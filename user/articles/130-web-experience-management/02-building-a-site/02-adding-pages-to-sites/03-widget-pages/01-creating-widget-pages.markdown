@@ -16,7 +16,7 @@ provide some tool or function for Users.
 When you first start @product@ you get a widget page by default as your home
 page. To create a new widget page,
 
-1.  Go to *Site Administration* &rarr; *Build* &rarr; *Pages*.
+1.  Go to *Site Administration* &rarr; *Site Builder* &rarr; *Pages*.
 
 2.  Click the *Add* icon (
     ![Add](../../../../../../images/icon-add.png)) in the top right and select 
@@ -26,12 +26,9 @@ page. To create a new widget page,
 
 4.  Select the *Widget Page* type. 
 
-5.  Name the page *Community* and leave the box checked to *Add this Page to the
-    following Menus: Default*.
+5.  Name the page *Community* and click *Save*.
  
-6.  Click *Submit*.
- 
-7.  On the next screen, you can select a Layout Template or manage other 
+6.  On the next screen, you can select a Layout Template or manage other 
     options. Leave the defaults and click *Save*.
 
 ![Figure 1: Create a page called *Community* with two columns.](../../../../../../images/creating-community-page.png)
@@ -45,17 +42,17 @@ Your new page is now added to the navigation.
 
 1.  Click the logo in the top left of the page to go back to your Site's front
     page. The page you just created appears in the main navigation.
- 
+
+    ![Figure 2: Your page has been added to the navigation automatically.](../../../../../../images/community-page-created.png)
+
 2.  Click on *Community* to go to the page.
 
-Currently the page is empty. Next you'll add some widgets to give it functionality.
-
-![Figure 2: Your page has been added to the navigation automatically.](../../../../../../images/community-page-created.png)
-
+Currently the page is empty. Next you'll add some widgets to give it
+functionality.
 
 ## Adding Widgets to a Page
 
-To add widget to a page, go to the page and click the *Add* button 
+To add a widget to a page, go to the page and click the *Add* button 
 (![Add](../../../../../../images/icon-control-menu-add.png)) 
 from the top menu and select the *Widgets* tab. You can either browse
 through the categories of available widgets until you find the one you want, or 
@@ -80,6 +77,6 @@ app and Blogs Aggregator app to a page.
 
 If the default layout options provided aren't enough, you can create your own.
 For more information about developing custom layout templates, see the tutorial
-[Layout Templates with the Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator). 
+[Layout Templates with the Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/creating-layout-templates-with-the-themes-generator). 
 
 Next, you'll look at creating reusable templates for widget pages.

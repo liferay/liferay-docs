@@ -22,7 +22,7 @@ your rules.
 | [the lite version of LMDD](https://web.liferay.com/marketplace/-/mp/application/92831494)
 | before you can install
 | [the enterprise version](https://web.liferay.com/marketplace/-/mp/application/35419014).
-| [Click here](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace)
+| [Click here](/docs/7-2/user/-/knowledge_base/u/using-the-liferay-marketplace)
 | for instructions on using Liferay Marketplace to find and install apps.
 
 You can develop plugins that integrate with other device databases. Even if you
@@ -30,6 +30,7 @@ don't have a device database, you can still set up mobile device rules. They
 won't, however, be effective until a database is deployed, because the portal
 won't have enough information about the devices being used to make page
 requests.
+
 <!-- Uncomment when the referenced article is published. Jim
 To learn how to tap into @product@'s Device API, see the 
 Using the Device Recognition API(/develop/tutorials/-/knowledge_base/7-1/using-the-device-recognition-api)
@@ -40,15 +41,15 @@ To access the Mobile Device Families administrative page,
 
 1.  Open the *Product Menu*.
 
-2.  Use the *Site Selector* (![Site Selector](../../../../../../images/icon-compass.png)) to choose the Site that you
-    want to define Mobile Device Rules for.
+2.  Use the *Site Selector* (![Site Selector](../../../../../../images/icon-compass.png))
+    to choose the Site that you want to define Mobile Device Rules for.
  
 3.  Select *Configuration* &rarr; *Mobile Device Families*.
 
 You can also add families for all Sites by navigating to the Control Panel
-&rarr; *Sites* &rarr; *Global*. The Mobile Device Families administrative page
-displays a list of defined families and lets you add more. To add rules, you
-must first add a family.
+&rarr; *Sites* &rarr; *Sites* &rarr; *Global*. The Mobile Device Families
+administrative page displays a list of defined families and lets you add more.
+To add rules, you must first add a family.
 
 1.  Click *Add* button (![Add Family](../../../../../../images/icon-add.png)) to 
     add a *New Device Family*.
@@ -94,18 +95,19 @@ found to apply.
 | evaluates whether a User is accessing content using a particular device family.
 | This rule is integrated with the Mobile Device Families app.
 | 
-| <!-- Add link once available (LRDOCS-4644)
-| Visit the
-| [Liferay Audience Targeting Rules](discover/portal/-/knowledge_base/7-1/liferay-audience-targeting-rules#device)
-| section for more details.
-| -->
+
+<!-- Add link once available (LRDOCS-4644)
+ Visit the
+ [Liferay Audience Targeting Rules](discover/portal/-/knowledge_base/7-1/liferay-audience-targeting-rules#device)
+ section for more details.
+ -->
 
 You can add families to a Site, individual page, or page set from their
 respective configuration pages. To do it for a Page Set:
 
 1.  Go to *Site Builder* &rarr; *Pages* in your Site.
 
-2.  Click on *Configuration* 
+2.  Click on *Configure* 
     (![Configure](../../../../../../images/icon-page-gear.png)) for the Public 
     Pages.
  

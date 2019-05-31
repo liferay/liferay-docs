@@ -6,7 +6,7 @@ header-id: adding-applications-to-a-page
 
 [TOC levels=1-4]
 
-Widget Pages are composed of "widgets." A widget is any application that you can
+Widget Pages are composed of *widgets*. A widget is any application that you can
 add to a page. Widget Pages are constructed by adding widgets to the page and
 filling them with content.
 

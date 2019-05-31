@@ -132,4 +132,5 @@ to any Site based on it. A checkbox appears for unlinking the Site template if
 the User has permission to do so.
 
 Once the Site has been created, you should configure its settings to fit your
-needs. You can learn more about Site Settings in [Configuring Sites](/docs/7-2/user/-/knowledge_base/u/configuring-sites).
+needs. You can learn more about Site Settings in
+[Configuring Sites](/docs/7-2/user/-/knowledge_base/u/configuring-sites).

@@ -23,7 +23,8 @@ a desktop:
 -  When the screen width is low, Liferay combines columns so that all 
    content remains legible.
 
-    ![Figure 3: Columns combine.](../../../../../images/columns-adjustment.png) 
+    <!--[Figure 3: Columns combine.](../../../../../images/columns-adjustment.png) -->
+    <!--TODO: Update image when there's more time. -->
  
 -  For web developers, Liferay's theme tools provide a number of tools to help
    ensure optimum mobile performance.
@@ -54,7 +55,7 @@ looks to your average smartphone user.
 
 There are also two options available to display 
 
-**Autosize:** Provides another way to view the default behavior where the page
+**AutoSize:** Provides another way to view the default behavior where the page
 shrinks and grows based on the width of the browser window.
  
 **Custom:** Lets you enter a specific size for testing and fixes the height and

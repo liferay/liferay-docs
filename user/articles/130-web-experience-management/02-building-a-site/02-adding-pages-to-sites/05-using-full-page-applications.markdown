@@ -14,33 +14,26 @@ other application that demands a full page.
 Creating a Full Page Application starts just like creating any other type of 
 page.
 
-1.  Go to *Site Administration* &rarr; *Site Builder* &rarr; *Site Pages*.
+1.  Go to *Site Administration* &rarr; *Site Builder* &rarr; *Pages*.
 
 2.  Click the (![Add Page](../../../../../images/icon-add.png)) icon.
 
-3.  Give your page a *Name* and click *Submit*.
+3.  Select the *Full Page Application* page type.
 
-At this point you created the page, but it contains no content. If you visit the
-page, there is no way to add any content or widgets to the page. You must
-configure the page for it to function.
+4.  Give your page a *Name* and click *Save*.
 
-1.  From *Site Pages* click the (![Options](../../../../../images/icon-options.png)) button and select 
-    *Configure*.
+5.  Set the *Full Page Application* to *Wiki* and click *Save*.
 
-    On the next screen, you can change the page's *Name*, *Friendly URL*, and 
-    set the *Full Page Application* as well as access other page configuration
-    options in the other tabs.
- 
     ![Figure 1: The Full Page Application configuration page.](../../../../../images/full-page-app-configure.png)
- 
-2.  Set the *Full Page Application* to *Wiki* and click *Save*.
+
+6.  Finish the page configuration and click *Save*.
 
     Out of the box, you can set the Blogs, Wiki, Media Gallery, Message Boards,
-    RSS, Hello Soy Portlet, Documents and Media, or Dynamic Data Mapping Form to
-    be the sole application for the page. Developers can make their applications
-    Full Page Applications.
+    RSS, Hello Soy Portlet, Documents and Media, Form, or Application
+    Authorization Request to be the sole application for the page. Developers
+    can make their applications Full Page Applications.
  
-3.  Click *Go to Site* in the Site Administration menu, and then click on your
+7.  Click *Go to Site* in the Site Administration menu, and then click on your
     page.
 
 Now the page is configured to display the Wiki and only the Wiki. No other 
@@ -56,8 +49,8 @@ on this page.
 If you want to configure the application to be scoped to this specific page, you
 can configure that through the application's settings.
 
-1.  From the page, click the (![Options](../../../../../images/icon-options.png)) button for the Wiki and
-    select *Configuration*.
+1.  From the page, click the (![Options](../../../../../images/icon-options.png))
+    button for the Wiki and select *Configuration*.
  
 2.  From the *Wiki - Configuration* page, select the *Scope* tab.
 

@@ -6,7 +6,7 @@ header-id: understanding-Site-management
 
 [TOC levels=1-4]
 
-Whether you're building a large corporate webSite or a small Site for
+Whether you're building a large corporate web Site or a small Site for
 facilitating collaboration among team members, supporting different kinds of
 collaboration and social scenarios is a must. Liferay's Sites provide three
 membership types:

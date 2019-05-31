@@ -10,7 +10,7 @@ Page templates provide pre-configured pages to reuse. There are two types of
 page templates in @product-ver@: Widget Page templates consist of a portlet
 layout and configuration. Content Page templates are constructed from
 Fragments. You can read about 
-[Content Page Templates in this article](/docs/7-1/user/-/knowledge_base/u/building-content-pages-from-fragments).
+[Content Page Templates in this article](/docs/7-2/user/-/knowledge_base/u/building-content-pages-from-fragments).
 
 Three sample layout page templates are installed by default:
 
@@ -24,16 +24,16 @@ Three sample layout page templates are installed by default:
 
 To add a new widget page template,
 
-1.  Go to *Build* &rarr; *Pages*.
+1.  Go to *Site Builder* &rarr; *Pages*.
 
 2.  Select the *Page Templates* tab.
 
-3.  Create a Collection named *Lunar Resort Templates*.
+3.  Click *New* and create a collection named *Lunar Resort Templates*.
 
-4.  Click the *Add* icon (![Add Page Template](../../../../../../images/icon-add.png)) and select *Widget Page 
-    Template.
+4.  Click the *Add* icon (![Add Page Template](../../../../../../images/icon-add.png))
+    and select *Widget Page Template*.
 
-5.  Enter a *Name*.
+5.  Enter a name.
 
 6.  Click *Save*.
 
@@ -47,7 +47,7 @@ If you want to edit the template again,
 
 2.  Click the *Actions* icon (![Actions](../../../../../../images/icon-actions.png)).
 
-3.  Click *Edit*.
+3.  Click *Configure*.
 
 Note that after a new page template has been created, the default permissions
 only allow the creator to use the page template. To give other users access to
@@ -65,14 +65,14 @@ check the *View* permission for the *User* Role.
 To use your template to create a new page,
 
 1.  Go to Site Administration and select the *Pages* option from the 
-    *Build* menu dropdown option.
+    *Site Builder* menu dropdown option.
  
 2.  Click the *Add* icon (![Add Page](../../../../../../images/icon-add.png)).
 
 3.  Inside the Lunar Resort collection, select the page template that you 
     created.
 
-4.  Enter the name of your page and click *Submit*.
+4.  Enter the name of your page and click *Add*.
 
 Pages based on templates can inherit changes from the page template:
 
@@ -84,8 +84,8 @@ those pages. Site administrators can disable this behavior by disabling the
 *Inherit Changes* selector. Occasionally, propagation for page templates fails
 due to unintended errors. To learn how to manage a failed page template
 propagation, visit the
-[Propagating Changes from Site Templates to Sites](/docs/7-1/user/-/knowledge_base/u/propagating-changes-from-site-templates-to-sites)
-tutorial.
+[Propagating Changes from Site Templates to Sites](/docs/7-2/user/-/knowledge_base/u/propagating-changes-from-site-templates-to-sites)
+article.
 
 If staging has been enabled, changes to the page template are automatically
 propagated to the staged page. These changes must still be approved before
@@ -94,17 +94,20 @@ page template changes to the staged page cannot be turned off and the *Inherit
 Changes* selector does not appear.
 
 You can read more about staging in the
-[Staging Content for Publication tutorial](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication).
+[Stagingl](/docs/7-2/user/-/knowledge_base/u/staging) articles.
 
 ## Sharing Widget Page Templates
 
-When importing pages to a new site or environment, you must also import
-templates associated with those pages. Generally templates are
-included automatically when an associated page is exported, but if not you 
-can export the template collection separately so the page can be imported 
-to the new environment. To export page templates, 
+<!-- TODO: check this section. I could not find a way to import/export page
+templates. -->
 
-1.  Go to *Site Management* &rarr; *Build* &rarr; *Pages*.
+When importing pages to a new site or environment, you must also import
+templates associated with those pages. Generally templates are included
+automatically when an associated page is exported, but if not you can export the
+template collection separately so the page can be imported to the new
+environment. To export page templates, 
+
+1.  Go to *Site Management* &rarr; *Site Builder* &rarr; *Pages*.
 
 2.  Select the *Page Templates* tab.
 
@@ -118,8 +121,8 @@ to the new environment. To export page templates,
 5.  When you're done configuring the export, click *Export* and save the 
     exported LAR file.
 
-6.  On the target environment, go to *Site Management* &rarr; *Build* &rarr; 
-    *Pages* and select *Page Templates*.
+6.  On the target environment, go to *Site Management* &rarr; *Site Builder*
+    &rarr; *Pages* and select *Page Templates*.
 
 7.  At the top right of the page, click *Options* 
     (![Options](../../../../../../images/icon-options.png)) &rarr; 
@@ -127,11 +130,10 @@ to the new environment. To export page templates,
 
 8.  Select the *Import* tab.
 
-9.  Upload the LAR with your template data. If the LAR contains 
-    additional content you don't want to import, you can deselect it.
+9.  Upload the LAR with your template data. If the LAR contains additional
+    content you don't want to import, you can deselect it.
 
 Once the template has been imported, the page can be imported normally to your
 new environment. For more information on exporting/importing content, visit the
-[Importing/Exporting Sites and Content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content)
+[Importing/Exporting Sites and Content](/docs/7-2/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 article. 
-

@@ -15,7 +15,8 @@ To add actions to a selected rule group:
 1.  Go to the *Configuration* page for the page, page set, or Site where you 
     have configured a device family.
 
-2.  In the *Mobile Device Rules* section, click *Actions* (![Actions](../../../../../../images/icon-actions.png)) &rarr; *Manage 
+2.  In the *Mobile Device Rules* section, click *Actions*
+    (![Actions](../../../../../../images/icon-actions.png)) &rarr; *Manage 
     Actions* next to the device family that you wish to add an action for.
  
 3.  Click *Add Action*.
@@ -104,7 +105,7 @@ family. Now you must apply the rule to some pages.
 
 1.  Go to *Site Builder* &rarr; *Pages* in Site Administration.
 
-2.  Click on the *Configuration* icon for the *Public Pages*
+2.  Click on the *Configure* icon for the *Public Pages*
 
 3.  Go to the *Advanced* tab.
 

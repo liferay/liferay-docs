@@ -13,15 +13,15 @@ everything you need with pages from Site Administration.
     Selector* button (![Compass](../../../../images/icon-compass.png)) next to 
     your current Site name in the Menu and select your desired Site.
 
-2.  Go to *Site Administration* &rarr; *Build*.
+2.  Go to *Site Administration* &rarr; *Site Builder*.
 
-3.  Click on *Site Pages*
+3.  Click on *Pages*
  
-![Figure 1: The Sites Pages page allows you to edit your Site pages as a whole.](../../../../images/managing-site-pages.png)
+![Figure 1: The Pages screen lets you edit your Site pages as a whole.](../../../../images/managing-site-pages.png)
 
 From here, you'll create pages and page templates.
 
-| Note: Pages are always part of page sets, and page sets are always associated
+| **Note:** Pages are always part of page sets, and page sets are always associated
 | with Sites. Even users' personal pages are part of their personal Sites. All
 | pages belong to one of two types of page sets: public pages and private pages.
 | By default, anyone can access public pages, even non-logged in users (guests).
@@ -29,11 +29,12 @@ From here, you'll create pages and page templates.
 | pages. This means the private pages of an organization's Site are viewable only
 | by Site members and members of the organization.
 
-From *Site Pages* you can do several things:
+From *Pages* you can do several things:
 
-1.  Click the `+` button in the top right corner to add a new page.
+1.  Click the (![Compass](../../../../images/icon-add.png)) button in the top
+    right corner to add a new page.
 
-2.  Click options icons manage page or page set settings.
+2.  Click options, icons, manage page, or page set settings.
 
 3.  Create child pages by clicking the `+` button next to an existing page.
 
@@ -85,7 +86,7 @@ currently viewing. The page type appears at the top of the page to help you
 determine the administration options you have and where you need to go to
 configure the page.
 
-![Figure 4: Here are three different page with three different types as they as displayed in the heading.](../../../../images/page-type-guide.png)
+![Figure 4: Here are three different page types as they're displayed in the heading.](../../../../images/page-type-guide.png)
 
 Now that you know the basics of adding pages, you can start working on the Lunar
 Resort Site. If you're not currently on the right Site, navigate to Site
@@ -93,13 +94,13 @@ Administration in the Menu, select the compass icon next to the current Site
 name, and select the Site you wish to edit.
 
 If you must ever modify the page you've created for your Site, select
-*Configure* from the Options menu for the page from *Site Pages*. When
+*Configure* from the Options menu for the page from *Pages*. When
 configuring a specific page, you have more options than when you were creating
 a new page. You can also read 
-[Configuring Sites](/docs/7-1/user/-/knowledge_base/u/configuring-sites).
+[Configuring Sites](/docs/7-2/user/-/knowledge_base/u/configuring-sites).
 
 There are also configuration options that are only available for individual
 pages or page groups only. You'll learn about options available for both
 instances.
 
-Next, you'll look at creating the main page types you'll use in Liferay.
+Next, you'll look at creating the main page types you'll use in @product@.
