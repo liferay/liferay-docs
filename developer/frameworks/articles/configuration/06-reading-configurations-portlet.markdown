@@ -1,9 +1,12 @@
-# Reading Unscoped Configuration Values from an MVC Portlet [](id=reading-unscoped-configuration-values-from-an-mvc-portlet)
+---
+header-id: reading-unscoped-configuration-values-from-an-mvc-portlet
+---
+
+# Reading Unscoped Configuration Values from an MVC Portlet
 
 If your configuration is scoped to `SYSTEM` or is unscoped (which amounts to
 the same thing), you have a couple of options for reading configuration values.
-This section describes how to read values from an MVC portlet. There are two
-ways to do this:
+There are two ways to do this:
 
 -   Add a configuration to the request and read it from the view layer
     (commonly a JSP).
@@ -15,7 +18,7 @@ Configuration Portlet. The import statements are included in the code snippets
 so that you can see the fully qualified class names (FQCNs) of all the classes
 that are used.
 
-## Accessing the Configuration Object in the Portlet Class [](id=accessing-the-configuration-object-in-the-portlet-class)
+## Accessing the Configuration Object in the Portlet Class
 
 Whether you need the configuration values in the portlet class or the JSPs, the
 first step is to get access to the configuration object in the `*Portlet`
@@ -43,9 +46,10 @@ class.
     import com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil;
 ```
 
-2.  Portlet classes are Component classes. To mate the configuration with the
-    Component, provide the `configurationPid` property with the FQCN of the
-    configuration class. 
+2.  MVC Portlet classes are Component classes. If you have a Bean Portlet or
+    PortletMVC4Spring class, the configuration below goes in `portlet.xml` and
+    `liferay-portlet.xml`. To mate the configuration with the Component, provide
+    the `configurationPid` property with the FQCN of the configuration class. 
 
 ```java
     @Component(
@@ -64,8 +68,8 @@ class.
     public class ExampleConfigPortlet extends MVCPortlet {
 ```
 
-    Note that you can specify more than one configuration PID here, by enclosing the
-    values in curly braces (`{}`) and placing commas between each PID.
+    Note that you can specify more than one configuration PID here by enclosing
+    the values in curly braces (`{}`) and placing commas between each PID.
 
 3.  Write an `activate`  method annotated with `@Activate` and `@Modified`.
     This ensures that the method is invoked when the Component is started, and
@@ -82,11 +86,11 @@ class.
     private volatile ExampleConfiguration _configuration;
 ```
 
-    A volatile field `_configuration` is created by the `createConfigurable` method.
-    Now the field can be used to retrieve configuration values or to set the values
-    in the request, so they can be retrieved in the application's JSPs.
+A volatile field `_configuration` is created by the `createConfigurable` method.
+Now the field can be used to retrieve configuration values or to set the values
+in the request, so they can be retrieved in the application's JSPs.
 
-## Accessing the Configuration from a JSP [](id=accessing-the-configuration-from-a-jsp)
+## Accessing the Configuration from a JSP
 
 In the case of reading from a JSP, add the configuration object to the request
 object so its values can be read from the JSPs that comprise the application's
@@ -125,7 +129,7 @@ view layer.
    the desired configuration value from it. Here's a `view.jsp` file that does
    this:
 
-```java
+```jsp
     <%@ include file="/init.jsp" %>
 
     <p>
@@ -154,7 +158,7 @@ and click on the *Example configuration* link, you can find the `Favorite color`
 setting and change its value. The JSP reads the configuration, and refreshing
 the UI reflects this update.
 
-## Accessing the Configuration from the Portlet Class [](id=accessing-the-configuration-from-the-portlet-class)
+## Accessing the Configuration from the Portlet Class 
 
 Now that you've seen a detailed example of accessing the configuration values in
 a JSP, there's not much more to cover when accessing the configuration directly
@@ -184,6 +188,6 @@ It returns true and adds a success message if the two Strings match each other,
 but you can do anything that makes sense for your application's controller
 logic.
 
-That's all there is to reading configuration values in an MVC Portlet. The next
+That's all there is to reading configuration values in a Portlet. The next
 section covers reading configuration values from an OSGi Component class that
-is not part of an MVC portlet.
+is not part of a portlet.
