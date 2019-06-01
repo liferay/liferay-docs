@@ -68,8 +68,8 @@ can skip the step on deleting the default search page if you're starting with
 a new site:
 
 1.  Delete the existent search page by navigating to the default site's menu and
-    clicking *Build* &rarr; *Site Pages*. Click the Search page's Options menu
-    icon (![Options](../../images/icon-kebab-blue-on-white.png)) and select *Delete*.
+    clicking *Site Builder* &rarr; *Pages*. Click the Search page's Actions menu
+    icon (![Actions](../../images/icon-actions.png)) and select *Delete*.
     Confirm you want to delete the page, and it's gone.
 
     Once deleted, the search bar disappears from your site pages, replaced by a
@@ -94,7 +94,7 @@ a new site:
 4.  Configure the search bar at the top of the page, making sure it points to your
     new search page's friendly URL (for example, `/finders-keepers`). 
 
-    Click the Search Bar widget's Options menu (![Options](../../images/icon-kebab-blue-on-blue.png)).
+    Click the Search Bar widget's Options menu (![Ac](../../images/icon-app-options.png)).
 
     Click *Configuration* and set the Destination Page to the search page's
     friendly URL.
@@ -114,9 +114,10 @@ looks a lot like the new search behavior, only its monolithic structure means
 it's difficult to customize. If you liked the old application, it's still
 available. Enable it with these steps:
 
-1.  Delete the default search page. From the site menu, click *Build* &rarr;
-    *Pages*. Click the Options menu (![Options](../../images/icon-kebab-blue-on-white.png))
-    for the Search page and choose *Delete*. 
+1.  Delete the default search page. From the site menu, click *Site Builder*
+    &rarr; *Pages*. Click the Actions menu
+    (![Actions](../../images/icon-actions.png)) for the Search page and choose
+    *Delete*. 
 
 2.  Enable the legacy search application. Go to Control Panel &rarr;
     Configuration &rarr; System Settings &rarr; Search &rarr; Search Web and
