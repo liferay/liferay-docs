@@ -20,7 +20,7 @@ browser window or tab.
 
 A Success Page is simple. It has a title in bold text and a description beneath 
 the title. A common alternative to using a Success Page is to 
-[redirect users to a different page in your Site](/docs/7-1/user/-/knowledge_base/u/redirecting-users). 
+[redirect users to a different page in your Site](/docs/7-2/user/-/knowledge_base/u/redirecting-users). 
 What should you put in a Success Page? Whatever you want. If you can't think
 of anything important or creative to say, use the default message: 
 
@@ -28,8 +28,8 @@ of anything important or creative to say, use the default message:
 
 To configure a Success Page, 
 
-1.  Add a form in *Site Administration* (your site's menu) &rarr; *Content* 
-    &rarr; *Forms*. 
+1.  Add a form in *Site Administration* (your site's menu) &rarr; *Content &
+    Data* &rarr; *Forms*. 
 
 2.  Click on the form page's *Actions* button 
     (![Actions](../../images/icon-actions.png)) 
@@ -48,4 +48,4 @@ the Success Page is live for your form users.
 | 
 | To see what your Success Page looks like, submit a test entry of the form and
 | then delete it if needed. For more information, see
-| [the documentation on viewing and managing form entries](/docs/7-1/user/-/knowledge_base/u/managing-form-entries#viewing-form-entries).
+| [the documentation on viewing and managing form entries](/docs/7-2/user/-/knowledge_base/u/managing-form-entries#viewing-form-entries).
