@@ -21,8 +21,8 @@ importantly, _where_ to find search configuration options.
 
 ## System Scoped Search Configuration
 
-System scoped search configurations are primarily found in 
-[System Settings](/documentation/user/-/knowledge_base/7-2/system-settings).
+System scoped search configurations are primarily found in [System
+Settings](/docs/7-2/user/-/knowledge_base/u/system-settings). 
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*.
 
@@ -48,7 +48,7 @@ keyword search query. Specify the entry class names
 The Default Search Result Permission Filter entry allows configuration of
 *post-filtering permission checking* (database permission checking that occurs
 after the results are returned from the search index). Read
-[here](/documentation/user/-/knowledge_base/7-2/search-results-behavior#final-permissions-checking)
+[here](/docs/7-2/user/-/knowledge_base/u/search-results-behavior#final-permissions-checking)
 for more information on these settings:
 
 - `permissionFilteredSearchResultAccurateCountThreshold` 
@@ -103,7 +103,7 @@ buffer are executed in one batch and removed from the buffer.
 ### Index Query Preprocessor
 
 This entry has one repeatable property (use array syntax if you're defining via 
-[OSGi configuration file](/documentation/user/-/knowledge_base/7-2/creating-configuration-files)):
+[OSGi configuration file](/docs/7-2/user/-/knowledge_base/u/creating-configuration-files)):
 
 `fieldNamePatterns`: Fields with names matching the patterns set here are
 treated as non-analyzed keyword fields. Instead of scored full text queries,
@@ -125,7 +125,7 @@ executing a full re-index.
 ### Engine Helper
 
 This entry has one repeatable property (use array syntax if you're defining via 
-[OSGi configuration file](/documentation/user/-/knowledge_base/7-2/creating-configuration-files)):
+[OSGi configuration file](/docs/7-2/user/-/knowledge_base/u/creating-configuration-files)):
 
 `excludedEntryClassNames`: Exclude an asset type from being
 searched in the catchall query constructed for the Search application. For
