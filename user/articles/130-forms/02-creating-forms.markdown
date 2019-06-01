@@ -6,8 +6,8 @@ header-id: creating-and-managing-forms
 
 [TOC levels=1-4]
 
-The Forms widget can do a lot of things really well, but if you just need
-a simple form, how do you wade through all the features you don't need? Is your
+The Forms widget can do a lot of things really well, but if you just need a
+simple form, how do you wade through all the features you don't need? Is your
 simple survey going to make you late for that lunch outing you've been planning
 with colleagues at that new shawarma place? No!
 
@@ -27,7 +27,7 @@ field.
 Whether creating a form or managing existing forms, it all starts in the same
 place: the Forms Application in your site's Content section. Access this in the
 Menu, first choosing the site to work in (for example, The Lunar Resort) and
-clicking *Content &rarr; Forms*. The first thing you'll see is a list of
+clicking _Content & Data_  &rarr; _Forms_. The first thing you'll see is a list of
 existing forms (if there are any). This list is styled by the Display Style
 selector next to the Add button (![Add](../../images/icon-add.png)). By
 default, forms are displayed in List format.
@@ -50,7 +50,7 @@ To add a new form,
 
 2.  Name the form. Replace *Untitled Form* with *Guest Survey*.
 
-3.  For Help Text enter *Tell us how your stay was!*
+3.  For the description text enter *Tell us how your stay was!*
 
 4.  Add the fields. Click the *Add* button (![Add](../../images/icon-add.png))
     to open the sidebar if it's not already opened.
@@ -70,15 +70,15 @@ To add a new form,
 
     Leave the manual option checked for creating the list of selections. To
     learn about populating the field with a data provider, read
-    [here](/docs/7-1/user/-/knowledge_base/u/data-providers).
+    [here](/docs/7-2/user/-/knowledge_base/u/data-providers).
 
     Add these options:
-    
+
     - *It was out of this world!*
     - *I had a good time.*
-    - *I'd rather go to the beach*
-    - *I'll never come back*
-    
+    - *I'd rather go to the beach.*
+    - *I'll never come back.*
+
     Typing in one of the fields automatically adds another blank selection line.
     Just leave the last one blank when you're done.
 
@@ -132,15 +132,15 @@ To display the form on a site page in The Lunar Resort site:
 
     ![Figure 5: Add a page for guests to view and fill out your new form.](../../images/forms-guest-survey-page.png)
 
-2.  Add the Form widget to the page. If you used a full page application, click
-    the *Configure Page* button (![Page Gear](../../images/icon-page-gear.png))
-    and choose *Form* from the Full Page Application dropdown.
+2.  Add the Form widget to the page if you've chosen a Widget Page. If you used
+    a full page application, use the page configuration to choose *Form* from
+    the Full Page Application dropdown.
 
 3.  Once the Form widget is on the page, click *Select Form*, choose the 
     *Guest Survey* form, and click *Save*.
 
-4.  Close the Form dialog window and your form is ready for Lunar Resort site 
-    users.
+4.  Close the _Form---Configuration_ dialog window and your form is ready for
+    Lunar Resort site users.
 
 To display the form on a dedicated page accessed only by its link:
 
