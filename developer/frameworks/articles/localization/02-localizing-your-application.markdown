@@ -6,11 +6,14 @@ header-id: localizing-your-application
 
 [TOC levels=1-4]
 
-If you're writing a Liferay Application, you're probably a genius who is also
-really cool, which means your application will be used throughout the entire
-world. At least, if its messages can be translated into their language, it will.
-Thankfully, Liferay facilitates creating and using message translations. Here
-are the steps: 
+Liferay's localization framework allows you to create and use localized messages
+in minutes. You create your messages in a default properties file called
+`Language.properties` and localize them in properties files that use the
+convention `Language_xx.properties`, where `xx` is the locale code. After
+deploying your app, the messages are available to your templates. Liferay's JSP
+tags, such as `<liferay-ui:message .../>` display them in the user's current
+locale automatically, without requiring you to explicitly access
+`ResourceBundle` or `Locale` objects. Here are the steps: 
 
 1.  Create a default language properties file called `Language.properties` in 
     your project's resource bundle folder. 
