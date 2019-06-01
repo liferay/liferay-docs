@@ -51,7 +51,7 @@ also activates some of Liferay's built-in mobile features.
 **Mobile:** Puts your page in an even smaller box to demonstrate how the page
 looks to your average smartphone user.
 
-![Figure 4: The Simulation panel defines multiple screen sizes.](../../../../../images/device-simulation.png) 
+![Figure 3: The Simulation panel defines multiple screen sizes.](../../../../../images/device-simulation.png) 
 
 There are also two options available to display 
 

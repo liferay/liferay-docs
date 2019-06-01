@@ -53,7 +53,7 @@ of Content Pages.
 There are many features of the Content Page Interface---too many to cover in a 
 practical exercise. For a complete overview of every nook and cranny of the 
 Content Page management interface see the
-[Content Page Interface reference](/docs/7-2/user/-/knowledge_base/u/the-content-page-management-interface).
+[Content Page Interface reference](/docs/7-2/user/-/knowledge_base/u/content-page-management-interface).
 
 ## Personalizing Content Pages 
 
