@@ -12,9 +12,10 @@ To better understand Navigation Menus, it's time to create a new menu.
 
 1.  Go to *Site Administration* &rarr; *Site Builder* &rarr; *Navigation Menus*.
 
-2.  Click the `+` button to add a new menu.
+2.  Click the *Add* button (![Add Page](../../../../images/icon-add.png)) to add
+    a new menu.
 
-3.  Give your menu a name and click *Submit*.
+3.  Give your menu a name and click *Save*.
 
 On the next page appears a number of elements that you can add to a menu.
 
@@ -86,7 +87,7 @@ that contain links for sharing content on social media or similar tasks.
 
 ### Modifying Menus
 
-Next click on the options menu at the far left of your new navigation menu: 
+Next click on the options menu at the far right of your new navigation menu: 
 
 ![Figure 2: Menus with a standard page, a submenu, and a URL link in the submenu are created for different reasons.](../../../../images/nav-menu-options.png)
 

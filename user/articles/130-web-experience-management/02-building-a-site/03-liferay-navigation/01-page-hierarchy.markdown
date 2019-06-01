@@ -19,10 +19,10 @@ page,
 1.  Go to *Site Administration* for the Site you want to work on, then
     *Site Builder* &rarr; *Pages*.
 
-![Figure 1: In the default site, initially only the *Home* and the hidden *Search* pages exist in the Public Pages Hierarchy.](../../../../images/default-nav-pages.png)
+    ![Figure 1: In the default site, initially only the *Home* and the hidden *Search* pages exist in the Public Pages Hierarchy.](../../../../images/default-nav-pages.png)
 
-2.  Click *Add* [Add Page](../../../../images/icon-add.png) and select *Public 
-    Page*.
+2.  Click *Add* (![Add Page](../../../../images/icon-add.png)) and select
+    *Public Page*.
 
 3.  Select *Widget Page*.
 
@@ -46,18 +46,18 @@ automatically when visiting your Site.
     see the order of the pages matches the order of the pages from Site
     Administration.
 
-![Figure 3: You can see the order of pages in Site Administration vs. how they appear on the site.](../../../../images/navigation-practical1.png)
+    ![Figure 3: You can see the order of pages in Site Administration vs. how they appear on the site.](../../../../images/navigation-practical1.png)
 
 2.  Drag the *About Us* page above the *Welcome* page in the list. It
     automatically becomes the *Home* page.
 
 3.  Click *Go to Site* to see how this affects your menu.
 
-![Figure 4: *About Us* is now the home page, and *Welcome* is second in the nav.](../../../../images/navigation-practical2.png)
+    ![Figure 4: *About Us* is now the home page, and *Welcome* is second in the nav.](../../../../images/navigation-practical2.png)
 
 4.  Drag *About Us* on top of *Welcome* to nest it. 
 
-6.  Click *Go to Site* one more time to see how nested pages appear.
+5.  Click *Go to Site* one more time to see how nested pages appear.
 
 ![Figure 5: *About Us* is now nested under *Welcome* and appear when you mouse-over *Welcome*.](../../../../images/navigation-practical3.png)
 
@@ -78,19 +78,19 @@ While managing the default menu, you can also access page options. Clicking on
 the *Options* icon [Option](../../../../images/icon-options.png) 
 accesses several configuration tools:
 
-* **View** goes to the selected page on the Site.
+**View** goes to the selected page on the Site.
 
-* **Configure** goes to page configuration.
+**Configure** goes to page configuration.
 
-* **Copy Page** creates a new page in the current Site that duplicates
-  the selected page.
+**Copy Page** creates a new page in the current Site that duplicates the
+selected page.
 
-* **Permissions** opens the Permissions dialog.
+**Permissions** opens the Permissions dialog.
 
-* **Orphan Widgets** clears data related to widgets that have been removed from
-  the page.
+**Orphan Widgets** clears data related to widgets that have been removed from
+the page.
  
-* **Delete** deletes the page and all its data.
+**Delete** deletes the page and all its data.
 
 Creating and managing pages using the page hierarchy is simple but very 
 powerful. If you need more navigation options, however, Navigation

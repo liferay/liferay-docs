@@ -23,11 +23,11 @@ you are displaying.
 
 From here you can configure three main categories: 
 
--  The Navigation Menu to be displayed
+- The Navigation Menu to be displayed
 
--  The styling of the menu
+- The styling of the menu
 
--  What level of navigation to display
+- What level of navigation to display
 
 ![Figure 1: Configuring the Navigation Menu Widget.](../../../../images/nav-widget-configuration.png)
 
@@ -74,8 +74,9 @@ padding.
 **Split Button Dropdowns:** Displays each item as a button with a dropdown 
 for multiple navigation levels.
 
-You can also add your own 
-[custom templates](/docs/7-2/tutorials/-/knowledge_base/t/application-display-templates).
+You can also add your own custom templates.
+
+<!-- TODO: Provide link for developing ADTs when available.-->
 
 ### Menu Items to Show
 
