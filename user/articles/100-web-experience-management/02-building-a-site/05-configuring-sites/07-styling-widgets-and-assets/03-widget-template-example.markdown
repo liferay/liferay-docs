@@ -14,7 +14,7 @@ templates can be for your Liferay instance.
     (![Add](../../../../../images/icon-add.png)) &rarr; *Widgets* &rarr;
     *Content Management* &rarr; *Media Gallery*.
 
-2.  Click the widgets's *Add* button (![Actions](../../../../../images/icon-app-add.png))
+2.  Click the widgets's *Add* button (![Actions](../../../../../images/icon-add.png))
     &rarr; *Multiple Files Upload* and select two custom photos to display. Then
     click *Save*, and navigate back to the main application screen.
 
