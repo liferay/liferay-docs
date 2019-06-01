@@ -4,6 +4,8 @@ header-id: frameworks
 
 # Frameworks
 
+[TOC levels=1-4]
+
 To make your applications more fully featured and to develop them faster, you
 can make use of Liferay's development frameworks. These help you create
 commonly used features---like search, tagging, and comments---without having to
