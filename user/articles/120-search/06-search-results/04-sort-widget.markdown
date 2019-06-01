@@ -34,12 +34,12 @@ It's also possible to delete unwanted sort options from the widget.
 
 To get started with the Sort widget,
 
-1. Open the Add menu (![Add](../../images/icon-add-widget.png)) for the page and
+1. Open the Add menu (![Add](../../../images/icon-add-widget.png)) for the page and
    expand the Widgets section.
 
 2.  From the Search section, drag a Sort widget onto the page.
 
-![Figure 1: Users can re-order search results with the Sort widget.](../../images/search-sort.png)
+![Figure 1: Users can re-order search results with the Sort widget.](../../../images/search-sort.png)
 
 ### Configuring the Sort Widget
 
@@ -49,10 +49,10 @@ Three things can be done from the Configuration screen:
 - Deleting options
 - Adding options
 
-![Figure 2: From the Sort widget's configuration, add, edit, or remove Sort options.](../../images/search-sort-configuration.png)
+![Figure 2: From the Sort widget's configuration, add, edit, or remove Sort options.](../../../images/search-sort-configuration.png)
 
 To access the widget configuration screen, open the widget Options menu
-(![Options](../../images/icon-app-options.png)) and click _Configuration_.
+(![Options](../../../images/icon-app-options.png)) and click _Configuration_.
 
 Each Sort option has two fields: _Label_ and _Field_.
 

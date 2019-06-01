@@ -24,12 +24,12 @@ on the page.
 
 To get started with Custom Filters,
 
-1. Open the Add menu (![Add](../../images/icon-add-widget.png)) for the page and
+1. Open the Add menu (![Add](../../../images/icon-add-widget.png)) for the page and
    expand the Widgets section.
 
 2.  From the Search section, drag a Custom Filter onto the page.
 
-![Figure 1: A custom filter has no impact until it's configured.](../../images/search-custom-filter.png)
+![Figure 1: A custom filter has no impact until it's configured.](../../../images/search-custom-filter.png)
 
 Custom filters can do so many things, it's impossible to list them all. What
 follows is a widget configuration tour. Separate documentation will be written
@@ -37,10 +37,10 @@ to provide a how-to demonstration of Custom Filters.
 
 ### Custom Filter Configuration Options
 
-Open the widget Options menu (![Options](../../images/icon-app-options.png)) and
+Open the widget Options menu (![Options](../../../images/icon-app-options.png)) and
 click _Configuration_.
 
-![Figure 2: Once the Custom Filter is added to the page, mold it like soft clay into the beautiful sculpture you've envisioned.](../../images/search-custom-filter-configuration.png)
+![Figure 2: Once the Custom Filter is added to the page, mold it like soft clay into the beautiful sculpture you've envisioned.](../../../images/search-custom-filter-configuration.png)
 
 
 **Filter Field (text)**
