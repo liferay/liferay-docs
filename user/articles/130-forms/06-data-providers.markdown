@@ -16,7 +16,7 @@ someone else (hopefully a trustworthy expert) to keep the data updated.
 When setting up a data provider, you're accessing a 
 [REST web service](https://en.wikipedia.org/wiki/Representational_state_transfer). 
 Use the 
-[JSON web services registered in Liferay](/docs/7-1/tutorials/-/knowledge_base/t/registering-json-web-services),
+[JSON web services registered in Liferay](/docs/7-2/tutorials/-/knowledge_base/t/registering-json-web-services),
 or any other REST web service you can access. To find a list of the ready-to-use
 registered JSON web services in @product@, navigate to
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) (assuming
@@ -39,10 +39,10 @@ countries using JSON syntax, like this:
       },
         ...
 
-That's the record for the country Afghanistan. As you can see in the *URL* tab,
-the URL you entered into the data provider form is the same as the one generated
-for accessing the `get-countries` JSON web service. Find the URL for any
-registered JSON web service using this same procedure. 
+That's the record for the country Afghanistan. As you can see in the *URL
+Example* tab, the URL you entered into the data provider form is the same as the
+one generated for accessing the `get-countries` JSON web service. Find the URL
+for any registered JSON web service using this same procedure. 
 
 Note the field you want Users to select. With this service, it's most likely
 `nameCurrentValue`, because it contains the full, properly capitalized name of
@@ -54,8 +54,7 @@ To add a *Countries of the World* Data Provider for use in your Forms,
 
 1.  Go to the Forms application.
 
-2.  Click the Options button (![Options](../../images/icon-options.png)) and
-    click *Data Providers*.
+2.  Click the *Data Providers* tab.
 
 3.  Click the Add button (![Add](../../images/icon-add.png)).
 
@@ -70,9 +69,9 @@ To add a *Countries of the World* Data Provider for use in your Forms,
 
     URL: `http://localhost:8080/api/jsonws/country/get-countries/`
 
-    User Name: `test@liferay.com`
+    User Name: `adminuser@liferay.com`
 
-    Password:`test`
+    Password:`adminuserpass`
 
 6.  In the Outputs fields, specify which field from the REST service populates
     your select list. 
@@ -120,9 +119,8 @@ see the list of results from the data provider. Arrgh! Now what?
 ## Granting Data Provider Permissions
 
 To configure the data provider's permissions, go to the Forms application (*Site
-Administration* &rarr; *Content* &rarr; *Forms*). Open the Options menu
-(![Options](../../images/icon-options.png)) and select *Data Providers*. For
-the data provider you want to configure, click the Actions button
+Administration* &rarr; *Content & Data* &rarr; *Forms*). Open the Data Providers
+tab. For the data provider you want to configure, click the Actions button
 (![Actions](../../images/icon-actions.png)), then *Permissions*. 
 
 Configure the permissions you need. If Guests are to fill out the form, they
@@ -176,7 +174,7 @@ request, if a response is not returned.
 service's response. Specify the Label, Parameter, and Type (Text or Number), and
 choose whether the input is required to use the Data Provider. You can add
 multiple Inputs. To provide a way for users to specify the input value, use an
-[_Autofill_ Form Rule](/docs/7-1/user/-/knowledge_base/u/action-autofill).
+[_Autofill_ Form Rule](/docs/7-2/user/-/knowledge_base/u/action-autofill).
 A User enters input into one field, and their input is sent to the REST service.
 The REST service's response data is filtered by the input parameter.
 
