@@ -6,7 +6,7 @@ header-id: localization
 
 [TOC levels=1-4]
 
-If you're writing a Liferay Application, you're probably a genius who is also
+If you're writing a Liferay application, you're probably a genius who is also
 really cool, which means your application will be used throughout the entire
 world. At least, if its messages can be translated into their language, it will.
 Thankfully, Liferay facilitates creating and using message translations and
@@ -23,8 +23,8 @@ file, manually or automatically using Language Builder.
 
 Language Builder integrates the Microsoft Text Translator API to translate each
 locale file's messages from your default locale to the respective locale. A
-machine's translation of a message is no substitute for a human's translation,
-of course, but the automatic translation gives you a base to work from. 
+machine's translation is no substitute for a human's, of course, but the
+automatic translation gives you a base to work from. 
 
 It's common to use the same messages in multiple apps. @product@ provides these
 message sharing features:
