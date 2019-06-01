@@ -88,7 +88,7 @@ the Recycle Bin, see
 If you select the *Content Sharing* tab from the Advanced tab, you can
 configure whether sub-Sites can display content from this Site. Administrators
 of this Site's sub-Sites can use all structures, templates, categories,
-application display templates, and more from this parent Site. Even if you
+widget templates, and more from this parent Site. Even if you
 initially allowed content sharing between the parent Site and its sub-Sites,
 you can disable this option and immediately revoke content sharing from
 all sub-Sites.

@@ -57,7 +57,7 @@ Site's administrator can enable content sharing to share the document
 automatically with its child Sites. Also, content sharing privileges can be set
 to let every Site administrator share content across Sites they manage. Some
 examples of content you can share across Sites include web content structures
-and templates, categories, application display templates, etc.
+and templates, categories, widget templates, etc.
 
 Please refer to the 
 [Sites Admin Portlet](https://docs.liferay.com/portal/7.2/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)

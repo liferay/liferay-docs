@@ -35,7 +35,7 @@ page functionality:
 - `navigation.ftl`: Contains the navigation markup. To customize pages in the
   navigation, you must use the `liferay.navigation_menu` macro. Then you can
   leverage
-  [ADTs](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/site-navigation/site-navigation-menu-web/src/main/resources/com/liferay/site/navigation/menu/web/portlet/template/dependencies)
+  [widget templates](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/site-navigation/site-navigation-menu-web/src/main/resources/com/liferay/site/navigation/menu/web/portlet/template/dependencies)
   for the navigation menu. Note that `navigation.ftl` also defines the hamburger
   icon and `navbar-collapse` class that provides the simplified navigation
   toggle for mobile viewports, as shown in the snippet below for the Classic
@@ -117,7 +117,7 @@ The following extensions and mechanisms are available for themes:
   for more information. 
 - **Context Contributor:** Exposes Java variables and functionality for use in
   FreeMarker templates. This allows non-JSP templating languages in themes,
-  ADTs, and any other templates. See the 
+  widget templates, and any other templates. See the 
   [Context Contributors tutorial](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-into-your-templates)
   or more information.
 - **Theme Contributor:** A package containing UI resources, not attached to a 
@@ -138,9 +138,9 @@ You can customize portlets with these mechanisms and extensions:
   portlets. See the 
   [Theming Portlets tutorial](/docs/7-2/frameworks/-/knowledge_base/f/theming-portlets#portlet-ftl) 
   for more information.
-- **Application Display Templates (ADTs):** Provides an alternate display style 
-  for a portlet. Note that not all portlets support ADTs. See the 
-  [Application Display Templates (ADTs) User Guide](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-application-display-templates) 
+- **Widget Templates:** Provides an alternate display style 
+  for a portlet. Note that not all portlets support widget templates. See the 
+  [Widget Templates User Guide](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates) 
   for more information.
 - **Portlet Decorator:** Customizes the exterior decoration for a portlet. 
   See the 

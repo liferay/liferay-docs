@@ -45,8 +45,8 @@ Once you select a menu, you must choose how to display it.
 
 ### Display Template
 
-The *Display Template* option lets you select an 
-[Application Display Template](/docs/7-2/user/-/knowledge_base/u/application-display-templates)
+The *Display Template* option lets you select an
+[Widget Template](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates)
 for Navigation Menus. There ten included by default:
 
 **List Menu:** Displays all the items in a vertical list.
@@ -76,7 +76,7 @@ for multiple navigation levels.
 
 You can also add your own custom templates.
 
-<!-- TODO: Provide link for developing ADTs when available.-->
+<!-- TODO: Provide link for developing widget templates when available.-->
 
 ### Menu Items to Show
 

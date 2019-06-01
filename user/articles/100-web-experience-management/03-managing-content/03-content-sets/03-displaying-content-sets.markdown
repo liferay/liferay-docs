@@ -38,8 +38,8 @@ necessary Asset Publishers and configure them to display the Content Sets.
 7.  Click *Save*.
 
 Now the images will appear at the top of the page. You can manage the way the 
-content is displayed---like what metadata appears---or even create an 
-*Application Display Template* to style the content, but the items which 
+content is displayed---like what metadata appears---or even create a
+*Widget Template* to style the content, but the items which 
 display and the order in which they appear are determined by the Content Set.
 
 Now configure the bottom Asset Publisher with the other Content Set.
@@ -60,7 +60,7 @@ Now configure the bottom Asset Publisher with the other Content Set.
 Again, you can manage various display settings, but the items which appear and 
 their order are determined by the Content Set criteria.
 
-![Figure 3: You can see the results as the standard Asset Publisher output. You can create Application Display Templates to add more style and pizzazz here.](../../../../images/content-set-dynamic-results.png)
+![Figure 3: You can see the results as the standard Asset Publisher output. You can create Widget Templates to add more style and pizzazz here.](../../../../images/content-set-dynamic-results.png)
 
 ## Adding Items to an existing Content Set
 

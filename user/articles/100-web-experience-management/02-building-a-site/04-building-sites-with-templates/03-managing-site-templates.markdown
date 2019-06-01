@@ -47,7 +47,7 @@ section, you can create a poll question that is only available for that specific
 Site template. Assets created within your template's Content section can
 only be accessed by Sites using the template.
 
-The Configuration section includes Application Display Templates and
+The Configuration section includes Widget Templates and
 Mobile Device configuration options for your Site Template. Also, nested in the
 Configuration section is the *Site Template Settings*. This edits the template's
 name and description while also offering boolean options for activating your
