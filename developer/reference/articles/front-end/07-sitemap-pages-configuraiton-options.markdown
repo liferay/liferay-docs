@@ -1,4 +1,10 @@
+---
+header-id: sitemap-page-configuration-options
+---
+
 # Sitemap Page Configuration Options
+
+[TOC levels=1-4]
 
 If you're importing resources with your themes, you must define the pages for 
 the site in the theme's `sitemap.json`. Below is the full list of available 

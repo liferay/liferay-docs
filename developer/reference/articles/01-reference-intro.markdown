@@ -4,6 +4,8 @@ header-id: developer-reference
 
 # Developer Reference
 
+[TOC levels=1-4]
+
 This developer reference contains lists of options for various APIs. The actual
 API reference is stored on [docs.liferay.com](https://docs.liferay.com). Here,
 you'll find higher level descriptions of those APIs, lists of tag libraries,
