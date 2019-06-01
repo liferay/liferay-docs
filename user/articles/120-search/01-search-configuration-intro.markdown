@@ -206,18 +206,27 @@ in past releases. See
 [here](/documentation/user/-/knowledge_base/7-2/configuring-search-pages#legacy-search-experience)
 for more information.
 
-### Reindexing from Search Administration
+### Search Administration
 
-In addition to the System Settings for Search, the action of recreating the
-search indexes is a system scoped action. 
+In *Control Panel* &rarr; *Configuration* &rarr; *Search* there are two
+administrative UIs: Index Actions and Field Mappings
 
-1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Search*.
+#### Index Actions
 
-2.  Re-index one of these:
+In Index Actions, re-index one of these:
 
     - All indexable assets
     - An individual indexable asset
     - All spell check indexes
+
+#### Field Mappings
+
+The Field Mappings tab shows you all field mappings that are effective in the
+system, by index. Currently, you can view the mappings, copy them, zoom in or
+out, and view them with a dark theme. Look for added functionality to this UI in
+future versions.
+
+### Portal Properties
 
 Portal properties are system scoped configurations as well. The 
 [Lucene Search](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Lucene%20Search)
