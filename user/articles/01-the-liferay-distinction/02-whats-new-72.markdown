@@ -4,6 +4,8 @@ header-id: whats-new-in-72
 
 # What's New in @product-ver@
 
+[TOC levels=1-4]
+
 The latest version of @product@ delivers powerful tools to help
 businesses create and personalize any experience across their solutions,
 leverage the flexibility of a decoupled CMS architecture, and streamline

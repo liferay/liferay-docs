@@ -4,6 +4,8 @@ header-id: the-liferay-distinction
 
 # The Liferay Distinction
 
+[TOC levels=1-4]
+
 Your web presence is a big deal, and the software platform that runs it must be
 up to the task. You must be able to update your site easily, to provide your
 partners with the services they need, and to enable your users and customers to
