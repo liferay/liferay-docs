@@ -90,11 +90,16 @@ Configure the buffering of index requests:
 `buffered`: Disable or configure the buffering of indexing requests. To stop
 the buffering of index requests, choose *Disabled*. 
 
-<!--`bufferedExecutionMode`:-->
+`bufferedExecutionMode`: Allows administrators to select a different
+`IndexerRequestBufferExecutor`, used to execute a `IndexerRequest`. One
+implementation of the executor is provided out of the box (_DEFAULT_). When a
+developer creates and deploys a new `IndexerRequestBufferExecutor`
+implementation, one of the properties they provided is a
+`buffered.execution.mode` which makes the implementation selectable from System
+Settings. 
 
-`maximumBufferSize`: If buffering is
-enabled, set the Maximum Buffer Size so that any additional indexing
-requests are executed immediately. 
+`maximumBufferSize`: If buffering is enabled, set the Maximum Buffer Size so
+that any additional indexing requests are executed immediately. 
 
 `minimumBufferAvailabilityPercentage`: When the capacity of the buffer has
 only the specified percent of space left, the existing requests in the
