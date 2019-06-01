@@ -24,5 +24,10 @@ section:
 
 - [Search Results Display Settings](/docs/7-2/user/-/knowledge_base/u/display-settings)
 
+- [Filtering Results](/docs/7-2/user/-/knowledge_base/u/filtering-search-results-with-the-custom-filter-widget) 
+
+- [Sorting Results](/docs/7-2/user/-/knowledge_base/u/sorting-search-results-with-the-sort-widget) 
+
 - [Search Results Behavior](/docs/7-2/user/-/knowledge_base/u/search-results-behavior)
+
 
