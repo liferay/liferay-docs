@@ -6,14 +6,13 @@ header-id: duplicating-forms-and-form-fields
 
 [TOC levels=1-4]
 
-Duplicating effort wastes time and increases the likelihood that something won't 
-be perfectly replicated. Instead of duplicating effort, duplicate forms and form 
-fields. 
+Repetitive tasks are error prone. Instead of duplicating effort, duplicate
+forms and form fields. 
 
 To duplicate a form, 
 
-1.  Go to *Site Administration* (your Site's menu) &rarr; *Content* &rarr; 
-    *Forms*. 
+1.  Go to *Site Administration* (your Site's menu) &rarr; *Content & Data*
+    &rarr; *Forms*. 
 
 2.  Click the *Actions* button 
     (![Actions](../../images/icon-actions.png)) 
@@ -29,8 +28,8 @@ form, all configurations and form rules are duplicated as well.
 
 To duplicate a form field, 
 
-1.  Go to *Site Administration* (your Site's menu) &rarr; *Content* &rarr; 
-    *Forms* and open or add a form. 
+1.  Go to *Site Administration* (your Site's menu) &rarr; *Content & Data*
+    &rarr; *Forms* and open or add a form. 
 
 2.  In the Builder view, hover over the form field to duplicate and click the
     *Copy* icon 
