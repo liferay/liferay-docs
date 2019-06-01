@@ -61,8 +61,7 @@ Activate workflow for Web Content Folders from the folder settings menu:
 
 Activate workflow for Documents and Media Folders from the folder settings:
 
-![Figure 2: Activate workflow on Documents and Media folders from the folder's
-edit screen.](../../images/workflow-dm-folder.png)
+![Figure 2: Activate workflow on Documents and Media folders from the folder's edit screen.](../../images/workflow-dm-folder.png)
 
 Enable workflow on Dynamic Data List entries in each list's Add form:
 
@@ -80,8 +79,7 @@ activated: The Publish button for the resource's *Add* form is replaced by a
 has its status set as *Pending* and must proceed through the workflow before
 publication.
 
-![Figure 5: Instead of a Publish button, a Submit for Publication button appears
-for workflow-enabled resources.](../../images/submit-for-publication.png)
+![Figure 5: Instead of a Publish button, a Submit for Publication button appears for workflow-enabled resources.](../../images/submit-for-publication.png)
 
 Page revisions are slightly different. Page revisions only occur in
 [staging environments](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication)
@@ -91,3 +89,4 @@ page, and the variation must be approved in the workflow before it can be
 published to the live Site.
 
 ![Figure 6: With workflow enabled on Page Revisions, the Site administrator must submit their page variation for publication before it can go live.](../../images/page-revision-submission.png)
+
