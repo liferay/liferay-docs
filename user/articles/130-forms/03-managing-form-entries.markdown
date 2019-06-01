@@ -43,19 +43,19 @@ might need to get all the entries into a spreadsheet so you can work with them.
 So you need to put your form entries in a spreadsheet to do spreadsheet things
 with them? No problem.
 
-1.  Navigate to the Forms application in The Lunar Resort site's Content section
-    again.
+1.  Navigate to the Forms application in The Lunar Resort site's Content & Data
+    section again.
 
 2.  Click the *Actions* (![Actions](../../images/icon-actions.png)) button and
     select *Export*. 
 
-3.  Choose a File Extension. You can export entries in CSV, XLS, or XML formats 
+3.  Choose a File Extension. You can export entries in CSV, JSON, XLS, or XML formats 
     by default. For this example, pick CSV.
 
 4.  Click *Okay*, and open the file or save it locally. Open it with your
     favorite spreadsheet program and verify your form entries.
 
-![Figure 3: You can export entries as CSV, XLS, or XML.](../../images/forms-export-csv.png)
+![Figure 3: You can export entries as CSV, JSON, XLS, or XML.](../../images/forms-export-csv.png)
 
 | **Note:** The Forms application itself has an *Import/Export* window accessible
 | from the application's Configuration menu
@@ -63,13 +63,13 @@ with them? No problem.
 | export the application configuration and its data (forms and form entries). The
 | file format for this type of import and export is a LAR file. For more
 | information, see the article on
-| [importing and exporting application content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content).
+| [importing and exporting application content](/docs/7-2/user/-/knowledge_base/u/importing-exporting-pages-and-content).
 
 There's a system level setting to determine whether administrators can export
 entries in CSV format:
 
 1.  Go to Control Panel &rarr; Configuration &rarr; System Settings and click
-    the *Forms* category in the Content section.
+    the *Forms* category in the CONTENT AND DATA section.
 
 2.  Click the *Forms* entry under SITE SCOPE.
 
@@ -95,15 +95,13 @@ Liferay database? It's easy to delete all of a form's entries at once.
 2.  Click the *Actions* (![Actions](../../images/icon-actions.png)) button next
     to the Guest Survey form and select *View Entries* again.
 
-3.  Select all entries by checking the box next to *Filter and Order*. A trash 
-    can icon
-    (![Trash](../../images/icon-trash.png)) appears in the top right corner of 
-    the Form Entries screen. Click it.
+3.  Select all entries by checking the box next to *Filter and Order*. An X
+    appears in the top right corner of the Form Entries screen. Click it.
 
     ![Figure 4: Delete all form entries in one fell swoop.](../../images/forms-delete-entries.png)
 
 If you just wanted to delete a single entry, select that entry by checking its
-box; then click the trash can.
+box; then delete it.
 
 If you're worried about deleting everything irrecoverably by accident, don't
 worry. You must confirm the deletion in a dialog box that pops up after clicking
