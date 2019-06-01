@@ -8,7 +8,7 @@ header-id: enabling-captcha-on-form-submissions
 
 [CAPTCHA](https://en.wikipedia.org/wiki/CAPTCHA) 
 prevents a bot from submitting forms. It's often used in 
-[login apps](/docs/7-1/deploy/-/knowledge_base/d/logging-into-liferay), 
+[login apps](/docs/7-2/deploy/-/knowledge_base/d/logging-into-liferay), 
 but you can also use it in the Forms app. 
 
 To enable CAPTCHA, click the form's *Options* button 
