@@ -160,7 +160,7 @@ By now you've probably noticed that search terms appearing in the summary are
 <mark>highlighted</mark> by default. If this is undesirable, disable it in the
 widget configuration screen. 
 
-![Figure 4: Some document summaries have lots of highlights if the search term matches text that appears in the summary.](../../../images/search-results-highlight.png)
+![Figure 3: Some document summaries have lots of highlights if the search term matches text that appears in the summary.](../../../images/search-results-highlight.png)
 
 Highlighting is a helpful visual cue that hints at why the result is returned,
 but beware. A hit can score well and thus be returned near the top of the
@@ -170,6 +170,6 @@ has an email address of *acc@authors.org*, which is searchable. Because results
 summaries for Users only contain the full name of the User, searching for Mr.
 Clarke by his email address returns the User, but no term is highlighted. 
 
-![Figure 5: Results that match the search term won't always have highlights.](../../../images/search-results-no-highlight.png)
+![Figure 4: Results that match the search term won't always have highlights.](../../../images/search-results-no-highlight.png)
 
 There are additional cases where search results don't have highlighting.
