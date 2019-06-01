@@ -257,6 +257,11 @@ favorite JavaScript framework. The toolkit resolves any conflicting JavaScript
 packages and bundles the application properly to deploy it into @product@
 seamlessly.
 
+#### Struts Removed
+
+Though @product@ never used a version of Struts with security vulnerabilities,
+the Struts library has been removed, and it is no longer a part of the product.
+
 ## What's Next
 
 Learn more about how Liferay can help your business take the next step
