@@ -20,13 +20,13 @@ industrious.
 
 ## Creating Element Sets
 
-To create Element Sets, go to Site Menu &rarr; Content &rarr; Forms. The Forms
-view is displayed by default. Click the *Element Sets* tab, and any existing
-Element Sets appear, just like existing Forms are displayed in the Forms view.
-Click the *Add* button (![Add](../../images/icon-add.png)).
+To create Element Sets, go to Site Menu &rarr; Content &Data &rarr; Forms. The
+Forms view is displayed by default. Click the *Element Sets* tab, and any
+existing Element Sets appear, just like existing Forms are displayed in the
+Forms view. Click the *Add* button (![Add](../../images/icon-add.png)).
 
 Here's the thing. If you know how to 
-[create a Form](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms), 
+[create a Form](/docs/7-2/user/-/knowledge_base/u/creating-and-managing-forms), 
 you already know how to create an Element Set. The process is identical. Drag
 and drop elements onto the form builder palette, configuring fields as you go.
 
