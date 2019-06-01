@@ -35,8 +35,7 @@ facets that apply. See the article on
 [configuring search pages](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages#legacy-search-experience)
 to learn more about these options.
 
-![Figure 1: The default search configuration displays a search bar in its default view,
-beckoning users to enter the search context.](../../images/search-bar.png)
+![Figure 1: The default search configuration displays a search bar in its default view, beckoning users to enter the search context.](../../images/search-bar.png)
 
 ### Entering Search Terms
 

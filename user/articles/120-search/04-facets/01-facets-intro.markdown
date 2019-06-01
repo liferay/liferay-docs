@@ -49,8 +49,7 @@ who's named *back2bach*. You see that his name is listed in the User facet, and
 there aren't many results in the facet count (the number in parentheses next to
 the facet). You click into the facet and quickly find the content you wanted.
 
-![Figure 2: When presented lots of search results, facets narrow down the results list so users can find relevant
-content.](../../../images/search-facets1.png)
+![Figure 2: When presented lots of search results, facets narrow down the results list so users can find relevant content.](../../../images/search-facets1.png)
 
 Clicking on a facet narrows down the search results. It's added to the filter
 list in the search query, and the results list is refined by the selected
