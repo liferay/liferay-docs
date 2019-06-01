@@ -56,7 +56,7 @@ To export or import data from a widget, follow the steps below:
     (![Add](../../../../images/icon-add-app.png)) &rarr; *Widgets* menu.
 
 2.  Select the widget's *Options* button
-    (![Options](../../../../images/icon-widget-options.png)) and select
+    (![Options](../../../../images/icon-app-options.png)) and select
     *Export/Import*.
 
 3.  Select the *Export* or *Import* tab to begin configuring the respective

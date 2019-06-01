@@ -96,11 +96,12 @@ however, do *not* overwrite users' customizations.
 
 As an administrator,
 
-1.  Go to *Page Configuration* for the *Welcome* page.
+1.  Go to *Configure* for the *Welcome* page.
 
-2.  Go to the *Advanced* tab, and activate Customizations.
+2.  Go to the *Advanced* tab and activate Customizations.
 
-3.  Set the main column of the Welcome page of the Lunar Resort Site to be customizable.
+3.  Set the main column of the Welcome page of the Lunar Resort Site to be
+    customizable.
 
 As a regular user,
 

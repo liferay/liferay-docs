@@ -27,7 +27,7 @@ Administrators can manage Site members from that Site's *Site Membership* page.
 1.  Open *Site Administration* and select the Site that you want to manage
     members for.
  
-2.  Click on *People* &rarr; *Site Memberships*
+2.  Click on *People* &rarr; *Memberships*
 
 From here you can manage Site Memberships, Organization, and User Group
 associations. You can learn more about those in the 
@@ -73,7 +73,7 @@ To remove several users at once, you can do this:
 
 1.  Click the checkbox for each user that you want to remove.
 
-2.  In the menu at the top of the page, click the trash can icon to remove the
+2.  In the menu at the top of the page, click the `X` icon to remove the
     users from the Site. 
 
 3.  In the pop-up that appears, confirm the removal.
@@ -96,7 +96,7 @@ you are taken to the *Assign Site Roles* screen. From here:
 
 2.  Click *Done*.
 
-![Figure 4: Assigning Site Roles. ](../../../../images/assigning-site-roles.png)
+![Figure 4: Assigning Site Roles.](../../../../images/assigning-site-roles.png)
 
 Site Roles are created at a global level, but when they're assigned they only
 provide privileges for the specific Site where they were assigned. Since Roles
@@ -105,4 +105,3 @@ are created at a global level, they cannot be created by Site Administrators
 **Teams** allow Site Administrators to assign permissions to groups of Users
 within their Sites. Next, you'll look at more configuration for managing members
 of your Site.
-

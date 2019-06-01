@@ -21,8 +21,10 @@ By default, newly created users are granted a personal Site.
 You can disable personal Sites by adding the following properties to your
 `portal-ext.properties` file:
 
-    layout.user.public.layouts.enabled=false
-    layout.user.private.layouts.enabled=false
+```properties
+layout.user.public.layouts.enabled=false
+layout.user.private.layouts.enabled=false
+```
 
 | **Note:** The public and private page sets of personal Sites are handled
 | separately. You can leave one page set enabled while disabling the other.
@@ -35,8 +37,10 @@ You can allow users to create personal Sites but not have them automatically
 created for new users. To do this, add the following properties to your
 `portal-ext.properties` file:
 
-    layout.user.public.layouts.auto.create=false
-    layout.user.private.layouts.auto.create=false
+```properties
+layout.user.public.layouts.auto.create=false
+layout.user.private.layouts.auto.create=false
+```
 
 If the properties `layout.user.public.layouts.enabled`,
 `layout.user.private.layouts.enabled`, `layout.user.public.layouts.auto.create`,
@@ -59,3 +63,4 @@ sections of the `portal.properties` file for details.
 | from Roles. To disallow all Liferay users from modifying something, remove the
 | relevant permission from the User Role.
 
+Great! Now you know how to customize a personal site!

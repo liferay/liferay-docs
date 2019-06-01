@@ -15,13 +15,13 @@ users can view them.
 
 Here's how to create a page only administrators can see: 
 
-1.  Go to your Site's Site Administration dropdown and select *Build*
+1.  Go to your Site's Site Administration dropdown and select *Site Builder*
     &rarr; *Pages* &rarr; *Private Pages*. 
 
 2.  Create a page called *Admin Tips*.
 
-3.  Click *Configure Page* from the Options button dropdown for the page in the
-    left menu.
+3.  Click *Configure* from the Options button dropdown for the page in the left
+    menu.
 
 4.  Select *Permissions* from the *Options* icon
     (![Options](../../../../../images/icon-options.png)) in the top right corner of

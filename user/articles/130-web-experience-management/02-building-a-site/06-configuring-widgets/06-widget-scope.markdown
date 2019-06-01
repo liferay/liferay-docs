@@ -46,8 +46,8 @@ Unless otherwise noted, all widgets support scoping by instance (global), Site
 your Liferay instance. You can configure the scope of an app with just a few
 simple steps.
 
-1.  Click the *Options* icon (![Options](../../../../images/icon-options.png)) in
-    the app window.
+1.  Click the *Options* icon (![Options](../../../../images/icon-app-options.png))
+    in the app window.
 
 2.  Select *Configuration*.
 

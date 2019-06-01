@@ -10,7 +10,7 @@ You can display Navigation Menus in different ways on your Site. You may want
 to configure different display styles for a main menu, sidebar, and footer menu
 all on one page.
 
-## The Navigation Menu Widget
+## Navigation Menu Widget
 
 The Navigation Menu widget lets you add navigation wherever you need it. You
 can place the widget on a page and then select a menu and style for the menu

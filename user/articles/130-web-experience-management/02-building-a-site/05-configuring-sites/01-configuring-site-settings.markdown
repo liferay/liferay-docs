@@ -2,7 +2,7 @@
 header-id: configuring-site-settings
 ---
 
-# General Settings
+# Configuring Site Settings
 
 [TOC levels=1-4]
 
@@ -64,7 +64,10 @@ should update your instance's Home URL field so that page requests to
 
 1.  Go to *Configuration* &rarr; *Instance Settings* in the Control Panel.
 
-2.  Under *Navigation*, in the Home URL field enter your home URL (i.e. */web/lunar-resort/home*).
+2.  Under *Navigation*, in the Home URL field enter your home URL (i.e.
+    */web/lunar-resort/home*).
+
+<!-- TODO: Check for Navigation tab. -->
 
 Once you've entered this setting, page requests to `localhost:8080` redirect
 to the friendly URL of your Liferay instance's new home page.
@@ -105,7 +108,7 @@ displays information about the link between the Site Template and the Site.
 Specifically, you can see which Site Template was used and whether or not it
 allows modifications to the pages inherited from it by Site administrators. To
 learn more about Site Templates and how to create your own, see 
-[Building Sites from Templates](/docs/7-1/user/-/knowledge_base/u/building-sites-from-templates).
+[Building Sites from Templates](/docs/7-2/user/-/knowledge_base/u/building-sites-from-templates).
 
 ## Asset Auto Tagging
 
@@ -117,4 +120,4 @@ Tagging rules on your site. See [Asset Auto Tagging](link) to learn more about s
 *Custom Fields* only appears if you've created them in Control Panel &rarr;
 *Configuration* &rarr; *Custom Fields*. For more information on Custom Fields,
 see 
-[Custom Fields](/docs/7-1/user/-/knowledge_base/u/setting-up).
+[Custom Fields](/docs/7-2/user/-/knowledge_base/u/setting-up).

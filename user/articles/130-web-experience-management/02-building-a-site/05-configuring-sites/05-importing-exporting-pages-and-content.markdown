@@ -40,8 +40,8 @@ content from a Site in one environment (say, a development or QA environment)
 and move it all to a Site on another server with LARs. You can use LARs to
 import data onto production servers, but you should not make this a regular
 occurrence. If you want to regularly move pages from one server to another, you
-should use @product@'s staging environment. See 
-[Staging Content for Publication](/docs/7-2/user/-/knowledge_base/u/staging-content-for-publication).
+should use @product@'s staging environment. See the
+[Staging](/docs/7-2/user/-/knowledge_base/u/staging) section for more details.
 
 You can export LARs to use them as a backup. If you ever have to restore your
 Site, you must only import the latest LAR file. However, please be careful! If
@@ -78,7 +78,7 @@ Here's how the export process works:
     A *New Custom Export* page loads, so you can choose the pages and 
     content you want to export from your Site. 
 
-4.  Enter "Lunar Resort Version 1" for the *Title*.
+4.  Enter *Lunar Resort Version 1* for the *Title*.
 
 5.  Under *Pages*, select public or private pages and the settings you want 
     to export.

@@ -8,7 +8,7 @@ header-id: look-and-feel-configuration
 
 To access the look and feel configuration menu of any widget,
 
-1.  Click *Options* (![Options](../../../../images/icon-options.png)) in the top
+1.  Click *Options* (![Options](../../../../images/icon-app-options.png)) in the top
     right corner of the widget.
 
 2.  Select *Look and Feel Configuration*.

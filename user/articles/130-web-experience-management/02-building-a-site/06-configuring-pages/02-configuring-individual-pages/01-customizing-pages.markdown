@@ -136,4 +136,3 @@ for more information on doing this for Page Sets.
 Apply rules for how this page should render for various mobile devices here.
 Create them by navigating to Site Administration menu and selecting
 *Configuration* &rarr; *Mobile Device Families*.
-

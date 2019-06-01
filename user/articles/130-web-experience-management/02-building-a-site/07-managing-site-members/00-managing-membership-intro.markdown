@@ -16,6 +16,5 @@ there are other user configuration options specific to Site Management:
 - Adding members to Sites automatically
 - Creating Teams of Site members for various functions
 
-
 This section of tutorials shows you how to manage and configure these Site
 options for Users.

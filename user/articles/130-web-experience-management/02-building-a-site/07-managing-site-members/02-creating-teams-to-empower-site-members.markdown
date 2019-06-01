@@ -38,7 +38,7 @@ To create a team within a Site,
 
 1.  Go to the Site Administration page of your Site.
 
-2.  Select *People* &rarr; *Site Teams*.
+2.  Select *People* &rarr; *Teams*.
 
     It's important to note that configuring other Site membership groupings, 
     such as *Users*, *Organizations*, and *User Groups* can be done in the 
@@ -48,7 +48,7 @@ To create a team within a Site,
 
 3.  Finally, click the *Add Team* icon (![Add Team](../../../../images/icon-add.png)).
 
-![Figure 1: Creating teams within your site can foster teamwork and collaboration, as team permissions enable team members to access the same resources and perform the same types of tasks.](../../../../images/creating-a-team.png)
+    ![Figure 1: Creating teams within your site can foster teamwork and collaboration, as team permissions enable team members to access the same resources and perform the same types of tasks.](../../../../images/creating-a-team.png)
 
 4.  Enter a name and a description and click *Save*. Your new team shows in the list.
 
@@ -64,7 +64,7 @@ permissions.
 If you created a team whose task is to moderate the Message Boards, for example,
 you'd want to give the team all the permissions they'd need.
 
-1.  Go to *Site Administration* &rarr; *Content* &rarr; *Message Boards*.
+1.  Go to *Site Administration* &rarr; *Content & Data* &rarr; *Message Boards*.
 
 2.  Select *Home Category Permissions* from the *Options* icon
     (![Options](../../../../images/icon-options.png)) in the top right of the 

@@ -14,7 +14,7 @@ widgets placed on a page. Applications available from the Product Menu do not
 provide configuration templates.
 
 To create a configuration template, click the *Options* icon
-(![Options](../../../../images/icon-options.png)) from the menu in the widget's
+(![Options](../../../../images/icon-app-options.png)) from the menu in the widget's
 title bar and select *Configuration Templates*. If widget's current settings
 are the ones you want to save, click the *Save Current Configuration as
 Template* button. If not, change the settings until it's configured the way you

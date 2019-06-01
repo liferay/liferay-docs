@@ -2,7 +2,7 @@
 header-id: page-set-look-and-feel
 ---
 
-# Page Set Look and Feel
+# Configuring Page Sets
 
 [TOC levels=1-4]
 
@@ -37,7 +37,6 @@ can switch the bullet style between dots and arrows and you can choose whether
 or not to show maximize/minimize application links by default. The *CSS*
 section lets you enter custom CSS for tweaking your theme. 
 
-
 ## Using a Custom Logo for a Site
 
 By default, the Liferay logo is used for your Site pages' logo. If you want to
@@ -53,4 +52,3 @@ next to the logo. This option is enabled by default and cannot be disabled if
 the *Allow Site Administrators to set their own logo* option is disabled in
 *Instance Settings*. Removing the Site name is not available for the default
 Site---you can configure this only for new Sites and user pages. 
-
