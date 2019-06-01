@@ -44,17 +44,20 @@ always have, drag them onto the page where you want to use them. Fragments are
 intended to be reusable, so each Fragment is like a single puzzle piece that 
 can fit in many different puzzles. Using the tools you have available, you can 
 create stunning pages through an intuitive, empowering interface. In the 
-[Building Content Pages guide](/docs/7-2/user/-/knowledge_base/user/building-content-pages) you will create Content Pages 
-using a variety of the features and capabilities of Content Pages.
+[Building Content Pages guide](/docs/7-2/user/-/knowledge_base/u/building-content-pages)
+you will create Content Pages  using a variety of the features and capabilities
+of Content Pages.
 
 ## The Content Page Interface
 
 There are many features of the Content Page Interface---too many to cover in a 
 practical exercise. For a complete overview of every nook and cranny of the 
-Content Page management interface see the [Content Page Interface reference](/docs/7-2/user/-/knowledge_base/user/the-content-page-management-interface).
+Content Page management interface see the
+[Content Page Interface reference](/docs/7-2/user/-/knowledge_base/u/the-content-page-management-interface).
 
 ## Personalizing Content Pages 
 
 When you create Content Pages, you can create different **Experiences** for 
 users based on User Segments. You can create a unique Experience on any Content 
-Page for any existing User Segment. For more information, see the [Content Page Personalization guide](docs/7-2/user/-/knowledge_base/user/content-page-personalization).
+Page for any existing User Segment. For more information, see the
+[Content Page Personalization guide](docs/7-2/user/-/knowledge_base/u/content-page-personalization).
