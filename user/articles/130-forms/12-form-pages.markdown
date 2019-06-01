@@ -15,18 +15,17 @@ default, and alternate.
 
 ![Figure 1: The default pagination style.](../../images/forms-pagination1.png)
 
-![Figure 2: The alternate pagination style.](../../images/forms-pagination2.png)
+![Figure 2: The alternate pagination style as seen in the Form Builder.](../../images/forms-pagination2.png)
 
 To add a form page, 
 
 1.  Go to a form's builder view. 
 
-2.  Click the *Actions* button 
-    (![Action](../../images/icon-actions.png)) 
-    at the top-right corner of the form, then click *Add New Page*. 
+2.  Click the *Actions* button (![Actions](../../images/icon-actions.png)) at
+    the top-right corner of the form, then click *Add New Page*. 
 
 ![Figure 3: You can add new pages or reset the current page from the Page Actions menu.](../../images/forms-page-actions.png)
 
 You can also delete form pages, add 
-[success pages](/docs/7-1/user/-/knowledge_base/u/form-success-pages), 
+[success pages](/docs/7-2/user/-/knowledge_base/u/form-success-pages), 
 and switch pagination modes. 
