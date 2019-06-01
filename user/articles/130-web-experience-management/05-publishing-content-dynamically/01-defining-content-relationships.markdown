@@ -11,7 +11,7 @@ any tags and aren't in the same category. Here you'll focus on how to define
 relationships between assets so when you begin publishing assets, the Related
 Assets widget can display those relationships. 
 
-## The Related Assets Widget
+## Related Assets Widget
 
 By default, the Related Assets widget displays any related asset of the asset
 selected in the Asset Publisher. If you don't want to show every related asset,
@@ -19,8 +19,8 @@ you can configure what content relationships to display. To do this, follow
 these steps: 
 
 1.  Go to the Related Assets app and select the *Options* icon
-    (![Options](../../../images/icon-options.png)) in the upper right corner of
-    the application and click *Configuration*. 
+    (![Options](../../../images/icon-app-options.png)) in the upper right corner
+    of the application and click *Configuration*. 
 
 2.  Under the *Setup* &rarr; *Asset Selection* tab, set the type of asset(s) to
     display using the *Asset Type* menu. The default value is set to *Any*. 
@@ -30,11 +30,12 @@ these steps:
 
     Filter options set minimum requirements for displaying assets by their
     categories, tags, and custom fields. Ordering and Grouping organizes assets
-    using the same criteria. Display settings customize how the app shows assets:
-    by title, in a table, by abstract, or full content. You can convert assets to
-    different document types like ODT, PDF, and RTF. You can choose to show metadata
-    fields such as author, modification date, tags, and view count. You can even
-    enable RSS subscriptions and customize their display settings. 
+    using the same criteria. Display settings customize how the app shows
+    assets: by title, in a table, by abstract, or full content. You can convert
+    assets to different document types like ODT, PDF, and RTF. You can choose to
+    show metadata fields such as author, modification date, tags, and view
+    count. You can even enable RSS subscriptions and customize their display
+    settings. 
 
 4.  When you're finished setting the Source and Filter options, click *Save*.
 
@@ -60,7 +61,7 @@ alongside the clicked asset. Here's how to do it:
 
 3.  Now that those assets are created, you can relate the blog entry and
     photo to your web content article. Navigate to your article in Site
-    Administration &rarr; *Content* &rarr; *Web Content*.
+    Administration &rarr; *Content & Data* &rarr; *Web Content*.
 
 4.  You've now defined relationship with your three assets. Click the *Add* icon
     (![Add](../../../images/icon-add.png)) at the top of your page

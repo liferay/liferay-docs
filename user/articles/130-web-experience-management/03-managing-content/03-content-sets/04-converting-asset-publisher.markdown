@@ -21,7 +21,7 @@ Publisher.
 
 1.  Go to ![Options](../../../../images/icon-app-options.png) &rarr;
     *Configuration* for the Asset Publisher.
-    
+
 2.  Click *Create a content set from this configuration*.
 
     ![Figure 1: You can generate a Content Set directly from the Asset Publisher configuration.](../../../../images/content-set-create-ap.png)

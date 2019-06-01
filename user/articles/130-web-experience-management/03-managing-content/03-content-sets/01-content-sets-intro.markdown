@@ -2,7 +2,7 @@
 header-id: content-sets
 ---
 
-# Introduction to Content Sets
+# Managing Content Sets
 
 [TOC levels=1-4]
 
