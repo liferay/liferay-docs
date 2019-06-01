@@ -14,7 +14,7 @@ entry is submitted.
     and selecting *Settings*. 
 
 2.  Click the *Email Notifications* tab, enable the option 
-    *Send an email notification for each entry*, and fill out these fields: 
+    *Send an Email Notification for Each Entry*, and fill out these fields: 
 
     **From Name:** The sender's name. This could be the Site name, the form 
     name, or anything else informative to the recipient.
@@ -29,9 +29,9 @@ entry is submitted.
     recipient what happened. For example, An application for employment was
     submitted in The Lunar Resort*. 
 
-Note that if you 
-[enabled workflow for the form](/docs/7-1/user/-/knowledge_base/u/sending-form-entries-through-a-workflow) 
-and it already sends a notification, you might not need to configure the Forms 
+Note that if you [enabled workflow for the
+form](/docs/7-2/user/-/knowledge_base/u/sending-form-entries-through-a-workflow)
+and it already sends a notification, you might not need to configure the Forms
 app to generate a notification. 
 
 ![Figure 1: Configure email notifications each time a form entry is submitted.](../../images/forms-notification-email.png)
