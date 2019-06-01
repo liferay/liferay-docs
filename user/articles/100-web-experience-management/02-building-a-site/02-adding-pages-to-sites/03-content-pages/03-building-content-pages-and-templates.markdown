@@ -24,7 +24,7 @@ You'll complete this process next.
 
 1.  From Site Administration for your Site, go to *Site Builder* &rarr; *Pages*.
 
-2.  Click the (![Add](../../../images/icon-add.png)) and select *Content Page*.
+2.  Click the (![Add](../../../../../images/icon-add.png)) and select *Content Page*.
 
 3.  Set the *Name* as *Space Landing Page* and click *Save*.
 
@@ -55,7 +55,7 @@ Now that the structure is defined, start editing the text and images.
     ![Figure 3: Edit the text and formatting as you see fit.](../../../../../images/content-page-creation-step-2.png)
 
 2.  Click on the main banner image, and then on the 
-    ![Edit](../../../images/icon-edit-pencil.png) icon.
+    ![Edit](../../../../../images/icon-edit-pencil.png) icon.
 
 3.  Select one of the many space flight images that are surely filling up your
     Documents and Media library, upload a new one, or specify a URL.

@@ -20,7 +20,7 @@ Three sample layout page templates are installed by default:
 
 - **Blog:** Provides a page with three applications related to blogging.
 
-![Figure 1: The Blog page template is already available for use along with the Search and Wiki page templates.](../../../../../../images/default-page-templates.png)
+![Figure 1: The Blog page template is already available for use along with the Search and Wiki page templates.](../../../../../images/default-page-templates.png)
 
 To add a new widget page template,
 
@@ -30,7 +30,7 @@ To add a new widget page template,
 
 3.  Click *New* and create a collection named *Lunar Resort Templates*.
 
-4.  Click the *Add* icon (![Add Page Template](../../../../../../images/icon-add.png))
+4.  Click the *Add* icon (![Add Page Template](../../../../../images/icon-add.png))
     and select *Widget Page Template*.
 
 5.  Enter a name.
@@ -45,7 +45,7 @@ If you want to edit the template again,
 
 1.  Go back to the *Page Templates* tab.
 
-2.  Click the *Actions* icon (![Actions](../../../../../../images/icon-actions.png)).
+2.  Click the *Actions* icon (![Actions](../../../../../images/icon-actions.png)).
 
 3.  Click *Configure*.
 
@@ -67,7 +67,7 @@ To use your template to create a new page,
 1.  Go to Site Administration and select the *Pages* option from the 
     *Site Builder* menu dropdown option.
  
-2.  Click the *Add* icon (![Add Page](../../../../../../images/icon-add.png)).
+2.  Click the *Add* icon (![Add Page](../../../../../images/icon-add.png)).
 
 3.  Inside the Lunar Resort collection, select the page template that you 
     created.
@@ -76,7 +76,7 @@ To use your template to create a new page,
 
 Pages based on templates can inherit changes from the page template:
 
-![Figure 2: You can choose whether or not to inherit changes made to the page template.](../../../../../../images/automatic-application-page-template-changes.png)
+![Figure 2: You can choose whether or not to inherit changes made to the page template.](../../../../../images/automatic-application-page-template-changes.png)
 
 By default, when a Site administrator creates pages based on a page
 template, future changes to the template are automatically propagated to
@@ -112,7 +112,7 @@ environment. To export page templates,
 2.  Select the *Page Templates* tab.
 
 3.  At the top right of the page, click *Options* 
-    (![Options](../../../../../../images/icon-options.png)) &rarr; 
+    (![Options](../../../../../images/icon-options.png)) &rarr; 
     *Export/Import*.
 
 4.  On the *Export/Import* page you can choose to export configuration data and
@@ -125,7 +125,7 @@ environment. To export page templates,
     &rarr; *Pages* and select *Page Templates*.
 
 7.  At the top right of the page, click *Options* 
-    (![Options](../../../../../../images/icon-options.png)) &rarr; 
+    (![Options](../../../../../images/icon-options.png)) &rarr; 
     *Export/Import*.
 
 8.  Select the *Import* tab.

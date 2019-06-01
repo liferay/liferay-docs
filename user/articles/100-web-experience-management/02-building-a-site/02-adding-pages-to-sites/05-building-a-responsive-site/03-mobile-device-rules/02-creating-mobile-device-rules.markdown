@@ -108,7 +108,7 @@ respective configuration pages. To do it for a Page Set:
 1.  Go to *Site Builder* &rarr; *Pages* in your Site.
 
 2.  Click on *Configure* 
-    (![Configure](../../../../../../images/icon-page-gear.png)) for the Public 
+    (![Configure](../../../../../../images/icon-gear.png)) for the Public 
     Pages.
  
 3.  Select the *Advanced* tab and open the *Mobile Device Rules* option in the
