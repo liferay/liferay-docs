@@ -12,7 +12,7 @@ new widgets to new APIs and infrastructure.
 ## New and Improved Widgets
 
 Add search widgets by clicking the Add
-([!Add](../../../../images/icon-add-widget.png)) icon on the page. Then expand
+(![Add](../../images/icon-add-widget.png)) icon on the page. Then expand
 the Widgets &rarr; Search section.
 
 ### Custom Filter
@@ -54,15 +54,15 @@ an explanation of the score for each search hit.
 The Search Admin functionality is found in Control Panel &rarr; Configuration
 &rarr; Search.
 
-### DXP Only: Synonyms
+<!-- COMMENTING: Will be added by FP-1d### DXP Only: Synonyms
 
 Add a list of synonyms. At search time, the list is parsed to match results for
 synonymous search keywords.
-
+-->
 ### Search Engine Info
 
-Improved Search Engine information, showing the client and node information as
-well as the vendor and operation mode.
+The displayed Search Engine information is enhanced, showing the client and node
+information as well as the vendor and operation mode.
 
 ### Field Mappings
 
@@ -79,8 +79,8 @@ re-indexing action has completed.
 Access the Search System Settings at Control Panel &rarr; Configuration
 &rarr; System Settings &rarr; Search.
 
-There's a new entry in the search category: _Title Field Query Builder_ for
-configuring how search responds to matches on the Title field of a document.
+There's a new entry in the search category: _Title Field Query Builder_. Use it
+to configure how search responds to matches on the Title field of a document.
 
 **Exact Match boost:** Give an additional boost when searched keywords exactly
 match the `title` field of a document.
@@ -93,12 +93,13 @@ for more information.
 
 ## New Infrastructure
 
-There are some important search infrastructure changes to know.
+There are some important search infrastructure changes to know about.
 
 ### Elasticsearch 6.5.x Support
 
 @product-ver@ supports Elasticsearch 6.5.x, and it's included as the embedded
-version to use for testing out-of-the-box search behavior.
+version to use for testing out-of-the-box search behavior. See the [deployment
+guide](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch) for more information.
 
 ### Application-Specific Indexes
 
@@ -110,14 +111,12 @@ will likely appear in future versions, and third party developers can use the
 visit the [Search Framework
 documentation](/docs/7-2/frameworks/-/knowledge_base/f/search) 
 frequently to discover new search
-infrastructure changes that expose more functionality for developers to use in
-your code.
+infrastructure changes that expose more functionality for developers.
 
 ### API Enhancements
 
 Enhancements to the [search
-framework](/docs/7-2/frameworks/-/knowledge_base/f/liferays-search-framework#liferays-search-framework)
-APIs include
+framework](/docs/7-2/frameworks/-/knowledge_base/f/search) APIs include
 
 - Low level indexing and queries
 - Operations directly on indexed documents (no need for the Indexer framework)
