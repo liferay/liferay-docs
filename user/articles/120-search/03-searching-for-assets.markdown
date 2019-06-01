@@ -24,15 +24,14 @@ the ones included by default.
 ## Search Bar
 
 Users enter the search context in the search bar. Users enter search terms, hit
-their *Enter* button (or click the magnifying glass icon), and they're taken to
+the *Enter* button (or click the magnifying glass icon), and they're taken to
 a [search page](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages)
 with various search widgets deployed. 
 
-If using the Search Bar in the legacy 
-[search portlet](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages#legacy-search-experience),
-users see a maximized view of the search portlet displaying any results and
-facets that apply. See the article on 
-[configuring search pages](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages#legacy-search-experience)
+If using the Search Bar in the legacy search portlet, users see a maximized view
+of the search portlet displaying any results and facets that apply. See the
+article on [configuring search
+pages](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages#legacy-search-experience)
 to learn more about these options.
 
 ![Figure 1: The default search configuration displays a search bar in its default view, beckoning users to enter the search context.](../../images/search-bar.png)
@@ -40,10 +39,9 @@ to learn more about these options.
 ### Entering Search Terms
 
 Liferay's search infrastructure supports full text search as implemented by its
-supported search engines 
+supported search engines
 ([Elasticsearch]((https://www.elastic.co/guide/en/elasticsearch/reference/6.5/full-text-queries.html)
-and 
-[Solr](http://lucene.apache.org/solr/features.html)).
+and [Solr](http://lucene.apache.org/solr/features.html)).
 
 Full text search compares all the words entered in a search query (for example,
 *space vacation*) to all the words in each index document. A search engine like

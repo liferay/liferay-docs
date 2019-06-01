@@ -90,6 +90,8 @@ Configure the buffering of index requests:
 `buffered`: Disable or configure the buffering of indexing requests. To stop
 the buffering of index requests, choose *Disabled*. 
 
+<!--`bufferedExecutionMode`:-->
+
 `maximumBufferSize`: If buffering is
 enabled, set the Maximum Buffer Size so that any additional indexing
 requests are executed immediately. 
@@ -115,28 +117,7 @@ usually performs better.
 
 This entry contains only one property:
 
-`indexingBatchSizes`: Sets the number of documents indexed
-
-**Index Registry**
-: Disable or configure the buffering of indexing requests. To stop the buffering
-of index requests, set the Buffered property to *Disabled*. If buffering is
-enabled, set the Maximum Buffer Size so that additional indexing requests are
-executed immediately. Minimum Buffer Availability Percentage sets a different
-threshold: when the capacity of the buffer has only a certain percent of space
-left, the existing requests in the buffer are executed in one batch and removed
-from the buffer.
-
-**Index Query Preprocessor**
-: Fields with names matching the patterns set here are treated as non-analyzed
-keyword fields. Instead of scored full text queries, matching is performed by
-non-scored wildcard queries. This is a resource intensive operation that
-degrades search engine performance as indexes grow larger. For substring
-matching, relying on the
-[NGram Tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-ngram-tokenizer.html) 
-usually performs better.
-
-**Reindex**
-: Use the Indexing Batch Sizes property to set the number of documents indexed
+`indexingBatchSizes`: Set the number of documents indexed
 per batch for model types that support batch indexing. Defaults to 10000. For
 models with large documents, decreasing this value may improve stability when
 executing a full re-index.
@@ -155,19 +136,32 @@ the Search application. Thus, Organizations are added to
 
 ### Permission Checker
 
-Configure *pre-filtering permission checking* (permission checking on the
-search index) behavior. See 
-[here](/documentation/user/-/knowledge_base/7-2/search-results-behavior#initial-permissions-checking) 
+Configure *pre-filtering permission checking* (permission checking on the search
+index) behavior. See
+[here](/docs/7-2/user/-/knowledge_base/u/search-results-behavior#initial-permissions-checking)
 for more information on these properties:
 
 - `includeInheritedPermission`
 
 - `permissionTermsLimit`
 
+### Title Field Query Builder
+
+Configure how search responds to matches on the Title field of a document.
+
+**Exact Match boost:** Give an additional boost when searched keywords exactly
+match the `title` field of a document.
+
+**Maximum Expansions:** Limit the number of documents to return when matching
+searched keywords to the `title` field as a phrase prefix. See Elasticsearch's
+[Match Phrase Query
+documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-match-query-phrase.html)
+for more information.
+
 ### Elasticsearch 6
 
 Configure the connection between @product@ and Elasticsearch 6. See
-[here](/discover/deployment/-/knowledge_base/7-2/configuring-the-liferay-elasticsearch-connector) 
+[here](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector)
 for more information on these properties:
 
 - `clusterName`
@@ -199,11 +193,10 @@ for more information on these properties:
 
 ### Search Web
 
-This entry contains one property:
-`classicSearchPortletInFrontPage`: Revert the default search experience from
-using the new Search Widgets to the classic Search Portlet that was standard
-in past releases. See
-[here](/documentation/user/-/knowledge_base/7-2/configuring-search-pages#legacy-search-experience)
+This entry contains one property: `classicSearchPortletInFrontPage`: Revert the
+default search experience from using the new Search Widgets to the classic
+Search Portlet that was standard in past releases. See
+[here](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages#legacy-search-experience)
 for more information.
 
 ### Search Administration
@@ -235,12 +228,12 @@ their descriptions and determine if they apply to your search requirements.
 
 ## Site Scoped Search Configuration
 
-Search isn't configurable at the Site Scope by the strict definition of 
-[Site Scoped Configuration](/documentation/user/-/knowledge_base/7-2/setting-up#configuration-scope).
-However, 
-[Search Pages](/documentation/user/-/knowledge_base/7-2/configuring-search-pages)
-influence site-specific search behavior. Commonly, Search Pages contain search
-widgets configured to search for all content within a particular Site.
+Search isn't configurable at the Site Scope by the strict definition of [Site
+Scoped Configuration](/docs/7-2/user/-/knowledge_base/u/setting-up#configuration-scope).
+However, [Search
+Pages](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages) influence
+site-specific search behavior. Commonly, Search Pages contain search widgets
+configured to search for all content within a particular Site.
 
 In addition, the Header Search (the Search Bar embedded in every Site page by
 default), whether populated by the new Search Bar widget or the legacy Search
@@ -252,11 +245,11 @@ Because of the modularity of Search, there are some important configuration
 nuances to be aware of when using the new Search widgets:
 
 - If the Header Search uses the Search Bar widget, its configuration
-  always requires a _destination page_ to be set, where Users are redirected
-  to complete their search activity, interacting with the other Search widgets
-  (Results, Facets, Suggestions etc.). 
-  [Search destination pages](/documentation/user/-/knowledge_base/7-2/configuring-search-pages)
-  are ordinary pages holding the Search widgets. You can have as many pages with
+  always requires a _destination page_ to be set, where Users are redirected to
+  complete their search activity, interacting with the other Search widgets
+  (Results, Facets, Suggestions etc.). [Search destination
+  pages](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages) are
+  ordinary pages holding the Search widgets. You can have as many pages with
   Search widgets across the Site as you want.
 
 - Unlike the legacy Search portlet, the new Search Bar widget is instanceable,
@@ -271,8 +264,8 @@ nuances to be aware of when using the new Search widgets:
   their configurations, even if they differ from the Header Search
   configuration. 
 
-See the documentation on 
-[configuring of a Search Bar](/documentation/user/-/knowledge_base/7-2/searching-for-assets#configuring-the-search-bar) 
+See the documentation on [configuring of a Search
+Bar](/docs/7-2/user/-/knowledge_base/u/searching-for-assets#configuring-the-search-bar)
 for more information.
 
 ## Widget Scoped Search Configuration
@@ -282,17 +275,17 @@ options:
 
 **Search Results**
 :  Configure how search results are displayed. Read 
-[here](/documentation/user/-/knowledge_base/7-2/search-results) for more
+[here](/docs/7-2/user/-/knowledge_base/u/search-results) for more
 information.
 
 **Search Bar**
 : Configure the behavior of how search keywords are processed. See
-[here](/documentation/user/-/knowledge_base/7-2/searching-for-assets#configuring-the-search-bar) 
+[here](/docs/7-2/user/-/knowledge_base/u/searching-for-assets#configuring-the-search-bar) 
 for more information.
 
 **Search Facets**
 : Configure each facet's behavior and URL parameters. See
-[here](/documentation/user/-/knowledge_base/7-2/facets) for more information.
+[here](/docs/7-2/user/-/knowledge_base/u/facets) for more information.
 
 **Search Options**
 : This is a special case, where configuring this widget defines page scoped
@@ -308,11 +301,22 @@ the Search Page:
 
 **Search Suggestions**
 : Suggest better queries and spell check queries. See
-[here](/documentation/user/-/knowledge_base/7-2/searching-for-assets#search-suggestions) 
+[here](/docs/7-2/user/-/knowledge_base/u/searching-for-assets#search-suggestions) 
 for more information.
 
 **Search Insights**
 : Add this to the Search Page to inspect the full query string that's
 constructed by the back-end search code when the User enters a keyword. Only
 useful for testing and development.
+
+**Custom Filter**
+: Add a widget to the page for each of the filters you'd like applied to the
+search results. Let search page users see and manipulate the filters or make
+them invisible and/or immutable.
+
+**Sort**
+: Let Users reorder the search results based on the value of certain `keyword`
+fields in the index. For example, show results in alphabetic order of the Title
+field. The default order is determined by the search engine's _Relevance_
+calculation.
 

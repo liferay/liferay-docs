@@ -22,7 +22,7 @@ If you're in need of a fully customized experience,
 After choosing your approach and reading here to get it up and running, find
 the articles on the [Search
 Bar](/docs/7-2/user/-/knowledge_base/u/searching-for-assets#search-bar),
-[Search Facets](/docs/7-2/user/-/knowledge_base/u/facets), and [Search Results](/discover/portal/-/knowledge_base/7-2/search-results) to understand the full suite of
+[Search Facets](/docs/7-2/user/-/knowledge_base/u/facets), and [Search Results](/docs/7-2/user/-/knowledge_base/u/search-results) to understand the full suite of
 configuration options. 
 
 Search display pages are where users go to enter search terms and browse search
@@ -94,7 +94,7 @@ a new site:
 4.  Configure the search bar at the top of the page, making sure it points to your
     new search page's friendly URL (for example, `/finders-keepers`). 
 
-    Click the Search Bar widget's Options menu (![Ac](../../images/icon-app-options.png)).
+    Click the Search Bar widget's Options menu (![Options](../../images/icon-app-options.png)).
 
     Click *Configuration* and set the Destination Page to the search page's
     friendly URL.

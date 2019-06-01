@@ -22,7 +22,7 @@ search library. There's an Elasticsearch server embedded in all bundles, which
 is handy for testing and development purposes. Production environments must
 install a separate, remote Elasticsearch server (or even better, cluster of
 servers).  For information on how to install Elasticsearch, read the 
-[deployment guide](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch).
+[deployment guide](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch).
 
 ## Search Features
 
