@@ -9,18 +9,19 @@ header-id: translating-forms
 Forms can be translated to any locale that @product@ supports. The form builder 
 specifies a translation of the form's default language. 
 
-![Figure 1: A form is translate-able into any supported language.](../../images/forms-translate1.png)
-
 The form's default language and the available translations are set in the
-[site's language configuration](/docs/7-1/user/-/knowledge_base/u/social-settings-and-languages#languages).
+[site's language configuration](/docs/7-2/user/-/knowledge_base/u/social-settings-and-languages#languages).
 
 Follow these steps to create a form translation: 
 
-1.  Go to *Site Administration* (your site's menu) &rarr; *Content* &rarr; 
+1.  Go to *Site Administration* (your site's menu) &rarr; *Content & Data* &rarr; 
     *Forms* and open the form to translate. 
 
-2.  Click *Add Translation* and choose from the available languages. 
+2.  Click the + icon next to the current translation language and choose from
+    the available languages. 
 
+    ![Figure 1: Add a translation for the form.](../../images/forms-add-translation.png)
+ 
 3.  Translate the form's title, field labels, field options, field placeholder
     text, and any other text visible to the user.
 
@@ -41,14 +42,14 @@ To fill out a translated form in a translated language,
 
 | **Note:** Translations work differently depending on how a User accesses a Form:
 | 
-| 1.  If
-|     [accessed in the Form widget on a @product@ page](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms#accessing-forms),
-|     the Form is displayed in the User's language automatically. If there's no
-|     translation available for the User's language, the default language of the
-|     Form is displayed.
-| 
-| 2.  If accessed via direct
-|     [URL](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms#accessing-forms),
-|     the Form translation must be selected manually.
+| If [accessed in the Form widget on a @product@
+| page](/docs/7-2/user/-/knowledge_base/u/creating-and-managing-forms#accessing-forms),
+| the Form is displayed in the User's language automatically. If there's no
+| translation available for the User's language, the default language of the Form
+| is displayed.  
+|
+| If accessed via direct
+| [URL](/docs/7-2/user/-/knowledge_base/u/creating-and-managing-forms#accessing-forms),
+| the Form translation must be selected manually.
 
 ![Figure 3: Select the form's language.](../../images/forms-translate3.png)
