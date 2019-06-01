@@ -18,7 +18,7 @@ Another important topic is porting your calendar's data from one installation of
 
 Follow these steps to add a new calendar resource:
 
-1.  Click on the *Resources* tab and click the ![Add](../images/icon-add.png) 
+1.  Click on the *Resources* tab and click the ![Add](../../images/icon-add.png) 
     button to add a new resource.
 
     ![Figure 1: Resources are accessed from the tab menu at the top of the widget.](../../images/calendar-resources.png)
