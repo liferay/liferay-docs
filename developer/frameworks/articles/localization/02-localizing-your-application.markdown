@@ -6,14 +6,14 @@ header-id: localizing-your-application
 
 [TOC levels=1-4]
 
-Liferay's localization framework allows you to create and use localized messages
+Liferay's localization framework helps you create and use localized messages
 in minutes. You create your messages in a default properties file called
 `Language.properties` and localize them in properties files that use the
 convention `Language_xx.properties`, where `xx` is the locale code. After
 deploying your app, the messages are available to your templates. Liferay's JSP
 tags, such as `<liferay-ui:message .../>` display them in the user's current
-locale automatically, without requiring you to explicitly access
-`ResourceBundle` or `Locale` objects. Here are the steps: 
+locale automatically, without requiring you to access
+`ResourceBundle` or `Locale` objects explicitly. Here are the steps: 
 
 1.  Create a default language properties file called `Language.properties` in 
     your project's resource bundle folder. 
@@ -97,7 +97,7 @@ howdy-partner=Hola, Compañero!
     JSP could use the `howdy-partner` property via the
     [`<liferay-ui:message />`](@platform-ref@/7.2-latest/taglibs/util-taglib/liferay-ui/message.html) tag. 
 
-```javascript
+```jsp
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %> 
 ...
 <liferay-ui:message key="howdy-partner" />
