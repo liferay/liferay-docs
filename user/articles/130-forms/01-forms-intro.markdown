@@ -45,24 +45,24 @@ building.
 When you need a form, what you're really looking for is data. There are two
 applications for building forms to collect precisely the data you need:
 
-1.  [Liferay Forms](/docs/7-1/user/-/knowledge_base/u/forms):
+1.  [Liferay Forms](/docs/7-2/user/-/knowledge_base/u/forms):
     The primary form building application is for the simplest one or two
     question survey to the most complex, multi-page, homeowners insurance
     application containing rules and lists populated by a REST data provider.
 
-2.  [Dynamic Data Lists (DDL)](/docs/7-1/user/-/knowledge_base/u/dynamic-data-lists):
+2.  [Dynamic Data Lists (DDL)](/docs/7-2/user/-/knowledge_base/u/dynamic-data-lists):
     Provides a user interface tool for building reusable form- and list-based
     applications intended for display on pages, using
-    [templates](/docs/7-1/user/-/knowledge_base/u/using-templates-to-display-forms-and-lists).
+    [templates](/docs/7-2/user/-/knowledge_base/u/using-templates-to-display-forms-and-lists).
 
 | **Kaleo Forms:** If you're a Liferay Digital Enterprise customer, there's a
 | third form building tool called
-| [Kaleo Forms](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-forms).
+| [Kaleo Forms](https://customer.liferay.com/documentation/7.2/admin/-/official_documentation/portal/kaleo-forms).
 | It integrates form building with workflow to create form-based business
 | processes, like a Conference Room Checkout Form, or a Support Ticket Process so
 | support tickets go through the proper channels on their way to resolution. Read
 | more about Kaleo Forms in the
-| workflow [section](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-forms).
+| workflow [section](https://customer.liferay.com/documentation/7.2/admin/-/official_documentation/portal/kaleo-forms).
 
 ## Which Form Builder Should I Use?
 
@@ -81,6 +81,7 @@ should I use Dynamic Data Lists?"
 - Use DDL if there's a field type you need that's not included (yet) in Liferay
   Forms. These are the field types included in DDL that *are not* in Liferay
   Forms at the time of this writing:
+        - Color
         - Geolocation
         - Web Content
         - Link to Page
