@@ -4,6 +4,8 @@ header-id: social-bookmark-template
 
 # Social Bookmark Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay social bookmark as a
 Liferay module. To create a social bookmark as a module via the command line
 using Blade CLI or Maven, use one of the commands with the following parameters:

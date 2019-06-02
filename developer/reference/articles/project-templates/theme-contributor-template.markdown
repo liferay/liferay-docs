@@ -4,6 +4,8 @@ header-id: theme-contributor-template
 
 # Theme Contributor Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay theme contributor as a
 Liferay module. To create a theme contributor via the command line using Blade
 CLI or Maven, use one of the commands with the following parameters:

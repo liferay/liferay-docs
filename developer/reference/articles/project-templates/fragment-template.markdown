@@ -4,6 +4,8 @@ header-id: using-the-fragment-template
 
 # Fragment Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay fragment as a Liferay
 module. You can learn more about fragment modules in the
 [Declaring a Fragment Host](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-jsps#declaring-a-fragment-host)

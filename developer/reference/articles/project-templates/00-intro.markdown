@@ -4,6 +4,8 @@ header-id: project-templates
 
 # Project Templates
 
+[TOC levels=1-4]
+
 Liferay provides project templates that you can use to generate starter projects
 formatted in an opinionated way. These templates can be used by most build tools
 (e.g., Gradle, Maven, Dev Studio) to generate your desired project structure.

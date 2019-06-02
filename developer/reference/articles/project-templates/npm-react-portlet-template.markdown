@@ -4,6 +4,8 @@ header-id: npm-react-portlet-template
 
 # npm React Portlet Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create an npm React portlet as a Liferay
 module. To create an npm React portlet via the command line using Blade CLI or
 Maven, use one of the commands with the following parameters:

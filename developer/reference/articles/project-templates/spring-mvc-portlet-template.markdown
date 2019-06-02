@@ -4,6 +4,8 @@ header-id: spring-mvc-portlet-template
 
 # Spring MVC Portlet Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay Spring MVC portlet
 application as a WAR. To create a Liferay Spring MVC portlet via the command
 line using Blade CLI or Maven, use one of the commands with the following
