@@ -16,13 +16,9 @@ articles. If you examine the content on many writing platforms each article
 follows a similar format like this:
 
 -  Header Image
-
 -  Title
-
 -  Main Body
-
 -  Highlighted Quote
- 
 -  Footer with links to related articles or other content
 
 With Display Pages, you can create standard, reusable formats like this to 
