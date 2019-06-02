@@ -28,20 +28,19 @@ structure.
 
 **Asset Publisher:** Aggregate and display different types of content together
 in one view. This is covered in more detail in 
-[Publishing Assets](/docs/7-1/user/-/knowledge_base/u/publishing-assets).
+[Publishing Assets](/docs/7-2/user/-/knowledge_base/u/publishing-assets).
 
 **Scheduler:** Schedule when content is reviewed, displayed or removed. This
 is covered in more detail in 
-[Scheduling Web Content Publication](/docs/7-1/user/-/knowledge_base/u/scheduling-web-content-publication).
+[Scheduling Web Content Publication](/docs/7-2/user/-/knowledge_base/u/scheduling-web-content-publication).
 
 **Workflow Integration:** Run your content through a review process. This is
 covered in more detail in the
-[Workflow](/docs/7-1/user/-/knowledge_base/u/workflow) section.
+[Workflow](/docs/7-2/user/-/knowledge_base/u/workflow) section.
 
 **Staging:** Use a separate staging server or stage your content locally so you
 can keep your changes separate from the live site. This is covered in more
-detail in 
-[Using the Staging Environment](/docs/7-1/user/-/knowledge_base/u/using-the-staging-environment).
+detail in the [Staging](/docs/7-2/user/-/knowledge_base/u/staging) section.
 
 These tools streamline the content creation process for end users and are also
 integrated with Liferay's services so advanced template developers can use them

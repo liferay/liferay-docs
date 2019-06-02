@@ -15,7 +15,7 @@ When you create a new web content article, you can choose a default language.
 First, you must change the system configuration to enable the option to change
 the default language.
 
-1.  Go to the *Control Panel* &rarr; *System Settings*. 
+1.  Go to the *Control Panel* &rarr; *Configuration* &rarr; *System Settings*. 
 
 2.  Locate *Web Content* &rarr; *Administration* by scrolling or using the 
     search bar.
@@ -38,7 +38,7 @@ When you select a language, all fields in the article switch to the new
 language. To create the new translation, fill in the fields in the selected
 language and publish the article. 
 
-![Figure 1: Adding a translation to an article works like adding the default translation.](../../../../images/web-content-translation.png)
+![Figure 1: Adding a translation to an article works like adding the default translation.](../../../../../images/web-content-translation.png)
 
 You can modify the language translation list by inserting `locales.enabled=`
 followed by your preferred languages in your `portal-ext.properties` file. For
@@ -55,7 +55,7 @@ When you create a new web content structure, each field you create has a
 *Localizable* checkbox displayed next to it. This enables you to control what
 can and can't be changed in the translation process. For example, if you don't
 want images or content titles to be changed when the content is translated, you
-can make sure those fields aren't llocalizable. When you follow the steps above
+can make sure those fields aren't localizable. When you follow the steps above
 to localize content, only fields within the structure that had the *Localizable*
 box checked appear within the translation window.
 
@@ -79,43 +79,43 @@ site. To enable Xuggler,
 Once Xuggler has been installed and enabled, you can embed a video or audio 
 file in a web content article the same way you added images previously. 
 
-![Figure 2: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../../../images/web-content-audio-video.png)
+![Figure 2: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../../../../images/web-content-audio-video.png)
 
 ## XML Format Downloads
 
 Tools like the 
-[Resource Importer](/docs/7-1/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)
+[Resource Importer](/docs/7-2/frameworks/-/knowledge_base/f/importing-resources-with-a-theme)
 and Site Initiators can be deployed to build a site almost instantly. Before you
 can use them to import Web Content, however, you first need to have the content
 exported individually in XML format. To export the content,
 
-1.  Go to *Site Administration* &rarr; *Content* &rarr; *Web Content*.
+1.  Go to *Site Administration* &rarr; *Content & Data* &rarr; *Web Content*.
 
 2.  Start editing the article you want to download.
 
-3.  Click the *Options* icon (![Options](../../../../images/icon-options.png)) in 
+3.  Click the *Options* icon (![Options](../../../../../images/icon-options.png)) in 
     the top right of the page and select *View Source*.
 
 This displays the raw XML source of the article. You can copy this content to 
 save into an XML file locally.
 
-![Figure 3: The *View Source* button is available from the *Options* button.](../../../../images/web-content-download.png)
+![Figure 3: The *View Source* button is available from the *Options* button.](../../../../../images/web-content-download.png)
 
 ## Subscribing to Content
 
 An administrator or web content writer can subscribe to an article or folder to
 follow changes being made to it. 
 
-1.  Go to *Content* &rarr; *Web Content* for your Site.
+1.  Go to *Content & Data* &rarr; *Web Content* for your Site.
 
-2.  Click *Options* 
-    (![Options](../../../../images/icon-app-options.png)) &rarr; *Subscribe* next 
-    to the article or folder you want to follow.
+2.  Click *Actions* 
+    (![Actions](../../../../../images/icon-app-options.png)) &rarr; *Subscribe*
+    next to the article or folder you want to follow.
 
 Anytime an asset that you follow is modified, you receive an email notifying you
 of the change.
 
-![Figure 4: Click the Subscribe icon in the web content entity's *Options* menu to begin receiving web content notifications.](../../../../images/web-content-subscribe.png)
+![Figure 4: Click the Subscribe icon in the web content entity's *Options* menu to begin receiving web content notifications.](../../../../../images/web-content-subscribe.png)
 
 That's pretty much all there is to basic content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
@@ -128,7 +128,7 @@ By default, when you select a structure to add a new Web Content article, the
 structures are ordered by their IDs, not their names. This can be confusing,
 but---never fear---there's a configuration property to sort them alphabetically.
 
-![Figure 5: The default ordering for Web Content Structures can yield confusing results.](../../../../images/web-content-default-order.png)
+![Figure 5: The default ordering for Web Content Structures can yield confusing results.](../../../../../images/web-content-default-order.png)
 
 To enable this property for Site Administration,
 
@@ -137,17 +137,15 @@ To enable this property for Site Administration,
 
 2.  Check the box labeled *Journal Browse by Structures Sorted by Name*.
 
-![Figure 6: Web Content Administration will now display structures in alphabetical order.](../../../../images/web-content-admin-alphabetical.png)
+![Figure 6: Web Content Administration will now display structures in alphabetical order.](../../../../../images/web-content-admin-alphabetical.png)
 
-With @product-ver@ Fix Pack 2 or greater, you can also set this property for the
-Web Content Display widget. To enable this property for the Web Content Display,
+You can also set this property for the Web Content Display widget. To enable
+this property for the Web Content Display,
 
 1.  Go to *Configuration* &rarr; *System Settings* &rarr; *Web Content* &rarr; 
     *Web Content Display*.
 
 2.  Check the box labeled *Sort Structures by Name*.
-
-![Figure 7: The Web Content Display widget will now display structures in alphabetical order.](../../../../images/web-content-display-alphabetical.png)
 
 After this option is checked, the structures are sorted alphabetically. Note 
 that enabling this property can degrade performance with large structure 
