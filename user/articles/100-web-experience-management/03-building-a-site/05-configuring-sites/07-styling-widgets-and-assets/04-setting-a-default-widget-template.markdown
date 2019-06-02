@@ -40,7 +40,7 @@ For example, configure the Language Selector widget templates like this:
 5.  Click the *Actions* (![Actions](../../../../../images/icon-actions.png))
     button for the new widget template.
 
-5.  Open *Details* and find the *Template Key* - `LANGUAGE-ICON-FTL`
+6.  Open *Details* and find the *Template Key* - `LANGUAGE-ICON-FTL`
 
 ![Figure 2: System Settings shows where you can find the Template Key.](../../../../../images/adt-template-key.png)
 

@@ -20,7 +20,7 @@ create two Roles with access to structures and templates:
 When creating the Roles, define them to have global permission for all
 structures and templates across the entire instance or only for specific
 Sites. For more information on creating Roles, see the 
-[Roles and Permissions](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions) 
+[Roles and Permissions](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions) 
 article.
 
 ## Assigning Permissions for Individual Templates
@@ -30,7 +30,7 @@ can view and interact with a template,
 
 1.  Go to the *Templates* tab.
 
-2.  Click the Action* button (![Actions](../../../../../images/icon-actions.png))
+2.  Click the *Actions* button (![Actions](../../../../../../images/icon-actions.png))
     for a template that you created and select *Permissions*.
 
 Here permissions for a template can be set for Roles or Teams. Use this option 

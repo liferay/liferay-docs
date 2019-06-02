@@ -20,7 +20,7 @@ Practice this now.
 1.  In your structure, add an *HTML* element.
 
 2.  Hover over the field and select the *Configuration* icon 
-    (![Configuration](../../../../../images/icon-wrench.png)).
+    (![Configuration](../../../../../../images/icon-wrench.png)).
 
 3.  Change the *Field Label* value to *Instructions* and the *Name* value to
     *steps*. Now your template writer has a variable by which he or she can
@@ -78,7 +78,7 @@ fields (like tags, categories, and related assets) and the content of the
 structure fields, while also setting a default template for displaying the
 structure data.
 
-![Figure 1: You can edit default values via the *Actions* button of the Manage Structures interface.](../../../../../images/structure-actions.png)
+![Figure 1: You can edit default values via the *Actions* button of the Manage Structures interface.](../../../../../../images/structure-actions.png)
 
 Returning to the newspaper scenario again, suppose you want all sports articles
 to have the same display page (sports page), the same categories, or the same
@@ -90,10 +90,10 @@ you have an existing structure.
 
 To edit a structure's default values:
 
-1.  Go to *Site Administration* &rarr; *Content* &rarr; *Web Content* and click
-    on the *Structures* tab to see the structures list.
+1.  Go to *Site Administration* &rarr; *Content & Data* &rarr; *Web Content* and
+    click on the *Structures* tab to see the structures list.
 
-2.  Find the *Actions* button (![Actions](../../../../../images/icon-actions.png)) 
+2.  Find the *Actions* button (![Actions](../../../../../../images/icon-actions.png)) 
     for the desired structure and select *Edit Default Values* from the menu to 
     view a window like the one below.
 
@@ -101,8 +101,7 @@ To edit a structure's default values:
     *Predefined Value* field setting (see above), but is much more convenient
     for setting or editing a large number of defaults at once.
 
-![Figure 2: You can define values for your structure fields and the standard asset metadata fields.](../../../../../images/structure-default-values.png)
-
+![Figure 2: You can define values for your structure fields and the standard asset metadata fields.](../../../../../../images/structure-default-values.png)
 
 Every new web content you create with this structure is preloaded with the
 data you inserted. Next, you'll learn about assigning permissions.

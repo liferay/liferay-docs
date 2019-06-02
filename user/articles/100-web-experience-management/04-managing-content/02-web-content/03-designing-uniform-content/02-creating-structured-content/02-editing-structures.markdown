@@ -8,7 +8,7 @@ header-id: editing-structures
 
 To start, go to the *Structures* page.
 
-1.  From *Site Administration* go to *Content* &rarr; *Web Content*.
+1.  From *Site Administration* go to *Content & Data* &rarr; *Web Content*.
 
 2.  Open the *Structures* tab.
 
@@ -17,7 +17,7 @@ new web content structures, edit existing ones, manage the templates associated
 with a structure, edit the permissions of a structure, and copy or delete
 structures.
 
-![Figure 1: Structures are not pre-installed. You have to make your own.](../../../../../images/manage-structures.png)
+![Figure 1: Structures are not pre-installed. You have to make your own.](../../../../../../images/manage-structures.png)
 
 | Note: When you copy a structure, @product@ generates a unique ID for the copied
 | structure, but every other attribute of the copied structure, including the
@@ -26,9 +26,9 @@ structures.
 | copy process, you're prompted to choose whether to copy any detail templates or
 | list templates associated with the structure. For information on detail
 | templates and list templates, please refer to
-| [Dynamic Data Lists](/docs/7-1/user/-/knowledge_base/u/dynamic-data-lists).
+| [Dynamic Data Lists](/docs/7-2/user/-/knowledge_base/u/dynamic-data-lists).
 
-*Basic Web Content* which you used in previous exercises lives at the *Global* 
+*Basic Web Content*, which you used in previous exercises, lives at the *Global* 
 scope so that it is available to all Sites. This structure and template are 
 used automatically if a custom structure and template are not added.
 
@@ -36,7 +36,7 @@ used automatically if a custom structure and template are not added.
 
 Now, create a new Structure:
 
-1.  Click *Add* (![Add Structure](../../../../../images/icon-add.png)).
+1.  Click *Add* (![Add Structure](../../../../../../images/icon-add.png)).
 
 2.  Give your Structure a name.
 
@@ -44,14 +44,14 @@ Structures are essentially a set of fields organized in a certain way. The
 interface on this page provides an easy way to add and organize whatever fields
 you need. Each element that you add has three icon options that you can click:
 
-**Settings:** (![Settings](../../../../../images/icon-wrench.png)) Changes the
+**Settings:** (![Settings](../../../../../../images/icon-wrench.png)) Changes the
 name and label and set other information about the field, like whether or not
 it is required. 
 
-**Delete:** (![Delete](../../../../../images/icon-trash.png)) Removes the field 
+**Delete:** (![Delete](../../../../../../images/icon-trash.png)) Removes the field 
 from the structure.
 
-**Duplicate:** (![Duplicate](../../../../../images/icon-add-2.png)) Duplicates the 
+**Duplicate:** (![Duplicate](../../../../../../images/icon-wysiwyg-add.png)) Duplicates the 
 field and all its settings and iterates the *Name* to avoid conflicts.
 
 Web content structures can inherit characteristics from other structures. A 
@@ -61,7 +61,7 @@ have *Sports Article* and you want to create *In-depth Sports Article*, set
 *Sports Article* as the parent and the *In-dept Sports Article* inherits
 all its fields, letting you add new ones for more in-depth information.
 
-| **Note:** Due to import/export operations it's possible to have both a global
+| **Note:** Due to import/export operations, it's possible to have both a global
 | and a Site-scoped structure with the same `structureKey`. If this happens, the
 | Site-scoped structure takes precedence, and you can't access the global
 | structure from that Site.
@@ -72,13 +72,15 @@ method is for more experienced developers.
 
 Take a moment to add, delete, and rearrange different elements.
 
-![Figure 2: The structure editor gives you many options to customize your Web Content.](../../../../../images/web-content-structure-editor.png)
+![Figure 2: The structure editor gives you many options to customize your Web Content.](../../../../../../images/web-content-structure-editor.png)
 
 The following fields can be in structures:
 
 **Boolean:** Adds a checkbox onto your structure, which stores either `true`
 (checked) or `false` (unchecked). Template developers can use this as a display
 rule.
+
+**Color:** Adds a way to choose a color.
 
 **Date:** Adds a pre-formatted text field that displays a date picker to assist
 in selecting the desired data. The format for the date is governed by the
@@ -121,6 +123,8 @@ combo box. Can be configured to allow multiple selections, unlike *Radio*.
 **Text:** Used for items such as titles and headings.
 
 **Text Box:** Used for the body of your content or long descriptions.
+
+**Web Content:** Provides a way to select a web content article.
 
 These fields provide all you need to model any information type you would
 want to use as web content. Liferay customers have used structures to model

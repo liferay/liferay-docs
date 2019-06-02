@@ -23,7 +23,7 @@ If the variable name doesn't give you sufficient information on the variable's
 functionality, you can hover your pointer over it for a more detailed 
 description.
 
-![Figure 1: You can hover your pointer over a variable for a more detailed description.](../../../../../images/web-content-templates-create.png)
+![Figure 1: You can hover your pointer over a variable for a more detailed description.](../../../../../../images/web-content-templates-create.png)
 
 The interactive template editor is available for the FreeMarker, Velocity, and
 XSL languages. Depending on which language you select, the variable content
@@ -34,9 +34,9 @@ clicking one of the variables, the editor inserts the variable into the template
 editor.
 
 | **Note:** The `utilLocator`, `objectUtil`, and `staticUtil` variables for
-| FreeMarker and the `utilLocator` variable for Velocity are disabled by default.
-| These variables are vulnerable to remote code execution and privilege
-| escalation, and should be used with caution, if enabled.
+| FreeMarker are disabled by default. These variables are vulnerable to remote
+| code execution and privilege escalation, and should be used with caution, if
+| enabled.
 
 After you've saved your template, @product@ provides a WebDAV URL and static 
 URL. These values access the XML source of your structure. You can find these 
