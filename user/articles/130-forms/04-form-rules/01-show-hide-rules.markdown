@@ -29,12 +29,12 @@ To set this example up, add these fields to a form:
 |     (![Add](../../../images/icon-add.png)) button.
 | 
 | 2.  Define the rule:
-|      - If the *I am 18 years old or older* field is equal to *No*, show the
+|      - If the *I am 18 years old or older* field is equal to the Value *No*, show the
 |        *Legal Guardian Email Address* field.
 | 
 |     ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-rule-development.png)
 | 
-|      - Save the rule.
+|      - Save the form to save the rule.
 | 
 |     ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-rule-list.png)
 | 
