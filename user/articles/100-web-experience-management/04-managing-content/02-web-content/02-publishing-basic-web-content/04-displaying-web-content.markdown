@@ -119,7 +119,7 @@ tool compares these versions and highlights the differences between them.
 
     The tool provides color coded highlighting to emphasize additions and deletions between the two articles.
 
-![Figure 4: Comparing web content articles is a great feature to use during the Workflow process.](../../../../../images/web-content-diff-feature.png)
+![Figure 3: Comparing web content articles is a great feature to use during the Workflow process.](../../../../../images/web-content-diff-feature.png)
 
 Whenever you publish updates to a web content article that's already being
 displayed, the content is immediately updated unless you have a workflow
