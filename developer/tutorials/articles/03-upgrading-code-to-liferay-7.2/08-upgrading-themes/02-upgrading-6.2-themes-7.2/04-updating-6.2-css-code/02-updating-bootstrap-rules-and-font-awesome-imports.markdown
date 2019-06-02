@@ -56,13 +56,7 @@ imports:
     Original:
 
 ```css
----
-header-id: reservebtn-
----
-
 #reserveBtn {
-
-[TOC levels=1-4]
 	background-color: #00C4FB;
 	border-radius: 10px;
 	color: #FFF;
@@ -77,13 +71,7 @@ header-id: reservebtn-
     Updated:
 
 ```css
----
-header-id: reservebtn-0
----
-
 #reserveBtn {
-
-[TOC levels=1-4]
 	background-color: #00C4FB;
 	border-radius: 10px;
 	color: #FFF;
