@@ -34,7 +34,7 @@ To set this example up, add these fields to a form:
 | 
 |     ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-rule-development.png)
 | 
-|      - Save the form to save the rule.
+|      - Save the rule.
 | 
 |     ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-rule-list.png)
 | 
