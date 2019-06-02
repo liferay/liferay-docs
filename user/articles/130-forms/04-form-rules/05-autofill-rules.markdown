@@ -8,11 +8,11 @@ header-id: action-autofill
 
 Autofill rules let you change the selection options of another field based on
 the value entered into a related field. A 
-[data provider's](/docs/7-1/user/-/knowledge_base/u/data-providers) 
+[data provider's](/docs/7-2/user/-/knowledge_base/u/data-providers) 
 output is used to populate a field, as long as the condition is met.
 
 Before configuring an autofill rule, 
-[set up a data provider](/docs/7-1/user/-/knowledge_base/u/data-providers). 
+[set up a data provider](/docs/7-2/user/-/knowledge_base/u/data-providers). 
 That's how autofilled fields are populated. Pay careful attention to the
 input and output parameters you choose when setting up the rule.
 
@@ -25,7 +25,7 @@ To follow this example:
 
     Make sure the output parameter is set to `$..nameCurentValue`. If you're unsure
     how to do this, first read the article on 
-    [Data Providers](/docs/7-1/user/-/knowledge_base/u/data-providers).
+    [Data Providers](/docs/7-2/user/-/knowledge_base/u/data-providers).
 
 2.  On the last form page, add two fields:
 
@@ -47,7 +47,7 @@ To follow this example:
 | 
 | 2. Define the rule:
 |     - If field *If I win I'd like my award to be* is equal to
-|         *All Expenses Paid Vacation*, Autofill the *Choose a Destination
+|         the Value *All Expenses Paid Vacation*, Autofill the *Choose a Destination
 |         Country* field from the *countries* data provider (note that you might
 |         have named this differently when setting it up).
 | 
@@ -79,7 +79,7 @@ autofill rule to display the countries of the world filtered by a Region field
     (*List*).
 
     To understand more about these values, read the 
-    [Data Provider documentation](/docs/7-1/user/-/knowledge_base/u/data-providers).
+    [Data Provider documentation](/docs/7-2/user/-/knowledge_base/u/data-providers).
 
     ![Figure 3: Create a data provider for the autofill rule.](../../../images/forms-autofill-data-provider.png)
 

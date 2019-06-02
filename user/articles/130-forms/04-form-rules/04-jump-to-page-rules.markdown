@@ -18,11 +18,11 @@ To follow the example here,
 
 1.  Create a second form page called *Team Information*.
 
-2.  On the new form page, create a single selection field labeled *Are you a
+2.  On the _first_ form page, create a single selection field labeled *Are you a
     returning racer, with the same team?* with two options: *Yes*
     and *No*.
 
-3.  Create a text field on the page called *Animal Name*.
+3.  Create a text field on the _second_ form page called *Animal Name*.
 
 4.  Create a third form page called *Final Confirmation*.
 
@@ -46,6 +46,10 @@ To follow the example here,
 |     - Save the rule.
 | 
 |     ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-jump-to-page2.png)
+
+Once the form User fills out the first page and clicks _Next_, the rule
+condition will evaluate hte answer to the field and either proceed to the next
+page or take the action of skipping to the page inidicatedd in the rule.
 
 If you use an *is not equal to* condition for form fields on two different
 pages, the condition is checked after leaving the page of the first form field,
