@@ -27,7 +27,8 @@ Require
 
 Jump to Page
 : Based on user input, skip over some form pages directly to a relevant
-page. 
+page. _This rule doesn't appear in the rule builder until a second page is added
+to the form_.
 
 Autofill with Data Provider 
 : Use a [data provider](/docs/7-2/user/-/knowledge_base/u/data-providers)

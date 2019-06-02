@@ -19,10 +19,10 @@ To follow the example here,
 1.  Create a second form page called *Team Information*.
 
 2.  On the new form page, create a single selection field labeled *Are you a
-    returning racer with the same team?* with two options: *Yes*
+    returning racer, with the same team?* with two options: *Yes*
     and *No*.
 
-3.  On the new form page, create a repeatable text field called *Animal Name*.
+3.  Create a text field on the page called *Animal Name*.
 
 4.  Create a third form page called *Final Confirmation*.
 
@@ -38,8 +38,8 @@ To follow the example here,
 |    (![Add](../../../images/icon-add.png)) button.
 | 
 | 2. Define the rule:
-|     - If field *Are you a returning racer with the same team?* is equal to
-|         *Yes*, Jump to Page *Final Confirmation*.
+|     - If field *Are you a returning racer, with the same team?* is equal to
+|         the Value *Yes*, Jump to Page *Final Confirmation*.
 | 
 |     ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-jump-to-page.png)
 | 
