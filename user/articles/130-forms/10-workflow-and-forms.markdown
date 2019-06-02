@@ -30,7 +30,7 @@ To enable workflow in a form,
 3.  The Settings window has a *Select a Workflow* drop-down. Find the workflow
     you want, select it, and then click *Done*.
 
-    ![Figure 3: Enable workflow for each form in its Settings window.](../../images/form-settings.png)
+    ![Figure 2: Enable workflow for each form in its Settings window.](../../images/form-settings.png)
 
 ## Testing the Workflow
 
@@ -72,5 +72,5 @@ record](/docs/7-2/user/-/knowledge_base/u/reviewing-assets):
 8.  Navigate back to the View Entries screen for the form, and now the entry is
     marked as *Approved*. 
 
-![Figure 4: Each entry's status is visible in the Forms application's Form Entries screen.](../../images/forms-view-entries-status.png)
+![Figure 3: Each entry's status is visible in the Forms application's Form Entries screen.](../../images/forms-view-entries-status.png)
 

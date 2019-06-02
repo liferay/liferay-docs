@@ -8,8 +8,7 @@ header-id: creating-data-lists
 
 There are two places to create dynamic data lists: 
 
-1.  **Site Administration:** Open the Menu
-    (![Menu](../../../images/icon-menu.png)) and expand your Site's menu (the
+1.  **Site Administration:** Open the Menu and expand your Site's menu (the
     Site Administration menu). Then select *Content & Data* &rarr; *Dynamic
     Data Lists*. This opens the Dynamic Data Lists screen. A table contains any
     existing lists. Click the *Add* button
