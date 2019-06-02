@@ -4,6 +4,8 @@ header-id: knowledge-base-configuration
 
 # Knowledge Base Configuration
 
+[TOC levels=1-4]
+
 These are the settings to configure the Knowledge Base, including the migration 
 of properties from Liferay Portal 6.2.
 

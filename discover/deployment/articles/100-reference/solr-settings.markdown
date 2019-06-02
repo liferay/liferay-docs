@@ -4,6 +4,8 @@ header-id: solr-settings
 
 # Solr Settings
 
+[TOC levels=1-4]
+
 Solr can be configured for use with @product-ver@. Liferay Marketplace includes a
 Solr adapter called Liferay Enterprise Search-Solr Search Engine. The adapter is
 configurable through System Settings or an OSGi configuration file named

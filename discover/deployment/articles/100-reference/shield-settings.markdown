@@ -4,6 +4,8 @@ header-id: shield-adapter-settings
 
 # Shield Adapter Settings
 
+[TOC levels=1-4]
+
 The following is a complete list of the settings you can configure with
 [Liferay's Shield adapter](/docs/7-0/deploy/-/knowledge_base/d/shield).
 

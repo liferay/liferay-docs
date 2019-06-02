@@ -4,6 +4,8 @@ header-id: configuration-reference
 
 # Configuration Reference
 
+[TOC levels=1-4]
+
 The Configuration Reference page gives you shortcuts to Liferay Portal
 configuration reference documentation. From here, you can easily check Liferay
 definitions and configuration defaults as you customize your portal.

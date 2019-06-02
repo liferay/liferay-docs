@@ -4,6 +4,8 @@ header-id: elasticsearch-settings
 
 # Elasticsearch Settings
 
+[TOC levels=1-4]
+
 Elasticsearch is the default search engine for @product-ver@. The *Liferay
 Foundation* suite includes an adapter for Elasticsearch called *Liferay Portal
 Search Elasticsearch*. The adapter is configurable through System Settings or an

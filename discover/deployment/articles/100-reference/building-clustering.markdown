@@ -4,6 +4,8 @@ header-id: building-clustering-for-liferay
 
 # Building Clustering for Liferay Portal
 
+[TOC levels=1-4]
+
 | **Note:** These instructions are for adding the clustering modules to **Liferay
 | Portal CE**. Skip them if you're running Liferay DXP, as it has clustering
 | available out-of-the-box.

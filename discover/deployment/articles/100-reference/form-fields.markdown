@@ -4,20 +4,22 @@ header-id: form-field-types
 
 # Form Field Types
 
+[TOC levels=1-4]
+
 A form without fields is no form at all. To meet your form-building needs,
 Liferay Forms provides useful and highly configurable field types. To see
 examples of the form fields described here, visit the [Collecting Information from
 Users](/docs/7-0/user/-/knowledge_base/u/collecting-information-from-users)
 section of the User Guide.
 
-![Figure 1: Out of the box form field types.](../images/forms-field-types.png)
+![Figure 1: Out of the box form field types.](../../images/forms-field-types.png)
 
 Form Text
 : This is static text on the form. Users do not enter data into Form Text
 fields. The form creator enters text that form users see displayed on the form.
 This is useful for longer instructions.
 
-![Figure 2: A form text field.](../images/forms-form-text.png)
+![Figure 2: A form text field.](../../images/forms-form-text.png)
 
 Text Field
 : Users enter text into these fields. For example, a Full Name field is a text
@@ -29,7 +31,7 @@ Place limits on the text users can enter (numbers from 1-10, or email addresses,
 for example) by using the Text field's validation options (as in [this
 example](/docs/7-0/user/-/knowledge_base/u/creating-advanced-forms#validating-text-fields)).
 
-![Figure 3: A multiline text form.](../images/forms-multiline.png)
+![Figure 3: A multiline text form.](../../images/forms-multiline.png)
 
 Select from List
 : Users select one (or more, if configured to allow it) options from a 
@@ -37,19 +39,19 @@ list of choices. Choices are entered manually or automatically populated by
 a data provider. For example, a Country of Residence field can be a
 select from list field populated by a Countries of the World data provider. 
 
-![Figure 4: A select from list field.](../images/forms-select-list.png)
+![Figure 4: A select from list field.](../../images/forms-select-list.png)
 
 Single Selection
 : Using a radio button, users select one option from a list of options displayed
 on the form. 
 
-![Figure 5: A single selection field.](../images/forms-single-selection.png)
+![Figure 5: A single selection field.](../../images/forms-single-selection.png)
 
 Date
 : Users select a date using a date picker. For example, a Birth Date field uses
 the Date field type.
 
-![Figure 6: A date field.](../images/forms-date.png)
+![Figure 6: A date field.](../../images/forms-date.png)
 
 Multiple Selection/Single Checkbox
 : Users select one or more options from check boxes (or switchers, if
@@ -58,7 +60,7 @@ subscribers, but its functionality can be obtained with the Multiple
 Selection field. The Single Checkbox field will be removed in the next version
 of Liferay DXP Digital Enterprise.
 
-![Figure 7: A multiple selection field using a switcher.](../images/forms-switcher.png)
+![Figure 7: A multiple selection field using a switcher.](../../images/forms-switcher.png)
 
 <!-- Unreleased fields
 Grid
@@ -68,12 +70,12 @@ is needed for multiple questions. For example, a product survey form might ask
 users to rate a list of their product's characteristics as Wonderful, Pretty
 Good, Not So Good, or Awful.
 
-![Figure 8: A grid field.](../images/forms-grid.png)
+![Figure 8: A grid field.](../../images/forms-grid.png)
 
 Numeric
 : Users enter numeric data (integers or decimals) into numeric fields.
 Non-number input is not accepted. For example, configure a numeric field that
 accepts integers to ask users how many pets they have.
 
-![Figure 9: A numeric field.](../images/forms-numeric.png)
+![Figure 9: A numeric field.](../../images/forms-numeric.png)
 -->
