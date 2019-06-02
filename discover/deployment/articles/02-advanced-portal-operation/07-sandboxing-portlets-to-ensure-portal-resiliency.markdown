@@ -4,6 +4,8 @@ header-id: sandboxing-portlets-to-ensure-portal-resiliency
 
 # Sandboxing Portlets to Ensure Portal Resiliency
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 The performance, health, and stability of a portal deployment is heavily

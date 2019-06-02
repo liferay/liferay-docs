@@ -4,6 +4,8 @@ header-id: capturing-web-sites-with-the-bookmarks-portlet
 
 # Capturing Web Sites with the Bookmarks Portlet
 
+[TOC levels=1-4]
+
 Many of us enjoy collecting things we value. They may be stamps, comic books,
 sea shells, or fabulous shoes. The list goes on and on. But have you considered
 URLs collectible? Having a thorough collection of links can be a great way to

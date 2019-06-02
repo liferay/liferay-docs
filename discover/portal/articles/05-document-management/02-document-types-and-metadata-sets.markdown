@@ -4,6 +4,8 @@ header-id: document-types-and-metadata-sets
 
 # Document Types and Metadata Sets
 
+[TOC levels=1-4]
+
 When a user assigns a document type to a document, the user is required to fill
 out the fields defined by the metadata set of the document type. This encourages
 users not to forget to enter important information about their documents. For

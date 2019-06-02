@@ -4,6 +4,8 @@ header-id: localization
 
 # Localization
 
+[TOC levels=1-4]
+
 When you create a new piece of Web Content, you have the ability to choose a
 default language. If you click *Change*, you can select your default language
 from a large number of languages Liferay supports. Before you can create a

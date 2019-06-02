@@ -4,6 +4,8 @@ header-id: sending-alerts-and-announcements-in-your-portal
 
 # Sending Alerts and Announcements in Your Portal
 
+[TOC levels=1-4]
+
 Suppose you're running a portal with lots of users. Maybe you have thousands or
 tens of thousands of users (or more!). Wouldn't it be nice to have an easy way
 to periodically communicate important information to them? And wouldn't it be

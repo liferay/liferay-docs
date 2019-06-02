@@ -4,6 +4,8 @@ header-id: summary-12
 
 # Summary
 
+[TOC levels=1-4]
+
 This chapter is a guide to everything about installing Liferay. Whether you
 choose a Liferay bundle or an existing application server, Liferay Portal
 integrates seamlessly with your enterprise Java environment. It is supported on

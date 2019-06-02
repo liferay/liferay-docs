@@ -4,6 +4,8 @@ header-id: managing-liferay-with-liferay-connected-services
 
 # Managing Liferay with Liferay Connected Services
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay Connected Services (LCS) is a set of online tools and services that lets 

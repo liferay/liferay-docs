@@ -4,6 +4,8 @@ header-id: building-a-list-platform-in-liferay-and-defining-data-
 
 # Building a List Platform in Liferay and Defining Data Types
 
+[TOC levels=1-4]
+
 To expand and extend the social capabilities of our site, we want to build a
 new, radical platform on Liferay: custom-built lists that users can share and
 collaborate on with their friends (or enemies, depending on their Social

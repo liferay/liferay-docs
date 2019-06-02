@@ -4,6 +4,8 @@ header-id: installing-liferay-on-glassfish-4
 
 # Installing Liferay on GlassFish 4
 
+[TOC levels=1-4]
+
 *Liferay Home* is three folders above your GlassFish domain folder.
 
 For example, if your domain location is

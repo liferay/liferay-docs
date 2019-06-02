@@ -4,6 +4,8 @@ header-id: summary-6
 
 # Summary
 
+[TOC levels=1-4]
+
 We have explored many of the portlets in Liferay's collaboration suite. The
 Blogs and Blogs Aggregation portlets can be used to manage shared blogs or blogs
 belonging to a group of people at once. These portlets have all the features you

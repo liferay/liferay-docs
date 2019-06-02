@@ -4,6 +4,8 @@ header-id: installing-liferay-on-oracle-weblogic-12c-12-1-2-and-h
 
 # Installing Liferay on Oracle WebLogic 12c (12.1.2 and higher)
 
+[TOC levels=1-4]
+
 In this section, you'll learn how to install Liferay on Oracle WebLogic 12c.
 Since you're using Oracle WebLogic, you may wonder if Liferay supports XA
 transactions. Liferay doesn't require XA transactions, but it supports XA.

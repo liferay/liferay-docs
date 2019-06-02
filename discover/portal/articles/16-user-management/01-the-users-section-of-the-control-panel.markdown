@@ -4,6 +4,8 @@ header-id: the-users-section-of-the-control-panel
 
 # The Users Section of the Control Panel
 
+[TOC levels=1-4]
+
 The Users section of the Control Panel is used for most administrative tasks
 involving user management. There, you'll find an interface for the creation and
 maintenance of the following portal entities: users, organizations, user groups,

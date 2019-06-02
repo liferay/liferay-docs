@@ -4,6 +4,8 @@ header-id: managing-rss-feeds-in-liferay
 
 # Managing RSS Feeds in Liferay
 
+[TOC levels=1-4]
+
 RSS is a family of web feed formats used to publish frequently updated works
 such as blog entries and news articles. RSS allows users to stay up-to-date with
 your site's content without actually having to visit your site! Instead, they

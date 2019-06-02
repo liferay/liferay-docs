@@ -4,6 +4,8 @@ header-id: knowledge-base
 
 # Knowledge Base
 
+[TOC levels=1-4]
+
 Liferay's Knowledge Base application provides a way to create and organize
 articles in a site. For example, it can be used to display professional product
 documentation or form complete books or guides. It even lets you import

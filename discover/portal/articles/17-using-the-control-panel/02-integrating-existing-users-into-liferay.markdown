@@ -4,6 +4,8 @@ header-id: integrating-existing-users-into-liferay
 
 # Integrating Existing Users into Liferay
 
+[TOC levels=1-4]
+
 Liferay provides a number of user authentication options. You can configure
 Liferay to connect to LDAP or NTLM servers so users from those environments can
 log in to your Liferay server. You can also configure Liferay to allow users to
@@ -222,7 +224,7 @@ You can also add your own mappings if you wish.
   click the *Test LDAP Users* button and Liferay will attempt to pull LDAP users
   and match them with their mappings as a preview.
 
-![Figure x: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
+![Figure 1: Testing LDAP Users](../../images/server-configuration-testing-ldap-users.jpg)
 
 **Groups:** This section contains settings for mapping LDAP groups to Liferay
 user groups.
@@ -265,7 +267,7 @@ user groups.
   classes are, use an LDAP browser tool such as *Jxplorer* to locate a group and
   view the Object Class attributes stored in LDAP for that group.
 
-![Figure x: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
+![Figure 2: Mapping LDAP Groups](../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you've set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
@@ -533,7 +535,7 @@ needs to do is accept the header attribute from Shibboleth and log the user in.
 The Shibboleth plugin adds a Shibboleth tab to the Authentication page of the
 Portal Settings section of the Control Panel.
 
-![Figure x: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rrar; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
+![Figure 3: You can enable/disable Shibboleth authentication for Liferay by navigating to the *Control Panel* &rarr; *Portal Settings* &rrar; *Authentication* &rarr; *Shibboleth*.](../../images/shibboleth.png)
 
 There are four configuration options:
 
@@ -598,7 +600,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
    Marketplace interface or manually. To confirm that the plugin was
    successfully deployed, look for the *SAML Admin* entry in the Control Panel.
 
-    ![Figure x: The SAML Admin entry appears as a sub-section of the Configuration section of the Control Panel.](../../images/saml-admin.png)
+    ![Figure 4: The SAML Admin entry appears as a sub-section of the Configuration section of the Control Panel.](../../images/saml-admin.png)
 
     To access the SAML Admin interface, click on *Admin* &rarr; *Control Panel*
     and then on *SAML Admin*. 
@@ -606,7 +608,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
 2. To begin configuring Liferay to use SAML, you need to select a SAML role
    for Liferay and you need to choose an entity ID.
 
-    ![Figure x: Select a SAML role for Liferay and enter an entity ID.](../../images/saml-initial-config.png)
+    ![Figure 5: Select a SAML role for Liferay and enter an entity ID.](../../images/saml-initial-config.png)
 
     The SAML role can be set to Identity Provider or Service Provider.
     Select the *Identity Provider* SAML role. A single Liferay instance can
@@ -662,7 +664,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
    you'd like to change any of the information saved in your keystore, including
    the password.
 
-    ![Figure x: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../images/saml-keystore-info.png)
+    ![Figure 6: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../images/saml-keystore-info.png)
 
     Also, notice that additional options appear in the SAML Admin Control Panel
     portlet. There are three tabs:

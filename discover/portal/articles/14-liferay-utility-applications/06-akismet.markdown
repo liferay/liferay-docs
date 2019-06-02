@@ -4,6 +4,8 @@ header-id: akismet
 
 # Akismet
 
+[TOC levels=1-4]
+
 Akismet is a web-based spam detection service. The Akismet app, available from
 Liferay Marketplace, integrates Liferay with Akismet to provide spam detection
 for Liferay's message boards, blogs, wikis, and comments. When you install the

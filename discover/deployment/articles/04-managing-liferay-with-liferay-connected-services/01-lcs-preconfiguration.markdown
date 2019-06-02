@@ -4,6 +4,8 @@ header-id: lcs-preconfiguration
 
 # LCS Preconfiguration
 
+[TOC levels=1-4]
+
 To take full advantage of Liferay Connected Services (LCS), you must first 
 register your server with LCS. Before doing so, however, there are a few things 
 you must take care of. The sections in this guide walk you through these steps: 

@@ -4,6 +4,8 @@ header-id: using-liferay-as-a-social-platform
 
 # Using Liferay as a social platform
 
+[TOC levels=1-4]
+
 Whether you plan to build a social network or enable social applications as part
 of your overall user experience, Liferay Portal has the tools to make those
 features work for you. Starting with a suite of applications--including a

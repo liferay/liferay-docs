@@ -4,6 +4,8 @@ header-id: web-content-management
 
 # Web Content Management
 
+[TOC levels=1-4]
+
 Liferay's Web Content Management system allows non-technical users to publish
 content to the web without having advanced knowledge of web technology or
 programming of any sort. Liferay WCM empowers you to publish your content with a

@@ -4,6 +4,8 @@ header-id: remotely-accessing-liferay-services
 
 # Remotely Accessing Liferay Services
 
+[TOC levels=1-4]
+
 Liferay includes a utility called the *Service Builder* which is used to
 generate all of the low level code for accessing resources from the portal
 database. This utility is further explained in the [*Liferay Developer Guide*](http://www.liferay.com/documentation/liferay-portal/6.2/development) and

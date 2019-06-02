@@ -4,6 +4,8 @@ header-id: scope
 
 # Scope
 
+[TOC levels=1-4]
+
 As we learned earlier, roles can be scoped by the portal, by a site, or by an
 organization. A role only takes effect within its scope. For example, a Message
 Boards Administrator role with complete access to the Message Boards portlet

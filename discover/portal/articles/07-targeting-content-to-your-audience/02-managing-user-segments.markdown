@@ -4,6 +4,8 @@ header-id: managing-user-segments
 
 # Managing User Segments
 
+[TOC levels=1-4]
+
 The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Control Panel allows you to manage user segments and
 campaigns.

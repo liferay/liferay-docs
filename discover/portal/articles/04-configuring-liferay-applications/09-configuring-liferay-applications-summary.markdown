@@ -4,6 +4,8 @@ header-id: summary-2
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we explored the configuration options available for Liferay
 applications. We showed how to customize your applications, export/import
 portlet data, take advantage of different scopes, and communicate between

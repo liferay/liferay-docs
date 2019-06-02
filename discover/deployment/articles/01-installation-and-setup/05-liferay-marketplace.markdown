@@ -4,6 +4,8 @@ header-id: liferay-marketplace
 
 # Liferay Marketplace
 
+[TOC levels=1-4]
+
 The Liferay Marketplace is an integral part of the Liferay Portal experience.
 Starting with Liferay Portal 6.2, the Marketplace plugin is required to be
 installed alongside Liferay Portal. The Marketplace plugin enables a host of

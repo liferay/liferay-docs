@@ -4,6 +4,8 @@ header-id: using-workflow-with-other-applications
 
 # Using workflow with other applications
 
+[TOC levels=1-4]
+
 Above we saw an example of using workflow with Liferay web content. The process
 is the same for all resources that are workflow-enabled. However, while
 configuring your resources to use workflow in the Default Configuration tab of

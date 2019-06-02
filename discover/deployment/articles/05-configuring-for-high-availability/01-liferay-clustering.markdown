@@ -4,6 +4,8 @@ header-id: liferay-clustering
 
 # Liferay Clustering
 
+[TOC levels=1-4]
+
 Liferay Portal is designed to serve everything from the smallest to the largest
 web sites. Out of the box, it's configured optimally for a single server
 environment. If one server isn't sufficient to serve the high traffic needs of

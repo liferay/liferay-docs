@@ -4,6 +4,8 @@ header-id: performance-tuning
 
 # Performance Tuning
 
+[TOC levels=1-4]
+
 Once you have your portal up and running, you may find a need to tune it for
 performance, especially if your site winds up generating more traffic than you'd
 anticipated. There are some definite steps you can take with regard to improving

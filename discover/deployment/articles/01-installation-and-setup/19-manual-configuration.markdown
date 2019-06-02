@@ -4,6 +4,8 @@ header-id: manual-configuration
 
 # Manual Configuration
 
+[TOC levels=1-4]
+
 You don't have to use the setup wizard to configure Liferay. The setup wizard
 behind the scenes creates a configuration file that you can create manually.
 Create a text file called `portal-ext.properties` in your Liferay Home folder.

@@ -4,6 +4,8 @@ header-id: permissions
 
 # Permissions
 
+[TOC levels=1-4]
+
 All of Liferay's portlets support Liferay's robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab
 of the portlet configuration dialog box. You can grant roles permission to add

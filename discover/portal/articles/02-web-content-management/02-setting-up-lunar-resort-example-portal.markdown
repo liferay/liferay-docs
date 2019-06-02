@@ -4,6 +4,8 @@ header-id: setting-up-the-lunar-resort-example-portal
 
 # Setting up the Lunar Resort Example Portal
 
+[TOC levels=1-4]
+
 Suppose that you've been assigned the task of building a web site for an
 innovative new company called Lunar Resort, Inc. You've decided to take
 advantage of Liferay Portal and its rapid deployment features as well as its

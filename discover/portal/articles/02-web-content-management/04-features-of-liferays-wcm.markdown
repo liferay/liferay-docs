@@ -4,6 +4,8 @@ header-id: features-of-liferays-wcm
 
 # Features of Liferay's WCM
 
+[TOC levels=1-4]
+
 Liferay's WCM offers a host of features that makes managing the content of your
 site easier:
 

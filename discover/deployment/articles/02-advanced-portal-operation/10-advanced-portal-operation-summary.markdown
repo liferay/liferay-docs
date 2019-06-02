@@ -4,6 +4,8 @@ header-id: summary-15
 
 # Summary
 
+[TOC levels=1-4]
+
 Liferay Portal is an easy environment to maintain. Backup procedures are simple
 and straightforward. Administrators have all the options they need to view and
 diagnose a running Liferay Portal server through its tunable logs. Patching

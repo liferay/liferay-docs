@@ -4,6 +4,8 @@ header-id: installing-liferay-on-mulesoft-tcat
 
 # Installing Liferay on Mulesoft Tcat
 
+[TOC levels=1-4]
+
 For this section, we will refer to your Tcat server's installation location as
 `[TCAT_HOME]`. If you don't already have an existing Tcat server, we
 recommend you download a Liferay/Tcat bundle from

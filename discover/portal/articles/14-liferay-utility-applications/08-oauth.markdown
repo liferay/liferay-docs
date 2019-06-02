@@ -4,6 +4,8 @@ header-id: oauth
 
 # OAuth
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay's OAuth utility authorizes third-party applications to interact with a

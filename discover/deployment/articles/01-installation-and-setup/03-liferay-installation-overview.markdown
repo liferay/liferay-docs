@@ -4,6 +4,8 @@ header-id: liferay-installation-overview
 
 # Liferay installation overview
 
+[TOC levels=1-4]
+
 Before we begin, it's important to go over the various facets of the
 installation. They are: 
 

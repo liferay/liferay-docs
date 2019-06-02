@@ -4,6 +4,8 @@ header-id: measuring-social-activity
 
 # Measuring Social Activity
 
+[TOC levels=1-4]
+
 When you have a lot of user interaction on your web site, it can be helpful to
 try to separate the signal from the noise. Liferay contains a lot of
 applications which end users can use to communicate with each other and provide

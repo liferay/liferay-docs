@@ -4,6 +4,8 @@ header-id: liferay-audience-targeting-rules
 
 # Liferay Audience Targeting Rules
 
+[TOC levels=1-4]
+
 Rules enable Audience Targeting administrators to define how users are
 classified into the user segments they create.
 

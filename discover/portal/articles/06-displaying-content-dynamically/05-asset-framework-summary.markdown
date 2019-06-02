@@ -4,6 +4,8 @@ header-id: summary-4
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we explored Liferay's asset framework. Any type of content in
 Liferay is considered an asset and can utilize the features provided by the
 asset framework: tags, categories, comments, ratings, and relationships. We

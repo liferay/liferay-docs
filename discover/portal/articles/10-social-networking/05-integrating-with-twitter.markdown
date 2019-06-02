@@ -4,6 +4,8 @@ header-id: integrating-with-twitter
 
 # Integrating with Twitter
 
+[TOC levels=1-4]
+
 Liferay Portal also provides integration with Twitter via the Twitter app on 
 [Liferay Marketplace](http://liferay.com/marketplace). Once you register your 
 Twitter username with the app, your tweets are shown in your Activities portlet 

@@ -4,6 +4,8 @@ header-id: leveraging-liferays-multi-site-capabilities
 
 # Leveraging Liferay's Multi-site Capabilities
 
+[TOC levels=1-4]
+
 As stated in the [Building a site with Liferay Web Content](/docs/6-2/user/-/knowledge_base/u/building-a-site-with-liferay-web-content)
 section, a site is a set of pages that can be used to publish content or
 applications. Sites can be independent or they can be associated with an

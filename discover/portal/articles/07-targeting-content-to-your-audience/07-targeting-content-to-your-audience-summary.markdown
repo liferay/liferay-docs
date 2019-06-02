@@ -4,6 +4,8 @@ header-id: summary-ct
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, you learned how to use Liferay's Audience Targeting app. This
 app allows you to define custom user segments, target specific content to
 different user segments, and create campaigns for different user segments.

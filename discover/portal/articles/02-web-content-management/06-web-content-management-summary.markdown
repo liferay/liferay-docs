@@ -4,6 +4,8 @@ header-id: summary-0
 
 # Summary
 
+[TOC levels=1-4]
+
 This chapter has provided an introduction to Liferay site management and web
 content management. We've learned how you can use Liferay to create multiple
 sites with different membership types. We've seen how easy it is to create and

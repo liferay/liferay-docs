@@ -4,6 +4,8 @@ header-id: creating-and-uploading-apps
 
 # Creating and Uploading Apps
 
+[TOC levels=1-4]
+
 Creating apps for the Liferay Marketplace is very easy and intuitive. To find
 out more information about creating your own Liferay apps, visit the 
 [Liferay Marketplace Developer Guide](/distribute) and

@@ -4,6 +4,8 @@ header-id: backing-up-a-liferay-installation
 
 # Backing up a Liferay Installation
 
+[TOC levels=1-4]
+
 Once you have an installation of Liferay Portal running, you'll want to have
 proper backup procedures in place in case of a catastrophic hardware failure of
 some kind. Liferay isn't very different from any other application that may be

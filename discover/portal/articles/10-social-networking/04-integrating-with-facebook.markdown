@@ -4,6 +4,8 @@ header-id: integrating-with-facebook
 
 # Integrating with Facebook
 
+[TOC levels=1-4]
+
 Facebook is currently the number one social network in the world with somewhere
 over 1 billion active users. If you're trying to build acommunity on your 
 portal, you don't want to neglect a bridge to that many possible users. With 

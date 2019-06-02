@@ -4,6 +4,8 @@ header-id: using-web-services-for-remote-portlets-wsrp
 
 # Using Web Services for Remote Portlets (WSRP)
 
+[TOC levels=1-4]
+
 The Web Services for Remote Portlets (WSRP) specification defines a web service
 interface for accessing and interacting with presentation-oriented web services
 in the form of portlets. What are presentation-oriented web services? These are

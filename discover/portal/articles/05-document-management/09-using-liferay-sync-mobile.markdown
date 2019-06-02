@@ -4,6 +4,8 @@ header-id: using-liferay-sync-on-your-mobile-device
 
 # Using Liferay Sync on Your Mobile Device
 
+[TOC levels=1-4]
+
 Liferay Sync for Android and iOS contains most of the
 [desktop Sync client](/docs/6-2/user/-/knowledge_base/u/using-liferay-sync-on-your-desktop)'s
 functionality. The mobile client can, however, only be connected to one portal

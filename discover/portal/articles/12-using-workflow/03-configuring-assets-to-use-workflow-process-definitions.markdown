@@ -4,6 +4,8 @@ header-id: configuring-assets-to-use-workflow-process-definitions
 
 # Configuring assets to use workflow process definitions
 
+[TOC levels=1-4]
+
 All your global workflow configuration can be done via the control panel.
 Everything you need to do in the portal can be done through simple GUI
 controls.

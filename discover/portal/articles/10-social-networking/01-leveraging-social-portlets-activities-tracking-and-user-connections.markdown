@@ -4,6 +4,8 @@ header-id: leveraging-social-portlets-activities-tracking-and-use
 
 # Leveraging Social Portlets, Activities Tracking, and User Connections
 
+[TOC levels=1-4]
+
 Liferay has many portlets available for social interaction and collaboration.
 Some of these portlets are designed to help you work together as a team, while
 others are designed to foster social interactions between team members at your

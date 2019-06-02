@@ -4,6 +4,8 @@ header-id: installing-liferay-on-tomcat-7
 
 # Installing Liferay on Tomcat 7
 
+[TOC levels=1-4]
+
 *Liferay Home* is one folder above Tomcat's install location.
 
 For this section, we will refer to your Tomcat server's installation location as

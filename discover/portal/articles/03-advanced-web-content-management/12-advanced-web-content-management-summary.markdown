@@ -4,6 +4,8 @@ header-id: summary-1
 
 # Summary
 
+[TOC levels=1-4]
+
 This chapter has been your guide to advanced Liferay site management and web
 content management. We've seen how you can use Liferay to manage both simple
 content and advanced content with structures and templates. We've also learned

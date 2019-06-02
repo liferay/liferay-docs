@@ -4,6 +4,8 @@ header-id: summary-11
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we introduced Liferay Marketplace, your one-stop shop for
 browsing and downloading Liferay-compatible applications. We looked at how to
 browse, purchase, download, and install apps. You can do this either through

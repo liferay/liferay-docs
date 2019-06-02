@@ -4,6 +4,8 @@ header-id: editions-of-liferay
 
 # Editions of Liferay
 
+[TOC levels=1-4]
+
 Liferay ships in two editions: one for the community and one for enterprise
 subscribers. The community edition is the same Liferay Portal that has been
 available for years: frequently updated and bursting with the latest features,

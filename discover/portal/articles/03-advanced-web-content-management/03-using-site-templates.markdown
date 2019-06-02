@@ -4,6 +4,8 @@ header-id: using-site-templates
 
 # Using Site Templates
 
+[TOC levels=1-4]
+
 Site Templates can be administered from the Control Panel. They allow portal
 administrators to create multiple sites with the same default set of pages and
 content. Site templates can contain multiple pages, each with its own theme,

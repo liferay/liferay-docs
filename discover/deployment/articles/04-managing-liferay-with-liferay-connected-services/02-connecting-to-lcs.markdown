@@ -4,6 +4,8 @@ header-id: connecting-to-lcs
 
 # Connecting to LCS
 
+[TOC levels=1-4]
+
 Follow these steps to connect your Liferay Portal server to LCS: 
 
 1.  Ensure that you've completed the 
@@ -46,7 +48,7 @@ Follow these steps to connect your Liferay Portal server to LCS:
     box that appears when you select *Show Blacklisted Properties*. Note that 
     [LCS doesn't access security sensitive properties](/docs/6-2/deploy/-/knowledge_base/d/using-lcs#what-lcs-stores-about-your-liferay-servers). 
 
-    ![Figure 3: An environment's Registration tab lets you manage the token file used to connect your server to the environment.](../../images/lcs-registration.png)
+    ![Figure 1: An environment's Registration tab lets you manage the token file used to connect your server to the environment.](../../images/lcs-registration.png)
 
 5.  What you do now depends on what you did in the previous step: 
 

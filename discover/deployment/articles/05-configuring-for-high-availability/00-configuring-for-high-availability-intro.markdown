@@ -4,6 +4,8 @@ header-id: configuring-liferay-for-high-availability
 
 # Configuring Liferay for High Availability
 
+[TOC levels=1-4]
+
 Liferay Portal is a robust, enterprise-ready portal solution. As such, it is
 fully ready to support mission-critical, enterprise applications in an
 environment configured for multiple redundancies and 24/7 uptimes. The product,

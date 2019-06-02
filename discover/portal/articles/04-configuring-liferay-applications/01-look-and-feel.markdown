@@ -4,6 +4,8 @@ header-id: look-and-feel
 
 # Look and Feel
 
+[TOC levels=1-4]
+
 An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the gear icon at the top right corner of the portlet and
 selecting *Look and Feel*. The location of the gear icon may vary, depending on

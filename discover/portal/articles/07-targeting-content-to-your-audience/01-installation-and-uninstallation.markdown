@@ -4,6 +4,8 @@ header-id: installation-and-uninstallation
 
 # Installation and Uninstallation
 
+[TOC levels=1-4]
+
 The easiest way to install the Audience Targeting app is via
 [Liferay Marketplace](http://www.liferay.com/marketplace). Make sure to install
 the correct version of the app. Choose

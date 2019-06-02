@@ -4,6 +4,8 @@ header-id: summary-10
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we examined several Liferay utility applications: the Bookmarks
 portlet, the Shopping portlet, the Software Catalog, the Reports and
 JasperReports applications, the Knowledge Base, the Akismet application, the

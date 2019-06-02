@@ -4,6 +4,8 @@ header-id: searching-for-content-in-liferay
 
 # Searching for Content in Liferay
 
+[TOC levels=1-4]
+
 To stay organized, I (RS) used to use a paper-based planner. It had different
 sections for various areas of my life. Its initial incarnation came from a
 commercial company, but over the years I tweaked it into something that worked

@@ -4,6 +4,8 @@ header-id: user-management
 
 # User Management
 
+[TOC levels=1-4]
+
 You know how all these retailers advertise themselves as a "one stop shop" for
 anything you want? The idea is they have so much stuff that chances are whatever
 you're looking for is there. Liferay's Control Panel is something like this. If

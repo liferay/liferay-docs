@@ -4,6 +4,8 @@ header-id: exporting-portal-applications-as-widgets-and-opensocia
 
 # Exporting Portal Applications as Widgets and OpenSocial Gadgets
 
+[TOC levels=1-4]
+
 OpenSocial is a framework designed for the creation of socially themed
 application programming interfaces (APIs). OpenSocial applications, called
 *gadgets*, can be used in any web-based application that supports them. They are

@@ -4,6 +4,8 @@ header-id: generating-reports-in-liferay
 
 # Generating Reports in Liferay
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay's Reports portlet allows administrators to create reports and schedule

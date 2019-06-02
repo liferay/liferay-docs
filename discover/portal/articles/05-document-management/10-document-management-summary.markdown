@@ -4,6 +4,8 @@ header-id: summary-3
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we examined Liferay's Documents and Media Library, a powerful
 and customizable virtual shared drive. Liferay 6.1 introduced the ability to
 mount multiple external repositories to the Documents and Media library. The

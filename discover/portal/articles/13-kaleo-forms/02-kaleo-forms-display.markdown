@@ -4,6 +4,8 @@ header-id: kaleo-forms-display
 
 # Kaleo Forms Display
 
+[TOC levels=1-4]
+
 The Kaleo Forms Display portlet makes use of the workflow processes that you
 create in the Kaleo Forms Admin portlet. Add the Kaleo Forms Display portlet to
 a page if you haven't done so yet. Any forms available for processing through

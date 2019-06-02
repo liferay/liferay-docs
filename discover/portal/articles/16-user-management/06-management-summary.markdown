@@ -4,6 +4,8 @@ header-id: summary-13
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we learned how to manage users, organizations, user groups, and
 roles via Liferay's Control Panel. Site memberships and teams aren't the only
 way for portal administrators to group and manage users: organizations can be

@@ -4,6 +4,8 @@ header-id: touring-liferay-portals-user-interface
 
 # Touring Liferay Portal's User Interface
 
+[TOC levels=1-4]
+
 Liferay Portal's user interface is designed to be simple and intuitive. Across
 the top is what's known as the *Dockbar*, a series of links that appear based on
 the permissions of the logged-in user. There are four sections in the Dockbar:

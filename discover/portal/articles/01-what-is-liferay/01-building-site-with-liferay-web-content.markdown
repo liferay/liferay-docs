@@ -4,6 +4,8 @@ header-id: building-a-site-with-liferay-web-content
 
 # Building a site with Liferay Web Content
 
+[TOC levels=1-4]
+
 When you log into Liferay and look at its default screen, one thing should jump
 out at you right away: it's built for all clients that access the web, not just
 desktop browsers. 

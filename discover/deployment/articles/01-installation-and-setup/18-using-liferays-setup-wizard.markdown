@@ -4,6 +4,8 @@ header-id: using-liferays-setup-wizard
 
 # Using Liferay's setup wizard
 
+[TOC levels=1-4]
+
 To make it easy to configure Liferay optimally for your use, the first thing you
 see when browsing to your newly installed Liferay bundle is a setup wizard. This
 gives you a convenient way to configure Liferay for your purposes. 

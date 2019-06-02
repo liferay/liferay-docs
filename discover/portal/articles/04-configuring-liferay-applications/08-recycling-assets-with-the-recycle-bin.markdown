@@ -4,6 +4,8 @@ header-id: recycling-assets-with-the-recycle-bin
 
 # Recycling Assets with the Recycle Bin
 
+[TOC levels=1-4]
+
 Have you ever had that life-altering experience where you deleted an important
 file and immediately regretted deleting it? The deed is usually followed by a
 palm to the forehead or a sick feeling. Good news! Liferay is here to turn that

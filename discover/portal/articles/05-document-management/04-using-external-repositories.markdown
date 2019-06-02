@@ -4,6 +4,8 @@ header-id: using-external-repositories
 
 # Using External Repositories
 
+[TOC levels=1-4]
+
 Liferay Portal's Documents and Media lets you access external repositories in
 addition to the built in document repository. Some of the features supported
 with third-party repositories include:

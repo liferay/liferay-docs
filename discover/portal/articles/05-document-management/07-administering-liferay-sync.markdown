@@ -4,6 +4,8 @@ header-id: administering-liferay-sync
 
 # Administering Liferay Sync
 
+[TOC levels=1-4]
+
 Liferay Sync is an add-on product for Liferay 6.2 CE and EE that synchronizes
 files between your Liferay server and users' desktop and mobile environments.
 With Liferay Sync, users can publish and access shared documents and files from

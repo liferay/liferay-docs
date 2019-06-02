@@ -4,6 +4,8 @@ header-id: export-import
 
 # Export/Import
 
+[TOC levels=1-4]
+
 <!-- This section needs to be tested against the new AlloyUI -->
 
 Some Liferay portlets allow you to export or import portlet data. These include

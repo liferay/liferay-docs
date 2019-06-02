@@ -4,6 +4,8 @@ header-id: kaleo-forms-admin
 
 # Kaleo Forms Admin
 
+[TOC levels=1-4]
+
 You can access Kaleo Forms Admin from the Dockbar by clicking
 *Admin* &rarr; *Site Administration* &rarr; *Content* and then clicking *Kaleo 
 Forms Admin*. The portlet then appears with a listing of the processes that 

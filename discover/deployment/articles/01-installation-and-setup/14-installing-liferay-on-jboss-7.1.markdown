@@ -4,6 +4,8 @@ header-id: installing-liferay-on-jboss-7-1
 
 # Installing Liferay on JBoss 7.1
 
+[TOC levels=1-4]
+
 **Liferay Home** is one folder above JBoss's install location.
 
 1. Download and install JBoss AS 7.1.x into your preferred directory. This

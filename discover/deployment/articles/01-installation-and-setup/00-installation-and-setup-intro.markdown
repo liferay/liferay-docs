@@ -4,6 +4,8 @@ header-id: installation-and-setup
 
 #  Installation and Setup
 
+[TOC levels=1-4]
+
 <div id="62-PDF" style="width:250px; float: left; text-align:center"><a href="https://dev.liferay.com/documents/10184/359510/using-liferay-portal-6.2.pdf">PDF</a></div>
 
 <div id="62-eBooks" style="width:250px; float: left; text-align:center"><a href="https://dev.liferay.com/documents/10184/359510/using-liferay-portal-62.azw3">Kindle</a> <a href="https://dev.liferay.com/documents/10184/359510/using-liferay-portal-62.epub">epub (iPad, Nook)</a></div>

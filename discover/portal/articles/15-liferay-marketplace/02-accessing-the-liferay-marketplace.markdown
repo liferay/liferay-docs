@@ -4,6 +4,8 @@ header-id: accessing-the-liferay-marketplace
 
 # Accessing the Liferay Marketplace
 
+[TOC levels=1-4]
+
 There are two ways to access the Marketplace.
 
 1. Via the website: Using your favorite browser, you can navigate to the

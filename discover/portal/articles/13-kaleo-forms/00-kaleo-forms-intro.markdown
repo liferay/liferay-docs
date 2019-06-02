@@ -4,6 +4,8 @@ header-id: kaleo-forms-defining-business-processes
 
 # Kaleo Forms: Defining Business Processes
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 In the last chapter, you saw the elements that comprise a workflow

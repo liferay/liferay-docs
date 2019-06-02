@@ -4,6 +4,8 @@ header-id: simulating-user-segments-and-campaigns
 
 # Simulating User Segments and Campaigns
 
+[TOC levels=1-4]
+
 The Audience Targeting app includes a simulator feature. The Audience Targeting
 Simulator allows administrators to preview the way portal pages appear to
 different users. It does so by allowing site administrators to modify the

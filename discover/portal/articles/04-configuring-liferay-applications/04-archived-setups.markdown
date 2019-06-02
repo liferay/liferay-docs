@@ -4,6 +4,8 @@ header-id: archived-setups
 
 # Archived Setups
 
+[TOC levels=1-4]
+
 Once you've configured a portlet, Archived Setups enables you to save those
 settings in an "archive". If someone goes in and changes the settings of a
 particular portlet, it then becomes easy to revert those changes back to the

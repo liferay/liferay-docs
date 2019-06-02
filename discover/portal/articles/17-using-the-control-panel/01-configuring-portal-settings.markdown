@@ -4,6 +4,8 @@ header-id: configuring-portal-settings
 
 # Configuring Portal Settings
 
+[TOC levels=1-4]
+
 Most global portal settings can be configured from the Portal Settings section
 of the Control Panel. The Configuration heading contains the following links:
 

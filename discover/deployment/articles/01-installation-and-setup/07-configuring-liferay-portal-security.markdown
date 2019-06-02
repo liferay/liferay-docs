@@ -4,6 +4,8 @@ header-id: configuring-liferay-portal-security
 
 # Configuring Liferay Portal Security
 
+[TOC levels=1-4]
+
 As you probably know, Liferay Marketplace is an online store for obtaining
 applications that run on the Liferay Portal platform. These applications are
 provided not only by Liferay, but also by partners and independent developers

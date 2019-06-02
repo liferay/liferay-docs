@@ -4,6 +4,8 @@ header-id: understanding-liferays-releases
 
 # Understanding Liferay's Releases
 
+[TOC levels=1-4]
+
 Which version of Liferay should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version
 available. If you want to understand how Liferay releases work, read on.

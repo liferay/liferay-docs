@@ -4,6 +4,8 @@ header-id: make-it-pretty-creating-custom-displays
 
 # Make it Pretty: Creating Custom Displays
 
+[TOC levels=1-4]
+
 When creating custom lists and data definitions, you can control not only how
 the input form appears to your users but also how the list itself displays.
 Eventually you may realize you need to create another sign-up sheet but you

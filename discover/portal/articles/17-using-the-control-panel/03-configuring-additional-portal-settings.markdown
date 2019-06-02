@@ -4,6 +4,8 @@ header-id: configuring-additional-portal-settings
 
 # Configuring Additional Portal Settings
 
+[TOC levels=1-4]
+
 Go back to the Control Panel, and click on *Portal Settings* under the
 *Configuration* heading. We've already looked at the options available from the
 *General* and *Authentication* links. Now let's examine the other portal

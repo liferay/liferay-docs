@@ -4,6 +4,8 @@ header-id: find-out-what-others-think-or-do-using-polls
 
 # Find out what others think or do using Polls
 
+[TOC levels=1-4]
+
 How well do you know your users? Do you ever wonder what they're thinking? Is
 using your site easy for them? How do they feel about the hot-button issues of
 the day? Do they prefer dogs over cats? What about the new policy that

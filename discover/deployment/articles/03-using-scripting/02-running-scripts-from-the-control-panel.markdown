@@ -4,6 +4,8 @@ header-id: running-scripts-from-the-control-panel
 
 # Running Scripts from the Control Panel
 
+[TOC levels=1-4]
+
 To see a very simple example of the script console in action, log into the
 portal as an administrator and navigate to the *Control Panel* &rarr; *Server
 Administration* &rarr; *Script*. Change the script type to Groovy and replace

@@ -4,6 +4,8 @@ header-id: targeting-content-to-your-audience
 
 # Targeting Content To Your Audience
 
+[TOC levels=1-4]
+
 Liferay's Audience Targeting app allows you to divide your audience into user
 segments, target specific content to different user segments, and create
 campaigns for different user segments. It also allows you to quickly measure the

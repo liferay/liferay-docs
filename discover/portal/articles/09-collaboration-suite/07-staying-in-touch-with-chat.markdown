@@ -4,6 +4,8 @@ header-id: staying-in-touch-with-the-chat
 
 # Staying in touch with Chat and Meetings
 
+[TOC levels=1-4]
+
 Liferay's Chat and Meetings apps let you stay in contact and collaborate with 
 other users. The Chat portlet lets you send instant messages to other logged-in 
 users. The Meetings app integrates with the BigBlueButton and Zoom web 

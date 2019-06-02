@@ -4,6 +4,8 @@ header-id: content-delivery-network
 
 # Content Delivery Network
 
+[TOC levels=1-4]
+
 A Content Delivery Network (CDN) is an interconnected system of servers deployed
 in multiple data centers that use geographical proximity as a criteria to
 deliver content across the Internet. For more information on CDNs and their

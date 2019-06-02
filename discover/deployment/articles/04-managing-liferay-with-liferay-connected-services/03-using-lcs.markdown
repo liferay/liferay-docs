@@ -4,6 +4,8 @@ header-id: using-lcs
 
 # Using LCS
 
+[TOC levels=1-4]
+
 Once your Liferay Portal server is connected to LCS, you can get down to the 
 business that LCS is designed for--managing and monitoring your servers. If 
 you're not already there, log in with your account on 
@@ -422,7 +424,7 @@ that you need their assistance.
 Lastly, the *Server Settings* tab lets you view and edit your server's name, 
 location, and description. You can also unregister your server from LCS. 
 
-![Figure 13: You can use the Server Settings tab to give your server a fun name.](../../images/lcs-server-settings.png)
+![Figure 1: You can use the Server Settings tab to give your server a fun name.](../../images/lcs-server-settings.png)
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 

@@ -4,6 +4,8 @@ header-id: summary-14
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we examined how to configure Liferay's portal settings. We
 looked at the different authentication options provided by Liferay. You can
 configure Liferay so that users can authenticate via LDAP, CAS, Facebook, NTLM,

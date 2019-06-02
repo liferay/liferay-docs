@@ -4,6 +4,8 @@ header-id: expressing-yourself-using-blogs
 
 # Expressing Yourself Using Blogs
 
+[TOC levels=1-4]
+
 The word *Blog* is an apostrophe-less contraction of the two words *web* and
 *log*. Blogs were first popularized by web sites such as
 [Slashdot](http://slashdot.org), which have the format of a running list of

@@ -4,6 +4,8 @@ header-id: liferays-database
 
 # Liferay's database
 
+[TOC levels=1-4]
+
 The recommended way of setting up your Liferay database also happens to be the
 simplest. Liferay Portal takes care of just about everything. The only thing you
 need to do is create a blank database encoded for character set UTF-8. The

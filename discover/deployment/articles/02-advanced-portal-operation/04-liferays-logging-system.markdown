@@ -4,6 +4,8 @@ header-id: liferays-logging-system
 
 # Liferay's Logging System
 
+[TOC levels=1-4]
+
 Liferay's logging system uses Log4j extensively to implement logging for nearly
 every class in the portal. If you need to debug something specific while the
 system is running, you can use the control panel to set logging levels by class

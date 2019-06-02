@@ -4,6 +4,8 @@ header-id: summary-16
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we saw how Liferay's script engine opens up many exciting
 possibilities for working with Liferay. You can write and execute scripts from
 Liferay's Script console in the Control Panel using in a variety of languages

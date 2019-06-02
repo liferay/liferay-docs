@@ -4,6 +4,8 @@ header-id: summary-7
 
 # Summary
 
+[TOC levels=1-4]
+
 <!-- | TODO: This is too thin. Please use the headings to summarize what the
 chapter was about. | -->
 

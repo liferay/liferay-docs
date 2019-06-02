@@ -4,6 +4,8 @@ header-id: custom-java-tools-in-the-script-engine
 
 # Custom Java Tools in the Script Engine
 
+[TOC levels=1-4]
+
 Users of the Script Engine face several challenges, including debugging and
 logging challenges. One approach to overcome these challenges is to develop
 custom Java utilities that can be called from your scripts. These utilities can

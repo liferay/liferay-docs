@@ -4,6 +4,8 @@ header-id: advanced-portal-operation
 
 # Advanced Portal Operation
 
+[TOC levels=1-4]
+
 In this chapter, you'll find several advanced features of Liferay Portal,
 including portal maintenance, backup, and logging. You'll also learn how to
 access Liferay's web services remotely. It's generally not much more complicated

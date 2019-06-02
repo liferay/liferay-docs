@@ -4,6 +4,8 @@ header-id: communication
 
 # Communication
 
+[TOC levels=1-4]
+
 Liferay implements several communication mechanisms across portlets including
 those specified by the JSR-286 standard: public render parameters and events.
 Public render parameters are easy to use and can be quite powerful. Some

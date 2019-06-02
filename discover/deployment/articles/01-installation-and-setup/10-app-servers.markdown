@@ -4,6 +4,8 @@ header-id: app-servers
 
 # App Servers
 
+[TOC levels=1-4]
+
 When it comes time to install Liferay Portal on your server, you'll find it's
 easiest to do this by starting with a bundle. But many organizations can't do
 that. There may be an existing infrastructure into which you're installing

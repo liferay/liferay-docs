@@ -4,6 +4,8 @@ header-id: page-customizations
 
 # Page Customizations
 
+[TOC levels=1-4]
+
 Liferay 6.1 introduced the concept of page customizations. Administrators can
 designate pages or sections of pages to be customizable. When a user visits such
 a page, a notification appears stating that the user can customize the page.

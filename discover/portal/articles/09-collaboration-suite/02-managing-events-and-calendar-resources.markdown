@@ -4,6 +4,8 @@ header-id: managing-events-and-calendar-resources-with-liferays-c
 
 # Managing Events and Calendar Resources with Liferay's Calendar Portlet
 
+[TOC levels=1-4]
+
 As of Liferay 6.2, Liferay no longer includes the core Calendar portlet that was
 included in Liferay 6.1 and previous versions. Instead, Liferay provides a new
 Calendar portlet on Liferay Marketplace. The new Calendar portlet upgrades

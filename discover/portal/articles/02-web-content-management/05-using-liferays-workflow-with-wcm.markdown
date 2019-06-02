@@ -4,6 +4,8 @@ header-id: using-liferays-workflow-with-wcm
 
 # Using Liferay's Workflow with WCM
 
+[TOC levels=1-4]
+
 Workflow is essentially a predetermined sequence of connected steps. In Liferay
 WCM, workflow is designed to manage the creation, modification and publication
 of web content. You can set up a workflow so content can't be published without

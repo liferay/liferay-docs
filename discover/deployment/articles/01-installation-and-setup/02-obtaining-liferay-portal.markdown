@@ -4,6 +4,8 @@ header-id: obtaining-liferay-portal
 
 # Obtaining Liferay Portal
 
+[TOC levels=1-4]
+
 The Liferay community can download Liferay Portal from our web site at
 [http://www.liferay.com](http://www.liferay.com). Click the *Downloads* link at
 the top of the page, and you'll see multiple options for getting a copy of

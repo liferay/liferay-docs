@@ -4,6 +4,8 @@ header-id: using-the-audience-targeting-applications
 
 # Using the Audience Targeting Applications
 
+[TOC levels=1-4]
+
 The Audience Targeting app not only adds the Audience Targeting application to
 the Site Administration area of the Control Panel, it also includes the
 following instanceable applications which can be added to any portal page:

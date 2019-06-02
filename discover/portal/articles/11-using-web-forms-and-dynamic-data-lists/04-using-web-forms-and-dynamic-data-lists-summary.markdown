@@ -4,6 +4,8 @@ header-id: summary-8
 
 # Summary
 
+[TOC levels=1-4]
+
 Our `list.it` experience is now much more enjoyable than when we first signed
 up. As new Listies, we had no idea how to define our own data types for our
 lists, let alone how to create a list. You can now be the envy of your

@@ -4,6 +4,8 @@ header-id: creating-data-lists
 
 # Creating Data Lists
 
+[TOC levels=1-4]
+
 Building out new lists really isn't all that different from creating new pieces
 of web content. Just as you can create new Web Content Structures to control the
 input of a particular type of web content, you can use Data List Definitions to

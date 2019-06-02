@@ -4,6 +4,8 @@ header-id: using-scripting-for-advanced-flexibility
 
 # Using Scripting for Advanced Flexibility
 
+[TOC levels=1-4]
+
 Liferay provides a robust script engine that can be used to interpret scripts in
 Beanshell, Javascript, Groovy, Python, and Ruby. The script engine came out of
 Liferay's involvement with the [Romulus project](http://www.ict-romulus.eu). It

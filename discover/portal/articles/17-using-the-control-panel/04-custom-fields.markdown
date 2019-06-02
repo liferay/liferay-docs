@@ -4,6 +4,8 @@ header-id: custom-fields
 
 # Custom Fields
 
+[TOC levels=1-4]
+
 Custom fields appear beneath Portal Settings under the Configuration heading of
 the Control Panel. Custom fields are a way to add attributes to many types of
 assets and resources in the portal. For example, if you're using Liferay Portal

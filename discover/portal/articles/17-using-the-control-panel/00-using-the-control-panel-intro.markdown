@@ -4,6 +4,8 @@ header-id: using-the-control-panel
 
 # Using the Control Panel
 
+[TOC levels=1-4]
+
 In the previous chapter, we learned how to use the Control Panel for user
 management. We learned how to manage users, organizations, user group, roles,
 and password policies. We also learned about user monitoring. In this chapter,
