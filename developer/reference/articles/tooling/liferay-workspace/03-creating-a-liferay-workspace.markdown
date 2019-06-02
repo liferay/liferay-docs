@@ -68,7 +68,7 @@ You can also create a Maven-based workspace with Blade CLI. See the
 6.  Select the specific target platform version corresponding to the GA release
     you're developing for (e.g., 7.1.0 &rarr; 7.1 GA1). For more information on
     target platform benefits, see the
-    [Managing the Target Platform](/docs/reference/7-2/-/knowledge_base/reference/managing-the-target-platform)
+    [Managing the Target Platform](/docs/7-2/reference/-/knowledge_base/reference/managing-the-target-platform)
     articles.
 
 7.  Check the *Download Liferay bundle* checkbox if you'd like to auto-generate
@@ -106,7 +106,7 @@ A dialog appears prompting you to open the Liferay Workspace perspective. Click
     ![Figure 3: Choose *Liferay Gradle Workspace* or *Liferay Maven Workspace*, depending on the build you prefer.](../../../images/intellij-workspace-build.png)
 
 4.  Specify your workspace's name, location, intended @product@ version,
-    [target platform](/docs/reference/7-2/-/knowledge_base/reference/managing-the-target-platform-for-liferay-workspace),
+    [target platform](/docs/7-2/reference/-/knowledge_base/reference/managing-the-target-platform-for-liferay-workspace),
     and SDK (i.e., Java JDK). Then click *Finish*.
 
     ![Figure 4: Specify your workspace's configurations.](../../../images/intellij-workspace-project.png)

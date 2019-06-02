@@ -9,7 +9,7 @@ header-id: managing-message-boards
 Message boards can become unwieldy if left unmanaged. The Message Boards in Site 
 Administration facilitates day-to-day thread administration. You may wish to 
 assign this function to a 
-[Role](/discover/portal/-/knowledge_base/7-2/roles-and-permissions) 
+[Role](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions) 
 that you give to one or more users. This frees you to concentrate on other areas 
 of your Site. For example, you can create a Role called 
 *Message Board Administrator* scoped to the portal (globally), an Organization,

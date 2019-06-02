@@ -87,7 +87,7 @@ This section lets you connect to @product@'s built-in data source.
 
 | **Important:** If you haven't created a database for @product@, create one 
 | now following
-| [database preparation instructions](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#database-preparation)
+| [database preparation instructions](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#preparing-a-database)
 | in the preceding article. 
 
 HSQL is selected as the default database, but it's primarily for demonstration
@@ -95,7 +95,7 @@ or trial purposes.
 
 Click the *Change* link if you want to use @product@'s built-in data source and
 configure it to use the
-[database you created earlier](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#database-preparation). 
+[database you created earlier](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#preparing-a-database). 
 
 The database configuration section also has an *Add Sample Data* checkbox for
 adding sample data to your database. This data includes Users, Sites, and
@@ -107,7 +107,7 @@ checkbox unselected.
 | **Warning:** HSQL should not be used in production @product@ instances. 
 | Configure @product@ to use a different database; specify that database via the
 | Basic Configuration page here or using portal properties. See
-| [Database Preparation](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#database-preparation)
+| [Database Preparation](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#preparing-a-database)
 | for details.
 
 Once you've filled out the Basic Configuration form, click *Finish

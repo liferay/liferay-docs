@@ -10,6 +10,11 @@ After you've created your
 [themelet](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator), 
 follow the steps below to install it into your theme.
 
+| **Note:** Gulp is included as a local dependency in generated themes, so you 
+| are not required to install it. It can be accessed by running 
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+| root folder.
+
 1.  Navigate to your theme's root folder and run `gulp extend`.
 
 2.  Choose *Themelet* as the theme asset to extend.

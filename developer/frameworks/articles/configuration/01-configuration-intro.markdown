@@ -28,7 +28,7 @@ developing an interface for your users to select configuration options.
 | and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
 | *System Settings*). In the Other category, click the *Message display
 | configuration* entry.
-| 
+|
 | Add the *Blade Message Portlet* to a page to test your configuration choices.
 
 Complete these three high level tasks to integrate your application with the
@@ -92,7 +92,10 @@ configuration scopes:
 **Configuration UIs** : When you create a configuration interface of any sort,
 a UI is generated for you in *System Settings*. If your configuration is scoped
 to `COMPANY`, `GROUP`, or `PORTLET_INSTANCE`, an additional UI is generated in
-*Instance Settings*.
+*Instance Settings*. Note that while `GROUP` and `PORTLET_INSTANCE`
+configurations appear in the Instance Settings UI, they can only be used to set
+defaults for the current instance. No corresponding UI is auto-generated to
+configure the app at the Site or Portlet level.
 
 |Note: An Instance Settings UI is not currently generated for factory
 |configurations. You can track the progress of this issue

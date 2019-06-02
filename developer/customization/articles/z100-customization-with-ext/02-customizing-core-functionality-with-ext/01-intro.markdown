@@ -43,13 +43,13 @@ more about what the core encompasses in the
 [Finding Core @product@ Artifacts](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies#finding-core-liferay-portal-artifacts)
 article section. In this section, you'll learn how to
 
-- [Create an Ext plugin](/docs/7-2/reference/-/knowledge_base/r/creating-an-ext-plugin)
-- [Develop an Ext plugin](/docs/7-2/reference/-/knowledge_base/r/developing-an-ext-plugin)
-- [Deploy an Ext plugin](/docs/7-2/reference/-/knowledge_base/r/deploying-an-ext-plugin)
-- [Redeploy an Ext plugin](/docs/7-2/reference/-/knowledge_base/r/redeploying-an-ext-plugin)
+- [Create an Ext plugin](/docs/7-2/customization/-/knowledge_base/c/creating-an-ext-plugin)
+- [Develop an Ext plugin](/docs/7-2/customization/-/knowledge_base/c/developing-an-ext-plugin)
+- [Deploy an Ext plugin](/docs/7-2/customization/-/knowledge_base/c/deploying-an-ext-plugin)
+- [Redeploy an Ext plugin](/docs/7-2/customization/-/knowledge_base/c/redeploying-an-ext-plugin)
 
 You can also dive into the
-[Anatomy of an Ext Plugin](/docs/7-2/reference/-/knowledge_base/r/anatomy-of-an-ext-plugin)
+[Anatomy of an Ext Plugin](/docs/7-2/customization/-/knowledge_base/c/anatomy-of-an-ext-plugin)
 to familiarize yourself with its structure.
 
 You'll start by creating an Ext plugin.

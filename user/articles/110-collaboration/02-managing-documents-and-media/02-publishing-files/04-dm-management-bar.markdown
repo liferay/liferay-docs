@@ -33,7 +33,7 @@ the selected view type:
 card-like rendering of the item. If the item isn't an image, a generic image for 
 the item's type is displayed. For files, each card also contains the file's 
 suffix (e.g., JPG, PNG, etc.), timestamp, name, and 
-[workflow](/discover/portal/-/knowledge_base/7-2/workflow) 
+[workflow](/docs/7-2/user/-/knowledge_base/u/workflow) 
 status (e.g., Approved, Draft, etc.). 
 
 **List** (![List](../../../../images/icon-view-type-list.png)): Shows the same 
@@ -113,4 +113,4 @@ The Actions button
 (![Actions](../../../../images/icon-actions.png)) 
 contains all the actions displayed in the Management Bar, plus actions for file 
 checkin and checkout. File checkout and checkin is explained in 
-[Checking out and Editing Files](/discover/portal/-/knowledge_base/7-2/checking-out-and-editing-files). 
+[Checking out and Editing Files](/docs/7-2/user/-/knowledge_base/u/checking-out-and-editing-files). 

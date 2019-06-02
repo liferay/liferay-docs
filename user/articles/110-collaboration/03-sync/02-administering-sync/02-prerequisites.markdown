@@ -13,7 +13,7 @@ across the instance or on a site-by-site basis. Note that Sync is enabled by
 default for all Sites. 
 
 For instructions on installing Marketplace apps, see 
-[the Liferay Marketplace documentation](/discover/portal/-/knowledge_base/7-2/using-the-liferay-marketplace). 
+[the Liferay Marketplace documentation](/docs/7-2/user/-/knowledge_base/u/using-the-liferay-marketplace). 
 
 | **Note:** The Liferay Sync Security module that Sync requires is included and 
 | enabled by default in @product@. You can verify this by ensuring that the 
