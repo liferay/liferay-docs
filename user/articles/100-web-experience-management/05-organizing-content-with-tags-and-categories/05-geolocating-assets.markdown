@@ -17,7 +17,7 @@ Let's examine how you can enable geolocation in your web content.
 ## Geolocating Web Content
 
 To use geolocation in your web content, you must create a 
-[structure and template](/docs/7-1/user/-/knowledge_base/u/designing-uniform-content)
+[structure and template](/docs/7-2/user/-/knowledge_base/u/designing-uniform-content)
 that includes a Geolocation field. 
 
 ![Figure 1: Add a geolocation field to your structure to enable geolocation in your web content.](../../../images/geo-structure.png)
@@ -52,7 +52,8 @@ the location is added as metadata to the web content.
 To use geolocation in your dynamic data lists, you must first create a data
 definition that includes a geolocation field.
 
-1.  Open the *Menu* and navigate to *Content* &rarr; *Dynamic Data Lists*. 
+1.  Open the Product Menu and navigate to *Content & Data* &rarr;
+    *Dynamic Data Lists*. 
 
 2.  Click the *Options* menu and select *Manage Data Definitions*.
 
@@ -65,8 +66,7 @@ definition that includes a geolocation field.
     with any other fields you wish to add and *Save*.
 
 6.  Go back to the Dynamic Data Lists screen and click the *Add* button 
-    (![add](../../../images/icon-add.png)) to 
-    create a new list.
+    (![add](../../../images/icon-add.png)) to create a new list.
 
 7.  Enter a name and optional description.
 
@@ -74,7 +74,7 @@ definition that includes a geolocation field.
     definition.
 
 Now that your data list is complete, you can use the 
-[Data List Display portlet](/docs/7-1/user/-/knowledge_base/u/creating-data-lists) 
+[Data List Display portlet](/docs/7-2/user/-/knowledge_base/u/creating-data-lists) 
 to display it.
 
 ## Geolocating Documents and Media
@@ -84,7 +84,8 @@ type that includes geolocation metadata. You can add geolocation metadata as
 part of a Metadata Set or as part of the new document type. To add geolocation
 metadata as part of a Metadata Set:
 
-1.  Open the *Menu* and navigate to *Content* &rarr; *Documents and Media*. Open the *Options* () menu, and select *Metadata Sets*.
+1.  Open the Product Menu and navigate to *Content & Data* &rarr; *Documents and
+    Media*. Open the *Options* menu, and select *Metadata Sets*.
 
 2.  Click the *Add* (![add](../../../images/icon-add.png)) button and enter
     a name, optional description, and Parent Metadata Set if you have one.
@@ -115,10 +116,11 @@ To create the new document type with geolocation:
     content, your location is automatically obtained from the browser and added 
     to your document.
 
-Once your assets are geolocation enabled, you can use the [Asset Publisher](/docs/7-1/user/-/knowledge_base/u/publishing-assets) 
+Once your assets are geolocation enabled, you can use the
+[Asset Publisher](/docs/7-2/user/-/knowledge_base/u/publishing-assets) 
 to display the location of the assets on a map, using the map display template.
-Check out the [Configuring Display Settings](/docs/7-1/user/-/knowledge_base/u/configuring-display-settings)
+Check out the
+[Configuring Display Settings](/docs/7-2/user/-/knowledge_base/u/configuring-display-settings)
 section to learn more.
 
 ![Figure 5: The Asset Publisher can display your geolocated assets on a map.](../../../images/geo-map.png)
-

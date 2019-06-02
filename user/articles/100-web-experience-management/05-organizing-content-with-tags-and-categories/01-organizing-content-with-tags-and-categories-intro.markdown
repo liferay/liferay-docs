@@ -21,7 +21,7 @@ if no categories have been created), the *Select* option doesn't appear.
 | for web content. This field is not related to categories and tags, but rather,
 | specifies the order in which the web content article is listed when displayed in
 | the Asset Publisher. To learn more about the Asset Publisher, see the
-| [Publishing Assets](/docs/7-1/user/-/knowledge_base/u/publishing-assets)
+| [Publishing Assets](/docs/7-2/user/-/knowledge_base/u/publishing-assets)
 | section.
 
 The Menu (![Menu](../../../images/icon-menu.png)) contains interfaces for

@@ -9,8 +9,8 @@ header-id: targeted-vocabularies
 You can decide which vocabularies can be applied to an asset type and which
 vocabularies are required for an asset type with Targeted Vocabularies. To
 configure these settings, go to the Categories application in Site
-Administration and select a vocabulary's *Actions* icon. Select the *Associated
-Asset Types* tab to reveal a dialog box like the one below.
+Administration and select a vocabulary's *Actions* &rarr; *Edit* button. Select
+the *Associated Asset Types* tab to reveal a dialog box like the one below.
 
 ![Figure 1: You can target vocabularies by checking the *Allow Multiple Categories* selector and then selecting the Asset Types.](../../../images/targeted-vocabularies.png)
 

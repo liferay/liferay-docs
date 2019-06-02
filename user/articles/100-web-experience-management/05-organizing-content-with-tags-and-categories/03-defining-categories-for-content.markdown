@@ -57,8 +57,8 @@ assets they have permission to create or edit. To create a new category:
 
 If you're already viewing a vocabulary:
 
-1.  Select the *Actions* button (![Actions](../../../images/icon-actions.png)) next to an existing 
-    vocabulary and select *Add Category*.
+1.  Select the *Actions* button (![Actions](../../../images/icon-actions.png))
+    next to an existing vocabulary and select *Add Category*.
 
 2.  Enter a name for the new category and, optionally, a description.
 
@@ -78,10 +78,10 @@ a child category to the selected parent.
 After you've created a hierarchy of categories, they're available to apply to
 content: 
 
-1.  Click on *Web Content* in the Content section of Site Administration and
-    click *Add* &rarr; *Basic Web Content*. 
+1.  Click on *Web Content* in the *Content & Data* section of Site
+    Administration and click *Add* &rarr; *Basic Web Content*. 
  
-2.  Click on *Categorization* from the right-side menu and click *Select* on the
+2.  Click on *Metadata* from the right-side menu and click *Select* on the
     vocabulary you'd like to apply. A dialog box appears with your categories.
  
 3.  Select relevant categories by checking the box next to them, and they'll
@@ -94,8 +94,8 @@ so too does the web content articles you're required to manage. You've decided
 to categorize your web content based on the color and type of firework, so the
 articles are easier to manage.
 
-1.  Go to Site Administration &rarr; *Content* &rarr; *Categories* and create 
-    vocabularies *Type* and *Color*.
+1.  Go to Site Administration &rarr; *Categorization* &rarr; *Categories* and
+    create vocabularies *Type* and *Color*.
 
 2.  Make sure both vocabularies are only used for web content articles by 
     clicking the *Associated Asset Types* dropdown and selecting *Web Content 
@@ -104,9 +104,10 @@ articles are easier to manage.
 3.  Create categories *Fire* and *Smoke* for the Type vocabulary and *Red*, 
     *Yellow*, and *Blue* categories for the Color vocabulary.
 
-4.  Now navigate to *Content* &rarr; *Web Content* in Site Administration and 
-    create an article called *Red Rocket*. This is your best selling product, so
-    make sure to give it a detailed explanation and an awesome picture.
+4.  Now navigate to *Content & Data* &rarr; *Web Content* in Site Administration
+    and create an article called *Red Rocket*. This is your best selling
+    product, so make sure to give it a detailed explanation and an awesome
+    picture.
 
 5.  Select the *Metadata* dropdown for your web content article and select the 
     Type &rarr; Fire and Color &rarr; Red categories.

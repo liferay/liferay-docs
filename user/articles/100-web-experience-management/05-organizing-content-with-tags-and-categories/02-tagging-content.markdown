@@ -21,13 +21,13 @@ Only site administrators can access the *Tags* application in the Content
 section of the Site Administration area of the Menu. Here, site administrators
 can create new tags and edit any existing site tags: 
 
-1.  Go to the site you want to create tags for and click *Content* &rarr;
+1.  Go to the site you want to create tags for and click *Categorization* &rarr;
     *Tags*.
  
     From this screen, you can view existing tags and create new ones.
 
-2.  To create a new tag, click the *Add Tag* icon (![Add
-    Tag](../../../images/icon-add.png)) and enter a name for the tag.
+2.  To create a new tag, click the *Add Tag* icon
+    (![Add Tag](../../../images/icon-add.png)) and enter a name for the tag.
 
 ![Figure 1: The Add Tag interface is very simple, only requiring the name of your tag.](../../../images/new-tag-interface.png)
 
