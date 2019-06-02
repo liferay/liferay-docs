@@ -9,17 +9,21 @@ application as a WAR. To create a Liferay Spring MVC portlet via the command
 line using Blade CLI or Maven, use one of the commands with the following
 parameters:
 
-    blade create -t spring-mvc-portlet [-p packageName] [-c className] projectName
+```bash
+blade create -t spring-mvc-portlet [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.spring.mvc.portlet \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.spring.mvc.portlet \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -30,20 +34,24 @@ with a package name of `com.liferay.docs.springmvcportlet` and a class name of
 `MySpringMvcPortlet`. Also, you'd like to create a Spring-annotated portlet
 class named `MySpringMvcPortletViewController`.
 
-    blade create -t spring-mvc-portlet -p com.liferay.docs.springmvcportlet -c MySpringMvcPortlet my-spring-mvc-portlet-project
+```bash
+blade create -t spring-mvc-portlet -p com.liferay.docs.springmvcportlet -c MySpringMvcPortlet my-spring-mvc-portlet-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.spring.mvc.portlet \
-        -DgroupId=com.liferay \
-        -DartifactId=my-spring-mvc-portlet-project \
-        -Dpackage=com.liferay.docs.springmvcportlet \
-        -Dversion=1.0 \
-        -DclassName=MySpringMvcPortlet \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.spring.mvc.portlet \
+    -DgroupId=com.liferay \
+    -DartifactId=my-spring-mvc-portlet-project \
+    -Dpackage=com.liferay.docs.springmvcportlet \
+    -Dversion=1.0 \
+    -DclassName=MySpringMvcPortlet \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure looks
 like this:
@@ -94,5 +102,5 @@ Gradle-specific files, but otherwise, appears exactly the same.
 The generated WAR is a working application and is deployable to a @product@
 instance. To build upon the generated app, modify the project by adding logic
 and additional files to the folders outlined above. You can visit the
-[springmvc-portlet](/docs/7-0/reference/-/knowledge_base/r/spring-mvc-portlet)
+[springmvc-portlet](/docs/7-1/reference/-/knowledge_base/r/spring-mvc-portlet)
 sample project for a more expanded sample of a Spring MVC portlet.

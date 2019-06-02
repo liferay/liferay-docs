@@ -8,17 +8,21 @@ In this article, you'll learn how to create a Liferay social bookmark as a
 Liferay module. To create a social bookmark as a module via the command line
 using Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t social-bookmark [-p packageName] [-c className] projectName
+```bash
+blade create -t social-bookmark [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.social.bookmark \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.social.bookmark \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -28,20 +32,24 @@ create a social bookmark project called `my-social-bookmark-project` with a
 package name of `com.liferay.docs.socialbookmark` and a class name of
 `TestSocialBookmark`. You could run the following command to accomplish this:
 
-    blade create -t social-bookmark -p com.liferay.docs.socialbookmark -c Test my-social-bookmark-project
+```bash
+blade create -t social-bookmark -p com.liferay.docs.socialbookmark -c Test my-social-bookmark-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.social.bookmark \
-        -DgroupId=com.liferay \
-        -DartifactId=my-social-bookmark-project \
-        -Dpackage=com.liferay.docs.socialbookmark \
-        -Dversion=1.0 \
-        -DclassName=Test \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.social.bookmark \
+    -DgroupId=com.liferay \
+    -DartifactId=my-social-bookmark-project \
+    -Dpackage=com.liferay.docs.socialbookmark \
+    -Dversion=1.0 \
+    -DclassName=Test \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure looks
 like this:
@@ -81,7 +89,7 @@ bookmark named *Test* that searches the current URL using Google Search.
 To build upon the generated app, modify the project by adding logic and
 additional files to the folders outlined above. For more information on
 developing social bookmarks, see the
-[Social API](/docs/7-1/tutorials/-/knowledge_base/t/social-api) section of
+[Social API](/docs/7-2/frameworks/-/knowledge_base/f/social-api) section of
 tutorials. For information on configuring social bookmarks for the Blogs widget,
-see the [Displaying Blogs](/docs/7-1/user/-/knowledge_base/u/displaying-blogs)
+see the [Displaying Blogs](/docs/7-2/user/-/knowledge_base/u/displaying-blogs)
 article.

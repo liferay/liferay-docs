@@ -8,17 +8,21 @@ In this article, you'll learn how to create a Liferay WAR hook project. To
 create a Liferay WAR hook via the command line using Blade CLI or Maven, use one
 of the commands with the following parameters:
 
+```bash
     blade create -t war-hook [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.war.hook \
-        -DartifactId=[projectName]
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.war.hook \
+    -DartifactId=[projectName]
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -28,19 +32,23 @@ a WAR hook project called `my-war-hook-project` with a package name of
 `com.liferay.docs` and a class name of `MyWarHook`. You could run the following
 command to accomplish this:
 
-    blade create -t war-hook -p com.liferay.docs -c MyWarHook my-war-hook-project
+```bash
+blade create -t war-hook -p com.liferay.docs -c MyWarHook my-war-hook-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.war.hook \
-        -DgroupId=com.liferay \
-        -DartifactId=my-war-hook-project \
-        -Dpackage=com.liferay.docs \
-        -DclassName=MyWarHook \
-        -Dversion=1.0 \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.war.hook \
+    -DgroupId=com.liferay \
+    -DartifactId=my-war-hook-project \
+    -Dpackage=com.liferay.docs \
+    -DclassName=MyWarHook \
+    -Dversion=1.0 \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's folder structure looks
 like this: 
@@ -74,7 +82,7 @@ To build upon the generated project, modify the project by adding logic and
 additional files to the folders outlined above. Deploying WAR hooks is
 supported for @product-ver@, however, it is recommended to optimize your WAR
 hooks to fragments or other applicable module projects. You can visit the
-[Customizing](/docs/7-0/tutorials/-/knowledge_base/t/customizing) section for
+[Liferay Customization](/docs/7-2/customization/-/knowledge_base/c/liferay-customization) section for
 info on how to do this for many project types. See the
 [Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 section for more information on WAR hooks.

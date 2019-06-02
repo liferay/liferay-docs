@@ -8,15 +8,19 @@ In this article, you'll learn how to create a Liferay WAR core Ext project. To
 create a WAR core Ext project via the command line using Blade CLI or Maven, use
 one of the commands with the following parameters:
 
-    blade create -t war-core-ext projectName
+```bash
+blade create -t war-core-ext projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.war.core.ext \
-        -DartifactId=[projectName] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.war.core.ext \
+    -DartifactId=[projectName] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -25,16 +29,20 @@ The template for this kind of project is `war-core-ext`. Suppose you want to
 create a WAR core Ext project called `my-war-core-ext-project`. You could run
 the following command to accomplish this:
 
-    blade create -t war-core-ext my-war-core-ext-project
+```bash
+blade create -t war-core-ext my-war-core-ext-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.war.core-ext \
-        -DgroupId=com.liferay \
-        -DartifactId=my-war-core-ext-project \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.war.core-ext \
+    -DgroupId=com.liferay \
+    -DartifactId=my-war-core-ext-project \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's folder structure looks
 like this: 
@@ -96,5 +104,5 @@ To build upon the generated project, modify the project by adding logic and
 additional files to the folders outlined above. Deploying WAR Ext projects is
 only supported for limited use cases; it is recommended to leverage provided
 extension points offered in @product@. You can visit the
-[Customizing Core Functionality with Ext](/docs/7-1/reference/-/knowledge_base/r/customizing-core-functionality-with-ext)
+[Customization with Ext](/docs/7-2/customization/-/knowledge_base/c/customization-with-ext)
 section for info on how to do this.

@@ -8,16 +8,20 @@ In this article, you'll learn how to create a Liferay MVC portlet project as a
 WAR file. To create a Liferay MVC portlet project as a WAR via the command line
 using Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t war-mvc-portlet [-p packageName] projectName
+```bash
+blade create -t war-mvc-portlet [-p packageName] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.war.mvc.portlet \
-        -DartifactId=[projectName]
-        -Dpackage=[packageName] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.war.mvc.portlet \
+    -DartifactId=[projectName]
+    -Dpackage=[packageName] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -27,18 +31,22 @@ create a WAR MVC portlet project called `my-war-mvc-portlet-project` with a
 package name of `com.liferay.docs.war.mvc` and a class name of
 `MyWarMvcPortlet`. You could run the following command to accomplish this:
 
-    blade create -t war-mvc-portlet -p com.liferay.docs.war.mvc my-war-mvc-portlet-project
+```bash
+blade create -t war-mvc-portlet -p com.liferay.docs.war.mvc my-war-mvc-portlet-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.war.mvc.portlet \
-        -DgroupId=com.liferay \
-        -DartifactId=my-war-mvc-portlet-project \
-        -Dpackage=com.liferay.docs.war.mvc \
-        -Dversion=1.0 \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.war.mvc.portlet \
+    -DgroupId=com.liferay \
+    -DartifactId=my-war-mvc-portlet-project \
+    -Dpackage=com.liferay.docs.war.mvc \
+    -Dversion=1.0 \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's folder structure looks
 like this: 
@@ -84,5 +92,5 @@ To build upon the generated project, modify the project by adding logic and
 additional files to the folders outlined above. Deploying WAR MVC portlets is
 supported for @product-ver@, however, it is recommended to optimize your WAR
 portlet to a module project, if possible. You can visit the
-[From Liferay Portal 6 to 7](/docs/7-0/tutorials/-/knowledge_base/t/from-liferay-6-to-liferay-7)
+[From Liferay Portal 6 to 7](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver)
 section for info on how to do this.

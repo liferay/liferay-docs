@@ -9,17 +9,21 @@ packaged in a Liferay module. To create a Liferay RESTful web service via the
 command line using Blade CLI or Maven, use one of the commands with the
 following parameters:
 
-    blade create -t rest [-p packageName] [-c className] projectName
+```bash
+blade create -t rest [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.rest \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.rest \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -29,20 +33,24 @@ RESTful web service project called `my-rest-project` with a package name of
 `com.liferay.docs.application` and a class name prefix of `Rest`. You could run
 one of the following commands to accomplish this:
 
-    blade create -t rest -p com.liferay.docs -c Rest my-rest-project
+```bash
+blade create -t rest -p com.liferay.docs -c Rest my-rest-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.rest \
-        -DgroupId=com.liferay \
-        -DartifactId=my-rest-project \
-        -Dpackage=com.liferay.docs \
-        -Dversion=1.0 \
-        -DclassName=Rest \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.rest \
+    -DgroupId=com.liferay \
+    -DartifactId=my-rest-project \
+    -Dpackage=com.liferay.docs \
+    -Dversion=1.0 \
+    -DclassName=Rest \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure looks
 like this:
@@ -68,14 +76,6 @@ like this:
 The Maven-generated project includes a `pom.xml` file and does not include the
 Gradle-specific files, but otherwise, appears exactly the same.
 
-| **Note:** This project template depends on the `org.osgi.service.jaxrs` package,
-| but this is not an included dependency in the `7.1.0` BOM leveraged in the
-| [target platform](/docs/7-1/tutorials/-/knowledge_base/t/managing-the-target-platform-for-liferay-workspace).
-| feature. This means that a project generated with this template won't correctly
-| resolve if you're pointing to the `7.1.0` target platform version.
-| 
-| The `7.1.1` target platform version has been updated with this dependency.
-
-The generated module is a working RESTful web service and is deployable to a @product@
-instance. To build upon the generated app, modify the project by adding logic
-and additional files to the folders outlined above.
+The generated module is a working RESTful web service and is deployable to a
+@product@ instance. To build upon the generated app, modify the project by
+adding logic and additional files to the folders outlined above.

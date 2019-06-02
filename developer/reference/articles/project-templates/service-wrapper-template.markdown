@@ -8,18 +8,22 @@ In this article, you'll learn how to create a Liferay service wrapper as a
 Liferay module. To create a Liferay service wrapper via the command line using
 Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t service-wrapper [-p packageName] [-c className] [-s serviceWrapperClass] projectName
+```bash
+blade create -t service-wrapper [-p packageName] [-c className] [-s serviceWrapperClass] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.service.wrapper \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DserviceWrapperClass=[serviceWrapperClass] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.service.wrapper \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DserviceWrapperClass=[serviceWrapperClass] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -32,21 +36,25 @@ create a service wrapper project called `service-override` with a package name o
 `com.liferay.portal.service.UserLocalServiceWrapper` class. You could run the
 following command to accomplish this:
 
-    blade create -t service-wrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.kernel.service.UserLocalServiceWrapper service-override
+```bash
+blade create -t service-wrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.kernel.service.UserLocalServiceWrapper service-override
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.service.wrapper \
-        -DgroupId=com.liferay \
-        -DartifactId=service-override \
-        -Dpackage=com.liferay.docs.serviceoverride \
-        -Dversion=1.0 \
-        -DclassName=UserLocalServiceOverride \
-        -DserviceWrapperClass=com.liferay.portal.kernel.service.UserLocalServiceWrapper \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.service.wrapper \
+    -DgroupId=com.liferay \
+    -DartifactId=service-override \
+    -Dpackage=com.liferay.docs.serviceoverride \
+    -Dversion=1.0 \
+    -DclassName=UserLocalServiceOverride \
+    -DserviceWrapperClass=com.liferay.portal.kernel.service.UserLocalServiceWrapper \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 Here, *service* means an OSGi service, not a Liferay API. Another way to say
 *service type* is to say *component type*.

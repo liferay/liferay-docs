@@ -9,17 +9,21 @@ contributor as a Liferay module. To create a portlet toolbar contributor entry
 via the command line using Blade CLI or Maven, use one of the commands with the
 following parameters:
 
-    blade create -t portlet-toolbar-contributor [-p packageName] [-c className] projectName
+```bash
+blade create -t portlet-toolbar-contributor [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.portlet.toolbar.contributor \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.portlet.toolbar.contributor \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -31,20 +35,24 @@ you want to create a portlet toolbar contributor project called
 `SamplePortletToolbarContributor`. You could run the following command to
 accomplish this:
 
-    blade create -t portlet-toolbar-contributor -p com.liferay.docs -c Sample my-portlet-toolbar-contributor
+```bash
+blade create -t portlet-toolbar-contributor -p com.liferay.docs -c Sample my-portlet-toolbar-contributor
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.portlet.toolbar.contributor \
-        -DgroupId=com.liferay \
-        -DartifactId=my-portlet-toolbar-contributor \
-        -Dpackage=com.liferay.docs \
-        -Dversion=1.0 \
-        -DclassName=Sample \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.portlet.toolbar.contributor \
+    -DgroupId=com.liferay \
+    -DartifactId=my-portlet-toolbar-contributor \
+    -Dpackage=com.liferay.docs \
+    -Dversion=1.0 \
+    -DclassName=Sample \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure would
 look like this
