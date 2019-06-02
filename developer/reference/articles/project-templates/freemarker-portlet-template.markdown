@@ -9,17 +9,21 @@ application as a Liferay module. To create a Liferay FreeMarker portlet
 application via the command line using Blade CLI or Maven, use one of the
 commands with the following parameters:
 
-    blade create -t freemarker-portlet [-p packageName] [-c className] projectName
+```bash
+blade create -t freemarker-portlet [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.freemarker.portlet \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.freemarker.portlet \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -33,20 +37,24 @@ with a package name of `com.liferay.docs.freemarkerportlet` and a class name of
 means an OSGi service, not a Liferay API. Another way to say *service type* is
 to say *component type*. You could run the following command to accomplish this:
 
-    blade create -t freemarker-portlet -p com.liferay.docs.freemarkerportlet -c MyFreemarkerPortlet my-freemarker-portlet-project
+```bash
+blade create -t freemarker-portlet -p com.liferay.docs.freemarkerportlet -c MyFreemarkerPortlet my-freemarker-portlet-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.freemarker.portlet \
-        -DgroupId=com.liferay \
-        -DartifactId=my-freemarker-portlet-project \
-        -Dpackage=com.liferay.docs.freemarkerportlet \
-        -Dversion=1.0 \
-        -DclassName=MyFreemarkerPortlet \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.freemarker.portlet \
+    -DgroupId=com.liferay \
+    -DartifactId=my-freemarker-portlet-project \
+    -Dpackage=com.liferay.docs.freemarkerportlet \
+    -Dversion=1.0 \
+    -DclassName=MyFreemarkerPortlet \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure looks
 like this:

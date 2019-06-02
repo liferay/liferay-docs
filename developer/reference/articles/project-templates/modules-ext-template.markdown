@@ -8,18 +8,22 @@ In this article, you'll learn how to create an Ext module. To create an Ext
 module via the command line using Blade CLI or Maven, use one of the commands
 with the following parameters:
 
-    blade create -t modules-ext [-p packageName] [-m originalModuleName] [-M originalModuleVersion] projectName
+```bash
+blade create -t modules-ext [-p packageName] [-m originalModuleName] [-M originalModuleVersion] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.modules.ext \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DoriginalModuleName=[originalModuleName] \
-        -DoriginalModuleVersion=[originalModuleVersion] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.modules.ext \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DoriginalModuleName=[originalModuleName] \
+    -DoriginalModuleVersion=[originalModuleVersion] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -33,18 +37,22 @@ Also, the override module has a package path of `com.liferay.docs.test`. You
 must use the exact path of the original module when creating an Ext module. You
 could run the following command to accomplish this: 
 
-    blade create -t modules-ext -p com.liferay.docs.test -m com.liferay.test.web -M 1.0.0 my-ext-module-project
+```bash
+blade create -t modules-ext -p com.liferay.docs.test -m com.liferay.test.web -M 1.0.0 my-ext-module-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.modules.ext \
-        -DartifactId=my-ext-module-project \
-        -Dpackage=com.liferay.docs.test \
-        -DoriginalModuleName=com.liferay.test.web \
-        -DoriginalModuleVersion=1.0.0 \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.modules.ext \
+    -DartifactId=my-ext-module-project \
+    -Dpackage=com.liferay.docs.test \
+    -DoriginalModuleName=com.liferay.test.web \
+    -DoriginalModuleVersion=1.0.0 \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure looks
 like this:

@@ -9,17 +9,21 @@ a Liferay module. To create a Liferay panel app and category via the command
 line using Blade CLI or Maven, use one of the commands with the following
 parameters:
 
-    blade create -t panel-app [-p packageName] [-c className] projectName
+```bash
+blade create -t panel-app [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.panel.app \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.panel.app \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -29,20 +33,24 @@ a panel app project called `my-panel-app-project` with a package name prefix of
 `com.liferay.docs` and a class name prefix of `Sample`. You could run the
 following command to accomplish this:
 
-    blade create -t panel-app -p com.liferay.docs -c Sample my-panel-app-project
+```bash
+blade create -t panel-app -p com.liferay.docs -c Sample my-panel-app-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.panel.app \
-        -DgroupId=com.liferay \
-        -DartifactId=my-panel-app-project \
-        -Dpackage=com.liferay.docs \
-        -Dversion=1.0 \
-        -DclassName=Sample \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.panel.app \
+    -DgroupId=com.liferay \
+    -DartifactId=my-panel-app-project \
+    -Dpackage=com.liferay.docs \
+    -Dversion=1.0 \
+    -DclassName=Sample \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure would
 look like this
@@ -82,5 +90,5 @@ The generated module is functional and is deployable to a @product@ instance.
 The generated module, by default, creates a panel category with a panel app in
 @product@'s Product Menu. To build upon the generated app, modify the project by
 adding logic and additional files to the folders outlined above. You can visit
-the [Customizing the Product Menu](/docs/7-0/tutorials/-/knowledge_base/t/customizing-the-product-menu)
+the [Customizing the Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
 tutorial for instructions on customizing a panel app project.

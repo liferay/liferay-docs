@@ -8,17 +8,21 @@ In this article, you'll learn how to create a Liferay Control Menu entry as a
 Liferay module. To create a Liferay Control Menu entry via the command line
 using Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t control-menu-entry [-p packageName] [-c className] projectName
+```bash
+blade create -t control-menu-entry [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.control.menu.entry \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.control.menu.entry \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -29,20 +33,24 @@ a package name of `com.liferay.docs.entry.control.menu` and a class name of
 `SampleProductNavigationControlMenuEntry`. You could run the following command
 to accomplish this:
 
-    blade create -t control-menu-entry -p com.liferay.docs.entry -c Sample my-control-menu-entry-project
+```bash
+blade create -t control-menu-entry -p com.liferay.docs.entry -c Sample my-control-menu-entry-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.control.menu.entry \
-        -DgroupId=com.liferay \
-        -DartifactId=my-control-menu-entry-project \
-        -Dpackage=com.liferay.docs.entry \
-        -Dversion=1.0 \
-        -DclassName=Sample \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.control.menu.entry \
+    -DgroupId=com.liferay \
+    -DartifactId=my-control-menu-entry-project \
+    -Dpackage=com.liferay.docs.entry \
+    -Dversion=1.0 \
+    -DclassName=Sample \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure would
 look like this:
@@ -70,8 +78,8 @@ Gradle-specific files, but otherwise, appears exactly the same.
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
-[control-menu-entry](/docs/7-0/reference/-/knowledge_base/r/control-menu-entry)
+[control-menu-entry](/docs/7-1/reference/-/knowledge_base/r/control-menu-entry)
 sample project for a more expanded sample of a Control Menu entry. Likewise, see
 the
-[Customizing the Control Menu](/docs/7-0/tutorials/-/knowledge_base/t/customizing-the-control-menu)
+[Customizing the Control Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-control-menu)
 tutorial for instructions on customizing a Control Menu entry project.

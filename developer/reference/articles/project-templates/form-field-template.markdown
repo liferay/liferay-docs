@@ -8,17 +8,21 @@ In this article, you'll learn how to create a Liferay form field as a Liferay
 module. To create a Liferay form field via the command line using Blade CLI or
 Maven, use one of the commands with the following parameters:
 
-    blade create -t form-field [-p packageName] [-c className] projectName
+```bash
+blade create -t form-field [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.form.field \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.form.field \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -28,20 +32,24 @@ create a form field project called `my-form-field-project` with a package name
 of `com.liferay.docs.form.field` and a class name prefix of `MyFormField`. You
 could run one of the following commands to accomplish this:
 
-    blade create -t form-field -p com.liferay.docs -c MyFormField my-form-field-project
+```bash
+blade create -t form-field -p com.liferay.docs -c MyFormField my-form-field-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.form.field \
-        -DgroupId=com.liferay \
-        -DartifactId=my-form-field-project \
-        -Dpackage=com.liferay.docs \
-        -Dversion=1.0 \
-        -DclassName=MyFormField \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.form.field \
+    -DgroupId=com.liferay \
+    -DartifactId=my-form-field-project \
+    -Dpackage=com.liferay.docs \
+    -Dversion=1.0 \
+    -DclassName=MyFormField \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure looks
 like this:

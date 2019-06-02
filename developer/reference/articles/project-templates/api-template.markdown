@@ -8,17 +8,21 @@ In this tutorial, you'll learn how to create a Liferay API as a Liferay module.
 To create a Liferay API via the command line using Blade CLI or Maven, use one
 of the commands with the following parameters:
 
-    blade create -t api [-p packageName] [-c className] projectName
+```bash
+blade create -t api [-p packageName] [-c className] projectName
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.api \
-        -DartifactId=[projectName] \
-        -Dpackage=[packageName] \
-        -DclassName=[className] \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.api \
+    -DartifactId=[projectName] \
+    -Dpackage=[packageName] \
+    -DclassName=[className] \
+    -DliferayVersion=7.2
+```
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -29,20 +33,24 @@ want to create an API project called `my-api-project` with a package name of
 `com.liferay.docs.api` and a class name of `MyApi`. You could run the following
 command to accomplish this:
 
-    blade create -t api -p com.liferay.docs -c MyApi my-api-project
+```bash
+blade create -t api -p com.liferay.docs -c MyApi my-api-project
+```
 
 or
 
-    mvn archetype:generate \
-        -DarchetypeGroupId=com.liferay \
-        -DarchetypeArtifactId=com.liferay.project.templates.api \
-        -DgroupId=com.liferay \
-        -DartifactId=my-api-project \
-        -Dpackage=com.liferay.docs \
-        -Dversion=1.0 \
-        -DclassName=MyApi \
-        -Dauthor=Joe Bloggs \
-        -DliferayVersion=7.1
+```bash
+mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.api \
+    -DgroupId=com.liferay \
+    -DartifactId=my-api-project \
+    -Dpackage=com.liferay.docs \
+    -Dversion=1.0 \
+    -DclassName=MyApi \
+    -Dauthor=Joe Bloggs \
+    -DliferayVersion=7.2
+```
 
 After running the Blade command above, your project's directory structure looks
 like this:
