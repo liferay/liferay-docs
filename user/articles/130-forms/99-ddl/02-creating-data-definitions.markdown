@@ -11,7 +11,7 @@ Follow these steps to create a data definition:
 1.  Open the Menu 
     (![Menu](../../../images/icon-menu.png)) 
     and expand your site's menu (the Site Administration menu). Then select 
-    *Content* &rarr; *Dynamic Data Lists*. This opens the Dynamic Data Lists 
+    *Content & Data* &rarr; *Dynamic Data Lists*. This opens the Dynamic Data Lists 
     screen. A table lists any existing dynamic data lists. 
 
 2.  Click the *Options* button at the top-right 
@@ -60,10 +60,9 @@ Follow these steps to create a data definition:
     other side. To add a field type to the definition, select its icon, drag,
     and drop it onto the canvas. By dragging a field onto a field that's already
     on the canvas, you can nest the new field in the existing field. When you
-    mouse over a field on the canvas, the field action icons 
-    (![Icons](../../../images/icon-ddl-actions.png)) 
-    appear. Clicking the *+* icon creates a duplicate of the current field and
-    adds it below the current field. Clicking the trash can deletes the field. 
+    mouse over a field on the canvas, the field action icons appear. Clicking
+    the *+* icon creates a duplicate of the current field and adds it below the
+    current field. Clicking the trash can deletes the field. 
 
     The following fields are available:
 

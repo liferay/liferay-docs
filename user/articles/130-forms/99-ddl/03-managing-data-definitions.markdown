@@ -12,16 +12,15 @@ templates, copy it, or delete it.
 
 Follow these steps to access your data definitions: 
 
-1.  Open the Menu 
-    (![Menu](../../../images/icon-menu.png)) 
-    and expand your site's menu (the Site Administration menu). Then select 
-    *Content* &rarr; *Dynamic Data Lists*. This opens the Dynamic Data Lists 
-    screen. A table lists any existing dynamic data lists. 
+1.  Open the Menu (![Menu](../../../images/icon-menu.png)) and expand your
+    site's menu (the Site Administration menu). Then select *Content & Data*
+    &rarr; *Dynamic Data Lists*. This opens the Dynamic Data Lists screen. A
+    table lists any existing dynamic data lists. 
 
-2.  Click the *Options* button at the top-right 
-    (![Options](../../../images/icon-options.png)) 
-    and select *Manage Data Definitions*. The Data Definitions screen appears.
-    A table lists the data definitions. 
+2.  Click the *Options* button at the top-right
+    (![Options](../../../images/icon-options.png)) and select *Manage Data
+    Definitions*. The Data Definitions screen appears.  A table lists the data
+    definitions. 
 
 ![Figure 1: You can copy an existing data definition, manage its templates, and more.](../../../images/ddl-definitions-actions.png)
 
@@ -31,13 +30,13 @@ for each definition:
 
 **Edit:** Edit the data definition. The edit screen uses the same form 
 for 
-[creating data definitions](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions). 
+[creating data definitions](/docs/7-2/user/-/knowledge_base/u/creating-data-definitions). 
 Note that if you edit a data definition referenced elsewhere (e.g., by
 a dynamic data list or display template), then you must update that reference. 
 
 **Manage Templates:** The *Manage Templates* screen creates and manages
 templates for the data definition. For details, see 
-[Using Templates to Display Forms and Lists](/docs/7-1/user/-/knowledge_base/u/using-templates-to-display-forms-and-lists). 
+[Using Templates to Display Forms and Lists](/docs/7-2/user/-/knowledge_base/u/using-templates-to-display-forms-and-lists). 
 
 **Permissions:** Configure the data definition's permissions. Note that 
 these permissions are for an individual definition accessed through the

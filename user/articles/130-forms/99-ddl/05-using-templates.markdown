@@ -25,7 +25,7 @@ choose a list's template in the Dynamic Data Lists Display widget.
 Since Display and Form Templates correspond to a particular data definition,
 they're accessed from the Data Definitions screen of the Dynamic Data Lists
 application in Site Administration. See the 
-[Creating Data Definitions article](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions) 
+[Creating Data Definitions article](/docs/7-2/user/-/knowledge_base/u/creating-data-definitions) 
 for instructions on accessing this screen. 
 
 The Data Definitions screen lists each definition in a table. To start working 

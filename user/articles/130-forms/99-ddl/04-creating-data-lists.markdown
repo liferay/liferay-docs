@@ -8,13 +8,12 @@ header-id: creating-data-lists
 
 There are two places to create dynamic data lists: 
 
-1.  **Site Administration:** Open the Menu 
-    (![Menu](../../../images/icon-menu.png)) 
-    and expand your Site's menu (the Site Administration menu). Then select 
-    *Content* &rarr; *Dynamic Data Lists*. This opens the Dynamic Data Lists 
-    screen. A table contains any existing lists. Click the *Add* button 
-    (![Add](../../../images/icon-add.png)) 
-    to open *New List* form. 
+1.  **Site Administration:** Open the Menu
+    (![Menu](../../../images/icon-menu.png)) and expand your Site's menu (the
+    Site Administration menu). Then select *Content & Data* &rarr; *Dynamic
+    Data Lists*. This opens the Dynamic Data Lists screen. A table contains any
+    existing lists. Click the *Add* button
+    (![Add](../../../images/icon-add.png)) to open *New List* form. 
 
     To add Dynamic Data Lists, you must have permission to access the Dynamic
     Data Lists app in Site Administration. 
@@ -48,7 +47,7 @@ Either option leads to the New List form:
 By default, only administrators have permission to create list records. Follow 
 these steps to give other users this permission: 
 
-1.  Navigate to *Content* &rarr; *Dynamic Data Lists* in Site Administration. 
+1.  Navigate to *Content & Data* &rarr; *Dynamic Data Lists* in Site Administration. 
 
 2.  Click *Actions* 
     (![Actions](../../../images/icon-actions.png)) &rarr; *Permissions* for the
@@ -61,7 +60,7 @@ these steps to give other users this permission:
 Create new records in a list from the same places you can create the lists
 themselves: 
 
-1.  **Site Administration:** In Site Administration, navigate to *Content* 
+1.  **Site Administration:** In Site Administration, navigate to *Content & Data* 
     &rarr; *Dynamic Data Lists*. Click a list in the table to view any existing 
     records, then click the *Add* button 
     (![Add](../../../images/icon-add.png)). 
