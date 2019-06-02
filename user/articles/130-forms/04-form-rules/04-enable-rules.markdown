@@ -30,8 +30,7 @@ Use an enable/disable rule to make a field editable based on one or more conditi
 |     - If the *Would you like to use the provided dog food?* field is equal to
 |       *Yes*, enable the *Amount (US lb.)* field.
 | 
-|     ![Figure 1: Build form rules quickly by defining your conditions and
-|     actions.](../../../images/forms-enable-rule.png)
+|     ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-enable-rule.png)
 | 
 |     - Save the rule.
 | 

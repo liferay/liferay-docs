@@ -24,8 +24,7 @@ Use a require rule to make a field required based on one or more conditions.
 |      - If the *I am 18 years old or older* field is equal to *No*, show the
 |        *Legal Guardian Email Address* field and make it required.
 | 
-|     ![Figure 1: Build form rules quickly by defining your conditions and
-|     actions.](../../../images/forms-require-rule.png)
+|     ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-require-rule.png)
 | 
 |      - Save the rule.
 | 
