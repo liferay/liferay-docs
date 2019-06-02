@@ -6,13 +6,11 @@ header-id: form-rules
 
 [TOC levels=1-4]
 
-What's the difference between a chicken and a dog? Among other things, you can't
-train a chicken, while dogs are quite trainable. If you're skeptical, try
-teaching your chicken to sit on command or herd sheep. Better yet, get a team of
-chickens to pull a sled in the [Iditarod](http://iditarod.com). The Forms
-application is much more like the dog than the useful (southwestern omelet
-anyone?) but untrainable chicken, and it's only getting more trainable as time
-passes. 
+Chickens don't follow rules well, but dogs do. If you're skeptical, try teaching
+your chicken to sit on command or herd sheep. Better yet, get a team of chickens
+to pull a sled in the [Iditarod](http://iditarod.com). The Forms application is
+much more like the dog than the useful (southwestern omelet anyone?) but
+untrainable chicken, and it's only getting more trainable as time passes. 
 
 Form rules are a good example of the trainable nature of the Forms application.
 With form rules, you can train your form fields to behave as you wish. There are
@@ -32,7 +30,7 @@ Jump to Page
 page. 
 
 Autofill with Data Provider 
-: Use a [data provider](/docs/7-1/user/-/knowledge_base/u/data-providers)
+: Use a [data provider](/docs/7-2/user/-/knowledge_base/u/data-providers)
 to populate fields when a condition is met in another field.
 
 Calculate
@@ -43,7 +41,7 @@ Form rules are for changing fields and form elements by acting on conditions.
 *If [condition] do [action].*
 
 If you're not already familiar with the Forms application, start
-[here](/docs/7-1/user/-/knowledge_base/u/forms). Once you know how to create
+[here](/docs/7-2/user/-/knowledge_base/u/forms). Once you know how to create
 forms, add and configure fields, and then publish forms, come back here and
 learn about form rules.
 
