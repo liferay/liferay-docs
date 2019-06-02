@@ -25,7 +25,7 @@ them. You can recycle several different types of assets:
 To demonstrate using the Recycle Bin let's delete a web content article and 
 then restore it. You'll run through two different methods of restoring the file.
 
-1.  Go to Site Administration and select *Content* &rarr; *Web Content*.
+1.  Go to Site Administration and select *Content & Data* &rarr; *Web Content*.
 
 2.  Select the *Add* button (![Add Web Content](../../../images/icon-add.png))
     and click *Basic Web Content*.
@@ -85,3 +85,4 @@ removed from its original location and transferred to the Recycle Bin.
 
 ![Figure 3: A quick and easy way of disposing your items is the drag and drop method.](../../../images/recycle-bin-drag.png)
 
+Awesome! You now know how to use the Recycle Bin!

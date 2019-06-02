@@ -18,7 +18,7 @@ First, you'll configure the Recycle Bin for site-specific scoping.
 1.  Choose the Site you'd like configure for the Recycle Bin from the Site 
     Administration menu.
 
-2.  Click *Configuration* &rarr; *Site Settings*.
+2.  Click *Configuration* &rarr; *Settings*.
 
 3.  Next, select the top *Advanced* tab and click *Recycle Bin*. You'll notice 
     a few configurable options.
@@ -61,7 +61,7 @@ for all sites in the portal (default is *true*).
 held before being permanently deleted.
 
 Visit the
-[portal.properties](https://docs.liferay.com/portal/7.1/propertiesdoc/portal.properties.html#Trash)
+[portal.properties](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Trash)
 file to view all of the configurable properties for the Recycle Bin.
 
 Next, you should make sure permissions are set properly for users who can
