@@ -16,7 +16,7 @@ Use a require rule to make a field required based on one or more conditions.
 | To configure a require rule,
 | 
 | 1.  Edit the
-|     [Show Rule](/docs/7-1/user/-/knowledge_base/u/action-show-and-hide)
+|     [Show Rule](/docs/7-2/user/-/knowledge_base/u/action-show-and-hide)
 |     configured above. Open the Rules tab of the Edit Form page and click the
 |     kebab menu (![Actions](../../../images/icon-actions.png)) for the rule, and
 |     then click *Edit*.
