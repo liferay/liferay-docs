@@ -4,6 +4,8 @@ header-id: tuning-guidelines
 
 # Tuning Guidelines
 
+[TOC levels=1-4]
+
 Although setting names may differ, these concepts apply to most application
 servers. To keep things simple, Tomcat is used as the example. For other
 application servers, consult the provider's documentation for specific settings. 
