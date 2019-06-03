@@ -4,6 +4,8 @@ header-id: kaleo-forms
 
 # Kaleo Forms
 
+[TOC levels=1-4]
+
 Business processes are often form-based and workflow-driven. They start with 
 entered data and progress by sending that data to other people or groups. Then
 it's processed in some way (for example, further data is entered or approval is
@@ -29,7 +31,7 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
     processes. 
 
 2.  Click the *Add* button 
-    (![Add](../../images-dxp/icon-add.png)) 
+    (![Add](../../images/icon-add.png)) 
     to open the New Process Wizard. 
 
 3.  Give the process a name and a description and click *Next*. 
@@ -41,7 +43,7 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
 
     -   Use an existing field set. Click the field set's Actions 
         button 
-        (![Actions](../../images-dxp/icon-actions.png)) 
+        (![Actions](../../images/icon-actions.png)) 
         and select *Choose*.
 
     -   Create a new field set/data definition. Click the 
@@ -57,13 +59,13 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
 
 5.  Select a workflow to use for your forms. To do this, click the workflow's 
     *Actions* button 
-    (![Actions](../../images-dxp/icon-actions.png)) 
+    (![Actions](../../images/icon-actions.png)) 
     and select *Choose*. 
 
     You can also edit an existing workflow or create a new one: 
 
     -   To edit a workflow, click its *Actions* button 
-        (![Actions](../../images-dxp/icon-actions.png)) 
+        (![Actions](../../images/icon-actions.png)) 
         and select *Edit*. 
 
     -   To begin creating a new workflow, click the *Add Workflow* button. 
@@ -79,10 +81,10 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
 
 6.  Select or create a form to use for each workflow task. To do this, click 
     each task's *Actions* button 
-    (![Actions](../../images-dxp/icon-actions.png)) 
+    (![Actions](../../images/icon-actions.png)) 
     and select *Assign Form*. On the screen that appears, select an existing 
     form or click the *Add* button 
-    (![Add](../../images-dxp/icon-add.png)) 
+    (![Add](../../images/icon-add.png)) 
     and to create one. 
 
     Click *Save* when you're finished. Your process is done and appears in Kaleo 
@@ -94,7 +96,7 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
 
 To add records to a process, click it in Kaleo Forms Admin and then click the 
 *Add* button 
-(![Add](../../images-dxp/icon-add.png)). 
+(![Add](../../images/icon-add.png)). 
 This brings up the form you assigned to the workflow's initial state. Fill it 
 out and click *Save*. Once submitting the initial form, the workflow engine then 
 takes over and moves through each task in the workflow. Whatever Users or Roles 

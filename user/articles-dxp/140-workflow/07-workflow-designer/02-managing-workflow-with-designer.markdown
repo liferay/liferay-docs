@@ -4,6 +4,8 @@ header-id: managing-workflows-with-workflow-designer
 
 # Managing Workflows with Kaleo Designer
 
+[TOC levels=1-4]
+
 The Kaleo Designer gives you an intuitive interface for creating workflow
 definitions, from the simplest approval processes to the most complex business
 processes you can imagine. It features a drag and drop interface, workflow
@@ -17,7 +19,7 @@ line of XML. Of course, the Kaleo Designer can also directly manipulate the XML
 
 Access Kaleo Designer by going to the Control Panel, then clicking
 Configuration &rarr; Workflow. Click the Add icon
-(![Add](../../../images-dxp/icon-add.png)).
+(![Add](../../../images/icon-add.png)).
 
 Give the workflow definition a title and you're ready to start designing your
 workflow.
