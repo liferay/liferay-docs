@@ -25,16 +25,16 @@ Control Panel, at the Instance level.
 
 3.  Click on the *Miscellaneous* tab. 
 
-![Figure 1: You can change the default and available languages and the time zone in Instance Settings.](../../../images/instance-locales.png)
+![Figure 1: You can change the default and available languages and the time zone in Instance Settings.](../../images/instance-locales.png)
 
 The central left and right arrows let you add or remove available languages and
 locales. You can also set these as properties in your `portal-ext.properties`
 file in your
-[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
+[Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 folder. The `portal.properties` reference document's 
-[Company](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Company) 
+[Company](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Company) 
 section defines the default locale. The 
-[Languages and Time Zones](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
+[Languages and Time Zones](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
 section defines the available and current locales.
 
 	company.default.locale=en_GB 
@@ -80,7 +80,7 @@ these settings. If you're clustered, you must make these changes on all nodes.
 
 Developers can add or modify certain core UI messages (e.g. *Your request
 completed successfully.*) by 
-[modifying the language keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-language-keys) 
+[modifying the language keys](/docs/7-2/customization/-/knowledge_base/c/overriding-language-keys) 
 that ship by default. 
 
 ### Right to Left
@@ -93,7 +93,7 @@ properties settings:
 	lang.line.end=left
 
 To display right to left by default,
-[override these properties globally](/docs/7-1/tutorials/-/knowledge_base/t/overriding-global-language-keys). 
+[override these properties globally](/docs/7-2/customization/-/knowledge_base/c/overriding-global-language-keys). 
 
 ### Localizing User Names
 
@@ -105,12 +105,12 @@ Spanish, the `language_es.properties` file contains these values:
 	lang.user.name.required.field.names=last-name
 
 For more information, see 
-[Using Liferay Language Settings](/docs/7-1/tutorials/-/knowledge_base/t/using-liferays-language-settings).
+[Using Liferay Language Settings](/docs/7-2/frameworks/-/knowledge_base/f/using-liferays-language-settings).
 
 ## Related Topics
 
-[Using Liferay Language Settings](/docs/7-1/tutorials/-/knowledge_base/t/using-liferays-language-settings)
+[Using Liferay Language Settings](/docs/7-2/frameworks/-/knowledge_base/f/using-liferays-language-settings)
 
-[Overriding Global Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-global-language-keys)
+[Overriding Global Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-global-language-keys)
 
-[Overriding a Module's Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys)
+[Overriding a Module's Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-a-modules-language-keys)
