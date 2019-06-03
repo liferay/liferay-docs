@@ -26,7 +26,7 @@ forms through a workflow.
 
 To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin: 
 
-1.  Go to *Site Administration* (your Site's menu) &rarr; *Content* &rarr; 
+1.  Go to *Site Administration* (your Site's menu) &rarr; *Content & Data* &rarr; 
     *Kaleo Forms Admin*. The Kaleo Forms app appears with a list of any defined 
     processes. 
 
