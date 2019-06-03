@@ -36,7 +36,7 @@ to another node. If you stop before reaching the edge of the next node, a pop-up
 displays node types you can create and connect to on-the-fly. To connect with an
 existing node, continue dragging the connector to that node.
 
-When developing workflows in Kaleo Designer, make sure you go through all the
+When developing workflows in the Workflow Designer, make sure you go through all the
 transitions and name them appropriately. By default, these transitions get
 system generated names, so rename them to something more human-readable, as
 they're displayed to workflow users as links that send the item to the next step
@@ -132,12 +132,13 @@ Now you're equipped with the basic knowledge to design beautiful, effective
 workflows so that your assets can be properly reviewed before they're published
 in your sites.
 
-<!-- ## Related Topics [](id=related-topics)
+## Related Topics [](id=related-topics)
 
-[Workflow Forms](discover/portal/-/knowledge_base/7-2/workflow-forms)
+[Kaleo Forms](/docs/7-2/user/-/knowledge_base/u/kaleo-forms)
 
-[Using Workflow](discover/portal/-/knowledge_base/7-2/enabling-workflow)
+[Activating Workflow](/docs/7-2/user/-/knowledge_base/u/activating-workflow)
 
-[Liferay's Workflow Framework](/docs/7-2/tutorials/-/knowledge_base/t/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework)
 
-[Dynamic Data Lists](discover/portal/-/knowledge_base/7-2/dynamic-data-lists) -->
+[Dynamic Data Lists](/docs/7-2/user/-/knowledge_base/u/dynamic-data-lists) 
+

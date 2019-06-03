@@ -70,10 +70,8 @@ usually the goal of a workflow process.
 You can do something simple like the actions above, or you can be as creative as
 you'd like.
 
-<!-- Let's add an example of something creative. -Rich -->
-
-It's good to assign a task to a user, and it's even more useful if the user can
-get notified of a workflow task.
+It's good to assign a task to a user, and it's even more useful if the user
+is notified about workflow tasks.
 
 ### Notifications
 
@@ -87,7 +85,7 @@ a notification.
 
 You must specify the Notification Type, and you can choose User
 Notification, Email, Instant Messenger, or Private Message. You can use
-Freemarker or Velocity if you need a template, or you can choose to write a
+Freemarker if you need a template, or you can choose to write a
 plain text message.
 
 Here's a basic Freemarker template that reports the name of the asset creator and
@@ -132,8 +130,7 @@ the Groovy scripting language:
 
     WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
 
-Feel free to add more to the action script if you need to do additional
-processing.
+Add more to the action script if you need to do additional processing.
 
 By default, there's a transition connecting the start node and end node, but
 you'll probably want to delete it, since most workflows don't proceed straight
@@ -155,12 +152,13 @@ what it would look like in Groovy:
 
 Next, you'll learn to do parallel processing using fork and join nodes.
 
-<!-- ## Related Topics [](id=related-topics)
+## Related Topics [](id=related-topics)
 
-[Workflow Forms](discover/portal/-/knowledge_base/7-2/workflow-forms)
+[Kaleo Forms](/docs/7-2/user/-/knowledge_base/u/kaleo-forms)
 
-[Using Workflow](discover/portal/-/knowledge_base/7-2/enabling-workflow)
+[Activating Workflow](/docs/7-2/user/-/knowledge_base/u/activating-workflow)
 
-[Liferay's Workflow Framework](/docs/7-2/tutorials/-/knowledge_base/t/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework)
 
-[Dynamic Data Lists](discover/portal/-/knowledge_base/7-2/dynamic-data-lists) -->
+[Dynamic Data Lists](/docs/7-2/user/-/knowledge_base/u/dynamic-data-lists) 
+

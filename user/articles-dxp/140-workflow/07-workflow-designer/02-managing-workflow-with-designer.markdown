@@ -2,29 +2,29 @@
 header-id: managing-workflows-with-workflow-designer
 ---
 
-# Managing Workflows with Kaleo Designer
+# Managing Workflows with the Workflow Designer
 
 [TOC levels=1-4]
 
-The Kaleo Designer gives you an intuitive interface for creating workflow
+The Workflow Designer gives you an intuitive interface for creating workflow
 definitions, from the simplest approval processes to the most complex business
 processes you can imagine. It features a drag and drop interface, workflow
 definition versioning, and a graphical representation of definitions and their
-nodes. Without Kaleo Designer, you'd have to hand-craft your entire workflow
-definition in XML. With Kaleo Designer, you might never need to look at a single
-line of XML. Of course, the Kaleo Designer can also directly manipulate the XML
-(using the *Source* tab) if you find it convenient.
+nodes. Without the Workflow Designer, you'd have to hand-craft your entire
+workflow definition in XML. With the Workflow Designer, you might never need to
+look at a single line of XML. Of course, the Workflow Designer also lets you
+directly manipulate the XML (using the *Source* tab) if you find it convenient.
 
-## Adding New Workflow Definitions with Kaleo Designer
+## Adding New Workflow Definitions with the Workflow Designer
 
-Access Kaleo Designer by going to the Control Panel, then clicking
-Configuration &rarr; Workflow. Click the Add icon
+Access the Workflow Designer by going to the Control Panel &rarr; Workflow
+&rarr; Process Builder. Click the Add icon
 (![Add](../../../images/icon-add.png)).
 
 Give the workflow definition a title and you're ready to start designing your
 workflow.
 
-![Figure 1: The Kaleo Designer's graphical interface makes designing workflows intuitive.](../../../images-dxp/workflow-designer-canvas.png)
+![Figure 1: The Workflow Designer's graphical interface makes designing workflows intuitive.](../../../images-dxp/workflow-designer-canvas.png)
 
 ## Saving and Publishing Workflow Definitions
 
@@ -37,7 +37,7 @@ the Revision history. To see the Revision history and manage workflow versions,
 open the Info sidebar (![Information](../../../images/icon-information.png)) and
 click *Revision History*.
 
-![Figure 2: View a list of the current workflows that can be edited in the Kaleo Designer.](../../../images-dxp/workflow-designer-definitions.png)
+![Figure 2: View a list of the current workflows that can be edited in the Workflow Designer.](../../../images-dxp/workflow-designer-definitions.png)
 
 ## Adding Nodes
 
@@ -52,7 +52,7 @@ the workflow.
    can't be used in the workflow. Delete the existing transition and then you
    can make new transitions to direct the *flow* of your workflow (see more
    about transitions below if you're not sure what they're for or how to use
-   them in Kaleo Designer).
+   them in the Workflow Designer).
 
 Alternatively, start by deleting the default transition, then click the edge of
 the start node, drag a new transition from the start node to a blank spot on the
@@ -82,12 +82,13 @@ Of course, there's more you can do besides changing node names. Actions,
 Notifications, and Assignments can be used to make your workflow definition
 useful and interactive. Keep reading to learn about these features.
 
-<!-- ## Related Topics [](id=related-topics)
+## Related Topics [](id=related-topics)
 
-[Workflow Forms](discover/portal/-/knowledge_base/7-2/workflow-forms)
+[Kaleo Forms](/docs/7-2/user/-/knowledge_base/u/kaleo-forms)
 
-[Using Workflow](discover/portal/-/knowledge_base/7-2/enabling-workflow)
+[Activating Workflow](/docs/7-2/user/-/knowledge_base/u/activating-workflow)
 
-[Liferay's Workflow Framework](/docs/7-2/tutorials/-/knowledge_base/t/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework)
 
-[Dynamic Data Lists](discover/portal/-/knowledge_base/7-2/dynamic-data-lists) -->
+[Dynamic Data Lists](/docs/7-2/user/-/knowledge_base/u/dynamic-data-lists) 
+

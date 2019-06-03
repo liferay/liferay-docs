@@ -2,7 +2,7 @@
 header-id: creating-tasks-in-workflow-designer
 ---
 
-# Creating Tasks in Kaleo Designer
+# Creating Tasks in the Workflow Designer
 
 [TOC levels=1-4]
 
@@ -26,10 +26,6 @@ You can define a notification (often Task Assignee is appropriate), or write a
 Groovy script defining an action that's triggered for your task.
 
 Next learn about creating Assignments for your task nodes. 
-
-<!-- Task nodes are the most complex parts, and yet there's not much in this
-section. Please describe an example here so users can understand what a task
-node is for and how they are used. Include a script. -Rich --> 
 
 ## Assignments
 
@@ -74,13 +70,13 @@ permission for the VIEW action on the Roles resource).
   assignment.
 
 How do you go from finding the resource action to using it in the workflow? Use
-Kaleo Designer's interface for setting up a resource action assignment.
+the Workflow Designer's interface for setting up a resource action assignment.
 
 When configuring your task node's Assignment, select Resource Actions as the
 Assignment Type, then specify the Resource Actions to use for the assignment
 (for example, UPDATE).
 
-![Figure 2: Configure resource action assignments in Kaleo Designer.](../../../images-dxp/workflow-designer-resource-action-assignment.png)
+![Figure 2: Configure resource action assignments in the Workflow Designer.](../../../images-dxp/workflow-designer-resource-action-assignment.png)
 
 Here's what the assignment looks like in the Source (Workflow XML) tab:
 
@@ -162,12 +158,13 @@ the `roles` variable is where you specify any Roles the task is assigned to. For
 example, when `roles.add(adminRole);` is called, the Administrator role is added
 to the assignment.
 
-<!-- ## Related Topics [](id=related-topics)
+## Related Topics [](id=related-topics)
 
-[Workflow Forms](discover/portal/-/knowledge_base/7-2/workflow-forms)
+[Kaleo Forms](/docs/7-2/user/-/knowledge_base/u/kaleo-forms)
 
-[Using Workflow](discover/portal/-/knowledge_base/7-2/enabling-workflow)
+[Activating Workflow](/docs/7-2/user/-/knowledge_base/u/activating-workflow)
 
-[Liferay's Workflow Framework](/docs/7-2/tutorials/-/knowledge_base/t/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework)
 
-[Dynamic Data Lists](discover/portal/-/knowledge_base/7-2/dynamic-data-lists) -->
+[Dynamic Data Lists](/docs/7-2/user/-/knowledge_base/u/dynamic-data-lists) 
+

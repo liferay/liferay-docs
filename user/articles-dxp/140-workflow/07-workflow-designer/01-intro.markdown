@@ -2,18 +2,18 @@
 header-id: workflow-designer
 ---
 
-# Kaleo Designer
+# Workflow Designer
 
 [TOC levels=1-4]
 
 With the proper permissions, users can publish assets. Even if your enterprise
 has the greatest employees in the world, many of the items they want to publish
-must still be reviewed, for a variety of reasons. The Kaleo Designer lets you
+must still be reviewed, for a variety of reasons. The Workflow Designer lets you
 design workflow definitions so your assets go through a review process before
 publication.
 
-With Kaleo Designer, you develop workflow definitions using a convenient drag
-and drop user interface. You don't need to be familiar with writing XML
+With the Workflow Designer, you develop workflow definitions using a convenient
+drag and drop user interface. You don't need to be familiar with writing XML
 definitions by hand. Some of the features can be enhanced, however, if you're
 familiar with Groovy, a supported Java-based scripting language. All that is to
 say, don't be scared off when you come to a block of code in these articles.
@@ -22,9 +22,10 @@ Groovy to help you out.
 
 | **Note:** By default, only one workflow definition is installed: the Single
 | Approver Workflow definition. What you might not know is that you have access to
-| several others too. Look in `[Liferay_Home]/osgi/portal/` and find the
-| `com.liferay.portal.workflow.kaleo.runtime.impl-[version].jar`. Open it up and
-| then look in `META-INF/definitions`. You'll see the following workflow
+| several others too. Look in `[Liferay_Home]/osgi/marketplace/` and find the
+| `Liferay Forms and Workflow - Liferay Portal Workflow - Impl.lpkg`. Open it,
+| find the `com.liferay.portal.workflow.kaleo.runtime.impl-[version].jar`, and
+| look in its `META-INF/definitions` folder. You'll see the following workflow
 | definitions:
 | 
 |     category-specific-definition.xml
@@ -32,11 +33,12 @@ Groovy to help you out.
 |     single-approver-definition.xml
 |     single-approver-definition-scripted-assignment.xml
 | 
-| To work with any of these definitions in Kaleo Designer, extract them from the
-| JAR file first. Once you have the XML files locally,
+| To work with any of these definitions in the Workflow Designer, extract them
+| from the JAR file first. Once you have the XML files locally,
 | 
-| 1.  Add a new workflow. Go to Control Panel &rarr; Configuration &rarr;
-|     Workflow, and click the Add button (![Add](../../../images/icon-add.png)).
+| 1.  Add a new workflow. Go to Control Panel &rarr; Workflow &rarr;
+| Process Builder, and click the Add button
+| (![Add](../../../images/icon-add.png)).
 | 
 | 2.  Go to the Source tab.
 | 
@@ -48,4 +50,4 @@ Groovy to help you out.
 | 
 | Now you can begin exploring or modifying the definition.
 
-It's time to start exploring the Kaleo Designer and its features.
+It's time to start exploring the Workflow Designer and its features.
