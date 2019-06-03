@@ -50,7 +50,7 @@ that breaks compatibility with the existing version of the plugin or module.
 ## Applying Fix Packs (DXP only)
 
 The Customer Portal identifies
-[fix packs](/docs/7-1/deploy/-/knowledge_base/d/maintaining-liferay)
+[fix packs](/docs/7-2/deploy/-/knowledge_base/d/maintaining-liferay)
 that are not revertible, and therefore ineligible for rolling restart. All other
 fix packs are eligible. 
 
@@ -60,12 +60,12 @@ Revertible fix packs can be removed in rolling restarts.
 
 ## Portal Properties controlled by `portal-ext.properties`
  
-[Portal Properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)
+[Portal Properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html) 
 file changes can be applied in rolling restarts. 
 
 ## System Settings controlled by Configuration Admin Files
 
-[System configuration](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)
+[System configuration](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files)
 files can be applied in rolling restarts. 
 
 ## Application Server or JVM setting modifications
@@ -84,8 +84,8 @@ steps listed earlier. Other updates must be done differently as described next.
 
 ## Related Topics
 
-[@product@ Clustering](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)
+[@product@ Clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
 
-[Maintaining @product@](/docs/7-1/deploy/-/knowledge_base/d/maintaining-liferay)
+[Maintaining @product@](/docs/7-2/deploy/-/knowledge_base/d/maintaining-liferay)
 
-[Implementing Data Upgrades](/docs/7-1/tutorials/-/knowledge_base/t/data-upgrades)
+[Implementing Data Upgrades](/docs/7-2/appdev/-/knowledge_base/a/data-upgrades)

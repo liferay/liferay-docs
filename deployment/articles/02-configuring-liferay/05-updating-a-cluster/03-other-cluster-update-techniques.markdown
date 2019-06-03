@@ -36,10 +36,10 @@ For more information, refer to these blue-green deployment articles:
 
 ## Related Topics
 
-[Rolling Restarts](/docs/7-1/deploy/-/knowledge_base/d/using-rolling-restarts)
+[Rolling Restarts](/docs/7-2/deploy/-/knowledge_base/d/using-rolling-restarts)
 
-[@product@ Clustering](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)
+[@product@ Clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
 
-[Maintaining @product@](/docs/7-1/deploy/-/knowledge_base/d/maintaining-liferay)
+[Maintaining @product@](/docs/7-2/deploy/-/knowledge_base/d/maintaining-liferay)
 
-[Implementing Data Upgrades](/docs/7-1/tutorials/-/knowledge_base/t/data-upgrades)
+[Implementing Data Upgrades](/docs/7-2/appdev/-/knowledge_base/a/data-upgrades)
