@@ -54,8 +54,7 @@ to another one. Instead, you want to do two or more things at the same time. To
 do this, transition to a fork node, make two transitions from the fork to
 your parallel tasks, and then come back together using a join node.
 
-![Figure 3: Forks and Joins are used to enable parallel processing in the
-workflow.](../../../images-dxp/workflow-designer-fork-join.png)
+![Figure 3: Forks and Joins are used to enable parallel processing in the workflow.](../../../images-dxp/workflow-designer-fork-join.png)
 
 With a regular Join node, for the workflow to proceed beyond the join, the
 transition from both parallel executions must be invoked. However, if you use a
