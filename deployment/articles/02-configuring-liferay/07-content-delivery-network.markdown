@@ -30,7 +30,7 @@ machine based on an algorithm that finds the server closest to the user. The
 figure below shows a visual representation of using geographical proximity to
 improve latency.
 
-![Figure 1: The red lines on the map represent the required distances traveled by requests from a server to the user. Using CDN allows a user to request static resources from a much closer local server, improving download times.](../../../images/cdn-map.png)
+![Figure 1: The red lines on the map represent the required distances traveled by requests from a server to the user. Using CDN allows a user to request static resources from a much closer local server, improving download times.](../../images/cdn-map.png)
 
 Because of the reduced wait time for requests and reduced load on your
 application server, a CDN is a great option to improve performance. Using a CDN
@@ -75,9 +75,9 @@ different methods:
 
 To configure your CDN via a properties file, create a
 `portal-ext.properties` file in your
-[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
+[Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 folder and set the appropriate
-[Content Delivery Network properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network).
+[Content Delivery Network properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network).
 
 Once you configure your CDN host, @product@ generates URLs to the static assets
 that replace the old host with your new CDN host so they are automatically
@@ -91,12 +91,12 @@ three fields related to CDNs:
 - *CDN Host HTTPS*
 - *Enable CDN Dynamic Resources*
 
-![Figure 2: The Control Panel lets you configure your portal's CDN.](../../../images/cdn-control-panel.png)
+![Figure 2: The Control Panel lets you configure your portal's CDN.](../../images/cdn-control-panel.png)
 
 These properties are exactly the same as the ones you can specify in your
 `portal-ext.properties`. Make sure to visit the Content Delivery Network section
 of the
-[portal.properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network)
+[portal.properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network)
 reference document if you don't know how to fill in the CDN fields. Once you're
 finished, click *Save* and your old host is replaced with your new CDN host for
 static content.
