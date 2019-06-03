@@ -1,19 +1,28 @@
 # Editing Multiple Change Lists in Parallel
 
-There are times when multiple people must edit content at the same time. With
-each of them maintaining their own change list, problems can arise where people
-could attempt to override each other's content changes based on when they're
-published. The Change Lists framework can help resolve these issues by detecting
-content collisions.
+When two or more administrators create separate change lists based on the same
+baseline environment, they become parallel or competing change lists. This is a
+common scenario that is supported by the Change Lists framework.
+
+For example, suppose a company hosts a site that must be revamped for its
+upcoming product release. Two employees are tasked with updating the site and
+create separate change lists based on the live production environment. These two
+parallel change lists are tracked by the system and can be published seamlessly
+if they modify separate content. Parallel change lists that do not modify the
+same content can be published like any other change list and require no further
+attention.
+
+If the employees' change lists modify a single asset differently, problems can
+arise where they could attempt to override each other's content changes based on
+when they're published. The Change Lists framework can help resolve these issues
+by detecting content collisions.
 
 Collision detection is possible with the following assets:
 
 - Web content structure
 - Web content template
 
-As an example, assume there are two content editors managing their own separate
-change lists with both change lists based on the same production environment.
-Consider this scenario:
+Consider this specific collision scenario:
 
 1.  There is an existing production template in Site A (v1.0).
 2.  User 1 creates a change list *CC1*.
@@ -50,4 +59,4 @@ When a collision is detected for web content articles, your only option is to
 copy the latest article's content in the production environment to your active
 change list and then apply your changes to it.
 
-Great! Now you know how to manage collisions for your change list!
+Great! Now you know how the system manages parallel change lists!
