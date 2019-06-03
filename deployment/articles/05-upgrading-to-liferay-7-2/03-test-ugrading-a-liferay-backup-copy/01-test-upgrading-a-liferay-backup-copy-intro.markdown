@@ -48,7 +48,7 @@ your server to use a new empty database for testing data upgrades.
 ### Copy the Production Backup to the Test Database
 
 Import data from your [production database
-backup](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-product-installation)
+backup](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
 to the new empty database. 
 
 | **Important:** Make sure to save the data import log---you'll examine it in

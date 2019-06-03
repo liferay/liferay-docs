@@ -15,16 +15,15 @@ test your server.
 ## Remove Duplicate Web Content Structure Field Names
 
 If you've used Web Content Management extensively, you might have structures
-without unique field names.
-[Find and remove duplicate field names](/docs/7-2/deploy/-/knowledge_base/d/upgrading-liferay#find-and-remove-duplicate-field-names)
-before upgrading. If you upgraded to Liferay Portal 6.2 previously and skipped
-doing this, you'll encounter this error: 
+without unique field names. Find and remove duplicate field names before
+upgrading. If you upgraded to Liferay Portal 6.2 previously and skipped doing
+this, you'll encounter this error: 
 
     19:29:35,298 ERROR [main][VerifyProcessTrackerOSGiCommands:221] com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
     com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
  
 If this is the case, roll back to your previous backup of Liferay Portal 6.2 and
-[find and remove duplicate field names](/docs/7-2/deploy/-/knowledge_base/d/upgrading-liferay#find-and-remove-duplicate-field-names). 
+find and remove duplicate field names. 
 
 ## Find and Remove Unused Objects
 

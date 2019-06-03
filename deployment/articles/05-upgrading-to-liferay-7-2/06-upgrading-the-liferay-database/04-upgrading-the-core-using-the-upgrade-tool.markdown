@@ -67,7 +67,7 @@ finishing the upgrade process.
 | -   If execution stopped during an upgrade process for Core 7.1 or higher, or 
 |     any module upgrade process, restart the upgrade tool to continue the 
 |     upgrade from that point. You can also use Gogo shell to
-|     [check module upgrade status](/docs/7-2/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)
+|     [check module upgrade status](/docs/7-2/deploy/-/knowledge_base/d/upgrading-modules-using-gogo-shell#checking-upgrade-status)
 |     and continue upgrading modules. 
 | -   If execution stopped during an upgrade process for Core 7.0 or lower, you 
 |     must

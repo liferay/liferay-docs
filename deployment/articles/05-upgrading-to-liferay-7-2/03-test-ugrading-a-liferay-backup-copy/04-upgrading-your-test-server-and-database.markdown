@@ -7,7 +7,7 @@ header-id: upgrading-your-test-server-and-database
 [TOC levels=1-4]
 
 After you've [pruned your database and tested it
-successfully](/docs/7-2/deploy/-/knowledge_base/d/pruning-your-database),
+successfully](/docs/7-2/deploy/-/knowledge_base/d/pruning-the-database),
 it's ready for upgrade. Here you'll install @product-ver@ and migrate your
 current installation files to it and upgrade them. Then you'll optimize your
 database for the upgrade and upgrade your data. Lastly, you'll test this
@@ -25,12 +25,12 @@ server's Liferay upgrade tool next.
 
 ## Tune Your Database for the Upgrade 
 
-[Tune your database for the upgrade](/docs/7-2/deploy/-/knowledge_base/d/tune-your-database-for-the-upgrade). 
+[Tune your database for the upgrade](/docs/7-2/deploy/-/knowledge_base/d/tuning-for-the-data-upgrade). 
 
 ## Upgrade the Database 
 
 Upgrade the database to @product-ver@ (see
-[Upgrade the Database](/docs/7-2/deploy/-/knowledge_base/d/upgrade-the-database));
+[Upgrade the Database](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-product-data));
 then return here. 
 
 If the upgrade took too long, search the upgrade log to identify more unused
