@@ -6,32 +6,41 @@ header-id: users-and-organizations
 
 [TOC levels=1-4]
 
-Bacon ipsum dolor amet ea prosciutto turducken shoulder. T-bone pork velit
-sirloin meatball irure landjaeger. Spare ribs andouille tri-tip velit jerky
-biltong et tongue flank aliquip beef pastrami. Excepteur minim veniam est jowl
-id ut. Capicola officia salami ea, meatloaf jowl incididunt andouille venison
-short loin kevin. Chicken pork loin ut, ground round ball tip ut turkey tongue
-brisket.
+*Users* and *Organizations* are fundamental entities. If your site requires
+people (even just a set of site administrators) to have accounts to do anything,
+you need to know about users. If your users are at all divided hierarchically,
+like into departments, you'll find that organizations are helpful. 
 
-Bacon ribeye mollit pork chop nulla exercitation, pancetta pork belly et nisi
-dolore. Deserunt minim non hamburger fatback venison ball tip in lorem
-andouille sed. Aliqua sausage picanha, cupim ham ribeye chicken pastrami bacon
-alcatra tempor pork chop andouille prosciutto shoulder. Short loin ribeye ut
-elit brisket nostrud turkey deserunt velit et. Consequat tongue sed pork belly.
+You're probably not surprised to hear that Users and Organizations are managed
+in the Control Panel's *Users and Organizations* section. If it were any
+different, it'd be weird. 
 
-Commodo exercitation anim kielbasa drumstick. Salami prosciutto picanha fatback
-cupim porchetta tenderloin sirloin et spare ribs rump culpa venison kevin beef
-ribs. Dolore consectetur capicola spare ribs chuck, tail drumstick do
-excepteur. Porchetta lorem esse incididunt ullamco shankle.
+Consider the Lunar Resort site. Consider what you'd do if 
 
-Consequat quis sunt, officia deserunt buffalo alcatra laborum jowl andouille
-sausage shank beef pariatur. Laborum prosciutto shankle irure beef ribs veniam
-doner drumstick. Tongue short ribs nostrud incididunt chicken. Tempor ut
-pancetta id. Swine consectetur picanha officia. Hamburger nisi boudin pork chop
-andouille.
+- An employee leaves the company to join that pesky competitor, Martian Resort
+  and Luxury Spa.
+- An employee joins the resort as a new Mechanical Crew member.
+- An employee is promoted from Crew Supervisor to Department Head and needs the requisite
+  permissions.
+- You need to organize the users by department.
+- A new department is added to the Lunar Resort and the employees need their own
+  internal website.
+- An employee gets married, and their name changes.
 
-Eiusmod shank ham buffalo, pork belly cow fatback cupim. Nisi dolore flank
-burgdoggen, in tri-tip chicken porchetta ball tip velit anim. Flank ut ipsum
-laboris. Picanha deserunt andouille drumstick aliquip burgdoggen. Velit
-exercitation aliquip, excepteur dolore mollit labore pariatur ut sirloin
-reprehenderit et sed aliqua drumstick. Consequat ut corned beef proident.
+The user tasks listed above are all resolved in the Users and Organizations
+section of the Control Panel.
+
+## What are Users?
+
+In case there's any confusion over the term, a User is an entity that can sign
+into the portal and do something. Generally a User has more privileges, called
+Permissions, than a Guest of your site, who does not sign in. Users are assigned
+Roles, and Roles define the User's privileges.
+
+Understanding Users is pretty straightforward. Organizations are a bit trickier,
+but a smart administrator like you is undoubtedly up to the challenge. Read more
+about Organizations
+[here](/docs/7-2/user/-/knowledge_base/u/organizations).
+
+The remaining articles in this section give you guidance on managing (creating,
+deleting, editing, and more) Users and Organizations.
