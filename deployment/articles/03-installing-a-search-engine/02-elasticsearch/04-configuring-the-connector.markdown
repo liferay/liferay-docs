@@ -81,7 +81,7 @@ There are two ways to configure the connector:
 It's convenient to configure the Elasticsearch connector from System Settings, but
 this is often only possible during development and testing. If you're not
 familiar with System Settings, read about it
-[here](/docs/7-2/user/-/knowledge_base/user/system-settings).
+[here](/docs/7-2/user/-/knowledge_base/u/system-settings).
 Remember that you can generate configuration files for deployment to other
 systems by configuring System Settings, and then exporting the `.config` file
 with your configuration.
