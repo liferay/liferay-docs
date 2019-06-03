@@ -1,4 +1,10 @@
+---
+header-id: change-lists
+---
+
 # Change Lists
+
+[TOC levels=1-4]
 
 Change Lists provide a way to track asset changes and how they're displayed
 system wide. You can group changes into working *sets* and publish them when

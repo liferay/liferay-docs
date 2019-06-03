@@ -1,4 +1,10 @@
+---
+header-id: editing-multiple-change-lists-in-parallel
+---
+
 # Editing Multiple Change Lists in Parallel
+
+[TOC levels=1-4]
 
 When two or more administrators create separate change lists based on the same
 baseline environment, they become parallel or competing change lists. This is a

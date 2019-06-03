@@ -1,4 +1,10 @@
+---
+header-id: managing-change-lists
+---
+
 # Managing Change Lists
+
+[TOC levels=1-4]
 
 Managing change lists is primarily done from the Overview page. You can get
 there by navigating to the Control Panel &rarr; *Change Lists* &rarr;
@@ -90,7 +96,7 @@ When you've published your change list, you're redirected to the History screen.
 You can view the status of your current change list publication and others
 you've performed in the past.
 
-![Figure 5: You can always refer to your change list publication history.](../../../images/change-list-history.png)
+![Figure 6: You can always refer to your change list publication history.](../../../images/change-list-history.png)
 
 If you navigate back to the Overview screen, the Published Change List section
 (top right) now provides information on your publication. You can click the

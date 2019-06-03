@@ -1,4 +1,10 @@
+---
+header-id: creating-change-lists
+---
+
 # Creating Change Lists
+
+[TOC levels=1-4]
 
 Creating change lists is straightforward once you've
 [enabled them](/docs/7-2/user/-/knowledge_base/user/enabling-change-lists).

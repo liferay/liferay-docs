@@ -1,4 +1,10 @@
+---
+header-id: enabling-change-lists
+---
+
 # Enabling Change Lists
+
+[TOC levels=1-4]
 
 Enabling the Change Lists feature lets you track asset creation/modifications
 system wide. Note, Change Lists and Staging cannot be used at the same time.

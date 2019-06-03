@@ -1,4 +1,10 @@
+---
+header-id: configuring-permissions-for-change-lists
+---
+
 # Configuring Permissions for Change Lists
+
+[TOC levels=1-4]
 
 Configuring permissions for who can access and use change lists is a critical
 part of managing your @product@ instance's content management.
