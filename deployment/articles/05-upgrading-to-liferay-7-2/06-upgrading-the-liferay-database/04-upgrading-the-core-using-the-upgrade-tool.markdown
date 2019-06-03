@@ -97,6 +97,6 @@ it. If a core upgrade step for @product@ 7.1 (or newer) fails, executing the
 upgrade tool again starts it from that step. 
 
 If you configured the upgrade tool to upgrade non-core modules, the tool opens a
-Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules, check
-module upgrade status, verify upgrades, and restart module upgrades. Read on to
-learn how to use Gogo shell commands to complete @product@ upgrades. 
+Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules,
+check module upgrade status, verify upgrades, and restart module upgrades. Read
+on to learn how to use Gogo shell commands to complete @product@ upgrades. 
