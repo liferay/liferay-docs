@@ -1,4 +1,10 @@
+---
+header-id: display-page-template-example
+---
+
 # Display Page Template Example
+
+[TOC levels=1-4]
 
 Create a new Display Page Template:
 
