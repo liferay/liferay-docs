@@ -13,7 +13,7 @@ apps. The types of apps you can install include:
 -   Portlets
 -   Web Plugins
 -   Templates
-- T  hemes
+-   Themes
 
 Read on to learn about these app types. 
 
@@ -33,21 +33,22 @@ discusses these.
 
 ## Portlets
 
-Portlets are small web applications that run in a portion of a web page. For
-example, the built-in Blogs app is a portlet. Portlet applications, like servlet
-applications, are a Java standard implemented by various portal server vendors.
-The JSR-168 standard defines the portlet 1.0 specification, the JSR-286 standard
-defines the portlet 2.0 specification, and the JSR-362 standard defines the
-portlet 3.0 specification. A Java standard portlet should be deployable on any
-portlet container that supports the standard. Portlets are placed on the page in
-a certain order by the end user and are served up dynamically by the portal
+[Portlets](/docs/7-2/frameworks/-/knowledge_base/f/portlets) are small web
+applications that run in a portion of a web page. For example, the built-in
+Blogs app is a portlet. Portlet applications, like servlet applications, are a
+Java standard implemented by various portal server vendors. The JSR-168 standard
+defines the portlet 1.0 specification, the JSR-286 standard defines the portlet
+2.0 specification, and the JSR-362 standard defines the portlet 3.0
+specification. A Java standard portlet should be deployable on any portlet
+container that supports the standard. Portlets are placed on the page in a
+certain order by the end user and are served up dynamically by the portal
 server. This means certain things that apply to servlet-based projects, such as
 control over URLs or access to the `HttpServletRequest` object, don't apply in
 portlet projects because the portal server generates these objects dynamically. 
 
 Portlets can be composed of OSGi modules (recommended), or contained in WAR
-files. For information on developing OSGi modules for Liferay, including
-portlets, see [Application Development](/docs/7-2/appdev). 
+files. For information on developing portlets see [Web
+Front-ends](/docs/7-2/appdev/-/knowledge_base/a/web-front-ends). 
 
 ## Web Plugins
 
@@ -58,12 +59,13 @@ implemented as web modules used by @product@ portlets to provide functionality.
 
 ## Templates and Themes
 
-Templates and themes are plugins that change @product@'s appearance. Templates
-(layout templates) control how you can arrange portlets on a page. They make up
-a page's body (the large area into which you can drag and drop portlets). There
-are several built-in layout templates. If you have a complex page layout
-(especially for your home page), you may wish to create a custom layout template
-of your own. 
+[Templates](/docs/7-2/frameworks/-/knowledge_base/f/layout-templates-intro) and
+[themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-intro) are plugins that
+change @product@'s appearance. Templates (layout templates) control how you can
+arrange portlets on a page. They make up a page's body (the large area into
+which you can drag and drop portlets). There are several built-in layout
+templates. If you have a complex page layout (especially for your home page),
+you may wish to create a custom layout template of your own. 
 
 Themes can completely transform @product@'s look and feel. Most organizations 
 have their own look and feel standards that apply to all of their web sites and 
@@ -72,15 +74,12 @@ on @product@. There are many available theme plugins on Liferay's web site and
 more are being added every day. This makes it easy for theme developers, as they
 can customize existing themes instead of writing a new one from scratch. 
 
-For information on developing themes and templates, see 
-[Front-end Development](/docs/7-2/frameworks/-/knowledge_base/f/front-end-development). 
-
 ## Liferay Marketplace App Packages
 
-Regardless of app type, each  [Liferay
-Marketplace](https://web.liferay.com/marketplace)  app is distributed in an LPKG
+Regardless of app type, each [Liferay
+Marketplace](https://web.liferay.com/marketplace) app is distributed in an LPKG
 package. The LPKG package contains Marketplace  metadata and the files the app
 needs to run. Note that it's possible for an LPKG  package to contain multiple
 apps. For example, a single LPKG package can contain  several portlets. This is
-common in cases where an app requires a Control Panel  portlet for
+common in cases where an app requires a Control Panel portlet for
 administrators, and another portlet for end users. 
