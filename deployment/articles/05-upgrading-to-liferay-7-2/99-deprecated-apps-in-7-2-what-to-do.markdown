@@ -1,25 +1,13 @@
-# Maintenance Mode
-
-Maintenance Mode for a product or capability means we are no longer actively enhancing the product or capability.  Liferay will continue to provide bug fixes and provide full support in accordance to with Subscribers' subscription level and the end of service life policies of the compatible DXP version. 
-
-## Products & Features in Maintenance Mode
-* Liferay Connected Services
-* Liferay Mobile Experience (Liferay Screens, Liferay Mobile SDK, Liferay Push)
-* Staging 
-* Liferay Sync
-
 # Deprecated Apps in 7.2: What to Do 
-
-[TOC levels=1-4]
 
 During the development of any software product, it's sometimes necessary to stop
 development on or remove outdated or unpopular features. @product-ver@ is no
-different. Liferay has deprecated several apps in @product-ver@. It's important
-to note what, exactly, *deprecated* means here. 
+different. In @product-ver@, Liferay has deprecated several apps and features. Some apps and features are in maintenance mode. 
 
-| **Note:** All apps deprecated by Liferay are no longer in active development.
-| You should therefore plan to stop using these apps. Such apps, however, may
-| still be available for download.
+It's important
+to note what, exactly, *maintenance mode* and *deprecated* mean here. 
+
+While an app or feature is in maintenance mode, Liferay continues to provide bug fixes and support in accordance to with the subscribers' subscription level and the end of service life policies of the compatible Liferay DXP version. 
 
 There are three types of deprecated apps: 
 
@@ -34,8 +22,22 @@ There are three types of deprecated apps:
 3.  Deprecated apps that have been removed from @product@ and aren't available 
     for download. (Availability: *Removed*) 
 
+| **Note:** All apps deprecated by Liferay are no longer in active development.
+| You should therefore plan to stop using these apps. Such apps, however, may
+| still be available for download.
+
 | **Note:** For information on apps deprecated in @product@ 7.1, please see 
 | [Deprecated Apps in 7.1: What to Do](/docs/7-1/deploy/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do)
+
+## Apps and Features in Maintenance Mode 
+
+Here are the items in maintenance mode:
+
+-   Liferay Connected Services
+-   Liferay Sync
+-   Liferay Mobile Experience (Liferay Screens, Liferay Mobile SDK, Liferay 
+    Push)
+-   Staging 
 
 Here are the apps deprecated in @product-ver@. 
 
@@ -49,29 +51,31 @@ Here are the apps deprecated in @product-ver@.
 | Search Portlet | Bundled | Will be removed in a future release. Replaced by the [Search widgets](/docs/7-1/user/-/knowledge_base/u/whats-new-with-search). |
 
 ## Personalization
+
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
-| Audience Targeting | Removed | Replaced by Personalization in 7.2 | 
+| Audience Targeting | Removed | Replaced by [Personalization](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization). | 
 
 ## Web Experience
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
 | RSS Publisher | Bundled | See [the article](/docs/7-1/user/-/knowledge_base/u/the-rss-publisher-widget) on enabling and using this widget. |
-| User Group Pages (Copy Mode) | Bundled | See the [Legacy User Group Sites Behavior article] for instructions on how to enable. |
+| User Group Pages (Copy Mode) | Bundled | See the [Legacy User Group Sites Beahavior](/docs/7-1/user/-/knowledge_base/u/user-group-sites#legacy-user-group-sites-behavior) instructions on how to enable it. |
 
 ## Security
 
 | App |  Availability |  Notes |
 | --- | ------------------ | ----------- |
-| Central Authentication Service | Bundled | Migrate to SAML based authentication |
+| Central Authentication Service | Bundled | Migrate to [SAML based authentication](/docs/7-2/deploy/-/knowledge_base/d/configuring-saml). |
 | Google Login | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
 | NTLM | Marketplace release planned | Replaced by [Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos). |
 | OAuth 1.0a | Marketplace release planned | Replaced by OAuth 2.0, which is included in the bundle. |
-| OpenAM / OpenSSO | Bundled | Migrate to SAML based authentication |
+| OpenAM / OpenSSO | Bundled | Migrate to [SAML based authentication](/docs/7-2/deploy/-/knowledge_base/d/configuring-saml). |
 | OpenID | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
 
 ## User and System Management
+
 | App |  Availability | 
 | --- | ------------------ |
-| Live Users | Enabled through Portal Properties | 
+| Live Users | Enabled through the [`live.users.enabled`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Live Users) [portal property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties). | 
