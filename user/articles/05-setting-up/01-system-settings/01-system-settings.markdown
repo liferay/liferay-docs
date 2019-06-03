@@ -41,7 +41,7 @@ Changing a configuration isn't difficult:
 | **Important:** Content generated using templates (e.g., FreeMarker templates and
 | Application Display Templates) is cached. Cached content might not reflect
 | configuration changes until the cache is invalidated (cleared). The
-| [Server Administration &rarr; Resources tab](/docs/7-1/user/-/knowledge_base/u/server-administration-resources)
+| [Server Administration &rarr; Resources tab](/docs/7-2/user/-/knowledge_base/u/server-administration-resources)
 | provides cache clearing options.
 
 ![Figure 3: After saving changes to a configuration, the actions *Reset Default Values* and *Export* are available for it.](../../../images/system-settings-actions.png)

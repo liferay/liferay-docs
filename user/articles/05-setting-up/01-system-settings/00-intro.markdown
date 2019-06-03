@@ -12,7 +12,7 @@ system and instance scoped) configuration options. This section considers the
 configuration options dealing with the *System* scope. Configuration at the
 system level affects all the *Virtual Instances* of Liferay in the system. If
 you're not sure what a Virtual Instance is, read the section on
-[Setting Up a Liferay Instance](/docs/7-1/user/-/knowledge_base/u/setting-up-a-virtual-instance).
+[Setting Up a Liferay Instance](/docs/7-2/user/-/knowledge_base/u/setting-up-a-virtual-instance).
 
 There are several Control Panel sections with system scoped configurations:
 

@@ -60,4 +60,4 @@ email address is an important default for the following reasons:
 
 Learn to configure a third party authentication service or set up Single Sign On
 (SSO) in the
-[security documentation](/docs/7-1/deploy/-/knowledge_base/d/securing-product).
+[security documentation](/docs/7-2/deploy/-/knowledge_base/d/securing-product).

@@ -8,7 +8,7 @@ header-id: server-administration-external-services
 
 Users can upload and share any type of file via the Documents and Media library, 
 a customizable and permissions-enabled online repository for files (see 
-[publishing files ](/docs/7-1/user/-/knowledge_base/u/publishing-files) 
+[publishing files ](/docs/7-2/user/-/knowledge_base/u/publishing-files) 
 for more information). 
 [PDFBox](https://pdfbox.apache.org/) 
 is included with @product@ and generates automatic previews for certain file

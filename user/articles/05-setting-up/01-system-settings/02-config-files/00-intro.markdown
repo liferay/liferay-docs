@@ -6,10 +6,10 @@ header-id: understanding-system-configuration-files
 
 [TOC levels=1-4]
 
-The [System Settings application](/docs/7-1/user/-/knowledge_base/u/system-settings) 
+The [System Settings application](/docs/7-2/user/-/knowledge_base/u/system-settings) 
 is convenient for making system-scoped configuration changes and setting default
 configurations for other
-[scopes](/docs/7-1/user/-/knowledge_base/u/setting-up#configuration-scope).
+[scopes](/docs/7-2/user/-/knowledge_base/u/setting-up#configuration-scope).
 But there's another supported configuration approach: configuration files. You
 can use configuration files to transfer configurations from pre-production
 systems to production systems, or between any other @product@ systems. Sometimes
@@ -23,7 +23,7 @@ Configuration files use the `.config` property value format defined by the
 | **Important:** Content generated using templates (e.g., FreeMarker templates and
 | Application Display Templates) is cached. Cached content might not reflect
 | configuration changes until the cache is invalidated (cleared). The
-| [Server Administration &rarr; Resources tab](/docs/7-1/user/-/knowledge_base/u/server-administration-resources)
+| [Server Administration &rarr; Resources tab](/docs/7-2/user/-/knowledge_base/u/server-administration-resources)
 | provides cache clearing options.
 
 | **Note:** The `.cfg` file format is common in OSGi environments, and it's a

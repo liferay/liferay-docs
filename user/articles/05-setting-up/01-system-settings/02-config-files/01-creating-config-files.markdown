@@ -7,7 +7,7 @@ header-id: creating-configuration-files
 [TOC levels=1-4]
 
 System Settings provides an
-[*Export*](/docs/7-1/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
+[*Export*](/docs/7-2/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
 option that becomes available once you modify a configuration entry. Exporting
 is the recommended way to create `.config` files: you download a `.config` file
 containing the entry's settings in a `key=value` format. @product@ exports an
@@ -101,7 +101,7 @@ Once you have a configuration file, deploy it. It's registered and
 the targeted configuration values are updated automatically. 
 
 To deploy the `.config` file, place it in your 
-[Liferay Home's](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+[Liferay Home's](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
 

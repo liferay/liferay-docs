@@ -25,7 +25,7 @@ three additional configuration forms for these integrations:
 **Analytics**: Enter an analytics system or remove one of the two
 pre-configured options (`google` and `piwik`). Activate these systems here, and
 configure them at the 
-[site level](/docs/7-1/user/-/knowledge_base/u/advanced-site-settings#analytics).
+[site level](/docs/7-2/user/-/knowledge_base/u/advanced-site-settings#analytics).
 
 **Maps**: Choose OpenStreetMap or Google Maps as the maps API provider for
 geolocalized asset display.

@@ -11,7 +11,7 @@ approving content in an enterprise environment. Even if you don't leverage
 scripts, it's a powerful and robust workflow solution. Adding scripts takes it
 to the next level. These scripts aren't run from the script console, but are
 embedded in 
-[XML workflow definitions](/docs/7-1/tutorials/-/knowledge_base/t/crafting-xml-workflow-definitions) 
+[XML workflow definitions](/docs/7-2/tutorials/-/knowledge_base/t/crafting-xml-workflow-definitions) 
 and run during the execution of the workflow.
 
 The final step in a workflow runs a script that makes content available for use.
@@ -113,7 +113,7 @@ submission. Otherwise, the asset is sent to the `Default Review` task.
 
 Within a workflow, the next task or state is chosen based on the return value.
 See some examples of workflow scripts by accessing the
-[embedded workflows](/docs/7-1/user/-/knowledge_base/u/workflow#embedded-workflows) 
+[embedded workflows](/docs/7-2/user/-/knowledge_base/u/workflow#embedded-workflows) 
 and inspecting the XML.
 
 ## Calling OSGi Services
@@ -121,7 +121,7 @@ and inspecting the XML.
 How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
 disappear without notice? 
-[Use a service tracker](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers). 
+[Use a service tracker](/docs/7-2/tutorials/-/knowledge_base/t/service-trackers). 
 That way you can make sure your code has access to the service it
 needs, and if not, do something appropriate in response. Here's a little example
 code to show you how this might look in Groovy:
@@ -166,7 +166,7 @@ code to show you how this might look in Groovy:
     }
 
 If you read the article on 
-[service trackers](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers), 
+[service trackers](/docs/7-2/tutorials/-/knowledge_base/t/service-trackers), 
 the only odd looking piece of the above code is the `getBundle` call: why is
 `GroovyExecutor.class` passed as a parameter? The parameter passed to the
 `FrameworkUtil.getBundle` call must be a class from the OSGi bundle executing
@@ -181,10 +181,10 @@ Since, however, it enables users to execute code, it can be dangerous. When
 configuring your permissions, be aware of the potential consequences of poorly
 or maliciously written scripts inside a workflow definition. For more
 information on creating workflow definitions with Kaleo workflow, see the
-[workflow documentation](/docs/7-1/user/-/knowledge_base/u/workflow).
+[workflow documentation](/docs/7-2/user/-/knowledge_base/u/workflow).
 
 ## Related Topics
 
-[Running Scripts From the Script Console](/docs/7-1/user/-/knowledge_base/u/running-scripts-from-the-script-console)
+[Running Scripts From the Script Console](/docs/7-2/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 
-[Script Examples](/docs/7-1/user/-/knowledge_base/u/script-examples)
+[Script Examples](/docs/7-2/user/-/knowledge_base/u/script-examples)

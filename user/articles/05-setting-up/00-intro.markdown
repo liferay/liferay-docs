@@ -18,7 +18,7 @@ Breaking it down, three types of applications must be configurable:
 
 To this end, Liferay's engineers have made the platform and its applications
 configurable, and created a mechanism for developers to make their
-[applications configurable](/docs/7-1/tutorials/-/knowledge_base/t/configurable-applications).
+[applications configurable](/docs/7-2/tutorials/-/knowledge_base/t/configurable-applications).
 
 ## Where Configuration Happens
 

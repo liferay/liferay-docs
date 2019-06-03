@@ -14,13 +14,13 @@ even system level operations in the scripting console.
 
 These tutorials cover the following scripting topics: 
 
-- [Invoking Liferay services](/docs/7-1/user/-/knowledge_base/u/invoking-liferay-services-from-scripts)
+- [Invoking Liferay services](/docs/7-2/user/-/knowledge_base/u/invoking-liferay-services-from-scripts)
 
-- [Running scripts from the script console](/docs/7-1/user/-/knowledge_base/u/running-scripts-from-the-script-console)
+- [Running scripts from the script console](/docs/7-2/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 
-- [Using the script engine with workflow](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow)
+- [Using the script engine with workflow](/docs/7-2/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow)
 
-- [Script examples](/docs/7-1/user/-/knowledge_base/u/script-examples)
+- [Script examples](/docs/7-2/user/-/knowledge_base/u/script-examples)
 
 The most common use of the scripting console is to invoke Liferay's services,
 so that's covered first. Familiarity with Liferay's API makes the scripting
