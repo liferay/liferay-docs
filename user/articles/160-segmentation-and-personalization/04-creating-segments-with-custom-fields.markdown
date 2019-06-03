@@ -23,7 +23,7 @@ First, create a custom field to use for the Segment:
 
 5.  For the *Field Name* enter *Cardholder Type*.
 
-6.  For values, enter *None,* *Basic*, *Gold*, and *Platinum* on four separate lines.
+6.  For values, enter *None,* *Basic*, *Silver*, and *Gold* on four separate lines.
 
 7.  Click *Save*.
 

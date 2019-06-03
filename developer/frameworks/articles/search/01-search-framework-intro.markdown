@@ -2,7 +2,7 @@
 header-id: search
 ---
 
-# Search [](id=introduction-to-liferay-search)
+# Search
 
 [TOC levels=1-4]
 

@@ -22,7 +22,7 @@ You should carefully manage who can add, view, and update files. You can store
 files of all kinds for various purposes. For example, you may have one set of
 files intended for only specific site members and another intended for everyone,
 including guests. You can use 
-[Roles and Permissions](/discover/portal/-/knowledge_base/7-2/roles-and-permissions) 
+[Roles and Permissions](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions) 
 to control access to Document Library files. The Document Library's folder
 permissions also help you organize files. 
 
@@ -47,7 +47,7 @@ and Media:
 
 5.  Assign this Role to the Users that should manage media. For more 
     information on this and other topics related to Roles, see 
-    [Roles and Permissions](/discover/portal/-/knowledge_base/7-2/roles-and-permissions). 
+    [Roles and Permissions](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions). 
 
 ## Using the Add Menu
 
@@ -80,11 +80,11 @@ system.
 
 **Multiple Files Upload:** Upload several files at once. You can apply a single 
 description and document type to all the files. You can also 
-[categorize and tag](/discover/portal/-/knowledge_base/7-2/organizing-content-with-tags-and-categories) 
+[categorize and tag](/docs/7-2/user/-/knowledge_base/u/organizing-content-with-tags-and-categories) 
 the files, and assign them default permissions. 
 
 **Repository**: Add access to an external repository. See 
-[Store Types](/discover/portal/-/knowledge_base/7-2/store-types) 
+[Store Types](/docs/7-2/user/-/knowledge_base/u/store-types) 
 for more information. 
 
 **Shortcut**: Create a shortcut to any document that you can view. You 
@@ -92,9 +92,9 @@ can set permissions on the shortcut to specify who can access the
 original document via the shortcut. 
 
 Any additional items in the Add menu are 
-[document types](/discover/portal/-/knowledge_base/7-2/document-types) 
+[document types](/docs/7-2/user/-/knowledge_base/u/document-types) 
 described by a unique 
-[metadata set](/discover/portal/-/knowledge_base/7-2/metadata-sets). 
+[metadata set](/docs/7-2/user/-/knowledge_base/u/metadata-sets). 
 When you add a document belonging to a document type, a form appears that lets 
 you pick the file to upload and enter the data defined by the document type's 
 metadata set. 

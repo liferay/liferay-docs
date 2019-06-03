@@ -13,3 +13,4 @@ The topics below are covered in this section:
 
 - [@product@ FreeMarker Macros](/docs/7-2/reference/-/knowledge_base/r/product-freemarker-macros)
 - [Front-end Taglibs](/docs/7-2/reference/-/knowledge_base/r/front-end-taglibs)
+- [Liferay npm Bundler](/docs/7-2/reference/-/knowledge_base/r/liferay-npm-bundler)

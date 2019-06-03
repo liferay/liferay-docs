@@ -8,7 +8,7 @@ header-id: configuring-message-boards
 
 Before using a message board, configure it to your needs. First, open the
 Message Boards app in your scope's Site Administration menu, as described 
-[earlier](/discover/portal/-/knowledge_base/7-2/creating-message-boards). 
+[earlier](/docs/7-2/user/-/knowledge_base/u/creating-message-boards). 
 To open the message board's configuration screen, click the message board's 
 *Options* menu 
 (![Options](../../../../images/icon-options.png)) and select *Configuration*. 

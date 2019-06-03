@@ -12,7 +12,7 @@ management of Liferay projects by providing various build scripts and configured
 properties. You can download the
 [Liferay Project SDK installer](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
 and run it to install
-[Blade CLI](/docs/reference/7-2/-/knowledge_base/reference/blade-cli) (default
+[Blade CLI](/docs/7-2/reference/-/knowledge_base/reference/blade-cli) (default
 CLI for workspace), initialize a new Liferay Workspace, and download @ide@.
 
 Liferay Workspace is the official way to create/manage @product-ver@ projects
@@ -21,27 +21,27 @@ Maven-based workspace.
 
 You'll cover the following topics in this section:
 
-- [Installing Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/installing-liferay-workspace)
-- [Creating a Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/creating-a-liferay-workspace)
-- [Importing a Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/importing-a-liferay-workspace-into-an-ide)
-- [Setting Proxy Requirements](/docs/reference/7-2/-/knowledge_base/reference/setting-proxy-requirements-for-liferay-workspace)
-- [Adding a Bundle](/docs/reference/7-2/-/knowledge_base/reference/adding-a-liferay-bundle-to-liferay-workspace)
-- [Setting Environment Configurations](/docs/reference/7-2/-/knowledge_base/reference/setting-environment-configurations-for-liferay-workspace)
-- [Building Node.js Themes](/docs/reference/7-2/-/knowledge_base/reference/building-node-js-themes-in-liferay-workspace)
-- [Building Gradle/Maven Themes](/docs/reference/7-2/-/knowledge_base/reference/building-gradle-maven-themes-in-liferay-workspace)
-- [Managing the Target Platform](/docs/reference/7-2/-/knowledge_base/reference/managing-the-target-platform)
-- [Validating Modules Against the Target Platform](/docs/reference/7-2/-/knowledge_base/reference/validating-modules-against-the-target-platform)
-- [Leveraging Docker](/docs/reference/7-2/-/knowledge_base/reference/leveraging-docker)
-- [Updating Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/updating-liferay-workspace)
-- [Updating Default Plugins Provided by Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/updating-default-plugins-provided-by-liferay-workspace)
+- [Installing Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/installing-liferay-workspace)
+- [Creating a Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/creating-a-liferay-workspace)
+- [Importing a Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/importing-a-liferay-workspace-into-an-ide)
+- [Setting Proxy Requirements](/docs/7-2/reference/-/knowledge_base/reference/setting-proxy-requirements-for-liferay-workspace)
+- [Adding a Bundle](/docs/7-2/reference/-/knowledge_base/reference/adding-a-liferay-bundle-to-liferay-workspace)
+- [Setting Environment Configurations](/docs/7-2/reference/-/knowledge_base/reference/setting-environment-configurations-for-liferay-workspace)
+- [Building Node.js Themes](/docs/7-2/reference/-/knowledge_base/reference/building-node-js-themes-in-liferay-workspace)
+- [Building Gradle/Maven Themes](/docs/7-2/reference/-/knowledge_base/reference/building-gradle-maven-themes-in-liferay-workspace)
+- [Managing the Target Platform](/docs/7-2/reference/-/knowledge_base/reference/managing-the-target-platform)
+- [Validating Modules Against the Target Platform](/docs/7-2/reference/-/knowledge_base/reference/validating-modules-against-the-target-platform)
+- [Leveraging Docker](/docs/7-2/reference/-/knowledge_base/reference/leveraging-docker)
+- [Updating Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/updating-liferay-workspace)
+- [Updating Default Plugins Provided by Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/updating-default-plugins-provided-by-liferay-workspace)
 
 Liferay Workspaces can be used in many different development environments, which
 makes it flexible and applicable to many different developers. For example, a
 Liferay Workspace easily integrates with Eclipse and IntelliJ, providing a
 seamless development experience. See how to
-[install](/docs/reference/7-2/-/knowledge_base/reference/installing-liferay-workspace)
+[install](/docs/7-2/reference/-/knowledge_base/reference/installing-liferay-workspace)
 and
-[create](/docs/reference/7-2/-/knowledge_base/reference/creating-a-liferay-workspace)
+[create](/docs/7-2/reference/-/knowledge_base/reference/creating-a-liferay-workspace)
 a Liferay Workspace for more information.
 
 You'll learn about workspace's anatomy and development lifecycle next.
@@ -62,18 +62,11 @@ folder structure any way you'd like. The top-level files/folder of a Liferay
 - `ext` (generated): holds the Ext OSGi modules and Ext plugins.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
-- `plugins-sdk` (generated): holds plugins to migrate from previous releases.
-  These project types should eventually be migrated to the `wars` folder, if
-  possible. This is targeted for @product@ 7.0 to provide a way to migrate from
-  the Plugins SDK to Liferay Workspace. See the
-  [Using a Plugins SDK from Your Workspace](/docs/tutorials/7-0/-/knowledge_base/tutorials/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
-  section for more information. The Plugins SDK is no longer available for
-  @product-ver@.
 - `themes`: holds Node.js-style themes that use the Liferay JS Theme Toolkit, 
   which are built using the Liferay Theme Generator.
 - `wars`: holds traditional WAR-style web application projects and theme
   projects (i.e., generated by the
-  [`theme`](/docs/reference/7-2/-/knowledge_base/reference/theme-template) project
+  [`theme`](/docs/7-2/reference/-/knowledge_base/reference/theme-template) project
   template).
 - `build.gradle`: the common Gradle build file.
 - `gradle.properties`: specifies the workspace's project locations and @product@
@@ -91,7 +84,7 @@ is the same, except the Gradle build files are swapped out for a `pom.xml` file.
 Visit your workspace's `gradle.properties` file for a list of properties (with
 descriptions) you can define to adapt your workspace. For a Maven-based
 workspace, see the
-[Bundle Support Plugin](/docs/reference/7-2/-/knowledge_base/reference/bundle-support-plugin)
+[Bundle Support Plugin](/docs/7-2/reference/-/knowledge_base/reference/bundle-support-plugin)
 article for info on adapting your Maven workspace.
 
 If you'd like to keep the global Gradle properties the same, but want to change
@@ -118,32 +111,32 @@ You'll learn about each lifecycle option next.
 ### Creating Projects
 
 Workspace provides a slew of
-[project templates](/docs/reference/7-2/-/knowledge_base/reference/project-templates)
+[project templates](/docs/7-2/reference/-/knowledge_base/reference/project-templates)
 that you can use to create many different types of Liferay projects.
 
 You can also configure where to generate certain projects (modules, themes,
 WARs, etc.). These settings are documented in the `gradle.properties` file. See
 the
-[Creating a Project](/docs/reference/7-2/-/knowledge_base/reference/creating-a-project)
+[Creating a Project](/docs/7-2/reference/-/knowledge_base/reference/creating-a-project)
 article for more information.
 
 Liferay Workspace manages theme projects in two separate folders based on how
 they're created:
 
-- [Liferay Theme Generator](/docs/reference/7-2/-/knowledge_base/reference/theme-generator)
+- [Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/theme-generator)
   (Node.js-based themes that use the Liferay JS Theme Toolkit)
-- [Project template/archetype](/docs/reference/7-2/-/knowledge_base/reference/theme-template)
+- [Project template/archetype](/docs/7-2/reference/-/knowledge_base/reference/theme-template)
   (Gradle/Maven-based themes)
 
 Liferay Workspace offers an environment where developers can use the Liferay
 Theme Generator to create themes and their work can be seamlessly integrated
 into their overall DevOps strategy. You can leverage the Liferay Theme Generator
 to
-[create Node.js-based themes inside workspace](/docs/reference/7-2/-/knowledge_base/reference/building-node-js-themes-in-liferay-workspace)
+[create Node.js-based themes inside workspace](/docs/7-2/reference/-/knowledge_base/reference/building-node-js-themes-in-liferay-workspace)
 or you can leverage it externally and copy themes into Workspace.
 
 Workspace also offers a
-[traditional Java-based theme approach](/docs/reference/7-2/-/knowledge_base/reference/building-gradle-maven-themes-in-liferay-workspace)
+[traditional Java-based theme approach](/docs/7-2/reference/-/knowledge_base/reference/building-gradle-maven-themes-in-liferay-workspace)
 (leveraging Gradle/Maven) for those that can't use the Liferay JS Theme
 Toolkit's tools in their CI environment.
 
@@ -153,9 +146,9 @@ Liferay Workspace abstracts many build requirements away so you can focus on
 developing projects instead of worrying about how to build them. This is done by
 incorporating a slew of plugins under the hood to allow for easily
 accessible tooling. See the
-[Gradle Plugins](/docs/reference/7-2/-/knowledge_base/reference/gradle-plugins)
+[Gradle Plugins](/docs/7-2/reference/-/knowledge_base/reference/gradle-plugins)
 and
-[Maven Plugins](/docs/reference/7-2/-/knowledge_base/reference/maven-plugins)
+[Maven Plugins](/docs/7-2/reference/-/knowledge_base/reference/maven-plugins)
 sections for information on some of the plugins provided by workspace.
 
 Gradle-based workspaces also include a Gradle wrapper in its ROOT folder (e.g.,
@@ -173,7 +166,7 @@ of manual build configurations.
 Liferay Workspace provides easy-to-use deployment mechanisms that let you deploy
 your project to a Liferay server without any custom configuration. To learn more
 about deploying projects from a workspace, visit the
-[Deploying a Project](/docs/reference/7-2/-/knowledge_base/reference/deploying-a-project)
+[Deploying a Project](/docs/7-2/reference/-/knowledge_base/reference/deploying-a-project)
 article.
 
 ### Testing Projects
@@ -221,7 +214,7 @@ When workspace generates a @product@ bundle, these things happen:
     top of any existing configurations from the `common` folder.
 
 See the
-[Setting Environment Configurations for Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/setting-environment-configurations-for-liferay-workspace)
+[Setting Environment Configurations for Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/setting-environment-configurations-for-liferay-workspace)
 article for more information.
 
 ### Releasing Projects
@@ -238,7 +231,7 @@ developers the chance to use them.
 
 For more instructions on how to set up a Maven Nexus repository for your
 workspace's projects, see the
-[Creating a Maven Repository](/docs/reference/7-2/-/knowledge_base/reference/creating-a-maven-repository)
+[Creating a Maven Repository](/docs/7-2/reference/-/knowledge_base/reference/creating-a-maven-repository)
 and
-[Deploying Liferay Maven Artifacts to a Repository](/docs/reference/7-2/-/knowledge_base/reference/deploying-liferay-maven-artifacts-to-a-repository)
+[Deploying Liferay Maven Artifacts to a Repository](/docs/7-2/reference/-/knowledge_base/reference/deploying-liferay-maven-artifacts-to-a-repository)
 articles.

@@ -26,6 +26,11 @@ theme:
 
         npm install -g yo
 
+| **Note:** Gulp is included as a local dependency in generated themes, so you 
+| are not required to install it. It can be accessed by running 
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+| root folder.
+
 2.  Install the Liferay Theme Generator with the command below:
     
         npm install -g generator-liferay-theme

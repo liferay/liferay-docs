@@ -32,7 +32,7 @@ Module projects created using
 [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli),
 [Liferay's Maven archetypes](/docs/7-2/reference/-/knowledge_base/r/maven),
 or
-[Liferay @ide@](/docs/7-2/reference/-/knowledge_base/r/liferay-ide)
+[Liferay @ide@](/docs/7-2/reference/-/knowledge_base/r/liferay-dev-studio)
 use
 [bnd](http://bnd.bndtools.org/).
 On building such a project's module JAR, bnd propagates the OSGi headers from
@@ -65,9 +65,9 @@ packages with other OSGi bundles!
 
 ## Related Topics
 
-[Configuring Dependencies](/docs/7-2/tutorials/-/knowledge_base/t/configuring-dependencies)
+[Configuring Dependencies](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies)
 
-[Deploying WARs \(WAB Generator\)](/docs/7-2/tutorials/-/knowledge_base/t/using-the-wab-generator)
+[Deploying WARs \(WAB Generator\)](/docs/7-2/customization/-/knowledge_base/c/using-the-wab-generator)
 
 [Project Templates](/docs/7-2/reference/-/knowledge_base/r/project-templates)
 
@@ -75,6 +75,6 @@ packages with other OSGi bundles!
 
 [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli)
 
-[Liferay @ide@](/docs/7-2/reference/-/knowledge_base/t/liferay-ide)
+[Liferay @ide@](/docs/7-2/reference/-/knowledge_base/r/liferay-dev-studio)
 
 [Semantic Versioning](/docs/7-2/customization/-/knowledge_base/c/semantic-versioning)

@@ -6,13 +6,10 @@ header-id: searching-for-localized-content
 
 [TOC levels=1-4]
 
-@product@ supports setting a virtual instance-wide 
-[default language](/documentation/user/-/knowledge_base/7-2/miscellaneous-settings#miscellaneous-display-settings) <!-- update when available on 7.2-->
-and setting a 
-[site-specific language](/documentation/user/-/knowledge_base/7-2/social-settings-and-languages#languages). <!-- Update to 7.2 when available-->
-In addition, many out of the box assets 
-[support translation](/documentation/user/-/knowledge_base/7-2/other-content-options#localizing-content).
-<!--update link to 7.2 -->
+@product@ supports setting a virtual instance-wide [default
+language](/docs/7-2/user/-/knowledge_base/u/miscellaneous-settings#miscellaneous-display-settings)
+and setting a In addition, many out of the box assets [support
+translation](/docs/7-2/user/-/knowledge_base/u/other-content-options#localizing-content).
 
 How an asset's fields are indexed in the search engine plays an important role
 in the end user's experience. Not all assets are indexed in a way that supports

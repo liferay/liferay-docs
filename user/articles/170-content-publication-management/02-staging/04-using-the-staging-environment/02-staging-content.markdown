@@ -14,7 +14,7 @@ staged site page. You can choose the site page variation from the dropdown menu
 or manage them from the *Options* icon
 (![Options](../../../../images/icon-staging-bar-options.png)) in the Staging
 Bar. See the
-[Using Site Pages Variations](/docs/7-2/user/-/knowledge_base/user/using-multi-and-single-page-variations)
+[Using Site Pages Variations](/docs/7-2/user/-/knowledge_base/u/using-multi-and-single-page-variations)
 article for more information.
 
 **Page Variations:** lets you work in parallel on multiple versions of a staged
@@ -22,7 +22,7 @@ page. You can choose the page variation from the dropdown menu or manage them
 from the *Options* icon
 (![Options](../../../../images/icon-staging-bar-options.png)) in the Staging
 Bar. See the
-[Using Site Pages Variations](/docs/7-2/user/-/knowledge_base/user/using-multi-and-single-page-variations)
+[Using Site Pages Variations](/docs/7-2/user/-/knowledge_base/u/using-multi-and-single-page-variations)
 article for more information.
 
 **Undo/Redo:** steps back/forward through recent changes to a page, which can

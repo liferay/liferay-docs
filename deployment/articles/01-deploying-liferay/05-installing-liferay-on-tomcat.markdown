@@ -26,7 +26,7 @@ or
 - OSGi JARs ZIP file
 
 | **Important:** 
-| [Prepare for the install](/docs/7-2/deploy/-/knowledge_base/d/prepare-for-install)
+| [Prepare for the install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install)
 | before continuing. 
 
 Here are the basic steps for installing @product@ on Tomcat:

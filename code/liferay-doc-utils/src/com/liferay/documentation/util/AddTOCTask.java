@@ -112,20 +112,12 @@ public class AddTOCTask extends Task {
 
 			while ((line = in.readLine()) != null) {
 
-				if (line.equals(tocSyntax)) {
+				if (line.startsWith(tocSyntax)) {
 
 					tocExists = true;
 					tocLineNum = in.getLineNumber();
-					break;
 				}
-				else if (line.contains(tocSyntax)) {
-					in.close();
-					throw new BuildException("Filename: " + filename + ":" +
-							in.getLineNumber() + " TOC syntax should not be accompanied by " +
-							"any additional text! Also verify there is no whitespace " +
-							"with the TOC syntax.");
-				}
-				else if (in.getLineNumber() == (tocLineNum + 1) && tocExists) {
+				if (in.getLineNumber() == (tocLineNum + 1) && tocExists) {
 					if (!line.equals("")) {
 						in.close();
 						throw new BuildException("Filename: " + filename + ":" +

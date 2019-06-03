@@ -99,7 +99,7 @@ In summary, an Ext project is a powerful way to extend @product@. There are no
 limits to what you can customize, so use it carefully. Before using an Ext
 project, see if you can implement all or part of the desired functionality
 through
-[Application Display Templates](/docs/7-2/frameworks/-/knowledge_base/f/styling-apps-and-assets)
+[Widget Templates](/docs/7-2/frameworks/-/knowledge_base/f/styling-apps-and-assets)
 or extension points, without introducing the complexity that's inherent with Ext
 projects. If you need to use an Ext project, make your customization as small as
 possible and follow the instructions in this section carefully to avoid issues.
