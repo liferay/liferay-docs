@@ -163,7 +163,7 @@ The command line interface is recommended for domain mode deployments.
 environment on multiple Wildfly servers. You can set up a cluster of @product@
 instances running on Wildfly servers running in standalone mode. Please refer to
 the chapter of this guide on
-[@product@ Clustering](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)
+[@product@ Clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
 for information on setting up a @product@ cluster.
 
 $$$
@@ -271,12 +271,12 @@ Make the following edits as applicable for your operating system:
 
 1.  Comment out the initial `JAVA_OPTS` assignment like this:
 
-        rem set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m"
+        rem set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=2560m"
 
 2.  Add the following `JAVA_OPTS` assignment one line above the `:JAVA_OPTS_SET`
     line found at end of the file:
 
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2560m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
 
 **Unix:**
 
@@ -291,7 +291,7 @@ Make the following edits as applicable for your operating system:
 
 2.  Add the following statement to the bottom of the file:
 
-        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true  -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
+        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true  -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2560m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
    
 +$$$
 
@@ -340,7 +340,7 @@ installation on Wildfly. Next you'll configure your database.
 
 The easiest way to handle database configuration is to let @product@ manage your
 data source. The 
-[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)
+[Basic Configuration](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#using-the-built-in-data-source)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 
@@ -414,7 +414,7 @@ Now that you've configured your data source, the mail session is next.
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s built-in mail
 session, skip this section and
-[configure the mail session](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#configuring-mail)
+[configure the mail session](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail)
 in the Control Panel.
 
 If you want to manage your mail session with Wildfly, follow these steps:
