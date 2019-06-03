@@ -20,7 +20,7 @@ following documentation:
 - [Data Upgrade](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver)
 - [Code Upgrade](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver)
 
-The Upgrade Planner is provided in  
+The Upgrade Planner is provided in
 [Liferay Dev Studio](/docs/7-2/reference/-/knowledge_base/r/liferay-dev-studio) 
 (versions 3.6+). Here's what the Upgrade Planner does: 
 
@@ -31,7 +31,7 @@ The Upgrade Planner is provided in
 - Describes each API change related to the code.
 - Suggests how to adapt the code.
 - Provides options, in some cases, to adapt code automatically.
-- Transfer database and server data to your new environment.
+- Transfers database and server data to your new environment.
 
 Even if you prefer tools other than Dev Studio (which is based on Eclipse), you
 should upgrade your data and legacy plugins using the Upgrade Planner first--you
@@ -41,8 +41,8 @@ To start the Upgrade Planner in Dev Studio, do this:
 
 1.  Navigate to *Project* &rarr; *New Liferay Upgrade Plan...*.
 
-2.  In the New Liferay Upgrade Plan wizard, assign you plan a name and choose
-    the upgrade plan outline. The data and code upgrade processes are separate,
+2.  In the New Liferay Upgrade Plan wizard, assign your plan a name and choose
+    an upgrade plan outline. The data and code upgrade processes are separate,
     so you must step through each process independently.
 
 3.  Choose your current Liferay version and the new version you're upgrading to.
@@ -62,7 +62,7 @@ You're now offered several windows in the UI:
   development environment. It also displays your
   [upgrade problems](/docs/7-2/tutorials/-/knowledge_base/t/fixing-upgrade-problems)
   that are detected during the *Fix Upgrade Problems* step.
-- *Liferay Upgrade Plan:* outlines the upgrade plan's steps.
+- *Liferay Upgrade Plan:* outlines the upgrade plan's steps and step summaries.
 - *Liferay Upgrade Plan Info:* shows official documentation that describes the
   upgrade step.
 
@@ -75,14 +75,14 @@ Upgrade Plan window. Each step can have several options:
 - *Click when complete:* marks the step as complete. This is only offered when
   the Upgrade Planner cannot provide automated assistance and, instead, only
   offers documentation to assist in completing the step manually.
-- *Restart:* marks the step as unfinished. The step is performed again if
-  automation is involved.
+- *Restart:* marks a completed step as unfinished. The step is performed again
+  if automation is involved.
 - *Skip:* skips the step and jumps to the next step in the outline.
 
 ![Figure 2: You can preview the Upgrade Planner's automated updates before you perform them.](../../images/preview-upgrade-planner-changes.png)
 
-Great! You now have a general understanding of the Liferay Upgrade Planner's UI
-and how to get started. Visit the
+Great! You now have a good understanding of the Liferay Upgrade Planner's UI and
+how to get started. Visit the
 [Data Upgrade](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver) and
 [Code Upgrade](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver)
 sections for more information on those upgrade processes.
