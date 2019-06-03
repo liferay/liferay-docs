@@ -28,7 +28,7 @@ Provides a suite of JSF components that utilize [AlloyUI](http://alloyui.com/).
 
 |Branch|Example Artifact|AlloyUI|JSF API|Additional Info|
 |------|----------------|-------|-------|---------------|
-|[master (3.x)](https://github.com/liferay/liferay-faces-alloy/tree/master)|com.liferay.faces.alloy-3.0.1.jar|3.0.x|2.2+|*AlloyUI 3.0.x is the version that comes bundled with Liferay Portal 7.0/7.1.*|
+|[master (3.x)](https://github.com/liferay/liferay-faces-alloy/tree/master)|com.liferay.faces.alloy-3.0.1.jar|3.0.x|2.2+|*AlloyUI 3.0.x is the version that comes bundled with Liferay Portal 7.0+.*|
 |[2.x](https://github.com/liferay/liferay-faces-alloy/tree/2.x)|com.liferay.faces.alloy-2.0.1.jar|2.0.x|2.1+|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 |[1.x](https://github.com/liferay/liferay-faces-alloy/tree/1.x)|com.liferay.faces.alloy-1.0.1.jar|2.0.x|1.2|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 
@@ -68,7 +68,7 @@ Provides a suite of JSF components that are based on the JSP tags provided by
 
 |Branch|Example Artifact|Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;JSF API|
 |------|----------------|:------------------:|:-------:|
-|[3.x](https://github.com/liferay/liferay-faces-portal/tree/3.x)|com.liferay.faces.portal-3.0.1.jar|7.0.x/7.1.x|2.2+|
+|[3.x](https://github.com/liferay/liferay-faces-portal/tree/3.x)|com.liferay.faces.portal-3.0.1.jar|7.0.x+|2.2+|
 |[2.x](https://github.com/liferay/liferay-faces-portal/tree/2.x)|com.liferay.faces.portal-2.0.1.jar|6.2.x|2.1+|
 |[1.x](https://github.com/liferay/liferay-faces-portal/tree/1.x)|com.liferay.faces.portal-1.0.1.jar|6.2.x|1.2|
 

@@ -63,7 +63,7 @@ bridge.
 A JSF portlet bridge aligns the correct phases of the JSF lifecycle with each
 phase of the portlet lifecycle. For instance, if a browser sends an HTTP GET
 request to a portal page with a JSF portlet in it, the `RENDER_PHASE` is
-perfomed in the portlet's lifecycle. The JSF portlet bridge then initiates the
+performed in the portlet's lifecycle. The JSF portlet bridge then initiates the
 `RESTORE_VIEW` and `RENDER_RESPONSE` phases in the JSF lifecycle. Likewise, when
 an HTTP POST is executed on a portlet and the portlet enters the `ACTION_PHASE`,
 then the full JSF lifecycle is initiated by the bridge. 
@@ -97,8 +97,8 @@ section of tutorials for more information on JSF development for @product@.
 
 ## Related Topics
 
-[Understanding Liferay Faces Alloy](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/docs/7-2/reference/-/knowledge_base/r/understanding-liferay-faces-alloy)
 
-[Understanding Liferay Faces Portal](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/7-2/reference/-/knowledge_base/r/understanding-liferay-faces-portal)
 
-[What is Service Builder?](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
