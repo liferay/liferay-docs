@@ -1,0 +1,34 @@
+<p>&mdash;</p><h2>header-id: custom-fields</h2><h1>Custom Fields</h1><p>[TOC levels=1-4]</p><p>Have you ever wondered why there&rsquo;s no <em>Head Circumference</em> field in the form for adding users to @product@? Probably because most sites based on @product@ don&rsquo;t need it. If you&rsquo;re an administrator at the Lunar Resort, however, you certainly need to know your guests&rsquo; head circumference so you can provide them with a properly fitting helmet. </p><p>Many of @product@&rsquo;s assets and resources let you add new fields to their edit forms. Here&rsquo;s the complete list:</p>
+<ul>
+  <li>Blogs Entry</li>
+  <li>Calendar Event</li>
+  <li>Document</li>
+  <li>Documents Folder</li>
+  <li>Knowledge Base Article</li>
+  <li>Knowledge Base Folder</li>
+  <li>Message Boards Category</li>
+  <li>Message Boards Message</li>
+  <li>Organization</li>
+  <li>Page</li>
+  <li>Role</li>
+  <li>Site</li>
+  <li>User</li>
+  <li>User Group</li>
+  <li>Web Content Article</li>
+  <li>Web Content Folder</li>
+  <li>Wiki Page</li>
+</ul><p>| <strong>Developer Use Case:</strong> Adding custom fields to @product@ resources affords | flexibility to developers. Suppose you must limit the number of users | that can be assigned to a particular Role. First an administrator creates a custom | field called <em>max-users</em> for the Role. A developer then creates a module that | inserts logic before a user is added to that Role. If the logic detects that | the maximum number of Role users would be exceeded by completing the action, an | exception is thrown and the action does not complete.</p><h2>Adding Custom Fields</h2><p>To add custom fields, find the Custom Fields entry beneath the Control Panel&rsquo;s Configuration heading.</p><p>To add a custom field to one of the listed entities, </p>
+<ol>
+  <li><p>Choose a resource by clicking on it.</p></li>
+  <li><p>Click the add (<img src="../../images-dxp/icon-add.png"  alt="Add"/>) button.</p></li>
+  <li><p>Choose a field type: Text Area, Input Field, Dropdown, Checkbox, Radio, Geolocation, Date, True/False. </p></li>
+  <li><p>Add a name that&rsquo;s used as a key for accessing the field programmatically.</p><p>| <strong>Note:</strong> The Key you enter here is the name of the new field. It&rsquo;s stored | in the database and used by developers to access the custom field with the | <code>&lt;liferay-ui:custom-attribute /&gt;</code> tag. It is also used to label the | field in the UI.</p></li>
+  <li><p>Choose the Data Type of field and set any advanced properties.</p><p><img src="../../images/custom-fields-user-head-circumference.png" alt="Figure 1" /><p class="caption">Figure 1: At The Lunar Resort, a Head Circumference field is necessary for all users.</p></li>
+  <li><p>Click Save.</p></li>
+</ol><p>That&rsquo;s it.</p><p>Once you have a custom field for a resource, go find it in the UI of the resource. First find the UI location for the resource, and all its custom fields are displayed in a Custom Fields panel. For example, consider the Users UI:</p><p>Navigate to <em>Control Panel &rarr; Users and Organizations</em>. Click on a User to open the Edit User form and scroll down to find your custom field.</p><p><img src="../../images/custom-fields-panel.png" alt="Figure 2" /><p class="caption">Figure 2: The Custom Fields panel is found at the bottom of the Edit User form.</p><h2>Editing a Custom Field</h2><p>You can&rsquo;t change the key or field type of a custom field, but you can delete it and create a new one if necessary. Additionally, once you create the custom field, there are properties you can configure. For example, here&rsquo;s the Head Circumference field&rsquo;s edit page: </p><p><img src="../../images/custom-fields-configuration.png" alt="Figure 3" /><p class="caption">Figure 3: Custom Fields can be configured after you create them. The exact options depend on the field type you choose.</p><p>Edit an individual custom field&rsquo;s permissions by clicking the field&rsquo;s kebab menu (<img src="../../images-dxp/icon-actions.png"  alt="Actions"/>), then <em>Permissions</em>. Permission can be granted or removed for these actions:</p>
+<ul>
+  <li>Delete</li>
+  <li>Permissions</li>
+  <li>Update</li>
+  <li>View</li>
+</ul><p><img src="../../images/custom-fields-edit.png" alt="Figure 4" /><p class="caption">Figure 4: You can delete a custom field, edit it, or configure its permissions.</p><p>Custom fields make many of @product@&rsquo;s entities extensible directly from the administrative user interface. Use them as is or combine them with some back-end code, and you have yet another powerful, flexible feature at your disposal. As they&rsquo;re fond of saying at The Lunar Resort, &ldquo;The sky is certainly not the limit.&rdquo;</p>

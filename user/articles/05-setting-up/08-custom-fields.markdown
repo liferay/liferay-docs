@@ -16,11 +16,11 @@ Many of @product@'s assets and resources let you add new fields to their edit
 forms. Here's the complete list:
 
 - Blogs Entry
-- Bookmarks Entry
-- Bookmarks Folder
-- Calendar Booking
+- Calendar Event
 - Document
 - Documents Folder
+- Knowledge Base Article
+- Knowledge Base Folder
 - Message Boards Category
 - Message Boards Message
 - Organization
@@ -52,46 +52,17 @@ To add a custom field to one of the listed entities,
 
 2.  Click the add (![Add](../../images-dxp/icon-add.png)) button.
 
-3.  Add a Key.
+3.  Choose a field type: Text Area, Input Field, Dropdown, Checkbox, Radio,
+    Geolocation, Date, True/False. 
+
+4.  Add a name that's used as a key for accessing the field programmatically.
 
     | **Note:** The Key you enter here is the name of the new field. It's stored
     | in the database and used by developers to access the custom field with the
     | `<liferay-ui:custom-attribute />` tag. It is also used to label the
     | field in the UI.
 
-4. Choose the type of field you want to add.
-
-    | **Available Field Types:** There are a number of field types to choose from:
-    | 
-    | Presets:
-    | 
-    | - Selection of Integer Values
-    | - Selection of Decimal Values
-    | - Selection of Text Values
-    | - Text Box
-    | - Text Box--Indexed
-    | - Text Field--Secret
-    | - Text Field--Indexed
-    | 
-    | Primitives
-    | 
-    | - True/False
-    | - Date
-    | - Decimal number (64-bit)
-    | - Group of Decimal numbers (64-bit)
-    | - Decimal number (32-bit)
-    | - Group of Decimal numbers (32-bit)
-    | - Integer (32-bit)
-    | - Group of Integers (32-bit)
-    | - Integer (64-bit)
-    | - Group of Integers (64-bit)
-    | - Decimal Number or Integer (64-bit)
-    | - Group of Decimal numbers or Integer (64-bit)
-    | - Integer (16-bit)
-    | - Group of Integers (16-bit)
-    | - Text
-    | - Group of Text Values
-    | - Localized Text
+4. Choose the Data Type of field and set any advanced properties.
 
     ![Figure 1: At The Lunar Resort, a Head Circumference field is necessary for all users.](../../images/custom-fields-user-head-circumference.png)
 
@@ -111,12 +82,9 @@ open the Edit User form and scroll down to find your custom field.
 ## Editing a Custom Field
 
 You can't change the key or field type of a custom field, but you can delete it
-and create a new one if necessary. Additionally, once you create the custom
-field, there are properties you can configure. For example, here's the Head
-Circumference field's edit page: 
+and create a new one if necessary. 
 
-![Figure 3: Custom Fields can be configured after you create them. The exact
-options depend on the field type you choose.](../../images/custom-fields-configuration.png)
+![Figure 3: The exact Custom Fields configuration options you use depend on the field type you choose.](../../images/custom-fields-configuration.png)
 
 Edit an individual custom field's permissions by clicking the field's kebab menu
 (![Actions](../../images-dxp/icon-actions.png)), then *Permissions*.  Permission
@@ -127,8 +95,7 @@ can be granted or removed for these actions:
 - Update
 - View
 
-![Figure 4: You can delete a custom field, edit it, or configure its
-permissions.](../../images/custom-fields-edit.png)
+![Figure 4: You can delete a custom field, edit it, or configure its permissions.](../../images/custom-fields-edit.png)
 
 Custom fields make many of @product@'s entities extensible directly from the
 administrative user interface. Use them as is or combine them with some
