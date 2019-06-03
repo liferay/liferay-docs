@@ -70,6 +70,8 @@ app's External Services tab:
 
 ![Figure 1: Enable ImageMagick and Ghostscript, and verify that the paths are correct.](../../../../images/imagemagick-ghostscript.png)
 
+4.  Set the Resource limits to use.
+
 ## Xuggler Configuration
 
 Follow these steps to install and configure Xuggler: 

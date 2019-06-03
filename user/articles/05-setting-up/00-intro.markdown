@@ -18,7 +18,7 @@ Breaking it down, three types of applications must be configurable:
 
 To this end, Liferay's engineers have made the platform and its applications
 configurable, and created a mechanism for developers to make their
-[applications configurable](/docs/7-2/tutorials/-/knowledge_base/t/configurable-applications).
+[applications configurable](/docs/7-2/frameworks/-/knowledge_base/f/configurable-applications).
 
 ## Where Configuration Happens
 
@@ -31,7 +31,7 @@ values set in the UI always override configurations set in properties files.
 the platform or the modules. Keep in mind that these settings can always be
 overridden by a system administrator in the UI. To find what properties are
 configurable this way, visit
-[docs.liferay.com](https://docs.liferay.com/portal/7.1-latest/propertiesdoc).
+[docs.liferay.com](https://docs.liferay.com/portal/7.2-latest/propertiesdoc).
 
 The UI location where these configuration options appear depends on the scope
 you want to affect with the settings you choose.

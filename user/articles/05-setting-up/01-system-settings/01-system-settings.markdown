@@ -29,11 +29,10 @@ entry.
 
 Changing a configuration isn't difficult: 
 
-1.  Find the configuration you need, either by searching or browsing the
+1.  Find the configuration entry you need, either by searching or browsing the
     sections and categories.
 
-2.  Open the configuration form for the entry. Click the name of the component
-    you want to configure. 
+2.  Open the configuration form for the entry.
 
 3.  Make any changes you'd like, then click *Save*. Your configuration changes
     are saved and applied throughout the system. 
@@ -57,11 +56,11 @@ While browsing the categories of System Settings, you'll notice that clicking
 into a topic (for example, Blogs) reveals entries at different scopes. All the
 settings here act at the system scope. For scopes labeled other than System,
 these configurations act as defaults. In other words, they identify where the
-system-wide configuration is overridden. System scoped configurations are, of
-course, not overridden at more granular scopes. There are four values that
-you'll see under Scope:
+system-wide configuration is overridden. True system-scoped configurations
+(those under a category's _System Scope_ heading) are not overridden anywhere.
+There are four values that you'll see under Scope:
 
-- *System:* Any System Settings configuration made for system scoped entries
+- *System Scope:* Any System Settings configuration made for system scoped entries
   becomes the final value for the application in a system-wide fashion. It
   affects the whole system and isn't overridden anywhere else. 
 
@@ -91,15 +90,15 @@ default behavior at Control Panel &rarr; Configuration &rarr; System Settings
 &rarr; Blogs. In the Blogs Entry under Widget Scope, disable the *Enable
 Comments* checkbox. 
 
-Now add a Blog Entry to a Site's Content &rarr; Blogs application. Then go to a
-public page and add the Blogs Widget to the page. Click the Actions button
-(![Actions](../../../images/icon-actions.png)) for the widget and select
-*Configuration*. You'll see the same Enable Comments checkbox, and its default
-is now false (unchecked). Checking the box in the Widget Configuration screen
-breaks its link with the System Settings entry. Changing the System Settings
-configuration has no effect on this widget anymore.
+Now add a Blog Entry to a Site's Content & Data &rarr; Blogs application. Then
+go to a public page and add the Blogs Widget to the page. Click the Options
+button (![Options](../../../images/icon-app-options.png)) for the widget and
+select *Configuration*. You'll see the same Enable Comments checkbox, and its
+default is now false (unchecked). Checking the box in the Widget Configuration
+screen breaks its link with the System Settings entry. Changing the System
+Settings configuration has no effect on this widget anymore.
 
-If an application is configurable from Instance Settings and System Settings,
+<!--If an application is configurable from Instance Settings and System Settings,
 use System Settings to configure it whenever possible. If you use Instance
 Settings and later want to revert to using the System Settings default
 configurations, use the *Reset Values* button from the Instance Settings entry. 
@@ -110,16 +109,16 @@ The Reset Values button removes configuration values from the database so you
 can rely on the defaults that were provided out-of-the-box. If there is no Reset
 Values button for an Instance Settings entry, once you use Instance Settings to
 configure the application, you can't later decide to use System Settings. Only
-changes to Instance Settings are recognized. 
+changes to Instance Settings are recognized. -->
 
 ## Exporting and Importing Configurations
 
 What if you change many default configurations in System Settings, and then need
-to make the same changes in another installation? Don't worry, you
-don't need to remember and duplicate every choice you made. The System Settings
-application lets you export a single entry's configurations, or all the settings
-you made in the System Settings interface. The exported files are deployable to
-any other installation of the same version.
+to make the same changes in another installation? Don't worry, you don't need to
+remember and duplicate every choice you made. The System Settings application
+lets you export a single entry's configurations, or all the settings you made in
+the System Settings interface. The exported files are deployable to any other
+installation of the same version.
 
 To export a single entry's configurations, click the actions button
 (![Actions](../../../images/icon-actions.png)), then click *Export*. A `.config`

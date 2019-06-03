@@ -67,9 +67,7 @@ previews. For more information, see
 [the article on External Services](/docs/7-2/user/-/knowledge_base/u/server-administration-external-services).
 
 **Script:** A scripting console for executing migration or management code. 
-The Groovy scripting language is supported out of the box. <!-- See the 
-scripting article(/discover/portal/-/knowledge_base/7-2/using-liferays-script-engine)
-for more information and examples on using the scripting console-->. 
+The Groovy scripting language is supported out of the box. 
 
 **Shutdown:** Schedule a shutdown that notifies logged-in users of the
 impending shutdown. You can define the number of minutes until the shutdown and

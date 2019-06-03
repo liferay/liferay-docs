@@ -27,7 +27,9 @@ functionality, has this file name:
 
 The syntax for all keys and values in a `.config` file is the same: 
 
-    configurationName="value"
+```properties
+configurationName="value"
+```
 
 For single value configurations without special characters, that's all there is
 to know. Settings with multiple values and certain characters require slight
@@ -40,7 +42,9 @@ example, a configuration property for specifying supported file extensions needs
 more than one value. Here's how to write a multi-value setting in a `.config` 
 file: 
 
-    multiValueSetting=["Value 1","Value 2", ...]
+```properties
+multiValueSetting=["Value 1","Value 2", ...]
+```
 
 Do not use a space character between values (after the comma). The property
 won't be loaded.
@@ -54,7 +58,9 @@ multiple single value entries for *Characters Blacklist*:
 In the configuration file, this is really a single key with an array of 
 comma-separated values: 
 
-    charactersblacklist=["&","'","@","\\","]","}",":","\=",">","/","<","[","{","%","+","#","`","?","\"",";","*","~"]
+```properties
+charactersblacklist=["&","'","@","\\","]","}",":","\=",">","/","<","[","{","%","+","#","`","?","\"",";","*","~"]
+```
 
 ## Escaping Characters
 
@@ -62,20 +68,24 @@ Double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files.
 Escaping is using another character to denote that a character shouldn't be used 
 in its normal way. Since double quotes and equals signs are already used in 
 `.config` files, escaping them tells the framework not to read them the normal 
-way, but to pass them through as part of the value. Use a `\\` to escape 
+way, but to pass them through as part of the value. Use a backslash to escape 
 characters in the `.config` file: 
 
-    charactersblacklist=["&","\"","\="]
+```properties
+charactersblacklist=["&","\"","\="]
+```
 
 This setting illustrates a multi-value setting with a regular, unescaped 
 character (`&`), and two escaped ones (`\"` and `\=`). 
 
 Along with the mandatory escaping of double quotes and equals characters, it's
-beneficial to escape spaces inside values to avoid problems. In this example, a 
-`\\` is used before each space character to ensure it's read and processed 
+beneficial to escape spaces inside values to avoid problems. In this example, a
+backslash is used before each space character to ensure it's read and processed
 properly: 
 
-    blacklistBundleSymbolicNames=["Liferay\ Marketplace","Liferay\ Sharepoint\ Connector"]
+```properties
+blacklistBundleSymbolicNames=["Liferay\ Marketplace","Liferay\ Sharepoint\ Connector"]
+```
 
 If you don't escape spaces yourself, the framework adds the backslash for you 
 after deployment. 
@@ -88,12 +98,16 @@ the correct type for each configuration property, the type characters are only
 useful for informational purposes. For example, a configuration with a boolean
 type has *B* just before the value to mark it as a boolean type:
 
-    addDefaultStructures=B"true"
+```properties
+addDefaultStructures=B"true"
+```
 
 If you see type markers in `.config` files, you can safely ignore them. The
 example included above functions identically without the type marker: 
 
-    addDefaultStructures="true"
+```properties
+addDefaultStructures="true"
+```
 
 ## Deploying a Configuration File
 
@@ -101,7 +115,7 @@ Once you have a configuration file, deploy it. It's registered and
 the targeted configuration values are updated automatically. 
 
 To deploy the `.config` file, place it in your 
-[Liferay Home's](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+[Liferay Home's](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
 

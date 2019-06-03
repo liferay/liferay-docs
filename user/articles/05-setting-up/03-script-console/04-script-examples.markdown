@@ -209,7 +209,7 @@ consider this script:
     } 
 
 The script above creates a subfolder of
-[Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
+[Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
 called `scripting` and saves the script output to a file in this folder. After
 running the script above, you can read the generated file without direct access
 to the file system. Here's a second script that demonstrates this:
