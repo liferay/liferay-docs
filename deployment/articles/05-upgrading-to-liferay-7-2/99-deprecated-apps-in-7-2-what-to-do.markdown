@@ -51,6 +51,12 @@ Here are the apps deprecated in @product-ver@.
 | User Group Pages (Copy Mode) | TBD |  |
 | Resources Importer | Bundled | Deprecated as of 7.1 with no direct replacement |
 
+## Forms
+
+| App | Availability | Notes |
+| --- | ------------------ | ----------- |
+| Web Form | Nexus &rarr; Will be removed. | Final version released for 7.0. |
+
 ## Security
 
 | App |  Availability |  Notes |
