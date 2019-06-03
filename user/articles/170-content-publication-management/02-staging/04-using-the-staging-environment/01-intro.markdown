@@ -6,7 +6,7 @@ header-id: using-the-staging-environment
 
 [TOC levels=1-4]
 
-After [enabling staging](/docs/7-2/user/-/knowledge_base/user/enabling-staging)
+After [enabling staging](/docs/7-2/user/-/knowledge_base/u/enabling-staging)
 (either Local Live or Remote Live) for a site, you'll notice additional options
 provided on the top Control Menu (Staging Bar) and also in the menu to the left.
 These new menus help you manage staged pages. Most of your page management

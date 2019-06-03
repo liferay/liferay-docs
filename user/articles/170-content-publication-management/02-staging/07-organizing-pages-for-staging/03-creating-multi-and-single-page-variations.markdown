@@ -12,7 +12,7 @@ You can create two types of page variations:
 - Page Variation (single page)
 
 You can learn more about these variations in the
-[Using Multi and Single Page Variations](/docs/7-2/user/-/knowledge_base/user/using-multi-and-single-page-variations)
+[Using Multi and Single Page Variations](/docs/7-2/user/-/knowledge_base/u/using-multi-and-single-page-variations)
 article. As an example, you'll step through creating a Site pages variation
 next. Both variation processes, however, are similar.
 

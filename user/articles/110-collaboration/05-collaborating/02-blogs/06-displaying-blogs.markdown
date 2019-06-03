@@ -76,9 +76,9 @@ choose the following:
 
 ![Figure 2: The *Card* display template makes your blog posts look like fun little trading cards.](../../../../images/blogs-cards.png)
 
-To select a different application display template (ADT) or create your own, 
+To select a different widget template or create your own, 
 click *Manage Templates*. For more information, see the documentation on 
-[application display templates](/docs/7-2/user/-/knowledge_base/u/using-page-fragments). 
+[widget templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-fragments). 
 
 **Enable Report Inappropriate Content:** Whether to let users flag content as 
 inappropriate, which sends an email to administrators. 

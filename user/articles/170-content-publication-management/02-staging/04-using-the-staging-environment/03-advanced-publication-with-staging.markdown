@@ -89,7 +89,7 @@ Content, Include Always, Version History*. You can remove items by clicking the
 *Change* button next to the list.
 
 See the
-[Managing Content Types in Staging](/docs/7-2/user/-/knowledge_base/user/managing-content-types-in-staging)
+[Managing Content Types in Staging](/docs/7-2/user/-/knowledge_base/u/managing-content-types-in-staging)
 article for more information on managing content during the publication process.
 
 ## Deletions

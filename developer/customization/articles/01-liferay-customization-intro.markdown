@@ -24,8 +24,8 @@ extending @product@ components and applications using APIs.
 
 -   [Built-in Customization Features](/docs/7-2/customization/-/knowledge_base/c/built-in-customization-features)
     shows you how to create pages and content faster using Fragments,
-    Application Display Templates (ADTs), and Web Experience Management
-    features. All this is done from within the @product@ UI.
+    Widget Templates, and Web Experience Management features. All this is done
+    from within the @product@ UI.
 
 -   [Customizing Components](/docs/7-2/customization/-/knowledge_base/c/customizing-components)
     demonstrates overriding and extending @product@ UI components, services,
