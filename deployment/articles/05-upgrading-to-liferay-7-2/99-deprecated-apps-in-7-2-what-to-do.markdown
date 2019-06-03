@@ -48,7 +48,7 @@ Here are the apps deprecated in @product-ver@.
 | JCRStore | Removed | Migrate to another [Document Repository Store option](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver), migrate your document store data using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration). |
 | Search Portlet | Bundled | Will be removed in a future release. Replaced by the [Search widgets](/docs/7-1/user/-/knowledge_base/u/whats-new-with-search). |
 
-# Personalization
+## Personalization
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
 | Audience Targeting | Removed | Replaced by Personalization in 7.2 | 
