@@ -18,11 +18,11 @@ User inquiries into how their data is stored and processed.
 Liferay is aware of the need for functionality to address User data management,
 and added two important features toward this end:
 
-[Erase and/or anonymize data associated with a User](/docs/7-1/user/-/knowledge_base/u/sanitizing-user-data)
+[Erase and/or anonymize data associated with a User](/docs/7-2/user/-/knowledge_base/u/sanitizing-user-data)
 : Administrative Users go through a step by step process, choosing to erase
 certain pieces of data and anonymize others.
 
-[Export a User's personal data](/docs/7-1/user/-/knowledge_base/u/exporting-user-data)
+[Export a User's personal data](/docs/7-2/user/-/knowledge_base/u/exporting-user-data)
 : Export ZIP files containing the data associated with a User.
 
 These features are tools that get you closer to meeting two of GDPR's
@@ -83,7 +83,7 @@ To edit an existing configuration:
 
 To create a new Anonymous User:
 
-1.  [Create a User](/docs/7-1/user/-/knowledge_base/u/adding-editing-and-deleting-users#adding-users)
+1.  [Create a User](/docs/7-2/user/-/knowledge_base/u/adding-editing-and-deleting-users#adding-users)
     use for data anonymization. Alternatively, you can use an
     existing User.
 
@@ -122,7 +122,7 @@ Anonymizing just the User's identification fields is often not enough. If a User
 named Ziltoid Omniscient complains about The Lunar Resort's coffee in a Message
 Boards Message and in it signs the post with _Supreme Leader of Ziltoidea 9_,
 anonymizing this post would remove the User's name (Ziltoid Omnisicent) and
-replace it with Anonymous Anonymous, but searching the internet for _Ziltoidea
+replace it with Anonymous Anonymous, but searching the Internet for _Ziltoidea
 9_ quickly reveals that the post was written by 
 [Ziltoid the Omniscient](https://en.wikipedia.org/wiki/Ziltoid_the_Omniscient).
 There can be user-entered personal data within the content of an application.
