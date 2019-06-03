@@ -25,7 +25,7 @@ million users, but only small numbers are loaded into memory at a time.
 Here's how to use actionable dynamic query:
 
 1.  Get an
-    [`ActionableDynamicQuery`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/ActionableDynamicQuery.html)
+    [`ActionableDynamicQuery`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/ActionableDynamicQuery.html)
     from your `*LocalService` by invoking its `getActionableDynamicQuery` 
     method. 
 
@@ -77,7 +77,7 @@ The example method demonstrates executing an actionable dynamic query on `Bar`
 entities that match certain criteria. 
 
 1.  Retrieve an 
-    [`ActionableDynamicQuery`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/ActionableDynamicQuery.html)
+    [`ActionableDynamicQuery`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/ActionableDynamicQuery.html)
     from local service `BarLocalService`.
 
         ActionableDynamicQuery adq = _barLocalService.getActionableDynamicQuery();
@@ -129,8 +129,8 @@ groups. It's an efficient and high performing way to update entities.
 
 ## Related Topics
 
-[Service Builder Web Services](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services)
+[Service Builder Web Services](/docs/7-2/appdev/-/knowledge_base/a/service-builder-web-services)
 
-[Creating Local Service](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
+[Creating Local Service](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
 
-[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
+[Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)

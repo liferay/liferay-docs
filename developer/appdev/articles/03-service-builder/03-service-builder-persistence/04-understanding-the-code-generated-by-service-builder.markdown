@@ -6,7 +6,7 @@ header-id: understanding-the-code-generated-by-service-builder
 
 [TOC levels=1-4]
 
-[Service Builder generates code](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
+[Service Builder generates code](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 to support your entities. The files listed under Local Service and Remote
 Service below are only generated for an entity that has both `local-service` and
 `remote-service` attributes set to `true`. Service Builder generates services
@@ -52,7 +52,7 @@ Here are the persistence, service, and model classes:
       for CRUD operations. This utility should only be used by the service
       layer; in your portlet classes, use the `[ENTITY_NAME]` class by
       referencing it with the
-      [`@Reference` annotation](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services). 
+      [`@Reference` annotation](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services). 
 
     ![Figure 1: Service Builder generates these persistence classes and interfaces for an example entity called *Event*. You shouldn't (and you won't need to) customize any of these classes or interfaces.](../../../images/service-builder-persistence-diagram.png)
 
@@ -71,11 +71,11 @@ Here are the persistence, service, and model classes:
       which wraps `[ENTITY_NAME]LocalServiceImpl`. This class is generated for
       backwards compatibility purposes only. Use the `*LocalService` class by
       referencing it with the
-      [`@Reference` annotation](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services). 
+      [`@Reference` annotation](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services). 
     - `[ENTITY_NAME]LocalServiceWrapper`: Local service wrapper which implements
       `[ENTITY_NAME]LocalService`. This class is designed to be extended and it
       lets you
-      [customize the entity's local services](/docs/7-1/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers).
+      [customize the entity's local services](/docs/7-2/appdev/-/knowledge_base/a/customizing-liferay-services-service-wrappers).
 
     ![Figure 2: Service Builder generates these service classes and interfaces. Only the [ENTITY_NAME]LocalServiceImpl (e.g., EventLocalServiceImpl for the Event entity) allows custom methods to be added to the service layer.](../../../images/service-builder-service-diagram.png)
 
@@ -94,11 +94,11 @@ Here are the persistence, service, and model classes:
       which wraps `[ENTITY_NAME]ServiceImpl`. This class is generated for
       backwards compatibility purposes only. Use the `*Service` class by
       referencing it with the
-      [`@Reference` annotation](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services).
+      [`@Reference` annotation](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services).
     - `[ENTITY_NAME]ServiceWrapper`: Remote service wrapper which implements
       `[ENTITY_NAME]Service`. This class is designed to be extended and it lets
       you
-      [customize the entity's remote services](/docs/7-1/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers).
+      [customize the entity's remote services](/docs/7-2/appdev/-/knowledge_base/a/customizing-liferay-services-service-wrappers).
     - `[ENTITY_NAME]ServiceSoap`: SOAP utility which the remote 
       `[ENTITY_NAME]ServiceUtil` remote service utility can access.
     - `[ENTITY_NAME]Soap`: SOAP model, similar to `[ENTITY_NAME]ModelImpl`.
@@ -121,14 +121,14 @@ Here are the persistence, service, and model classes:
       methods to the `[ENTITY_NAME]` interface the next time you run it.
     - `[ENTITY_NAME]Wrapper`: Wrapper, wraps `[ENTITY_NAME]`. This class is 
       designed to be extended and it lets you
-      [customize the entity](/docs/7-1/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers).
+      [customize the entity](/docs/7-2/appdev/-/knowledge_base/a/customizing-liferay-services-service-wrappers).
 
     ![Figure 3: Service Builder generates these model classes and interfaces. Only `[ENTITY_NAME]Impl`  (e.g., EventImpl for the Event entity) allows custom methods to be added to the service layer.](../../../images/service-builder-model-diagram.png)
 
 | **Note:** `*Util` classes are generated for backwards compatibility purposes
 | only. Your module applications should avoid calling the util classes. Use the
 | non-util classes instead--you can reference them using the
-| [`@Reference` annotation](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services).
+| [`@Reference` annotation](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services).
 
 Each file that Service Builder generates is assembled from an associated
 FreeMarker template. The FreeMarker templates are in the
@@ -151,14 +151,14 @@ data in the database. **New fields added to `service.xml` are not automatically
 added to the database.** To add the fields, you must do one of two things: 
 
 1.  Write an
-    [upgrade process](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app) 
+    [upgrade process](/docs/7-2/appdev/-/knowledge_base/a/creating-an-upgrade-process-for-your-app) 
     to modify the tables and preserve the data, or
 
 2.  Run the `cleanServiceBuilder`
-    [Gradle task](/docs/7-1/reference/-/knowledge_base/r/db-support-gradle-plugin)
+    [Gradle task](/docs/7-2/reference/-/knowledge_base/r/db-support-gradle-plugin)
     (also supported on Maven and Ant), which drops your tables so they get
     re-created the next time your app is deployed. The
-    [Maven DB Support Plugin](/docs/7-1/reference/-/knowledge_base/r/db-support-plugin)
+    [Maven DB Support Plugin](/docs/7-2/reference/-/knowledge_base/r/db-support-plugin)
     reference article explains how to run this command from a Maven
     project.
 
@@ -171,10 +171,10 @@ and service layers and you understand the generated code.
 
 **Related Topics**
 
-[What is Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)
+[What is Service Builder](/docs/7-2/appdev/-/knowledge_base/a/what-is-service-builder)
 
-[Running Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
+[Running Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 
-[Understanding Service Context](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext)
+[Understanding Service Context](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext)
 
-[Creating Local Services](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
+[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)

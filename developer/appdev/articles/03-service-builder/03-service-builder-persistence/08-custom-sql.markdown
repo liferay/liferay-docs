@@ -11,9 +11,9 @@ attributes: their column values. When you add a column as a parameter for the
 finder in your `service.xml` file and run Service Builder, it generates the
 finder method in your persistence layer and adds methods to your service layer
 that invoke the finder. If your queries are simple enough, consider using 
-[Dynamic Query](/docs/7-1/tutorials/-/knowledge_base/t/dynamic-query) to access
+[Dynamic Query](/docs/7-2/appdev/-/knowledge_base/a/dynamic-query) to access
 Liferay's database. If you want to do something more complicated like JOINs, you
-can write your own custom SQL queries. You'll learn how in this tutorial.
+can write your own custom SQL queries. Here, you'll learn how.
 
 Say you have a Guestbook application with two tables, one for guestbooks and one
 for guestbook entries. The entry entity's foreign key to its guestbook is the
@@ -104,7 +104,7 @@ package. For the Guestbook application, you could create a `EntryFinderImpl`
 class in the `com.liferay.docs.guestbook.service.persistence.impl` package. Your
 class should extend `BasePersistenceImpl<Entry>`.
 
-[Run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
+[Run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 to generate the `*Finder` interface based on the `*FinderImpl` class. Modify
 your `*FinderImpl` class to have it implement the `*Finder` interface you just
 generated:
@@ -223,6 +223,6 @@ application!
 
 ## Related Topics
 
-[Customizing Liferay Services](/docs/7-1/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers)
+[Customizing Liferay Services](/docs/7-2/appdev/-/knowledge_base/a/customizing-liferay-services-service-wrappers)
 
-[Service Builder Web Services](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services)
+[Service Builder Web Services](/docs/7-2/appdev/-/knowledge_base/a/service-builder-web-services)

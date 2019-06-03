@@ -15,16 +15,16 @@ instead of taking the time-consuming route of writing your own persistence
 layer, you can use Service Builder to quickly define your entities and
 generate the layer instantaneously.
 
-Here's what these tutorials cover:
+Here's what this section covers:
 
-- [Defining an object-relational map and generating your persistence layer from that map](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
-- [Running Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
-- [Understanding and using local and remote services Service Builder generates](/docs/7-1/tutorials/-/knowledge_base/t/understanding-the-code-generated-by-service-builder)
-- [Using the `ServiceContext` class](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext)
-- [Customizing model entities with Model Hints](/docs/7-1/tutorials/-/knowledge_base/t/customizing-model-entities-with-model-hints)
-- [SQL queries](/docs/7-1/tutorials/-/knowledge_base/t/custom-sql)
-- [Using Hibernate's criteria API](/docs/7-1/tutorials/-/knowledge_base/t/dynamic-query)
-- [Configuring `service.properties`](/docs/7-1/tutorials/-/knowledge_base/t/configuring-service-properties)
-- [Connecting Service Builder to external data sources](/docs/7-1/tutorials/-/knowledge_base/t/connecting-service-builder-to-external-databases)
+- [Defining an object-relational map and generating your persistence layer from that map](/docs/7-2/appdev/-/knowledge_base/a/defining-an-object-relational-map-with-service-builder)
+- [Running Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
+- [Understanding and using local and remote services Service Builder generates](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder)
+- [Using the `ServiceContext` class](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext)
+- [Customizing model entities with Model Hints](/docs/7-2/appdev/-/knowledge_base/a/customizing-model-entities-with-model-hints)
+- [SQL queries](/docs/7-2/appdev/-/knowledge_base/a/custom-sql)
+- [Using Hibernate's criteria API](/docs/7-2/appdev/-/knowledge_base/a/dynamic-query)
+- [Configuring `service.properties`](/docs/7-2/appdev/-/knowledge_base/a/configuring-service-properties)
+- [Connecting Service Builder to external data sources](/docs/7-2/appdev/-/knowledge_base/a/connecting-service-builder-to-external-databases)
 
 Start with defining an object-relational map. 

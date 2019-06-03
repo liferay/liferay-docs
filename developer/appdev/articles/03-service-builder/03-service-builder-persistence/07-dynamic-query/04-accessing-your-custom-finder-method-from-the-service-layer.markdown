@@ -49,8 +49,8 @@ query in a custom finder and exposing it as a service for your portlet!
 
 ## Related Topics
 
-[Service Builder Web Services](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services)
+[Service Builder Web Services](/docs/7-2/appdev/-/knowledge_base/a/service-builder-web-services)
 
-[Creating Local Service](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
+[Creating Local Service](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
 
-[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
+[Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)

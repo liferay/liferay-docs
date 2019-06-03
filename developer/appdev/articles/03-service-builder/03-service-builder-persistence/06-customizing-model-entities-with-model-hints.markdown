@@ -13,7 +13,7 @@ a single place to specify entity data restrictions and other formatting.
 
 You define model hints in a file called `portlet-model-hints.xml`. If your
 project has an API module and a service module like the 
-[Service Builder project template](/docs/7-1/reference/-/knowledge_base/r/using-the-service-builder-template),
+[Service Builder project template](/docs/7-2/appdev/-/knowledge_base/a/using-the-service-builder-template), 
 `portlet-model-hints.xml` goes in the service module's
 `src/main/resources/META-INF` folder. For example, in Liferay's Bookmarks
 application, the `portlet-model-hints.xml` file is in the
@@ -97,9 +97,9 @@ pixels, you could nest a `hint` element named `display-width` and give it
 a value of `50`. 
 
 To see the effect of a hint on a field,
-[run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
+[run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 again and
-[redeploy your module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module).
+[redeploy your module](/docs/7-2/appdev/-/knowledge_base/a/starting-module-development#building-and-deploying-a-module).
 Note that changing `display-width` doesn't limit the number of characters a
 user can enter into the `name` field; it only controls the field's width in the
 AlloyUI input form. 

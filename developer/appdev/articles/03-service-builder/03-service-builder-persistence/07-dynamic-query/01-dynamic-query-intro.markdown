@@ -17,25 +17,25 @@ you technically don't need to know SQL to construct Dynamic Queries, you still
 must take care to construct efficient queries. For information on Hibernate's
 Criteria API, please see 
 [Hibernate's manual](http://docs.jboss.org/hibernate/orm/5.0/userguide/html_single/chapters/query/criteria/Criteria.html).
-This tutorial demonstrates creating custom finders for Liferay applications
+This article demonstrates creating custom finders for Liferay applications
 using Service Builder and Dynamic Query API.
 
 To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can
-[define model entities in `service.xml`](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
+[define model entities in `service.xml`](/docs/7-2/appdev/-/knowledge_base/a/defining-an-object-relational-map-with-service-builder)
 and
-[run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
+[run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 to generate model, persistence, and service layers for your application. This
-tutorial assumes that you're creating a Liferay application consisting of a
+article assumes that you're creating a Liferay application consisting of a
 service module, an API module, and a web module. Once you've used Service
 Builder to generate model, persistence, and service layers for your application,
 follow these steps to call custom finders using the Dynamic Query API:
 
-1.  [Define a custom finder method](/docs/7-1/tutorials/-/knowledge_base/t/defining-a-custom-finder-method).
+1.  [Define a custom finder method](/docs/7-2/appdev/-/knowledge_base/a/defining-a-custom-finder-method).
 
-2.  [Implement your finder using the Dynamic Query API](/docs/7-1/tutorials/-/knowledge_base/t/implementing-a-custom-finder-method-using-dynamic-query).
+2.  [Implement your finder using the Dynamic Query API](/docs/7-2/appdev/-/knowledge_base/a/implementing-a-custom-finder-method-using-dynamic-query).
 
-3.  [Add a method to your `*LocalServiceImpl` class that invokes your finder method](/docs/7-1/tutorials/-/knowledge_base/t/accessing-your-custom-finder-method-from-the-service-layer). 
+3.  [Add a method to your `*LocalServiceImpl` class that invokes your finder method](/docs/7-2/appdev/-/knowledge_base/a/accessing-your-custom-finder-method-from-the-service-layer). 
 
 Once you've taken these steps, you can access your custom finder as a service
 method. Note: You can create multiple or overloaded `findBy*` finder methods in

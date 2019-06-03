@@ -7,7 +7,7 @@ header-id: implementing-a-custom-finder-method-using-dynamic-query
 [TOC levels=1-4]
 
 Once you've
-[defined your custom finder method](/docs/7-1/tutorials/-/knowledge_base/t/defining-a-custom-finder-method),
+[defined your custom finder method](/docs/7-2/appdev/-/knowledge_base/a/defining-a-custom-finder-method), 
 you can use the Dynamic Query API to implement your query in it. Here's what you
 must do in your finder method:
 
@@ -156,7 +156,7 @@ Your first step in implementing your custom finder method in your `*FinderImpl`
 class is to open a new Hibernate session. Since your `*FinderImpl` class extends
 `BasePersistenceImpl<Entity>`, and `BasePersistenceImpl<Entity>` contains a
 session factory object and an
-[`openSession`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/persistence/impl/BasePersistenceImpl.html#openSession--)
+[`openSession`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/persistence/impl/BasePersistenceImpl.html#openSession--)
 method, you can simply invoke the `openSession` method of your `*FinderImpl`'s
 parent class to open a new Hibernate session. The structure of your finder
 method should look like this:
@@ -194,7 +194,7 @@ Next, in the try block, create your dynamic query objects.
 
 In Liferay, you don't create criteria objects directly from the
 Hibernate session. Instead, you create dynamic query objects using Liferay's
-[`DynamicQueryFactoryUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/DynamicQueryFactoryUtil.html)
+[`DynamicQueryFactoryUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/DynamicQueryFactoryUtil.html)
 service. Thus, instead of
 
     Criteria entryCriteria = session.createCriteria(Entry.class);
@@ -219,7 +219,7 @@ in a certain range, or a non-null value, etc.
 
 When you need to add restrictions to a dynamic query, don't call Hibernate's
 `Restrictions` class directly. Instead, use the
-[`RestrictionsFactoryUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/RestrictionsFactoryUtil.html)
+[`RestrictionsFactoryUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/RestrictionsFactoryUtil.html)
 service. `RestrictionsFactoryUtil` has the same methods that you're used to from
 Hibernate's `Restrictions` class: `in`, `between`, `like`, `eq`, `ne`, `gt`,
 `ge`, `lt`, `le`, etc.
@@ -296,8 +296,8 @@ It's time to execute your dynamic query.
 
 ## Executing the Dynamic Query
 
-In the previous tutorial, you ran Service Builder after
-[defining your custom finder](/docs/7-1/tutorials/-/knowledge_base/t/defining-a-custom-finder-method).
+In the previous article, you ran Service Builder after
+[defining your custom finder](/docs/7-2/appdev/-/knowledge_base/a/defining-a-custom-finder-method).
 Service Builder
 generated a `dynamicQuery(DynamicQuery dynamicQuery)` method in your
 `*LocalServiceBaseImpl` class. Using a `*LocalService` instance, invoke
@@ -317,7 +317,7 @@ returns that list.
 | start, int end)` and `public List dynamicQuery(DynamicQuery dynamicQuery, int
 | start, int end, OrderByComparator orderByComparator)` methods. You can go back
 | to
-| [defining custom finder methods](/docs/7-1/tutorials/-/knowledge_base/t/defining-a-custom-finder-method)
+| [defining custom finder methods](/docs/7-2/appdev/-/knowledge_base/a/defining-a-custom-finder-method)
 | and either modify your finder method or create overloaded versions of it to take
 | advantage of these extra methods and their parameters. The `int start` and `int
 | end` parameters are useful when paginating a result list. `start` is the lower

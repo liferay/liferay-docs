@@ -30,8 +30,8 @@ The persistence classes are generated in a package of the same name in the
 and
 [bookmarks-service](https://github.com/liferay/liferay-portal/tree/master/modules/apps/bookmarks/bookmarks-service)
 modules to see how these are automatically generated for you. A
-later tutorial 
-[describes the package content](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder). 
+later article 
+[describes the package content](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder). 
 
 ## Namespace Options
 

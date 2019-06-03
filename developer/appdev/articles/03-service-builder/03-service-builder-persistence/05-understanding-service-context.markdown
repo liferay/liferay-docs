@@ -8,7 +8,7 @@ header-id: understanding-servicecontext
 
 The `ServiceContext` class holds contextual information for a service. It
 aggregates information necessary for features used throughout Liferay's
-portlets, such as permissions, tagging, categorization, and more. This tutorial
+portlets, such as permissions, tagging, categorization, and more. This article 
 covers the following `ServiceContext` class topics:
 
 - [Service Context Fields](#service-context-fields)
@@ -21,7 +21,7 @@ The `ServiceContext` fields are first.
 ## Service Context Fields
 
 The `ServiceContext` class has many fields. The
-[`ServiceContext` class Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html)
+[`ServiceContext` class Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html)
 describes them. 
 
 Here's a categorical listing of some commonly used Service Context fields: 
@@ -167,9 +167,8 @@ curl, or click on *URL example* to see how to invoke the web service via a URL.
 
 ![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../../images/jsonws-simple-example.png) 
 
-To learn more about Liferay's JSON web services, see the
-[JSON Web Services](/docs/7-1/tutorials/-/knowledge_base/t/registering-json-web-services)
-tutorial.
+To learn more about Liferay's JSON web services, see 
+[JSON Web Services](/docs/7-2/appdev/-/knowledge_base/a/registering-json-web-services).
 
 Next, you'll learn how to access information from a `ServiceContext` object. 
 
@@ -282,6 +281,6 @@ Liferay application development.
 
 ## Related Topics
 
-[Creating Local Services](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
+[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
 
-[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
+[Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)

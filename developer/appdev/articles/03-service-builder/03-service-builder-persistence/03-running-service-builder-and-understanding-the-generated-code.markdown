@@ -6,10 +6,10 @@ header-id: running-service-builder
 
 [TOC levels=1-4]
 
-This tutorial demonstrates how to run Service Builder. If want to use Service
-Builder in your application but haven't yet
-[created a `service.xml` file that defines an object-relational map for you application](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder),
-make sure to do so before proceeding with this tutorial.
+Here you'll learn how to run Service Builder. If want to use Service Builder in 
+your application but haven't yet
+[created a `service.xml` file that defines an object-relational map for you application](/docs/7-2/appdev/-/knowledge_base/a/defining-an-object-relational-map-with-service-builder),
+make sure to do so before proceeding. 
 
 There are two ways to build services from a `service.xml` file:
 
@@ -57,11 +57,11 @@ If you're using Maven, build the services by running the following command:
 using the `com.liferay.portal.tools.service.builder` plugin version 1.0.145+.
 Maven projects using an earlier version of the Service Builder plugin should
 update their POM accordingly. More information is available on
-[using Maven to run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/using-service-builder-in-a-maven-project).
+[using Maven to run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/using-service-builder-in-a-maven-project).
 
 On successfully building the services, Service Builder prints the message `BUILD
 SUCCESSFUL`. Many generated files appear in your project. They represent a model
 layer, service layer, and persistence layer for your entities. Don't worry about
-the number of generated files--they're explained in the next tutorial. Its time
+the number of generated files--they're explained in the next article. Its time
 to review the code Service Builder generates for your entities.
 

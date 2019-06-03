@@ -8,8 +8,8 @@ header-id: connecting-service-builder-to-external-databases
 
 Sometimes you want to use a database other than @product@'s. To do this, its
 data source must be defined in `portal-ext.properties` or configured as a JNDI
-data source on the app server. This tutorial shows how to connect
-[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
+data source on the app server. This article shows how to connect
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 to a data source. Here's how: 
 
 1. [Specify the data source.](#step-1-specify-the-data-source)
@@ -47,8 +47,8 @@ in your traditional portlet's `WEB-INF/src/META-INF/parent` folder. Create this
 folder if it doesn't exist already. 
 
 | **Note:** Since Liferay DXP 7.1 Fix Pack 3 (included in Service Pack 1) and
-| Liferay Portal 7.1 CE GA2, the Spring extender uses two application contexts for
-| Service Builder `*-service` modules. This lets @product@ register extender
+| Liferay Portal 7.1 CE GA2, the Spring extender uses two application contexts 
+| for Service Builder `*-service` modules. This lets @product@ register extender
 | services earlier and separately from the Service Builder services and allows
 | disabling features in the parent application context that may no longer be
 | needed in the future. For details, see
@@ -134,7 +134,7 @@ source property prefix.
 
 The data source bean `liferayDataSource` is overridden with one that refers to
 the `liferayDataSourceFactory` bean. The override affects this bundle (module or
-[Web Application Bundle](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)) 
+[Web Application Bundle](/docs/7-2/appdev/-/knowledge_base/a/using-the-wab-generator)) 
 only. 
 
 The alias `extDataSource` refers to the `liferayDataSource` data source bean. 
@@ -149,8 +149,8 @@ In your `service.xml` file, set your entity's data source to the
 an example: 
 
     <?xml version="1.0"?>
-    <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.1.0//EN"
-        "http://www.liferay.com/dtd/liferay-service-builder_7_1_0.dtd">
+    <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
 
     <service-builder package-path="com.liferay.example" >
         <namespace>TestDB</namespace>
@@ -173,19 +173,19 @@ the column name.
 
 ## Step 4: Run Service Builder
 
-[Run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder).
+[Run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder).
 Now your Service Builder services use the data source. You can
-[use the services in your business logic](/docs/7-1/tutorials/-/knowledge_base/t/business-logic-with-service-builder)
+[use the services in your business logic](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)
 as you always have regardless of the underlying data source.
 
 Congratulations! You've connected Service Builder to your external data source. 
 
 ## Related Topics
 
-[Connecting to JNDI Data Sources](/docs/7-1/tutorials/-/knowledge_base/t/connecting-to-data-sources-using-jndi)
+[Connecting to JNDI Data Sources](/docs/7-2/appdev/-/knowledge_base/a/connecting-to-data-sources-using-jndi)
 
-[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 
-[Running Service Builder and Understanding the Generated Code](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
+[Running Service Builder and Understanding the Generated Code](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 
-[Business Logic with Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/business-logic-with-service-builder)
+[Business Logic with Service Builder](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)

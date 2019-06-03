@@ -18,7 +18,7 @@ directly, but rather make any necessary property overrides in a
 Here are some of the properties the `service.properties` file includes:
 
 - `build.namespace`: This is the
-  [namespace you defined in your `service.xml`](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder).
+  [namespace you defined in your `service.xml`](/docs/7-2/appdev/-/knowledge_base/a/defining-an-object-relational-map-with-service-builder).
   Liferay distinguishes different modules from each other using their
   namespaces.
 - `build.number`: Liferay distinguishes your module's different Service Builder 
@@ -36,13 +36,13 @@ Here are some of the properties the `service.properties` file includes:
 | The Build Auto Upgrade feature is now different and is set in a global property
 | `schema.module.build.auto.upgrade` in the file
 | `[Liferay_Home]/portal-developer.properties`. To learn more, see the tutorial
-| [Upgrading Data Schemas in Development](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-data-schemas-in-development).
+| [Upgrading Data Schemas in Development](/docs/7-2/appdev/-/knowledge_base/a/upgrading-data-schemas-in-development).
 
 Awesome! You now have all the tools necessary to set up your own
 `service-ext.properties` file.
 
 ## Related Topics
 
-[What is Service Builder?](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)
+[What is Service Builder?](/docs/7-2/appdev/-/knowledge_base/a/what-is-service-builder)
 
-[Creating Local Services](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
+[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
