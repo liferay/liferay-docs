@@ -4,7 +4,7 @@ header-id: workflow-definition-nodes
 
 # Workflow Definition Nodes
 
-Once you know the basics of [creating workflow definitions](/docs/7-1/user/-/knowledge_base/u/managing-workflows-with-workflow-designer)
+Once you know the basics of [creating workflow definitions](/docs/7-2/user/-/knowledge_base/u/managing-workflows-with-workflow-designer)
 with the workflow Designer, you can get into the details. In this tutorial
 you'll learn about Actions and Notifications, two important features your
 workflow nodes can use. You'll also learn how to affect the processing of the
@@ -20,10 +20,10 @@ There are several node types you can use in workflow definitions:
 - State nodes
 
 Because they're the most complex node, and often the meat of your workflow
-definitions, Task nodes are covered [separately](/docs/7-1/user/-/knowledge_base/u/creating-tasks-in-workflow-designer).
+definitions, Task nodes are covered [separately](/docs/7-2/user/-/knowledge_base/u/creating-tasks-in-workflow-designer).
 
 Fork, Join, and Condition nodes are discussed, along with Transitions, in a
-tutorial on [workflow processing](/docs/7-1/user/-/knowledge_base/u/affecting-the-processing-of-workflow-definitions),
+tutorial on [workflow processing](/docs/7-2/user/-/knowledge_base/u/affecting-the-processing-of-workflow-definitions),
 since they're used for affecting the processing of the workflow.
 
 This tutorial discusses State nodes, Start nodes, and End nodes, along with
@@ -155,10 +155,10 @@ Next, you'll learn to do parallel processing using fork and join nodes.
 
 <!-- ## Related Topics [](id=related-topics)
 
-[Workflow Forms](discover/portal/-/knowledge_base/7-1/workflow-forms)
+[Workflow Forms](discover/portal/-/knowledge_base/7-2/workflow-forms)
 
-[Using Workflow](discover/portal/-/knowledge_base/7-1/enabling-workflow)
+[Using Workflow](discover/portal/-/knowledge_base/7-2/enabling-workflow)
 
-[Liferay's Workflow Framework](/docs/7-1/tutorials/-/knowledge_base/t/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-2/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 
-[Creating Simple Applications](discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
+[Dynamic Data Lists](discover/portal/-/knowledge_base/7-2/dynamic-data-lists) -->

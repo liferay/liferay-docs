@@ -12,7 +12,7 @@ User is.
 
 Commonly, task nodes contain Notifications, Assignments, and Actions (defined in
 scripts). See more about Notifications and Actions in the article on 
-[workflow nodes](/docs/7-1/user/-/knowledge_base/u/workflow-definition-nodes). 
+[workflow nodes](/docs/7-2/user/-/knowledge_base/u/workflow-definition-nodes). 
 Task nodes and their assignments are more complex and deserve their own article
 (this one).
 
@@ -55,7 +55,7 @@ entity. For example, a User might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the User can update
 the resource. If you're still uncertain about what resource actions are, refer
 to the developer tutorial on the 
-[permission system](/docs/7-1/tutorials/-/knowledge_base/t/defining-application-permissions)
+[permission system](/docs/7-2/tutorials/-/knowledge_base/t/defining-application-permissions)
 for a more detailed explanation.
 
 To find all the resource actions that have been configured, you need access to
@@ -64,7 +64,7 @@ permission for the VIEW action on the Roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the 
-  [article on managing roles](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions)
+  [article on managing roles](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions)
   for more information.
 - Once the Role is added, navigate to the Define Permissions interface for the
   Role.
@@ -162,10 +162,10 @@ to the assignment.
 
 <!-- ## Related Topics [](id=related-topics)
 
-[Workflow Forms](discover/portal/-/knowledge_base/7-1/workflow-forms)
+[Workflow Forms](discover/portal/-/knowledge_base/7-2/workflow-forms)
 
-[Using Workflow](discover/portal/-/knowledge_base/7-1/enabling-workflow)
+[Using Workflow](discover/portal/-/knowledge_base/7-2/enabling-workflow)
 
-[Liferay's Workflow Framework](/docs/7-1/tutorials/-/knowledge_base/t/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-2/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 
-[Creating Simple Applications](discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
+[Dynamic Data Lists](discover/portal/-/knowledge_base/7-2/dynamic-data-lists) -->

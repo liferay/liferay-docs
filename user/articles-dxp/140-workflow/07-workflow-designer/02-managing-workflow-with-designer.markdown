@@ -82,10 +82,10 @@ useful and interactive. Keep reading to learn about these features.
 
 <!-- ## Related Topics [](id=related-topics)
 
-[Workflow Forms](discover/portal/-/knowledge_base/7-1/workflow-forms)
+[Workflow Forms](discover/portal/-/knowledge_base/7-2/workflow-forms)
 
-[Using Workflow](discover/portal/-/knowledge_base/7-1/enabling-workflow)
+[Using Workflow](discover/portal/-/knowledge_base/7-2/enabling-workflow)
 
-[Liferay's Workflow Framework](/docs/7-1/tutorials/-/knowledge_base/t/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-2/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 
-[Creating Simple Applications](discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
+[Dynamic Data Lists](discover/portal/-/knowledge_base/7-2/dynamic-data-lists) -->
