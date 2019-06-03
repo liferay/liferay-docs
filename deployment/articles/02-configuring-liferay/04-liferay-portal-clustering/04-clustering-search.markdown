@@ -7,7 +7,8 @@ header-id: clustering-search
 [TOC levels=1-4]
 
 Search should always run on a separate environment from your @product@ server.
-@product@ supports [Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch), 
+@product@ supports 
+[Elasticsearch](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch), 
 
 <!--Uncomment when Solr adapters is available. 
 or 

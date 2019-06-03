@@ -11,7 +11,7 @@ distributed across multiple @product@ nodes running concurrently. Cluster Link
 does
 [Ehcache](http://www.ehcache.org)
 replication. The Ehcache global settings are in the
-[`portal.properties` file](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Ehcache). 
+[`portal.properties` file](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Ehcache). 
 
 By default Liferay does not copy cached entities between nodes. If an entity is
 deleted or changed, for example, Cluster Link sends a *remove* message to the
@@ -29,15 +29,17 @@ To enable Cluster Link, add this property to `portal-ext.properties`:
 
     cluster.link.enabled=true
 
-Cluster Link depends on [JGroups](http://www.jgroups.org) and provides an API
-for nodes to communicate. It can
+Cluster Link depends on 
+[JGroups](http://www.jgroups.org) 
+and provides an API for nodes to communicate. It can
 
 - Send messages to all nodes in a cluster
 - Send messages to a specific node
 - Invoke methods and retrieve values from all, some, or specific nodes
 - Detect membership and notify when nodes join or leave
 
-When you start @portal@ in a cluster, a log file message shows your cluster's name (e.g., `cluster=liferay-channel-control`): 
+When you start @portal@ in a cluster, a log file message shows your cluster's 
+name (e.g., `cluster=liferay-channel-control`): 
 
     ------------------------------------------------------------------- 
     GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643 
@@ -51,14 +53,16 @@ UDP multicast, but unicast and TCP are also available.
 
 When you enable Cluster Link, @product@'s default clustering configuration is
 enabled. This configuration defines IP multicast over UDP. @product@ uses two
-groups of [channels from JGroups](http://www.jgroups.org/manual/index.html#_channel) 
+groups of 
+[channels from JGroups](http://www.jgroups.org/manual/index.html#_channel) 
 to implement this: a control group and a transport group. If you want to
 customize the channel properties, you can do so in `portal-ext.properties`: 
 
     cluster.link.channel.name.control=[your control channel name]
     cluster.link.channel.properties.control=[your control channel properties]
 
-Please see [JGroups's documentation](http://www.jgroups.org/manual/index.html#protlist) 
+Please see 
+[JGroups's documentation](http://www.jgroups.org/manual/index.html#protlist) 
 for channel properties. The default configuration sets many properties whose
 settings are discussed there. 
 
@@ -68,7 +72,7 @@ information (e.g., scheduled tasks) sent between them can lead to unintended
 consequences. Isolate such cluster environments by either separating them
 logically or physically on the network, or by configuring each cluster's
 `portal-ext.properties` to use different sets of
-[multicast group address and port values](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Multicast). 
+[multicast group address and port values](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Multicast). 
 
 JGroups sets a bind address automatically. If you want to set a manual address,
 you can do this. By default, these are set to `localhost`: 
@@ -185,7 +189,8 @@ corresponding `JDBCPING` tag:
         connection_driver="com.mysql.jdbc.Driver"/>
 
 The above example uses MySQL as the database. For further information about
-JDBC Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
+JDBC Ping, please see the 
+[JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
 
 ### S3 Ping
 
@@ -203,7 +208,8 @@ tag:
         location="ControlBucket"/>
 
 Supply your Amazon keys as values for the parameters above. For further
-information about S3 Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
+information about S3 Ping, please see the 
+[JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
 
 ### Other Pings
 
@@ -224,10 +230,10 @@ settings aren't optimized for your site. In this case, tweak the settings using
 a module. You can install the module on each node and change the settings
 without taking down the cluster. 
 
-We've made this as easy as possible by
+We've made this as easy as possible by 
 [creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
-[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace),
 in the workspace's `modules` folder. To override your cache settings, you must
 only modify one Ehcache configuration file, which you'll find in this folder
 structure: 

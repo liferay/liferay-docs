@@ -32,7 +32,7 @@ Then enable a read-writer database in your `portal-ext.properties` file:
         jdbc.default.liferay.pool.provider=dbcp
 
     All the portal JDBC configuration properties are documented
-    [here](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#JDBC).
+    [here](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#JDBC).
 
     Skip to step 3 to use JNDI. 
 
@@ -84,7 +84,7 @@ Then enable a read-writer database in your `portal-ext.properties` file:
             [..]
 
     The Spring configuration portal properties are documented 
-    [here](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Spring).
+    [here](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Spring).
 
 The next time you start @product@, it uses the two data sources you have
 defined. 
