@@ -25,7 +25,7 @@ Follow these steps to create a user group:
 
 5.  Click *Save*. The new user group then appears in the table. 
 
-Note that new user groups don't have any users. The next section shows you how 
+Note that new User Groups don't have any Users. The next section shows you how 
 to add members to a user group. 
 
 ![Figure 1: The New User Group form.](../../../images/new-user-group.png)
