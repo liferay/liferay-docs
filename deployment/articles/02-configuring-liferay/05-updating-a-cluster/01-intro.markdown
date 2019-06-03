@@ -26,20 +26,20 @@ The techniques are compared below.
 
 **Cluster Update Techniques**
 
-Update |  &nbsp;Rolling Restart|  &nbsp;Blue-green |
---------- | :-------------- | :---------- | -------------- |
-Plugin/module installation | Supported | Supported | 
-Plugin/module update (backward-compatible data/schema changes) | Supported | Supported | 
-Plugin/module update (non-backward-compatible data/schema changes) [1](#one) | Not supported | Supported | 
-Fix pack installation and removal (revertable fix pack) | Supported | Supported | 
-Fix pack installation (non-revertible fix pack) | Not supported | Supported | 
-Cluster code changes [2](#two) | Not supported | Supported | 
-Portal property changes | Supported | Supported | 
-System Setting changes via configuration admin files | Supported | Supported | 
-Application server updates | Supported | Supported | 
-JVM setting changes | Supported | Supported | 
-New Java version (minor) | Supported | Supported | 
-New Java version (major) | Not supported | Supported | 
+| Update | &nbsp;Rolling Restart| &nbsp;Blue-green |
+| ------ | :------------------- | :--------------- |
+| Plugin/module installation | Supported | Supported | 
+| Plugin/module update (backward-compatible data/schema changes) | Supported | Supported | 
+| Plugin/module update (non-backward-compatible data/schema changes) [1](#one) | Not supported | Supported | 
+| Fix pack installation and removal (revertable fix pack) | Supported | Supported | 
+| Fix pack installation (non-revertible fix pack) | Not supported | Supported | 
+| Cluster code changes [2](#two) | Not supported | Supported | 
+| Portal property changes | Supported | Supported | 
+| System Setting changes via configuration admin files | Supported | Supported | 
+| Application server updates | Supported | Supported | 
+| JVM setting changes | Supported | Supported | 
+| New Java version (minor) | Supported | Supported | 
+| New Java version (major) | Not supported | Supported | 
 
 [<a name="one">1</a>] Data and data schema changes that are not 
 backward-compatible include, but are not limited to these:
