@@ -40,7 +40,7 @@ the default. Be careful about turning widget borders off; some themes assume
 widget borders are turned on and may not display correctly with them turned
 off.
 
-![Figure 1: The General tab of the Look and Feel Configuration menu allows you to define a custom widget title, link widget URLs to a specific page, and select the widget contrast option using decorators.](../../../../images/look-and-feel-portlet-configuration-menu.png)
+![Figure 1: The General tab of the Look and Feel Configuration menu lets you define a custom widget title and select the widget contrast option using decorators.](../../../../images/look-and-feel-portlet-configuration-menu.png)
 
 ## Text Styles
 
