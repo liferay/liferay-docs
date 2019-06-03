@@ -11,7 +11,7 @@ header-id: installing-product-on-tomcat
 (DXP) or the
 [Community Downloads page](https://www.liferay.com/downloads-community)
 (Portal CE). The Tomcat bundle contains JARs, scripts, and configuration files
-required for deploying @product-ver@ Copying these files from the @product@
+required for deploying @product-ver@. Copying these files from the @product@
 Tomcat bundle facilitates installing @product@ on an existing Tomcat application
 server.
 
