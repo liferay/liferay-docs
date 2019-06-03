@@ -6,9 +6,7 @@ header-id: installing-liferay-enterprise-search-monitoring
 
 [TOC levels=1-4]
 
-Monitor Elasticsearch with X-Pack Monitoring. First 
-[install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack)
-and configure security if you're using X-Pack's security features. Then come
+First configure security if you're using X-Pack's security features. Then come
 back here for instructions on installing and configuring Kibana (the monitoring
 server) with X-Pack so that Elasticsearch (secured with X-Pack), Kibana (secured
 with X-Pack), and @product@ can communicate effortlessly and securely. A Liferay
@@ -126,7 +124,7 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
 
 1.  Once the connector is installed and Kibana and Elasticsearch are securely
     configured, create a 
-    [configuration file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)
+    [configuration file](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files)
     named
 
         com.liferay.portal.search.elasticsearch6.xpack.monitoring.web.internal.configuration.XPackMonitoringConfiguration.config
@@ -142,7 +140,7 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
     Security features.
 
     Alternatively, configure the monitoring adapter from
-    [System Settings](/docs/7-1/user/-/knowledge_base/u/system-settings).
+    [System Settings](/docs/7-2/user/-/knowledge_base/u/system-settings).
     Navigate to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* 
     and find the X-Pack Monitoring entry in the Search category. All the
     configuration options for the monitoring connector appear there.
