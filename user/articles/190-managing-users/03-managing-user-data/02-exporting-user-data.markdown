@@ -27,7 +27,7 @@ containing the data is XML.
 
 To export user data,
 
-1.  Go to Control Panel &rarr; Users &rarr; Users and Organizations.
+1.  Go to *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.
 
 2.  Find the User and click the Actions button
     (![Actions](../../../images/icon-actions.png)), then click *Export Personal
@@ -57,41 +57,43 @@ To export user data,
 
 So what does the exported data look like?
 
-    <?xml version="1.0"?>
+```xml
+<?xml version="1.0"?>
 
-    <model>
-        <model-name>com.liferay.message.boards.model.MBMessage</model-name>
-        <column>
-            <column-name>messageId</column-name>
-            <column-value><![CDATA[38099]]></column-value>
-        </column>
-        <column>
-            <column-name>statusByUserId</column-name>
-            <column-value><![CDATA[38045]]></column-value>
-        </column>
-        <column>
-            <column-name>statusByUserName</column-name>
-            <column-value><![CDATA[Jane Slaughter]]></column-value>
-        </column>
-        <column>
-            <column-name>userId</column-name>
-            <column-value><![CDATA[38045]]></column-value>
-        </column>
-        <column>
-            <column-name>userName</column-name>
-            <column-value><![CDATA[Jane Slaughter]]></column-value>
-        </column>
-        <column>
-            <column-name>subject</column-name>
-            <column-value><![CDATA[Great list. I was thinking of bringing the family,...]]></column-value>
-        </column>
-        <column>
-            <column-name>body</column-name>
-            <column-value><![CDATA[<p>Great list. I was thinking of bringing the family, but I don&#39;t
-      actually believe humans have ever been to the moon, so I guess it
-      would be silly to book a trip! LOL!</p>]]></column-value>
-        </column>
-    </model>
+<model>
+    <model-name>com.liferay.message.boards.model.MBMessage</model-name>
+    <column>
+        <column-name>messageId</column-name>
+        <column-value><![CDATA[38099]]></column-value>
+    </column>
+    <column>
+        <column-name>statusByUserId</column-name>
+        <column-value><![CDATA[38045]]></column-value>
+    </column>
+    <column>
+        <column-name>statusByUserName</column-name>
+        <column-value><![CDATA[Jane Slaughter]]></column-value>
+    </column>
+    <column>
+        <column-name>userId</column-name>
+        <column-value><![CDATA[38045]]></column-value>
+    </column>
+    <column>
+        <column-name>userName</column-name>
+        <column-value><![CDATA[Jane Slaughter]]></column-value>
+    </column>
+    <column>
+        <column-name>subject</column-name>
+        <column-value><![CDATA[Great list. I was thinking of bringing the family,...]]></column-value>
+    </column>
+    <column>
+        <column-name>body</column-name>
+        <column-value><![CDATA[<p>Great list. I was thinking of bringing the family, but I don&#39;t
+  actually believe humans have ever been to the moon, so I guess it
+  would be silly to book a trip! LOL!</p>]]></column-value>
+    </column>
+</model>
+```
 
 In this example, User Jane Slaughter made a Message Boards Message post, and her
 User information was recorded in the `MBMessage` model's database table.

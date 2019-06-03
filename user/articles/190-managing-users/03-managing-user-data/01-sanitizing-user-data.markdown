@@ -48,52 +48,31 @@ To begin sanitizing a user's data,
 1.  Go to Control Panel &rarr; Users &rarr; Users and Organizations.
 
 2.  Click the Actions button for a User (![Actions](../../../images/icon-actions.png)) and
-    select *Delete Personal Data*.
+    select *Delete Personal Data*. If you have not deactivated the user, you
+    will be asked to do so. 
 
     The User's Personal Data Erasure screen appears.
 
-3.  Complete the five-step process sequentially to erase the personal data
-    associated with the User.
+## The Personal Data Erasure Screen
 
-![Figure 1: Sequentially complete five steps to complete the data erasure process.](../../../images/users-data-erasure.png)
+You can browse all data the user has posted on the system. Click *Personal Site*
+to browse data from that site. 
 
-## Step 1: Deactivation
+![Figure 1: From here, you can browse all data the user posted on his or her personal Site.](../../images/users-data-erasure-personal.png)
 
-Deactivating the User first ensures she doesn't create more content as you're
-sanitizing her from the system. Click *Deactivate User*.
+Click *Regular Sites* to browse any data posted in regular Liferay sites. 
 
-![Figure 2: Deactivating the User kicks off the data erasure process.](../../../images/users-data-erasure3.png)
+![Figure 2: Choose Regular Sites to browse all data posted by the user on administratively-created Sites.](../../images/users-data-erasure-regular.png)
 
-## Step 2: Delete the User's Personal Site
+To review the user's data, click the item. For example, Pepper seems to have
+posted a blog entry on her personal Site. Clicking that entry reveals the title
+of that blog entry. 
 
-The User's public (profile) and private (dashboard) pages are deleted when the
-User is deleted. Separating this step out allows the administrator to make sure
-no information important to the enterprise is lost before the personal Site
-deletion is completed. Review the User's personal Site (click the provided links
-to navigate directly there) and preserve any necessary data. Then click *Delete
-Personal Site*.
+![Figure 3: Pepper's blog entry might need review.](../../images/users-data-erasure-blog.png)
 
-![Figure 3: The second step in personal data erasure is deleting the User personal Site.](../../../images/users-data-erasure1.png)
-
-## Step 3: Review Application Data
-
-There's no automated process for anonymizing application data (Blogs Entries,
-Wiki Pages, etc.). The administrator must review the User Associated Data (UAD:
-application content created by the User) piece by piece to determine that no
-data important to the enterprise is lost by deleting it and that no UAD can be
-gleaned from the content if anonymized.
-
-After reviewing each piece of the data, the administrator either anonymizes it
-or deletes it to complete this step.
-
-![Figure 4: In the third data erasure step, review, delete, and/or anonymize the User's application data.](../../../images/users-data-erasure2.png)
-
-To enter the review process, click *Review*.
-
-The Application Data Review screen displays a summary including how many content
-items in each application are associated with the User.
-
-![Figure 5: The Application Data Review screen makes the third, and most complicated data erasure step, more manageable.](../../../images/users-app-data-review.png)
+To review any entry, click it. You're brought to the edit mode of the
+application (in this case, Blogs), where you can make any changes to the content
+that are necessary. 
 
 To manage (anonymize or delete) all the items for an application at once: 
 
@@ -106,37 +85,14 @@ To manage (anonymize or delete) all the items for an application at once:
 3.  If you're sure simple anonymization is good enough for all of an
     application's items, choose *Anonymize*.
 
-4.  To view the items for an application, choose *View* or click on the
-    application in the table.
+Use the interface to browse through the Sites, applications, and data. 
 
-Clicking an item takes you to the view/edit screen where you can see the
-application's items and take action. 
-
-![Figure 6: Drill down into a User's application data to determine if manual editing is necessary.](../../../images/users-item-data-review.png)
-
-Click the Actions button (![Actions](../../../images/icon-actions.png)) for an
-item and select *Edit*, *Anonymize*, or *Delete*, as appropriate.
-
-Once you've worked your way through the items and taken action, the view in the
-Application Data Review screen is updated to reflect that there are no more items
-needed to review. Click the *Complete Step* button once finished.
-
-![Figure 7: Click *Complete Step* once all of the User's application data is reviewed and dealt with.](../../../images/users-data-review-complete.png)
-
-## Step 4: Anonymize Remaining Data
-
-In step 4, you must click *Anonymize Data*. This completes the anonymization
-process for remaining database references to the User's Name and ID. Some
-information is anonymized, but others, such as Notifications, are deleted as
-they don't make sense once the User is deleted.
-
-![Figure 8: Anonymize any remaining use of the User's identifier's remaining in the database.](../../../images/users-data-erasure4.png)
-
-## Step 5: Delete User
+## Delete the User
 
 Once all data is reviewed, deleted, edited, and/or anonymized as appropriate,
-delete the User. This step is simple: Click *Delete User*.
+delete the User. A dialog box pops up automatically when you're finished. This
+step is simple: Click *OK*.
 
-![Figure 9: To finish the data erasure process, delete the User.](../../../images/users-data-erasure5.png)
+![Figure 4: To finish the data erasure process, delete the User.](../../../images/users-delete-user.png)
 
 Now the User's data is anonymized or deleted, and the User is also deleted.
