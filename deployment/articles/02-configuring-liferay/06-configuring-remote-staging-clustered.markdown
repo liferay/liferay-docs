@@ -7,7 +7,7 @@ header-id: configuring-remote-staging-in-a-clustered-environment
 [TOC levels=1-4]
 
 If you're running @product@ as a
-[clustered environment](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)
+[clustered environment](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
 and you want to use remote staging, you must configure it properly for a
 seamless experience. In this tutorial, you'll learn how to set up remote staging
 in an example clustered environment scenario. The example environment assumes
@@ -20,7 +20,7 @@ you have
 - two nodes that call two Liferay app servers (e.g., *App Server 1* and *App
   Server 2*), both of which are connected to the same database.
 
-![Figure 1: This is the assumed setup for your clustered environment.](../../../images/remote-staging-clustering.png)
+![Figure 1: This is the assumed setup for your clustered environment.](../../images/remote-staging-clustering.png)
 
 The steps below also assume your web tier, application tier, and cluster
 environment are already configured. You may need to adjust the configurations in
@@ -83,7 +83,7 @@ Let's begin!
       file and insert the properties listed below. Creating one `.config` file
       configures all cluster nodes the same way. For more information on
       `.config` files, see the
-      [Understanding System Configuration Files](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)
+      [Understanding System Configuration Files](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files)
       article.
 
             enabled=true
@@ -102,7 +102,7 @@ Let's begin!
     Product Menu and select *Publishing* &rarr; *Staging*. Then select *Remote
     Live*.
 
-    ![Figure 2: When selecting the Remote Staging radio button, you're given a list of options to configure.](../../../images/remote-staging-menu.png)
+    ![Figure 2: When selecting the Remote Staging radio button, you're given a list of options to configure.](../../images/remote-staging-menu.png)
 
 7.  For the Remote Host/IP field, insert the balancer's IP of your web tier.
     Configuring the Staging instance with the balancer's IP ensures the
