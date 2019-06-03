@@ -43,7 +43,7 @@ it accomplishes in your JSF application.
 
 ## Related Topics
 
-[Creating a JSF Project Manually](/docs/7-2/appdev/-/knowledge_base/a/creating-a-jsf-project-manually)
+[Developing a JSF Portlet Application](/docs/7-2/appdev/-/knowledge_base/a/developing-a-jsf-portlet-application)
 
 [Understanding Liferay Faces Bridge](/docs/7-2/reference/-/knowledge_base/r/understanding-liferay-faces-bridge)
 
