@@ -6,6 +6,9 @@ header-id: change-lists
 
 [TOC levels=1-4]
 
+| **Note:** The Change Lists framework is a beta feature and is not currently
+| supported at this time.
+
 Change Lists provide a way to track asset changes and how they're displayed
 system wide. You can group changes into working *sets* and publish them when
 they're ready. This prevents users from seeing changes that aren't ready for
