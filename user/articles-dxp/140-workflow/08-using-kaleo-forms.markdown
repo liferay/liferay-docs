@@ -13,9 +13,9 @@ is laborious. It's much better to have a tool for quickly defining a process to
 suit each use case. The process architect must define both the data that gets
 collected and the process the data moves through to reach its final state. To
 accomplish this, @product@ already includes the
-[Dynamic Data Lists app](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions)
+[Dynamic Data Lists app](/docs/7-2/user/-/knowledge_base/u/creating-data-definitions)
 for defining forms, and the 
-[Kaleo Designer app](/docs/7-1/user/-/knowledge_base/u/kaleo-designer) 
+[Workflow Designer app](/docs/7-2/user/-/knowledge_base/u/workflow-designer) 
 for designing workflows. The Kaleo Forms solution combines the features of these
 apps, letting you use a single UI to design an integrated process for sending 
 forms through a workflow. 
@@ -47,7 +47,7 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
     -   Create a new field set/data definition. Click the 
         *Add Field Set* button. If you need help with this, see the 
         documentation on
-        [creating data definitions](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions). 
+        [creating data definitions](/docs/7-2/user/-/knowledge_base/u/creating-data-definitions). 
         After creating the field set, select it as you would an existing field 
         set. 
 
@@ -70,7 +70,7 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
 
     In either case, you use the same UI to edit/create the workflow. This UI is 
     called 
-    [Kaleo Designer](/docs/7-1/user/-/knowledge_base/u/kaleo-designer). It 
+    [Workflow Designer](/docs/7-2/user/-/knowledge_base/u/workflow-designer). It 
     lets you create your workflow graphically instead of via code. 
 
     Once you select a workflow to use with your forms, click *Next*. 
