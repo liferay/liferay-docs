@@ -1,5 +1,5 @@
 ---
-header-id: managing-workflows-with-kaleo-designer
+header-id: managing-workflows-with-workflow-designer
 ---
 
 # Managing Workflows with Kaleo Designer

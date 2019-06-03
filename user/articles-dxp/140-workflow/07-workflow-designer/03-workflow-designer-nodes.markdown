@@ -4,7 +4,7 @@ header-id: workflow-definition-nodes
 
 # Workflow Definition Nodes
 
-Once you know the basics of [creating workflow definitions](/docs/7-1/user/-/knowledge_base/u/managing-workflows-with-kaleo-designer)
+Once you know the basics of [creating workflow definitions](/docs/7-1/user/-/knowledge_base/u/managing-workflows-with-workflow-designer)
 with the workflow Designer, you can get into the details. In this tutorial
 you'll learn about Actions and Notifications, two important features your
 workflow nodes can use. You'll also learn how to affect the processing of the
