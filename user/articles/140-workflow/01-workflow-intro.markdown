@@ -71,7 +71,7 @@ status _on time_ or _overdue_.
 ![Figure 2: See Workflow Reports generated based on your SLAs.](../../images/workflow-report.png)
 
 See the article on
-[Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics)
+[Workflow Metrics](https://help.liferay.com/hc/en-us/articles/360029042071-Workflow-Metrics-The-Service-Level-Agreement-SLA-)
 to learn more about SLAs and available reports.
 
 ### Control Panel Reorganization
