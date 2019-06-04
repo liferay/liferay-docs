@@ -37,34 +37,38 @@ agree to the terms of use again before they can sign in.
 
 1.  Enter and execute the following code in the script console:
 
-        import com.liferay.portal.kernel.service.UserLocalServiceUtil
+    ```groovy
+    import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
-        userCount = UserLocalServiceUtil.getUsersCount()
-        users = UserLocalServiceUtil.getUsers(0, userCount)
+    userCount = UserLocalServiceUtil.getUsersCount()
+    users = UserLocalServiceUtil.getUsers(0, userCount)
 
-        for (user in users) { println("User Name: " + user.getFullName() + " -- " +
-        user.getAgreedToTermsOfUse()) }
+    for (user in users) { println("User Name: " + user.getFullName() + " -- " +
+    user.getAgreedToTermsOfUse()) }
+    ```
 
     This code prints each user's `agreedToTermsOfUse` attribute value. 
 
 2.  Replace that with this script:
     
-        import com.liferay.portal.kernel.service.UserLocalServiceUtil
+    ```groovy
+    import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
-        userCount = UserLocalServiceUtil.getUsersCount()
-        users = UserLocalServiceUtil.getUsers(0, userCount)
+    userCount = UserLocalServiceUtil.getUsersCount()
+    users = UserLocalServiceUtil.getUsers(0, userCount)
 
-        for (user in users){
+    for (user in users){
 
-            if(!user.isDefaultUser() && 
-                !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
+        if(!user.isDefaultUser() && 
+            !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
 
-                    user.setAgreedToTermsOfUse(false)
-                    UserLocalServiceUtil.updateUser(user)
-
-            }
+                user.setAgreedToTermsOfUse(false)
+                UserLocalServiceUtil.updateUser(user)
 
         }
+
+    }
+    ```
 
     This sets each user's `agreedToTermsOfUse` attribute to `false`. It skips
     the default user as well as the default admin user that's currently signed
@@ -85,15 +89,17 @@ The output of the script console is rendered as HTML content. Thus, you can
 embed HTML markup in your output to change its look and feel. Here's an
 example:
 
-    import com.liferay.portal.kernel.service.*
+```groovy
+import com.liferay.portal.kernel.service.*
 
-    number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount();
-    out.println(
-            """	
-                    <div style="background-color:black; text-align: center">
-                            <h1 style="color: #37A9CC; font-size:xx-large">${number}</h1>
-                    </div>
-            """);
+number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount();
+out.println(
+        """	
+                <div style="background-color:black; text-align: center">
+                        <h1 style="color: #37A9CC; font-size:xx-large">${number}</h1>
+                </div>
+        """);
+```
 
 ![Figure 1: Here's an example of invoking a Groovy script that embeds HTML markup in the output of the script.](../../../images/groovy-script-embed-html-markup.png)
 
@@ -102,7 +108,7 @@ example:
 When any exception occurs during script execution, the error message is always
 the same:
 
-`Your request failed to complete.`
+    Your request failed to complete.
 
 This message gives no detail about the error. To find information about the
 error and what caused it, you must usually examine the server logs.
@@ -112,13 +118,15 @@ the script console. Wrap your code with a try / catch block and print the
 stacktrace to the console output from the catch clause. Note that even this
 technique does not catch script syntax errors. Here's an example:
 
-    try {
-            nullVar = null
-            out.println(nullVar.length())
-    } catch(e) {
-            out.println("""<div class="portlet-msg-error">${e}</div>""")
-            e.printStackTrace(out)
-    }
+```groovy
+try {
+        nullVar = null
+        out.println(nullVar.length())
+} catch(e) {
+        out.println("""<div class="portlet-msg-error">${e}</div>""")
+        e.printStackTrace(out)
+}
+```
 
 ![Figure 2: Here's an example of a Groovy script that catches exceptions and prints exception information to the script console.](../../../images/groovy-script-show-exception.png)
 
@@ -137,41 +145,43 @@ switch the flag so the script can make permanent updates to the database.
 Here's an example Groovy script that sets users to inactive. Clearly, you'd
 want to test this with preview mode before running it: 
 
-    import java.util.Calendar
-    import com.liferay.portal.kernel.service.*
-    import com.liferay.portal.kernel.model.*
-    import com.liferay.portal.kernel.dao.orm.*
-    import static com.liferay.portal.kernel.workflow.WorkflowConstants.*
+```groovy
+import java.util.Calendar
+import com.liferay.portal.kernel.service.*
+import com.liferay.portal.kernel.model.*
+import com.liferay.portal.kernel.dao.orm.*
+import static com.liferay.portal.kernel.workflow.WorkflowConstants.*
 
-    //
-    // Deactivate users never logged and created since more than 2 years
-    //
+//
+// Deactivate users never logged and created since more than 2 years
+//
 
-    previewMode = true // Update this flag to false to really make changes
+previewMode = true // Update this flag to false to really make changes
 
-    Calendar twoYearsAgo = Calendar.getInstance()
-    twoYearsAgo.setTime(new Date())
-    twoYearsAgo.add(Calendar.YEAR, -2)
+Calendar twoYearsAgo = Calendar.getInstance()
+twoYearsAgo.setTime(new Date())
+twoYearsAgo.add(Calendar.YEAR, -2)
 
-    DynamicQuery query = DynamicQueryFactoryUtil.forClass(User.class)
-            .add(PropertyFactoryUtil.forName("lastLoginDate").isNull())
-            .add(PropertyFactoryUtil.forName("createDate").lt(twoYearsAgo.getTime()))
+DynamicQuery query = DynamicQueryFactoryUtil.forClass(User.class)
+        .add(PropertyFactoryUtil.forName("lastLoginDate").isNull())
+        .add(PropertyFactoryUtil.forName("createDate").lt(twoYearsAgo.getTime()))
 
-    users = UserLocalServiceUtil.dynamicQuery(query)
+users = UserLocalServiceUtil.dynamicQuery(query)
 
-    users.each { u ->
-             if(!u.isDefaultUser() && u.getStatus() != STATUS_INACTIVE) {
-                    out.println(u.getEmailAddress())
-                    if(!previewMode) {
-                            UserLocalServiceUtil.updateStatus(u.getUserId(), STATUS_INACTIVE)
-                    }
-             }
-    }
+users.each { u ->
+         if(!u.isDefaultUser() && u.getStatus() != STATUS_INACTIVE) {
+                out.println(u.getEmailAddress())
+                if(!previewMode) {
+                        UserLocalServiceUtil.updateStatus(u.getUserId(), STATUS_INACTIVE)
+                }
+         }
+}
 
-    if(previewMode) {
-            out.println('Preview mode is on: switch off the flag and execute '
-                    + 'again this script to make changes to the database') 
-    }
+if(previewMode) {
+        out.println('Preview mode is on: switch off the flag and execute '
+                + 'again this script to make changes to the database') 
+}
+```
 
 ## Example 5: Plan a File Output for Long-Running Scripts
 
@@ -187,26 +197,28 @@ To bypass this limitation, you can send the output of the script console to a
 file instead of to the console itself or to the Liferay log. For example,
 consider this script:
 
-    import com.liferay.portal.kernel.service.*
-    import com.liferay.portal.kernel.dao.orm.*
+```groovy
+import com.liferay.portal.kernel.service.*
+import com.liferay.portal.kernel.dao.orm.*
 
-    // Output management
+// Output management
 
-    final def SCRIPT_ID = "MYSCRIPT"
-    outputFile = new File("""${System.getProperty("liferay.home")}/scripting/out-${SCRIPT_ID}.txt""")
-    outputFile.getParentFile().mkdirs()
+final def SCRIPT_ID = "MYSCRIPT"
+outputFile = new File("""${System.getProperty("liferay.home")}/scripting/out-${SCRIPT_ID}.txt""")
+outputFile.getParentFile().mkdirs()
 
-    def trace(message) {
-            out.println(message)
-            outputFile << "${message}\n"
-    }
+def trace(message) {
+        out.println(message)
+        outputFile << "${message}\n"
+}
 
-    // Main code
+// Main code
 
-    users = UserLocalServiceUtil.getUsers(QueryUtil.ALL_POS, QueryUtil.ALL_POS)
-    users.each { u ->
-            trace(u.getFullName())
-    } 
+users = UserLocalServiceUtil.getUsers(QueryUtil.ALL_POS, QueryUtil.ALL_POS)
+users.each { u ->
+        trace(u.getFullName())
+} 
+```
 
 The script above creates a subfolder of
 [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
@@ -214,9 +226,11 @@ called `scripting` and saves the script output to a file in this folder. After
 running the script above, you can read the generated file without direct access
 to the file system. Here's a second script that demonstrates this:
 
-    final def SCRIPT_ID = "MYSCRIPT"
-    outputFile = new File("""${System.getProperty("liferay.home")}/scripting/out-${SCRIPT_ID}.txt""")
-    out.println(outputFile.text)
+```groovy
+final def SCRIPT_ID = "MYSCRIPT"
+outputFile = new File("""${System.getProperty("liferay.home")}/scripting/out-${SCRIPT_ID}.txt""")
+out.println(outputFile.text)
+```
 
 One advantage of using a dedicated output file instead of using a classic logger
 is that it's easier to get the script output data back. Getting the script

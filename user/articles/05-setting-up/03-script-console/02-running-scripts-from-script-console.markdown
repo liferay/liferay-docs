@@ -33,11 +33,13 @@ Here's how to run the sample script in the script console:
 3.  Click on *Script*. This is the script console. The default sample script
     prints the User count to the console output. 
 
-        // ### Groovy Sample ###
+    ```groovy
+    // ### Groovy Sample ###
 
-        number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount();
+    number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount();
 
-        out.println(number);
+    out.println(number);
+    ```
 
 4.  Click *Execute* and check the script console *Output* for the User count.
 
@@ -65,15 +67,17 @@ console:
 This script demonstrates using the `actionRequest` variable to get the portal
 instance's `Company`:
 
-    import com.liferay.portal.kernel.util.*
+```groovy
+import com.liferay.portal.kernel.util.*
 
-    company = PortalUtil.getCompany(actionRequest)
-    out.println("Current Company:${company.getName()}\n")
+company = PortalUtil.getCompany(actionRequest)
+out.println("Current Company:${company.getName()}\n")
 
-    out.println("User Info:")
-    userInfo.each { 
-            k,v -> out.println("${k}:${v}") 
-    }
+out.println("User Info:")
+userInfo.each { 
+        k,v -> out.println("${k}:${v}") 
+}
+```
 
 ![Figure 2: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the company and current user.](../../../images/groovy-script-current-user-info.png)
 

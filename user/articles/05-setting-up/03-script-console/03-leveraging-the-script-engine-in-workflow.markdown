@@ -11,13 +11,14 @@ approving content in an enterprise environment. Even if you don't leverage
 scripts, it's a powerful and robust workflow solution. Adding scripts takes it
 to the next level. These scripts aren't run from the script console, but are
 embedded in 
-[XML workflow definitions](/docs/7-2/tutorials/-/knowledge_base/t/crafting-xml-workflow-definitions) 
+[XML workflow definitions](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions) 
 and run during the execution of the workflow.
 
 The final step in a workflow runs a script that makes content available for use.
 The snippet below accesses the Java class associated with the workflow to set
 content's status to *approved*.
 
+```xml
     <script>
         <![CDATA[
             import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
@@ -27,6 +28,7 @@ content's status to *approved*.
         ]]>
     </script>
     <script-language>groovy</script-language>
+```
 
 At virtually any point in a workflow, you can use Liferay's script engine to
 access workflow APIs or other Liferay APIs. There are a lot of different ways
@@ -44,6 +46,7 @@ can be used in any XML type that can contain an `actions` tag: those types are
 `<state>`, `<task>`, `<fork>` and `<join>`. Inside of one of those types, format
 your script like this:
 
+```xml
     <actions>
         <action>
             <script>
@@ -53,6 +56,7 @@ your script like this:
         </action>
         ...
     </actions>
+```
 
 Here's an example of a workflow script created in Groovy. This one is used with
 a `Condition` statement in Kaleo. It accesses Liferay's asset framework to
@@ -61,6 +65,7 @@ the correct approval process automatically.  If the category `legal` has been
 applied to the asset, the asset is sent to the `Legal Review` task upon
 submission. Otherwise, the asset is sent to the `Default Review` task.
 
+```xml
     <script>
         <![CDATA[
             import com.liferay.portal.kernel.util.GetterUtil;
@@ -110,6 +115,7 @@ submission. Otherwise, the asset is sent to the `Default Review` task.
            ]]>
     </script>
     <script-language>groovy</script-language>
+```
 
 Within a workflow, the next task or state is chosen based on the return value.
 See some examples of workflow scripts by accessing the
@@ -126,6 +132,7 @@ That way you can make sure your code has access to the service it
 needs, and if not, do something appropriate in response. Here's a little example
 code to show you how this might look in Groovy:
 
+```groovy
     import com.liferay.journal.model.JournalArticle;
     import com.liferay.journal.service.JournalArticleLocalService;
     import com.liferay.portal.scripting.groovy.internal.GroovyExecutor;
@@ -164,10 +171,11 @@ code to show you how this might look in Groovy:
             st.close();
         }
     }
+```
 
-If you read the article on 
-[service trackers](/docs/7-2/tutorials/-/knowledge_base/t/service-trackers), 
-the only odd looking piece of the above code is the `getBundle` call: why is
+If you read the article on [service
+trackers](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers), the only odd
+looking piece of the above code is the `getBundle` call: why is
 `GroovyExecutor.class` passed as a parameter? The parameter passed to the
 `FrameworkUtil.getBundle` call must be a class from the OSGi bundle executing
 the workflow script. This is different from the context of a plugin project,
@@ -180,8 +188,8 @@ The combination of Liferay's script and workflow engines is incredibly powerful.
 Since, however, it enables users to execute code, it can be dangerous. When
 configuring your permissions, be aware of the potential consequences of poorly
 or maliciously written scripts inside a workflow definition. For more
-information on creating workflow definitions with Kaleo workflow, see the
-[workflow documentation](/docs/7-2/user/-/knowledge_base/u/workflow).
+information on creating workflow definitions, see the [workflow
+documentation](/docs/7-2/user/-/knowledge_base/u/workflow).
 
 ## Related Topics
 
