@@ -221,7 +221,8 @@ in your module to add functionality and content.
 Remember, this type of customization is a last resort. Your override may break 
 due to the nature of this implementation, and core functionality in Liferay can 
 go down with it. If the JSP you want to override is in another module, refer to 
-the section on [API based approaches to overriding JSPs](/docs/7-2/customization/-/knowledge_base/c/jsp-overrides-using-custom-jsp-bag#using-portals-api-to-override-a-jsp). 
+the API based approaches to overriding JSPs mentioned at the beginning of the 
+article. 
 
 ## Site Scoped JSP Customization
 

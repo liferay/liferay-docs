@@ -170,8 +170,8 @@ your module's language key overrides.
 |     "content.Language_es_ES", UTF8Control.INSTANCE);
 | ```
 
-**Important**: If your module [uses language keys from another module](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application#using-a-language-module)
-and [overrides any of that other module's keys](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application#using-a-language-module-from-a-module),
+**Important**: If your module [uses language keys from another module](/docs/7-2/frameworks/-/knowledge_base/f/using-language-modules)
+and [overrides any of that other module's keys](/docs/7-2/frameworks/-/knowledge_base/f/using-language-modules),
 make sure to use OSGi headers to specify the capabilities your module requires 
 and provides. This lets you prioritize resource bundles from the modules. 
 

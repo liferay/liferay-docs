@@ -85,7 +85,7 @@ Note that your build file need only specify artifact dependencies. bnd examines
 your module's class path to determine which packages from those artifacts
 contain classes your application uses and imports the packages. The examination
 includes all classes found in the class path--even those from embedded
-[third party library JARs](/docs/7-2/customization/-/knowledge_base/c/resolving-third-party-library-package-dependencies). 
+[third party library JARs](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module). 
 
 Regarding classes used by a plugin WAR,
 [Liferay's WAB Generator](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
@@ -160,7 +160,7 @@ plugins to use.
 
 [Configuring Dependencies](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies)
 
-[Deploying WARs \(WAB Generator\)](/docs/7-2/customization/-/knowledge_base/c/using-the-wab-generator)
+[Deploying WARs \(WAB Generator\)](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
 
 [Project Templates](/docs/7-2/reference/-/knowledge_base/r/project-templates)
 

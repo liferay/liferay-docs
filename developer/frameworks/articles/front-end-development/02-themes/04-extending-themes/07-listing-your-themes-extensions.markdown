@@ -31,5 +31,5 @@ Your theme's current extensions are also found under the `baseTheme` and
 ## Related Topics
 
 - [Changing Your Base Theme](/docs/7-2/frameworks/-/knowledge_base/f/changing-your-base-theme)
-- [Configuring Your Theme's App Server](/docs/7-2/frameworks/-/knowledge_base/f/configuring-your-themes-app-server)
-- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/f/creating-reusable-pieces-of-code-for-your-themes)
+- [Configuring Your Theme's App Server](/docs/7-2/frameworks/-/knowledge_base/f/updating-your-themes-app-server)
+- [Generating Themelets with the Theme Generator](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator)

@@ -98,7 +98,7 @@ module URLs shown below:
 
 Next you can learn how the bundler (since version 2.0.0) isolates package 
 dependencies. See 
-[What Changed Between liferay-npm-bundler 1.x and 2.x](/docs/7-2/reference/-/knowledge_base/r/changes-between-liferay-npm-bundler-1x-and-2x) 
+[What Changed Between liferay-npm-bundler 1.x and 2.x](/docs/7-2/reference/-/knowledge_base/r/what-changed-between-liferay-npm-bundler-1-x-and-2-x) 
 for more information on why this change was made. 
 
 ## Isolated Package Dependencies

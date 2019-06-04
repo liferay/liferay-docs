@@ -53,6 +53,6 @@ such as those created with the
 
 ## Related Topics
 
-- [Configuring Your Theme's App Server](/docs/7-2/frameworks/-/knowledge_base/f/configuring-your-themes-app-server)
+- [Configuring Your Theme's App Server](/docs/7-2/frameworks/-/knowledge_base/f/updating-your-themes-app-server)
 - [Copying an Existing Theme's Files](/docs/7-2/frameworks/-/knowledge_base/f/copying-an-existing-themes-files)
 - [Deploying and Applying Themes](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes)

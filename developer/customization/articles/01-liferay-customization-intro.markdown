@@ -27,10 +27,6 @@ extending @product@ components and applications using APIs.
     Widget Templates, and Web Experience Management features. All this is done
     from within the @product@ UI.
 
--   [Customizing Components](/docs/7-2/customization/-/knowledge_base/c/customizing-components)
-    demonstrates overriding and extending @product@ UI components, services,
-    language keys, LPKG files, and more. 
-
 -   [Customizing Applications](/docs/7-2/customization/-/knowledge_base/c/customizing-applications)
     demonstrates modifying Liferay applications via their APIs and extension
     points. 

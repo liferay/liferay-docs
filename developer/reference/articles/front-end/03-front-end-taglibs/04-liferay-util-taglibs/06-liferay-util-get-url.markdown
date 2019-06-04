@@ -39,4 +39,4 @@ Now you know how to use the `<liferay-util:get-url>` tag to scrape URLs.
 
 - [Using the Liferay Util Param Tag](/docs/7-2/reference/-/knowledge_base/r/using-liferay-util-param)
 - [Using the Liferay Util Include Tag](/docs/7-2/reference/-/knowledge_base/r/using-liferay-util-include)
-- [Using the AUI Taglib](/docs/7-2/reference/-/knowledge_base/r/using-aui-taglibs-in-your-portlets)
+- [Using the AUI Taglib](/docs/7-2/reference/-/knowledge_base/r/using-aui-taglibs)
