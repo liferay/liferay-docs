@@ -134,7 +134,7 @@ object, it helps to see a simple JSON web service example in JavaScript:
     Liferay.Service(
         '/user/get-user-by-email-address`,
         {
-            companyId: Liferay.ThemeDisplay.getCompanyId(),
+            companyId: 20101,
             emailAddress: 'test@liferay.com`
         },
         function(obj) {
