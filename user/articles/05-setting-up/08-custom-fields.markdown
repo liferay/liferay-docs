@@ -50,7 +50,7 @@ To add a custom field to one of the listed entities,
 
 1.  Choose a resource by clicking on it.
 
-2.  Click the add (![Add](../../images-dxp/icon-add.png)) button.
+2.  Click the add (![Add](../../images/icon-add.png)) button.
 
 3.  Choose a field type: Text Area, Input Field, Dropdown, Checkbox, Radio,
     Geolocation, Date, True/False. 
@@ -87,7 +87,7 @@ and create a new one if necessary.
 ![Figure 3: The exact Custom Fields configuration options you use depend on the field type you choose.](../../images/custom-fields-configuration.png)
 
 Edit an individual custom field's permissions by clicking the field's kebab menu
-(![Actions](../../images-dxp/icon-actions.png)), then *Permissions*.  Permission
+(![Actions](../../images/icon-actions.png)), then *Permissions*.  Permission
 can be granted or removed for these actions:
 
 - Delete
