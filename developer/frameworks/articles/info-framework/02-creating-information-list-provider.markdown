@@ -83,7 +83,7 @@ changes. If you create a provider for a custom class, you must also render it.
     ```java
     @Override
     public String getLabel(Locale locale) {
-     return “Most Viewed Content”;
+     return "Most Viewed Content";
      }
      ```
 
@@ -123,7 +123,7 @@ The completed class should look like this:
 
            @Override
            public String getLabel(Locale locale) {
-             return “Most Viewed Content”;
+             return "Most Viewed Content";
              }
 
 @Reference
