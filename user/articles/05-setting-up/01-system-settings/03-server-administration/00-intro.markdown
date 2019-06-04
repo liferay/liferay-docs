@@ -34,7 +34,7 @@ system properties. You can use this information for debugging purposes or to
 check the currently running configuration. The Portal Properties tab shows 
 an exhaustive list of the current portal property values. For explanations 
 of these properties, see the 
-[portal properties reference documentation](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html). 
+[portal properties reference documentation](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html). 
 
 **Data Migration:** Migrate documents from one repository to another. For 
 example, you can migrate your documents to a new repository on a different 

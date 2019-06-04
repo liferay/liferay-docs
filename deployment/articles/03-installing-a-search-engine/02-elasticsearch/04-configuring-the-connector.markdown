@@ -136,16 +136,10 @@ file:
 As you can see from the System Settings entry for Elasticsearch, there are a lot
 more configuration options available that help you tune your system for optimal
 performance. 
-<!-- For a detailed accounting of these, refer to the reference article
-on [Elasticsearch Settings](discover/reference/-/knowledge_base/7-1/elasticsearch-settings).
--->
 
 What follows here are some known good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
 testing under load, and tuning again, so we encourage you to examine the
-<!--
-[settings](discover/reference/-/knowledge_base/7-1/elasticsearch-settings) 
-as well as the -->
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html) 
 and go through that process once you have a working configuration. 
 
@@ -203,7 +197,6 @@ shards is `1`.
 | through TCP. See the Elasticsearch documentation for the available properties
 | (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 | connector's settings for the connector's available settings.
-| <!--reference article](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
 | 
 | At a minimum, provide the list of hosts (as `host:port`)  to act as gossip
 | routers during unicast discovery in the `elasticsearch.yml`:

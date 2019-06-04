@@ -239,7 +239,7 @@ there: the vendor name is now simply _Elasticsearch_, whereas prior to the
 installation of the remote Elasticsearch server, it said _Elasticsearch
 (Embedded)_.
 
-![Figure 1: To see information about the currently connected search engine, go to _Control Panel &rarr; Configuration &rarr; Search_. ](../../../images/search-admin-engineinfo-remote.png)
+![Figure 1: To see information about the currently connected search engine, go to _Control Panel &rarr; Configuration &rarr; Search_.](../../../images/search-admin-engineinfo-remote.png)
 
 For additional details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/_installation.html).
 

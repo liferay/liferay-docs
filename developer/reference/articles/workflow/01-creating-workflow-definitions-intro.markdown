@@ -20,8 +20,7 @@ Only one workflow definition is installed by default: Single Approver. Several
 more, however, are embedded in the source code of your @product@ installation.
 If you're comfortable extracting the XML files from a JAR file embedded in an
 LPKG file, you're welcome to follow the steps below to obtain the workflow
-definitions. <!--To obtain the files more conveniently, download a ZIP file
-[here](https://dev.liferay.com/documents/10184/1530512/Workflow+Definitions+Zip).-->
+definitions. 
 
 To extract the definitions for yourself,
 
