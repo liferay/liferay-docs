@@ -127,7 +127,7 @@ and inspecting the XML.
 How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
 disappear without notice? 
-[Use a service tracker](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers). 
+[Use a service tracker](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers-for-osgi-services). 
 That way you can make sure your code has access to the service it
 needs, and if not, do something appropriate in response. Here's a little example
 code to show you how this might look in Groovy:
@@ -174,7 +174,7 @@ code to show you how this might look in Groovy:
 ```
 
 If you read the article on [service
-trackers](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers), the only odd
+trackers](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers-for-osgi-services), the only odd
 looking piece of the above code is the `getBundle` call: why is
 `GroovyExecutor.class` passed as a parameter? The parameter passed to the
 `FrameworkUtil.getBundle` call must be a class from the OSGi bundle executing
