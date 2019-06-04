@@ -416,7 +416,7 @@ it. Mail session configuration is next.
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s
-[built-in mail session](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail#products-built-in-mail-session),
+[built-in mail session](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail),
 skip this section. 
 
 If you want to manage your mail session with Tomcat, follow these steps:
