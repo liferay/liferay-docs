@@ -14,6 +14,26 @@ embedded in
 [XML workflow definitions](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions) 
 and run during the execution of the workflow.
 
+## Injected Variables
+
+Usually when you're scripting in Groovy, you must define your variables. In
+workflow scripts, though, there are several [pre-defined variables](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-workflow/portal-workflow-kaleo-runtime-scripting-impl/src/main/java/com/liferay/portal/workflow/kaleo/runtime/scripting/internal/util/ScriptingContextBuilderImpl.java) injected into
+your script context. Call these without defining them first:
+
+These are always available:
+
+kaleoInstanceToken
+workflowContext
+
+If a `kaleoTaskInstanceToke` has been created:
+
+kaleoTaskInstanceToken
+taskName
+
+userId
+workflowTaskAssignees
+kaleoTimerInstanceToken
+
 The final step in a workflow runs a script that makes content available for use.
 The snippet below accesses the Java class associated with the workflow to set
 content's status to *approved*.
