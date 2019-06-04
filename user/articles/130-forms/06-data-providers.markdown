@@ -16,7 +16,7 @@ someone else (hopefully a trustworthy expert) to keep the data updated.
 When setting up a data provider, you're accessing a 
 [REST web service](https://en.wikipedia.org/wiki/Representational_state_transfer). 
 Use the 
-[JSON web services registered in Liferay](/docs/7-2/tutorials/-/knowledge_base/t/registering-json-web-services),
+JSON web services registered in @product@,
 or any other REST web service you can access. To find a list of the ready-to-use
 registered JSON web services in @product@, navigate to
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) (assuming
