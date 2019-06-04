@@ -6,16 +6,15 @@ header-id: email-and-content
 
 [TOC levels=1-4]
 
-There are a few sections of the Configuration tab dedicated to configuring
-email and content sharing:
+The Email category in Open Control Panel &rarr; Configuration &rarr; Instance
+Settings is dedicated to configuring email and content sharing:
 
+- Account Created Notification
+- Email Sender
 - Mail Host Names
-- Email notifications
-- Content Sharing
-
-Configure these settings at Control Panel &rarr; Configuration &rarr; Instance
-Settings. In the Configuration tab, scroll down to the bottom. These three
-entries are last in the tab.
+- Email Verification Notification
+- Password Changed Notification
+- Password Reset Notification
 
 ## Mail Host Names
 
@@ -23,7 +22,7 @@ Enter one mail host name per line, besides the one you configured on the General
 tab. This tells the virtual instance which mail host names are owned by your
 organization.
 
-## Email Notifications
+## Email Verification Notification
 
 The Sender tab sets the virtual instance's administrative name and email
 address.  By default, these are `Test Test` and `test@liferay.com`. This name
@@ -32,7 +31,7 @@ virtual instance.
 
 ![Figure 1: Customize the email template for the email messages sent to new Users.](../../../images/instance-settings-account-created.png)
 
-The remaining tabs (Account Created Notification, Email Verification
+The remaining entries (Account Created Notification, Email Verification
 Notification, Password Changed Notification and Password Reset Notification)
 customize the email messages sent to Users each time any of those four events
 occur.
@@ -43,6 +42,7 @@ A list of tokens, entitled "Definition of Terms," is provided for insertion of
 certain variables (such as the portal URL or the User ID) into custom email
 messages.
 
+<!--
 ## Content Sharing
 
 Choose if Site administrators can display content in Sites from other Sites they
@@ -65,3 +65,4 @@ behavior cannot be changed by a Site administrator.
 
 That covers a lot of Instance Settings, but you're not finished yet. The next
 article covers the identification and social settings.
+-->

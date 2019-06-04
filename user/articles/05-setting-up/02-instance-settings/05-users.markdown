@@ -7,23 +7,21 @@ header-id: users
 [TOC levels=1-4]
 
 Configure user settings at Control Panel &rarr; Configuration &rarr; Instance
-Settings. In the Configuration tab, scroll down to the Users section and expand
-it.
+Settings, in the Users category.
 
-The *Users* section has three tabs: Fields, Reserved Credentials and Default
-User Associations.
+The *Users* section has three entries: Personal Menu, Default
+User Associations, and Fields.
 
-In the Fields tab, enable/disable these fields on the Add/Edit User Form:
+In the Personal Menu entry, configure whether the personal menu appears in
+the Control Menu (as it did in past versions of @product@).
+
+In the Fields entry, enable/disable these fields on the Add/Edit User Form:
 
 - Autogeneration of screen names
 
 - Birthday field
 
 - Gender field
-
-In the Reserved Credentials tab, specify the screen names and email addresses
-Users aren't allowed to use. This prevents Users from creating IDs that look
-like administrative IDs or that have reserved words in their names.
 
 Default User Associations has four fields for listing (one per line) the Sites,
 Organization Sites, Roles, and User Groups you want all new Users assigned to

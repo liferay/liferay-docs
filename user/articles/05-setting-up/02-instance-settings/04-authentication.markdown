@@ -7,17 +7,11 @@ header-id: authentication
 [TOC levels=1-4]
 
 Configure authentication at Control Panel &rarr; Configuration &rarr; Instance
-Settings. In the Configuration tab, scroll down to the Authentication section
-and expand it.
-
-Authentication has several tabs: General, OpenSSO, CAS, NTLM, LDAP, OpenID,
-Facebook, Google, and OpenId Connect. These configure how Users authenticate.
+Settings. The User Authentication category contains two entries: General and Reserved Credentials.
 
 ![Figure 1: Configure general authentication behavior and settings for external authentication systems.](../../../images/instance-settings-auth.png)
 
-The General tab's settings affect only the platform's built-in authentication
-functionality and don't have anything to do with the integration options on the
-other tabs. There are several general authentication settings:
+There are several general authentication settings:
 
 -   Authenticate by email address (default), screen name, or User ID (a
     numerical ID auto-generated in the database---not recommended).
@@ -57,6 +51,10 @@ email address is an important default for the following reasons:
     occurs, no notifications sent by the virtual instance will reach the User.
     Keeping the email address at the forefront of a User's mind when she logs in
     helps ensure the User keeps it current. 
+
+In the Reserved Credentials tab, specify the screen names and email addresses
+Users aren't allowed to use. This prevents Users from creating IDs that look
+like administrative IDs or that have reserved words in their names.
 
 Learn to configure a third party authentication service or set up Single Sign On
 (SSO) in the

@@ -11,19 +11,19 @@ first in the Instance Settings interface, but they're one of the first things
 to configure for your virtual instance.
 
 Configure Terms of Use for the virtual instance at *Control Panel* &rarr;
-*Configuration* &rarr; *Instance Settings*. In the Configuration tab, scroll
-down to the Terms of Use section and expand it.
+*Configuration* &rarr; *Instance Settings*. In the Platform section, click into
+the Instance Configuration section and go to the Terms of Use page.
 
 Since the Terms of Use page is enabled by default, one of your first actions
-should be to disable or replace the default, placeholder terms.  You can disable
+should be to disable or replace the default, placeholder terms. You can disable
 the requirement for all Users to read the terms of use or set the Group ID and
 Article ID for the Web Content Article that contains your Terms of Use.
 
 To find a Web Content Article's ID:
 
-1.  Go to the *Site Menu* &rarr; *Content* &rarr; *Web Content*. 
+1.  Go to the *Site Menu* &rarr; *Content & Data* &rarr; *Web Content*. 
 
-2.  Click on the Terms of Use article. Its ID appears at the top of the screen,
+2.  Click on your Terms of Use article. Its ID appears at the top of the screen,
     with the Version and Workflow Status.
 
 ![Figure 1: The Web Content Article ID is displayed in the edit screen.](../../../images/instance-settings-wc-id.png)
@@ -31,7 +31,7 @@ To find a Web Content Article's ID:
 The Group ID is the ID of the Site the Web Content is associated with. To find
 the Group/Site ID:
 
-1.  Go to *Site Menu* &rarr; *Configuration* &rarr; *Site Settings*.
+1.  Go to *Site Menu* &rarr; *Configuration* &rarr; *Settings*.
 
 2.  Find the Site ID field in the General tab. Enter it into the Group ID
     field.
