@@ -20,68 +20,63 @@ intuitive, consistent user experiences.
 
 Here are some of Liferay's most popular frameworks:
 
-- [Permissions](/docs/7-1/tutorials/-/knowledge_base/t/defining-application-permissions):
+[Permissions](/docs/7-2/frameworks/-/knowledge_base/f/defining-application-permissions):
 Defines resource for entities and actions for performing on the resources. 
 
-- [Configurable Applications](/docs/7-1/tutorials/-/knowledge_base/t/configurable-applications):
+[Configurable Applications](/docs/7-2/frameworks/-/knowledge_base/f/configurable-applications):
 Makes applications configurable from within the Control Panel. 
 
-- [Workflow](/docs/7-1/tutorials/-/knowledge_base/t/workflow):
+[Workflow](/docs/7-2/frameworks/-/knowledge_base/f/workflow):
 Equips entities for reviewing in workflows before publishing. 
 
-- [Item Selector](/docs/7-1/tutorials/-/knowledge_base/t/item-selector): 
+[Item Selector](/docs/7-2/frameworks/-/knowledge_base/f/item-selector): 
 Provides a consistent developer experience for browsing and selecting entities. 
 
-- [Asset Framework](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework): 
+[Asset Framework](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework): 
 Makes entities more descriptive enabling users to tag, categorize, rate,
 prioritize, and comment on them. It enables users to relate entities to each
 other as assets and it allows the entities to be published in the Asset
 Publisher. 
 
-    - [Tags and Categories](/docs/7-1/tutorials/-/knowledge_base/t/implementing-asset-categorization-and-tagging):
+    - [Tags and Categories](/docs/7-2/frameworks/-/knowledge_base/f/implementing-asset-categorization-and-tagging):
     Enables users to tag entities and categorize the tagged entities. 
-    - [Priority](/docs/7-1/tutorials/-/knowledge_base/t/implementing-asset-priority):
+    - [Priority](/docs/7-2/frameworks/-/knowledge_base/f/implementing-asset-priority):
     Users can ascribe numerical priorities to entities. 
-    - [Related Assets](/docs/7-1/tutorials/-/knowledge_base/t/relating-assets):
+    - [Related Assets](/docs/7-2/frameworks/-/knowledge_base/f/relating-assets):
     Users can associate one entity with another as an asset. 
-    - [Asset Renderer](/docs/7-1/tutorials/-/knowledge_base/t/rendering-an-asset):
+    - [Asset Renderer](/docs/7-2/frameworks/-/knowledge_base/f/rendering-an-asset):
     Enables displaying entities in the Asset Publisher. 
-    - [Comments](/docs/7-1/tutorials/-/knowledge_base/t/adding-comments-to-your-app):
+    - [Comments](/docs/7-2/frameworks/-/knowledge_base/f/adding-comments-to-your-app):
     Lets users comment on entities.
-    - [Ratings](/docs/7-1/tutorials/-/knowledge_base/t/rating-assets):
+    - [Ratings](/docs/7-2/frameworks/-/knowledge_base/f/rating-assets):
     Enables rating systems, such as five stars or thumbs up/down, on entities. 
-    - [Flags](/docs/7-1/tutorials/-/knowledge_base/t/flagging-inappropriate-asset-content):
+    - [Flags](/docs/7-2/frameworks/-/knowledge_base/f/flagging-inappropriate-asset-content):
     Users can flag entity content as inappropriate. 
-    - *Social Bookmarks*:
+    - [Social Bookmarks](/docs/7-2/frameworks/-/knowledge_base/f/applying-social-bookmarks):
     Users can share entity content on Twitter, Facebook, and more. 
-    ([Tutorials](https://issues.liferay.com/browse/LRDOCS-4531) are coming soon.)
 
-- [Export/Import](/docs/7-1/tutorials/-/knowledge_base/t/export-import-and-staging):
+[Export/Import](/docs/7-2/frameworks/-/knowledge_base/f/export-import-and-staging):
 Lets users export entity data to and import entity data from files (`.lpkg`
 files). Exported data can be imported to another portal instance or saved for
 later use. 
 
-- [Staging](/docs/7-1/tutorials/-/knowledge_base/t/export-import-and-staging): 
+[Staging](/docs/7-2/frameworks/-/knowledge_base/f/export-import-and-staging): 
 Lets users change entities behind the scenes without affecting the live site. 
 
-- *Search*: Enables entities to be found and shown in @product@ search results. 
-([Tutorials](https://issues.liferay.com/browse/LRDOCS-4372) are coming soon.)
+[Search](/docs/7-2/frameworks/-/knowledge_base/f/search): 
+Enables entities to be found and shown in @product@ search results. 
 
-- *Recycle Bin*: Entities can be moved from the application and put them into the 
-Recycle Bin. Entities can be restored from the Recycle Bin or deleted
-permanently (manually or per a schedule).
-([Tutorials](https://issues.liferay.com/browse/LRDOCS-4505) are coming soon.)
+[Recycle Bin](/docs/7-2/frameworks/-/knowledge_base/f/moving-entities-to-the-recycle-bin): 
+Entities can be moved from the application and put them into the Recycle Bin. 
+Entities can be restored from the Recycle Bin or deleted permanently (manually 
+or per a schedule). 
 
-Liferay's frameworks are rich with features users expect in applications. Click
-on the framework tutorial links to start leveraging the frameworks. Next are
-tutorials on invoking local services. 
+## Related Topics
 
-## Related Topics:
+[Internationalization](/docs/7-2/frameworks/-/knowledge_base/f/internationalization)
 
-[Internationalization](/docs/7-1/tutorials/-/knowledge_base/t/internationalization)
+[JavaScript Module Loaders](/docs/7-2/frameworks/-/knowledge_base/f/javascript-module-loaders)
 
-[JavaScript Module Loaders](/docs/7-1/tutorials/-/knowledge_base/t/javascript-module-loaders)
+[Front-End Taglibs](/docs/7-2/frameworks/-/knowledge_base/f/front-end-taglibs)
 
-[Front-End Taglibs](/docs/7-1/tutorials/-/knowledge_base/t/front-end-taglibs)
-
-[Data Upgrades](/docs/7-1/tutorials/-/knowledge_base/t/data-upgrades)
+[Data Upgrades](/docs/7-2/appdev/-/knowledge_base/a/data-upgrades)

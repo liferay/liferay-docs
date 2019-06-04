@@ -6,13 +6,13 @@ header-id: implementing-any-other-business-logic
 
 [TOC levels=1-4]
 
-This section's earlier local service tutorials focus on CRUD methods: methods
+This section's earlier local service articles focus on CRUD methods: methods
 that **c**reate (add), **r**ead (get), **u**pdate, and **d**elete entities. But
 you might also need methods that provide business logic. 
 
 For example, Liferay Bookmarks application users *open* bookmarks (navigate to a
 URLs) by clicking on them. 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.0-a1/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s 
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s 
 `openEntry` method supports this functionality: 
 
     public BookmarksEntry openEntry(long userId, BookmarksEntry entry) {
@@ -55,7 +55,7 @@ is the bookmarks entry and the folder where it's going. Compare the following
     bookmarksEntryLocalService.moveEntry(entryId, folderId);
 
 Convenience methods are typically straightforward to write. Here's the
-[`moveEntry` method](https://github.com/liferay/liferay-portal/blob/7.1.0-a1/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java):
+[`moveEntry` method](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java):
 
     public BookmarksEntry moveEntry(long entryId, long parentFolderId)
         throws PortalException {
@@ -76,7 +76,7 @@ changes, and returns the entity. Convenience methods like this one facilitate
 updating a subset of the entity's attributes. 
 
 After implementing your custom business methods, 
-[run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
+[run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 to propagate them to the interface.
 
 In your local services, you can implement business logic methods that suit your
@@ -84,8 +84,8 @@ application.
 
 **Related Topics**
 
-[Creating Local Services](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
+[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
 
-[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
+[Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)
 
-[Invoking Services from Service Builder Code](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-from-service-builder-code)
+[Invoking Services from Service Builder Code](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-service-builder-code)

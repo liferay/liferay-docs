@@ -17,7 +17,7 @@ application. Here's how:
 2. [Call the component's methods.](#step-2-call-the-service-component-methods)
 
 There's a Blade sample called 
-[Basic Service Builder](/docs/7-1/reference/-/knowledge_base/r/service-builder-samples).
+[Basic Service Builder](/docs/7-2/reference/-/knowledge_base/r/service-builder-samples).
 Its `basic-web` module has a `Portlet` service component that demonstrates
 referencing a local service component. This module also has JSPs that invoke the
 component's methods. Your first step is to add a reference to the local service
@@ -28,7 +28,7 @@ component object.
 Your application's Service Builder-generated local services are DS components
 that you can inject into your application's other DS components (classes
 annotated with `@Component`)
-[using the `@Reference` annotation](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services).
+[using the `@Reference` annotation](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services).
 The `basic-web` module's `JSPPortlet` class is a `Portlet` service component
 that references the `FooLocalService` local service as a DS component.
 
@@ -41,9 +41,9 @@ that references it. The `JSPPortlet` sample class declares the
 completely optional. 
 
 | **Note**: Service Builder generates `*LocalServiceImpl`, `*ServiceImpl`,
-| `*PersistenceImpl`, and `[ENTITY_NAME]Impl` classes for your entities as Service
-| Builder Spring Beans---not OSGi Declarative Services.
-| [Service Builder Spring Beans must use means other than the `@Reference` annotation to reference Liferay services and OSGi services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-from-service-builder-code).
+| `*PersistenceImpl`, and `[ENTITY_NAME]Impl` classes for your entities as 
+| Service Builder Spring Beans---not OSGi Declarative Services. 
+| [Service Builder Spring Beans must use means other than the `@Reference` annotation to reference Liferay services and OSGi services](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-service-builder-code).
 
 **Important:** You should never invoke `*LocalServiceImpl` objects directly. You
 should only invoke them indirectly through their `*LocalService` service
@@ -122,11 +122,11 @@ on the entity instance's ID.
     	foo = fooLocalService.getFoo(fooId);
     }
 
-| **Important:** When invoking service entity updates (e.g.,
-| `fooService.update(object)`) for services that have MVCC enabled, make sure to
-| do so in transactions. Propagate rejected transactions to the UI for the user to
-| handle. For details, see
-| [Multiversion concurrency control (MVCC)](/docs/7-1/tutorials/-/knowledge_base/t/defining-global-service-information#multiversion-concurrency-control-mvcc).
+| **Important:** When invoking service entity updates (e.g., 
+| `fooService.update(object)`) for services that have MVCC enabled, make sure to 
+| do so in transactions. Propagate rejected transactions to the UI for the user 
+| to handle. For details, see 
+| [Multiversion concurrency control (MVCC)](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#multiversion-concurrency-control-mvcc).
 
 Using the `@Reference` annotation, you can inject your application's OSGi DS
 components (such as a portlet DS component) with instances of your application's
@@ -135,14 +135,14 @@ JSPs access to the component instances via `RenderRequest` attributes.
 
 ## Related Topics
 
-[Creating Local Services](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
+[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
 
-[Creating Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/creating-remote-services)
+[Creating Remote Services](/docs/7-2/appdev/-/knowledge_base/a/creating-remote-services)
 
-[Invoking Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-remote-services)
+[Invoking Remote Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-remote-services)
 
-[Service Security Layers](/docs/7-1/tutorials/-/knowledge_base/t/service-security-layers)
+[Service Security Layers](/docs/7-2/appdev/-/knowledge_base/a/service-security-layers)
 
-[Invoking Services from Service Builder Code](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-from-service-builder-code)
+[Invoking Services from Service Builder Code](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-service-builder-code)
 
-[OSGi Services and Dependency Injection with Declarative Services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services)
+[OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services)

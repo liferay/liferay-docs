@@ -13,7 +13,7 @@ Spring Application Context file, Service Builder defines each entity's
 `*LocalServiceImpl`, `*ServiceImpl`, and `*PersistenceImpl` classes as Spring
 Beans. For example, Service Builder defines Spring Beans for the `Foo` entity in
 the
-[Liferay Blade Service Builder `basic-service` sample module's](/docs/7-1/reference/-/knowledge_base/r/service-builder-samples)
+[Liferay Blade Service Builder `basic-service` sample module's](/docs/7-2/reference/-/knowledge_base/r/service-builder-samples)
 `src/main/resources/META-INF/spring/module-spring.xml` file:
 
     <?xml version="1.0"?>
@@ -50,7 +50,7 @@ recommended Liferay annotations a Service Builder Spring Bean can use.
 | `fooService.update(object)`) for services that have MVCC enabled, make sure to
 | do so in transactions. Propagate rejected transactions to the UI for the user to
 | handle. For details, see
-| [Multiversion concurrency control (MVCC)](/docs/7-1/tutorials/-/knowledge_base/t/defining-global-service-information#multiversion-concurrency-control-mvcc).
+| [Multiversion concurrency control (MVCC)](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#multiversion-concurrency-control-mvcc).
 
 The `@BeanReference` annotation is explained first. 
 
@@ -112,7 +112,7 @@ more robust and versatile.
 
 Fortunately, Service Builder generates this kind of code for every entity your
 `service.xml` file references. For example, the
-[Liferay Blade Service Builder sample project](/docs/7-1/reference/-/knowledge_base/r/service-builder-samples)
+[Liferay Blade Service Builder sample project](/docs/7-2/reference/-/knowledge_base/r/service-builder-samples)
 `basic-service` module's `service.xml` file defines a `Foo` entity that
 references an `AssetEntry` entity:
 
@@ -132,10 +132,10 @@ Bean in the Application Context of your Service Builder Spring Bean.
 
 ## Related Topics
 
-[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
+[Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)
 
-[Invoking Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-remote-services)
+[Invoking Remote Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-remote-services)
 
-[JSON Web Services Invoker](/docs/7-1/tutorials/-/knowledge_base/t/json-web-services-invoker)
+[JSON Web Services Invoker](/docs/7-2/appdev/-/knowledge_base/a/json-web-services-invoker)
 
-[Service Trackers](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers)
+[Service Trackers](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers)

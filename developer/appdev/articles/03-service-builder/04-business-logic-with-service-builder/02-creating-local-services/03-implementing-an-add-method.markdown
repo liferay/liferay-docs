@@ -26,8 +26,8 @@ steps for implementing an `add*` method:
 
 7.  [Return the entity instance.](#return-the-entity)
 
-This tutorial refers to the Bookmarks application's `addEntry` method from 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
+This article refers to the Bookmarks application's `addEntry` method from 
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 as an example. To keep things simple, we have excluded the code that integrates
 with Liferay services, such as assets, social bookmarks, and more. 
 
@@ -108,7 +108,7 @@ a `BookmarksFolder`.
 
 Validate the parameters as needed. You might need to make sure a parameter is
 not empty or `null`, or that a parameter value is within a valid range. Throw a
-[`PortalException`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
+[`PortalException`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
 or an extension of `PortalException` for any invalid parameters.
 
 For example, the `addEntry` method invokes the following `validate` method to
@@ -125,7 +125,7 @@ Next, generate a primary key for the entity instance you're creating.
 ## Step 3: Generate a primary key
 
 Every entity instance needs a unique primary key. Liferay's
-[`CounterLocalService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)
+[`CounterLocalService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html) 
 generates them per entity. Every `*BaseLocalServiceImpl` has a
 `counterLocalService` field that references a `CounterLocalService` object for
 the entity. Invoke the counter service's `increment` method to generate a
@@ -197,7 +197,7 @@ Your entity is persisted for the application.
 
 Finally, return the entity you just created so the caller can use it. 
 
-[Run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
+[Run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 to propagate your new service method to the `*LocalService` interface. 
 
 You've implemented your local service's `add*` method to create and persist your

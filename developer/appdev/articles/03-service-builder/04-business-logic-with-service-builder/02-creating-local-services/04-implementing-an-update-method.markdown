@@ -2,12 +2,12 @@
 header-id: implementing-update-and-delete-methods
 ---
 
-# Implementing update and delete Methods
+# Implementing Update and Delete Methods
 
 [TOC levels=1-4]
 
 After you've implementing an
-[`add*` method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method) for 
+[`add*` method](/docs/7-2/appdev/-/knowledge_base/a/implementing-an-add-method) for 
 creating service entities, you'll want to create
 [`update*`](#implementing-an-update-method)
 and
@@ -16,10 +16,10 @@ methods for updating and deleting them. They're easy to implement. The main
 difference between them and the `add*` method is they must know which entity
 they're updating or deleting. 
 
-## Implementing an update method
+## Implementing an Update Method
 
 An `update*` method for a local service resembles an
-[`add*` method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method)
+[`add*` method](/docs/7-2/appdev/-/knowledge_base/a/implementing-an-add-method)
 most because it has parameters for setting entity attribute values. Create an
 `update*` method this way:
 
@@ -36,7 +36,7 @@ most because it has parameters for setting entity attribute values. Create an
 6.  [Run Service Builder.](#run-service-builder)
 
 The following code snippets from 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s
 `updateEntry` method are helpful to examine. 
 
 	public BookmarksEntry updateEntry(
@@ -81,7 +81,7 @@ This method has all the makings of a good `update*` method:
 Refer to the example method above as you follow the steps to create your own
 `update*` method. 
 
-### Step 1: Declare an update method with parameters for updating the entity
+### Step 1: Declare an Update Method with Parameters for Updating the Entity
 
 Create a public method for updating your application's entity. 
 
@@ -107,21 +107,21 @@ entity instance. Also it has parameters `folderId`, `name`, `url`, and
 Note, user ID, group ID, and service context parameters are useful for
 integrating with Liferay's services. More on that later. 
 
-### Step 2: Validate the parameters
+### Step 2: Validate the Parameters
 
 Similar to validating the
-[`add*` method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method)
+[`add*` method](/docs/7-2/appdev/-/knowledge_base/a/implementing-an-add-method)
 parameters, validate your `update*` parameters. Your `add*` and `update*`
 methods might be able to use the same validation code. Throw a 
-[`PortalException`](@platform-ref@/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
+[`PortalException`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
 or an extension of `PortalException` for any invalid parameters. 
 
-### Step 3: Retrieve the entity instance
+### Step 3: Retrieve the Entity Instance
 
 If you're passing in an entity instance, you can update it directly. Otherwise,
 pass in the entity ID (the primary key).  The `*Persistence` class Service
 Builder injects into `*BaseLocalServiceImpl` classes has a
-`findByPrimaryKey(long)` method that retrieves instances by ID. For example, the [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
+`findByPrimaryKey(long)` method that retrieves instances by ID. For example, the [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 retrieves the `BookmarksEntry` that matches the primary key `entryId`. 
 
     BookmarksEntry entry = bookmarksEntryPersistence.findByPrimaryKey(
@@ -134,11 +134,11 @@ retrieve the entity instance that matches your primary key parameter.
 
 It's time to update the entity attributes. 
 
-### Step 4: Update the entity attributes
+### Step 4: Update the Entity Attributes
 
 Invoke the entity's setter methods to replace its attribute values. 
 
-### Step 5: Persist and return the updated entity instance
+### Step 5: Persist and Return the Updated Entity Instance
 
 Persist the updated entity to the database and return the instance to the
 caller. 
@@ -157,7 +157,7 @@ Finally, run Service Builder to propagate your new service method to the
 You've created a service method to update your entity. If you thought that was
 easy, implementing a `delete*` method is even easier. 
 
-## Implementing a delete method
+## Implementing a Delete Method
 
 The `remove` method of an entity's `*Persistence` class deletes an entity
 instance from the database. Use it in your local service's `delete*` method.
@@ -175,7 +175,7 @@ Here's what a `delete*` method looks like:
 Make sure to replace `[ENTITY]` with your entity's name or nickname. 
 
 For example, here's paraphrased code from 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s 
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s 
 `deleteEntry` method:
 
     public BookmarksEntry deleteEntry(BookmarksEntry entry)
@@ -188,13 +188,9 @@ For example, here's paraphrased code from
         return entry;
     }
 
-After implementing your `delete*` method, run Service Builder to propagate your
+After implementing your `delete*` method, run Service Builder to propagate your 
 new service method to the `*LocalService` interface. 
 
 ## Related Topics
 
-[Implementing an add method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method)
-
-Implementing getter and counter methods 
-
-Integrating with Liferay services 
+[Implementing an add method](/docs/7-2/appdev/-/knowledge_base/a/implementing-an-add-method)
