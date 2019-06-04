@@ -1,5 +1,5 @@
 ---
-header-id: customizing-liferay-services-service-wrappers
+header-id: overriding-service-builder-services-service-wrappers
 ---
 
 # Overriding Liferay Services (Service Wrappers)

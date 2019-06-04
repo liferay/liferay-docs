@@ -1,8 +1,8 @@
 ---
-header-id: overriding-mvc-commands
+header-id: overriding-liferay-mvc-commands
 ---
 
-# Overriding MVC Commands
+# Overriding Liferay MVC Commands
 
 [TOC levels=1-4]
 
@@ -19,7 +19,7 @@ ranking, and deploy it.
 All existing components that reference the original MVC command service 
 component (using a greedy reference policy) switch to reference your new one. 
 Any existing [reluctant references to the original command must be configured to 
-reference the new one](/docs/7-2/customization/-/knowledge_base/c/overriding-service-references). 
+reference the new one](/docs/7-2/customization/-/knowledge_base/c/overriding-osgi-services). 
 Once they're configured with the new service component, their JSP's command URLs 
 invoke the new custom MVC command. 
 

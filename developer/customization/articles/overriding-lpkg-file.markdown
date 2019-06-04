@@ -2,7 +2,7 @@
 header-id: overriding-lpkg-files
 ---
 
-# Overriding lpkg files
+# Overriding lpkg Files
 
 [TOC levels=1-4]
 

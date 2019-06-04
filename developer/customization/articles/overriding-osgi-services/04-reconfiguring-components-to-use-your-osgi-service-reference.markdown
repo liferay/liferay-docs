@@ -35,20 +35,24 @@ reference to use your custom service immediately.
 
 This article uses example modules `override-my-service-reference` and 
 `overriding-service-reference` to demonstrate reconfiguring a service reference, 
-binding the component to a different service. You can download the modules and 
+binding the component to a different service. you can apply the steps below to 
+configure your own customization.
+<!--TODO: Uncomment once zips are ported to the new site.
+You can download the modules and 
 build them using Gradle (bundled with each module) or you can apply the steps 
 below to configure your own customization. Executing `gradlew jar` in each 
 example module root generates the module JAR to the `build/libs` folder. 
+-->
 
 -   `override-my-service-reference` 
-    ([download](https://dev.liferay.com/documents/10184/656312/override-my-service-reference.zip)):
+    <!--TODO: Uncomment once zip is ported to new site.([download](https://dev.liferay.com/documents/10184/656312/override-my-service-reference.zip))-->:
     This module's portlet component `OverrideMyServiceReferencePortlet`'s field 
     `_someService` references a service of type `SomeService`. The reference's 
     policy is static and reluctant. By default, it binds to an implementation 
     called `SomeServiceImpl`. 
 
 -   `overriding-service-reference` 
-    ([download](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip)):
+    <!--TODO: Uncomment once zip is ported to new site.([download](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip))-->:
     Provides a custom `SomeService` implementation called `CustomServiceImpl`. 
     The module's configuration file overrides 
     `OverrideMyServiceReferencePortlet`'s `SomeService` reference so that it 
@@ -149,7 +153,7 @@ component `overriding.service.reference.service.CustomServiceImpl`.
 `CustomServiceImpl` references default service `SomeServiceImpl` to delegate 
 work to it. 
 
-![Figure 1: Because the example component's service reference is overridden by the configuration file deployment, the portlet indicates it's calling the custom service.](../../../images/overriding-service-refs-result.png)
+![Figure 1: Because the example component's service reference is overridden by the configuration file deployment, the portlet indicates it's calling the custom service.](../../images/overriding-service-refs-result.png)
 
 @product@ processed the configuration file and injected the service reference, 
 which in turn bound the custom service to the referencing component! 

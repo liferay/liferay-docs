@@ -2,7 +2,7 @@
 header-id: model-listeners
 ---
 
-# Creating Model Listeners
+# Model Listeners
 
 [TOC levels=1-4]
 
@@ -30,7 +30,7 @@ unpredictably and give you headaches:
 -  Setting a model's attributes in an `onBeforeUpdate` call. If some other 
    database table has already been updated with the values before your model 
 listener is invoked, your database gets out of sync. To change how an entity's 
-attributes are set, consider using a [service wrapper](/docs/7-2/customization/-/knowledge_base/c/customizing-liferay-services-service-wrappers) 
+attributes are set, consider using a [service wrapper](/docs/7-2/customization/-/knowledge_base/c/overriding-service-builder-services-service-wrappers) 
 instead.
 -  Wrapping a model. Model listeners are not called when fetching records from 
    the database.

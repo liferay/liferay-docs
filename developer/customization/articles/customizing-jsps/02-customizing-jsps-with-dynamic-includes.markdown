@@ -18,8 +18,13 @@ register that content with the dynamic include tag, and deploy your module.
 | different customization approach, such as
 | [portlet filters](/docs/7-2/customization/-/knowledge_base/c/jsp-overrides-using-portlet-filters).
 
-Blogs entries contain a good example of how dynamic includes work. For 
+<!--TODO: Uncomment once zip is ported to new site.
+Blogs entries contain a good example of how dynamic includes work. 
+For 
 reference, you can download the [example module](https://dev.liferay.com/documents/10184/656312/example-dynamic-include-blogs-master.zip). 
+-->
+
+Follow these steps:
 
 1.  Find the `liferay-util:dynamic-include` tag where you want to insert content 
     and note the tag's key. 

@@ -36,8 +36,11 @@ details to make these decisions.
 
 Here's an example `scr:info` command and results (abbreviated with `...`) that 
 describe component `override.my.service.reference.OverrideMyServiceReference` 
+
+<!--TODO: Uncomment once zip is ported to new site
 (from sample module 
 [override-my-service-reference](https://dev.liferay.com/documents/10184/656312/override-my-service-reference.zip))
+-->
 and its reference to a service of type
 `override.my.service.reference.service.api.SomeService`: 
 
