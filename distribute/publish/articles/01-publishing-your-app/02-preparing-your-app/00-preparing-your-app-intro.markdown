@@ -4,6 +4,8 @@ header-id: preparing-your-app
 
 # Preparing Your App
 
+[TOC levels=1-4]
+
 As a Liferay developer, you're undoubtedly already familiar with the concept of
 plugins (portlets, themes, etc.). If you're not familiar with Liferay
 plugins, see 

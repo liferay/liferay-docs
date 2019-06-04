@@ -4,6 +4,8 @@ header-id: marketplace-app-metadata-guidelines
 
 # Marketplace App Metadata Guidelines
 
+[TOC levels=1-4]
+
 The following app metadata guidelines ensure that apps are submitted with
 important and necessary supporting information. The metadata that you submit
 with your app serves both as necessary information for your app's buyers (e.g.,
@@ -154,7 +156,7 @@ produce an appealing app advertisement.
 				Please include a "+" at the end of the latest version when
 				specifying version constraints in your
 				liferay-plugin-package.properties file (e.g.,
-				"liferay-versions=6.1.1+, 6.1.20+"). This ensures that the app
+				"liferay-versions=7.2.1+, 7.2.20+"). This ensures that the app
 				continues to be deployable to future @product@ versions within
 				a minor release. If, in the future, you discover your app does
 				NOT work with a particular version, you can modify the list to

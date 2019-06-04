@@ -4,6 +4,8 @@ header-id: targeting-liferay-editions-and-versions
 
 # Targeting Liferay Editions and Versions and Versioning your App
 
+[TOC levels=1-4]
+
 There are multiple versions of Liferay and multiple editions (e.g., community
 and enterprise) for each version. You must decide the versions and editions to
 build your app on. And lastly, you must decide how to version your app. This
@@ -15,7 +17,7 @@ Of course, targeting the widest possible range of Liferay editions and versions
 in an app typically draws larger audiences to the app. And there may be certain
 features in these editions and versions that you want to take advantage of. In
 your app's plugin
-[packaging properties](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app),
+[packaging properties](/how-to-publish/-/knowledge_base/publish/preparing-your-app),
 specify packaging directives to indicate the editions the app supports and the
 version that the app supports. To ensure the widest audience for your app, make
 your app compatible with both Liferay Digital Experience Platform (DXP) and
@@ -27,7 +29,7 @@ to support. When uploading your app, you can specify which versions of Liferay
 your app is compatible with and you can appropriately upload the sets of app
 files that are designed for those different versions. The next article in this
 guide explains how to go about
-[specifying packaging directives](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app). 
+[specifying packaging directives](/how-to-publish/-/knowledge_base/publish/preparing-your-app). 
 
 Note that apps on Liferay Marketplace must be designed for Liferay Portal 6.1
 GA3 or later. That doesn't mean they can't work with prior versions. However,

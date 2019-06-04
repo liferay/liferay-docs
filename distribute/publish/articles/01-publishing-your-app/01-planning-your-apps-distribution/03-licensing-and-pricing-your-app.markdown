@@ -4,6 +4,8 @@ header-id: licensing-and-pricing-your-app
 
 # Licensing and Pricing Your App
 
+[TOC levels=1-4]
+
 You have significant control over how to price your app. You choose the license
 term (perpetual vs. annual), choose the license type (standard vs. developer),
 define a pricing structure (pricing and bundled discounting based on a license
@@ -28,7 +30,7 @@ term that makes the most sense for your app.
 | non-perpetual license sales (considered to be royalty income) to US customers
 | are subject to a 30% withholding tax. This tax does not apply to perpetual
 | licenses. For more information on licensing terms and fees, please refer to the
-| [FAQ](/distribute/faq).
+| [FAQ](/faq).
 
 ## Determining License Type and License Unit Pricing
 

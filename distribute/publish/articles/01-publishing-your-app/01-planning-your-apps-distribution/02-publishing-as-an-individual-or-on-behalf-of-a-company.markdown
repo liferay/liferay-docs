@@ -4,6 +4,8 @@ header-id: publishing-as-an-individual-or-on-behalf-of-a-company
 
 # Publishing as an Individual or on Behalf of a Company
 
+[TOC levels=1-4]
+
 You can publish an app as yourself (an individual) or on behalf of a *company*.
 This determines who is shown as the app's author and owner. Your selection also
 determines who can access the app behind the scenes, once it's published. 

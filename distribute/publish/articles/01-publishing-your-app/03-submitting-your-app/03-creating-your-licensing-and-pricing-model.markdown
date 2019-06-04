@@ -4,6 +4,8 @@ header-id: creating-your-licensing-and-pricing-model
 
 # Creating Your Licensing and Pricing Model
 
+[TOC levels=1-4]
+
 Carefully consider which licensing structure best meets your needs. Once your
 app has been approved, these options, except for price updates, cannot be
 changed. 

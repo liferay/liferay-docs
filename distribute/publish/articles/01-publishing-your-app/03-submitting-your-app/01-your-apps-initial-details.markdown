@@ -4,10 +4,12 @@ header-id: specify-your-apps-initial-details
 
 # Specifying Your App's Initial Details
 
+[TOC levels=1-4]
+
 From this screen you enter your app's basic details. Previous articles
-[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/publish/planning-your-apps-distribution)
+[Planning Your App's Distribution](/how-to-publish/-/knowledge_base/publish/planning-your-apps-distribution)
 and
-[Preparing Your App](/distribute/how-to-publish/-/knowledge_base/publish/preparing-your-app)
+[Preparing Your App](/how-to-publish/-/knowledge_base/publish/preparing-your-app)
 helped prepare you for filling in these details. 
 
 The top portion of the app wizard's initial screen is shown in the figure below.
@@ -97,9 +99,9 @@ manually type in new tags.
 your own. There's a link to the minimum terms which custom EULAs must satisfy.
 
 Remember to visit the articles
-[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/publish/planning-your-apps-distribution)
+[Planning Your App's Distribution](/how-to-publish/-/knowledge_base/publish/planning-your-apps-distribution)
 and
-[Preparing Your App](/distribute/how-to-publish/-/knowledge_base/publish/preparing-your-app)
+[Preparing Your App](/how-to-publish/-/knowledge_base/publish/preparing-your-app)
 for information to help you decide how best to fill in many of these fields. 
 
 Once you've entered all your app's details, click *Next* to get to the screen

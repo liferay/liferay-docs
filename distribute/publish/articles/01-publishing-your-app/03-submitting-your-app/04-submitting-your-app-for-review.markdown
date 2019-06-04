@@ -4,6 +4,8 @@ header-id: submitting-your-app-for-review
 
 # Submitting Your App For Review
 
+[TOC levels=1-4]
+
 The *App Preview* screen lets you preview your app as it will appear on the
 Marketplace. If you want to change things before finally submitting your app,
 click *Edit* to go back and continue making changes until you're satisfied.

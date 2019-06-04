@@ -4,11 +4,13 @@ header-id: uploading-your-app
 
 # Uploading Your App
 
+[TOC levels=1-4]
+
 On this screen, you must specify your app's version and upload your app's files. 
 Note that the article 
-[Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/publish/planning-your-apps-distribution) 
+[Planning Your App's Distribution](/how-to-publish/-/knowledge_base/publish/planning-your-apps-distribution) 
 helps you plan your app's versioning scheme. Likewise, the article 
-[Preparing Your App](/distribute/how-to-publish/-/knowledge_base/publish/preparing-your-app) 
+[Preparing Your App](/how-to-publish/-/knowledge_base/publish/preparing-your-app) 
 helps you determine which files to upload. 
 
 To start uploading, click *Browse* and select the files that make up your app. 

@@ -4,6 +4,8 @@ header-id: making-changes-to-published-apps
 
 # Making Changes to Published Apps
 
+[TOC levels=1-4]
+
 You can make these kinds of changes during the life of your published app:
 
 - Edit your app details (e.g., description, icon, etc.)
@@ -44,7 +46,7 @@ your app's metadata:
 
 All changes must go through the submission process. If your app revision only
 consists of metadata changes, it need only go through the 
-[*App metadata review*](/distribute/how-to-publish/-/knowledge_base/publish/understanding-the-app-review-process)
+[*App metadata review*](/how-to-publish/-/knowledge_base/publish/understanding-the-app-review-process)
 phase of the review process. 
 
 Once approved, the changes you request appear for your app on the Marketplace.
@@ -107,7 +109,7 @@ to editing an app.
 
 6.  Upload your new files (ensuring that your new plugins have updated 
     compatibility information: see the
-    [Marketplace App Metadata Guidelines](/distribute/how-to-publish/-/knowledge_base/publish/preparing-your-app)
+    [Marketplace App Metadata Guidelines](/how-to-publish/-/knowledge_base/publish/preparing-your-app)
     for details on versions). 
 
 7.  Click *Next*, and observe the newly-added files listed at the bottom of the 

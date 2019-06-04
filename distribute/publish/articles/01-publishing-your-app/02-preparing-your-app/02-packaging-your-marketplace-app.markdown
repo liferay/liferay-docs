@@ -4,6 +4,8 @@ header-id: packaging-your-marketplace-app
 
 # Packaging Your Marketplace App
 
+[TOC levels=1-4]
+
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
 other Liferay plugins, as explained in the tutorials on creating

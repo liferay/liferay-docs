@@ -4,6 +4,8 @@ header-id: selling-your-app-or-making-it-free
 
 # Selling Your App or Making it Free
 
+[TOC levels=1-4]
+
 Do you want to sell your app on the Marketplace? Or do you want to share
 it freely with anyone on the Marketplace? It's up to you. Most of the content that
 follows describes options for paid apps (apps you sell). 

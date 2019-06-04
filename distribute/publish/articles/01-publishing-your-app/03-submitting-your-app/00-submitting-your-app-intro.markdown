@@ -4,6 +4,8 @@ header-id: submitting-your-app
 
 # Submitting Your App
 
+[TOC levels=1-4]
+
 Now that you have everything in order for publishing your app, you can start the
 Marketplace app submission process. 
 
@@ -20,10 +22,10 @@ Click *Apps* from the *Development* section to access your app development page.
 Now that you know how to get to your app development page, you can submit your
 app! It involves,
 
-- [Specifying your app's initial details](/distribute/how-to-publish/-/knowledge_base/publish/specify-your-apps-initial-details)
-- [Uploading your app](/distribute/how-to-publish/-/knowledge_base/publish/uploading-your-app)
-- [Creating your licensing and pricing model](/distribute/how-to-publish/-/knowledge_base/publish/creating-your-licensing-and-pricing-model)
-- [Submitting your app for review](/distribute/how-to-publish/-/knowledge_base/publish/submitting-your-app-for-review)
+- [Specifying your app's initial details](/how-to-publish/-/knowledge_base/publish/specify-your-apps-initial-details)
+- [Uploading your app](/how-to-publish/-/knowledge_base/publish/uploading-your-app)
+- [Creating your licensing and pricing model](/how-to-publish/-/knowledge_base/publish/creating-your-licensing-and-pricing-model)
+- [Submitting your app for review](/how-to-publish/-/knowledge_base/publish/submitting-your-app-for-review)
 
 To begin the process of publishing your app, click *Add New App*. The app wizard
 appears, so that you can fill in your app's details.

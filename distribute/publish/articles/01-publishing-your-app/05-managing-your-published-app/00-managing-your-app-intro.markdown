@@ -4,6 +4,8 @@ header-id: managing-your-published-app
 
 # Managing Your Published App
 
+[TOC levels=1-4]
+
 You've launched your new app on the Marketplace. Congratulations! As you settle
 down from your launch celebration, you might wonder how your app is performing
 in the Marketplace. Is there a way to monitor how many people are viewing it and

@@ -4,6 +4,8 @@ header-id: understanding-the-app-review-process
 
 # Understanding the App Review Process
 
+[TOC levels=1-4]
+
 The Liferay Marketplace app QA/review process begins as soon as you submit your
 app for review. Every third-party app submitted to the Liferay Marketplace is
 reviewed by our team to ensure that certain standards for information are upheld
