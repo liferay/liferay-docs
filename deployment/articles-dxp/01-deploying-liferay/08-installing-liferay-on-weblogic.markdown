@@ -1,4 +1,8 @@
-# Installing @product@ on WebLogic 12c R2 [](id=installing-liferay-dxp-on-weblogic-12c-r2)
+---
+header-id: installing-liferay-dxp-on-weblogic-12c-r2
+---
+
+# Installing @product@ on WebLogic 12c R2
 
 Although you can install @product@ in a WebLogic Admin Server, this isn't
 recommended. It's a best practice to install web apps, including @product@, in
@@ -46,7 +50,6 @@ The following jars should be present within the `liferay-dxp-dependencies-[versi
 13. `portal-kernel.jar`
 14. `portlet.jar`
 
-
 The following folders should be present within the `/liferay/osgi` folder: 
 
 1. `Configs`
@@ -54,10 +57,9 @@ The following folders should be present within the `/liferay/osgi` folder:
 3. `Marketplace`
 4. `War`
 
-
 Without any further ado, get ready to install @product@ in WebLogic! 
 
-## Configuring WebLogic's Node Manager [](id=configuring-weblogics-node-manager)
+## Configuring WebLogic's Node Manager
 
 WebLogic requires a Node Manager to start and stop managed servers. Before 
 installing @product@, you must configure the Node Manager included with your 
@@ -65,29 +67,33 @@ WebLogic installation. You'll do this via the
 `domains/your_domain_name/nodemanager/nodemanager.properties` file. Open this 
 file and set the `SecureListener` property to `false`: 
 
-    SecureListener=false
+```properties
+SecureListener=false
+```
 
-This setting disables the encryption (SSL) requirement for the Node Manager, 
-allowing it to accept unencrypted connections. Although it's possible to run 
-@product@ with this property set to `true`, you may encounter difficulties doing 
-so. Also note that with `SecureListener` set to `true`, you must configure your 
-machine in the Admin Server's console to accept unencrypted connections from the 
-Node Manager. To do this, first log in to your Admin Server and select 
-*Environment* &rarr; *Machines* from the *Domain Structure* box on the left. 
-Click your machine in the table and then select the *Configuration* &rarr; *Node 
-Manager* tab. In the *Type* field, select *Plain* from the selector menu, and 
-then click *Save*. You must restart your Admin Server for this change to take 
+This setting disables the encryption (SSL) requirement for the Node Manager,
+allowing it to accept unencrypted connections. Although it's possible to run
+@product@ with this property set to `true`, you may encounter difficulties doing
+so. Also note that with `SecureListener` set to `true`, you must configure your
+machine in the Admin Server's console to accept unencrypted connections from the
+Node Manager. To do this, first log in to your Admin Server and select
+*Environment* &rarr; *Machines* from the *Domain Structure* box on the left.
+Click your machine in the table and then select the *Configuration* &rarr; *Node
+Manager* tab. In the *Type* field, select *Plain* from the selector menu, and
+then click *Save*. You must restart your Admin Server for this change to take
 effect. 
 
 If you're running WebLogic on Mac or Linux, you may also need to set the 
 `NativeVersionEnabled` property to `false`: 
 
-    NativeVersionEnabled=false
+```properties
+NativeVersionEnabled=false
+```
 
 This tells the Node Manager to start in non-native mode. This is required for 
 the platforms where WebLogic doesn't provide native Node Manager libraries. 
 
-## Configuring WebLogic [](id=configuring-weblogic)
+## Configuring WebLogic
 
 Next, you must set some variables in two WebLogic startup scripts. These 
 variables and scripts are as follows. Be sure to use `set` instead of `export` 
@@ -101,45 +107,52 @@ if you're on Windows.
 
     Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
 
-        export DERBY_FLAG="false"
-        export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -Duser.timezone=GMT -da:org.apache.lucene... -da:org.aspectj..."
-        export MW_HOME="/your/weblogic/directory"
-        export USER_MEM_ARGS="-Xmx2560m"
+    ```bash
+    export DERBY_FLAG="false"
+    export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -Duser.timezone=GMT -da:org.apache.lucene... -da:org.aspectj..."
+    export MW_HOME="/your/weblogic/directory"
+    export USER_MEM_ARGS="-Xmx2560m -Xms2560m"
+    ```
 
-    +$$$
-
-    **Important:** For @product@ to work properly, the application server JVM 
-    must use the `GMT` time zone and `UTF-8` file encoding.
-
-    $$$
+    | **Important:** For @product@ to work properly, the application server JVM
+    | must use the `GMT` time zone and `UTF-8` file encoding.
     
-    The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
-    @product@ doesn't require this server. The remaining settings support @product@'s 
-    memory requirements, UTF-8 requirement, Lucene usage, and Aspect Oriented 
-    Programming via AspectJ. Also make sure to set `MW_HOME` to the directory 
-    containing your WebLogic server on your machine. For example: 
+    The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as
+    @product@ doesn't require this server. The remaining settings support
+    @product@'s  memory requirements, UTF-8 requirement, Lucene usage, and
+    Aspect Oriented  Programming via AspectJ. Also make sure to set `MW_HOME` to
+    the directory  containing your WebLogic server on your machine. For example: 
 
-        export MW_HOME="/Users/ray/Oracle/wls12210"
+    ```bash
+    export MW_HOME="/Users/ray/Oracle/wls12210"
+    ```
 
+3.  Some of the settings are also found in the
+    `your-domain/bin/SetDomainEnv.[cmd|sh]` . Add the following variables
+    (Windows):
 
-3.  Some of the settings are also found in the `your-domain/bin/SetDomainEnv.[cmd|sh]` . Add the following variables (Windows):
-
-        set WLS_MEM_ARGS_64BIT=-Xms512m -Xmx2560m 
-        set WLS_MEM_ARGS_32BIT=-Xms512m -Xmx2560m
+    ```bash
+    set WLS_MEM_ARGS_64BIT=-Xms2560m -Xmx2560m 
+    set WLS_MEM_ARGS_32BIT=-Xms2560m -Xmx2560m
+    ```
 
     or on Mac or Linux:
 
-        WLS_MEM_ARGS_64BIT="-Xms512m -Xmx2560m"
-        export WLS_MEM_ARGS_64BIT
+    ```bash
+    WLS_MEM_ARGS_64BIT="-Xms2560m -Xmx2560m"
+    export WLS_MEM_ARGS_64BIT
 
-        WLS_MEM_ARGS_32BIT="-Xms512m -Xmx2560m"
-        export WLS_MEM_ARGS_32BIT
+    WLS_MEM_ARGS_32BIT="-Xms2560m -Xmx2560m"
+    export WLS_MEM_ARGS_32BIT
+    ```
 
 4.  Set the Java file encoding to UTF-8 in 
     `your-domain/bin/SetDomainEnv.[cmd|sh]` by appending `-Dfile.encoding=UTF-8`
     ahead of your other Java properties:  
 
-        JAVA_PROPERTIES="-Dfile.encoding=UTF-8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+    ```bash
+    JAVA_PROPERTIES="-Dfile.encoding=UTF-8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+    ```
 
 5.  You must also ensure that the Node Manager sets @product@'s memory
     requirements when starting the Managed Server. In the Admin Server's console
@@ -147,19 +160,22 @@ if you're on Windows.
     select the *Server Start* tab. Enter the following parameters into the
     *Arguments* field: 
 
-        -Xmx2560m -XX:MaxMetaspaceSize=512m
+    ```bash
+    -Xmx2560m -Xms2560m -XX:MaxMetaspaceSize=512m
+    ```
 
     Click *Save* when you're finished. 
 
 Next, you'll set some @product@-specific properties for your @product@ installation. 
 
-## Setting @product@ Properties [](id=setting-liferay-properties)
+## Setting @product@ Properties
 
-Before installing @product@, you must set the 
-[*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
-folder's location via the `liferay.home` property in a `portal-ext.properties` 
-file. You can also use this file to override 
-[other @product@ properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html) 
+Before installing @product@, you must set the  [*Liferay
+Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) folder's location via
+the `liferay.home` property in a
+[`portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
+file. You can also use this file to override  [other @product@
+properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html)
 that you may need. 
 
 First, decide which folder you want to serve as Liferay Home. In WebLogic, your
@@ -167,17 +183,19 @@ domain's folder is generally Liferay Home, but you can choose any folder on your
 machine. Then create your `portal-ext.properties` file and add the
 `liferay.home` property: 
 
-    liferay.home=/full/path/to/your/liferay/home/folder
+```properties
+liferay.home=/full/path/to/your/liferay/home/folder
+```
 
 Remember to change this file path to the location on your machine that you want 
 to serve as Liferay Home. 
 
-Now that you've created your `portal-ext.properties` file, you must put it 
-inside the @product@ WAR file. Expand the @product@ WAR file and place 
-`portal-ext.properties` in the `WEB-INF/classes` folder. Later, you can deploy 
-the expanded archive to WebLogic. Alternatively, you can re-WAR the expanded 
-archive for later deployment. In either case, @product@ reads your property settings 
-once it starts up. 
+Now that you've created your `portal-ext.properties` file, you must put it
+inside the @product@ WAR file. Expand the @product@ WAR file and place
+`portal-ext.properties` in the `WEB-INF/classes` folder. Later, you can deploy
+the expanded archive to WebLogic. Alternatively, you can re-WAR the expanded
+archive for later deployment. In either case, @product@ reads your property
+settings once it starts up. 
 
 If you need to make any changes to `portal-ext.properties` after @product@ 
 deploys, you can find it in your domain's `autodeploy/ROOT/WEB-INF/classes` 
@@ -186,7 +204,7 @@ deployment.
 
 Next, you'll install @product@'s dependencies. 
 
-## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies
 
 You must now install @product@'s dependencies. Recall that earlier you 
 downloaded two ZIP files containing these dependencies. Install their contents 
@@ -238,7 +256,7 @@ Your `[Liferay Home]/osgi` folder has these subfolders:
 
 Next, you'll configure your database. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 Use the following procedure if you want WebLogic to manage your [database](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#using-the-built-in-data-source) for @product@. You can skip this section if you want to use @product@'s built-in 
 Hypersonic database. 
@@ -264,22 +282,28 @@ Hypersonic database.
 7.  Select the target for the data source and click *Finish*. 
 
 8.  You must now tell @product@ about the JDBC data source. Create a 
-    `portal-ext.propreties` file in your Liferay Home directory, and add the line 
-    `jdbc.default.jndi.name=jdbc/LiferayPool`. 
+    `portal-ext.propreties` file in your Liferay Home directory, and add the
+    line:
+
+    ```propreties
+    jdbc.default.jndi.name=jdbc/LiferayPool
+    ```
 
 Alternatively, you can make the above configuration strictly via properties in 
 the `portal-ext.properties` file. To do so, place the following properties and 
 values in the file. Be sure to change the `your*` values with the values 
 appropriate for your database's configuration (if using MySQL): 
 
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
-    jdbc.default.url=jdbc:mysql://your.db.ip.address/yourdbname?useUnicode?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.default.username=yourdbuser
-    jdbc.default.password=yourdbpassword
+```propreties
+jdbc.default.driverClassName=com.mysql.jdbc.Driver
+jdbc.default.url=jdbc:mysql://your.db.ip.address/yourdbname?useUnicode?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+jdbc.default.username=yourdbuser
+jdbc.default.password=yourdbpassword
+```
 
 Next, you'll configure your mail session. 
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want WebLogic to manage your [mail session](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail), use the following procedure. 
 If you want to use Liferay's built-in mail session (recommended), skip this
@@ -305,16 +329,17 @@ section.
 6.  With your Managed and Admin servers shut down, add the following property to
     your `portal-ext.properties` file in Liferay Home: 
 
-        mail.session.jndi.name=mail/MailSession
+    ```propreties
+    mail.session.jndi.name=mail/MailSession
+    ```
 
-    @product@ references your WebLogic mail session via this property setting. 
-    If you've already deployed @product@, you can find your 
-    `portal-ext.properties` file in your domain's 
-    `autodeploy/ROOT/WEB-INF/classes` folder. 
+@product@ references your WebLogic mail session via this property setting. If
+you've already deployed @product@, you can find your `portal-ext.properties`
+file in your domain's `autodeploy/ROOT/WEB-INF/classes` folder. 
 
 Your changes take effect upon restarting your Managed and Admin servers. 
 
-## Deploying @product@ [](id=deploying-liferay-dxp)
+## Deploying @product@
 
 As mentioned earlier, although you can deploy @product@ to a WebLogic Admin 
 Server, you should instead deploy it to a WebLogic Managed Server. Dedicating 
@@ -348,19 +373,15 @@ Follow these steps to deploy @product@ to a Managed Server:
 
 Nice work! Now you're running @product@ on WebLogic. 
 
-+$$$
-
-After deploying @product@, you may see excessive warnings and log messages, such
-as the ones below, involving `PhaseOptimizer`. These are benign and can be
-ignored. Make sure to adjust your app server's logging level or log filters to
-avoid excessive benign log messages. 
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| After deploying @product@, you may see excessive warnings and log messages, 
+| such as the ones below, involving `PhaseOptimizer`. These are benign and can
+| be ignored. Make sure to adjust your app server's logging level or log filters
+| to avoid excessive benign log messages.
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
