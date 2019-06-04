@@ -38,21 +38,21 @@ prioritize, and comment on them. It enables users to relate entities to each
 other as assets and it allows the entities to be published in the Asset
 Publisher. 
 
-    - [Tags and Categories](/docs/7-2/frameworks/-/knowledge_base/f/implementing-asset-categorization-and-tagging):
+-   [Tags and Categories](/docs/7-2/frameworks/-/knowledge_base/f/implementing-asset-categorization-and-tagging):
     Enables users to tag entities and categorize the tagged entities. 
-    - [Priority](/docs/7-2/frameworks/-/knowledge_base/f/implementing-asset-priority):
+-   [Priority](/docs/7-2/frameworks/-/knowledge_base/f/implementing-asset-priority):
     Users can ascribe numerical priorities to entities. 
-    - [Related Assets](/docs/7-2/frameworks/-/knowledge_base/f/relating-assets):
+-   [Related Assets](/docs/7-2/frameworks/-/knowledge_base/f/relating-assets):
     Users can associate one entity with another as an asset. 
-    - [Asset Renderer](/docs/7-2/frameworks/-/knowledge_base/f/rendering-an-asset):
+-   [Asset Renderer](/docs/7-2/frameworks/-/knowledge_base/f/rendering-an-asset):
     Enables displaying entities in the Asset Publisher. 
-    - [Comments](/docs/7-2/frameworks/-/knowledge_base/f/adding-comments-to-your-app):
+-   [Comments](/docs/7-2/frameworks/-/knowledge_base/f/adding-comments-to-your-app):
     Lets users comment on entities.
-    - [Ratings](/docs/7-2/frameworks/-/knowledge_base/f/rating-assets):
+-   [Ratings](/docs/7-2/frameworks/-/knowledge_base/f/rating-assets):
     Enables rating systems, such as five stars or thumbs up/down, on entities. 
-    - [Flags](/docs/7-2/frameworks/-/knowledge_base/f/flagging-inappropriate-asset-content):
+-   [Flags](/docs/7-2/frameworks/-/knowledge_base/f/flagging-inappropriate-asset-content):
     Users can flag entity content as inappropriate. 
-    - [Social Bookmarks](/docs/7-2/frameworks/-/knowledge_base/f/applying-social-bookmarks):
+-   [Social Bookmarks](/docs/7-2/frameworks/-/knowledge_base/f/applying-social-bookmarks):
     Users can share entity content on Twitter, Facebook, and more. 
 
 [Export/Import](/docs/7-2/frameworks/-/knowledge_base/f/export-import-and-staging):
