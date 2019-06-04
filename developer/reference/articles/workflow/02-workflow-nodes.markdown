@@ -125,12 +125,11 @@ transition to the *Legal Review* task or the *Content Review* task.
 
 The `returnValue` variable points from the condition to a transition, and its
 value must match a valid transition name. This script looks up the asset in
-question, retrieves its
-[asset category](LINK),
-and sets an initial `returnValue`. Then it checks to see if the asset has been
-marked with the *legal* category. If not it goes through *Content Review* (to
-the content-review task in the workflow), and if it does it goes through *Legal
-Review* (to the legal-review task in the workflow).
+question, retrieves its asset category, and sets an initial `returnValue`. Then
+it checks to see if the asset has been marked with the *legal* category. If not
+it goes through *Content Review* (to the content-review task in the workflow),
+and if it does it goes through *Legal Review* (to the legal-review task in the
+workflow).
 
 ## Forks and Joins
 
@@ -189,7 +188,7 @@ must complete just one of the forks before processing continues.
 
 ## Task Nodes
 
-[Task nodes](/docs/7-1/frameworks/-/knowledge_base/frameworks/workflow-task-nodes)
+[Task nodes](/docs/7-2/reference/-/knowledge_base/r/workflow-task-nodes)
 are at the core of the workflow definition. They're the part where a user
 interacts with the asset in some way. Tasks can also have sub-elements,
 including notifications, assignments, and task timers.

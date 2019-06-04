@@ -82,7 +82,7 @@ publication.
 ![Figure 5: Instead of a Publish button, a Submit for Publication button appears for workflow-enabled resources.](../../images/submit-for-publication.png)
 
 Page revisions are slightly different. Page revisions only occur in
-[staging environments](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication)
+[staging environments](/docs/7-2/user/-/knowledge_base/u/staging-content-for-publication)
 that have Page Versioning enabled. When a Page Variation or Site Page Variation
 is created, its creator must click *Submit for Publication* at the top of the
 page, and the variation must be approved in the workflow before it can be

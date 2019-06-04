@@ -34,30 +34,6 @@ releases of Liferay CE Portal 7.1 and Liferay DXP 7.1. In these releases, you
 must therefore make the widget visible via a configuration file. The next 
 section shows you how to do this. 
 
-## Ensuring that the RSS Publisher Widget is Visible
-
-The RSS Publisher widget is hidden in Liferay CE Portal 7.1 GA1 and versions of 
-Liferay DXP 7.1 prior to Fix Pack 4. If you're running one of these versions, 
-follow these steps to ensure that the widget is visible: 
-
-1.  Shut down your portal instance, if it's running. 
-
-2.  In `[Liferay Home]/osgi/configs`, create the file 
-    `com.liferay.rss.web.internal.configuration.RSSWebCacheConfiguration.config`. 
-    Note that the 
-    [Liferay Home folder](/docs/7-2/user/-/knowledge_base/u/installing-liferay#liferay-home) 
-    is usually the application server's parent folder. 
-
-3.  Add the following configuration to the file you created in the first step: 
-
-        com.liferay.portlet.display-category="category.news"
-
-4.  Start @product@. 
-
-The RSS Publisher widget is now available in the *Add* 
-(![Add](../../../../images/icon-add-app.png)) 
-&rarr; *Widgets* &rarr; *News* menu. 
-
 ## Using the RSS Publisher Widget
 
 You can add the RSS Publisher widget to a page from the *Add* 

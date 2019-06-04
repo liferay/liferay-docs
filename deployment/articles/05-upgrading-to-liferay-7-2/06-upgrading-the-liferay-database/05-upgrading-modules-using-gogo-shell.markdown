@@ -22,7 +22,8 @@ Below is a list of commands.
 
 If you ran the upgrade tool and it opened Gogo shell, you're already connected.
 Otherwise, you can execute commands using the
-[Gogo Shell portlet](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
+[Gogo Shell
+portlet](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell).
 
 Here are the commands:
 
@@ -56,8 +57,8 @@ module's verify process
 
 `verify:list:` Lists all registered verifiers
 
-There are many useful
-[Liferay commands and standard commands available in Gogo shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
+There are many useful [Liferay commands and standard commands available in Gogo
+shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell).
 The following sections describe Liferay upgrade commands. 
 
 ## Listing module upgrade processes

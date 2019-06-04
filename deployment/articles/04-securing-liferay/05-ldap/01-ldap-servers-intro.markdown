@@ -233,6 +233,6 @@ configure user import behavior, export behavior, and other LDAP settings.
 
 ## Related Topics
 
-[@product@ Security Overview](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security-overview)
-[Logging into @product@](/discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay)
+[@product@ Security Overview](/docs/7-0/deploy/-/knowledge_base/d/liferay-portal-security-overview)
+[Logging into @product@](/docs/7-0/deploy/-/knowledge_base/d/logging-in-to-liferay)
 

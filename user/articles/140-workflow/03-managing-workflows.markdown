@@ -30,7 +30,7 @@ To add a workflow definition,
 
 3.  From here you're either
     [writing an XML definition](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions),
-    [designing a definition in in the visual designer (DXP only)](https://customer.liferay.com/documentation/7.2/admin/-/official_documentation/portal/kaleo-designer),
+    [designing a definition in in the visual designer (DXP only)](https://customer.liferay.com/documentation/7.2/admin/-/official_documentation/portal/workflow-designer),
     or
     [uploading an existing definition](#uploading-workflow-definitions).
 

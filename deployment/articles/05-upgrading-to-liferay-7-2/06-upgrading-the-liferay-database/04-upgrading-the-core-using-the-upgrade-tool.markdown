@@ -67,7 +67,7 @@ finishing the upgrade process.
 | -   If execution stopped during an upgrade process for Core 7.1 or higher, or 
 |     any module upgrade process, restart the upgrade tool to continue the 
 |     upgrade from that point. You can also use Gogo shell to
-|     [check module upgrade status](/docs/7-2/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)
+|     [check module upgrade status](/docs/7-2/deploy/-/knowledge_base/d/upgrading-modules-using-gogo-shell#checking-upgrade-status)
 |     and continue upgrading modules. 
 | -   If execution stopped during an upgrade process for Core 7.0 or lower, you 
 |     must
@@ -97,6 +97,6 @@ it. If a core upgrade step for @product@ 7.1 (or newer) fails, executing the
 upgrade tool again starts it from that step. 
 
 If you configured the upgrade tool to upgrade non-core modules, the tool opens a
-Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules, check
-module upgrade status, verify upgrades, and restart module upgrades. Read on to
-learn how to use Gogo shell commands to complete @product@ upgrades. 
+Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules,
+check module upgrade status, verify upgrades, and restart module upgrades. Read
+on to learn how to use Gogo shell commands to complete @product@ upgrades. 

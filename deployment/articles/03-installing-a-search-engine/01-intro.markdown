@@ -13,16 +13,17 @@ search engine for your @product@ deployment.
 Elasticsearch, a highly scalable, full-text search engine, is installed by
 default, as an embedded server. Elasticsearch is well-supported and almost
 certainly meets any search and indexing need you have, but you must not use the
-[embedded version in your production deployment](LINK/remote-versus-embedded-mode). 
+[embedded version in your production deployment](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch#embedded-vs-remote-operation-mode). 
 
 Learn to configure a remote Elasticsearch server or cluster
-[here](LINK/installing-elasticsearch).
+[here](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch).
 
 [Solr](http://lucene.apache.org/solr) 
 is another capable and popular search engine supported in @product@. 
 
-Learn to configure a remote Solr server or cluster 
-[here](LINK/installing-solr).
+<!--Learn to configure a remote Solr server or cluster 
+[here](/docs/7-2/deploy/-/knowledge_base/d/installing-solr). 
+-->
 
 ## Choosing a Search Engine
 
@@ -31,8 +32,7 @@ they work with @product@. In certain cases, you must choose Elasticsearch.
 
 If you answer _yes_ to either of these questions, you must choose Elasticsearch:
 
-1.  You're using 
-    [@commerce@](LINK/commerce/latest/getting-started).
+1.  You're using @commerce@.
 
 2.  Your custom search code requires the use of the `TermsSetFilter` API or the
     Geolocation APIs that are implemented in the Liferay Connector to

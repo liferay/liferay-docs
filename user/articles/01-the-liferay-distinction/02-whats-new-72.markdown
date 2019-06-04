@@ -2,7 +2,7 @@
 header-id: whats-new-in-72
 ---
 
-# What's New in @product-ver@
+# What's New in Liferay 7.2!
 
 [TOC levels=1-4]
 
