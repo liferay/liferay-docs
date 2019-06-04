@@ -14,7 +14,7 @@ however, is not the case for FreeMarker templates. To access this information in
 FreeMarker templates, you must inject it yourself into the template's context. 
 @product@ gives you a head start by injecting several common objects into the 
 template's context and exposing them as 
-[FreeMarker macros](/docs/7-2/frameworks/-/knowledge_base/f/product-freemarker-macros). 
+[FreeMarker macros](/docs/7-2/reference/-/knowledge_base/r/product-freemarker-macros). 
 To inject other objects into the FreeMarker template's context, you must create 
 a *Context Contributor*. 
 
@@ -93,6 +93,5 @@ the power of your chosen templating language.
 
 ## Related Topics
 
-- [Customizing the Product Menu](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-product-menu)
 - [Developing Themes](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes)
 - [Theme Contributors](/docs/7-2/frameworks/-/knowledge_base/f/packaging-independent-ui-resources-for-your-site)

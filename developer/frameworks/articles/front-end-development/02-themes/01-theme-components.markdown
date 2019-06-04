@@ -28,10 +28,8 @@ page functionality:
   define new variables, such as 
   [theme settings](/docs/7-2/frameworks/-/knowledge_base/f/making-configurable-theme-settings).
 - `portlet.ftl`: Controls the theme's portlets. If your theme uses 
-  Portlet Decorators, modify this file to create application decorator-specific
-  theme settings. See the 
-  [Portlet Decorators](/docs/7-2/frameworks/-/knowledge_base/f/creating-configurable-styles-for-portlet-wrappers) 
-  tutorial for more info.
+  [Portlet Decorators](/docs/7-2/frameworks/-/knowledge_base/f/theming-portlets#portlet-decorators), 
+  modify this file to create application decorator-specific theme settings. 
 - `navigation.ftl`: Contains the navigation markup. To customize pages in the
   navigation, you must use the `liferay.navigation_menu` macro. Then you can
   leverage
@@ -96,8 +94,8 @@ the web implementation of Liferay's
 An extension of Bootstrap, Clay CSS fills the gaps between Bootstrap and the 
 needs of @product@, providing additional components and CSS patterns that you 
 can use in your themes. Clay base, Liferay's Bootstrap API extension, along with 
-Atlas, a custom Bootstrap theme, creates @product@'s Classic theme. See the 
-[importing Clay CSS tutorial](/docs/7-2/frameworks/-/knowledge_base/f/importing-clay-css-into-a-theme) 
+Atlas, a custom Bootstrap theme, creates @product@'s Classic theme. See 
+[Customizing Atlas and Clay Base Themes](/docs/7-2/frameworks/-/knowledge_base/f/customizing-atlas-and-clay-base-themes) 
 for more information.
 
 ## Theme Customizations and Extensions
@@ -118,7 +116,7 @@ The following extensions and mechanisms are available for themes:
 - **Context Contributor:** Exposes Java variables and functionality for use in
   FreeMarker templates. This allows non-JSP templating languages in themes,
   widget templates, and any other templates. See the 
-  [Context Contributors tutorial](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-into-your-templates)
+  [Context Contributors tutorial](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme-te)
   or more information.
 - **Theme Contributor:** A package containing UI resources, not attached to a 
   theme, that you want to include on every page. See the 
@@ -136,15 +134,14 @@ You can customize portlets with these mechanisms and extensions:
 
 - **Portlet FTL Customizations:** Customize the base template markup for all 
   portlets. See the 
-  [Theming Portlets tutorial](/docs/7-2/frameworks/-/knowledge_base/f/theming-portlets#portlet-ftl) 
+  [Theming Portlets](/docs/7-2/frameworks/-/knowledge_base/f/theming-portlets) 
   for more information.
 - **Widget Templates:** Provides an alternate display style 
   for a portlet. Note that not all portlets support widget templates. See the 
   [Widget Templates User Guide](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates) 
   for more information.
 - **Portlet Decorator:** Customizes the exterior decoration for a portlet. 
-  See the 
-  [Portlet Decorators tutorial](/docs/7-2/frameworks/-/knowledge_base/f/creating-configurable-styles-for-portlet-wrappers) 
+  See [Portlet Decorators](/docs/7-2/frameworks/-/knowledge_base/f/theming-portlets#portlet-decorators) 
   for more information.
 - **Web Content Template:** Defines how structures are displayed for web content. 
   See the 

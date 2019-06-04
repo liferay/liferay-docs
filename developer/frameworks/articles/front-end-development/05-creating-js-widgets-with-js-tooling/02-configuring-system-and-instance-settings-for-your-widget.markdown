@@ -17,7 +17,7 @@ portlet instance settings for your widget:
 
 | **Note:** This location can be overridden with the 
 | `create-jar.features.configuration` option in your project's `.npmbundlerrc` 
-| file. See [OSGi bundle configuration options](/docs/7-2/reference/-/knowledge_base/r/understanding-the-npmbundlerrcs-structure#osgi-bundle-configuration-options) 
+| file. See [OSGi bundle configuration options](/docs/7-2/reference/-/knowledge_base/r/understanding-the-npmbundlerrcs-structure#osgi-bundle-creation-options) 
 | for all the available options for the bundle.
 
 2.  Create a `configuration.json` file in the `/features` folder and follow the 
@@ -83,5 +83,5 @@ settings for your widget.
 ## Related Topics
 
 - [Localizing Your Widget](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-widget)
-- [Using Translation Features in Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/using-translation-features-in-your-javascript-widget)
-- [Setting Portlet Properties for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/setting-portlet-properties-for-your-javascript-widget)
+- [Using Translation Features in Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/using-translation-features-in-your-widget)
+- [Setting Portlet Properties for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/configuring-portlet-properties-for-your-widget)

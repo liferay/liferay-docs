@@ -34,4 +34,4 @@ additional resources in the bottom of the page's body.
 
 - [Using the Liferay Util HTML Body Top Tag](/docs/7-2/reference/-/knowledge_base/r/using-liferay-util-body-top)
 - [Using the Liferay Util HTML Top Tag](/docs/7-2/reference/-/knowledge_base/r/using-liferay-util-html-top)
-- [Using the Liferay UI Taglib](/docs/7-2/reference/-/knowledge_base/r/using-the-liferay-ui-taglib-in-your-portlets)
+- [Using the Liferay UI Taglib](/docs/7-2/reference/-/knowledge_base/r/using-the-liferay-ui-taglib)

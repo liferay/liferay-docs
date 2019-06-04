@@ -39,7 +39,7 @@ howdy-partner=Howdy, Partner!
     locales your @product@ instance supports are specified in its [portal
     properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties) file
     (here are @product@'s [default
-    locales]((@platform-ref@/72-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)).
+    locales]((@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)).
     For example, these configurations support translations for English and
     Spanish locales: 
 

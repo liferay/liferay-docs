@@ -36,9 +36,9 @@ Follow the steps below to learn how to localize your widget:
 
 2.  Configure the `Language.properties` file and provide the localized property 
     files (e.g. `Language_[locale].properties`) with the 
-    [language keys](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application#what-are-language-keys) 
+    [language keys](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application) 
     for each 
-    [available translation](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application#what-locales-are-available-by-default). 
+    [available translation](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones). 
     The *JavaScript based widget* configuration is shown below:
 
 ```properties
@@ -62,5 +62,5 @@ Great! Now you know how to localize your widget!
 ## Related Topics
 
 - [Configuring System Settings and Instance Settings for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/configuring-system-settings-and-instance-settings-for-your-js-widget)
-- [Using Translation Features in Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/using-translation-features-in-your-javascript-widget)
-- [Setting Portlet Properties for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/setting-portlet-properties-for-your-javascript-widget)
+- [Using Translation Features in Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/using-translation-features-in-your-widget)
+- [Setting Portlet Properties for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/configuring-portlet-properties-for-your-widget)

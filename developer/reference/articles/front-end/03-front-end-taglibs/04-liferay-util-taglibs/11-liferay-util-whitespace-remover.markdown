@@ -30,4 +30,4 @@ that your code formatting is consistent.
 
 - [Using the Liferay Util Param Tag](/docs/7-2/reference/-/knowledge_base/r/using-liferay-util-param)
 - [Using the Liferay Util Buffer Tag](/docs/7-2/reference/-/knowledge_base/r/using-liferay-util-buffer)
-- [Using the AUI Taglib](/docs/7-2/reference/-/knowledge_base/r/using-aui-taglibs-in-your-portlets)
+- [Using the AUI Taglib](/docs/7-2/reference/-/knowledge_base/r/using-aui-taglibs)

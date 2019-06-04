@@ -45,5 +45,5 @@ Congrats! Now you have a head start to developing your theme.
 ## Related Topics
 
 - [Building Your Theme's files](/docs/7-2/frameworks/-/knowledge_base/f/building-your-themes-files)
-- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/f/creating-reusable-pieces-of-code-for-your-themes)
+- [Generating Themelets with the Theme Generator](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator)
 - [Deploying and Applying Themes](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes)

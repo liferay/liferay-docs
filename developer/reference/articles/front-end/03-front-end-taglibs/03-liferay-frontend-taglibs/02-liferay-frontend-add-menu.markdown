@@ -65,6 +65,6 @@ taglibdocs for the full list of available attributes for the tags.
 
 ## Related Topics
 
-- [Liferay Frontend Cards](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-cards)
-- [Liferay Frontend Info Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-info-bar)
-- [Liferay Frontend Management Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-management-bar)
+- [Liferay Frontend Cards](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-cards)
+- [Liferay Frontend Info Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-info-bar)
+- [Liferay Frontend Management Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-management-bar)

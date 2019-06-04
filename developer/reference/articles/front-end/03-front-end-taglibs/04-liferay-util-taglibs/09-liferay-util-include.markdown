@@ -32,4 +32,4 @@ in your portlets, themes, and web content.
 
 - [Using the Liferay Util Param Tag](/docs/7-2/reference/-/knowledge_base/r/using-liferay-util-param)
 - [Using the Liferay Util Dynamic Include Tag](/docs/7-2/reference/-/knowledge_base/r/using-liferay-util-dynamic-include)
-- [Using the Liferay Front-End Taglibs](/docs/7-2/reference/-/knowledge_base/r/using-liferay-frontend-taglibs-in-your-portlet)
+- [Using the Liferay Front-End Taglibs](/docs/7-2/reference/-/knowledge_base/r/using-liferay-front-end-taglibs-in-your-portlet)

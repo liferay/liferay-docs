@@ -133,6 +133,6 @@ Liferay, you can include the model listener inside your application.
 
 ## Related Topics
 
-- [Upgrading Model Listener Hooks](/docs/7-2/customization/-/knowledge_base/c/upgrading-model-listener-hooks)
+- [Upgrading Model Listener Hooks](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-model-listener-hooks)
 - [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 - [Service Builder Persistence](/docs/7-2/appdev/-/knowledge_base/a/service-builder-persistence)

@@ -13,7 +13,7 @@ or extend a configuration preset (via Babel).
 This article explains the `.npmbundlerrc` file's structure. See the 
 [default preset reference](/docs/7-2/reference/-/knowledge_base/r/how-the-default-preset-configures-the-liferay-npm-bundler) 
 to learn how the default preset configures the liferay-npm-bundler. See 
-[Creating JavaScript Widgets with JavaScript Tooling](/docs/7-2/frameworks/-/knowledge_base/f/creating-javascript-widgets-with-javascript-tooling) 
+[Creating JavaScript Widgets with JavaScript Tooling](/docs/7-2/frameworks/-/knowledge_base/f/creating-and-bundling-javascript-widgets-with-javascript-tooling) 
 to learn how to use the liferay-npm-bundler along with the Liferay JS Generator 
 to create JavaScript widgets. 
 
@@ -259,7 +259,7 @@ Use the `create-jar.features.js-extender` option instead.
 - **create-jar.features.configuration**: specifies the file describing the 
 system (OSGi) and widget instance (widget preferences, as defined in the 
 Portlet spec) configuration to use. (see 
-[Configuring System Settings and Instance Settings for Your JavaScript Widgets](/docs/7-2/frameworks/-/knowledge_base/f/configuring-system-settings-and-instance-settings-for-your-javascript-widget) 
+[Configuring System Settings and Instance Settings for Your JavaScript Widgets](/docs/7-2/frameworks/-/knowledge_base/f/configuring-system-settings-and-instance-settings-for-your-js-widget) 
 for more information on the required settings configuration). The 
 default value is `features/configuration.json` if that file exists, otherwise 
 the default is `undefined`.
@@ -320,7 +320,7 @@ publishing bundle's static resources. The default value is
 
 - **create-jar.features.localization:** specifies the L10N file to use for the 
 bundle (see 
-[Providing Localization in Your JavaScript Widgets](/docs/7-2/frameworks/-/knowledge_base/f/configuring-localization-in-your-javascript-widgets) 
+[Providing Localization in Your JavaScript Widgets](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-widget) 
 for more information on using localization in your widget. The default value is 
 `features/localization/Language` if a properties file with that base name 
 exists, otherwise the default is `undefined`.

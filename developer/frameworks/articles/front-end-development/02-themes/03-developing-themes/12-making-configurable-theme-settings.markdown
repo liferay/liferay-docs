@@ -103,6 +103,6 @@ Great! You've created configurable settings for your theme.
 
 ## Related Topics
 
-- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/f/creating-reusable-pieces-of-code-for-your-themes)
+- [Creating Themelets with the Theme Generator](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator)
 - [Listing Your Theme's Extensions](/docs/7-2/frameworks/-/knowledge_base/f/listing-your-themes-extensions)
 - [Importing Resources with a Theme](/docs/7-2/frameworks/-/knowledge_base/f/importing-resources-with-a-theme)

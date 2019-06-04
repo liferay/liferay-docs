@@ -20,12 +20,12 @@ You'll learn these things:
 
 Themes use the standard components (CSS, JS, and HTML) along with FreeMarker
 templates for rendering. There are several 
-[default FreeMarker templates](/docs/7-2/frameworks/-/knowledge_base/f/theme-components-and-workflow#theme-templates)
+[default FreeMarker templates](/docs/7-2/frameworks/-/knowledge_base/f/theme-components#theme-templates)
 that each handle a key piece of functionality for the page. There are also 
-[theme template utilities](/docs/7-2/frameworks/-/knowledge_base/f/theme-components-and-workflow#theme-template-utilities)
+[theme template utilities](/docs/7-2/frameworks/-/knowledge_base/f/theme-components#theme-template-utilities)
 that let you use portlets, taglibs, theme objects, and more in your theme
 templates. 
-[CSS extensions and patterns](/docs/7-2/frameworks/-/knowledge_base/f/theme-components-and-workflow#css-frameworks-and-extensions)
+[CSS extensions and patterns](/docs/7-2/frameworks/-/knowledge_base/f/theme-components#css-frameworks-and-extensions)
 come out-of-the-box, and support SASS, and multiple JavaScript frameworks.
 Several mechanisms are available for customizing, developing, and extending
 themes. 
@@ -45,7 +45,7 @@ The following Liferay tools help you build themes:
 - [Theme Builder Gradle Plugin](/docs/7-2/reference/-/knowledge_base/r/theme-builder-gradle-plugin)
 - [Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme)
 - [Dev Studio](/docs/7-2/frameworks/-/knowledge_base/f/creating-themes-with-liferay-ide)
-- [Blade CLI](/docs/7-2/frameworks/-/knowledge_base/f/blade-cli)'s 
+- [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli)'s 
   [Theme Template](/docs/7-2/reference/-/knowledge_base/r/theme-template). 
 
 Depending on the tool you choose 
@@ -93,7 +93,7 @@ helpful Gulp tasks to streamline the process:
   for more information.
 - **init:** specifies the app server to deploy your theme to (automatically run
   during the initial creation of the theme). See the 
-  [gulp init tutorial](/docs/7-2/frameworks/-/knowledge_base/f/configuring-your-themes-app-server)
+  [gulp init tutorial](/docs/7-2/frameworks/-/knowledge_base/f/updating-your-themes-app-server)
   for more information. 
 - **kickstart:** copies files from an existing theme into your theme to help 
   kickstart it. See the 

@@ -11,7 +11,7 @@ header-id: understanding-how-liferay-amd-loader-configuration-is-exported
 | [Liferay AMD Module Loader](/docs/7-2/frameworks/-/knowledge_base/f/loading-amd-modules-in-liferay) 
 | for more information.
 
-With [de-duplication](/docs/7-2/reference/-/knowledge_base/r/how-liferay-portal-publishes-npm-packages#package-deduplication) 
+With [de-duplication](/docs/7-2/reference/-/knowledge_base/r/how-the-liferay-npm-bundler-publishes-npm-packages#package-de-duplication) 
 in place, JavaScript modules are made available to Liferay AMD Loader through 
 the configuration returned by the `/o/js_loaded_modules` URL.
 

@@ -42,4 +42,4 @@ Great! Now you know how to embed a portlet in your theme's by their name and ID.
 
 - [Embedding Portlets in Themes by Entity Type and Action](/docs/7-2/frameworks/-/knowledge_base/f/embedding-portlets-in-themes-by-entity-type-and-action)
 - [Portlets](/docs/7-2/frameworks/-/knowledge_base/f/portlets)
-- [Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/service-builder)
+- [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)

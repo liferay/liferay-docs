@@ -9,10 +9,10 @@ header-id: installing-the-js-generator-and-generating-a-bundle
 Here you'll learn how to install the 
 [Liferay JS Generator](https://www.npmjs.com/package/generator-liferay-bundle) 
 and use it to create JavaScript widgets. See the 
-[Angular widget](/docs/7-2/appdev/-/knowledge_base/a/angular-widget), 
-[React widget](/docs/7-2/appdev/-/knowledge_base/a/react-widget), 
+[Angular Application](/docs/7-2/appdev/-/knowledge_base/a/developing-an-angular-application), 
+[React Application](/docs/7-2/appdev/-/knowledge_base/a/developing-a-react-application), 
 and 
-[Vue widget](/docs/7-2/appdev/-/knowledge_base/a/vue-widget) 
+[Vue Application](/docs/7-2/appdev/-/knowledge_base/a/developing-a-vue-application) 
 articles to learn how to use your existing Angular, React, and Vue apps in 
 @product@. 
 
