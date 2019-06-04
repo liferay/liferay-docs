@@ -5,15 +5,15 @@ header-id: installing-product-on-wildfly
 # Installing @product@ on Wildfly
 
 @product-ver@ bundled with Wildfly 11 is available on the [Help
-Center](https://help.liferay.com/hc) (DXP) or the [Community Downloads
-page](https://www.liferay.com/downloads-community) (Portal CE). The Wildfly
-bundle contains JARs, scripts, and configuration files required for deploying
-@product-ver@. Copying these files from the @product@ Wildfly bundle facilitates
-installing @product@ on an existing Wildfly application server.
+Center](https://customer.liferay.com/downloads) (DXP) or the [Community
+Downloads page](https://www.liferay.com/downloads-community) (Portal CE). The
+Wildfly bundle contains JARs, scripts, and configuration files required for
+deploying @product-ver@. Copying these files from the @product@ Wildfly bundle
+facilitates installing @product@ on an existing Wildfly application server.
 
 Whether you copy bundle files (recommended) or download and create the files,
-you must download these files for [DXP](https://help.liferay.com/hc) or [Portal
-CE](https://www.liferay.com/downloads-community):
+you must download these files for [DXP](https://customer.liferay.com/downloads)
+or [Portal CE](https://www.liferay.com/downloads-community):
 
 -   @product@ WAR file
 -   Dependencies ZIP file
