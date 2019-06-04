@@ -30,15 +30,14 @@ folders that it needs to run. On WebSphere, Liferay Home is typically `[Install
 Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
 
 To start, download @product@'s WAR file and dependencies from the customer
-portal on
-[liferay.com](https://customer.liferay.com/downloads).
-You'll need the following files: 
+portal on [liferay.com](https://customer.liferay.com/downloads). You'll need the
+following files: 
 
-- `liferay-dxp-[version].war`
+-   `liferay-dxp-[version].war`
 
-- `liferay-dxp-dependencies-[version].zip` 
+-   `liferay-dxp-dependencies-[version].zip` 
 
-- `liferay-dxp-osgi-[version].zip` 
+-   `liferay-dxp-osgi-[version].zip` 
 
 Without any further ado, get ready to install @product@ in WebSphere! 
 
@@ -73,25 +72,24 @@ Management Tool* to create a profile appropriate for @product@.
     to your environment. Click *Next*. 
 
 6.  Administrative security in WebSphere is a way to restrict who has access to 
-    the administrative tools. You may want to have it enabled in your 
-    environment so that a user name and password are required to administer the 
-    WebSphere server. See WebSphere's documentation for more information. Click 
+    the administrative tools. You may want to have it enabled in your
+    environment so that a user name and password are required to administer the
+    WebSphere server. See WebSphere's documentation for more information. Click
     *Next*. 
 
 7.  Each profile needs a security certificate, which comes next in the wizard. 
     If you don't have certificates already, choose the option to generate a 
     personal certificate and a signing certificate and click *Next*. 
 
-8.  Once the certificates are generated, set a password for your keystore. Click 
+8.  Once the certificates are generated, set a password for your keystore. Click
     *Next*. 
 
 9.  Now you can customize the ports this server profile uses. Be sure to choose 
-    ports that are open on your machine. When choosing ports, the wizard detects 
-    existing WebSphere installations and if it finds activity, it increments 
+    ports that are open on your machine. When choosing ports, the wizard detects
+    existing WebSphere installations and if it finds activity, it increments
     ports by one. 
 
-10. Choose whether you want this profile started when the machine starts. Click 
-    *Next*. 
+10. Choose whether to start this profile when the machine starts. Click *Next*. 
 
 11. WebSphere ships with IBM HTTP Server, which is a re-branded version of 
     Apache. Choose whether you want a web server definition, so that this JVM 
@@ -116,12 +114,14 @@ deploying certain apps to @product@. To configure servlet filters to initialize
 on application startup (i.e., deployment), set the following `webcontainer`
 properties in your WebSphere application server: 
 
-    com.ibm.ws.webcontainer.initFilterBeforeInitServlet = true
-    com.ibm.ws.webcontainer.invokeFilterInitAtStartup = true
+```properties
+com.ibm.ws.webcontainer.initFilterBeforeInitServlet = true
+com.ibm.ws.webcontainer.invokeFilterInitAtStartup = true
+```
 
 To set `webcontainer` properties in the WebSphere application server, follow the
-instructions 
-[here in WebSphere's documentation](http://www-01.ibm.com/support/docview.wss?rss=180&uid=swg21284395). 
+instructions  [here in WebSphere's
+documentation](http://www-01.ibm.com/support/docview.wss?rss=180&uid=swg21284395). 
 
 ### Setting up JVM Parameters for Liferay DXP
 
@@ -129,22 +129,29 @@ Next, in the WebSphere profile you created for @product@, you must set an
 argument that supports @product@'s Java memory requirements. You'll modify this 
 file: 
 
-    [Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/nodes/your-node/servers/your-server/server.xml
+```
+[Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/your-cell/nodes/your-node/servers/your-server/server.xml
+```
 
-Add `maximumHeapSize="2048"` inside the `jvmEntries` tag. For example: 
+Add `maximumHeapSize="2560"` inside the `jvmEntries` tag. For example: 
 
-    <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ... maximumHeapSize="2560">
+```xml
+<jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ... maximumHeapSize="2560">
+```
 
 | **Note:** The JVM parameters used here are defaults intended for initial
 | deployment of production systems. Administrators should change the settings to
 | values that best address their specific environments. These must be tuned
 | depending on need.
 
-Administrators can set the UTF-8 properties in the `server.xml` file. This is
-required or else special characters will not be parsed correctly. Add the
-following inside the `jvmEntries` tag:
+Administrators can set the UTF-8 properties in the `<jvmEntries
+genericJvmArguments=.../>` attribute in `server.xml`. This is required or else
+special characters will not be parsed correctly. Set the maximum and minimum
+heap sizes to `2560m` there too. Add the following inside the `jvmEntries` tag:
 
-    <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ...genericJvmArguments="-Dfile.encoding=UTF-8 -Duser.timezone=GMT">
+```xml
+<jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ...genericJvmArguments="-Dfile.encoding=UTF-8 -Duser.timezone=GMT -Xms2560m -Xmx2560m">
+```
 
 | **Important:** For @product@ to work properly, the application server JVM must
 | use the `GMT` time zone and `UTF-8` file encoding.
@@ -165,8 +172,10 @@ Delete the `secureSessionCookie` tag containing
 
 If this tag is not removed, an error similar to this may occur: 
 
-    WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901    
-    com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
+```
+WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901    
+com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
+```
 
 ## Installing @product@'s Dependencies
 
@@ -174,34 +183,35 @@ You must now install @product@'s dependencies. Recall that earlier you
 downloaded two ZIP files containing these dependencies. Install their contents 
 now: 
 
-1.  `liferay-dxp-dependencies-[version].zip`: Unzip this file
-    and place its contents in your WebSphere application server's `[Install
+1.  `liferay-dxp-dependencies-[version].zip`: Unzip this file and place its 
+    contents in your WebSphere application server's `[Install
     Location]/WebSphere/AppServer/lib/ext` folder. If you have a JDBC database
     driver `JAR`, copy it to this location as well. 
 
 2.  From the same archive, copy `portlet.jar`into `[Install
-    Location]/WebSphere/AppServer/javaext` for WebSphere 9.0.0.x. WebSphere already contains
-    an older version of `portlet.jar` which must be overridden at the highest
-    classloader level. The new `portlet.jar` (version 3) is backwards-compatible. 
+    Location]/WebSphere/AppServer/javaext` for WebSphere 9.0.0.x. WebSphere
+    already contains an older version of `portlet.jar` which must be overridden
+    at the highest class loader level. The new `portlet.jar` (version 3) is
+    backwards-compatible. 
 
-3.  `liferay-dxp-osgi-[version].zip`: Unzip this file and 
-    place its contents in the `[Liferay Home]/osgi` folder (create this folder
-    if it doesn't exist). This is typically `[Install
+3.  `liferay-dxp-osgi-[version].zip`: Unzip this file and place its contents in 
+    the `[Liferay Home]/osgi` folder (create this folder if it doesn't exist).
+    This is typically `[Install
     Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`. 
 
 Before starting the server, verify that all the following jars have been copied 
 to the correct folders. The following files should be present within the `lib/ext` (WebSphere Application) 
 folder: 
 
-1. `com.liferay.petra.concurrent.jar`
-2. `com.liferay.petra.executor.jar`
-3. `com.liferay.petra.function.jar`
-4. `com.liferay.petra.io.jar`
-5. `com.liferay.petra.lang.jar`
-6. `com.liferay.petra.memory.jar`
-7. `com.liferay.petra.nio.jar`
-8. `com.liferay.petra.process.jar`
-9. `com.liferay.petra.reflect.jar`
+1.  `com.liferay.petra.concurrent.jar`
+2.  `com.liferay.petra.executor.jar`
+3.  `com.liferay.petra.function.jar`
+4.  `com.liferay.petra.io.jar`
+5.  `com.liferay.petra.lang.jar`
+6.  `com.liferay.petra.memory.jar`
+7.  `com.liferay.petra.nio.jar`
+8.  `com.liferay.petra.process.jar`
+9.  `com.liferay.petra.reflect.jar`
 10. `com.liferay.petra.string.jar`  
 11. `com.liferay.registry.api.jar`
 12. `hsql.jar`
@@ -211,11 +221,10 @@ folder:
 
 The following folders should be present within the `/liferay/osgi` folder: 
 
-1. `Configs`
-2. `Core`
-3. `Marketplace`
-4. `War`
-
+1.  `configs`
+2.  `core`
+3.  `marketplace`
+4.  `war`
 
 ### Ensuring that @product@'s portlet.jar is loaded first
 
@@ -223,12 +232,13 @@ In addition to placing the `portlet.jar` in the correct folder, you must
 configure the `config.ini` file so that it is loaded first. Navigate to
 `/IBM/WebSphere/AppServer/configuration/config.ini`.
 
-1. Find the property `com.ibm.CORBA,com.ibm`
+1.  Find the property `com.ibm.CORBA,com.ibm`
 
-2. Insert the property `javax.portlet,javax.portlet.filter,javax.portlet.annotations`
-   after `com.ibm.CORBA` and before `com.ibm`.
+2.  Insert the property 
+    `javax.portlet,javax.portlet.filter,javax.portlet.annotations`
+    after `com.ibm.CORBA` and before `com.ibm`.
 
-3. Save the file.
+3.  Save the file.
 
 Once you've installed these dependencies and configured the `config.ini` file,
 start the server profile you created for @product@. Once it starts, you're ready
@@ -238,9 +248,13 @@ to configure your database.
 
 If you want WebSphere to manage the database connections, follow the
 instructions below. Note this is not necessary if you plan to use @product@'s
-standard database configuration; in that case, skip this section. See the [Using the Built-in Data Sources](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#using-the-built-in-data-source) section for more article.
+standard database configuration; in that case, skip this section. See the [Using
+the Built-in Data
+Sources](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#using-the-built-in-data-source)
+section for more article.
 
-You'll set your database information in @product@'s setup wizard after the install. 
+You'll set your database information in @product@'s setup wizard after the
+install. 
 
 | **Note:** Although @product@'s embedded database is fine for testing purposes,
 | you **should not** use it for production @product@ instances.
@@ -264,15 +278,15 @@ You'll set your database information in @product@'s setup wizard after the insta
     `com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource` in
     *Implementation Class Name*. Click *Next* when you are finished. 
 
-6.  Clear any text in the classpath settings. You already copied the necessary 
-    JARs to a location on the server's classpath. Click *Next*. 
+6.  Clear any text in the class path settings. You already copied the necessary 
+    JARs to a location on the server's class path. Click *Next*. 
 
-7.  Review your settings and click *Finish*. The final configuration should look 
+7.  Review your settings and click *Finish*. The final configuration should look
     like this: 
 
     ![Figure 4: Completed JDBC provider configurations.](../../images-dxp/websphere-03.png)
 
-8.  Click your new provider configuration when it appears in the table, and then 
+8.  Click your new provider configuration when it appears in the table, and then
     click *Data Sources* under *Additional Properties*. Click *New*. 
 
 9.  Enter *liferaydatabasesource* in the *Data source name* field and 
@@ -282,7 +296,7 @@ You'll set your database information in @product@'s setup wizard after the insta
     values. Then review your changes and click *Finish*. 
 
 11. Click the data source when it appears in the table and then click *Custom 
-    Properties*. Now click the *Show Filter Function* button. This is the second 
+    Properties*. Now click the *Show Filter Function* button. This is the second
     from last of the small icons under the *New* and *Delete* buttons. 
 
 12. Type *user* into the search terms and click *Go*. 
@@ -295,12 +309,17 @@ You'll set your database information in @product@'s setup wizard after the insta
 14. Do another filter search for the *url* property. Give this property a value 
     that points to your database. For example, a MySQL URL would look like this: 
 
-        jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    ```properties
+    jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    ```
+
+    | **Tip:** For more example URLs, see the `jdbc.default.url` values in 
+    | [Database Templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates). 
 
     Click *OK* and save to master configuration. 
 
-15. Do another filter search for the *password* property. Enter the password for 
-    the user ID you added earlier as the value for this property. Click *OK* and 
+15. Do another filter search for the *password* property. Enter the password for
+    the user ID you added earlier as the value for this property. Click *OK* and
     save to master configuration. 
 
 16. Go back to the data source page by clicking it in the breadcrumb trail. 
@@ -310,31 +329,33 @@ Once you've set up your database, you can set up your mail session.
 
 ## Mail Configuration
 
-If you want WebSphere to manage your mail sessions, use the following procedure. 
-If you want to use @product@'s built-in mail sessions, you can skip this 
-section. See the [Configuring Mail](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail) article on how to use @product@'s built-in mail sessions.
+If you want WebSphere to manage your mail sessions, use the following procedure.
+If you want to use @product@'s built-in mail sessions, you can skip this
+section. See the [Configuring
+Mail](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail) article on how to
+use @product@'s built-in mail sessions.
 
 ### Creating a WebSphere-Managed Mail Session (Optional)
 
-1. Click *Resources &rarr; Mail &rarr; Mail Providers*. 
+1.  Click *Resources &rarr; Mail &rarr; Mail Providers*. 
 
-2. Click the Built-In Mail Provider for your node and server. 
+2.  Click the Built-In Mail Provider for your node and server. 
 
-3. Click *Mail Sessions* and then click the *New* button. 
+3.  Click *Mail Sessions* and then click the *New* button. 
 
-4. Give your mail session a name of *liferaymail* and a JNDI name of 
-   `mail/MailSession`. Fill in the correct information for your mail server in 
-   the sections *Outgoing Mail Properties* and *Incoming Mail Properties*. Click 
-   *OK* and then save to the master configuration. 
+4.  Give your mail session a name of *liferaymail* and a JNDI name of 
+    `mail/MailSession`. Fill in the correct information for your mail server in
+    the sections *Outgoing Mail Properties* and *Incoming Mail Properties*.
+    Click *OK* and then save to the master configuration. 
 
-5. Click your mail session when it appears in the table and select *Custom 
-   Properties* under the *Additional Properties* section. Set any other JavaMail 
-   properties required by your mail server, such as the protocol, ports, whether 
-   to use SSL, and so on. 
+5.  Click your mail session when it appears in the table and select *Custom 
+    Properties* under the *Additional Properties* section. Set any other
+    JavaMail properties required by your mail server, such as the protocol,
+    ports, whether to use SSL, and so on. 
 
-5. Click *Security &rarr; Global Security* and de-select *Use Java 2 security to 
-   restrict application access to local resources* if it is selected. Click 
-   *Apply*. 
+6.  Click *Security &rarr; Global Security* and de-select *Use Java 2 security 
+    to restrict application access to local resources* if it is selected. Click
+    *Apply*. 
 
 Note that you may also need to retrieve a SSL certificate from your mail server 
 and add it to WebSphere's trust store. See WebSphere's documentation for 
@@ -355,35 +376,37 @@ WebSphere restricts cookies to HTTPS sessions by default. If you're
 using HTTP instead, this prevents users from signing in to @product@ and 
 displays the following error in the console: 
 
-    20:07:14,021 WARN  [WebContainer : 1][SecurityPortletContainerWrapper:341]
-    User 0 is not allowed to access URL http://localhost:9081/web/guest/home and
-    portlet com_liferay_login_web_portlet_LoginPortlet
+```
+20:07:14,021 WARN  [WebContainer : 1][SecurityPortletContainerWrapper:341]
+User 0 is not allowed to access URL http://localhost:9081/web/guest/home and
+portlet com_liferay_login_web_portlet_LoginPortlet
+```
 
 This occurs because @product@ can't use the HTTPS cookie when you use HTTP. The 
 end result is that new sessions are created on each page refresh. Follow these 
 steps to resolve this issue in WebSphere: 
 
-1. Click *Application Servers* &rarr; *server1* &rarr; *Session Management*
+1.  Click *Application Servers* &rarr; *server1* &rarr; *Session Management*
    &rarr; Enable Cookies 
 
-2. De-select *Restrict cookies to HTTPS sessions* 
+2.  De-select *Restrict cookies to HTTPS sessions* 
 
-3. Click *Apply* 
+3.  Click *Apply* 
 
-4. Click *Save* 
+4.  Click *Save* 
 
 ## Enable UTF-8
 
 If you did not add the `-Dfile.encoding=UTF-8` property in the `server.xml`, you
 can do so in the Administrative Console.
 
-1. Click *Application Servers* &rarr; *server1* &rarr; *Process definition*.
+1.  Click *Application Servers* &rarr; *server1* &rarr; *Process definition*.
 
-2. Click *Java Virtual Machine* under *Additional Properties*.
+2.  Click *Java Virtual Machine* under *Additional Properties*.
 
-3. Enter `-Dfile.encoding=UTF-8` in the *Generic JVM arguments* field.
+3.  Enter `-Dfile.encoding=UTF-8` in the *Generic JVM arguments* field.
 
-4. Click *Apply* and then *Save* to master configuration.
+4.  Click *Apply* and then *Save* to master configuration.
 
 Once the changes have been saved, @product@ can parse special characters if
 there is localized content.
@@ -392,26 +415,26 @@ there is localized content.
 
 Now you're ready to deploy @product@! 
 
-1. In WebSphere's administrative console, click *Applications* &rarr; *New 
-   Application* &rarr; *New Enterprise Application*. 
+1.  In WebSphere's administrative console, click *Applications* &rarr; *New 
+    Application* &rarr; *New Enterprise Application*. 
 
-2. Browse to the @product@ `.war` file, select it, and click *Next*. 
+2.  Browse to the @product@ `.war` file, select it, and click *Next*. 
 
-3. Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
-   Application* has been checked and click *Next* again. 
+3.  Leave *Fast Path* selected and click *Next*. Ensure that *Distribute
+    Application* has been checked and click *Next* again. 
 
-4. Choose the WebSphere runtimes and/or clusters where you want @product@ 
-   deployed. Click *Next*. 
+4.  Choose the WebSphere runtimes and/or clusters where you want @product@ 
+    deployed. Click *Next*. 
 
-5. Select the virtual host to deploy @product@ on and click *Next*. 
+5.  Select the virtual host to deploy @product@ on and click *Next*. 
 
-6. Map @product@ to the root context (/) and click *Next*. 
+6.  Map @product@ to the root context (`/`) and click *Next*. 
 
-7. Select the *metadata-complete attribute* setting that you want to use and 
-   click *Next*. 
+7.  Select the *metadata-complete attribute* setting that you want to use and 
+    click *Next*. 
 
-8. Ensure that you have made all the correct choices and click *Finish*. When 
-   @product@ has installed, click *Save to Master Configuration*. 
+8.  Ensure that you have made all the correct choices and click *Finish*. When 
+    @product@ has installed, click *Save to Master Configuration*. 
 
    ![Figure 6: Review your deployment options before deploying.](../../images-dxp/websphere-deploy-dxp.png)
 
@@ -424,77 +447,88 @@ ensure that WebSphere does this, shut down WebSphere after you've deployed the
 @product@ `.war` file. Navigate to the `WEB_INF` folder and add the following
 setting to the `ibm-web-ext.xml` or in most cases the `ibm-web-ext.xmi` file:
 
-    <jsp-attribute name="jdkSourceLevel" value="18" />
+```xml
+<jsp-attribute name="jdkSourceLevel" value="18" />
+```
 
 The exact path to the `ibm-web-ext.xmi` file depends on your WebSphere
 installation location and @product@ version, but here's an example:
 
-	/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/localhostNode01Cell/applications/liferayXX.ear/deployments/liferayXX/liferayXX.war/WEB-INF/ibm-web-ext.xmi
+```bash
+/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/localhostNode01Cell/applications/liferayXX.ear/deployments/liferayXX/liferayXX.war/WEB-INF/ibm-web-ext.xmi
+```
 
 Note that the @product@ `.war` comes pre-packaged with the `ibm-web-ext.xmi`
-file; this format is functionally the same as `.xml` and WebSphere recognizes both
-formats. For more general information on how WebSphere compiles JSPs see IBM's
-official documentation for [WebSphere Application Server 9.0.0.x](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_9.0.0/com.ibm.websphere.base.doc/ae/rweb_jspengine.html).
-
+file; this format is functionally the same as `.xml` and WebSphere recognizes
+both formats. For more general information on how WebSphere compiles JSPs see
+IBM's official documentation for [WebSphere Application Server
+9.0.0.x](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_9.0.0/com.ibm.websphere.base.doc/ae/rweb_jspengine.html).
 
 ## Resolve LCS Boot Delegation
 It was discovered that after applying DXP 7.1 Fix Pack 5, there is a startup error in @product@ deployed on WebSphere 9 that uses Liferay Connected Services (LCS) to manage subscription and patches. The root cause is because the LCS boot delegation property conflicts with Elasticsearch Connector 6.5. 
 
+1.  In the
+    [`portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/d/portal-properties),
+    add the property `com.ibm.crypto` to the existing property inside
+    `module.framework.properties.org.osgi.framework.bootdelegation=\`:
 
-1. In the `portal-ext.properties`, add the property `com.ibm.crypto` to the existing property inside `module.framework.properties.org.osgi.framework.bootdelegation=\`:
+    ```properties
+    module.framework.properties.org.osgi.framework.bootdelegation=\
+    __redirected,\
+    com.liferay.aspectj,\
+    com.liferay.aspectj.*,\
+    com.liferay.portal.servlet.delegate,\
+    com.liferay.portal.servlet.delegate*,\
+    com.sun.ccpp,\
+    com.sun.ccpp.*,\
+    com.sun.crypto.*,\
+    com.sun.image.*,\
+    com.sun.jmx.*,\
+    com.sun.jna,\
+    com.sun.jndi.*,\
+    com.sun.mail.*,\
+    com.sun.management.*,\
+    com.sun.media.*,\
+    com.sun.msv.*,\
+    com.sun.org.*,\
+    com.sun.syndication,\
+    com.sun.tools.*,\
+    com.sun.xml.*,\
+    com.yourkit.*,\
+    javax.validation,\
+    javax.validation.*,\
+    jdk.*,\
+    com.ibm.crypto.*,\
+    sun.*,\
+    weblogic.jndi,\
+    weblogic.jndi.*
+    ```
 
-        module.framework.properties.org.osgi.framework.bootdelegation=\
-        __redirected,\
-        com.liferay.aspectj,\
-        com.liferay.aspectj.*,\
-        com.liferay.portal.servlet.delegate,\
-        com.liferay.portal.servlet.delegate*,\
-        com.sun.ccpp,\
-        com.sun.ccpp.*,\
-        com.sun.crypto.*,\
-        com.sun.image.*,\
-        com.sun.jmx.*,\
-        com.sun.jna,\
-        com.sun.jndi.*,\
-        com.sun.mail.*,\
-        com.sun.management.*,\
-        com.sun.media.*,\
-        com.sun.msv.*,\
-        com.sun.org.*,\
-        com.sun.syndication,\
-        com.sun.tools.*,\
-        com.sun.xml.*,\
-        com.yourkit.*,\
-        javax.validation,\
-        javax.validation.*,\
-        jdk.*,\
-        com.ibm.crypto.*,\
-        sun.*,\
-        weblogic.jndi,\
-        weblogic.jndi.*
-
-2. Save the file.
+2.  Save the file.
 
 Now restart WebSphere. 
 
 ## Start @product@
 
-1. If you plan to use @product@'s [setup wizard](/docs/7-2/deploy/-/knowledge_base/d/installing-product#using-the-setup-wizard), skip to the next step. If you 
-   wish to use WebSphere's data source and mail session, create a file called 
-   `portal-ext.properties` in your Liferay Home folder. Place the following 
-   configuration in the file: 
+1.  If you plan to use @product@'s [setup
 
-        jdbc.default.jndi.name=jdbc/LiferayPool
-        mail.session.jndi.name=mail/MailSession
-        setup.wizard.enabled=false
+    wizard](/docs/7-2/deploy/-/knowledge_base/d/installing-product#using-the-setup-wizard),
+    skip to the next step. If you wish to use WebSphere's data source and mail
+    session, create a file called `portal-ext.properties` in your Liferay Home
+    folder. Place the following configuration in the file: 
 
-2. In the WebSphere administrative console, navigate to *Enterprise 
-   Applications*, select the @product@ application, and click *Start*. While
-   @product@ is starting, WebSphere displays a spinning graphic. 
+    ```properties
+    jdbc.default.jndi.name=jdbc/LiferayPool
+    mail.session.jndi.name=mail/MailSession
+    setup.wizard.enabled=false
+    ```
+2.  In the WebSphere administrative console, navigate to *Enterprise 
+    Applications*, select the @product@ application, and click *Start*. While
+    @product@ is starting, WebSphere displays a spinning graphic. 
 
-3. In @product@'s setup wizard, select and configure your database type. Click 
-   *Finish* when you're done. @product@ then creates the tables it needs in the 
-   database. 
+3.  In @product@'s setup wizard, select and configure your database type. Click 
+    *Finish* when you're done. @product@ then creates the tables it needs in the
+    database. 
 
 Congratulations! You've installed @product@ on WebSphere! 
 
