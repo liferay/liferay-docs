@@ -91,7 +91,7 @@ There's a fast way to send an asset along in the review process:
 
     Note that options names in this menu are identical to the workflow
     definition's
-    [Transition](/docs/7-1/tutorials/-/knowledge_base/t/workflow-definition-nodes)
+    [Transition](/docs/7-2/tutorials/-/knowledge_base/t/workflow-definition-nodes)
     names. Your menu might have different options than the *Approve* and
     *Reject* options in the figure below.
 
