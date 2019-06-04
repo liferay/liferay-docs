@@ -35,9 +35,7 @@ Follow the steps below to install a trial plugin:
     Marketplace](/docs/7-2/user/-/knowledge_base/u/using-the-liferay-marketplace)
     for details. 
 
-| **Note:** At a later date, the Marketplace website on `liferay.com` will be
-| accessible to @product@ trial customers. For now, please access subscription
-| apps through the portal installation itself.
+Next are answers to some common questions. 
 
 ## FAQ
 
