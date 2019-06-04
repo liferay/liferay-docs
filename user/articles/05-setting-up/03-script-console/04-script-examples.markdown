@@ -14,7 +14,7 @@ languages.
 
 - [Example 1: Presenting New Terms of Use to Users](#example-1-presenting-new-terms-of-use-to-users)
 
-- [Example 2: Embedding HTML Markup in Script Outputs](#example-2-embed-html-markup-in-script-outputs)
+- [Example 2: Embedding HTML Markup in Script Outputs](#example-2-embedding-html-markup-in-script-outputs)
 
 - [Example 3: Show Exceptions in the Script Console](#example-3-show-exceptions-in-the-script-console)
 

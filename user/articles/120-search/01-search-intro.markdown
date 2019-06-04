@@ -9,7 +9,7 @@ header-id: search
 Sites often feature lots of content split over lots of asset types.  Web content
 articles, documents and media files, and blogs entries are just a few examples.
 Most content types are *assets*. Under the hood, assets use the
-[Asset API](/docs/7-2/tutorials/-/knowledge_base/t/asset-framework) 
+[Asset API](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework) 
 and have an Indexer class. Any content that has these features can be
 searched. 
 

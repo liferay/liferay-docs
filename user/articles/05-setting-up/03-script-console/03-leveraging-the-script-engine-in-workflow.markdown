@@ -127,7 +127,7 @@ and inspecting the XML.
 How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
 disappear without notice? 
-[Use a service tracker](/docs/7-2/tutorials/-/knowledge_base/t/service-trackers). 
+[Use a service tracker](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers). 
 That way you can make sure your code has access to the service it
 needs, and if not, do something appropriate in response. Here's a little example
 code to show you how this might look in Groovy:
