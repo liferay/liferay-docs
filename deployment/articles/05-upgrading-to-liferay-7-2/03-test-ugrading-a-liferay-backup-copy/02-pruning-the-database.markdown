@@ -15,16 +15,15 @@ test your server.
 ## Remove Duplicate Web Content Structure Field Names
 
 If you've used Web Content Management extensively, you might have structures
-without unique field names.
-[Find and remove duplicate field names](/docs/7-2/deploy/-/knowledge_base/d/upgrading-liferay#find-and-remove-duplicate-field-names)
-before upgrading. If you upgraded to Liferay Portal 6.2 previously and skipped
-doing this, you'll encounter this error: 
+without unique field names. Find and remove duplicate field names before
+upgrading. If you upgraded to Liferay Portal 6.2 previously and skipped doing
+this, you'll encounter this error: 
 
     19:29:35,298 ERROR [main][VerifyProcessTrackerOSGiCommands:221] com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
     com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
  
 If this is the case, roll back to your previous backup of Liferay Portal 6.2 and
-[find and remove duplicate field names](/docs/7-2/deploy/-/knowledge_base/d/upgrading-liferay#find-and-remove-duplicate-field-names). 
+find and remove duplicate field names. 
 
 ## Find and Remove Unused Objects
 
@@ -115,8 +114,8 @@ Check these object types:
     -   (and everything else)
 
 -   **Instances**: Unused instances are rare, but since they are the highest
-    object in the hierarchy, removing their objects can
-    optimize upgrades considerably:
+    object in the hierarchy, removing their objects can optimize upgrades
+    considerably:
 
     -   Sites (and all their related content)
 
@@ -137,10 +136,9 @@ Check these object types:
     Intermediate Journal Article
     Versions](/docs/7-2/deploy/-/knowledge_base/d/example-removing-intermediate-journal-article-versions).  
 
--   **Document versions**: As with Journal Articles, if you don't need
-    intermediate document versions, delete them. This saves space both
-    in the database and on the file system, space that no longer needs
-    to be upgraded. 
+-   **Document versions**: As with Journal Articles, if you don't need 
+    intermediate document versions, delete them. This saves space both in the
+    database and on the file system, space that no longer needs to be upgraded. 
 
 -   **Layouts:** Layouts are site pages, and they affect upgrade performance
     because they relate to other entities such as portlet preferences,
@@ -159,13 +157,13 @@ Check these object types:
 
     -   `DLFileEntries` with no file system data.
 
-    -   `ResourcePermission` objects associated to a Role, Layout, User, 
-        portlet instance, etc. that no longer exists.
+    -   `ResourcePermission` objects associated to a Role, Layout, User, portlet
+        instance, etc. that no longer exists.
 
     -   `PortletPreference` objects associated with a portlet or layout that
         no longer exists. This is common in environments with many embedded
-        portlets. These portlet instances have a different lifecycle and
-        aren't deleted when the portlet is removed from a template.
+        portlets. These portlet instances have a different lifecycle and aren't
+        deleted when the portlet is removed from a template.
 
 If you want to see an example of removing intermediate object versions, read
 [Example: Removing Intermediate Journal Article
