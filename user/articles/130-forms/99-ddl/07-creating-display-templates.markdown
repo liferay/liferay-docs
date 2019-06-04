@@ -13,7 +13,7 @@ those fields in the list view, either. Modify the list view using Display
 Templates. 
 
 | **Note:** If you're familiar with
-| [web content templates](/docs/7-1/user/-/knowledge_base/u/designing-web-content-with-templates),
+| [web content templates](/docs/7-2/user/-/knowledge_base/u/designing-web-content-with-templates),
 | display templates customize the display of a list in the same way. Display
 | templates are written in FreeMarker or Velocity, pulling data from the data
 | definition in the same way that web content templates pull data from their
@@ -25,7 +25,7 @@ Templates.
 | template and work off of it for your new display template.
 
 As with 
-[form templates](/docs/7-1/user/-/knowledge_base/u/creating-form-templates), 
+[form templates](/docs/7-2/user/-/knowledge_base/u/creating-form-templates), 
 you can create display templates from the Dynamic Data Lists app in Site 
 Administration or the Dynamic Data Lists Display widget. 
 
@@ -73,7 +73,7 @@ Alternatively, you can use the Dynamic Data Lists Display widget to create
 display templates: 
 
 1.  Follow the instructions in the 
-    [Creating Data Lists article](/docs/7-1/user/-/knowledge_base/u/creating-data-lists) 
+    [Creating Data Lists article](/docs/7-2/user/-/knowledge_base/u/creating-data-lists) 
     for adding and configuring the widget in a site page. Make sure to configure
     the widget to show the list's definition you're making into a template. 
 
@@ -136,8 +136,8 @@ data definition, which is ugly and practically useless:
 
     {uuid=52c4ac1c-afe7-963c-49c6-5279b7030a99, recordId=35926, groupId=20126, 
     companyId=20099, userId=20139, userName=Test Test, versionUserId=20139, 
-    versionUserName=Test Test, createDate=2018-07-16 14:31:51.056, 
-    modifiedDate=2018-07-16 14:31:51.058, DDMStorageId=35927, recordSetId=35922, 
+    versionUserName=Test Test, createDate=2018-07-26 14:31:51.056, 
+    modifiedDate=2018-07-26 14:31:51.058, DDMStorageId=35927, recordSetId=35922, 
     recordSetVersion=1.0, version=1.0, displayIndex=0, lastPublishDate=null}
 
 Here's a simple example template that uses a list based on the embedded Contacts

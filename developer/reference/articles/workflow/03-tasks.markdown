@@ -75,7 +75,7 @@ There are two `actions` in the review task, both `<notification>`s. Each
 notification may contain a name, template, notification-type, execution-type,
 and recipients. Besides notifications, You can also use the `<action>` tag.
 These have a name and a
-[script](/docs/7-1/user/-/knowledge_base/user/leveraging-the-script-engine-in-workflow)
+[script](/docs/7-2/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow)
 and are more often used in state nodes than tasks.
 
 ## Assignments
@@ -182,7 +182,7 @@ entity. For example, a user might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the user can update
 the resource. If you're uncertain about what resource actions are, refer to the
 developer tutorial on the
-[permission system](/docs/7-1/frameworks/-/knowledge_base/frameworks/defining-application-permissions)
+[permission system](/docs/7-2/frameworks/-/knowledge_base/f/defining-application-permissions)
 for a more detailed explanation.
 
 To find all the resource actions that have been created, you need access to the
@@ -191,7 +191,7 @@ permission for the VIEW action on the roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the
-  [article on managing roles](/docs/7-1/user/-/knowledge_base/user/roles-and-permissions)
+  [article on managing roles](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions)
   for more information.
 - Once the role is added, navigate to the Define Permissions interface for the
   role.
@@ -305,7 +305,7 @@ Like `<action>` elements, `<timer-action>` elements can contain scripts.
 
 The above example isn't functional but it demonstrates setting up a `<script>`
 in your task timer.
-[Read the _Scripting in Workflow_ article](/7-2/user/-/knowledge_base/user/leveraging-the-script-engine-in-workflow)
+[Read the _Scripting in Workflow_ article](/docs/7-2/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow)
 for more information.
 
 | **Note:** A `timer-action` can contain all the same tags as an `action`, with
@@ -315,5 +315,5 @@ for more information.
 
 Tasks are at the core of the workflow definition. Once you understand how to
 create tasks and the other
-[workflow nodes](7-2/frameworks/-/knowledge_base/frameworks/workflow-definition-nodes) and add
+[workflow nodes](/docs/7-2/reference/-/knowledge_base/r/workflow-definition-nodes) and add
 transitions between the nodes, you're on the cusp of workflow wizard-hood.

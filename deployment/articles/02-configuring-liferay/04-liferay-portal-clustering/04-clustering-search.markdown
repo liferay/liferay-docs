@@ -12,7 +12,7 @@ Search should always run on a separate environment from your @product@ server.
 
 <!--Uncomment when Solr adapters is available. 
 or 
-[Solr](discover/deployment/-/knowledge_base/7-1/using-solr), 
+[Solr](/docs/7-2/deploy/-/knowledge_base/d/installing-solr) 
 and either of those environments
 -->
 
