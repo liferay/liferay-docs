@@ -177,9 +177,14 @@ source.
 Follow these steps to configure the Elasticsearch adapter using an OSGi
 configuration file:
 
-1. Create the following file:
+1. Create the following file to configure the default adapter (for
+   Elasticsearch 2.4):
     
         [Liferay_Home]/osgi/configs/com.liferay.portal.search.elasticsearch.configuration.ElasticsearchConfiguration.config
+
+    To configure the Liferay Connector to Elasticsearch 6, name your file thus:
+
+        [Liferay_Home]/osgi/configs/com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.config
 
 2. Add this to the configuration file you just created:
 
