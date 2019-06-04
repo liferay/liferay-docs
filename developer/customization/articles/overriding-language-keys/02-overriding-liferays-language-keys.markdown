@@ -71,7 +71,7 @@ language key.
     
     `publish=Publish`
  
-![Figure 1: Messages displayed in Liferay's user interface can be customized.](../../../images/standard-publish.png)
+![Figure 1: Messages displayed in Liferay's user interface can be customized.](../../images/standard-publish.png)
 
 Next, you'll learn how to override this key. 
 
@@ -179,7 +179,7 @@ To see your Liferay language key overrides in action,
 [deploy your module](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project) 
 and visit the portlets and pages that use the keys. 
 
-![Figure 2: This button uses the overridden `publish` key.](../../../images/localized-publish.png)
+![Figure 2: This button uses the overridden `publish` key.](../../images/localized-publish.png)
 
 That's all there is to overriding Liferay's language keys. 
 

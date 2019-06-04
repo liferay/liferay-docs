@@ -58,7 +58,7 @@ public class CustomCaptchaMVCResourceCommand implements MVCResourceCommand {
 ```
 
 And that, as they say, is that. Even if you don't own the source code of an 
-application, you can [override its MVC commands](/docs/7-2/customization/-/knowledge_base/c/overriding-mvc-commands) 
+application, you can [override its MVC commands](/docs/7-2/customization/-/knowledge_base/c/overriding-liferay-mvc-commands) 
 just by knowing the component class name. 
 
 ## Related Topics

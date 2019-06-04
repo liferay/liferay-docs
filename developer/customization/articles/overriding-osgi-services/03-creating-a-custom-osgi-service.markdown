@@ -12,12 +12,14 @@ if you haven't done so already. Here you'll create a custom service that
 implements the service interface, declares it an OSGi service of that type, and 
 makes it the best match for binding with other components. 
 
-The example custom service `CustomServiceImpl` (from sample module 
+The example custom service `CustomServiceImpl` implements service interface 
+<!--TODO: Uncomment once zip is ported to new site.
+(from sample module 
 [`overriding-service-reference`](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip)) 
-implements service interface `SomeService`, declares itself an OSGi service of 
-the `SomeService` service type, and even delegates work to the existing service. 
-Examine this example code as you follow the steps for creating your custom 
-service:
+-->
+`SomeService`, declares itself an OSGi service of the `SomeService` service 
+type, and even delegates work to the existing service. Examine the example code 
+below as you follow the steps for creating your custom service:
 
 ```java
 @Component(

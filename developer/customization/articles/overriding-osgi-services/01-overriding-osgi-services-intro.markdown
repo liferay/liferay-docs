@@ -1,5 +1,5 @@
 ---
-header-id: overriding-service-references
+header-id: overriding-osgi-services
 ---
 
 # Overriding OSGi Services

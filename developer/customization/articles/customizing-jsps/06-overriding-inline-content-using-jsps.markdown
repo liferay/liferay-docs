@@ -203,7 +203,7 @@ On deploying the `start.jsp`, the `fieldset` tags render the same as they did
 before. This is expected because it uses the same logic as `FieldsetTag`'s 
 `processStart` method. 
 
-![Figure 1: @product@'s home page's search and sign in components are in a `fieldset`.](../../../images/jsp-readme-inline-fieldset.png)
+![Figure 1: @product@'s home page's search and sign in components are in a `fieldset`.](../../images/jsp-readme-inline-fieldset.png)
 
 The `fieldset` starting logic is ready for customization. To test that this 
 works, you'll print the word *test* surrounded by asterisks before the end of 
@@ -217,7 +217,7 @@ last `div` tag:
 Redeploy the JSP and refresh the page to see the text printed above the 
 `fieldset`'s fields. 
 
-![Figure 2: Before the `fieldset`'s nested fields, it prints *test* surrounded by asterisks.](../../../images/jsp-readme-override-inline-fieldset.png)
+![Figure 2: Before the `fieldset`'s nested fields, it prints *test* surrounded by asterisks.](../../images/jsp-readme-override-inline-fieldset.png)
 
 You know how to override specific @product@ core inline content using Liferay's 
 `.jsp.readme` files. 
