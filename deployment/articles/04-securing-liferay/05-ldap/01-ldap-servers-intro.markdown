@@ -1,5 +1,5 @@
 ---
-header-id: LDAP
+header-id: ldap
 ---
 
 # LDAP

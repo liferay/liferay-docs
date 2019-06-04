@@ -227,7 +227,7 @@ do that:
 ```
 
 2.  Do this for any function. For example, the Permissions function you added in
-    [step 3](/develop/tutorials/-/knowledge_base/7-1/associating-permissions-with-resources)
+    [step 3](/docs/7-2/frameworks/-/knowledge_base/f/associating-permissions-with-resources)
     should definitely be protected by permissions: 
 
 ```jsp
