@@ -58,17 +58,17 @@ To begin sanitizing a user's data,
 You can browse all data the user has posted on the system. Click *Personal Site*
 to browse data from that site. 
 
-![Figure 1: From here, you can browse all data the user posted on his or her personal Site.](../../images/users-data-erasure-personal.png)
+![Figure 1: From here, you can browse all data the user posted on his or her personal Site.](../../../images/users-data-erasure-personal.png)
 
 Click *Regular Sites* to browse any data posted in regular Liferay sites. 
 
-![Figure 2: Choose Regular Sites to browse all data posted by the user on administratively-created Sites.](../../images/users-data-erasure-regular.png)
+![Figure 2: Choose Regular Sites to browse all data posted by the user on administratively-created Sites.](../../../images/users-data-erasure-regular.png)
 
 To review the user's data, click the item. For example, Pepper seems to have
 posted a blog entry on her personal Site. Clicking that entry reveals the title
 of that blog entry. 
 
-![Figure 3: Pepper's blog entry might need review.](../../images/users-data-erasure-blog.png)
+![Figure 3: Pepper's blog entry might need review.](../../../images/users-data-erasure-blog.png)
 
 To review any entry, click it. You're brought to the edit mode of the
 application (in this case, Blogs), where you can make any changes to the content

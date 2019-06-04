@@ -4,6 +4,8 @@ header-id: using-audit-events
 
 # Viewing Audit Events
 
+[TOC levels=1-4]
+
 The Audit app shows activities in your @product@ installation. Access it by
 navigating to *Control Panel* &rarr; *Configuration* &rarr; *Audit*. The app
 displays a searchable list of captured events. You can browse the list, but
