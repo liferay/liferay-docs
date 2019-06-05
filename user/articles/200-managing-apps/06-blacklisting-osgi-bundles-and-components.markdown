@@ -75,7 +75,7 @@ To reinstall *all* the blacklisted bundles execute one of these options:
 -   Uninstall the bundle `com.liferay.portal.bundle.blacklist` using the
     [Application Manager](/docs/7-2/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager)
     or
-    [Felix Gogo Shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
+    [Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell).
 
 | **Note**: To temporarily reinstall a bundle that's been blacklisted, you can
 | remove its symbolic name from the Bundle Blacklist module in *System Settings*

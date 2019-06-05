@@ -19,7 +19,7 @@ entity's closing `</entity>` tag.
 <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 ```
 
-Then [run Service Builder.](/docs/7-2/appdev/-/knowledge_base/appdev/service-builder)
+Then [run Service Builder.](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 
 Now you're ready to implement adding and updating assets!
 

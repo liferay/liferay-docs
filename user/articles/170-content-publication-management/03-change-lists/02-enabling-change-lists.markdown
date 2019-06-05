@@ -25,11 +25,11 @@ To enable the Change Lists feature, follow these steps:
 
 Initially, all changes are still published to your live production environment.
 You must create a new change list to begin tracking 
-[supported content types](/docs/7-2/user/-/knowledge_base/user/change-lists) and
+[supported content types](/docs/7-2/user/-/knowledge_base/u/change-lists) and
 have the content hidden from your audience. Supported content types cannot be
 enabled/disabled; they're all enabled when the Change Lists framework is
 activated. You can learn more about creating change lists in
-[this article](/docs/7-2/user/-/knowledge_base/user/creating-change-lists).
+[this article](/docs/7-2/user/-/knowledge_base/u/creating-change-lists).
 
 | **Important:** Pages are not tracked by change lists in @product@ 7.2 GA1, but
 | this functionality is in development for a future release.

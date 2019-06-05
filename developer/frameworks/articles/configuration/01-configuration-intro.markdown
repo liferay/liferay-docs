@@ -165,7 +165,7 @@ entirely so you can put your own UI in its place.
 
 -   If you want the UI to render only under certain
     circumstances, you can write logic to 
-    [do that, too](/developer/frameworks/-/knowledge_base/7-2/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
+    [do that, too](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
 
 Enough conceptual stuff. You're ready to get started with some code. If you
 already have an app that was configurable under an earlier version of
