@@ -78,7 +78,7 @@ choose the following:
 
 To select a different widget template or create your own, 
 click *Manage Templates*. For more information, see the documentation on 
-[widget templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-fragments). 
+[widget templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates). 
 
 **Enable Report Inappropriate Content:** Whether to let users flag content as 
 inappropriate, which sends an email to administrators. 
