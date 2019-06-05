@@ -6,8 +6,8 @@ header-id: automatically-generating-translations
 
 [TOC levels=1-4]
 
-If your app uses a [language
-module](/docs/7-2/frameworks/-/knowledge_base/f/using-a-language-module) or
+If your app uses a 
+[language module](/docs/7-2/frameworks/-/knowledge_base/f/using-a-language-module) or
 [`Language.properties`
 file](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application) for
 its user interface messages, you're in the right place. Language Builder
@@ -15,7 +15,7 @@ provides these localization capabilities:
 
 -  Generating language files for each supported locale with a single
    command. It also propagates new default language file keys to all
-   language files, while keeping their translated values intact.  
+   language files, while keeping their translated values intact. 
 
 -  Generating translations automatically using Microsoft's Translator Text API. 
    This gives you a jump start on creating translations. 
@@ -33,7 +33,7 @@ or [Maven](/docs/7-2/reference/-/knowledge_base/r/lang-builder-plugin).
 
 **Gradle:**
 
-```
+```groovy
 buildscript {
     dependencies {
         classpath 'com.liferay:com.liferay.gradle.plugins.lang.builder:latest.release'
@@ -56,7 +56,7 @@ repositories {
 ```
 
 **Maven:**
-    
+
 ```xml 
 <project>
     ...
@@ -119,8 +119,8 @@ Microsoft Translator Text API, keep reading.
 
 If you've configured the Language Builder plugin (above) in your project, you're
 well on your way to translating language keys automatically. Now you have to
-configure [Microsoft's Translator Text
-API](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/)
+configure 
+[Microsoft's Translator Text API](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/)
 so you can translate language keys automatically.
 
 | **Important:** Lang Builder does not translate language keys containing HTML 
@@ -149,7 +149,7 @@ Here's how to set up the translator and generate translations.
     Make sure the `buildLang` task knows to use your subscription key for
     translation by setting the `translateSubscriptionKey` property:
 
-    ```
+    ```groovy
     buildLang {
        translateSubscriptionKey = langTranslateSubscriptionKey
     }
@@ -157,7 +157,7 @@ Here's how to set up the translator and generate translations.
 
     Here's the entire `build.gradle` example code, 
 
-    ```
+    ```groovy
     buildscript {
         dependencies {
             classpath 'com.liferay:com.liferay.gradle.plugins.lang.builder:latest.release'
@@ -188,8 +188,7 @@ Here's how to set up the translator and generate translations.
     Set the following Language Builder plugin `<translateClientId />` and
     `<translateClientSecret />` configuration elements using Maven build environment properties: 
 
-    ```
-    ...
+    ```xml
     <configuration>
         <langDirName>.</langDirName>
         <translateClientId>${microsoft.translator.client.id}</translateClientId>
@@ -200,7 +199,7 @@ Here's how to set up the translator and generate translations.
 
     Here's the entire `pom.xml` example code, 
 
-    ```
+    ```xml
     <project>
         ...
         <build>
