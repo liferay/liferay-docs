@@ -7,7 +7,7 @@ header-id: publishing-content-dynamically
 [TOC levels=1-4]
 
 Most content types are Assets. In the 
-[Creating Web Content](/docs/7-2/user/-/knowledge_base/user/creating-web-content) 
+[Creating Web Content](/docs/7-2/user/-/knowledge_base/u/creating-web-content) 
 articles, you examined the most common type of asset: web content. Other types
 of assets include blog posts, wiki articles, message board posts, bookmarks, and
 documents. Developers can define custom asset types that use the asset
