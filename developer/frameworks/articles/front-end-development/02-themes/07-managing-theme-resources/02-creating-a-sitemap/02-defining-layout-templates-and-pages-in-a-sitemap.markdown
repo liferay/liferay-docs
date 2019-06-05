@@ -65,7 +65,7 @@ your theme's `sitemap.json`:
 | 
 | If you want to import both public and private page sets, as shown in the example
 | `sitemap.json` below, you must
-| [import your resources into a site](/docs/7-2/frameworks/-/knowledge_base/f/specifying-where-to-import-your-themes-resources#importing-resources-into-existing-site-templates-and-sites).
+| [import your resources into a site](/docs/7-2/frameworks/-/knowledge_base/f/specifying-where-to-import-your-themes-resources).
   
 2.  Follow the pattern below to specify the public and (optionally) private 
     pages for your theme. You can specify a name for a page, title, friendly 

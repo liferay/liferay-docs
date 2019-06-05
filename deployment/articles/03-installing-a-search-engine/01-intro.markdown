@@ -22,7 +22,7 @@ Learn to configure a remote Elasticsearch server or cluster
 is another capable and popular search engine supported in @product@. 
 
 <!--Learn to configure a remote Solr server or cluster 
-[here](/docs/7-2/deploy/-/knowledge_base/d/installing-solr). 
+here(/docs/7-2/deploy/-/knowledge_base/d/installing-solr). 
 -->
 
 ## Choosing a Search Engine

@@ -11,7 +11,7 @@ where a developer can inject additional HTML, resources, or functionality, using
 the `DynamicIncludeRegistry`. You can read more about the OSGi Service Registry 
 [here](http://docs.spring.io/osgi/docs/current/reference/html/service-registry.html). 
 The `key` attribute identifies the extension point. See 
-[Dynamic Includes](/docs/7-2/frameworks/-/knowledge_base/f/dynamic-includes) 
+[Dynamic Includes](/docs/7-2/customization/-/knowledge_base/c/dynamic-includes) 
 for example configurations that use dynamic include extension points to inject 
 additional functionality. 
 
@@ -36,6 +36,6 @@ extension points to your app.
     
 ## Related Topics
 
-- [Dynamic Includes](/docs/7-2/frameworks/-/knowledge_base/f/dynamic-includes)
+- [Dynamic Includes](/docs/7-2/customization/-/knowledge_base/c/dynamic-includes)
 - [Using the Liferay Util Body Top Tag](/docs/7-2/reference/-/knowledge_base/r/using-liferay-util-body-top)
 - [Using the Chart Taglib](/docs/7-2/reference/-/knowledge_base/r/using-the-chart-taglib-in-your-portlets)

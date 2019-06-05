@@ -56,6 +56,6 @@ your theme will inherit the updated base theme's files.
 
 ## Related Topics
 
-- [Configuring Your Theme's App Server](/docs/7-2/frameworks/-/knowledge_base/f/configuring-your-themes-app-server)
+- [Configuring Your Theme's App Server](/docs/7-2/frameworks/-/knowledge_base/f/updating-your-themes-app-server)
 - [Deploying and Applying Themes](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes)
 - [Listing Your Theme's Extensions](/docs/7-2/frameworks/-/knowledge_base/f/listing-your-themes-extensions)

@@ -38,7 +38,7 @@ for the Liferay AMD Loader.
 While developing JavaScript applications, you may need to access 
 @product@-specific information or web services. The `Liferay` global JavaScript 
 Object 
-[exposes this information for you](/docs/7-2/frameworks/-/knowledge_base/f/liferay-javascript-apis), 
+[exposes this information for you](/docs/7-2/reference/-/knowledge_base/r/liferay-javascript-apis), 
 to use in your JavaScript applications. 
 
 ## Lexicon and Clay
@@ -88,9 +88,8 @@ the stability, conformity, and future evolution of your applications.
 Below are some of the available front-end extensions:
 
 - [Theme Contributors](/docs/7-2/frameworks/-/knowledge_base/f/packaging-independent-ui-resources-for-your-site)
-- [Context Contributors](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-into-your-templates)
-- [Creating Configurable Styles for Portlet Wrappers](/docs/7-2/frameworks/-/knowledge_base/f/creating-configurable-styles-for-portlet-wrappers)
-- [Dynamic Includes](/docs/7-2/frameworks/-/knowledge_base/f/adding-new-behavior-to-an-editor)
+- [Context Contributors](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme-te)
+- [Dynamic Includes](/docs/7-2/customization/-/knowledge_base/c/dynamic-includes)
 
 See 
 [Theme Components](/docs/7-2/frameworks/-/knowledge_base/f/theme-components) 

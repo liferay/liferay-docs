@@ -82,7 +82,7 @@ update the status of an entity in the database.
 ## Updating the Service Layer
 
 In most Liferay applications,
-[Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 is used to create database fields. First, you must update the service layer:
 
 1.  Make sure your entity database table has `status`, `statusByUserId`,

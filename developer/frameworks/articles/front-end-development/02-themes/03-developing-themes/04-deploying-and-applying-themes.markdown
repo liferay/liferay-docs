@@ -22,7 +22,7 @@ Follow these steps to deploy your theme:
 1.  Navigate to your theme's root folder and run `gulp deploy`.
 
     | **Note:** If you're running the 
-    | [Felix Gogo shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell), 
+    | [Felix Gogo shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell), 
     | you can also deploy your theme using the `gulp deploy:gogo` command.
 
 2.  Your server's log displays that the OSGi bundle is started.
@@ -39,6 +39,6 @@ Wonderful! Your theme is deployed to your server and applied to your site.
 
 - [Automatically Deploying Theme Changes](/docs/7-2/frameworks/-/knowledge_base/f/automatically-deploying-theme-changes)
 - [Copying an Existing Theme's Files](/docs/7-2/frameworks/-/knowledge_base/f/copying-an-existing-themes-files)
-- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/f/creating-reusable-pieces-of-code-for-your-themes)
+- [Creating Themelets with the Theme Generator](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator)
 
 

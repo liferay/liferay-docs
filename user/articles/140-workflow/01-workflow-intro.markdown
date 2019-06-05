@@ -19,7 +19,7 @@ There are several steps to effective workflowing:
 
 - [Designing review processes in XML](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions)
 
-- (DXP only) [Visually designing review processes](/docs/7-2/user/-/knowledge_base/u/workflow-designer)
+- (DXP only) [Visually designing review processes](https://help.liferay.com/hc/en-us/articles/360028821892-Workflow-Designer)
 
 - [Uploading workflow definitions](/docs/7-2/user/-/knowledge_base/u/managing-workflows#uploading-workflow-definitions)
 
@@ -29,7 +29,7 @@ There are several steps to effective workflowing:
 
 - [Sending assets through review](/docs/7-2/user/-/knowledge_base/u/reviewing-assets)
 
-- [Using Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics)
+- (DXP only) [Using Workflow Metrics](https://help.liferay.com/hc/en-us/articles/360029042071-Workflow-Metrics-The-Service-Level-Agreement-SLA-)
 
 After all that, you'll be familiar with using Liferay's workflow engine to set
 up approval processes for any
@@ -71,7 +71,7 @@ status _on time_ or _overdue_.
 ![Figure 2: See Workflow Reports generated based on your SLAs.](../../images/workflow-report.png)
 
 See the article on
-[Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics)
+[Workflow Metrics](https://help.liferay.com/hc/en-us/articles/360029042071-Workflow-Metrics-The-Service-Level-Agreement-SLA-)
 to learn more about SLAs and available reports.
 
 ### Control Panel Reorganization

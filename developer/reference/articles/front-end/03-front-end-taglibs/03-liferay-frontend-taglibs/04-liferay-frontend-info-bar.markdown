@@ -62,7 +62,7 @@ taglibdocs for the full list of available attributes for the tags.
 
 ## Related Topics
 
-- [Liferay Front-end Add Menu](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-add-menu)
-- [Liferay Front-end Cards](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-cards)
-- [Liferay Front-end Management Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-management-bar)
+- [Liferay Front-end Add Menu](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-add-menu)
+- [Liferay Front-end Cards](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-cards)
+- [Liferay Front-end Management Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-management-bar)
 

@@ -7,7 +7,7 @@ header-id: developing-themes
 [TOC levels=1-4]
 
 Theme projects created using the 
-[Liferay Theme Generator](/docs/7-2/frameworks/-/knowledge_base/f/creating-themes-with-the-liferay-theme-generator) 
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator) 
 have access to several 
 [gulp](https://www.npmjs.com/package/gulp) 
 tasks you can execute to manage and develop your theme. This section covers the 

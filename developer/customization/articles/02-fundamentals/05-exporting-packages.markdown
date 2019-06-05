@@ -67,7 +67,7 @@ packages with other OSGi bundles!
 
 [Configuring Dependencies](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies)
 
-[Deploying WARs \(WAB Generator\)](/docs/7-2/customization/-/knowledge_base/c/using-the-wab-generator)
+[Deploying WARs \(WAB Generator\)](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
 
 [Project Templates](/docs/7-2/reference/-/knowledge_base/r/project-templates)
 

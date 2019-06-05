@@ -127,7 +127,7 @@ Make sure to do three things:
     service.
 
 All the Java code for the logic discussed here is shown in the next article,
-[Creating Form Storage Adapters](/docs/7-2/customization/-/knowledge_base/c/creating-form-storage-adapters).
+[Creating Form Storage Adapters](/docs/7-2/customization/-/knowledge_base/c/creating-a-form-storage-adapter).
 
 ## Enabling the Storage Adapter
 
