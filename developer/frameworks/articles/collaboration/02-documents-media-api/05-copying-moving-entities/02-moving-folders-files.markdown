@@ -38,7 +38,7 @@ a file, respectively. This example does both to demonstrate the procedures:
                 DLFileEntry.class.getName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext). 
 
 3.  Call the service reference's method(s). This example calls `moveFolder` to 
     move a folder (`folderId`) to a different folder (`newFolderId`). It then 

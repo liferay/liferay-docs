@@ -86,7 +86,7 @@ SharePoint), you can effectively mount that repository inside a Site's default
 repository. When users enter this special folder, they see the external 
 repository. These folders are called *mount points*. You can create one via the 
 API by setting the 
-[Service Context's](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext) 
+[Service Context's](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext) 
 `mountPoint` attribute to `true`, and then using that Service Context in the 
 `addFolder` method: 
 

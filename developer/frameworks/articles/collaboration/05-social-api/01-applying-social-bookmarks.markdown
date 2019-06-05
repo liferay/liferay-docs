@@ -25,7 +25,7 @@ Follow these steps to add social bookmarks to your app:
 3.  Choose a view in which to show the social bookmarks. For example, you can 
     display them in one of your app's views. However, note that you don't need 
     to implement social bookmarks in your app's 
-    [asset renderers](/docs/7-2/frameworks/-/knowledge_base/f/rendering-an-asset). 
+    [asset renderers](/docs/7-2/frameworks/-/knowledge_base/f/creating-an-asset-renderer). 
     The Asset Publisher displays social bookmarks in asset renderers by default. 
 
 4.  In your view's JSP, include the `liferay-social-bookmarks` taglib 

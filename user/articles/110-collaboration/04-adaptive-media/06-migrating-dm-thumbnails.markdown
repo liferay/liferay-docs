@@ -71,7 +71,7 @@ describes the steps to run this process.
 
 The migration process is a set of Gogo console commands. You can learn more
 about using the Gogo console in 
-[the Felix Gogo Shell tutorial](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell). 
+[the Felix Gogo Shell article](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell). 
 
 Follow these steps to migrate your thumbnails from the Gogo console:
 

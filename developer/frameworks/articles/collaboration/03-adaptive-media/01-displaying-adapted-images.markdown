@@ -34,7 +34,7 @@ For more information, see
 
 For example, this `view.jsp` uses the taglib to display the adapted images 
 in a grid with the `col-md-6` 
-[column container class](/docs/7-2/frameworks/-/knowledge_base/f/creating-layout-templates-manually): 
+[column container class](/docs/7-2/frameworks/-/knowledge_base/f/layout-templates-intro): 
 
 ```markup
         <%@ include file="/init.jsp" %>

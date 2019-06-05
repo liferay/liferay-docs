@@ -7,10 +7,10 @@ header-id: displaying-blogs
 [TOC levels=1-4]
 
 The Blogs app in Site Administration lets you 
-[add](https://www.liferay.com/), 
-[manage](https://www.liferay.com/), 
+[add](/7-2/user/-/knowledge_base/u/adding-blog-entries), 
+[manage](/7-2/user/-/knowledge_base/u/managing-blog-entries), 
 and 
-[configure](https://www.liferay.com/) 
+[configure](/docs/7-2/user/-/knowledge_base/u/configuring-the-blogs-app) 
 your site's blogs. You can then display those blogs by adding a separate Blogs 
 widget to a page. Adding the Blogs widget to a site page creates a shared blog 
 for site members. Adding the widget to a user's personal site (dashboard) 
@@ -74,11 +74,11 @@ choose the following:
 -   **Card:** Displays each blog entry in a card-like rectangle that shows the 
     cover image, title, author, post date, and a few lines of text. 
 
-![Figure 2: The *Card* display template makes your blog posts look like fun little trading cards.](../../../../images/blogs-cards.png)
+To select a different widget template or create your own, click 
+*Manage Templates*. For more information, see the documentation on 
+[widget templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates). 
 
-To select a different widget template or create your own, 
-click *Manage Templates*. For more information, see the documentation on 
-[widget templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-fragments). 
+![Figure 2: The Card display template makes your blog posts look like fun little trading cards.](../../../../images/blogs-cards.png)
 
 **Enable Report Inappropriate Content:** Whether to let users flag content as 
 inappropriate, which sends an email to administrators. 
