@@ -6,7 +6,7 @@ header-id: content-page-personalization
 
 [TOC levels=1-4]
 
-In [Creating Segments with Customer Fields and Session Data](/docs/7-2/user/-/knowledge-base/u/creating-segments-with-custom-fields-and-session-data)
+In [Creating Segments with Customer Fields and Session Data](/docs/7-2/user/-/knowledge_base/u/creating-segments-with-custom-fields-and-session-data)
 you created a Segment called *Premium Card Prospects*. Now, you'll use it to
 demonstrate Content Page Personalization.
 

@@ -51,7 +51,7 @@ section to learn how to do this.
 If your module references a non-existent service, an error is thrown.
 This is helpful because service reference issues are hard to diagnose during
 deployment without using the
-[Gogo Shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
+[Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell).
 
 For example, if your module `test-portlet` references a service (e.g.,
 `test.api.TestApi`) it does not have access to, the following error is thrown:
@@ -113,7 +113,7 @@ To fix this, inspect your target platform to ensure it includes the JAR you're
 attempting to add a fragment for. Your fragment host header may be referencing
 an incorrect bundle symbolic name (BSN) or version. The easiest way to check
 this is by using the
-[Gogo Shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
+[Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell).
 Follow the steps below to find the bundle symbolic name:
 
 1.  Start your target platform instance.
