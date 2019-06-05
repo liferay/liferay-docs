@@ -8,7 +8,7 @@ header-id: displaying-content-sets
 
 Content Sets are primarily displayed through the Asset Publisher. It is 
 currently the only method to display them out of the box, but you can develop 
-your own external applications or widgets to utilize Content Sets. In [Creating Content Sets](/docs/7-2/user/-/knowledge_base/user/creating-content-sets) you 
+your own external applications or widgets to utilize Content Sets. In [Creating Content Sets](/docs/7-2/user/-/knowledge_base/u/creating-content-sets) you 
 created two Content Sets. Now display them 
 on a page.
 

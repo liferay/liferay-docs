@@ -93,7 +93,7 @@ attributes.
 ![Figure 2: The App Manager aggregates Liferay and independent modules.](../../../images/configuring-dependencies-indep-modules-in-app-manager.png)
 
 If you don't know a deployed module's group ID, use the 
-[Felix Gogo Shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell) 
+[Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell) 
 to find it: 
 
 1.  Navigate to the Gogo Shell portlet in the Control Panel &rarr;

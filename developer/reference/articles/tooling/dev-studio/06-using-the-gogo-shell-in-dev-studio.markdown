@@ -9,7 +9,7 @@ header-id: using-the-gogo-shell-in-dev-studio
 If you're using Dev Studio to develop and deploy your projects, you may be
 interested in managing them after they're deployed with Dev Studio too. You can
 do this with the Dev Studio's
-[Gogo Shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
+[Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)
 feature.
 
 1.  Right-click your started portal instance in the Servers view.
