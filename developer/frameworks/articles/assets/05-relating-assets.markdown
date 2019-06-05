@@ -17,7 +17,7 @@ must implement persisting your entity's asset relationships.
 
 1.  In your portlet's `service.xml`, put the following line of code below any
     finder method elements and then
-    [run](/docs/7-2/appdev/-/knowledge_base/appdev/running-service-builder)
+    [run](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
     Service Builder:
 
     ```xml
