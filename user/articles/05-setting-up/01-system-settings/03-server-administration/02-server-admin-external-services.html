@@ -1,0 +1,31 @@
+<p>&mdash;</p><h2>header-id: server-administration-external-services</h2><h1>Server Administration: External Services</h1><p>[TOC levels=1-4]</p><p>Users can upload and share any type of file via the Documents and Media library, a customizable and permissions-enabled online repository for files (see <a href="/docs/7-2/user/-/knowledge_base/u/publishing-files">publishing files </a> for more information). <a href="https://pdfbox.apache.org/">PDFBox</a> is included with @product@ and generates automatic previews for certain file types (mostly PDFs). You can install two additional tools to generate previews for other file types: </p>
+<ul>
+  <li><p><a href="https://www.imagemagick.org/script/index.php"><strong>ImageMagick:</strong></a> Generate higher-quality image previews for many types of images.</p></li>
+  <li><p><a href="http://www.xuggle.com/xuggler/"><strong>Xuggler:</strong></a> Convert and generate previews for audio and video files. </p></li>
+</ul><p>Once you&rsquo;ve installed these tools, you can use the Server Administration app&rsquo;s External Services tab to configure @product@ to use them. Make sure to choose the correct versions of these tools for your operating system. We recommend that you install the latest stable versions, as older versions may not run properly with @product@. ImageMagick must be installed manually, but you can install Xuggler from the Control Panel. </p><p>| <strong>Tip:</strong> If you&rsquo;re running @product@ on a Linux server and experience a problem | enabling Xuggler, check your server&rsquo;s glibc version. For Xuggler to work, you | may need to update glibc to version 2.6 or later.</p><h2>ImageMagick Configuration</h2><p>Before configuring ImageMagick to generate image and PDF previews, install it and its dependency, Ghostscript. This differs by operating system: on Linux, both are likely already installed. They are not likely to be installed on Windows, but may be on macOS.</p>
+<ol>
+  <li><p>Download and install <a href="https://www.imagemagick.org/script/index.php">ImageMagick</a>.</p></li>
+  <li><p>Download and install <a href="https://www.ghostscript.com/">Ghostscript</a>. </p></li>
+</ol><p>Once installed, you must enable ImageMagick in the Server Administration app&rsquo;s External Services tab, or in a <code>portal-ext.properties</code> file. If using <code>portal-ext.properties</code>, add the following lines and make sure the search path points to the directories containing the ImageMagick and Ghostscript executables. You may also need to configure the path for fonts used by Ghostscript when in macOS or Unix environments. </p>
+<pre><code>imagemagick.enabled=true
+imagemagick.global.search.path[apple]=/opt/local/bin:/opt/local/share/ghostscript/fonts:/opt/local/share/fonts/urw-fonts
+imagemagick.global.search.path[unix]=/usr/local/bin:/usr/local/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts
+imagemagick.global.search.path[windows]=C:\\Program Files\\ImageMagick
+</code></pre><p>Follow these steps to instead enable ImageMagick from the Server Administration app&rsquo;s External Services tab: </p>
+<ol>
+  <li><p>In the <em>Control Panel</em>, navigate to <em>Configuration</em> &rarr; <em>Server Administration</em>, then click the <em>External Services</em> tab.</p></li>
+  <li><p>Expand the ImageMagick and Ghostscript section and select <em>Enabled</em>. </p></li>
+  <li><p>Verify that the paths to the ImageMagick and Ghostscript executables are correct. </p></li>
+</ol><p><img src="../../../../images/imagemagick-ghostscript.png" alt="Figure 1" /><p class="caption">Figure 1: Enable ImageMagick and Ghostscript, and verify that the paths are correct.</p><h2>Xuggler Configuration</h2><p>Follow these steps to install and configure Xuggler: </p>
+<ol>
+  <li><p>In the <em>Control Panel</em>, navigate to <em>Configuration</em> &rarr; <em>Server Administration</em>, then click the <em>External Services</em> tab.</p></li>
+  <li><p>In the Xuggler section, select the Xuggler <code>.jar</code> file that matches your operating system. Then click <em>Install</em>. </p></li>
+  <li><p>Restart your application server. </p></li>
+  <li><p>Enable Xuggler for your portal. There are two ways to do this: </p>
+  <ul>
+    <li>In the Control Panel, navigate to the <em>Server Administration</em> &rarr; <em>External Services</em> tab, select <em>Enabled</em>, then click <em>Save</em>.</li>
+    <li>Add the following line to your <code>portal-ext.properties</code> file and restart your application server:</li>
+  </ul>
+  <pre><code>    xuggler.enabled=true
+</code></pre></li>
+</ol><p><img src="../../../../images/xuggler-install.png" alt="Figure 2" /><p class="caption">Figure 2: Install Xuggler.</p>

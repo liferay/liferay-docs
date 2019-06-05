@@ -23,9 +23,9 @@ prior to those images.
 
 Since Adaptive Media delivers the adapted images behind the scenes, content 
 creators should add images to 
-[blog entries](/discover/portal/-/knowledge_base/7-2/publishing-blogs) 
+[blog entries](/docs/7-2/user/-/knowledge_base/u/publishing-blogs) 
 and 
-[web content](/discover/portal/-/knowledge_base/7-2/creating-web-content) 
+[web content](/docs/7-2/user/-/knowledge_base/u/creating-web-content) 
 as usual: by clicking the image button in the editor and then selecting the 
 image in the file selector. 
 
@@ -76,7 +76,7 @@ is used as a fallback in case the adapted images aren't available.
 ## Using Adapted Images in Structured Web Content
 
 To use adapted images in 
-[structured web content](/discover/portal/-/knowledge_base/7-2/designing-uniform-content), 
+[structured web content](/docs/7-2/user/-/knowledge_base/u/designing-uniform-content), 
 content creators must manually include an image field in the web content's 
 structure. Then they can reference that image field in the matching template by 
 selecting it on the left side of the editor. Here's an example snippet of an 
@@ -102,9 +102,9 @@ resolution (see the `<picture>` example above).
 ## Staging Adapted Images
 
 Adaptive Media is fully integrated with @product@'s 
-[content staging](/discover/portal/-/knowledge_base/7-2/staging-content-for-publication) 
+[content staging](/docs/7-2/user/-/knowledge_base/u/staging-content-for-publication) 
 and 
-[export/import](/discover/portal/-/knowledge_base/7-2/exporting-importing-widget-data) 
+[export/import](/docs/7-2/user/-/knowledge_base/u/exporting-importing-widget-data) 
 functionality. Adaptive Media includes adapted images in staged content when 
 published, and can update those images to match any new resolutions. 
 

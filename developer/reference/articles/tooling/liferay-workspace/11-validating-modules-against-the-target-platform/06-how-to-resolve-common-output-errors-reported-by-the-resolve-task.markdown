@@ -9,7 +9,7 @@ header-id: how-to-resolve-common-output-errors-reported-by-the-resolve-task
 Liferay Workspace provides the `resolve` Gradle task to validate modules. This
 is very useful for finding issues and reporting them as output before
 deployment. For general help with OSGi related issues, visit the
-[Troubleshooting FAQ](/docs/reference/7-2/-/knowledge_base/reference/troubleshooting)
+[Troubleshooting FAQ](/docs/7-2/reference/-/knowledge_base/reference/troubleshooting)
 section.
 
 For help interpreting the `resolve` task's output, see the list below for common
@@ -36,14 +36,14 @@ dependencies cannot be satisfied. These types of scenarios are difficult to
 diagnose, but with the `resolve` task, can be found with ease.
 
 To fix missing import errors, you may need to adjust the
-[export](/docs/reference/7-2/-/knowledge_base/reference/exporting-packages) and/or
-[import](/docs/reference/7-2/-/knowledge_base/reference/importing-packages)
+[export](/docs/7-2/reference/-/knowledge_base/reference/exporting-packages) and/or
+[import](/docs/7-2/reference/-/knowledge_base/reference/importing-packages)
 configuration of your modules. Also, see the
-[Resolving Third Party Library Package Dependencies](/docs/reference/7-2/-/knowledge_base/reference/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/docs/7-2/reference/-/knowledge_base/reference/adding-third-party-libraries-to-a-module)
 tutorial for more information on resolving import errors. Sometimes, this kind
 of error can be solved by editing the `resolve` task's list of capabilities. See
 the
-[Resolving Third Party Library Package Dependencies](/docs/reference/7-2/-/knowledge_base/reference/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/docs/7-2/reference/-/knowledge_base/reference/adding-third-party-libraries-to-a-module)
 section to learn how to do this.
 
 ## Missing Service Reference
@@ -51,7 +51,7 @@ section to learn how to do this.
 If your module references a non-existent service, an error is thrown.
 This is helpful because service reference issues are hard to diagnose during
 deployment without using the
-[Gogo Shell](/docs/reference/7-2/-/knowledge_base/reference/using-the-felix-gogo-shell).
+[Gogo Shell](/docs/7-2/reference/-/knowledge_base/reference/using-the-felix-gogo-shell).
 
 For example, if your module `test-portlet` references a service (e.g.,
 `test.api.TestApi`) it does not have access to, the following error is thrown:
@@ -86,7 +86,7 @@ If you're unable to track down your missing service, it may be provided by a
 customized @product@ core feature or an external @product@ feature. If this is
 the case, it isn't included in the target platform's default capabilities. You
 can make the custom service capability available to reference by
-[generating a new custom distro JAR](/docs/reference/7-2/-/knowledge_base/reference/depending-on-a-customized-distribution-of-product).
+[generating a new custom distro JAR](/docs/7-2/reference/-/knowledge_base/reference/depending-on-a-customized-distribution-of-product).
 
 ## Missing Fragment Host
 
@@ -113,7 +113,7 @@ To fix this, inspect your target platform to ensure it includes the JAR you're
 attempting to add a fragment for. Your fragment host header may be referencing
 an incorrect bundle symbolic name (BSN) or version. The easiest way to check
 this is by using the
-[Gogo Shell](/docs/reference/7-2/-/knowledge_base/reference/using-the-felix-gogo-shell).
+[Gogo Shell](/docs/7-2/reference/-/knowledge_base/reference/using-the-felix-gogo-shell).
 Follow the steps below to find the bundle symbolic name:
 
 1.  Start your target platform instance.
@@ -128,5 +128,5 @@ Once you know the correct BSN/version to reference, update your `Fragment-Host`
 header to resolve the error.
 
 For more information on fragments, see the
-[JSP Overrides Using OSGi Fragments](/docs/customization/7-2/-/knowledge_base/customization/overriding-a-modules-jsps)
+[JSP Overrides Using OSGi Fragments](/docs/7-2/customization/-/knowledge_base/customization/overriding-a-modules-jsps)
 tutorial.

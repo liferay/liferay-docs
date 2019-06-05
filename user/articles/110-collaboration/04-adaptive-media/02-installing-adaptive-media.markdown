@@ -72,7 +72,7 @@ problems, or your old content doesn't need adapted images.
 
 **Liferay Adaptive Media Document Library Thumbnails:** Lets thumbnails in 
 Documents and Media use adapted images. For this to work, you must first 
-[migrate the original thumbnails to adapted images](/discover/portal/-/knowledge_base/7-2/migrating-documents-and-media-thumbnails-to-adaptive-media). 
+[migrate the original thumbnails to adapted images](/docs/7-2/user/-/knowledge_base/u/migrating-documents-and-media-thumbnails-to-adaptive-media). 
 We highly recommend that you enable this module, but it's not mandatory. 
 
 Great! Now you know the mandatory and optional modules that come with Adaptive 
@@ -87,7 +87,7 @@ To process animated GIFs, Adaptive Media uses an external tool called
 This tool ensures that the animation works when the GIF is scaled to different 
 resolutions. You must manually install Gifsicle on the server and ensure that
 it's on the `PATH`. Once it's installed, you must enable it in Adaptive Media's
-[advanced configuration options](/discover/portal/-/knowledge_base/7-2/advanced-configuration-options). 
+[advanced configuration options](/docs/7-2/user/-/knowledge_base/u/advanced-configuration-options). 
 
 If Gifsicle isn't installed and `image/gif` is included as a supported MIME type
 in the advanced configuration options, Adaptive Media scales only a GIF's single

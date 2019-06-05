@@ -52,7 +52,7 @@ published with it.
 Before you activate staging, choose which of these widgets' data you'd
 like to copy to staging. You'll learn about many of the collaboration widgets
 listed under the Staged Content heading when you read the
-[Collaboration Suite's](/docs/7-2/user/-/knowledge_base/user/collaboration)
+[Collaboration Suite's](/docs/7-2/user/-/knowledge_base/u/collaboration)
 section of articles. For now, be aware that you can enable or disable staging
 for any of these widgets.
 

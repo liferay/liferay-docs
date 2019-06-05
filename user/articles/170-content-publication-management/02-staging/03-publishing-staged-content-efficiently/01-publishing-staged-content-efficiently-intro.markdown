@@ -66,7 +66,7 @@ to evaluate.
   site, you can turn on staging for only the necessary content types, leaving
   others turned off to avoid unnecessary work. Publication can also be
   configured to publish only certain types of content. See the 
-  [Managing Content Types](/docs/7-2/user/-/knowledge_base/user/managing-content-types-in-staging)
+  [Managing Content Types](/docs/7-2/user/-/knowledge_base/u/managing-content-types-in-staging)
   article for more information.
 
 - **Hardware Environment:** You should plan your environment according to your
@@ -79,7 +79,7 @@ to evaluate.
 - **Customizations and Custom Logic for Your Staging Environment:** Your
   organization's business logic is most likely implemented in an app, and if you
   want to support staging for that app, you must 
-  [write some code](/docs/7-2/frameworks/-/knowledge_base/frameworks/content-publication-management) 
+  [write some code](/docs/7-2/frameworks/-/knowledge_base/f/content-publication-management) 
   to accomplish this. You can also consider changing default UI settings by
   writing new JSP code if you want your staging environment's look and feel to
   change.

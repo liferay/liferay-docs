@@ -19,7 +19,7 @@ To inject other objects into the FreeMarker template's context, you must create
 a *Context Contributor*. 
 
 You can create a Context Contributor to use non-JSP templating languages for 
-themes, ADTs, and any other templates used in @product@. For example, suppose 
+themes, widget templates, and any other templates used in @product@. For example, suppose 
 you want your theme to change color based on the user's organization. You could 
 create a Context Contributor to inject the user's organization into your theme's 
 context, and then determine the theme's color based on that information. 
@@ -33,7 +33,7 @@ Follow the steps below to create a context contributor:
     service, and set the `type` property to the type of context you're injecting 
     into. Set it to `TYPE_THEME` to inject context-specific variables for your 
     theme, or set it to `TYPE_GLOBAL` to inject it into every context execution 
-    in @product@, like themes, ADTs, DDM templates, etc, as defined in 
+    in @product@, like themes, widget templates, DDM templates, etc, as defined in 
     [TemplateContextContributor](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html). 
     To follow naming conventions, begin the class name with the entity you want 
     to inject context-specific variables for, followed by 

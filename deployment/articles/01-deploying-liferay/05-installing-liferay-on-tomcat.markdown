@@ -6,27 +6,23 @@ header-id: installing-product-on-tomcat
 
 [TOC levels=1-4]
 
-@product-ver@ bundled with Tomcat 9 is available on the
-[Help Center](https://help.liferay.com/hc)
-(DXP) or the
-[Community Downloads page](https://www.liferay.com/downloads-community)
-(Portal CE). The Tomcat bundle contains JARs, scripts, and configuration files
-required for deploying @product-ver@ Copying these files from the @product@
-Tomcat bundle facilitates installing @product@ on an existing Tomcat application
-server.
+@product-ver@ bundled with Tomcat 9 is available on the [Help
+Center](https://customer.liferay.com/downloads) (DXP) or the [Community
+Downloads page](https://www.liferay.com/downloads-community) (Portal CE). The
+Tomcat bundle contains JARs, scripts, and configuration files required for
+deploying @product-ver@. Copying these files from the @product@ Tomcat bundle
+facilitates installing @product@ on an existing Tomcat application server.
 
 Whether you copy bundle files (recommended) or download and create the files,
-you must download these files for
-[DXP](https://help.liferay.com/hc)
-or
-[Portal CE](https://www.liferay.com/downloads-community):
+you must download these files for [DXP](https://customer.liferay.com/downloads)
+or [Portal CE](https://www.liferay.com/downloads-community):
 
 - @product@ WAR file
 - Dependencies ZIP file
 - OSGi JARs ZIP file
 
 | **Important:** 
-| [Prepare for the install](/docs/7-2/deploy/-/knowledge_base/d/prepare-for-install)
+| [Prepare for the install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install)
 | before continuing. 
 
 Here are the basic steps for installing @product@ on Tomcat:
@@ -157,18 +153,21 @@ Start with configuring Tomcat to run @product@.
     export JAVA_HOME=/usr/lib/jvm/java-8-jdk
     export PATH=$JAVA_HOME/bin:$PATH
     ```
+    
 
     Then configure Catalina's JVM options to support @product@.
 
     Unix: 
 
     ```bash
-    CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
+    CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xms2560m -Xmx2560m -XX:MaxMetaspaceSize=512m"
     ```
 
     Windows:
 
-        set "CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
+    ```bash
+    set "CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xms2560m -Xmx2560m -XX:MaxMetaspaceSize=512m"
+    ```
 
     This sets the file encoding to UTF-8, prefers an IPv4 stack over IPv6,
     prevents Tomcat from working around garbage collection bugs relating to
@@ -178,6 +177,13 @@ Start with configuring Tomcat to run @product@.
 
     | **Important:** @product@ requires that the application server JVM use the 
     | GMT time zone and UTF-8 file encoding. 
+    
+    | **Note:** On JDK 11, it's recommended to add this JVM argument to display
+    | four-digit years.
+    |
+    | ```properties
+    | -Djava.locale.providers=JRE,COMPAT,CLDR
+    | ```
 
     After installation, tune your system (including these JVM options) for
     performance. 
@@ -191,38 +197,40 @@ Start with configuring Tomcat to run @product@.
     The `ROOT.xml` file specifies a web application context for @product@.
     `ROOT.xml` looks like this:
 
-        <Context crossContext="true" path="">
+    ```xml
+    <Context crossContext="true" path="">
 
-            <!-- JAAS -->
+        <!-- JAAS -->
 
-            <!--<Realm
-                className="org.apache.catalina.realm.JAASRealm"
-                appName="PortalRealm"
-                userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
-                roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
-            />-->
+        <!--<Realm
+            className="org.apache.catalina.realm.JAASRealm"
+            appName="PortalRealm"
+            userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+            roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+        />-->
 
-            <!--
-            Uncomment the following to disable persistent sessions across reboots.
-            -->
+        <!--
+        Uncomment the following to disable persistent sessions across reboots.
+        -->
 
-            <!--<Manager pathname="" />-->
+        <!--<Manager pathname="" />-->
 
-            <!--
-            Uncomment the following to not use sessions. See the property
-            "session.disabled" in portal.properties.
-            -->
+        <!--
+        Uncomment the following to not use sessions. See the property
+        "session.disabled" in portal.properties.
+        -->
 
-            <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
+        <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
 
-            <Resources>
-                <PreResources
-                    base="${catalina.base}/lib/ext/portal"
-                    className="com.liferay.support.tomcat.webresources.ExtResourceSet"
-                    webAppMount="/WEB-INF/lib"
-                />
-            </Resources>
-        </Context>
+        <Resources>
+            <PreResources
+                base="${catalina.base}/lib/ext/portal"
+                className="com.liferay.support.tomcat.webresources.ExtResourceSet"
+                webAppMount="/WEB-INF/lib"
+            />
+        </Resources>
+    </Context>
+    ```
 
      Setting `crossContext="true"` lets multiple web applications use the same
      class loader. This configuration includes commented instructions and tags
@@ -234,7 +242,7 @@ Start with configuring Tomcat to run @product@.
     value to the `common.loader` property: 
 
     ```properties
-        ,"${catalina.home}/lib/ext/global","${catalina.home}/lib/ext/global/*.jar","${catalina.home}/lib/ext","${catalina.home}/lib/ext/*.jar"
+    ,"${catalina.home}/lib/ext/global","${catalina.home}/lib/ext/global/*.jar","${catalina.home}/lib/ext","${catalina.home}/lib/ext/*.jar"
     ```
 
 4.  Make sure to use UTF-8 URI encoding consistently. If you have a @product@ 
@@ -245,28 +253,38 @@ Start with configuring Tomcat to run @product@.
 
     Old:
 
-        <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+    ```xml
+    <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+    ```
 
     New:
 
-        <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+    ```xml
+    <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8" />
+    ```
 
     Old:
 
-        <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
+    ```xml
+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
+    ```
 
     New:
 
-        <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
+    ```xml
+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
+    ```
 
 5.  Refrain from writing access logs (optional) by commenting out the access
     log `Valve` element in `$CATALINA_BASE/conf/server.xml`. It's commented out
     here:
 
-        <!-- <Valve className="org.apache.catalina.valves.AccessLogValve" 
-               directory="logs"
-               prefix="localhost_access_log" suffix=".txt"
-               pattern="%h %l %u %t &quot;%r&quot; %s %b" /> -->
+    ```xml
+    <!-- <Valve className="org.apache.catalina.valves.AccessLogValve" 
+           directory="logs"
+           prefix="localhost_access_log" suffix=".txt"
+           pattern="%h %l %u %t &quot;%r&quot; %s %b" /> -->
+    ```
 
 6.  Optionally, set the following log levels in your
     `$CATALINA_HOME/conf/logging.properties` file:
@@ -283,18 +301,20 @@ Start with configuring Tomcat to run @product@.
     adding the following elements above the `jsp` servlet element's
     `<load-on-startup>` element. 
 
-        <init-param>
-            <param-name>compilerSourceVM</param-name>
-            <param-value>1.8</param-value>
-        </init-param>
-        <init-param>
-            <param-name>compilerTargetVM</param-name>
-            <param-value>1.8</param-value>
-        </init-param>
-        <init-param>
-            <param-name>tagpoolClassName</param-name>
-            <param-value>com.liferay.support.tomcat.jasper.runtime.TagHandlerPool</param-value>
-        </init-param>
+    ```xml
+    <init-param>
+        <param-name>compilerSourceVM</param-name>
+        <param-value>1.8</param-value>
+    </init-param>
+    <init-param>
+        <param-name>compilerTargetVM</param-name>
+        <param-value>1.8</param-value>
+    </init-param>
+    <init-param>
+        <param-name>tagpoolClassName</param-name>
+        <param-value>com.liferay.support.tomcat.jasper.runtime.TagHandlerPool</param-value>
+    </init-param>
+    ```
 
 8.  In `$CATALINA_HOME/conf/web.xml`, specify whether the application server
     should look for extra metadata, such as annotations in the application's
@@ -307,7 +327,9 @@ Start with configuring Tomcat to run @product@.
     `$CATALINA_HOME/bin` and `$CATALINA_BASE/bin` folders executable by running
     this command in each folder:
 
-        chmod a+x *.sh
+    ```bash
+    chmod a+x *.sh
+    ```
 
 **Checkpoint:**
 
@@ -354,21 +376,23 @@ If you want Tomcat to manage your data source, follow these steps:
 2.  Open `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` and add your data 
     source as a `Resource` in your web application `Context`:
 
-        <Context...>
-            ...
-            <Resource
-                name="jdbc/LiferayPool"
-                auth="Container"
-                type="javax.sql.DataSource"
-                driverClassName="com.mysql.jdbc.Driver"
-                url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-                username="root"
-                password="root"
-                maxActive="100"
-                maxIdle="30"
-                maxWait="10000"
-            />
-        </Context>
+    ```xml
+    <Context...>
+        ...
+        <Resource
+            name="jdbc/LiferayPool"
+            auth="Container"
+            type="javax.sql.DataSource"
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+            username="root"
+            password="root"
+            maxActive="100"
+            maxIdle="30"
+            maxWait="10000"
+        />
+    </Context>
+    ```
 
     The example resource definition above is for a MySQL database named
     `lportal` that has a user named `root` whose password is `root`. Replace
@@ -388,7 +412,7 @@ it. Mail session configuration is next.
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s
-[built-in mail session](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail#products-built-in-mail-session),
+[built-in mail session](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail),
 skip this section. 
 
 If you want to manage your mail session with Tomcat, follow these steps:
@@ -397,27 +421,29 @@ If you want to manage your mail session with Tomcat, follow these steps:
     session as a `Resource` in your web application `Context`. Make sure to
     replace the example mail session values with your own.
 
-        <Context...>
-            ...
-            <Resource
-                name="mail/MailSession"
-                auth="Container"
-                type="javax.mail.Session"
-                mail.pop3.host="pop.gmail.com"
-                mail.pop3.port="110"
-                mail.smtp.host="smtp.gmail.com"
-                mail.smtp.port="465"
-                mail.smtp.user="user"
-                mail.smtp.password="password"
-                mail.smtp.auth="true"
-                mail.smtp.starttls.enable="true"
-                mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
-                mail.imap.host="imap.gmail.com"
-                mail.imap.port="993"
-                mail.transport.protocol="smtp"
-                mail.store.protocol="imap"
-            />
-        </Context>
+    ```xml
+    <Context...>
+        ...
+        <Resource
+            name="mail/MailSession"
+            auth="Container"
+            type="javax.mail.Session"
+            mail.pop3.host="pop.gmail.com"
+            mail.pop3.port="110"
+            mail.smtp.host="smtp.gmail.com"
+            mail.smtp.port="465"
+            mail.smtp.user="user"
+            mail.smtp.password="password"
+            mail.smtp.auth="true"
+            mail.smtp.starttls.enable="true"
+            mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+            mail.imap.host="imap.gmail.com"
+            mail.imap.port="993"
+            mail.transport.protocol="smtp"
+            mail.store.protocol="imap"
+        />
+    </Context>
+    ```
 
 2.  In your `portal-ext.properties` file in Liferay Home, reference your mail
     session:

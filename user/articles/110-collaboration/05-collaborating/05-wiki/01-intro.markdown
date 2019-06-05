@@ -21,9 +21,9 @@ does these things:
 
 As you can see, @product@'s wiki is flexible and can be configured to fit 
 nearly any use case. What's more, it's completely integrated with the portal's 
-[user management](/discover/portal/-/knowledge_base/7-2/managing-users), 
-[tagging](/discover/portal/-/knowledge_base/7-2/tagging-content), and
-[security](/discover/deployment/-/knowledge_base/7-2/securing-product) 
+[user management](/docs/7-2/user/-/knowledge_base/u/managing-users), 
+[tagging](/docs/7-2/user/-/knowledge_base/u/tagging-content), and
+[security](/docs/7-2/deploy/-/knowledge_base/d/securing-product) 
 features. 
 
 ![Figure 1: The Wiki widget displays your wiki on a Site page.](../../../../images/wiki-page-full.png)

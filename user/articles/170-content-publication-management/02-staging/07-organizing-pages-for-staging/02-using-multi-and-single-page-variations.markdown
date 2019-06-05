@@ -7,7 +7,7 @@ header-id: using-multi-and-single-page-variations
 [TOC levels=1-4]
 
 There are two page variation options available from the
-[Staging Bar](/docs/7-2/user/-/knowledge_base/user/using-the-staging-environment):
+[Staging Bar](/docs/7-2/user/-/knowledge_base/u/using-the-staging-environment):
 
 - *Site Pages Variation:* Different variations for a set of Site pages. For
   instance, you could use this if you had three separate pages and wanted to
@@ -42,7 +42,7 @@ You'll learn about enabling page versioning next.
 ## Enabling Page Versioning
 
 Page Versioning is enabled on the Staging Configuration screen when first
-[enabling staging](/docs/7-2/user/-/knowledge_base/user/enabling-staging).
+[enabling staging](/docs/7-2/user/-/knowledge_base/u/enabling-staging).
 
 ![Figure 1: You can enable page versioning for public and/or private pages.](../../../../images/page-versioning.png)
 
@@ -81,7 +81,7 @@ done by creating several page variations within the current Site pages variation
 of their product launch Site. You'll learn more about page variations later.
 
 Once you've
-[created a Site pages variation](/docs/7-2/user/-/knowledge_base/user/creating-multi-and-single-page-variations),
+[created a Site pages variation](/docs/7-2/user/-/knowledge_base/u/creating-multi-and-single-page-variations),
 you can now navigate to its home page and change the logo, apply a new theme,
 move applications around, change the order of the pages, configure different
 apps, and more. The other variations aren't affected. You can even delete
@@ -109,7 +109,7 @@ Holidays Site pages variation. Page variations only exist inside a Site pages
 variation.
 
 Once you've
-[created a page variation](/docs/7-2/user/-/knowledge_base/user/creating-multi-and-single-page-variations),
+[created a page variation](/docs/7-2/user/-/knowledge_base/u/creating-multi-and-single-page-variations),
 you can choose it from the dropdown menu on the Staging Bar. You can always
 switch between different variations by clicking on them from the Staging Bar.
 

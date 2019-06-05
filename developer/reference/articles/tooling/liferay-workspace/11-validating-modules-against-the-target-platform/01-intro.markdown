@@ -90,7 +90,7 @@ against.
 
 You can now validate your module projects before deploying them! If the resolver
 throws errors, see the article on
-[how to resolve common output errors reported by the `resolve` task](/docs/reference/7-2/-/knowledge_base/reference/how-to-resolve-common-output-errors-reported-by-the-resolve-task).
+[how to resolve common output errors reported by the `resolve` task](/docs/7-2/reference/-/knowledge_base/reference/how-to-resolve-common-output-errors-reported-by-the-resolve-task).
 Sometimes, you must modify the `resolve` task's default behavior to successfully
 validate your app. See the next section for more information.
 
@@ -122,9 +122,9 @@ resolver to bypass this.
 
 There are three ways you can do this:
 
-- [Embed the third party library in your module](/docs/reference/7-2/-/knowledge_base/reference/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
-- [Add the third party library's capabilities to the current static set of resolver capabilities](/docs/reference/7-2/-/knowledge_base/reference/adding-a-third-party-librarys-capabilities-to-the-resolvers-capabilities)
-- [Skip the resolving process for your module](/docs/reference/7-2/-/knowledge_base/reference/skipping-the-resolving-process-for-your-module)
+- [Embed the third party library in your module](/docs/7-2/reference/-/knowledge_base/reference/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
+- [Add the third party library's capabilities to the current static set of resolver capabilities](/docs/7-2/reference/-/knowledge_base/reference/adding-a-third-party-librarys-capabilities-to-the-resolvers-capabilities)
+- [Skip the resolving process for your module](/docs/7-2/reference/-/knowledge_base/reference/skipping-the-resolving-process-for-your-module)
 
 | **Note:** You should only embed a third party library in your module if it's
 | the only module that depends on it. You should not bypass the resolver failure

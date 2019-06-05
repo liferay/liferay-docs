@@ -44,7 +44,7 @@ content.
 You'll step through an example to see how this is done.
 
 1.  Make sure the Staging framework is
-    [enabled](/docs/7-2/user/-/knowledge_base/user/enabling-staging) and you're
+    [enabled](/docs/7-2/user/-/knowledge_base/u/enabling-staging) and you're
     on the staged Site.
 
 2.  Create a Web Content Article in the Product Menu's *Content & Data* &rarr;
@@ -92,7 +92,7 @@ assets. Follow the steps below to modify these permissions for a Role:
 
 Also, make sure the *Publish Staging* permission is granted to the role. This
 is required to publish assets with staging. See the
-[Managing Permissions](/docs/7-2/user/-/knowledge_base/user/managing-permissions)
+[Managing Permissions](/docs/7-2/user/-/knowledge_base/u/managing-permissions)
 article for more information.
 
 Great! Now you know how to publish single assets and manage the permissions for

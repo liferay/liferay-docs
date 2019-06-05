@@ -58,7 +58,7 @@ Follow these steps to create a document type:
     can be created only via the form and can't be used with other document 
     types. You create and edit these metadata fields in the form the same way 
     that you do when creating 
-    [metadata sets](/discover/portal/-/knowledge_base/7-2/metadata-sets). 
+    [metadata sets](/docs/7-2/user/-/knowledge_base/u/metadata-sets). 
 
     **Additional Metadata Fields:** Select a metadata set to associate with the 
     document type. Each document type must be associated with one or more 

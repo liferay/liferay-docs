@@ -7,7 +7,7 @@ header-id: configuring-sharing
 [TOC levels=1-4]
 
 Administrators can choose whether 
-[file sharing](/discover/portal/-/knowledge_base/7-2/sharing-files) 
+[file sharing](/docs/7-2/user/-/knowledge_base/u/sharing-files) 
 is enabled at the global, instance, and Site levels. 
 
 ## Global Configuration

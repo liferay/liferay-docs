@@ -593,7 +593,8 @@ public class CheckLinksTask extends Task {
 
 		heading = heading.replace(" - ", "-");
 		heading = heading.replace(' ', '-');
-		heading = heading.replace('.', '-');
+		heading = heading.replace(".", "");
+		heading = heading.replace('_', '-');
 		heading = heading.replace('/', '-');
 		heading = heading.toLowerCase();
 

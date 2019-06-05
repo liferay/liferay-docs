@@ -16,7 +16,7 @@ SAML Identify Provider *or* as a SAML Service Provider but not as both. If your
 | messages coming from the IdP must be signed. If they're not, an error message
 | appears and communication between the IdP and @product@ fails.
 
-1.  Install the Liferay SAML 2.0 Provider app. To confirm successful deployment,
+1.  Install the Liferay Connector to SAML 2.0 app. To confirm successful deployment,
     look for the *SAML Admin* entry in the Configuration section of the Control
     Panel.
 
@@ -131,7 +131,7 @@ the providers so users can recognize them.
 
 ## Setting Up @product@ as a SAML Service Provider in a Clustered Environment
 
-You can use the Liferay SAML 2.0 Provider app as an SSO solution for a
+You can use the Liferay Connector to SAML 2.0 app as an SSO solution for a
 clustered @product@ environment. If your multi-node cluster is behind a load
 balancer, you must enable all the nodes as SPs, and they must share the
 same keystore manager. 
@@ -145,7 +145,7 @@ If using the Filesystem Keystore Manager (the default):
 2.  Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from
     the first node to the remaining nodes. This file is the Java keystore that's
     created by the SAML Provider app. The keystore contains the valid or
-    self-signed certificate managed by the SAML Provider app.
+    self-signed certificate managed by the SAML connector app.
 
 3.  Verify that the service provider metadata has been generated to be used
     either as a URL or an XML file. The metadata is the same for all nodes
