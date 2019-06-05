@@ -42,4 +42,4 @@ Now you know how to set default preferences for embedded portlets!
 
 - [Embedding Portlets by Name](/docs/7-2/frameworks/-/knowledge_base/f/embedding-a-portlet-by-portlet-name)
 - [Portlets](/docs/7-2/frameworks/-/knowledge_base/f/portlets)
-- [Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/service-builder)
+- [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)

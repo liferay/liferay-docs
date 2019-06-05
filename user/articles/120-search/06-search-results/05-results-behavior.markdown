@@ -113,7 +113,7 @@ Search Result Permission Filter*. It includes two settings:
 ## Search and Staging
 
 With
-[staging](/docs/7-2/user/-/knowledge_base/u/staging-content-for-publication),
+[staging](/docs/7-2/user/-/knowledge_base/u/staging-content),
 content is placed first in a preview and testing environment before being
 published for consumption by end Users (on the live site). Content added to the
 search index is marked so that the search API can decipher whether an item is

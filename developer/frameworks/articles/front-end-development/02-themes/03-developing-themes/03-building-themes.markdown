@@ -24,7 +24,7 @@ such as those created with the
     (in the `dist` folder), that you can deploy to your server. Copy any of 
     these files and folders to your theme's `src` folder to modify them. 
 
-3.  [Deploy](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-your-theme) 
+3.  [Deploy](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes) 
     the `war` file to your app server to make it available.
     
 ![Figure 1: Run the `gulp build` task to build your theme's files.](../../../../images/theme-dev-building-themes-gulp-build.png)
@@ -33,4 +33,4 @@ such as those created with the
 
 - [Automatically Deploying Theme Changes](/docs/7-2/frameworks/-/knowledge_base/f/automatically-deploying-theme-changes)
 - [Copying an Existing Theme's Files](/docs/7-2/frameworks/-/knowledge_base/f/copying-an-existing-themes-files)
-- [Deploying and Applying Themes](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-your-theme)
+- [Deploying and Applying Themes](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes)

@@ -115,6 +115,6 @@ Congratulations! You've created and deployed a Liferay service wrapper!
 
 ## Related Topics
 
-- [Upgrading Service Wrappers](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-service-wrappers)
+- [Upgrading Service Wrappers](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-service-wrapper-hooks)
 - [Installing Blade CLI](/docs/7-2/reference/-/knowledge_base/r/installing-blade-cli)
 - [Creating Projects with Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/creating-projects-with-blade-cli)

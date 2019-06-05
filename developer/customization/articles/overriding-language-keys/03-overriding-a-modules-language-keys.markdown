@@ -15,7 +15,7 @@ module's language keys is different from
 Here is the process:
 
 1.  [Find the module and its metadata and language keys](#find-the-module-and-its-metadata-and-language-keys)
-2.  [Write your custom language key values](#providing-language-keys) 
+2.  [Write your custom language key values](#write-custom-language-key-values) 
 3.  [Prioritize your module's resource bundle](#prioritize-your-modules-resource-bundle)
 
 ## Find the module and its metadata and language keys
@@ -102,7 +102,7 @@ Create a new module to hold a resource bundle loader and your custom language
 keys. 
 
 In your module's `src/main/resources/content` folder, create 
-[language properties files](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application#what-are-language-keys) 
+[language properties files](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application) 
 for each locale whose keys you want to override. In each language properties 
 file, specify your language key overrides. 
 

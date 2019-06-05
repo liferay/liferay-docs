@@ -66,7 +66,7 @@ more information on these sample projects, see the
 [Liferay Sample Projects](/docs/7-2/reference/-/knowledge_base/r/liferay-sample-projects)
 tutorial. Usable extension points are also documented throughout Liferay's
 Developer Network categorized by the @product@ section involved. For example,
-[Overriding MVC Commands](/docs/7-2/customization/-/knowledge_base/c/overriding-mvc-commands)
+[Overriding MVC Commands](/docs/7-2/customization/-/knowledge_base/c/overriding-liferay-mvc-commands)
 and
 [Customizing the Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
 are articles describing how to extend a @product@ extension point. Want to
@@ -99,7 +99,7 @@ In summary, an Ext project is a powerful way to extend @product@. There are no
 limits to what you can customize, so use it carefully. Before using an Ext
 project, see if you can implement all or part of the desired functionality
 through
-[Widget Templates](/docs/7-2/frameworks/-/knowledge_base/f/styling-apps-and-assets)
+[Widget Templates](/docs/7-2/user/-/knowledge_base/u/styling-apps-and-assets)
 or extension points, without introducing the complexity that's inherent with Ext
 projects. If you need to use an Ext project, make your customization as small as
 possible and follow the instructions in this section carefully to avoid issues.

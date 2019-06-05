@@ -71,10 +71,9 @@ Follow these steps:
             }
         }
 
-    **portletSetupPortletDecoratorId:** Specifies the portlet decorator to use 
-    for the portlet (`borderless` || `barebone` || `decorate`). See the 
-    [Applying Portlet Decorators to Embedded Portlets](/docs/7-2/frameworks/-/knowledge_base/f/applying-portlet-decorators-to-embedded-portlets) 
-    tutorial for more info. 
+    **portletSetupPortletDecoratorId:** Specifies the [portlet decorator]() 
+    to use for the portlet (`borderless` || `barebone` || `decorate`). See 
+    [Setting Default Preference for An Embedded Portlet](/docs/7-2/frameworks/-/knowledge_base/f/setting-default-preferences-for-an-embedded-portlet) for more information. 
 
 | **Tip:** You can specify an
 | [application display template](/docs/7-1/user/-/knowledge_base/u/styling-apps-and-assets)

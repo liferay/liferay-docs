@@ -23,6 +23,6 @@ some of the topics:
 -   [Database templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates):
     Use these portal properties templates to specify the @product@ database. 
 
--   [Elasticsearch settings](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch-settings):
+-   [Elasticsearch settings](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch-connector-settings-reference):
     Examine the configuration settings for Liferay's default Elasticsearch
     adapter. 

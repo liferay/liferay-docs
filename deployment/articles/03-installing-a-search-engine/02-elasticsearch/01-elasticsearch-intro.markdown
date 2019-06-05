@@ -17,7 +17,7 @@ through the process of configuring Elasticsearch in remote mode.
 
 <!-- Uncomment this when we release the Solr adapter
 If you'd rather use Solr, it's also supported. See the documentation on
-[Installing Solr](/docs/7-2/deploy/-/knowledge_base/d/installing-solr) 
+Installing Solr(/docs/7-2/deploy/-/knowledge_base/d/installing-solr) 
 if you're interested.
 -->
 

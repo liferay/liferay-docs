@@ -45,9 +45,11 @@ Here are the items in maintenance mode:
     Push)
 -   Staging 
 
+## Deprecated Apps and Features 
+
 Here are the apps deprecated in @product-ver@. 
 
-## Foundation
+### Foundation
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
@@ -56,13 +58,13 @@ Here are the apps deprecated in @product-ver@.
 | JCRStore | Removed | Migrate to another [Document Repository Store option](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver), migrate your document store data using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration). |
 | Legacy Search Portlet | Bundled | Will be removed in a future release. Replaced by the [Search widgets](/docs/7-2/user/-/knowledge_base/u/search). |
 
-## Personalization
+### Personalization
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
 | Audience Targeting | Removed | Replaced by [Personalization](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization). | 
 
-## Web Experience
+### Web Experience
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
@@ -70,13 +72,13 @@ Here are the apps deprecated in @product-ver@.
 | User Group Pages (Copy Mode) | Bundled | See the [Legacy User Group Sites Beahavior](/docs/7-1/user/-/knowledge_base/u/user-group-sites#legacy-user-group-sites-behavior) instructions on how to enable it. |
 | Resources Importer | Bundled | Deprecated as of 7.1 with no direct replacement |
 
-## Forms
+### Forms
 
 | App | Availability | Notes |
 | --- | ------------------ | ----------- |
 | Web Form | Nexus &rarr; Will be removed. | Final version released for 7.0. |
 
-## Security
+### Security
 
 | App |  Availability |  Notes |
 | --- | ------------------ | ----------- |
@@ -87,8 +89,8 @@ Here are the apps deprecated in @product-ver@.
 | OpenAM / OpenSSO | Bundled | Migrate to [SAML based authentication](/docs/7-2/deploy/-/knowledge_base/d/configuring-saml). |
 | OpenID | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
 
-## User and System Management
+### User and System Management
 
 | App |  Availability | 
 | --- | ------------------ |
-| Live Users | Enabled through the [`live.users.enabled`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Live Users) [portal property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties). | 
+| Live Users | Enabled through the [`live.users.enabled`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html) [portal property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties). | 

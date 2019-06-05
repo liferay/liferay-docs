@@ -171,6 +171,6 @@ Management Bar. Below is an example snippet from the User Admin portlet:
 
 ## Related Topics
 
-- [Liferay Front-end Add Menu](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-add-menu)
-- [Liferay Front-end Info Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-info-bar)
-- [Liferay Front-end Management Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-management-bar)
+- [Liferay Front-end Add Menu](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-add-menu)
+- [Liferay Front-end Info Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-info-bar)
+- [Liferay Front-end Management Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-management-bar)

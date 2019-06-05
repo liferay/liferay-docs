@@ -34,5 +34,5 @@ your theme, the themelet will be bundled along with it.
 ## Related Topics
 
 -[Generating Themelets with the Theme Generator](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator)
--[Injecting Additional Context Variables and Functionality into Your Theme Templates](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme-templates)
+-[Injecting Additional Context Variables and Functionality into Your Theme Templates](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme-te)
 -[Packaging Independent UI Resources for Your Site](/docs/7-2/frameworks/-/knowledge_base/f/packaging-independent-ui-resources-for-your-site)

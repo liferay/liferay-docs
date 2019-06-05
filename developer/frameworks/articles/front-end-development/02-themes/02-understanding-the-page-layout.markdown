@@ -47,7 +47,7 @@ You can target the elements and IDs shown in the table below to style the page:
 ![Figure 2: Each section of the page has elements and IDs that you can target for styling.](../../../images/portal-layout-elements.png)
 
 As shown in the diagram above, you can also add 
-[fragments](/docs/7-2/user/-/knowledge_base/u/creating-fragments) 
+[fragments](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments) 
 to a page. Fragments are components---composed of CSS, JavaScript, and
 HTML---that provide key pieces of functionality for the page (i.e. a carousel or
 banner). @product@ provides an editor for creating collections of fragments that
@@ -59,12 +59,12 @@ your vision.
 The page layout within the `#content` Section is determined by the 
 [Layout Template](/docs/7-2/frameworks/-/knowledge_base/f/layout-templates-intro). 
 Several layout templates are included out-of-the-box. You can also 
-[create custom layout templates manually](/docs/7-2/frameworks/-/knowledge_base/f/creating-layout-templates-manually) 
+[create custom layout templates manually](/docs/7-2/frameworks/-/knowledge_base/f/layout-templates-intro) 
 or with the 
 [Liferay Theme Generator's layout sub-generator](/docs/7-2/reference/-/knowledge_base/r/creating-layout-templates-with-the-themes-generator). 
 
 Layout templates can be pre-configured depending on the 
-[page type](/docs/7-2/user/-/knowledge_base/u/page-types-and-templates) 
+[page type](/docs/7-2/user/-/knowledge_base/u/creating-pages) 
 you choose when the page is created. Along with setting the types of portlets to 
 include on the page, the page template may also define the default layout 
 template for the page. Climbing further up the scope chain, you can create 
@@ -96,9 +96,12 @@ can trigger through the Control Menu. These are listed below:
 When styling the page, you must keep the navigation menus in mind, especially 
 for absolutely positioned elements, such as a fixed navbar. If the user is 
 logged in and can view the Control Menu, the fixed navbar must have a top margin 
-equal to the Control Menu's height. See the 
+equal to the Control Menu's height. 
+<!--TODO: Uncomment once these articles are ported to 7.2
+See the 
 [Product Navigation tutorials section](/docs/7-2/frameworks/-/knowledge_base/f/product-navigation) 
 for more information on customizing these menus. 
+-->
 
 ## Related Topics
 

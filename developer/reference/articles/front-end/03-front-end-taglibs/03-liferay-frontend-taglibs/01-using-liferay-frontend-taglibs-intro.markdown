@@ -25,10 +25,10 @@ theme templates and web content templates. Follow this syntax:
 
 The following Front-end UI components are covered in this section:
 
-- [Add Menu](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-add-menu)
-- [Cards](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-cards)
-- [Info Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-info-bar)
-- [Management Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-frontend-management-bar)
+- [Add Menu](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-add-menu)
+- [Cards](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-cards)
+- [Info Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-info-bar)
+- [Management Bar](/docs/7-2/reference/-/knowledge_base/r/liferay-front-end-management-bar)
 
 Each article contains a set of examples along with a screenshot of the resulting 
 UI. 
