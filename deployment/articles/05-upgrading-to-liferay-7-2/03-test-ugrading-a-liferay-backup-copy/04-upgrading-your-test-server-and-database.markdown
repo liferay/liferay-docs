@@ -16,7 +16,7 @@ again with backup of your pruned database. After you're satisfied with the test
 upgrade, you can prepare for upgrading production. Start with preparing
 @product-ver@ on a test server. 
 
-## Install @product-ver@ on a Test Server and Configure It to Use the Pruned Database 
+## Install Liferay on a Test Server and Configure It to Use the Pruned Database 
 
 [Prepare a new test server with @product-ver@](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade). 
 Configure it to use the pruned database copy---keep the original backup in case

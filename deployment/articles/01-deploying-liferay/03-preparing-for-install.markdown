@@ -11,11 +11,11 @@ and a database. Several configuration topics (e.g.,
 [search engine integration]((/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine),
 [document repository configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration),
 [security management](/docs/7-2/deploy/-/knowledge_base/d/securing-product),
-[clustering](/docs/7-2/deploy/-/knowledge_base/d/product-clustering),
+[clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering),
 and more) can be addressed *after* deploying @product@. 
 
 | **Note:** If you are installing @product@ to multiple machines (e.g., in a 
-| [cluster](/docs/7-2/deploy/-/knowledge_base/d/product-clustering))
+| [cluster](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering))
 | or prefer centralizing configuration in a file, using portal properties in a
 | [`[LIFERAY_HOME]/portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
 | is the recommended way to configure. The install preparation topics here and
@@ -136,7 +136,7 @@ The recommended way to set up your @product@ database is also the simplest.
     supported character sets.
 
     | **Note:** If you plan to migrate from one database vendor to another,
-    | [configure the database to use the default query result order you expect for entities @product@ lists](/docs/7-2/frameworks/-/knowledge_base/f/sort-order-changed-with-a-different-database). 
+    | [configure the database to use the default query result order you expect for entities @product@ lists](/docs/7-2/deploy/-/knowledge_base/d/sort-order-changed-with-a-different-database). 
 
     | **Note:** If you use Sybase, configure the database to allow nulls by 
     | default. 
@@ -233,7 +233,7 @@ database access.
 | database settings. If it's at all possible, allow the database user that
 | initializes the database to continue using the database with the same
 | recommended permissions. The start of this section
-| ([Database Preparation](#database-prepartation)) 
+| ([Database Preparation](#preparing-a-database)) 
 | describes the recommended procedure for initializing the @product@ database
 | and preserving that user's permissions for maintaining the @product@ database
 | and updating the database as plugin installations and plugin updates require. 

@@ -28,7 +28,7 @@ or [Portal CE](https://www.liferay.com/downloads-community):
 Here are the basic steps for installing @product@ on Tomcat:
 
 - [Installing dependencies to your application server](#installing-dependencies)
-- [Configuring your application server for @product@](#tomcat-configuration)
+- [Configuring your application server for @product@](#configuring-tomcat)
 - [Deploying the @product@ WAR file to your application server](#deploying-product)
 
 [*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
