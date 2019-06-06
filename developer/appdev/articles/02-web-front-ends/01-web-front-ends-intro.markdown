@@ -30,9 +30,9 @@ to be a flexible platform that supports anything you need to write.
 Liferay gives you a head start on developing and deploying apps that use these
 popular Java and JavaScript-based technologies:
 
--   [Angular Widget](/docs/7-2/appdev/-/knowledge_base/a/angular-widget)
--   [React Widget](/docs/7-2/appdev/-/knowledge_base/a/react-widget) 
--   [Vue Widget](/docs/7-2/appdev/-/knowledge_base/a/vue-widget)
+-   [Angular Widget](/docs/7-2/appdev/-/knowledge_base/a/developing-an-angular-application)
+-   [React Widget](/docs/7-2/appdev/-/knowledge_base/a/developing-a-react-application) 
+-   [Vue Widget](/docs/7-2/appdev/-/knowledge_base/a/developing-a-vue-application)
 -   [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet) 
 -   [JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet)
 -   [PortletMVC4Spring Portlet](/docs/7-2/appdev/-/knowledge_base/a/portlet-mvc-for-spring-portletmvc4spring)

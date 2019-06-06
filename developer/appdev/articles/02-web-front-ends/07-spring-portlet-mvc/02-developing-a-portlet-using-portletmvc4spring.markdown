@@ -120,8 +120,8 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
 7.  Add controller classes, following these basic steps. 
 
     | **Note:**
-    | [PortletMVC4Spring Annotation-based Controller Development](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring-annotation-based-controller-development)
-    | provides more controller development details. 
+    | *PortletMVC4Spring Annotation-based Controller Development* (coming soon)
+    | will provide more controller development details. 
 
     1.  Add the
         [`@Controller`](https://liferay.github.io/portletmvc4spring/apidocs/com/liferay/portletmvc4spring/mvc/Controller.html)
@@ -323,4 +323,4 @@ Congratulations on creating and deploying a PortletMVC4Spring Portlet.
 
 ## Related Topics 
 
-[Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
