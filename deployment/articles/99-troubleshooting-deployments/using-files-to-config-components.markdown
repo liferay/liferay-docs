@@ -56,7 +56,7 @@ created or if the component is intended to be a singleton:
     Entries*, you can create multiple instances of the component configured 
     however you like. Otherwise, you should treat the component as a singleton. 
 
-![Figure 1: You can create multiple instances of components whose System Settings page has a *Configuration Entries* section.](../../../images/system-settings-page-lists-configuration-entries.png)
+![Figure 1: You can create multiple instances of components whose System Settings page has a *Configuration Entries* section.](../../images/system-settings-page-lists-configuration-entries.png)
 
 *All* configuration file names must start with the component's PID (PID stands
 for *persistent identity*) and end with `.config` or `.cfg`. 
