@@ -7,9 +7,9 @@ header-id: converting-asset-publisher
 [TOC levels=1-4]
 
 In the previous two guides in this section, you've seen
-[Creating Content Sets](/docs/7-2/user/-/knowledge_base/user/creating-content-sets)
+[Creating Content Sets](/docs/7-2/user/-/knowledge_base/u/creating-content-sets)
 and
-[Displaying Content Sets](/docs/7-2/user/-/knowledge_base/user/displaying-content-sets) 
+[Displaying Content Sets](/docs/7-2/user/-/knowledge_base/u/displaying-content-sets) 
 demonstrated. Next, try out converting an existing Asset Publisher
 configuration to a Content Set.
 

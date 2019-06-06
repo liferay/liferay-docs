@@ -21,7 +21,7 @@ attachments.
 | to add articles with a command from the Gogo shell. 
 | 
 | Open the
-| [Gogo shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
+| [Gogo shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell).
 | Type `knowledgeBase:addImportArticlePermissions` and hit enter. 
 
 The ZIP file's articles are imported in file order (alphanumerically). To 

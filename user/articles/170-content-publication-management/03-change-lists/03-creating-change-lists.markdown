@@ -7,7 +7,7 @@ header-id: creating-change-lists
 [TOC levels=1-4]
 
 Creating change lists is straightforward once you've
-[enabled them](/docs/7-2/user/-/knowledge_base/user/enabling-change-lists).
+[enabled them](/docs/7-2/user/-/knowledge_base/u/enabling-change-lists).
 Change lists can be created on a per user basis. This means multiple users of a
 @product@ instance can manage their own personal change lists.
 

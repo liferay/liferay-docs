@@ -44,7 +44,7 @@ Live staging environment for your site.
     If the remote Liferay server is a cluster, you can set the Remote Host/IP to
     the load balanced IP address of the cluster to increase the availability of
     the publishing process. See the
-    [Configuring Remote Staging in a Clustered Environment](/docs/7-2/user/-/knowledge_base/u/configuring-remote-staging-in-a-clustered-environment)
+    [Configuring Remote Staging in a Clustered Environment](/docs/7-2/deploy/-/knowledge_base/d/configuring-remote-staging-in-a-clustered-environment)
     for details.
 
 4.  Enter the port on which the remote Liferay instance is running into the

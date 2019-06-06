@@ -10,7 +10,7 @@ Page templates provide pre-configured pages to reuse. There are two types of
 page templates in @product-ver@: Widget Page templates consist of a portlet
 layout and configuration. Content Page templates are constructed from
 Fragments. You can read about 
-[Content Page Templates in this article](/docs/7-2/user/-/knowledge_base/u/building-content-pages-from-fragments).
+[Content Page Templates in this article](/docs/7-2/user/-/knowledge_base/u/building-content-pages).
 
 Three sample layout page templates are installed by default:
 
