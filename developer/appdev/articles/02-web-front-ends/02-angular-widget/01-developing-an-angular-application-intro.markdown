@@ -230,7 +230,7 @@ Generator (*Sample* is the default category).
 
 ## Related Topics
 
-[Web Services](/docs/7-2/appdev/-/knowledge_base/a/web-services)
+[Web Services](/docs/7-2/frameworks/-/knowledge_base/f/web-services)
 
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 
