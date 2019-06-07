@@ -33,22 +33,26 @@ in its
 `src/main/resources/META-INF/resources/css/blade.theme.contributor/_control_menu.scss`
 file:
 
-    body {
-            .control-menu {
-                    background-color: darkkhaki;
-            }
-    }
+```css
+body {
+        .control-menu {
+                background-color: darkkhaki;
+        }
+}
+```
 
 All of the SCSS files used in this sample are imported into the main
 `blade.theme.contributor.scss` file:
 
-    @import "bourbon";
-    @import "mixins";
+```css
+@import "bourbon";
+@import "mixins";
 
-    @import "blade.theme.contributor/body";
-    @import "blade.theme.contributor/control_menu";
-    @import "blade.theme.contributor/product_menu";
-    @import "blade.theme.contributor/simulation_panel";
+@import "blade.theme.contributor/body";
+@import "blade.theme.contributor/control_menu";
+@import "blade.theme.contributor/product_menu";
+@import "blade.theme.contributor/simulation_panel";
+```
 
 If you add your own `SCSS` files, you must add them to the list of imports in 
 the `blade.theme.contributor.scss` file.
@@ -56,10 +60,12 @@ the `blade.theme.contributor.scss` file.
 Likewise, the sample `blade.theme.contributor.js` logs a message to your
 browser's console window using the following JS logic:
 
-    console.log('Hello Blade Theme Contributor!');
+```js
+console.log('Hello Blade Theme Contributor!');
+```
 
 For more information on Theme Contributors, visit the
-[Theme Contributors](/docs/7-1/tutorials/-/knowledge_base/t/packaging-independent-ui-resources-for-your-site)
+[Theme Contributors](/docs/7-2/frameworks/-/knowledge_base/f/packaging-independent-ui-resources-for-your-site)
 tutorial.
 
 ## Where Is This Sample?
@@ -67,6 +73,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/themes/theme-contributor)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/themes/theme-contributor)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/themes/theme-contributor)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/themes/theme-contributor)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/themes/theme-contributor)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/themes/theme-contributor)

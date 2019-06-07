@@ -18,7 +18,7 @@ Context contributors allow non-JSP developers an easy way to inject variables
 into their Liferay templates.
 
 This sample leverages the
-[TemplateContextContributor](@product-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
+[TemplateContextContributor](@product-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
 API.
 
 ## How does this sample leverage the API(s) and/or code component?
@@ -36,14 +36,16 @@ etc.)? You can change the context in which your variables are injected by
 modifying the `property` attribute in the `@Component` annotation. If you want
 your variable available for all templates, change it to
 
-    property = {"type=" + TemplateContextContributor.TYPE_GLOBAL}
+```java
+property = {"type=" + TemplateContextContributor.TYPE_GLOBAL}
+```
 
 For more information on customizing the Template Context Contributor sample to
 fit your needs, see the Javadoc listed in this sample's
 `com.liferay.blade.samples.theme.contributorBladeTemplateContextContributor`
 class. For more information on context contributors and how to create them in
 @product@, visit the
-[Context Contributors](/docs/7-1/tutorials/-/knowledge_base/t/injecting-additional-context-variables-into-your-templates)
+[Context Contributors](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme)
 tutorial.
 
 ## Where Is This Sample?
@@ -51,6 +53,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/themes/template-context-contributor)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/themes/template-context-contributor)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/themes/template-context-contributor)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/themes/template-context-contributor)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/themes/template-context-contributor)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/themes/template-context-contributor)

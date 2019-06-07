@@ -29,24 +29,30 @@ do this:
 2.  Search for the bundle ID of the original bundle to override. To find the
     `com.liferay.login.web` bundle, execute this command:
 
-        lb -s | grep com.liferay.login.web
+    ```bash
+    lb -s | grep com.liferay.login.web
+    ```
 
     This returns output similar to this:
 
-        423|Active   |   10|com.liferay.login.web (3.0.4)
+    ```bash
+    1580|Active   |   10|com.liferay.login.web (4.0.5)
+    ```
 
-    Make note of the ID (e.g., `423`).
+    Make note of the ID (e.g., `1580`).
 
 3.  Stop the bundle:
 
-        stop 423
+    ```bash
+    stop 1580
+    ```
 
 Once the original bundle is stopped, deploy the Ext module. Note that you cannot
 leverage Blade or Gradle's `deploy` command to do this. The `deploy` command
 deploys the module to the `osgi\marketplace\override` folder by default, which
 does not configure Ext modules properly for usage. You should build and copy the
 Ext module's JAR to the `deploy` folder manually, or leverage Liferay Dev
-Studio's [drag-and-drop deployment](/docs/7-1/tutorials/-/knowledge_base/t/deploying-projects-with-liferay-ide)
+Studio's [deployment](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project#liferay-dev-studio)
 feature.
 
 ## What API(s) and/or code components does this sample highlight?
@@ -66,20 +72,26 @@ supports Gradle), you must specify the original module's Bundle Symbolic Name
 and the original module's exact version. In this example, this is configured
 like this:
 
-    originalModule group: "com.liferay", name: "com.liferay.login.web", version: "3.0.4"
+```groovy
+originalModule group: "com.liferay", name: "com.liferay.login.web", version: "4.0.5"
+```
 
 If you're leveraging
-[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace),
 you should put your Ext module project in the `/ext` folder (default); you can
 specify a different Ext folder name in workspace's `gradle.properties` by adding
 
-    liferay.workspace.ext.dir=EXT_DIR
+```properties
+liferay.workspace.ext.dir=EXT_DIR
+```
 
 If you are developing an Ext module project in standalone mode (not associated
 with Liferay Workspace), you must declare the Ext Gradle plugin in your
 `build.gradle`:
 
-    apply plugin: 'com.liferay.osgi.ext.plugin'
+```groovy
+apply plugin: 'com.liferay.osgi.ext.plugin'
+```
 
 Then you must provide your own code intended to replace the original one. **Be
 sure to mimic the original module's folder structure when overriding its JAR.**
@@ -105,5 +117,5 @@ is done by the `buildCSS` task.
 There are two different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/ext/login-web-ext)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/ext/login-web-ext)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/ext/login-web-ext)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/ext/login-web-ext)
