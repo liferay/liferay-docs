@@ -53,7 +53,7 @@ entity. For example, a User might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the User can update
 the resource. If you're still uncertain about what resource actions are, refer
 to the developer tutorial on the 
-[permission system](/docs/7-2/tutorials/-/knowledge_base/t/defining-application-permissions)
+[permission system](/docs/7-2/frameworks/-/knowledge_base/f/defining-application-permissions)
 for a more detailed explanation.
 
 To find all the resource actions that have been configured, you need access to
