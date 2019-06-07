@@ -4,6 +4,8 @@ header-id: deployment-reference
 
 # Deployment Reference
 
+[TOC levels=1-4]
+
 The Deployment Reference page gives you shortcuts to Liferay configuration
 reference documentation. From here, you can easily check Liferay definitions and
 configuration defaults as you customize your portal. 
