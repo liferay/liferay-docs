@@ -34,7 +34,7 @@ Follow these steps to update a file shortcut:
                     DLFileShortcutConstants.getClassName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext). 
 
 3.  Call the service reference's `updateFileShortcut` method with the data from 
     the previous step: 

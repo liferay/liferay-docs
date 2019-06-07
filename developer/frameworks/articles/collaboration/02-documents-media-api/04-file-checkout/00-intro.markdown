@@ -55,7 +55,7 @@ attributes in the `checkOutFileEntry` method's `ServiceContext` parameter:
     time, omit this attribute or set it to `0`. 
 
 -   `fileVersionUuid`: This is used by 
-    [staging](/docs/7-2/user/-/knowledge_base/u/staging-content-for-publication), 
+    [staging](/docs/7-2/user/-/knowledge_base/u/staging), 
     but can be ignored for normal use. Setting this attribute causes the system 
     to create the new private working copy version with the given UUID. 
 

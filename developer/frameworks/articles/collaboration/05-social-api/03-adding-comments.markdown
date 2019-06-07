@@ -17,7 +17,7 @@ Follow these steps to enable commenting on your app's content:
 
 2.  Choose a read-only view of the entity you want to enable comments on. You 
     can display the comments component in your app's view, or if you've 
-    [implemented asset rendering](/docs/7-2/frameworks/-/knowledge_base/f/rendering-an-asset) 
+    [implemented asset rendering](/docs/7-2/frameworks/-/knowledge_base/f/creating-an-asset-renderer) 
     you can display it in the full content view in the Asset Publisher app. 
 
 3.  Include the `liferay-ui`, `liferay-comment`, and `portlet` taglib 
