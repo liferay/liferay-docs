@@ -21,10 +21,10 @@ to display content.
 -   You can publish a site's content in an application on a page in the site.
     For example, the Web Content Display and Asset Publisher applications can
     display a site's content once they're added to a page. 
-    
-<div class="video-link">
-<img src="../../../images/vid-publishing-basic-content-thumbnail.png" alt="video-thumbnail"/>
-</div>
+
+<div class="video-thumbnail"></div>
+
+!P[Video Thumbnail](https://portal.liferay.dev/documents/113763090/113920063/vid-publishing-basic-content-thumbnail.png)
 
 If you followed the previous steps, you have a site that contains content and
 a page. Now you'll publish that content on that page. 
@@ -78,10 +78,7 @@ Great work! You've created content, displayed it on a page, and done some basic
 page management. Now that you know the basics, you'll dig deeper and create some 
 more pages to fill with content.
 
-<div class="video-tag" data-name="Publishing Basic Content">
-  <video width="100%" height="100%" controls>
-    <source src="https://dev.liferay.com/documents/10184/1058908/publishing-basic-web-content.mp4" type="video/mp4">
-    <source src="https://dev.liferay.com/documents/10184/1058908/publishing-basic-web-content.mkv" type="video/webm">
-    Your browser does not support HTML5 video.
-  </video>
+<div class="video-wrapper" data-name="Publishing Basic Content">
 </div>
+
+!V[Video Tutorial](https://portal.liferay.dev/documents/113763090/113920063/publishing-basic-web-content.mp4|https://portal.liferay.dev/documents/113763090/113920063/publishing-basic-web-content.mkv)
