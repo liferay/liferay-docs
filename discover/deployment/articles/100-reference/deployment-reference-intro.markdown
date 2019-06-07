@@ -1,10 +1,10 @@
 ---
-header-id: configuration-reference
+header-id: deployment-reference
 ---
 
-# Configuration Reference
+# Deployment Reference
 
-The Configuration Reference page gives you shortcuts to Liferay configuration
+The Deployment Reference page gives you shortcuts to Liferay configuration
 reference documentation. From here, you can easily check Liferay definitions and
 configuration defaults as you customize your portal. 
 
