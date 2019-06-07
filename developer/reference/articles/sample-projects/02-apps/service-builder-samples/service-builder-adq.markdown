@@ -15,6 +15,9 @@ existing service builder entities.
 
 ![Figure 1: This sample provides options to add entities and perform a mass update.](../../../../images/adq-sample.png)
 
+<!-- TODO: Update image above with actual content when sample works correctly.
+-->
+
 To see the ADQ Service Builder sample in action, complete the following steps:
 
 1.  Add the sample to a page by navigating to *Add*
@@ -26,7 +29,9 @@ To see the ADQ Service Builder sample in action, complete the following steps:
 
 3.  Click the *Mass Update* button and click *Save* to invoke the update.
 
-    ![Figure 2: Clicking the *Save* button executes the mass update.](../../../../images/adq-sample-mass-update.png)
+    <!-- Add image back when sample works:
+    [Figure 2: Clicking the *Save* button executes the mass update.](../../../../images/adq-sample-mass-update.png)
+    -->
 
     After invoking the update, each entity's `field3` value (whose value is less
     than 100) is incremented.
@@ -48,41 +53,43 @@ invoked. The `massUpdate` method, in turn, invokes the `massUpdate` method
 defined in the `adq-service` module's `BarLocalServiceImpl`. This is where the
 sample leverages the actionable dynamic query API:
 
-    public void massUpdate() {
-        ActionableDynamicQuery adq = getActionableDynamicQuery();
+```java
+public void massUpdate() {
+    ActionableDynamicQuery adq = getActionableDynamicQuery();
 
-        adq.setAddCriteriaMethod(
-            new ActionableDynamicQuery.AddCriteriaMethod() {
+    adq.setAddCriteriaMethod(
+        new ActionableDynamicQuery.AddCriteriaMethod() {
 
-                @Override
-                public void addCriteria(DynamicQuery dynamicQuery) {
-                    dynamicQuery.add(RestrictionsFactoryUtil.lt("field3", 100));
-                }
+            @Override
+            public void addCriteria(DynamicQuery dynamicQuery) {
+                dynamicQuery.add(RestrictionsFactoryUtil.lt("field3", 100));
+            }
 
-            });
+        });
 
-        adq.setPerformActionMethod(
-            new ActionableDynamicQuery.PerformActionMethod<Bar>() {
+    adq.setPerformActionMethod(
+        new ActionableDynamicQuery.PerformActionMethod<Bar>() {
 
-                @Override
-                public void performAction(Bar bar) {
-                    int field3 = bar.getField3();
+            @Override
+            public void performAction(Bar bar) {
+                int field3 = bar.getField3();
 
-                    field3++;
-                    bar.setField3(field3);
+                field3++;
+                bar.setField3(field3);
 
-                    updateBar(bar);
-                }
+                updateBar(bar);
+            }
 
-            });
+        });
 
-        try {
-            adq.performActions();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+    try {
+        adq.performActions();
     }
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+```
 
 For more information on the actionable dynamic query API, visit its dedicated
 [tutorial](/docs/7-0/tutorials/-/knowledge_base/t/dynamic-query#actionable-dynamic-queries).

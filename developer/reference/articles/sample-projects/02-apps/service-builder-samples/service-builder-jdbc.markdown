@@ -19,13 +19,15 @@ application.
     and a `VARCHAR(255)` column called `Name`. Add at least one record to this
     table. Here are the MariaDB commands to accomplish this:
 
-        create database external character set utf8;
+    ```bash
+    create database external character set utf8;
 
-        use external;
+    use external;
 
-        create table country(id bigint not null primary key, name varchar(255));
+    create table country(id bigint not null primary key, name varchar(255));
 
-        insert into country(id, name) values(1, 'Australia');
+    insert into country(id, name) values(1, 'Australia');
+    ```
 
     Make sure that your database commands were successful: Running `select *
     from country;` should return the record you added.
@@ -35,10 +37,12 @@ application.
     `.liferay-home` file). In your `portal-ext.properties` file, define the
     details of your JDBC data source connection:
 
-        jdbc.ext.driverClassName=org.mariadb.jdbc.Driver
-        jdbc.ext.password=userpassword
-        jdbc.ext.url=jdbc:mariadb://localhost/external?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-        jdbc.ext.username=yourusername
+    ```properties
+    jdbc.ext.driverClassName=org.mariadb.jdbc.Driver
+    jdbc.ext.password=userpassword
+    jdbc.ext.url=jdbc:mariadb://localhost/external?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.ext.username=yourusername
+    ```
 
     Note that @product@'s primary data source is specified by the `jdbc.default`
     prefix. These details are often specified in a
@@ -50,14 +54,16 @@ application.
     folder if it doesn't yet exist. Add this content to the XML file that you
     created:
 
-        <?xml version="1.0"?>
-        <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+    ```xml
+    <?xml version="1.0"?>
+    <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
-        <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
-            <category name="com.liferay.blade.samples.jdbcservicebuilder.service.impl">
-                <priority value="INFO" />
-            </category>
-        </log4j:configuration>
+    <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+        <category name="com.liferay.blade.samples.jdbcservicebuilder.service.impl">
+            <priority value="INFO" />
+        </category>
+    </log4j:configuration>
+    ```
 
     This XML file defines the log level for the classes in the
     `com.liferay.blade.samples.jdbcservicebuilder.service.impl` package. The

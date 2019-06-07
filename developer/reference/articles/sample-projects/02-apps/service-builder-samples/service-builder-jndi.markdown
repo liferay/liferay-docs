@@ -19,13 +19,15 @@ application.
     and a `VARCHAR(255)` column called `Name`. Add at least one record to this
     table. Here are the MariaDB commands to accomplish this:
 
-        create database external character set utf8;
+    ```bash
+    create database external character set utf8;
 
-        use external;
+    use external;
 
-        create table region(id bigint not null primary key, name varchar(255));
+    create table region(id bigint not null primary key, name varchar(255));
 
-        insert into region(id, name) values(1, 'Tasmania');
+    insert into region(id, name) values(1, 'Tasmania');
+    ```
 
     Make sure that your database commands were successful: Running `select *
     from region;` should return the record you added.
@@ -36,19 +38,21 @@ application.
     `[LIFERAY_HOME]/tomcat-9.0.6/conf/server.xml` file and add this resource
     element inside of the `<GlobalNamingResources>` element:
 
-        <Resource
-            name="jdbc/externalDataSource"
-            auth="Container"
-            type="javax.sql.DataSource"
-            factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
-            driverClassName="org.mariadb.jdbc.Driver"
-            url="jdbc:mariadb://localhost/external"
-            username="yourusername"
-            password="yourpassword"
-            maxActive="20"
-            maxIdle="5"
-            maxWait="10000"
-        />
+    ```xml
+    <Resource
+        name="jdbc/externalDataSource"
+        auth="Container"
+        type="javax.sql.DataSource"
+        factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+        driverClassName="org.mariadb.jdbc.Driver"
+        url="jdbc:mariadb://localhost/external"
+        username="yourusername"
+        password="yourpassword"
+        maxActive="20"
+        maxIdle="5"
+        maxWait="10000"
+    />
+    ```
 
     Replace the specified username and password with the correct values for your
     database.
@@ -56,7 +60,9 @@ application.
 3.  Open your `[LIFERAY_HOME]/tomcat-9.0.6/conf/context.xml` file and add this
     resource link element inside of the `<Context>` element:
 
-        <ResourceLink name="jdbc/externalDataSource" global="jdbc/externalDataSource" type="javax.sql.DataSource"/>
+    ```xml
+    <ResourceLink name="jdbc/externalDataSource" global="jdbc/externalDataSource" type="javax.sql.DataSource"/>
+    ```
 
     Now your data source is defined at Tomcat's scope.
 
@@ -65,14 +71,16 @@ application.
     folder if it doesn't yet exist. Add this content to the XML file that you
     created:
 
-        <?xml version="1.0"?>
-        <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+    ```xml
+    <?xml version="1.0"?>
+    <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
-        <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
-            <category name="com.liferay.blade.samples.jndiservicebuilder.service.impl">
-                <priority value="INFO" />
-            </category>
-        </log4j:configuration>
+    <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+        <category name="com.liferay.blade.samples.jndiservicebuilder.service.impl">
+            <priority value="INFO" />
+        </category>
+    </log4j:configuration>
+    ```
 
     This XML file defines the log level for the classes in the
     `com.liferay.blade.samples.jndiservicebuilder.service.impl` package. The
