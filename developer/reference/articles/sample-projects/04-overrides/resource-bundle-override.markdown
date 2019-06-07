@@ -49,29 +49,31 @@ to prioritize its resource bundle over the target module resource bundle. See
 this sample's `bnd.bnd` as an example for setting the `Provide-Capability` OSGi
 header:
 
-    Provide-Capability:\
-        liferay.resource.bundle;\
-            resource.bundle.base.name="content.Language",\
-        liferay.resource.bundle;\
-            bundle.symbolic.name=com.liferay.login.web;\
-            resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.blade.login.web.resource.bundle.override),(bundle.symbolic.name=com.liferay.login.web)";\
-            resource.bundle.base.name="content.Language";\
-            service.ranking:Long="2";\
-            servlet.context.name=login-web
+```
+Provide-Capability:\
+    liferay.resource.bundle;\
+        resource.bundle.base.name="content.Language",\
+    liferay.resource.bundle;\
+        bundle.symbolic.name=com.liferay.login.web;\
+        resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.blade.login.web.resource.bundle.override),(bundle.symbolic.name=com.liferay.login.web)";\
+        resource.bundle.base.name="content.Language";\
+        service.ranking:Long="2";\
+        servlet.context.name=login-web
+```
 
 For more information on the `Provide-Capability` header and its parts, see the
-[Prioritze Your Module's Resource Bundle](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys#prioritize-your-modules-resource-bundle)
+[Prioritze Your Module's Resource Bundle](/docs/7-2/customization/-/knowledge_base/c/overriding-a-modules-language-keys#prioritize-your-modules-resource-bundle)
 section.
 
 This approach can be used to override any portlet's language keys (i.e.,
 `language.properties` files that are inside a module deployed to @product@'s
 OSGi runtime). If you need to override @product@'s core language keys, see the
-[Overriding Global Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-global-language-keys)
-tutorial.
+[Overriding Global Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-global-language-keys)
+article.
 
 For more information on using a resource bundle to override a module's
 language keys, see the
-[Overriding a Module's Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys)
+[Overriding a Module's Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-a-modules-language-keys)
 tutorial.
 
 ## Where Is This Sample?
@@ -79,6 +81,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/overrides/login-web-resource-bundle-override)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/overrides/login-web-resource-bundle-override)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/overrides/login-web-resource-bundle-override)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/overrides/login-web-resource-bundle-override)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/overrides/login-web-resource-bundle-override)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/overrides/login-web-resource-bundle-override)
