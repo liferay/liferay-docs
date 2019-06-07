@@ -22,13 +22,11 @@ extending @product@ components and applications using APIs.
     architecture helps you develop better customizations fast, and it empowers
     you to build extension points into your own applications.
 
--   [Built-in Customization Features](/docs/7-2/customization/-/knowledge_base/c/built-in-customization-features)
-    shows you how to create pages and content faster using Fragments,
-    Widget Templates, and Web Experience Management features. All this is done
-    from within the @product@ UI.
+-   Built-in customization features, including Widget Templates and Web 
+    Experience Management help you customize content and pages faster. All this
+    is done from within the @product@ UI.
 
--   [Customizing Applications](/docs/7-2/customization/-/knowledge_base/c/customizing-applications)
-    demonstrates modifying Liferay applications via their APIs and extension
-    points. 
+-   Application customization articles demonstrate modifying Liferay 
+    applications via their APIs and extension points. 
 
 Start with Fundamentals. 

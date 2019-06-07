@@ -145,7 +145,7 @@ desired. Here are some suggestions:
     machine has  restricted access to the public network or if you restricted
     the @product@ database user's permissions after initializing the database
     (not recommended), you can still set up Marketplace by following the
-    [Marketplace setup instructions](/docs/7-2/deploy/-/knowledge_base/d/setting-up-marketplace). 
+    [Marketplace setup instructions](/docs/7-2/deploy/-/knowledge_base/d/setting-up-marketplace-and-portal-security). 
 
 3.  Read the
     [Configuring @product@](/docs/7-2/deploy/-/knowledge_base/d/configuring-product)

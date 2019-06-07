@@ -23,7 +23,7 @@ them.
     an artifact and how to configure such artifacts as compile-time
     dependencies. 
 
--   [Resolving Third-Party Library Java Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/resolving-thid-party-library-java-package-dependencies)
+-   [Resolving Third-Party Library Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module)
     provides a workflow for using packages that are only available in
     traditional library JARs (JARs that aren't OSGi modules). It involves
     minimizing transitive dependencies so you can resolve dependencies quicker

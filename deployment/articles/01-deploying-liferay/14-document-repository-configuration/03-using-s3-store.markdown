@@ -49,7 +49,7 @@ storage:
 Your @product@ instance is using the Amazon S3 store. 
 
 To use the S3 store in a
-[cluster](/docs/7-2/deploy/-/knowledge_base/d/product-clustering), follow these
+[cluster](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering), follow these
 steps: 
 
 1.  [Export](/docs/7-2/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)

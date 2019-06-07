@@ -150,7 +150,10 @@ Should users select items from a list? Use the [Item Selector](/docs/7-2/framewo
 
 ## Next Steps
 
-So what's next? [Download](/download) @product@ and [create your first project](/docs/7-2/reference/-/knowledge_base/r/creating-a-project)! 
-Have a look at our [back-end](/docs/7-2/appdev/-/knowledge_base/a/service-builder), [REST Builder](/docs/7-2/appdev/-/knowledge_base/a/rest-builder), and [front-end](/docs/7-2/appdev/-/knowledge_base/a/web-front-ends) docs, 
-examine what Liferay's [frameworks](/docs/7-2/frameworks) have to offer, and
-then go create the beautiful things that only you can make. 
+So what's next? [Download](/download) @product@ and [create your first
+project](/docs/7-2/reference/-/knowledge_base/r/creating-a-project)!  Have a
+look at our [back-end](/docs/7-2/appdev/-/knowledge_base/a/service-builder),
+[REST Builder](/docs/7-2/appdev/-/knowledge_base/a/rest-builder), and
+[front-end](/docs/7-2/appdev/-/knowledge_base/a/web-front-ends) docs, examine
+what Liferay's [frameworks](/docs/7-2/frameworks/-/knowledge_base/f/frameworks)
+have to offer, and then go create the beautiful things that only you can make. 

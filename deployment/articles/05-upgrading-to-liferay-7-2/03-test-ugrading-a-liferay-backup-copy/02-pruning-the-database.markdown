@@ -172,7 +172,7 @@ and then return here.
 
 Next, you'll test @product@ with its pruned database. 
 
-## Test @product@ with its Pruned Database Copy
+## Test with the Pruned Database Copy
 
 Find and resolve any issues related to the objects you removed. You can always
 restart pruning a new copy of your production database if you can't resolve an
