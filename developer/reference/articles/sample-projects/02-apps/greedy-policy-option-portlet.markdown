@@ -70,24 +70,28 @@ ranking service instance that matches its target filter (if specified).
 The portlet classes refer to instances of interface `SomeService`. The
 `doSomething` method returns a `String`.
 
-    public interface SomeService {
+```java
+public interface SomeService {
 
-    	public String doSomething();
+    public String doSomething();
 
-    }
+}
+```
 
 Class `DefaultSomeService` implements `SomeService`. Its `doSomething` method
 returns the `String` "I am Default!".
 
-    @Component
-    public class DefaultSomeService implements SomeService {
+```java
+@Component
+public class DefaultSomeService implements SomeService {
 
-    	@Override
-    	public String doSomething() {
-    		return "I am Default!";
-    	}
-
+    @Override
+    public String doSomething() {
+        return "I am Default!";
     }
+
+}
+```
 
 When module's portlets refer to `DefaultSomeService`, they display the `String`
 "I am Default!".
@@ -97,36 +101,38 @@ default: static and reluctant. This policy option keeps the reference bound to
 its current service instance unless that instance stops or the reference is
 reconfigured to refer to a different service instance.
 
-    @Component(
-       immediate = true,
-       property = {
-           "com.liferay.portlet.display-category=category.sample",
-           "com.liferay.portlet.instanceable=true",
-           "javax.portlet.display-name=Reluctant Portlet",
-           "javax.portlet.init-param.template-path=/",
-           "javax.portlet.init-param.view-template=/view.jsp",
-           "javax.portlet.name=" + ReluctantVsGreedyPortletKeys.Reluctant,
-           "javax.portlet.resource-bundle=content.Language",
-           "javax.portlet.security-role-ref=power-user,user"
-       },
-       service = Portlet.class
-    )
-    public class ReluctantPortlet extends MVCPortlet {
+```java
+@Component(
+   immediate = true,
+   property = {
+       "com.liferay.portlet.display-category=category.sample",
+       "com.liferay.portlet.instanceable=true",
+       "javax.portlet.display-name=Reluctant Portlet",
+       "javax.portlet.init-param.template-path=/",
+       "javax.portlet.init-param.view-template=/view.jsp",
+       "javax.portlet.name=" + ReluctantVsGreedyPortletKeys.Reluctant,
+       "javax.portlet.resource-bundle=content.Language",
+       "javax.portlet.security-role-ref=power-user,user"
+    },
+    service = Portlet.class
+  )
+public class ReluctantPortlet extends MVCPortlet {
 
-       @Override
-       public void doView(
-               RenderRequest renderRequest, RenderResponse renderResponse)
-           throws IOException, PortletException {
+   @Override
+   public void doView(
+           RenderRequest renderRequest, RenderResponse renderResponse)
+       throws IOException, PortletException {
 
-           renderRequest.setAttribute("doSomething", _someService.doSomething());
+       renderRequest.setAttribute("doSomething", _someService.doSomething());
 
-           super.doView(renderRequest, renderResponse);
-       }
+       super.doView(renderRequest, renderResponse);
+   }
 
-       @Reference
-       private SomeService _someService;
+    @Reference
+    private SomeService _someService;
 
-    }
+}
+```
 
 The `ReluctantPortlet`'s method `doView` sets render request attribute
 `doSomething` to the value returned from the `SomeService` instance's
@@ -136,42 +142,44 @@ The `GreedyPortlet` class is similar to `ReluctantPortlet`, except its
 `SomeService` reference's policy option is static and greedy (i.e.,
 `ReferencePolicyOption.GREEDY`).
 
-    public class GreedyPortlet extends MVCPortlet {
+```java
+public class GreedyPortlet extends MVCPortlet {
 
-    	@Override
-    	public void doView(
-    			RenderRequest renderRequest, RenderResponse renderResponse)
-    		throws IOException, PortletException {
+  @Override
+	public void doView(
+  		RenderRequest renderRequest, RenderResponse renderResponse)
+  	throws IOException, PortletException {
 
-    		renderRequest.setAttribute("doSomething", _someService.doSomething());
+  	renderRequest.setAttribute("doSomething", _someService.doSomething());
 
-    		super.doView(renderRequest, renderResponse);
-    	}
+  	super.doView(renderRequest, renderResponse);
+	}
 
-    	@Reference (policyOption = ReferencePolicyOption.GREEDY)
-    	private SomeService _someService;
+	@Reference (policyOption = ReferencePolicyOption.GREEDY)
+	private SomeService _someService;
 
-    }
+}
+```
 
 The greedy policy option lets the component switch to using a higher ranked
 `SomeService` instance if one becomes active in the system. The section
-[*Deploying a module with a higher ranked service instance for binding to greedy references immediately*](#deploying-a-module-with-a-higher-ranked-service-instance-for-binding-to-gre)
+[*Deploying a module with a higher ranked service instance for binding to greedy references immediately*](#deploying-a-module-with-a-higher-ranked-service-instance-for-binding-to-greedy-references-immediately)
 demonstrates this portlet switching to a higher ranked service.
 
 It's time to see this module's portlets and service in action.
 
 1.  Stop module `higher-ranked-service` if it's active.
 2.  Deploy the `service-reference` module.
-3.  Add the *Reluctant Portlet* from the *Add* &rarr; *Applications* &rarr;
+3.  Add the *Reluctant Portlet* from the *Add* &rarr; *Widgets* &rarr;
     *Sample* category to a site page.
 
-    The portlet displays the message "SomeService says I am default!"--whose
+    The portlet displays the message "SomeService says I am Default!"--whose
     latter part comes from the render request attribute set by the
     `DefaultService` instance.
 
-    ![Figure 2: *Reluctant Portlet* displays the message "SomeService says I am default!"](../../../images/reluctant-portlet-using-default.png)
+    ![Figure 2: *Reluctant Portlet* displays the message "SomeService says I am Default!"](../../../images/reluctant-portlet-using-default.png)
 
-4.  Add the *Greedy Portlet* from the *Add* &rarr; *Applications* &rarr;
+4.  Add the *Greedy Portlet* from the *Add* &rarr; *Widgets* &rarr;
     *Sample* category to a site page.
 
     The portlet displays the message "SomeService says I am better, use me!".
@@ -222,7 +230,9 @@ and `com.liferay.blade.reluctant.vs.greedy.portlet.portlet.ReluctantPortlet.cfg`
 configure the `ReluctantPortlet` component to use a `HigherRankedService`
 instance.
 
-    _someService.target=(component.name=com.liferay.blade.reluctant.vs.greedy.service.HigherRankedService)
+```
+_someService.target=(component.name=com.liferay.blade.reluctant.vs.greedy.service.HigherRankedService)
+```
 
 The service configuration filters on a service whose `component.name` is
 `com.liferay.blade.reluctant.vs.greedy.service.HigherRankedService`.
@@ -251,6 +261,6 @@ me!".
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/greedy-policy-option-portlet)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/apps/greedy-policy-option-portlet)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/apps/greedy-policy-option-portlet)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/apps/greedy-policy-option-portlet)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/apps/greedy-policy-option-portlet)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/apps/greedy-policy-option-portlet)

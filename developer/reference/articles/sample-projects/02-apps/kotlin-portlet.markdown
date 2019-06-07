@@ -16,13 +16,13 @@ submitting a name, the portlet renders a greeting message.
 This sample highlights the use of the [Kotlin](https://kotlinlang.org/)
 programming language in conjunction with Liferay's MVC framework.
 Specifically, this sample leverages the
-[MVCActionCommand](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html)
+[MVCActionCommand](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html)
 interface.
 
 ## How does this sample leverage the API(s) and/or code component?
 
 This sample uses the
-[MVC Action Command](/docs/7-1/tutorials/-/knowledge_base/t/mvc-action-command)'s
+[MVC Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command)'s
 `processAction(...)` method to process the inputted text (i.e., name). The text
 is set as an attribute in the `KotlinGreeterActionCommandKt.kt` class using an
 `ActionRequest` and then is retrieved in the JSP using a `RenderRequest`.
@@ -31,5 +31,5 @@ is set as an attribute in the `KotlinGreeterActionCommandKt.kt` class using an
 
 This sample is built with the following build tools:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/kotlin-portlet)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/apps/kotlin-portlet)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/apps/kotlin-portlet)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/apps/kotlin-portlet)

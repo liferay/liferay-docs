@@ -26,14 +26,16 @@ API.
 This sample leverages the `PanelApp` interface as an OSGi service via the
 `@Component` annotation:
 
-    @Component(
-        immediate = true,
-        property = {
-            "panel.app.order:Integer=500",
-            "panel.category.key=" + SimulationPanelCategory.SIMULATION
-        },
-        service = PanelApp.class
-    )
+```java
+@Component(
+    immediate = true,
+    property = {
+        "panel.app.order:Integer=500",
+        "panel.category.key=" + SimulationPanelCategory.SIMULATION
+    },
+    service = PanelApp.class
+)
+```
 
 There are also two properties provided via the `@Component` annotation:
 
@@ -55,9 +57,9 @@ class implementing `PanelApp` to use other technologies, such as FreeMarker.
 
 To learn more about Liferay Portal's product navigation using panel categories
 and panel apps, see the
-[Customizing the Product Menu](/docs/7-1/tutorials/-/knowledge_base/t/customizing-the-product-menu)
+[Customizing the Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
 tutorial. For more information on extending the Simulation Menu, see the
-[Extending the Simulation Menu](/docs/7-1/tutorials/-/knowledge_base/t/extending-the-simulation-menu)
+[Extending the Simulation Menu](/docs/7-2/customization/-/knowledge_base/c/extending-the-simulation-menu)
 tutorial.
 
 ## Where Is This Sample?
@@ -65,6 +67,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/simulation-panel-app)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/apps/simulation-panel-app)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/apps/simulation-panel-app)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/apps/simulation-panel-app)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/apps/simulation-panel-app)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/apps/simulation-panel-app)

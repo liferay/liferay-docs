@@ -76,7 +76,7 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
 
     You can get a reference to the registered service in your components as
     detailed in the
-		[Overriding a Module's Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys)
+		[Overriding a Module's Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-a-modules-language-keys)
 		tutorial. The main disadvantage of this approach is that it forces you to
 		provide a specific implementation of the `ResourceBundleLoader`, making it
 		harder to modularize in the future.
@@ -86,15 +86,17 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
     The same `LanguageExtender` that registers the services supports an extended
     syntax that lets you register an aggregate of a collection of bundles:
 
-        -liferay-aggregate-resource-bundles: \
-            blade.language
+    ```
+    -liferay-aggregate-resource-bundles: \
+        blade.language
+    ```
 
     This approach has the advantage of easier extensibility. When language keys
     change, only the common language modules must be built and redeployed for
     the modules referencing them to recognize their updates.
 
 For more information on sharing language keys, visit the
-[Internationalization](/docs/7-1/tutorials/-/knowledge_base/t/internationalization)
+[Internationalization](/docs/7-2/frameworks/-/knowledge_base/f/internationalization)
 tutorials.
 
 ## Where Is This Sample?
@@ -102,6 +104,6 @@ tutorials.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/shared-language-keys)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/apps/shared-language-keys)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/apps/shared-language-keys)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/apps/shared-language-keys)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/apps/shared-language-keys)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/apps/shared-language-keys)

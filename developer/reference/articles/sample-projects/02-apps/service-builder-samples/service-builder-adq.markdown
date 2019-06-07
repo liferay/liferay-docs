@@ -7,7 +7,7 @@ header-id: service-builder-application-demonstrating-actionable-dynamic-query
 [TOC levels=1-4]
 
 This sample is similar to the
-[`basic` Service Builder sample](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/service-builder/basic),
+[`basic` Service Builder sample](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/apps/service-builder/basic),
 which lets you perform CRUD (create, read, update, delete) operations on service
 builder entities. The distinctive feature of the Service Builder Actionable
 Dynamic Query (ADQ) sample is that it also lets you perform a mass update on all
