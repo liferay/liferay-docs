@@ -523,56 +523,84 @@ their consinutous numbering.
 
 ### Including Video Tutorials
 
-You may need to include a video tutorial in a developer tutorial or User Guide 
-article. To display video tutorials in the markdown, an Administrator must first 
-upload the video tutorial (in MP4 and WEBM formats) to the Documents and Media 
-repository on LDN. Videos are organized into two folders: `/Develop-videos` for 
-developer tutorials and `/User-admin-videos` for User Guide articles. The 
+You may need to include a video in an article. To display a video in the 
+markdown, an Administrator must first upload the video (in MP4 and WEBM formats) 
+to the Documents and Media repository on LDN, along with a thumbnail PNG that 
+follows the format below:
+
+    vid-name-of-video-thumbnail.png
+
+Thumbnails should be 250px by 141px (to roughly match the 16x9 aspect ratio). 
+Typically, thumbnails are title cards as shown in the figure below:
+
+![Liferay-video-thumbnail image](./images/liferay-video-thumbnail.png)
+
+Videos and thumbnails are organized into the `Videos/[docs-version]` folder. The 
 video's title should be the same for both formats, and include the `.mp4` || 
 `.webm` extension in the document name, as shown in the configuration below:
 
     getting-started-with-liferay-ide.mp4
 
-Once the videos are uploaded, you can include them in the markdown. First 
-add a thumbnail of the video to the images folder. Thumbnails should be 
-250px by 141px (to roughly match the 16x9 aspect ratio). Typically, thumbnails 
-are title cards as shown in the figure below:
+Once the video and thumbnail are uploaded, you can include them in the markdown. 
+Follow these steps:
 
-![Liferay-video-thumbnail image](./images/liferay-video-thumbnail.png)
+1.  Add the video thumbnail wrapper HTML, shown below, two lines below the first 
+    paragraph. It must have the `video-thumbnail` class:
 
-Add the following markup after the first paragraph to include the thumbnail:
+```html
+end of text here.
 
-    <div class="video-link">
-    <img src="../../../images/vid-ide-thumbnail.png" alt="video-thumbnail"/>
-    </div>
+<div class="video-thumbnail"></div>
+```
 
-The `<div>` **must use the `video-link` class for the tutorial to render 
-properly.** Finally, you can include the video.
+2.  Add an empty line (without this the video will not render properly), and 
+    then add a picture media tag that links to the video's thumbnail in the Doc 
+    and Media repository on LDN:
 
-We use the HTML5 video tag to include multiple sources of our video. Add this 
-markup to the bottom of the article, just before the *Related Topics* section:
+```markdown
+</div>
 
-    <div class="video-tag" data-name="Getting Started with Liferay IDE">
-      <video width="100%" height="100%" controls>
-        <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.mp4" type="video/mp4">
-        <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.webm" type="video/webm">
-        Your browser does not support HTML5 video.
-      </video>
-    </div>
+!P[Video Thumbnail](https://portal.liferay.dev/documents/113763090/113919826/vid-building-content-pages-thumbnail.png)    
+```
 
-The wrapping `<div>` tag **must use the `video-tag` class and provide a 
-`data-name` value**. The `data-name` attribute is used as the title for the 
-video player. The `src` attributes point to the video formats. If one format 
-isn't supported, the other will be delivered. If neither is supported, the user 
-receives the notification text.
+3.  After the last paragraph, just before the *Related Topics* section, add an 
+    empty line, then add the video wrapper HTML shown below: 
+
+```html
+last paragraph text.
+
+<div class="video-wrapper" data-name="Building Content Pages with Fragments">
+</div>
+```
+
+    The wrapping `<div>` tag **must use the `video-wrapper` class and provide a 
+    `data-name` value**. The `data-name` attribute is used as the title for the 
+    video player. 
+
+4.  Add a new empty line (without this the video will not render properly), then 
+    add a video media tag that links to the video (in MP4 and WEBM formats) in 
+    the Docs and Media repository on LDN:
+
+```markdown
+</div>
+
+!V[Video Tutorial](https://portal.liferay.dev/documents/113763090/113919826/building-content-pages-with-fragments.mp4|https://portal.liferay.dev/documents/113763090/113919826/building-content-pages-with-fragments.webm)
+```
+
+The links (separated by a `|`) point to the video formats. If one format isn't 
+supported, the other will be delivered. If neither is supported, the user 
+receives a notification that their browser doesn't support HTML5 video. 
 
 View the video by clicking the thumbnail on the right-side 
 (or bottom on mobile) of the article.
 
-**Note:** WEBM format is not native to [Blender](https://www.blender.org/) 
+**Note:** WEBM format is not native to [Blender's VSE](https://www.blender.org/) 
 (our video editor of choice), but you can convert an MP4 
 (which is native to Blender) to WEBM with [Handbrake](https://handbrake.fr/). 
 Set the export to VP9 with an MKV container and Opus audio. 
+
+See the [Using Page Fragments](https://raw.githubusercontent.com/liferay/liferay-docs/7.1.x/discover/portal/articles/100-web-experience-management/02-building-a-site/02-adding-pages-to-sites/02-page-types-and-templates/02-using-content-pages/00-creating-content-pages-intro.markdown) 
+markdown for a full example. 
 
 ### Markdown Metadata
 
