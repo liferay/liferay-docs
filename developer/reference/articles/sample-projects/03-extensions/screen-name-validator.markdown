@@ -31,7 +31,7 @@ You can test this sample by following the following steps:
 ## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
-[ScreenNameValidator](@product-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/ScreenNameValidator.html)
+[ScreenNameValidator](@product-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/ScreenNameValidator.html)
 API.
 
 ## How does this sample leverage the API(s) and/or code component?
@@ -53,6 +53,6 @@ the Javadoc provided in this sample's Java classes.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/extensions/screen-name-validator)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/extensions/screen-name-validator)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/extensions/screen-name-validator)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/extensions/screen-name-validator)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/extensions/screen-name-validator)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/extensions/screen-name-validator)

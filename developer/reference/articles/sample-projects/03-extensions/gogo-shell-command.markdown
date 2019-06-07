@@ -45,25 +45,29 @@ class with the following two properties:
 
 These properties are set in your class's `@Component` annotation like this:
 
-    @Component(
-        property = {"osgi.command.function=usercount", "osgi.command.scope=blade"},
-        service = Object.class
-    )
+```java
+@Component(
+    property = {"osgi.command.function=usercount", "osgi.command.scope=blade"},
+    service = Object.class
+)
+```
 
 The logic for the `usercount` command is specified in the method with the same
 name:
 
-    public void usercount() {
-        System.out.println(
-            "# of users: " + getUserLocalService().getUsersCount());
-    }
+```java
+public void usercount() {
+    System.out.println(
+        "# of users: " + getUserLocalService().getUsersCount());
+}
+```
 
 This method uses *Declarative Services* to get a reference for the
 `UserLocalService` to invoke the `getUsersCount` method. This lets you find the
 number of users currently in the system.
 
 For more information on using the Gogo shell, see the
-[Using the Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
+[Using the Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)
 tutorial.
 
 ## Where Is This Sample?
@@ -71,6 +75,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/extensions/gogo)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/extensions/gogo)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/extensions/gogo)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/extensions/gogo)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/extensions/gogo)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/extensions/gogo)

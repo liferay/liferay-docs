@@ -16,15 +16,6 @@ option as illustrated in the images below:
 
 ![Figure 1: The new *Blade Basic Info* option is available from the entry's Options menu.](../../../images/documents-and-media-admin-portlet.png)
 
-![Figure 2: The new option is also available from the portlet's Document Details.](../../../images/documents-and-media-admin-portlet-detail.png)
-
-Likewise, the Documents and Media portlet provides the same option after
-selecting *Show Actions* from the portlet's Configuration menu.
-
-![Figure 3: You can access the new *Blade Basic Info* option from the Documents and Media portlet added to a page.](../../../images/documents-and-media-portlet.png)
-
-![Figure 4: The Documents And Media portlet provides the option from its Document Detail too.](../../../images/documents-and-media-portlet-detail.png)
-
 ## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
@@ -35,11 +26,11 @@ API.
 
 There are four Java classes used in this sample:
 
-- `BladeActionConfigurationIcon`: Adds the new context menu option to the
+<!-- - `BladeActionConfigurationIcon`: Adds the new context menu option to the
    Document Detail screen options (![Options](../../../images/icon-options.png))
    (top right corner) of the Documents and Media Admin portlet. See the
    [Configuring Your Admin App's Actions Menu](/docs/7-0/tutorials/-/knowledge_base/t/configuring-your-admin-apps-actions-menu)
-   tutorial for more details.
+   tutorial for more details.-->
 - `BladeActionDisplayContext`: Adds the Display Context for the document action.
    More about Display Contexts are described later.
 - `BladeActionDisplayContextFactory`: Adds the Display Context factory for the
@@ -87,6 +78,6 @@ worry about missing out on the updates you make to the JSPs.
 There are three different versions of this sample, each built with a different
 build tool:
    
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/extensions/document-action)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/extensions/document-action)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/extensions/document-action)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/extensions/document-action)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/extensions/document-action)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/extensions/document-action)

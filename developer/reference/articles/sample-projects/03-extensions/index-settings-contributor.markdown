@@ -67,19 +67,21 @@ This sample has two classes:
 
 The `IndexSettingsContributor`'s `contribute` method adds the type mappings:
 
-    @Override
-    public void contribute(
-        String indexName, TypeMappingsHelper typeMappingsHelper) {
-        try {
-            String mappings = ResourceUtil.readResouceAsString(
-                "META-INF/resources/mappings/index-type-mappings.json");
+```java
+@Override
+public void contribute(
+    String indexName, TypeMappingsHelper typeMappingsHelper) {
+    try {
+        String mappings = ResourceUtil.readResouceAsString(
+            "META-INF/resources/mappings/index-type-mappings.json");
 
-            typeMappingsHelper.addTypeMappings(indexName, mappings);
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+        typeMappingsHelper.addTypeMappings(indexName, mappings);
     }
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+```
 
 For the `ResourceUtil.readResouceAsString` parameter, you should pass the path
 for the `.json` file that contains the properties to be added.
@@ -87,10 +89,12 @@ for the `.json` file that contains the properties to be added.
 Also, it is important to highlight the `IndexSettingsContributor`'s `@Component`
 annotation that registers a new service to the OSGi container:
 
-    @Component(
-    	immediate = true,
-    	service = com.liferay.portal.search.elasticsearch6.settings.IndexSettingsContributor.class
-    )
+```java
+@Component(
+    immediate = true,
+    service = com.liferay.portal.search.elasticsearch6.settings.IndexSettingsContributor.class
+)
+```
 
 This sample demonstrates the essentials needed to contribute your own index
 settings.
@@ -100,6 +104,6 @@ settings.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/blob/7.1/gradle/extensions/index-settings-contributor)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/blob/7.1/liferay-workspace/extensions/index-settings-contributor)
-- [Maven](https://github.com/liferay/liferay-blade-samples/blob/7.1/maven/extensions/index-settings-contributor)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/blob/7.2/gradle/extensions/index-settings-contributor)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/blob/7.2/liferay-workspace/extensions/index-settings-contributor)
+- [Maven](https://github.com/liferay/liferay-blade-samples/blob/7.2/maven/extensions/index-settings-contributor)

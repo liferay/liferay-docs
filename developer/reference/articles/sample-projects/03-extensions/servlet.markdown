@@ -47,6 +47,6 @@ you would need to implement your own servlet, managing requests at a low level.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/extensions/servlet)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/extensions/servlet)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/extensions/servlet)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/extensions/servlet)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/extensions/servlet)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/extensions/servlet)

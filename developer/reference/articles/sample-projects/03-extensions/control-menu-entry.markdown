@@ -26,14 +26,16 @@ API.
 This sample first leverages the `ProductNavigationControlMenuEntry` interface as
 an OSGi service via the `@Component` annotation:
 
-    @Component(
-        immediate = true,
-        property = {
-            "product.navigation.control.menu.category.key=" + ProductNavigationControlMenuCategoryKeys.USER,
-            "product.navigation.control.menu.entry.order:Integer=1"
-        },
-        service = ProductNavigationControlMenuEntry.class
-    )
+```java
+@Component(
+    immediate = true,
+    property = {
+        "product.navigation.control.menu.category.key=" + ProductNavigationControlMenuCategoryKeys.USER,
+        "product.navigation.control.menu.entry.order:Integer=1"
+    },
+    service = ProductNavigationControlMenuEntry.class
+)
+```
 
 There are also two properties provided via the `@Component` annotation:
 
@@ -57,7 +59,7 @@ The following methods are implemented:
 Refer to this sample's `BladeProductNavigationControlMenuEntry` class for
 Javadocs describing these methods. For more information on how to customize
 Liferay Portal's Control Menu, visit the
-[Customizing the Control Menu](/docs/7-1/tutorials/-/knowledge_base/t/customizing-the-control-menu)
+[Customizing the Control Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-control-menu)
 tutorial.
 
 ## Where Is This Sample?
@@ -65,6 +67,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/extensions/control-menu-entry)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/extensions/control-menu-entry)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/extensions/control-menu-entry)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/extensions/control-menu-entry)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.2/liferay-workspace/extensions/control-menu-entry)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.2/maven/extensions/control-menu-entry)
