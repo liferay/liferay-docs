@@ -1,3 +1,7 @@
+---
+header-id: troubleshooting-themes
+---
+
 # Troubleshooting Themes
 
 [TOC levels=1-4]

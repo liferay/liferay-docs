@@ -2,7 +2,7 @@
 header-id: loading-aui-modules-with-aui-script
 ---
 
-## Loading AlloyUI Modules with AUI Script
+# Loading AlloyUI Modules with AUI Script
 
 [TOC levels=1-4]
 

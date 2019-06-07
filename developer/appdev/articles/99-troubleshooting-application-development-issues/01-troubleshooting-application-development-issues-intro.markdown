@@ -1,3 +1,7 @@
+---
+header-id: troubleshooting-application-development-issues
+---
+
 # Troubleshooting Application Development Issues
 
 [TOC levels=1-4]
