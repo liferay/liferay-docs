@@ -21,8 +21,8 @@ existing service builder entities.
 To see the ADQ Service Builder sample in action, complete the following steps:
 
 1.  Add the sample to a page by navigating to *Add*
-    (![Add](../../../../images/icon-control-menu-add.png)) &rarr; *Widgets* &rarr;
-    *Sample* and dragging it to the page.
+    (![Add](../../../../images/icon-add.png)) &rarr; *Widgets* &rarr; *Sample*
+    and dragging it to the page.
 
 2.  Select the app's *Add* button and add an entity. Do this several times to
     create multiple entities.

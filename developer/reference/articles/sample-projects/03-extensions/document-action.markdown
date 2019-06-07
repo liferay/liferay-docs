@@ -19,18 +19,18 @@ option as illustrated in the images below:
 ## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
-[PortletConfigurationIcon](@product-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/PortletConfigurationIcon.html)
+[PortletConfigurationIcon](@product-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/PortletConfigurationIcon.html)
 API.
 
 ## How does this sample leverage the API(s) and/or code component?
 
 There are four Java classes used in this sample:
 
-<!-- - `BladeActionConfigurationIcon`: Adds the new context menu option to the
+- `BladeActionConfigurationIcon`: Adds the new context menu option to the
    Document Detail screen options (![Options](../../../images/icon-options.png))
    (top right corner) of the Documents and Media Admin portlet. See the
    [Configuring Your Admin App's Actions Menu](/docs/7-0/tutorials/-/knowledge_base/t/configuring-your-admin-apps-actions-menu)
-   tutorial for more details.-->
+   tutorial for more details.
 - `BladeActionDisplayContext`: Adds the Display Context for the document action.
    More about Display Contexts are described later.
 - `BladeActionDisplayContextFactory`: Adds the Display Context factory for the
@@ -39,7 +39,7 @@ There are four Java classes used in this sample:
    [GenericPortlet](https://portals.apache.org/pluto/portlet-2.0-apidocs/javax/portlet/GenericPortlet.html).
    This class generates what is shown when the context menu option is selected.
 
-<!-- Update 7.0 link above when 7.1 version is available (LRDOCS-4313). -Cody -->
+<!-- Update 7.0 link above when 7.2 version is available (LRDOCS-4313). -Cody -->
 
 A Display Context is a Java class that controls access to a portlet screen's UI
 elements. For example, the Document Library would use Display Contexts to
