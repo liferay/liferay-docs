@@ -8,15 +8,15 @@ header-id: ddm-form-screenlet-for-android
 
 ## Requirements
 
--   Android SDK 4.1 (API Level 16) or above
--   Liferay CE Portal 7.1 GA3+, Liferay DXP 7.1 FP5+
+-   Android SDK 4.1 (API Level 21) or above
+-   Liferay DXP 7.1 SP2+
 -   Liferay Hypermedia REST APIs. These APIs are installed but disabled by 
     default. To enable them, follow the instructions in the tutorial 
     [Enabling Hypermedia REST APIs](/docs/7-1/tutorials/-/knowledge_base/t/enabling-hypermedia-rest-apis). 
 
 ## Compatibility
 
--   Android SDK 4.1 (API Level 16) or above
+-   Android SDK 4.1 (API Level 21) or above
 
 ## Xamarin Requirements
 
@@ -190,10 +190,6 @@ Before using DDM Form Screenlet, ensure that the following exist in the portal:
     article 
     [Creating and Managing Forms](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms). 
 
--   Liferay Hypermedia REST APIs must be enabled. To do this, follow the 
-    instructions in the tutorial 
-    [Enabling Hypermedia REST APIs](/docs/7-1/tutorials/-/knowledge_base/t/enabling-hypermedia-rest-apis). 
-
 -   If your form uses it, workflow must be configured. See the 
     [Workflow](/docs/7-1/user/-/knowledge_base/u/workflow) 
     section of the user guide for instructions on configuring and using 
@@ -218,6 +214,27 @@ Before using DDM Form Screenlet, ensure that the following exist in the portal:
 <td>formInstanceId</td>
 <td>number</td>
 <td>The ID of the form to display in the Screenlet. To find the IDs for your data definitions in the portal, select the site to work in and click Content &rarr; Forms. The table that lists the site's forms also lists each form's ID.</td>
+</tr>
+<tr>
+<td>layoutId</td>
+<td>@layout</td>
+<td>The layout to use to show the View.</td>
+</tr>
+</tr>
+<tr>
+<td>autoloadDraftEnabled</td>
+<td>boolean</td>
+<td>Sets whether the form loads the last draft for the current user when the Screenlet is shown. The default value is `true`.</td>
+</tr>
+<tr>
+<td>autosaveDraftEnabled</td>
+<td>boolean</td>
+<td>Sets whether the form should autosave a draft for the current user. The default value is `true`.</td>
+</tr>
+<tr>
+<td>syncFormTimeout</td>
+<td>number</td>
+<td>Time in milliseconds to start synchronize the form (save and evaluate form rules). The default value is 500.</td>
 </tr>
 </tbody>
 </table>
@@ -255,6 +272,11 @@ and Media and select
 <td>void</td>
 <td>Starts the request to load the form. The form fields are shown when the response is received.</td>
 </tr>
+<tr>
+<td>setDDMFormListener()</td>
+<td>void</td>
+<td>Sets the listener for this form.</td>
+</tr>
 </tbody>
 </table>
 
@@ -270,3 +292,9 @@ successfully loads.
 `onError(Exception e)`: Called when an error occurs in the process. For 
 example, this method is called when an error occurs while loading a form 
 instance. 
+
+`onDraftLoaded(FormInstanceRecord formInstanceRecord)`: Called when a draft is retored.
+
+`onDraftSaved(FormInstanceRecord formInstanceRecord)`: Called when a draft is saved.
+
+`onFormSubmitted(FormInstanceRecord formInstanceRecord)`: Called when a form is successfully submitted.
