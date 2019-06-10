@@ -38,7 +38,7 @@ highlighted tool.
     | ```
     | 
     | You can update the default version after it has been set by opening your
-    | workspace's `.blade/settings.properties` file and setting the
+    | workspace's `.blade.properties` file and setting the
     | `liferay.version.default` property.
 
 You can also create a Maven-based workspace with Blade CLI. See the
