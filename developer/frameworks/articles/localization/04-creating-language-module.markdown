@@ -22,8 +22,31 @@ Follow these steps to create a language module:
 1.  In the root project folder (the one that holds your service, API, and web
     modules), 
     [create a new module](/docs/7-2/reference/-/knowledge_base/r/creating-a-project) 
-    to hold your app's language keys. For example, here's the folder structure 
-    of a language module called `my-application-lang`: 
+    to hold your app's language keys. 
+
+2.  In the language module, create a `src/main/resources/content` folder. In 
+    this folder, create a `Language.properties` file for your app's default 
+    language keys. For example, such a file might look like this: 
+
+    ```properties
+    my-app-title=My Application
+    add-entity=Add Entity
+    ```
+
+3.  Create any translations you want in additional language properties files, 
+    appending the translation locale ID to the file name. For example, a file 
+    `Language_es.properties` holds Spanish (`es`) translations and could contain 
+    this: 
+
+    ```properties
+    my-app-title=Mi Aplicación
+    add-entity=Añadir Entity
+    ```
+
+    Here's the folder structure of an example language module called 
+    `my-application-lang`. Note that this module contains the app's default 
+    language keys (`Language.properties`) and a Spanish translation 
+    (`Language_es.properties`): 
 
         my-application-lang/
             bnd.bnd
@@ -32,27 +55,8 @@ Follow these steps to create a language module:
                     resources/
                         content/
                             Language.properties
-                            Language_ar.properties
-                            Language_bg.properties
+                            Language_es.properties
                             ...
-
-2.  In the language module, create a `src/main/resources/content` folder. Put 
-    your language properties files here. A `Language.properties` file might look 
-    like this: 
-
-    ```properties
-    my-app-title=My Application
-    add-entity=Add Entity
-    ```
-
-3.  Create any translations you want, appending the translation locale ID to the 
-    language file name. For example, a file `Language_es.properties` holds 
-    Spanish (`es`) translations and could contain this: 
-
-    ```properties
-    my-app-title=Mi Aplicación
-    add-entity=Añadir Entity
-    ```
 
 On building the language module, @product@'s 
 `ResourceBundleLoaderAnalyzerPlugin` detects the module's `Language.properties` 
