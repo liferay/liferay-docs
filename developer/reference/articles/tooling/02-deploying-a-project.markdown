@@ -44,8 +44,8 @@ blade deploy
 ```
 
 If you prefer not to use your underlying build tool's (Gradle or Maven) module
-deployment configuration, and instead, deploy straight to @product@'s OSGi
-container, run this command instead:
+deployment configuration, and instead, you want to deploy straight to
+@product@'s OSGi container, run this command:
 
 ```bash
 blade deploy -l

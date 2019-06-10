@@ -95,7 +95,7 @@ modifying a Liferay server:
     | 
     | You can replace the JAR name above with the module JAR you want to exclude.
     | This is useful for those who want to have a module in their workspace that
-    | is used for development or debug purposes only, and should not be deployed
+    | is used for development or debug purposes only, and it should not be deployed
     | to production. This works for Gradle builds only at this time.
 
     <!-- TODO: Add way for producing a distributable workspace using Blade, when
