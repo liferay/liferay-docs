@@ -13,18 +13,15 @@ portlet artifacts called [Portlet Predefined
 Beans](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans).
 They give a portlet's CDI beans access to the portlet configuration,
 preferences, requests, responses, and more. Here you'll create and use CDI beans
-and use Portlet Predefined Beans in your portlet. 
+and Portlet Predefined Beans. 
 
 1.  Create a portlet WAR project, if you haven't created one 
     already. 
 
-    -   [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet) 
-    -   [JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet) 
-    -   [PortletMVC4Spring
-        Portlet](/docs/7-2/appdev/-/knowledge_base/a/portlet-mvc-for-spring-portletmvc4spring) 
-    -   Any portlet that implements the [Portlet 3
-        `Portlet`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/Portlet.html)
-        directly or indirectly. 
+    -   [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet)
+    -   Any project that has a class that implements the
+        [`javax.portlet.Portlet`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/Portlet.html)
+        interface, either directly or indirectly. 
 
     | **Note:** If you're developing a portlet JAR, such as a
     | [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet),
@@ -33,11 +30,10 @@ and use Portlet Predefined Beans in your portlet.
 
     | **Note:**
     | [@product@ exports](/docs/7-2/reference/-/knowledge_base/r/third-party-packages-product-exports)
-    | the `portlet-api` and `cdi-api` packages. Projects generated using 
-    | Liferay project templates typically include them as transitive 
-    | dependencies. If you must explicitly depend on the portlet API and CDI
-    | artifacts, add them as `compileOnly` (Gradle) or `provided` (Maven)
-    | dependencies. 
+    | the packages provided by the Portlet API and CDI API. Liferay project
+    | templates typically include them as transitive dependencies. If you must
+    | explicitly depend on the portlet API and CDI artifacts, add them as
+    | `compileOnly` (Gradle) or `provided` (Maven) dependencies. 
 
 2.  If your portlet WAR project isn't a Bean Portlet, add this
     `src/main/webapp/WEB-INF/beans.xml` file to it. This file informs CDI to
@@ -50,11 +46,7 @@ and use Portlet Predefined Beans in your portlet.
 	   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd">
 	<!-- This file is necessary in order to inform CDI that scanning should occur for CDI annotations. -->
 </beans>
-```
-
-| **Note:** In a PortletMVC4Spring Portlet, this `bean.xml` replaces the
-| application context file (e.g.,
-| `src/main/webapp/WEB-INF/applicationContext.xml`). 
+``` 
 
 3.  Add the
     [`@ApplicationScoped`](https://docs.oracle.com/javaee/7/api/javax/enterprise/context/ApplicationScoped.html)
@@ -82,7 +74,7 @@ public class MyPortlet ... {
 | [`@PortletSessionScoped`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/PortletSessionScoped.html) | Places the bean in the portlet session. |
 | [`@RenderStateScoped`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/RenderStateScoped.html) | Stores the bean as part of the portlet's render state. **Important:** The bean must implement the `PortletSerializable` interface. |
 
-6.  Use the
+6.  Use the [JSR 330](https://jcp.org/en/jsr/detail?id=330)
     [`@Inject`](https://docs.oracle.com/javaee/7/api/javax/inject/Inject.html)
     annotation in a CDI bean to inject another CDI bean into it. For example,
     this code informs @product@'s CDI bean container to inject a `GuestBook` CDI
@@ -103,7 +95,7 @@ private GuestBook guestbook;
 public class RequestProcessor ... {
 
     @Inject 
-    private PortletReqeust portletRequest;
+    private PortletRequest portletRequest;
     ...
 }
 ```
@@ -127,15 +119,14 @@ public class MyPortlet ... {
     in your JSP or JSF pages. 
 
 10. [Deploy](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)
-    your portlet. 
+    your project. 
 
 Congratulations! You have created and used CDI beans and Portlet Predefined
 Beans in your portlet. 
 
 ## Related Topics 
 
-[Portlet Predefined CDI
-Beans](/docs/7-2/reference/-/knowledge_base/r/portlet-predefined-beans)
+[CDI Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans)
 
 [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet) 
 
