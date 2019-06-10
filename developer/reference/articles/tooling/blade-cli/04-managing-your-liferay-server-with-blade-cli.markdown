@@ -83,6 +83,21 @@ modifying a Liferay server:
     only available with Gradle at this time. The above command leverages Blade
     CLI's `gw` option, which executes the project's Gradle wrapper.
 
+    | **Note:** You can avoid deploying a module inside your workspace's
+    | `modules/` folder when `distBundle[Zip|Tar]` is called by adding the
+    | following snippet to your workspace's `build.gradle` file:
+    | 
+    | ```groovy
+    | distBundle {
+    |     exclude "com.liferay.jsp.spy*.jar"
+    | }
+    | ```
+    | 
+    | You can replace the JAR name above with the module JAR you want to exclude.
+    | This is useful for those who want to have a module in their workspace that
+    | is used for development or debug purposes only, and should not be deployed
+    | to production. This works for Gradle builds only at this time.
+
     <!-- TODO: Add way for producing a distributable workspace using Blade, when
     available. It can only be done currently with ./gradlew distBundle[Zip|Tar].
     -->
