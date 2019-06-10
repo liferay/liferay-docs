@@ -37,11 +37,19 @@ This is the recommended way to deploy Gradle and Maven projects in a Liferay
 Workspace via command line. Blade CLI is leveraged by Dev Studio and IntelliJ
 too.
 
-1.  Run this command to deploy your project:
+Run this command to deploy your project:
 
-    ```bash
-    blade deploy
-    ```
+```bash
+blade deploy
+```
+
+If you prefer not to use your underlying build tool's (Gradle or Maven) module
+deployment configuration, and instead, deploy straight to @product@'s OSGi
+container, run this command instead:
+
+```bash
+blade deploy -l
+```
 
 ## Gradle
 
