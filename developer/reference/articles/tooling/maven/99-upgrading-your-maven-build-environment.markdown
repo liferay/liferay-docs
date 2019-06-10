@@ -45,36 +45,40 @@ For example, suppose your Liferay Portal 6.2 project was using the
 the legacy `liferay-maven-plugin` plugin dependency from your project's
 `pom.xml` file:
 
-    <plugin>
-        <groupId>com.liferay.maven.plugins</groupId>
-        <artifactId>liferay-maven-plugin</artifactId>
-        <version>${liferay.version}</version>
-        <configuration>
-            <autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>
-            <liferayVersion>${liferay.version}</liferayVersion>
-            <pluginType>portlet</pluginType>
-        </configuration>
-    </plugin>
+```xml
+<plugin>
+    <groupId>com.liferay.maven.plugins</groupId>
+    <artifactId>liferay-maven-plugin</artifactId>
+    <version>${liferay.version}</version>
+    <configuration>
+        <autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>
+        <liferayVersion>${liferay.version}</liferayVersion>
+        <pluginType>portlet</pluginType>
+    </configuration>
+</plugin>
+```
 
 Then, add the CSS Builder plugin dependency to your project's `pom.xml` file:
 
-    <plugin>
-        <groupId>com.liferay</groupId>
-        <artifactId>com.liferay.css.builder</artifactId>
-        <version>2.1.3</version>
-        <executions>
-            <execution>
-                <id>default-build</id>
-                <phase>generate-sources</phase>
-                <goals>
-                    <goal>build</goal>
-                </goals>
-            </execution>
-        </executions>
-            <configuration>
-                <docrootDirName>src/main/webapp</docrootDirName>
-            </configuration>
-    </plugin>
+```xml
+<plugin>
+    <groupId>com.liferay</groupId>
+    <artifactId>com.liferay.css.builder</artifactId>
+    <version>2.1.3</version>
+    <executions>
+        <execution>
+            <id>default-build</id>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>build</goal>
+            </goals>
+        </execution>
+    </executions>
+        <configuration>
+            <docrootDirName>src/main/webapp</docrootDirName>
+        </configuration>
+</plugin>
+```
 
 Some common Liferay Maven plugins are listed below, with their corresponding
 artifact IDs and articles explaining how to configure them:
@@ -104,32 +108,34 @@ In Liferay Portal 6.2, you were also required to specify all your app server
 configuration settings. For example, your parent POM probably contained settings
 similar to these:
 
-    <properties>
-        <liferay.app.server.deploy.dir>
-            E:\liferay-portal-6.2.0-ce-ga1\tomcat-7.0.42\webapps
-        </liferay.app.server.deploy.dir>
+```xml
+<properties>
+    <liferay.app.server.deploy.dir>
+        E:\liferay-portal-6.2.0-ce-ga1\tomcat-7.0.42\webapps
+    </liferay.app.server.deploy.dir>
 
-        <liferay.app.server.lib.global.dir>
-            E:\liferay-portal-6.2.0-ce-ga1\tomcat-7.0.42\lib\ext
-        </liferay.app.server.lib.global.dir>
+    <liferay.app.server.lib.global.dir>
+        E:\liferay-portal-6.2.0-ce-ga1\tomcat-7.0.42\lib\ext
+    </liferay.app.server.lib.global.dir>
 
-        <liferay.app.server.portal.dir>
-            E:\liferay-portal-6.2.0-ce-ga1\tomcat-7.0.42\webapps\root
-        </liferay.app.server.portal.dir> 
+    <liferay.app.server.portal.dir>
+        E:\liferay-portal-6.2.0-ce-ga1\tomcat-7.0.42\webapps\root
+    </liferay.app.server.portal.dir> 
 
-        <liferay.auto.deploy.dir>
-            E:\liferay-portal-6.2.0-ce-ga1\deploy
-        </liferay.auto.deploy.dir>
+    <liferay.auto.deploy.dir>
+        E:\liferay-portal-6.2.0-ce-ga1\deploy
+    </liferay.auto.deploy.dir>
 
-        <liferay.version>
-            6.2.0
-        </liferay.version>
+    <liferay.version>
+        6.2.0
+    </liferay.version>
 
-        <liferay.maven.plugin.version>
-            6.2.0
-        </liferay.maven.plugin.version
+    <liferay.maven.plugin.version>
+        6.2.0
+    </liferay.maven.plugin.version
  
-    </properties>
+</properties>
+```
 
 This is no longer required in @product-ver@ because Liferay's Maven tools no
 longer rely on your @product@ installation's specific versions. You should

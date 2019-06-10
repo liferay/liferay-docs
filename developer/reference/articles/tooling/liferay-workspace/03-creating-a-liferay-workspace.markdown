@@ -118,7 +118,9 @@ A dialog appears prompting you to open the Liferay Workspace perspective. Click
 
 1.  Execute the following Maven command:
 
-        mvn archetype:generate -Dfilter=liferay
+    ```bash
+    mvn archetype:generate -Dfilter=liferay
+    ```
 
 2.  Select the `com.liferay.project.templates.workspace` archetype to generate.
 

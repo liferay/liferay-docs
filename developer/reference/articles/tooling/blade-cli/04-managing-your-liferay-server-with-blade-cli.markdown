@@ -19,7 +19,9 @@ modifying a Liferay server:
 
 2.  Initialize a Liferay server by running
 
-        blade server init
+    ```bash
+    blade server init
+    ```
 
     This downloads the @product@ bundle set in your workspace's
     `gradle.propeties` file. See the
@@ -28,7 +30,9 @@ modifying a Liferay server:
 
 3.  Start your Liferay server (Tomcat or Wildfly/JBoss) by running
 
-        blade server start
+    ```bash
+    blade server start
+    ```
 
     This starts the server in the background. You can tail the logs by adding
     the `-t` flag. If you prefer starting the server in the foreground, run
@@ -42,7 +46,9 @@ modifying a Liferay server:
     example, to check if you successfully deployed your application from the
     previous section, you could run:
 
-        blade sh lb
+    ```bash
+    blade sh lb
+    ```
 
     Your output lists a long list of modules that are active/installed in your
     server's OSGi container.
@@ -58,7 +64,9 @@ modifying a Liferay server:
 5.  Once you're finished modifying your Liferay bundle, you can package it as a
     sharable file by running this command:
 
-        blade gw distBundle[Zip|Tar]
+    ```bash
+    blade gw distBundle[Zip|Tar]
+    ```
 
     This lets you create a ZIP or TAR file to share with others. This option is
     only available with Gradle at this time. The above command leverages Blade
@@ -70,7 +78,9 @@ modifying a Liferay server:
 
 6.  Turn off your Liferay server:
 
-        blade server stop
+    ```bash
+    blade server stop
+    ```
 
 To reference all of Blade CLI's available options, see the
 [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) article.
