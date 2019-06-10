@@ -28,6 +28,17 @@ modifying a Liferay server:
     [Adding a Liferay Bundle to Workspace](/docs/7-2/reference/-/knowledge_base/r/adding-a-liferay-bundle-to-liferay-workspace)
     article for more information.
 
+    You can initialize a server based on a
+    [defined environment](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace#testing-projects)
+    by running the following command:
+
+    ```bash
+    blade server init --environment [ENVIRONMENT]
+    ```
+
+    For example, you could pass in the `uat` variable to generate a bundle
+    with the configs set in the `configs/uat` workspace folder.
+
 3.  Start your Liferay server (Tomcat or Wildfly/JBoss) by running
 
     ```bash
