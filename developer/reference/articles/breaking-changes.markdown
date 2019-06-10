@@ -495,6 +495,36 @@ navigation tabs in widget pages was part of a UI clean up process.
 
 ---------------------------------------
 
+### Move the User Menu out of the Product Menu
+- **Date:** 2019-Apr-19
+- **JIRA Ticket:** [LPS-87868](https://issues.liferay.com/browse/LPS-87868)
+
+#### What changed?
+
+The User Menu was removed from the Product Menu, and the user menu entries were
+moved to the new Personal Menu, a dropdown menu triggered by the user avatar.
+
+#### Who is affected?
+
+This affects anyone who has customized the User Menu section of the Product
+Menu.
+
+#### How should I update my code?
+
+If you would like to keep your custom user menu entries and have them available
+in the Personal Menu, you need to implement the `PersonalMenuEntry` interface.
+All panel apps registered with the `PanelCategoryKeys.USER`,
+`PanelCategoryKeys.USER_MY_ACCOUNT`, and `PanelCategoryKeys.USER_SIGN_OUT` panel
+category keys should be converted to `PersonalMenuEntry`.
+
+#### Why was this change made?
+
+Product navigation has been reviewed from a UX perspective, and removing the
+User Menu from the Product Menu and splitting the menu to its own provides a
+better user experience.
+
+---------------------------------------
+
 ### Removed Hong Kong and Macau from the List of Countries
 - **Date:** 2019-Apr-26
 - **JIRA Ticket:** [LPS-82203](https://issues.liferay.com/browse/LPS-82203)
