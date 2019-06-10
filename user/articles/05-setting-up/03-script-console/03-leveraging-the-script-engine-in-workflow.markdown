@@ -16,23 +16,59 @@ and run during the execution of the workflow.
 
 ## Injected Variables
 
-Usually when you're scripting in Groovy, you must define your variables. In
+Usually when you're scripting in Groovy, you must define your variables.
+
+```groovy
+KaleoInstanceToken kaleoInstanceToken=new KaleoInstanceToken;
+```
+
+
+In
 workflow scripts, though, there are several [pre-defined variables](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-workflow/portal-workflow-kaleo-runtime-scripting-impl/src/main/java/com/liferay/portal/workflow/kaleo/runtime/scripting/internal/util/ScriptingContextBuilderImpl.java) injected into
 your script context. Call these without defining them first:
 
-These are always available:
+### Variables that are Always Available
 
-kaleoInstanceToken
-workflowContext
+These variables are available from anywhere that you can run a workflow script:
 
-If a `kaleoTaskInstanceToke` has been created:
+`kaleoInstanceToken`
+: A token for each instance of a workflow (each time a User clicks _Submit for
+Publication_, a workflow instance, and its corresponding `KaleoInstanceToken`,
+is created). Use this to retrieve the ID of the token, by calling
+`kaleoInstanceToken.getKaleoInstanceTokenId()`.
 
-kaleoTaskInstanceToken
-taskName
+`userId`
+: The `userId` returned is context dependent. It's the ID of the last User to
+intervene in the workflow at the tiome the script id run. In the `created` node,
+this would be the User that clicked _Submit for Publication_, whereas it's the
+ID of the reviewer upon exit of the `review` node of the Single Approver
+definition.
 
-userId
-workflowTaskAssignees
-kaleoTimerInstanceToken
+`workflowContext` : The workflow context is full of useful information you can
+use in your scripts. Usually you'll pass this as a parameter to a method that
+requires a `WorkflowContext` object.
+
+### Injected Variables in a Task Node
+
+If a `kaleoTaskInstanceToken` has been created:
+
+`kaleoTaskInstanceToken`
+: The token itself is available in the workflow script. Use it to get its ID, to
+use in other useful programmatic workflow activities, like programmatic
+assignment.
+
+`taskName`
+: The task's own name is accessible.
+
+`workflowTaskAssignees`
+: If the script is inside a task node, get a list of its assignees.
+
+`kaleoTimerInstanceToken`
+: If a [task timer](/docs/7-2/reference/-/knowledge_base/r/workflow-task-nodes/#task-timers)
+exists,use the `kaleoTimerInstanceToken` to get its ID, by calling
+`kaleoTimerInstanceToken.getKaleoTimerInstanceTokenId()`.
+
+## Scripting Examples
 
 The final step in a workflow runs a script that makes content available for use.
 The snippet below accesses the Java class associated with the workflow to set
