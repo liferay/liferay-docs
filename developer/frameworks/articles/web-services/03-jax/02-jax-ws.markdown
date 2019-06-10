@@ -34,11 +34,11 @@ CXF endpoints and extenders can be created programmatically or with Liferay's
 Control Panel. This tutorial shows you how to do both, and then shows you how to
 publish JAX-WS web services. The following topics are covered:
 
-- [Configuring Endpoints and Extenders with the Control Panel](/docs/7-1/tutorials/-/knowledge_base/t/jax-ws#configuring-endpoints-and-extenders-with-the-control-panel)
+- [Configuring Endpoints and Extenders with the Control Panel](/docs/7-2/frameworks/-/knowledge_base/f/jax-ws#configuring-endpoints-and-extenders-with-the-control-panel)
 
-- [Configuring Endpoints and Extenders Programmatically](/docs/7-1/tutorials/-/knowledge_base/t/jax-ws#configuring-endpoints-and-extenders-programmatically)
+- [Configuring Endpoints and Extenders Programmatically](/docs/7-2/frameworks/-/knowledge_base/f/jax-ws#configuring-endpoints-and-extenders-programmatically)
 
-- [Publishing JAX-WS Web Services](/docs/7-1/tutorials/-/knowledge_base/t/jax-ws#publishing-jax-ws-web-services)
+- [Publishing JAX-WS Web Services](/docs/7-2/frameworks/-/knowledge_base/f/jax-ws#publishing-jax-ws-web-services)
 
 ## Configuring Endpoints and Extenders with the Control Panel
 
@@ -60,7 +60,7 @@ services deployed there are available at
 
 **`AuthVerifier` properties:** Any properties defined here are passed as-is to 
 the `AuthVerifier` filter. See the 
-[`AuthVerifier` documentation](/docs/7-1/deploy/-/knowledge_base/d/authentication-verifiers) 
+[`AuthVerifier` documentation](/docs/7-2/deploy/-/knowledge_base/d/authentication-verifiers) 
 for more details. 
 
 **Required Extensions:** CXF normally loads its default extension classes, but 
@@ -116,13 +116,15 @@ configuration files' location inside the module. For example, the following
 configuration sets the `ConfigurationPath` to
 `src/main/resources/configuration`:
 
-    Bundle-Name: Liferay Export Import Service JAX-WS
-    Bundle-SymbolicName: com.liferay.exportimport.service.jaxws
-    Bundle-Version: 1.0.0
-    Liferay-Configuration-Path: /configuration
-    Include-Resource: configuration=src/main/resources/configuration
-    Liferay-Releng-Module-Group-Description:
-    Liferay-Releng-Module-Group-Title: Data Management
+```properties
+Bundle-Name: Liferay Export Import Service JAX-WS
+Bundle-SymbolicName: com.liferay.exportimport.service.jaxws
+Bundle-Version: 1.0.0
+Liferay-Configuration-Path: /configuration
+Include-Resource: configuration=src/main/resources/configuration
+Liferay-Releng-Module-Group-Description:
+Liferay-Releng-Module-Group-Title: Data Management
+```
 
 Note that Liferay-specific Bnd instructions are prefixed with `Liferay` to
 avoid conflicts. 
@@ -137,49 +139,55 @@ identifier) and then provide your settings. For example, the following code uses
 the `-staging` suffix on the PID and creates a CXF endpoint at the context path 
 `/staging-ws`: 
 
-    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-staging.properties:
+`com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-staging.properties`:
 
-    contextPath=/staging-ws
+```properties
+contextPath=/staging-ws
+```
 
 As another example, the following code uses the suffix `-stagingjaxws` on the 
 PID and creates a SOAP extender at the context path `/staging-ws`. This code 
 also includes settings for the configuration fields `jaxWsHandlerFilterStrings` 
 and `jaxWsServiceFilterStrings`: 
 
-    com.liferay.portal.remote.soap.extender.configuration.SoapExtenderConfiguration-stagingjaxws.properties:
+`com.liferay.portal.remote.soap.extender.configuration.SoapExtenderConfiguration-stagingjaxws.properties`:
 
-    contextPaths=/staging-ws
-    jaxWsHandlerFilterStrings=(staging.jax.ws.handler=true)
-    jaxWsServiceFilterStrings=(staging.jax.ws.service=true)
+```properties
+contextPaths=/staging-ws
+jaxWsHandlerFilterStrings=(staging.jax.ws.handler=true)
+jaxWsServiceFilterStrings=(staging.jax.ws.service=true)
+```
 
 You must then use these configuration fields in the configuration class. For 
 example, the `SoapExtenderConfiguration` interface below contains the 
 configuration fields `contextPaths`, `jaxWsHandlerFilterStrings`, and 
 `jaxWsServiceFilterStrings`: 
 
-    @ExtendedObjectClassDefinition(
-	    category = "foundation", factoryInstanceLabelAttribute = "contextPaths"
-    )
-    @Meta.OCD(
-        factory = true,
-        id = "com.liferay.portal.remote.soap.extender.configuration.SoapExtenderConfiguration",
-        localization = "content/Language", name = "soap.extender.configuration.name"
-    )
-    public interface SoapExtenderConfiguration {
+```java
+@ExtendedObjectClassDefinition(
+    category = "foundation", factoryInstanceLabelAttribute = "contextPaths"
+)
+@Meta.OCD(
+    factory = true,
+    id = "com.liferay.portal.remote.soap.extender.configuration.SoapExtenderConfiguration",
+    localization = "content/Language", name = "soap.extender.configuration.name"
+)
+public interface SoapExtenderConfiguration {
 
-        @Meta.AD(required = false)
-        public String[] contextPaths();
+    @Meta.AD(required = false)
+    public String[] contextPaths();
 
-        @Meta.AD(name = "jax.ws.handler.filters", required = false)
-        public String[] jaxWsHandlerFilterStrings();
+    @Meta.AD(name = "jax.ws.handler.filters", required = false)
+    public String[] jaxWsHandlerFilterStrings();
 
-        @Meta.AD(name = "jax.ws.service.filters", required = false)
-        public String[] jaxWsServiceFilterStrings();
+    @Meta.AD(name = "jax.ws.service.filters", required = false)
+    public String[] jaxWsServiceFilterStrings();
 
-        @Meta.AD(name = "soap.descriptor.builder", required = false)
-        public String soapDescriptorBuilderFilter();
+    @Meta.AD(name = "soap.descriptor.builder", required = false)
+    public String soapDescriptorBuilderFilter();
 
-    }
+}
+```
 
 Next, you'll learn how to publish JAX-WS web services. 
 
@@ -191,38 +199,40 @@ the OSGi framework. For example, the following class uses the `@WebService`
 annotation for the class and `@WebMethod` annotations for its methods. You must
 also set the `jaxws` property to `true` in the OSGi `@Component` annotation: 
 
-    import javax.jws.WebMethod;
-    import javax.jws.WebService;
+```java
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 
-    import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Component;
 
-    @Component(
-        immediate = true, property = "jaxws=true", service = Calculator.class
-    )
-    @WebService
-    public class Calculator {
+@Component(
+    immediate = true, property = "jaxws=true", service = Calculator.class
+)
+@WebService
+public class Calculator {
 
-        @WebMethod
-        public int divide(int a, int b) {
-            return a / b;
-        }
-
-        @WebMethod
-        public int multiply(int a, int b) {
-            return a * b;
-        }
-
-        @WebMethod
-        public int subtract(int a, int b) {
-            return a - b;
-        }
-
-        @WebMethod
-        public int sum(int a, int b) {
-            return a + b;
-        }
-
+    @WebMethod
+    public int divide(int a, int b) {
+        return a / b;
     }
+
+    @WebMethod
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    @WebMethod
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    @WebMethod
+    public int sum(int a, int b) {
+        return a + b;
+    }
+
+}
+```
 
 You should also make sure that you include `org.osgi.core` and 
 `org.osgi.service.component.annotations` as dependencies to your project. 
