@@ -50,7 +50,7 @@ public class CheckLinksTask extends Task {
 		List<File> currentArticles = findCurrentDirArticles(currentArticleDir);
 
 		if (checkDxpLinks) {
-			currentArticles = addDxpOnlyArticles(currentArticles, docDir, true);
+			currentArticles = addDxpOnlyArticles(currentArticles, docDir);
 		}
 
 		assignReferencedDirArticles(articleDirs);
@@ -201,9 +201,9 @@ public class CheckLinksTask extends Task {
 	 * @return the new list of articles containing the new DXP articles and DXP
 	 *         overrides
 	 */
-	private static List<File> addDxpOnlyArticles(List<File> articles, String path, boolean currentDir) {
+	private static List<File> addDxpOnlyArticles(List<File> articles, String path) {
 
-		List<File> dxpArticles = getDxpArticles(path, currentDir);
+		List<File> dxpArticles = getDxpArticles(path);
 
 		articles = includeDxpOverrides(articles, dxpArticles);
 
@@ -802,7 +802,7 @@ public class CheckLinksTask extends Task {
 		}
 
 		if (checkDxpLinks) {
-			articles = addDxpOnlyArticles(articles, path, false);
+			articles = addDxpOnlyArticles(articles, path);
 		}
 
 		return articles;
@@ -936,25 +936,25 @@ public class CheckLinksTask extends Task {
 	 *         folder the command was executed from
 	 * @return the DXP articles contained in the folder
 	 */
-	private static List<File> getDxpArticles(String path, boolean currentDir) {
+	private static List<File> getDxpArticles(String path) {
 
 		List<File> dxpArticles = new ArrayList<File>();
 		File dxpArticleDir = new File("");
 
 		// Ensure "articles-dxp" folder exists
-		try {
-			if (currentDir) {
-				dxpArticleDir = new File("../" + path + "/articles-dxp");
-			}
-			else {
-				dxpArticleDir = new File("../../" + path + "/articles-dxp");
-			}
+		dxpArticleDir = new File("../" + path + "/articles-dxp");
 
+		// Some 'articles' folders are nested in one folder while others are
+		// nested two folders deep. This if statement assigns those articles
+		// that are nested two folders deep.
+		if(!dxpArticleDir.exists()) {
+			dxpArticleDir = new File("../../" + path + "/articles-dxp");
+		}
+
+		try {
 			dxpArticles = findCurrentDirArticles(dxpArticleDir);
 		} catch(NullPointerException e) {
-			if (currentDir) {
-				System.out.println("No DXP articles in " + dxpArticleDir.getParent());
-			}
+			System.out.println("No DXP articles in " + dxpArticleDir.getParent());
 		}
 
 		return dxpArticles;

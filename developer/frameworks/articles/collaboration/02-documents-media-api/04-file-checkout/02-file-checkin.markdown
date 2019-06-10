@@ -33,7 +33,7 @@ Follow these steps to use `checkInFileEntry` to check in a file:
         ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext). 
 
 3.  Call the service reference's `checkInFileEntry` method with the data from 
     the previous step: 

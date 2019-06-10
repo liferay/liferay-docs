@@ -47,7 +47,7 @@ you wish:
         }
 
     For more information on `ServiceContext`, see 
-    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext). 
 
 3.  Call the service reference's `updateFileEntry` method with the data from the 
     previous step. Note that this example does so inside the previous step's 

@@ -6,7 +6,7 @@ header-id: workflow-definition-nodes
 
 [TOC levels=1-4]
 
-Once you know the basics of [creating workflow definitions](/docs/7-2/user/-/knowledge_base/u/managing-workflows-with-workflow-designer)
+Once you know the basics of [creating workflow definitions](/docs/7-2/user/-/knowledge_base/u/workflow-designer)
 with the workflow Designer, you can get into the details. In this tutorial
 you'll learn about Actions and Notifications, two important features your
 workflow nodes can use. You'll also learn how to affect the processing of the

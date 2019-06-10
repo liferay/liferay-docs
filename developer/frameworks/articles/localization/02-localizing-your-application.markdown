@@ -127,4 +127,4 @@ using language keys across applications.
 
 [Using Language Modules](/docs/7-2/frameworks/-/knowledge_base/f/using-language-modules)
 
-[Using @product@'s Language Settings](/docs/7-2/frameworks/-/knowledge_base/f/using-products-language-settings)
+[Using @product@'s Language Settings](/docs/7-2/frameworks/-/knowledge_base/f//docs/7-1/tutorials/-/knowledge_base/t/using-liferays-language-settings)

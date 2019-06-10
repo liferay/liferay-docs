@@ -8,7 +8,7 @@ header-id: using-the-simple-file-system-store
 
 The simple file storage implementation is the default store. It uses a local
 folder to store files. You can use the file system for your
-[clustered](/docs/7-2/deploy/-/knowledge_base/d/product-clustering)
+[clustered](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
 configuration, but the folder you're pointing to must be shared by all nodes and
 handle concurrent requests and file locking. For this reason, you need to use a
 Storage Area Network or a clustered file system.
@@ -20,7 +20,7 @@ this path to anything you want in [System
 Settings](/docs/7-2/user/-/knowledge_base/u/system-settings). 
 
 | **Note:** To propagate store configuration in a
-| [cluster](/docs/7-2/deploy/-/knowledge_base/d/product-clustering),
+| [cluster](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering),
 | [export](/docs/7-2/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
 | your store
 | settings from your store's *File Storage* screen in System Settings to a

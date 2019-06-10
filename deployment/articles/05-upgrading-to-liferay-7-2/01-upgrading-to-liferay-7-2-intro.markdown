@@ -72,7 +72,7 @@ Here are the upgrade steps:
         objects) that you don't need. Remove them and objects that only
         reference them.{.summary}
 
-    5.  [Test @product@ with its Pruned Database Copy](/docs/7-2/deploy/-/knowledge_base/d/pruning-the-database#test-product-with-its-pruned-database-copy){.title}
+    5.  [Test @product@ with its Pruned Database Copy](/docs/7-2/deploy/-/knowledge_base/d/pruning-the-database#test-with-the-pruned-database-copy){.title}
 
         Make sure @product@ continues to work successfully. If it's broken,
         start over with a fresh database backup and prune it more carefully.{.summary}
@@ -82,13 +82,13 @@ Here are the upgrade steps:
         Install the @product@ version you're upgrading to, to use its upgrade
         tool.{.summary}
         
-    7.  [Tune Your Database for the Upgrade](/docs/7-2/deploy/-/knowledge_base/d/tune-your-database-for-the-upgrade){.title}
+    7.  [Tune Your Database for the Upgrade](/docs/7-2/deploy/-/knowledge_base/d/tuning-for-the-data-upgrade){.title}
 
     8.  [Upgrade the Liferay Data, then Return Here](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-product-data){.title}
 
     9.  [If the Upgrade Took too Long, Prune a Fresh Database Backup More and Upgrade Its Data](/docs/7-2/deploy/-/knowledge_base/d/test-upgrading-a-product-backup-copy#copy-the-production-backup-to-the-test-database){.title}
 
-    10. [Test the Upgraded Instance](/docs/7-2/deploy/-/knowledge_base/d/test-upgrading-a-product-backup-copy#test-the-upgraded-portal-and-resolve-any-issues){.title}
+    10. [Test the Upgraded Instance](/docs/7-2/deploy/-/knowledge_base/d/pruning-the-database){.title}
 
         Make sure @product@ continues to work successfully. If it's broken,
         start over with a fresh database backup and prune it more carefully.{.summary}
@@ -106,13 +106,13 @@ Here are the upgrade steps:
 
         Remove all unused objects you noted from pruning your test database.{.summary}
 
-    2.  [Test @product@](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#test-liferay-portal-with-its-pruned-database){.title}
+    2.  [Test @product@](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#test-using-the-pruned-database){.title}
 
     3.  [Upgrade Your Marketplace Apps](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#upgrade-your-marketplace-apps){.title}
 
     4.  [Publish All Staged Changes](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#publish-all-staged-changes-to-production){.title}
 
-    5.  [Synchronize a Complete @product@ Backup](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#synchronize-a-complete-liferay-portal-backup){.title}
+    5.  [Synchronize a Complete @product@ Backup](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#synchronize-a-complete-backup){.title}
 
         Synchronize a complete backup of your production @product@ server
         installation and pruned production database.{.summary}
@@ -127,13 +127,13 @@ Here are the upgrade steps:
     system properties too. (Note, this step can be done in parallel with any of
     the previous steps.){.summary}
 
-    1.  [Request an Upgrade Patch From Liferay Support \(Liferay DXP Only\)](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#synchronize-a-complete-liferay-portal-backup){.title}
+    1.  [Request an Upgrade Patch From Liferay Support \(Liferay DXP Only\)](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#synchronize-a-complete-backup){.title}
 
-    2.  [Install the @product@ Version You're Upgrading To](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade#install-liferay-portal-ce-72){.title}
+    2.  [Install the @product@ Version You're Upgrading To](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade#install-liferay){.title}
 
     3.  [Install the Latest Upgrade Patch or Fix Pack \(Liferay DXP Only\)](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade#install-the-latest-upgrade-patch-or-fix-pack-liferay-dxp-only){.title}
 
-    4.  [Migrate Your OSGi Configurations \(@product@ 7.0+\)](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade#migrate-your-osgi-configurations-liferay-portal-70){.title}
+    4.  [Migrate Your OSGi Configurations \(@product@ 7.0+\)](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade#migrate-your-osgi-configurations-70){.title}
 
     5.  [Migrate Your Portal Properties](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade#migrate-your-portal-properties){.title}
 
@@ -168,30 +168,30 @@ Here are the upgrade steps:
     This section explains the data upgrade options, upgrade configuration,
     and the upgrade process.{.summary}
 
-    1.  [Tune Your Database for the Upgrade](/docs/7-2/deploy/-/knowledge_base/d/tuning-your-database-for-the-upgrade){.title}
+    1.  [Tune Your Database for the Upgrade](/docs/7-2/deploy/-/knowledge_base/d/tuning-for-the-data-upgrade){.title}
 
-    2.  [Configure the Data Upgrade](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-data-upgrade#configuring-the-data-upgrade){.title}
+    2.  [Configure the Data Upgrade](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-data-upgrade){.title}
 
         Configure the data upgrade, including the data store and whether to
         automatically upgrade the modules.{.summary}
 
-    3.  [Upgrade the Core](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-core-using-the-upgrade-tool#upgrading-the-core-using-the-upgrade-tool){.title}
+    3.  [Upgrade the Core](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-core-using-the-upgrade-tool){.title}
 
-        1.  [Run the Data Upgrade Tool](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-core-using-the-upgrade-tool#upgrading-the-core-using-the-upgrade-tool#upgrade-tool-usage){.title}
+        1.  [Run the Data Upgrade Tool](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-core-using-the-upgrade-tool#upgrade-tool-usage){.title}
 
             Run the data upgrade tool. Resolve any core upgrade issues.{.summary}
 
-        2.  [Issues Upgrading to 7.0 or Lower? Restore the Database Backup](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#synchronize-a-complete-liferay-portal-backup){.title}
+        2.  [Issues Upgrading to 7.0 or Lower? Restore the Database Backup](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database#synchronize-a-complete-backup){.title}
 
             If the issues were with upgrades to Liferay 7.0 or lower, get a
             clean start by restoring the pruned production database backup.{.summary}
 
-        3.  [Upgrade Your Resolved Issues](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-core-using-the-upgrade-tool#upgrading-the-core-using-the-upgrade-tool){.title}
+        3.  [Upgrade Your Resolved Issues](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-core-using-the-upgrade-tool){.title}
 
             If there were issues upgrading to 7.2, resolve them and restart the
             data upgrade tool; continue if there were no issues.{.summary}
 
-    4.  [Upgrade the Liferay Modules](/docs/7-2/deploy/-/knowledge_base/d/upgrading-modules-using-gogo-shell#upgrading-modules-using-gogo-shell){.title}
+    4.  [Upgrade the Liferay Modules](/docs/7-2/deploy/-/knowledge_base/d/upgrading-modules-using-gogo-shell){.title}
 
         Learn how to use Gogo Shell to upgrade the Liferay modules, if you 
         didn't upgrade them automatically with the core.{.summary}
@@ -217,7 +217,7 @@ Here are the upgrade steps:
 
     3.  [Update Web Content Permissions \(7.0 and lower\)](/docs/7-2/deploy/-/knowledge_base/d/executing-post-upgrade-tasks#enabling-web-content-view-permissions){.title}
 
-    4.  [Address Any Deprecated Apps That Still Need Handling](/docs/7-2/deploy/-/knowledge_base/d/planning-for-deprecated-applications#planning-for-deprecated-applications){.title}
+    4.  [Address Any Deprecated Apps That Still Need Handling](/docs/7-2/deploy/-/knowledge_base/d/planning-for-deprecated-applications){.title}
 
 10.  Checkpoint: You've completed the upgrade and post-upgrade tasks
 

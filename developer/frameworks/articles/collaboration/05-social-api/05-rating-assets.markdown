@@ -22,7 +22,7 @@ a guestbook.
 
 2.  Choose a read-only view of the entity for which you want to enable ratings. 
     You can display ratings in one of your portlet's views, or if you've 
-    [implemented asset rendering](/docs/7-2/frameworks/-/knowledge_base/f/rendering-an-asset) 
+    [implemented asset rendering](/docs/7-2/frameworks/-/knowledge_base/f/creating-an-asset-renderer) 
     you can display them in the full content view in the Asset Publisher app. 
 
 3.  In the JSP, include the `liferay-ui` taglib declaration:

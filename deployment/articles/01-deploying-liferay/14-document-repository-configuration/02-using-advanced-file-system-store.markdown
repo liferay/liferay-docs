@@ -22,7 +22,7 @@ to be stored, but also improves performance as there are fewer files stored per
 folder. 
 
 The same rules apply to the advanced file system store as apply to the simple
-file system store. To [cluster](/docs/7-2/deploy/-/knowledge_base/d/product-clustering) this, you must point the store to a network
+file system store. To [cluster](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering) this, you must point the store to a network
 mounted file system that all the nodes can access, and that networked file
 system must support concurrent requests and file locking. Otherwise, you may
 experience data corruption issues if two users attempt to write to the same file
