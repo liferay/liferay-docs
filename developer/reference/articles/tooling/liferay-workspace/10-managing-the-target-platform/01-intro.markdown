@@ -61,6 +61,16 @@ index the configured @product@ source code to
 - debug @product@ sources
   ([article](/docs/7-2/reference/-/knowledge_base/r/debugging-product-source-in-dev-studio))
 
+To enable this functionality, set the following property in your workspace's
+`gradle.properties` file:
+
+```properties
+target.platform.index.sources=true
+```
+
+| **Note:** The disablement of portal source indexing is disabled in Gradle
+| workspace version 2.0.3+ (Target Platform plugin version 2.0.0+).
+
 These options in Dev Studio are only available when developing in a Liferay
 Workspace, or if you have the
 [Target Platform Gradle plugin](/docs/7-2/reference/-/knowledge_base/r/target-platform-gradle-plugin)
