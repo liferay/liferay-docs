@@ -95,6 +95,10 @@ These steps assume you've
 3.  Verify your project builds, deploys, and starts successfully by viewing the
     results in the Console window.
 
+Dev Studio's deployment mechanism executes the `watch` task behind the scenes.
+For more information on what to expect from the `watch` task, see
+[this article](/docs/7-2/reference/-/knowledge_base/r/blade-cli).
+
 ## Liferay IntelliJ Plugin
 
 These steps assume you've
