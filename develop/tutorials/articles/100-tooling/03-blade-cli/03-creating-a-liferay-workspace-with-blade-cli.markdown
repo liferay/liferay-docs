@@ -28,7 +28,7 @@ folder where you want your workspace and run the following command:
 | versioned project templates.
 | 
 | You can update the default version after it has been set by opening your
-| workspace's `.blade/settings.properties` file and setting the
+| workspace's `.blade.properties` file and setting the
 | `liferay.version.default` property.
 
 Initializing a workspace requires no downloading or access to the internet.
