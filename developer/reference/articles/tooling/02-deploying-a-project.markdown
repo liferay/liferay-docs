@@ -17,10 +17,13 @@ project generation:
 - [Maven](/docs/7-2/reference/-/knowledge_base/r/maven)
 
 The deployment process is the same across all tools; the deployment
-command/action builds and copies your project to the @product@ `/deploy` folder,
-which is found by reading the Liferay Home folder. The Liferay Home folder is
-preconfigured in most cases; if it's not, ways to configure it are included
-below. All tools support JAR and WAR-style project deployment.
+command/action builds and deploys your project based on the build tool's
+deployment configuration. For example, leveraging Blade CLI in a default Gradle
+Liferay Workspace uses the underlying Gradle deployment configuration. The build
+tool's deployment configuration is found by reading the Liferay Home folder. The
+Liferay Home folder is preconfigured in most cases; if it's not, ways to
+configure it are included below. All tools support JAR and WAR-style project
+deployment.
 
 It's recommended to deploy Liferay projects within a
 [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).
