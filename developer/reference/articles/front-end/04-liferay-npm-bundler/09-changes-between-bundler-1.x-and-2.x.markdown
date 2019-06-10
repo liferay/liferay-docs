@@ -58,9 +58,7 @@ dependencies in one project, and reference them from the rest. Though This new
 way of de-duplication is not automatic, it leads to full control 
 (during build time) of how each package is resolved.
 
-<!--TODO: Uncomment once article is ported to 7.2
 Now that you understand what changed between version 1.x and 2.x of the 
 liferay-npm-bundler, you can follow the steps in the 
 [Migrating a liferay-npm-bundler Project from 1.x to 2.x](/docs/7-2/frameworks/-/knowledge_base/f/migrating-a-liferay-npm-bundler-project-from-1-x-to-2-x) 
-tutorial to migrate your 1.x projects to 2.x.
--->
+to migrate your 1.x projects to 2.x. 
