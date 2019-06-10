@@ -34,10 +34,12 @@ in which the bean is valid.
 
 ## Portlet Request Scoped Beans
 
-These beans have the `@PortletRequestScoped` annotation. 
+These beans have the `@PortletRequestScoped` annotation. Here are their artifact types, bean EL names, and annotation qualifiers, and the portlet phases they're valid during. 
 
-| Artifact | Bean EL Name | Qualifier | Valid during (phase) | 
-| -------- | ------------ | --------- | -------------------- |
+Table 1: Portlet Request Scoped Beans[^1]
+
+| Artifact | Bean EL Name | Qualifier | Valid during | 
+| -------- | ------------ | --------- | ------------ |
 | `PortletConfig` | `portletConfig` | - | all | 
 | `PortletRequest` | `portletRequest` | - | all | 
 | `PortletResponse` | `portletResponse` | - | all | 
@@ -68,14 +70,23 @@ These beans have the `@PortletRequestScoped` annotation.
 
 ## Dependent Scoped Beans 
 
-These beans have the `@Dependent` scope annotation. 
+These beans use the `@Dependent` scope. They're of type `java.lang.String`,
+which is `final`, which disqualifies them from being proxied. To prevent using
+dependent scoped beans in a scope broader than their original scope, you should
+only inject them into `@PortletRequestScoped` beans. 
 
-| Artifact | Bean EL Name | Qualifier | Valid during (phase) |
-| -------- | ------------ | --------- | -------------------- |
+Table 2: Dependent Scoped Beans[^2]
+
+| Artifact | Bean EL Name | Qualifier | Valid during |
+| -------- | ------------ | --------- | ------------ |
 | `Namespace` (String) | `namespace` | `@Namespace` | all |
 | `ContextPath` (String) | `contextPath` | `@ContextPath` | all |
 | `WindowID` (String) | `windowId` | `@WindowId` | all |
 | `Portlet name` (String) | `portletName` | `@PortletName` | all |
+
+[^1]: Martin Scott Nicklous, Java&trade; Portlet Specification 3.0, page 122. 
+ 
+[^2]: Martin Scott Nicklous, Java&trade; Portlet Specification 3.0, page 123. 
 
 ## Related Topics
 
