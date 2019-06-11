@@ -11,15 +11,15 @@ contains three such modules:
     my-application-api/
     my-application-service/
 
-Each of these modules can have language keys and translations to maintain, and 
-there will probably be duplicate keys. You don't want to end up with different
+Each of these modules can have language keys and translations to maintain, 
+likely resulting in duplicate keys. You don't want to end up with different
 values for the same key, and you don't want to maintain language keys in 
 multiple places. In this case, you should create a single module---a language 
-module---for your app's language keys. 
+module---for housing all your app's language keys. 
 
 Follow these steps to create a language module: 
 
-1.  In the root project folder (the one that holds your service, API, and web
+1.  In the root project folder (the one that holds your service, API, and web 
     modules), 
     [create a new module](/docs/7-2/reference/-/knowledge_base/r/creating-a-project) 
     to hold your app's language keys. 
@@ -34,9 +34,9 @@ Follow these steps to create a language module:
     ```
 
 3.  Create any translations you want in additional language properties files, 
-    appending the translation locale ID to the file name. For example, a file 
+    appending the locale's ID to the file name. For example, a file 
     `Language_es.properties` holds Spanish (`es`) translations and could contain 
-    this: 
+    something like this: 
 
     ```properties
     my-app-title=Mi Aplicación
@@ -44,8 +44,8 @@ Follow these steps to create a language module:
     ```
 
     Here's the folder structure of an example language module called 
-    `my-application-lang`. Note that this module contains the app's default 
-    language keys (`Language.properties`) and a Spanish translation 
+    `my-application-lang`. This module contains the app's default language keys 
+    (`Language.properties`) and a Spanish translation 
     (`Language_es.properties`): 
 
         my-application-lang/
