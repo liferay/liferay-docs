@@ -1,3 +1,7 @@
+---
+header-id: using-liferays-localization-settings
+---
+
 # Using Liferay's Localization Settings
 
 [TOC levels=1-4]

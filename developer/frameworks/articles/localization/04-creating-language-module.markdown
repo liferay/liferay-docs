@@ -1,4 +1,10 @@
+---
+header-id: creating-a-language-module
+---
+
 # Creating a Language Module
+
+[TOC levels=1-4]
 
 You might have an application with multiple modules that provide the view layer. 
 These modules are often called web modules. For example, this application 
