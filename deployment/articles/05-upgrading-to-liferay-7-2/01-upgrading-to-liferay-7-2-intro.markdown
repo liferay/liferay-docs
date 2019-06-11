@@ -6,9 +6,10 @@ header-id: upgrading-to-product-ver
 
 [TOC levels=1-4]
 
-Upgrading to @product-ver@ involves migrating your installation and code (your
-custom apps) to the new version. Here you'll learn how to upgrade your
-installation.
+Upgrading to @product-ver@ involves migrating your installation and [code (your
+theme and custom
+apps)](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver) to
+the new version. Here you'll learn how to upgrade your installation.
 
 Here are the installation upgrade paths:
 
