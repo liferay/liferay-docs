@@ -200,3 +200,12 @@ lang.line.begin=right
 lang.line.end=left
 ```
 
+## Related Topics
+
+[Overriding Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-language-keys)
+
+[Localizing Your Application](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application)
+
+[Creating a Language Module](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-language-module)
+
+[Using a Language Module](/docs/7-2/frameworks/-/knowledge_base/f/using-a-language-module)

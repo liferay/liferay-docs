@@ -73,3 +73,13 @@ framework. Capabilities let you associate services with modules that provide
 them. In this case, @product@ registers a 
 [ResourceBundleLoader](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) 
 service for the resource bundle capability. 
+
+## Related Topics
+
+[Overriding Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-language-keys)
+
+[Localizing Your Application](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application)
+
+[Using Liferay's Localization Settings](/docs/7-2/frameworks/-/knowledge_base/f/using-liferays-localization-settings)
+
+[Using a Language Module](/docs/7-2/frameworks/-/knowledge_base/f/using-a-language-module)
