@@ -39,7 +39,7 @@ is created). Use this to retrieve the ID of the token, by calling
 
 `userId`
 : The `userId` returned is context dependent. It's the ID of the last User to
-intervene in the workflow at the tiome the script id run. In the `created` node,
+intervene in the workflow at the time the script is run. In the `created` node,
 this would be the User that clicked _Submit for Publication_, whereas it's the
 ID of the reviewer upon exit of the `review` node of the Single Approver
 definition.
