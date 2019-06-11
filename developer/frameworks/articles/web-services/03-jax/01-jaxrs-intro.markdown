@@ -115,6 +115,89 @@ its security: the above URLs are only for local testing purposes. You certainly
 would not want to pass OAuth tokens between clients and servers in the clear.
 Make sure that in production your server uses HTTPS. 
 
+## Using JAX-RS with CORS
+
+You can use the `@CORS` annotation to define [CORS policies](/docs/7-2/deploy/-/knowledge_base/d/configuring-cors) 
+on your deployed JAX-RS applications. It only takes three steps: 
+
+1.  Add the Portal Remote CORS API dependency to your module: 
+
+```groovy
+compileOnly project(":apps:portal-remote:portal-remote-cors-api")
+```
+
+2.  Activate the CORS annotation feature in your application properties: 
+
+```java
+@Component(
+    property = {
+        "osgi.jaxrs.application.base=/my-application",
+        "osgi.jaxrs.name=My.Application.Name",
+        "liferay.cors.annotation=true"
+    },
+    service = Application.class
+    )
+    public class MyApplication extends Application {
+    ...
+    }
+```
+
+3.  Use the `@CORS` annotation throughout your application globally or by
+    method. 
+
+Globally: 
+
+```java
+@Component(
+	property = {
+		"osgi.jaxrs.application.base=/my-application",
+		"osgi.jaxrs.name=My.Application.Name",
+		"liferay.cors.annotation=true"
+	},
+	service = Application.class
+)
+@CORS(allowMethods="GET")
+public class MyApplication extends Application {
+...
+}
+```
+
+By method: 
+
+```java
+@CORS
+	@GET
+	@Path("/users")
+	public List<User> getUserList() throws Exception {
+		return _users;
+	}
+```
+
+You can use the annotation to provide a configuration for any of the CORS
+headers. Here are some examples: 
+
+|      Header      |    Annotation Example    | 
+|------------------|--------------------------|
+|Access-Control-Allow-Credentials|`@CORS(allowCredentials = false)`|
+|Access-Control-Allow-Headers|`@CORS(allowHeaders = "X-PINGOTHER")`|
+|Access-Control-Allow-Methods|`@CORS(allowMethods = "OPTIONS,POST")`|
+|Access-Control-Allow-Origin|`@CORS(allowOrigin = "http://www.liferay.com")`|
+
+If for some reason you want to disable the `@CORS` annotations in your
+application, you can do it globally by disabling it in your `@Component`
+annotation: 
+
+```java
+@Component(
+	property = {
+		"osgi.jaxrs.application.base=/no-cors-application",
+		"osgi.jaxrs.name=NoCors.Application.Name",
+		"liferay.cors.annotation=false"
+	},
+	service = Application.class
+)
+```
+
 Great! Now you know how to create, deploy, and invoke JAX-RS web services on
 @product@'s platform! 
 
