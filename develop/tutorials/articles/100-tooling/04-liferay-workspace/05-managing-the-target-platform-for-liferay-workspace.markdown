@@ -32,8 +32,8 @@ To enable this functionality, set the following property in your workspace's
 target.platform.index.sources=true
 ```
 
-| **Note:** The disablement of portal source indexing is disabled in Gradle
-| workspace version 2.0.3+ (Target Platform plugin version 2.0.0+).
+| **Note:** Portal source indexing is disabled in Gradle workspace version
+| 2.0.3+ (Target Platform plugin version 2.0.0+).
 
 These options in @ide@ are only available when developing in a Liferay
 Workspace, or if you have the
