@@ -31,14 +31,18 @@ project with the highlighted tool.
 
 1.  Print the available project templates by executing this:
 
-        blade create -l
+    ```bash
+    blade create -l
+    ```
 
     Note the project template you want to generate; you'll use it in the next
     step.
 
 2.  Run the following command to create a Gradle project with Blade CLI:
 
-        blade create -t [projectTemplate] [option1] [option2] ... [optionN] [projectName]
+    ```bash
+    blade create -t [projectTemplate] [option1] [option2] ... [optionN] [projectName]
+    ```
 
 | **Note:** If you want to generate a project for a previous version (e.g.,
 | Liferay Portal 7.0), you can specify this using the `-v` flag. For example, to
@@ -94,7 +98,9 @@ Run `blade create --help` for the entire list of available options.
 
 1.  Execute the following Maven command:
 
-        mvn archetype:generate -Dfilter=liferay
+    ```bash
+    mvn archetype:generate -Dfilter=liferay
+    ```
 
 2.  Select the archetype you want to leverage and proceed through the
     configuration prompts.

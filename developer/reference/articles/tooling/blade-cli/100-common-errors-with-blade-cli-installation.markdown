@@ -30,11 +30,15 @@ your operating system.
 
 macOS:
 
-    echo 'export PATH="$PATH:$HOME/Library/PackageManager/bin"' >> ~/.bash_profile
+```bash
+echo 'export PATH="$PATH:$HOME/Library/PackageManager/bin"' >> ~/.bash_profile
+```
 
 Linux:
 
-    echo 'export PATH="$PATH:$HOME/jpm/bin"' >> ~/.bash_profile
+```bash
+echo 'export PATH="$PATH:$HOME/jpm/bin"' >> ~/.bash_profile
+```
 
 Once you open a new shell, the `blade` command should be available.
 

@@ -29,9 +29,9 @@ resolution, click that resolution's *Actions* menu
 
 While a resolution is disabled, it doesn't generate adapted images for 
 new image uploads. After enabling a resolution, you should generate the adapted 
-images that weren't generated while it was disabled (see the 
-[Generating Missing Image Resolutions](#generating-missing-image-resolutions) 
-section for instructions on this). 
+images that weren't generated while it was disabled (see 
+[Generating Missing Adapted Images](#generating-missing-adapted-images) 
+for instructions on this). 
 
 ## Editing Image Resolutions
 

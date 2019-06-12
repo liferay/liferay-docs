@@ -8,7 +8,7 @@ Installing @product@ on JBoss EAP 7.1 takes three steps:
 
 - [Installing @product@ dependencies to your application server](#installing-dependencies)
 - [Configuring your application server for @product@](#configuring-jboss)
-- [Installing the @product@ WAR file to your application server](#deploying-product)
+- [Installing the @product@ WAR file to your application server](#deploying-liferay)
 
 Before proceeding, download these files from the 
 [Customer Portal](https://customer.liferay.com/downloads):
@@ -156,7 +156,7 @@ The command line interface is recommended for domain mode deployments.
 | environment on multiple JBoss servers. You can set up a cluster of @product@
 | instances running on JBoss EAP servers running in standalone mode. Please 
 | refer to the
-| [@product@ Clustering](/docs/7-2/deploy/-/knowledge_base/d/product-clustering)
+| [@product@ Clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
 | section for information on setting up a @product@ cluster.
 
 ## Configuring JBoss
@@ -461,7 +461,7 @@ If you want to manage your mail session with JBoss, follow these steps:
  
 You've got mail! Next, you'll deploy @product@ to your JBoss app server.
 
-## Deploying @product@
+## Deploy Liferay
 
 1.  If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists
     in your JBoss installation, delete all of its subfolders and files.

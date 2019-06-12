@@ -23,7 +23,7 @@ An *upgrade patch* contains the latest fix pack and hot fixes planned for the
 next service pack. Upgrade patches provide the latest fixes available for your
 data upgrade. 
 
-## Install @product-ver@ 
+## Install Liferay
 
 [Install @product@ on your application server](/docs/7-2/deploy/-/knowledge_base/d/deploying-product)
 or
@@ -35,9 +35,9 @@ or
 ## Install the Latest Upgrade Patch or Fix Pack (Liferay DXP only)
 
 Install the upgrade patch (if you requested it from Liferay Support) or the 
-[latest Fix Pack](/docs/7-2/deploy/-/knowledge_base/d/patching-product). 
+[latest Fix Pack](/docs/7-2/deploy/-/knowledge_base/d/patching-liferay). 
 
-## Migrate Your OSGi Configurations (@product@ 7.0+)
+## Migrate Your OSGi Configurations (7.0+)
 
 Copy your
 [OSGi configuration files](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files)
@@ -66,7 +66,7 @@ property-related updates:
     [migrate the Image Gallery](/docs/6-2/deploy/-/knowledge_base/deploy/upgrading-liferay#migrate-your-image-gallery-images).
 
 -   If you have a sharded environment,
-    [configure your upgrade to generate a non-sharded environment](/docs/7-2/deploy/-/knowledge_base/d/upgrading-sharded-environment).
+    [configure your upgrade to generate a non-sharded environment](/docs/7-2/deploy/-/knowledge_base/d/upgrading-a-sharded-environment).
 
 When a new version of @product@ is released, there are often changes to default
 settings, and this release is no different. If you rely on the defaults from
@@ -134,7 +134,7 @@ previous attempts for traces like these:
 
 Install the recommended database driver and update your database connection
 driver specified in your `portal-ext.properties`. See the [Database
-Templates](/docs/7-2/deployment/-/knowledge_base/d/database-templates). 
+Templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates). 
 
 ## Configure Your Documents and Media File Store 
 
@@ -158,8 +158,14 @@ changed for document storage:
     [Document Repository
     Configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
     documentation describes other store options. [Migrate to a supported
-    document
-    store](/docs/7-2/user/-/knowledge_base/u/server-administration#data-migration)
+    document store](/docs/7-2/user/-/knowledge_base/u/server-administration)
+    before upgrading your data. 
+
+-   CMIS Store was deprecated since 7.0.10 Fix Pack 14 and was removed in 
+    @product@ 7.2. The [Document Repository
+    Configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
+    documentation describes other store options. [Migrate to a supported
+    document store](/docs/7-2/user/-/knowledge_base/u/server-administration)
     before upgrading your data. 
 
 -   Since @product@ 7.0, document store type-specific configuration (e.g., 

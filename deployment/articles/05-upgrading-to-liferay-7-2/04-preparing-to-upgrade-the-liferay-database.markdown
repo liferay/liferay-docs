@@ -20,7 +20,7 @@ Previously you identified and removed unused objects from a copy of your
 UI) you removed the unused objects from the backup, remove them from your
 pre-upgrade production database. 
 
-## Test @product@ with its Pruned Database 
+## Test Using the Pruned Database 
 
 Find and resolve any issues related to the objects you removed. By removing the
 objects from production and testing your changes before upgrading, you can more
@@ -43,7 +43,7 @@ it to the live site. If you skip this step, you must run a full publish (or
 manually publish changes) after the upgrade, since the system won't know what
 content changed since the last publishing date.
 
-## Synchronize a Complete @product@ Backup 
+## Synchronize a Complete Backup 
 
 [Completely back up your @product@ installation, pruned production database, and document repository](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-liferay-installation). 
 

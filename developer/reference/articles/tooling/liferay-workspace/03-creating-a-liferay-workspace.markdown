@@ -38,7 +38,7 @@ highlighted tool.
     | ```
     | 
     | You can update the default version after it has been set by opening your
-    | workspace's `.blade/settings.properties` file and setting the
+    | workspace's `.blade.properties` file and setting the
     | `liferay.version.default` property.
 
 You can also create a Maven-based workspace with Blade CLI. See the
@@ -118,7 +118,9 @@ A dialog appears prompting you to open the Liferay Workspace perspective. Click
 
 1.  Execute the following Maven command:
 
-        mvn archetype:generate -Dfilter=liferay
+    ```bash
+    mvn archetype:generate -Dfilter=liferay
+    ```
 
 2.  Select the `com.liferay.project.templates.workspace` archetype to generate.
 

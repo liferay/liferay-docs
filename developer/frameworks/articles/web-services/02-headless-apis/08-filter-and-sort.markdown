@@ -65,7 +65,7 @@ prepended with a navigation path that identifies a collection.
 
 | Lambda Operator | Description | Example                                    |
 | --------------- | ----------- | ------------------------------------------ |
-| `any`           | Any         | `keywords/any(k: contains(k,'substring1')` |
+| `any`           | Any         | `keywords/any(k:contains(k,'substring1'))` |
 
 The `any` operator applies a boolean expression to each collection element and
 evaluates to `true` if the expression is true for any element. 

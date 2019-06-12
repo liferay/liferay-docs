@@ -60,7 +60,7 @@ existing thumbnails to the values in the Adaptive Media image resolutions, which
 can take time depending on the number of images. We only recommend this approach 
 when there isn't a large number of thumbnails to process, or if you prefer to 
 generate your images from scratch. This approach is covered in more detail in
-[Generating Missing Adapted Images](/docs/7-2/user/-/knowledge_base/u/managing-image-resolutions#generating-missing-image-resolutions). 
+[Generating Missing Adapted Images](/docs/7-2/user/-/knowledge_base/u/managing-image-resolutions#generating-missing-adapted-images). 
 
 **Execute a migrate process that reuses the existing thumbnails:** This copies 
 the existing thumbnails to Adaptive Media, which performs better because it 
@@ -71,7 +71,7 @@ describes the steps to run this process.
 
 The migration process is a set of Gogo console commands. You can learn more
 about using the Gogo console in 
-[the Felix Gogo Shell tutorial](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell). 
+[the Felix Gogo Shell article](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell). 
 
 Follow these steps to migrate your thumbnails from the Gogo console:
 
