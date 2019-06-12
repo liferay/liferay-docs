@@ -1,5 +1,5 @@
 ---
-header-id: portlet-mvc-for-spring
+header-id: portletmvc4spring
 ---
 
 # PortletMVC4Spring
