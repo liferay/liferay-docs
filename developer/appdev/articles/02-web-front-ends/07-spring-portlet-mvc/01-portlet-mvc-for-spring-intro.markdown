@@ -1,8 +1,8 @@
 ---
-header-id: portlet-mvc-for-spring-portletmvc4spring
+header-id: portlet-mvc-for-spring
 ---
 
-# Portlet MVC for Spring
+# PortletMVC4Spring
 
 [TOC levels=1-4]
 
