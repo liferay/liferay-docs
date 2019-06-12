@@ -30,10 +30,12 @@ proxy requirements for both Gradle and Maven environments.
 3.  If the proxy server requires authentication, also add the following
     properties:
 
-        systemProp.http.proxyUser=userId
-        systemProp.http.proxyPassword=yourPassword
-        systemProp.https.proxyUser=userId
-        systemProp.https.proxyPassword=yourPassword
+    ```properties
+    systemProp.http.proxyUser=userId
+    systemProp.http.proxyPassword=yourPassword
+    systemProp.https.proxyUser=userId
+    systemProp.https.proxyPassword=yourPassword
+    ```
 
 Excellent! Your proxy settings are set in your Liferay Workspace's Gradle
 environment.

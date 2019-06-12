@@ -19,16 +19,31 @@ modifying a Liferay server:
 
 2.  Initialize a Liferay server by running
 
-        blade server init
+    ```bash
+    blade server init
+    ```
 
     This downloads the @product@ bundle set in your workspace's
     `gradle.propeties` file. See the
     [Adding a Liferay Bundle to Workspace](/docs/7-2/reference/-/knowledge_base/r/adding-a-liferay-bundle-to-liferay-workspace)
     article for more information.
 
+    You can initialize a server based on a
+    [defined environment](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace#testing-projects)
+    by running the following command:
+
+    ```bash
+    blade server init --environment [ENVIRONMENT]
+    ```
+
+    For example, you could pass in the `uat` variable to generate a bundle
+    with the configs set in the `configs/uat` workspace folder.
+
 3.  Start your Liferay server (Tomcat or Wildfly/JBoss) by running
 
-        blade server start
+    ```bash
+    blade server start
+    ```
 
     This starts the server in the background. You can tail the logs by adding
     the `-t` flag. If you prefer starting the server in the foreground, run
@@ -42,7 +57,9 @@ modifying a Liferay server:
     example, to check if you successfully deployed your application from the
     previous section, you could run:
 
-        blade sh lb
+    ```bash
+    blade sh lb
+    ```
 
     Your output lists a long list of modules that are active/installed in your
     server's OSGi container.
@@ -58,11 +75,28 @@ modifying a Liferay server:
 5.  Once you're finished modifying your Liferay bundle, you can package it as a
     sharable file by running this command:
 
-        blade gw distBundle[Zip|Tar]
+    ```bash
+    blade gw distBundle[Zip|Tar]
+    ```
 
     This lets you create a ZIP or TAR file to share with others. This option is
     only available with Gradle at this time. The above command leverages Blade
     CLI's `gw` option, which executes the project's Gradle wrapper.
+
+    | **Note:** You can avoid deploying a module inside your workspace's
+    | `modules/` folder when `distBundle[Zip|Tar]` is called by adding the
+    | following snippet to your workspace's `build.gradle` file:
+    | 
+    | ```groovy
+    | distBundle {
+    |     exclude "com.liferay.jsp.spy*.jar"
+    | }
+    | ```
+    | 
+    | You can replace the JAR name above with the module JAR you want to exclude.
+    | This is useful for those who want to have a module in their workspace that
+    | is used for development or debug purposes only, and it should not be deployed
+    | to production. This works for Gradle builds only at this time.
 
     <!-- TODO: Add way for producing a distributable workspace using Blade, when
     available. It can only be done currently with ./gradlew distBundle[Zip|Tar].
@@ -70,7 +104,9 @@ modifying a Liferay server:
 
 6.  Turn off your Liferay server:
 
-        blade server stop
+    ```bash
+    blade server stop
+    ```
 
 To reference all of Blade CLI's available options, see the
 [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) article.

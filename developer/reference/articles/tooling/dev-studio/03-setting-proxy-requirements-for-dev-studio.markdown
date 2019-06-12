@@ -42,15 +42,17 @@ proxy settings.
 To do so, open the `eclipse.ini` file associated with your Eclipse installation
 and add the following entries:
 
-		-vmargs
-		-Dhttp.proxyHost=www.somehost.com
-		-Dhttp.proxyPort=1080
-		-Dhttp.proxyUser=userId
-		-Dhttp.proxyPassword=somePassword
-		-Dhttps.proxyHost=www.somehost.com
-		-Dhttps.proxyPort=1080
-		-Dhttps.proxyUser=userId
-		-Dhttps.proxyPassword=somePassword
+```
+-vmargs
+-Dhttp.proxyHost=www.somehost.com
+-Dhttp.proxyPort=1080
+-Dhttp.proxyUser=userId
+-Dhttp.proxyPassword=somePassword
+-Dhttps.proxyHost=www.somehost.com
+-Dhttps.proxyPort=1080
+-Dhttps.proxyUser=userId
+-Dhttps.proxyPassword=somePassword
+```
 
 After saving the file, restart Eclipse. Now your additional proxy settings are
 applied!

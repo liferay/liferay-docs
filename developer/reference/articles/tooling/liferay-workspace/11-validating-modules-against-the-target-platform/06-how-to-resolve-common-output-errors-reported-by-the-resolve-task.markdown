@@ -22,10 +22,12 @@ error. For example, suppose you have a module `test-service` that depends on
 the `com.google.common.base` package. If the container can't find that package,
 it throws this error:
 
-    Resolution exception in project 'modules:test-service': Unresolved requirements in root project 'modules:test-service':
-        Mandatory:
-            [osgi.wiring.package ] com.google.common.base; version=[23.0.0,24.0.0)
-            [osgi.identity       ] test.service
+```bash
+Resolution exception in project 'modules:test-service': Unresolved requirements in root project 'modules:test-service':
+    Mandatory:
+        [osgi.wiring.package ] com.google.common.base; version=[23.0.0,24.0.0)
+        [osgi.identity       ] test.service
+```
 
 This kind of error can also occur when separate modules require different
 versions of another module. If you have *module A* requiring *module Test
