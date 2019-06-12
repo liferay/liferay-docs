@@ -86,3 +86,6 @@ elements and properties:
 -   `service = EditPortletProvider.class` reflects the subinterface 
     `PortletProvider` class this class implements 
     ([`EditPortletProvider`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/EditPortletProvider.html)). 
+
+For step-by-step instructions on creating a Portlet Provider class, see 
+[Creating Portlet Providers](/docs/7-2/frameworks/-/knowledge_base/f/creating-portlet-providers). 
