@@ -10,7 +10,7 @@ In this article, you'll learn how to create a Liferay WAR core Ext project. To
 create a WAR core Ext project via the command line using Blade CLI or Maven, use
 one of the commands with the following parameters:
 
-    blade create -t war-core-ext projectName
+    blade create -t war-core-ext -v 7.1 projectName
 
 or
 
@@ -27,7 +27,7 @@ The template for this kind of project is `war-core-ext`. Suppose you want to
 create a WAR core Ext project called `my-war-core-ext-project`. You could run
 the following command to accomplish this:
 
-    blade create -t war-core-ext my-war-core-ext-project
+    blade create -t war-core-ext -v 7.1 my-war-core-ext-project
 
 or
 
