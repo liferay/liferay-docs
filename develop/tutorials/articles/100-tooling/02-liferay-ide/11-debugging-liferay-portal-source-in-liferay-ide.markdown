@@ -29,8 +29,18 @@ To configure your target platform, you must be developing in a
 [Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace).
 Liferay Workspace is able to provide debugging capabilities by targeting a
 specific @product@ version, which indexes the configured @product@ source code.
-Without specifying a target platform, @product@'s source code
-cannot be accessed by @ide@. See the
+You must enable this functionality by adding the following property to your
+workspace's `gradle.properties` file:
+
+```properties
+target.platform.index.sources=true
+```
+
+| **Note:** Portal source indexing is disabled in Gradle workspace version
+| 2.0.3+ (Target Platform plugin version 2.0.0+).
+
+Without specifying a target platform, @product@'s source code cannot be accessed
+by @ide@. See the
 [Managing the Target Platform for Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/managing-the-target-platform-for-liferay-workspace)
 tutorial for more information on how this works.
 

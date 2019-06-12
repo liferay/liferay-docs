@@ -25,6 +25,16 @@ configured @product@ source code to
 - debug @product@ sources
   ([tutorial](/docs/7-0/tutorials/-/knowledge_base/t/debugging-product-source-in-liferay-ide))
 
+To enable this functionality, set the following property in your workspace's
+`gradle.properties` file:
+  
+```properties
+target.platform.index.sources=true
+```
+
+| **Note:** Portal source indexing is disabled in Gradle workspace version
+| 2.0.3+ (Target Platform plugin version 2.0.0+).
+
 These options in @ide@ are only available when developing in a Liferay
 Workspace, or if you have the
 [Target Platform](/docs/7-0/reference/-/knowledge_base/r/target-platform-gradle-plugin)

@@ -19,14 +19,16 @@ This can be used for WAR-style projects and modules (JARs). You can also deploy
 all projects in a folder by running the `deploy` command from the parent folder
 (e.g., `[WORKSPACE_ROOT]/modules`).
     
-If you're using Liferay Workspace, the `deploy` command copies your project to
-the @product@ `/deploy` folder, which is found by reading the Liferay Home
-folder set in your workspace's `gradle.properties` or `pom.xml` file. The
-`deploy` command works similarly if you're working outside of workspace; the
-Liferay Home folder, in contrast, is set by loading the Liferay extension object
-(Gradle) or the effective POM (Maven) and searching for the Liferay Home
-property stored there. If it's not stored, Blade prompts you to set it so it's
-available.
+If you're using Liferay Workspace, the `deploy` command deploys your project
+based on the build tool's deployment configuration. For example, leveraging
+Blade CLI in a default Gradle Liferay Workspace uses the underlying Gradle
+deployment configuration. The build tool's deployment configuration is found by
+reading the Liferay Home folder set in your workspace's `gradle.properties` or
+`pom.xml` file. The `deploy` command works similarly if you're working outside
+of workspace; the Liferay Home folder, in contrast, is set by loading the
+Liferay extension object (Gradle) or the effective POM (Maven) and searching for
+the Liferay Home property stored there. If it's not stored, Blade prompts you to
+set it so it's available.
     
 | **Note:** If you prefer using pure Gradle or Maven to deploy your project, you
 | can do this by applying the appropriate plugin and configuring your Liferay Home
@@ -52,6 +54,14 @@ available.
 | `pom.xml`. See the
 | [Deploying a Module Built with Maven to Liferay Portal](/docs/7-0/tutorials/-/knowledge_base/t/deploying-a-module-built-with-maven-to-product)
 | for details.
+
+If you prefer not to use your underlying build tool's (Gradle or Maven) module
+deployment configuration, and instead, you want to deploy straight to
+@product@'s OSGi container, run this command instead:
+
+```bash
+blade deploy -l
+```
 
 Blade CLI also offers a way to *watch* a deployed project, which compiles and
 redeploys a project when changes are detected. There are two ways to do this:

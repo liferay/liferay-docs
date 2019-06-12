@@ -25,6 +25,17 @@ advanced search. See the
 [Managing the Target Platform in Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/managing-the-target-platform-for-liferay-workspace)
 tutorial for more information on how this works.
 
+Workspace does not perform portal source indexing by default. You must enable
+this functionality by adding the following property to your workspace's
+`gradle.properties` file:
+
+```properties
+target.platform.index.sources=true
+```
+
+| **Note:** Portal source indexing is disabled in Gradle workspace version
+| 2.0.3+ (Target Platform plugin version 2.0.0+).
+
 In this tutorial, you'll explore three use cases where advanced search would be
 useful.
 
