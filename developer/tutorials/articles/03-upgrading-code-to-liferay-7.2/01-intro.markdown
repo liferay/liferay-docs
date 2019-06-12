@@ -13,7 +13,10 @@ section.
 These tutorials assume you're using the
 [Liferay Upgrade Planner](/docs/7-2/reference/-/knowledge_base/r/liferay-upgrade-planner).
 To follow along with this section, install the planner and step through the
-upgrade instructions.
+upgrade instructions. You can also use the planner to
+[upgrade your data](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver);
+this is a separate process that must be done independently from the code upgrade
+process.
 
 For convenience, this tutorial section also references documentation and
 outlined steps to aid those opting to upgrade their code manually.
