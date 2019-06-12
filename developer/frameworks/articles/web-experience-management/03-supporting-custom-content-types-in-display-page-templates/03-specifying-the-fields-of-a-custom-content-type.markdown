@@ -6,7 +6,7 @@ fields in the Display Page Template. To do this, implement the
 [`InfoDisplayContributorField`](@app-ref@/info/2.0.0/javadocs/com/liferay/info/display/contributor/field/InfoDisplayContributorField.html)
 interface.
 
-Follow the steps below to complete this for the User content type:
+Follow the steps below to create a user name field for the User content type:
 
 1.  Inside your custom model project, add a class named
     `UserNameInfoDisplayContributorField`.
