@@ -6,14 +6,14 @@ header-id: cdi-dependency-injection
 
 [TOC levels=1-4]
 
-Portlet 3.0 (see [JSR 362](https://jcp.org/en/jsr/detail?id=362)) supports using
-Contexts and Dependency Injection (CDI). It enables you to create and use
+Portlet 3.0 (see [JSR 362](https://jcp.org/en/jsr/detail?id=362)) supports 
+Contexts and Dependency Injection (CDI) so you can create and use
 injectable classes (CDI beans) in your portlet. It also provides injectable
-portlet artifacts called [Portlet Predefined
-Beans](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans).
+portlet artifacts called 
+[Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans).
 They give a portlet's CDI beans access to the portlet configuration,
-preferences, requests, responses, and more. Here you'll create and use CDI beans
-and Portlet Predefined Beans. 
+preferences, requests, responses, and more. Here's how to create and use CDI
+beans and Portlet Predefined Beans: 
 
 1.  Create a portlet WAR project, if you haven't created one 
     already. 
@@ -36,7 +36,7 @@ and Portlet Predefined Beans.
     | `compileOnly` (Gradle) or `provided` (Maven) dependencies. 
 
 2.  If your portlet WAR project isn't a Bean Portlet, add this
-    `src/main/webapp/WEB-INF/beans.xml` file to it. This file informs CDI to
+    `src/main/webapp/WEB-INF/beans.xml` file to it. This file tells CDI to
     scan the project for CDI annotations. 
 
 ```xml 
@@ -85,8 +85,7 @@ public class MyPortlet ... {
 private GuestBook guestbook;
 ```
 
-7.  Inject any [Portlet Predefined
-    Beans](/docs/7-2/reference/-/knowledge_base/r/portlet-predefined-beans)
+7.  Inject any [Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/portlet-predefined-beans)
     (portlet request scoped or dependent scoped beans) into your
     `@PortletRequestScoped` CDI beans. 
 
@@ -100,8 +99,7 @@ public class RequestProcessor ... {
 }
 ```
 
-8.  Inject any [dependent scoped Portlet Predefined
-    Beans](/docs/7-2/reference/-/knowledge_base/r/portlet-predefined-beans) into
+8.  Inject any [dependent scoped Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/portlet-predefined-beans) into
     your `ApplicationScoped` or `@Dependent` scoped CDI beans. For example,
 
 ```java
@@ -114,8 +112,8 @@ public class MyPortlet ... {
 }
 ```
 
-9.  Use bean EL names to reference any [portlet redefined *named
-    beans*](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans)
+9.  Use bean EL names to reference any 
+    [portlet redefined *named beans*](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans)
     in your JSP or JSF pages. 
 
 10. [Deploy](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)
