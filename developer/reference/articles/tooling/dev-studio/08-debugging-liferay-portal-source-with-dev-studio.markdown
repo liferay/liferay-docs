@@ -37,8 +37,8 @@ enable this functionality by adding the following property to your workspace's
 target.platform.index.sources=true
 ```
 
-| **Note:** The disablement of portal source indexing is disabled in Gradle
-| workspace version 2.0.3+ (Target Platform plugin version 2.0.0+).
+| **Note:** Portal source indexing is disabled in Gradle workspace version
+| 2.0.3+ (Target Platform plugin version 2.0.0+).
 
 Without specifying a target platform, @product@'s source code
 cannot be accessed by Dev Studio. See the
