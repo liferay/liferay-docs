@@ -2,9 +2,9 @@
 
 Elasticsearch 6.5.x is the default, most up-to-date supported version of
 Elasticsearch for @product-ver@. If you're upgrading @product@ and still running
-Elasticsearch 6.1, it's time to upgrade your Elasticsearch servers,too. If
+Elasticsearch 6.1, it's time to upgrade your Elasticsearch servers, too. If
 you're setting up a new system and not already running a remote Elasticsearch
-6.l.x server, follow the [installation
+6.1.x server, follow the [installation
 guide](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch) to install
 Elasticsearch 6 and the [configuration
 guide](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector)
