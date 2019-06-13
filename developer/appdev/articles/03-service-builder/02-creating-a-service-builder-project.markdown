@@ -20,11 +20,11 @@ Here's how to create a Service Builder project.
 1.  Decide on a project name. If the project is part of an application, name the
     project after the application. 
 
-2.  Create the Service Builder project using [Blade
-    CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) and the
-    `service-builder` project template, passing your project name as a
-    parameter. For example, here are Gradle and Maven commands for creating a
-    Service Builder project called `bookmarks`. 
+2.  [Create a project](/docs/7-2/reference/-/knowledge_base/r/creating-a-project) 
+    using [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) 
+    and the `service-builder` project template, passing your project name as
+    a parameter. For example, here are Gradle and Maven commands for creating
+    a Service Builder project called `bookmarks`. 
 
     Gradle: 
 
