@@ -1,4 +1,10 @@
+---
+header-id: retrieving-portlets
+---
+
 # Retrieving Portlets
+
+[TOC levels=1-4]
 
 When a 
 [Portlet Provider](/docs/7-2/frameworks/-/knowledge_base/f/back-end-frameworks#portlet-providers) 
@@ -116,3 +122,9 @@ for (AssetRendererFactory<?> curRendererFactory : assetRendererFactories) {
             request, curRendererFactory.getClassName(),
             PortletProvider.Action.BROWSE);
 ```
+
+## Related Topics
+
+[Portlet Providers](/docs/7-2/frameworks/-/knowledge_base/f/back-end-frameworks#portlet-providers)
+
+[Creating Portlet Providers](/docs/7-2/frameworks/-/knowledge_base/f/creating-portlet-providers)

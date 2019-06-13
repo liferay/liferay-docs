@@ -1,4 +1,10 @@
+---
+header-id: creating-portlet-providers
+---
+
 # Creating Portlet Providers
+
+[TOC levels=1-4]
 
 Follow these steps to create your own 
 [Portlet Provider](/docs/7-2/frameworks/-/knowledge_base/f/back-end-frameworks#portlet-providers): 
@@ -77,4 +83,10 @@ Follow these steps to create your own
 Now your Portlet Provider is available to return the ID and URL of the portlet
 that provides the desired behaviors. For more information on this, see 
 [Retrieving Portlets](/docs/7-2/frameworks/-/knowledge_base/f/retrieving-portlets). 
+
+## Related Topics
+
+[Portlet Providers](/docs/7-2/frameworks/-/knowledge_base/f/back-end-frameworks#portlet-providers)
+
+[Retrieving Portlets](/docs/7-2/frameworks/-/knowledge_base/f/retrieving-portlets)
 

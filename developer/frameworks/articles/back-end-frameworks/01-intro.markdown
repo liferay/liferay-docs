@@ -89,3 +89,5 @@ elements and properties:
 
 For step-by-step instructions on creating a Portlet Provider class, see 
 [Creating Portlet Providers](/docs/7-2/frameworks/-/knowledge_base/f/creating-portlet-providers). 
+For instructions on using Portlet Providers to retrieve a portlet, see 
+[Retrieving Portlets](/docs/7-2/frameworks/-/knowledge_base/f/retrieving-portlets). 
