@@ -1,5 +1,7 @@
 # Search, Filtering, and Hierarchy in the GDPR Data Erasure app
 
+<!-- add this section to the INTRO when published -->
+
 Version 7.2 introduces a few refinements the GDPR Delete Peronsal Data API and interface. The user interface now supports three new features
 
 1. **Filtering** - User content can now be viewed and acted upon based on whether it is part of the user's personal site, some other site, or the overall company.
@@ -10,7 +12,7 @@ Let's explore each of these.
 
 ## Filtering and Searching
 
-You can take advantage of both of these features by implementing three methods on `UADDisplay`:
+To add filtering and searching for your custom entities, implement three methods on `UADDisplay`:
 
 - `isSiteScoped`
 - `search`
@@ -20,7 +22,7 @@ The `isSiteScoped` method should return a boolean based on whether or not the en
 
 The `search` method takes the following parameters:
 
-- `userId` - the userId of the user whose data is being acted on.
+- `userId` - the `userId` of the User whose data is being acted on.
 - `groupIds` - this is an array of groupIds used to filter which data is shown by which groups it is associated with. In the case that no groupIds are given (it can be null), the search method should return data that is not scoped to any given group.
 - `keywords` - this will be whatever is typed into the search bar. The search method should filter by whatever fields are relevant for the given entity.
 - `orderByField` - the name of the field used to sort the results. This will be one of the names returned by `getSortingFieldNames`.
