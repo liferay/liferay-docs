@@ -14,7 +14,7 @@ of the frameworks:
 
 -   Device Recognition
 -   [Portlet Providers](#portlet-providers)
--   [Data Scopes](/docs/7-1/frameworks/-/knowledge_base/f/data-scopes)
+-   [Data Scopes](#data-scopes)
 -   [Message Bus](/docs/7-1/frameworks/-/knowledge_base/f/message-bus)
 
 These frameworks and more deliver smashing performances and are stars in their
@@ -91,3 +91,35 @@ For step-by-step instructions on creating a Portlet Provider class, see
 [Creating Portlet Providers](/docs/7-2/frameworks/-/knowledge_base/f/creating-portlet-providers). 
 For instructions on using Portlet Providers to retrieve a portlet, see 
 [Retrieving Portlets](/docs/7-2/frameworks/-/knowledge_base/f/retrieving-portlets). 
+
+## Data Scopes
+
+Apps can restrict their data to specific *scopes*. Scopes provide a context for 
+the application's data. 
+
+**Global:** One data set throughout a portal instance. 
+
+**Site:** Separate data sets for each Site it's added to. 
+
+**Page:** Separate data sets for each page it's added to. 
+
+For example, a Site-scoped app can display its data across a single Site. For a 
+detailed explanation of scopes, see the user guide article 
+[Widget Scope](/docs/7-2/user/-/knowledge_base/u/widget-scope). 
+To give your applications scope, you must manually add support for it. For 
+instructions on this, see 
+[Enabling and Accessing Data Scopes](/docs/7-2/frameworks/-/knowledge_base/f/enabling-and-accessing-data-scopes). 
+
+### Accessing the Site Scope Across Apps
+
+There may be times when you must access a different app's Site-scoped data from 
+your app that is scoped to a page or the portal. For example, web content 
+articles can be created in the page, Site, or portal scope. 
+[Structures and Templates](/docs/7-2/user/-/knowledge_base/u/designing-uniform-content) 
+for such articles, however, exist only in the Site scope. Other techniques 
+return your app's scope, which might not be the Site scope. What a pickle! Never
+fear, the 
+[`ThemeDisplay`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html) 
+method `getSiteGroupId()` is here! This method always gets the Site scope, no 
+matter your app's current scope. For an example of using this method, see 
+[Enabling and Accessing Data Scopes](/docs/7-2/frameworks/-/knowledge_base/f/enabling-and-accessing-data-scopes). 
