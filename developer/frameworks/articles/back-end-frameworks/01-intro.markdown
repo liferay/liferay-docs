@@ -15,7 +15,7 @@ of the frameworks:
 -   Device Recognition
 -   [Portlet Providers](#portlet-providers)
 -   [Data Scopes](#data-scopes)
--   [Message Bus](/docs/7-1/frameworks/-/knowledge_base/f/message-bus)
+-   [Service Bus](#service-bus)
 
 These frameworks and more deliver smashing performances and are stars in their
 own right. 
@@ -123,3 +123,32 @@ fear, the
 method `getSiteGroupId()` is here! This method always gets the Site scope, no 
 matter your app's current scope. For an example of using this method, see 
 [Enabling and Accessing Data Scopes](/docs/7-2/frameworks/-/knowledge_base/f/enabling-and-accessing-data-scopes). 
+
+## Service Bus
+
+If you ever need to do some data processing outside the scope of the web's
+request/response, look no further than the Service Bus. It's conceptually
+similar to Java Messaging Service (JMS) Topics, but sacrifices transactional,
+reliable delivery capabilities, making it much lighter-weight. @product@ uses
+Service Bus all over the place: 
+
+- Auditing
+- Search engine integration
+- Email subscriptions
+- Monitoring
+- Document Library processing
+- Background tasks
+- Cluster-wide request execution
+- Clustered cache replication
+
+You can use it too! Here are some of Service Bus's most important features:
+
+-   publish/subscribe messaging 
+-   request queuing and throttling
+-   flow control
+-   multi-thread message processing
+
+There are also tools, such as the Java SE's JConsole, that can monitor Service
+Bus activities. 
+
+![Figure 1: JConsole shows statistics on Service Bus messages sent, messages pending, and more.](../../images/service-bus-jconsole.png)
