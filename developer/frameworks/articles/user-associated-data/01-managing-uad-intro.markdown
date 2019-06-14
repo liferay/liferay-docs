@@ -6,15 +6,21 @@ header-id: managing-user-associated-data-stored-by-custom-applications
 
 [TOC levels=1-4]
 
-Administrators can [delete or
-anonymize](/docs/7-2/user/-/knowledge_base/u/managing-user-data) User Associated
+Administrators can 
+[delete or anonymize](/docs/7-2/user/-/knowledge_base/u/managing-user-data) User Associated
 Data (UAD), complying with the EU's General Data Protection Regulation (GDPR).
-Out of the box, this tool supports Liferay applications (blogs, web content,
-etc.), but you can also anonymize data stored by your custom applications.
+Out of the box, the UAD management tool supports @product@ applications (Blogs,
+Documents and Media, etc.), but you can also anonymize data stored by your
+custom applications.
 
-At the core of the anonymization effort, you must identify fields to anonymize
-by attaching anonymization attributes to elements in the `-service` module's
-`service.xml` file. The UAD framework recognizes two kinds of field:
+This task is made easier for 
+[Service Builder applications](/docs/7-2/appdev/-/knowledge_base/a/service-builder) 
+At the core of the anonymization effort, you must identify the model entity's
+fields to anonymize. With Service Builder, attach anonymization attributes to
+elements in the `-service` module's `service.xml` file. For the entire DTD for
+Service Builder, see
+[here](https://docs.liferay.com/portal/7.2-ga1/definitions/).
+These two are the most important attributes for the UAD framework:
 
 - The `uad-anonymize-field-name=fieldName` attribute indicates a field whose
     value is replaced by that of the anonymous user in the UAD deletion process.

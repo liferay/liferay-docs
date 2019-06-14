@@ -1,13 +1,13 @@
 # Adding the UAD Framework to a Service Builder Application
 
-You'll touch two modules of a Service Builder application to implement the UAd
+You'll touch two modules of a Service Builder application to implement the UAD
 features: the `-service` module and a brand new module that Service Builder
 generates for you, the `-uad` module.
 
 ## Update the Service Module
 
 Before you specify your model entity's fields to manage with the UAD framework,
-make sure you ave the right dependencies.
+make sure you have the right dependencies.
 
 ### Include Dependencies
 
