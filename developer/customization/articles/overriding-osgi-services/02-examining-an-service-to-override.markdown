@@ -34,13 +34,10 @@ details to make these decisions.
     command `scr:info [componentName]` lists the component's attributes and 
     service references. 
 
-Here's an example `scr:info` command and results (abbreviated with `...`) that 
-describe component `override.my.service.reference.OverrideMyServiceReference` 
-
-<!--TODO: Uncomment once zip is ported to new site
-(from sample module 
-[override-my-service-reference](https://dev.liferay.com/documents/10184/656312/override-my-service-reference.zip))
--->
+Here's an example `scr:info` command and results (abbreviated with `...`) that
+describe component `override.my.service.reference.OverrideMyServiceReference`
+(from sample module
+[override-my-service-reference](https://portal.liferay.dev/documents/113763090/114000186/override-my-service-reference.zip))
 and its reference to a service of type
 `override.my.service.reference.service.api.SomeService`: 
 

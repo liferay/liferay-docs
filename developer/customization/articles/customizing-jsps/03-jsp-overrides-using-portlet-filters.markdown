@@ -12,13 +12,9 @@ client. You can operate on the request and / or response to modify the JSP
 content. Unlike dynamic includes, portlet filters give you access to all the 
 content sent back to the client. 
 
-This demonstration uses a portlet filter to modify content in Liferay's Blogs 
-portlet. 
-
-<!--TODO: Uncomment once zip is ported to new site.
-For reference, you can download the 
-[example module](https://dev.liferay.com/documents/10184/656312/example-portlet-filter-customize-jsp-master.zip). 
--->
+This demonstration uses a portlet filter to modify content in Liferay's Blogs
+portlet. For reference, you can download the [example
+module](https://portal.liferay.dev/documents/113763090/114000186/example-portlet-filter-customize-jsp-master.zip). 
 
 Follow these steps:
 
