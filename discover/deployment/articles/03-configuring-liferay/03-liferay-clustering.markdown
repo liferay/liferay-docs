@@ -248,7 +248,7 @@ and change the settings without taking down the cluster. Modifying the Ehcache
 settings with a module is recommended over modifying the Ehcache settings
 directly. 
 
-We've made this as easy as possible by [creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
+We've made this as easy as possible by [creating the project](https://portal.liferay.dev/documents/113763090/114000186/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
 [Liferay Workspace](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-workspace), 
 in the workspace's `modules` folder. To override your cache settings, you only

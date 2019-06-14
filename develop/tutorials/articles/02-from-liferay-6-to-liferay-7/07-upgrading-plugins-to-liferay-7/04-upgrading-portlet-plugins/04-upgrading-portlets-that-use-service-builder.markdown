@@ -21,9 +21,9 @@ section of the Liferay Portal 6.2 Learning Path
 ![Figure 1: The Guestbook portlet to model guestbooks and guestbook entries.](../../../../images/upgrade-service-builder-portlet-guestbook.png)
 
 To get the most from this tutorial, you can download and refer to the
-[original portlet source code](https://dev.liferay.com/documents/10184/656312/guestbook-portlet-pre-7-0-upgrade.zip)
+[original portlet source code](https://portal.liferay.dev/documents/113763090/114000186/guestbook-portlet-pre-7-0-upgrade.zip)
 and the 
-[upgraded source code](https://dev.liferay.com/documents/10184/656312/guestbook-portlet-post-7-0-upgrade.zip).
+[upgraded source code](https://portal.liferay.dev/documents/113763090/114000186/guestbook-portlet-post-7-0-upgrade.zip).
 
 The Guestbook portlet has the following characteristics:
 

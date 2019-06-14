@@ -41,9 +41,9 @@ You can follow this tutorial to upgrade your Struts portlet. Along the way, you
 can examine the Sample Struts portlet source code from before and after its
 upgrade:
 
--   [Liferay Portal 6.2 Sample Struts portlet code](https://dev.liferay.com/documents/10184/656312/sample-struts-portlet-pre-7-0-upgrade.zip)
+-   [Liferay Portal 6.2 Sample Struts portlet code](https://portal.liferay.dev/documents/113763090/114000186/sample-struts-portlet-pre-7-0-upgrade.zip)
 
--   [@product-ver@ Sample Struts portlet code](https://dev.liferay.com/documents/10184/656312/sample-struts-portlet-post-7-0-upgrade.zip)
+-   [@product-ver@ Sample Struts portlet code](https://portal.liferay.dev/documents/113763090/114000186/sample-struts-portlet-post-7-0-upgrade.zip)
 
 Here's the Sample Struts portlet's folder structure:
 

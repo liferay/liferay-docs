@@ -23,7 +23,7 @@ Additionally it measures code coverage using
 [JaCoCo](http://eclemma.org/jacoco/).
 In this tutorial, you'll learn how the Arquillian Liferay Extension and JaCoCo
 work. You can download the Arquillian Blade Example project
-[here](https://dev.liferay.com/documents/10184/656312/arquillian-blade-example.zip/27250a6e-4acf-6ed3-33bb-9a8a87fd0776)
+[here](https://portal.liferay.dev/documents/113763090/114000186/arquillian-blade-example.zip)
 or access its latest code on
 [GitHub](https://github.com/liferay-labs/arquillian-blade-example). 
 
