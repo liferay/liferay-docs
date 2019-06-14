@@ -15,9 +15,9 @@ the link, the Liferay logo appears.
 ![Figure 1: The Sample JSON portlet displays text stating *Click me* that you can click to initiate an action.](../../../../images/upgrading-portlets-sample-servlet-json-initial-view.png)
 
 To get the most from this tutorial, you can download and refer to the 
-[original sample portlet source code](https://dev.liferay.com/documents/10184/656312/sample-json-portlet-pre-7-0-upgrade.zip)
+[original sample portlet source code](https://portal.liferay.dev/documents/113763090/114000186/sample-json-portlet-pre-7-0-upgrade.zip)
 and the 
-[upgraded source code](https://dev.liferay.com/documents/10184/656312/sample-json-portlet-post-7-0-upgrade.zip).
+[upgraded source code](https://portal.liferay.dev/documents/113763090/114000186/sample-json-portlet-post-7-0-upgrade.zip).
 
 Here are the sample portlet's characteristics:
 
