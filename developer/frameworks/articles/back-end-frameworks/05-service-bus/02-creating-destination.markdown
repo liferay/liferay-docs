@@ -144,9 +144,9 @@ class that follows demonstrates these steps.
         _serviceRegistrations = new HashMap<>();
     ```
 
-6.  Add a `deactivate` method that unregisters and destroys any destinations. 
-    This ensures there aren't any active destinations for this component when 
-    the service deactivates. 
+6.  Add a `deactivate` method that unregisters and destroys any destinations for 
+    this component. This ensures there aren't any active destinations for this 
+    component when the service deactivates: 
 
     ```java
     @Deactivate
