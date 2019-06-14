@@ -12,8 +12,17 @@ entities can be associated with a particular site. This is used to determine
 which filter they will be associated with ("instance", "personal-site", or
 "regular-sites").
 
-NEED CODE
+<!--Straight out of BaseModelUADDisaply: -->
+```java
+@Override
+public boolean isSiteScoped() {
+    if (GroupedModel.class.isAssignableFrom(getTypeClass())) {
+        return true;
+    }
 
+    return false;
+}
+```
 ## Implement search
 
 The `search` method takes the following parameters:
@@ -26,12 +35,30 @@ The `search` method takes the following parameters:
  For pagination.
 - `end` - the ending index of the result set. For pagination.
 
+
+<!--Straight out of BaseModelUADDisaply: -->
+```java
+@Override
+public List<T> search(
+    long userId, long[] groupIds, String keywords, String orderByField,
+    String orderByType, int start, int end) {
+
+    return doGetRange(
+        getSearchDynamicQuery(
+            userId, groupIds, keywords, orderByField, orderByType),
+        start, end);
+}
+```
 ## Implement searchCount
 
-The `searchCount` method takes the following parameters. Treat them
-identically to the ones in `search`:
+The `searchCount` method takes a `userId`, `groupIds`, and `keywords`
+parameter. Treat them just as you did in the `search` method.
 
-- `userId`
-- `groupIds`
-- `keywords`
-
+<!--Straight out of BaseModelUADDisaply: -->
+```java
+@Override
+public long searchCount(long userId, long[] groupIds, String keywords) {
+    return doCount(
+        getSearchDynamicQuery(userId, groupIds, keywords, null, null));
+}
+```
