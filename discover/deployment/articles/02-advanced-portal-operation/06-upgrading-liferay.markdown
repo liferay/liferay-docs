@@ -161,9 +161,11 @@ duplicated field names in your structures, the upgrade will fail.
 To identify these structures, Liferay has provided Groovy scripts you can run in
 the script console: 
 
-- [Script for 6.0](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.0.x.groovy)
-- [Script for 6.1](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.1.x.groovy)
-- [Script for 6.2](https://dev.liferay.com/documents/10184/741415/NormalizeDuplicateFields-6.2.x.groovy)
+
+
+- [Script for 6.0](https://portal.liferay.dev/documents/113763090/114000078/NormalizeDuplicateFields-6.0.x.groovy)
+- [Script for 6.1](https://portal.liferay.dev/documents/113763090/114000078/NormalizeDuplicateFields-6.1.x.groovy)
+- [Script for 6.2](https://portal.liferay.dev/documents/113763090/114000078/NormalizeDuplicateFields-6.2.x.groovy)
 
 To execute the script, go to the *Control Panel* &rarr; *Server Administration*
 &rarr; *Scripts*. Make sure Groovy is the selected language and paste in the
