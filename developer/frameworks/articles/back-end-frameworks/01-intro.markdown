@@ -12,7 +12,6 @@ richness and life to their films, Liferay's powerful back-end frameworks bring
 essential services and deliver terrific performances of their own. Here are some
 of the frameworks: 
 
--   Device Recognition
 -   [Portlet Providers](#portlet-providers)
 -   [Data Scopes](#data-scopes)
 -   [Service Bus](#service-bus)
