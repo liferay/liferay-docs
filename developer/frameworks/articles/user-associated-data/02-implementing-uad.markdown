@@ -1,4 +1,10 @@
+---
+header-id: adding-the-uad-framework-to-a-service-builder-application
+---
+
 # Adding the UAD Framework to a Service Builder Application
+
+[TOC levels=1-4]
 
 You'll touch two modules of a Service Builder application to implement the UAD
 features: the `-service` module and a brand new module that Service Builder
