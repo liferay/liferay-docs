@@ -13,7 +13,7 @@ implements the service interface, declares it an OSGi service of that type, and
 makes it the best match for binding with other components. 
 
 The example custom service `CustomServiceImpl` (from sample module 
-[`overriding-service-reference`](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip))
+[`overriding-service-reference`](https://portal.liferay.dev/documents/113763090/114000186/overriding-service-reference.zip))
 implements service interface `SomeService`, declares itself an OSGi service of
 the `SomeService` service type, and even delegates work to the existing service.
 Examine this example code as you follow the steps for creating your custom

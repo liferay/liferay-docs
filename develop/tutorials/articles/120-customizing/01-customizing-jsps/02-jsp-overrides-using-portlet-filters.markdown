@@ -14,7 +14,7 @@ content sent back to the client.
 
 This demonstration uses a portlet filter to modify content in Liferay's Blogs
 portlet. For reference, you can download the 
-[example module](https://dev.liferay.com/documents/10184/656312/example-portlet-filter-customize-jsp-master.zip).
+[example module](https://portal.liferay.dev/documents/113763090/114000186/example-portlet-filter-customize-jsp-master.zip).
 
 1.  Create a new module and make sure it specifies these compile-only
     dependencies, shown here in Gradle format:

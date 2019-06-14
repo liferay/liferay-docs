@@ -28,9 +28,9 @@ portlet. This portlet provides a job application users can submit.
 ![Figure 1: The JSF Applicant portlet provides a job application for users to submit.](../../../../images/jsf-applicant-6-2.png)
 
 For reference, you can download the
-[pre-upgraded portlet code](https://dev.liferay.com/documents/10184/656312/jsf-applicant-portlet-6.2/48113118-3372-636f-4b5e-c0b501108a97)
+[pre-upgraded portlet code](https://portal.liferay.dev/documents/113763090/114000186/jsf-applicant-portlet-6.2.zip)
 and the
-[upgrade portlet code](https://dev.liferay.com/documents/10184/1608802/jsf-applicant-portlet-7.1/7e9d3296-0bf2-72a6-78e8-39f58a048081).
+[upgrade portlet code](https://portal.liferay.dev/documents/113763090/114000653/jsf-applicant-portlet-7.1.zip).
 This sample project uses Maven.
 
 Follow these steps to upgrade your Liferay JSF portlet.

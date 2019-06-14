@@ -22,9 +22,9 @@ called *Sample DAO* (project `sample-dao-portlet`).
 
 The sample portlet lets users view, add, edit, and delete food items from a
 listing. For reference, you can download the
-[pre-upgraded portlet code](https://dev.liferay.com/documents/10184/656312/sample-dao-portlet-pre-7-0-upgrade.zip)
+[pre-upgraded portlet code](https://portal.liferay.dev/documents/113763090/114000186/sample-dao-portlet-pre-7-0-upgrade.zip)
 and the
-[upgraded code](https://dev.liferay.com/documents/10184/1608802/sample-dao-portlet-post-7-1-upgrade.zip). 
+[upgraded code](https://portal.liferay.dev/documents/113763090/114000653/sample-dao-portlet-post-7-1-upgrade.zip). 
 
 The sample portlet has the following characteristics:
  

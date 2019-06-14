@@ -20,7 +20,7 @@ register that content with the dynamic include tag, and deploy your module.
 
 Blogs entries contain a good example of how dynamic includes work. For
 reference, you can download the 
-[example module](https://dev.liferay.com/documents/10184/656312/example-dynamic-include-blogs-master.zip). 
+[example module](https://portal.liferay.dev/documents/113763090/114000186/example-dynamic-include-blogs-master.zip). 
 
 1.  Find the `liferay-util:dynamic-include` tag where you want to insert content
     and note the tag's key. 
