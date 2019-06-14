@@ -20,6 +20,8 @@ Here's an overview of using X-Pack with @product@:
 
 1.  Get an [Enterprise Search subscription](https://help.liferay.com/hc/en-us/articles/360014400932).
 
+2.  You'll receive license for X-Pack. Install it on your Elasticsearch servers.
+
 2.  Download and install the X-Pack connectors you purchased. Access the
     connector corresponding to your subscription level:
 
@@ -31,6 +33,12 @@ Here's an overview of using X-Pack with @product@:
     information.
 
 4.  Restart Elasticsearch. These steps require a full cluster restart.
+
+
+| **Note:** Out of the box, X-Pack comes with a [30-day
+| trial](https://www.elastic.co/guide/en/x-pack/current/license-management.html).
+| This can be useful if there's a delay between your subscruption and receipt of
+| your production X-Pack license.
 
 Following these instructions gives you a working installation of Elasticsearch
 communicating freely with @product@. Elastic's documentation explains additional
