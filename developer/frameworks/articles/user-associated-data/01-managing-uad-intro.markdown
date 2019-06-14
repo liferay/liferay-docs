@@ -6,12 +6,12 @@ header-id: managing-user-associated-data-stored-by-custom-applications
 
 [TOC levels=1-4]
 
-Administrators can 
-[delete or anonymize](/docs/7-2/user/-/knowledge_base/u/managing-user-data) User Associated
-Data (UAD), complying with the EU's General Data Protection Regulation (GDPR).
-Out of the box, the UAD management tool supports @product@ applications (Blogs,
-Documents and Media, etc.), but you can also anonymize data stored by your
-custom applications.
+Administrators can [delete or
+anonymize](/docs/7-2/user/-/knowledge_base/u/managing-user-data) User Associated
+Data (UAD) using management tools designed to aid compliance efforts with the
+EU's General Data Protection Regulation (GDPR).  Out of the box, the UAD
+management tool supports @product@ applications (Blogs, Documents and Media,
+etc.), but you can also anonymize data stored by your custom applications.
 
 This task is made easier for 
 [Service Builder applications](/docs/7-2/appdev/-/knowledge_base/a/service-builder) 
