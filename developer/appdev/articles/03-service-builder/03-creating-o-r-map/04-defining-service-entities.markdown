@@ -8,57 +8,47 @@ header-id: defining-service-entities
 
 Entities are the heart and soul of a service. They represent the map between the
 model objects in Java and your database fields and tables. Service Builder maps
-the entities you define automatically, giving you a facility for taking Java
-objects and persisting them. For the Bookmarks application, two entities are
-created according to its
-[service.xml](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/service.xml)
---one for bookmark entries and one for bookmark folders.
+your Java model to the entities you define automatically, giving you a facility
+for taking Java objects and persisting them. For the Guestbook application, two
+entities are created according to its `service.xml`: one for Guestbooks
+and one for Guestbook Entries.
 
-Here's a summary of the `BookmarksEntry` entity information:
+Here's a summary of the `Guestbook` entity information:
 
-- **Name:** *BookmarksEntry*
+- **Name:** `Guestbook`
 - **Local service:** *yes*
 - **Remote service:** *yes* 
 
-And here's what is used for the `BookmarksFolder` entity:
+And here's what is used for the `GuestbookEntry` entity:
 
-- **Name:** *BookmarksFolder*
+- **Name:** `GuestbookEntry`
 - **Local service:** *yes*
 - **Remote service:** *yes* 
 
-Here are steps to create entities using Liferay @ide@:
+Here's how you define entities: 
 
-1.  In the outline on the left side of the `service.xml` editor in Overview
-    mode, select the *Entities* node under the Service Builder node. In the
-    main part of the view, notice that the Entities table is empty.
+```xml
+<entity name="Guestbook" uuid="true" local-service="true" remote-service="true">
+</entity>
 
-2.  Create an entity by clicking on the *Add Entity* icon
-    (![Add](../../../../images/icon-add-ide.png))
-    to the right of the table.
-
-3.  Name your entity and mark whether to generate local and remote services for
-    it.
-
-Add as many entities as you need.
-
-![Figure 1: Adding service entities in your `service.xml` file is easy with Liferay @ide@'s *Overview* mode.](../../../../images/service-add-entity.png)
+<entity name="GuestbookEntry" uuid="true" local-service="true" remote-service="true">
+</entity>
+```
 
 The entity's database table name includes the entity name prefixed with the
-namespace. The Bookmarks example creates one database table named
-`Bookmarks_BookmarksEntry` and another named `Bookmarks_BookmarksFolder`. 
+namespace. The Guestbook example creates one database table named
+`GW_Guestbook` and another named `GB_GuestbookEntry`. 
 
 Setting *Local Service* (the `local-service` attribute) to `true` instructs
 Service Builder to generate local interfaces for the entity's services. Local
-services are set to `false` by default. Local services can only be invoked from
-the Liferay server on which they're deployed. 
+services can only be invoked from the Liferay server on which they're deployed. 
 
 Setting *Remote Service* (the `remote-service` attribute) to `true` instructs
-Service Builder to generate remote interfaces for the service. Local services
-are set to `true` by default. You can build a fully-functional application
-without generating remote services. In that case, you could set your entity
-local services to `true` and remote services to `false`. If, however, you want
-to enable remote access to your application's services, set both local service
-and remote service to `true`.
+Service Builder to generate remote interfaces for the service. You can build
+a fully-functional application without generating remote services. In that case,
+you could set your entity local services to `true` and remote services to
+`false`. If, however, you want to enable remote access to your application's
+services, set both local service and remote service to `true`.
 
 | **Tip:** Suppose you have an existing Data Access Object (DAO) service for an
 | entity built using some other framework such as JPA. You can set local service

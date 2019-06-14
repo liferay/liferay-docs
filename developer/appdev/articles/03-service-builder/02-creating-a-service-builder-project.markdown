@@ -29,7 +29,7 @@ Here's how to create a Service Builder project.
     Gradle: 
 
     ```bash
-    blade create -t service-builder -p com.liferay.docs.bookmarks bookmarks
+    blade create -t service-builder -p com.liferay.docs.guestbook guestbook
     ```
 
     Maven:
@@ -39,8 +39,8 @@ Here's how to create a Service Builder project.
     -DarchetypeGroupId=com.liferay \
     -DarchetypeArtifactId=com.liferay.project.templates.service.builder \
     -DgroupId=com.liferay \
-    -DartifactId=bookmarks \
-    -Dpackage=com.liferay.docs.bookmarks \
+    -DartifactId=guestbook \
+    -Dpackage=com.liferay.docs.guestbook \
     -Dversion=1.0 \
     -DapiPath=com.liferay.api.path \
     -DliferayVersion=7.2
@@ -55,11 +55,11 @@ Successfully created project bookmarks in C:\workspaces_liferay\72-ws\modules
 Blade CLI generates the parent project folder and sub-folders for the `*-api`
 and `*-service` module projects. 
 
--   `bookmarks/`
-    -   `bookmarks-api/`
+-   `guestbook/`
+    -   `guestbook-api/`
         -   `bnd.bnd`
         -   `build.gradle`
-    -   `bookmarks-service/`
+    -   `guestbook-service/`
         -   `bnd.bnd`
         -   `build.gradle`
         -   `service.xml` &rarr; Service definition file.
