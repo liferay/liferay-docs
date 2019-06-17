@@ -169,7 +169,7 @@ decomposed into several new classes and methods.
  `getFullQuery` | `SearchContextContributor` | [`DLFileEntryModelSearchContextContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelSearchContextContributor.java) |
  `isVisible`/`isVisibleRelatedEntry` | `ModelVisibilityContributor` | [`DLFileEntryModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelVisibilityContributor.java) |
  `getSummary`/`createSummary`/`doGetSummary` | `ModelSummaryContributor` | [`GuestbookModelSummaryContributor`](/docs/7-1/tutorials/-/knowledge_base/t/generating-results-summaries) |
- `Indexer.search`/`searchCount` | No change | [Guestbook `view_search.jsp`](https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-0/creating-a-search-results-jsp-for-the-guestbook-portlet) |	
+ `Indexer.search`/`searchCount` | No change | [Guestbook `view_search.jsp`](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-search-results-jsp-for-the-guestbook-portlet) |	
  `Indexer.delete`/`doDelete` | No change | [`MBMessageLocalServiceImpl.deleteDiscussionMessages`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/message-boards/message-boards-service/src/main/java/com/liferay/message/boards/service/impl/MBMessageLocalServiceImpl.java#L687) |
 
 In addition, you can index `ExpandoBridge` attributes. This was previously

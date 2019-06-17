@@ -25,7 +25,7 @@ folders. An example configuration is shown below:
 
     <liferay-frontend:horizontal-card
     	text="Documents"
-      url="https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-1/clay-icons"
+      url="/docs/7-1/tutorials/-/knowledge_base/t/clay-icons"
     >
     	<liferay-frontend:horizontal-card-col>
     				<liferay-frontend:horizontal-card-icon

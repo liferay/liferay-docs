@@ -13,14 +13,14 @@ is used.
 
 A basic configuration for the `<liferay-util:get-url>` tag is shown below:
     
-    <liferay-util:get-url url="https://dev.liferay.com/en/develop/tutorials" />
+    <liferay-util:get-url url="https://portal.liferay.dev/" />
  
 Here is an example that uses the `var` attribute:
 
-    <liferay-util:get-url url="https://dev.liferay.com/en/develop/tutorials" var="ldn" />
+    <liferay-util:get-url url="https://portal.liferay.dev/" var="ldn" />
 
     <div>
-    				<h2>We stole <a href="https://dev.liferay.com/en/develop/tutorials">LDN</a>, here it is.</h2>
+    				<h2>We stole <a href="https://portal.liferay.dev/">Liferay Portal</a>, here it is.</h2>
 
     				<div class="ldn">
     								<%= ldn %>

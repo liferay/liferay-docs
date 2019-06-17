@@ -32,7 +32,7 @@ These tutorials show you how to
 
 | **Example project:** The source code for the example *time* project developed in
 | these tutorials can be downloaded for your convenience. Click
-| [here](https://dev.liferay.com/documents/10184/1608802/dynamic-data-mapping-type-time/f518f6b8-4498-a387-46d5-4715e36cc714?download=true) to begin downloading the source code zip file.
+| [here](https://portal.liferay.dev/documents/113763090/114000653/dynamic-data-mapping-type-time.zip) to begin downloading the source code zip file.
 
 
 Before getting started, learn the structure of a form field type. 
@@ -109,7 +109,8 @@ field type contains the following files:
 
 `.babelrc`: The [Babel](https://babeljs.io/) configuration file.
 
-`.npmbundlerrc`: The [liferay-npm-bundler](https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-0/liferay-npm-bundler) 
+`.npmbundlerrc`: The
+[liferay-npm-bundler](/docs/7-1/reference/-/knowledge_base/r/liferay-npm-bundler) 
 configuration file.
 
 `bnd.bnd`: The module's metadata.
