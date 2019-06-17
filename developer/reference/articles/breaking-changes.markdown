@@ -116,7 +116,7 @@ the settings there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making applications configurable](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
+[making applications configurable](/docs/7-2/frameworks/-/knowledge_base/f/configurable-applications).
 
 #### Why was this change made?
 
