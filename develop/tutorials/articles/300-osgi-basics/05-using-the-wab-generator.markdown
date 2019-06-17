@@ -104,7 +104,7 @@ Generator in action.
 
 1.  Create a WAR-style plugin that follows a similar structure to the one
     outlined above. You can download an example WAR-style portlet
-    [here](https://dev.liferay.com/documents/10184/656312/com.liferay.hello.user.jsf.portlet-1.0-SNAPSHOT.war/640837a9-9437-47a8-af42-8d406d93e7a2?download=true),
+    [here](https://portal.liferay.dev/documents/113763090/114000186/com.liferay.hello.user.jsf.portlet-1.0-SNAPSHOT.war),
     for demonstration.
 
     <!-- Attach WAR above for download. -Cody -->

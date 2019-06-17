@@ -18,9 +18,9 @@ Plugins SDK's `spring_mvc` template.
 ![Figure 1: My Spring MVC portlet shows its name and @product@'s information.](../../../../images/upgraded-spring-mvc-portlet.png)
 
 To follow along, download and refer to the
-[original source code](https://dev.liferay.com/documents/10184/656312/my-spring-mvc-portlet-pre-7-0-upgrade.zip)
+[original source code](https://portal.liferay.dev/documents/113763090/114000186/my-spring-mvc-portlet-pre-7-0-upgrade.zip)
 and the 
-[upgraded source code](https://dev.liferay.com/documents/10184/656312/my-spring-mvc-portlet-post-7-0-upgrade.zip).
+[upgraded source code](https://portal.liferay.dev/documents/113763090/114000186/my-spring-mvc-portlet-post-7-0-upgrade.zip).
 
 The figure below shows the `my-spring-mvc-portlet` project.
 

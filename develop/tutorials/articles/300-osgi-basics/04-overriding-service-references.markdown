@@ -28,14 +28,14 @@ configure your own customization. Executing `gradlew jar` in each example module
 root generates the module JAR to the `build/libs` folder. 
 
 -   `override-my-service-reference` 
-    ([download](https://dev.liferay.com/documents/10184/656312/override-my-service-reference.zip)):
+    ([download](https://portal.liferay.dev/documents/113763090/114000186/override-my-service-reference.zip)):
     This module's portlet component `OverrideMyServiceReferencePortlet`'s field
     `_someService` references a service of type `SomeService`. The reference's
     policy is static and reluctant. By default, it binds to an implementation
     called `SomeServiceImpl`. 
 
 -   `overriding-service-reference`
-    ([download](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip)):
+    ([download](https://portal.liferay.dev/documents/113763090/114000186/overriding-service-reference.zip)):
     Provides a custom `SomeService` implementation called `CustomServiceImpl`.
     The module's configuration file overrides `OverrideMyServiceReferencePortlet`'s
     `SomeService` reference so that it binds to `CustomServiceImpl`. 
