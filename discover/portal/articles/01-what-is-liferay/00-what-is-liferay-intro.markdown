@@ -6,11 +6,13 @@ header-id: what-is-liferay
 
 [TOC levels=1-4]
 
+<!-- Uncomment when these are made available on the doclib. Jim
 <div id="62-PDF" style="width:250px; float: left; text-align:center"><a href="https://dev.liferay.com/documents/10184/510059/indexed-using-liferay-portal-62.pdf">PDF</a></div>
 
 <div id="62-eBooks" style="width:250px; float: left; text-align:center"><a href="https://dev.liferay.com/documents/10184/510059/using-liferay-portal-62.azw3">Kindle</a> <a href="https://dev.liferay.com/documents/10184/510059/using-liferay-portal-62.epub">epub (iPad, Nook)</a></div>
 
 <div id="62-purchase" style="width:250px; float: left; text-align:center"><a href="http://www.lulu.com/shop/richard-sezov-jr/using-liferay-portal-62/paperback/product-22010160.html">Paperback</a></div><br />
+-->
 
 
 Let's attempt some mind reading: you're reading this because you need to build
