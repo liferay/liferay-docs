@@ -8,9 +8,9 @@ header-id: mentioning-users
 
 Have you ever wanted to include another user in a discussion on the Message
 Boards? Have you ever wanted to give kudos to a colleague in content you're
-writing? With the Mentions feature, you can [*mention*](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Mentions)
-(notify and/or draw attention to) other users, by entering the "@" character in
-front of each user's user name. 
+writing? With the Mentions feature, you can *mention* (notify and/or draw
+attention to) other users, by entering the "@" character in front of each user's
+user name. 
 
 When you mention a user, the user receives a site notification next to the
 user's profile icon and an email, alerting the user with a link to the content.

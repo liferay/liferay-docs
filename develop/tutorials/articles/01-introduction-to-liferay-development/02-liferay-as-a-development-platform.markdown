@@ -348,7 +348,7 @@ The Java class defines only four methods:
         @Override
         public String getURL(HttpServletRequest request) {
 
-            return "https://dev.liferay.com";
+            return "https://portal.liferay.dev";
 
         }
 
@@ -395,4 +395,3 @@ something could be improved about that article.  If you have feedback about the
 site itself, the feedback button is always floating at the bottom right. There
 are living, breathing people behind all the content on this site, and we stand
 ready to assist you on your Liferay journey. 
-

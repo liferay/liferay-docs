@@ -6,14 +6,13 @@ header-id: data-scopes
 
 [TOC levels=1-4]
 
-Apps in @product@ can restrict their data to specific 
-[scopes](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/scope).
-Scopes provide a context for the application's data. For example, a site-scoped
-app can display its data across a single site. For a detailed explanation of
-scopes, see the user guide article 
-[Application Scope](/docs/7-0/user/-/knowledge_base/u/application-scope). 
-To give your applications scope, you must manually add support for it. This
-tutorial shows you how. 
+Apps in @product@ can restrict their data to specific  scopes. Scopes provide a
+context for the application's data. For example, a site-scoped app can display
+its data across a single site. For a detailed explanation of scopes, see the
+user guide article  [Application
+Scope](/docs/7-0/user/-/knowledge_base/u/application-scope).  To give your
+applications scope, you must manually add support for it. This tutorial shows
+you how. 
 
 ## Scoping Your Entities
 

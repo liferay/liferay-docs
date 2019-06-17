@@ -11,12 +11,12 @@ Examples abound in healthcare, transportation, pharmaceutical, or any other
 heavily regulated industry. For these applications, you need an easy way to
 section off your forms into easily navigable groups. 
 
-Since @product-ver@, the
-[Form Navigator](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Form+Navigator) framework
-enables you to add new sections and section categories dynamically to existing
-form navigation. The framework includes a well-described API and a powerful
-[`liferay-ui`](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui)
-tag called  [`form-navigator`](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/form-navigator.html).
+Since @product-ver@, the Form Navigator framework enables you to add new
+sections and section categories dynamically to existing form navigation. The
+framework includes a well-described API and a powerful
+[`liferay-ui`](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui) tag
+called
+[`form-navigator`](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/form-navigator.html).
 It's easy to use and facilitates organizing large forms into sections of input
 and categories. 
 

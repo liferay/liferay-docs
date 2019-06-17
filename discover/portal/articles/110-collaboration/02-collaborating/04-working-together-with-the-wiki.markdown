@@ -6,13 +6,14 @@ header-id: working-together-with-the-wiki
 
 [TOC levels=1-4]
 
-@product@'s Wiki is a full-featured [wiki](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Wiki)
-application which has all the features you would expect in a state of the art
-wiki. Again, though, it has the benefit of being able to take advantage of all
-the features of @product@. As such, it is completely integrated
-with @product@'s [user management](/docs/7-0/user/-/knowledge_base/u/user-management),
+@product@'s Wiki is a full-featured wiki application which has all the features
+you would expect in a state of the art wiki. Again, though, it has the benefit
+of being able to take advantage of all the features of @product@. As such, it is
+completely integrated with @product@'s [user
+management](/docs/7-0/user/-/knowledge_base/u/user-management),
 [tagging](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories),
-and [security features](/docs/7-0/deploy/-/knowledge_base/d/liferay-portal-security).
+and [security
+features](/docs/7-0/deploy/-/knowledge_base/d/liferay-portal-security).
 
 So what is a wiki? A wiki is an application that allows users to
 collaboratively build a repository of information. There are, of course, many

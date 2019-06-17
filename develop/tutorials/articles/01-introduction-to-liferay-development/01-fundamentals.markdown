@@ -49,9 +49,9 @@ use to do all this:
 4.  [Blogs](http://blogs.liferay.com): Read the latest news, advice, and best
     practices from key core developers and our most active community members.
 
-5.  [Participate](http://dev.liferay.com/participate): Learn how to get started
-    participating. You will find options for all levels of expertise and time
-    available.
+5.  [Participate](https://portal.liferay.dev/participate/): Learn how to get 
+    started participating. You will find options for all levels of expertise and
+    time available.
 
 In addition to being Open Source, Liferay is also heavily based on standards.
 This is great news for your project, since it significantly reduces the lock-in

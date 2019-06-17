@@ -250,7 +250,7 @@ directly.
 
 We've made this as easy as possible by [creating the project](https://portal.liferay.dev/documents/113763090/114000186/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
-[Liferay Workspace](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-workspace), 
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace), 
 in the workspace's `modules` folder. To override your cache settings, you only
 have to modify one Ehcache configuration file, which you'll find in this folder
 structure: 

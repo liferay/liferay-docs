@@ -535,8 +535,8 @@ To recap, you created your JSF application in the following steps:
 - Design a view XHTML form to let the user interact with the portlet.
 
 You can view the finished version of the Hello User JSF application by
-downloading its
-[ZIP file](https://dev.liferay.com/documents/10184/656312/hello-user-jsf-portlet.zip/4b736126-3267-46fe-8b7c-54a83e305609?download=true).
+downloading its [ZIP
+file](https://portal.liferay.dev/documents/113763090/114000186/hello-user-jsf-portlet.zip).
 
 Now you have the knowledge to create your own JSF applications!
 

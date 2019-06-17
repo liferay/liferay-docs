@@ -28,9 +28,10 @@ In these tutorials, learn to
 - create a module that adds a *Time* form field type with a timepicker
 - add custom configuration options to your field types
 
-| **Example project:** The source code for the example *time* project developed in
-| these tutorials can be downloaded for your convenience. Click
-| [here](https://dev.liferay.com/documents/10184/656312/Field+Type+Module+Source/de6203af-1bae-4c59-9f90-0ab5e58c5894) to begin downloading the source code zip file.
+| **Example project:** The source code for the example *time* project developed 
+| in these tutorials can be downloaded for your convenience. Click
+| [here](https://portal.liferay.dev/documents/113763090/114000186/Field+Type+Module+Source.zip)
+| to begin downloading the source code zip file.
 
 Before getting started, learn what @product@'s field types consist of. 
 
@@ -117,4 +118,3 @@ example follows those patterns.
 | `com.liferay.docs.formfield` under `src/main/java/` and the frontend resources
 | (JavaScript and Soy files) are in `sr/main/resources/META-INF/resources`.
 -->
-
