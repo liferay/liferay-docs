@@ -23,7 +23,7 @@ Liferay's Sign In portlet makes use of this tag for its navigation:
 As its name suggests, the `liferay-ui:icon-list` tag allows you to create a 
 navigation menu from a list of icons. Liferay UI also provides the 
 `liferay-ui:icon-menu` tag for a pop-up menu navigation. You can read more 
-about this tag [here](http://dev.liferay.com/tutorials/-/knowledge_base/6-2/creating-a-navigation-menu-with-the-liferay-ui-icon-menu-tag). 
+about this tag [here](/docs/6-2/tutorials/-/knowledge_base/t/organizing-icons-with-the-liferay-ui-icon-menu-tag). 
 
 This tutorial covers how to use the `liferay-ui:icon-list` tag to create a 
 list-style navigation menu. By the end of this tutorial you should be able to 

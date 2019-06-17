@@ -16,7 +16,7 @@ A theme mock up serves as a guide for what the finished theme will look like:
 ![Figure 1: By the end of this Learning Path, you'll have developed this theme.](../../../images/finished-theme.png)
 
 To get started, 
-[download the resources](https://dev.liferay.com/documents/10184/532726/themes-learning-path-6.2.zip) 
+[download the resources](https://portal.liferay.dev/documents/113763090/114000078/themes-learning-path-6.2.zip) 
 you'll need to go through each exercise and unzip them to a folder of your 
 choice. 
 

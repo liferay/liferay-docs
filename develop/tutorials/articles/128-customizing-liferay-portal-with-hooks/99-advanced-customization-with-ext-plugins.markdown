@@ -901,9 +901,10 @@ of interest to a broader audience. Consider contributing it back to the project.
 That benefits all users of the product including you, since you won't have to
 maintain the changes with each newly released version of Liferay. You can notify
 Liferay of bugs or improvements in
-[issues.liferay.com](http://issues.liferay.com). Check out the [Participate](/participate/contribute-a-feature)
-section of [dev.liferay.com](https://dev.liferay.com), to learn all the ways
-that you can contribute to Liferay projects. 
+[issues.liferay.com](http://issues.liferay.com). Check out the
+[Participate](https://portal.liferay.dev/participate/) section of
+[portal.liferay.dev](https://portal.liferay.dev/), to learn all the ways that
+you can contribute to the Liferay Portal project. 
 
 In summary, Ext plugins are a powerful way to extend Liferay. There are no
 limits to what you can customize with them, so use them carefully. Before using

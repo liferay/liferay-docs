@@ -10,7 +10,7 @@ A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
 However, staging the house with some furniture and decorations helps prospective
 buyers imagine what the house might look like with their belongings. Liferay's
-[resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) application is a tool that allows a theme developer to have
+resources importer application is a tool that allows a theme developer to have
 files and web content automatically imported into the portal when a theme is
 deployed. Usually, the resources are imported into a site template but they can
 also be imported directly into a site. Portal administrators can use the site or
@@ -23,7 +23,7 @@ install it on their portal, go to Sites or Site Templates in the Control Panel
 and immediately see their new theme in action. In this tutorial, we explain how
 to include resources with your theme.
 
-| **Note:** The [resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) can be
+| **Note:** The resources importer can be
 | used in any type of plugin project to import resources. Importing resources
 | within a theme plugin is just one of the more common use cases. To learn how to
 | use the resources importer in other types of plugins, please see the
@@ -532,4 +532,3 @@ and which you can download from Liferay Marketplace.
 [Themes and Layout Templates](/docs/6-2/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 
 [Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)
-
