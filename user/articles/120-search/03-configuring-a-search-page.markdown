@@ -66,9 +66,18 @@ Out of the box, the Search Page Template includes these widgets:
 
 - [Modified Facet](/docs/7-2/user/-/knowledge_base/u/modified-facet)
 
-The widgets are configured to use "Barebone" as "Application Decorators" which means, the widget body is hidden and only the header is displayed unless there is an actual content to render. The practical impact of this is that when you visit a search page created from the default search page template you won't see certain widgets fully rendered: you need to hover your mouse over the area near to the Search Options widget to reveal the widget header where you can reach the widget configuration from (for example to configure the Suggestions widget).
+Out of the box, widgets use the _Barebone_ Application Decorators: unless
+there's content to render in the widget, the widget body is hidden. The
+header is displayed if you hover over it. 
 
-In contrast, when you add a search widget to a page manually, they will be configured to be "Borderless" by default which shows more from the widget even if there is no "real" content to display.
+![Figure x: At first glance, not much is happening on the search page. But, there's more than meets the eye.](../../images/search-barebone-widgets.png)
+
+Because of this, when you visit a search page created from the default search
+page template, you won't see certain widgets fully rendered.
+
+By contrast, when you add a search widget to a page manually, they use the
+_Borderless_ decorator (by default), which shows more of the widget even when
+there is no content to display.
 
 ## Default Search Pages
 
