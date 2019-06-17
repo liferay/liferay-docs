@@ -44,16 +44,13 @@ Out of the box, the Search Page Template includes these widgets:
 
 - [Search Bar](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#search-bar)
 
-- [Suggestions](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#search-suggestions): 
-    This widget is hidden until it's configured.
+- [Suggestions](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#search-suggestions)
 
 - [Search Results](/docs/7-1/user/-/knowledge_base/u/search-results)
 
 - [Search Options](/docs/7-1/user/-/knowledge_base/u/whats-new-with-search#search-options)
 
-- [Site Facet](/docs/7-1/user/-/knowledge_base/u/site-facet): This widget is
-    hidden unless the Search Bar is configured to search the _Everything_ scope
-    and results from multiple sites are returned.
+- [Site Facet](/docs/7-1/user/-/knowledge_base/u/site-facet)
 
 - [Type Facet](/docs/7-2/user/-/knowledge_base/u/type-facet)
 
@@ -66,6 +63,19 @@ Out of the box, the Search Page Template includes these widgets:
 - [User Facet](/docs/7-1/user/-/knowledge_base/u/user-facet)
 
 - [Modified Facet](/docs/7-1/user/-/knowledge_base/u/modified-facet)
+
+Out of the box, widgets use the _Barebone_ Application Decorators: unless
+there's content to render in the widget, the widget body is hidden. The
+header is displayed if you hover over it. 
+
+![Figure x: At first glance, not much is happening on the search page. But, there's more than meets the eye.](../../images/search-barebone-widgets.png)
+
+Because of this, when you visit a search page created from the default search
+page template, you won't see certain widgets fully rendered.
+
+By contrast, when you add a search widget to a page manually, they use the
+_Borderless_ decorator (by default), which shows more of the widget even when
+there is no content to display.
 
 ## Default Search Pages
 
