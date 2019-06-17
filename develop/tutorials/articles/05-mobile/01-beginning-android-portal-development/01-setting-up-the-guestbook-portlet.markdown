@@ -65,7 +65,7 @@ instance.
 
 Now that your portal is set up, you can deploy the Guestbook portlet to it. 
 Download the Guestbook portlet's `.war` package from 
-[here](https://dev.liferay.com/documents/10184/598513/guestbook-portlet.war) 
+[here](https://portal.liferay.dev/documents/113763090/114000078/guestbook-portlet.war) 
 and place it in the `[Liferay Home]/deploy` folder. You should see messages 
 in your console indicating that the Guestbook portlet has been successfully 
 deployed. On your portal's default site, click the + icon on the left side of 

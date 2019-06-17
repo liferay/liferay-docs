@@ -12,7 +12,7 @@ use for your web content articles and wikis? If so, you can bundle these up in a
 Liferay plugin to distribute to them. You can even put them in a Marketplace app
 for them to purchase. When they install your plugin, its templates and
 structures are automatically imported into their portal's global site. How is
-this possible? The Templates Importer feature of the [resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) app
+this possible? The Templates Importer feature of the resources importer app
 makes it happen! The Resources Importer is available from
 [Liferay Marketplace](https://www.liferay.com/marketplace).
 
@@ -304,4 +304,3 @@ makes it easy. Have fun distributing your structures and templates!
 [Customizing Sites and Site Templates with Application Adapters](/docs/6-2/tutorials/-/knowledge_base/t/customizing-sites-and-site-templates-with-application-adapters)
 
 [Advanced Content with Structures and Templates](/docs/6-2/user/-/knowledge_base/u/advanced-content-with-structures-and-templates)
-
