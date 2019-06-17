@@ -57,7 +57,7 @@ For example, this code gets a reference to `DLAppService`:
     private DLAppService _dlAppService;
 
 If you're using a standard web module (WAR file), use a 
-[Service Tracker](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/service-trackers)
+[Service Tracker](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers)
 to get a reference to the service instead. 
 
 Getting the reference this way ensures that you leverage OSGi's 

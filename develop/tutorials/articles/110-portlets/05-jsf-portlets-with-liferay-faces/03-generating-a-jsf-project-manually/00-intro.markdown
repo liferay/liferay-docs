@@ -24,7 +24,7 @@ The steps you'll take are outlined below:
 - Design a view XHTML form to let the user interact with the portlet.
 
 You can examine the example JSF application solution any time during this
-section by downloading its
-[ZIP file](https://dev.liferay.com/documents/10184/1608802/hello-user-jsf-portlet.zip/61e42092-4487-976d-f0f0-841fba0fba33?version=1.0&download=true).
+section by downloading its [ZIP
+file](https://portal.liferay.dev/documents/113763090/114000653/hello-user-jsf-portlet.zip).
 
 Let's get started!

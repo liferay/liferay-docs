@@ -29,7 +29,7 @@ dependencies in their project POMs to reference it.
 To follow this tutorial, you'll need a Liferay module built with Maven. For
 demonstration purposes, this tutorial uses the `portlet.ds` sample module
 project. To follow along with this module, download the
-[portlet.ds](https://dev.liferay.com/documents/10184/656312/portlet.ds.zip)
+[portlet.ds](https://portal.liferay.dev/documents/113763090/114000186/portlet.ds.zip)
 Zip. 
 
 1.  Create a folder anywhere on your machine to serve as the parent folder
