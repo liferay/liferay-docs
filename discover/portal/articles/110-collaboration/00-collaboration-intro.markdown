@@ -39,7 +39,7 @@ users--tagging them by name to get their attention or give them kudos.
 
 As you produce digital assets--documents, videos, audio--you can store and share
 them using the suite's 
-[Documents and Media Library](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Documents+and+Media).
+[Documents and Media Library](/docs/7-0/user/-/knowledge_base/u/managing-documents-and-media).
 It both provides its own repository and connects to external CMIS repositories 
 and even 
 [Google Docs&trade;](/docs/7-0/user/-/knowledge_base/u/accessing-google-docs)
@@ -55,6 +55,3 @@ and create hierarchies of official documentation in a
 These are just some of the ways the Collaboration Suite helps you communicate,
 produce, and present. In short, it empowers you to labor together with others in
 doing amazing things! 
-
-
-

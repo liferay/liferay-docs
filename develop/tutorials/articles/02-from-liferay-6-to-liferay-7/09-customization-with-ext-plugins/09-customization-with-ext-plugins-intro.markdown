@@ -624,9 +624,9 @@ project. That benefits all users of the product including you, since you won't
 have to maintain the changes with each newly released version of @product@. You
 can notify Liferay of bugs or improvements at
 [issues.liferay.com](http://issues.liferay.com). Check out the
-[Participate](/participate/contribute-a-feature) section of
-[dev.liferay.com](https://dev.liferay.com), to learn all the ways that you can
-contribute to Liferay projects. 
+[Participate](https://portal.liferay.dev/participate/) section of
+[portal.liferay.dev](https://portal.liferay.dev), to learn all the ways that you
+can contribute to the Liferay Portal project. 
 
 In summary, an Ext plugin is a powerful way to extend @product@. There are no
 limits to what you can customize, so use it carefully. Before using

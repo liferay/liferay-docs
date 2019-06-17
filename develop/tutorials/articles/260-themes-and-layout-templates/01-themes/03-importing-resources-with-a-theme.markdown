@@ -10,19 +10,18 @@ A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
 However, staging the house with some furniture and decorations helps prospective
 buyers imagine what the house might look like with their belongings. Liferay's
-[resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) 
-module is a tool that allows a theme developer to have files and web content 
-automatically imported into @product@ when a theme is deployed. Usually, the 
-resources are imported into a site template but they can also be imported 
-directly into a site. Liferay Administrators can use the site or site template 
-created by the resources importer to showcase the theme. This is a great way for 
-theme developers to provide a sample context that optimizes the design of their 
-theme. In fact, all standalone themes that are uploaded to Liferay Marketplace 
-must use the resources importer. This ensures a uniform experience for 
-Marketplace users: a user can download a theme from Marketplace, install it on 
-@product@, go to Sites or Site Templates in the Control Panel and immediately 
-see their new theme in action. In this tutorial, we explain how to include 
-resources with your theme.
+resources importer module is a tool that allows a theme developer to have files
+and web content automatically imported into @product@ when a theme is deployed.
+Usually, the resources are imported into a site template but they can also be
+imported directly into a site. Liferay Administrators can use the site or site
+template created by the resources importer to showcase the theme. This is a
+great way for theme developers to provide a sample context that optimizes the
+design of their theme. In fact, all standalone themes that are uploaded to
+Liferay Marketplace must use the resources importer. This ensures a uniform
+experience for Marketplace users: a user can download a theme from Marketplace,
+install it on @product@, go to Sites or Site Templates in the Control Panel and
+immediately see their new theme in action. In this tutorial, we explain how to
+include resources with your theme.
 
 | **Note:** The resources importer has undergone some changes that affect the
 | properties, class names, and structures that were referred to in versions prior
@@ -32,7 +31,7 @@ resources with your theme.
 | file. In @product-ver@ and up, this is no longer a requirement. The resources
 | importer is now an OSGi module, and is deployed to your instance by default.
 
-<!--| **Note:** The [resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) can be
+<!--| **Note:** The resources importer can be
 <!--| used in any type of plugin project to import resources. Importing resources
 <!--| within a theme is just one of the more common use cases. To learn how to
 <!--| use the resources importer in other types of projects, please see the
@@ -368,7 +367,7 @@ understand. Let's examine a sample `sitemap.json` file:
         ]
     }
 
-The first thing you should declare in your `sitemap.json` file is a default 
+The first thing you should declare in your `sitemap.json` file is a default
 layout template ID so the target site or site template can reference the layout
 template to use for its pages. You can also specify different layout templates
 to use for individual pages. You can find layout templates in your Liferay
@@ -377,11 +376,12 @@ pages, that your site template should use. Note that pages are called *layouts*
 in @product@'s code. You can specify a name, title, and friendly URL for a page,
 and you can set a page to be hidden. To declare that web content should be
 displayed on a page, simply specify an XML file. You can declare portlets by
-specifying their portlet IDs, which can be found in the App Manager of the 
+specifying their portlet IDs, which can be found in the App Manager of the
 Control Panel. Select the suite that the App is located in, click the App, click
-the App web link, and open the *Portlets* tab that appears. The portlet ID is 
-displayed below the name of the App. You can find a full list of the default 
-portlet IDs for Liferay in the [Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide). 
+the App web link, and open the *Portlets* tab that appears. The portlet ID is
+displayed below the name of the App. You can find a full list of the default
+portlet IDs for Liferay in the [Portlet ID quick
+reference](/docs/7-1/reference/-/knowledge_base/r/fully-qualified-portlet-ids).
 You can also specify portlet preferences for each portlet.
 
 The following properties are available in the `sitemap.json`: 
@@ -646,5 +646,3 @@ and which you can download from Liferay Marketplace.
 [Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 
 [Styling Apps with Application Display Templates](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
-
-

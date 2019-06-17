@@ -13,9 +13,9 @@ are attached to a theme, you should look into
 [themelets](/docs/7-0/tutorials/-/knowledge_base/t/themelets).
 
 A Theme Contributor is a
-[module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
-that contains UI resources to use in @product@. Once a Theme Contributor is
-deployed to @product@, it's scanned for all valid CSS and JS files, and then its
+[module](/docs/7-0/tutorials/-/knowledge_base/t/fundamentals#modules) that
+contains UI resources to use in @product@. Once a Theme Contributor is deployed
+to @product@, it's scanned for all valid CSS and JS files, and then its
 resources are included on the page. You can, therefore, style these UI
 components as you like, and the styles are applied for the current theme.
 

@@ -21,7 +21,7 @@ and then redirect the user to a location of your choice.
 ## Authenticating to @product@
 
 You can use the example project 
-[in this ZIP file](https://dev.liferay.com/documents/10184/656312/MyCustomLoginPortlet.zip) 
+[in this ZIP file](https://portal.liferay.dev/documents/113763090/114000186/MyCustomLoginPortlet.zip) 
 as a starting point for your own. 
 
 It has only one view, which is used for logging in or showing the user who is

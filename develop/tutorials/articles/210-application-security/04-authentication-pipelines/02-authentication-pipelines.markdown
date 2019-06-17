@@ -334,11 +334,10 @@ When these projects are deployed, the `Authenticator` you defined runs,
 enforcing logins for the two domains specified in the validator. 
 
 If you want to examine these projects further, you can download them 
-[in this ZIP file](https://dev.liferay.com/documents/10184/656312/auth-pipelines-authenticator.zip). 
+[in this ZIP file](https://portal.liferay.dev/documents/113763090/114000186/auth-pipelines-authenticator.zip). 
 
 ## Related Topics
 
 [Auto Login](/docs/7-0/tutorials/-/knowledge_base/t/auto-login)
 
 [Writing a Custom Login Portlet](/docs/7-0/tutorials/-/knowledge_base/t/writing-a-custom-login-portlet)
-

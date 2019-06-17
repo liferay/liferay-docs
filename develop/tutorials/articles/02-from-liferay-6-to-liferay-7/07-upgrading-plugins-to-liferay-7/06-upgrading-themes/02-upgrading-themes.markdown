@@ -822,7 +822,7 @@ You can also retrieve a portlet's ID from the UI:
 
 ![Figure 5: The portlet ID is listed within the blue box in the *Advanced Styling* tab.](../../../../images/upgrading-themes-portlet-id.png)
 
-The [Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide)
+The [Portlet ID quick reference](/docs/7-1/reference/-/knowledge_base/r/fully-qualified-portlet-ids)
 lists all the default portlet IDs.
 
 Next, you can learn how to update your theme's UI to follow Lexicon design

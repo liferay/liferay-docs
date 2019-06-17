@@ -61,9 +61,9 @@ Great! Next, you'll deploy the Guestbook portlet to your @product@ instance.
 
 ## Deploying the Guestbook Portlet
 
-Now that your @product@ instance is set up, you can deploy the Guestbook portlet 
-to it. First, 
-[click here](https://dev.liferay.com/documents/10184/656312/guestbook-services.zip) 
+Now that your @product@ instance is set up, you can deploy the Guestbook portlet
+to it. First, [click
+here](https://portal.liferay.dev/documents/113763090/114000186/guestbook-services.zip)
 to download the Guestbook portlet's modules: 
 
 - `com.liferay.docs.guestbook.api-1.0.0.jar`

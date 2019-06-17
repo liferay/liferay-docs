@@ -145,8 +145,8 @@ Such acts may lead to security misconfiguration and an insecure @product@
 deployment.
 
 For more information about securing a @product@ installation, please see
-[https://www.liferay.com/security](https://www.liferay.com/security) and
-[https://dev.liferay.com/web/community-security-team](https://dev.liferay.com/web/community-security-team)
+[https://liferay.com/security](https://liferay.com/security) and
+[https://portal.liferay.dev/people/community-security-team](https://portal.liferay.dev/people/community-security-team)
 and the resources listed on those pages.
 
 Also, @product@ customers are advised to deploy security patches as
@@ -157,5 +157,5 @@ For community and CE deployments, the only way to stay secure is to use always
 the latest community version, which contains all previous security patches.
 Until a new version is released, the Community Security Team issues patches for
 the latest CE version via the
-[https://dev.liferay.com/web/community-security-team](https://dev.liferay.com/web/community-security-team)
+[https://portal.liferay.dev/people/community-security-team](https://portal.liferay.dev/people/community-security-team)
 page.
