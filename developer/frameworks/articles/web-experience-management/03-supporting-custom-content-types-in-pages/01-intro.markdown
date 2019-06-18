@@ -1,4 +1,10 @@
+---
+header-id: supporting-custom-content-types-in-content-and-display-pages
+---
+
 # Supporting Custom Content Types in Content and Display Pages
+
+[TOC levels=1-4]
 
 Content Pages and Display Page Templates can display several types of content
 out-of-the-box:

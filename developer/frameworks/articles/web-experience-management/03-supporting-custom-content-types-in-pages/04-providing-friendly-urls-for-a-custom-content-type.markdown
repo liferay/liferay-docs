@@ -1,4 +1,10 @@
-# Providing Friendly URLs for a Custom Content Type 
+---
+header-id: providing-friendly-urls-for-a-custom-content-type
+---
+
+# Providing Friendly URLs for a Custom Content Type
+
+[TOC levels=1-4]
 
 To provide a friendly URL for your custom content type, you must implement a
 friendly URL resolver to retrieve the desired information. For the User content
