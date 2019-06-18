@@ -73,9 +73,10 @@ To do this, follow the steps below.
     }
     ```
 
-    This method returns a new `InfoDisplayObjectProvider` for the `User` type.
-    This is required by the friendly URL resolver. Now you'll implement the
-    friendly URL resolver for the User content type.
+    This method returns a new `InfoDisplayObjectProvider` for the User type.
+    This is the specific model instance used to retrieve the mapped values and
+    check for the display page. This is required by the friendly URL resolver.
+    Now you'll implement the friendly URL resolver for the User content type.
 
 2.  Inside your custom model project, add a class named
     `UserDisplayPageFriendlyURLResolver`.
@@ -208,8 +209,9 @@ To do this, follow the steps below.
     private Portal _portal;
     ```
 
-    The key functionality above is you're finding the
-    `InfoDisplayObjectProvider` corresponding to the current user.
+    Notice you're finding the `InfoDisplayObjectProvider` corresponding to the
+    current user. This serves as the representation/descriptor of the mapped
+    object.
 
     | **Note:** This `FriendlyURLResolver` implementation uses the default
     | display page template for the User model.
