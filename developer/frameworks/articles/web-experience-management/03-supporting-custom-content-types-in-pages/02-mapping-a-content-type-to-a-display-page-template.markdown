@@ -1,4 +1,10 @@
+---
+header-id: mapping-a-content-type-to-a-page
+---
+
 # Mapping a Content Type to a Page
+
+[TOC levels=1-4]
 
 You must allow the mapping of your custom content type to the page type. To do
 this, implement the

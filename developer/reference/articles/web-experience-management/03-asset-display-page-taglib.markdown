@@ -1,4 +1,10 @@
+---
+header-id: asset-display-page-taglib
+---
+
 # Asset Display Page Taglib
+
+[TOC levels=1-4]
 
 Once you have created an Asset Display Page associated with your Asset type, 
 you can add the option to select an Asset Display Page in the form where you

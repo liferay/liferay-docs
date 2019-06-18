@@ -1,4 +1,10 @@
+---
+header-id: specifying-the-fields-of-a-custom-content-type
+---
+
 # Specifying the Fields of a Custom Content Type
+
+[TOC levels=1-4]
 
 Now that your custom content type is selectable for a Display Page Template, you
 must specify the fields you want the user to map to the a fragment's editable
