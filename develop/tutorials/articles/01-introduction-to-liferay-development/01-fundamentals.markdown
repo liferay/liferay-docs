@@ -192,9 +192,9 @@ You can also use any JavaScript library, including
 
 @product@ follows a design language created by our designers at Liferay called 
 [Lexicon Experience Language](https://lexicondesign.io/), which has been 
-implemented for use of the web as [Lexicon](https://liferay.github.io/clay/).
+implemented for use of the web as [Clay](https://liferay.github.io/clay/).
 
-Lexicon is automatically made available to you through a set of CSS classes and
+Clay is automatically made available to you through a set of CSS classes and
 markup, although it's even easier to use our tag library. 
 
 For templating, Java EE's JSP is there as expected as well as FreeMarker, but the
