@@ -6,10 +6,10 @@ header-id: adding-custom-panel-categories
 
 [TOC levels=1-4]
 
-As you navigate the Product Menu, you can see that Panel Apps like *Web
-Content* and *Site Settings* are organized into Panel Categories such as
-*Content* and *Configuration*. This tutorial explains how to add new Panel
-Categories to the menu. Adding new Panel Apps is covered in the next section.
+As you navigate the Product Menu, you can see that Panel Apps like *Web Content*
+and *Settings* are organized into Panel Categories such as *Content & Data* and
+*Configuration*. This article explains how to add new Panel Categories to the
+menu. Adding new Panel Apps is covered in the next section.
 
 There are three steps to creating a new category:
 
@@ -24,9 +24,9 @@ There are three steps to creating a new category:
 First you must create the project.
 
 1.  Create an OSGi module using your favorite third party tool, or use
-    [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli). Blade CLI
+    [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli). Blade CLI
     offers a 
-    [Panel App](/docs/7-1/reference/-/knowledge_base/r/panel-app-template) template,
+    [Panel App](/docs/7-2/reference/-/knowledge_base/r/panel-app-template) template,
     which is for creating a panel category and panel app.
 
 2.  Create a unique package name in the module's `src` directory and create
@@ -49,19 +49,21 @@ Both of these steps are described below.
 
 Directly above the class's declaration, insert the following annotation:
 
-        @Component(
-            immediate = true,
-            property = {
-                "panel.category.key=" + [Panel Category Key],
-                "panel.category.order:Integer=[int]"
-            },
-            service = PanelCategory.class
-        )
+```java
+@Component(
+    immediate = true,
+    property = {
+        "panel.category.key=" + [Panel Category Key],
+        "panel.category.order:Integer=[int]"
+    },
+    service = PanelCategory.class
+)
+```
 
 The `property` element designates two properties that should be assigned for
 your category. The `panel.category.key` specifies the parent category for
 your custom category. You can find popular parent categories to assign in
-the [`PanelCategoryKeys`](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/constants/PanelCategoryKeys.html)
+the [`PanelCategoryKeys`](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/PanelCategoryKeys.html)
 class. For instance, if you wanted to create a child category in the Control
 Panel, you could assign `PanelCategoryKeys.CONTROL_PANEL`. Likewise, if you
 wanted to create a root category, like the Control Panel or Site
@@ -75,25 +77,27 @@ Finally, your `service` element should specify the `PanelCategory.class`
 service. You can view an example of a similar `@Component` annotation for
 the `UserPanelCategory` class below.
 
-        @Component(
-            immediate = true,
-            property = {
-                "panel.category.key=" + PanelCategoryKeys.ROOT,
-                "panel.category.order:Integer=200"
-            },
-            service = PanelCategory.class
-        )
+```java
+@Component(
+    immediate = true,
+    property = {
+        "panel.category.key=" + PanelCategoryKeys.ROOT,
+        "panel.category.order:Integer=200"
+    },
+    service = PanelCategory.class
+)
+```
 
 | **Note:** To insert a panel category between existing categories in the
 | default menu, you must know the `panel.category.order:Integer` property
 | for the existing categories. Default categories with a given
-| panel.category.key are numbered in increments of 100, starting with 100.
+| `panel.category.key` are numbered in increments of 100, starting with 100.
 | 
-| For example, the Product Menu's three main sections---Control Panel, User
-| Menu, and Site Administration---have `panel.category.order:Integer`
-| properties of 100, 200, and 300, respectively. A new panel inserted between
-| Control Panel and User Menu would need a `panel.category.key` of ROOT and
-| a `panel.category.order:Integer` of 150.
+| For example, the Product Menu's two main sections---Control Panel and Site
+| Administration---have `panel.category.order:Integer` properties of 100 and
+| 200, respectively. A new panel inserted between Control Panel and Site
+| Administration  would need a `panel.category.key` of ROOT and a
+| `panel.category.order:Integer` of 150.
 
 ### Implement the PanelCategory Interface
 
@@ -111,9 +115,9 @@ The `PanelCategory` interface requires you to implement the following methods:
 You can reduce the number of methods you must implement if you extend a base
 class that already implements the `PanelCategory` interface. The recommended way
 to do this is by extending the
-[`BasePanelCategory`](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BasePanelCategory.html)
+[`BasePanelCategory`](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/BasePanelCategory.html)
 or
-[`BaseJSPPanelCategory`](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelCategory.html)
+[`BaseJSPPanelCategory`](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/BaseJSPPanelCategory.html)
 abstract classes. Typically, the `BasePanelCategory` is extended for basic
 categories (e.g., the Control Panel category) that only display the category
 name. To add more complex functionality, you can then provide a custom UI for
@@ -124,7 +128,7 @@ If you plan to use JSPs as the front-end technology, extend a base class called
 `BaseJSPPanelCategory` that already implements the methods `include()` and
 `includeHeader()` for you. This is covered in more detail below.
  
-| **Note:** In this tutorial, example JSPs describe how to provide functionality
+| **Note:** In this article, example JSPs describe how to provide functionality
 | to panel categories and apps. JSPs, however, are not the only way to provide
 | front-end functionality to your categories/apps. You can create your own class
 | implementing `PanelCategory` to use other technologies such as FreeMarker.
@@ -140,32 +144,36 @@ As you learned earlier, you can extend the `BasePanelCategory` and
 
 If you need something simple for your panel category like a name, extending
 `BasePanelCategory` is probably sufficient. For example, the
-[`ControlPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/web-experience/product-navigation/product-navigation-control-panel/src/main/java/com/liferay/product/navigation/control/panel/internal/application/list/ControlPanelCategory.java)
+[`ControlPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/product-navigation/product-navigation-control-panel/src/main/java/com/liferay/product/navigation/control/panel/internal/application/list/ControlPanelCategory.java)
 extends `BasePanelCategory` and specifies a `getLabel` method to set and display
 the panel category name.
 
-        @Override
-        public String getLabel(Locale locale) {
-            return LanguageUtil.get(locale, "control-panel");
-        }
+```java
+@Override
+public String getLabel(Locale locale) {
+    return LanguageUtil.get(locale, "control-panel");
+}
+```
 
 ### BaseJSPPanelCategory
 
 If you need more complex functionality, extend `BaseJSPPanelCategory` and use
 JSPs to render the panel category. For example, the
-[`SiteAdministrationPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/web-experience/product-navigation/product-navigation-site-administration/src/main/java/com/liferay/product/navigation/site/administration/internal/application/list/SiteAdministrationPanelCategory.java)
+[`SiteAdministrationPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/product-navigation/product-navigation-site-administration/src/main/java/com/liferay/product/navigation/site/administration/internal/application/list/SiteAdministrationPanelCategory.java)
 specifies the `getHeaderJspPath` and `getJspPath` methods. You could create
 a JSP with the UI you want to render and specify its path in methods like these:
 
-        @Override
-        public String getHeaderJspPath() {
-            return "/sites/site_administration_header.jsp";
-        }
+```java
+@Override
+public String getHeaderJspPath() {
+    return "/sites/site_administration_header.jsp";
+}
 
-        @Override
-        public String getJspPath() {
-            return "/sites/site_administration_body.jsp";
-        }
+@Override
+public String getJspPath() {
+    return "/sites/site_administration_body.jsp";
+}
+```
 
 One JSP renders the panel category's header (displayed when panel is collapsed)
 and the other its body (displayed when panel is expanded).
@@ -174,20 +182,24 @@ You must also specify the servlet context from where you are loading the JSP
 files. If this is inside an OSGi module, make sure your `bnd.bnd` file has
 defined a web context path:
 
-        Bundle-SymbolicName: com.sample.my.module.web
-        Web-ContextPath: /my-module-web
+```
+Bundle-SymbolicName: com.sample.my.module.web
+Web-ContextPath: /my-module-web
+```
 
 Then reference the Servlet context using the symbolic name of your module like
 this:
 
-        @Override
-        @Reference(
-            target = "(osgi.web.symbolicname=com.sample.my.module.web)",
-            unbind = "-"
-        )
-        public void setServletContext(ServletContext servletContext) {
-            super.setServletContext(servletContext);
-        }
+```java
+@Override
+@Reference(
+    target = "(osgi.web.symbolicname=com.sample.my.module.web)",
+    unbind = "-"
+)
+public void setServletContext(ServletContext servletContext) {
+    super.setServletContext(servletContext);
+}
+```
 
 Excellent! You've successfully created a custom panel category to display in the
 Product Menu. In many cases, a panel category holds panel apps for users to

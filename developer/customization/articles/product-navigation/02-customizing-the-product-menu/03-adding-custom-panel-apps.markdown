@@ -9,9 +9,9 @@ header-id: adding-custom-panel-apps
 After you have created a Category, create a Panel app to go in it:
 
 1.  Create an OSGi module using your favorite third party tool, or use
-    [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli). Blade CLI
+    [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli). Blade CLI
     offers a
-    [Panel App](/docs/7-0/reference/-/knowledge_base/r/panel-app-template)
+    [Panel App](/docs/7-2/reference/-/knowledge_base/r/panel-app-template)
     template to help generate a basic panel category and panel app.
 
 2.  Create a unique package name in the module's `src` directory, and create a
@@ -20,28 +20,32 @@ After you have created a Category, create a Panel app to go in it:
 
 3.  Directly above the class's declaration, insert the following annotation:
 
-        @Component(
-            immediate = true,
-            property = {
-                "panel.app.order:Integer=INTEGER"
-                "panel.category.key=" + PANEL_CATEGORY_KEY,
-            },
-            service = PanelApp.class
-        )
+    ```java
+    @Component(
+        immediate = true,
+        property = {
+            "panel.app.order:Integer=INTEGER"
+            "panel.category.key=" + PANEL_CATEGORY_KEY,
+        },
+        service = PanelApp.class
+    )
+    ```
 
-    These properties and attributes are similar to those discussed  in
+    These properties and attributes are similar to those discussed in
     the previous
-    [tutorial](/docs/7-1/tutorials/-/knowledge_base/t/adding-custom-panel-categories).
+    [article](/docs/7-2/customization/-/knowledge_base/c/adding-custom-panel-categories).
     The `panel.category.key` assigns your panel app to a panel category. The
     `panel.app.order:Integer` property specifies the order your panel app
     appears among other panel apps in the same category. For example, if you
-    want to add a panel app to Site Administration &rarr; *Content*, add the
-    following property:
+    want to add a panel app to Site Administration &rarr; *Content & Data*, add
+    the following property:
 
-        "panel.category.key=" + PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT
+    ```java
+    "panel.category.key=" + PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT
+    ```
 
     Visit the
-    [PanelCategoryKeys](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/constants/PanelCategoryKeys.html)
+    [PanelCategoryKeys](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/constants/PanelCategoryKeys.html)
     class for keys you can use to specify default panel categories in Liferay.
 
     Set the `service` attribute to `PanelApp.class`. You can view an example of
@@ -57,14 +61,14 @@ After you have created a Category, create a Panel app to go in it:
         )
 
 4.  Implement the `PanelApp` interface by extending the
-    [BasePanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BasePanelApp.html)
+    [BasePanelApp](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/BasePanelApp.html)
     abstract class. As you learned in the previous
-    [tutorial](/docs/7-1/tutorials/-/knowledge_base/t/adding-custom-panel-categories)
+    [article](/docs/7-2/customization/-/knowledge_base/c/adding-custom-panel-categories)
     on panel categories, if you must create a more complex UI to render in
     the panel, you can.
 
     If you want to use JSPs to render that UI, extend 
-    [BaseJSPPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelApp.html).
+    [BaseJSPPanelApp](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/BaseJSPPanelApp.html).
     This provides additional methods you can use to incorporate JSP 
     functionality into your app's listing in the Product Menu. 
 
@@ -73,7 +77,7 @@ After you have created a Category, create a Panel app to go in it:
     other technologies such as FreeMarker.
 
 5.  If you are implementing the
-    [PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
+    [PanelApp](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/PanelApp.html)
     interface without extending a base class, you must implement its methods.
     The `BlogsPanelApp` is a simple example of how to specify your portlet as
     a panel app. This class extends `BasePanelApp`, overriding the
@@ -87,19 +91,21 @@ After you have created a Category, create a Panel app to go in it:
 
     This is how those methods look for the Blogs portlet:
 
-        @Override
-        public String getPortletId() {
-            return BlogsPortletKeys.BLOGS_ADMIN;
-        }
+    ```java
+    @Override
+    public String getPortletId() {
+        return BlogsPortletKeys.BLOGS_ADMIN;
+    }
 
-        @Override
-        @Reference(
-            target = "(javax.portlet.name=" + BlogsPortletKeys.BLOGS_ADMIN + ")",
-            unbind = "-"
-        )
-        public void setPortlet(Portlet portlet) {
-            super.setPortlet(portlet);
-        }
+    @Override
+    @Reference(
+        target = "(javax.portlet.name=" + BlogsPortletKeys.BLOGS_ADMIN + ")",
+        unbind = "-"
+    )
+    public void setPortlet(Portlet portlet) {
+        super.setPortlet(portlet);
+    }
+    ```
 
     You can also customize your panel app's appearance in the Product Menu. As
     you learned before, the `BaseJSPPanelApp` abstract class can be extended to
