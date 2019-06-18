@@ -1,7 +1,7 @@
-# Mapping a Content Type to a Display Page Template
+# Mapping a Content Type to a Page
 
-You must allow the mapping of your custom content type to the Display Page
-Template framework. To do this, implement the
+You must allow the mapping of your custom content type to the page type. To do
+this, implement the
 [`InfoDisplayContributor`](@app-ref@/info/2.0.0/javadocs/com/liferay/info/display/contributor/InfoDisplayContributor.html)
 interface. Follow the steps below to complete this for the custom User content
 type.
@@ -53,5 +53,5 @@ type.
 
 ![Figure 1: After creating the `*InfoDisplayContributor` class, you can create Display Page Templates and map them to your custom model.](../../../images/custom-model-selectable.png)
 
-Great! You've mapped your custom content type to the Display Page Templates
+Great! You've mapped your custom content type to the Display Page Template
 framework. Next, you'll provide your content type's fields.
