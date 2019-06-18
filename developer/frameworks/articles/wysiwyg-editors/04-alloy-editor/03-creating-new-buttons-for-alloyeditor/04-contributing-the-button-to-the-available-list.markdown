@@ -16,10 +16,10 @@ Below is an example configuration that extends this class:
 1.  Create a Component class that implements the `DynamicInclude.class` service 
     and extends `BaseDynamicInclude`:
 
-```java
-@Component(immediate = true, service = DynamicInclude.class)
-public class MyButtonDynamicInclude extends BaseDynamicInclude {
-```
+    ```java
+    @Component(immediate = true, service = DynamicInclude.class)
+    public class MyButtonDynamicInclude extends BaseDynamicInclude {
+    ```
 
 2.  Override the `include()` method to include a script with your transpiled JSX 
     file. You can use the `StringBundler` to concatenate the script. Note the 
@@ -27,50 +27,50 @@ public class MyButtonDynamicInclude extends BaseDynamicInclude {
     defined in your 
     [bundle's `build.gradle` `transpileJS` task](/docs/7-2/frameworks/-/knowledge_base/f/creating-the-alloyeditor-buttons-osgi-bundle):
 
-```java
-@Override
-public void include(
-                HttpServletRequest request, HttpServletResponse response,
-                String key)
-        throws IOException {
+    ```java
+    @Override
+    public void include(
+                    HttpServletRequest request, HttpServletResponse response,
+                    String key)
+            throws IOException {
 
-        ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
-                WebKeys.THEME_DISPLAY);
+            ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
+                    WebKeys.THEME_DISPLAY);
 
-        PrintWriter printWriter = response.getWriter();
+            PrintWriter printWriter = response.getWriter();
 
-        StringBundler sb = new StringBundler(7);
+            StringBundler sb = new StringBundler(7);
 
-        sb.append("<script src=\"");
-        sb.append(themeDisplay.getPortalURL());
-        sb.append(PortalUtil.getPathProxy());
-        sb.append(_servletContext.getContextPath());
-        sb.append("/js/buttons.js");
-        sb.append("\" ");
-        sb.append("type=\"text/javascript\"></script>");
+            sb.append("<script src=\"");
+            sb.append(themeDisplay.getPortalURL());
+            sb.append(PortalUtil.getPathProxy());
+            sb.append(_servletContext.getContextPath());
+            sb.append("/js/buttons.js");
+            sb.append("\" ");
+            sb.append("type=\"text/javascript\"></script>");
 
-        printWriter.println(sb.toString());
-}
-```
+            printWriter.println(sb.toString());
+    }
+    ```
 
 3.  Override the `register()` method to use the `additionalResources` dynamic 
     include to add your script. Note the `@Reference` annotation's `target` 
     value is your bundle's symbolic name defined in its `bnd.bnd` file:
 
-```java
-@Override
-public void register(DynamicIncludeRegistry dynamicIncludeRegistry) {
-        dynamicIncludeRegistry.register(
-                "com.liferay.frontend.editor.alloyeditor.web#alloyeditor#" +
-                        "additionalResources");
-}
+    ```java
+    @Override
+    public void register(DynamicIncludeRegistry dynamicIncludeRegistry) {
+            dynamicIncludeRegistry.register(
+                    "com.liferay.frontend.editor.alloyeditor.web#alloyeditor#" +
+                            "additionalResources");
+    }
 
-@Reference(
-        target = "(osgi.web.symbolicname=com.liferay.frontend.editor.alloyeditor.my.button.web)"
-)
-private ServletContext _servletContext;
-}
-```
+    @Reference(
+            target = "(osgi.web.symbolicname=com.liferay.frontend.editor.alloyeditor.my.button.web)"
+    )
+    private ServletContext _servletContext;
+    }
+    ```
 
 Now that your button is included, you can follow the steps covered in 
 [Adding Buttons to the AlloyEditor's Toolbars](/docs/7-2/frameworks/-/knowledge_base/f/adding-buttons-to-alloyeditor-toolbars) 

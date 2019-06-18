@@ -25,9 +25,9 @@ a language properties file for it with translations:
 
 2.  Run the translate target with the command below:
 
-```bash
-npm run translate
-```
+    ```bash
+    npm run translate
+    ```
 
 3.  The translate target automatically creates a language properties file for 
     each new **supported** locale with translations for your language keys. It 

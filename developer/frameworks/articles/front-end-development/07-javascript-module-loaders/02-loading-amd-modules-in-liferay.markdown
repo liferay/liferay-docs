@@ -22,41 +22,41 @@ Follow these steps to prepare your module for the Liferay AMD Module Loader:
 1.  Wrap your AMD module code with the `Liferay.Loader.define()` method, such as 
     the one shown below:
 
-```javascript
-Liferay.Loader.define('my-dialog', ['my-node', 'my-plugin-base'], 
-function(myNode, myPluginBase) {
-   return {
-       log: function(text) {
-           console.log('module my-dialog: ' + text);
-       }
-   };
-});
-```
+    ```javascript
+    Liferay.Loader.define('my-dialog', ['my-node', 'my-plugin-base'], 
+    function(myNode, myPluginBase) {
+       return {
+           log: function(text) {
+               console.log('module my-dialog: ' + text);
+           }
+       };
+    });
+    ```
 
 2.  You can modify the configuration to load the module when another module is 
     triggered or when a condition is met. The configuration below specifies that 
     this module should be loaded if another module requests the `my-test` module:
 
-```javascript
-Liferay.Loader.define('my-dialog', ['my-node', 'my-plugin-base'], 
-function(myNode, myPluginBase) {
-   return {
-       log: function(text) {
-           console.log('module my-dialog: ' + text);
-       }
-   };
-}, {
-   condition: {
-       trigger: 'my-test',
-       test: function() {
-           var el = document.createElement('input');
+    ```javascript
+    Liferay.Loader.define('my-dialog', ['my-node', 'my-plugin-base'], 
+    function(myNode, myPluginBase) {
+       return {
+           log: function(text) {
+               console.log('module my-dialog: ' + text);
+           }
+       };
+    }, {
+       condition: {
+           trigger: 'my-test',
+           test: function() {
+               var el = document.createElement('input');
 
-           return ('placeholder' in el);
-       }
-   },
-   path: 'my-dialog.js'
-});
-```
+               return ('placeholder' in el);
+           }
+       },
+       path: 'my-dialog.js'
+    });
+    ```
 
     The Liferay AMD Loader uses the definition, along with the listed 
     dependencies, as well as any other configurations specified, to create a 
@@ -64,37 +64,37 @@ function(myNode, myPluginBase) {
     are available, where they are located, and what dependencies they require. 
     Below is an example of a generated `config.json` file:
 
-```json
-{
-    "frontend-js-web@1.0.0/html/js/parser": {
-        "dependencies": []
-    },
-    "frontend-js-web@1.0.0/html/js/list-display": {
-        "dependencies": ["exports"]
-    },
-    "frontend-js-web@1.0.0/html/js/autocomplete": {
-        "dependencies": ["exports", "./parser", "./list-display"]
+    ```json
+    {
+        "frontend-js-web@1.0.0/html/js/parser": {
+            "dependencies": []
+        },
+        "frontend-js-web@1.0.0/html/js/list-display": {
+            "dependencies": ["exports"]
+        },
+        "frontend-js-web@1.0.0/html/js/autocomplete": {
+            "dependencies": ["exports", "./parser", "./list-display"]
+        }
     }
-}
-```
+    ```
 
 3.  Load your module in your scripts. Pass the module name to the 
     `Liferay.Loader.require` method. The example below loads a module called 
     `my-dialog`:
 
-```javascript
-Liferay.Loader.require('my-dialog', function(myDialog) {
-    // your code here
-}, function(error) {
-    console.error(error);
-});
-```
+    ```javascript
+    Liferay.Loader.require('my-dialog', function(myDialog) {
+        // your code here
+    }, function(error) {
+        console.error(error);
+    });
+    ```
 
-| **Note:** By default, the AMD Loader times out in seven seconds. You can 
-| configure this value through System Settings. Open the Control Panel and 
-| navigate to *Configuration* &rarr; *System Settings* &rarr; *PLATFORM* &rarr; 
-| *Infrastructure*, and select *JavaScript Loader*. Set the *Module Definition 
-| Timeout* configuration to the time you want and click *Save*.
+    | **Note:** By default, the AMD Loader times out in seven seconds. You can 
+    | configure this value through System Settings. Open the Control Panel and 
+    | navigate to *Configuration* &rarr; *System Settings* &rarr; *PLATFORM* &rarr; 
+    | *Infrastructure*, and select *JavaScript Loader*. Set the *Module Definition 
+    | Timeout* configuration to the time you want and click *Save*.
 
 ## Related Topics
 

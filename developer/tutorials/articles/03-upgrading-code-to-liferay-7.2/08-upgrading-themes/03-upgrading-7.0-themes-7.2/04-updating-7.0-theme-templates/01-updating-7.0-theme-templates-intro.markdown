@@ -67,4 +67,4 @@ applicable. For reference, the main changes between @product@ 7.0 themes and
 In this section you'll learn how to update various theme templates to 
 @product-ver@. 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-2/updating-7-0-theme-templates">Let's Go<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/updating-7-0-theme-templates">Let's Go<span class="icon-circle-arrow-right"></span></a>

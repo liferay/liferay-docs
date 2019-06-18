@@ -33,53 +33,53 @@ portlet IDs. Follow these steps to update the sitemap:
     The original and updated versions of the Lunar Resort theme's `sitemap.json` 
     are shown below:
 
-Original:
+    Original:
 
-```json
-{
-	"name": "Collaboration",
-	"title": "Collaboration",
-	"friendlyURL": "/collaboration",
-	"layoutTemplateId": "2_columns",
-	"columns": [
-		[
-			{
-			"portletId": "36"
-			}
-		],
-		[
-			{
-			"portletId": "115"
-			}
-		]
-	
-	]
-}
-```
+    ```json
+    {
+    	"name": "Collaboration",
+    	"title": "Collaboration",
+    	"friendlyURL": "/collaboration",
+    	"layoutTemplateId": "2_columns",
+    	"columns": [
+    		[
+    			{
+    			"portletId": "36"
+    			}
+    		],
+    		[
+    			{
+    			"portletId": "115"
+    			}
+    		]
+    	
+    	]
+    }
+    ```
 
-Updated:
+    Updated:
 
-```json
-{
-  "name": "Collaboration",
-  "title": "Collaboration",
-  "friendlyURL": "/collaboration",
-  "layoutTemplateId": "2_columns",
-  "columns": [
-    [
-      {
-      "portletId": "com_liferay_wiki_web_portlet_WikiPortlet"
-      }
-    ],
-    [
-      {
-      "portletId": "com_liferay_blogs_web_portlet_BlogsAgreggatorPortlet"
-      }
-    ]
-  
-  ]
-},
-```
+    ```json
+    {
+      "name": "Collaboration",
+      "title": "Collaboration",
+      "friendlyURL": "/collaboration",
+      "layoutTemplateId": "2_columns",
+      "columns": [
+        [
+          {
+          "portletId": "com_liferay_wiki_web_portlet_WikiPortlet"
+          }
+        ],
+        [
+          {
+          "portletId": "com_liferay_blogs_web_portlet_BlogsAgreggatorPortlet"
+          }
+        ]
+      
+      ]
+    },
+    ```
 
 2.  Update references to the web content articles in the `sitemap.json` to use 
     the XML file extensions.

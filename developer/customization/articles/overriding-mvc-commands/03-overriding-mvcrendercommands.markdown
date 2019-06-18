@@ -166,9 +166,9 @@ render command:
 
 1.  Add a `ServletContext` field.
 
-```java
-protected ServletContext servletContext;
-```
+    ```java
+    protected ServletContext servletContext;
+    ```
 
 2.  Add the `@Reference` annotation to the field and set the annotation to 
     filter on the portlet's module. By convention, Liferay puts portlets in 
@@ -176,43 +176,43 @@ protected ServletContext servletContext;
     context reference filters on a module whose symbolic name is 
     `com.custom.code.web`.
 
-```java
-@Reference(target = "(osgi.web.symbolicname=com.custom.code.web)")
-protected ServletContext servletContext;
-```
+    ```java
+    @Reference(target = "(osgi.web.symbolicname=com.custom.code.web)")
+    protected ServletContext servletContext;
+    ```
 
 Implement your `render` method this way:
 
 1.  Get a request dispatcher to your module's custom JSP:
 
-```java
-RequestDispatcher requestDispatcher =
-    servletContext.getRequestDispatcher("/custom_edit_entry.jsp");
-```
+    ```java
+    RequestDispatcher requestDispatcher =
+        servletContext.getRequestDispatcher("/custom_edit_entry.jsp");
+    ```
 
 2.  Include the HTTP servlet request and response in the request dispatcher.
 
-```java
-try {
-    HttpServletRequest httpServletRequest = 
-        PortalUtil.getHttpServletRequest(renderRequest);
-    HttpServletResponse httpServletResponse = 
-        PortalUtil.getHttpServletResponse(renderResponse);
+    ```java
+    try {
+        HttpServletRequest httpServletRequest = 
+            PortalUtil.getHttpServletRequest(renderRequest);
+        HttpServletResponse httpServletResponse = 
+            PortalUtil.getHttpServletResponse(renderResponse);
 
-    requestDispatcher.include
-        (httpServletRequest, httpServletResponse);
-} catch (Exception e) {
-    throw new PortletException
-        ("Unable to include custom_edit_entry.jsp", e);
-}
-```
+        requestDispatcher.include
+            (httpServletRequest, httpServletResponse);
+    } catch (Exception e) {
+        throw new PortletException
+            ("Unable to include custom_edit_entry.jsp", e);
+    }
+    ```
 
 3.  Return the request dispatcher via the constant 
     `MVC_PATH_VALUE_SKIP_DISPATCH`.
 
-```java
-return MVCRenderConstants.MVC_PATH_VALUE_SKIP_DISPATCH;
-```
+    ```java
+    return MVCRenderConstants.MVC_PATH_VALUE_SKIP_DISPATCH;
+    ```
 
 After deploying your module, the [portlets targeted by your custom 
 `MVCRenderCommand` component](/docs/7-2/customization/-/knowledge_base/c/adding-logic-to-mvc-commands##step-2-publish-as-a-component) 

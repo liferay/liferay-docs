@@ -10,18 +10,18 @@ Follow these steps to load your ES2015 and Metal.js modules with `<aui:script>`:
 
 1.  Add the following declaration to your portlet's JSP:
 
-```markup
-<%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
-```
+    ```markup
+    <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+    ```
 
 2.  Add the `<aui:script>` tag and use the `require` attribute to load ES2015 
     and Metal.js modules:
 
-```javascript
-<aui:script require="metal-clipboard/src/Clipboard">
-    new metalClipboardSrcClipboard.default();
-</aui:script>
-```
+    ```javascript
+    <aui:script require="metal-clipboard/src/Clipboard">
+        new metalClipboardSrcClipboard.default();
+    </aui:script>
+    ```
 
 alternatively, you can specify a variable for your module by adding 
 `as variableName` after the module name, as shown in the example below:

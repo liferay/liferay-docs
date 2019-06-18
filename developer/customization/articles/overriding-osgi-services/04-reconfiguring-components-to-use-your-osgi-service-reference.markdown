@@ -77,9 +77,9 @@ service references on the fly.
 2.  In the configuration file, add a reference target entry that filters on your
     custom service. Follow this format for the entry:
 
-```properties
-[reference].target=[filter]
-```
+    ```properties
+    [reference].target=[filter]
+    ```
 
     Replace `[reference]` with the name of the reference you're overriding. 
     Replace `[filter]` with service properties that filter on your custom 
@@ -87,27 +87,28 @@ service references on the fly.
 
     This example filters on the `component.name` service property:
 
-```properties
-_someService.target="(component.name\=overriding.service.reference.service.CustomServiceImpl)" 
-```
+    ```properties
+    _someService.target="(component.name\=overriding.service.reference.service.CustomServiceImpl)" 
+    ```
+    
     This example filters on the `service.vendor` service property:
 
-```properties
-_someService.target="(service.vendor\=Acme, Inc.)"
-```
+    ```properties
+    _someService.target="(service.vendor\=Acme, Inc.)"
+    ```
 
 3.  Optionally, you can add a `cardinality.minimum` entry to specify the number 
     of services the reference can use. Here's the format:
 
-```properties
-[reference].cardinality.minimum=[int]
-```
+    ```properties
+    [reference].cardinality.minimum=[int]
+    ```
 
     Here's an example cardinality minimum:
 
-```properties
-_someService.cardinality.minimum=1
-```
+    ```properties
+    _someService.cardinality.minimum=1
+    ```
 
 4.  Deploy the configuration by copying the configuration file into the folder
     `[Liferay_Home]/osgi/configs`. 
