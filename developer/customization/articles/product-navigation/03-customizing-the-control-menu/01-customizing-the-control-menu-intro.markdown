@@ -6,10 +6,10 @@ header-id: customizing-the-control-menu
 
 [TOC levels=1-4]
 
-The Control Menu is the most visible and accessible menu in Liferay. For
-example, on your home page, the Control Menu offers default options for
-accessing the Product Menu, Simulation Menu, and Add Menu. You can think of this
-menu as the gateway to configuring options in Liferay.
+The Control Menu is the most visible and accessible menu. For example, on your
+home page, the Control Menu offers default options for accessing the Product
+Menu, Simulation Menu, and Add Menu. You can think of this menu as the gateway
+to configuring options in @product@.
 
 ![Figure 1: The Control Menu has three configurable areas: left, right, and middle. It also displays the title and type of page that you are currently viewing.](../../../images/control-menu-home.png)
 
@@ -27,16 +27,18 @@ each category.
 | **Note:** You can add the Control Menu to a theme by adding the following
 | snippet into your `portal_normal.ftl`:
 | 
-|     <@liferay.control_menu />
+| ```
+| <@liferay.control_menu />
+| ```
 | 
 | The other product navigation menus (e.g., Product Menu, Simulation Menu) are
 | included in this tag, so specifying the above snippet embeds all three menus
-| into your theme. Embedding the User Personal Bar is slightly different. Visit
-| the [Providing the User Personal Bar](/docs/7-1/tutorials/-/knowledge_base/t/providing-the-user-personal-bar)
-| tutorial for more information.
+| into your theme. Embedding the User Personal Menu is slightly different. Visit
+| the [Providing the User Personal Menu](/docs/7-2/customization/-/knowledge_base/c/providing-the-user-personal-menu)
+| article for more information.
 
 You can reference a sample Control Menu Entry by visiting the
-[Control Menu Entry](/docs/7-1/reference/-/knowledge_base/r/control-menu-entry-template)
+[Control Menu Entry](/docs/7-2/reference/-/knowledge_base/r/control-menu-entry-template)
 article.
 
 Next you'll learn how to customize the Control Menu.
