@@ -2,7 +2,7 @@
 header-id: using-angular-js-in-your-portlets
 ---
 
-# Using Angular JS in Your Portlets
+# Using Angular in Your Portlets
 
 [TOC levels=1-4]
 
@@ -10,7 +10,7 @@ You can use the
 [npm Angular portlet template](/docs/7-1/reference/-/knowledge_base/r/npm-angular-portlet-template) 
 to automate much of the required configuration for you, or create the module
 manually. For convenience, all manual steps are listed below. This tutorial
-shows how to use Angular JS in your portlets, whether you're migrating an
+shows how to use Angular in your portlets, whether you're migrating an
 existing Angular project or building a fresh one. See the [npm Angular portlet
 template](/docs/7-1/reference/-/knowledge_base/r/npm-angular-portlet-template)
 reference docs for more information on the portlet's anatomy. Get started by
@@ -279,7 +279,7 @@ Follow these steps to render your app component:
         	bootstrapRequire.default('#<portlet:namespace />-root');
         </aui:script>
 
-Now you know how to use Angular JS in your projects! 
+Now you know how to use Angular in your projects! 
 
 ## Related Topics
 

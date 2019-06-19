@@ -187,7 +187,7 @@ Now you know how to use React in your projects!
 
 ## Related Topics
 
-[Using Angular JS in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-angular-js-in-your-portlets)
+[Using Angular in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-angular-js-in-your-portlets)
 
 [Using Vue in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-vue-in-your-portlets)
 
