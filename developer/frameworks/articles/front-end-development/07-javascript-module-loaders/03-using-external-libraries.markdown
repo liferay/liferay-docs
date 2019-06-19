@@ -59,5 +59,5 @@ Loaders.
 ## Related Topics
 
 - [Liferay AMD Module Loader](/docs/7-2/frameworks/-/knowledge_base/f/loading-amd-modules-in-liferay)
-- [Using ES2015+ Modules in Your Portlet](/docs/7-2/frameworks/-/knowledge_base/f/preparing-your-javascript-files-for-esplus)
+- [Using ES2015+ Modules in Your Portlet](/docs/7-2/frameworks/-/knowledge_base/f/using-esplus-modules-in-your-portlet)
 - [Loading Modules with AUI Script](/docs/7-2/frameworks/-/knowledge_base/f/loading-modules-with-aui-script)
