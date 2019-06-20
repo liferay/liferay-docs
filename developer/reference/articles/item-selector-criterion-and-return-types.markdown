@@ -38,7 +38,7 @@ Blogs item.
 **Page Fragments:**
 
 [FragmentItemSelectorCriterion](@app-ref@/fragment/latest/javadocs/com/liferay/fragment/item/selector/criterion/FragmentItemSelectorCriterion.html): 
-[Page fragment](/docs/7-2/frameworks/-/knowledge_base/f/developing-fragments). 
+[Page fragment](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments). 
 
 **Item Selector:**
 

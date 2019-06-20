@@ -29,7 +29,7 @@ or JSF page.
 implementation. 
 
 **Valid during (phase):** The 
-[portlet phases](/docs/7-2/frameworks/-/knowledge_base/f/cdi-dependency-injection/portlets)
+[portlet phases](/docs/7-2/frameworks/-/knowledge_base/f/portlets)
 in which the bean is valid. 
 
 ## Portlet Request Scoped Beans

@@ -28,7 +28,7 @@ feature.
     ![Figure 2: You can check to see if your project deployed successfully to Liferay using the Gogo shell.](../../../images/gogo-deploy-successful.png)
 
 **Important:** Dev Studio's Gogo shell usage requires
-[Developer Mode](/docs/7-2/frameworks/-/knowledge_base/f/using-developer-mode-with-themes#setting-developer-mode-for-your-server-in-liferay-ide)
+[Developer Mode](/docs/7-2/frameworks/-/knowledge_base/f/using-developer-mode-with-themes)
 to be enabled. Developer Mode is enabled in
 [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace)
 by default.

@@ -57,7 +57,7 @@ Continue on to see how this is done.
     | **Note:** Although WABs can be generated using the `bnd-maven-plugin`,
     | this is not supported by Liferay. WABs should be created as a standard WAR
     | project and deployed to the
-    | [Liferay WAB Generator](/docs/7-2/reference/-/knowledge_base/r/using-the-wab-generator),
+    | [Liferay WAB Generator](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator),
     | which generates a WAB for you.
 
 2.  In your project's `pom.xml` file, add the

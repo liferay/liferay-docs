@@ -9,7 +9,7 @@ header-id: building-a-theme-with-maven
 Liferay's Theme Builder is used to build @product@ theme files in your project.
 You can incorporate the Theme Builder into your Maven project to generate
 WAR-style
-[themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-and-layout-templates)
+[themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction)
 deployable to @product@.
 
 The easiest way to create a Liferay theme with Maven is to create a new Maven
