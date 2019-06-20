@@ -29,7 +29,7 @@ beans and Portlet Predefined Beans:
     | [OSGi CDI Integration](/docs/7-2/frameworks/-/knowledge_base/f/osgi-cdi-integration). 
 
     | **Note:**
-    | @product@ exports the packages provided by the Portlet API and CDI API. <!-- Add link back for '@product@ exports' once third-party-packages-product-exports article is available -->
+    | @product@ exports the packages provided by the Portlet API and CDI API.
     | Liferay project templates typically include them as transitive 
     | dependencies. If you must explicitly depend on the portlet API and CDI 
     | artifacts, add them as `compileOnly` (Gradle) or `provided` (Maven) 
