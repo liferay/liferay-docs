@@ -36,5 +36,12 @@ right away. Here are the fundamental topics:
 -   **Gogo Shell** enables you to examine components, debug issues, and manage 
     deployments. 
 
+<!-- Uncomment when 'Architecture' section is available. Jim
+| **Note:** The
+| Architecture section
+| provides conceptual diagrams and explains @product@ services and components, 
+| and applications, and the @product@ core. 
+-->
+
 Start with understanding how WAR and OSGi JAR project structures are used in
 development. 
