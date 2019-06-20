@@ -160,6 +160,5 @@ which in turn bound the custom service to the referencing component!
 
 ## Related Topics
 
-- [OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services)
-- [Finding Extension Points](/docs/7-2/customization/-/knowledge_base/c/finding-extension-points)
+- [OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)
 - [Using Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)
