@@ -103,5 +103,5 @@ To create an Information Item Renderer you must create a class that implements
 `InfoItemRenderer` and registers it as a component. Inside that class, you 
 need a `render()` method that contains your logic. To learn about Information
 Item Renderers, see 
-[Creating Information Item Renderers](/docs/7-2/frameworks/-/knowledge_base/f/creating-item-renderer).
+[Creating Information Item Renderers](/docs/7-2/frameworks/-/knowledge_base/f/custom-rendering-of-information-with-infoitemrenderer).
 
