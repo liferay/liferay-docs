@@ -16,5 +16,3 @@ how to find Liferay artifacts and  configure dependencies on them, see
 ## Related Topics
 
 [Configuring Dependencies](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies)
-
-[Finding Extension Points](/docs/7-2/customization/-/knowledge_base/c/finding-extension-points)

@@ -34,10 +34,14 @@ Follow these steps:
 
     Choose the archetype that matches your web app's JSF component suite. The
     above archetypes support both Gradle and Maven development by providing a
-    `build.gradle` and `pom.xml`, respectively. See the
-    [Generating a JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/generating-a-jsf-portlet)
-    article for information on how to generate a JSF portlet.
-
+    `build.gradle` and `pom.xml`, respectively. 
+    
+    <!-- Uncomment once article is available
+    See the
+    Generating a JSF Portlet article for information on how to generate a JSF 
+    portlet.
+    -->
+    
     Here's the resulting project structure for a JSF Standard portlet:
 
     - [liferay-jsf-portlet]/ &rarr; Arbitrary project name
@@ -138,9 +142,13 @@ Follow these steps:
 10. Replace your new JSF portlet's `webapp/WEB-INF/web.xml` with your web app's
     `web.xml` file. The `web.xml` file serves as a deployment descriptor that
     provides necessary configurations for your JSF portlet to deploy and
-    function in @product@. You can see the
-    [Defining JSF Portlet Descriptors](/docs/7-2/appdev/-/knowledge_base/a/defining-jsf-portlet-descriptors)
+    function in @product@. 
+    
+    <!-- Uncomment once article is available
+    You can see the 
+    Defining JSF Portlet Descriptors
     article for more information on a Liferay JSF portlet's `web.xml`.
+    -->
 
 11. Modify your `webapp/WEB-INF/portlet.xml` as desired. The `portlet.xml`
     descriptor describes the portlet to the portlet container. For example, it
