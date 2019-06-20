@@ -46,8 +46,10 @@ you wish:
                     DLFileEntry.class.getName(), uploadPortletRequest);
         }
 
+<!--Uncomment once article is available
     For more information on `ServiceContext`, see 
-    [Understanding ServiceContext](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext). 
+    Understanding ServiceContext. 
+-->
 
 3.  Call the service reference's `updateFileEntry` method with the data from the 
     previous step. Note that this example does so inside the previous step's 

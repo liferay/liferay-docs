@@ -44,9 +44,11 @@ The following Liferay tools help you build themes:
 
 - [Theme Builder Gradle Plugin](/docs/7-2/reference/-/knowledge_base/r/theme-builder-gradle-plugin)
 - [Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme)
-- [Dev Studio](/docs/7-2/frameworks/-/knowledge_base/f/creating-themes-with-liferay-ide)
 - [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli)'s 
   [Theme Template](/docs/7-2/reference/-/knowledge_base/r/theme-template). 
+  <!--Uncomment once article is available
+  - Dev Studio
+  -->
 
 Depending on the tool you choose 
 (

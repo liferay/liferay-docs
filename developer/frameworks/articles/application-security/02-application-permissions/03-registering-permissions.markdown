@@ -43,7 +43,7 @@ Builder-generated service.
 If you're not using Service Builder, but you are using OSGi modules for your
 application, you should be able to inject the resource service with an
 `@Reference` annotation. If you're building a WAR-style plugin, you need
-a [service tracker](/docs/7-2/customization/-/knowledge_base/c/service-trackers-for-osgi-services) to
+a [service tracker](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers-for-osgi-services) to
 gain access to the service. Note that your model classes must also implement
 Liferay's `ClassedModel` interface. 
 

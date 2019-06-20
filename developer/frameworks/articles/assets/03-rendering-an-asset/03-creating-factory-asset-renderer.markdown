@@ -122,9 +122,13 @@ renderer factory.
     private BlogsEntryLocalService _blogsEntryLocalService;
     ```
 
-    The setter method is annotated with the `@Reference` tag. Visit the
-    [Invoking Local Services](/docs/7-2/-/knowledge_base/invoking-local-services)
+    The setter method is annotated with the `@Reference` tag. 
+    
+    <!--Uncomment once article is available
+    Visit the
+    Invoking Local Services
     tutorial for more information.
+    -->
 
     b. You must specify the resource bundle loader since it was specified in
        the `BlogsEntryAssetRenderer`'s constructor:

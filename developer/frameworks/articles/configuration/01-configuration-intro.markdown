@@ -120,14 +120,14 @@ The final step is to make your app read the configuration values that users
 enter. There are a number of ways to do that:
 
 If your configuration is scoped to `COMPANY` or `GROUP` you must use
-[`ConfigurationProvider`](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-configuration-provider)
+[`ConfigurationProvider`](/docs/7-2/frameworks/-/knowledge_base/f/reading-scoped-configuration-values)
 This allows your app to read different configuration values from each site,
 virtual instance, or whatever the configuration is scoped to.
 
 If your configuration is scoped to `PORTLET_INTSANCE`, you can still use
 `ConfigurationProvider`, but using `PortletDisplay` is simpler and more
 convenient. See 
-[`PortletDisplay`](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-configuration-provider#accessing-the-portlet-instance-configuration-through-the-portletdisplay). 
+[`PortletDisplay`](/docs/7-2/frameworks/-/knowledge_base/f/reading-scoped-configuration-values#accessing-the-portlet-instance-configuration-through-the-portletdisplay). 
 
 If you only want your app to be configurable at the `SYSTEM` scope, you have
 a few options. `ConfigurationProvider` will work fine, but there are
@@ -135,11 +135,11 @@ alternatives that---since they don't need to query multiple sources---can yield
 modest performance benefits. Which one you use depends on what kind of class
 you're using to read configuration values. Here are your options:
 
--   Read with an [MVC portlet's JSP](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-mvc-portlet#accessing-the-configuration-from-a-jsp)
+-   Read with an [MVC portlet's JSP](/docs/7-2/frameworks/-/knowledge_base/f/reading-unscoped-configuration-values-from-an-mvc-portlet#accessing-the-configuration-from-a-jsp)
 
--   With an [MVC Portlet's Portlet Class](/docs/7-2/frameworks/-/knowledge_base/7-2/reading-configuration-values-from-a-mvc-portlet#accessing-configuration-object-in-the-portlet-class)
+-   With an [MVC Portlet's Portlet Class](/docs/7-2/frameworks/-/knowledge_base/f/reading-unscoped-configuration-values-from-an-mvc-portlet#accessing-the-configuration-from-the-portlet-class)
 
--   With any other [Component Class](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-component)
+-   With any other [Component Class](/docs/7-2/frameworks/-/knowledge_base/f/reading-unscoped-configuration-values-from-a-component)
 
 
 ## Further Customization
@@ -165,7 +165,7 @@ entirely so you can put your own UI in its place.
 
 -   If you want the UI to render only under certain
     circumstances, you can write logic to 
-    [do that, too](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
+    [do that, too](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-configuration-user-interface#excluding-a-configuration-ui).
 
 Enough conceptual stuff. You're ready to get started with some code. If you
 already have an app that was configurable under an earlier version of
