@@ -56,9 +56,10 @@ Here are example steps for removing intermediate Journal Article versions:
 
     2.  Get each Journal Article version's workflow status via the 
         `JournalArticle` object associated with each `JournalArticleResource`.
-        [Dynamic Query](/docs/7-2/appdev/-/knowledge_base/a/dynamic-query) is an
-        efficient way to get exactly the data you want (and nothing more) from
-        each object. 
+        Dynamic Query is an efficient way to get exactly the data you want 
+        (and nothing more) from each object.
+        
+        <!--Add back link for 'Dynamic Query' once dynamic-query article is available-->
 
     ```java 
 	for (JournalArticleResource

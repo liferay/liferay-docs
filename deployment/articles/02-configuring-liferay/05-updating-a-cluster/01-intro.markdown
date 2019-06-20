@@ -49,8 +49,11 @@ backward-compatible include, but are not limited to these:
 -   Changing column types
 -   Changing data formats used in columns (such as changing from XML to JSON)
 -   Updating a Service Builder service module's data schema to a version 
-    outside of the module's
-    [required data schema range](/docs/7-2/appdev/-/knowledge_base/a/creating-an-upgrade-process-for-your-app#specifying-the-schema-version). 
+    outside of the module's required data schema range. 
+    <!-- Add back link for 'required data schema range' once 
+    creating-an-upgrade-process-for-your-app#specifying-the-schema-version 
+    article is available
+    -->
     A module's `Liferay-Require-SchemaVersion` (specified in its `bnd.bnd`) must
     match the module's schema version value in the `Release_` table. Installing
     a module with a new schema version updates the `Release_` table with

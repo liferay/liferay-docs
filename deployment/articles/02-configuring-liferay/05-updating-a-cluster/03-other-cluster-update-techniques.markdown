@@ -41,5 +41,3 @@ For more information, refer to these blue-green deployment articles:
 [@product@ Clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
 
 [Maintaining @product@](/docs/7-2/deploy/-/knowledge_base/d/maintaining-liferay)
-
-[Implementing Data Upgrades](/docs/7-2/appdev/-/knowledge_base/a/data-upgrades)

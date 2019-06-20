@@ -35,7 +35,7 @@ or
 ## Install the Latest Upgrade Patch or Fix Pack (Liferay DXP only)
 
 Install the upgrade patch (if you requested it from Liferay Support) or the 
-[latest Fix Pack](/docs/7-2/deploy/-/knowledge_base/d/patching-liferay). 
+[latest Fix Pack](https://help.liferay.com/hc/en-us/articles/360028810452-Patching-Liferay-DXP). 
 
 ## Migrate Your OSGi Configurations (7.0+)
 
