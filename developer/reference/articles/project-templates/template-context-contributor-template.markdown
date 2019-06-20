@@ -83,5 +83,5 @@ files to the folders outlined above. You can visit the
 [template-context-contributor](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/themes/template-context-contributor)
 sample project for a more expanded sample of a template context contributor.
 Likewise, see the
-[Context Contributors](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-into-your-templates)
+[Context Contributors](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme-te)
 tutorial for instructions on customizing a template context contributor project.
