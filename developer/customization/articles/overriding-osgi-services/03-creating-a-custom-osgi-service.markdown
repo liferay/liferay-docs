@@ -99,4 +99,4 @@ can be dynamically reconfigured to use your service. That's demonstrated next.
 
 ## Related Topics
 
-[OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services)
+[OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)

@@ -22,8 +22,8 @@ The following app servers should be used for Ext module development in
 
 In this section, you'll learn how to
 
-- [Create an Ext module](/docs/7-2/reference/-/knowledge_base/r/creating-an-ext-module)
-- [Develop an Ext module](/docs/7-2/reference/-/knowledge_base/r/developing-an-ext-module)
-- [Deploy an Ext module](/docs/7-2/reference/-/knowledge_base/r/deploying-an-ext-module)
+- [Create an Ext module](/docs/7-2/customization/-/knowledge_base/c/creating-an-ext-module)
+- [Develop an Ext module](/docs/7-2/customization/-/knowledge_base/c/developing-an-ext-module)
+- [Deploy an Ext module](/docs/7-2/customization/-/knowledge_base/c/deploying-an-ext-module)
 
 You'll start by creating an Ext module.
