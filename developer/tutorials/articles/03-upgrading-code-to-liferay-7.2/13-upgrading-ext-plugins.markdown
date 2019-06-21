@@ -27,5 +27,5 @@ points.
 
 For more information on Ext projects, how to decide if you need one, and how to
 manage them, see the
-[Customization with Ext](/docs/7-2/reference/-/knowledge_base/r/customization-with-ext)
+[Customization with Ext](/docs/7-2/customization/-/knowledge_base/c/customization-with-ext)
 section.
