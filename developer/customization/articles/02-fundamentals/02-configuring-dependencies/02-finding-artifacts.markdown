@@ -55,7 +55,7 @@ where to find the artifact's manifest, which lists the artifact version:
 Next, you'll learn how to find @product@ app and independent module artifact
 attributes. 
 
-## Finding @product@ App and Independent Artifacts
+## Finding Liferay App and Independent Artifacts
 
 Independent modules and @product@ app modules aren't part of the  @product@
 core. You must still, however, find their artifact attributes if you  depend on
@@ -74,7 +74,7 @@ independent modules:
 The App Manager is the best source for information on deployed modules. You'll 
 learn about it next. 
 
-### @product@'s App Manager
+### App Manager
 
 [The App Manager](/docs/7-2/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager) 
 knows what's deployed on your Liferay instance. Use it to find deployed module
