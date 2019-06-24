@@ -178,12 +178,15 @@ Now you're ready to define both your root model and model permissions.
         </model-resource>
 
     The model name (`com.liferay.blogs`) is just a package name. The
-    `<root>true</root>` tag defines this as a root model. The `<weight>` tag
+    `<root>true</root>` tag defines this as a root model. The `<portlet-ref>`
+    element is the name of the portlet that uses the model. The `<weight>` tag
     defines the order of these permissions in the GUI. The permissions defined
     are ADD_ENTRY (add a Blog entry), PERMISSIONS (set permissions on Blog
     entries), and SUBSCRIBE (receive notifications when Blog entries are
     created). These are all root model permissions, because no primary key in
-    the database can be assigned to any of these functions. 
+    the database can be assigned to any of these functions. The default
+    permissions (for both model and portlet resources) are added when the
+    portlet defined by the `<portlet-ref>` tag initializes.
 
 3.  Finally, define your model permissions: 
 
