@@ -882,6 +882,16 @@ public class CheckLinksTask extends Task {
 					String headerKeyValue = generateVirtualSecondaryHeader(line, article.getCanonicalPath());
 					secondaryHeaders.add(headerKeyValue);
 				}
+				else if (line.contains("<a name=" + quotation)) {
+
+					int begIndex = line.indexOf("<a name=");
+					int quotStart = line.indexOf(quotation, begIndex);
+					int quotClose = line.indexOf(quotation, quotStart + 1);
+
+					String htmlHeaderAnchor = line.substring(quotStart + 1, quotClose);
+
+					secondaryHeaders.add(htmlHeaderAnchor + article.getCanonicalPath());
+				}
 			}
 			in.close();
 		}
@@ -1180,7 +1190,6 @@ public class CheckLinksTask extends Task {
 			throws IOException {
 
 		boolean validUrl = false;
-		char quotation = '"';
 		LineNumberReader in = new LineNumberReader(new FileReader(article));
 		String line = null;
 
@@ -1337,6 +1346,7 @@ public class CheckLinksTask extends Task {
 	private static final int MAX_ID_LEN = 75;
 	private static String platformReferenceSite;
 	private static String platformToken;
+	private static char quotation = '"';
 	private static int resultsNumber = 0;
 	private static boolean validUrl;
 
