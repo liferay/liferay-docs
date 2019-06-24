@@ -24,7 +24,7 @@ attributes. Artifacts have these attributes:
 
 Here you'll learn how to find artifact attributes to specify artifact dependencies. 
 
-## Finding Core @product@ Artifact Attributes
+## Finding Core Artifact Attributes
 
 Each Liferay artifact is a JAR file whose `META-INF/MANIFEST.MF` file specifies
 OSGi bundle metadata the artifact's attributes. For example, these two OSGi
