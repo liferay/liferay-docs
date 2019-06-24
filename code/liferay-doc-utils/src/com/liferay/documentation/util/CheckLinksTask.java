@@ -1248,7 +1248,23 @@ public class CheckLinksTask extends Task {
 			// If headers is empty, the assignDirHeaders method could not match the
 			// relative URL with the header list (e.g., developer/user). This only
 			// happens when the first folder is valid but its subfolder isn't.
-			if (!docFoldersMatch || headers.isEmpty()) {
+			if (headers.isEmpty()) {
+
+				// Allow linking to parent folders of site
+				if (line.contains("/docs/" + PORTAL_VERSION + "/" + userGuideLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + deploymentGuideLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + distributeGuideLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + appDevLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + customizationDevLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + frameworksDevLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + tutorialsDevLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + referenceDevLinkFolder + ")")) {
+
+					validURL = true;
+				}
+				// else, invalid link
+			}
+			else if (!docFoldersMatch) {
 				// invalid URL
 			}
 			else if (Validator.isNull(secondaryHeader)) {
