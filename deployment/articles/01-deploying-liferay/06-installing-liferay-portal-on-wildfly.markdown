@@ -6,39 +6,35 @@ header-id: installing-product-on-wildfly
 
 [TOC levels=1-4]
 
-Running @product-ver@ with Wildfly 11 is officially supported, but must be
-bundled manually. Before beginning the manual process of bundling your @product@
-+ Wildfly instance, you must download these files for
-[DXP](https://customer.liferay.com/downloads)
-or [Portal CE](https://www.liferay.com/downloads-community):
-
--   @product@ WAR file
--   Dependencies ZIP file
--   OSGi JARs ZIP file
-
-| **Important:** 
-| [Prepare for the install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install)
-| before continuing. 
-
-Installing @product@ manually takes three steps:
+Installing @product@ on Wildfly 11 takes three steps:
 
 -   [Installing dependencies to your application server](#installing-dependencies)
 -   [Configuring your application server for @product@](#configuring-wildfly)
 -   [Deploying the @product@ WAR file to your application server](#deploying-product)
 
-[*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
-is the folder containing your Wildfly server folder. After installing and
-deploying @product@, the Liferay Home folder contains the Wildfly server folder
-as well as `data`, `deploy`, `logs`, and `osgi` folders. `$WILDFLY_HOME` refers
-to your Wildfly server folder. It is usually named `wildfly-[version]`.
+| **Important:** Before installing @product@, familiarize yourself with
+| [preparing for install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install). 
+
+Now, [download the @product@ WAR and Dependency
+JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the liferay-war-and-dependency-jars):
+
+-   @product@ WAR file
+-   Dependencies ZIP file
+-   OSGi Dependencies ZIP file
+
+Note that [*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) is
+the folder containing your Wildfly server folder. After installing and deploying
+@product@, the Liferay Home folder contains the Wildfly server folder as well as
+`data`, `deploy`, `logs`, and `osgi` folders. `$WILDFLY_HOME` refers to your
+Wildfly server folder. It is usually named `wildfly-[version]`. 
 
 ## Installing Dependencies
 
-@product@ + Wildfly depends on many JARs that you must manually download and
-install. Follow the steps below to do this:
+@product@ depends on a driver for your database and the JARs in the Dependencies
+ZIP and OSGi Dependencies ZIP files you downloaded. Here's how to install them: 
 
 1.  Create the folder `$WILDFLY_HOME/modules/com/liferay/portal/main` if it
-    doesn't exist and extract the dependencies ZIP JARs to it:
+    doesn't exist and extract the Dependencies ZIP JARs to it:
 
     -   `com.liferay.petra.concurrent.jar`
     -   `com.liferay.petra.executor.jar`
@@ -101,15 +97,17 @@ install. Follow the steps below to do this:
     MySQL `.jar` with the driver JAR for your database (e.g., HSQL, PostgreSQL,
     etc.).
 
-4.  Create an `osgi` folder in your Liferay Home folder. Extract the OSGi ZIP
-    file that you downloaded into the `osgi` folder.
+4.  Create an `osgi` folder in your [Liferay
+    Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) folder. Extract the
+    OSGi Dependencies ZIP file that you downloaded into the `[Liferay
+    Home]/osgi` folder.
 
     The `osgi` folder provides the necessary modules for @product@'s OSGi
     runtime.
 
 **Checkpoint:**
 
-1.  At this point, you should have the following files in the 
+1.  The following files are in the
     `$WILDFLY_HOME/modules/com/liferay/portal/main` folder:
 
     -   `com.liferay.petra.concurrent`
@@ -167,8 +165,8 @@ The command line interface is recommended for domain mode deployments.
 | **Note:** This does not prevent @product@ from running in a clustered
 | environment on multiple Wildfly servers. You can set up a cluster of @product@
 | instances running on Wildfly servers running in standalone mode. Please refer 
-| to [@product@ Clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
-| for information on setting up a @product@ cluster.
+| to the [@product@ clustering articles](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
+| for more information.
 
 ## Configuring Wildfly
 
@@ -229,7 +227,7 @@ Make the following modifications to
     -   `<extension module="org.jboss.as.weld"/>`
     -   `<subsystem xmlns="urn:jboss:domain:weld:4.0"/>`
 
-6.  Remove the two code snippets providing welcome content:
+6.  Remove the welcome content code snippets:
 
     ```xml
     <location name="/" handler="welcome-content"/>
@@ -272,14 +270,16 @@ Before continuing, verify the following properties have been set in the
 
 Now you must configure your JVM and startup scripts.
 
-In the `$WILDFLY_HOME/bin/` folder, you must make these modifications to your
-standalone domain's configuration script file `standalone.conf`
-(`standalone.conf.bat` on Windows):
+In the `$WILDFLY_HOME/bin/` folder, modify your standalone domain's
+configuration script file `standalone.conf` (`standalone.conf.bat` on Windows):
 
--   Set the file encoding
--   Set the user time-zone
--   Set the preferred protocol stack
--   Increase the default amount of memory available.
+- Set the file encoding to `UTF-8`
+- Set the user time zone to `GMT`
+- Set the preferred protocol stack
+- Increase the default amount of memory available.
+
+| **Important:** For @product@ to work properly, the application server JVM must
+| use the `GMT` time zone and `UTF-8` file encoding.
 
 Make the following edits as applicable for your operating system:
 
@@ -356,8 +356,7 @@ performance.
 
 **Checkpoint:**
 
-At this point, you've finished configuring the application server's JVM
-settings. 
+You've configured the application server's JVM settings. 
 
 1.  The file encoding, user time-zone, preferred protocol stack have been set in
     the `JAVA_OPTS` in the `standalone.conf.bat` file.
@@ -380,7 +379,7 @@ the data source and driver snippets as necessary.
 
 If you want Wildfly to manage your data source, follow these steps:
 
-1.  Add your data source inside
+1.  Add your data source inside the
     `$WILDFLY_HOME/standalone/configuration/standalone.xml` file's
     `<datasources>` element:
 
@@ -413,7 +412,7 @@ If you want Wildfly to manage your data source, follow these steps:
     </drivers>
     ```
 
-    Your final data sources subsystem should look like this:
+    A final data sources subsystem that uses MySQL should look like this:
 
     ```xml
     <subsystem xmlns="urn:jboss:domain:datasources:1.0">
@@ -496,18 +495,17 @@ Now you're ready to deploy @product@ using the @product@ WAR file.
 
 3.  To trigger deployment of `ROOT.war`, create an empty file named
     `ROOT.war.dodeploy` in your `$WILDFLY_HOME/standalone/deployments/` folder.
-    On startup, Wildfly detects the presence of this file and deploys it as a
-    web application.
+    On startup, Wildfly detects this file and deploys it as a web application.
 
 4.  Start the Wildfly application server by navigating to `$WILDFLY_HOME/bin`
     and running `standalone.bat` or `standalone.sh`.
 
 Congratulations; you've deployed @product@ on Wildfly!
 
-| **Note:** After deploying @product@, you may see excessive warnings and log messages, 
-| such as the ones below, involving `PhaseOptimizer`. These are benign and can
-| be ignored. Make sure to adjust your app server's logging level or log filters
-| to avoid excessive benign log messages.
+| **Note:** After deploying @product@, you may see excessive warnings and log 
+| messages, such as the ones below, involving `PhaseOptimizer`. These are
+| benign and can be ignored. Make sure to adjust your app server's logging level
+| or log filters to avoid excessive benign log messages.
 | 
 |     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
 |     WARNING: Skipping pass gatherExternProperties
