@@ -1239,29 +1239,19 @@ public class CheckLinksTask extends Task {
 
 		headers = assignDirHeaders(line, lineIndex);
 
-		// If headers is empty, the assignDirHeaders method could not match the
-		// relative URL with the header list (e.g., developer/user). This only
-		// happens when the first folder is valid but its subfolder isn't.
-		if (headers.isEmpty()) {
-			logInvalidUrl(article, in.getLineNumber(), line, false);
-		}
-
-		// Check 7.1 portal and 1.0 commerce links from local liferay-docs repo
-		else if ((line.contains("/" + PORTAL_VERSION + "/") || line.contains("/" + COMMERCE_VERSION + "/")) &&
+		// Check 7.2 portal and 1.1 commerce links from local liferay-docs repo
+		if ((line.contains("/" + PORTAL_VERSION + "/") || line.contains("/" + COMMERCE_VERSION + "/")) &&
 				!differingDefaultVersion) {
 
-			// Ensure portal link versions aren't mixed with commerce link versions
-			if (line.contains("/web/commerce/") && !line.contains(COMMERCE_VERSION)) {
-				logInvalidUrl(article, in.getLineNumber(), line, false);
-			}
-			
 			boolean docFoldersMatch = doesDocFoldersMatch(line, lineIndex);
-			if (!docFoldersMatch) {
-				logInvalidUrl(article, in.getLineNumber(), line, true);
+
+			// If headers is empty, the assignDirHeaders method could not match the
+			// relative URL with the header list (e.g., developer/user). This only
+			// happens when the first folder is valid but its subfolder isn't.
+			if (!docFoldersMatch || headers.isEmpty()) {
+				// invalid URL
 			}
-
-			if (Validator.isNull(secondaryHeader)) {
-
+			else if (Validator.isNull(secondaryHeader)) {
 				if (headers.get(0).contains(primaryHeader)) {
 					validURL = true;
 				}
