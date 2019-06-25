@@ -8,7 +8,7 @@ Unless you're searching for model entities using database queries (not
 recommended in most cases), each asset in @product@ must be indexed in the
 search engine. The indexing code is specific to each asset, as the asset's
 developers know what fields to index and what filters to apply to the search
-query.
+query. This paradigm applies to Liferay's own developers and anyone developing custom model entities for use with @product@.
 
 In past versions of @product@, when your asset required indexing, you would
 implement a new Indexer by extending
@@ -127,5 +127,15 @@ methods:
 
     blogsEntryLocalService.deleteEntry(entry);
 
-<!--For step-by-step instructions on indexing model entities, visit the 
-Search and Indexing section of the Developing a Web Application tutorials/docs/7-1/tutorials/-/knowledge_base/t/search-and-indexing)-->
+## Search and Localization: a Cheat Sheet
+
+[Localization](/docs/7-2/frameworks/-/knowledge_base/f/localization) is
+important. Can search and localization play nicely together? Yes, if you take
+some precautions:
+
+- For each field (e.g., `content`), index a field for each of the site's
+    languages (e.g., `content_en_US`, `content_ja_JP`, `content_es_ES`, ...).
+- Search the localized fields. Whatever you index, that's what you should be
+    querying for.
+- Don't index plain (unlocalized) fields.
+- Don't index both the plain and the localized field.
