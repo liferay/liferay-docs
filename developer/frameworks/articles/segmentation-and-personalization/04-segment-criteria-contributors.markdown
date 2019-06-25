@@ -321,7 +321,7 @@ public Criteria.Type getType() {
 }
 ```
 
-6.  [Deploy your module](/docs/7-2/reference/-/knowledge_base/deploying-a-project).
+6.  [Deploy your module](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project).
 
 After deploying your extension, the segment criteria editor includes a new 
 section containing Knowledge Base properties. Notice that the section's UI, 

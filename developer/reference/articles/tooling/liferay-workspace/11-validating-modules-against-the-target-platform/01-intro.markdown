@@ -6,6 +6,11 @@ header-id: validating-modules-against-the-target-platform
 
 [TOC levels=1-4]
 
+| **Important:** Validating modules with the `resolve` task is deprecated. It
+| only functions as it's documented here in versions prior to Liferay Workspace
+| (Gradle only) version 2.0.3. It is being redesigned for workspace versions
+| 2.0.3+ and is still in development at this time.
+
 After you write a module in Liferay Workspace, you can validate it before
 deployment to make sure of several things: 
 
@@ -122,9 +127,9 @@ resolver to bypass this.
 
 There are three ways you can do this:
 
-- [Embed the third party library in your module](/docs/7-2/reference/-/knowledge_base/r/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
+- [Embed the third party library in your module](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module)
 - [Add the third party library's capabilities to the current static set of resolver capabilities](/docs/7-2/reference/-/knowledge_base/r/adding-a-third-party-librarys-capabilities-to-the-resolvers-capabilities)
-- [Skip the resolving process for your module](/docs/7-2/reference/-/knowledge_base/r/skipping-the-resolving-process-for-your-module)
+- [Skip the resolving process for your module](/docs/7-2/reference/-/knowledge_base/r/skipping-the-resolving-process-for-a-module)
 
 | **Note:** You should only embed a third party library in your module if it's
 | the only module that depends on it. You should not bypass the resolver failure

@@ -34,7 +34,7 @@ clean up actions:
 ![Figure 2: help icons are used throughout the Control Panel.](../../../../images/liferay-ui-taglib-tooltip-02.png)
 
 Note that the message is supplied via a 
-[language key](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application#where-do-i-put-language-files). 
+[language key](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application). 
 While you can use a string for the tooltip's message for testing purposes, a 
 language key is considered best practice and should be used in production. 
 

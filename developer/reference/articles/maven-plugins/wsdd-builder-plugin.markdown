@@ -9,7 +9,7 @@ header-id: wsdd-builder-plugin
 The WSDD Builder plugin lets you generate the
 [Apache Axis](http://axis.apache.org/axis/) Web Service Deployment Descriptor
 (WSDD) files from a
-[Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/what-is-service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 `service.xml` file.
 
 ## Usage

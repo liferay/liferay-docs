@@ -24,7 +24,7 @@ If you have an app with a configuration interface scoped to anything other than
     long term.
 
     For other ways to disable the auto-generated UI, see
-    [Excluding a Configuration UI](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-configuration-user-interface#exluding-a-configuration-ui)
+    [Excluding a Configuration UI](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-configuration-user-interface#excluding-a-configuration-ui)
 
 -   Write an Upgrade Process to convert your configuration values in
     `PortletPreferences` to an instance-scoped OSGi configuration, using the

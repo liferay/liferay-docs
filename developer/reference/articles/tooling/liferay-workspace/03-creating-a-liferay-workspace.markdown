@@ -38,7 +38,7 @@ highlighted tool.
     | ```
     | 
     | You can update the default version after it has been set by opening your
-    | workspace's `.blade/settings.properties` file and setting the
+    | workspace's `.blade.properties` file and setting the
     | `liferay.version.default` property.
 
 You can also create a Maven-based workspace with Blade CLI. See the
@@ -106,7 +106,7 @@ A dialog appears prompting you to open the Liferay Workspace perspective. Click
     ![Figure 3: Choose *Liferay Gradle Workspace* or *Liferay Maven Workspace*, depending on the build you prefer.](../../../images/intellij-workspace-build.png)
 
 4.  Specify your workspace's name, location, intended @product@ version,
-    [target platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform-for-liferay-workspace),
+    [target platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform),
     and SDK (i.e., Java JDK). Then click *Finish*.
 
     ![Figure 4: Specify your workspace's configurations.](../../../images/intellij-workspace-project.png)
@@ -118,7 +118,9 @@ A dialog appears prompting you to open the Liferay Workspace perspective. Click
 
 1.  Execute the following Maven command:
 
-        mvn archetype:generate -Dfilter=liferay
+    ```bash
+    mvn archetype:generate -Dfilter=liferay
+    ```
 
 2.  Select the `com.liferay.project.templates.workspace` archetype to generate.
 

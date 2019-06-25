@@ -231,7 +231,7 @@ a module. You can install the module on each node and change the settings
 without taking down the cluster. 
 
 We've made this as easy as possible by 
-[creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
+[creating the project](https://portal.liferay.dev/documents/113763090/114000186/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
 [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace),
 in the workspace's `modules` folder. To override your cache settings, you must

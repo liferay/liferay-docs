@@ -14,12 +14,20 @@ with the same properties as the original, but with a higher service ranking.
 
 Custom MVC action commands typically extend the [`BaseMVCActionCommand` class](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html), 
 and override its `doProcessAction` method, which returns `void`. Add your logic 
-to the original behavior of the action method by 
-[getting a reference to the original service](/docs/7-2/customization/-/knowledge_base/c/adding-logic-to-mvc-commands#refer-to-the-original-implementation), 
-and [calling it after your own logic](/docs/7-2/customization/-/knowledge_base/c/adding-logic-to-mvc-commands#add-the-logic). 
-For example, this `MVCActionCommand` override checks whether the `delete` action 
-is invoked on a blog entry, and prints a message to the log, before continuing 
-with the original processing:
+to the original behavior of the action method by getting a reference to the 
+original service, and calling it after your own logic. 
+
+<!--Add link back for 'getting a reference to the original service' once 
+adding-logic-to-mvc-commands#refer-to-the-original-implementation article is available
+
+And add link back for 'calling it after your own logic' once 
+adding-logic-to-mvc-commands#add-the-logic article is available
+-->
+
+For example, this 
+`MVCActionCommand` override checks whether the `delete` action is invoked on a 
+blog entry, and prints a message to the log, before continuing with the original 
+processing:
 
 ```java
 @Component(
@@ -58,7 +66,6 @@ maintains loose coupling between new and old code.
 
 ## Related Topics
 
-- [MVC Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command)
 - [Adding Logic to MVC Commands](/docs/7-2/customization/-/knowledge_base/c/adding-logic-to-mvc-commands)
 - [Overriding MVCRenderCommands](/docs/7-2/customization/-/knowledge_base/c/overriding-mvcrendercommand)
 - [Converting StrutsActionWrappers to MVCCommands](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-struts-action-hooks)

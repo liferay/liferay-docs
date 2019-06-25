@@ -37,8 +37,12 @@ Follow these steps to call a `getFolders` method:
     It's also possible to get the group ID via the 
     [`ThemeDisplay`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
     Calling the `ThemeDisplay` method `getScopeGroupId()` gets the ID of your 
-    app's current Site (group). For more information, see 
-    [Data Scopes](/docs/7-2/frameworks/-/knowledge_base/f/data-scopes). 
+    app's current Site (group). 
+    
+    <!--Uncomment once article is available
+    For more information, see 
+    Data Scopes. 
+    -->
 
         ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
         long groupId = themeDisplay.getScopeGroupId();

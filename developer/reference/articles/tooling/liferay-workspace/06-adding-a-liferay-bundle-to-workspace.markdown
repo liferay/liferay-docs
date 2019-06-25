@@ -49,7 +49,9 @@ You can also produce a distributable Liferay bundle (Zip or Tar) from within a
 workspace. To do this, navigate to your workspace's root folder and run the
 following command:
 
-    ./gradlew distBundle[Zip|Tar]
+```bash
+./gradlew distBundle[Zip|Tar]
+```
 
 Your distribution file is available from the workspace's `/build` folder.
 

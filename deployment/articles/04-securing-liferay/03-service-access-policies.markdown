@@ -109,8 +109,7 @@ disallow certain API functions from being invoked, you can change the
 service access policies. Default service access policies are applied to all
 incoming requests, including unauthenticated requests. 
 
-The other 10 policies have to do with OAuth and 
-[JSON web services](/docs/7-2/frameworks/-/knowledge_base/f/invoking-json-web-services): 
+The other 10 policies have to do with OAuth and JSON web services: 
 
 **OAUTH2_analytics.read/write:** Integrates with 
 [Liferay Analytics Cloud](https://www.liferay.com/products/analytics-cloud), 

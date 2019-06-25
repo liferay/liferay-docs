@@ -125,5 +125,5 @@ Now you know how to build user-friendly forms for your applications.
 ## Related Topics
 
 - [Using the Chart Taglib in Your Portlets](/docs/7-2/reference/-/knowledge_base/r/using-the-chart-taglib-in-your-portlets)
-- [Using Liferay Front-end Taglibs in Your Portlet](/docs/7-2/reference/-/knowledge_base/r/using-liferay-frontend-taglibs-in-your-portlet)
+- [Using Liferay Front-end Taglibs in Your Portlet](/docs/7-2/reference/-/knowledge_base/r/using-liferay-front-end-taglibs-in-your-portlet)
 - [Using the Clay Taglib in Your portlets](/docs/7-2/reference/-/knowledge_base/r/using-the-clay-taglib-in-your-portlets)

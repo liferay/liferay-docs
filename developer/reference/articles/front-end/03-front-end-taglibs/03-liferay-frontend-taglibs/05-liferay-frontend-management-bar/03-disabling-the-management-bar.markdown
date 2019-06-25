@@ -38,5 +38,5 @@ effect when there aren't any results to view:
 
 ## Related Topics
 
-- [Including Actions in the Management Bar](/docs/7-2/frameworks/-/knowledge_base/f/including-actions-in-the-management-bar)
+- [Including Actions in the Management Bar](/docs/7-2/reference/-/knowledge_base/r/including-actions-in-the-management-bar)
 - [Clay Management Toolbar](/docs/7-2/reference/-/knowledge_base/r/clay-management-toolbar)
