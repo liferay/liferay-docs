@@ -2,6 +2,8 @@
 
 [TOC levels=1-4]
 
+<!-- cover the pitfalls of bad localization -->
+
 Unless you're searching for model entities using database queries (not
 recommended in most cases), each asset in @product@ must be indexed in the
 search engine. The indexing code is specific to each asset, as the asset's
@@ -10,8 +12,8 @@ query.
 
 In past versions of @product@, when your asset required indexing, you would
 implement a new Indexer by extending
-`com.liferay.portal.kernel.search.BaseIndexer<T>`. @product-ver@ introduces
-a new pattern that relies on 
+`com.liferay.portal.kernel.search.BaseIndexer<T>`. @product@ version 7.1
+introduced a new pattern that relies on 
 [composition instead of inheritance](https://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition).
 If you want to use the old approach, feel free to extend `BaseIndexer`. It's
 still supported. 
@@ -30,17 +32,13 @@ types) there is a one-to-one mapping between the Liferay and Elasticsearch APIs.
 In addition to the Elasticsearch centered APIs, Liferay's Search Infrastructure
 includes additional APIs serving these purposes: 
 
--   Indexed documents include the fields needed by @product@ (e.g., 
-    `entryClassName`, `entryClassPK`, `assetTagNames`, `assetCategories`, 
+-   Ensure all indexed documents include the fields needed by @product@ (e.g., 
+    `entryClassName`, `entryClassPK`, `assetTagNames`, `assetCategories`,
     `companyId`, `groupId`, staging status). 
--   It ensures the scope of returned search results is appropriate by applying 
+-   Ensure the scope of returned search results is appropriate by applying 
     the right filters to search requests. 
--   It provides permission checking and hit summaries to display in the search 
-    portlet. 
-
-To understand how search and indexing code makes your custom models seamlessly
-searchable, you must know how to influence each portion of the search and
-indexing cycle: Indexing, Searching, and Returing Results.
+-   Provide permission checking and hit summaries for display in the built-in
+    [search application](/docs/7-2/user/-/knowledge_base/u/search).
 
 ## Mapping the Composite Search and Indexing Framework to `Indexer`/`BaseIndexer` Code
 
@@ -49,7 +47,8 @@ If you're used to the old way of indexing custom entities (extending
 provides a quick overview about how the methods of the `Indexer` interface were
 decomposed into several new classes and methods.
 
-<!--UPDATE LINKS FOR 7.2 -->
+<!--UPDATE LINKS FOR 7.2. BREAK ACCORDING TO SEARCH/INEXING LIFECYCLE, LIKE THE
+HOW-TO ARTICLES-->
  Indexer/BaseIndexer method | Composite Indexer Equivalent | Example |
 :-------------------------- | :-------------------------- | :--------------- |
  Class Constructor | `SearchRegistrar` | [`GuestbookSearchRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-guestbooks-with-the-search-framework) |
@@ -92,7 +91,7 @@ is implemented for an application.
 
 Having entities translated into database entities _and_ search engine documents
 means that there's a possibility for a state mismatch between the database and
-search engine. For example, when a Blogs entry is added, updated or removed from
+search engine. For example, when a Blogs Entry is added, updated or removed from
 the database, corresponding changes must be made in the search engine. To do
 this, intervention must be made into the service layer. For Service Builder
 entities, this occurs in the `LocalServiceImpl` classes. There's an annotation
