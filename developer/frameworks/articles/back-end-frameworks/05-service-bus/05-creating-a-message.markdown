@@ -28,6 +28,6 @@ via the Service Bus, you must first create it. Here's how to create a message:
 
 [Sending a Message](/docs/7-2/frameworks/-/knowledge_base/f/sending-a-message)
 
-[Sending Messages Across a Cluster](/docs/7-2/frameworks/-/knowledge_base/f/sending-messages-across-the-cluster) 
+[Sending Messages Across a Cluster](/docs/7-2/frameworks/-/knowledge_base/f/sending-messages-across-a-cluster) 
 
 [Using the Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus) 
