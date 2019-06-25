@@ -33,7 +33,7 @@ divide up your panel apps. This article covers the simpler case of creating a
 panel app for the already present hidden category.
 
 1.  Follow the steps documented in 
-    [Adding Custom Panel Apps](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu#adding-custom-panel-apps)
+    [Adding Custom Panel Apps](/docs/7-2/customization/-/knowledge_base/c/adding-custom-panel-apps)
     for creating custom panel apps. Once you've created the foundation 
     of your panel app, move on to learn how to tweak it so it customizes the
     Simulation Menu.
