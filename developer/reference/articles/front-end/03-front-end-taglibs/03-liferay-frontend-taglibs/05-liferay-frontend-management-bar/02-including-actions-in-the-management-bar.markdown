@@ -60,5 +60,5 @@ Follow these steps to include actions in your management bar:
 
 ## Related Topics
 
-- [Disabling All or Portions of the Management Bar](/docs/7-2/frameworks/-/knowledge_base/f/disabling-all-or-portions-of-the-management-bar)
+- [Disabling All or Portions of the Management Bar](/docs/7-2/reference/-/knowledge_base/r/disabling-all-or-portions-of-the-management-bar)
 - [Clay Management Toolbar](/docs/7-2/reference/-/knowledge_base/r/clay-management-toolbar)

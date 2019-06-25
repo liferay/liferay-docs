@@ -40,9 +40,9 @@ workspaces next.
 | be updated if you're migrating from a workspace before version `1.10.14` to
 | the latest available version. To update your Gradle wrapper, run
 | 
-|    ```bash
-|    ./gradlew wrapper --gradle-version=4.10.2
-|    ```
+| ```bash
+| ./gradlew wrapper --gradle-version=4.10.2
+| ```
 
 Awesome! You've upgraded your Gradle-based Liferay Workspace!
 

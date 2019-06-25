@@ -47,8 +47,10 @@ Follow these steps to use `copyFolder` to copy a folder:
         ServiceContext serviceContext = ServiceContextFactory.getInstance(
                     DLFolder.class.getName(), actionRequest);
 
+<!--Uncomment once article is available
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext). 
+    Understanding ServiceContext. 
+-->
 
 3.  Call the service reference's `copyFolder` method with the data from the 
     previous step. Note that this example uses the 

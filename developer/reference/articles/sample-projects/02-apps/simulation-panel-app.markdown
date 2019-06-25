@@ -55,12 +55,14 @@ interface with JSP support. JSPs, however, are not the only way to provide
 frontend functionality to your panel categories/apps. You can create your own
 class implementing `PanelApp` to use other technologies, such as FreeMarker.
 
+<!--Uncomment once articles are available
 To learn more about Liferay Portal's product navigation using panel categories
 and panel apps, see the
-[Customizing the Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
+Customizing the Product Menu
 tutorial. For more information on extending the Simulation Menu, see the
-[Extending the Simulation Menu](/docs/7-2/customization/-/knowledge_base/c/extending-the-simulation-menu)
+Extending the Simulation Menu
 tutorial.
+-->
 
 ## Where Is This Sample?
 

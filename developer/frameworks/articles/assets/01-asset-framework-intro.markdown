@@ -87,10 +87,13 @@ may consist of a both instanceable and non-instanceable portlets. If your
 application does not currently include a non-instanceable portlet, adding a 
 configuration interface through a panel app both enhances the usability of 
 the application, and meets the requirement for adding a non-instanceable 
-portlet to the application. See our tutorial on 
-[Adding Custom Panel Apps](/docs/7-2/frameworks-/knowledge_base/f/customizing-the-product-menu#adding-custom-panel-apps)
-to learn how to add one.
+portlet to the application. 
 
+<!--Uncomment once article is available
+See our tutorial on 
+Adding Custom Panel Apps
+to learn how to add one.
+-->
 
 After you have met all the prerequisites, there are two things you must do to 
 get your asset renderer functioning properly for your asset:
@@ -128,7 +131,7 @@ content article appear alongside that entry in the Asset Publisher application.
 ## Implementing Asset Priority
 
 The 
-[Asset Publisher](/docs/7-2/-/knowledge_base/publishing-assets) 
+[Asset Publisher](/docs/7-2/user/-/knowledge_base/u/publishing-assets) 
 lets you order assets by priority. For this to work, however, users must be able
 to set the asset's priority when creating or editing the asset. For example,
 when creating or editing web content, users can assign a priority in the

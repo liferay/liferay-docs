@@ -15,18 +15,24 @@ version`.
 
 To update your Blade CLI installation to the latest stable version, run
 
-    blade update
+```bash
+blade update
+```
 
 Although Blade CLI is frequently released, if you want bleeding edge features
 not yet available, you can install the latest snapshot version:
 
-    blade update -s
+```
+blade update -s
+```
 
 This pulls the latest snapshot version of Blade CLI and installs it to your
 local machine. Running `blade version` after installing a snapshot displays
 output similar to this:
 
-    blade version 3.3.1.SNAPSHOT201811301746
+```bash
+blade version 3.3.1.SNAPSHOT201811301746
+```
 
 Be careful; snapshot versions are unstable and should only be used for
 experimental purposes.

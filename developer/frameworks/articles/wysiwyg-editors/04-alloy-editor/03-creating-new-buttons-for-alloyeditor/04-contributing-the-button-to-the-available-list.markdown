@@ -80,4 +80,4 @@ tutorials to add the button to the editor's toolbars.
 
 - [Adding New Behavior to an Editor](/docs/7-2/frameworks/-/knowledge_base/f/adding-new-behavior-to-an-editor)
 - [Creating the Button's JSX File](/docs/7-2/frameworks/-/knowledge_base/f/creating-the-alloyeditor-buttons-jsx-file)
-- [WYSIWYG Editor Dynamic Includes](/docs/7-2/cusomtization/-/knowledge_base/c/wysiwyg-editor-dynamic-includes)
+- [WYSIWYG Editor Dynamic Includes](/docs/7-2/customization/-/knowledge_base/c/wysiwyg-editor-dynamic-includes)

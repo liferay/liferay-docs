@@ -8,12 +8,7 @@ header-id: deprecated-apps-in-7-2-what-to-do
 
 During the development of any software product, it's sometimes necessary to stop
 development on or remove outdated or unpopular features. @product-ver@ is no
-different. In @product-ver@, Liferay has deprecated several apps and features. Some apps and features are in maintenance mode. 
-
-It's important
-to note what, exactly, *maintenance mode* and *deprecated* mean here. 
-
-While an app or feature is in maintenance mode, Liferay continues to provide bug fixes and support in accordance to with the subscribers' subscription level and the end of service life policies of the compatible Liferay DXP version. 
+different. In @product-ver@, Liferay has deprecated several apps and features. 
 
 There are three types of deprecated apps: 
 
@@ -35,21 +30,9 @@ There are three types of deprecated apps:
 | **Note:** For information on apps deprecated in @product@ 7.1, please see 
 | [Deprecated Apps in 7.1: What to Do](/docs/7-1/deploy/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do)
 
-## Apps and Features in Maintenance Mode 
-
-Here are the items in maintenance mode:
-
--   Liferay Connected Services
--   Liferay Sync
--   Liferay Mobile Experience (Liferay Screens, Liferay Mobile SDK, Liferay 
-    Push)
--   Staging 
-
-## Deprecated Apps and Features 
-
 Here are the apps deprecated in @product-ver@. 
 
-### Foundation
+## Foundation
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
@@ -58,13 +41,13 @@ Here are the apps deprecated in @product-ver@.
 | JCRStore | Removed | Migrate to another [Document Repository Store option](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver), migrate your document store data using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration). |
 | Legacy Search Portlet | Bundled | Will be removed in a future release. Replaced by the [Search widgets](/docs/7-2/user/-/knowledge_base/u/search). |
 
-### Personalization
+## Personalization
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
 | Audience Targeting | Removed | Replaced by [Personalization](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization). | 
 
-### Web Experience
+## Web Experience
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
@@ -72,13 +55,13 @@ Here are the apps deprecated in @product-ver@.
 | User Group Pages (Copy Mode) | Bundled | See the [Legacy User Group Sites Beahavior](/docs/7-1/user/-/knowledge_base/u/user-group-sites#legacy-user-group-sites-behavior) instructions on how to enable it. |
 | Resources Importer | Bundled | Deprecated as of 7.1 with no direct replacement |
 
-### Forms
+## Forms
 
 | App | Availability | Notes |
 | --- | ------------------ | ----------- |
 | Web Form | Nexus &rarr; Will be removed. | Final version released for 7.0. |
 
-### Security
+## Security
 
 | App |  Availability |  Notes |
 | --- | ------------------ | ----------- |
@@ -89,8 +72,12 @@ Here are the apps deprecated in @product-ver@.
 | OpenAM / OpenSSO | Bundled | Migrate to [SAML based authentication](https://help.liferay.com/hc/en-us/articles/360028711032-Introduction-to-Authenticating-Using-SAML). |
 | OpenID | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
 
-### User and System Management
+## User and System Management
 
 | App |  Availability | 
 | --- | ------------------ |
 | Live Users | Enabled through the [`live.users.enabled`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html) [portal property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties). | 
+
+## Related Topics 
+
+[Apps in Maintenance Mode](/docs/7-2/deploy/-/knowledge_base/d/apps-in-maintenance-mode)

@@ -86,7 +86,7 @@ to the original file in @product@:
       to configure appenders for log file location, naming, and rotation. See
       the
       [Log4j XML Configuration Primer](https://wiki.apache.org/logging-log4j/Log4jXmlFormat). 
-      [Increasing or decreasing the log level of a class or class hierarchy](/docs/7-2/frameworks/-/knowledge_base/f/adjusting-module-logging)
+      [Increasing or decreasing the log level of a class or class hierarchy](/docs/7-2/appdev/-/knowledge_base/a/adjusting-module-logging)
       is best done outside of an Ext plugin, in @product@'s' UI or a Log4j XML
       file in a module or the `osgi/log4j` folder. 
     - **Original file in Liferay:** `portal-impl/src/META-INF/portal-log4j.xml`

@@ -220,6 +220,5 @@ render your new JSP.
 
 ## Related Topics
 
-- [MVC Render Command](/docs/7-2/customization/-/knowledge_base/c/mvc-render-command)
 - [Adding Logic to MVC Commands](/docs/7-2/customization/-/knowledge_base/c/adding-logic-to-mvc-commands)
 - [Converting StrutsActionWrappers to MVCCommands](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-struts-action-hooks)

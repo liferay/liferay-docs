@@ -16,6 +16,8 @@ configure your http(s) proxy for it using JPM:
 2.  Execute the following command to configure your proxy requirements for Blade
     CLI:
 
-        jpm command --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" jpm
+    ```bash
+    jpm command --jvmargs "-Dhttp(s).proxyHost=[your proxy host] -Dhttp(s).proxyPort=[your proxy port]" jpm
+    ```
 
 Excellent! You've configured Blade CLI with your proxy settings using JPM.

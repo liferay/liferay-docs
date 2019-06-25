@@ -12,7 +12,7 @@ steps to create and configure the OSGi module:
 
 1.  [Create an OSGi module](/docs/7-2/reference/-/knowledge_base/r/creating-a-project), 
     using 
-    [Blade's portlet template](/docs/7-2/reference/-/knowledge_base/r/using-the-portlet-template):
+    [Blade's portlet template](/docs/7-2/reference/-/knowledge_base/r/using-the-mvc-portlet-template):
 
 ```bash
 blade create -t portlet -p com.liferay.docs.my.button -c 

@@ -104,4 +104,4 @@ You can make a Fragment even more dynamic by including a widget. Currently,
 portlets are the only embeddable types of widgets, but other options are planned.
 
 You can find a complete list and usage examples of these in the 
-[Page Fragments Reference](/docs/7-2/frameworks/-/knowledge_base/f/fragment-specific-tags).
+[Page Fragments Reference](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags).
