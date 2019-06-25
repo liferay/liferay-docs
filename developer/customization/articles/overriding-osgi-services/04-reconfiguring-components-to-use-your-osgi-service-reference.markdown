@@ -45,14 +45,14 @@ example module root generates the module JAR to the `build/libs` folder.
 -->
 
 -   `override-my-service-reference` 
-    <!--TODO: Uncomment once zip is ported to new site.([download](https://dev.liferay.com/documents/10184/656312/override-my-service-reference.zip))-->:
+    ([download](https://portal.liferay.dev/documents/113763090/114000186/override-my-service-reference.zip)):
     This module's portlet component `OverrideMyServiceReferencePortlet`'s field 
     `_someService` references a service of type `SomeService`. The reference's 
     policy is static and reluctant. By default, it binds to an implementation 
     called `SomeServiceImpl`. 
 
--   `overriding-service-reference` 
-    <!--TODO: Uncomment once zip is ported to new site.([download](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip))-->:
+-   `overriding-service-reference`
+    ([download](https://portal.liferay.dev/documents/113763090/114000186/overriding-service-reference.zip)):
     Provides a custom `SomeService` implementation called `CustomServiceImpl`. 
     The module's configuration file overrides 
     `OverrideMyServiceReferencePortlet`'s `SomeService` reference so that it 
@@ -160,6 +160,5 @@ which in turn bound the custom service to the referencing component!
 
 ## Related Topics
 
-- [OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services)
-- [Finding Extension Points](/docs/7-2/customization/-/knowledge_base/c/finding-extension-points)
+- [OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)
 - [Using Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)

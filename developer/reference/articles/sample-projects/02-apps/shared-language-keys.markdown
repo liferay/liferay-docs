@@ -96,7 +96,7 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
     the modules referencing them to recognize their updates.
 
 For more information on sharing language keys, visit the
-[Internationalization](/docs/7-2/frameworks/-/knowledge_base/f/internationalization)
+[Internationalization](/docs/7-2/frameworks/-/knowledge_base/f/localization)
 tutorials.
 
 ## Where Is This Sample?

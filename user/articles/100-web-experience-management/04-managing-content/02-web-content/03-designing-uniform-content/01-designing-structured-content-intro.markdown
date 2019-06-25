@@ -39,8 +39,8 @@ All of this starts with structures.
 <!--
 div class="video-tag" data-name="Creating Content with Structures and Templates">
   video width="100%" height="100%" controls>
-    source src="https://dev.liferay.com/documents/10184/1058908/creating-content-with-structures-and-templates.mp4" type="video/mp4">
-    source src="https://dev.liferay.com/documents/10184/1058908/creating-content-with-structures-and-templates.webm" type="video/webm">
+    source src="https://portal.liferay.dev/documents/113763090/113919826/creating-content-with-structures-and-templates.mp4" type="video/mp4">
+    source src="https://portal.liferay.dev/documents/113763090/113919826/creating-content-with-structures-and-templates.webm" type="video/webm">
     Your browser does not support HTML5 video.
   /video>
 /div>

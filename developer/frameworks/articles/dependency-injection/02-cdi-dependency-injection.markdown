@@ -29,11 +29,11 @@ beans and Portlet Predefined Beans:
     | [OSGi CDI Integration](/docs/7-2/frameworks/-/knowledge_base/f/osgi-cdi-integration). 
 
     | **Note:**
-    | [@product@ exports](/docs/7-2/reference/-/knowledge_base/r/third-party-packages-product-exports)
-    | the packages provided by the Portlet API and CDI API. Liferay project
-    | templates typically include them as transitive dependencies. If you must
-    | explicitly depend on the portlet API and CDI artifacts, add them as
-    | `compileOnly` (Gradle) or `provided` (Maven) dependencies. 
+    | @product@ exports the packages provided by the Portlet API and CDI API.
+    | Liferay project templates typically include them as transitive 
+    | dependencies. If you must explicitly depend on the portlet API and CDI 
+    | artifacts, add them as `compileOnly` (Gradle) or `provided` (Maven) 
+    | dependencies. 
 
 2.  If your portlet WAR project isn't a Bean Portlet, add this
     `src/main/webapp/WEB-INF/beans.xml` file to it. This file tells CDI to
@@ -85,7 +85,7 @@ public class MyPortlet ... {
 private GuestBook guestbook;
 ```
 
-7.  Inject any [Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/portlet-predefined-beans)
+7.  Inject any [Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans)
     (portlet request scoped or dependent scoped beans) into your
     `@PortletRequestScoped` CDI beans. 
 
@@ -99,8 +99,8 @@ public class RequestProcessor ... {
 }
 ```
 
-8.  Inject any [dependent scoped Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/portlet-predefined-beans) into
-    your `ApplicationScoped` or `@Dependent` scoped CDI beans. For example,
+8.  Inject any [dependent scoped Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans) 
+    into your `ApplicationScoped` or `@Dependent` scoped CDI beans. For example,
 
 ```java
 @ApplicationScoped

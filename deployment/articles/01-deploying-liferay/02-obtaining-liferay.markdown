@@ -33,23 +33,21 @@ Liferay enterprise subscribers can download Liferay DXP from the
 [Support page](https://help.liferay.com/hc/categories/360000894391-Product-Support)
 for a complete listing). Here are the ways to install @product@:
 
--   [Install @product@ as a bundle](#product-bundles)
-    (an application server with @product@ pre-installed).
+-   [Install a @product@ Tomcat bundle](#liferay-tomcat-bundle)
+    (Tomcat application server with @product@ pre-installed).
 
 -   [Install the @product@ `.war`](#installing-the-product-war)
     (and supporting libraries) onto an existing application server.
 
 Since bundles is the easiest way, it's described first. 
 
-## @product@ Bundles 
+## Liferay Tomcat Bundle
 
-Bundles include an application server with @product@ pre-installed. There are
-bundles for several application servers; choose the one that best fits your
-needs. If you don't currently have an application server preference, consider
-starting with the Tomcat bundle. Tomcat is one of the most lightweight and
-straightforward bundles to configure. If you have an open source application
-server preference, choose the server you prefer from the available @product@
-bundles. 
+The Liferay Tomcat bundle includes the Tomcat application server with @product@
+pre-installed. If you prefer using another application server with @product@,
+you must install it manually. If you don't currently have an application server
+preference, consider starting with the Tomcat bundle. Tomcat is one of the most
+lightweight and straightforward bundles to configure.
 
 | **Note:** Application server bundles for proprietary application servers such
 | as WebLogic or WebSphere aren't available because the licenses for these

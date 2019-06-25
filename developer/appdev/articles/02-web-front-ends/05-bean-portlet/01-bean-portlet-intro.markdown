@@ -78,7 +78,7 @@ portlet to a page.
 | annotations are respectively synonymous with the `javax.portlet.*` and
 | `com.liferay.portlet.*` properties in the OSGi `@Component` annotation (used 
 | in
-| [Liferay MVC Portlets](/docs/7-2/appdev/-/knowledge_base/a/creating-an-mvc-portlet),
+| [Liferay MVC Portlets](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet),
 | for example).
 | If you're familiar with the `portlet.xml` and `liferay-portlet.xml` 
 | descriptors, the

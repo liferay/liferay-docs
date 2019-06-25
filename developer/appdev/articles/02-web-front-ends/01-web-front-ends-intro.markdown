@@ -35,7 +35,7 @@ popular Java and JavaScript-based technologies:
 -   [Vue Widget](/docs/7-2/appdev/-/knowledge_base/a/developing-a-vue-application)
 -   [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet) 
 -   [JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet)
--   [PortletMVC4Spring Portlet](/docs/7-2/appdev/-/knowledge_base/a/portlet-mvc-for-spring-portletmvc4spring)
+-   [PortletMVC4Spring Portlet](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring)
 -   [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
 
 | **Note:** The Reference section describes

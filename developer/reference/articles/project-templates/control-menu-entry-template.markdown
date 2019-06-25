@@ -81,7 +81,4 @@ The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
 [control-menu-entry](/docs/7-1/reference/-/knowledge_base/r/control-menu-entry)
-sample project for a more expanded sample of a Control Menu entry. Likewise, see
-the
-[Customizing the Control Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-control-menu)
-tutorial for instructions on customizing a Control Menu entry project.
+sample project for a more expanded sample of a Control Menu entry. 

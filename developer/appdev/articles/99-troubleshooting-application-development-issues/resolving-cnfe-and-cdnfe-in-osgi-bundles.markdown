@@ -135,5 +135,3 @@ Here's how to add packages to the boot delegation list:
 [Backing up Liferay Installations](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
 
 [Resolving Third Party Library Package Dependencies](https://portal.liferay.dev/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module)
-
-[Bundle Classloading Flow](/docs/7-2/customization/-/knowledge_base/c/bundle-classloading-flow)

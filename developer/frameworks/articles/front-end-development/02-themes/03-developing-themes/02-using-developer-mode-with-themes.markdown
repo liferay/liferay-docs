@@ -90,4 +90,3 @@ immediately on redeploying your theme!
 ## Related Topics
 
 - [Generating Layout Templates with the Theme Generator](/docs/7-2/reference/-/knowledge_base/r/creating-layout-templates-with-the-themes-generator)
-- [Creating Themes with @ide@](/docs/7-2/reference/-/knowledge_base/r/creating-themes-with-liferay-ide)
