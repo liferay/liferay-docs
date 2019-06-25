@@ -142,4 +142,4 @@ the `deactivate` method unregisters the listener.
 
 ## Related Topics
 
-[Using the Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#message-listeners)
+[Using the Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus)

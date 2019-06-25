@@ -135,5 +135,5 @@ See these topics for instructions on creating and sending messages:
 
 - [Creating a Message](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-message) 
 - [Sending a Message](/docs/7-2/frameworks/-/knowledge_base/f/sending-a-message) 
-- [Sending Messages Across a Cluster](/docs/7-2/frameworks/-/knowledge_base/f/sending-messages-across-the-cluster) 
+- [Sending Messages Across a Cluster](/docs/7-2/frameworks/-/knowledge_base/f/sending-messages-across-a-cluster) 
 
