@@ -63,6 +63,5 @@ just by knowing the component class name.
 
 ## Related Topics
 
-- [MVC Resource Command](/docs/7-2/customization/-/knowledge_base/c/mvc-resource-command)
 - [Adding Logic to MVC Commands](/docs/7-2/customization/-/knowledge_base/c/adding-logic-to-mvc-commands)
 - [Overriding MVCRenderCommands](/docs/7-2/customization/-/knowledge_base/c/overriding-mvcrendercommand)

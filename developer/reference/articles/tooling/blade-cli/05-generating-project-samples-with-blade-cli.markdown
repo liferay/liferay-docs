@@ -17,26 +17,34 @@ CLI for convenience.
 
 1.  List the available sample projects:
 
-        blade samples
+    ```bash
+    blade samples
+    ```
 
     Note the sample project you want to generate; you'll use it in the next
     step.
 
 2.  Run the following command to generate a sample project:
 
-        blade samples <NAME>
+    ```bash
+    blade samples <NAME>
+    ```
 
     For example, to generate the
     [portlet-ds](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/ds-portlet)
     sample, execute
 
-        blade samples ds-portlet
+    ```bash
+    blade samples ds-portlet
+    ```
 
     The sample is generated in the current folder.
 
 | **Note:** Interested in generating legacy versions of Blade samples? Pass in the
 | `-v` param followed by the @product@ version to target. For example,
 | 
-|     blade samples -v 7.0 ds-portlet
+| ```bash
+| blade samples -v 7.0 ds-portlet
+| ```
 
 Awesome! You've successfully generated a Liferay sample project using Blade CLI!

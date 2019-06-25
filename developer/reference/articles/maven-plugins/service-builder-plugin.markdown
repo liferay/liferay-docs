@@ -7,7 +7,7 @@ header-id: service-builder-plugin
 [TOC levels=1-4]
 
 The Service Builder plugin lets you generate a service layer defined in a
-[Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/what-is-service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 `service.xml` file. Visit the
 [Using Service Builder in a Maven Project](/docs/7-2/reference/-/knowledge_base/r/using-service-builder-in-a-maven-project)
 tutorial to learn more about applying Service Builder to your Maven project.
@@ -60,7 +60,7 @@ Parameter Name | Type | Default Value | Description
 `hbmFileName` | `String` | `"src/META-INF/portal-hbm.xml"` | A Hibernate Mapping file to generate.
 `implDirName` | `String` | `"src"` | A directory where the service Java source files are generated.
 `inputFileName` | `String` | `"service.xml"` | The project's `service.xml` file.
-`modelHintsConfigs` | `String` | `"classpath*:META-INF/portal-model-hints.xml, META-INF/portal-model-hints.xml, classpath*:META-INF/ext-model-hints.xml, classpath*:META-INF/portlet-model-hints.xml"` | Paths to the [model hints](/docs/7-2/frameworks/-/knowledge_base/f/customizing-model-entities-with-model-hints) files for Liferay Service Builder to use in generating the service layer.
+`modelHintsConfigs` | `String` | `"classpath*:META-INF/portal-model-hints.xml, META-INF/portal-model-hints.xml, classpath*:META-INF/ext-model-hints.xml, classpath*:META-INF/portlet-model-hints.xml"` | Paths to the model hints files for Liferay Service Builder to use in generating the service layer. <!-- Add back link for 'model hints' once article is available -->
 `modelHintsFileName` | `String` | `"src/META-INF/portal-model-hints.xml"` | A model hints file for the project.
 `osgiModule` | `boolean` | `null` | Whether to generate the service layer for OSGi modules.
 `pluginName` | `String` | `null` | If specified, a plugin can enable additional generation features, such as `Clp` class generation, for non-OSGi modules.

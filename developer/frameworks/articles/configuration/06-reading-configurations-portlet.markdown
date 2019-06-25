@@ -115,7 +115,7 @@ view layer.
 
     The main difference between this example and the component class covered in
     the
-    [next section](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-component) 
+    [next section](/docs/7-2/frameworks/-/knowledge_base/f/reading-unscoped-configuration-values-from-a-component) 
     is that this class is a portlet class and it sets the configuration object
     as a request attribute in its `doView()` method. 
 

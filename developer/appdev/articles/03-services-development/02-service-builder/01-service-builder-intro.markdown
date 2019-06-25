@@ -101,14 +101,13 @@ Liferay caching in a cluster.
 
 Service Builder is a flexible tool. It automates many of the common tasks
 associated with creating database persistence code but it doesn't prevent you
-from creating [custom SQL
-queries](/docs/7-2/appdev/-/knowledge_base/a/custom-sql). Service Builder lets
-you define custom SQL queries in an XML file and implement finder methods
-to run the queries. This is useful, for example, for retrieving specific pieces
-of information from multiple tables via an SQL join. Service Builder also
-supports retrieving database information via [dynamic
-query](/docs/7-2/appdev/-/knowledge_base/a/dynamic-query). Liferay's dynamic
-query API leverages Hibernate's criteria API. 
+from creating custom SQL queries. Service Builder lets you define custom SQL 
+<!--Add link back for 'custom SQL queries' once article is available -->
+queries in an XML file and implement finder methods to run the queries. This is 
+useful, for example, for retrieving specific pieces of information from multiple 
+tables via an SQL join. Service Builder also supports retrieving database 
+information via dynamic query. Liferay's dynamic query API leverages Hibernate's 
+criteria API. 
 
 Service Builder is a proven application development solution used throughout
 @product@ and Liferay applications. Each of its features mentioned here saves

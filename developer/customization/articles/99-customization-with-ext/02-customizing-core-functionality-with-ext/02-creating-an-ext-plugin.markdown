@@ -11,7 +11,7 @@ the complexity of your @product@ installation, you should only use an Ext plugin
 if you're sure you can't accomplish your goal in a different way. You can		
 create Ext plugins using the pre-configured `war-core-ext` project
 template/archetype. See the
-[`war-core-ext`](/docs/7-2/reference/-/knowledge_base/r/war-core-ext-template)
+[`war-core-ext`](/docs/7-2/reference/-/knowledge_base/r/war-core-ext)
 project template article for information on how to create an Ext plugin, its
 folder structure, and other important details.
 

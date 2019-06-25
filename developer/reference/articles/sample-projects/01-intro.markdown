@@ -50,7 +50,7 @@ logging is implemented for several samples (e.g.,
 [service-builder/jdbc](/docs/7-2/reference/-/knowledge_base/r/service-builder-application-using-external-database-via-jdbc),
 etc.), which lets OSGi modules supply their own logging configuration defaults
 without external configuration. See the
-[Adjusting Module Logging](/docs/7-2/customization/-/knowledge_base/c/adjusting-module-logging)
+[Adjusting Module Logging](/docs/7-2/appdev/-/knowledge_base/a/adjusting-module-logging)
 article for more information.
 
 For a list of sample template projects available, visit the

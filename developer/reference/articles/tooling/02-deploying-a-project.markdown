@@ -17,10 +17,13 @@ project generation:
 - [Maven](/docs/7-2/reference/-/knowledge_base/r/maven)
 
 The deployment process is the same across all tools; the deployment
-command/action builds and copies your project to the @product@ `/deploy` folder,
-which is found by reading the Liferay Home folder. The Liferay Home folder is
-preconfigured in most cases; if it's not, ways to configure it are included
-below. All tools support JAR and WAR-style project deployment.
+command/action builds and deploys your project based on the build tool's
+deployment configuration. For example, leveraging Blade CLI in a default Gradle
+Liferay Workspace uses the underlying Gradle deployment configuration. The build
+tool's deployment configuration is found by reading the Liferay Home folder. The
+Liferay Home folder is preconfigured in most cases; if it's not, ways to
+configure it are included below. All tools support JAR and WAR-style project
+deployment.
 
 It's recommended to deploy Liferay projects within a
 [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).
@@ -34,9 +37,19 @@ This is the recommended way to deploy Gradle and Maven projects in a Liferay
 Workspace via command line. Blade CLI is leveraged by Dev Studio and IntelliJ
 too.
 
-1.  Run this command to deploy your project:
+Run this command to deploy your project:
 
-        blade deploy
+```bash
+blade deploy
+```
+
+If you prefer not to use your underlying build tool's (Gradle or Maven) module
+deployment configuration, and instead, you want to deploy straight to
+@product@'s OSGi container, run this command:
+
+```bash
+blade deploy -l
+```
 
 ## Gradle
 
@@ -46,19 +59,25 @@ deploying Liferay Gradle projects in most cases.
 
 1.  Apply the Liferay Gradle plugin in your project's `build.gradle` file:
 
-        apply plugin: "com.liferay.plugin"
+    ```groovy
+    apply plugin: "com.liferay.plugin"
+    ```
 
 2.  Extend the Liferay extension object to set your Liferay Home and `deploy`
     folder:
 
-        liferay {
-            liferayHome = "../../../../liferay-ce-portal-7.1.1-ga2"
-            deployDir = file("${liferayHome}/deploy")
-        }
+    ```groovy
+    liferay {
+        liferayHome = "../../../../liferay-ce-portal-7.1.1-ga2"
+        deployDir = file("${liferayHome}/deploy")
+    }
+    ```
 
 3.  Run this command to deploy your project:
 
-        ./gradlew deploy
+    ```bash
+    ./gradlew deploy
+    ```
 
 ## Liferay Dev Studio
 
@@ -75,6 +94,10 @@ These steps assume you've
 
 3.  Verify your project builds, deploys, and starts successfully by viewing the
     results in the Console window.
+
+Dev Studio's deployment mechanism executes the `watch` task behind the scenes.
+For more information on what to expect from the `watch` task, see
+[this article](/docs/7-2/reference/-/knowledge_base/r/blade-cli).
 
 ## Liferay IntelliJ Plugin
 
@@ -102,24 +125,26 @@ If you're developing your project in a Liferay Workspace, skip to step 3.
 1.  Add the following plugin configuration to your Liferay Maven project's
     parent `pom.xml` file.
 
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>com.liferay</groupId>
-                    <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
-                    <version>3.4.1</version>
-                    <executions>
-                        <execution>
-                            <id>deploy</id>
-                            <goals>
-                                <goal>deploy</goal>
-                            </goals>
-                            <phase>pre-integration-test</phase>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </build>
+    ```xml
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.liferay</groupId>
+                <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <id>deploy</id>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <phase>pre-integration-test</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    ```
 
     This POM configuration applies Liferay's
     [Bundle Support plugin](/docs/7-2/reference/-/knowledge_base/r/bundle-support-plugin).
@@ -135,10 +160,14 @@ If you're developing your project in a Liferay Workspace, skip to step 3.
     following logic within the `plugin` tags, but outside of the `execution`
     tags:
 
-        <configuration>
-            <liferayHome>C:/liferay/liferay-ce-portal-7.1-ga1</liferayHome>
-        </configuration>
+    ```xml
+    <configuration>
+        <liferayHome>C:/liferay/liferay-ce-portal-7.1-ga1</liferayHome>
+    </configuration>
+    ```
 
 3.  Run this command to deploy your project:
 
-        mvn verify
+    ```bash
+    mvn verify
+    ```

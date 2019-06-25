@@ -82,8 +82,8 @@ Name | Depends On | Type | Description
 [`buildAppDockerImage`](#task-buildappdockerimage) | `prepareAppDockerImageInputDir` | [`DockerBuildImage`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerBuildImage.html) | Builds the app's Docker image.
 [`prepareAppDockerImageInputDir`](#task-prepareappdockerimageinputdir) | \- | [`Sync`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html) | Copies the subproject artifacts and other resources to a temporary directory that will be used to build the app's Docker image.
 [`pushAppDockerImage`](#task-pushappdockerimage) | `buildAppDockerImage`, `pushAppDockerImage_tag1`, `pushAppDockerImage_tag2`, ... | [`DockerPushImage`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerPushImage.html) | Pushes the app's Docker image to the registry.
-[`pushAppDockerImage_${tag}`](#tasks-pushappdockerimagetag) | `tagAppDockerImage_${tag}` | [`DockerPushImage`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerPushImage.html) | Pushes the Docker image `${tag}` to the registry.
-[`tagAppDockerImage_${tag}`](#tasks-tagappdockerimagetag) | `buildAppDockerImage` | [`DockerTagImage`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerTagImage.html) | Creates the tag `${tag}`, which refers to the app's Docker image.
+[`pushAppDockerImage_${tag}`](#tasks-pushappdockerimage-) | `tagAppDockerImage_${tag}` | [`DockerPushImage`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerPushImage.html) | Pushes the Docker image `${tag}` to the registry.
+[`tagAppDockerImage_${tag}`](#tasks-tagappdockerimage-) | `buildAppDockerImage` | [`DockerTagImage`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerTagImage.html) | Creates the tag `${tag}`, which refers to the app's Docker image.
 
 ### Task buildAppDockerImage
 

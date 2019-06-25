@@ -21,11 +21,12 @@ interface.
 
 ## How does this sample leverage the API(s) and/or code component?
 
-This sample uses the
-[MVC Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command)'s
-`processAction(...)` method to process the inputted text (i.e., name). The text
-is set as an attribute in the `KotlinGreeterActionCommandKt.kt` class using an
-`ActionRequest` and then is retrieved in the JSP using a `RenderRequest`.
+This sample uses the MVC Action Command's `processAction(...)` method to process 
+the inputted text (i.e., name). The text is set as an attribute in the 
+`KotlinGreeterActionCommandKt.kt` class using an `ActionRequest` and then is 
+retrieved in the JSP using a `RenderRequest`. 
+
+<!-- Add back link for 'MVC Action Command' once mvc-action-command article is available-->
 
 ## Where Is This Sample?
 

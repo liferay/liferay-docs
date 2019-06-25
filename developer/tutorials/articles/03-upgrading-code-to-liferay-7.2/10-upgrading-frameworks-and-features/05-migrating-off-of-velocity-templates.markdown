@@ -24,5 +24,5 @@ this move:
 
 Although Velocity templates still work in @product-ver@, we highly recommend
 migrating to FreeMarker templates. For more information on this topic, see the
-[Upgrading Layout Templates](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-layout-templates)
+[Upgrading Layout Templates](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-layout-template-to-7-2)
 section.

@@ -22,10 +22,10 @@ modularizing it.
 
 If you prefer keeping your Service Builder logic as a WAR, you must implement a
 service tracker to call services. See the
-[Service Trackers](/docs/7-2/customization/-/knowledge_base/c/service-trackers)
+[Service Trackers](/docs/7-2/frameworks/-/knowledge_base/f/using-a-service-tracker)
 article for more information.
 
+<!--Uncomment once article is available
 If you're optimizing your Service Builder logic to invoke Liferay services from
-a module, see the
-[Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)
-article for more information.
+a module, see the Invoking Local Services article for more information.
+-->

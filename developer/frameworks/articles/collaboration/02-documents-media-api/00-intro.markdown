@@ -54,10 +54,12 @@ Documents and Media functionality:
     Note that Liferay used 
     [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder) 
     to create these services. Because the remote service contains permission 
-    checks, it's a 
-    [best practice](/docs/7-2/appdev/-/knowledge_base/a/creating-remote-services#using-service-builder-to-generate-remote-services) 
-    to call it instead of the local service. See below for instructions on 
-    getting a service reference. 
+    checks, it's a best practice to call it instead of the local service. See 
+    <!--add link back for 'best practice' once 
+    creating-remote-services#using-service-builder-to-generate-remote-services 
+    article is available
+    -->
+    below for instructions on getting a service reference. 
 
 **Entity Interfaces:** These interfaces represent entities in the Documents and 
 Media library. Here are the primary ones you'll use: 
