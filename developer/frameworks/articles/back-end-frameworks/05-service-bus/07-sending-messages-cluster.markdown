@@ -8,8 +8,8 @@ ensures that messages sent to the destination are distributed across the
 cluster's JVMs. You should do this in a registrator class, like those shown in 
 [Registering Message Listeners](/docs/7-2/frameworks/-/knowledge_base/f/registering-message-listeners). 
 
-Follow these steps to register a `ClusterBridgeMessageListener` to a 
-destination, in a registrator class: 
+Follow these steps to create a registrator class that registers a 
+`ClusterBridgeMessageListener` to a destination: 
 
 1.  Create the registrator class as an OSGi component: 
 
@@ -51,17 +51,17 @@ destination, in a registrator class:
     protected void activate() {
 
         _clusterBridgeMessageListener = new ClusterBridgeMessageListener();
-        _clusterBridgeMessageListener.setPriority(Priority.LEVEL_5)
+        _clusterBridgeMessageListener.setPriority(Priority.LEVEL5)
         _destination.register(_clusterBridgeMessageListener);
     }
     ```
 
     The 
     [`Priority`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/cluster/Priority.html)
-    enum has ten levels (`Level_1` through `Level_10`, with `Level 10` being the 
-    most important). Each level is a priority queue for sending messages through the
-    cluster. This is similar in concept to thread priorities: `Thread.MIN_PRIORITY`,
-    `Thread.MAX_PRIORITY`, and `Thread.NORM_PRIORITY`. 
+    enum has ten levels (`Level1` through `Level10`, with `Level10` being the 
+    most important). Each level is a priority queue for sending messages through 
+    the cluster. This is similar in concept to thread priorities: 
+    `Thread.MIN_PRIORITY`, `Thread.MAX_PRIORITY`, and `Thread.NORM_PRIORITY`. 
 
 5.  In the registrator's `deactivate` method, unregister the 
     `ClusterBridgeMessageListener` from the destination: 
@@ -88,7 +88,7 @@ public class MyMessageListenerRegistrator {
     protected void activate() {
 
         _clusterBridgeMessageListener = new ClusterBridgeMessageListener();
-        _clusterBridgeMessageListener.setPriority(Priority.LEVEL_5)
+        _clusterBridgeMessageListener.setPriority(Priority.LEVEL5)
         _destination.register(_clusterBridgeMessageListener);
     }
 
