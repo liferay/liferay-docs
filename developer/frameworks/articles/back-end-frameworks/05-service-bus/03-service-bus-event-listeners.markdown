@@ -11,7 +11,9 @@ When
 you may wish to listen for events that take place within the Service Bus 
 framework itself, independent of messages. For example, you can listen for when 
 [destinations](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#messaging-destinations) 
-and message listeners are added or removed. Here, you'll learn how. 
+and 
+[message listeners](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#message-listeners) 
+are added or removed. Here, you'll learn how. 
 
 ## Listening for Destinations
 
@@ -69,3 +71,7 @@ public class MyDestinationEventListener implements DestinationEventListener {
     }
 }
 ```
+
+## Related Topics
+
+[Using the Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus)

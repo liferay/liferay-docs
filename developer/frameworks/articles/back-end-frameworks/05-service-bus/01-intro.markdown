@@ -67,7 +67,7 @@ destination-related attributes:
 **Maximum Queue Size**: Limits the number of the destination's queued messages. 
 
 **Rejected Execution Handler**: A 
-[`com.liferay.portal.kernel.concurrent.RejectedExecutionHandler`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/concurrent/RejectedExecutionHandler.html) 
+[`RejectedExecutionHandler`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/concurrent/RejectedExecutionHandler.html) 
 instance can take action (e.g., log warnings) regarding rejected messages when 
 the destination queue is full. 
 
