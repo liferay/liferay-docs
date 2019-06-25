@@ -1,4 +1,10 @@
+---
+header-id: creating-an-mvc-portlet
+---
+
 # Creating an MVC Portlet
+
+[TOC levels=1-4]
 
 Your first step in developing an [MVC
 Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet) is to create
@@ -133,7 +139,7 @@ on the portlet's deployment.
 4.  Deploy the project [using your build
     environment](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project) or
     by building the project JAR and copying it to the `deploy/` folder in your
-    [Liferay Home](/docs/7-2/deployment/-/knowledge_base/d/liferay-home). 
+    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home). 
 
 The MVC Portlet is now available in the @product@ UI, in the Widget category you
 assigned it. 
