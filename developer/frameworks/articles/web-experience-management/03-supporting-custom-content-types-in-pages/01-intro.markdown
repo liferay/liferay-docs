@@ -24,17 +24,19 @@ Display Page Templates work, see the
 article.
 
 If you want to extend the Content Page or Display Page Template framework to
-support other content types, you must complete the following steps:
+support other content types, you must leverage the
+[Info framework](/docs/7-2/frameworks/-/knowledge_base/f/the-info-framework).
+
+You must complete the following steps:
 
 1.  Provide basic information about your custom content type.
 
 2.  Provide your content type's fields so they're configurable in the Page
     Editor.
 
-3.  Provide friendly URLs for your page type, and handle the information that
-    the user is requesting.
+3.  Provide friendly URLs for your page type.
 
-4.  Obtain a specific content type model instance by its primary key.
+4.  Handle the information that the user is requesting.
 
 As an example, you'll step through how to provide this information to the
 Content Page and Display Page Template frameworks.
