@@ -1,4 +1,10 @@
+---
+header-id: using-the-service-bus
+---
+
 # Using the Service Bus
+
+[TOC levels=1-4]
 
 Here, you'll learn how to use the 
 [Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/back-end-frameworks#service-bus) 

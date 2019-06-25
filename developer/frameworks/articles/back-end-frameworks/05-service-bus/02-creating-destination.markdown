@@ -1,4 +1,10 @@
+---
+header-id: creating-a-destination
+---
+
 # Creating a Destination
+
+[TOC levels=1-4]
 
 [Service Bus destinations](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#messaging-destinations) 
 are based on destination configurations and registered as OSGi services. Service 

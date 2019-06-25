@@ -1,4 +1,10 @@
+---
+header-id: sending-a-message
+---
+
 # Sending a Message
+
+[TOC levels=1-4]
 
 Once you've 
 [created a message](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-message), 

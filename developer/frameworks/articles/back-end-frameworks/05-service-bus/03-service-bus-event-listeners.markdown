@@ -1,4 +1,10 @@
+---
+header-id: service-bus-event-listeners
+---
+
 # Service Bus Event Listeners
+
+[TOC levels=1-4]
 
 When 
 [using Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus), 

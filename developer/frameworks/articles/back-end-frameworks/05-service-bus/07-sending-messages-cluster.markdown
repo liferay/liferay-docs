@@ -1,4 +1,10 @@
+---
+header-id: sending-messages-across-a-cluster
+---
+
 # Sending Messages Across a Cluster
+
+[TOC levels=1-4]
 
 To ensure a message sent to a destination is received by all cluster nodes, you 
 must register a 

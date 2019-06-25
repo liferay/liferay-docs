@@ -1,4 +1,10 @@
+---
+header-id: creating-a-message
+---
+
 # Creating a Message
+
+[TOC levels=1-4]
 
 Before you can 
 [send a message](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#sending-messages) 
