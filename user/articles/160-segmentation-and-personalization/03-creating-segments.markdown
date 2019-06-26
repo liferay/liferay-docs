@@ -23,7 +23,7 @@ On the Segments page, you see a list of all currently available segments. If you
 haven't created any Segments, this shows only the Default Segment. First, create
 a segment named *Engineers* for employees of Westeros Bank.
 
-1.  Click the [Add](../../images/icon-add.png) button.
+1.  Click the *Add* button (![Add](../../images/icon-add.png)) button.
 
 2.  Click in the text area where it says *Unnamed Segment* and enter the name 
     *American Engineers*.

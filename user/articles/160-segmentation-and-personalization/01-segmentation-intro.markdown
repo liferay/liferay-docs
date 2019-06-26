@@ -48,7 +48,7 @@ uses your site and how they use it. Analytics Cloud is a key component to fully
 utilizing Segments and Personalization, since it enables you to see the full
 picture of how users and visitors on your site behave and interact with
 both standard and targeted content. You can learn more about this in 
-[Using Analytics Cloud with User Segments](/documentation/user/-/knowledge_base/7-2/using-analytics-cloud-with-user-segments).
+[Using Analytics Cloud with User Segments](https://help.liferay.com/hc/en-us/articles/360029041751-Using-Analytics-Cloud-With-User-Segments).
 
 ## Personalizing Experiences
 
@@ -64,18 +64,21 @@ aspects of this.
 
 Content Page Personalization dynamically changes the page layout and 
 content based on who is viewing the page. You can create *Experiences* for any 
-[Content Page](user-guide-link) which provide different text, images, widgets, 
-and even different layouts based on the segment criteria of the user viewing 
-the page. You can see a step by step demonstration of this in [Content Page Personalization](/docs/7-2/user/-/knowledge_base/u/content-page-personalization).
+[Content Page](/docs/7-2/user/-/knowledge_base/u/creating-content-pages) which
+provide different text, images, widgets,  and even different layouts based on
+the segment criteria of the user viewing  the page. You can see a step by step
+demonstration of this in
+[Content Page Personalization](/docs/7-2/user/-/knowledge_base/u/content-page-personalization).
 
 ### Content Set Personalization
 
-[Content Sets](user-guide-link) organize and display content. Content Set
-Personalization provides dynamic selection of Content Sets based on User
-Segments. This means the Content Set which displays in a given context is
-determined by their segment criteria. For example, you could use a content list
-to display "featured" articles at the top of a page. Then you could create
-Segments containing users who should receive more specialized content,
-rather than the default. Those Segments would then see content personalized to
-their interest rather than the default. You can see 
-a step by step demonstration of this in [Content Set Personalization](/docs/7-2/user/-/knowledge_base/u/content-set-personalization).
+[Content Sets](/docs/7-2/user/-/knowledge_base/u/content-sets) organize and
+display content. Content Set Personalization provides dynamic selection of
+Content Sets based on User Segments. This means the Content Set which displays
+in a given context is determined by their segment criteria. For example, you
+could use a content list to display "featured" articles at the top of a page.
+Then you could create Segments containing users who should receive more
+specialized content, rather than the default. Those Segments would then see
+content personalized to their interest rather than the default. You can see  a
+step by step demonstration of this in
+[Content Set Personalization](/docs/7-2/user/-/knowledge_base/u/content-set-personalization).

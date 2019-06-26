@@ -30,7 +30,7 @@ Below that there are three main sections:
 
 ![Figure 2: You use the Segment Editor to create new Segments.](../../images/sp-segment-editor-full.png)
 
-In addition to the the various properties, there are operations and conjunctions
+In addition to the various properties, there are operations and conjunctions
 that you use to define criteria.
 
 ## User Properties
