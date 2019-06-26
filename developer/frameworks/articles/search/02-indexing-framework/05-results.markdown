@@ -1,7 +1,8 @@
 # Returning Results
 
 When a model entity's indexed search document is obtained during a search
-request, it's converted into a summary of the model entity.
+request, it's converted into a summary of the model entity. You can exert
+control over your model entity's summary.
 
 ## Creating a Results Summary
 
@@ -100,6 +101,5 @@ public class FooEntryModelVisibilityContributor
 }
 ```
 
-One important step must occur to make sure the above classes are discovered by
-the search framework. 
-
+Once you index model entities, add their terms to the @product@ search query,
+and get the summary just right, your model entity is ready to be searched.

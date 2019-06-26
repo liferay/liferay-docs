@@ -2,8 +2,6 @@
 
 [TOC levels=1-4]
 
-<!-- cover the pitfalls of bad localization -->
-
 Unless you're searching for model entities using database queries (not
 recommended in most cases), each asset in @product@ must be indexed in the
 search engine. The indexing code is specific to each asset, as the asset's
@@ -47,30 +45,28 @@ If you're used to the old way of indexing custom entities (extending
 provides a quick overview about how the methods of the `Indexer` interface were
 decomposed into several new classes and methods.
 
-<!--UPDATE LINKS FOR 7.2. BREAK ACCORDING TO SEARCH/INEXING LIFECYCLE, LIKE THE
-HOW-TO ARTICLES-->
  Indexer/BaseIndexer method | Composite Indexer Equivalent | Example |
 :-------------------------- | :-------------------------- | :--------------- |
- Class Constructor | `SearchRegistrar` | [`GuestbookSearchRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-guestbooks-with-the-search-framework) |
- `setDefaultSelectedFieldNames` | `SearchRegistrar.activate` | [`GuestbookSearchRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-guestbooks-with-the-search-framework) |
- `setDefaultSelectedLocalizedFieldNames` | `SearchRegistrar.activate` | [`GuestbookSearchRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-guestbooks-with-the-search-framework) |
- `setPermissionAware`  | `ModelResourcePermissionRegistrar` | [`GuestbookModelResourcePermissionRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-your-defined-permissions#registering-your-entities-with-the-permissions-service) |
-  `setFilterSearch` | `ModelResourcePermissionRegistrar` | [`GuestbookModelResourcePermissionRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-your-defined-permissions#registering-your-entities-with-the-permissions-service) |
- `getDocument`/`doGetDocument` | `ModelDocumentContributor` | [`GuestbookModelDocumentContributor`](/docs/7-1/tutorials/-/knowledge_base/t/indexing-guestbooks#implementing-modeldocumentcontributor)
- `reindex`/`doReindex` | `ModelIndexerWriterContributor` | [`GuestbookModelIndexerWriterContributor`](/docs/7-1/tutorials/-/knowledge_base/t/indexing-guestbooks#implementing-modelindexerwritercontributor)
- `addRelatedEntryFields` | `RelatedEntryIndexer` | [`DLFileEntryRelatedEntryIndexer`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryRelatedEntryIndexer.java)
- `postProcessContextBooleanFilter`/`PostProcessContextQuery` | `ModelPreFilterContributor` | [`DLFileEntryModelPreFilterContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelPreFilterContributor.java) |
-  `postProcessSearchQuery` | `KeywordQueryContributor` | [`GuestbookKeywordQueryContributor`](/docs/7-1/tutorials/-/knowledge_base/t/querying-for-guestbook-documents#implementing-keywordquerycontributor) |
- `getFullQuery` | `SearchContextContributor` | [`DLFileEntryModelSearchContextContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelSearchContextContributor.java) |
- `isVisible`/`isVisibleRelatedEntry` | `ModelVisibilityContributor` | [`DLFileEntryModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelVisibilityContributor.java) |
- `getSummary`/`createSummary`/`doGetSummary` | `ModelSummaryContributor` | [`GuestbookModelSummaryContributor`](/docs/7-1/tutorials/-/knowledge_base/t/generating-results-summaries) |
- `Indexer.search`/`searchCount` | No change | [Guestbook `view_search.jsp`](https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-0/creating-a-search-results-jsp-for-the-guestbook-portlet) |	
- `Indexer.delete`/`doDelete` | No change | [`MBMessageLocalServiceImpl.deleteDiscussionMessages`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/message-boards/message-boards-service/src/main/java/com/liferay/message/boards/service/impl/MBMessageLocalServiceImpl.java#L687) |
+ Class Constructor | `SearchRegistrar` | [`BlogsEntrySearchRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/BlogsEntrySearchRegistrar.java) |
+ `setDefaultSelectedFieldNames` | `SearchRegistrar.activate` | [`BlogsEntrySearchRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/BlogsEntrySearchRegistrar.java) |
+ `setDefaultSelectedLocalizedFieldNames` | `SearchRegistrar.activate` | [`BlogsEntrySearchRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/BlogsEntrySearchRegistrar.java) |
+ `setPermissionAware`  | `ModelResourcePermissionRegistrar` | [`DLFileEntryModelResourcePermissionRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/security/permission/resource/DLFileEntryModelResourcePermissionRegistrar.java) |
+  `setFilterSearch` | `ModelResourcePermissionRegistrar` | [`DLFileEntryModelResourcePermissionRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/security/permission/resource/DLFileEntryModelResourcePermissionRegistrar.java) |
+ `getDocument`/`doGetDocument` | `ModelDocumentContributor` | [`BlogsEntryModelDocumentContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/index/contributor/BlogsEntryModelDocumentContributor.java)
+ `reindex`/`doReindex` | `ModelIndexerWriterContributor` | [`BlogsEntryModelIndexerWriterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/index/contributor/BlogsEntryModelIndexerWriterContributor.java)
+ `addRelatedEntryFields` | `RelatedEntryIndexer` | [`DLFileEntryRelatedEntryIndexer`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryRelatedEntryIndexer.java)
+ `postProcessContextBooleanFilter`/`PostProcessContextQuery` | `ModelPreFilterContributor` | [`BlogsEntryModelPreFilterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/query/contributor/BlogsEntryModelPreFilterContributor.java) |
+  `postProcessSearchQuery` | `KeywordQueryContributor` | [`BlogsEntryKeywordQueryContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/query/contributor/BlogsEntryKeywordQueryContributor.java) |
+ `getFullQuery` | `SearchContextContributor` | [`DLFileEntryModelSearchContextContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelSearchContextContributor.java) |
+ `isVisible`/`isVisibleRelatedEntry` | `ModelVisibilityContributor` | [`BlogsEntryModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/result/contributor/BlogsEntryModelVisibilityContributor.java) |
+ `getSummary`/`createSummary`/`doGetSummary` | `ModelSummaryContributor` | [`BlogsEntryModelSummaryContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/result/contributor/BlogsEntryModelSummaryContributor.java) |
+ `Indexer.search`/`searchCount` | No change | [`BlogEntriesDisplayContext`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/display/context/BlogEntriesDisplayContext.java) |	
+ `Indexer.delete`/`doDelete` | No change | [`MBMessageLocalServiceImpl.deleteMessage`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/message-boards/message-boards-service/src/main/java/com/liferay/message/boards/service/impl/MBMessageLocalServiceImpl.java#L703) |
 
 In addition, you can index `ExpandoBridge` attributes. This was previously
 accomplished in `BaseIndexer`'s `getBaseModelDocument`. Now you implement an
 `ExpandoBridgeRetriever`. See 
-[`DLFileEntryExpandoBridgeRetriever`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryExpandoBridgeRetriever.java)
+[`DLFileEntryExpandoBridgeRetriever`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryExpandoBridgeRetriever.java)
 for an example implementation.
 
 ## Permissions Aware Searching and Indexing
@@ -130,12 +126,16 @@ methods:
 ## Search and Localization: a Cheat Sheet
 
 [Localization](/docs/7-2/frameworks/-/knowledge_base/f/localization) is
-important. Can search and localization play nicely together? Yes, if you take
-some precautions:
+important. Search and localization can play nicely together, if you take some
+precautions:
 
-- For each field (e.g., `content`), index a field for each of the site's
-    languages (e.g., `content_en_US`, `content_ja_JP`, `content_es_ES`, ...).
+- For each field that should be localized (e.g., `content`), index a separate
+    field for each of the site's languages (e.g., `content_en_US`,
+    `content_ja_JP`, `content_es_ES`, ...).
 - Search the localized fields. Whatever you index, that's what you should be
     querying for.
 - Don't index plain (unlocalized) fields.
 - Don't index both the plain and the localized field.
+
+The indexing and searching articles included in this section demonstrate how to
+properly handle localized fields in the search code.
