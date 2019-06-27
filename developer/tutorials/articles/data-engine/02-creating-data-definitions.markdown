@@ -1,13 +1,13 @@
-# Creating Data Definitions
+# Creating Data Definitions with REST Calls
 
-We'll use cURL, a cross-platform tool for making HTTP calls. Feel free to use
-any REST client.
+These example calls use cURL, a cross-platform tool for making HTTP calls. Feel
+free to use any REST client you're familiar with.
 
 ### Adding Data Definitions
 
 Get the `siteId` from the Site Menu &rarr; Configuration &rarr; Site Settings.
 
-In my case it's 20123.
+In this example, it's 20123.
 
 ```sh
 curl -i -X POST \
@@ -39,7 +39,7 @@ the `siteId`. Then you're creating a request body that includes:
     - `customProperties` <!-- DESCRIBE -->
     - `defaultValue`: provide a default value for a field. 
     - `id` <!-- is this a key that you can set yourself? Like the old
-        DDMTemplateKey that coudl be configured in the UI? DESCRIBE --> 
+        DDMTemplateKey that could be configured in the UI? DESCRIBE --> 
     - `indexable` can be set to `true` (default)  or `false` to control whether the
         fields is indexed in the search engine.
     - `label`: set a human readable label for each of the custom properties the
@@ -57,76 +57,12 @@ the `siteId`. Then you're creating a request body that includes:
 - `dataDefinitionRules`: set validation rules for the data definition.
 - `dateCreated` and `dateModified`: these are set by the system, so it's not
     necessary to do anything here.
+- `siteId`: the ID of the site the data definition is scoped to.
+- `storageType`: the default is `string`, which is how the JSON is stored in the
+    database.
+- `userId`: the ID of the User making the service call.
 
-<!--saved in the ddmStructure table. Record Collections in the ddlRecordSet
-table. -->
-
-```json
-{
-  "dataDefinitionFields": [
-    {
-      "customProperties": {
-        "additionalProp1": {},
-        "additionalProp2": {},
-        "additionalProp3": {}
-      },
-      "defaultValue": {
-        "additionalProp1": {},
-        "additionalProp2": {},
-        "additionalProp3": {}
-      },
-      "fieldType": "string",
-      "id": 0,
-      "indexable": true,
-      "label": {
-        "additionalProp1": {},
-        "additionalProp2": {},
-        "additionalProp3": {}
-      },
-      "localizable": true,
-      "name": "string",
-      "repeatable": true,
-      "tip": {
-        "additionalProp1": {},
-        "additionalProp2": {},
-        "additionalProp3": {}
-      }
-    }
-  ],
-  "dataDefinitionRules": [
-    {
-      "dataDefinitionFieldNames": [
-        "string"
-      ],
-      "dataDefinitionRuleParameters": {
-        "additionalProp1": {},
-        "additionalProp2": {},
-        "additionalProp3": {}
-      },
-      "name": "string",
-      "ruleType": "string"
-    }
-  ],
-  "dateCreated": "2019-05-30T20:48:25.939Z",
-  "dateModified": "2019-05-30T20:48:25.939Z",
-  "description": {
-    "additionalProp1": {},
-    "additionalProp2": {},
-    "additionalProp3": {}
-  },
-  "id": 0,
-  "name": {
-    "additionalProp1": {},
-    "additionalProp2": {},
-    "additionalProp3": {}
-  },
-  "siteId": 0,
-  "storageType": "string",
-  "userId": 0
-}
-```
-
-For more elements that can be added to your data definitions, see the
+For a complete view of the JSON structure of a data definitions, see the
 `data-engine-rest-impl/rest-openapi.yaml` file.
 
 One your POST call is processed, a `DataDefinition` is returned in the body. You
@@ -164,7 +100,7 @@ Content-Length: 307
 }
 ```
 
-Here you can see that some informationw as added by the data engine itself:
+Here you can see that some information was added by the data engine itself:
 
 - `id` <!-- is this a key that you can set yourself? Like the old
     DDMTemplateKey that coudl be configured in the UI? DESCRIBE --> 
@@ -177,11 +113,11 @@ Here you can see that some informationw as added by the data engine itself:
     the data definition is first created and when it's updated, respectively.
 - `userId` is set to the numeric ID of the User that created the definition.
 
-Before we move on, it's important to link the data definition and the data
-record, since they're closely related. A data record must conform to the fields
-defined in this data definition creation step. Therefore, when you add a data
-record in a later step your request will need to use a `dataRecordValues`
-structure like this:
+Before we move on, it's important to understand the relationship between the
+data definition and the information you're going to collect from Users, as a
+data record. A data record must conform to the fields defined in this data
+definition creation step. Therefore, when you add a data record in a later step
+your request will need to use a `dataRecordValues` structure like this:
 
 ```json
     "dataRecordValues": {
@@ -194,7 +130,9 @@ structure like this:
 
 ### Retrieving Data Definitions
 
-```ah
+In addition to adding data definitions, you can make GET calls to the service:
+
+```sh
 curl -i -X GET \
   http://localhost:8080/o/data-engine/v1.0/sites/20123/data-definitions \
   -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
@@ -203,6 +141,8 @@ curl -i -X GET \
 
 
 ### Deleting Data Definitions
+
+Data definitions can also be deleted:
 
 ```sh
 curl -i -X DELETE \
@@ -218,8 +158,11 @@ curl -i -X DELETE \
     ]}'
 ```
 
+<!-- Do we need to warn about deleting data definitions that are in use?-->
 
+IGNORE BELOW THIS: THESE ARE NOTES I'M NOT READY TO DELETE
 
+---
 
 ## CURL Commands
 
