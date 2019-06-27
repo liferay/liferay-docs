@@ -14,7 +14,7 @@ defining User Segments.
 
 2.  Click *People* &rarr; *Segments*.
 
-3.  Click the *Add User Segment* button (![Add](../../../../images/icon-add.png)).
+3.  Click the *Add User Segment* button (![Add](../../images/icon-add.png)).
 
 At the top of the editor you can set the name, view the current members of the
 segment as it is defined, and choose to *Save* the Segment or *Cancel* to 
