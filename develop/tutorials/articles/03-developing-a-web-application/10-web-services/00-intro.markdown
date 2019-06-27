@@ -30,4 +30,4 @@ When you finish, authorized clients can then consume these web services.
 
 Ready to start? 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/creating-remote-services-with-service-builder">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-0/tutorials/-/knowledge_base/t/creating-remote-services-with-service-builder">Let's Go!<span class="icon-circle-arrow-right"></span></a>

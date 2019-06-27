@@ -17,4 +17,4 @@ that you can implement quickly.
 
 Ready to start? 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/configuring-your-permissions-scheme">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-0/tutorials/-/knowledge_base/t/configuring-your-permissions-scheme">Let's Go!<span class="icon-circle-arrow-right"></span></a>

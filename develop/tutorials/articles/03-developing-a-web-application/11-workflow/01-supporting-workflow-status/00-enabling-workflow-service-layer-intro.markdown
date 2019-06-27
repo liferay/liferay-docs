@@ -33,4 +33,4 @@ That sounds like a lot of work, but thanks to Service Builder, you must change
 only three files: `service.xml`, `GuestbookLocalServiceImpl`, and
 `EntryLocalServiceImpl`.
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/setting-the-guestbook-status">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-0/tutorials/-/knowledge_base/t/setting-the-guestbook-status">Let's Go!<span class="icon-circle-arrow-right"></span></a>

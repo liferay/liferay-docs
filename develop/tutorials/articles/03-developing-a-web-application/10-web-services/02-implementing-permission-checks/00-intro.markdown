@@ -24,4 +24,4 @@ your portlet classes to call remote services instead of local services. This
 prevents attackers from trying to bypass your app's UI by playing with URL 
 parameters to access sensitive portions of your app. 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/implementing-permission-checks-at-the-service-layer">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-0/tutorials/-/knowledge_base/t/implementing-permission-checks-at-the-service-layer">Let's Go!<span class="icon-circle-arrow-right"></span></a>
