@@ -6,76 +6,136 @@ header-id: creating-segments
 
 Individuals share common properties and behavior. Aggregating them into Segments
 helps you understand groups of similar people. Segment analytics gives you
-insight into people's interests. In the navigation panel, *Segments* is at the
-top of the *People* section because it's where you'll spend most of your time
-gaining customer insights. 
+insight into people's interests and activities. In the navigation panel, 
+*Segments* is at the top of the *People* section because it's where you'll spend 
+most of your time gaining customer insights. 
 
-You can create Segments dynamically based on criteria or statically (comprising
-hand-selected Individuals). Dynamic Segment criteria can be based on
-Individuals' properties and behavior. You can use an *industry* property, for
-example, as criteria. Analytics on industry Segments shows industries engaging
-with you most and identifies your content that interests them.
+![Figure 1: You can access Segments in the navigation panel.](../../images/ac-segments-panel.png)
+
+There are two types of Segments: 
+
+[**Dynamic Segments:**](#dynamic-segments) 
+Individuals aggregated automatically based on criteria that you specify. 
+Criteria can be based on Individuals' properties and interaction with your 
+Liferay DXP Site pages and assets. For example, you can use an *industry* 
+property as criteria. Analytics on industry Segments show which industries 
+engage with you the most, and what content they're interested in. 
+
+[**Static Segments:**](#static-segments) 
+Individuals aggregated manually. Static Segments are therefore comprised of 
+hand-selected individuals. 
 
 ## Dynamic Segments
 
-Dynamic Segments aggregate Individuals based on their properties and interaction
-with your @product@ site pages and assets. As Individuals match the criteria,
-they are automatically added to the Segment. Here's how to create a Dynamic
-Segment:
+Follow these steps to create a Dynamic Segment:
 
-1. Click on *Segments* in the navigation panel. The list of existing Segments
-   appears.
+1.  Click *Segments* in the navigation panel. A table with existing Segments 
+    appears.
 
-2. Click on the *Create Segment* button. The *Create Individuals Segment* screen
-   appears. 
+2.  Click *Create Segment* &rarr; *Dynamic Segment*. The 
+    *Create Individuals Segment* screen appears for creating a Dynamic Segment. 
 
-3. Name the Segment.
+3.  Click the *Edit* icon next to *Unnamed Segment*, and give your segment a 
+    name. 
 
-4. Select the *Dynamic* Segment Type. 
+4.  To create your Segment's criteria, drag and drop them from the panel on the 
+    right to the canvas on the center of the screen. The selector menu at the 
+    top of the panel lets you select from these criteria types: 
 
-5. In the *Criteria* section, click on *Create Criteria*. The criteria options
-   appear.
+    **Individual Properties:** Properties that belong to a person (e.g., age, 
+    country, industry, etc.). 
 
-You can create these types of criteria:
+    **Account Properties:** Properties that belong to a Salesforce Account 
+    (e.g., account name, industry, website, etc.). 
 
-- *Individuals with Property:* Matches Individuals described by the property 
-  condition. 
+    **Interests:** Topics and content types that interest the person.  
 
-- *Individuals with Behavior:* Matches Individuals exhibiting the behavior 
-  condition.
+    **Session Properties:** Properties that belong to a person's web session 
+    (e.g., browser, geolocation, etc.). 
 
-![Figure 1: You can define Dynamic Segment criteria based on Individual properties and behavior.](../../images/create-dynamic-segment-on-property-or-behavior.png)
+    **Web Behaviors:** Actions taken by a person (e.g., submitted a form, viewed 
+    a blog, etc.). 
 
-Start with defining property criteria for matching Individuals. 
+    For further instructions, see 
+    [Creating Criteria](#creating-criteria). 
 
-### Property Criteria
+5.  Anonymous users are excluded from Segments by default. To include them, 
+    enable the *Include Anonymous* toggle. 
 
-Here's how to add criteria for an Individual property. 
+6.  Click *Save Segment* when you're finished. 
 
-1. In the *Criteria* section, select *Individuals with Property* from the
-   selector.
+### Creating Criteria
 
-2. Select a field (property) from the *Select Field* selector.
+The criteria creation canvas is very flexible. Once added to the canvas, you can 
+move, delete, or duplicate any criterion: 
 
-3. Set the *Condition* between the selected field and value. The condition type
-   depends on the field type. Here are some common conditions:
+**To move:** Click and drag the criterion using the vertical dots 
+(![Handle](../../images/icon-handle.png)) 
+on its left. 
 
-    - Contains (text)
-    - Equals
-    - Greater than (number)
-    - Is known
-    - Less than (number)
-    - Does not contain (text)
-    - Does not equal
-    - Is not known
-    - Greater than or equals (number)
-    - Less than or equals (number)
+**To delete:** Click the criterion's trash icon 
+(![Trash](../../images/icon-trash.png)). 
+Alternatively, you can click the criterion's Actions icon 
+(![Actions](../../images/icon-actions.png)) 
+and select *Delete*. 
 
-4. Set the *Value* field. A preview list of matching Individuals appears on the
-   right. *Search* lets find Individuals in the list. 
+**To duplicate:** Click the criterion's Actions icon 
+(![Actions](../../images/icon-actions.png)) 
+and select *Duplicate*. 
 
-You've set a criteria based on an Individual property. Adding behavior criteria
-is next.
+Each criterion that you add contains fields that let you customize it to your 
+needs. The first field is typically a selector menu in which you specify a 
+condition for any remaining fields. The condition's values depend on the data 
+type for the remaining fields. Here are some common condition values: 
+
+- Contains (text)
+- Equals
+- Greater than (number)
+- Is known
+- Less than (number)
+- Does not contain (text)
+- Does not equal
+- Is not known
+- Greater than or equals (number)
+- Less than or equals (number)
+- Is
+- Is before (date)
+- Is after (date)
+
+For example, the `birthDate` criterion's first field is a selector menu with 
+these options: 
+
+-   is before
+-   is
+-   is after
+
+The second field is a date field. You can therefore, for example, specify a 
+criterion in which only Individuals with a birthday after 31 December 1980 are 
+part of the Segment. 
+
+You can also control the way adjacent criteria interact with each other. For 
+example, if you place criteria next to each other, a small box appears between 
+them with the text *AND*. This means that the two criteria are joined by a 
+logical *And*. Clicking the box changes it to *OR*, which (as you probably 
+guessed) represents a logical *Or*. Selecting *And* narrows the Segment's 
+selection of Individuals; *Or* broadens it. 
+
+For example, joining two `birthDate` criteria with the following conditions 
+creates a Segment targeting the Millennial generation (born 1981 - 1996): 
+
+-   is after 31 December 1980
+-   AND
+-   is before 01 January 1997
+
+You can also form subgroups of criteria by dragging and dropping criteria onto 
+each other. An AND/OR box then appears between the subgroup and any adjacent 
+criteria. Together, these tools let you build complex criteria for your Segment. 
+
+![Figure 2: If you're selling avocado toast, you need to target Millennials.](../../images/criteria-combine.png)
+
+![Figure 3: Millennials interested in Liferay love avocado toast.](../../images/criteria-groups.png)
+
+<!-- Double-check Behavior Criteria section for stuff to add -->
 
 ### Behavior Criteria
 
