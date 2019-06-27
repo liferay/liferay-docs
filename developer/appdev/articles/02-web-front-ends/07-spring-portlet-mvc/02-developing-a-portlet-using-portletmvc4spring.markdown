@@ -324,3 +324,5 @@ Congratulations on creating and deploying a PortletMVC4Spring Portlet.
 ## Related Topics 
 
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
+
+[Migrating to PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/migrating-to-portletmvc4spring)
