@@ -1,4 +1,10 @@
+---
+header-id: upgrading-a-spring-portlet-mvc-portlet
+---
+
 # Upgrading a Spring Portlet MVC Portlet
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Portlets<br>Step 5 of 6</p>
