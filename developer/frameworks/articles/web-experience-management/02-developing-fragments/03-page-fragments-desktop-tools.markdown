@@ -12,41 +12,43 @@ with its own built in previews.
 
 ## Collection Format
 
-To import a Collection into Liferay, it must be archived in a `.zip` with the
+To import a Collection into @product@, it must be archived in a `.zip` with the
 contents in the following format:
 
 - `collection.json`: a text file which describes your collection with the 
-     format  `{"name":"<collection-name>","description":"<collection-description>"}`
- 
-  - `[fragment-name]/`: a folder containing all of the files for a single 
-     Page Fragment.
- 
-    - `fragment.json`: a text file that describes a Page Fragment with the 
-        format `{"jsPath":"src/index.js","htmlPath":"src/index.html","cssPath":"src/index.css","name":"<fragment-name>"}`
- 
-    - `index.html`: the HTML source for the fragment
- 
-    - `index.css`: the CSS source for the fragment
- 
-    - `index.js`: the JavaScript source for the fragment
-    
-    - `thumbnail.png`: the thumbnail that will display when the Fragment is displayed in a list.
+     format `{"name":"<collection-name>","description":"<collection-description>"}`.
 
-  - `[resources]/`: a folder containing any additional images or other external
-      files needed for the fragment.
- 
+    - `[fragment-name]/`: a folder containing all of the files for a single 
+     Page Fragment.
+
+        - `fragment.json`: a text file that describes a Page Fragment with the 
+          format `{"jsPath":"src/index.js","htmlPath":"src/index.html","cssPath":"src/index.css","name":"<fragment-name>"}`.
+
+        - `index.html`: the HTML source for the fragment.
+
+        - `index.css`: the CSS source for the fragment.
+
+        - `index.js`: the JavaScript source for the fragment.
+
+        - `thumbnail.png`: the thumbnail that will display when the Fragment is
+          displayed in a list.
+
+    - `[resources]/`: a folder containing any additional images or other
+      external files needed for the fragment.
+
 A collection can contain any number of fragments, so you can have multiple
 subfolders in the collection. This format is the same as what's exported from
 within Liferay. If you import a `.zip` file that is not organized like this, 
 any fragments that are found will be imported into special collection called 
-"Imported" which is created for orphaned fragments.
+*Imported* which is created for orphaned fragments.
 
 ## Fragment CLI
 
 You can manage Fragment creation and deployment manually, or you can use 
 Liferay's Fragment CLI:
 
-1.  Follow the project instructions to [setup the generator](https://github.com/liferay/generator-liferay-fragments/blob/master/README.md).
+1.  Follow the project instructions to
+    [setup the generator](https://github.com/liferay/generator-liferay-fragments/blob/master/README.md).
 
 2.  Run `yo liferay-fragments`.
 
@@ -55,14 +57,15 @@ Liferay's Fragment CLI:
 Now you will have the basic structure created, but there's still more that the 
 generator can help you with.
 
-| Note: You can see all of the available tasks inside the `scripts` section in 
-| the Fragment CLI `package.json`.
+| **Note:** You can see all of the available tasks inside the `scripts` section
+| in the Fragment CLI `package.json`.
 
 ### Creating Collections
 
-Before you can create any Page Fragments, you need to create a Collection. You 
-can learn more about Collections in the [Creating Page Fragments article](user-guide-link).
-Creating a Collection will create the base folder structure and some 
+Before you can create any Page Fragments, you must create a Collection. You can
+learn more about Collections in the
+[Creating Page Fragments](/docs/7-2/user/-/knowledge_base/u/creating-content-pages#creating-page-fragments)
+section. Creating a Collection will create the base folder structure and some
 information about your Collection. To do this,
 
 1.  From inside of your project, run `npm run add-collection`.
@@ -89,20 +92,20 @@ choice.
 
 ## Importing and Exporting Fragments
 
-The Fragment Generator can connect to your currently running Liferay to import
+The Fragment Generator can connect to your currently running @product@ to import
 and export fragments. You can even have fragments that you create with the 
-generator imported into Liferay automatically.
+generator imported into @product@ automatically.
 
-* To get collections and fragments from a running @product@ server, run `npm run export`
+- To get collections and fragments from a running server, run `npm run export`.
 
-* To send the collections and fragments from your current project to a running
-    @product@ server, run `npm run import`
+- To send the collections and fragments from your current project to a running
+  server, run `npm run import`.
     
-* To have collections and fragments automatically imported into @product@ as 
-    they are created or modified, run `npm run import:watch`
+- To have collections and fragments automatically imported into @product@ as
+  they are created or modified, run `npm run import:watch`.
     
-* To create a `.zip` file that can be manually imported into @product@ run
-    `npm run compress`
+- To create a `.zip` file that can be manually imported into @product@, run
+  `npm run compress`.
     
 With these tools at your disposal, you can more efficiently manage creating 
 and editing Page Fragments with whatever tools and environments work best for 
