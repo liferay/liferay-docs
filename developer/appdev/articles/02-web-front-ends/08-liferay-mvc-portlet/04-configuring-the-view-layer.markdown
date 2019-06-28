@@ -13,6 +13,8 @@ methods in your portlet class.
 | Note: As you create JSPs, you can
 | [apply Clay styles to your app to match Liferay's apps](/docs/7-1/tutorials/-/knowledge_base/t/applying-clay-styles-to-your-app).
 
+## Using the init.jsp 
+
 Liferay's best practice puts all Java imports, tag library declarations, and
 variable initializations into a JSP called `init.jsp`. If you use 
 [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) or 
@@ -20,61 +22,159 @@ variable initializations into a JSP called `init.jsp`. If you use
 to create a module based on the `mvc-portlet` project template, these taglib
 declarations and initializations are added automatically to your `init.jsp`:
 
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+```javascript
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
-    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
-    <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
-    <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
-    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+<%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
+<%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
+<%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
-    <liferay-theme:defineObjects />
+<liferay-theme:defineObjects />
 
-    <portlet:defineObjects />
+<portlet:defineObjects />
+```
 
-Make sure to include the `init.jsp` in your other JSPs:
+Here are the tag libraries it gives you:
 
-    <%@include file="/html/init.jsp"%>
+-   [`c`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/c/tld-frame.html): JSTL core tags. 
+-   [`portlet`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/portlet/tld-frame.html): Standard portlet component tags. 
+-   [`aui`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/aui/tld-summary.html): [AlloyUI](https://alloyui.com/) component tags.  
+-   [`liferay-portlet`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/liferay-portlet/tld-frame.html): Liferay portlet component tags. 
+-   [`liferay-theme`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/liferay-theme/tld-frame.html): Liferay theme component tags. 
+-   [`liferay-ui`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/liferay-ui/tld-frame.html): Liferay UI component tags. 
 
-JSPs can use action URLs to invoke controller methods. To create a link to
-another page, use a render URL with the `mvcPath` parameter. The
-[`<portlet:renderURL>` tag](@platform-ref@/7.1-latest/taglibs/util-taglib/portlet/renderURL.html) 
-constructs the URL and assigns it to a variable. 
+These tags make portlet and Liferay objects available as JavaScript variables:  
 
-    <portlet:renderURL var="searchURL">
-            <portlet:param name="mvcPath" value="/admin/view.jsp" />
+-   `<portlet:defineObjects />`: Implicit JavaScript variables that reference 
+    Portlet API objects. The objects available are limited to those available in
+    the current portlet request. For details, see the `defineObjects` tag in
+    [JSR-286](https://jcp.org/en/jsr/detail?id=286). 
+
+-   `<liferay-theme:defineObjects />`: Implicit JavaScript variables that 
+    reference Liferay objects. 
+
+To use all that the `init.jsp` has, include it in your other JSPs:
+
+```javascript
+<%@include file="/html/init.jsp"%>
+```
+
+A JSP can use render URLs to display other pages and use action URLs to invoke
+controller methods. 
+
+## Using Render URLs
+
+A render URL attached to a UI component action displays another page. For example, this render URL displays the JSP `/path/to/foo.jsp`. 
+
+```javascript
+<portlet:renderURL var="adminURL">
+    <portlet:param name="mvcPath" value="/path/to/foo.jsp" />
+</portlet:renderURL>
+```
+
+Here's how to use a render URL:
+
+1.  Add a
+    [`<portlet:renderURL>`](@platform-ref@/7.2-latest/taglibs/util-taglib/portlet/renderURL.html)
+    to your JSP. 
+
+2.  Name the renderURL via a `var` attribute in the `<portlet:renderURL>` tag.
+    The `<portlet:renderURL>` tag constructs the URL and assigns it to the
+    variable. For example, this render URL is assigned to the variable named
+    `adminURL`: 
+
+    ```javascript
+    <portlet:renderURL var="adminURL">
+       ...
     </portlet:renderURL>
+    ```
 
-The render URL is assigned to the `searchURL` variable specified by the `var`
-attribute. The 
-[`<portlet:param>` tag](@platform-ref@/7.1-latest/taglibs/util-taglib/portlet/param.html)
-above assigns JSP path `/admin/view.jsp` to the render parameter `mvcPath`. The
-controller's `render` method gets the JSP path from the `mvcPath` parameter to
-render the following JSP: 
+3.  As sub-element to the `<portlet:renderURL>` tag, add a 
+    [`<portlet:param>`](@platform-ref@/7.2-latest/taglibs/util-taglib/portlet/param.html)
+    tag that has the following attributes:
 
-    docs.liferaymvc.web/src/main/resources/META-INF/resources/admin/view.jsp
+    `name="mvcPath"`: Your controller's `render` method displays the JSP whose 
+    value is associated with the `mvcPath` parameter. 
 
-To invoke the render URL, assign its variable (the one set to the `var`
-attribute of the `<portlet:renderURL>`) to an action for a UI component, such as
-a button or navigation bar item.
+    `value="/path/to/foo.jsp"`: The path to the JSP to render. Replace the value
+    `/path/to/foo.jsp` with your JSP path. 
+
+```javascript
+<portlet:renderURL var="adminURL">
+    <portlet:param name="mvcPath" value="/path/to/foo.jsp" />
+</portlet:renderURL>
+```
+
+4.  To invoke the render URL, assign its variable (`var`) to a UI component 
+    action, such as a button or navigation bar item action. 
+
+Invoking the UI component causes the controller's render method to display the
+`mvcPath` parameter's JSP. 
+
+## Using Action URLs
 
 Action methods are different because they invoke an action (i.e., code), rather
-than just linking to another page. In your JSP, use a 
-[`<portlet:actionURL>` tag](@platform-ref@/7.1-latest/taglibs/util-taglib/portlet/actionURL.html) 
-to create an action URL and then assign that URL as an action for a UI
-component. Here's an action URL that calls a controller method named
-`doSomething`. 
+than just linking to another page. For example, this action URL invokes a
+controller method called `doSomething` and passes a parameter called `redirect`.
+The `redirect` parameter contains the path of the JSP to render after invoking
+the action: 
 
-    <portlet:actionURL name="doSomething" var="doSomethingURL">
-        <portlet:param name="redirect" value="<%= redirect %>" />
-    </portlet:actionURL>
+```javascript
+<portlet:actionURL name="doSomething" var="doSomethingURL">
+    <portlet:param name="redirect" value="<%= redirect %>" />
+</portlet:actionURL>
+```
 
-The portlet parameter named `redirect` is assigned to a JSP path for the portlet
-to redirect to after invoking the portlet action. This action URL is assigned to
-a variable named `doSomethingURL`. As with a render URL, you can assign an
-action URL to a UI component action by the action URL's variable (the one set to
-`var`). 
+Here's how to use an action URL:
 
-These simple examples demonstrate how the Liferay MVC framework facilitates
+1.  Add a
+    [`<portlet:actionURL>`](@platform-ref@/7.2-latest/taglibs/util-taglib/portlet/actionURL.html)
+    to your JSP. 
+
+2.  Add a `name` and `var` attribute to the `<portlet:actionURL>`. The
+    `<portlet:actionURL>` tag constructs the URL and assigns it to the `var`
+    variable.
+
+    `name`: Controller action method to invoke. 
+
+    `var`: Variable to assign the action URL to. 
+
+```javascript
+<portlet:actionURL name="doSomething" var="doSomethingURL">
+   ...
+</portlet:actionURL>
+```
+
+3.  As sub-element to the `<portlet:actionURL>` tag, add a 
+    [`<portlet:param>`](@platform-ref@/7.2-latest/taglibs/util-taglib/portlet/param.html)
+    tag that has the following attributes:
+
+    `name="redirect"`: Tells the portlet to redirect to the JSP associated with 
+    this parameter. 
+
+    `value="/path/to/foo.jsp"`: Redirects the user to this JSP path after
+    invoking the action. Replace the value `/path/to/bar.jsp` with your JSP
+    path. 
+
+```javascript
+<portlet:actionURL name="doSomething" var="doSomethingURL">
+    <portlet:param name="redirect" value="/path/to/bar.jsp" />
+</portlet:actionURL>
+```
+
+4.  To invoke the action URL, assign its variable (`var`) to a UI component 
+    action, such as a button or navigation bar item action. 
+
+Congratulations! Your portlet is ready for action. 
+
+These simple examples demonstrate how Liferay MVC Portlet facilitates
 communication between a smaller application's view layer and controller. 
+
+## Related Topics 
+
+[Front-end Taglibs](/docs/7-2/reference/-/knowledge_base/r/front-end-taglibs)
+
+[Liferay JavaScript APIs](https://portal.liferay.dev/docs/7-2/reference/-/knowledge_base/r/liferay-javascript-apis)
