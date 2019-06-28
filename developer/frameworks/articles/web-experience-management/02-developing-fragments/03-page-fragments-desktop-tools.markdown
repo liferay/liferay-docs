@@ -77,7 +77,7 @@ You can now create Page Fragments inside of this Collection.
 ### Creating Fragments
 
 A Page Fragment is made up of three primary files, `index.html`, `index.css`, 
-and `index.js`. However, the files need to be properly arranged in the folder 
+and `index.js`. However, the files must be properly arranged in the folder 
 structure and have the appropriate metadata to be imported onto your server. 
 The Fragments Toolkit will create the files in the correct hierarchy with all 
 of the necessary information.
@@ -100,13 +100,18 @@ toolkit imported into @product@ automatically.
 
 - To send the collections and fragments from your current project to a running
   server, run `npm run import`.
-    
+
 - To have collections and fragments automatically imported into @product@ as
   they are created or modified, run `npm run import:watch`.
-    
+
+- To preview how a fragment will look when it's imported, run `npm run preview`.
+  This renders a fragment on a specified Liferay server without importing it.
+  When changes are made to the fragment while it's previewed, changes are auto
+  reloaded to rapidly display updates.
+
 - To create a `.zip` file that can be manually imported into @product@, run
   `npm run compress`.
-    
+
 With these tools at your disposal, you can more efficiently manage creating 
 and editing Page Fragments with whatever tools and environments work best for 
 you. 
