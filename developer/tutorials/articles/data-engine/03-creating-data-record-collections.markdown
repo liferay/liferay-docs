@@ -1,7 +1,14 @@
 # Creating Data Record Collections with HTTP
 
-We'll use cURL, a cross-platform tool for making HTTP calls. Feel free to use
-any REST client.
+Data Record Collections are used to collect Data Records in the Data Engine. A
+Data Definition defines the fields present in the Data Record, while the Data
+Record Collection forms a boundary, collecting only records associated with its
+Primary Key. The Data Record Collection has a unique ID, a name, and a
+description. Each individual Data Record Collection is associated with a single
+Data Definition's Primary Key. 
+
+These example calls use cURL, a cross-platform tool for making HTTP calls. Feel
+free to use any REST client you're familiar with.
 
 ## Adding, Retrieving, and Deleting Data Record Collections
 
@@ -11,7 +18,7 @@ need to look it up, send a GET request for the site's data definitions. In this
 case you'll need the site ID, which can be retrieved from Site Administration
 &rarr; Configuration &rarr; Settings.
 
-In this example, the site ID is 20123:
+In this example GET call, the site ID is 20123:
 
 ```sh
 curl -i -X GET   http://localhost:8080/o/data-engine/v1.0/sites/20123/data-definitions   -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0'   -H 'Content-Type: application/json' \
@@ -20,7 +27,8 @@ curl -i -X GET   http://localhost:8080/o/data-engine/v1.0/sites/20123/data-defin
 The response body contains the Data Definition's data, including the `id`. Copy
 it.
 
-Now use it to add a Data Record Collection:
+Now use it to add a Data Record Collection. Here the data definition ID is
+`86524`:
 
 ```sh
 curl -i -X POST \
@@ -39,7 +47,12 @@ curl -i -X POST \
 }'
 ```
 
+In addition to sending POST calls to add data record collections, you can
+retrieve all the site's data record collections.
+
 ### Retrieving a Site's Data Record Collections
+
+Pass the site ID in to the GET request:
 
 ```sh
 curl -i -X GET \
