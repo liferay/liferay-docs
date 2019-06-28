@@ -68,17 +68,20 @@ property-related updates:
 -   If you have a sharded environment,
     [configure your upgrade to generate a non-sharded environment](/docs/7-2/deploy/-/knowledge_base/d/upgrading-a-sharded-environment).
 
--   If you use Liferay's sprite map support (Liferay sprites), it's now disabled
-    by default. Liferay sprites require scanning plugins for sprite maps. If
-    your virtual instance doesn't use Liferay sprites, there's no need to scan
-    for them. If your instance uses Liferay's sprite maps, you can enable them
-    by adding this portal property override to your
+-   Liferay's image sprite framework is disabled by default in 7.2. The 
+    framework requires scanning plugins for image sprites. If you don't use the
+    framework, there's no need for it to scan for images sprites. If you use the
+    framework, enable it by overriding the default `sprite.enabled` portal
+    property (new in 7.2) value with the following setting in a
     [`portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
     file: 
 
     ```properties
     sprite.enabled=true
     ```
+
+| **Note:** You can build image sprites using any framework you like and deploy
+| them in your plugins. 
 
 When a new version of @product@ is released, there are often changes to default
 settings, and this release is no different. If you rely on the defaults from
