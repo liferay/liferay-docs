@@ -48,14 +48,14 @@ You can manage Fragment creation and deployment manually, or you can use
 Liferay's Fragment CLI:
 
 1.  Follow the project instructions to
-    [setup the generator](https://github.com/liferay/generator-liferay-fragments/blob/master/README.md).
+    [set up the Fragments Toolkit](https://github.com/liferay/generator-liferay-fragments/blob/master/README.md).
 
 2.  Run `yo liferay-fragments`.
 
 3.  Follow the prompts to create a fragment.
 
 Now you will have the basic structure created, but there's still more that the 
-generator can help you with.
+Fragments Toolkit can help you with.
 
 | **Note:** You can see all of the available tasks inside the `scripts` section
 | in the Fragment CLI `package.json`.
@@ -79,7 +79,7 @@ You can now create Page Fragments inside of this Collection.
 A Page Fragment is made up of three primary files, `index.html`, `index.css`, 
 and `index.js`. However, the files need to be properly arranged in the folder 
 structure and have the appropriate metadata to be imported onto your server. 
-The Fragment Generator will create the files in the correct hierarchy with all 
+The Fragments Toolkit will create the files in the correct hierarchy with all 
 of the necessary information.
 
 1.  From inside of the Collection you created, run `npm run add-fragment`.
@@ -92,9 +92,9 @@ choice.
 
 ## Importing and Exporting Fragments
 
-The Fragment Generator can connect to your currently running @product@ to import
+The Fragments Toolkit can connect to your currently running @product@ to import
 and export fragments. You can even have fragments that you create with the 
-generator imported into @product@ automatically.
+toolkit imported into @product@ automatically.
 
 - To get collections and fragments from a running server, run `npm run export`.
 
