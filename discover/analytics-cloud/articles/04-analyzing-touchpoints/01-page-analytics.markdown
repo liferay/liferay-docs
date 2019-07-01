@@ -96,15 +96,14 @@ Page Engagement is useful to combine with time period filtering and comparative
 time period features. Comparing the engagement score from different periods is
 the best way to determine how your Page's performance changes over time.
 
-### Metric: Page Visitors
+### Metric: Unique Visitors
 
-Useful with the time period filter, Page Visitors is the number of
-visitors that accessed a Page in a given period of time.
+Useful with the time period filter, Page Visitors is the number of visitors that 
+accessed a Page in a given period of time. 
 
-A unique visitor has a unique IP address <!--need more info on how unique
-visitors are calculated--> in Analytics cloud. Therefore, if the same human
-being hits the Page from a different device, it's logged as two unique visitors
-to the Page.
+A unique visitor has a unique IP address in Analytics Cloud. Therefore, if the 
+same person views the Page from a different device, it's logged as two unique 
+visitors. 
 
 ### Metric: Page Views
 
@@ -125,7 +124,7 @@ the site without any page interaction (including scrolling on the page) after
 the initial page load. It's calculated as a daily rate (percentage per day), and
 the daily rate trend line is displayed over the selected time period. 
 
-### Metric: Average Time on Page
+### Metric: Time on Page
 
 Time on Page calculates the average time spent on a Page for all the Views each
 day. It's displayed for the selected time period.
@@ -148,6 +147,8 @@ interaction with the Page. It answers these questions:
     Analytics Cloud Segments?
 -   Of the users in Segments, what are the top 15 segments? 
 
+Here are the charts in the Audience report: 
+
 **Unique Visitors:** A donut chart that presents the percentage of total unique 
 visitors who are known or anonymous. The center of the chart shows the total 
 number of unique visitors. Tooltips on each chart section show the number of 
@@ -157,7 +158,9 @@ users for that section (e.g, the number of known or anonymous users).
 individuals who belong or do not belong to one or more Analytics Cloud Segment. 
 The center of the chart shows the total number of known individuals. Tooltips on 
 each chart section show the number of users for that section (e.g, the number of 
-users belonging to one or more Segments). 
+users belonging to one or more Segments). Click the chart title (Known 
+Individuals) to view a list of all the known individuals who comprise the 
+chart's data. 
 
 **Known Individuals Segments:** A bar chart that shows the percentage of known 
 individuals that comprise each Segment. The chart shows a bar for each of the 
@@ -166,26 +169,12 @@ A tooltip on the last bar shows the values for each of the remaining Segments.
 
 ![Figure 2: The Audience report visualizes how individuals interact with the Page.](../../images/audience-report.png)
 
-## Views by Segment
-
-Segments are created by the Analytics Cloud administrator in the People &rarr;
-Segments section. Segments are groups of Individuals with common
-characteristics.
-
-The Views by Segment bar graph shows how many times the Page was viewed by up to
-the top seven Segments over the selected time period. If there are more than
-seven Segments, the top six are displayed, and views by the remaining Segments
-are aggregated in the seventh bar on the graph, labeled _X More Segments_).
-
-![Figure 3: See which Segments are most commonly viewing the Page.](../../images/pages-views-segments.png)
-
 ## Views by Location
 
-View a bubble chart to compare the views by country over the selected period. Up
-to the top five countries are displayed, and the sixth bubble is an aggregation
-of the remaining countries.
+The map in the Views by Location panel shows the number of views by country in 
+the selected time period. 
 
-![Figure 4: See where the Page is most popular.](../../images/pages-views-location.png)
+![Figure 3: See where the Page is most popular.](../../images/pages-views-location.png)
 
 ## Views by Technology
 
@@ -193,13 +182,13 @@ View a stacked bar graph of the Page's views by operating system (grouped by
 device type) in the default tab. Hover over each bar to see the detailed
 breakdown of data.
 
-![Figure 5: Which OS is most commonly being used to access the Page?](../../images/pages-views-os.png)
+![Figure 4: Which OS is most commonly being used to access the Page?](../../images/pages-views-os.png)
 
 Click *Web Browser* to see a donut chart displaying up to the top eight web
 browsers over the selected time period. If applicable, remaining web browsers
 are aggregated in the ninth donut segment.
 
-![Figure 6: Which browser should your page be optimized for?](../../images/pages-views-browser.png)
+![Figure 5: Which browser should your page be optimized for?](../../images/pages-views-browser.png)
 
 ## Assets
 
@@ -213,7 +202,7 @@ Depending on the Asset being viewed, a different Interaction metric is reported:
 - Forms reports Submissions.
 - Web Content reports Views.
 
-![Figure 7: Which Assets on the Page are getting the most interactions?](../../images/pages-assets.png)
+![Figure 6: Which Assets on the Page are getting the most interactions?](../../images/pages-assets.png)
 
 After all those fundamental metrics, you're really getting to know your Pages.
 But there's some interesting Page data you haven't seen. Discover how people
