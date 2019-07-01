@@ -7,7 +7,7 @@ header-id: asset-display-pages
 [TOC levels=1-4]
 
 Asset Display Pages publish assets in highly customizable ways using 
-[Page Fragments](/docs/7-2/frameworks/-/knowledge_base/f/developing-fragments). 
+[Page Fragments](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments). 
 You can use Asset Display Pages to map fields of certain assets, like Web
 Content, to fields defined in a Page Fragment. Then you can publish the asset
 on a page using the Page Fragment as a template.

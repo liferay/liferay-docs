@@ -127,9 +127,9 @@ resolver to bypass this.
 
 There are three ways you can do this:
 
-- [Embed the third party library in your module](/docs/7-2/reference/-/knowledge_base/r/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
+- [Embed the third party library in your module](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module)
 - [Add the third party library's capabilities to the current static set of resolver capabilities](/docs/7-2/reference/-/knowledge_base/r/adding-a-third-party-librarys-capabilities-to-the-resolvers-capabilities)
-- [Skip the resolving process for your module](/docs/7-2/reference/-/knowledge_base/r/skipping-the-resolving-process-for-your-module)
+- [Skip the resolving process for your module](/docs/7-2/reference/-/knowledge_base/r/skipping-the-resolving-process-for-a-module)
 
 | **Note:** You should only embed a third party library in your module if it's
 | the only module that depends on it. You should not bypass the resolver failure

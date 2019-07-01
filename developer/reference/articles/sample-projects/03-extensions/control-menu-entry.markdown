@@ -57,10 +57,14 @@ The following methods are implemented:
 - `isShow(HttpServletRequest)`
 
 Refer to this sample's `BladeProductNavigationControlMenuEntry` class for
-Javadocs describing these methods. For more information on how to customize
+Javadocs describing these methods. 
+
+<!--Uncomment once article is available
+For more information on how to customize
 Liferay Portal's Control Menu, visit the
-[Customizing the Control Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-control-menu)
+Customizing the Control Menu
 tutorial.
+-->
 
 ## Where Is This Sample?
 

@@ -145,7 +145,8 @@ a notification, a related asset, as tagged or categorized data, or as relevant
 data based on a [user segment](docs/7-2/user/-/knowledge_base/u/creating-user-segments). Need to provide file upload/download? Use the 
 [Documents API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). Need a robust permissions system? Use [Liferay permissions](/docs/7-2/frameworks/-/knowledge_base/f/defining-application-permissions).
 Want users to submit comments? Use Liferay's [comments](/docs/7-2/frameworks/-/knowledge_base/f/adding-comments-to-your-app).
-Need to process data outside the request/response? Use the [Message Bus](/docs/7-2/frameworks/-/knowledge_base/f/message-bus). 
+Need to process data outside the request/response? Use the Message Bus. 
+<!-- Add Message Bus link back once article is available -->
 Should users select items from a list? Use the [Item Selector](/docs/7-2/frameworks/-/knowledge_base/f/item-selector).
 
 ## Next Steps

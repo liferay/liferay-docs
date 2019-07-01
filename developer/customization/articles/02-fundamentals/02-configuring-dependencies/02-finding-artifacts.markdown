@@ -183,6 +183,6 @@ it.
 
 [Exporting Packages](/docs/7-2/customization/-/knowledge_base/c/exporting-packages)
 
-[Resolving Third Party Library Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/resolving-third-party-library-package-dependencies)
+[Resolving Third Party Library Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module)
 
 [Deploying WARs \(WAB Generator\)](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)

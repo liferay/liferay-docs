@@ -32,7 +32,7 @@ Liferay provides a list of breaking changes for every major release to ensure
 you can easily adapt your code during the upgrade process.
 
 - [@product@ 7.0 Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes)
-- [@product@ 7.1 Breaking Changes](/docs/7-1/reference/7-1/-/knowledge_base/r/breaking-changes)
+- [@product@ 7.1 Breaking Changes](/docs/7-1/reference/-/knowledge_base/r/breaking-changes)
 - [@product-ver@ Breaking Changes](/docs/7-2/reference/-/knowledge_base/r/breaking-changes)
 
 The easiest way to resolve breaking changes is by using the

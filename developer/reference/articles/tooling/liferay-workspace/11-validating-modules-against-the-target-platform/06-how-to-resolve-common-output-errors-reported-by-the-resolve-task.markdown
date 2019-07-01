@@ -9,7 +9,7 @@ header-id: how-to-resolve-common-output-errors-reported-by-the-resolve-task
 Liferay Workspace provides the `resolve` Gradle task to validate modules. This
 is very useful for finding issues and reporting them as output before
 deployment. For general help with OSGi related issues, visit the
-[Troubleshooting FAQ](/docs/7-2/reference/-/knowledge_base/r/troubleshooting)
+[Troubleshooting FAQ](/docs/7-2/appdev/-/knowledge_base/a/troubleshooting-application-development-issues)
 section.
 
 For help interpreting the `resolve` task's output, see the list below for common
@@ -38,14 +38,14 @@ dependencies cannot be satisfied. These types of scenarios are difficult to
 diagnose, but with the `resolve` task, can be found with ease.
 
 To fix missing import errors, you may need to adjust the
-[export](/docs/7-2/reference/-/knowledge_base/r/exporting-packages) and/or
-[import](/docs/7-2/reference/-/knowledge_base/r/importing-packages)
+[export](/docs/7-2/customization/-/knowledge_base/c/exporting-packages) and/or
+[import](/docs/7-2/customization/-/knowledge_base/c/importing-packages)
 configuration of your modules. Also, see the
-[Resolving Third Party Library Package Dependencies](/docs/7-2/reference/-/knowledge_base/r/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module)
 tutorial for more information on resolving import errors. Sometimes, this kind
 of error can be solved by editing the `resolve` task's list of capabilities. See
 the
-[Resolving Third Party Library Package Dependencies](/docs/7-2/reference/-/knowledge_base/r/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module)
 section to learn how to do this.
 
 ## Missing Service Reference
@@ -130,5 +130,5 @@ Once you know the correct BSN/version to reference, update your `Fragment-Host`
 header to resolve the error.
 
 For more information on fragments, see the
-[JSP Overrides Using OSGi Fragments](/docs/7-2/customization/-/knowledge_base/c/overriding-a-modules-jsps)
+[JSP Overrides Using OSGi Fragments](/docs/7-2/customization/-/knowledge_base/c/jsp-overrides-using-osgi-fragments)
 tutorial.

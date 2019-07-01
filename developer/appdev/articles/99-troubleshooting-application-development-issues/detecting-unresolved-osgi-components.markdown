@@ -144,10 +144,14 @@ module.
 
 When developing a Liferay Service Builder application, you might sometimes have
 an unresolved Spring-related OSGi component. This can occur if you update your
-application's database schema but forget to trigger an upgrade (for information
+application's database schema but forget to trigger an upgrade. 
+
+<!-- Uncomment once article is available
+(for information
 on creating database upgrade processes for your @product@ applications, see the
 tutorial 
-[Creating an Upgrade Process for Your App](/docs/7-2/frameworks/-/knowledge_base/f/creating-an-upgrade-process-for-your-app)). 
+Creating an Upgrade Process for Your App). 
+-->
 
 These features detect unresolved Service Builder related components. 
 

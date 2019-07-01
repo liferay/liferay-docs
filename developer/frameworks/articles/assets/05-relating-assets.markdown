@@ -16,9 +16,9 @@ First, you must make some modifications to your portlet's service layer. You
 must implement persisting your entity's asset relationships. 
 
 1.  In your portlet's `service.xml`, put the following line of code below any
-    finder method elements and then
-    [run](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
-    Service Builder:
+    finder method elements and then run Service Builder:
+    
+    <!-- Add link back for 'run service builder' once article is available-->
 
     ```xml
     <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />

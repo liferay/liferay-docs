@@ -50,9 +50,13 @@ obtain a reference to it:
     ```
 
 3.  For Spring beans, it is possible to use the same mechanism as for Service
-    Builder services (`@ServiceReference`). Check the documentation on 
-    [how to integrate Spring beans with OSGi services](/docs/7-2/frameworks/-/knowledge_base/f/invoking-services-from-service-builder-code#referencing-an-osgi-service)
+    Builder services (`@ServiceReference`). 
+    
+    <!--Uncomment once article is available
+    Check the documentation on 
+    how to integrate Spring beans with OSGi services
     for more details.
+    -->
 
 4.  For anything else, call the same methods from the utility class,
     `ConfigurationProviderUtil`. Be sure you call the utility methods in

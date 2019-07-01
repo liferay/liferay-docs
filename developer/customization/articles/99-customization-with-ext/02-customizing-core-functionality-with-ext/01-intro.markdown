@@ -20,13 +20,13 @@ header-id: customizing-core-functionality-with-ext
 | 
 | - Providing custom implementations for any beans declared in @product@'s
 |   Spring files (when possible, use
-|   [service wrappers](/docs/7-2/customization/-/knowledge_base/c/customizing-liferay-services-service-wrappers)
+|   [service wrappers](/docs/7-2/customization/-/knowledge_base/c/overriding-service-builder-services-service-wrappers)
 |   instead of an Ext plugin). @product-ver@ removed many beans, so make sure
 |   your overridden beans are still relevant if converting your legacy Ext
 |   plugin.
 | - Overwriting a class in a @product-ver@ core JAR. For a list of core JARs,
 |   see the
-|   [Finding Core @product@ Artifacts](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies#finding-core-liferay-portal-artifacts)
+|   [Finding Core @product@ Artifacts](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts)
 |   section.
 | - Modifying @product@'s `web.xml` file.
 | - Adding to @product@'s `web.xml` file.
@@ -40,7 +40,7 @@ header-id: customizing-core-functionality-with-ext
 
 Ext plugins are used to customize @product@'s core functionality. You can learn
 more about what the core encompasses in the
-[Finding Core @product@ Artifacts](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies#finding-core-liferay-portal-artifacts)
+[Finding Core @product@ Artifacts](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts)
 article section. In this section, you'll learn how to
 
 - [Create an Ext plugin](/docs/7-2/customization/-/knowledge_base/c/creating-an-ext-plugin)

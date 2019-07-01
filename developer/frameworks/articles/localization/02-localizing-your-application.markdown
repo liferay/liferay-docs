@@ -115,16 +115,14 @@ howdy-partner=Hola, Compañero!
 
 Congratulations on a great start to localizing your application!
 
-Next, you can explore [generating translations
-automatically](/docs/7-2/frameworks/-/knowledge_base/f/automatically-generating-translations)
-or [create a language
-module](/docs/7-2/frameworks/-/knowledge_base/f/using-language-modules) for
-using language keys across applications. 
+Next, you can explore [generating translations automatically](/docs/7-2/frameworks/-/knowledge_base/f/automatically-generating-translations) 
+or [create a language module](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-language-module) 
+for using language keys across applications. 
 
 ## Related Topics 
 
 [Automatically Generating Translations](/docs/7-2/frameworks/-/knowledge_base/f/automatically-generating-translations)
 
-[Using Language Modules](/docs/7-2/frameworks/-/knowledge_base/f/using-language-modules)
+[Using Language Modules](/docs/7-2/frameworks/-/knowledge_base/f/using-a-language-module)
 
 [Using @product@'s Language Settings](/docs/7-2/frameworks/-/knowledge_base/f//docs/7-1/tutorials/-/knowledge_base/t/using-liferays-language-settings)

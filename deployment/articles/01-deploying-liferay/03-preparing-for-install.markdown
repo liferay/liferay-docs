@@ -116,7 +116,7 @@ To workaround this issue, add this property after your application server JVM op
 
 ```properties
  --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
-``` 
+```
 
 It's time to prepare your database. 
 

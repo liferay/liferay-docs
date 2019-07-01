@@ -64,8 +64,10 @@ it.
 **Controller:** The middle man in the MVC pattern, the Controller contains logic
 for passing the data back and forth between the view and the model layers.
 
-The MVC pattern fits well with  [@product@'s modular
-architecture](/docs/7-2/customization/-/knowledge_base/c/architecture).
+<!--Uncomment once article is available
+The MVC pattern fits well with 
+@product@'s modular architecture
+-->
 
 @product@'s applications are divided into multiple discrete modules. With
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder), the
@@ -185,14 +187,14 @@ time, you could
 -   Lift weights
 -   Work on your application's business logic
 
-It's entirely up to you. To get into the details of creating an MVC Portlet
-application, continue with  [Creating an MVC
-Portlet](/docs/7-2/appdev/-/knowledge_base/a/creating-an-mvc-portlet). 
+It's entirely up to you. 
+
+<!--Uncomment once article is available
+To get into the details of creating an MVC Portlet
+application, continue with 
+Creating an MVC Portlet. 
+-->
 
 ## Related Topics 
 
-[MVC Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command)
-
-[MVC Render Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-render-command)
-
-[MVC Resource Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-resource-command)
+[Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet)

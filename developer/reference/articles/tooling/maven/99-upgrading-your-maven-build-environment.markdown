@@ -160,7 +160,7 @@ Liferay Portal 6.2 Artifact ID | @product-ver@ Artifact ID |
 `util-taglib` | `com.liferay.util.taglib` |
 
 For more information on resolving dependencies in @product-ver@, see the
-[Resolving a Plugin's Dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies)
 article.
 
 Of course, you must also update the artifacts you're referencing for your

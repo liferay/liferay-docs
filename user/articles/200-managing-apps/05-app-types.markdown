@@ -60,12 +60,12 @@ implemented as web modules used by @product@ portlets to provide functionality.
 ## Templates and Themes
 
 [Templates](/docs/7-2/frameworks/-/knowledge_base/f/layout-templates-intro) and
-[themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-intro) are plugins that
-change @product@'s appearance. Templates (layout templates) control how you can
-arrange portlets on a page. They make up a page's body (the large area into
-which you can drag and drop portlets). There are several built-in layout
-templates. If you have a complex page layout (especially for your home page),
-you may wish to create a custom layout template of your own. 
+[themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) are 
+plugins that change @product@'s appearance. Templates (layout templates) control 
+how you can arrange portlets on a page. They make up a page's body (the large 
+area into which you can drag and drop portlets). There are several built-in 
+layout templates. If you have a complex page layout (especially for your home 
+page), you may wish to create a custom layout template of your own. 
 
 Themes can completely transform @product@'s look and feel. Most organizations 
 have their own look and feel standards that apply to all of their web sites and 

@@ -44,7 +44,7 @@ Here are the code upgrade steps:
             Import an existing Liferay Workspace. If you don't have one, revisit
             the previous step.{.summary}
 
-    2.  [Configure Liferay Workspace Settings](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment#configuring-liferay-workspace){.title}
+    2.  [Configure Liferay Workspace Settings](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment#configuring-liferay-workspace-settings){.title}
 
         Set the @product@ version in workspace's configuration you intend to
         upgrade to.{.summary}
@@ -93,7 +93,7 @@ Here are the code upgrade steps:
         Update your Workspace plugin version to leverage the latest features of
         Liferay Workspace.{.summary}
 
-    3.  [Remove Dependency Versions](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-build-dependencies#removing-the-projects-dependency-versions){.title commandId=remove_dependency_version}
+    3.  [Remove Dependency Versions](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-build-dependencies#removing-your-projects-build-dependency-versions){.title commandId=remove_dependency_version}
 
         Remove the project's dependency versions since it's leveraging target
         platform.{.summary}
@@ -163,7 +163,7 @@ Here are the code upgrade steps:
 
     9.  [Upgrade Servlet Filter Hooks](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-servlet-filter-hooks){.title}
 
-    10. [Upgrade Portal Properties Hooks](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-override-extension-hooks){.title}
+    10. [Upgrade Portal Properties Hooks](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-portal-property-hooks){.title}
 
     11. [Upgrade Struts Action Hooks](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-struts-action-hooks){.title}
 
@@ -214,7 +214,11 @@ Here are the code upgrade steps:
 
     4.  [Upgrade Servlet-based Portlets](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-servlet-based-portlet){.title}
 
-    5.  [Migrate from Spring Portlet MVC to PortletMVC4Spring](/docs/7-2/tutorials/-/knowledge_base/t/migrating-from-spring-portlet-mvc-to-portletmvc4spring){.title}
+    5.  [Migrate from Spring Portlet MVC to PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring){.title}
+
+        <!-- TODO - Replace the link above with a link to migration article 
+        when it's available. - Jim
+        -->
 
     6.  [Upgrade Struts 1 Portlets](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-struts-1-portlet){.title}
 

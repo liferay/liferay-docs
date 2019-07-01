@@ -91,6 +91,10 @@ Gradle-specific files, but otherwise, appears exactly the same.
 The generated module is functional and is deployable to a @product@ instance.
 The generated module, by default, creates a panel category with a panel app in
 @product@'s Product Menu. To build upon the generated app, modify the project by
-adding logic and additional files to the folders outlined above. You can visit
-the [Customizing the Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
+adding logic and additional files to the folders outlined above. 
+
+<!--Uncomment once article is available
+You can visit the 
+Customizing the Product Menu
 tutorial for instructions on customizing a panel app project.
+-->
