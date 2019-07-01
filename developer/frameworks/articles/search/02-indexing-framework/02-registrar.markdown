@@ -17,17 +17,17 @@ compileOnly group: "com.liferay", name: "com.liferay.portal.search.spi", version
 compileOnly group: "com.liferay", name: "com.liferay.portal.search.api", version: "3.7.0"
 ```
 
-| **APIs and SPIs:** SPIs are a special type of API. Generally, code inside a
-| SPI module (e.g., `portal-search-spi`) is used to customize existing behavior,
-| while API modules contain behavior you want to use. 
+| **APIs and SPIs:** SPIs are a special type of API. Generally, code inside a SPI
+| module (e.g., `portal-search-spi`) is used to customize existing behavior, while
+| API modules contain behavior you want to use. Put simply, implement interfaces
+| from a SPI, and consume the code form the API.  
 | 
 | SPI example:
-|  `ModelIndexerWriterContributor` lives in a SPI module because you're supposed
+|  `ModelDocumentContributor` lives in a SPI module because you're supposed
 |  to implement it directly, defining your own indexing behavior.
 | 
-| API example: 
-|  `SearchRequestBuilder` lives in a API module because its behavior is
-| leveraged inside your code to build a search request.
+| API example: `SearchRequest` lives in an API module because its behavior
+|  is leveraged inside your code to build a search request.
 
 A Registrar is required. Without it, all your indexing, searching, and summary
 logic (covered in the other tutorials of this section) isn't worth the bytes
@@ -73,7 +73,7 @@ used to store it.
     contributors used to build a model search definition.
 
     In addition to the `ModelSearchDefinition` setter methods used in the above
-    code, there are two more to be aware of:
+    code, there's another to be aware of:
 
     To select all locales all the time when searching for your model entity,
     pass `true` to `setSelectAllLocales`:
@@ -81,6 +81,10 @@ used to store it.
     ```java
     modelSearchDefinition.setSelectAllLocales(true);
     ```
+
+    Technically, there's another setter in `ModelSearchDefinition` that takes a
+    boolean, `setSearchResultPermissionFilterSuppressed`. However, this is
+    intended for internal consumption.
 
 3.  Write a corresponding `deactivate` method:
 

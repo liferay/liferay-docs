@@ -139,7 +139,7 @@ document is then retrieved and added to a collection.
     }
     ```
 
-4.  Override `getcompanyId`:
+4.  Override `getcompanyId`, getting the ID from your entity:
 
     ```java
 	@Override
@@ -148,9 +148,10 @@ document is then retrieved and added to a collection.
 	}
     ```
 
+5.  Override `getIndexerWriterMode`:
+<!-- Shouldn't we explain this a bit?-->
 
-
-
+    ```java
 	@Override
 	public IndexerWriterMode getIndexerWriterMode(FooEntry fooEntry) {
 		int status = fooEntry.getStatus();
@@ -164,16 +165,18 @@ document is then retrieved and added to a collection.
 
 		return IndexerWriterMode.DELETE;
 	}
+    ```
 
+6.  Add the services referenced:
+
+    ```java
 	@Reference
 	private FooEntryLocalService _fooEntryLocalService;
 
 	@Reference
 	private DynamicQueryBatchIndexingActionableFactory
 		_dynamicQueryBatchIndexingActionableFactory;
-
-}
-```
+    ```
 
 ## Contribute Fields to Every Document
 
