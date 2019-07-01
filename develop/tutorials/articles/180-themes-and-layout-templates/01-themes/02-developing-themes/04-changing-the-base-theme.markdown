@@ -27,8 +27,12 @@ Follow these steps to change your base theme:
     [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme) 
     are based off of the 
     [styled theme](https://www.npmjs.com/package/liferay-theme-styled). You can 
-    extend the styled or unstyled base theme, a globally installed theme, or a 
-    theme published on the npm registry. 
+    extend the styled or unstyled base theme, a globally installed theme, a 
+    theme published on the npm registry, or you can specify a package URL. 
+    Enter the number for the option you wish to select. 
+
+    | **Note:** You can retrieve the URL for a package by running 
+    | `npm show package-name dist.tarball`. 
 
     ![Figure 2: You can extend the styled or unstyled base theme, a globally installed theme, or a theme published to the npm registry.](../../../../images/theme-dev-changing-base-themes-gulp-extend-base-theme-choice.png)
 
