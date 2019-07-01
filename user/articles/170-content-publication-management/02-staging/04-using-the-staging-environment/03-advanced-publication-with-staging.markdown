@@ -39,6 +39,10 @@ separately if you want to publish both page groups.
 You can also choose specific pages to publish, and the look and feel of those
 pages.
 
+| **Note:** If you're publishing pages with a custom theme, you must check the
+| *Theme Settings* option under the Look and Feel heading for your staging
+| configuration. If it's not checked, the default theme is always applied.
+
 The *Delete Missing Pages* option under the Look and Feel heading deletes all
 pages from the live Site that are not present on the staging Site. You can
 choose specific pages to publish (and remove) by manually selecting them under
