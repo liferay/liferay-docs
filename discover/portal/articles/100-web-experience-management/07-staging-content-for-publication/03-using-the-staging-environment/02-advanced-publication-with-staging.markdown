@@ -36,6 +36,10 @@ separately if you want to publish both page groups.
 
 ![Figure 1: You have several ways to specify the pages you want included in your publication.](../../../../images/staging-advanced-publication.png)
 
+| **Note:** If you're publishing pages with a custom theme, you must check the
+| *Theme Settings* option under the Look and Feel heading for your staging
+| configuration. If it's not checked, the default theme is always applied.
+
 You can also choose specific pages to publish, and the look and feel of those
 pages.
 
