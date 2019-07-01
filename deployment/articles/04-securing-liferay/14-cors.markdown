@@ -8,9 +8,9 @@ header-id: configuring-cors
 
 CORS stands for Cross-Origin Resource Sharing. An Origin is a web server at
 a different domain, and a Resource is some asset stored on the server, like an
-image, PDF, or HTML file. Sometimes there's a need to request resources stored
-on another origin. This is called a cross-origin request, and web servers have
-policies to allow or deny such requests. 
+image, PDF, or HTML file. Sometimes you must request resources stored on another
+origin. This is called a cross-origin request, and web servers have policies to
+allow or deny such requests. 
 
 For example, browsers themselves don't allow cross-origin AJAX-style requests
 from scripts to help mitigate 
