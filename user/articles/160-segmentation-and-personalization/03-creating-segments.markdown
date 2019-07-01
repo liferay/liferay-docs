@@ -57,7 +57,8 @@ if you are correctly defining the Segment.
 
 After you create your Segment, you can see it in the list of Segments on the 
 *People* &rarr; *Segments* page. From there you can edit the segment, delete 
-it, or change the permissions for it. Changing permissions only affects who has 
+it, or change the permissions for it. You cannot delete a segment if it's being
+used in an experience. Also, changing permissions only affects who has 
 access to manage the Segment; it doesn't change Segment membership or criteria.
 
 1.  Go to *People* &rarr; *Segments*.
