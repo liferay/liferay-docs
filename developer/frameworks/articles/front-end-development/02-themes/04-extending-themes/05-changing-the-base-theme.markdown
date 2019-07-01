@@ -52,9 +52,9 @@ Your theme's `package.json` contains the updated base theme configuration:
 ```
 
 Great! You've updated your base theme. When you 
-[build your theme's files](/docs/7-1/frameworks/-/knowledge_base/frameworks/building-your-themes-files) 
+[build your theme's files](/docs/7-2/frameworks/-/knowledge_base/f/building-your-themes-files) 
 or 
-[deploy it](/docs/7-1/frameworks/-/knowledge_base/frameworks/deploying-your-theme), 
+[deploy it](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes), 
 your theme will inherit the updated base theme's files. 
 
 ## Related Topics
