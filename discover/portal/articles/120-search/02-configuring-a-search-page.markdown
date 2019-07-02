@@ -28,6 +28,55 @@ configuration options.
 Search display pages are where users go to enter search terms and browse search
 results. 
 
+##  Search Page Templates
+
+The default search page is backed by a Search Page Template, and manually
+configured search pages can use the template, too. The template can be used in
+two ways:
+
+1.  Enable inheriting changes to the template, if you want the search page to
+    get any updates made to the template at a later date. 
+
+2.  Create the page based on the template, but independently configured after
+    the initial creation.
+
+Out of the box, the Search Page Template includes these widgets:
+
+- [Search Bar](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#search-bar)
+
+- [Suggestions](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#search-suggestions)
+
+- [Search Results](/docs/7-1/user/-/knowledge_base/u/search-results)
+
+- [Search Options](/docs/7-1/user/-/knowledge_base/u/whats-new-with-search#search-options)
+
+- [Site Facet](/docs/7-1/user/-/knowledge_base/u/site-facet)
+
+- [Type Facet](/docs/7-2/user/-/knowledge_base/u/type-facet)
+
+- [Tag Facet](/docs/7-1/user/-/knowledge_base/u/tag-and-category-facets#tag-and-category-facets)
+
+- [Category Facet](/docs/7-1/user/-/knowledge_base/u/tag-and-category-facets#tag-and-category-facets)
+
+- [Folder Facet](/docs/7-1/user/-/knowledge_base/u/folder-facet)
+
+- [User Facet](/docs/7-1/user/-/knowledge_base/u/user-facet)
+
+- [Modified Facet](/docs/7-1/user/-/knowledge_base/u/modified-facet)
+
+Out of the box, widgets use the _Barebone_ Application Decorators: unless
+there's content to render in the widget, the widget body is hidden. The
+header is displayed if you hover over it. 
+
+![Figure x: At first glance, not much is happening on the search page. But, there's more than meets the eye.](../../images/search-barebone-widgets.png)
+
+Because of this, when you visit a search page created from the default search
+page template, you won't see certain widgets fully rendered.
+
+By contrast, when you add a search widget to a page manually, they use the
+_Borderless_ decorator (by default), which shows more of the widget even when
+there is no content to display.
+
 ## Default Search Pages
 
 Using the default site and the default theme with the default search settings,
