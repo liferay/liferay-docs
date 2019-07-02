@@ -31,15 +31,15 @@ Follow these steps:
     The Blogs app's `view_entry.jsp` has a dynamic include tag at the top and 
     another at the very bottom. 
 
-```markup
-<%@ include file="/blogs/init.jsp" %>
+    ```markup
+    <%@ include file="/blogs/init.jsp" %>
 
-<liferay-util:dynamic-include key="com.liferay.blogs.web#/blogs/view_entry.jsp#pre" />
+    <liferay-util:dynamic-include key="com.liferay.blogs.web#/blogs/view_entry.jsp#pre" />
 
-    ... JSP content is here
+        ... JSP content is here
 
-<liferay-util:dynamic-include key="com.liferay.blogs.web#/blogs/view_entry.jsp#post" />
-```
+    <liferay-util:dynamic-include key="com.liferay.blogs.web#/blogs/view_entry.jsp#post" />
+    ```
 
     Here are the Blogs view entry dynamic include keys:
 
@@ -53,98 +53,98 @@ Follow these steps:
 3.  Specify compile-only dependencies, like these Gradle dependencies, in your 
     module build file:
 
-```properties
-dependencies {
-	compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
-	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
-	compileOnly group: "com.liferay", name: "com.liferay.petra.string", version: "1.0.0"
-	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-	compileOnly group: "org.osgi", name: "osgi.cmpn", version: "6.0.0"
-}
-```
+    ```properties
+    dependencies {
+    	compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+    	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+    	compileOnly group: "com.liferay", name: "com.liferay.petra.string", version: "1.0.0"
+    	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+    	compileOnly group: "org.osgi", name: "osgi.cmpn", version: "6.0.0"
+    }
+    ```
 
 4.  Create an OSGi component class that implements the 
     [`DynamicInclude` interface](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/DynamicInclude.html). 
 
     Here's an example dynamic include implementation for Blogs:
 
-```java
-import java.io.IOException;
-import java.io.PrintWriter;
+    ```java
+    import java.io.IOException;
+    import java.io.PrintWriter;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
 
-import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Component;
 
-import com.liferay.portal.kernel.servlet.taglib.DynamicInclude;
+    import com.liferay.portal.kernel.servlet.taglib.DynamicInclude;
 
-@Component(
-	immediate = true,
-	service = DynamicInclude.class
-)
-public class BlogsDynamicInclude implements DynamicInclude {
+    @Component(
+    	immediate = true,
+    	service = DynamicInclude.class
+    )
+    public class BlogsDynamicInclude implements DynamicInclude {
 
-	@Override
-	public void include(
-			HttpServletRequest request, HttpServletResponse response,
-			String key)
-		throws IOException {
+    	@Override
+    	public void include(
+    			HttpServletRequest request, HttpServletResponse response,
+    			String key)
+    		throws IOException {
 
-		PrintWriter printWriter = response.getWriter();
+    		PrintWriter printWriter = response.getWriter();
 
-		printWriter.println(
-			"<h2>Added by Blogs Dynamic Include!</h2><br />");
-	}
+    		printWriter.println(
+    			"<h2>Added by Blogs Dynamic Include!</h2><br />");
+    	}
 
-	@Override
-	public void register(DynamicIncludeRegistry dynamicIncludeRegistry) {
-		dynamicIncludeRegistry.register(
-			"com.liferay.blogs.web#/blogs/view_entry.jsp#pre");
-	}
+    	@Override
+    	public void register(DynamicIncludeRegistry dynamicIncludeRegistry) {
+    		dynamicIncludeRegistry.register(
+    			"com.liferay.blogs.web#/blogs/view_entry.jsp#pre");
+    	}
 
-}
-```
+    }
+    ```
 
     Giving the class an `@Component` annotation that has the service attribute 
     `service = DynamicInclude.class` makes the class a `DynamicInclude` service 
     component. 
 
-```java
-@Component(
-    immediate = true,
-    service = DynamicInclude.class
-)
-```
+    ```java
+    @Component(
+        immediate = true,
+        service = DynamicInclude.class
+    )
+    ```
 
     In the `include` method, add your content. The example `include` method 
     writes a heading. 
 
-```java
-@Override
-public void include(
-        HttpServletRequest request, HttpServletResponse response,
-        String key)
-    throws IOException {
+    ```java
+    @Override
+    public void include(
+            HttpServletRequest request, HttpServletResponse response,
+            String key)
+        throws IOException {
 
-    PrintWriter printWriter = response.getWriter();
+        PrintWriter printWriter = response.getWriter();
 
-    printWriter.println(
-    "<h2>Added by Blogs Dynamic Include!</h2><br />");
-}
-```
+        printWriter.println(
+        "<h2>Added by Blogs Dynamic Include!</h2><br />");
+    }
+    ```
 
     In the `register` method, specify the dynamic include tag to use. The 
     example register method targets the dynamic include at the top of the Blogs 
     `view_entry.jsp`. 
 
-```java
-@Override
-public void register(DynamicIncludeRegistry dynamicIncludeRegistry) {
-	dynamicIncludeRegistry.register(
-		"com.liferay.blogs.web#/blogs/view_entry.jsp#pre");
-}
-```
+    ```java
+    @Override
+    public void register(DynamicIncludeRegistry dynamicIncludeRegistry) {
+    	dynamicIncludeRegistry.register(
+    		"com.liferay.blogs.web#/blogs/view_entry.jsp#pre");
+    }
+    ```
 
 Once you've [deployed your module](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project), 
 the JSP dynamically includes your content. Congratulations on injecting dynamic 

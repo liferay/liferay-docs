@@ -33,9 +33,9 @@ Follow these steps to take the theme through the upgrade process:
 1.  Navigate to the theme's root directory and run the command below to update 
     the theme's `liferay-theme-tasks` dependency to version `8.x.x`:
     
-```bash
-npm install --save-dev liferay-theme-tasks@8.x.x
-```
+    ```bash
+    npm install --save-dev liferay-theme-tasks@8.x.x
+    ```
 
 2.  Run the `gulp upgrade` command to upgrade the @product@ 7.0 theme to 7.1.
 
@@ -56,11 +56,11 @@ npm install --save-dev liferay-theme-tasks@8.x.x
     tool will be compatible with the @product-ver@ theme. Both commands are 
     shown below. Run them separately:
     
-```bash
-npm install --save-dev liferay-theme-tasks@9.x.x
+    ```bash
+    npm install --save-dev liferay-theme-tasks@9.x.x
 
-npm install -g generator-liferay-theme@9.x.x
-```
+    npm install -g generator-liferay-theme@9.x.x
+    ```
 
 4.  With the `9.x.x` versions of the `liferay-theme-tasks` and Liferay Theme 
     Generator installed, run the `gulp upgrade` command for the final time to 

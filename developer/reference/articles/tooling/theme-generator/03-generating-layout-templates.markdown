@@ -28,19 +28,19 @@ these steps to create a layout template:
     [available options](/docs/7-2/reference/-/knowledge_base/r/layouts-sub-generator-options) 
     to create your layout: 
 
-```bash
-yo liferay-theme:layout
-```
+    ```bash
+    yo liferay-theme:layout
+    ```
 
     ![Figure 2: The Layouts sub-generator automates the layout creation process.](../../../images/layout-prompt.png)
 
 3.  Run `gulp deploy` to deploy your layout template to the server you 
     specified, or deploy your theme if the layout is [bundled with it](/docs/7-2/frameworks/-/knowledge_base/f/including-layout-templates-with-a-theme).
 
-| **Note:** Gulp is included as a local dependency of the generator, so you 
-| are not required to install it. It can be accessed by running 
-| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
-| root folder.
+    | **Note:** Gulp is included as a local dependency of the generator, so you 
+    | are not required to install it. It can be accessed by running 
+    | `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+    | root folder.
 
 Awesome! You just created a layout template with the Theme Generator's Layouts 
 sub-generator. Your layout template project should have a file structure similar 

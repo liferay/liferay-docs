@@ -15,37 +15,37 @@ your project:
 1.  Open your `tsconfig.json` file and replace the `"module": "amd"` compiler 
     option with the configuration shown below to produce CommonJS modules:
 
-```json
-{
-  "compilerOptions": {
-    ...
-    "module": "commonjs",
-    ...
-  }
-}
-```
+    ```json
+    {
+      "compilerOptions": {
+        ...
+        "module": "commonjs",
+        ...
+      }
+    }
+    ```
 
 2.  Delete the `.babelrc` file to remove the Babel configuration.
 
 3.  Remove Babel from your `package.json` build process so it matches the 
     configuration below:
 
-```json    
-{
-  "scripts": {
-    "build": "tsc && liferay-npm-bundler"
-  },
-  ...
-}
-```
+    ```json    
+    {
+      "scripts": {
+        "build": "tsc && liferay-npm-bundler"
+      },
+      ...
+    }
+    ```
 
 4.  Remove the following Babel dependencies from your `package.json` 
     *devDependencies*:
 
-```json
-"babel-cli": "6.26.0",
-"babel-preset-liferay-amd": "1.2.2"
-```
+    ```json
+    "babel-cli": "6.26.0",
+    "babel-preset-liferay-amd": "1.2.2"
+    ```
 
 Great! Your project is migrated to use the new version of the 
 liferay-npm-bundler. 

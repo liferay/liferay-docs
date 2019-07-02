@@ -21,4 +21,4 @@ As you upgrade this theme, you'll learn how to update metadata, theme templates,
 UI, and more using all the best practices and standards. Completing this 
 tutorial prepares you for upgrading your own theme. 
 
-<a class="go-link btn btn-primary" href="/developer/tutorials/-/knowledge_base/7-2/t/setting-up-the-development-environment-for-6-2-themes">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/setting-up-the-development-environment-for-6-2-themes">Let's Go!<span class="icon-circle-arrow-right"></span></a>
