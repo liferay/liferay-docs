@@ -5,10 +5,14 @@ header-id: creating-segments
 # Creating Segments
 
 Individuals share common properties and behavior. Aggregating them into Segments
-helps you understand groups of similar people. Segment analytics gives you
-insight into people's interests and activities. In the navigation panel, 
-*Segments* is at the top of the *People* section because it's where you'll spend 
-most of your time gaining customer insights. 
+helps you understand groups of similar people. Segment analytics give you 
+insight into people's interests and activities. 
+<!-- Explain more about why segments are important -->
+
+<!-- Mention DXP personalization, and why AC's segments are better. -->
+
+In the navigation panel, *Segments* is at the top of the *People* section 
+because it's where you'll spend most of your time gaining customer insights. 
 
 ![Figure 1: You can access Segments in the navigation panel.](../../images/ac-segments-panel.png)
 
@@ -24,6 +28,11 @@ engage with you the most, and what content they're interested in.
 [**Static Segments:**](#static-segments) 
 Individuals aggregated manually. Static Segments are therefore comprised of 
 hand-selected individuals. 
+
+<!-- 
+Add small section about DXP personalization and link to 
+https://help.liferay.com/hc/en-us/articles/360029041751-Using-Analytics-Cloud-With-User-Segments
+-->
 
 ## Dynamic Segments
 
@@ -48,7 +57,9 @@ Follow these steps to create a Dynamic Segment:
     **Account Properties:** Properties that belong to a Salesforce Account 
     (e.g., account name, industry, website, etc.). 
 
-    **Interests:** Topics and content types that interest the person.  
+    **Interests:** Topics and content types that interest the person. For more 
+    information on interests in Analytics Cloud, see 
+    [Customer Insights](https://help.liferay.com/hc/en-us/articles/360006947951-Customer-Insights). 
 
     **Session Properties:** Properties that belong to a person's web session 
     (e.g., browser, geolocation, etc.). 
@@ -60,7 +71,11 @@ Follow these steps to create a Dynamic Segment:
     [Creating Criteria](#creating-criteria). 
 
 5.  Anonymous users are excluded from Segments by default. To include them, 
-    enable the *Include Anonymous* toggle. 
+    enable the *Include Anonymous* toggle. Note, however, that criteria with 
+    individual and/or account properties will exclude anonymous users regardless 
+    of your setting here. Such properties only apply to known users. 
+
+    ![Figure 2: You can also include anonymous users in your segment.](../../images/anonymous-toggle.png)
 
 6.  Click *Save Segment* when you're finished. 
 
@@ -110,7 +125,7 @@ contains the options *is before*, *is*, and *is after*. The second field is a
 date field. You can therefore, for example, specify a criterion in which only 
 Individuals with a birthday after 31 December 1980 are part of the Segment. 
 
-![Figure 2: This criterion specifies Individuals with a birthday after 31 December 1980.](../../images/criteria-birthdate.png)
+![Figure 3: This criterion specifies Individuals with a birthday after 31 December 1980.](../../images/criteria-birthdate.png)
 
 You can also control the way adjacent criteria interact with each other. For 
 example, if you place criteria next to each other, a small box appears between 
@@ -130,7 +145,7 @@ You can also form subgroups of criteria by dragging and dropping criteria onto
 each other. An AND/OR box then appears between the subgroup and any adjacent 
 criteria. Together, these tools let you build complex criteria for your Segment. 
 
-![Figure 3: Millennials interested in Liferay love avocado toast.](../../images/criteria-groups.png)
+![Figure 4: Millennials interested in Liferay love avocado toast.](../../images/criteria-groups.png)
 
 ## Static Segments
 
