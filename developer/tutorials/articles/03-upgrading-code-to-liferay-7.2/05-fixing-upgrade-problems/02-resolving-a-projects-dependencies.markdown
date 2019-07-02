@@ -100,10 +100,10 @@ The following table shows each Liferay utility module's symbolic name.
  util-taglib            | `com.liferay.util.taglib` |
 
 You can use @product@'s
-[App Manager](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts#finding-liferay-portal-app-and-independent-artifacts),
+[App Manager](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts#finding-liferay-app-and-independent-artifacts),
 [Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell),
 or
-[module JAR file manifests](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts#finding-core-liferay-portal-artifact-attributes)
+[module JAR file manifests](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts#finding-core-artifact-attributes)
 to find versions of modules deployed on your @product@ instance. 
 
 For more information on resolving your project's dependencies, see the
