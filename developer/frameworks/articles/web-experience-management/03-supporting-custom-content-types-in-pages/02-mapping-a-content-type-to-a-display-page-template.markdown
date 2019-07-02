@@ -25,14 +25,12 @@ type.
     }
     ```
 
-    The `@Component` annotation section above the implementation class's
-    declaration registers the class as an info display contributor in the OSGi
-    service registry. You should set the `service` property to the interface
-    you're implementing.
+    The `@Component` annotation registers the class as an info display
+    contributor in the OSGi service registry. Set the `service` property to the
+    interface you're implementing.
 
-3.  Implement the methods. For the example User content type, we'll highlight
-    three methods that are crucial to mapping its model to the Display Page
-    Template framework:
+3.  Implement the methods. For the example User content type, three methods are
+    crucial to mapping its model to the Display Page Template framework:
 
     ```java
     @Override
