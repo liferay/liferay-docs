@@ -1,4 +1,10 @@
+---
+header-id: extending-blade-cli
+---
+
 # Extending Blade CLI
+
+[TOC levels=1-4]
 
 There are several ways you can extend Blade CLI. In simple cases, you can add
 custom commands and templates. These are *extensions* of Blade CLI. When
