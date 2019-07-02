@@ -6,9 +6,11 @@ header-id: injecting-service-components-into-tests
 
 [TOC levels=1-4]
 
-You can use @product@'s `@Inject` annotation to inject service components into 
-an integration test, like you use the 
-[`@Reference` annotation to inject service components](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services) 
+Test driven development plays a key role in quality assurance. Liferay's tooling 
+and integration with standard test frameworks support test driven development 
+and help you reach quality milestones. You can use @product@'s `@Inject` 
+annotation to inject service components into an integration test, like you use 
+the [`@Reference` annotation to inject service components](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services) 
 into an OSGi component. 
 
 | **Note:**
