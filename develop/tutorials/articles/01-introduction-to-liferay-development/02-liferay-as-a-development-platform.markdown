@@ -358,7 +358,7 @@ The Java class defines only four methods:
         @Override
         public String getURL(HttpServletRequest request) {
 
-            return "https://dev.liferay.com";
+            return "https://liferay.com";
 
         }
 

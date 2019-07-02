@@ -110,5 +110,5 @@ folder structure.
 ![Figure 1: After submitting the user's name, it's displayed with a greeting.](../../../../images/hello-user-jsf-portlet.png)
 
 You can view the finished version of the Hello User JSF application by
-downloading its
-[ZIP file](https://dev.liferay.com/documents/10184/1608802/hello-user-jsf-portlet.zip/61e42092-4487-976d-f0f0-841fba0fba33?version=1.0&download=true).
+downloading its [ZIP
+file](https://portal.liferay.dev/documents/113763090/114000653/hello-user-jsf-portlet.zip).

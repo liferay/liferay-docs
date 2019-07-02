@@ -13,7 +13,7 @@ are attached to a theme, you should look into
 [themelets](/docs/7-1/tutorials/-/knowledge_base/t/creating-reusable-pieces-of-code-for-your-themes).
 
 A Theme Contributor is a
-[module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
+[module](/docs/7-1/tutorials/-/knowledge_base/t/fundamentals#modules)
 that contains UI resources to use in @product@. Once a Theme Contributor is
 deployed to @product@, it's scanned for all valid CSS and JS files, and then its
 resources are included on the page. You can, therefore, style these UI

@@ -19,8 +19,8 @@ the returned string as the argument for a `liferay-ui:message` key:
     		var="linkContent"
     >
     		<aui:a 
-    			href="https://dev.liferay.com/en/develop/tutorials" 
-    			target="_blank">the Liferay Developer Network's documentation
+    			href="https://portal.liferay.dev/" 
+    			target="_blank">the Liferay Portal project
     		</aui:a>
     </liferay-util:buffer>
 

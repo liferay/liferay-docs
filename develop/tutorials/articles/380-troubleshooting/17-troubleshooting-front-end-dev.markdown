@@ -52,7 +52,7 @@ Click a question to view the answer.
 <div class="ldn-faq-question" id="jquery-anonymous-module-error">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">Why does my JQuery module throw an anonymous module error when I try to load it?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">
-    <p>If you're using an external library that you host, you must disable the <i>Expose Global</i> option as described in the <a href="https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-1/using-external-javascript-libraries#using-libraries-that-you-host">Using External JavaScript Libraries</a> tutorial.</p>
+    <p>If you're using an external library that you host, you must disable the <i>Expose Global</i> option as described in the <a href="https://portal.liferay.dev/docs/7-1/tutorials/-/knowledge_base/t/using-external-javascript-libraries#using-libraries-that-you-host">Using External JavaScript Libraries</a> tutorial.</p>
   </div>
 </div>
 
@@ -89,8 +89,8 @@ Click a question to view the answer.
 <div class="ldn-faq-question" id="angular-react-vue-portlet-disable-spa">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">I want to use a custom router in my Angular/React/Vue portlet. How can I disable the default Senna JS SPA engine in my portlet?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">
-    <p>By default, the <a href="https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-1/automatic-single-page-applications#what-is-sennajs">Senna JS SPA engine</a> is enabled in your portlets and sites. This disables full page reloads during portlet navigation.</p>
-    <p>If you want to use a custom router in your portlet instead, follow the <a href="https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-1/automatic-single-page-applications#disabling-spa">instructions in the SPA documentation</a> to blacklist your portlet from SPA.</p>
+    <p>By default, the <a href="https://portal.liferay.dev/docs/7-1/tutorials/-/knowledge_base/t/automatic-single-page-applications#what-is-sennajs">Senna JS SPA engine</a> is enabled in your portlets and sites. This disables full page reloads during portlet navigation.</p>
+    <p>If you want to use a custom router in your portlet instead, follow the <a href="https://portal.liferay.dev/docs/7-1/tutorials/-/knowledge_base/t/automatic-single-page-applications#disabling-spa">instructions in the SPA documentation</a> to blacklist your portlet from SPA.</p>
   </div>
 </div>
 
