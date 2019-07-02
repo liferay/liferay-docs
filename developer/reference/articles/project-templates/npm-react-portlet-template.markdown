@@ -6,6 +6,10 @@ header-id: npm-react-portlet-template
 
 [TOC levels=1-4]
 
+| **Note:** The npm React project template is deprecated. Use the
+| [Liferay JS Generator](/docs/7-2/reference/-/knowledge_base/r/js-generator) to
+| leverage the recommended React starter projects.
+
 In this article, you'll learn how to create an npm React portlet as a Liferay
 module. To create an npm React portlet via the command line using Blade CLI or
 Maven, use one of the commands with the following parameters:
