@@ -1,5 +1,18 @@
 # Content Recommendation API
 
+The Content Recommendation API in Liferay Analytics Cloud suggests content based 
+on user interactions with content in a Liferay DXP instance. This is possible 
+because once Liferay DXP is connected to Analytics Cloud, it sends interaction 
+events each time a user visits a page. Each of those events contains information 
+about the content the user consumes. Analytics Cloud collects and processes this 
+information. 
+
+The Content Recommendation API contains services that enable the following: 
+
+-   Discover similar tags (content) based on the current tags the user is 
+    browsing. 
+-   Discover tags based on the user's interest over time. 
+
 ## Discover Similar Tags
 
 This service returns a list of tags (terms) similar to those passed as 
