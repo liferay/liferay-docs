@@ -35,9 +35,11 @@ entity and action as arguments to the
 method `getPortletId`. For example, this call gets the ID of a portlet for 
 viewing Recycle Bin entries: 
 
-    String portletId = PortletProviderUtil.getPortletId(
-        "com.liferay.portlet.trash.model.TrashEntry", 
-        PortletProvider.Action.VIEW);
+```java
+String portletId = PortletProviderUtil.getPortletId(
+    "com.liferay.portlet.trash.model.TrashEntry", 
+    PortletProvider.Action.VIEW);
+```
 
 The `com.liferay.portlet.trash.model.TrashEntry` entity specifies Recycle Bin 
 entries, and `PortletProvider.Action.VIEW` specifies the view action. 
@@ -53,7 +55,8 @@ portlet ID or URL for adding the portlet to the current page. Here's the
 relevant code from the 
 [`asset_display/preview.jsp`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/asset/asset-taglib/src/main/resources/META-INF/resources/asset_display/preview.jsp#L75-L91): 
 
-```markup
+```jsp
+<%
 Map<String, Object> data = new HashMap<String, Object>();
 
 <!-- populate the data map -->
@@ -77,14 +80,14 @@ entity class.
 
 The JSP puts the portlet ID into the `data` map:
 
-```markup
+```java
 data.put("portlet-id", portletId);
 ```
 
 Then it passes the `data` map to a new *Add* button that adds the portlet to
 the page:
 
-```markup
+```jsp
 <aui:button cssClass="add-button-preview" data="<%= data %>" value="add" />
 ```
 
