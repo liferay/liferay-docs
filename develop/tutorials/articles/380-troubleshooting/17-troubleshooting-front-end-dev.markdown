@@ -117,7 +117,7 @@ Click a question to view the answer.
 <div class="ldn-faq-question" id="classic-base-theme">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I use the Classic theme as my base theme?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">
-    <p>The Classic theme is already an implementation of an existing base theme and should not be extended. You can use the <a href="/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files">Gulp kickstart</a> task to copy files from the Classic theme into your theme if you wish. If you want to start off with some base styling, start with the Styled theme instead.</p>
+    <p>The Classic theme is already an implementation of an existing base theme and should not be extended. You can use the <a href="/docs/7-1/tutorials/-/knowledge_base/t/copying-an-existing-themes-files">Gulp kickstart</a> task to copy files from the Classic theme into your theme if you wish. If you want to start off with some base styling, start with the Styled theme instead.</p>
   </div>
 </div>
 
@@ -135,7 +135,7 @@ Click a question to view the answer.
 <div class="ldn-faq-question" id="developer-mode">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">Why aren't my changes showing up after I redeploy my theme?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">
-    <p>By default CSS, JS, and theme template files are cached in the browser. During development, you can enable <a href="/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes">Devloper Mode</a> to prevent your theme's files from caching. </p>
+    <p>By default CSS, JS, and theme template files are cached in the browser. During development, you can enable <a href="/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes">Devloper Mode</a> to prevent your theme's files from caching. </p>
   </div>
 </div>
 

@@ -50,4 +50,4 @@ still supported.
 Since there's no reason to search for guestbooks in the UI, only back-end work
 is necessary. 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-1/understanding-search-and-indexing">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-1/tutorials/-/knowledge_base/t/understanding-search-and-indexing">Let's Go!<span class="icon-circle-arrow-right"></span></a>
