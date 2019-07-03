@@ -6,18 +6,15 @@ header-id: back-end-frameworks
 
 [TOC levels=1-4]
 
-Back-end frameworks are analogous to supporting actors and actresses in show
-business. They fill out the stories in films we know and love. As actors bring
-richness and life to their films, Liferay's powerful back-end frameworks bring
-essential services and deliver terrific performances of their own. Here are some
-of the frameworks: 
+Liferay's powerful back-end frameworks provide essential services behind the
+scenes. Here are some of the frameworks: 
 
 -   [Portlet Providers](#portlet-providers)
 -   [Data Scopes](#data-scopes)
 -   [Service Bus](#service-bus)
 
-These frameworks and more deliver smashing performances and are stars in their
-own right. 
+You can use these frameworks to provide important functionality to your
+applications. 
 
 ## Portlet Providers
 
@@ -98,12 +95,13 @@ the application's data.
 
 **Global:** One data set throughout a portal instance. 
 
-**Site:** Separate data sets for each Site it's added to. 
+**Site:** One data set for each Site. 
 
-**Page:** Separate data sets for each page it's added to. 
+**Page:** One data set for each Page on a Site. 
 
-For example, a Site-scoped app can display its data across a single Site. For a 
-detailed explanation of scopes, see the user guide article 
+For example, a Site-scoped app has one set of data on one Site and a completely
+different set of data for another Site. For a detailed explanation of scopes,
+see the user guide article 
 [Widget Scope](/docs/7-2/user/-/knowledge_base/u/widget-scope). 
 To give your applications scope, you must manually add support for it. For 
 instructions on this, see 
@@ -125,11 +123,11 @@ matter your app's current scope. For an example of using this method, see
 
 ## Service Bus
 
-If you ever need to do some data processing outside the scope of the web's
+If you must ever do data processing outside the scope of the web's
 request/response, look no further than the Service Bus. It's conceptually
 similar to Java Messaging Service (JMS) Topics, but sacrifices transactional,
 reliable delivery capabilities, making it much lighter-weight. @product@ uses
-Service Bus all over the place: 
+Service Bus in many places: 
 
 - Auditing
 - Search engine integration
