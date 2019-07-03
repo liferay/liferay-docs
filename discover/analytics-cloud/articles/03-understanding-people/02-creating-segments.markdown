@@ -4,37 +4,63 @@ header-id: creating-segments
 
 # Creating Segments
 
-Individuals share common properties and behavior. Aggregating them into Segments
-helps you understand groups of similar people. Segment analytics give you 
-insight into people's interests and activities. 
-<!-- Explain more about why segments are important -->
+Segments aggregate Individuals based on common properties and behavior. For 
+example, you can create a Segment that contains users who are interested in a 
+given topic, work in a specific industry, or both. Analytics Cloud then analyzes 
+and 
+[profiles](https://help.liferay.com/hc/en-us/articles/360006947851-Profiling-Segments) 
+Segments. You can then integrate your Analytics Cloud Segments with 
+personalization in Liferay DXP. This lets you deliver content of interest to 
+each Segment via Liferay DXP. 
 
-<!-- Mention DXP personalization, and why AC's segments are better. -->
-
-In the navigation panel, *Segments* is at the top of the *People* section 
+Here, you'll learn how to create segments in Analytics Cloud. In Analytics 
+Cloud's navigation panel, *Segments* is at the top of the *People* section 
 because it's where you'll spend most of your time gaining customer insights. 
 
 ![Figure 1: You can access Segments in the navigation panel.](../../images/ac-segments-panel.png)
 
 There are two types of Segments: 
 
-[**Dynamic Segments:**](#dynamic-segments) 
+[**Dynamic Segments:**](#creating-dynamic-segments) 
 Individuals aggregated automatically based on criteria that you specify. 
 Criteria can be based on Individuals' properties and interaction with your 
 Liferay DXP Site pages and assets. For example, you can use an *industry* 
 property as criteria. Analytics on industry Segments show which industries 
 engage with you the most, and what content they're interested in. 
 
-[**Static Segments:**](#static-segments) 
+[**Static Segments:**](#creating-static-segments) 
 Individuals aggregated manually. Static Segments are therefore comprised of 
 hand-selected individuals. 
 
-<!-- 
-Add small section about DXP personalization and link to 
-https://help.liferay.com/hc/en-us/articles/360029041751-Using-Analytics-Cloud-With-User-Segments
--->
+## Liferay DXP Personalization
 
-## Dynamic Segments
+When used with Liferay DXP's personalization features, the full power of 
+Analytics Cloud's Segments is realized. Personalization lets you target Liferay 
+DXP content at specific Segments. For example, if you have a Segment for users 
+in the finance industry, then you could use personalization to show them content 
+on investing. 
+
+Note that like Analytics Cloud, Liferay DXP can contain Segments. Liferay DXP 
+segments, however, are less powerful than those in Analytics Cloud. Analytics 
+Cloud Segments are more powerful because of the comparatively greater computing 
+power and resources that exist in the cloud. 
+
+Here's a comparison of Segments in Liferay DXP and Analytics Cloud. 
+
+| Liferay DXP Segments | Analytics Cloud Segments |
+| -------------------- | ------------------------ |
+| Based only on user data in DXP | Based on user data from multiple sources (e.g., DXP, Salesforce, CSV files, etc.) |
+| Created from session attribute and cookies | Created from user interests and historical behavior |
+| User identity comes from only one DXP site | User identity is resolved from multiple DXP sites |
+| Can't include anonymous users | Includes anonymous users |
+| Good for limited, short-term personalization | Good for expansive, long-term personalization |
+
+For information on using Analytics Cloud Segments in Liferay DXP, see 
+[Using Analytics Cloud with User Segments](https://help.liferay.com/hc/en-us/articles/360029041751-Using-Analytics-Cloud-With-User-Segments). 
+For information on personalization in Liferay DXP, see 
+[Personalizing Experiences](https://help.liferay.com/hc/en-us/articles/360028721372-Introduction-to-Segmentation-and-Personalization#personalizing-experiences). 
+
+## Creating Dynamic Segments
 
 Follow these steps to create a Dynamic Segment:
 
@@ -147,7 +173,7 @@ criteria. Together, these tools let you build complex criteria for your Segment.
 
 ![Figure 4: Millennials interested in Liferay love avocado toast.](../../images/criteria-groups.png)
 
-## Static Segments
+## Creating Static Segments
 
 Follow these steps to create a Dynamic Segment: 
 
