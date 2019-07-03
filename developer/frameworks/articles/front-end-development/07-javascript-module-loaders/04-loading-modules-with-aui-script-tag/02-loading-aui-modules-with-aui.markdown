@@ -10,23 +10,23 @@ Follow these steps to load modules with `<aui:script>`:
 
 1.  Add the following declaration to your portlet's JSP:
 
-```markup
-<%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
-```
+    ```markup
+    <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+    ```
 
 2.  Add the `<aui:script>` tag and use the `use` attribute to load AlloyUI/YUI 
     modules:
 
-```javascript
-<aui:script use="aui-base">
-    A.one('#someNodeId').on(
-        'click',
-        function(event) {
-            alert('Thank you for clicking.')
-        }
-    );
-</aui:script>
-```
+    ```javascript
+    <aui:script use="aui-base">
+        A.one('#someNodeId').on(
+            'click',
+            function(event) {
+                alert('Thank you for clicking.')
+            }
+        );
+    </aui:script>
+    ```
 
 This loads the `aui-base` AlloyUI component and makes it available to the code 
 inside the `aui:script`.

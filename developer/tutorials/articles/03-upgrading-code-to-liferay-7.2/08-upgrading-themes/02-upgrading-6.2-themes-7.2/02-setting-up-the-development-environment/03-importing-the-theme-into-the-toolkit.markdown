@@ -19,9 +19,9 @@ Follow these steps to import your theme to use the Liferay JS Theme Toolkit:
 1.  Run the command below to import your 6.2 theme to use the Liferay JS Theme 
     Toolkit:
 
-```bash
-yo liferay-theme:import
-```
+    ```bash
+    yo liferay-theme:import
+    ```
 
 2.  Provide the path (relative or absolute) to the 6.2 theme project's root 
     folder and press the *Enter* key to import the theme.

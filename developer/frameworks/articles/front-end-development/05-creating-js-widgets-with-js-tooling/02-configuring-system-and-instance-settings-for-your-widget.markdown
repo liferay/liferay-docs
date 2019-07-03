@@ -24,51 +24,51 @@ portlet instance settings for your widget:
     pattern below. See the [Configuration JSON](/docs/7-2/reference/-/knowledge_base/r/configuration-json-available-options) 
     reference for an explanation of each of the available options:
  
-```json
-{
-  "system": {
-    "category": "{category identifier}",
-    "name": "{name of configuration}",
-    "fields": {
-      "{field id 1}": {
-        "type": "{field type}",
-        "name": "{field name}",
-        "description": "{field description}",
-        "default": "{default value}",
-        "options": {
-          "{option id 1}": "{option name 1}",
-          "{option id 2}": "{option name 2}",
+    ```json
+    {
+      "system": {
+        "category": "{category identifier}",
+        "name": "{name of configuration}",
+        "fields": {
+          "{field id 1}": {
+            "type": "{field type}",
+            "name": "{field name}",
+            "description": "{field description}",
+            "default": "{default value}",
+            "options": {
+              "{option id 1}": "{option name 1}",
+              "{option id 2}": "{option name 2}",
 
-          "{option id n}": "{option name n}"
+              "{option id n}": "{option name n}"
+            }
+          },
+          "{field id 2}": {},
+
+          "{field id n}": {}
         }
       },
-      "{field id 2}": {},
+      "portletInstance": {
+        "name": "{name of configuration}",
+        "fields": {
+          "{field id 1}": {
+            "type": "{field type}",
+            "name": "{field name}",
+            "description": "{field description}",
+            "default": "{default value}",
+            "options": {
+              "{option id 1}": "{option name 1}",
+              "{option id 2}": "{option name 2}",
 
-      "{field id n}": {}
-    }
-  },
-  "portletInstance": {
-    "name": "{name of configuration}",
-    "fields": {
-      "{field id 1}": {
-        "type": "{field type}",
-        "name": "{field name}",
-        "description": "{field description}",
-        "default": "{default value}",
-        "options": {
-          "{option id 1}": "{option name 1}",
-          "{option id 2}": "{option name 2}",
+              "{option id n}": "{option name n}"
+            }
+          },
+          "{field id 2}": {},
 
-          "{option id n}": "{option name n}"
+          "{field id n}": {}
         }
-      },
-      "{field id 2}": {},
-
-      "{field id n}": {}
+      }
     }
-  }
-}
-```
+    ```
 
 3.  Access a system setting's value or a portlet instance setting's value with 
     the syntax `configuration.system` or `configuration.portletInstance` 

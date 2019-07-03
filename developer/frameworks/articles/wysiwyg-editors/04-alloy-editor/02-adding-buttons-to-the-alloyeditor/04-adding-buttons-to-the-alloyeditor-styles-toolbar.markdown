@@ -33,20 +33,20 @@ Follow these steps to add a button to one of the Styles toolbars:
 
 1.  Inside the `populateConfigJSONObject()` method, retrieve the Styles toolbar:
 
-```java
-JSONObject stylesToolbar = toolbarsJSONObject.getJSONObject("styles");
+    ```java
+    JSONObject stylesToolbar = toolbarsJSONObject.getJSONObject("styles");
 
-if (stylesToolbar == null) {
-        stylesToolbar = JSONFactoryUtil.createJSONObject();
-}
-```
+    if (stylesToolbar == null) {
+            stylesToolbar = JSONFactoryUtil.createJSONObject();
+    }
+    ```
 
 2.  Retrieve the available selection toolbars:
 
-```java
-JSONArray selectionsJSONArray = stylesToolbar.getJSONArray(
-"selections");
-```
+    ```java
+    JSONArray selectionsJSONArray = stylesToolbar.getJSONArray(
+    "selections");
+    ```
 
 3.  Iterate through the selection toolbars, select the one you want to add 
     the button(s) to (`embedurl`, `image`, `link`, `table`, or `text`), retrieve 
@@ -57,19 +57,19 @@ JSONArray selectionsJSONArray = stylesToolbar.getJSONArray(
     [`plugin.js` file](/docs/7-1/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide) 
     for `editor.ui.addButton` to find the button's name:
 
-```java
-for (int i = 0; i < selectionsJSONArray.length(); i++) {
-        JSONObject selection = selectionsJSONArray.getJSONObject(i);
+    ```java
+    for (int i = 0; i < selectionsJSONArray.length(); i++) {
+            JSONObject selection = selectionsJSONArray.getJSONObject(i);
 
-        if (Objects.equals(selection.get("name"), "text")) {
-                JSONArray buttons = selection.getJSONArray("buttons");
+            if (Objects.equals(selection.get("name"), "text")) {
+                    JSONArray buttons = selection.getJSONArray("buttons");
 
-                buttons.put("Copy");
-                buttons.put("Cut");
-                buttons.put("Paste");
-        }
-}
-```
+                    buttons.put("Copy");
+                    buttons.put("Cut");
+                    buttons.put("Paste");
+            }
+    }
+    ```
 
     The example above adds one of the 
     [CKEditor plugins bundled with @product@'s AlloyEditor](/docs/7-2/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide). 
@@ -107,13 +107,13 @@ for (int i = 0; i < selectionsJSONArray.length(); i++) {
 
 4.  Update the AlloyEditor's configuration with the changes you made:
 
-```java
-stylesToolbar.put("selections", selectionsJSONArray);
+    ```java
+    stylesToolbar.put("selections", selectionsJSONArray);
 
-toolbarsJSONObject.put("styles", stylesToolbar);
+    toolbarsJSONObject.put("styles", stylesToolbar);
 
-jsonObject.put("toolbars", toolbarsJSONObject);
-```
+    jsonObject.put("toolbars", toolbarsJSONObject);
+    ```
 
 5.  [Deploy your module](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project) 
     and create a new piece of content that uses the AlloyEditor---such as a blog 

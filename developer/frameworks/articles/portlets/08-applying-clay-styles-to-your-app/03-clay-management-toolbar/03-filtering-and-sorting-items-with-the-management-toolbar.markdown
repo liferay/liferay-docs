@@ -30,69 +30,70 @@ filters.
     
     `BaseManagementToolbarDisplayContext` example:
 
-```java
-public class MyManagementToolbarDisplayContext
-  extends BaseManagementToolbarDisplayContext {
+    ```java
+    public class MyManagementToolbarDisplayContext
+      extends BaseManagementToolbarDisplayContext {
 
-  public MyManagementToolbarDisplayContext(
-    LiferayPortletRequest liferayPortletRequest,
-    LiferayPortletResponse liferayPortletResponse,
-    HttpServletRequest request) {
+      public MyManagementToolbarDisplayContext(
+        LiferayPortletRequest liferayPortletRequest,
+        LiferayPortletResponse liferayPortletResponse,
+        HttpServletRequest request) {
 
-    super(liferayPortletRequest, liferayPortletResponse, request);
-  }
-  ...
-}
+        super(liferayPortletRequest, liferayPortletResponse, request);
+      }
+      ...
+    }
+    ```
 
     `SearchContainerManagementToolbarDisplayContext` example:
 
-```java
-public class MyManagementToolbarDisplayContext
-  extends SearchContainerManagementToolbarDisplayContext {
+    ```java
+    public class MyManagementToolbarDisplayContext
+      extends SearchContainerManagementToolbarDisplayContext {
 
-  public MyManagementToolbarDisplayContext(
-    LiferayPortletRequest liferayPortletRequest,
-    LiferayPortletResponse liferayPortletResponse,
-    HttpServletRequest request, SearchContainer searchContainer) {
+      public MyManagementToolbarDisplayContext(
+        LiferayPortletRequest liferayPortletRequest,
+        LiferayPortletResponse liferayPortletResponse,
+        HttpServletRequest request, SearchContainer searchContainer) {
 
-    super(
-      liferayPortletRequest, liferayPortletResponse, request,
-      searchContainer);
-  }
-}
-```
+        super(
+          liferayPortletRequest, liferayPortletResponse, request,
+          searchContainer);
+      }
+    }
+    ```
 
 2.  Override the `getNavigationKeys()` method to return the navigation filter 
     dropdown item(s). If your app doesn't require any navigation filters, you 
     can just provide the *all* filter to display everything. An example 
     configuration is shown below:
 
-```java
-@Override
-protected String[] getNavigationKeys() {
-  return new String[] {"all", "pending", "done"};
-}
-```
+    ```java
+    @Override
+    protected String[] getNavigationKeys() {
+      return new String[] {"all", "pending", "done"};
+    }
+    ```
 
 3.  override the `getOrderByKeys()` method to return the columns to order. An 
     example configuration is shown below:
 
-```java
-@Override
-protected String[] getOrderByKeys() {
-  return new String[] {"name", "items", "status"};
-}
-```
+    ```java
+    @Override
+    protected String[] getOrderByKeys() {
+      return new String[] {"name", "items", "status"};
+    }
+    ```
 
 4.  Open the JSP view that contains the Clay Management Toolbar and set its 
     `displayContext` attribute to the Display Context you created. An example 
     configuration is shown below:
 
-```html
-<clay:management-toolbar
-	displayContext="<%= myManagementToolbarDisplayContext %>"
-/>
-```
+    ```html
+    <clay:management-toolbar
+    	displayContext="<%= myManagementToolbarDisplayContext %>"
+    />
+    ```
 
 Now you know how to configure the Management Toolbar's filters via a Display 
 Context. 

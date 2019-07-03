@@ -18,63 +18,63 @@ Follow these steps to create your OSGi bundle for your new button:
     the bundle's root folder. This is required to properly locate and load the 
     module's JavaScript: 
 
-```properties
-Bundle-Name: my-log-text-button
-Bundle-SymbolicName: com.liferay.docs.portlet
-Bundle-Version: 1.0.0
-Web-ContextPath: /my-button-portlet-project
-```
+    ```properties
+    Bundle-Name: my-log-text-button
+    Bundle-SymbolicName: com.liferay.docs.portlet
+    Bundle-Version: 1.0.0
+    Web-ContextPath: /my-button-portlet-project
+    ```
 
 4.  Since the button's configuration is defined in a JSX file, it must be 
     transpiled for the browser. You can do this by adding the `transpileJS` task 
     to your `build.gradle` file. An example configuration is shown below:
 
-```groovy
-configJSModules {
-    enabled = false
-}
+    ```groovy
+    configJSModules {
+        enabled = false
+    }
 
-dependencies {
-  compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.6.2"
-  compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
-  compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
-  compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
-  compileOnly group: "jstl", name: "jstl", version: "1.2"
-  compileOnly group: "org.osgi", name: "osgi.cmpn", version: "6.0.0"
-  compileOnly group: "org.osgi", name: "org.osgi.core", version: "6.0.0"
-}
+    dependencies {
+      compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.6.2"
+      compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
+      compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
+      compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+      compileOnly group: "jstl", name: "jstl", version: "1.2"
+      compileOnly group: "org.osgi", name: "osgi.cmpn", version: "6.0.0"
+      compileOnly group: "org.osgi", name: "org.osgi.core", version: "6.0.0"
+    }
 
-transpileJS {
-    bundleFileName = "js/buttons.js"
-    globalName = "AlloyEditor.Buttons"
-    modules = "globals"
-    srcIncludes = "**/*.jsx"
-}
-```
+    transpileJS {
+        bundleFileName = "js/buttons.js"
+        globalName = "AlloyEditor.Buttons"
+        modules = "globals"
+        srcIncludes = "**/*.jsx"
+    }
+    ```
 
 5.  Add the following `devDependencies` to your `package.json` file:
 
-```json
-{
-  "devDependencies": {
-    "babel-preset-react": "^6.11.1",
-    "metal-cli": "^4.0.1"
-  },
-  "name": "my-bundle-name",
-  "version": "1.0.0"
-}
-```
+    ```json
+    {
+      "devDependencies": {
+        "babel-preset-react": "^6.11.1",
+        "metal-cli": "^4.0.1"
+      },
+      "name": "my-bundle-name",
+      "version": "1.0.0"
+    }
+    ```
 
 6.  Add following preset to your module's `.babelc` file to transpile your JSX 
     file:
 
-```json
-{
-  "presets": [
-    "react"
-  ]
-}
-```
+    ```json
+    {
+      "presets": [
+        "react"
+      ]
+    }
+    ```
 
 ## Related Topics
 

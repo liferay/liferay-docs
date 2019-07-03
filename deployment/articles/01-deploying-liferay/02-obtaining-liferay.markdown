@@ -23,8 +23,9 @@ Clicking *Resources &rarr; Community Downloads* takes you to the
 [Community Downloads page](https://www.liferay.com/downloads-community),
 where you can access Liferay Portal CE or a trial of the enterprise supported
 Liferay DXP. The installers are available in several different formats. The
-formats include convenient bundles as well as `.war` files for installing
-@product@ on your application server of choice. 
+formats include a Liferay Tomcat bundle (@product@ bundled with Tomcat) as well
+as a @product@ `.war` (WAR) file for installing @product@ on an existing
+application server of choice. 
 
 Liferay enterprise subscribers can download Liferay DXP from the
 [Help Center](https://help.liferay.com/hc). 
@@ -33,13 +34,13 @@ Liferay enterprise subscribers can download Liferay DXP from the
 [Support page](https://help.liferay.com/hc/categories/360000894391-Product-Support)
 for a complete listing). Here are the ways to install @product@:
 
--   [Install a @product@ Tomcat bundle](#liferay-tomcat-bundle)
+-   [Install a Liferay Tomcat bundle](#liferay-tomcat-bundle)
     (Tomcat application server with @product@ pre-installed).
 
--   [Install the @product@ `.war`](#installing-the-product-war)
+-   [Install the Liferay WAR](#installing-the-product-war)
     (and supporting libraries) onto an existing application server.
 
-Since bundles is the easiest way, it's described first. 
+Since the Liferay Tomcat bundle is the easiest way, it's described first. 
 
 ## Liferay Tomcat Bundle
 
@@ -62,7 +63,7 @@ demonstrates installing @product@ from a bundle. Follow its instructions once
 you've prepared for installing @product@ (see the next article). 
 
 @product@ bundles might not be appropriate for you. Here are some reasons for
-installing the @product@ `.war` manually instead of using a bundle. 
+installing the @product@ WAR manually instead of using a bundle. 
 
 -   There is no @product@ bundle for the application server you want to use. 
 
@@ -72,17 +73,20 @@ installing the @product@ `.war` manually instead of using a bundle.
 
 Manual installation is described next. 
 
-## Installing the @product@ WAR
+## Downloading the Liferay WAR and Dependency JARs
 
-Manual installation requires installing the @product@ `.war` and required JARs
-onto the application server. There are specific configuration and script changes
-required on each application.
+Manual installation requires installing the @product@ WAR and dependency JARs
+onto the application server. These files are available to download for
+[DXP](https://customer.liferay.com/downloads) or [Portal
+CE](https://www.liferay.com/downloads-community):
+
+-   @product@ WAR file
+-   Dependencies ZIP file
+-   OSGi Dependencies ZIP file
 
 After preparing for install (next), follow the @product@ installation steps for
-your application server. The article titles follow this format, with
-*[Application Server]* replaced by the application server name. 
+your application server. There are specific configuration and script changes
+required on each application. The installation article titles follow this 
+format, with *[Application Server]* replaced by the application server name. 
 
 *Installing @product@ on [Application Server]*
-
-Once you've determined the install format that's right for you, download
-@product@. Preparing for installation is next!

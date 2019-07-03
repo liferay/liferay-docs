@@ -18,19 +18,19 @@ Follow these steps:
 
 2.  Use npm to install the [Yeoman](http://yeoman.io/) dependency:
 
-```bash
-npm install -g yo
-```
+    ```bash
+    npm install -g yo
+    ```
 
 3.  Install the Liferay Theme Generator v8.x.x with the command below:
 
-```bash
-npm install -g generator-liferay-theme@8.x.x
-```
+    ```bash
+    npm install -g generator-liferay-theme@8.x.x
+    ```
 
-| **Note:** Liferay Theme Generator v8.x.x supports importing 6.2 themes to use 
-| the Liferay JS Theme Toolkit. Later on, you will install the latest version of 
-| the Liferay Theme Generator to complete the upgrade process.
+    | **Note:** Liferay Theme Generator v8.x.x supports importing 6.2 themes to use 
+    | the Liferay JS Theme Toolkit. Later on, you will install the latest version of 
+    | the Liferay Theme Generator to complete the upgrade process.
 
     If you're on Windows, follow the instructions in step 4 to install Sass, 
     otherwise you can skip that step.

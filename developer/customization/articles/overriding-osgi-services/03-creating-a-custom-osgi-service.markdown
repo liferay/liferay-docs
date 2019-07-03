@@ -74,12 +74,12 @@ Here are the steps to create a custom OSGi service:
     to target the existing service. The example above refers to an existing 
     service like this:
 
-```java
-@Reference  (
-    target = "(component.name=override.my.service.reference.service.impl.SomeServiceImpl)"
-)
-private SomeService _defaultService;
-```
+    ```java
+    @Reference  (
+        target = "(component.name=override.my.service.reference.service.impl.SomeServiceImpl)"
+    )
+    private SomeService _defaultService;
+    ```
 
     The field lets you invoke the existing service in your custom service. 
 
