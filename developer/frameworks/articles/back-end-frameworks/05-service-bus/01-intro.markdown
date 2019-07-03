@@ -25,7 +25,7 @@ coupled.
 ### Destination Configuration
 
 Each destination has a name and type and can have several other attributes. The 
-destination type determines the following: 
+destination type determines these things: 
 
 -   Whether there's a message queue. 
 -   The kinds of threads involved with a destination. 
@@ -55,7 +55,7 @@ Here are the primary destination types:
 Preconfigured destinations exist for various purposes. The 
 [`DestinationNames`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
 class defines `String` constants for each. For example, 
-`DestinationNames.HOT_DEPLOY` (value is  `"liferay/hot_deploy"`) is for 
+`DestinationNames.HOT_DEPLOY` (value is `"liferay/hot_deploy"`) is for 
 deployment event messages. Since destinations are tuned for specific purposes, 
 don't modify them. 
 
