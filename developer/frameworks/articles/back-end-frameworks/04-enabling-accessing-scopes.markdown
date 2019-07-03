@@ -7,7 +7,7 @@ header-id: enabling-and-accessing-data-scopes
 [TOC levels=1-4]
 
 Apps can restrict their data to specific scopes (e.g., Global, Site, Page). 
-Here, you'll learn how to do the following: 
+Here, you'll learn how to 
 
 -   [Enable Scoping](#enabling-scoping) 
 -   [Access Your App's Scope](#accessing-your-apps-scope)
@@ -54,14 +54,14 @@ Users can typically set an app's scope to a page, a Site, or the entire portal.
 To handle your app's data, you must access it in its current scope. Your app's
 scope is available in these ways: 
 
-1.  Via the `scopeGroupId` variable that is injected in your JSPs that 
-    use the `<liferay-theme:defineObjects />` tag. This variable contains your 
-    app's current scope. For example, the Liferay Bookmarks app's 
+1.  Via the `scopeGroupId` variable injected in JSPs that use the
+    `<liferay-theme:defineObjects />` tag. This variable contains your app's
+    current scope. For example, the Liferay Bookmarks app's
     [`view.jsp`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/bookmarks/bookmarks-web/src/main/resources/META-INF/resources/bookmarks/view.jsp#L122-L125) 
     uses its `scopeGroupId` to retrieve the bookmarks and total number of 
     bookmarks in the current scope: 
 
-    ```markup
+    ```jsp
     ...
     total = BookmarksEntryServiceUtil.getGroupEntriesCount(scopeGroupId, groupEntriesUserId);
 
