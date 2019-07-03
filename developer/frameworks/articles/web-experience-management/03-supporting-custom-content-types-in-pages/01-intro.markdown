@@ -24,7 +24,7 @@ Display Page Templates work, see the
 article.
 
 If you want to extend the Content Page or Display Page Template framework to
-support other content types, you must leverage the
+support other content types, you must use the
 [Info framework](/docs/7-2/frameworks/-/knowledge_base/f/the-info-framework).
 
 You must complete the following steps:
@@ -42,7 +42,7 @@ As an example, you'll step through how to provide this information to the
 Content Page and Display Page Template frameworks.
 
 | **Note:** This section assumes you're customizing Display Page Templates'
-| available content types. The same development outlined in these articles also
+| available content types. The same process outlined in these articles also
 | applies to Content Pages, although it's not explicitly stated.
 
 Continue on to begin!

@@ -7,7 +7,7 @@ header-id: specifying-the-fields-of-a-custom-content-type
 [TOC levels=1-4]
 
 Now that your custom content type is selectable for a Display Page Template, you
-must specify the fields you want the user to map to the a fragment's editable
+must specify the fields you want the user to map to the fragment's editable
 fields in the Display Page Template. To do this, implement the
 [`InfoDisplayContributorField`](@app-ref@/info/2.0.0/javadocs/com/liferay/info/display/contributor/field/InfoDisplayContributorField.html)
 interface.

@@ -46,9 +46,9 @@ script in `$CATALINA_HOME/bin`.
 
 The first time @product@ starts, it creates all of its database tables. On
 completing startup, it launches a web browser that displays the Basic
-Configuration page. If for some reason your browser doesn't load the Basic
-Configuration page automatically, open your browser and navigate to your app
-server's address and port (for example, http://localhost:8080).
+Configuration page (the setup wizard). If for some reason your browser doesn't
+load the Basic Configuration page automatically, open your browser and navigate
+to your app server's address and port (for example, http://localhost:8080).
 
 ## Using the Setup Wizard 
 

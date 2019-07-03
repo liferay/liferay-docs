@@ -18,4 +18,4 @@ Theme upgrades involve these steps:
 -  Updating CSS
 -  Updating theme templates
 
-<a class="go-link btn btn-primary" href="/developer/tutorials/-/knowledge_base/7-2/t/running-the-upgrade-task-for-7-0-themes">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/running-the-upgrade-task-for-7-0-themes">Let's Go!<span class="icon-circle-arrow-right"></span></a>

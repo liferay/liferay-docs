@@ -19,7 +19,7 @@ or [Portal CE](https://www.liferay.com/downloads-community):
 
 - @product@ WAR file
 - Dependencies ZIP file
-- OSGi JARs ZIP file
+- OSGi Dependencies ZIP file
 
 | **Important:** 
 | [Prepare for the install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install)

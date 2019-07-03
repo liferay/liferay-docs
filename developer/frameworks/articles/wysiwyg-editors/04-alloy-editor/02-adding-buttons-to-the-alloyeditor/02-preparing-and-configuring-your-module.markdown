@@ -14,10 +14,10 @@ steps to create and configure the OSGi module:
     using 
     [Blade's portlet template](/docs/7-2/reference/-/knowledge_base/r/using-the-mvc-portlet-template):
 
-```bash
-blade create -t portlet -p com.liferay.docs.my.button -c 
-MyEditorConfigContributor my-new-button
-```
+    ```bash
+    blade create -t portlet -p com.liferay.docs.my.button -c 
+    MyEditorConfigContributor my-new-button
+    ```
 
 2.  Open the portlet's `build.gradle` file and update the 
     `com.liferay.portal.kernel` `version` to `4.13.1`. This is the version 
@@ -26,28 +26,28 @@ MyEditorConfigContributor my-new-button
 3.  Open the portlet class you created in step one (`MyEditorConfigContributor`) 
     and add the following imports:
 
-```java
-import com.liferay.portal.kernel.editor.configuration.BaseEditorConfigContributor;
-import com.liferay.portal.kernel.editor.configuration.EditorConfigContributor;
-import com.liferay.portal.kernel.json.JSONArray;
-import com.liferay.portal.kernel.json.JSONFactoryUtil;
-import com.liferay.portal.kernel.json.JSONObject;
-import com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory;
-import com.liferay.portal.kernel.theme.ThemeDisplay;
-```
+    ```java
+    import com.liferay.portal.kernel.editor.configuration.BaseEditorConfigContributor;
+    import com.liferay.portal.kernel.editor.configuration.EditorConfigContributor;
+    import com.liferay.portal.kernel.json.JSONArray;
+    import com.liferay.portal.kernel.json.JSONFactoryUtil;
+    import com.liferay.portal.kernel.json.JSONObject;
+    import com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory;
+    import com.liferay.portal.kernel.theme.ThemeDisplay;
+    ```
 
 4.  Replace the `@Component` and properties with the properties below:
 
-```java
-@Component(
-    immediate = true,
-    property = {
-      "editor.name=alloyeditor",
-      "service.ranking:Integer=100"
-    },
-    service = EditorConfigContributor.class  
-)
-```
+    ```java
+    @Component(
+        immediate = true,
+        property = {
+          "editor.name=alloyeditor",
+          "service.ranking:Integer=100"
+        },
+        service = EditorConfigContributor.class  
+    )
+    ```
 
     This targets AlloyEditor for the configuration and overrides the default 
     service by providing a higher 
@@ -61,26 +61,26 @@ import com.liferay.portal.kernel.theme.ThemeDisplay;
 6.  Replace the `doView()` method and contents with the 
     `populateConfigJSONObject()` method shown below:
 
-```java
-@Override
-public void populateConfigJSONObject(
-JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
-ThemeDisplay themeDisplay,
-RequestBackedPortletURLFactory requestBackedPortletURLFactory) {
+    ```java
+    @Override
+    public void populateConfigJSONObject(
+    JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
+    ThemeDisplay themeDisplay,
+    RequestBackedPortletURLFactory requestBackedPortletURLFactory) {
 
-}
-```
+    }
+    ```
 
 7.  Inside the `populateConfigJSONObject()` method, retrieve the AlloyEditor's 
     toolbars: 
 
-```java
-JSONObject toolbarsJSONObject = jsonObject.getJSONObject("toolbars");
+    ```java
+    JSONObject toolbarsJSONObject = jsonObject.getJSONObject("toolbars");
 
-if (toolbarsJSONObject == null) {
-        toolbarsJSONObject = JSONFactoryUtil.createJSONObject();
-}
-```
+    if (toolbarsJSONObject == null) {
+            toolbarsJSONObject = JSONFactoryUtil.createJSONObject();
+    }
+    ```
 
 8.  If you're adding a button for one of the 
     [CKEditor plugins bundled with the AlloyEditor](/docs/7-2/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide), 
@@ -88,21 +88,21 @@ if (toolbarsJSONObject == null) {
     AlloyEditor's configuration. The example below adds the `clipboard` CKEditor 
     plugin:
 
-```java
-String extraPlugins = jsonObject.getString("extraPlugins");
+    ```java
+    String extraPlugins = jsonObject.getString("extraPlugins");
 
-if (Validator.isNotNull(extraPlugins)) {
-  extraPlugins = extraPlugins + ",ae_uibridge,ae_autolink,
-  ae_buttonbridge,ae_menubridge,ae_panelmenubuttonbridge,ae_placeholder,
-  ae_richcombobridge,clipboard";
-}
-else {
-  extraPlugins = "ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,
-  ae_panelmenubuttonbridge,ae_placeholder,ae_richcombobridge,clipboard";
-}
+    if (Validator.isNotNull(extraPlugins)) {
+      extraPlugins = extraPlugins + ",ae_uibridge,ae_autolink,
+      ae_buttonbridge,ae_menubridge,ae_panelmenubuttonbridge,ae_placeholder,
+      ae_richcombobridge,clipboard";
+    }
+    else {
+      extraPlugins = "ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,
+      ae_panelmenubuttonbridge,ae_placeholder,ae_richcombobridge,clipboard";
+    }
 
-jsonObject.put("extraPlugins", extraPlugins);
-```
+    jsonObject.put("extraPlugins", extraPlugins);
+    ```
 
     AlloyEditor also comes with several plugins to bridge the gap between the 
     CKEditor's UI and the AlloyEditor's UI. These are prefixed with the `ae_` 

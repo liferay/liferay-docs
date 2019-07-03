@@ -17,27 +17,21 @@ installed. You can find more information about this fix pack
 Please also note that @product@ doesn't support the WebSphere Application 
 Liberty Profile. 
 
-You should also read the following articles to familiarize yourself with 
-@product@'s general installation steps: 
+| **Important:** Before installing @product@, familiarize yourself with
+| [preparing for install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install). 
 
--   [Preparing for Install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install)
--   [Installing @product@](/docs/7-2/deploy/-/knowledge_base/d/installing-product)
+Now, [download the @product@ WAR and Dependency
+JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the liferay-war-and-dependency-jars):
 
-Note that the  [*Liferay Home*
+-   @product@ WAR file
+-   Dependencies ZIP file
+-   OSGi Dependencies ZIP file
+
+Note that the [*Liferay Home*
 folder](docs/7-2/deploy/-/knowledge_base/d/liferay-home) is important to the
 operation of @product@. In Liferay Home, @product@ creates certain files and
 folders that it needs to run. On WebSphere, Liferay Home is typically `[Install
 Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
-
-To start, download @product@'s WAR file and dependencies from the customer
-portal on [liferay.com](https://customer.liferay.com/downloads). You'll need the
-following files: 
-
--   `liferay-dxp-[version].war`
-
--   `liferay-dxp-dependencies-[version].zip` 
-
--   `liferay-dxp-osgi-[version].zip` 
 
 Without any further ado, get ready to install @product@ in WebSphere! 
 
@@ -183,10 +177,10 @@ You must now install @product@'s dependencies. Recall that earlier you
 downloaded two ZIP files containing these dependencies. Install their contents 
 now: 
 
-1.  `liferay-dxp-dependencies-[version].zip`: Unzip this file and place its 
-    contents in your WebSphere application server's `[Install
-    Location]/WebSphere/AppServer/lib/ext` folder. If you have a JDBC database
-    driver `JAR`, copy it to this location as well. 
+1.  Unzip the Dependencies ZIP file and place its contents in your WebSphere 
+    application server's `[Install Location]/WebSphere/AppServer/lib/ext`
+    folder. If you have a JDBC database driver `JAR`, copy it to this location
+    as well. 
 
 2.  From the same archive, copy `portlet.jar`into `[Install
     Location]/WebSphere/AppServer/javaext` for WebSphere 9.0.0.x. WebSphere
@@ -194,9 +188,9 @@ now:
     at the highest class loader level. The new `portlet.jar` (version 3) is
     backwards-compatible. 
 
-3.  `liferay-dxp-osgi-[version].zip`: Unzip this file and place its contents in 
-    the `[Liferay Home]/osgi` folder (create this folder if it doesn't exist).
-    This is typically `[Install
+3.  Unzip the OSGi Dependencies ZIP file and place its contents in the 
+    `[Liferay Home]/osgi` folder (create this folder if it doesn't exist). This
+    is typically `[Install
     Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`. 
 
 Before starting the server, verify that all the following jars have been copied 

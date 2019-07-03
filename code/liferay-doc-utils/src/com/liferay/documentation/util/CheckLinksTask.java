@@ -882,6 +882,16 @@ public class CheckLinksTask extends Task {
 					String headerKeyValue = generateVirtualSecondaryHeader(line, article.getCanonicalPath());
 					secondaryHeaders.add(headerKeyValue);
 				}
+				else if (line.contains("<a name=" + quotation)) {
+
+					int begIndex = line.indexOf("<a name=");
+					int quotStart = line.indexOf(quotation, begIndex);
+					int quotClose = line.indexOf(quotation, quotStart + 1);
+
+					String htmlHeaderAnchor = line.substring(quotStart + 1, quotClose);
+
+					secondaryHeaders.add(htmlHeaderAnchor + article.getCanonicalPath());
+				}
 			}
 			in.close();
 		}
@@ -1180,7 +1190,6 @@ public class CheckLinksTask extends Task {
 			throws IOException {
 
 		boolean validUrl = false;
-		char quotation = '"';
 		LineNumberReader in = new LineNumberReader(new FileReader(article));
 		String line = null;
 
@@ -1230,29 +1239,35 @@ public class CheckLinksTask extends Task {
 
 		headers = assignDirHeaders(line, lineIndex);
 
-		// If headers is empty, the assignDirHeaders method could not match the
-		// relative URL with the header list (e.g., developer/user). This only
-		// happens when the first folder is valid but its subfolder isn't.
-		if (headers.isEmpty()) {
-			logInvalidUrl(article, in.getLineNumber(), line, false);
-		}
-
-		// Check 7.1 portal and 1.0 commerce links from local liferay-docs repo
-		else if ((line.contains("/" + PORTAL_VERSION + "/") || line.contains("/" + COMMERCE_VERSION + "/")) &&
+		// Check 7.2 portal and 1.1 commerce links from local liferay-docs repo
+		if ((line.contains("/" + PORTAL_VERSION + "/") || line.contains("/" + COMMERCE_VERSION + "/")) &&
 				!differingDefaultVersion) {
 
-			// Ensure portal link versions aren't mixed with commerce link versions
-			if (line.contains("/web/commerce/") && !line.contains(COMMERCE_VERSION)) {
-				logInvalidUrl(article, in.getLineNumber(), line, false);
-			}
-			
 			boolean docFoldersMatch = doesDocFoldersMatch(line, lineIndex);
-			if (!docFoldersMatch) {
-				logInvalidUrl(article, in.getLineNumber(), line, true);
+
+			// If headers is empty, the assignDirHeaders method could not match the
+			// relative URL with the header list (e.g., developer/user). This only
+			// happens when the first folder is valid but its subfolder isn't.
+			if (headers.isEmpty()) {
+
+				// Allow linking to parent folders of site
+				if (line.contains("/docs/" + PORTAL_VERSION + "/" + userGuideLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + deploymentGuideLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + distributeGuideLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + appDevLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + customizationDevLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + frameworksDevLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + tutorialsDevLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + referenceDevLinkFolder + ")")) {
+
+					validURL = true;
+				}
+				// else, invalid link
 			}
-
-			if (Validator.isNull(secondaryHeader)) {
-
+			else if (!docFoldersMatch) {
+				// invalid URL
+			}
+			else if (Validator.isNull(secondaryHeader)) {
 				if (headers.get(0).contains(primaryHeader)) {
 					validURL = true;
 				}
@@ -1337,6 +1352,7 @@ public class CheckLinksTask extends Task {
 	private static final int MAX_ID_LEN = 75;
 	private static String platformReferenceSite;
 	private static String platformToken;
+	private static char quotation = '"';
 	private static int resultsNumber = 0;
 	private static boolean validUrl;
 

@@ -15,21 +15,15 @@ Before getting started, create your Admin and Managed Servers. See
 [WebLogic's documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 for instructions on setting up and configuring Admin and Managed Servers. 
 
-You should also read the following articles to familiarize yourself with
-@product@'s general installation steps: 
+Also familiarize yourself with [preparing for
+install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install). 
 
-- [Installing @product@](/docs/7-2/deploy/-/knowledge_base/d/installing-product)
-- [Preparing for Install](docs/7-2/deploy/-/knowledge_base/d/preparing-for-install)
+Now, [download the @product@ WAR and Dependency
+JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the liferay-war-and-dependency-jars):
 
-Finally, download @product@'s WAR file and dependencies from the 
-[Customer Portal](https://customer.liferay.com/downloads).
-You'll need these files:
-
-- `liferay-dxp-[version].war`: @product@ WAR file
-
-- `liferay-dxp-dependencies-[version].zip`: @product@ dependencies
-
-- `liferay-dxp-osgi-[version].zip`: @product@ OSGi dependencies
+-   @product@ WAR file
+-   Dependencies ZIP file
+-   OSGi Dependencies ZIP file
 
 **Checkpoint**
 
@@ -174,7 +168,7 @@ Before installing @product@, you must set the  [*Liferay
 Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) folder's location via
 the `liferay.home` property in a
 [`portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
-file. You can also use this file to override  [other @product@
+file. You can also use this file to override [other @product@
 properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html)
 that you may need. 
 
@@ -210,12 +204,11 @@ You must now install @product@'s dependencies. Recall that earlier you
 downloaded two ZIP files containing these dependencies. Install their contents 
 now: 
 
-1.  `liferay-dxp-dependencies-[version].zip`: Unzip this file 
-    and place its contents in your WebLogic domain's `lib` folder. 
+1.  Unzip the Dependencies ZIP file and place its contents in your WebLogic
+    domain's `lib` folder. 
 
-2.  `liferay-dxp-osgi-[version].zip`: Unzip this file and 
-    place its contents in the `Liferay_Home/osgi` folder (create this folder if
-    it doesn't exist).
+2.  Unzip the OSGi Dependencies ZIP file and place its contents in the 
+    `Liferay_Home/osgi` folder (create this folder if it doesn't exist).
 
 You must also add your database's driver JAR file to your domain's `lib` folder.
 Note that although Hypersonic is fine for testing purposes, you **should not**
