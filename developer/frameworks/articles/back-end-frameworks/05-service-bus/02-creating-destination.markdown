@@ -10,8 +10,8 @@ header-id: creating-a-destination
 are based on destination configurations and registered as OSGi services. Service 
 Bus detects the destination services and manages their associated destinations. 
 
-Here are the general steps for creating a destination. The example configurator
-class that follows demonstrates these steps.
+Here are the steps for creating a destination. The example configurator class
+that follows demonstrates these steps.
 
 1.  Create an `activate(BundleContext)` method in your component. Then create a 
     [`BundleContext`](https://osgi.org/javadoc/r4v43/core/org/osgi/framework/BundleContext.html) 
