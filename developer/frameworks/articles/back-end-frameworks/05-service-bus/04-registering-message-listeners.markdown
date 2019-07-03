@@ -142,7 +142,7 @@ public class MyMessageListenerRegistrator {
 ```
 
 The `_destination` field's `@Reference` annotation binds it to a destination
-named `"someDestination"`. The `activate` method creates the listener and
+named `someDestination`. The `activate` method creates the listener and
 registers it to the destination. When this registrator component is destroyed,
 the `deactivate` method unregisters the listener. 
 
