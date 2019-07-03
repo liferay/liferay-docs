@@ -6,24 +6,12 @@ header-id: creating-a-blade-profile
 
 [TOC levels=1-4]
 
-Suppose you want to customize the normal Blade development workflow. Normally,
-Liferay developers who use Blade CLI run a series of Blade commands that all
-make sense in the *default* Liferay Workspace. What if the workspace, however,
-should support a containerized environment (e.g., Docker) or some other
-specialized environment? The commands used in the development workflow must
-complete the workflow slightly different.
+There are two steps when adding a new Blade profile:
 
-To customize Blade CLI's development workflow, create a Blade *profile*. Blade
-profiles let you *override* existing Blade commands or add *new* commands. For
-example, `blade init` for a profile `myprofile` would override the
-default `init` command to do something before/after the normal `init` command.
-The command `blade server start`, in the case of a profile, would override the
-`ServerStartCommand` in Blade and contribute its own way to start the Liferay
-server (e.g., in a container of some sort).
+- [Creating a new profile](#creating-a-new-profile)
+- [Setting the profile in Liferay Workspace](#setting-a-profile)
 
-Commands like `blade deploy` or `blade watch` would likely mean something
-completely different in the context of a profile, so they would need to be
-overridden too.
+You'll learn how to create a profile first.
 
 ## Creating a New Profile
 
@@ -31,35 +19,38 @@ To create a new Blade profile, follow these steps:
 
 1.  [Create a generic OSGi module](/docs/7-2/reference/-/knowledge_base/r/creating-a-project).
 
-2.  In the profile module's `src/main/java/PACKAGE_NAME` folder, create the
-    command and arguments classes extending
+2.  To create a new command, create the command and arguments classes extending
     [`BaseCommand`](https://github.com/liferay/liferay-blade-cli/blob/master/cli/src/main/java/com/liferay/blade/cli/command/BaseCommand.java)
     and
     [`BaseArgs`](https://github.com/liferay/liferay-blade-cli/blob/master/cli/src/main/java/com/liferay/blade/cli/command/BaseArgs.java),
     respectively, as described in the
     [Creating Custom Commands](/docs/7-2/reference/-/knowledge_base/r/creating-custom-commands-for-blade-cli)
-    article. These classes register your command and arguments to Blade CLI.
+    article. These classes should reside in the profile module's
+    `src/main/java/PACKAGE_NAME` folder. These classes register your command and
+    arguments to Blade CLI.
 
-3.  To override a default command, create the command class extending
+3.  To override a default command, create new command and arguments classes
+    similar to what was done
+    [here](/docs/7-2/reference/-/knowledge_base/r/creating-custom-commands-for-blade-cli).
+    Instead of extending the
     [`BaseCommand`](https://github.com/liferay/liferay-blade-cli/blob/master/cli/src/main/java/com/liferay/blade/cli/command/BaseCommand.java)
-    as described in the
-    [Creating Custom Commands](/docs/7-2/reference/-/knowledge_base/r/creating-custom-commands-for-blade-cli)
-    article. When specifying your arguments class, instead of extending
+    and
     [`BaseArgs`](https://github.com/liferay/liferay-blade-cli/blob/master/cli/src/main/java/com/liferay/blade/cli/command/BaseArgs.java),
-    extend the arguments class defined for the command to override.
-    
-    Then, set the `@Parameters` annotation's `commandNames` argument to the
-    command to override. For example, if you intend to override the default
-    `deploy` command, your arguments class declaration would look like this:
+    classes, extend the command/arguments classes defined for the command you
+    intend to override. Make sure to also set the `@Parameters` annotation's
+    `commandNames` argument to the command to override.
+
+    For example, if you intend to override the default `deploy` command, your
+    arguments class declaration would look like this:
 
     ```java
-    @Parameters(commandDescription = "Overriden Deploy Command", commandNames = "deploy")
+    @Parameters(commandDescription = "Overridden Deploy Command", commandNames = "deploy")
     public class OverriddenArgs extends DeployArgs {
 
     }
     ```
 
-    You can search for the default arguments classes
+    You can search for the default command/arguments classes
     [here](https://github.com/liferay/liferay-blade-cli/tree/master/cli/src/main/java/com/liferay/blade/cli/command).
 
 4.  To associate a command to your new profile, set the
@@ -86,7 +77,7 @@ Next, you'll learn how to set your new profile for use in a Liferay Workspace.
 
 ## Setting a Profile
 
-To set your new Blade profile in a Liferay Workspace open the
+To set your new Blade profile in a Liferay Workspace, open the
 `${workspaceDir}/.blade.properties` file and set the `profile.name` property to
 your profile name:
 

@@ -22,15 +22,18 @@ commands and also applies globally to all types of workspaces, you can create
 and install a new custom command as explained in the links above.
 
 Alternatively, you may want a set of custom commands that only apply to a
-specific workspace environment. If you want to create a fully-customized Liferay
-Workspace workflow tailored for your requirements in Blade CLI, you can create
-extensions that are all associated with a Blade *profile*. Whenever that profile
-is applied to a workspace, the custom extensions it provides are available.
+specific workspace environment. Normally, Liferay developers who use Blade CLI
+run a series of Blade commands that all make sense in the *default* Liferay
+Workspace. What if the workspace, however, should support a containerized
+environment (e.g., Docker) or some other specialized environment? The commands
+used in the development workflow must complete the workflow differently.
 
-For example, suppose you want to build some custom commands that only work when
-the Liferay Workspace is configured to use Docker or OpenShift. For this, you
-should create a Blade profile that supports the development workflow in that
-environment. For more information, see the
+To customize Blade CLI's development workflow, you must create a Blade
+*profile*. Blade profiles let you *override* existing Blade commands or add
+*new* commands in a preserved environment that can be applied to any Liferay
+Workspace. For example, `blade init` for a profile `myprofile` would override
+the default `init` command to do something before/after the normal `init`
+command. For more information, see the
 [Creating a Blade Profile](/docs/7-2/reference/-/knowledge_base/r/creating-a-blade-profile)
 article.
 

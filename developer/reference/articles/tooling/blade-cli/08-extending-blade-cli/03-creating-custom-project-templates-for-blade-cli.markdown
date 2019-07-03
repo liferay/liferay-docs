@@ -25,7 +25,7 @@ folder structure:
         - `archetype-resources`
             - Folder structure to be generated
 - `bnd.bnd`
-- `build.gradle`
+- `[build.gradle|pom.xml]`
 
 You can read more about Maven archetypes and their features and capabilities
 [here](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html).

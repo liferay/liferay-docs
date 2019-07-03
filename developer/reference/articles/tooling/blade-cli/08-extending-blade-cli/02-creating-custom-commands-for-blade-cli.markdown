@@ -15,8 +15,7 @@ To create a custom command for Blade CLI, follow these steps:
 
 2.  You'll leverage [JCommander](http://jcommander.org/) and the Blade CLI API
     to create your custom command. Add these dependencies in your build file.
-    For example, a `build.gradle` file's `dependencies` block would look like
-    this:
+    For example, a `build.gradle` file's `dependencies` block looks like this:
 
     ```groovy
     dependencies {
@@ -75,10 +74,10 @@ To create a custom command for Blade CLI, follow these steps:
 
     This class extends the
     [`BaseArgs`](https://github.com/liferay/liferay-blade-cli/blob/master/cli/src/main/java/com/liferay/blade/cli/command/BaseArgs.java)
-    class. Notice that the class has the `@Parameters` JCommander annotation.
-    This sets your command's description and name. The `@Parameter` annotation
-    applied to the private string `_name` sets how the command's parameter is
-    called and whether it's required.
+    class. Notice that the class declaration has the `@Parameters` JCommander
+    annotation. This sets your command's description and name. The `@Parameter`
+    annotation applied to the private string `_name` sets how the command's
+    parameter is called and whether it's required.
 
 5.  Since Blade looks for custom commands using the
     `com.liferay.blade.cli.command.BaseCommand` service interface, you must use
@@ -87,7 +86,7 @@ To create a custom command for Blade CLI, follow these steps:
 
     Create a file named `com.liferay.blade.cli.command.BaseCommand` in the
     `src/main/resources/META-INF/services/` folder. This class should list all
-    of your custom commands' FQDN classes:
+    of your custom commands' fully qualified class names:
 
     ```
     com.liferay.extensions.sample.command.Hello
