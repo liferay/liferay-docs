@@ -12,9 +12,9 @@ creating extensions, you can specify the extension name and help text, and
 implement it to meet your requirements. For more information on creating and
 installing custom extensions for Blade CLI, see the following topics:
 
-- [Creating Custom Commands for Blade CLI]()
-- [Creating Custom Project Templates for Blade CLI]()
-- [Installing New Extensions for Blade CLI]()
+- [Creating Custom Commands for Blade CLI](/docs/7-2/reference/-/knowledge_base/r/creating-custom-commands-for-blade-cli)
+- [Creating Custom Project Templates for Blade CLI](/docs/7-2/reference/-/knowledge_base/r/creating-custom-project-templates-for-blade-cli)
+- [Installing New Extensions for Blade CLI](/docs/7-2/reference/-/knowledge_base/r/installing-new-extensions-for-blade-cli)
 
 There are a few use cases to consider when extending Blade CLI. For example, if
 you only want to add a new command that adds to Blade CLI's standard set of
@@ -31,7 +31,7 @@ For example, suppose you want to build some custom commands that only work when
 the Liferay Workspace is configured to use Docker or OpenShift. For this, you
 should create a Blade profile that supports the development workflow in that
 environment. For more information, see the
-[Creating a Blade Profile]()
+[Creating a Blade Profile](/docs/7-2/reference/-/knowledge_base/r/creating-a-blade-profile)
 article.
 
 Continue on to learn more!
