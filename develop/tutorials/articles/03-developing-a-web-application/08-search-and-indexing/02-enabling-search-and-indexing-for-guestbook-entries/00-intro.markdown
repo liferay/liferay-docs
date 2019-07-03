@@ -17,4 +17,4 @@ Enabling search for guestbook entries in the Guestbook portlet takes two steps:
 When you finish, all the back-end search and indexing work for both entities 
 will be complete, leaving only the UI changes to complete. 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/creating-an-entry-indexer">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-0/tutorials/-/knowledge_base/t/creating-an-entry-indexer">Let's Go!<span class="icon-circle-arrow-right"></span></a>

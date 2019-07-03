@@ -19,4 +19,4 @@ There's a handy abstract class you can extend to make the job easier, called
 `BaseWorkflowHandler`. You'll do this next for both entities of the guestbook
 project, starting with guestbooks.
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/creating-a-workflow-handler-for-guestbooks">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-0/tutorials/-/knowledge_base/t/creating-a-workflow-handler-for-guestbooks">Let's Go!<span class="icon-circle-arrow-right"></span></a>
