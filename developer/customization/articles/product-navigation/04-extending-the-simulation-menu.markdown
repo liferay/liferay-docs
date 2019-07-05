@@ -6,31 +6,17 @@ header-id: extending-the-simulation-menu
 
 [TOC levels=1-4]
 
-When testing how pages and apps appear for users, it's important to simulate
-their views in as many ways as possible. The Simulation Menu on the right-side
-of the main page allows this, and you can extend the menu if you need to
-simulate something that it does not provide.
-
-First, you must get accustomed to using panel categories/apps. This is
-covered in detail in the
-[Customizing The Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
-articles. Once you know how to create panel categories and panel apps, continue
-with this article.
-
-There are few differences between the Simulation Menu and Product Menu, mostly
-because they extend the same base classes. The Simulation Menu, by default, is
-made up of only one panel category and one panel app. Liferay provides the
-[`SimulationPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/product-navigation/product-navigation-simulation-web/src/main/java/com/liferay/product/navigation/simulation/web/internal/application/list/SimulationPanelCategory.java)
-class, a hidden category needed to hold the `DevicePreviewPanelApp`. This is the
-app and functionality you see in the Simulation Menu by default.
-
-![Figure 1: The Simulation Menu offers a device preview application.](../../images/simulation-menu-preview.png)
-
 To provide your own functionality in the Simulation Menu, you must create a
 panel app in `SimulationPanelCategory`. If you want to add extensive
 functionality, you can even create additional panel categories in the menu to
 divide up your panel apps. This article covers the simpler case of creating a
 panel app for the already present hidden category.
+
+Before beginning, make sure you're accustomed to using panel categories/apps.
+This is covered in detail in the
+[Customizing the Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
+articles. Once you know how to create panel categories and panel apps, continue
+with this article.
 
 1.  Follow the steps documented in 
     [Adding Custom Panel Apps](/docs/7-2/customization/-/knowledge_base/c/adding-custom-panel-apps)

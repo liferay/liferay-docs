@@ -73,7 +73,23 @@ articles.
 
 ## Simulation Menu
 
+When testing how pages and apps appear for users, it's important to simulate
+their views in as many ways as possible. The Simulation Menu on the right-side
+of the main page allows this, and you can extend the menu if you need to
+simulate something that it does not provide.
 
+![Figure 1: The Simulation Menu offers a device preview application.](../../images/simulation-menu-preview.png)
+
+There are few differences between the Simulation Menu and Product Menu, mostly
+because they extend the same base classes. The Simulation Menu, by default, is
+made up of only one panel category and one panel app. Liferay provides the
+[`SimulationPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/product-navigation/product-navigation-simulation-web/src/main/java/com/liferay/product/navigation/simulation/web/internal/application/list/SimulationPanelCategory.java)
+class, a hidden category needed to hold the `DevicePreviewPanelApp`. This is the
+app and functionality you see in the Simulation Menu by default.
+
+For more information, read the
+[Extending the Simulation Menu](/docs/7-2/customization/-/knowledge_base/c/extending-the-simulation-menu)
+article.
 
 ## User Personal Menu
 
