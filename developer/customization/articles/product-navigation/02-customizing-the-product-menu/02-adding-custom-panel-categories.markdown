@@ -11,11 +11,13 @@ and *Settings* are organized into Panel Categories such as *Content & Data* and
 *Configuration*. This article explains how to add new Panel Categories to the
 menu. Adding new Panel Apps is covered in the next section.
 
-There are two steps to creating a new category:
+There are three steps to creating a new category:
 
-1.  [Create the OSGi structure and metadata.](#creating-the-osgi-module)
+1.  Create the OSGi structure and metadata.
 
-2.  [Implement Liferay's Frameworks.](#implementing-liferays-frameworks)
+2.  Implement Liferay's Frameworks.
+
+3.  Define the Panel Category.
 
 ## Creating the OSGi Module
 

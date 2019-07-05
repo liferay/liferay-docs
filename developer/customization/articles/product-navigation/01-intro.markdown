@@ -51,7 +51,25 @@ articles.
 
 ## Control Menu
 
+The Control Menu is the most visible and accessible menu. For example, on your 
+home page, the Control Menu offers default options for accessing the Product
+Menu, Simulation Menu, and Add Menu. You can think of this menu as the gateway
+to configuring options in @product@.
 
+![Figure 1: The Control Menu has three configurable areas: left, right, and middle. It also displays the title and type of page that you are currently viewing.](../../../images/control-menu-home.png)
+
+If you navigate away from the home page, the Control Menu adapts and provides
+helpful functionality for whatever option you're using. For example, if you
+navigate to Site Administration &rarr; *Content & Data* &rarr; *Web Content*,
+you see a Control Menu with different functionality tailored for that option.
+
+![Figure 2: When switching your context to web content, the Control Menu adapts to provide helpful options for that area.](../../../images/control-menu-web-content.png)
+
+The default Control Menu contains three categories representing the left,
+middle, and right portions of the menu. You can create navigation entries for
+each category. For more information, read the
+[Customizing the Control Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-control-menu)
+articles.
 
 ## Simulation Menu
 
