@@ -27,7 +27,7 @@ First you must create the project.
     [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli). Blade CLI
     offers a 
     [Panel App](/docs/7-2/reference/-/knowledge_base/r/panel-app-template)
-    template, which is for creating a panel category and panel app.
+    template, which is for creating a Panel Category and Panel App.
 
 2.  Create a unique package name in the module's `src` directory and create
     a new Java class in that package. To follow naming conventions, give your
@@ -80,7 +80,7 @@ define information about your entry. This takes only two steps:
     your category is displayed. The higher the number (integer), the lower your
     category is listed among other sibling categories assigned to a parent.
 
-    | **Note:** To insert a panel category between existing categories in the
+    | **Note:** To insert a Panel Category between existing categories in the
     | default menu, you must know the `panel.category.order:Integer` property
     | for the existing categories. For example, the Product Menu's two main
     | sections---Control Panel and Site Administration---have
@@ -123,6 +123,6 @@ define information about your entry. This takes only two steps:
     }
     ```
 
-Excellent! You've successfully created a custom panel category to display in the
-Product Menu. In many cases, a panel category holds panel apps for users to
-access. You'll learn how to add a panel app to a panel category next.
+Excellent! You've successfully created a custom Panel Category to display in the
+Product Menu. In many cases, a Panel Category holds Panel Apps for users to
+access. You'll learn how to add a Panel App to a Panel Category next.

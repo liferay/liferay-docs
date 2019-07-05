@@ -6,8 +6,8 @@ header-id: customizing-the-product-menu
 
 [TOC levels=1-4]
 
-Customizing the Product Menu can be completed by adding panel categories and
-panel apps.
+Customizing the Product Menu can be completed by adding Panel Categories and
+Panel Apps.
 
 | **Note:** The Product Menu cannot be changed by applying a new theme. To
 | change the layout/style of the Product Menu, you must create and deploy a
@@ -26,12 +26,12 @@ interfaces.
 The `PanelCategory` interface requires you to implement the following methods:
 
 - `getNotificationCount`: returns the number of notifications to be shown in
-  the panel category.
-- `include`: renders the body of the panel category.
-- `includeHeader`: renders the panel category header.
+  the Panel Category.
+- `include`: renders the body of the Panel Category.
+- `includeHeader`: renders the Panel Category header.
 - `isActive`: whether the panel is selected.
-- `isPersistState`: whether to persist the panel category's state to the
-  database. This saves the state of the panel category when navigating away from
+- `isPersistState`: whether to persist the Panel Category's state to the
+  database. This saves the state of the Panel Category when navigating away from
   the menu.
 
 You can reduce the number of methods you must implement if you extend a base
@@ -51,7 +51,7 @@ If you plan to use JSPs as the front-end technology, extend a base class called
 `includeHeader()` for you.
  
 | **Note:** In this article, example JSPs describe how to provide functionality
-| to panel categories and apps. JSPs, however, are not the only way to provide
+| to Panel Categories and Panel Apps. JSPs, however, are not the only way to provide
 | front-end functionality to your categories/apps. You can create your own class
 | implementing `PanelCategory` to use other technologies such as FreeMarker.
 
@@ -60,11 +60,11 @@ implementation are described next.
 
 ### BasePanelCategory
 
-If you need something simple for your panel category like a name, extending
+If you need something simple for your Panel Category like a name, extending
 `BasePanelCategory` is probably sufficient. For example, the
 [`ControlPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/product-navigation/product-navigation-control-panel/src/main/java/com/liferay/product/navigation/control/panel/internal/application/list/ControlPanelCategory.java)
 extends `BasePanelCategory` and specifies a `getLabel` method to set and display
-the panel category name.
+the Panel Category name.
 
 ```java
 @Override
@@ -76,7 +76,7 @@ public String getLabel(Locale locale) {
 ### BaseJSPPanelCategory
 
 If you need more complex functionality, extend `BaseJSPPanelCategory` and use
-JSPs to render the panel category. For example, the
+JSPs to render the Panel Category. For example, the
 [`SiteAdministrationPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/product-navigation/product-navigation-site-administration/src/main/java/com/liferay/product/navigation/site/administration/internal/application/list/SiteAdministrationPanelCategory.java)
 specifies the `getHeaderJspPath` and `getJspPath` methods. You could create
 a JSP with the UI you want to render and specify its path in methods like these:
@@ -93,7 +93,7 @@ public String getJspPath() {
 }
 ```
 
-One JSP renders the panel category's header (displayed when panel is collapsed)
+One JSP renders the Panel Category's header (displayed when panel is collapsed)
 and the other its body (displayed when panel is expanded).
 
 Next, you'll learn about the `PanelApp` interface.
@@ -122,13 +122,13 @@ abstract classes. If you want to use JSPs to render that UI, extend
 JSP functionality into your app's listing in the Product Menu.
 
 | **Note:** JSPs are not the only way to provide front-end functionality to your
-| panel apps. You can create your own class implementing `PanelApp` to use other
+| Panel Apps. You can create your own class implementing `PanelApp` to use other
 | technologies such as FreeMarker.
 
 The `BlogsPanelApp` is a simple example of how to specify your portlet as a
-panel app. This class extends `BasePanelApp`, overriding the `getPortletId` and
-`setPortlet` methods. These methods specify and set the Blogs portlet as a panel
-app.
+Panel App. This class extends `BasePanelApp`, overriding the `getPortletId` and
+`setPortlet` methods. These methods specify and set the Blogs portlet as a Panel
+App.
 
 This is how those methods look for the Blogs portlet:
 
@@ -148,9 +148,9 @@ public void setPortlet(Portlet portlet) {
 }
 ```
 
-Each panel app must belong to a portlet and each portlet can have at most one
-panel app. If more than one panel app is needed, another portlet must be
-created. By default, the panel app only appears if the user has permission to
+Each Panel App must belong to a portlet and each portlet can have at most one
+Panel App. If more than one Panel App is needed, another portlet must be
+created. By default, the Panel App only appears if the user has permission to
 view the associated portlet.
 
-Continue on the learn about creating custom panel categories and panel apps.
+Continue on the learn about creating custom Panel Categories and Panel Apps.

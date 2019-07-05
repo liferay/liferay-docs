@@ -35,16 +35,16 @@ You'll learn more about each of these product navigation sections next.
 ## Product Menu
 
 By default, Liferay's Product Menu consists of two main sections: Control Panel
-and Site Administration. These sections are called *panel categories*. For
-instance, the Control Panel is a single panel category, and when clicking on it,
-you see six child panel categories: *Users*, *Sites*, *Apps*, *Configuration*,
-*Workflow*, and *Change Lists*. Clicking a child panel category shows *panel
+and Site Administration. These sections are called *Panel Categories*. For
+instance, the Control Panel is a single Panel Category, and when clicking on it,
+you see six child Panel Categories: *Users*, *Sites*, *Apps*, *Configuration*,
+*Workflow*, and *Change Lists*. Clicking a child Panel Category shows *panel
 apps*.
 
 The Product Menu is intuitive and easy to use---but you can still change it any
-way you want. You can reorganize the panel categories and apps, or add
-completely new categories and populate them with custom panel apps. You'll
-learn how to provide new or modified panel categories and panel apps for the
+way you want. You can reorganize the Panel Categories and apps, or add
+completely new categories and populate them with custom Panel Apps. You'll
+learn how to provide new or modified Panel Categories and Panel Apps for the
 Product Menu. For more information, read the
 [Customizing the Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
 articles.
@@ -82,7 +82,7 @@ simulate something that it does not provide.
 
 There are few differences between the Simulation Menu and Product Menu, mostly
 because they extend the same base classes. The Simulation Menu, by default, is
-made up of only one panel category and one panel app. Liferay provides the
+made up of only one Panel Category and one Panel App. Liferay provides the
 [`SimulationPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/product-navigation/product-navigation-simulation-web/src/main/java/com/liferay/product/navigation/simulation/web/internal/application/list/SimulationPanelCategory.java)
 class, a hidden category needed to hold the `DevicePreviewPanelApp`. This is the
 app and functionality you see in the Simulation Menu by default.
@@ -103,7 +103,7 @@ appear anywhere in the interface.
 Although Liferay's default User Personal Menu is bare-bones, you can
 add more functionality to fit your needs. Unlike other product navigation menus
 (e.g., Product Menu), the User Personal Bar does not require the
-extension/creation of panel categories and panel apps. It uses another common
+extension/creation of Panel Categories and Panel Apps. It uses another common
 Liferay framework for providing functionality:
 [Portlet Providers](/docs/7-2/frameworks/-/knowledge_base/f/embedding-portlets-in-themes).
 
@@ -114,7 +114,9 @@ placeholder, but the portlet Liferay provides can be replaced by other portlets.
 | **Note:** You can add the User Personal Bar to your theme by adding the
 | following snippet into your `portal_normal.ftl`:
 | 
-|     <@liferay.user_personal_bar />
+| ```
+| <@liferay.user_personal_bar />
+| ```
 
 For more information, read the
 [Providing the User Personal Menu](/docs/7-2/customization/-/knowledge_base/c/providing-the-user-personal-menu)

@@ -7,21 +7,21 @@ header-id: extending-the-simulation-menu
 [TOC levels=1-4]
 
 To provide your own functionality in the Simulation Menu, you must create a
-panel app in `SimulationPanelCategory`. If you want to add extensive
-functionality, you can even create additional panel categories in the menu to
-divide up your panel apps. This article covers the simpler case of creating a
-panel app for the already present hidden category.
+Panel App in `SimulationPanelCategory`. If you want to add extensive
+functionality, you can even create additional Panel Categories in the menu to
+divide up your Panel Apps. This article covers the simpler case of creating a
+Panel App for the already present hidden category.
 
-Before beginning, make sure you're accustomed to using panel categories/apps.
-This is covered in detail in the
+Before beginning, make sure you're accustomed to using Panel Categories and
+Panel Apps. This is covered in detail in the
 [Customizing the Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
-articles. Once you know how to create panel categories and panel apps, continue
+articles. Once you know how to create Panel Categories and Panel Apps, continue
 with this article.
 
 1.  Follow the steps documented in 
     [Adding Custom Panel Apps](/docs/7-2/customization/-/knowledge_base/c/adding-custom-panel-apps)
-    for creating custom panel apps. Once you've created the foundation 
-    of your panel app, move on to learn how to tweak it so it customizes the
+    for creating custom Panel Apps. Once you've created the foundation 
+    of your Panel App, move on to learn how to tweak it so it customizes the
     Simulation Menu.
 
     You can generate a Simulation Panel App by using Blade CLI's
@@ -41,14 +41,14 @@ with this article.
     To use this constant, you must add a dependency on 
     [`com.liferay.product.navigation.simulation`](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.product.navigation.simulation/).
 
-    Be sure to also specify the order to display your new panel app,
+    Be sure to also specify the order to display your new Panel App,
     which was explained in [Adding Custom Panel Apps](/docs/7-2/customization/-/knowledge_base/c/adding-custom-panel-apps).
 
 3.  This article assumes you're using JSPs. 
     Therefore, you should extend the [`BaseJSPPanelApp`](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/BaseJSPPanelApp.html)
     abstract class, which implements the [`PanelApp`](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/PanelApp.html)
     interface and also provides additional methods necessary for specifying JSPs
-    to render your panel app's UI. Remember that you can also implement your own
+    to render your Panel App's UI. Remember that you can also implement your own
     `include()` method to use any front-end technology you want, if you want to
     use a technology other than JSP (e.g., FreeMarker).
 
@@ -72,9 +72,9 @@ with this article.
     ```
 
     As explained in [Customizing The Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu),
-    a panel app should be associated with a portlet. This makes the panel app 
+    a Panel App should be associated with a portlet. This makes the Panel App 
     visible only when the user has permission to view the portlet.
-    This panel app is associated to the Simulation Device portlet using these
+    This Panel App is associated to the Simulation Device portlet using these
     methods:
 
     ```java
@@ -97,7 +97,7 @@ with this article.
     Segments also provides a good example of how to extend the Simulation Menu.
     When segments are available, the Simulation Menu is extended to offer
     personalization options. You can simulate particular experiences directly
-    from the Simulation Menu. Its panel app class is similar to
+    from the Simulation Menu. Its Panel App class is similar to
     `DevicePreviewPanelApp`, except it points to a different portlet and JSP.
     For more information on Segments, see the
     [Segmentation and Personalization](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization)
@@ -120,7 +120,7 @@ with this article.
     iframe.setAttribute('src', newUrlWithCustomParameters);
     ```
 
-Now that you know how to extend the necessary panel categories and panel apps to
+Now that you know how to extend the necessary Panel Categories and Panel Apps to
 modify the Simulation Menu,
 [create a module](/docs/7-2/reference/-/knowledge_base/r/creating-a-project) 
 of your own and customize the Simulation Menu so it's most helpful for your 

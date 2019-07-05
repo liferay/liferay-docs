@@ -9,8 +9,8 @@ header-id: creating-control-menu-entries
 Now you'll create entries to customize the Control Menu. Make sure to read
 [Adding Custom Panel Categories](/docs/7-2/customization/-/knowledge_base/c/adding-custom-panel-categories)
 before beginning this article. This article assumes you know how to create a 
-panel category. Creating a Control Menu Entry follows the same pattern as
-creating a category:
+Panel Category. Creating a Control Menu Entry follows the same pattern as
+creating a Panel Category:
 
 1.  Create the OSGi structure and metadata.
 
@@ -62,7 +62,7 @@ to define information about your entry.
     "product.navigation.control.menu.category.key=" + ProductNavigationControlMenuCategoryKeys.TOOLS
     ```
 
-    Like panel categories, you must specify an integer to place your entry in
+    Like Panel Categories, you must specify an integer to place your entry in
     the category. Entries are ordered from left to right: an entry with order
     `1` appears to the left of an entry with order `2`. If the order is
     not specified, it's chosen at random based on which service was registered
