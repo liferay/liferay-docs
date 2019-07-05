@@ -6,10 +6,12 @@ header-id: mvc-resource-command
 
 [TOC levels=1-4]
 
-When using Liferay's MVCPortlet framework, you can create resource URLs in your
-JSPs to retrieve images, XML, or any other kind of resource from a @product@
-instance. The resource URL then invokes the corresponding MVC resource command
-class (`*MVCResourceCommand`) that processes the resource request and response. 
+When using Liferay's [MVCPortlet
+framework](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet), you can
+create resource URLs in your JSPs to retrieve images, XML, or any other kind of
+resource from a @product@ instance. The resource URL then invokes the
+corresponding MVC resource command class (`*MVCResourceCommand`) that processes
+the resource request and response. 
 
 Here how to create your own MVC Resource Command:
 
@@ -148,6 +150,8 @@ Liferay MVC Portlets.
 ## Related Topics
 
 [Creating an MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/creating-an-mvc-portlet)
+
+[Configuring the View Layer](/docs/7-2/appdev/-/knowledge_base/a/configuring-the-view-layer)
 
 [MVC Render Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-render-command)
 

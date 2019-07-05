@@ -149,6 +149,8 @@ actions.
 
 [Creating an MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/creating-an-mvc-portlet)
 
+[Configuring the View Layer](/docs/7-2/appdev/-/knowledge_base/a/configuring-the-view-layer)
+
 [MVC Render Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-render-command)
 
 [MVC Resource Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-resource-command)

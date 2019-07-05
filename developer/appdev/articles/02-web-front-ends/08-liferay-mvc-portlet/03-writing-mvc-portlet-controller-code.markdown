@@ -248,6 +248,8 @@ but there's more to the view layer than that. The view layer is up next.
 
 [Creating an MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/creating-an-mvc-portlet)
 
+[Configuring the View Layer](/docs/7-2/appdev/-/knowledge_base/a/configuring-the-view-layer)
+
 [MVC Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command)
 
 [MVC Render Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-render-command)

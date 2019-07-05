@@ -122,6 +122,8 @@ multiple command names for multiple portlets.
 
 [Creating an MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/creating-an-mvc-portlet)
 
+[Configuring the View Layer](/docs/7-2/appdev/-/knowledge_base/a/configuring-the-view-layer)
+
 [MVC Resource Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-resource-command)
 
 [MVC Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command)

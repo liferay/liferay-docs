@@ -152,6 +152,8 @@ Congratulations on creating and deploying an MVC Portlet!
 
 [Writing MVC Portlet Controller Code](/docs/7-2/appdev/-/knowledge_base/a/writing-mvc-portlet-controller-code)
 
+[Configuring the View Layer](/docs/7-2/appdev/-/knowledge_base/a/configuring-the-view-layer)
+
 [MVC Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command)
 
 [MVC Render Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-render-command)

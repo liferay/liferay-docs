@@ -175,6 +175,14 @@ communication between a smaller application's view layer and controller.
 
 ## Related Topics 
 
+[Writing MVC Portlet Controller Code](/docs/7-2/appdev/-/knowledge_base/a/writing-mvc-portlet-controller-code)
+
+[MVC Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command)
+
+[MVC Render Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-render-command)
+
+[MVC Resource Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-resource-command)
+
 [Front-end Taglibs](/docs/7-2/reference/-/knowledge_base/r/front-end-taglibs)
 
 [Liferay JavaScript APIs](https://portal.liferay.dev/docs/7-2/reference/-/knowledge_base/r/liferay-javascript-apis)

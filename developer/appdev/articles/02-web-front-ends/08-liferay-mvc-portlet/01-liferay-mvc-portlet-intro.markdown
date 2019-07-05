@@ -12,7 +12,7 @@ View Controller. In this article you must stay focused, because there are
 several attempts to show you why Liferay's implementation of Model View
 Controller is different, when instead you're hearing about another MVC
 framework. With that in mind, let's get back to the MVC pattern we were
-discussing.
+discussing. 
 
 If there are so many implementations of MVC frameworks in Java, why did Liferay
 create yet another one? Stay with us and you'll see that Liferay MVC Portlet
@@ -23,18 +23,19 @@ provides these benefits:
     your code. 
 -   It's a simple extension of
     [`GenericPortlet`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/GenericPortlet.html). 
--   You avoid writing a bunch of boilerplate code, since Liferay's MVC framework
-    simply looks for some pre-defined parameters when the `init()` method is
-    called. 
+-   You avoid writing a bunch of boilerplate code, since Liferay's MVC Portlet 
+    framework simply looks for some pre-defined parameters when the `init()`
+    method is called. 
 -   The controller can be broken down into MVC command classes, each of which
-    handles the controller code for a particular portlet phase (render, action,
-    and resource serving phases). 
--   An MVC command class can serve multiple portlets. 
+    handles the controller code for a particular [portlet
+    phase](/docs/7-2/frameworks/-/knowledge_base/f/portlets) (render, action,
+    and resource serving phases).  -   An MVC command class can serve multiple
+    portlets. 
 -   Liferay's portlets use it. That means there are plenty of robust
     implementations to reference when you need to design or troubleshoot your
     Liferay applications.
 
-The Liferay MVC portlet framework is light, it hides part of the complexity of
+The Liferay MVC Portlet framework is light, it hides part of the complexity of
 portlets, and it makes the most common operations easier. The default
 [`MVCPortlet`
 project](/docs/7-2/reference/-/knowledge_base/r/using-the-mvc-portlet-template)
@@ -109,7 +110,6 @@ component as an example:
 
 ```java
 @Component(
-    immediate = true,
     property = {
         "com.liferay.portlet.css-class-wrapper=portlet-hello-world",
         "com.liferay.portlet.display-category=category.sample",
@@ -159,7 +159,7 @@ interface. Import that, and not, for example,
 |     "com.liferay.portlet.css-class-wrapper=portlet-hello-world",
 | 
 | The properties namespaced with `javax.portlet....` are elements of the
-| [portlet.xml descriptor](https://docs.liferay.com/portlet-api/3.0/portlet-app_3_0.xsd).
+| [`portlet.xml` descriptor](https://docs.liferay.com/portlet-api/3.0/portlet-app_3_0.xsd).
 
 ## A Simpler MVC Portlet
 
@@ -178,7 +178,7 @@ portlet render URLs specify JSP paths in `mvcPath` parameters.
 </portlet:renderURL>
 ```
 
-As you've seen, Liferay's MVC portlet framework gives you a well-structured
+As you've seen, Liferay's MVC Portlet framework gives you a well-structured
 controller layer that takes very little time to implement. With all your free
 time, you could
 
