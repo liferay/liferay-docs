@@ -150,7 +150,7 @@ Congratulations on creating and deploying an MVC Portlet!
 
 ## Related Topics 
 
-[Developing a Simple MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/developing-a-simple-mvc-portlet)
+[Writing MVC Portlet Controller Code](/docs/7-2/appdev/-/knowledge_base/a/writing-mvc-portlet-controller-code)
 
 [MVC Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command)
 

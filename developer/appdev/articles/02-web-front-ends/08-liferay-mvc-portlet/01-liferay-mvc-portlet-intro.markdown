@@ -189,11 +189,9 @@ time, you could
 
 It's entirely up to you. 
 
-<!--Uncomment once article is available
-To get into the details of creating an MVC Portlet
-application, continue with 
-Creating an MVC Portlet. 
--->
+To get into the details of creating an MVC Portlet application, continue with
+[Creating an MVC
+Portlet](/docs/7-2/appdev/-/knowledge_base/a/creating-an-mvc-portlet). 
 
 ## Related Topics 
 
