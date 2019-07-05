@@ -81,7 +81,7 @@ Here's how to use a render URL:
     [`<portlet:renderURL>`](@platform-ref@/7.2-latest/taglibs/util-taglib/portlet/renderURL.html)
     to your JSP. 
 
-2.  Name the renderURL via a `var` attribute in the `<portlet:renderURL>` tag.
+2.  Name the render URL via a `var` attribute in the `<portlet:renderURL>` tag.
     The `<portlet:renderURL>` tag constructs the URL and assigns it to the
     variable. For example, this render URL is assigned to the variable named
     `adminURL`: 
@@ -138,7 +138,7 @@ Here's how to use an action URL:
     `<portlet:actionURL>` tag constructs the URL and assigns it to the `var`
     variable.
 
-    `name`: Controller action method to invoke. 
+    `name`: Controller action to invoke. 
 
     `var`: Variable to assign the action URL to. 
 
