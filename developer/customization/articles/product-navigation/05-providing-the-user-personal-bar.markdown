@@ -6,29 +6,6 @@ header-id: providing-the-user-personal-menu
 
 [TOC levels=1-4]
 
-The User Personal Menu displays options unique to the current user. By default,
-this menu appears as an avatar button that expands the User Settings sub-menu
-just below the Control Menu. In a custom theme, the User Personal Menu could
-appear anywhere in the interface.
-
-![Figure 1: By default, the User Personal Menu contains the signed-in user's avatar, which opens the user's settings when selected.](../../images/user-personal-menu.png)
-
-Although Liferay's default User Personal Menu is bare-bones, you can
-add more functionality to fit your needs. Unlike other product navigation menus
-(e.g., Product Menu), the User Personal Bar does not require the
-extension/creation of panel categories and panel apps. It uses another common
-Liferay framework for providing functionality:
-[Portlet Providers](/docs/7-2/frameworks/-/knowledge_base/f/embedding-portlets-in-themes).
-
-The User Personal Menu can be seen as a placeholder in every Liferay theme. By
-default, Liferay provides one sample *User Personal Bar* portlet that fills that
-placeholder, but the portlet Liferay provides can be replaced by other portlets.
-
-| **Note:** You can add the User Personal Bar to your theme by adding the
-| following snippet into your `portal_normal.ftl`:
-| 
-|     <@liferay.user_personal_bar />
-
 In this article, you'll learn how to customize the User Personal Menu. You'll
 create a single Java class where you'll specify a portlet to replace the
 existing default portlet.
