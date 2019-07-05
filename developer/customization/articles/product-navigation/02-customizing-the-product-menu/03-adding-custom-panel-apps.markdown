@@ -65,7 +65,7 @@ After you have created a Panel Category, create a Panel App to go in it:
     Set the `service` attribute to `PanelApp.class`. 
 
 4.  Implement the `PanelApp` interface. See the
-    [`PanelApp` Interface](/docs/7-2/customization/-/knowledge_base/c/panelapp-inteface)
+    [`PanelApp` Interface](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu#panelapp-interface)
     section for more details. Extending one of the provided base classes
     ([BasePanelApp](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/BasePanelApp.html)
     or

@@ -56,14 +56,14 @@ home page, the Control Menu offers default options for accessing the Product
 Menu, Simulation Menu, and Add Menu. You can think of this menu as the gateway
 to configuring options in @product@.
 
-![Figure 1: The Control Menu has three configurable areas: left, right, and middle. It also displays the title and type of page that you are currently viewing.](../../images/control-menu-home.png)
+![Figure 2: The Control Menu has three configurable areas: left, right, and middle. It also displays the title and type of page that you are currently viewing.](../../images/control-menu-home.png)
 
 If you navigate away from the home page, the Control Menu adapts and provides
 helpful functionality for whatever option you're using. For example, if you
 navigate to Site Administration &rarr; *Content & Data* &rarr; *Web Content*,
 you see a Control Menu with different functionality tailored for that option.
 
-![Figure 2: When switching your context to web content, the Control Menu adapts to provide helpful options for that area.](../../images/control-menu-web-content.png)
+![Figure 3: When switching your context to web content, the Control Menu adapts to provide helpful options for that area.](../../images/control-menu-web-content.png)
 
 The default Control Menu contains three categories representing the left,
 middle, and right portions of the menu. You can create navigation entries for
@@ -78,7 +78,7 @@ their views in as many ways as possible. The Simulation Menu on the right-side
 of the main page allows this, and you can extend the menu if you need to
 simulate something that it does not provide.
 
-![Figure 1: The Simulation Menu offers a device preview application.](../../images/simulation-menu-preview.png)
+![Figure 4: The Simulation Menu offers a device preview application.](../../images/simulation-menu-preview.png)
 
 There are few differences between the Simulation Menu and Product Menu, mostly
 because they extend the same base classes. The Simulation Menu, by default, is
@@ -98,7 +98,7 @@ this menu appears as an avatar button that expands the User Settings sub-menu
 just below the Control Menu. In a custom theme, the User Personal Menu could
 appear anywhere in the interface.
 
-![Figure 1: By default, the User Personal Menu contains the signed-in user's avatar, which opens the user's settings when selected.](../../images/user-personal-menu.png)
+![Figure 5: By default, the User Personal Menu contains the signed-in user's avatar, which opens the user's settings when selected.](../../images/user-personal-menu.png)
 
 Although Liferay's default User Personal Menu is bare-bones, you can
 add more functionality to fit your needs. Unlike other product navigation menus

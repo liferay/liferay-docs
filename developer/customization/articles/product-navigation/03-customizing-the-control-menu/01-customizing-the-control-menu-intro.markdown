@@ -85,11 +85,11 @@ return "/portlet/control_menu/product_menu_control_menu_entry_icon.jsp";
 ```
 
 The `getIconJspPath()` method provides the Product Menu icon
-(![Menu Closed](../../../images/icon-menu.png) &rarr;
-![Menu Open](../../../images/icon-menu-open.png)), and the `getBodyJspPath()`
-method adds the UI body for the entry outside of the Control Menu. The latter
-method must be used when providing a UI outside the Control Menu. You can test
-this by opening and closing the Product Menu on the home page.
+(![Menu Closed](../../../images/icon-menu.png) &rarr; ![Menu Open](../../../images/icon-menu-open.png)),
+and the `getBodyJspPath()` method adds the UI body for the entry outside of the
+Control Menu. The latter method must be used when providing a UI outside the
+Control Menu. You can test this by opening and closing the Product Menu on the
+home page.
 
 Finally, if you provide functionality that is exclusively inside the Control
 Menu, the `StagingProductNavigationControlMenuEntry` class calls its JSP like
