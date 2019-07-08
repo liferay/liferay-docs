@@ -7,11 +7,11 @@ header-id: using-service-builder-in-a-maven-project
 [TOC levels=1-4]
 
 The easiest way to add
-[Service Builder](/develop/frameworks/-/knowledge_base/7-2/what-is-service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 to your Maven project is to create a new Maven project using Liferay's provided
 Service Builder archetype; it's configured in the new project by default. You
 can learn how to generate a Service Builder Maven project by visiting the
-[Service Builder Template](/docs/7-2/reference/-/knowledge_base/r/service-builder-template)
+[Service Builder Template](/docs/7-2/reference/-/knowledge_base/r/using-the-service-builder-template)
 article.
 
 In some cases, you should not use this template due to a number of reasons:
@@ -67,11 +67,15 @@ project!
     directory name, model hints file, Spring configurations, SQL configurations,
     etc. You can reference all the configurable Service Builder properties in
     the
-    [Service Builder Plugin](/docs/7-2/reference/-/knowledge_base/r/service-builder-with-maven)
-    reference article. Also, visit the
-    [Defining an Object-Relational Map with Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/defining-an-object-relational-map-with-service-builder)
+    [Service Builder Plugin](/docs/7-2/reference/-/knowledge_base/r/service-builder-plugin)
+    reference article. 
+    
+    <!--Uncomment once article is available
+    Also, visit the
+    Defining an Object-Relational Map with Service Builder
     tutorial for more information on defining a `service.xml` file to configure
     Service Builder.
+    -->
 
 2.  Apply the WSDD Builder plugin declaration directly after the Service Builder
     plugin declaration:
@@ -90,15 +94,23 @@ project!
     ```
 
     The WSDD Builder is required to generate your project's remote services.
+    
+    <!--Uncomment once article is available
     Visit the
-    [Creating Remote Services](/docs/7-2/frameworks/-/knowledge_base/f/creating-remote-services)
+    Creating Remote Services
     tutorial for more information on WSDD (Web Service Deployment Descriptor).
+    -->
+    
     See the
     [WSDD Builder Plugin](/docs/7-2/reference/-/knowledge_base/r/wsdd-builder-plugin)
     article for more information on the configuration properties.
 
 Terrific! You've successfully configured your Maven project to use Service
 Builder by applying the Service Builder and WSDD Builder plugins in your
-project's POM. To run Service Builder, see the
-[Running Service Builder and Understanding the Generated Code](/docs/7-2/frameworks/-/knowledge_base/f/running-service-builder)
+project's POM. 
+
+<!--Uncomment once article is available
+To run Service Builder, see the
+Running Service Builder and Understanding the Generated Code
 article for instructions.
+-->

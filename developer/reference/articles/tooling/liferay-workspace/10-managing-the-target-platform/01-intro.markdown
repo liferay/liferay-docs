@@ -13,7 +13,7 @@ are updated to the latest ones provided in the targeted release.
 
 | **Note:** There are times when configuring dependencies based on a version
 | range is better than tracking exact versions. See the
-| [Semantic Versioning](/docs/7-2/reference/-/knowledge_base/r/semantic-versioning)
+| [Semantic Versioning](/docs/7-2/customization/-/knowledge_base/c/semantic-versioning)
 | tutorial for more details.
 
 Next, you'll discover how all of this is possible.

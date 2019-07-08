@@ -8,7 +8,7 @@ header-id: preparing-for-install
 
 @product@ doesn't require much to deploy. You need a Java Development Kit (JDK)
 and a database. Several configuration topics (e.g.,
-[search engine integration]((/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine),
+[search engine integration](/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine),
 [document repository configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration),
 [security management](/docs/7-2/deploy/-/knowledge_base/d/securing-product),
 [clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering),
@@ -116,7 +116,7 @@ To workaround this issue, add this property after your application server JVM op
 
 ```properties
  --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
-``` 
+```
 
 It's time to prepare your database. 
 

@@ -30,7 +30,7 @@ property names resemble the original descriptor names.
 
 This article covers these descriptor mappings:
 
--   [Portlet descriptor mappings](#jsr-168-jsr-286-descriptor-mappings)
+-   [Portlet descriptor mappings](#portlet-descriptor-mappings)
 
 -   [Liferay descriptor mappings](#liferay-descriptor-mappings)
 

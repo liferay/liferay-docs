@@ -28,9 +28,13 @@ specification. This is the modern, preferred way to work with web services in
 @product@. 
 
 **Plain Web/REST Services:** This is the old way to build and consume web 
-services in @product@, but is still supported. For example, you can use 
-[JAX-RS](/docs/7-2/frameworks/-/knowledge_base/f/jax-rs), 
-[JAX-WS](/docs/7-2/frameworks/-/knowledge_base/f/jax-ws), 
+services in @product@, but is still supported. 
+
+<!--Uncomment once articles are available
+For example, you can use 
+JAX-RS, 
+JAX-WS, 
 or 
-[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder-web-services) 
-to implement plain REST or SOAP web services. 
+Service Builder 
+to implement plain REST or SOAP web services.
+--> 

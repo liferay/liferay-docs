@@ -83,9 +83,13 @@ description and document type to all the files. You can also
 [categorize and tag](/docs/7-2/user/-/knowledge_base/u/organizing-content-with-tags-and-categories) 
 the files, and assign them default permissions. 
 
-**Repository**: Add access to an external repository. See 
-[Store Types](/docs/7-2/user/-/knowledge_base/u/store-types) 
+**Repository**: Add access to an external repository. 
+
+<!--Uncomment once article is available
+See 
+Store Types 
 for more information. 
+-->
 
 **Shortcut**: Create a shortcut to any document that you can view. You 
 can set permissions on the shortcut to specify who can access the 

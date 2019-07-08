@@ -16,7 +16,7 @@ built from scratch, you follow these steps:
     and the previously created `DisplayContext` class.
 
 A generalized discussion on System Settings UI customization is found in a
-[separate section](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-system-settings-user-interface).
+[separate section](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-configuration-user-interface).
 
 This article demonstrates replacing the configuration UI for the _Language
 Template_ System Settings entry, found in *Control Panel* &rarr; *Configuration*
@@ -97,8 +97,8 @@ public class LanguageTemplateConfigurationFormRenderer
 Next, write an `activate` method (decorated with `@Activate` and `@Modified`)
 to convert a map of the configuration's properties to a typed class. The
 configuration is stored in a volatile field. Don't forget to make it volatile
-to prevent thread safety problems. See the article on
-[reading configuration values from a component class](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-component)
+to prevent thread safety problems. See the article on 
+[reading configuration values from a component class](/docs/7-2/frameworks/-/knowledge_base/f/reading-unscoped-configuration-values-from-a-component) 
 for more information.
 
 ```java

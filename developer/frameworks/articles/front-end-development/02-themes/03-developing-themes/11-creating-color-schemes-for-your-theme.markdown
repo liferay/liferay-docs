@@ -110,5 +110,5 @@ There you have it. Now you can go color scheme crazy with your themes!
 
 ## Related Topics
 
-- [Generating Layout Templates](/docs/7-2/frameworks/-/knowledge_base/f/creating-layout-templates-with-the-themes-generator)
+- [Generating Layout Templates](/docs/7-2/reference/-/knowledge_base/r/creating-layout-templates-with-the-themes-generator)
 - [Creating a Thumbnail Preview for Your Theme](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-thumbnail-preview-for-your-theme)

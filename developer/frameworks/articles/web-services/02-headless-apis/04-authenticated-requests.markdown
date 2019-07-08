@@ -179,7 +179,7 @@ auth.verifier.guest.allowed="true"
     `false`. 
 
 2.  Deploy the config file to `[Liferay Home]/osgi/configs`. Note that 
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
     is typically the application server's parent folder. 
 
 3.  Test the APIs by making a request to an OpenAPI profile URL: 

@@ -83,10 +83,14 @@ the Export/Import and Staging UI options for the Bookmarks application.
 
     The `set` methods must be annotated with the
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
-    annotation. Visit the
-    [Invoking Local Services](/docs/7-2/frameworks/-/knowledge_base/f/invoking-local-services)
+    annotation. 
+    
+    <!--Uncomment once article is available
+    Visit the
+    Invoking Local Services
     article for more information on using the `@Reference` annotation in
     @product@.
+    -->
 
     **Important:** @product@'s official Bookmarks app does not use local
     services in its portlet data handler; instead, it uses the

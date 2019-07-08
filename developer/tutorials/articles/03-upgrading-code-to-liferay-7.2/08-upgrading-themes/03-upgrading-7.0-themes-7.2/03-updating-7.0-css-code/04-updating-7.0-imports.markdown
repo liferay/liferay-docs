@@ -20,23 +20,23 @@ the theme:
 		move and `_aui_variables.scss` was modified, the Font Awesome imports shown 
 		below must be removed from `_clay_variables.scss`:
 
-```scss
-// Icon paths
-$FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
-$font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
-$icon-font-path: "aui/lexicon/fonts/";
-```
+    ```scss
+    // Icon paths
+    $FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
+    $font-awesome-path: "aui/lexicon/fonts/alloy-font-awesome/font";
+    $icon-font-path: "aui/lexicon/fonts/";
+    ```
 
 2.  Update the old AUI lexicon paths to use the new Clay paths instead, as shown 
 		in the table below:
 
-|Pattern|Replacement|
-|---|---|
-|`@import "/aui/lexicon/bootstrap/mixins/";`|removed|
-|`@import "/aui/lexicon/lexicon-base/mixins/";`|removed|
-|`@import "/aui/lexicon/atlas-theme/mixins/";`|removed|
-|`@import "aui/lexicon/atlas-variables";`|`@import "clay/atlas-variables";`|
-|`@import "aui/lexicon/atlas";`|`@import "clay/atlas";`|
+    |Pattern|Replacement|
+    |---|---|
+    |`@import "/aui/lexicon/bootstrap/mixins/";`|removed|
+    |`@import "/aui/lexicon/lexicon-base/mixins/";`|removed|
+    |`@import "/aui/lexicon/atlas-theme/mixins/";`|removed|
+    |`@import "aui/lexicon/atlas-variables";`|`@import "clay/atlas-variables";`|
+    |`@import "aui/lexicon/atlas";`|`@import "clay/atlas";`|
 
 Great! Your imports are updated, and your CSS upgrade is complete. Next you can 
 upgrade the theme templates. 

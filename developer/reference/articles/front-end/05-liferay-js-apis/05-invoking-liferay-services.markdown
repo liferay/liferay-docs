@@ -8,11 +8,15 @@ header-id: invoking-liferay-services
 
 @product@ provides many web services out-of-the-box. To see a comprehensive list 
 of the available web services, navigate to `http://localhost:8080/api/jsonws` 
-(assuming your localhost is running on port 8080). If you've deployed your own 
+(assuming your localhost is running on port 8080). 
+
+<!--Uncomment once registering-json-web-services#mapping-and-naming-conventions article is available
+If you've deployed your own 
 Service Builder-generated JSON web services, 
-[follow these guidelines](/docs/7-2/appdev/-/knowledge_base/a/registering-json-web-services#mapping-and-naming-conventions)
+follow these guidelines
 for invoking them. These services are useful for creating single page 
 applications and can even be used to create custom front-ends in @product@. 
+-->
 
 This reference covers how to invoke these web services using JavaScript. 
 

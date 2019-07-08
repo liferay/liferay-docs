@@ -7,7 +7,7 @@ header-id: service-builder-gradle-plugin
 [TOC levels=1-4]
 
 The Service Builder Gradle plugin lets you generate a service layer defined in a
-[Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/what-is-service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 `service.xml` file.
 
 The plugin has been successfully tested with Gradle 4.10.2.
@@ -73,12 +73,17 @@ Property Name | Default Value
 [`springFile`](#springfile) | <p>**If `osgiModule` is `true`:** the file `META-INF/spring/module-spring.xml` in the first `resources` directory of the `main` source set (by default: `src/main/resources/META-INF/spring/module-spring.xml`)</p><p>**Otherwise:** the file `META-INF/portlet-spring.xml` in the first `resources` directory of the `main` source set (by default: `src/main/resources/META-INF/portlet-spring.xml`)</p>
 [`sqlDir`](#sqldir) | <p>**If the `war` plugin is applied:** `${project.webAppDir}/WEB-INF/sql`</p><p>**Otherwise:** The directory `META-INF/sql` in the first `resources` directory of the `main` source set (by default: `src/main/resources/META-INF/sql`).</p>
 
-In the [typical scenario](/docs/7-2/frameworks/-/knowledge_base/f/defining-an-object-relational-map-with-service-builder)
-of a data-driven Liferay OSGi application split in `myapp-app`, `myapp-service`
-and `myapp-web` modules, the `service.xml` file is usually contained in the root
-directory of `myapp-service`. In the `build.gradle` of the same module, it is
-enough to apply the `com.liferay.service.builder` plugin [as described](#usage),
-and then add the following snippet to enable the use of Liferay Service Builder:
+<!--Add back link below for `typlical scenario` once 
+defining-an-object-relational-map-with-service-builder 
+article is available
+-->
+
+In the typical scenario of a data-driven Liferay OSGi application split in 
+`myapp-app`, `myapp-service` and `myapp-web` modules, the `service.xml` file is 
+usually contained in the root directory of `myapp-service`. In the 
+`build.gradle` of the same module, it is enough to apply the 
+`com.liferay.service.builder` plugin [as described](#usage), and then add the 
+following snippet to enable the use of Liferay Service Builder:
 
 ```gradle
 buildService {
@@ -118,7 +123,7 @@ Property Name | Type | Default Value | Description
 <a name="hbmfile"></a>`hbmFile` | `File` | `null` | A Hibernate Mapping file to generate. It sets the `service.hbm.file` argument.
 <a name="impldir"></a>`implDir` | `File` | `null` | A directory where the service Java source files are generated. It sets the `service.impl.dir` argument.
 <a name="inputfile"></a>`inputFile` | `File` | `null` | The project's `service.xml` file. It sets the `service.input.file` argument.
-`modelHintsConfigs` | `Set` | `["classpath*:META-INF/portal-model-hints.xml", "META-INF/portal-model-hints.xml", "classpath*:META-INF/ext-model-hints.xml", "classpath*:META-INF/portlet-model-hints.xml"]` | Paths to the [model hints](/docs/7-2/frameworks/-/knowledge_base/f/customizing-model-entities-with-model-hints) files for Liferay Service Builder to use in generating the service layer. It sets the `service.model.hints.configs` argument.
+`modelHintsConfigs` | `Set` | `["classpath*:META-INF/portal-model-hints.xml", "META-INF/portal-model-hints.xml", "classpath*:META-INF/ext-model-hints.xml", "classpath*:META-INF/portlet-model-hints.xml"]` | Paths to the model hints files for Liferay Service Builder to use in generating the service layer. It sets the `service.model.hints.configs` argument.<!-- Add back link for 'modal hints' once customizing-model-entities-with-model-hints article is available -->
 <a name="modelhintsfile"></a>`modelHintsFile` | `File` | `null` | A model hints file for the project. It sets the `service.model.hints.file` argument.
 <a name="osgimodule"></a>`osgiModule` | `boolean` | `false` | Whether to generate the service layer for OSGi modules. It sets the `service.osgi.module` argument.
 <a name="pluginname"></a>`pluginName` | `String` | `null` | If specified, a plugin can enable additional generation features, such as `Clp` class generation, for non-OSGi modules. It sets the `service.plugin.name` argument.

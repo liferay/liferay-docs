@@ -15,12 +15,14 @@ extending @product@ components and applications using APIs.
     include understanding and configuring dependencies, packaging, and
     deployment. Here you'll work with module JARs, plugin WARs, components, and
     Java packages in @product@. 
- 
--   [Architecture](/docs/7-2/customization/-/knowledge_base/c/architecture)
+
+<!--Uncomment once articles are available
+-   Architecture
     dives deep into how @product@ uses modularity and OSGi to provide the core,
     application modules, component services, and extension points. Learning the
     architecture helps you develop better customizations fast, and it empowers
     you to build extension points into your own applications.
+-->
 
 -   Built-in customization features, including Widget Templates and Web 
     Experience Management help you customize content and pages faster. All this

@@ -24,7 +24,7 @@ modify the default password policy so that this box becomes usable.
 3.  Deselect the *Change Required* switcher in the Password Changes section. Now
     you can decide whether users you add must reset their passwords. 
 
-See [Password Policies](/discover/tutorials/-/knowledge_base/7-2/password-policies)
+See [Password Policies](/docs/7-2/user/-/knowledge_base/u/password-policies)
 for more information on editing the default policy or creating your own.
 
 ## Adding an Administrative User
@@ -129,7 +129,7 @@ This is just the default. To override it with your own default image:
 | **Note:** There's a way to adjust which initials are displayed and in what
 | order, so you can make the default user icon (with the user initials) work
 | for your locale. These settings are configured in a
-| [Language Settings module](/docs/7-2/tutorials/-/knowledge_base/t/using-liferays-language-settings),
+| [Language Settings module](/docs/7-2/frameworks/-/knowledge_base/f/using-liferays-localization-settings),
 | so kidnap a friendly developer, give him a cup of coffee, and tell him the
 | settings you want to change:
 | 

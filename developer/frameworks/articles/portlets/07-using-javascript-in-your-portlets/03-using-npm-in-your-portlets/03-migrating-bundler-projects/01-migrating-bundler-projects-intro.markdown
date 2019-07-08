@@ -14,16 +14,16 @@ these steps to migrate your project to 2.x:
 1.  Update the `liferay-npm-bundler` dependency in your `package.json` to 
     version 2.x:
 
-```json
-{
-  "devDependencies": {
-    ...
-    "liferay-npm-bundler": "^2.0.0",
-    ...
-  },
-  ...
-}
-```
+    ```json
+    {
+      "devDependencies": {
+        ...
+        "liferay-npm-bundler": "^2.0.0",
+        ...
+      },
+      ...
+    }
+    ```
 
 2.  Remove all `liferay-npm-bundler-preset-*` dependencies from your 
     `package.json` because liferay-npm-bundler 2.x includes these by default.
