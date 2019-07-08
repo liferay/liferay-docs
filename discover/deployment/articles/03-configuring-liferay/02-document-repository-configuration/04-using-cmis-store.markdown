@@ -15,10 +15,7 @@ also define the @product@ repository to point to a CMIS repository.
 | 7.0 GA4. Because it can have performance issues with large repositories, it's
 | recommended that you use one of the other configuration repositories listed
 | above, such as Advanced File System Store, to store your Documents and Media
-| files. This deprecation does not affect the use of external repositories. You
-| can still
-| [connect to external repositories](/docs/7-1/user/-/knowledge_base/u/using-external-repositories)
-| using CMIS. 
+| files. 
 
 To use the CMIS store, follow these steps:
 
