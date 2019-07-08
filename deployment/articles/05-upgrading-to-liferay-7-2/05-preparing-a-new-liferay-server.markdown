@@ -68,11 +68,12 @@ property-related updates:
 -   If you have a sharded environment,
     [configure your upgrade to generate a non-sharded environment](/docs/7-2/deploy/-/knowledge_base/d/upgrading-a-sharded-environment).
 
--   Liferay's image sprite framework is disabled by default in 7.2. The 
-    framework requires scanning plugins for image sprites. If you don't use the
-    framework, there's no need for it to scan for images sprites. If you use the
-    framework, enable it by overriding the default `sprite.enabled` portal
-    property (new in 7.2) value with the following setting in a
+-   Liferay's image sprite framework is deprecated as of 7.2 and is disabled by 
+    default. The framework requires scanning plugins for image sprites. If you
+    don't use the framework, there's no need for it to scan for images sprites.
+    If you use the framework, enable it by overriding the default
+    `sprite.enabled` portal property (new in 7.2) value with the following
+    setting in a
     [`portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
     file: 
 
