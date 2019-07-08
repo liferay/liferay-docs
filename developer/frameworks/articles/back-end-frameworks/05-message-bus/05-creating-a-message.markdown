@@ -7,11 +7,11 @@ header-id: creating-a-message
 [TOC levels=1-4]
 
 Before you can 
-[send a message](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#sending-messages) 
-via the Service Bus, you must first create it. Here's how to create a message: 
+[send a message](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus#sending-messages) 
+via the Message Bus, you must first create it. Here's how to create a message: 
 
 1.  Call the
-    [`Message`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/Message.html) 
+    [`Message`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/Message.html) 
     constructor to create a new `Message`: 
 
     ```java
@@ -36,4 +36,4 @@ via the Service Bus, you must first create it. Here's how to create a message:
 
 [Sending Messages Across a Cluster](/docs/7-2/frameworks/-/knowledge_base/f/sending-messages-across-a-cluster) 
 
-[Using the Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus) 
+[Using the Message Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus) 

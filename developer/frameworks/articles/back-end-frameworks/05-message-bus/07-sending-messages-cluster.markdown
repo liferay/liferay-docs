@@ -117,4 +117,4 @@ public class MyMessageListenerRegistrator {
 
 [Sending a Message](/docs/7-2/frameworks/-/knowledge_base/f/sending-a-message)
 
-[Using the Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus)
+[Using the Message Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus)

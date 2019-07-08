@@ -6,8 +6,8 @@ header-id: creating-a-destination
 
 [TOC levels=1-4]
 
-[Service Bus destinations](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#messaging-destinations) 
-are based on destination configurations and registered as OSGi services. Service 
+[Message Bus destinations](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus#messaging-destinations) 
+are based on destination configurations and registered as OSGi services. Message 
 Bus detects the destination services and manages their associated destinations. 
 
 Here are the steps for creating a destination. The example configurator class
@@ -30,7 +30,7 @@ that follows demonstrates these steps.
 
     You'll create and register your destination inside this `activate` method. 
     This ensures that the destination is available upon service activation. Once 
-    the destination is registered, Service Bus detects its service and manages
+    the destination is registered, Message Bus detects its service and manages
     the destination. 
 
 2.  Create a destination configuration by using one of 
@@ -280,4 +280,4 @@ public class MyMessagingConfigurator {
 
 ## Related Topics
 
-[Service Bus Destinations](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#messaging-destinations)
+[Message Bus Destinations](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus#messaging-destinations)
