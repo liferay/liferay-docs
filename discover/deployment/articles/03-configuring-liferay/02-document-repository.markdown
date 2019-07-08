@@ -198,13 +198,13 @@ through the UI. The CMIS store allows you to do just that.
 
 | **Note:** CMIS Store is not suitable for production use and is deprecated as 
 | of Liferay DXP Digital  Enterprise 7.0 Fix Pack 14 (SP3) and Liferay Portal CE
-7.0 GA4. Because it can have performance issues with large repositories, it's
-recommended that you use one of the other configuration repositories listed
-above, such as Advanced File System Store, to store your Documents and Media
-files. This deprecation does not affect the use of external repositories. You
-can still [connect to external
-repositories](/docs/7-0/user/-/knowledge_base/u/using-external-repositories)
-using CMIS. 
+| 7.0 GA4. Because it can have performance issues with large repositories, it's
+| recommended that you use one of the other configuration repositories listed
+| above, such as Advanced File System Store, to store your Documents and Media
+| files. This deprecation does not affect the use of external repositories. You
+| can still
+| [connect to external repositories](/docs/7-0/user/-/knowledge_base/u/using-external-repositories)
+| using CMIS. 
 
 If you wish to use the CMIS store, follow the instructions [here](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration#cmis)
 to set it up. The @product@ repository is connected to CMIS via the CMIS store. As
