@@ -6,41 +6,37 @@ header-id: defining-relationships-between-service-entities
 
 [TOC levels=1-4]
 
-Referencing one type of entity in the context of another entity is a common
-requirement. This is also known as *relating* entities. Liferay's Bookmarks
-application defines a relationship between an entry and its folder.
+Relationships between database entities or Java objects are necessary for most
+applications. The Guestbook application, therefore, defines a relationship
+between a Guestbook and its entries.
 
-As mentioned earlier, each bookmark must have a folder. Therefore, each
-`BookmarksEntry` entity must relate to a `BookmarksFolder` entity. Liferay
-@ide@'s Diagram mode for `service.xml` facilitates relating entities. 
+As mentioned earlier, each entry must belong to a particular Guestbook.
+Therefore, each `GuestbookEntry` entity must relate to a `Guestbook`
+entity. 
 
-1.  Select Diagram mode for the `service.xml` file. 
+Create the `GuestbookEntry` entity's fields: 
 
-2.  Select the *Relationship* option under *Connections* in the palette on the 
-    right side of the view. This relationship tool helps you draw relationships
-    between entities in the diagram.
+```xml
+<entity name="GuestbookEntry" local-service="true" uuid="true" remote-service="true">
 
-3.  Click your first entity and move your cursor over to the entity you'd like 
-    to relate it with. Liferay @ide@ draws a dashed line from your selected
-    entity to the cursor.
+	<column name="entryId" primary="true" type="long" />
+	<column name="name" type="String" />
+	<column name="email" type="String" />
+	<column name="message" type="String" />
+	<column name="guestbookId" type="long" />
+```
 
-4.  Click the second entity to complete drawing the relationship. Liferay @ide@ 
-    turns the dashed line into a solid line, with an arrow pointing to the
-    second entity.
-
-5.  Save the `service.xml` file. 
-
-Congratulations! You've related two entities. Their relationship shows in
-Diagram mode and looks similar to the relationship in the figure below. 
+Note the last field in the list is the `guestbookId` field. Since it's the same
+name as the `Guestbook` object's primary key, a relationship is created between
+the two objects. If you're using Liferay @ide@, you can see this relationship in
+its diagram mode. 
 
 ![Figure 1: Relating entities is a snap in Liferay @ide@'s *Diagram* mode for `service.xml`.](../../../../images/service-builder-relate-entities.png)
 
-Switch to *Source* mode in the editor for your `service.xml` file and note that
-Liferay @ide@ created a column element in the first selected entity to hold the
-ID of the corresponding entity instance reference. For example, the
-`BookmarksEntry` entity uses this column to relate to a `BookmarksFolder` entity :
+Congratulations! You've related two entities. 
 
-    <column name="folderId" type="long" />
+Next, add the instance, audit, and status fields mentioned from the previous
+step to enable Liferay's multi-tenancy, audit, and workflow features. 
 
 Now that your entity columns are in place and entity relationships are
 established, you can specify the default order in which the entity instances are
