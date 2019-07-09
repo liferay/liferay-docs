@@ -7,16 +7,14 @@ header-id: defining-service-entity-finder-methods
 [TOC levels=1-4]
 
 Finder methods retrieve entity objects from the database based on specified
-parameters. You'll probably want to create at least one finder method for each
-entity you create in your services. Service Builder generates several methods
-based on each finder you create for an entity. It creates methods to fetch,
-find, remove, and count entity instances based on the finder's parameters. 
+parameters. For each finder defined, Service Builder generates several methods
+to fetch, find, remove, and count entity instances based on the finder's
+parameters. 
 
-For many applications, it's important to be able to find its entities per site.
-You can specify these finders using Liferay @ide@'s Overview mode for the
-`service.xml` file.
+When supporting Liferay's multi-tenancy, it's important to be able to find its
+entities per Site. 
 
-## Create Finders
+## Creating Finders
 
 Here are the steps for creating a finder node:
 
@@ -37,17 +35,37 @@ Next, you'll learn how to specify the finder column for this node.
 
 ## Create Finder Columns
 
-Under the new finder node, @ide@ created a *Finder Columns* node. Here are the
-steps for creating finder columns: 
+Finders are easy to create: 
 
-1.  Select the *Finder Columns* node to specify the columns for your finder's 
-    parameters.
+```xml
+<finder name="GroupId" return-type="Collection">
+   <finder-column name="groupId" />
+</finder> 
+```
 
-2.  Create a new finder column by clicking the *Add* icon and specifying the
-    column's name. Keep in mind that you can specify multiple finder parameters
-    (columns).
+The example above is among the simplest of finders, and is one you should always
+add if you're supporting multi-tenancy. This finder returns a collection of
+objects that belong to the Site on which your application has been placed.
+Service Builder generates finder-related methods (e.g., `fetchByGroupId`,
+`findByGroupId`, `removeByGroupId`, `countByGroupId`) for the your entities in
+the `*Persistence` and `*PersistenceImpl` classes. The first of these classes is
+the interface; the second is its implementation. For example, the Guestbook
+application generates its entity finder methods in the `-Persistence`
+classes found in the
+`/guestbook-api/src/main/java/com/liferay/docs/guestbook/service/persistence` folder
+and the `-PersistenceImpl` classes in the
+`/guestbook/src/main/java/com/liferay/docs/service/persistence/impl`
+folder.
 
-3.  Save your `service.xml` file.
+You're not limited to finding by one column, however; you can create
+multi-column finders: 
+
+```xml
+<finder name="G_S" return-type="Collection">
+	<finder-column name="groupId" />
+	<finder-column name="status" />
+</finder>
+```
 
 | **Important**: DO NOT create finders that use entity primary key as parameters.
 | They're unnecessary as Service Builder automatically generates
@@ -56,23 +74,6 @@ steps for creating finder columns:
 | primary key columns and finder columns. Adding finders that use entity primary
 | keys results in attempts to create multiple indexes for the same
 | columns---Oracle DB, for example, reports these attempts as errors.
-
-![Figure 1: Creating Finder entities is easy with Liferay @ide@.](../../../../images/service-builder-finders.png)
-
-If you're creating site-scoped entities (entities whose data should be unique to
-each site), follow the steps described above to create finders by `groupId` for
-retrieving your entities. 
-
-Service Builder generates finder-related methods (e.g., `fetchByGroupId`,
-`findByGroupId`, `removeByGroupId`, `countByGroupId`) for the your entities in
-the `*Persistence` and `*PersistenceImpl` classes. The first of these classes is
-the interface; the second is its implementation. For example, Liferay's
-Bookmarks application generates its entity finder methods in the `-Persistence`
-classes found in the
-`/bookmarks-api/src/main/java/com/liferay/bookmarks/service/persistence` folder
-and the `-PersistenceImpl` classes in the
-`/bookmarks-service/src/main/java/com/liferay/bookmarks/service/persistence/impl`
-folder.
 
 Now you know to configure Service Builder to create finder methods for your
 entity. Terrific!
