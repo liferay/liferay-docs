@@ -14,17 +14,17 @@ for these entities in your application's `*-api` and `*-service` modules in the
 packages you specified in `service.xml`. For example, here are the package
 paths for Liferay's Bookmarks application:
 
-- `/bookmarks-api/src/main/java/com/liferay/bookmarks`
-- `/bookmarks-service/src/main/java/com/liferay/bookmarks`
+- `/guestbook-api/src/main/java/com/liferay/docs/guestbook`
+- `/guestbook-service/src/main/java/com/liferay/docs/guestbook`
 
-The `bookmarks-api` module's interfaces define the Bookmarks application API.
+The `guestbook-api` module's interfaces define the Guestbook application API.
 The `*-api` module interfaces define the application's persistence layer,
 service layer, and model layer. Whenever you compile and deploy the `*-api`
 module, all its classes and interfaces are packaged in a `.jar` file called
 `PROJECT_NAME-api.jar` in the module's `build/libs` folder. Deploying this JAR
 to Liferay *defines* the API as OSGi services. 
 
-The `bookmarks-service` module classes implement the `bookmarks-api` module
+The `guestbook-service` module classes implement the `guestbook-api` module
 interfaces. The `*-service` module provides the OSGi service implementations to
 deploy to Liferay's OSGi framework. 
 
@@ -61,7 +61,7 @@ Here are the persistence, service, and model classes:
     - `[ENTITY_NAME]LocalService`: Local service interface. 
     - `[ENTITY_NAME]LocalServiceImpl` (**LOCAL SERVICE IMPLEMENTATION**): Local
       service implementation. This is the only class in the local service that
-      you should modify manually. You can add custom business logic here. For
+      you should modify: it's where you add your business logic. For
       any methods added here, Service Builder adds corresponding methods
       to the `[ENTITY_NAME]LocalService` interface the next time you run it.
     - `[ENTITY_NAME]LocalServiceBaseImpl`: Local service base implementation.
@@ -77,7 +77,7 @@ Here are the persistence, service, and model classes:
       lets you
       [customize the entity's local services](/docs/7-2/appdev/-/knowledge_base/a/customizing-liferay-services-service-wrappers).
 
-    ![Figure 2: Service Builder generates these service classes and interfaces. Only the [ENTITY_NAME]LocalServiceImpl (e.g., EventLocalServiceImpl for the Event entity) allows custom methods to be added to the service layer.](../../../images/service-builder-service-diagram.png)
+![Figure 2: Service Builder generates these service classes and interfaces. Only the [ENTITY_NAME]LocalServiceImpl (e.g., EventLocalServiceImpl for the Event entity) allows custom methods to be added to the service layer.](../../../images/service-builder-service-diagram.png)
 
 - Remote Service (generated for an entity only if an entity's `remote-service`
   attribute is *not* set to `false` in `service.xml`)
@@ -123,7 +123,7 @@ Here are the persistence, service, and model classes:
       designed to be extended and it lets you
       [customize the entity](/docs/7-2/appdev/-/knowledge_base/a/customizing-liferay-services-service-wrappers).
 
-    ![Figure 3: Service Builder generates these model classes and interfaces. Only `[ENTITY_NAME]Impl`  (e.g., EventImpl for the Event entity) allows custom methods to be added to the service layer.](../../../images/service-builder-model-diagram.png)
+![Figure 3: Service Builder generates these model classes and interfaces. Only `[ENTITY_NAME]Impl`  (e.g., `EventImpl` for the Event entity) allows custom methods to be added to the service layer.](../../../images/service-builder-model-diagram.png)
 
 | **Note:** `*Util` classes are generated for backwards compatibility purposes
 | only. Your module applications should avoid calling the util classes. Use the
@@ -132,13 +132,13 @@ Here are the persistence, service, and model classes:
 
 Each file that Service Builder generates is assembled from an associated
 FreeMarker template. The FreeMarker templates are in the
-[`com.liferay.portal.tools.service.builder` module's](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.tools.service.builder/) `/com/liferay/portal/tools/service/builder/dependencies/` folder. For example,
-Service Builder uses the `service_impl.ftl` template to generate the
-`*ServiceImpl.java` classes. 
+[portal-tools-service-builder module's](https://github.com/liferay/liferay-portal/tree/master/modules/util/portal-tools-service-builder) `src/main/resources/com/liferay/portal/tools/service/builder/dependencies/` 
+folder. For example, Service Builder uses the `service_impl.ftl` template to
+generate the `*ServiceImpl.java` classes. 
 
 You can modify any `*Impl` class Service Builder generates. The most common are
-`*LocalServiceImpl`, `*ServiceImpl` and `*Impl`. If you manually modify the
-other classes, Service Builder overwrites the changes the next time you run it.
+`*LocalServiceImpl`, `*ServiceImpl` and `*Impl`. If you modify the other
+classes, Service Builder overwrites the changes the next time you run it.
 Whenever you add methods to, remove methods from, or change a method signature
 of a `*LocalServiceImpl` class, `*ServiceImpl` class, or `*Impl` class, you
 should run Service Builder again to regenerate the affected interfaces and the
