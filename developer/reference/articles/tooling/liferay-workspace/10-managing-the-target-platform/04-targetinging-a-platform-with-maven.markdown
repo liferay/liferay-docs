@@ -1,4 +1,10 @@
+---
+header-id: targeting-a-platform-with-maven
+---
+
 # Targeting a Platform with Maven
+
+[TOC levels=1-4]
 
 Although a Maven-based Liferay Workspace does not offer a configurable property
 to set the target platform, you can still leverage the Target Platform framework
