@@ -6,6 +6,14 @@ header-id: managing-the-target-platform
 
 [TOC levels=1-4]
 
+| **Note:** The Target Platform articles currently assume you're using Gradle
+| as a build tool. If your projects are built with Maven, you can still
+| leverage the Target Platform features, but it is not built into Liferay
+| Workspace *yet* ([LPS-90524](https://issues.liferay.com/browse/LPS-90524)).
+| See the
+| [Targeting a Platform with Maven](/docs/7-2/reference/-/knowledge_base/r/targeting-a-platform-with-maven)
+| article to set the Target Platform for Maven-based projects.
+
 Liferay Workspace helps you target a specific release of @product@, so
 dependencies get resolved properly. This makes upgrades easy: specify your
 target platform, and Workspace points to the new version. All your dependencies
