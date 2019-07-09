@@ -1,6 +1,7 @@
 package com.liferay.documentation.util;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +20,16 @@ public class CheckIntrosTask extends Task {
 		}
 
 		File articleDir = new File(dir.getAbsolutePath() + "/articles");
+		File[] articleFolders = articleDir.listFiles(new FileFilter() {
+		    @Override
+		    public boolean accept(File file) {
+		        return file.isDirectory();
+		    }
+		});
 
-		checkFolderForIntros(articleDir);
+		for (File articleFolder : articleFolders) {
+			checkFolderForIntros(articleFolder);
+		}
 
 		if (!errorDirs.isEmpty()) {
 			System.out.println("ERROR - Missing introduction markdown articles"
