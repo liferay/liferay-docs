@@ -82,9 +82,9 @@ so---chose only one:
 
 1.  [As JVM app server arguments](#jvm-app-server-arguments). 
 
-2.  [As LCS client app properties (LCS client app versions 6+)](#lcs-client-app-properties). 
+2.  [As LCS client app properties (LCS client app versions 6+)](#lcs-client-app-properties-versions-6). 
 
-3.  [As LCS client app properties (earlier versions of the LCS client app)](#lcs-client-app-properties). 
+3.  [As LCS client app properties (earlier versions of the LCS client app)](#lcs-client-app-properties-earlier-versions). 
 
 | **Note:** Use only one of these methods to configure your server to connect 
 | through a proxy. 
@@ -202,47 +202,50 @@ so:
 
 Versions of the LCS client app prior to version 6 were distributed as a WAR 
 file. To configure these versions of the app to connect through a proxy, you 
-must therefore set their properties differently. 
+must therefore set their properties in that WAR file. Follow these steps to do 
+so: 
 
-2.  To set the properties inside the LCS client app's WAR file, you must first 
-    extract it from the app's LPKG file (the app downloads from Liferay 
-    Marketplace as an LPKG file). Expand the LPKG file, then locate and expand 
-    the client's WAR file: `lcs-portlet-[version].war`. 
+1.  Extract the LCS client app's WAR file from the app's LPKG file (the app 
+    downloads from Liferay Marketplace as an LPKG file). Expand the LPKG file, 
+    then locate and expand the client's WAR file: `lcs-portlet-[version].war`. 
 
-    You must set the properties in the WAR's `portlet-ext.properties` file. 
-    Follow these steps to do so: 
+2.  In the LCS client's WAR file, create the file 
+    `WEB-INF/classes/portlet-ext.properties` (or open this file if it already 
+    exists). 
 
-    a. In the LCS client's WAR file, create the file 
-        `WEB-INF/classes/portlet-ext.properties` (or open this file if it 
-        already exists). 
+3.  Add the following properties at the end of `portlet-ext.properties` and set 
+    them to the appropriate values for your proxy: 
 
-    b. Add the following properties at the end of `portlet-ext.properties` and 
-       set them to the appropriate values for your proxy: 
-   
-            proxy.host.name=
-            proxy.host.port=
+    ```properties
+    proxy.host.name=
+    proxy.host.port=
+    ```
 
-      If your proxy requires authentication, you should also add the following 
-      properties and set them to the appropriate values for your proxy: 
+3.  If your proxy requires authentication, you should also add the following 
+    properties and set them to the appropriate values for your proxy: 
 
-            proxy.host.login=
-            proxy.host.password=
+    ```properties
+    proxy.host.login=
+    proxy.host.password=
+    ```
 
-      If your proxy requires NTLM authentication, you must also add the 
-      following properties: 
+4.  If your proxy requires NTLM authentication, you must also add the following 
+    properties: 
 
-            proxy.auth.type=ntlm
-            proxy.domain=
-            proxy.workstation=
+    ```properties
+    proxy.auth.type=ntlm
+    proxy.domain=
+    proxy.workstation=
+    ```
 
-      Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
-      values for your proxy. Note that you can leave `proxy.workstation` blank 
-      if you don't need it. 
+    Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
+    values for your proxy. Note that you can leave `proxy.workstation` blank if 
+    you don't need it. 
 
-    c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
-       file, then repackage the LPKG file with the LCS client WAR. Make sure the 
-       repackaged LPKG file has the same name as the original LPKG file 
-       downloaded from Liferay Marketplace. 
+5.  Repackage the LCS client WAR with the modified `portlet-ext.properties` 
+    file, then repackage the LPKG file with the LCS client WAR. Make sure the 
+    repackaged LPKG file has the same name as the original LPKG file downloaded 
+    from Liferay Marketplace. 
 
 Next, you'll learn how to ensure that the LCS client can access LCS. 
 
