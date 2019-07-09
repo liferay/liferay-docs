@@ -19,35 +19,8 @@ public class CheckIntrosTask extends Task {
 		}
 
 		File articleDir = new File(dir.getAbsolutePath() + "/articles");
-		File[] articles = articleDir.listFiles();
-		List<File> errorDirs = new ArrayList<File>();
 
-		for (File article : articles) {
-			if (article.getName().contains(".")) {
-				continue;
-			}
-
-			File[] allFiles = article.listFiles();
-
-			boolean containsIntro = false;
-			boolean containsTutorials = false;
-
-			for (File file : allFiles) {
-				if (file.getName().endsWith("introduction.markdown") ||
-						file.getName().endsWith("intro.markdown")) {
-
-					containsIntro = true;
-					break;
-				}
-				else if (file.getName().endsWith(".markdown")) {
-					containsTutorials = true;
-				}
-			}
-
-			if (containsTutorials && !containsIntro) {
-				errorDirs.add(article);
-			}
-		}
+		checkFolderForIntros(articleDir);
 
 		if (!errorDirs.isEmpty()) {
 			System.out.println("ERROR - Missing introduction markdown articles"
@@ -66,6 +39,30 @@ public class CheckIntrosTask extends Task {
 	public void setDocdir(String docdir) {
 		_docdir = docdir;
 	}
-	
+
+	private void checkFolderForIntros(File folder) {
+
+		boolean containsIntro = false;
+
+		for (File fileEntry : folder.listFiles()) {
+			if (fileEntry.isDirectory()) {
+				checkFolderForIntros(fileEntry);
+			}
+			else if (!containsIntro) {
+
+				if (fileEntry.getName().endsWith("introduction.markdown") ||
+						fileEntry.getName().endsWith("intro.markdown")) {
+
+					containsIntro = true;
+				}
+			}
+		}
+
+		if (!containsIntro) {
+			errorDirs.add(folder);
+		}
+	}
+
 	private String _docdir;
+	private List<File> errorDirs = new ArrayList<File>();
 }
