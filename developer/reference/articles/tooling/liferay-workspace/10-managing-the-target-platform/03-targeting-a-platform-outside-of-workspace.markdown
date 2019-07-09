@@ -63,6 +63,7 @@ To do this, follow the steps below.
 
     - `release.portal.bom` &rarr; `release.dxp.bom`
     - `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
+    - `release.portal.bom.third.party` &rarr; `release.dxp.bom.third.party`
     - `7.2.0` &rarr; `7.2.10`
 
 4.  If you're interested in
