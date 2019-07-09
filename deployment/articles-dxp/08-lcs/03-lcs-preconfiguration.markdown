@@ -80,66 +80,123 @@ These appear next; then you'll learn how to install the app.
 ## Preconfiguring LCS to Connect Through a Proxy
 
 If your server connects to the Internet through a proxy, you must set some 
-properties in either your server or the LCS client app **before** deploying the 
-app. There are therefore two ways to set these properties, depending on whether 
-you set them in your server or the LCS client app. 
+properties **before** deploying the LCS client app. There are two ways to do 
+so---chose only one: 
 
-1.  To set the properties in your server, set them as JVM app server arguments. 
-    Set these properties to the appropriate values for your proxy: 
+1.  [As JVM app server arguments](#jvm-app-server-arguments). 
 
-        -Dhttp.proxyHost=
-        -Dhttp.proxyPort=
-        -Dhttp.proxyUser=
-        -Dhttp.proxyPassword=
-        -Dhttps.proxyHost=
-        -Dhttps.proxyPort=
+2.  [As LCS client app properties](#lcs-client-app-properties). 
 
-    Note that the `user`, `password`, and `https` properties are only needed if 
-    your proxy requires authentication. 
+| **Note:** Use only one of these methods to configure your server to connect 
+| through a proxy. 
 
-    | **Note:** If you use JVM app server arguments as instructed in this step,
-    | you don't need to pre-configure the LCS client app to connect through the
-    | same proxy. 
+### JVM App Server Arguments
 
-2.  To set the properties inside the LCS client app's WAR file, you must first 
-    extract it from the app's LPKG file (the app downloads from Liferay 
-    Marketplace as an LPKG file). Expand the LPKG file, then locate and expand 
-    the client's WAR file: `lcs-portlet-[version].war`. 
+To set the proxy properties in your server, set them as JVM app server 
+arguments. Set these properties to the appropriate values for your proxy: 
 
-    You must set the properties in the WAR's `portlet-ext.properties` file. 
-    Follow these steps to do so: 
+```properties
+-Dhttp.proxyHost=
+-Dhttp.proxyPort=
+-Dhttp.proxyUser=
+-Dhttp.proxyPassword=
+-Dhttps.proxyHost=
+-Dhttps.proxyPort=
+```
 
-    a. In the LCS client's WAR file, create the file 
-        `WEB-INF/classes/portlet-ext.properties` (or open this file if it 
-        already exists). 
+Note that the `user`, `password`, and `https` properties are only needed if your 
+proxy requires authentication. 
 
-    b. Add the following properties at the end of `portlet-ext.properties` and 
-       set them to the appropriate values for your proxy: 
+### LCS Client App Properties
 
-            proxy.host.name=
-            proxy.host.port=
+To set the proxy properties via the LCS client app, you must create and deploy 
+a config file with the properties. Follow these steps to do so: 
 
-      If your proxy requires authentication, you should also add the following 
-      properties and set them to the appropriate values for your proxy: 
+1.  Create the config file 
+    `com.liferay.lcs.client.configuration.LCSConfiguration.config` and add the 
+    following properties to it. These are the default properties for configuring 
+    the LCS client app: 
 
-            proxy.host.login=
-            proxy.host.password=
+    ```properties
+    cacheMetricsHibernateObjectName="Hibernate:name\=statistics"
+    cacheMetricsMultiVMObjectName="net.sf.ehcache:type\=CacheStatistics,CacheManager\=MULTI_VM_PORTAL_CACHE_MANAGER,name\=*"
+    cacheMetricsSingleVMObjectName="net.sf.ehcache:type\=CacheStatistics,CacheManager\=SINGLE_VM_PORTAL_CACHE_MANAGER,name\=*"
+    commandScheduleDefaultInterval="86400"
+    communicationHeartbeatInterval="60000"
+    digitalSignatureKeyName="localhost"
+    digitalSignatureKeyStorePath="classpath:/keystore.jks"
+    digitalSignatureKeyStoreType="JKS"
+    digitalSignatureSigningAlgorithm="MD5withRSA"
+    keyGeneratorKeyAlias="generator"
+    keyGeneratorKeyStorePassword="123456"
+    keyGeneratorKeyStorePath="classpath:/keystore.jceks"
+    keyGeneratorKeyStoreType="JCEKS"
+    lcsClientBuildNumber="600"
+    lcsClientVersion="6.0.0"
+    lcsPlatformPortalHostName="lcs.liferay.com"
+    lcsPlatformPortalHostPort="443"
+    lcsPlatformPortalKeyStorePath="classpath:/keystore.jks"
+    lcsPlatformPortalKeyStoreType="JKS"
+    lcsPlatformPortalLayoutLCSClusterEntry="/group/guest/environment"
+    lcsPlatformPortalLayoutLCSClusterNode="/group/guest/server"
+    lcsPlatformPortalLayoutLCSProject="/group/guest/dashboard"
+    lcsPlatformPortalOauthAccessTokenUri="/c/portal/oauth/access_token"
+    lcsPlatformPortalOauthAuthorizeUri="/c/portal/oauth/authorize?oauth_token\={0}"
+    lcsPlatformPortalOauthConsumerKey="1f477b50-f4b0-45bd-a27d-1eccb07d741c"
+    lcsPlatformPortalOauthConsumerSecret="eb33f55d4207e0529dde0932b75755a0"
+    lcsPlatformPortalOauthRequestTokenUri="/c/portal/oauth/request_token"
+    lcsPlatformPortalProtocol="https"
+    lrdcomLCSClientDownloadUrl="https://web.liferay.com/marketplace/-/mp/application/71774947"
+    lrdcomLCSProductPageUrl="https://www.liferay.com/supporting-products/liferay-connected-services"
+    lrdcomLCSUserDocumentationUrl="https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services"
+    lrdcomSalesEmailAddress="sales@liferay.com"
+    lrdcomSupportUrl="https://web.liferay.com/group/customer/support/-/support/ticket"
+    osbLCSGatewayWebSecureApiToken="j8FxkmkTUBA5UqhSMc"
+    platformLcsGatewayHostName="lcs-gateway.liferay.com"
+    platformLcsGatewayHostPort="443"
+    platformLcsGatewayKeyStorePath="classpath:/keystore.jks"
+    platformLcsGatewayKeyStoreType="JKS"
+    platformLcsGatewayWebProtocol="https"
+    proxyAuthType=""
+    proxyDomain=""
+    proxyHostLogin=""
+    proxyHostName=""
+    proxyHostPassword=""
+    proxyHostPort="0"
+    proxyWorkstation=""
+    scheduledTaskPageSize="100"
+    scheduledTaskPauseInterval="60000"
+    ```
 
-      If your proxy requires NTLM authentication, you must also add the 
-      following properties: 
+2.  Set the `proxy*` properties to the appropriate values for your proxy: 
 
-            proxy.auth.type=ntlm
-            proxy.domain=
-            proxy.workstation=
+    ```properties
+    proxyHostName=""
+    proxyHostPort="0"
+    ```
 
-      Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
-      values for your proxy. Note that you can leave `proxy.workstation` blank 
-      if you don't need it. 
+    If your proxy requires authentication, pass the credentials via these 
+    properties: 
 
-    c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
-       file, then repackage the LPKG file with the LCS client WAR. Make sure the 
-       repackaged LPKG file has the same name as the original LPKG file 
-       downloaded from Liferay Marketplace. 
+    ```properties
+    proxyHostLogin=""
+    proxyHostPassword=""
+    ```
+
+    If your proxy requires NTLM authentication, you must also populate these 
+    properties: 
+
+    ```properties
+    proxyAuthType="ntlm"
+    proxyDomain=""
+    proxyWorkstation=""
+    ```
+
+    Be sure to set `proxyDomain` and `proxyWorkstation` to the appropriate 
+    values for your proxy. Note that you can leave `proxyWorkstation` blank if 
+    you don't need it. 
+
+3.  Deploy the config file to `osgi/configs`. 
 
 Next, you'll learn how to ensure that the LCS client can access LCS. 
 
