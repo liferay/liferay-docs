@@ -23,7 +23,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
         <plugin>
             <groupId>com.liferay</groupId>
             <artifactId>com.liferay.portal.tools.service.builder</artifactId>
-            <version>1.0.286</version>
+            <version>1.0.292</version>
             <configuration>
             </configuration>
         </plugin>

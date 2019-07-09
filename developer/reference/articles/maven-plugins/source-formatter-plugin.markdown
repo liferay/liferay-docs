@@ -23,7 +23,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
         <plugin>
             <groupId>com.liferay</groupId>
             <artifactId>com.liferay.source.formatter</artifactId>
-            <version>1.0.841</version>
+            <version>1.0.885</version>
             <executions>
                 <execution>
                     <phase>process-sources</phase>
