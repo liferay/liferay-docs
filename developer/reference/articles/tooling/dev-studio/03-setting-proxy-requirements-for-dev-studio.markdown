@@ -23,7 +23,7 @@ to work with Liferay Dev Studio, follow the instructions below.
     authentication settings (if necessary). Do not leave whitespace at the end
     of your proxy host or port settings.
 
-5.  Once you've configured your proxy entry, click *OK* &rarr; *OK*.
+5.  Once you've configured your proxy entry, click *Apply and Close*.
 
 If you're working with a Liferay Workspace in Dev Studio, you'll need to configure
 your proxy settings for that environment too. See the
