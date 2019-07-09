@@ -53,7 +53,7 @@ To start the Upgrade Planner in Dev Studio, do this:
 
 5.  Click *Finish*.
 
-![Figure 1: Configure your upgrade plan before beginning the upgrade process.](../../images/upgrade-plan-wizard.png)
+![Figure 1: Configure your upgrade plan before beginning the upgrade process.](../../../images/upgrade-plan-wizard.png)
 
 Switch to the new Liferay Upgrade Planner perspective (prompted automatically).
 You're now offered several windows in the UI:
@@ -79,7 +79,7 @@ Upgrade Plan window. Each step can have several options:
   if automation is involved.
 - *Skip:* skips the step and jumps to the next step in the outline.
 
-![Figure 2: You can preview the Upgrade Planner's automated updates before you perform them.](../../images/preview-upgrade-planner-changes.png)
+![Figure 2: You can preview the Upgrade Planner's automated updates before you perform them.](../../../images/preview-upgrade-planner-changes.png)
 
 Great! You now have a good understanding of the Liferay Upgrade Planner's UI and
 how to get started. Visit the
