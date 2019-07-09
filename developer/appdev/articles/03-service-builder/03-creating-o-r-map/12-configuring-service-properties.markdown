@@ -6,9 +6,6 @@ header-id: configuring-service-properties
 
 [TOC levels=1-4]
 
-This tutorial explains how to use and edit the `service.properties` file. It
-also tells you about the properties and how to set them to fit your needs.
-
 Service Builder generates a `service.properties` file in your `*-service`
 module's `src/main/resources` folder. @product@ uses this file's properties
 to alter your service's database schema. You should not modify this file
@@ -30,13 +27,12 @@ Here are some of the properties the `service.properties` file includes:
 
 | **Note**: In Liferay Portal 6.x Service Builder portlets, the
 | `build.auto.upgrade` property in `service.properties` applies Liferay Service
-| schema changes upon rebuilding services and redeploying the portlets. As of
-| @product-ver@, this property is deprecated.
+| schema changes upon rebuilding services and redeploying the portlets. This
+| property was deprecated in Liferay 7.0.
 | 
 | The Build Auto Upgrade feature is now different and is set in a global property
 | `schema.module.build.auto.upgrade` in the file
-| `[Liferay_Home]/portal-developer.properties`. To learn more, see the tutorial
-| [Upgrading Data Schemas in Development](/docs/7-2/appdev/-/knowledge_base/a/upgrading-data-schemas-in-development).
+| `[Liferay_Home]/portal-developer.properties`. 
 
 Awesome! You now have all the tools necessary to set up your own
 `service-ext.properties` file.
