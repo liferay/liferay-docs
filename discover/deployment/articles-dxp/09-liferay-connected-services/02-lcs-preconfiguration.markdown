@@ -69,76 +69,131 @@ Great! You've successfully downloaded the LCS client app. Before installing it,
 however, there are a few additional pre-configuration steps you should complete.
 These appear next; then you'll learn how to install the app. 
 
-| **Note:** If your server connects to the Internet through a proxy, you must
-| configure your server or the LCS client app **before** deploying the app. The
-| following section contains instructions on this. If your server doesn't connect
-| through a proxy, skip this section.
+| **Note:** If your server connects to the Internet through a proxy, you must 
+| configure your server or the LCS client app **before** deploying the app. The 
+| following section contains instructions on this. If your server doesn't 
+| connect through a proxy, skip this section. 
 
 ## Preconfiguring LCS to Connect Through a Proxy
 
 If your server connects to the Internet through a proxy, you must set some 
-properties in either your server or the LCS client app **before** deploying the 
-app. There are therefore two ways to set these properties, depending on whether 
-you set them in your server or the LCS client app. 
+properties **before** deploying the LCS client app. There are three ways to do 
+so---chose only one: 
 
-1.  To set the properties in your server, set them as JVM app server arguments. 
-    Set these properties to the appropriate values for your proxy: 
+1.  [As JVM app server arguments](#jvm-app-server-arguments). 
 
-        -Dhttp.proxyHost=
-        -Dhttp.proxyPort=
-        -Dhttp.proxyUser=
-        -Dhttp.proxyPassword=
-        -Dhttps.proxyHost=
-        -Dhttps.proxyPort=
+2.  [As LCS client app properties (LCS client app versions 6+)](#lcs-client-app-properties-versions-6). 
 
-    Note that the `user`, `password`, and `https` properties are only needed if 
-    your proxy requires authentication. 
+3.  [As LCS client app properties (earlier versions of the LCS client app)](#lcs-client-app-properties-earlier-versions). 
 
-    | **Note:** If you use JVM app server arguments as instructed in this step,
-    | you don't need to pre-configure the LCS client app to connect through the
-    | same proxy.
+| **Note:** Use only one of these methods to configure your server to connect 
+| through a proxy. 
 
-2.  To set the properties inside the LCS client app's WAR file, you must first 
-    extract it from the app's LPKG file (the app downloads from Liferay 
-    Marketplace as an LPKG file). Expand the LPKG file, then locate and expand 
-    the client's WAR file: `lcs-portlet-[version].war`. 
+### JVM App Server Arguments
 
-    You must set the properties in the WAR's `portlet-ext.properties` file. 
-    Follow these steps to do so: 
+To set the proxy properties in your server, set them as JVM app server 
+arguments. Set these properties to the appropriate values for your proxy: 
 
-    a. In the LCS client's WAR file, create the file 
-        `WEB-INF/classes/portlet-ext.properties` (or open this file if it 
-        already exists). 
+```properties
+-Dhttp.proxyHost=
+-Dhttp.proxyPort=
+-Dhttp.proxyUser=
+-Dhttp.proxyPassword=
+-Dhttps.proxyHost=
+-Dhttps.proxyPort=
+```
 
-    b. Add the following properties at the end of `portlet-ext.properties` and 
-       set them to the appropriate values for your proxy: 
-   
-            proxy.host.name=
-            proxy.host.port=
+Note that the `user`, `password`, and `https` properties are only needed if your 
+proxy requires authentication. 
 
-      If your proxy requires authentication, you should also add the following 
-      properties and set them to the appropriate values for your proxy: 
+### LCS Client App Properties: Versions 6+
 
-            proxy.host.login=
-            proxy.host.password=
+To set the proxy properties via versions 6+ of the LCS client app, you must 
+create and deploy a config file containing the properties. Follow these steps to 
+do so: 
 
-      If your proxy requires NTLM authentication, you must also add the 
-      following properties: 
+1.  Create the config file 
+    `com.liferay.lcs.client.configuration.LCSConfiguration.config`. In the steps 
+    that follow, you'll set the proxy properties in this file. 
 
-            proxy.auth.type=ntlm
-            proxy.domain=
-            proxy.workstation=
+2.  Set these `proxy*` properties to the appropriate values for your proxy: 
 
-      Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
-      values for your proxy. Note that you can leave `proxy.workstation` blank 
-      if you don't need it. 
+    ```properties
+    proxyHostName=""
+    proxyHostPort=""
+    ```
 
-    c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
-       file, then repackage the LPKG file with the LCS client WAR. Make sure the 
-       repackaged LPKG file has the same name as the original LPKG file 
-       downloaded from Liferay Marketplace. 
+3.  If your proxy requires authentication, pass the credentials via these 
+    properties: 
 
-Next, you'll learn how to ensure that the LCS client can access LCS. 
+    ```properties
+    proxyHostLogin=""
+    proxyHostPassword=""
+    ```
+
+4.  If your proxy requires NTLM authentication, you must also populate these 
+    properties: 
+
+    ```properties
+    proxyAuthType="ntlm"
+    proxyDomain=""
+    proxyWorkstation=""
+    ```
+
+    Be sure to set `proxyDomain` and `proxyWorkstation` to the appropriate 
+    values for your proxy. Note that you can leave `proxyWorkstation` blank if 
+    you don't need it. 
+
+5.  Deploy the config file to `osgi/configs`. 
+
+### LCS Client App Properties: Earlier Versions
+
+Versions of the LCS client app prior to version 6 were distributed as a WAR 
+file. To configure these versions of the app to connect through a proxy, you 
+must therefore set their properties in that WAR file. Follow these steps to do 
+so: 
+
+1.  Extract the LCS client app's WAR file from the app's LPKG file (the app 
+    downloads from Liferay Marketplace as an LPKG file). Expand the LPKG file, 
+    then locate and expand the client's WAR file: `lcs-portlet-[version].war`. 
+
+2.  In the LCS client's WAR file, create the file 
+    `WEB-INF/classes/portlet-ext.properties` (or open this file if it already 
+    exists). 
+
+3.  Add the following properties at the end of `portlet-ext.properties` and set 
+    them to the appropriate values for your proxy: 
+
+    ```properties
+    proxy.host.name=
+    proxy.host.port=
+    ```
+
+3.  If your proxy requires authentication, you should also add the following 
+    properties and set them to the appropriate values for your proxy: 
+
+    ```properties
+    proxy.host.login=
+    proxy.host.password=
+    ```
+
+4.  If your proxy requires NTLM authentication, you must also add the following 
+    properties: 
+
+    ```properties
+    proxy.auth.type=ntlm
+    proxy.domain=
+    proxy.workstation=
+    ```
+
+    Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
+    values for your proxy. Note that you can leave `proxy.workstation` blank if 
+    you don't need it. 
+
+5.  Repackage the LCS client WAR with the modified `portlet-ext.properties` 
+    file, then repackage the LPKG file with the LCS client WAR. Make sure the 
+    repackaged LPKG file has the same name as the original LPKG file downloaded 
+    from Liferay Marketplace. 
 
 ## Ensuring Access to LCS
 
