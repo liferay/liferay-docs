@@ -110,72 +110,20 @@ proxy requires authentication.
 ### LCS Client App Properties
 
 To set the proxy properties via the LCS client app, you must create and deploy 
-a config file with the properties. Follow these steps to do so: 
+a config file containing the properties. Follow these steps to do so: 
 
 1.  Create the config file 
-    `com.liferay.lcs.client.configuration.LCSConfiguration.config` and add the 
-    following properties to it. These are the default properties for configuring 
-    the LCS client app: 
+    `com.liferay.lcs.client.configuration.LCSConfiguration.config`. In the steps 
+    that follow, you'll set the proxy properties in this file. 
 
-    ```properties
-    cacheMetricsHibernateObjectName="Hibernate:name\=statistics"
-    cacheMetricsMultiVMObjectName="net.sf.ehcache:type\=CacheStatistics,CacheManager\=MULTI_VM_PORTAL_CACHE_MANAGER,name\=*"
-    cacheMetricsSingleVMObjectName="net.sf.ehcache:type\=CacheStatistics,CacheManager\=SINGLE_VM_PORTAL_CACHE_MANAGER,name\=*"
-    commandScheduleDefaultInterval="86400"
-    communicationHeartbeatInterval="60000"
-    digitalSignatureKeyName="localhost"
-    digitalSignatureKeyStorePath="classpath:/keystore.jks"
-    digitalSignatureKeyStoreType="JKS"
-    digitalSignatureSigningAlgorithm="MD5withRSA"
-    keyGeneratorKeyAlias="generator"
-    keyGeneratorKeyStorePassword="123456"
-    keyGeneratorKeyStorePath="classpath:/keystore.jceks"
-    keyGeneratorKeyStoreType="JCEKS"
-    lcsClientBuildNumber="600"
-    lcsClientVersion="6.0.0"
-    lcsPlatformPortalHostName="lcs.liferay.com"
-    lcsPlatformPortalHostPort="443"
-    lcsPlatformPortalKeyStorePath="classpath:/keystore.jks"
-    lcsPlatformPortalKeyStoreType="JKS"
-    lcsPlatformPortalLayoutLCSClusterEntry="/group/guest/environment"
-    lcsPlatformPortalLayoutLCSClusterNode="/group/guest/server"
-    lcsPlatformPortalLayoutLCSProject="/group/guest/dashboard"
-    lcsPlatformPortalOauthAccessTokenUri="/c/portal/oauth/access_token"
-    lcsPlatformPortalOauthAuthorizeUri="/c/portal/oauth/authorize?oauth_token\={0}"
-    lcsPlatformPortalOauthConsumerKey="1f477b50-f4b0-45bd-a27d-1eccb07d741c"
-    lcsPlatformPortalOauthConsumerSecret="eb33f55d4207e0529dde0932b75755a0"
-    lcsPlatformPortalOauthRequestTokenUri="/c/portal/oauth/request_token"
-    lcsPlatformPortalProtocol="https"
-    lrdcomLCSClientDownloadUrl="https://web.liferay.com/marketplace/-/mp/application/71774947"
-    lrdcomLCSProductPageUrl="https://www.liferay.com/supporting-products/liferay-connected-services"
-    lrdcomLCSUserDocumentationUrl="https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services"
-    lrdcomSalesEmailAddress="sales@liferay.com"
-    lrdcomSupportUrl="https://web.liferay.com/group/customer/support/-/support/ticket"
-    osbLCSGatewayWebSecureApiToken="j8FxkmkTUBA5UqhSMc"
-    platformLcsGatewayHostName="lcs-gateway.liferay.com"
-    platformLcsGatewayHostPort="443"
-    platformLcsGatewayKeyStorePath="classpath:/keystore.jks"
-    platformLcsGatewayKeyStoreType="JKS"
-    platformLcsGatewayWebProtocol="https"
-    proxyAuthType=""
-    proxyDomain=""
-    proxyHostLogin=""
-    proxyHostName=""
-    proxyHostPassword=""
-    proxyHostPort="0"
-    proxyWorkstation=""
-    scheduledTaskPageSize="100"
-    scheduledTaskPauseInterval="60000"
-    ```
-
-2.  Set the `proxy*` properties to the appropriate values for your proxy: 
+2.  Set these `proxy*` properties to the appropriate values for your proxy: 
 
     ```properties
     proxyHostName=""
-    proxyHostPort="0"
+    proxyHostPort=""
     ```
 
-    If your proxy requires authentication, pass the credentials via these 
+3.  If your proxy requires authentication, pass the credentials via these 
     properties: 
 
     ```properties
@@ -183,7 +131,7 @@ a config file with the properties. Follow these steps to do so:
     proxyHostPassword=""
     ```
 
-    If your proxy requires NTLM authentication, you must also populate these 
+4.  If your proxy requires NTLM authentication, you must also populate these 
     properties: 
 
     ```properties
@@ -196,9 +144,7 @@ a config file with the properties. Follow these steps to do so:
     values for your proxy. Note that you can leave `proxyWorkstation` blank if 
     you don't need it. 
 
-3.  Deploy the config file to `osgi/configs`. 
-
-Next, you'll learn how to ensure that the LCS client can access LCS. 
+5.  Deploy the config file to `osgi/configs`. 
 
 ## Ensuring Access to LCS
 
