@@ -250,11 +250,15 @@ you're running Windows, drop the `.sh` from each command that has it.
 2.  To let the patching tool discover your @product@ installation, run this 
     command: 
 
-        patching-tool.sh auto-discovery
+    ```bash
+    patching-tool.sh auto-discovery
+    ```
 
 3.  To configure the patching tool, run this command: 
 
-        patching-tool.sh setup
+    ```bash
+    patching-tool.sh setup
+    ```
 
 4.  On server startup, the patching tool agent installs the patches downloaded 
     by LCS. For the agent to start with your server, you must set the 
@@ -262,23 +266,29 @@ you're running Windows, drop the `.sh` from each command that has it.
     installation's `patching-tool-agent.jar`. Be sure to specify the correct 
     path to this file: 
 
-        -javaagent:../../patching-tool/lib/patching-tool-agent.jar
+    ```properties
+    -javaagent:../../patching-tool/lib/patching-tool-agent.jar
+    ```
 
 5.  If your patching tool is installed in a location other than the Liferay Home 
     folder, you must also specify the `patching-tool` folder's path as an app 
     server JVM argument. Do this with the `patching.tool.home` property: 
 
-        -Dpatching.tool.home=/opt/liferay-dxp-7.1/patching-tool/
+    ```properties
+    -Dpatching.tool.home=/opt/liferay-dxp-7.1/patching-tool/
+    ```
 
 There are also a few other things to consider when using the agent. Due to class
 loading issues, the agent starts in a separate JVM. You can specify options for
 it with the `patching.tool.agent.jvm.opts` property. 
 
-        -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8"
+```properties
+-Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8"
+```
 
-You may also experience issues on Windows if the user starting the app server
+You may also experience issues on Windows if the user starting the app server 
 doesn't have administrator privileges. Here are some examples of the errors you 
-may see:
+may see: 
 
     java.nio.file.FileSystemException: ..\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!
     java.io.FileNotFoundException: java.io.IOException: Access refused
@@ -286,7 +296,9 @@ may see:
 To solve this, set the `java.io.tmpdir` system property as follows in the
 `patching.tool.agent.jvm.opts` property:
 
-        -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8 -Djava.io.tmpdir=%TMP%"
+```properties
+-Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8 -Djava.io.tmpdir=%TMP%"
+```
 
 The agent also has some flags you can set to control how it behaves:
 
@@ -295,7 +307,9 @@ The agent also has some flags you can set to control how it behaves:
 
 You can specify these as follows:
 
-        -Dpatching.tool.agent.properties=debug,nohalt
+```properties
+-Dpatching.tool.agent.properties=debug,nohalt
+```
 
 ## Configuring WebSphere
 
@@ -312,62 +326,66 @@ app:
     properties you add depend on your Liferay DXP 7.1 Fix Pack version. If 
     you're running Fix Pack 5+, add these properties: 
 
-        module.framework.properties.org.osgi.framework.bootdelegation=\
-            __redirected,\
-            com.sun.ccpp,\
-            com.sun.ccpp.*,\
-            com.liferay.aspectj,\
-            com.liferay.aspectj.*,\
-            com.liferay.portal.servlet.delegate,\
-            com.liferay.portal.servlet.delegate*,\
-            com.sun.crypto.*,\
-            com.sun.image.*,\
-            com.sun.jmx.*,\
-            com.sun.jna,\
-            com.sun.jndi.*,\
-            com.sun.mail.*,\
-            com.sun.management.*,\
-            com.sun.media.*,\
-            com.sun.msv.*,\
-            com.sun.org.*,\
-            com.sun.syndication,\
-            com.sun.tools.*,\
-            com.sun.xml.*,\
-            com.yourkit.*,\
-            com.ibm.crypto.*,\
-            sun.*,\
-            javax.validation,\
-            javax.validation.*,\
-            jdk.*,\
-            weblogic.jndi,\
-            weblogic.jndi.*\
+    ```properties
+    module.framework.properties.org.osgi.framework.bootdelegation=\
+        __redirected,\
+        com.sun.ccpp,\
+        com.sun.ccpp.*,\
+        com.liferay.aspectj,\
+        com.liferay.aspectj.*,\
+        com.liferay.portal.servlet.delegate,\
+        com.liferay.portal.servlet.delegate*,\
+        com.sun.crypto.*,\
+        com.sun.image.*,\
+        com.sun.jmx.*,\
+        com.sun.jna,\
+        com.sun.jndi.*,\
+        com.sun.mail.*,\
+        com.sun.management.*,\
+        com.sun.media.*,\
+        com.sun.msv.*,\
+        com.sun.org.*,\
+        com.sun.syndication,\
+        com.sun.tools.*,\
+        com.sun.xml.*,\
+        com.yourkit.*,\
+        com.ibm.crypto.*,\
+        sun.*,\
+        javax.validation,\
+        javax.validation.*,\
+        jdk.*,\
+        weblogic.jndi,\
+        weblogic.jndi.*\
+    ```
 
     For Fix Pack versions prior to Fix Pack 5, add these properties instead: 
 
-        module.framework.properties.org.osgi.framework.bootdelegation=\
-            __redirected,\
-            com.sun.ccpp,\
-            com.sun.ccpp.*,\
-            com.liferay.aspectj,\
-            com.liferay.aspectj.*,\
-            com.liferay.portal.servlet.delegate,\
-            com.liferay.portal.servlet.delegate*,\
-            com.sun.crypto.*,\
-            com.sun.image.*,\
-            com.sun.jmx.*,\
-            com.sun.jna,\
-            com.sun.jndi.*,\
-            com.sun.mail.*,\
-            com.sun.management.*,\
-            com.sun.media.*,\
-            com.sun.msv.*,\
-            com.sun.org.*,\
-            com.sun.syndication,\
-            com.sun.tools.*,\
-            com.sun.xml.*,\
-            com.yourkit.*,\
-            com.ibm.*,\
-            sun.*
+    ```properties
+    module.framework.properties.org.osgi.framework.bootdelegation=\
+        __redirected,\
+        com.sun.ccpp,\
+        com.sun.ccpp.*,\
+        com.liferay.aspectj,\
+        com.liferay.aspectj.*,\
+        com.liferay.portal.servlet.delegate,\
+        com.liferay.portal.servlet.delegate*,\
+        com.sun.crypto.*,\
+        com.sun.image.*,\
+        com.sun.jmx.*,\
+        com.sun.jna,\
+        com.sun.jndi.*,\
+        com.sun.mail.*,\
+        com.sun.management.*,\
+        com.sun.media.*,\
+        com.sun.msv.*,\
+        com.sun.org.*,\
+        com.sun.syndication,\
+        com.sun.tools.*,\
+        com.sun.xml.*,\
+        com.yourkit.*,\
+        com.ibm.*,\
+        sun.*
+    ```
 
 3.  In your @product@ installation, delete the `osgi/state` folder. 
 
@@ -391,7 +409,9 @@ Note that for LCS client app versions prior to 5.0.0, you must also change the
 value of the `digital.signature.algorithm.provider` property in the app's 
 `portlet.properties` file to `IBMJCE`: 
 
-    digital.signature.algorithm.provider=IBMJCE
+```properties
+digital.signature.algorithm.provider=IBMJCE
+```
 
 ## Installing the LCS Client App
 
