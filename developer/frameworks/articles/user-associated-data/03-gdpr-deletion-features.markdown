@@ -1,51 +1,77 @@
-# Search, Filtering, and Hierarchy in the GDPR Data Erasure app
+# Enhancing the Data Erasure UI
 
-<!-- add this section to the INTRO when published -->
+As of @product-ver@, there are new features that enhance an administrator's
+experience finding data in the Personal Data Erasure UI:
 
-Version 7.2 introduces a few refinements the GDPR Delete Peronsal Data API and interface. The user interface now supports three new features
+**Filtering**
+: User content can now be viewed and acted upon based on
+   whether it is part of the user's personal site, some other site, or the
+   overall company.
 
-1. **Filtering** - User content can now be viewed and acted upon based on whether it is part of the user's personal site, some other site, or the overall company.
-2. **Search** - A search bar will now allow for filtering down content based on a search term.
-3. **Hierarchy Display** - If there are multiple types of content that relate to one another in a hierarchy, you can define that relationship using a `UADHierarchyDeclaration`, and the user interface will display that hierarchy (e.g. files and folders).
+**Search**
+: A search bar will now allow for filtering down content based on
+   a search term.
 
-Let's explore each of these.
+**Hierarchy Display**
+: If there are multiple types of content that relate to one another in a
+hierarchy, you can define that relationship using a `UADHierarchyDeclaration`,
+and the user interface will display that hierarchy (e.g. files and folders).
 
-## Filtering and Searching
+## Filtering and Searching in the Data Erasure UI
 
-To add filtering and searching for your custom entities, implement three methods on `UADDisplay`:
+To support filtering and searching in your custom entities, implement three
+methods in the `UADDisplay` class (found in your `-uad` module):
 
 - `isSiteScoped`
 - `search`
 - `searchCount`
 
-The `isSiteScoped` method should return a boolean based on whether or not the entities can be associated with a particular site. This is used to determine which filter they will be associated with ("instance", "personal-site", or "regular-sites").
+The `isSiteScoped` method returns a boolean, determining whether or not the
+entity can be associated with a particular site. This is used to determine
+which filter they will be associated with ("instance", "personal-site", or
+"regular-sites").
+
+![Figure x: Items in the Personal Data Erasure screen can be filtered by scope.](../../images/uad-scope-filter.png) 
 
 The `search` method takes the following parameters:
 
-- `userId` - the `userId` of the User whose data is being acted on.
-- `groupIds` - this is an array of groupIds used to filter which data is shown by which groups it is associated with. In the case that no groupIds are given (it can be null), the search method should return data that is not scoped to any given group.
-- `keywords` - this will be whatever is typed into the search bar. The search method should filter by whatever fields are relevant for the given entity.
-- `orderByField` - the name of the field used to sort the results. This will be one of the names returned by `getSortingFieldNames`.
-- `orderByType` - whether to sort the results in ascending order or descending order.  Will be one of "asc" or "desc".
- For pagination.
-- `end` - the ending index of the result set. For pagination.
+- `userId`---the `userId` of the User whose data is being acted on.
 
-The `searchCount` method takes the following parameters, and should treat them identically to the ones in `search`:
+- `groupIds`---this is an array of groupIds used to filter which data is shown
+    by which groups it is associated with. In the case that no groupIds are
+    given (it can be null), the search method should return data that is not
+    scoped to any given group.
+
+- `keywords`---this will be whatever is typed into the search bar. The search
+    method should filter by whatever fields are relevant for the given entity.
+
+- `orderByField`---the name of the field used to sort the results. This will be
+    one of the names returned by `getSortingFieldNames`.
+
+- `orderByType`---whether to sort the results in ascending order or descending
+    order.  Will be one of "asc" or "desc". For pagination.
+
+- `end`---the ending index of the result set. For pagination.
+
+The `searchCount` method takes the following parameters, which are treated
+identically to the ones in `search`:
 
 - `userId`
+
 - `groupIds`
+
 - `keywords`
 
-SEPARATE ARTICLE
 ## Hierarchy Display
 
 Hierarchical UAD display is an optional feature that can be useful for entities
 with a natural parent-child relationship (for example, Document Library Folders
 and Document Library File Entries). Viewing these entities in a hierarchy helps
-administrators make sense of the data they're reviewing for possible erasure or
-sanitization.
+administrators make sense of the data they're reviewing for possible erasure.
 
-In order to implement a hierarchy display, you'll need to do two things:
+![Figure x: Hierarchical representation of nested entities is useful for administrators reviewing User data for possible deletion.](../../images/uad-hierarchy.png)
+
+To implement a hierarchy display, you'll need to do two things:
 
 1.  Implement a
     [`UADHierarchyDeclaration`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/user-associated-data/user-associated-data-api/src/main/java/com/liferay/user/associated/data/display/UADHierarchyDeclaration.java)
@@ -108,10 +134,13 @@ Additionally, implement this method in the `*UADDisplay` class of all containers
 `getTopLevelContainer` is used to derive the count of how many user-owned
 entities are contained inside a given container's tree.
 
-This method answers the question "which type `T` ancestor of `childObject` is an
+It answers the question "which type `T` ancestor of `childObject` is an
 immediate child of the container identified by `parentContainerClass` and
 `parentContainerId`?" The method may return null, if `childObject` is not a
-child of the parent container at all. It's method is the most complicated to implement and requires some consideration for each case. Refer to the test case for examples of the requirements used for `DLFolder`: [DLFolderUADDisplayTest#testGetTopLevelContainer](https://github.com/liferay/liferay-portal/blob/c8f78609353d6a83a0b755b0bbf93764959821ee/modules/apps/document-library/document-library-uad-test/src/testIntegration/java/com/liferay/document/library/uad/display/test/DLFolderUADDisplayTest.java#L67)
+child of the parent container at all. It's method is the most complicated to
+implement and requires some consideration for each case. Refer to the test case
+for examples of the requirements used for `DLFolder`:
+[DLFolderUADDisplayTest#testGetTopLevelContainer](https://github.com/liferay/liferay-portal/blob/c8f78609353d6a83a0b755b0bbf93764959821ee/modules/apps/document-library/document-library-uad-test/src/testIntegration/java/com/liferay/document/library/uad/display/test/DLFolderUADDisplayTest.java#L67)
 
 See the actual implementation for `DLFolder` in [DLFolderUADDisplay#getTopLevelContainer](https://github.com/liferay/liferay-portal/blob/c8f78609353d6a83a0b755b0bbf93764959821ee/modules/apps/document-library/document-library-uad/src/main/java/com/liferay/document/library/uad/display/DLFolderUADDisplay.java#L105).
 
@@ -173,3 +202,5 @@ public DLFolder getTopLevelContainer(
     return null;
 }
 ```
+
+The exact implementation details will vary for each entity type.
