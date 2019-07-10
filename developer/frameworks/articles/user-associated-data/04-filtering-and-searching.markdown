@@ -1,8 +1,14 @@
+---
+header-id: filtering-and-searching-uad-marked-entities
+---
+
 # Filtering and Searching UAD-Marked Entities
+
+[TOC levels=1-4]
 
 When you 
 
-![Figure x: The UAD UI has filtering and searching elements you can leverage in
+![Figure 1: The UAD UI has filtering and searching elements you can leverage in
 custom entities.](../../images/uad-filter-search.png)
 
 To add filtering and searching for your custom entities, implement three

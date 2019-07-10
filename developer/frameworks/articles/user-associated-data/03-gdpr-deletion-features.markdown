@@ -1,4 +1,10 @@
+---
+header-id: enhancing-the-data-erasure-ui
+---
+
 # Enhancing the Data Erasure UI
+
+[TOC levels=1-4]
 
 As of @product-ver@, there are new features that enhance an administrator's
 experience finding data in the Personal Data Erasure UI:
@@ -31,7 +37,7 @@ entity can be associated with a particular site. This is used to determine
 which filter they will be associated with ("instance", "personal-site", or
 "regular-sites").
 
-![Figure x: Items in the Personal Data Erasure screen can be filtered by scope.](../../images/uad-scope-filter.png) 
+![Figure 1: Items in the Personal Data Erasure screen can be filtered by scope.](../../images/uad-scope-filter.png) 
 
 The `search` method takes the following parameters:
 
@@ -62,6 +68,10 @@ identically to the ones in `search`:
 
 - `keywords`
 
+Read
+[here](/docs/7-2/frameworks/-/knowledge_base/f/filtering-and-searching-uad-marked-entities)
+for instructions on how to implement search and filtering for your entity. 
+
 ## Hierarchy Display
 
 Hierarchical UAD display is an optional feature that can be useful for entities
@@ -69,7 +79,7 @@ with a natural parent-child relationship (for example, Document Library Folders
 and Document Library File Entries). Viewing these entities in a hierarchy helps
 administrators make sense of the data they're reviewing for possible erasure.
 
-![Figure x: Hierarchical representation of nested entities is useful for administrators reviewing User data for possible deletion.](../../images/uad-hierarchy.png)
+![Figure 2: Hierarchical representation of nested entities is useful for administrators reviewing User data for possible deletion.](../../images/uad-hierarchy.png)
 
 To implement a hierarchy display, you'll need to do two things:
 
