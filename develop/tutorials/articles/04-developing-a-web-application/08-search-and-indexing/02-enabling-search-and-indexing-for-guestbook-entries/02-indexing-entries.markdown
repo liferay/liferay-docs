@@ -6,8 +6,8 @@ header-id: indexing-entries
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Entries<br>Step 2 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Search and Indexing for Entries</p><p>Step 2 of 5</p>
 </div>
 
 To control how Entry objects are translated into search engine documents,

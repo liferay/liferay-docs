@@ -6,8 +6,8 @@ header-id: creating-a-user-interface
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Writing the Guestbook Admin App<br>Step 5 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Writing the Guestbook Admin App</p><p>Step 5 of 5</p>
 </div>
 
 It's time to create the Guestbook Admin portlet's user interface. The portlet's 

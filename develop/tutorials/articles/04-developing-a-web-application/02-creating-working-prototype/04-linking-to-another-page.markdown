@@ -6,8 +6,8 @@ header-id: linking-to-another-page
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Developing Your First Portlet<br>Step 4 of 8</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Developing Your First Portlet</p><p>Step 4 of 8</p>
 </div>
 
 In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:

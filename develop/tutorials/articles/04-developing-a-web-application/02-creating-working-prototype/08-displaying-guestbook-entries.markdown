@@ -6,8 +6,8 @@ header-id: viewing-guestbook-entries
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Developing Your First Portlet<br>Step 8 of 8</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Developing Your First Portlet</p><p>Step 8 of 8</p>
 </div>
 
 To display guestbook entries, you must do the reverse of what you did to store

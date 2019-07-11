@@ -6,8 +6,8 @@ header-id: querying-for-guestbook-documents
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Guestbooks<br>Step 4 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Search and Indexing for Guestbooks</p><p>Step 4 of 6</p>
 </div>
 
 The code is in place for for indexing Guestbooks to the search engine. Next,

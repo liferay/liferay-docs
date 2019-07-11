@@ -6,8 +6,8 @@ header-id: checking-for-permission-in-jsps
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Implementing Permissions<br>Step 4 of 4</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Implementing Permissions</p><p>Step 4 of 4</p>
 </div>
 
 You've already seen how user interface components can be wrapped in permission

@@ -6,8 +6,8 @@ header-id: creating-the-classes
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Writing the Guestbook Admin App<br>Step 1 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Writing the Guestbook Admin App</p><p>Step 1 of 5</p>
 </div>
 
 Because the Guestbook and Guestbook Admin applications should be bundled

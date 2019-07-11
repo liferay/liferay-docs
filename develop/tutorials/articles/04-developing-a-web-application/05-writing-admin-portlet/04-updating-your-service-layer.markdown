@@ -6,8 +6,8 @@ header-id: updating-your-service-layer
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Writing the Guestbook Admin App<br>Step 3 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Writing the Guestbook Admin App</p><p>Step 3 of 5</p>
 </div>
 
 In an earlier section, you wrote an `addGuestbook` service method in

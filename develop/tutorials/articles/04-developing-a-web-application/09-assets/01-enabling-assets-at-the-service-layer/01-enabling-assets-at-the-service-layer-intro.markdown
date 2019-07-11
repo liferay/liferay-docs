@@ -6,8 +6,8 @@ header-id: enabling-assets-at-the-service-layer
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Assets at the Service Layer<br>Step 1 of 3</p>
+<div class="learn-path-step row">
+    <p>Enabling Assets at the Service Layer</p><p>Step 1 of 3</p>
 </div>
 
 Each row in the `AssetEntry` table represents an asset. It has an `entryId`

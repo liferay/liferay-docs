@@ -6,8 +6,8 @@ header-id: updating-the-view
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Refactoring the Prototype<br>Step 5 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Refactoring the Prototype</p><p>Step 5 of 6</p>
 </div>
 
 You updated more than just the mechanism behind creating entries: you completely
