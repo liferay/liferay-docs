@@ -12,8 +12,8 @@ creating service entities, you'll want to create
 [`update*`](#implementing-an-update-method)
 and
 [`delete*`](#implementing-a-delete-method)
-methods for updating and deleting them. They're easy to implement. The main
-difference between them and the `add*` method is they must know which entity
+methods for updating and deleting them. The main
+difference between these and the `add*` method is they must know which entity
 they're updating or deleting. 
 
 ## Implementing an Update Method
@@ -36,38 +36,35 @@ most because it has parameters for setting entity attribute values. Create an
 6.  [Run Service Builder.](#run-service-builder)
 
 The following code snippets from 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s
-`updateEntry` method are helpful to examine. 
+`GuestbookEntryLocalServiceImpl`'s `updateEntry` method are helpful to examine. 
 
-	public BookmarksEntry updateEntry(
-			long userId, long entryId, long groupId, long folderId, String name,
-			String url, String description, ServiceContext serviceContext)
-		throws PortalException {
+```java
+public GuestbookEntry updateEntry(long userId, long guestbookId, long entryId, String name, String email, String message,
+        ServiceContext serviceContext) throws PortalException, SystemException {
 
-		// Entry
+    Date now = new Date();
 
-		BookmarksEntry entry = bookmarksEntryPersistence.findByPrimaryKey(
-			entryId);
+    validate(name, email, message);
 
-		if (Validator.isNull(name)) {
-			name = url;
-		}
+    GuestbookEntry entry = getGuestbookEntry(entryId);
 
-		validate(url);
+    User user = userLocalService.getUserById(userId);
 
-		entry.setFolderId(folderId);
-		entry.setTreePath(entry.buildTreePath());
-		entry.setName(name);
-		entry.setUrl(url);
-		entry.setDescription(description);
-		//...
+    entry.setUserId(userId);
+    entry.setUserName(user.getFullName());
+    entry.setModifiedDate(serviceContext.getModifiedDate(now));
+    entry.setName(name);
+    entry.setEmail(email);
+    entry.setMessage(message);
+    entry.setExpandoBridgeAttributes(serviceContext);
 
-		bookmarksEntryPersistence.update(entry);
+    guestbookEntryPersistence.update(entry);
 
-        // Integrate with more Liferay services here ...
+    // Integrate with Liferay frameworks here.
 
-		return entry;
-	}
+    return entry;
+}
+```
 
 This method has all the makings of a good `update*` method:
 
@@ -94,15 +91,15 @@ Replace `[ENTITY]` with your entity's name or nickname.  Create a parameter list
 that satisfies the entity attributes you're updating. Include an entity instance
 parameter or an ID parameter for fetching the entity instance.
 
-For example, the `BookmarksEntryLocalServiceImpl`'s `updateEntry` method
-signature has an ID parameter (`entryId`) for fetching the `BookmarksEntry`
+For example, the `GuestbookEntryLocalServiceImpl`'s `updateEntry` method
+signature has an ID parameter (`entryId`) for fetching the `GuestbookEntry`
 entity instance. Also it has parameters `folderId`, `name`, `url`, and
-`description` for updating the `BookmarksEntry`'s respective attributes. 
+`description` for updating the `GuestbookEntry`'s respective attributes. 
 
-    public BookmarksEntry updateEntry(
-            long userId, long entryId, long groupId, long folderId, String name,
-            String url, String description, ServiceContext serviceContext)
-        throws PortalException {...} 
+```java
+public GuestbookEntry updateEntry(long userId, long guestbookId, long entryId, String name, String email, String message,
+        ServiceContext serviceContext) throws PortalException, SystemException {
+```
 
 Note, user ID, group ID, and service context parameters are useful for
 integrating with Liferay's services. More on that later. 
@@ -121,10 +118,11 @@ or an extension of `PortalException` for any invalid parameters.
 If you're passing in an entity instance, you can update it directly. Otherwise,
 pass in the entity ID (the primary key).  The `*Persistence` class Service
 Builder injects into `*BaseLocalServiceImpl` classes has a
-`findByPrimaryKey(long)` method that retrieves instances by ID. For example, the [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
-retrieves the `BookmarksEntry` that matches the primary key `entryId`. 
+`findByPrimaryKey(long)` method that retrieves instances by ID. For example, the
+`GuestbookEntryLocalServiceImpl` retrieves the `GuestbookEntry` with the primary
+key `entryId`. 
 
-    BookmarksEntry entry = bookmarksEntryPersistence.findByPrimaryKey(
+    GuestbookEntry entry = guestbookEntryPersistence.findByPrimaryKey(
         entryId);
  
 Invoke the `findByPrimaryKey(long id)` method of your `*Persistence` class to
@@ -175,13 +173,12 @@ Here's what a `delete*` method looks like:
 Make sure to replace `[ENTITY]` with your entity's name or nickname. 
 
 For example, here's paraphrased code from 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s 
-`deleteEntry` method:
+`GuestbookEntryLocalServiceImpl`'s `deleteEntry` method:
 
-    public BookmarksEntry deleteEntry(BookmarksEntry entry)
+    public GuestbookEntry deleteEntry(GuestbookEntry entry)
         throws PortalException {
 
-        bookmarksEntryPersistence.remove(entry);
+        guestbookEntryPersistence.remove(entry);
 
         // Clean up related to additional Liferay services goes here ...  
 
