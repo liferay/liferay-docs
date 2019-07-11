@@ -75,21 +75,14 @@ Here's how to get entities based on criteria:
 
 7.  Run Service Builder. 
 
-For example, method `getGroupEntries` from [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
-returns a range of `BookmarksEntry`s associated with a `Group` primary key: 
+For example, `getGuestbookEntries` from `GuestbookEntryLocalServiceImpl`
+returns a range of `GuestbookEntry`s associated with a `Group` primary key: 
 
-    public List<BookmarksEntry> getGroupEntries(
-        long groupId, int start, int end) {
-
-        return bookmarksEntryPersistence.findByG_S(
-            groupId, WorkflowConstants.STATUS_APPROVED, start, end,
-            new EntryModifiedDateComparator());
-    }
-
-Of the `BookmarksEntry`s associated with workflows, this method only matches
-approved ones (`WorkflowConstants.STATUS_APPROVED`). It uses a new
-`EntryModifiedDateComparator` to order the matching `BookmarksEntry`s by
-modification date. 
+```java
+public List<GuestbookEntry> getGuestbookEntries(long groupId, long guestbookId) {
+    return guestbookEntryPersistence.findByG_G(groupId, guestbookId);
+}
+```
 
 Now you know how to leverage finder methods to get entities. Methods that count
 entities are next.
@@ -116,15 +109,15 @@ based on each finder and its columns.
 
 3.  Call the `*Persistence` class' `countBy` method and return the value. For 
     example, the method `getEntriesCount` from
-    [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
-    returns the number of `BookmarksEntry`s that have a workflow status of
-    `status` and that are associated with a group (matching `groupId`) and a
-    folder (matching `folderId`). 
+    `GuestbookEntryLocalServiceImpl`
+    returns the number of `GuestbookEntry`s that are associated with a group
+    (matching `groupId`) and a guestbook (matching `guestbookId`). 
 
-        public int getEntriesCount(long groupId, long folderId, int status) {
-    		return bookmarksEntryPersistence.countByG_F_S(
-    			groupId, folderId, status);
-    	}
+```java
+public int getGuestbookEntriesCount(long groupId, long guestbookId) {
+    return guestbookEntryPersistence.countByG_G(groupId, guestbookId);
+}
+```
 
 Now your local service can get entities matching your criteria and return quick
 entity counts. 
