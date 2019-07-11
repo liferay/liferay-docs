@@ -6,8 +6,8 @@ header-id: updating-6-2-liferay-plugin-package-properties
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 Resources Importer<br>Step 1 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 Resources Importer</p><p>Step 1 of 3</p>
 </div>
 
 Since the Lunar Resort theme was developed in the Plugins SDK, it requires 

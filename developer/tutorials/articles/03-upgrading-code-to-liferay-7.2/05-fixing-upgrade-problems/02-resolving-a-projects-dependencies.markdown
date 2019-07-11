@@ -6,8 +6,8 @@ header-id: resolving-a-projects-dependencies
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Fixing Upgrade Problems<br>Step 1 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Fixing Upgrade Problems</p><p>Step 1 of 2</p>
 </div>
 
 You may have compile errors due to missing Liferay classes or unresolved symbols

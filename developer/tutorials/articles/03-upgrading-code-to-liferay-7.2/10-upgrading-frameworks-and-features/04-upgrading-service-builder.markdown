@@ -6,8 +6,8 @@ header-id: upgrading-service-builder
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Frameworks and Features<br>Step 3 of 4</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Frameworks and Features</p><p>Step 3 of 4</p>
 </div>
 
 @product-ver@ continues to use 

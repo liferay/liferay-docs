@@ -6,8 +6,8 @@ header-id: installing-the-liferay-theme-generator-to-import-a-6-2-theme
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Setting up the Development Environment<br>Step 1 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Setting up the Development Environment</p><p>Step 1 of 2</p>
 </div>
 
 Follow these steps: 

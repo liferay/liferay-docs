@@ -6,10 +6,6 @@ header-id: updating-7-0-theme-templates
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 7.0 Theme Templates<br>Step 1 of 1</p>
-</div>
-
 Follow these steps to update the theme's templates. Note these changes are only 
 required if the templates are modified in the theme:
 

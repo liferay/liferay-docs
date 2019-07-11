@@ -6,8 +6,8 @@ header-id: migrating-off-of-velocity-templates
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Frameworks and Features<br>Step 4 of 4</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Frameworks and Features</p><p>Step 4 of 4</p>
 </div>
 
 Velocity templates were deprecated in Liferay Portal 7.0 and are now removed in
