@@ -6,8 +6,12 @@ header-id: implementing-an-add-method
 
 [TOC levels=1-4]
 
-Your `*LocalServiceImpl` operates on the entities your `service.xml` defines.
-The first method to implement, therefore, is one that creates entities.
+Your `*LocalServiceImpl` represents your service layer, where you create the
+business logic that operates on your application's data and then calls the
+persistence layer to persist, retrieve, or delete your data, using the object
+model defined in `service.xml`. 
+
+One of the first methods you'll likely implement is one that creates entities.
 Liferay's convention is to implement this in an `add*` method, where the part
 after `add` is the entity name (or a shortened version of it). Here are the
 steps for implementing an `add*` method:
@@ -26,55 +30,56 @@ steps for implementing an `add*` method:
 
 7.  [Return the entity instance.](#return-the-entity)
 
-This article refers to the Bookmarks application's `addEntry` method from 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
-as an example. To keep things simple, we have excluded the code that integrates
-with Liferay services, such as assets, social bookmarks, and more. 
+This article refers to the Guestbook application's `addGuestbookEntry` method
+from `GuestbookEntryLocalServiceImpl`. To keep things simple, we have excluded
+the code that integrates with Liferay services, such as assets, social
+bookmarks, and more. 
 
-Here's the Bookmarks application's `addEntry` method:
+Here's the Guestbook application's `addGuestbookEntry` method:
 
-	public BookmarksEntry addEntry(
-			long userId, long groupId, long folderId, String name, String url,
-			String description, ServiceContext serviceContext)
-		throws PortalException {
+```java
+public GuestbookEntry addEntry(long userId, long guestbookId, String name, String email, String message,
+        ServiceContext serviceContext) throws PortalException {
 
-		// Entry
+    long groupId = serviceContext.getScopeGroupId();
 
-		User user = userLocalService.getUser(userId);
+    User user = userLocalService.getUserById(userId);
 
-		if (Validator.isNull(name)) {
-			name = url;
-		}
+    Date now = new Date();
 
-		validate(url);
+    validate(name, email, message);
 
-		long entryId = counterLocalService.increment();
+    long entryId = counterLocalService.increment();
 
-		BookmarksEntry entry = bookmarksEntryPersistence.create(entryId);
+    GuestbookEntry entry = guestbookEntryPersistence.create(entryId);
 
-		entry.setUuid(serviceContext.getUuid());
-		entry.setGroupId(groupId);
-		entry.setCompanyId(user.getCompanyId());
-		entry.setUserId(user.getUserId());
-		entry.setUserName(user.getFullName());
-		entry.setFolderId(folderId);
-		entry.setTreePath(entry.buildTreePath());
-		entry.setName(name);
-		entry.setUrl(url);
-		entry.setDescription(description);
-		// More assignments ... 
+    entry.setUuid(serviceContext.getUuid());
+    entry.setUserId(userId);
+    entry.setGroupId(groupId);
+    entry.setCompanyId(user.getCompanyId());
+    entry.setUserName(user.getFullName());
+    entry.setCreateDate(serviceContext.getCreateDate(now));
+    entry.setModifiedDate(serviceContext.getModifiedDate(now));
+    entry.setExpandoBridgeAttributes(serviceContext);
+    entry.setGuestbookId(guestbookId);
+    entry.setName(name);
+    entry.setEmail(email);
+    entry.setMessage(message);
 
-		bookmarksEntryPersistence.update(entry);
+    guestbookEntryPersistence.update(entry);
 
-        // Integrate with more Liferay services here ...
+    // Calls to other Liferay frameworks go here
 
-		return entry;
-	}
+    return entry;
+}
+```
 
-This method uses the parameters to create `BookmarksEntry`. It validates the
+This method uses the parameters to create `GuestbookEntry`. It validates the
 parameters, creates an entry with a generated entry ID (primary key), populates
 the entry, persists the entry, and returns it. You can refer to this method as
-you create your own `add*` method. 
+you create your own `add*` method. Note that there's no real business logic
+here; it's a simple application that takes data the user entered, validates it,
+and then persists it to the database. 
 
 ## Step 1: Declare an add method with parameters for creating the entity
 
@@ -87,22 +92,22 @@ it a public method that returns the entity it creates.
 
 For example, here's the `addEntry` method signature:
 
-    public BookmarksEntry addEntry(
-            long userId, long groupId, long folderId, String name, String url,
-            String description, ServiceContext serviceContext)
-        throws PortalException {
-            ...
+```java
+public GuestbookEntry addEntry(long userId, long guestbookId, 
+    String name, String email, String message, 
+    ServiceContext serviceContext) throws PortalException {
+    ...
     }
+```
 
 This method specifies all the parameters needed to create and populate a
-`BookmarksEntry`. It throws a `PortalException` in case the parameters are
-invalid or a processing exception occurs (more on this in a later step). 
+`GuestbookEntry` as you specified them in your `service.xml` file. It throws
+a `PortalException` in case the parameters are invalid or a processing exception
+occurs (more on this in a later step). 
 
-Your add method must specify parameters that satisfy the entity's attributes
-specified in your `service.xml` file. Make sure to account for primary keys of
-other related entities. For example, the `addEntry` method above includes
-a parameter `long folderId` to associate the new `BookmarksEntry` to
-a `BookmarksFolder`. 
+Make sure to account for primary keys of other related entities. For example,
+the `addEntry` method above includes a parameter `long guestbookId` to associate
+the new `GuestbookEntry` to a `Guestbook`. 
 
 ## Step 2:  Validate the parameters
 
@@ -114,26 +119,41 @@ or an extension of `PortalException` for any invalid parameters.
 For example, the `addEntry` method invokes the following `validate` method to
 check if the URL parameter is `null`.
 
-    protected void validate(String url) throws PortalException {
-        if (!Validator.isUrl(url)) {
-            throw new EntryURLException();
-        }
+```java
+protected void validate(String name, String email, String entry) throws PortalException {
+
+    if (Validator.isNull(name)) {
+        throw new GuestbookEntryNameException();
     }
+
+    if (!Validator.isEmailAddress(email)) {
+        throw new GuestbookEntryEmailException();
+    }
+
+    if (Validator.isNull(entry)) {
+        throw new GuestbookEntryMessageException();
+    }
+}
+```
 
 Next, generate a primary key for the entity instance you're creating. 
 
 ## Step 3: Generate a primary key
 
-Every entity instance needs a unique primary key. Liferay's
+Entities must each have a unique primary key. Liferay's
 [`CounterLocalService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html) 
 generates them per entity. Every `*BaseLocalServiceImpl` has a
 `counterLocalService` field that references a `CounterLocalService` object for
 the entity. Invoke the counter service's `increment` method to generate a
 primary key for your entity instance.
 
-    long id = counterLocalService.increment();
+```java
+long id = counterLocalService.increment();
+```
 
-Now you have a unique ID for your entity instance. 
+Now you have a unique ID for your entity instance. Always generate primary keys
+in this way, as it ensures your code is compatible with all the databases
+Liferay supports.
 
 ## Step 4: Create an entity instance
 
@@ -141,19 +161,17 @@ The `*Peristence` instance associated with your entity has a `create(long id)`
 method that constructs an entity instance with the given ID. Every
 `*BaseLocalServiceImpl` has a `*Persistence` field that references a
 `*Persistence` object for the entity. For example,
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
-can access
-[`BookmarksEntryLocalServiceBaseImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/base/BookmarksEntryLocalServiceBaseImpl.java)'s
-field `bookmarksEntryPersistence`, which is a reference to a
-`BookmarksEntryPersistence` instance. 
+`GuestbookEntryLocalServiceImpl` as a child of
+`GuestbookEntryLocalServiceBaseImpl` has a field `guestbookEntryPersistence`,
+which is a reference to a `GuestbookEntryPersistence` instance. 
 
-    @BeanReference(type = BookmarksEntryPersistence.class)
-    protected BookmarksEntryPersistence bookmarksEntryPersistence;
+    @Reference
+    protected GuestbookEntryPersistence guestbookEntryPersistence;
 
-`BookmarksEntryLocalServiceImpl`'s `addEntry` method creates a `BookmarksEntry`
+`GuestbookEntryLocalServiceImpl`'s `addEntry` method creates a `GuestbookEntry`
 instance using this call:
 
-    BookmarksEntry entry = bookmarksEntryPersistence.create(entryId);
+    GuestbookEntry entry = guestbookEntryPersistence.create(entryId);
 
 To create an instance of your entity, invoke the `create` method on the
 `*Persistence` field associated with the entity, making sure to pass in the
@@ -166,19 +184,23 @@ It's time to populate the new entity instance.
 ## Step 5: Populate the entity attributes
 
 Use the `add*` method parameter values and the entity's setter methods to
-populate your entity's attributes. For example, here are the `BookmarksEntry`
+populate your entity's attributes. For example, here are the `GuestbookEntry`
 attribute assignments:
 
-    entry.setUuid(serviceContext.getUuid());
-    entry.setGroupId(groupId);
-    entry.setCompanyId(user.getCompanyId());
-    entry.setUserId(user.getUserId());
-    entry.setUserName(user.getFullName());
-    entry.setFolderId(folderId);
-    entry.setTreePath(entry.buildTreePath());
-    entry.setName(name);
-    entry.setUrl(url);
-    entry.setDescription(description);
+```java
+entry.setUuid(serviceContext.getUuid());
+entry.setUserId(userId);
+entry.setGroupId(groupId);
+entry.setCompanyId(user.getCompanyId());
+entry.setUserName(user.getFullName());
+entry.setCreateDate(serviceContext.getCreateDate(now));
+entry.setModifiedDate(serviceContext.getModifiedDate(now));
+entry.setExpandoBridgeAttributes(serviceContext);
+entry.setGuestbookId(guestbookId);
+entry.setName(name);
+entry.setEmail(email);
+entry.setMessage(message);
+```
 
 Note that the `ServiceContext` is commonly used to carry an entity's UUID and
 the `User` is associated to a company. 
@@ -187,9 +209,11 @@ the `User` is associated to a company.
 
 It's time to store the entity. Invoke the `*Persistence` field's `update`
 method, passing in the entity object. For example, here's how the new
-`BookmarksEntry` is persisted:
+`GuestbookEntry` is persisted:
 
-    bookmarksEntryPersistence.update(entry);
+```java
+guestbookEntryPersistence.update(entry);
+```
 
 Your entity is persisted for the application. 
 
