@@ -33,7 +33,7 @@ customize it in @product@.
 
 1.  Go to the *Segments* page.
 
-2.  Click on *Landing Page Visitors*.
+2.  Click on the new Segment.
 
 ![Figure 1: When you see Analytics Cloud Segments in the list of Segments, they are marked with the Analytics Cloud icon.](../../images/segments-ac-list-item.png)
 
