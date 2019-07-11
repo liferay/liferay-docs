@@ -23,16 +23,18 @@ Text auto tagging is disabled by default. To use it, you must enable it:
     is enabled. Although it's enabled by default, administrators can disable it. 
 
 2.  Ensure that a text auto tagging provider is configured and enabled for the 
-    asset type you want to auto tag. You'll learn how to do this here. Note that 
-    these providers aren't configured or enabled by default. 
+    asset types you want to auto tag. You'll learn how to do this here. Note 
+    that these providers aren't configured or enabled by default. 
 
 There are two text auto-tagging providers in the portal: 
 
-**Google Cloud Natural Language Text Auto Tagging:** Uses the 
+[**Google Cloud Natural Language Text Auto Tagging:**](#configuring-google-cloud-natural-language-text-auto-tagging) 
+Uses the 
 [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) 
 to analyze and automatically tag portal content. 
 
-**OpenNLP Text Auto Tagging:** Uses the open source 
+[**OpenNLP Text Auto Tagging:**](#configuring-opennlp-text-auto-tagging) 
+Uses the open source 
 [Apache OpenNLP](https://opennlp.apache.org/) 
 library to analyze and automatically tag portal content. Three models are used: 
 location name finder, organization finder, and person name finder. Use this 
