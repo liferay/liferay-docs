@@ -10,21 +10,26 @@ This section's earlier local service articles focus on CRUD methods: methods
 that **c**reate (add), **r**ead (get), **u**pdate, and **d**elete entities. But
 you might also need methods that provide business logic. 
 
-For example, Liferay Bookmarks application users *open* bookmarks (navigate to a
+Since the Guestbook application doesn't have any business logic, the Bookmarks
+application, which is extremely similar, (Bookmark Folders and Bookmark entries
+instead of Guestbooks and Guestbook entries) is used here to illustrate simple
+business logic. Bookmarks application users *open* bookmarks (navigate to a
 URLs) by clicking on them. 
 [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s 
 `openEntry` method supports this functionality: 
 
-    public BookmarksEntry openEntry(long userId, BookmarksEntry entry) {
-        entry.setVisits(entry.getVisits() + 1);
+```java
+public BookmarksEntry openEntry(long userId, BookmarksEntry entry) {
+    entry.setVisits(entry.getVisits() + 1);
 
-        bookmarksEntryPersistence.update(entry);
+    bookmarksEntryPersistence.update(entry);
 
-        assetEntryLocalService.incrementViewCounter(
-            userId, BookmarksEntry.class.getName(), entry.getEntryId(), 1);
+    assetEntryLocalService.incrementViewCounter(
+        userId, BookmarksEntry.class.getName(), entry.getEntryId(), 1);
 
-        return entry;
-    }
+    return entry;
+}
+```
 
 The `openEntry` method tracks and persists the number of visits to the
 `BookmarksEntry`'s URL, increments the number of views for the `BookmarksEntry`
@@ -48,27 +53,33 @@ is the bookmarks entry and the folder where it's going. Compare the following
 
 **Update method**:
 
-    bookmarksEntryLocalService.updateEntry(userId, entryId, groupId, folderId, name, url, description, serviceContext);
+```java
+bookmarksEntryLocalService.updateEntry(userId, entryId, groupId, folderId, name, url, description, serviceContext);
+```
 
 **Convenience method**:
 
-    bookmarksEntryLocalService.moveEntry(entryId, folderId);
+```java
+bookmarksEntryLocalService.moveEntry(entryId, folderId);
+```
 
-Convenience methods are typically straightforward to write. Here's the
-[`moveEntry` method](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java):
+Here's the [`moveEntry`
+method](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java):
 
-    public BookmarksEntry moveEntry(long entryId, long parentFolderId)
-        throws PortalException {
+```java
+public BookmarksEntry moveEntry(long entryId, long parentFolderId)
+    throws PortalException {
 
-        BookmarksEntry entry = getBookmarksEntry(entryId);
+    BookmarksEntry entry = getBookmarksEntry(entryId);
 
-        entry.setFolderId(parentFolderId);
-        entry.setTreePath(entry.buildTreePath());
+    entry.setFolderId(parentFolderId);
+    entry.setTreePath(entry.buildTreePath());
 
-        bookmarksEntryPersistence.update(entry);
+    bookmarksEntryPersistence.update(entry);
 
-        return entry;
-    }
+    return entry;
+}
+```
 
 The `moveEntry` method retrieves the `BookmarksEntry` entity by its ID, assigns
 it a new parent folder, updates its tree path, persists all the entity's
