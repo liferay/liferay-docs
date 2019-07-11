@@ -78,8 +78,8 @@ This automatically scopes your configuration to `SYSTEM`.
 | Because runtime availability is necessary for some of the Liferay-specific features
 | described below, we recommend defaulting to the bnd annotations.
 
-| **Also Note:** Your project depends on the `-metatype: *` line in its
-| `MANIFEST.MF` file. If you're in a [Liferay
+| **Also Note:** Your project depends on a `-metatype: *` declaration in its
+| metadata. If you're in a [Liferay
 | Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace) or using
 | the [Bundle Support plugin](/docs/7-2/reference/-/knowledge_base/r/), it's added
 | automatically at build time. Otherwise, add it manually in your module's
