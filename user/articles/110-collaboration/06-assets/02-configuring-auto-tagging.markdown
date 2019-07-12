@@ -14,7 +14,7 @@ apply tags that describe the image's content. This lets you leverage tags
 without requiring content creators to apply them manually. 
 
 | **Note:** Auto-tagging currently works only for images, text-based documents, 
-| and text-based web content. 
+| text-based web content, and blog entries. 
 
 Here, you'll learn how to configure asset auto-tagging in general. This is 
 required prior to configuring auto-tagging for specific asset types, which is 
@@ -22,8 +22,6 @@ documented separately:
 
 -   [Auto Tagging Images](/docs/7-2/user/-/knowledge_base/u/auto-tagging-images)
 -   [Auto Tagging Text](/docs/7-2/user/-/knowledge_base/u/auto-tagging-text)
--   [Auto Tagging Documents](/docs/7-2/user/-/knowledge_base/u/auto-tagging-documents)
--   [Auto Tagging Web Content](/docs/7-2/user/-/knowledge_base/u/auto-tagging-web-content)
 
 ## Configuration Levels
 
