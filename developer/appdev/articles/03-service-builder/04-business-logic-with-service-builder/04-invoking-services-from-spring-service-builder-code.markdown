@@ -1,8 +1,8 @@
 ---
-header-id: invoking-services-from-service-builder-code
+header-id: invoking-services-from-spring-service-builder-code
 ---
 
-# Invoking Services from Service Builder Code
+# Invoking Services from Spring Service Builder Code
 
 [TOC levels=1-4]
 

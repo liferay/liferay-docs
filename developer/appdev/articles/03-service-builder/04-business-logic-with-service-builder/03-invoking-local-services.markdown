@@ -46,7 +46,7 @@ completely optional.
 | generates `*LocalServiceImpl`, `*ServiceImpl`, `*PersistenceImpl`, and
 | `[ENTITY_NAME]Impl` classes for your entities as Service Builder Spring
 | Beans---not OSGi Declarative Services. 
-| [Service Builder Spring Beans must use means other than the `@Reference` annotation to reference Liferay services and OSGi services](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-service-builder-code).
+| [Service Builder Spring Beans must use means other than the `@Reference` annotation to reference Liferay services and OSGi services](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-spring-service-builder-code).
 
 **Important:** You should never invoke `*LocalServiceImpl` objects directly. You
 should only invoke them indirectly through their `*LocalService` service
