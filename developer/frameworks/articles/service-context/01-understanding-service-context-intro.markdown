@@ -88,12 +88,14 @@ data with scope must at least specify the scope group ID. Here's an example of
 creating a `ServiceContext` instance and passing it as a parameter to a Liferay
 service API: 
 
-    ServiceContext serviceContext = new ServiceContext();
-    serviceContext.setScopeGroupId(myGroupId);
+```java
+ServiceContext serviceContext = new ServiceContext();
+serviceContext.setScopeGroupId(myGroupId);
 
-    ...
+...
 
-    _blogsEntryService.addEntry(..., serviceContext);
+_blogsEntryService.addEntry(..., serviceContext);
+```
 
 If you invoke the service from a servlet, a Struts action, or any other
 front-end class with access to the `PortletRequest`, use one of the
@@ -102,12 +104,14 @@ front-end class with access to the `PortletRequest`, use one of the
 with all the values specified in the request. The above example looks different
 if you invoke the service from a servlet: 
 
-    ServiceContext serviceContext =
-        ServiceContextFactory.getInstance(BlogsEntry.class.getName(), portletRequest);
+```java
+ServiceContext serviceContext =
+    ServiceContextFactory.getInstance(BlogsEntry.class.getName(), portletRequest);
 
-    ...
+...
 
-    _blogsEntryService.addEntry(..., serviceContext);
+_blogsEntryService.addEntry(..., serviceContext);
+```
 
 You can see an example of populating a `ServiceContext` with information from a
 request object in the code of the `ServiceContextFactory.getInstance(...)`
@@ -131,16 +135,18 @@ JavaScript is no different from creating any other object in JavaScript.
 Before examining a JSON web service invocation that uses a `ServiceContext`
 object, it helps to see a simple JSON web service example in JavaScript:
 
-    Liferay.Service(
-        '/user/get-user-by-email-address`,
-        {
-            companyId: 20101,
-            emailAddress: 'test@liferay.com`
-        },
-        function(obj) {
-            console.log(obj);
-        }
-    );
+```javascript
+Liferay.Service(
+    '/user/get-user-by-email-address`,
+    {
+        companyId: 20101,
+        emailAddress: 'test@liferay.com`
+    },
+    function(obj) {
+        console.log(obj);
+    }
+);
+```
 
 If you run this code, the *test@liferay.com* user (JSON object) is logged to the
 JavaScript console.
@@ -191,80 +197,90 @@ following way:
 
 Here are the corresponding code snippets:
 
-    long groupId = serviceContext.getScopeGroupId();
+```java
+long groupId = serviceContext.getScopeGroupId();
 
-    ...
+...
 
-    entry.setGroupId(groupId);
+entry.setGroupId(groupId);
 
-    ...
+...
 
-    entry.setUrlTitle(getUniqueUrlTitle(entryId, groupId, title));
+entry.setUrlTitle(getUniqueUrlTitle(entryId, groupId, title));
 
-    ...
+...
 
-    // Message boards
+// Message boards
 
-    if (PropsValues.BLOGS_ENTRY_COMMENTS_ENABLED) {
-        mbMessageLocalService.addDiscussionMessage(
-            userId, entry.getUserName(), groupId,
-            BlogsEntry.class.getName(), entryId,
-            WorkflowConstants.ACTION_PUBLISH);
-    }
+if (PropsValues.BLOGS_ENTRY_COMMENTS_ENABLED) {
+    mbMessageLocalService.addDiscussionMessage(
+        userId, entry.getUserName(), groupId,
+        BlogsEntry.class.getName(), entryId,
+        WorkflowConstants.ACTION_PUBLISH);
+}
+```
 
 Can `ServiceContext` be used to access the UUID of the blog entry? Absolutely!
 Can you use `ServiceContext` to set the time the blog entry was added? You sure
 can. See here: 
 
-    entry.setUuid(serviceContext.getUuid());
-    ...
-    entry.setCreateDate(serviceContext.getCreateDate(now));
+```java
+entry.setUuid(serviceContext.getUuid());
+...
+entry.setCreateDate(serviceContext.getCreateDate(now));
+```
 
 Can `ServiceContext` be used in setting permissions on resources? You bet! When
 adding a blog entry, you can add new permissions or apply existing permissions
 for the entry, like this: 
 
-    // Resources
+```java
+// Resources
 
-    if (serviceContext.isAddGroupPermissions() ||
-        serviceContext.isAddGuestPermissions()) {
+if (serviceContext.isAddGroupPermissions() ||
+    serviceContext.isAddGuestPermissions()) {
 
-        addEntryResources(
-            entry, serviceContext.isAddGroupPermissions(),
-            serviceContext.isAddGuestPermissions());
-    }
-    else {
-        addEntryResources(
-            entry, serviceContext.getGroupPermissions(),
-            serviceContext.getGuestPermissions());
-    }
+    addEntryResources(
+        entry, serviceContext.isAddGroupPermissions(),
+        serviceContext.isAddGuestPermissions());
+}
+else {
+    addEntryResources(
+        entry, serviceContext.getGroupPermissions(),
+        serviceContext.getGuestPermissions());
+}
+```
 
 `ServiceContext` helps apply categories, tag names, and the link entry IDs to
 asset entries too. Asset links are the back-end term for related assets in
 Liferay.
 
-    // Asset
+```java
+// Asset
 
-    updateAsset(
-        userId, entry, serviceContext.getAssetCategoryIds(),
-        serviceContext.getAssetTagNames(),
-        serviceContext.getAssetLinkEntryIds());
+updateAsset(
+    userId, entry, serviceContext.getAssetCategoryIds(),
+    serviceContext.getAssetTagNames(),
+    serviceContext.getAssetLinkEntryIds());
+```
 
 Does `ServiceContext` also play a role in starting a workflow instance for the
 blogs entry? Must you ask? 
 
-    // Workflow
+```java
+// Workflow
 
-    if ((trackbacks != null) && (trackbacks.length > 0)) {
-        serviceContext.setAttribute("trackbacks", trackbacks);
-    }
-    else {
-        serviceContext.setAttribute("trackbacks", null);
-    }
+if ((trackbacks != null) && (trackbacks.length > 0)) {
+    serviceContext.setAttribute("trackbacks", trackbacks);
+}
+else {
+    serviceContext.setAttribute("trackbacks", null);
+}
 
-    _workflowHandlerRegistry.startWorkflowInstance(
-        user.getCompanyId(), groupId, userId, BlogsEntry.class.getName(),
-        entry.getEntryId(), entry, serviceContext);
+_workflowHandlerRegistry.startWorkflowInstance(
+    user.getCompanyId(), groupId, userId, BlogsEntry.class.getName(),
+    entry.getEntryId(), entry, serviceContext);
+```
 
 The snippet above also demonstrates the `trackbacks` attribute, a standard
 attribute for the blogs entry service. There may be cases where you need to pass
@@ -272,7 +288,9 @@ in custom attributes to your blogs entry service. Use Expando attributes to
 carry custom attributes along in your `ServiceContext`. Expando attributes are
 set on the added blogs entry like this: 
 
-    entry.setExpandoBridgeAttributes(serviceContext);
+```java
+entry.setExpandoBridgeAttributes(serviceContext);
+```
 
 You can see that the `ServiceContext` can be used to transfer lots of useful
 information for your services. Understanding how `ServiceContext` is used in
