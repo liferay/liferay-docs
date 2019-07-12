@@ -80,8 +80,9 @@ This automatically scopes your configuration to `SYSTEM`.
 
 | **Also Note:** Your project depends on a `-metatype: *` declaration in its
 | metadata. If you're in a [Liferay
-| Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace) or using
-| the [Bundle Support plugin](/docs/7-2/reference/-/knowledge_base/r/), it's added
+| Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace)(or
+| otherwise applying the [workspace plugin to your
+| build](/docs/7-2/reference/-/knowledge_base/r/gradle-plugins)), it's added
 | automatically at build time. Otherwise, add it manually in your module's
 | `bnd.bnd`. It's required to provide information about your app's configuration
 | options so that a configuration UI can be generated.
