@@ -10,8 +10,8 @@ given topic, work in a specific industry, or both. Analytics Cloud then analyzes
 and 
 [profiles](https://help.liferay.com/hc/en-us/articles/360006947851-Profiling-Segments) 
 Segments. You can then integrate your Analytics Cloud Segments with 
-personalization in Liferay DXP. This lets you deliver content of interest to 
-each Segment via Liferay DXP. 
+[personalization in Liferay DXP](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/02-liferay-dxp-personalization.markdown). 
+This lets you deliver content of interest to each Segment via Liferay DXP. 
 
 Here, you'll learn how to create segments in Analytics Cloud. In Analytics 
 Cloud's navigation panel, *Segments* is at the top of the *People* section 
