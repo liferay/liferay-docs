@@ -41,37 +41,39 @@ Here's how to use actionable dynamic query:
 This method from a sample portlet creates an actionable dynamic query, adds a
 query restriction and an action, and executes the query:
 
-	protected void massUpdate() {
-		ActionableDynamicQuery adq = _barLocalService.getActionableDynamicQuery();
-		
-		adq.setAddCriteriaMethod(new ActionableDynamicQuery.AddCriteriaMethod() {
-			
-			@Override
-			public void addCriteria(DynamicQuery dynamicQuery) {
-				dynamicQuery.add(RestrictionsFactoryUtil.lt("field3", 100));
-			}
-			
-		});
-		
-		adq.setPerformActionMethod(new ActionableDynamicQuery.PerformActionMethod<Bar>() {
-			
-			@Override
-			public void performAction(Bar bar) {
-				int field3 = bar.getField3();
-				field3++;
-				bar.setField3(field3);
-				_barLocalService.updateBar(bar);
-			}
-			
-		});
-		
-		try {
-			adq.performActions();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+```java
+protected void massUpdate() {
+    ActionableDynamicQuery adq = _barLocalService.getActionableDynamicQuery();
+    
+    adq.setAddCriteriaMethod(new ActionableDynamicQuery.AddCriteriaMethod() {
+        
+        @Override
+        public void addCriteria(DynamicQuery dynamicQuery) {
+            dynamicQuery.add(RestrictionsFactoryUtil.lt("field3", 100));
+        }
+        
+    });
+    
+    adq.setPerformActionMethod(new ActionableDynamicQuery.PerformActionMethod<Bar>() {
+        
+        @Override
+        public void performAction(Bar bar) {
+            int field3 = bar.getField3();
+            field3++;
+            bar.setField3(field3);
+            _barLocalService.updateBar(bar);
+        }
+        
+    });
+    
+    try {
+        adq.performActions();
+    }
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+```
  
 The example method demonstrates executing an actionable dynamic query on `Bar`
 entities that match certain criteria. 
@@ -80,7 +82,9 @@ entities that match certain criteria.
     [`ActionableDynamicQuery`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/ActionableDynamicQuery.html)
     from local service `BarLocalService`.
 
-        ActionableDynamicQuery adq = _barLocalService.getActionableDynamicQuery();
+    ```java
+    ActionableDynamicQuery adq = _barLocalService.getActionableDynamicQuery();
+    ```
 
     | **Note:** Service Builder generates method `getActionableDynamicQuery()` in
     | each entity's `*LocalService` interface and implements it in each entity's
@@ -91,38 +95,44 @@ entities that match certain criteria.
 
 2.  Set query criteria to match `field3` values less than `100`.
 
-        adq.setAddCriteriaMethod(new ActionableDynamicQuery.AddCriteriaMethod() {
+    ```java
+    adq.setAddCriteriaMethod(new ActionableDynamicQuery.AddCriteriaMethod() {
 
-             @Override
-             public void addCriteria(DynamicQuery dynamicQuery) {
-                 dynamicQuery.add(RestrictionsFactoryUtil.lt("field3", 100));
-             }
+         @Override
+         public void addCriteria(DynamicQuery dynamicQuery) {
+             dynamicQuery.add(RestrictionsFactoryUtil.lt("field3", 100));
+         }
 
-         });
+     });
+     ```
 
 3.  Set an action to perform. The action increments the matching entity's 
     `field3` value. 
 
-        adq.setPerformActionMethod(new ActionableDynamicQuery.PerformActionMethod<Bar>() {
+    ```java
+    adq.setPerformActionMethod(new ActionableDynamicQuery.PerformActionMethod<Bar>() {
 
-             @Override
-             public void performAction(Bar bar) {
-                 int field3 = bar.getField3();
-                 field3++;
-                 bar.setField3(field3);
-                 _barLocalService.updateBar(bar);
-             }
+         @Override
+         public void performAction(Bar bar) {
+             int field3 = bar.getField3();
+             field3++;
+             bar.setField3(field3);
+             _barLocalService.updateBar(bar);
+         }
 
-         });
+     });
+     ```
 
 4.  Execute the action on each matching entity. 
 
-        try {
-            adq.performActions();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+    ```java
+    try {
+        adq.performActions();
+    }
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+    ```
 
 Actionable dynamic queries let you act on large numbers of entities in smaller
 groups. It's an efficient and high performing way to update entities. 
