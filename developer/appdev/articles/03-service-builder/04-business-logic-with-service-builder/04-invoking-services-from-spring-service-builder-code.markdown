@@ -6,29 +6,31 @@ header-id: invoking-services-from-spring-service-builder-code
 
 [TOC levels=1-4]
 
-All the services created within a Service Builder application are wired using an
-internal Spring Application Context. This uses AOP proxies to adapt the services
-for transactions, indexing, and security. In a module's `module-spring.xml`
-Spring Application Context file, Service Builder defines each entity's
-`*LocalServiceImpl`, `*ServiceImpl`, and `*PersistenceImpl` classes as Spring
-Beans. For example, Service Builder defines Spring Beans for the `Foo` entity in
-the
+When using Spring as the dependency injector, all the services created within
+a Service Builder application are wired using an internal Spring Application
+Context. This uses AOP proxies to adapt the services for transactions, indexing,
+and security. In a module's `module-spring.xml` Spring Application Context file,
+Service Builder defines each entity's `*LocalServiceImpl`, `*ServiceImpl`, and
+`*PersistenceImpl` classes as Spring Beans. For example, Service Builder defines
+Spring Beans for the `Foo` entity in the
 [Liferay Blade Service Builder `basic-service` sample module's](/docs/7-2/reference/-/knowledge_base/r/service-builder-samples)
 `src/main/resources/META-INF/spring/module-spring.xml` file:
 
-    <?xml version="1.0"?>
+```xml
+<?xml version="1.0"?>
 
-    <beans
-    	default-destroy-method="destroy"
-    	default-init-method="afterPropertiesSet"
-    	xmlns="http://www.springframework.org/schema/beans"
-    	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-    >
-    	<bean class="com.liferay.blade.samples.servicebuilder.service.impl.FooLocalServiceImpl" id="com.liferay.blade.samples.servicebuilder.service.FooLocalService" />
-    	<bean class="com.liferay.blade.samples.servicebuilder.service.impl.FooServiceImpl" id="com.liferay.blade.samples.servicebuilder.service.FooService" />
-    	<bean class="com.liferay.blade.samples.servicebuilder.service.persistence.impl.FooPersistenceImpl" id="com.liferay.blade.samples.servicebuilder.service.persistence.FooPersistence" parent="basePersistence" />
-    </beans>
+<beans
+    default-destroy-method="destroy"
+    default-init-method="afterPropertiesSet"
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+    <bean class="com.liferay.blade.samples.servicebuilder.service.impl.FooLocalServiceImpl" id="com.liferay.blade.samples.servicebuilder.service.FooLocalService" />
+    <bean class="com.liferay.blade.samples.servicebuilder.service.impl.FooServiceImpl" id="com.liferay.blade.samples.servicebuilder.service.FooService" />
+    <bean class="com.liferay.blade.samples.servicebuilder.service.persistence.impl.FooPersistenceImpl" id="com.liferay.blade.samples.servicebuilder.service.persistence.FooPersistence" parent="basePersistence" />
+</beans>
+```
 
 Here's a summary of the beans the example context defines:
 
@@ -39,9 +41,9 @@ Here's a summary of the beans the example context defines:
  `com.liferay.blade.samples.servicebuilder.service.persistence.FooPersistence` | `com.liferay.blade.samples.servicebuilder.service.persistence.impl.FooPersistenceImpl` |
  
 Since these classes are Spring Beans and NOT OSGi Declarative Services
-components, they use annotations other than the `@Reference` Declarative
-Services annotation to inject Spring Beans and OSGi services. Here are the
-recommended Liferay annotations a Service Builder Spring Bean can use.
+components, they don't use the `@Reference` Declarative Services annotation to
+inject themselves. Here are the recommended Liferay annotations a Service
+Builder Spring Bean can use.
 
 - [Use `@BeanReference` to reference a Spring Bean that is in the Application Context.](#referencing-a-spring-bean-that-is-in-the-application-context)
 - [Use `@ServiceReference` to reference an OSGi service.](#referencing-an-osgi-service)
@@ -64,14 +66,14 @@ For example, if your service module's `service.xml` file defines local services
 for entities named `Foo` and `Bar`, Service Builder generates a
 `module-spring.xml` file that defines local service Spring Beans for both
 entities. To inject the `BarLocalService` Spring Bean into the
-`FooLocalServiceImpl` class, for example, the `FooLocalServiceImpl` class would
+`FooLocalServiceImpl` class, for example, the `FooLocalServiceImpl` class must
 declare a `BarLocalService` field and apply an `@BeanReference` annotation to
 it. 
 
     @BeanReference
     private BarLocalService _barLocalService;
 
-The `@BeanReference` lets Liferay's AOP treat the bean reference for use in
+The `@BeanReference` tells Liferay's AOP to treat the bean reference for use in
 transactions, search indexing, or security, if needed. The referencing class can
 invoke the Spring Bean class's methods.
 
@@ -107,8 +109,8 @@ annotation to reference the *external* service.
 This annotation retrieves a reference to the OSGi service and provides some nice
 benefits. None of the Spring context is created until the `SMSService` service
 is available. Likewise, if the `SMSService` suddenly disappears, the whole
-Spring Application Context is destroyed. This makes Liferay Spring apps much
-more robust and versatile.
+Spring Application Context is destroyed. This makes Liferay Spring apps robust
+and versatile.
 
 Fortunately, Service Builder generates this kind of code for every entity your
 `service.xml` file references. For example, the
@@ -116,15 +118,19 @@ Fortunately, Service Builder generates this kind of code for every entity your
 `basic-service` module's `service.xml` file defines a `Foo` entity that
 references an `AssetEntry` entity:
 
-    <reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+```xml
+<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+```
 
 Service Builder generated the `FooLocalServiceBaseImpl` class (the base class is
 part of the `FooLocalServiceImpl` class's hierarchy), which references the
 `AssetEntry` entity's local service `AssetEntryLocalService` using a field
 annotated with `@ServiceReference`:
 
-    @ServiceReference(type = com.liferay.asset.kernel.service.AssetEntryLocalService.class)
-    protected com.liferay.asset.kernel.service.AssetEntryLocalService assetEntryLocalService;
+```java
+@ServiceReference(type = com.liferay.asset.kernel.service.AssetEntryLocalService.class)
+protected com.liferay.asset.kernel.service.AssetEntryLocalService assetEntryLocalService;
+```
 
 Great! You now know how to add a reference to any OSGi service to a Service
 Builder Spring Bean. You also know how to add a reference to any other Spring
