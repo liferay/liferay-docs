@@ -73,8 +73,8 @@ You can override these settings for each instance from *Control Panel* &rarr;
 
 ![Figure 2: Configure TensorFlow image auto-tagging for your portal instances.](../../../images/auto-tagging-tensorflow.png)
 
-To optimize performance, you can also control the process that runs the 
-TensorFlow image auto tagging in @product@: 
+To optimize performance, you can also control the process that runs TensorFlow 
+image auto tagging: 
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
     *Assets*. 
@@ -131,7 +131,7 @@ Follow these steps to configure Microsoft Cognitive Services image auto tagging:
     [API key](https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/?apiSlug=computer-services) 
     for the Computer Vision API V2. 
 
-    **Endpoint:** The endpoint for the Computer Vision API V2 (e.g., 
+    **API Endpoint:** The endpoint for the Computer Vision API V2 (e.g., 
     `https://westcentralus.api.cognitive.microsoft.com/vision/v2.0`). 
 
     **Enabled:** Whether Microsoft Cognitive Services image auto tagging is 
