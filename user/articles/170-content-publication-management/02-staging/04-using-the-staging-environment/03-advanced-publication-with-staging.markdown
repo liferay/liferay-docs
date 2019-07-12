@@ -39,6 +39,26 @@ separately if you want to publish both page groups.
 You can also choose specific pages to publish, and the look and feel of those
 pages.
 
+| **Note:** If you're publishing pages with a custom theme, you must check the
+| *Theme Settings* option under the Look and Feel heading for your staging
+| configuration. If it's not checked, the default theme is always applied.
+
+The *Delete Missing Pages* option under the Look and Feel heading deletes all
+pages from the live Site that are not present on the staging Site. You can
+choose specific pages to publish (and remove) by manually selecting them under
+the Pages to Publish heading.
+
+| **Note:** The Simple Publication menu displays the number of page deletions
+| tracked by the Staging framework. Keep in mind that this number counts the
+| page deletions on the staging Site, not how many pages will be deleted on the
+| live Site. There could be an inconsistency between the number of page
+| deletions to be published and the actual number of pages present on either of
+| the staging and live Sites. For example, pages that were deleted on the
+| staging Site before they were published.
+
+See the [Deletions](#deletions) section for more information on content
+deletion.
+
 ## Content
 
 The Content area lets you select the content to be published. If you choose a
@@ -108,7 +128,8 @@ pages may reference this data. This process cannot be undone. If you are unsure,
 complete an export first.
 
 **Replicate Individual Deletions:** operations performed for content in the
-staging environment are replicated to the target site.
+staging environment are replicated to the target site. This does not include
+page deletions.
 
 ## Permissions
 
