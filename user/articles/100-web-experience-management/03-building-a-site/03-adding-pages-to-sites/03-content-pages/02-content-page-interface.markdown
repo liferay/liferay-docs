@@ -37,10 +37,8 @@ to work together to build something piece by piece.
 
 Out of the box, you are provided with a plethora of Layouts, Sections, and 
 Components to use to build page, and a
-[web developer can create their own Fragments](dev-guide-link)
-to add to these.
-
-<!-- TODO: provide dev link for creating fragments above, when available -->
+[web developer can create their own Fragments](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments)
+to add to these. 
 
 ## Editable Elements
 

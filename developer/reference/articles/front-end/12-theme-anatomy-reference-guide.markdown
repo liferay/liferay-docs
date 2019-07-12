@@ -2,15 +2,13 @@
 header-id: theme-reference-guide
 ---
 
-# Theme Reference Guide
+# Theme Anatomy Reference Guide
 
 [TOC levels=1-4]
 
 A theme is made up of several files. Although most of the files are named after
 their matching components, their functions may be unclear. This reference guide
 explains each file's usage to make clear which files to modify.
-
-## Theme Anatomy
 
 Themes built with the [Liferay JS Theme Toolkit](https://github.com/liferay/liferay-js-themes-toolkit/tree/master/packages) 
 have the anatomy shown below: 
