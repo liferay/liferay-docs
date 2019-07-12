@@ -12,7 +12,7 @@ project development, you must upgrade your Maven build to be compatible with
 upgrade process that you must address:
 
 - [Upgrading to new @product-ver@ Maven plugins](#upgrading-to-new-product-ver-maven-plugins)
-- [Updating Liferay Maven artifact dependencies](updating-liferay-maven-artifact-dependencies)
+- [Updating Liferay Maven artifact dependencies](#updating-liferay-maven-artifact-dependencies)
 
 For more information on using Maven with @product-ver@, see the
 [Maven tutorial section](/docs/7-1/tutorials/-/knowledge_base/t/maven). For a
