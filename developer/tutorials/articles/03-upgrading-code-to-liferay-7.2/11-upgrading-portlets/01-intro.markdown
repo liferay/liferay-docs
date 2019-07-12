@@ -25,11 +25,8 @@ portlets:
 -   [Liferay MVC Portlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet)
 -   [Liferay JSF Portlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-liferay-jsf-portlet)
 -   [Servlet-based portlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-servlet-based-portlet)
+-   [Spring Portlet MVC](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-spring-portlet-mvc-portlet)
 -   [Struts Portlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-struts-1-portlet)
-
-<!--Uncomment once article is available
--   Spring MVC Portlet
--->
 
 Let's get your portlet running on @product-ver@!
 
