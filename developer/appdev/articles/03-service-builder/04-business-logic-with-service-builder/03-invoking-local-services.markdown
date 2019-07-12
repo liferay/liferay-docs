@@ -32,17 +32,20 @@ annotated with `@Component`)
 The `basic-web` module's `JSPPortlet` class is a `Portlet` service component
 that references the `FooLocalService` local service as a DS component.
 
-    @Reference
-	private volatile FooLocalService _fooLocalService;
+```java
+@Reference
+private volatile FooLocalService _fooLocalService;
+```
 
 The OSGi service registry wires the service implementation object to your class
 that references it. The `JSPPortlet` sample class declares the
 `_fooLocalService` field to be volatile, but making a field volatile is
 completely optional. 
 
-| **Note**: Service Builder generates `*LocalServiceImpl`, `*ServiceImpl`,
-| `*PersistenceImpl`, and `[ENTITY_NAME]Impl` classes for your entities as 
-| Service Builder Spring Beans---not OSGi Declarative Services. 
+| **Note**: If you chose Spring as the dependency injector, Service Builder
+| generates `*LocalServiceImpl`, `*ServiceImpl`, `*PersistenceImpl`, and
+| `[ENTITY_NAME]Impl` classes for your entities as Service Builder Spring
+| Beans---not OSGi Declarative Services. 
 | [Service Builder Spring Beans must use means other than the `@Reference` annotation to reference Liferay services and OSGi services](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-service-builder-code).
 
 **Important:** You should never invoke `*LocalServiceImpl` objects directly. You
@@ -55,40 +58,44 @@ You can make a service object available to JSPs by associating it with a
 associates the `FooLocalService` object with an attribute called
 `fooLocalService`. 
 
-    @Override
-    public void render(RenderRequest request, RenderResponse response)
-        throws IOException, PortletException {
+```java
+@Override
+public void render(RenderRequest request, RenderResponse response)
+    throws IOException, PortletException {
 
-        //set service bean
-        request.setAttribute("fooLocalService", getFooLocalService());
+    //set service bean
+    request.setAttribute("fooLocalService", getFooLocalService());
 
-        super.render(request, response);
-    }
-    
-    public FooLocalService getFooLocalService() {
-        return _fooLocalService;
-    }
+    super.render(request, response);
+}
+
+public FooLocalService getFooLocalService() {
+    return _fooLocalService;
+}
+```
 
 If your JSP declares the `<portlet:defineObjects />` tag, it can retrieve the
 service object from the `RenderRequest` attribute. For example, the
 `JSPPortlet`'s `init.jsp` file retrieves the `FooLocalService` object from the
 `"fooLocalService"` attribute. 
 
-    ...
-    <%@
-    page import="com.liferay.blade.samples.servicebuilder.service.FooLocalService" %>
-    ...
+```jsp
+...
+<%@
+page import="com.liferay.blade.samples.servicebuilder.service.FooLocalService" %>
+...
 
-    <liferay-theme:defineObjects />
+<liferay-theme:defineObjects />
 
-    <portlet:defineObjects />
+<portlet:defineObjects />
 
-    <%
-    ...
+<%
+...
 
-    //get service bean
-    FooLocalService fooLocalService = (FooLocalService)request.getAttribute("fooLocalService");
-    %>
+//get service bean
+FooLocalService fooLocalService = (FooLocalService)request.getAttribute("fooLocalService");
+%>
+```
 
 All JSPs that include the above `init.jsp` can use the `fooLocalService`
 variable to invoke the local service component's methods. 
@@ -104,23 +111,27 @@ The `basic-web` sample module's `view.jsp` and `edit_foo.jsp` files include the
 `view.jsp` file uses the component's `getFoosCount` method and `getFoos` method
 in a Liferay Search Container that lists `Foo` instances. 
 
-    <liferay-ui:search-container
-    	total="<%= fooLocalService.getFoosCount() %>"
-    >
-    	<liferay-ui:search-container-results
-    		results="<%= fooLocalService.getFoos(searchContainer.getStart(), searchContainer.getEnd()) %>"
-    	/>
-        ...
-    </liferay-ui:search-container>
+```jsp
+<liferay-ui:search-container
+    total="<%= fooLocalService.getFoosCount() %>"
+>
+    <liferay-ui:search-container-results
+        results="<%= fooLocalService.getFoos(searchContainer.getStart(), searchContainer.getEnd()) %>"
+    />
+    ...
+</liferay-ui:search-container>
+```
 
 The `edit_foo.jsp` file calls `getFoo(long id)` to retrieve a `Foo` entity based
 on the entity instance's ID.
 
-    long fooId = ParamUtil.getLong(request, "fooId");
-    Foo foo = null;
-    if (fooId > 0) {
-    	foo = fooLocalService.getFoo(fooId);
-    }
+```jsp
+long fooId = ParamUtil.getLong(request, "fooId");
+Foo foo = null;
+if (fooId > 0) {
+    foo = fooLocalService.getFoo(fooId);
+}
+```
 
 | **Important:** When invoking service entity updates (e.g., 
 | `fooService.update(object)`) for services that have MVCC enabled, make sure to 
