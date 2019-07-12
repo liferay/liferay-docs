@@ -14,7 +14,8 @@ text-based assets. This lets you use tags without requiring anyone to manually
 apply them. 
 
 | **Note:** Currently, text auto tagging is only available for text-based 
-| documents and web content. Tags applied automatically are English only. 
+| documents, text-based web content, and blog entries. Tags applied 
+| automatically are English only. 
 
 Text auto tagging is disabled by default. To use it, you must enable it: 
 
