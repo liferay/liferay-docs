@@ -63,7 +63,9 @@ the `siteId`. Then you're creating a request body that includes:
 - `userId`: the ID of the User making the service call.
 
 For a complete view of the JSON structure of a data definitions, see the
-`data-engine-rest-impl/rest-openapi.yaml` file.
+[`data-engine-rest-impl/rest-openapi.yaml`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/data-engine/data-engine-rest-impl/rest-openapi.yaml)
+file. For a more robust User Experience, copy the file contents into the [Swagger
+Editor](https://editor.swagger.io/) and get auto-generated Open API docs. 
 
 One your POST call is processed, a `DataDefinition` is returned in the body. You
 will need its `id` to create data record collections for the definition's
@@ -117,7 +119,7 @@ Before we move on, it's important to understand the relationship between the
 data definition and the information you're going to collect from Users, as a
 data record. A data record must conform to the fields defined in this data
 definition creation step. Therefore, when you add a data record in a later step
-your request will need to use a `dataRecordValues` structure like this:
+your request will use a `dataRecordValues` structure like this:
 
 ```json
     "dataRecordValues": {
@@ -130,7 +132,9 @@ your request will need to use a `dataRecordValues` structure like this:
 
 ### Retrieving Data Definitions
 
-In addition to adding data definitions, you can make GET calls to the service:
+In addition to adding data definitions, you can make GET calls to the service.
+Retrieve all the data definitions in a site by passing in the site ID (`20123`
+here):
 
 ```sh
 curl -i -X GET \
@@ -139,23 +143,16 @@ curl -i -X GET \
   -H 'Content-Type: application/json' \
 ```
 
-
 ### Deleting Data Definitions
 
-Data definitions can also be deleted:
+Data definitions can also be deleted with a DELETE request. You'll need the data
+definition ID:
 
 ```sh
 curl -i -X DELETE \
   http://localhost:8080/o/data-engine/v1.0/data-definitions/39108 \
   -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
   -H 'Content-Type: application/json' \
-  -d '{
-    "dataDefinitionFields": [
-        {
-            "fieldType": "text",
-            "name": "product"
-        }
-    ]}'
 ```
 
 <!-- Do we need to warn about deleting data definitions that are in use?-->

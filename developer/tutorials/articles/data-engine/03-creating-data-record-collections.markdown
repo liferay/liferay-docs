@@ -62,3 +62,24 @@ curl -i -X GET \
 ```
 
 ### Deleting a Site's Data Record Collections
+
+
+Delete data record collections with a DELETE request. You'll need the data
+record collection ID:
+
+```sh
+```sh
+curl -i -X DELETE \
+  http://localhost:8080/o/data-engine/v1.0/data-record-collections/85637 \
+  -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
+  -H 'Content-Type: application/json'
+```
+
+<!-- Do we need to warn about deleting record collections that are in use?-->
+
+For more examples, paste the contents of
+[`data-engine-rest-impl/rest-openapi.yaml`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/data-engine/data-engine-rest-impl/rest-openapi.yaml)
+into the [Swagger Editor](https://editor.swagger.io/) and get auto-generated
+Open API docs. 
+
+
