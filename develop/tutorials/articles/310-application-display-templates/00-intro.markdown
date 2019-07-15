@@ -1,3 +1,7 @@
+---
+header-id: application-display-templates
+---
+
 # Application Display Templates
 
 [TOC levels=1-4]

@@ -1,4 +1,10 @@
+---
+header-id: recommendations-for-using-adts
+---
+
 # Recommendations for Using ADTs
+
+[TOC levels=1-4]
 
 You've harnessed a lot of power by learning to leverage the ADT API. Be
 careful, for with great power, comes great responsibility! To that end, you'll
