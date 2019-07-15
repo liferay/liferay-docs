@@ -138,7 +138,7 @@ To add Widget Template support in your custom portlet, follow the steps below.
         <%-- The code that will be rendered by default when there is no
         template available should be inserted here. --%>
 
-		</liferay-ddm:template-renderer>
+    </liferay-ddm:template-renderer>
     ```
 
     In this step, you initialized variables dealing with the display settings 

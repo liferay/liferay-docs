@@ -92,7 +92,7 @@ for step-by-step instructions on how to complete this.
 
 Next, you'll learn how to expose Widget Template selection for users.
 
-## Exposing Widget Template Selection
+## Exposing the Widget Template Selection
 
 To expose the Widget Template option to your users, you can use the
 `<liferay-ui:ddm-template-selector>` tag in the JSP file you're using to control
