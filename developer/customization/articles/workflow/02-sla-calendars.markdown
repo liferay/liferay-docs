@@ -1,4 +1,10 @@
+---
+header-id: creating-sla-calendars
+---
+
 # Creating SLA Calendars
+
+[TOC levels=1-4]
 
 By default, an internal calendar assumes the 
 [SLA deadline clock](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement-sla)
@@ -30,7 +36,7 @@ you've provided. For example, make the timer run for 8 hours per day, from 9-17
 by a 24-hour clock, for 5 days per week. Even stop the calendar from counting
 during lunch hours if you need to.
 
-![Figure x: Write a Custom SLA Calendar if the default, 24/7 calendar isn't sufficient.](../../images/workflow-custom-sla-calendar.png)
+![Figure 1: Write a Custom SLA Calendar if the default, 24/7 calendar isn't sufficient.](../../images/workflow-custom-sla-calendar.png)
 
 ## Dependencies
 
