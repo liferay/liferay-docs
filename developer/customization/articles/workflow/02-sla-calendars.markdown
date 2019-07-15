@@ -36,18 +36,15 @@ during lunch hours if you need to.
 
 Along with some artifacts you're probably used to depending on (like
 `com.liferay.portal.kernel`, you'll need the
-`com.liferay.portal.workflow.metrics.api-[version].jar` artifact. For @product@
+`com.liferay.portal.workflow.metrics.sla.api-[version].jar` artifact. For @product@
 version 7.2.10-GA1, here's an example Gradle build dependency declaration:
 
 ```groovy
-compileOnly group: "com.liferay", name: "com.liferay.portal.workflow.metrics.api", version: "1.0.2"
+compileOnly group: "com.liferay", name: "com.liferay.portal.workflow.metrics.sla.api", version: "1.1.0"
 compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "4.4.0"
 compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
 compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
 ```
-
-<!--NOTE, this assumes we're publishing the workflow metrics api publicly, which
-I do not have confirmation of yet. -->
 
 ## Implementation Steps
 
@@ -86,12 +83,12 @@ The component property `sla.calendar.key` is required to identify this calendar.
     }
 ```
 
-Use `getDuration` to return the time period (as a `Duration`) when the elapsed
-SLA time should be computed. The start and end dates are set by administrators
-during the creation of the SLA. For example, given a start date
+Use `getDuration` to return the time `Duration` when elapsed SLA time should be
+computed. The start and end dates that this method receives are those set by
+administrators during the creation of the SLA. For example, given a start date
 _2019-05-13T16:00:00_ and end date _2019-05-13T18:00:00_, The 24/7 calendar
-returns 2 elapsed hours, while the 9-17 weekdays calendar returns 1 hour as the
-elapsed time.
+returns 2 elapsed hours, while a 9-17 weekdays calendar returns 1 hour as the
+elapsed time. 
 
 ```java
     @Override
@@ -107,7 +104,10 @@ SLA will be considered overdue given the parameter values. For example; given
 that `nowLocalDateTime`=_2019-05-13T17:00:00_ and `remainingDuration`=_24H_, The
 24/7 calendar return a `localDateTime` of _2019-05-14T17:00:00_ as the overdue
 date. Given the same parameters, the 9-17 weekdays calendar returns
-_2019-05-17T09:00:00_. 
+_2019-05-17T09:00:00_. The remaining duration of time left in the SLA is
+available in the method as a `Duration` object; your job is to write the logic
+that will consider your calendar and create a `LocalDateTime` with the proper
+overdue date/time.
 
 ```java
     @Override
