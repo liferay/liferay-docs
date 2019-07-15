@@ -1,3 +1,7 @@
+---
+header-id: implementing-widget-templates
+---
+
 # Implementing Widget Templates
 
 [TOC levels=1-4]

@@ -1,3 +1,7 @@
+---
+header-id: customizing-widgets
+---
+
 # Customizing Widgets
 
 [TOC levels=1-4]
