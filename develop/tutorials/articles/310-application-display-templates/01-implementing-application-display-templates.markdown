@@ -78,7 +78,7 @@ You'll walk through these steps next.
 
     ```xml
     <?xml version="1.0"?>
-    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
+    <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_1_0.dtd">
     <resource-action-mapping>
         ...
         <portlet-resource>
@@ -173,7 +173,7 @@ You'll walk through these steps next.
         <%-- The code that will be rendered by default when there is no
         template available should be inserted here. --%>
 
-		</liferay-ddm:template-renderer>
+    </liferay-ddm:template-renderer>
     ```
 
     In this step, you initialized variables dealing with the display settings 
