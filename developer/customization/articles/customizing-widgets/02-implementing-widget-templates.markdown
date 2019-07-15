@@ -9,19 +9,7 @@ Configuration menu.
 
 ![Figure 1: By using a custom display template, your portlet's display can be customized.](../../images/widget-template-dropdown.png)
 
-In this article, you'll learn how to use the Widget Template API to add a
-Widget Template to a portlet.
-
-## Using the Application Display Templates API
-
-To leverage the Widget Template API, there are several steps you must follow.
-These steps involve
-
-- registering your portlet to use Widget Templates
-- defining permissions
-- exposing the Widget Template functionality to users
-
-You'll walk through these steps next.
+To add Widget Template support in your custom portlet, follow the steps below.
 
 1.  Create and register a custom `*PortletDisplayTemplateHandler` component.
     Liferay provides the
@@ -43,23 +31,6 @@ You'll walk through these steps next.
         service = TemplateHandler.class
     )
     ```
-
-    Each of the methods in this class have a significant role in defining and
-    implementing ADTs for your custom portlet. The list below highlights some of
-    the methods defined specifically for ADTs:
-
-    **getClassName():** Defines the type of entry your portlet is rendering.
-
-    **getName():** Declares the name of your Widget Template type (typically,
-    the name of the portlet).
-
-    **getResourceName():** Specifies which resource is using the Widget
-    Template (e.g., a portlet) for permission checking. This method must return
-    the portlet's fully qualified portlet ID (e.g.,
-    `com_liferay_wiki_web_portlet_WikiPortlet`).
-
-    **getTemplateVariableGroups():** Defines the variables exposed in the
-    template editor.
 
     As an example `*PortletDisplayTemplateHandler` implementation, you can look
     at the
@@ -126,14 +97,7 @@ You'll walk through these steps next.
     ```
 
     In this JSP, the `<liferay-ddm:template-selector>` tag specifies the Display
-    Template drop-down menu to be used in the widget's Configuration menu. The
-    variables `displayStyle` and `displayStyleGroupId` are preferences that your
-    portlet stores when you use this taglib and your portlet uses the
-    [BaseJSPSettingsConfigurationAction](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BaseJSPSettingsConfigurationAction.html)
-    or
-    [DefaultConfigurationAction](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/DefaultConfigurationAction.html).
-    Otherwise, you must obtain the value of those parameters and store them
-    manually in your configuration class.
+    Template drop-down menu to be used in the widget's Configuration menu.
 
     As an example JSP, see the Wiki widget's
     [`configuration.jsp`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/wiki/wiki-web/src/main/resources/META-INF/resources/wiki/configuration.jsp). 
@@ -142,7 +106,7 @@ You'll walk through these steps next.
     Widget Template. This lets you decide which part of your view is rendered by
     the Widget Template and what is available in the template context.
 
-    First, initialize the Java variables needed for the ADT: 
+    First, initialize the Java variables needed for the Widget Template: 
 
     ```
     <%
@@ -152,7 +116,7 @@ You'll walk through these steps next.
     ```
 
     Next, you can test if the Widget Template is configured, grabs the entities
-    to be rendered, and renders them using the ADT. The tag
+    to be rendered, and renders them using the Widget Template. The tag
     `<liferay-ddm:template-renderer>` aids with this process. It automatically
     uses the selected template, or renders its body if no template is selected.
 
@@ -175,19 +139,14 @@ You'll walk through these steps next.
 
     In this step, you initialized variables dealing with the display settings 
     (`displayStyle` and `displayStyleGroupId`) and passed them to the tag along
-    with other parameters listed below:
-
-    - `className`: your entity's class name.
-    - `contextObjects`: accepts a `Map<String, Object>` with any object you want
-      to the template context.
-    - `entries`: accepts a list of your entities (e.g., `List<YourEntity>`).
+    with other parameters.
 
     For an example that demonstrates implementing this, see
     [`configuration.jsp`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/site-navigation/site-navigation-site-map-web/src/main/resources/META-INF/resources/configuration.jsp).
 
-Awesome! Your portlet now supports Widget Templates! Once your script is uploaded into the
-portal and saved, users with the specified roles can select the template when
-they're configuring the display settings of your portlet on a page. You can
-visit the
+Awesome! Your portlet now supports Widget Templates! Once your script is
+uploaded into the portal and saved, users with the specified roles can select
+the template when they're configuring the display settings of your portlet on a
+page. You can visit the
 [Styling Widgets with Widget Templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates)
 section for more details on using Widget Templates.
