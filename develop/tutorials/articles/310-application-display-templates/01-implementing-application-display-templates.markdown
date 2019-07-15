@@ -7,9 +7,9 @@ header-id: implementing-application-display-templates
 [TOC levels=1-4]
 
 [Application Display Templates](/docs/7-1/user/-/knowledge_base/u/styling-widgets-with-application-display-templates)
-(ADTs) provide--the ability to add custom display templates to your widgets
-from the portal. The figure below shows what the Display Template option looks
-like in a widget Configuration menu.
+(ADTs) let you add custom display templates to your widgets from the portal. The
+figure below shows what the Display Template option looks like in a widget's
+Configuration menu.
 
 ![Figure 1: By using a custom display template, your portlet's display can be customized.](../../images/adt-dropdown.png)
 
@@ -18,9 +18,14 @@ to add an ADT to a portlet.
 
 ## Using the Application Display Templates API
 
-To leverage the ADT API, there are several steps you need to follow. These
-steps involve registering your portlet to use ADTs, defining permissions, and
-exposing the ADT functionality to users. You'll walk through these steps now:
+To leverage the ADT API, there are several steps you must follow. These steps
+involve
+
+- registering your portlet to use ADTs
+- defining permissions
+- exposing the ADT functionality to users
+
+You'll walk through these steps next.
 
 1.  Create and register a custom `*PortletDisplayTemplateHandler` component.
     Liferay provides the
@@ -75,9 +80,7 @@ exposing the ADT functionality to users. You'll walk through these steps now:
     <?xml version="1.0"?>
     <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
     <resource-action-mapping>
-
         ...
-
         <portlet-resource>
             <portlet-name>yourportlet</portlet-name>
             <permissions>
@@ -87,14 +90,10 @@ exposing the ADT functionality to users. You'll walk through these steps now:
                     <action-key>CONFIGURATION</action-key>
                     <action-key>VIEW</action-key>
                 </supports>
-
                 ...
-
             </permissions>
         </portlet-resource>
-
         ...
-
     </resource-action-mapping>
     ```
 
@@ -155,10 +154,10 @@ exposing the ADT functionality to users. You'll walk through these steps now:
     %>
     ```
 
-    Next, you can test if the ADT is configured, grab the entities to be
-    rendered, and render them using the ADT. The tag
+    Next, you can test if the ADT is configured, grabs the entities to be
+    rendered, and renders them using the ADT. The tag
     `<liferay-ddm:template-renderer>` aids with this process. It automatically
-    uses the selected template or render its body if no template is selected.
+    uses the selected template, or renders its body if no template is selected.
 
     Here's some example code that demonstrates implementing this:
 
