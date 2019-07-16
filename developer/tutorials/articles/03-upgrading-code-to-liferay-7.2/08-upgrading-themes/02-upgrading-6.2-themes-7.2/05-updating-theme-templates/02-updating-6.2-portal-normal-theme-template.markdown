@@ -6,8 +6,8 @@ header-id: updating-6-2-portal-normal-theme-template
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 Theme Templates<br>Step 1 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 Theme Templates</p><p>Step 1 of 3</p>
 </div>
 
 Follow these steps to update `portal_normal.ftl`:

@@ -6,10 +6,6 @@ header-id: upgrading-ext-plugins
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Ext Plugins<br>Step 1 of 1</p>
-</div>
-
 Ext plugins let you use internal APIs and even let you overwrite @product@ core
 files. This puts your deployment at risk of being incompatible with security,
 performance, or feature updates released by Liferay. When upgrading to a new

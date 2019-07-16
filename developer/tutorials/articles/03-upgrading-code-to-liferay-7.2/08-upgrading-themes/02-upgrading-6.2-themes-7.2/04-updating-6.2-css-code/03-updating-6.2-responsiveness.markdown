@@ -6,8 +6,8 @@ header-id: updating-the-6-2-responsiveness
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 CSS Code<br>Step 2 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 CSS Code</p><p>Step 2 of 2</p>
 </div>
 
 Bootstrap 4 explicit media queries replaced the Bootstrap 2 `respond-to` mixins

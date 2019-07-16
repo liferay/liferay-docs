@@ -6,8 +6,8 @@ header-id: removing-legacy-files
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Service Builder Services<br>Step 1 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Service Builder Services</p><p>Step 1 of 3</p>
 </div>
 
 The first step in upgrading your Service Builder services is to delete legacy
