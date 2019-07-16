@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Task;
 import org.htmlparser.Parser;
 import org.htmlparser.filters.NodeClassFilter;
 import org.htmlparser.tags.LinkTag;
@@ -23,43 +25,42 @@ import org.htmlparser.util.ParserException;
 
 import com.liferay.portal.kernel.util.Validator;
 
-public class CheckLinks {
+/**
+ * @author Cody Hoag
+ */
+public class CheckLinks extends Task {
 
-	public static void main(String[] args) throws Exception {
+	@Override
+	public void execute() throws BuildException {
 
-		String legacyLinks = args[0];
-		checkLegacyLinks = Boolean.parseBoolean(legacyLinks);
+		checkApiLinks = _apiLinks;
+		checkDxpLinks = _dxpCheck;
+		checkLegacyLinks = _legacyLinks;
 
-		String apiLinks = args[1];
-		checkApiLinks = Boolean.parseBoolean(apiLinks);
+		String docDir = _docdir;
 
-		String docDir = args[2];
-		platformToken = args[3];
-		appToken = args[4];
-		platformReferenceSite = args[5];
-		appReferenceSite = args[6];
+		appToken = _appToken;
+		platformToken = _platformToken;
 
-		String dxpLinks = args[7];
-		checkDxpLinks = Boolean.parseBoolean(dxpLinks);
+		platformReferenceSite = _platformReferenceSite;
+		appReferenceSite = _appReferenceSite;
 
 		// e.g., docDir = tutorials
 		File currentArticleDir = new File("../" + docDir + "/articles");
 		List<File> currentArticles = findCurrentDirArticles(currentArticleDir);
 
 		if (checkDxpLinks) {
-			currentArticles = addDxpOnlyArticles(currentArticles, docDir, true);
+			currentArticles = addDxpOnlyArticles(currentArticles, docDir);
 		}
 
 		assignReferencedDirArticles(articleDirs);
 
+		try {
 		userGuideHeaders = findHeaders(userGuideArticles);
-		adminGuideHeaders = findHeaders(adminGuideArticles);
-		analyticsCloudHeaders = findHeaders(analyticsCloudArticles);
-		commerceHeaders = findHeaders(commerceArticles);
-		userGuideReferenceHeaders = findHeaders(userGuideReferenceArticles);
-		tutorialHeaders = findHeaders(tutorialArticles);
-		devGuideReferenceHeaders = findHeaders(devGuideReferenceArticles);
-		commerceDevHeaders = findHeaders(commerceDevArticles);
+		deploymentGuideHeaders = findHeaders(deploymentGuideArticles);
+		distributeGuideHeaders = findHeaders(distributeGuideArticles);
+		tutorialsHeaders = findHeaders(tutorialsArticles);
+		referenceDevHeaders = findHeaders(referenceDevArticles);
 
 		for (File article : currentArticles) {
 
@@ -68,15 +69,19 @@ public class CheckLinks {
 
 			while ((line = in.readLine()) != null) {
 
-				if (line.contains("](/develop/") || line.contains("](/discover/") ||
-						line.contains("](/distribute/") || line.contains("](/web/commerce/")) {
+				if (line.contains("](/develop/") || line.contains("](/discover/")) {
+					logInvalidUrl(article, in.getLineNumber(), line, false);
+				}
 
-					String findStr = "/-/knowledge_base/";
-					int urlsInLine = countStrings(line, findStr);
+				if (line.contains("](/docs/" + PORTAL_VERSION) ||
+					line.contains("](/docs/" + PORTAL_VERSION_LEGACY_1) ||
+					line.contains("](/docs/" + PORTAL_VERSION_LEGACY_2)) {
+
+					int urlsInLine = countStrings(line);
 
 					if (urlsInLine < 2) {
 
-						String header = extractHeader(line, article, in, findStr);
+						String header = extractHeader(line, article, in);
 
 						String primaryHeader = null;
 						validUrl = true;
@@ -104,13 +109,14 @@ public class CheckLinks {
 					}
 
 					else {
-						checkMultiLinks(article, line, in, findStr);
+						checkMultiLinks(article, line, in);
 					}
 				}
+
 				if (line.contains("](#")) {
 
-					String findStr = "](#";
-					int subHeadersInLine = countStrings(line, findStr);
+					String sublinkStart = "](#";
+					int subHeadersInLine = countStrings(line);
 
 					if (subHeadersInLine < 2) {
 						String secondaryHeader = extractSubHeader(line, article, in);
@@ -122,7 +128,7 @@ public class CheckLinks {
 						}
 					}
 					else {
-						checkMultiSubLinks(article, line, in, findStr);
+						checkMultiSubLinks(article, line, in, sublinkStart);
 					}
 
 				}
@@ -139,12 +145,47 @@ public class CheckLinks {
 
 			in.close();
 		}
+		} catch (IOException e) {
+			throw new BuildException(e.getLocalizedMessage());
+		}
 		if (resultsNumber > 0) {
-			throw new Exception("\n\n**Total Broken Links: " + resultsNumber + "**\n");
+			throw new BuildException("\n\n**Total Broken Links: " + resultsNumber + "**\n");
 		}
 		else {
 			System.out.println("\nNo Broken Links!");
 		}
+	}
+
+	public void setApiLinks(boolean apiLinks) {
+		_apiLinks = apiLinks;
+	}
+
+	public void setDocdir(String docdir) {
+		_docdir = docdir;
+	}
+
+	public void setLegacyLinks(boolean legacyLinks) {
+		_legacyLinks = legacyLinks;
+	}
+
+	public void setAppReferenceSite(String appReferenceSite) {
+		_appReferenceSite = appReferenceSite;
+	}
+
+	public void setPlatformReferenceSite(String platformReferenceSite) {
+		_platformReferenceSite = platformReferenceSite;
+	}
+
+	public void setAppToken(String appToken) {
+		_appToken = appToken;
+	}
+
+	public void setPlatformToken(String platformToken) {
+		_platformToken = platformToken;
+	}
+
+	public void setDxpCheck(boolean dxpCheck) {
+		_dxpCheck = dxpCheck;
 	}
 
 	/**
@@ -157,9 +198,9 @@ public class CheckLinks {
 	 * @return the new list of articles containing the new DXP articles and DXP
 	 *         overrides
 	 */
-	private static List<File> addDxpOnlyArticles(List<File> articles, String path, boolean currentDir) {
+	private static List<File> addDxpOnlyArticles(List<File> articles, String path) {
 
-		List<File> dxpArticles = getDxpArticles(path, currentDir);
+		List<File> dxpArticles = getDxpArticles(path);
 
 		articles = includeDxpOverrides(articles, dxpArticles);
 
@@ -185,6 +226,35 @@ public class CheckLinks {
 	}
 
 	/**
+	 * Assembles the header ID for the given heading. This is used for secondary
+	 * headers since their header IDs do not exist in the Markdown article.
+	 *
+	 * @param  heading the heading to assemble an ID for
+	 * @param  idCount the number of matching header IDs found. This is added to
+	 *         the end of a header ID to differentiate it from other matching
+	 *         headers (e.g., liferay-home-2).
+	 * @return the header ID for the given heading
+	 */
+	private static String assembleId(String heading, int idCount) {
+
+		String count = "";
+		if (idCount > 0) {
+			count = "-" + idCount;
+		}
+
+		StringBuffer sb = new StringBuffer(heading);
+		sb.append(count);
+
+		String finalHeaderId = sb.toString();
+
+		if (finalHeaderId.contains("--")) {
+			finalHeaderId = finalHeaderId.replaceAll("--", "-");
+		}
+
+		return finalHeaderId;
+	}
+
+	/**
 	 * Returns all the possible referenced headers. This method scans the
 	 * current line and assigns it to the appropriate header list.
 	 *
@@ -200,36 +270,24 @@ public class CheckLinks {
 		String lineSubstring = line.substring(lineIndex, line.length());		
 
 		// The first link in the substring will have its headers applied.
-		if (lineSubstring.contains(userGuideDir)) {
+		if (lineSubstring.contains(userGuideLinkFolder + findStr)) {
 			headers = userGuideHeaders;
 		}
 
-		else if (lineSubstring.contains(adminGuideDir)) {
-			headers = adminGuideHeaders;
+		else if (lineSubstring.contains(deploymentGuideLinkFolder + findStr)) {
+			headers = deploymentGuideHeaders;
 		}
 
-		else if (lineSubstring.contains(commerceDir)) {
-			headers = commerceHeaders;
+		else if (lineSubstring.contains(distributeGuideLinkFolder + findStr)) {
+			headers = distributeGuideHeaders;
 		}
 
-		else if (lineSubstring.contains(analyticsCloudDir)) {
-			headers = analyticsCloudHeaders;
+		else if (lineSubstring.contains(tutorialsDevLinkFolder + findStr)) {
+			headers = tutorialsHeaders;
 		}
 
-		else if (lineSubstring.contains(userGuideReferenceDir)) {
-			headers = userGuideReferenceHeaders;
-		}
-
-		else if (lineSubstring.contains(tutorialDir)) {
-			headers = tutorialHeaders;
-		}
-
-		else if (lineSubstring.contains(devGuideReferenceDir)) {
-			headers = devGuideReferenceHeaders;
-		}
-
-		else if (lineSubstring.contains(commerceDevDir)) {
-			headers = commerceDevHeaders;
+		else if (lineSubstring.contains(referenceDevLinkFolder + findStr)) {
+			headers = referenceDevHeaders;
 		}
 
 		return headers;
@@ -250,32 +308,20 @@ public class CheckLinks {
 				userGuideArticles = findArticles(userGuideDir);
 			}
 
-			if (articleDir.equals(adminGuideDir)) {
-				adminGuideArticles = findArticles(adminGuideDir);
+			if (articleDir.equals(deploymentGuideDir)) {
+				deploymentGuideArticles = findArticles(deploymentGuideDir);
 			}
 
-			if (articleDir.equals(commerceDir)) {
-				commerceArticles = findArticles(commerceGithubDir);
+			if (articleDir.equals(distributeGuideDir)) {
+				distributeGuideArticles = findArticles(distributeGuideDir);
 			}
 
-			if (articleDir.equals(analyticsCloudDir)) {
-				analyticsCloudArticles = findArticles(analyticsCloudDir);
+			if (articleDir.equals(tutorialsDir)) {
+				tutorialsArticles = findArticles(tutorialsDir);
 			}
 
-			if (articleDir.equals(userGuideReferenceDir)) {
-				userGuideReferenceArticles = findArticles(userGuideReferenceDir);
-			}
-
-			if (articleDir.equals(tutorialDir)) {
-				tutorialArticles = findArticles(tutorialDir);
-			}
-
-			if (articleDir.equals(devGuideReferenceDir)) {
-				devGuideReferenceArticles = findArticles(devGuideReferenceDir);
-			}
-
-			if (articleDir.equals(commerceDevDir)) {
-				commerceDevArticles = findArticles(commerceGithubDevDir);
+			if (articleDir.equals(referenceDevDir)) {
+				referenceDevArticles = findArticles(referenceDevDir);
 			}
 		}
 	}
@@ -286,14 +332,13 @@ public class CheckLinks {
 	 * @param  article the article containing the line
 	 * @param  line the line containing multiple relative links
 	 * @param  in the line number reader
-	 * @param  findStr the string used for indexing the line's links
 	 * @throws IOException if an IO exception occurred
 	 */
-	private static void checkMultiLinks(File article, String line, LineNumberReader in, String findStr)
+	private static void checkMultiLinks(File article, String line, LineNumberReader in)
 			throws IOException {
 
 		// Extract headers into map with <header, index> pairs
-		LinkedHashMap<String, Integer> headerMaps = extractMultiStrings(line, article, in, findStr, 4);
+		LinkedHashMap<String, Integer> headerMaps = extractMultiStrings(line, article, in, findStr, 2);
 
 		Iterator<?> it = headerMaps.entrySet().iterator();
 
@@ -355,13 +400,12 @@ public class CheckLinks {
 	 * @param  article the article containing the line
 	 * @param  line the line containing multiple subheader relative links
 	 * @param  in the line number reader
-	 * @param  findStr the string used for indexing the line's links
 	 * @throws IOException if an IO exception occurred
 	 */
 	private static void checkMultiSubLinks(File article, String line, LineNumberReader in,
-			String findStr) throws IOException {
+			String sublinkStart) throws IOException {
 
-		LinkedHashMap<String, Integer> headerMaps = extractMultiStrings(line, article, in, findStr, 0);
+		LinkedHashMap<String, Integer> headerMaps = extractMultiStrings(line, article, in, sublinkStart, 0);
 
 		Iterator<?> it = headerMaps.entrySet().iterator();
 
@@ -388,10 +432,9 @@ public class CheckLinks {
 	 * Returns the number of specific strings in the line.
 	 *
 	 * @param  line the line to count the number of specific strings
-	 * @param  findStr the specific string to search for
 	 * @return the number of specific strings in the line
 	 */
-	private static int countStrings(String line, String findStr) {
+	private static int countStrings(String line) {
 
 		int lastIndex = 0;
 		int count = 0;
@@ -409,13 +452,58 @@ public class CheckLinks {
 	}
 
 	/**
+	 * Returns <code>true</code> if the link's folder and folder starting letter
+	 * match. For example, the link below returns <code>true</code> because the
+	 * <code>reference</code> string matches the second folder prefix
+	 * <code>r</code>.
+	 * 
+	 * <p>
+	 * <pre>
+	 * <code>
+	 * /docs/7-1/reference/-/knowledge_base/r/test
+	 * </code>
+	 * </pre>
+	 * </p>
+	 *
+	 * <p>
+	 * If the second folder prefix for the above link was <code>f</code>, this
+	 * method would return <code>false</code>.
+	 * </p>
+	 *
+	 * @param  line the line containing the relative link
+	 * @param  lineIndex the header's index on the line. This is useful when
+	 *         there are multiple relative links on one line.
+	 * @return <code>true</code> if the link's folder and folder starting letter
+	 *         match; <code>false</code> otherwise
+	 */
+	private static boolean doesDocFoldersMatch(String line, int lineIndex) {
+		
+		String lineSubstring = line.substring(lineIndex, line.length());
+		boolean foldersMatch = false;
+		
+		int begIndex = lineSubstring.indexOf("/docs/") + 10;
+		//int endIndex = lineSubstring.indexOf("/", begIndex);
+		String folder1 = lineSubstring.substring(begIndex, begIndex + 1);
+		
+		int begIndex2 = lineSubstring.indexOf(findStr) + findStr.length();
+		
+		String folder2 = lineSubstring.substring(begIndex2, begIndex2 + 1);
+		
+		if (folder1.equals(folder2)) {
+			foldersMatch = true;
+		}
+
+		return foldersMatch;
+	}
+
+	/**
 	 * Returns the header ID contained in the given line. For example, the
 	 * following line:
 	 * 
 	 * <p>
 	 * <pre>
 	 * <code>
-	 * [here](/discover/deployment/-/knowledge_base/7-1/installing-liferay-portal#liferay-home)
+	 * [here](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-portal#liferay-home)
 	 * </code>
 	 * </pre>
 	 * </p>
@@ -433,16 +521,14 @@ public class CheckLinks {
 	 * @param  line the line from which to extract the header
 	 * @param  article the article containing the line
 	 * @param  in the line number reader
-	 * @param  findStr the string to search for. This is helpful to prevent
-	 *         false positives when searching for a header.
 	 * @return the header ID
 	 * @throws IOException if an IO exception occurred
 	 */
-	private static String extractHeader(String line, File article, LineNumberReader in, String findStr)
+	private static String extractHeader(String line, File article, LineNumberReader in)
 			throws IOException {
 
 		int strIndex = line.indexOf(findStr);
-		int begIndex = strIndex + findStr.length() + 4;
+		int begIndex = strIndex + findStr.length() + 2;
 		int endIndex = line.indexOf(")", begIndex);
 
 		String header = "";
@@ -457,6 +543,40 @@ public class CheckLinks {
 	}
 
 	/**
+	 * Returns the article's heading found on the line.
+	 *
+	 * @param  line the line to extract the heading from
+	 * @return the article's heading
+	 */
+	private static String extractHeading(String line) {
+
+		int indexOfFirstHeaderChar = line.indexOf("# ") + 2;
+
+		String heading = line.substring(indexOfFirstHeaderChar);
+		heading = heading.trim();
+
+		// Replace each spaced dash, space, dot, and slash with a dash
+
+		heading = heading.replace(" - ", "-");
+		heading = heading.replace(' ', '-');
+		heading = heading.replace('_', '-');
+		heading = heading.toLowerCase();
+
+		// Filter out characters other than dashes, letters, and digits
+
+		StringBuffer headingSb = new StringBuffer();
+		for (int i = 0; i < heading.length(); i++) {
+			char ch = heading.charAt(i);
+
+			if (ch == '-' || Character.isLetterOrDigit(ch)) {
+				headingSb.append(ch);
+			}
+		}
+		heading = headingSb.toString();
+		return heading;
+	}
+
+	/**
 	 * Returns a map of headers paired with their line indexes. This method is
 	 * used to extract multiple headers (from relative links) that are contained
 	 * on one line.
@@ -464,24 +584,22 @@ public class CheckLinks {
 	 * @param  line the line from which to extract the header
 	 * @param  article the article containing the line
 	 * @param  in the line number reader
-	 * @param  findStr the string to search for. This is helpful to prevent
-	 *         false positives when searching for a header.
 	 * @param  indexCorrection the number used to modify the index used when
 	 *         searching for the next specific string on the line
 	 * @return the multiple headers contained on the line paired with their indexes
 	 * @throws IOException if an IO exception occurred
 	 */
 	private static LinkedHashMap<String, Integer> extractMultiStrings(String line, File article, LineNumberReader in,
-			String findStr, int indexCorrection) throws IOException {
+			String searcherString, int indexCorrection) throws IOException {
 
 		// Find all relevant headers
 		LinkedHashMap<String, Integer> headerMap = new LinkedHashMap<String, Integer>();
 		String originalLine = line;
 
-		while(line.contains(findStr)){
+		while(line.contains(searcherString)){
 
-			int strIndex = line.indexOf(findStr);
-			int begIndex = strIndex + findStr.length() + indexCorrection;
+			int strIndex = line.indexOf(searcherString);
+			int begIndex = strIndex + searcherString.length() + indexCorrection;
 			int endIndex = line.indexOf(")", begIndex);
 			int headerIndex = originalLine.length() - line.length();
 
@@ -496,7 +614,6 @@ public class CheckLinks {
 			line = line.substring(endIndex, line.length());
 
 			headerMap.put(header, headerIndex);
-			//headerList.add(map);
 
 		}
 
@@ -563,17 +680,68 @@ public class CheckLinks {
 	}
 
 	/**
+	 * Returns the article characterized by the primary header.
+	 *
+	 * @param  articles the articles to search for the primary header
+	 * @param  primaryHeader the header to search the articles for
+	 * @return the article characterized by the primary header
+	 * @throws IOException if an IO exception occurred
+	 */
+	private static File findArticleMatchingLink(List<File> articles, String primaryHeader)
+			throws IOException {
+
+		File matchingArticle = null;
+
+		for (File article: articles) {
+
+			LineNumberReader in = new LineNumberReader(new FileReader(article));
+			String line = null;
+
+			while ((line = in.readLine()) != null) {
+
+				if (line.startsWith(headerSyntax + primaryHeader)) {
+					matchingArticle = article;
+					break;
+				}
+			}
+			in.close();
+
+			if (matchingArticle != null) {
+				break;
+			}
+		}
+
+		return matchingArticle;	
+	}
+
+	/**
 	 * Returns the Markdown articles contained in the given path.
 	 *
 	 * @param  path the partial path for the articles (e.g.,
-	 *         <code>develop/tutorials</code>
+	 *         <code>developer/tutorials</code>
 	 * @return the Markdown articles
 	 */
 	private static List<File> findArticles(String path) {
 
-		File dir = new File("../../" + path + "/articles");
-		File[] dirFiles = dir.listFiles();
+		File dir = new File("../" + path + "/articles");
+
+		// Some 'articles' folders are nested in one folder while others are
+		// nested two folders deep. This if statement assigns those articles
+		// that are nested two folders deep.
+		if(!dir.exists()) {
+			dir = new File("../../" + path + "/articles");
+		}
+
 		List<File> articles = new ArrayList<File>();
+
+		if(!dir.exists()) {
+			System.out.println("Warning: Folder " + dir.getPath() + " does not exist. Update"
+					+ " check-links folder paths.");
+
+			return articles;
+		}
+
+		File[] dirFiles = dir.listFiles();
 
 		Queue<File> q = new LinkedList<File>();
 		for (File f : dirFiles) {
@@ -598,7 +766,7 @@ public class CheckLinks {
 		}
 
 		if (checkDxpLinks) {
-			articles = addDxpOnlyArticles(articles, path, false);
+			articles = addDxpOnlyArticles(articles, path);
 		}
 
 		return articles;
@@ -659,23 +827,35 @@ public class CheckLinks {
 
 			LineNumberReader in = new LineNumberReader(new FileReader(article));
 			String line = null;
+			String header;
 
 			while ((line = in.readLine()) != null) {
 
-				if (line.contains("#") && line.contains("[](id=")) {
+				if (line.startsWith(headerSyntax)) {
 
-					int begIndex = line.indexOf("[](id=") + 6;
-					int endIndex = line.lastIndexOf(")");
-					String header = line.substring(begIndex, endIndex);
+					int begIndex = headerSyntax.length();
+					int endIndex = line.length();
 
-					if (line.contains("##")) {
-						secondaryHeaders.add(header);
-					}
-					else {
-						primaryHeaders.add(header);
-					}
+					header = line.substring(begIndex, endIndex);
+
+					primaryHeaders.add(header);
 				}
+				else if (line.startsWith("## ") || line.startsWith("### ") ||
+						line.startsWith("#### ") || line.startsWith("##### ")) {
 
+					String headerKeyValue = generateVirtualSecondaryHeader(line, article.getCanonicalPath());
+					secondaryHeaders.add(headerKeyValue);
+				}
+				else if (line.contains("<a name=" + quotation)) {
+
+					int begIndex = line.indexOf("<a name=");
+					int quotStart = line.indexOf(quotation, begIndex);
+					int quotClose = line.indexOf(quotation, quotStart + 1);
+
+					String htmlHeaderAnchor = line.substring(quotStart + 1, quotClose);
+
+					secondaryHeaders.add(htmlHeaderAnchor + article.getCanonicalPath());
+				}
 			}
 			in.close();
 		}
@@ -688,6 +868,41 @@ public class CheckLinks {
 	}
 
 	/**
+	 * Returns the generated virtual secondary header ID for the line's
+	 * sub-header.
+	 *
+	 * @param  line the line containing the sub-header
+	 * @param  filename the article name
+	 * @return the generated virtual secondary header ID
+	 */
+	private static String generateVirtualSecondaryHeader(String line, String filename) {
+
+		String heading = extractHeading(line);
+
+		int idCount = 0;
+		String generatedSecondaryHeader = null;
+		while (true) {
+
+			generatedSecondaryHeader = assembleId(heading, idCount);
+
+				if (!secondaryKeyValues.contains(generatedSecondaryHeader + filename)) {
+
+					// Heading is unique for the document set. Map the ID to
+					// the filename.
+
+					//Easiest way to check/track unique key-value pairs
+					secondaryKeyValues.add(generatedSecondaryHeader + filename);
+
+					break;
+				}
+
+			idCount++;
+		}
+
+		 return generatedSecondaryHeader + filename;
+	}
+
+	/**
 	 * Returns the DXP articles contained in the folder.
 	 *
 	 * @param  path the partial folder path with the DXP articles to acquire
@@ -695,28 +910,66 @@ public class CheckLinks {
 	 *         folder the command was executed from
 	 * @return the DXP articles contained in the folder
 	 */
-	private static List<File> getDxpArticles(String path, boolean currentDir) {
+	private static List<File> getDxpArticles(String path) {
 
 		List<File> dxpArticles = new ArrayList<File>();
 		File dxpArticleDir = new File("");
 
 		// Ensure "articles-dxp" folder exists
-		try {
-			if (currentDir) {
-				dxpArticleDir = new File("../" + path + "/articles-dxp");
-			}
-			else {
-				dxpArticleDir = new File("../../" + path + "/articles-dxp");
-			}
+		dxpArticleDir = new File("../" + path + "/articles-dxp");
 
+		// Some 'articles' folders are nested in one folder while others are
+		// nested two folders deep. This if statement assigns those articles
+		// that are nested two folders deep.
+		if(!dxpArticleDir.exists()) {
+			dxpArticleDir = new File("../../" + path + "/articles-dxp");
+		}
+
+		try {
 			dxpArticles = findCurrentDirArticles(dxpArticleDir);
 		} catch(NullPointerException e) {
-			if (currentDir) {
-				System.out.println("No DXP articles in " + dxpArticleDir.getParent());
-			}
+			System.out.println("No DXP articles in " + dxpArticleDir.getParent());
 		}
 
 		return dxpArticles;
+	}
+
+	/**
+	 * Returns the folder represented by the link's directory header in the line
+	 * (e.g., <code>developer/frameworks</code>).
+	 *
+	 * @param  line the line containing the relative link
+	 * @param  lineIndex the header's index on the line. This is useful when
+	 *         there are multiple relative links on one line.
+	 * @return the folder represented by the link's directory header
+	 */
+	private static String getHeaderDir(String line, int lineIndex) {
+
+		String lineSubstring = line.substring(lineIndex, line.length());
+		String path = "";
+
+		// The first link in the substring will have its headers applied.
+		if (lineSubstring.contains(userGuideLinkFolder + findStr)) {
+			path = userGuideDir;
+		}
+
+		else if (lineSubstring.contains(deploymentGuideLinkFolder + findStr)) {
+			path = deploymentGuideDir;
+		}
+
+		else if (lineSubstring.contains(distributeGuideLinkFolder + findStr)) {
+			path = distributeGuideDir;
+		}
+
+		else if (lineSubstring.contains(tutorialsDevLinkFolder + findStr)) {
+			path = tutorialsDir;
+		}
+
+		else if (lineSubstring.contains(referenceDevLinkFolder + findStr)) {
+			path = referenceDevDir;
+		}
+
+		return path;
 	}
 
 	/**
@@ -889,16 +1142,16 @@ public class CheckLinks {
 			throws IOException {
 
 		boolean validUrl = false;
-		char quotation = '"';
 		LineNumberReader in = new LineNumberReader(new FileReader(article));
 		String line = null;
 
+		if (secondaryKeyValues.contains(secondaryHeader + article.getCanonicalPath())) {
+			validUrl = true;
+		}
+
 		while ((line = in.readLine()) != null) {
 
-			if (line.contains("[](id=" + secondaryHeader + ")")) {
-				validUrl = true;
-			}
-			else if (line.contains("<a name=" + quotation + secondaryHeader + quotation + ">")) {
+			if (line.contains("<a name=" + quotation + secondaryHeader + quotation + ">")) {
 				validUrl = true;
 			}
 			else if (line.contains("<div") && line.contains("id=" + quotation + secondaryHeader + quotation + ">")) {
@@ -923,6 +1176,8 @@ public class CheckLinks {
 	 * @param  secondaryHeader the secondary header ID
 	 * @param  lineIndex the header's index on the line. This is useful when
 	 *         there are multiple relative links on one line.
+	 * @param  differingDefaultVersion whether the link version differs from
+	 *         <code>PORTAL_VERSION</code>
 	 * @return <code>true</code> if the URL is valid; <code>false</code>
 	 *         otherwise
 	 * @throws IOException if an IO exception occurred
@@ -940,20 +1195,39 @@ public class CheckLinks {
 		if ((line.contains("/" + PORTAL_VERSION + "/") || line.contains("/" + COMMERCE_VERSION + "/")) &&
 				!differingDefaultVersion) {
 
-			// Ensure portal link versions aren't mixed with commerce link versions
-			if (line.contains("/web/commerce/") && !line.contains(COMMERCE_VERSION)) {
-				logInvalidUrl(article, in.getLineNumber(), line, false);
+			boolean docFoldersMatch = doesDocFoldersMatch(line, lineIndex);
+
+			// If headers is empty, the assignDirHeaders method could not match the
+			// relative URL with the header list (e.g., developer/user). This only
+			// happens when the first folder is valid but its subfolder isn't.
+			if (headers.isEmpty()) {
+
+				// Allow linking to parent folders of site
+				if (line.contains("/docs/" + PORTAL_VERSION + "/" + userGuideLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + deploymentGuideLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + distributeGuideLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + tutorialsDevLinkFolder + ")") ||
+					line.contains("/docs/" + PORTAL_VERSION + "/" + referenceDevLinkFolder + ")")) {
+
+					validURL = true;
+				}
+				// else, invalid link
 			}
-
-			if (Validator.isNull(secondaryHeader)) {
-
+			else if (!docFoldersMatch) {
+				// invalid URL
+			}
+			else if (Validator.isNull(secondaryHeader)) {
 				if (headers.get(0).contains(primaryHeader)) {
 					validURL = true;
 				}
 			}
 			else {
+
+				String linkDir = getHeaderDir(line, lineIndex);
+				List<File> articles = findArticles(linkDir);
+				File matchingArticle = findArticleMatchingLink(articles, primaryHeader);
 				if (headers.get(0).contains(primaryHeader) &&
-						headers.get(1).contains(secondaryHeader)) {
+						headers.get(1).contains(secondaryHeader + matchingArticle.getCanonicalPath())) {
 					validURL = true;
 				}
 			}
@@ -1005,15 +1279,28 @@ public class CheckLinks {
 
 	}
 
+	private boolean _apiLinks;
+	private String _docdir;
+	private boolean _legacyLinks;
+	private String _appReferenceSite;
+	private String _platformReferenceSite;
+	private String _appToken;
+	private String _platformToken;
+	private boolean _dxpCheck;
+
 	private static String appReferenceSite;
 	private static String appToken;
 	private static boolean checkApiLinks;
 	private static boolean checkDxpLinks;
 	private static boolean checkLegacyLinks;
 	private static List<File> fileOverrides = new ArrayList<File>();
+	private static String findStr = "/-/knowledge_base/";
+	private static String headerSyntax = "header-id: ";
+	private static List<String> secondaryKeyValues = new ArrayList<String>();
 	private static String ldnArticle;
 	private static String platformReferenceSite;
 	private static String platformToken;
+	private static char quotation = '"';
 	private static int resultsNumber = 0;
 	private static boolean validUrl;
 
@@ -1027,41 +1314,39 @@ public class CheckLinks {
 	// User Guide
 
 	private static String userGuideDir = "discover/portal";
+	private static String userGuideLinkFolder = "user";
 	private static List<File> userGuideArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> userGuideHeaders = new ArrayList<List<String>>();
 
-	private static String adminGuideDir = "discover/deployment";
-	private static List<File> adminGuideArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> adminGuideHeaders = new ArrayList<List<String>>();
+	private static String userRefGuideDir = "discover/reference";
+	private static String userRefGuideLinkFolder = "user";
+	private static List<File> userRefGuideArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> userRefGuideHeaders = new ArrayList<List<String>>();
 
-	private static String commerceDir = "web/commerce/documentation";
-	private static String commerceGithubDir = "discover/commerce";
-	private static List<File> commerceArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> commerceHeaders = new ArrayList<List<String>>();
+	// Deployment Guide
 
-	private static String analyticsCloudDir = "discover/analytics-cloud";
-	private static List<File> analyticsCloudArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> analyticsCloudHeaders = new ArrayList<List<String>>();
+	private static String deploymentGuideDir = "discover/deployment";
+	private static String deploymentGuideLinkFolder = "deploy";
+	private static List<File> deploymentGuideArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> deploymentGuideHeaders = new ArrayList<List<String>>();
 
-	private static String userGuideReferenceDir = "discover/reference";
-	private static List<File> userGuideReferenceArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> userGuideReferenceHeaders = new ArrayList<List<String>>();
+	private static String distributeGuideDir = "distribute/publish";
+	private static String distributeGuideLinkFolder = "publish";
+	private static List<File> distributeGuideArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> distributeGuideHeaders = new ArrayList<List<String>>();
 
 	// Dev Guide
 
-	private static String tutorialDir = "develop/tutorials";
-	private static List<File> tutorialArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> tutorialHeaders = new ArrayList<List<String>>();
+	private static String tutorialsDir = "develop/tutorials";
+	private static String tutorialsDevLinkFolder = "tutorials";
+	private static List<File> tutorialsArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> tutorialsHeaders = new ArrayList<List<String>>();
 
-	private static String devGuideReferenceDir = "develop/reference";
-	private static List<File> devGuideReferenceArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> devGuideReferenceHeaders = new ArrayList<List<String>>();
+	private static String referenceDevDir = "develop/reference";
+	private static String referenceDevLinkFolder = "reference";
+	private static List<File> referenceDevArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> referenceDevHeaders = new ArrayList<List<String>>();
 
-	private static String commerceDevDir = "web/commerce/developer-guide";
-	private static String commerceGithubDevDir = "develop/commerce";
-	private static List<File> commerceDevArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> commerceDevHeaders = new ArrayList<List<String>>();
-
-	private static String[] articleDirs = {userGuideDir, adminGuideDir, commerceDir, analyticsCloudDir, userGuideReferenceDir,
-			tutorialDir, devGuideReferenceDir, commerceDevDir};
+	private static String[] articleDirs = {userGuideDir, deploymentGuideDir,
+			distributeGuideDir, tutorialsDir, referenceDevDir};
 }

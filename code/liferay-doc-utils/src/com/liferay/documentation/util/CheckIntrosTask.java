@@ -1,6 +1,7 @@
 package com.liferay.documentation.util;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,34 +20,15 @@ public class CheckIntrosTask extends Task {
 		}
 
 		File articleDir = new File(dir.getAbsolutePath() + "/articles");
-		File[] articles = articleDir.listFiles();
-		List<File> errorDirs = new ArrayList<File>();
+		File[] articleFolders = articleDir.listFiles(new FileFilter() {
+		    @Override
+		    public boolean accept(File file) {
+		        return file.isDirectory();
+		    }
+		});
 
-		for (File article : articles) {
-			if (article.getName().contains(".")) {
-				continue;
-			}
-
-			File[] allFiles = article.listFiles();
-
-			boolean containsIntro = false;
-			boolean containsTutorials = false;
-
-			for (File file : allFiles) {
-				if (file.getName().endsWith("introduction.markdown") ||
-						file.getName().endsWith("intro.markdown")) {
-
-					containsIntro = true;
-					break;
-				}
-				else if (file.getName().endsWith(".markdown")) {
-					containsTutorials = true;
-				}
-			}
-
-			if (containsTutorials && !containsIntro) {
-				errorDirs.add(article);
-			}
+		for (File articleFolder : articleFolders) {
+			checkFolderForIntros(articleFolder);
 		}
 
 		if (!errorDirs.isEmpty()) {
@@ -66,6 +48,30 @@ public class CheckIntrosTask extends Task {
 	public void setDocdir(String docdir) {
 		_docdir = docdir;
 	}
-	
+
+	private void checkFolderForIntros(File folder) {
+
+		boolean containsIntro = false;
+
+		for (File fileEntry : folder.listFiles()) {
+			if (fileEntry.isDirectory()) {
+				checkFolderForIntros(fileEntry);
+			}
+			else if (!containsIntro) {
+
+				if (fileEntry.getName().endsWith("introduction.markdown") ||
+						fileEntry.getName().endsWith("intro.markdown")) {
+
+					containsIntro = true;
+				}
+			}
+		}
+
+		if (!containsIntro) {
+			errorDirs.add(folder);
+		}
+	}
+
 	private String _docdir;
+	private List<File> errorDirs = new ArrayList<File>();
 }
