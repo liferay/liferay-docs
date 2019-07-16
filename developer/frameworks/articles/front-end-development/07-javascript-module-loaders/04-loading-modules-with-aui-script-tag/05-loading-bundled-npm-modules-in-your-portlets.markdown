@@ -28,12 +28,12 @@ Follow these steps:
     variable `npmResolvedPackageName` is set to `my-module@2.3.0`. This lets you 
     prefix any JS module `require` or soy component rendering with this 
     variable.
-    
+
 3.  Use the `npmResolvedPackageName` variable along with the relative path to 
     your JavaScript module file to create an alias in the `<aui:script>`'s 
     `require` attribute. An example configuration is shown below:
 
-    ```markup
+    ```jsp
     <aui:script 
       require='<%= npmResolvedPackageName + 
       "/js/my-module.es as myModule" %>'>
@@ -42,7 +42,7 @@ Follow these steps:
 
 4.  Use the alias inside the `aui:script` to refer to your module:
 
-    ```markup
+    ```jsp
     <aui:script 
       require='<%= npmResolvedPackageName + 
       "/js/my-module.es as myModule" %>'>
