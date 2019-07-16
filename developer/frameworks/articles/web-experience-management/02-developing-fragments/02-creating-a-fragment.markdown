@@ -7,8 +7,9 @@ header-id: creating-fragments
 [TOC levels=1-4]
 
 This tutorial assumes you understand Fragments and Collections. If you don't,
-read [Creating Page Fragments](user-guide-link) first. Once, you're ready, start
-by creating a Collection:
+read
+[Creating Page Fragments](/docs/7-2/user/-/knowledge_base/u/creating-content-pages#creating-page-fragments)
+first. Once, you're ready, start by creating a Collection:
 
 1.  From the menu for your selected site, click *Site Builder* &rarr; *Page
     Fragments*.
@@ -109,7 +110,9 @@ provided by default, so the link must be configured when it is added to the
 page.
 
 From here, the Fragment can be added to a Page. To see this process in action, 
-see the [Building Content Pages from Fragments](user-guide-link) tutorial.
+see the
+[Building Content Pages](/docs/7-2/user/-/knowledge_base/u/building-content-pages)
+article.
 
 ## Managing Fragments and Collections
 

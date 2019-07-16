@@ -214,11 +214,7 @@ Here are the code upgrade steps:
 
     4.  [Upgrade Servlet-based Portlets](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-servlet-based-portlet){.title}
 
-    5.  [Migrate from Spring Portlet MVC to PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring){.title}
-
-        <!-- TODO - Replace the link above with a link to migration article 
-        when it's available. - Jim
-        -->
+    5.  [Upgrading Spring Portlet MVC Portlets](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-spring-portlet-mvc-portlet){.title}
 
     6.  [Upgrade Struts 1 Portlets](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-struts-1-portlet){.title}
 

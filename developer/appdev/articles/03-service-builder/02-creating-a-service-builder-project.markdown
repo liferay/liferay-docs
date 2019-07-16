@@ -20,16 +20,16 @@ Here's how to create a Service Builder project.
 1.  Decide on a project name. If the project is part of an application, name the
     project after the application. 
 
-2.  Create the Service Builder project using [Blade
-    CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) and the
-    `service-builder` project template, passing your project name as a
-    parameter. For example, here are Gradle and Maven commands for creating a
-    Service Builder project called `bookmarks`. 
+2.  [Create a project](/docs/7-2/reference/-/knowledge_base/r/creating-a-project) 
+    using [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) 
+    and the `service-builder` project template, passing your project name as
+    a parameter. For example, here are Gradle and Maven commands for creating
+    a Service Builder project called `bookmarks`. 
 
     Gradle: 
 
     ```bash
-    blade create -t service-builder -p com.liferay.docs.bookmarks bookmarks
+    blade create -t service-builder -p com.liferay.docs.guestbook guestbook
     ```
 
     Maven:
@@ -39,8 +39,8 @@ Here's how to create a Service Builder project.
     -DarchetypeGroupId=com.liferay \
     -DarchetypeArtifactId=com.liferay.project.templates.service.builder \
     -DgroupId=com.liferay \
-    -DartifactId=bookmarks \
-    -Dpackage=com.liferay.docs.bookmarks \
+    -DartifactId=guestbook \
+    -Dpackage=com.liferay.docs.guestbook \
     -Dversion=1.0 \
     -DapiPath=com.liferay.api.path \
     -DliferayVersion=7.2
@@ -55,11 +55,11 @@ Successfully created project bookmarks in C:\workspaces_liferay\72-ws\modules
 Blade CLI generates the parent project folder and sub-folders for the `*-api`
 and `*-service` module projects. 
 
--   `bookmarks/`
-    -   `bookmarks-api/`
+-   `guestbook/`
+    -   `guestbook-api/`
         -   `bnd.bnd`
         -   `build.gradle`
-    -   `bookmarks-service/`
+    -   `guestbook-service/`
         -   `bnd.bnd`
         -   `build.gradle`
         -   `service.xml` &rarr; Service definition file.
