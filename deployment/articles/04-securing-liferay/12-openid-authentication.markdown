@@ -13,7 +13,8 @@ OpenID vendors are Google, Paypal, Amazon, and Microsoft. Please see the [OpenID
 site](http://www.openid.net/) for a more complete list.
 
 | **Note:** OpenID is deprecated in @product-ver@ and has been removed. You can
-| still install it from Marketplace. 
+| still install it from Marketplace [here](https://web.liferay.com/marketplace/-/mp/application/125668346) 
+| or [here](https://web.liferay.com/marketplace/-/mp/application/125668379). 
 
 With OpenID, users don't have to register for a new account on every site which
 requires an account. Users register on *one* site (the OpenID provider's site)

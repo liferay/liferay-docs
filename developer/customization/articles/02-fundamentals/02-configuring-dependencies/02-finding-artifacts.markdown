@@ -64,7 +64,7 @@ independent modules:
 
 | Resource | Artifact Type |
 | :-------- | :-------------- |
-| [App Manager](#products-app-manager) | Deployed modules |
+| [App Manager](#app-manager) | Deployed modules |
 | [Reference Docs](#reference-docs) | @product@ modules (per release) |
 | [Maven Central](#maven-central) | All artifact types: @product@ and third party, module and non-module |
 

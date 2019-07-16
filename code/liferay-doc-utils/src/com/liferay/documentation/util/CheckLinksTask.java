@@ -245,13 +245,6 @@ public class CheckLinksTask extends Task {
 			count = "-" + idCount;
 		}
 
-		int idLength = heading.length() + count.length();
-		if (idLength >  MAX_ID_LEN) {
-			heading = heading.substring(
-				0,
-				(heading.length() - Math.abs(idLength -  MAX_ID_LEN)));
-		}
-
 		StringBuffer sb = new StringBuffer(heading);
 		sb.append(count);
 
@@ -593,9 +586,7 @@ public class CheckLinksTask extends Task {
 
 		heading = heading.replace(" - ", "-");
 		heading = heading.replace(' ', '-');
-		heading = heading.replace(".", "");
 		heading = heading.replace('_', '-');
-		heading = heading.replace('/', '-');
 		heading = heading.toLowerCase();
 
 		// Filter out characters other than dashes, letters, and digits
@@ -1349,7 +1340,6 @@ public class CheckLinksTask extends Task {
 	private static String headerSyntax = "header-id: ";
 	private static List<String> secondaryKeyValues = new ArrayList<String>();
 	private static String ldnArticle;
-	private static final int MAX_ID_LEN = 75;
 	private static String platformReferenceSite;
 	private static String platformToken;
 	private static char quotation = '"';

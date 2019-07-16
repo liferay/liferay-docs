@@ -115,7 +115,7 @@ Translation is disabled because credentials are not specified
 If you want to configure your app to generate automatic translations using the
 Microsoft Translator Text API, keep reading. 
 
-## Translating Language Keys Automatically [](id=translating-language-keys-automatically)
+## Translating Language Keys Automatically
 
 If you've configured the Language Builder plugin (above) in your project, you're
 well on your way to translating language keys automatically. Now you have to
