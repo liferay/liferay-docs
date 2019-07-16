@@ -6,8 +6,8 @@ header-id: generating-model-service-and-persistence-layers
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Generating the Back-end<br>Step 2 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Generating the Back-end</p><p>Step 2 of 3</p>
 </div>
 
 The persistence layer saves and retrieves your model data. The service layer is

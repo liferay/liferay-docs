@@ -51,4 +51,4 @@ index when an Entry is persisted:
 | If you desire to use the old approach, feel free to extend `BaseIndexer`. It's
 | still supported.
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-1/registering-entries-with-the-search-framework">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-1/tutorials/-/knowledge_base/t/registering-entries-with-the-search-framework">Let's Go!<span class="icon-circle-arrow-right"></span></a>

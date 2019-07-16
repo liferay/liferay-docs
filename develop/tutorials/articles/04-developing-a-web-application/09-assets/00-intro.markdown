@@ -32,4 +32,4 @@ learn how asset-enabled guestbooks and guestbook entries integrate with
 core portlets like the Asset Publisher, Tags Navigation, Tag Cloud, and
 Categories Navigation portlets. Ready to start? 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-1/enabling-assets-at-the-service-layer">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-1/tutorials/-/knowledge_base/t/enabling-assets-at-the-service-layer">Let's Go!<span class="icon-circle-arrow-right"></span></a>

@@ -6,8 +6,8 @@ header-id: generating-portlet-urls
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Developing Your First Portlet<br>Step 3 of 8</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Developing Your First Portlet</p><p>Step 3 of 8</p>
 </div>
 
 Recall that users can place multiple portlets on a single page. As a developer,

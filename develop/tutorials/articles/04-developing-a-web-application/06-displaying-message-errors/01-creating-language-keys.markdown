@@ -6,8 +6,8 @@ header-id: creating-language-keys
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Displaying Messages and Errors<br>Step 1 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Displaying Messages and Errors</p><p>Step 1 of 3</p>
 </div>
 
 Any modern application should place its messages and form field labels in a 

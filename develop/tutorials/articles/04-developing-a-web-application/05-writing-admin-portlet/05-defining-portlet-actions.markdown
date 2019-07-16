@@ -6,8 +6,8 @@ header-id: defining-portlet-actions
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Writing the Guestbook Admin App<br>Step 4 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Writing the Guestbook Admin App</p><p>Step 4 of 5</p>
 </div>
 
 The Guestbook Admin portlet now needs action methods for adding, updating, and

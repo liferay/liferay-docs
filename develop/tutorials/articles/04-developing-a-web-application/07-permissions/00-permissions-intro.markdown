@@ -23,4 +23,4 @@ implementing permissions, called *DRAC*:
 
 Ready to start? 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-1/defining-permissions">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-1/tutorials/-/knowledge_base/t/defining-permissions">Let's Go!<span class="icon-circle-arrow-right"></span></a>

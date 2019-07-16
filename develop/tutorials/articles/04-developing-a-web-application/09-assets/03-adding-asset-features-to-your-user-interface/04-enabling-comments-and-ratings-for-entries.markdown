@@ -6,8 +6,8 @@ header-id: enabling-comments-and-ratings-for-guestbook-entries
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Adding Asset Features to Your UI<br>Step 5 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Adding Asset Features to Your UI</p><p>Step 5 of 5</p>
 </div>
 
 The asset framework lets users comment on and rate assets. As with tags,

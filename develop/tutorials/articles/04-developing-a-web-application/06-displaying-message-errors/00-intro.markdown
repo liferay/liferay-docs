@@ -23,4 +23,4 @@ That's exactly what you'll do next, in three steps:
 
 Ready to get started? 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-1/creating-language-keys">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-1/tutorials/-/knowledge_base/t/creating-language-keys">Let's Go!<span class="icon-circle-arrow-right"></span></a>

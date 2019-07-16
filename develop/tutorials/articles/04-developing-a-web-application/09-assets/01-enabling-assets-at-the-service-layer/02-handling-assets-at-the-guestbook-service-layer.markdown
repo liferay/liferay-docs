@@ -6,8 +6,8 @@ header-id: handling-assets-at-the-guestbook-service-layer
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Assets at the Service Layer<br>Step 2 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Assets at the Service Layer</p><p>Step 2 of 3</p>
 </div>
 
 Before you can update the Service Layer to add the Asset Renderers, you must

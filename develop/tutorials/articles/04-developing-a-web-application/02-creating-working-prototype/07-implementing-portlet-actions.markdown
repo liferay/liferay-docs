@@ -6,8 +6,8 @@ header-id: implementing-portlet-actions
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Developing Your First Portlet<br>Step 7 of 8</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Developing Your First Portlet</p><p>Step 7 of 8</p>
 </div>
 
 When users submit the form, your application stores the form data for display in 

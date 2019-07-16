@@ -6,8 +6,8 @@ header-id: handling-indexing-in-the-guestbook-service-layer
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Guestbooks<br>Step 6 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Search and Indexing for Guestbooks</p><p>Step 6 of 6</p>
 </div>
 
 Whenever a Guestbook database entity is added, updated, or deleted, the search

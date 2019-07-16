@@ -6,8 +6,8 @@ header-id: indexing-guestbooks
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Guestbooks<br>Step 3 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Search and Indexing for Guestbooks</p><p>Step 3 of 6</p>
 </div>
 
 To control how Guestbook objects are translated into search engine documents,

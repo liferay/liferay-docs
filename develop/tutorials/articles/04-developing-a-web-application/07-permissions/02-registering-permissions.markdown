@@ -6,8 +6,8 @@ header-id: registering-your-defined-permissions
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Implementing Permissions<br>Step 2 of 4</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Implementing Permissions</p><p>Step 2 of 4</p>
 </div>
 
 The last step introduced the concept of *resources*. Resources are data stored 

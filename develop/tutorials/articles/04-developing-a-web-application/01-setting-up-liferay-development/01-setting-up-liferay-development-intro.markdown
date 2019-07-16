@@ -6,10 +6,6 @@ header-id: development-setup-overview
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Development Setup Overview<br>Step 1 of 1</p>
-</div>
-
 Liferay's development tools help you get started fast. The basic steps for
 installing Liferay @ide@ are
 

@@ -6,8 +6,8 @@ header-id: handling-indexing-in-the-entry-service-layer
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Entries<br>Step 5 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Search and Indexing for Entries</p><p>Step 5 of 5</p>
 </div>
 
 Whenever an Entry is added, updated, or deleted, the corresponding document
