@@ -6,8 +6,8 @@ header-id: converting-a-service-builder-module-from-spring-di-to-osgi-ds
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Service Builder Services<br>Step 2 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Service Builder Services</p><p>Step 2 of 3</p>
 </div>
 
 Prior to @product@ 7.2, Service Builder modules could only use Spring for

@@ -6,8 +6,8 @@ header-id: upgrading-a-genericportlet
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Portlets<br>Step 1 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Portlets</p><p>Step 1 of 6</p>
 </div>
 
 It's common to create portlets that extend `javax.portlet.GenericPortlet`. After

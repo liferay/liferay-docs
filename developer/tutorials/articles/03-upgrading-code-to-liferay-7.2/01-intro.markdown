@@ -231,6 +231,4 @@ Here are the code upgrade steps:
     manually modify your Ext plugin to merge your changes with @product@'s.{.summary}
 
 Once you've finished the code upgrade steps, your custom apps will be compatible
-with @product-ver@!
-
-<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+with @product-ver@! 

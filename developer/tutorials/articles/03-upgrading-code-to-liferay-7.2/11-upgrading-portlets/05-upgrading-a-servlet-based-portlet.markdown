@@ -6,8 +6,8 @@ header-id: upgrading-a-servlet-based-portlet
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Portlets<br>Step 4 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Portlets</p><p>Step 4 of 6</p>
 </div>
 
 This tutorial shows you how to upgrade servlet-based portlets. It refers to

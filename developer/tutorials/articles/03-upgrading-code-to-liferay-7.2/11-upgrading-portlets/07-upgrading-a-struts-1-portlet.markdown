@@ -6,8 +6,8 @@ header-id: upgrading-a-struts-1-portlet
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Portlets<br>Step 6 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Portlets</p><p>Step 6 of 6</p>
 </div>
 
 Struts is a stable, widely adopted framework that implements the Model View
