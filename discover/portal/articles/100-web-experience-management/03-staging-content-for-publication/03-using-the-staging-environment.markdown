@@ -81,6 +81,10 @@ publish both at the same time; you'll have to complete their publication
 processes separately if you want to publish both page groups. You can also
 choose specific pages to publish, the look and feel of those pages, etc.
 
+| **Note:** If you're publishing pages with a custom theme, you must check the
+| *Theme Settings* option under the Look and Feel heading for your staging
+| configuration. If it's not checked, the default theme is always applied.
+
 **Content** lets you configure the content to be published. Selecting the
 *Choose Content* option lets you filter the content to be published, based
 mainly on the date range and content type. If you choose a page to be published
