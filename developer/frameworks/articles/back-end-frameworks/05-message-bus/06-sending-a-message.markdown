@@ -9,7 +9,7 @@ header-id: sending-a-message
 Once you've 
 [created a message](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-message), 
 there are three ways to send it with the 
-[Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus): 
+[Message Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus): 
 
 -   [Directly with `MessageBus`](#directly-with-messagebus)
 -   [Asynchronously with `SingleDestinationMessageSender`](#asynchronously-with-singledestinationmessagesender) 
@@ -71,7 +71,7 @@ public class SomeServiceImpl {
 
 The 
 [`SingleDestinationMessageSender`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SingleDestinationMessageSender.html) 
-interface wraps the Service Bus to send messages asynchronously. Follow these 
+interface wraps the Message Bus to send messages asynchronously. Follow these 
 steps to use this interface to send asynchronous messages: 
 
 1.  Create a 
@@ -139,12 +139,12 @@ public class SomeServiceImpl {
 ### Synchronously with SynchronousMessageSender
 
 [`SynchronousMessageSender`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SynchronousMessageSender.html) 
-sends a message to the Service Bus and blocks until receiving a response or the 
+sends a message to the Message Bus and blocks until receiving a response or the 
 response times out. A `SynchronousMessageSender` has these 
 [operating modes](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SynchronousMessageSender.Mode.html):
 
 `DEFAULT`: Delivers the message in a separate thread and also provides timeouts, 
-in case the message is not delivered properly.
+in case the message is not delivered properly. 
 
 `DIRECT`: Delivers the message in the same thread of execution and blocks until 
 it receives a response. 
@@ -224,4 +224,4 @@ public class SomeServiceImpl {
 
 [Sending Messages Across a Cluster](/docs/7-2/frameworks/-/knowledge_base/f/sending-messages-across-a-cluster) 
 
-[Using the Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus) 
+[Using the Message Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus) 

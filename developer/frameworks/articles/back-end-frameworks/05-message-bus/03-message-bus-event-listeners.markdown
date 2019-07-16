@@ -1,23 +1,23 @@
 ---
-header-id: service-bus-event-listeners
+header-id: message-bus-event-listeners
 ---
 
-# Service Bus Event Listeners
+# Message Bus Event Listeners
 
 [TOC levels=1-4]
 
 When 
-[using Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus), 
-you may wish to listen for events that take place within the Service Bus 
+[using Message Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus), 
+you may wish to listen for events that take place within the Message Bus 
 framework itself, independent of messages. For example, you can listen for when 
-[destinations](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#messaging-destinations) 
+[destinations](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus#messaging-destinations) 
 and 
-[message listeners](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#message-listeners) 
+[message listeners](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus#message-listeners) 
 are added or removed. Here, you'll learn how. 
 
 ## Listening for Destinations
 
-Service Bus notifies event listeners when destinations are added and removed. To 
+Message Bus notifies event listeners when destinations are added and removed. To 
 register these listeners, publish a 
 [`MessageBusEventListener`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBusEventListener.html) 
 instance to the OSGi service registry (e.g., via an `@Component` annotation).
@@ -45,7 +45,7 @@ public class MyMessageBusEventListener implements MessageBusEventListener {
 
 ## Listening for Message Listeners
 
-Service Bus notifies 
+Message Bus notifies 
 [`DestinationEventListener`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html) 
 instances when message listeners for destinations are either registered or 
 unregistered. To register an event listener to a destination, publish a 
@@ -74,4 +74,4 @@ public class MyDestinationEventListener implements DestinationEventListener {
 
 ## Related Topics
 
-[Using the Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus)
+[Using the Message Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus)

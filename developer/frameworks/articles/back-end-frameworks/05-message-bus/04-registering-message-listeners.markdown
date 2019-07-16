@@ -7,8 +7,8 @@ header-id: registering-message-listeners
 [TOC levels=1-4]
 
 There are three ways to register a 
-[message listener](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus#message-listeners) 
-with the Service Bus: 
+[message listener](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus#message-listeners) 
+with the Message Bus: 
 
 1.  [Automatic Registration as a Component](#automatic-registration-as-a-component)
 2.  [Registering via a MessageBus Reference](#registering-via-a-messagebus-reference)
@@ -43,13 +43,13 @@ public class MyMessageListener implements MessageListener {
 }
 ```
 
-The Service Bus listens for 
+The Message Bus listens for 
 [`MessageListener`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageListener.html) 
 service components like this one to publish themselves to the OSGi service 
 registry. The attribute `immediate = true` tells the OSGi framework to activate 
-the component as soon as its dependencies resolve. Service Bus wires each 
+the component as soon as its dependencies resolve. Message Bus wires each 
 registered listener to the destination its `destination.name` property 
-specifies. If the destination is not yet registered, Service Bus queues the 
+specifies. If the destination is not yet registered, Message Bus queues the 
 listener until the destination registers. 
 
 ## Registering via a MessageBus Reference
@@ -148,4 +148,4 @@ the `deactivate` method unregisters the listener.
 
 ## Related Topics
 
-[Using the Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-service-bus)
+[Using the Message Bus](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus)

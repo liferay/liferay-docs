@@ -1,13 +1,13 @@
 ---
-header-id: using-the-service-bus
+header-id: using-the-message-bus
 ---
 
-# Using the Service Bus
+# Using the Message Bus
 
 [TOC levels=1-4]
 
 Here, you'll learn how to use the 
-[Service Bus](/docs/7-2/frameworks/-/knowledge_base/f/back-end-frameworks#service-bus) 
+[Message Bus](/docs/7-2/frameworks/-/knowledge_base/f/back-end-frameworks#message-bus) 
 to send and receive messages in the portal. The following topics are covered: 
 
 -   [Messaging Destinations](#messaging-destinations)
@@ -16,7 +16,7 @@ to send and receive messages in the portal. The following topics are covered:
 
 ## Messaging Destinations
 
-In Service Bus, you send messages to destinations. A destination is a named 
+In Message Bus, you send messages to destinations. A destination is a named 
 logical (not physical) location. Sender classes send messages to destinations, 
 while listener classes wait to receive messages at the destinations. In this 
 way, the sender and recipient don't need to know each other---they're loosely
@@ -107,12 +107,12 @@ public void receive(Message message) {
 }
 ```
 
-Here are the ways to register your listener with Service Bus: 
+Here are the ways to register your listener with Message Bus: 
 
 **Automatic Registration as a Component**: Publish the listener to the OSGi 
 registry as a 
 [Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services) 
-component that specifies a destination. Service Bus automatically wires the 
+component that specifies a destination. Message Bus automatically wires the 
 listener to the destination. 
 
 **Registering via MessageBus**: Obtain and use a 
@@ -127,7 +127,7 @@ For instructions on these topics, see
 
 ## Sending Messages
 
-Service Bus lets you send messages to destinations that have any number of 
+Message Bus lets you send messages to destinations that have any number of 
 listening classes. As a message sender you don't need to know the message 
 recipients. Instead, you focus on creating message content (payload) and sending 
 messages to destinations. 
