@@ -14,8 +14,7 @@ This automatically scopes your configuration to `SYSTEM`.
     configuration option. Here is the configuration interface for the Liferay
     Forms application:
 
-```java
-
+    ```java
     @Meta.OCD(
         id = "com.liferay.dynamic.data.mapping.form.web.configuration.DDMFormWebConfiguration",
         localization = "content/Language", name = "ddm-form-web-configuration-name"
@@ -37,8 +36,7 @@ This automatically scopes your configuration to `SYSTEM`.
 
 
     }
-
-```
+    ```
 
     This defines two configuration options, the autosave interval (with a default
     of one minute) and the default display view, which can be descriptive or
@@ -80,10 +78,14 @@ This automatically scopes your configuration to `SYSTEM`.
 | Because runtime availability is necessary for some of the Liferay-specific features
 | described below, we recommend defaulting to the bnd annotations.
 
-| **Also Note:** Your project depends on the `-metatype: *` line in it's
-| `bnd.bnd` file. This line is generated automatically from your bundle's
-| `.build.properties` file, and is required to provide information about your
-| app's configuration options so that a configuration UI can be generated.
+| **Also Note:** Your project depends on a `-metatype: *` declaration in its
+| metadata. If you're in a [Liferay
+| Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace)(or
+| otherwise applying the [workspace plugin to your
+| build](/docs/7-2/reference/-/knowledge_base/r/gradle-plugins)), it's added
+| automatically at build time. Otherwise, add it manually in your module's
+| `bnd.bnd`. It's required to provide information about your app's configuration
+| options so that a configuration UI can be generated.
 
 When you register a configuration interface, a UI is auto-generated for it in
 *System Settings* &rarr; *Platform* &rarr; *Third Party*. That's the default
