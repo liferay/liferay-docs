@@ -335,6 +335,9 @@ Property | Default | Required
 `jackrabbitCredentialsUsername` | none | `true`
 `jackrabbitCredentialsPassword` | none | `true`
 
+| **Note:** Use the absolute path for `jackrabbitRepositoryRoot`, 
+| `jackrabbitConfigFilePath`, and `jackrabbitRepositoryHome`. 
+
 ### S3
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.s3.S3Store`
