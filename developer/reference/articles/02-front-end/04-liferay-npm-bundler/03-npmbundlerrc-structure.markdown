@@ -181,7 +181,7 @@ the preset are inherited, but they can be overridden.
 `verbose:` Sets whether to output detailed information about what the tool is 
 doing to the console. The default value is `false`.
 
-### Package Processing Options [](id=package-processing-options)
+### Package Processing Options
 
 `"/"`: plugins' configuration for the project's package.
 
