@@ -89,4 +89,4 @@ and industry-wide conventions.
 
 ## Related Topics
 
-[Get Started: Invoke a Service](/docs/7-2/frameworks/-/knowledge_base/f/get-started-invoke-a-service)
+[Get Started: Invoke a Service](/docs/7-1/tutorials/-/knowledge_base/t/get-started-invoke-a-service)

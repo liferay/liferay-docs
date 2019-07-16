@@ -24,10 +24,9 @@ Traditionally, there are two approaches:
 
 **Contract Last:** The code is written first and features are exposed as web or 
 REST services. This approach is typically easier for developers, as they must 
-only implement and expose the business logic. Service Builder is an example of 
-this. 
-
-<!--Add link back for 'Service Builder' once service-builder-web-services article is available-->
+only implement and expose the business logic. 
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services) 
+is an example of this. 
 
 **Contract First:** The structure for client-server messages is written before 
 the code that implements the services. Such messages are defined independent of 

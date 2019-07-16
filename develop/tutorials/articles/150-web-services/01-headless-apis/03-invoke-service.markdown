@@ -7,7 +7,7 @@ header-id: get-started-invoke-a-service
 [TOC levels=1-4]
 
 Once you know which API you want to call via the 
-[OpenAPI profile](/docs/7-2/frameworks/-/knowledge_base/f/get-started-discover-the-api), 
+[OpenAPI profile](/docs/7-1/tutorials/-/knowledge_base/t/get-started-discover-the-api), 
 you can send a request to that resource's URL. For example, suppose you want to 
 retrieve all the blog entries from a Site. If you consult the OpenAPI profile 
 for @product@'s delivery API, you can find this endpoint: 
@@ -152,10 +152,10 @@ example response:
 
 Although this response is JSON, the API's consumer can select other formats to 
 use (like XML). For more information, see 
-[API Formats and Content Negotiation](/docs/7-2/frameworks/-/knowledge_base/f/api-formats-and-content-negotiation). 
+[API Formats and Content Negotiation](/docs/7-1/tutorials/-/knowledge_base/t/api-formats-and-content-negotiation). 
 
 ## Related Topics
 
-[Get Started: Discover the API](/docs/7-2/frameworks/-/knowledge_base/f/get-started-discover-the-api)
+[Get Started: Discover the API](/docs/7-1/tutorials/-/knowledge_base/t/get-started-discover-the-api)
 
-[API Formats and Content Negotiation](/docs/7-2/frameworks/-/knowledge_base/f/api-formats-and-content-negotiation)
+[API Formats and Content Negotiation](/docs/7-1/tutorials/-/knowledge_base/t/api-formats-and-content-negotiation)

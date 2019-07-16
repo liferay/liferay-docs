@@ -7,12 +7,12 @@ header-id: navigating-from-a-collection-to-its-elements
 [TOC levels=1-4]
 
 When you 
-[get a collection](/docs/7-2/frameworks/-/knowledge_base/f/getting-collections), 
+[get a collection](/docs/7-1/tutorials/-/knowledge_base/t/getting-collections), 
 you can use the response to get an element of that collection. Follow these 
 steps to do so: 
 
 1.  Get a collection. This example gets a list of users by sending 
-    [an authenticated request](/docs/7-2/frameworks/-/knowledge_base/f/making-authenticated-requests) 
+    [an authenticated request](/docs/7-1/tutorials/-/knowledge_base/t/making-authenticated-requests) 
     to the `user-accounts` collection: 
 
     ```bash
@@ -20,7 +20,7 @@ steps to do so:
     ```
 
     Recall from 
-    [Getting Collections](/docs/7-2/frameworks/-/knowledge_base/f/getting-collections) 
+    [Getting Collections](/docs/7-1/tutorials/-/knowledge_base/t/getting-collections) 
     that the response's `items` attribute contains the collection elements. In
     this case, the collection contains two users: Test Test and Javier Gamarra: 
 
@@ -103,6 +103,7 @@ steps to do so:
               "pageSize": 20,
               "totalCount": 2
             }
+        }
         ```
 
 2.  In the response, locate the ID of the element you want and look in the 
@@ -118,8 +119,8 @@ steps to do so:
 
 ## Related Topics
 
-[Getting Collections](/docs/7-2/frameworks/-/knowledge_base/f/getting-collections)
+[Getting Collections](/docs/7-1/tutorials/-/knowledge_base/t/getting-collections)
 
-[Pagination](/docs/7-2/frameworks/-/knowledge_base/f/pagination)
+[Pagination](/docs/7-1/tutorials/-/knowledge_base/t/pagination)
 
-[Making Authenticated Requests](/docs/7-2/frameworks/-/knowledge_base/f/making-authenticated-requests)
+[Making Authenticated Requests](/docs/7-1/tutorials/-/knowledge_base/t/making-authenticated-requests)
