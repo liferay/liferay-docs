@@ -1,3 +1,7 @@
+---
+header-id: content-recommendation-api
+---
+
 # Content Recommendation API
 
 The Content Recommendation API in Liferay Analytics Cloud suggests content based 

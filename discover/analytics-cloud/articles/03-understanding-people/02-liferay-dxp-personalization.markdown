@@ -1,3 +1,7 @@
+---
+header-id: liferay-dxp-personalization
+---
+
 # Liferay DXP Personalization
 
 When used with Liferay DXP's personalization features, the full power of 

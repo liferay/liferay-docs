@@ -1,3 +1,7 @@
+---
+header-id: managing-interest-topics
+---
+
 # Managing Interest Topics
 
 Analytics Cloud's 
