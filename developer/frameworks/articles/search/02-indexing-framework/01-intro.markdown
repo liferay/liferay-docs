@@ -22,16 +22,16 @@ That said, if you want to use the old approach, feel free to extend
 Liferay's original Search API was built around the Lucene search and indexing
 library. To this day, familiarity with Lucene will jump-start your understanding
 of Liferay's Search API. However, starting with the 7.0 version of @product@,
-the Search API is being reworked, so that the parts closely tied to Lucene are
-becoming more generic. Elasticsearch support was added (in addition to Solr),
-and most of the newer searching and indexing APIs aim to leverage/map
-Elasticsearch APIs. This means that in many cases (for example the `Query`
-types) there is a one-to-one mapping between the Liferay and Elasticsearch APIs.
+the Search API had been reworked, so that the parts closely tied to Lucene have
+become more generic. Elasticsearch support was added (in addition to Solr), and
+most of the newer searching and indexing APIs aim to leverage/map Elasticsearch
+APIs. This means that in many cases (for example the `Query` types) there is a
+one-to-one mapping between the Liferay and Elasticsearch APIs.
 
 In addition to the Elasticsearch centered APIs, Liferay's Search Infrastructure
 includes additional APIs serving these purposes: 
 
--   Ensure all indexed documents include the fields needed by @product@ (e.g., 
+-   Ensure all indexed documents include some required fields (e.g., 
     `entryClassName`, `entryClassPK`, `assetTagNames`, `assetCategories`,
     `companyId`, `groupId`, staging status). 
 -   Ensure the scope of returned search results is appropriate by applying 
@@ -135,7 +135,8 @@ precautions:
     `content_ja_JP`, `content_es_ES`, ...).
 - Search the localized fields. Whatever you index, that's what you should be
     querying for.
-- Don't index plain (unlocalized) fields.
+- Don't index content in plain (unlocalized) fields if you expect the content to
+    be present in multiple locales.
 - Don't index both the plain and the localized field.
 
 The indexing and searching articles included in this section demonstrate how to

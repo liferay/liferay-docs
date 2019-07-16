@@ -3,24 +3,32 @@
 The search framework must know about your entity and how to handle it during a
 search request. To register model entities with Liferay's search framework,
 `SearchRegistrar`s use the [search framework's
-registry](https://github.com/liferay/liferay-portal/tree/7.1.1-ga2/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/registrar)
+registry](https://github.com/liferay/liferay-portal/tree/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/registrar)
 to define certain things about your model entity's
-[`ModelSearchDefinition`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/registrar/ModelSearchDefinition.java):
+[`ModelSearchDefinition`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/registrar/ModelSearchDefinition.java):
 which fields are used by default to retrieve documents from the search engine,
 and which optional search services are registered for your entity (for example,
 the `ModelIndexWriterContributor` for you entity. Registration occurs as soon
 as the Component is activated (during portal startup or deployment of the
 bundle). Search and indexing code relies on Search APIs and SPIs:
 
+The extension points (i.e., the interfaces to implement) in this articles are
+provided by the `com.liferay.portal.search.spi` bundle. Calls are also made to
+the `com.liferay.portal.search.api` bundle's methods.
+
+Here are the Gradle dependencies for @product@ 7.2.0 GA1:
+
 ```groovy
-compileOnly group: "com.liferay", name: "com.liferay.portal.search.spi", version: "3.2.0"
-compileOnly group: "com.liferay", name: "com.liferay.portal.search.api", version: "3.7.0"
+dependencies {
+    compileOnly group: "com.liferay", name: "com.liferay.portal.search.spi", version: "3.2.1"
+    compileOnly group: "com.liferay", name: "com.liferay.portal.search.api", version: "3.7.0"
+}
 ```
 
 | **APIs and SPIs:** SPIs are a special type of API. Generally, code inside a SPI
 | module (e.g., `portal-search-spi`) is used to customize existing behavior, while
 | API modules contain behavior you want to use. Put simply, implement interfaces
-| from a SPI, and consume the code form the API.  
+| from a SPI, and consume the code form the API.
 | 
 | SPI example:
 |  `ModelDocumentContributor` lives in a SPI module because you're supposed

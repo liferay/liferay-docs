@@ -6,10 +6,11 @@ control over your model entity's summary.
 
 ## Creating a Results Summary
 
-[`ModelSummaryContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/result/contributor/ModelSummaryContributor.java) 
-classes get the `Summary` object created for each search document, so you can
-manipulate it by adding specific fields or setting the length of the displayed
-content.
+`ModelSummaryContributor` classes get the `Summary` object created for each
+search document, so you can manipulate it by adding specific fields or setting
+the length of the displayed content.
+
+**Extension Pointi (SPI):** [`com.liferay.portal.search.spi.model.result.contributor.ModelSummaryContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/result/contributor/ModelSummaryContributor.java)
 
 ```java
 @Component(
@@ -51,10 +52,12 @@ public class FooEntryModelSummaryContributor
 
 ## Controlling the Visibility of Model Entities
 
-[`ModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/result/contributor/ModelVisibilityContributor.java) 
+[`ModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/result/contributor/ModelVisibilityContributor.java) 
 classes control the visibility of model entities that can be attached to other
 asset types (for example, File Entries can be attached to Wiki Pages), in the
 search context. 
+
+**Extension Point (SPI):** [`com.liferay.portal.search.spi.model.result.contributor.ModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/result/contributor/ModelVisibilityContributor.java)
 
 ```java
 @Component(

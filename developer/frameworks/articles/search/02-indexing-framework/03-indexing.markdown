@@ -5,12 +5,13 @@ engine, to be later used during a search.
 
 ## Contributing Model Entity Fields to the Index
 
-Write a [`ModelDocumentContributor`
-class](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/index/contributor/ModelDocumentContributor.java)
-to control how model entity fields are indexed in search engine documents.
+Write a `ModelDocumentContributor` class to control how model entity fields are
+indexed in search engine documents.
+
+**Extension Point (SPI):** [`com.liferay.portal.search.spi.model.index.contributor.ModelDocumentContributor<T>`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/index/contributor/ModelDocumentContributor.java)
 
 Declare the Component's `indexer.class.name` and its service type as a
-`ModelDocumentContributor.class`:
+`ModelDocumentContributor` class:
 
 ```java
 @Component(
@@ -66,21 +67,22 @@ localized field name to the document.
 The `contribute` method is called each time the `add` and `update` methods in
 the entity's service layer are called.
 
-<!-- This section needs help! @Tibor -->
 ## Configure Re-Indexing and Batch Indexing Behavior
 
-[`ModelIndexerWriterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/index/contributor/ModelIndexerWriterContributor.java) 
-classes configure the re-indexing and batch re-indexing behavior for the model
-entity. This class's `customize` method is called when a re-index is triggered
-from the Search administrative application found in Control Panel &rarr;
-Configuration &rarr; Search, or when a CRUD operation is made on the entity,
-_if_ the `modelIndexed` method is implemented in the contributor.
+`ModelIndexerWriterContributor` classes configure the re-indexing and batch
+re-indexing behavior for the model entity. This class's `customize` method is
+called when a re-index is triggered from the Search administrative application
+found in Control Panel &rarr; Configuration &rarr; Search, or when a CRUD
+operation is made on the entity, _if_ the `modelIndexed` method is implemented
+in the contributor.
 
-The bulk of the work is in the `customize` method. This code uses the actionable
-dynamic query helper method to retrieve all existing Foo entities in the virtual
-instance (identified by the Company ID). If you're using Service Builder, this
-query method was generated for you when you built the services. Each Foo Entry
-document is then retrieved and added to a collection.
+**Extension Point (SPI):** [`com.liferay.portal.search.spi.model.index.contributor.ModelIndexerWriterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/index/contributor/ModelIndexerWriterContributor.java)
+
+The bulk of the work is in the `customize` method. This code uses the
+actionable dynamic query helper method to retrieve all existing Foo entities in
+the virtual instance (identified by the Company ID). If you're using Service
+Builder, this query method was generated for you when you built the services.
+Each Foo Entry document is then retrieved and added to a collection.
 
 1.  First set up the component and class declarations:
 
@@ -149,7 +151,6 @@ document is then retrieved and added to a collection.
     ```
 
 5.  Override `getIndexerWriterMode`:
-<!-- Shouldn't we explain this a bit?-->
 
     ```java
 	@Override
@@ -166,6 +167,18 @@ document is then retrieved and added to a collection.
 		return IndexerWriterMode.DELETE;
 	}
     ```
+
+    `com.liferay.portal.search.spi.model.index.contributor.helper.IndexerWriterMode`
+    defines the following index-writing options:
+
+    - `IndexerWriterMode.DELETE`: instructs the search framework to delete the
+        given document in the search index without re-creating it
+    - `IndexerWriterMode.PARTIAL_UPDATE`, `IndexerWriterMode.UPDATE`: instructs the
+        search framework to update the given document in the search index.
+    - `IndexerWriterMode.SKIP`: instructs the search framework to not write
+        anything to the search index.
+
+    The default is `IndexerWriterMode.UPDATE`.
 
 6.  Add the services referenced:
 
