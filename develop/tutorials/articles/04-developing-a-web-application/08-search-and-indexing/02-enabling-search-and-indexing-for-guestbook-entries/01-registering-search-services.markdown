@@ -6,8 +6,8 @@ header-id: registering-entries-with-the-search-framework
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Entries<br>Step 1 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Search and Indexing for Entries</p><p>Step 1 of 5</p>
 </div>
 
 The search registrar for Entries is very similar to the one created for

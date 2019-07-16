@@ -6,8 +6,8 @@ header-id: generating-results-summaries
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Guestbooks<br>Step 5 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Search and Indexing for Guestbooks</p><p>Step 5 of 6</p>
 </div>
 
 The Search application and the Asset Publisher application must display results

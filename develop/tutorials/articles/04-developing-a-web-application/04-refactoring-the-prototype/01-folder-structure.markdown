@@ -6,8 +6,8 @@ header-id: organizing-folders-for-larger-applications
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Refactoring the Prototype<br>Step 1 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Refactoring the Prototype</p><p>Step 1 of 6</p>
 </div>
 
 In larger projects, it is important to have all of your files and modules well 

@@ -6,8 +6,8 @@ header-id: enabling-tags-categories-and-related-assets-for-guestbooks
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Adding Asset Features to Your UI<br>Step 3 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Adding Asset Features to Your UI</p><p>Step 3 of 5</p>
 </div>
 
 Since you already asset-enabled guestbooks at the service layer, guestbook

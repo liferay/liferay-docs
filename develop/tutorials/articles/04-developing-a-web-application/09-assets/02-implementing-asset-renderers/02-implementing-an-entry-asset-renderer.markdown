@@ -6,8 +6,8 @@ header-id: implementing-an-entry-asset-renderer
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Implementing Asset Renderers<br>Step 2 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Implementing Asset Renderers</p><p>Step 2 of 2</p>
 </div>
 
 The classes you'll create here are nearly identical to the 

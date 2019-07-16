@@ -6,8 +6,8 @@ header-id: creating-a-form
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Developing Your First Portlet<br>Step 6 of 8</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Developing Your First Portlet</p><p>Step 6 of 8</p>
 </div>
 
 The form for creating guestbook entries has two fields: one for the name of the

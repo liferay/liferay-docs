@@ -6,8 +6,8 @@ header-id: fitting-it-all-together
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Refactoring the Prototype<br>Step 6 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Refactoring the Prototype</p><p>Step 6 of 6</p>
 </div>
 
 You've created a complete data-driven application from the back-end to the 

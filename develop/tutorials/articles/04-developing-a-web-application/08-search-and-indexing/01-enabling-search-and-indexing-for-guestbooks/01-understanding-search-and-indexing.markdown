@@ -6,8 +6,8 @@ header-id: understanding-search-and-indexing
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Guestbooks<br>Step 1 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Search and Indexing for Guestbooks</p><p>Step 1 of 6</p>
 </div>
 
 By default, @product@ uses Elasticsearch, a search engine backed by the popular

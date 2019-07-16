@@ -6,8 +6,8 @@ header-id: writing-your-first-liferay-application
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Developing Your First Portlet<br>Step 1 of 8</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Developing Your First Portlet</p><p>Step 1 of 8</p>
 </div>
 
 Now you'll learn step-by-step how to create your project and deploy your

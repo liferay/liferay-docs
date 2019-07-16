@@ -6,8 +6,8 @@ header-id: implementing-a-guestbook-asset-renderer
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Implementing Asset Renderers<br>Step 1 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Implementing Asset Renderers</p><p>Step 1 of 2</p>
 </div>
 
 @product@'s asset renderers follow the factory pattern, so you must create a 

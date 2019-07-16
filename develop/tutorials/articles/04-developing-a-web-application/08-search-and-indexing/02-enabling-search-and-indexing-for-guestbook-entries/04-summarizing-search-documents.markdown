@@ -6,8 +6,8 @@ header-id: generating-results-summaries-0
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Entries<br>Step 3 of 5</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Enabling Search and Indexing for Entries</p><p>Step 3 of 5</p>
 </div>
 
 The Search application and the Asset Publisher application display results
