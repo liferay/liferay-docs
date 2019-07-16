@@ -66,8 +66,10 @@ availability.
 | App | &nbsp;Availability | &nbsp;Notes |
 | --- | ------------------ | ----------- |
 | AlloyUI | Release (bundle) | Replaced by [Metal.js](https://metaljs.com/). | 
+| CMIS Store | Will be removed | Migrate to another [Document Repository Store option](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-1/deploy/-/knowledge_base/d/upgrading-to-liferay-71), migrate your document store data using [Data Migration in Server Administration](/docs/7-1/user/-/knowledge_base/u/server-administration). |
 | Columns Layout | Removed | |
 | Google Login | Release (bundle) | Replaced by OpenID Connect. |
+| JCRStore | Will be removed | Migrate to another [Document Repository Store option](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-1/deploy/-/knowledge_base/d/upgrading-to-liferay-71), migrate your document store data using [Data Migration in Server Administration](/docs/7-1/user/-/knowledge_base/u/server-administration). |
 | Marvel Integration | Removed | Replaced by X-Pack. |
 | OpenID | Release (bundle) | Replaced by OpenID Connect. |
 | OpenSocial Gadget | Removed | |

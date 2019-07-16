@@ -19,7 +19,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
             <plugin>
                 <groupId>com.liferay</groupId>
                 <artifactId>com.liferay.lang.builder</artifactId>
-                <version>1.0.28</version>
+                <version>1.0.31</version>
                 <configuration>
                 </configuration>
             </plugin>
