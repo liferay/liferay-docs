@@ -80,68 +80,71 @@ These appear next; then you'll learn how to install the app.
 ## Preconfiguring LCS to Connect Through a Proxy
 
 If your server connects to the Internet through a proxy, you must set some 
-properties in either your server or the LCS client app **before** deploying the 
-app. There are therefore two ways to set these properties, depending on whether 
-you set them in your server or the LCS client app. 
+properties **before** deploying the LCS client app. There are two ways to do 
+so---chose only one: 
 
-1.  To set the properties in your server, set them as JVM app server arguments. 
-    Set these properties to the appropriate values for your proxy: 
+1.  [As JVM app server arguments](#jvm-app-server-arguments). 
 
-        -Dhttp.proxyHost=
-        -Dhttp.proxyPort=
-        -Dhttp.proxyUser=
-        -Dhttp.proxyPassword=
-        -Dhttps.proxyHost=
-        -Dhttps.proxyPort=
+2.  [As LCS client app properties](#lcs-client-app-properties). 
 
-    Note that the `user`, `password`, and `https` properties are only needed if 
-    your proxy requires authentication. 
+| **Note:** Use only one of these methods to configure your server to connect 
+| through a proxy. 
 
-    | **Note:** If you use JVM app server arguments as instructed in this step,
-    | you don't need to pre-configure the LCS client app to connect through the
-    | same proxy. 
+### JVM App Server Arguments
 
-2.  To set the properties inside the LCS client app's WAR file, you must first 
-    extract it from the app's LPKG file (the app downloads from Liferay 
-    Marketplace as an LPKG file). Expand the LPKG file, then locate and expand 
-    the client's WAR file: `lcs-portlet-[version].war`. 
+To set the proxy properties in your server, set them as JVM app server 
+arguments. Set these properties to the appropriate values for your proxy: 
 
-    You must set the properties in the WAR's `portlet-ext.properties` file. 
-    Follow these steps to do so: 
+```properties
+-Dhttp.proxyHost=
+-Dhttp.proxyPort=
+-Dhttp.proxyUser=
+-Dhttp.proxyPassword=
+-Dhttps.proxyHost=
+-Dhttps.proxyPort=
+```
 
-    a. In the LCS client's WAR file, create the file 
-        `WEB-INF/classes/portlet-ext.properties` (or open this file if it 
-        already exists). 
+Note that the `user`, `password`, and `https` properties are only needed if your 
+proxy requires authentication. 
 
-    b. Add the following properties at the end of `portlet-ext.properties` and 
-       set them to the appropriate values for your proxy: 
+### LCS Client App Properties
 
-            proxy.host.name=
-            proxy.host.port=
+To set the proxy properties via the LCS client app, you must create and deploy 
+a config file containing the properties. Follow these steps to do so: 
 
-      If your proxy requires authentication, you should also add the following 
-      properties and set them to the appropriate values for your proxy: 
+1.  Create the config file 
+    `com.liferay.lcs.client.configuration.LCSConfiguration.config`. In the steps 
+    that follow, you'll set the proxy properties in this file. 
 
-            proxy.host.login=
-            proxy.host.password=
+2.  Set these `proxy*` properties to the appropriate values for your proxy: 
 
-      If your proxy requires NTLM authentication, you must also add the 
-      following properties: 
+    ```properties
+    proxyHostName=""
+    proxyHostPort=""
+    ```
 
-            proxy.auth.type=ntlm
-            proxy.domain=
-            proxy.workstation=
+3.  If your proxy requires authentication, pass the credentials via these 
+    properties: 
 
-      Be sure to set `proxy.domain` and `proxy.workstation` to the appropriate 
-      values for your proxy. Note that you can leave `proxy.workstation` blank 
-      if you don't need it. 
+    ```properties
+    proxyHostLogin=""
+    proxyHostPassword=""
+    ```
 
-    c. Repackage the LCS client WAR with the modified `portlet-ext.properties` 
-       file, then repackage the LPKG file with the LCS client WAR. Make sure the 
-       repackaged LPKG file has the same name as the original LPKG file 
-       downloaded from Liferay Marketplace. 
+4.  If your proxy requires NTLM authentication, you must also populate these 
+    properties: 
 
-Next, you'll learn how to ensure that the LCS client can access LCS. 
+    ```properties
+    proxyAuthType="ntlm"
+    proxyDomain=""
+    proxyWorkstation=""
+    ```
+
+    Be sure to set `proxyDomain` and `proxyWorkstation` to the appropriate 
+    values for your proxy. Note that you can leave `proxyWorkstation` blank if 
+    you don't need it. 
+
+5.  Deploy the config file to `osgi/configs`. 
 
 ## Ensuring Access to LCS
 
@@ -198,11 +201,15 @@ you're running Windows, drop the `.sh` from each command that has it.
 2.  To let the patching tool discover your @product@ installation, run this 
     command: 
 
-        patching-tool.sh auto-discovery
+    ```bash
+    patching-tool.sh auto-discovery
+    ```
 
 3.  To configure the patching tool, run this command: 
 
-        patching-tool.sh setup
+    ```bash
+    patching-tool.sh setup
+    ```
 
 4.  On server startup, the patching tool agent installs the patches downloaded 
     by LCS. For the agent to start with your server, you must set the 
@@ -210,19 +217,25 @@ you're running Windows, drop the `.sh` from each command that has it.
     installation's `patching-tool-agent.jar`. Be sure to specify the correct 
     path to this file: 
 
-        -javaagent:../../patching-tool/lib/patching-tool-agent.jar
+    ```properties
+    -javaagent:../../patching-tool/lib/patching-tool-agent.jar
+    ```
 
 5.  If your patching tool is installed in a location other than the Liferay Home 
     folder, you must also specify the `patching-tool` folder's path as an app 
     server JVM argument. Do this with the `patching.tool.home` property: 
 
-        -Dpatching.tool.home=/opt/liferay-dxp-7.2/patching-tool/
+    ```properties
+    -Dpatching.tool.home=/opt/liferay-dxp-7.2/patching-tool/
+    ```
 
 There are also a few other things to consider when using the agent. Due to class
 loading issues, the agent starts in a separate JVM. You can specify options for
 it with the `patching.tool.agent.jvm.opts` property. 
 
-        -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8"
+```properties
+-Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8"
+```
 
 You may also experience issues on Windows if the user starting the app server
 doesn't have administrator privileges. Here are some examples of the errors you 
@@ -234,7 +247,9 @@ may see:
 To solve this, set the `java.io.tmpdir` system property as follows in the
 `patching.tool.agent.jvm.opts` property:
 
-        -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8 -Djava.io.tmpdir=%TMP%"
+```properties
+-Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8 -Djava.io.tmpdir=%TMP%"
+```
 
 The agent also has some flags you can set to control how it behaves:
 
@@ -243,7 +258,9 @@ The agent also has some flags you can set to control how it behaves:
 
 You can specify these as follows:
 
-        -Dpatching.tool.agent.properties=debug,nohalt
+```properties
+-Dpatching.tool.agent.properties=debug,nohalt
+```
 
 ## Configuring WebSphere
 
@@ -258,35 +275,37 @@ app:
 
 2.  Add these properties in a `portal-ext.properties` file: 
 
-        module.framework.properties.org.osgi.framework.bootdelegation=\
-            __redirected,\
-            com.sun.ccpp,\
-            com.sun.ccpp.*,\
-            com.liferay.aspectj,\
-            com.liferay.aspectj.*,\
-            com.liferay.portal.servlet.delegate,\
-            com.liferay.portal.servlet.delegate*,\
-            com.sun.crypto.*,\
-            com.sun.image.*,\
-            com.sun.jmx.*,\
-            com.sun.jna,\
-            com.sun.jndi.*,\
-            com.sun.mail.*,\
-            com.sun.management.*,\
-            com.sun.media.*,\
-            com.sun.msv.*,\
-            com.sun.org.*,\
-            com.sun.syndication,\
-            com.sun.tools.*,\
-            com.sun.xml.*,\
-            com.yourkit.*,\
-            com.ibm.crypto.*,\
-            sun.*,\
-            javax.validation,\
-            javax.validation.*,\
-            jdk.*,\
-            weblogic.jndi,\
-            weblogic.jndi.*\
+    ```properties
+    module.framework.properties.org.osgi.framework.bootdelegation=\
+        __redirected,\
+        com.sun.ccpp,\
+        com.sun.ccpp.*,\
+        com.liferay.aspectj,\
+        com.liferay.aspectj.*,\
+        com.liferay.portal.servlet.delegate,\
+        com.liferay.portal.servlet.delegate*,\
+        com.sun.crypto.*,\
+        com.sun.image.*,\
+        com.sun.jmx.*,\
+        com.sun.jna,\
+        com.sun.jndi.*,\
+        com.sun.mail.*,\
+        com.sun.management.*,\
+        com.sun.media.*,\
+        com.sun.msv.*,\
+        com.sun.org.*,\
+        com.sun.syndication,\
+        com.sun.tools.*,\
+        com.sun.xml.*,\
+        com.yourkit.*,\
+        com.ibm.crypto.*,\
+        sun.*,\
+        javax.validation,\
+        javax.validation.*,\
+        jdk.*,\
+        weblogic.jndi,\
+        weblogic.jndi.*\
+    ```
 
 3.  In your @product@ installation, delete the `osgi/state` folder. 
 
@@ -310,7 +329,9 @@ Note that for LCS client app versions prior to 5.0.0, you must also change the
 value of the `digital.signature.algorithm.provider` property in the app's 
 `portlet.properties` file to `IBMJCE`: 
 
-    digital.signature.algorithm.provider=IBMJCE
+```properties
+digital.signature.algorithm.provider=IBMJCE
+```
 
 ## Installing the LCS Client App
 
