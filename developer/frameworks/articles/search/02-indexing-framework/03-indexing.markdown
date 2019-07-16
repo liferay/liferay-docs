@@ -6,7 +6,7 @@ engine, to be later used during a search.
 ## Contributing Model Entity Fields to the Index
 
 Write a [`ModelDocumentContributor`
-class](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/index/contributor/ModelDocumentContributor.java)
+class](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/index/contributor/ModelDocumentContributor.java)
 to control how model entity fields are indexed in search engine documents.
 
 Declare the Component's `indexer.class.name` and its service type as a
@@ -69,7 +69,7 @@ the entity's service layer are called.
 <!-- This section needs help! @Tibor -->
 ## Configure Re-Indexing and Batch Indexing Behavior
 
-[`ModelIndexerWriterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/index/contributor/ModelIndexerWriterContributor.java) 
+[`ModelIndexerWriterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/index/contributor/ModelIndexerWriterContributor.java) 
 classes configure the re-indexing and batch re-indexing behavior for the model
 entity. This class's `customize` method is called when a re-index is triggered
 from the Search administrative application found in Control Panel &rarr;

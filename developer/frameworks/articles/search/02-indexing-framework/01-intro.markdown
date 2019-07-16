@@ -6,15 +6,16 @@ Unless you're searching for model entities using database queries (not
 recommended in most cases), each asset in @product@ must be indexed in the
 search engine. The indexing code is specific to each asset, as the asset's
 developers know what fields to index and what filters to apply to the search
-query. This paradigm applies to Liferay's own developers and anyone developing custom model entities for use with @product@.
+query. This paradigm applies to Liferay's own developers and anyone developing
+custom model entities for use with @product@.
 
 In past versions of @product@, when your asset required indexing, you would
 implement a new Indexer by extending
 `com.liferay.portal.kernel.search.BaseIndexer<T>`. @product@ version 7.1
 introduced a new pattern that relies on 
 [composition instead of inheritance](https://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition).
-If you want to use the old approach, feel free to extend `BaseIndexer`. It's
-still supported. 
+That said, if you want to use the old approach, feel free to extend
+`BaseIndexer`. It's still supported. 
 
 ## Search and Indexing Overview
 
@@ -47,26 +48,26 @@ decomposed into several new classes and methods.
 
  Indexer/BaseIndexer method | Composite Indexer Equivalent | Example |
 :-------------------------- | :-------------------------- | :--------------- |
- Class Constructor | `SearchRegistrar` | [`BlogsEntrySearchRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/BlogsEntrySearchRegistrar.java) |
- `setDefaultSelectedFieldNames` | `SearchRegistrar.activate` | [`BlogsEntrySearchRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/BlogsEntrySearchRegistrar.java) |
- `setDefaultSelectedLocalizedFieldNames` | `SearchRegistrar.activate` | [`BlogsEntrySearchRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/BlogsEntrySearchRegistrar.java) |
- `setPermissionAware`  | `ModelResourcePermissionRegistrar` | [`DLFileEntryModelResourcePermissionRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/security/permission/resource/DLFileEntryModelResourcePermissionRegistrar.java) |
-  `setFilterSearch` | `ModelResourcePermissionRegistrar` | [`DLFileEntryModelResourcePermissionRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/security/permission/resource/DLFileEntryModelResourcePermissionRegistrar.java) |
- `getDocument`/`doGetDocument` | `ModelDocumentContributor` | [`BlogsEntryModelDocumentContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/index/contributor/BlogsEntryModelDocumentContributor.java)
- `reindex`/`doReindex` | `ModelIndexerWriterContributor` | [`BlogsEntryModelIndexerWriterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/index/contributor/BlogsEntryModelIndexerWriterContributor.java)
- `addRelatedEntryFields` | `RelatedEntryIndexer` | [`DLFileEntryRelatedEntryIndexer`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryRelatedEntryIndexer.java)
- `postProcessContextBooleanFilter`/`PostProcessContextQuery` | `ModelPreFilterContributor` | [`BlogsEntryModelPreFilterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/query/contributor/BlogsEntryModelPreFilterContributor.java) |
-  `postProcessSearchQuery` | `KeywordQueryContributor` | [`BlogsEntryKeywordQueryContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/query/contributor/BlogsEntryKeywordQueryContributor.java) |
- `getFullQuery` | `SearchContextContributor` | [`DLFileEntryModelSearchContextContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelSearchContextContributor.java) |
- `isVisible`/`isVisibleRelatedEntry` | `ModelVisibilityContributor` | [`BlogsEntryModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/result/contributor/BlogsEntryModelVisibilityContributor.java) |
- `getSummary`/`createSummary`/`doGetSummary` | `ModelSummaryContributor` | [`BlogsEntryModelSummaryContributor`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/result/contributor/BlogsEntryModelSummaryContributor.java) |
- `Indexer.search`/`searchCount` | No change | [`BlogEntriesDisplayContext`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/display/context/BlogEntriesDisplayContext.java) |	
- `Indexer.delete`/`doDelete` | No change | [`MBMessageLocalServiceImpl.deleteMessage`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/message-boards/message-boards-service/src/main/java/com/liferay/message/boards/service/impl/MBMessageLocalServiceImpl.java#L703) |
+ Class Constructor | `SearchRegistrar` | [`BlogsEntrySearchRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/BlogsEntrySearchRegistrar.java) |
+ `setDefaultSelectedFieldNames` | `SearchRegistrar.activate` | [`BlogsEntrySearchRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/BlogsEntrySearchRegistrar.java) |
+ `setDefaultSelectedLocalizedFieldNames` | `SearchRegistrar.activate` | [`BlogsEntrySearchRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/BlogsEntrySearchRegistrar.java) |
+ `setPermissionAware`  | `ModelResourcePermissionRegistrar` | [`DLFileEntryModelResourcePermissionRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/security/permission/resource/DLFileEntryModelResourcePermissionRegistrar.java) |
+  `setFilterSearch` | `ModelResourcePermissionRegistrar` | [`DLFileEntryModelResourcePermissionRegistrar`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/security/permission/resource/DLFileEntryModelResourcePermissionRegistrar.java) |
+ `getDocument`/`doGetDocument` | `ModelDocumentContributor` | [`BlogsEntryModelDocumentContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/index/contributor/BlogsEntryModelDocumentContributor.java)
+ `reindex`/`doReindex` | `ModelIndexerWriterContributor` | [`BlogsEntryModelIndexerWriterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/index/contributor/BlogsEntryModelIndexerWriterContributor.java)
+ `addRelatedEntryFields` | `RelatedEntryIndexer` | [`DLFileEntryRelatedEntryIndexer`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryRelatedEntryIndexer.java)
+ `postProcessContextBooleanFilter`/`PostProcessContextQuery` | `ModelPreFilterContributor` | [`BlogsEntryModelPreFilterContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/query/contributor/BlogsEntryModelPreFilterContributor.java) |
+  `postProcessSearchQuery` | `KeywordQueryContributor` | [`BlogsEntryKeywordQueryContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/query/contributor/BlogsEntryKeywordQueryContributor.java) |
+ `getFullQuery` | `SearchContextContributor` | [`DLFileEntryModelSearchContextContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelSearchContextContributor.java) |
+ `isVisible`/`isVisibleRelatedEntry` | `ModelVisibilityContributor` | [`BlogsEntryModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/result/contributor/BlogsEntryModelVisibilityContributor.java) |
+ `getSummary`/`createSummary`/`doGetSummary` | `ModelSummaryContributor` | [`BlogsEntryModelSummaryContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/search/spi/model/result/contributor/BlogsEntryModelSummaryContributor.java) |
+ `Indexer.search`/`searchCount` | No change | [`BlogEntriesDisplayContext`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/display/context/BlogEntriesDisplayContext.java) |	
+ `Indexer.delete`/`doDelete` | No change | [`MBMessageLocalServiceImpl.deleteMessage`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/message-boards/message-boards-service/src/main/java/com/liferay/message/boards/service/impl/MBMessageLocalServiceImpl.java#L703) |
 
 In addition, you can index `ExpandoBridge` attributes. This was previously
 accomplished in `BaseIndexer`'s `getBaseModelDocument`. Now you implement an
 `ExpandoBridgeRetriever`. See 
-[`DLFileEntryExpandoBridgeRetriever`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryExpandoBridgeRetriever.java)
+[`DLFileEntryExpandoBridgeRetriever`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryExpandoBridgeRetriever.java)
 for an example implementation.
 
 ## Permissions Aware Searching and Indexing
