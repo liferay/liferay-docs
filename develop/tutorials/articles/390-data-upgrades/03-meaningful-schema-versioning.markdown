@@ -19,8 +19,6 @@ define new [upgrade steps](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-up
 and support rollback of schema micro versions. The convention is optional but
 tracks data schema backwards compatibility. 
 
-$$$
-
 Here's Liferay's schema version convention:
 
 **MAJOR.MINOR.MICRO**
