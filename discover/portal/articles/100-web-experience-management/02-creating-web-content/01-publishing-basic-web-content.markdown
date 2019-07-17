@@ -311,13 +311,11 @@ Content Article permissions in your System Configuration:
 Once it is activated, any permissions you set in the article's configuration are
 checked before displaying the article.
 
-+$$$
-
-**Version Note:** This property is only available with Fix Pack
-de-13 installed. If you do not have the latest fix packs installed, set the 
-`journal.article.view.permission.check.enabled=` to `true` in your 
-`portal-ext.properties` file and restart Liferay to activate the permission 
-check.
+| **Version Note:** This property is only available with Fix Pack
+| de-13 installed. If you do not have the latest fix packs installed, set the 
+| `journal.article.view.permission.check.enabled=` to `true` in your 
+| `portal-ext.properties` file and restart Liferay to activate the permission 
+| check.
 
 Before you display your web content, you'll learn how to localize it to cater to
 different language speaking users.
@@ -355,14 +353,12 @@ followed by your preferred languages in your `portal-ext.properties` file. For
 example, `locales.enabled=ar_SA,nl_NL,hi_IN` offers *Arabic (Saudi Arabia)*,
 *Dutch (Netherlands)*, and *Hindi (India)*.
 
-+$$$
-
-**Warning:** If you switch your site's default language (e.g., via friendly
-URL), but do not have the necessary translations for localizable fields, your
-site's language values will be used from the old default language. Therefore,
-you should change the default language of your site *only* when you have
-translated values for all localizable entities. Otherwise, you may not be in
-control of what language is displayed in your Liferay instance.
+| **Warning:** If you switch your site's default language (e.g., via friendly
+| URL), but do not have the necessary translations for localizable fields, your
+| site's language values will be used from the old default language. Therefore,
+| you should change the default language of your site *only* when you have
+| translated values for all localizable entities. Otherwise, you may not be in
+| control of what language is displayed in your Liferay instance.
 
 The ability to completely delete a translation in one step is also available.
 Instead of disabling a translation or having to go through a multistep
@@ -475,14 +471,10 @@ handy if you are running a research or academically oriented site; users can
 very quickly download PDFs of your content for their research projects. These
 conversion options will be available under the *User Tools* list.
 
-+$$$
-
-**Note:** To enable OpenOffice integration in your Liferay instance, navigate to
-the Control Panel &rarr; *Configuration* &rarr; *Server Administration* &rarr;
-*External Services* and select the *Enabled* checkbox for enabling OpenOffice
-integration.
-
-$$$
+| **Note:** To enable OpenOffice integration in your Liferay instance, navigate to
+| the Control Panel &rarr; *Configuration* &rarr; *Server Administration* &rarr;
+| *External Services* and select the *Enabled* checkbox for enabling OpenOffice
+| integration.
 
 Note that you also have other options, such as enabling a Print button, enabling
 ratings so users can rate the content, enabling comments, and enabling ratings
@@ -563,22 +555,20 @@ have a workflow enabled, which is discussed in greater detail in the
 It makes no difference whether you edit it from a Web Content Display app, from
 the Asset Publisher, or from the Site Administration interface.
 
-**Note:** If you're using a mobile device or tablet and you'd like to view your 
-page the way your users will see it (i.e., without all the app controls and 
-icons), go up to the top Control Menu and select the *Toggle Controls* icon
-(![Toggle Controls](../../../images/icon-edit-controls.png)). This makes all 
-those extra controls you see as a Liferay administrator disappear. You'll also 
-notice the icon is crossed out when the Toggle Controls are disabled. If you 
-need to use the controls again, just select the icon again to return to the 
-original format.
+| **Note:** If you're using a mobile device or tablet and you'd like to view your 
+| page the way your users will see it (i.e., without all the app controls and 
+| icons), go up to the top Control Menu and select the *Toggle Controls* icon
+| (![Toggle Controls](../../../images/icon-edit-controls.png)). This makes all 
+| those extra controls you see as a Liferay administrator disappear. You'll also 
+| notice the icon is crossed out when the Toggle Controls are disabled. If you 
+| need to use the controls again, just select the icon again to return to the 
+| original format.
 
-This button is not displayed when viewing the page from a desktop computer. This 
-is because apps displayed from a desktop computer hide their controls by 
-default, and can be rendered by hovering over the app. To test out your page 
-from different devices, select the *Simulation* button (![Simulation](../../../images/icon-simulation.png)) 
-from the right corner of the top Control Menu.
-
-$$$
+| This button is not displayed when viewing the page from a desktop computer. This 
+| is because apps displayed from a desktop computer hide their controls by 
+| default, and can be rendered by hovering over the app. To test out your page 
+| from different devices, select the *Simulation* button (![Simulation](../../../images/icon-simulation.png)) 
+| from the right corner of the top Control Menu.
 
 As an administrator, you may want to monitor what changes are being made to your
 site's web content without implementing a workflow process. To keep tabs on
