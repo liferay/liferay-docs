@@ -11,9 +11,9 @@ installation and a database. It has many
 [Users](/docs/7-2/user/-/knowledge_base/u/users-and-organizations), 
 [Sites](/docs/7-2/user/-/knowledge_base/u/building-a-site), 
 and specific 
-[instance settings](/docs/7-2/user/-/knowledge_base/u/general-settings). 
-If you require a second similar installation, then adding a *Virtual Instance* might be 
-right for you. 
+[instance settings](/docs/7-2/user/-/knowledge_base/u/instance-configuration-instance-settings#general). 
+If you require a second similar installation, then adding a *Virtual Instance* 
+might be right for you. 
 
 You can run more than one Virtual Instance on a single server with a shared 
 database, but separate data and configurations. Users are directed to the 
