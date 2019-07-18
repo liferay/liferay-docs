@@ -6,17 +6,10 @@ header-id: liferay-mvc-portlet
 
 [TOC levels=1-4]
 
-Web applications often follow the Model View Controller (MVC) pattern. If you're
-an experienced developer, this is not the first time you've heard about Model
-View Controller. In this article you must stay focused, because there are
-several attempts to show you why Liferay's implementation of Model View
-Controller is different, when instead you're hearing about another MVC
-framework. With that in mind, let's get back to the MVC pattern we were
-discussing. 
-
-If there are so many implementations of MVC frameworks in Java, why did Liferay
-create yet another one? Stay with us and you'll see that Liferay MVC Portlet
-provides these benefits:
+If you're an experienced developer, this is not the first time you've heard
+about Model View Controller. If there are so many implementations of MVC
+frameworks in Java, why did Liferay create yet another one? Stay with us and
+you'll see that Liferay MVC Portlet provides these benefits:
 
 -   It's lightweight, as opposed to many other Java MVC frameworks. 
 -   There are no special configuration files that need to be kept in sync with
@@ -24,26 +17,22 @@ provides these benefits:
 -   It's a simple extension of
     [`GenericPortlet`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/GenericPortlet.html). 
 -   You avoid writing a bunch of boilerplate code, since Liferay's MVC Portlet 
-    framework simply looks for some pre-defined parameters when the `init()`
+    framework only looks for some pre-defined parameters when the `init()`
     method is called. 
 -   The controller can be broken down into MVC command classes, each of which
-    handles the controller code for a particular [portlet
-    phase](/docs/7-2/frameworks/-/knowledge_base/f/portlets) (render, action,
-    and resource serving phases).  -   An MVC command class can serve multiple
-    portlets. 
+    handles the controller code for a particular 
+    [portlet phase](/docs/7-2/frameworks/-/knowledge_base/f/portlets) (render, action,
+    and resource serving phases). 
+-   An MVC command class can serve multiple portlets. 
 -   Liferay's portlets use it. That means there are plenty of robust
     implementations to reference when you need to design or troubleshoot your
     Liferay applications.
 
-The Liferay MVC Portlet framework is light, it hides part of the complexity of
-portlets, and it makes the most common operations easier. The default
-[`MVCPortlet`
-project](/docs/7-2/reference/-/knowledge_base/r/using-the-mvc-portlet-template)
-uses separate JSPs for each portlet mode: For example, `edit.jsp` is for *edit*
-mode and `help.jsp` is for *help* mode.
+The Liferay MVC Portlet framework is light and easy to use. The default
+[`MVCPortlet` project](/docs/7-2/reference/-/knowledge_base/r/using-the-mvc-portlet-template)
+template generates a fully configured and working project. 
 
-Before diving in to the Liferay MVC swimming pool with all the other cool kids
-(applications), here's an overview of the Liferay MVC Portlet:
+Here, you'll learn how MVCPortlet works by covering these topics: 
 
 - [MVC layers and modularity](#mvc-layers-and-modularity)
 - [Liferay MVC command classes](#liferay-mvc-command-classes)
@@ -64,11 +53,6 @@ it.
 
 **Controller:** The middle man in the MVC pattern, the Controller contains logic
 for passing the data back and forth between the view and the model layers.
-
-<!--Uncomment once article is available
-The MVC pattern fits well with 
-@product@'s modular architecture
--->
 
 @product@'s applications are divided into multiple discrete modules. With
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder), the
@@ -156,19 +140,14 @@ interface. Import that, and not, for example,
 | To specify that property in your component, use this syntax in your property 
 | list:
 | 
-|     "com.liferay.portlet.css-class-wrapper=portlet-hello-world",
+| `"com.liferay.portlet.css-class-wrapper=portlet-hello-world",`
 | 
-| The properties namespaced with `javax.portlet....` are elements of the
+| The properties namespaced with `javax.portlet.` are elements of the
 | [`portlet.xml` descriptor](https://docs.liferay.com/portlet-api/3.0/portlet-app_3_0.xsd).
 
 ## A Simpler MVC Portlet
 
-With all this focus on MVC commands, don't be concerned that you'll be forced
-into a more complex pattern than you need, especially if you're developing only
-a small MVC application. Not so; just put all your logic into the `-Portlet`
-class if you don't want to split it up into MVC commands. 
-
-In simpler applications, if you don't use MVC commands, your
+In simpler applications, you don't use MVC commands. Your
 portlet render URLs specify JSP paths in `mvcPath` parameters.
 
 ```javascript
