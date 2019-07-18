@@ -46,8 +46,10 @@ assume you've followed the earlier section on *Installing and Configuring Solr
     -  Specify ports `8983` and `7574` (the defaults). Both nodes are
        started with the start commands printed in the log:
 
-                Starting up Solr on port 8983 using command:
-                "bin/solr" start -cloud -p 8983 -s "example/cloud/node1/solr"
+       ```sh
+        Starting up Solr on port 8983 using command:
+        "bin/solr" start -cloud -p 8983 -s "example/cloud/node1/solr"
+        ```
 
     -  Name the collection *liferay*.
     -  Split the collection into two shards.
@@ -56,7 +58,9 @@ assume you've followed the earlier section on *Installing and Configuring Solr
        should see a log message that concludes like this when the cluster has
        been started:
 
-                SolrCloud example running, please visit http://localhost:8983/solr
+       ```sh
+        SolrCloud example running, please visit http://localhost:8983/solr
+        ```
 
 Now you have a new collection called *liferay* in your local SolrCloud cluster.
 Verify its status by running the *status* command:
@@ -108,7 +112,9 @@ Liferay's Solr connector.
 1. From System Settings or your OSGi configuration file, set the *Client Type*
    to *CLOUD*.
 
-        clientType="CLOUD"
+    ```properties
+    clientType="CLOUD"
+    ```
 
 2. Start @product@ if it's not running already.
 

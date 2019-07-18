@@ -8,17 +8,17 @@ header-id: installing-solr-basic-installation
 
 There are two ways to install the Liferay Connector to Solr 7:
 
-<!-- verify still correct -->
 1. Navigate to 
    [Liferay Marketplace](https://web.liferay.com/marketplace/)
-   and download the app that corresponds to your portal:
+   and download the app that corresponds to your portal.
 
-       **Liferay Portal CE:** [Liferay CE Connector to Solr 7](https://web.liferay.com/marketplace/-/mp/application/118014614) 
+<!-- Update links when available
+   **Liferay Portal CE:** [Liferay CE Connector to Solr 7](https://web.liferay.com/marketplace/-/mp/application/118014614) 
 
-       **Liferay DXP:** [Liferay Connector to Solr 7](https://web.liferay.com/marketplace/-/mp/application/117931595)
+   **Liferay DXP:** [Liferay Connector to Solr 7](https://web.liferay.com/marketplace/-/mp/application/117931595)
+-->
 
-       Once the app LPKG is downloaded, copy it to
-       `Liferay_Home/osgi/marketplace`.
+   Once the app LPKG is downloaded, copy it to `Liferay_Home/osgi/marketplace`.
 
 2. In your running portal instance, navigate to *Control Panel* &rarr; *Apps*
    &rarr; *Store*. Sign in using your credentials, search for Solr Search
@@ -78,27 +78,31 @@ To install and properly configure Solr for @product@:
 7.  Create a `core.properties` file in `Solr_Home/liferay` and add this
     configuration:
 
-        config=solrconfig.xml
-        dataDir=data
-        name=liferay
-        schema=schema.xml
+    ```properties
+    config=solrconfig.xml
+    dataDir=data
+    name=liferay
+    schema=schema.xml
+    ```
 
 8.  Checkpoint: your `Solr_Home/liferay` folder now has this structure:
 
-        liferay
-        ├── conf
-        │   ├── lang
-        │   │   ├── contractions_ca.txt
-        │   │   ├── ....txt
-        │   ├── managed-schema
-        │   ├── params.json
-        │   ├── protwords.txt
-        │   ├── schema.xml
-        │   ├── solrconfig.xml
-        │   ├── stopwords.txt
-        │   └── synonyms.txt
-        ├── core.properties
-        └── data
+    ```sh
+    liferay
+    ├── conf
+    │   ├── lang
+    │   │   ├── contractions_ca.txt
+    │   │   ├── ....txt
+    │   ├── managed-schema
+    │   ├── params.json
+    │   ├── protwords.txt
+    │   ├── schema.xml
+    │   ├── solrconfig.xml
+    │   ├── stopwords.txt
+    │   └── synonyms.txt
+    ├── core.properties
+    └── data
+    ```
 
 8.  Start the Solr server by entering
 
@@ -117,6 +121,8 @@ Solr is now installed. Next install and configure the Solr connector.
 Since Elasticsearch is the default search engine, the Elasticsearch connector is
 already installed and running. You must stop it before configuring the Solr
 connector.
+
+### Stopping the Elasticsearch Connector
 
 Stop the Elasticsearch connector bundle using the App Manager, the Felix Gogo
 shell, or the bundle blacklist. If you're a Liferay DXP customer, use the
@@ -141,11 +147,13 @@ to stop the Elasticsearch connector. Enter
 You'll see two active bundles for the Liferay Connector to Elasticsearch 6:
 an API and an IMPL bundle. 
 
-    ID|State      |Level|Name
-    476|Active     |   10|Liferay CE Connector to Elasticsearch 6 - API (2.0.0)
-    478|Active     |   10|Liferay Portal Search Elasticsearch 6 API (2.0.6)
-    706|Active     |   10|Liferay CE Connector to Elasticsearch 6 - Impl (2.0.0)
-    707|Active     |   10|Liferay Portal Search Elasticsearch 6 Implementation (2.0.5)
+```sh
+ID|State      |Level|Name
+476|Active     |   10|Liferay CE Connector to Elasticsearch 6 - API (2.0.0)
+478|Active     |   10|Liferay Portal Search Elasticsearch 6 API (2.0.6)
+706|Active     |   10|Liferay CE Connector to Elasticsearch 6 - Impl (2.0.0)
+707|Active     |   10|Liferay Portal Search Elasticsearch 6 Implementation (2.0.5)
+```
 
 Stop the API bundle by entering 
 
@@ -153,23 +161,27 @@ Stop the API bundle by entering
 
 In the example above, the `[bundle ID]` is `476`. 
 
-| **Liferay DXP:** DXP customers should
-| [blacklist](/docs/7-2/user/-/knowledge_base/u/blacklisting-osgi-bundles-and-components)
-| the Elasticsearch, Shield, and Marvel plugins.
-| 
-| 1.  Create a
-| 
-|         com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
-| 
-|     file with these contents:
-| 
-|         blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
-| 
-|     If the X-Pack LPKG files are installed, you must blacklist these too.
-| 
-| 2.  Place the file in `Liferay Home/osgi/configs`.
+**Liferay DXP:** DXP customers should
+[blacklist](/docs/7-2/user/-/knowledge_base/u/blacklisting-osgi-bundles-and-components)
+the Elasticsearch, Shield, and Marvel plugins.
 
-Install and configure the Solr connector:
+1.  Create a 
+
+        com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
+
+    file with these contents:
+
+    ```properties
+    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
+    ```
+
+    If the X-Pack LPKG files are installed, you must blacklist these too.
+
+2.  Place the file in `Liferay Home/osgi/configs`.
+
+### Install and Configure the Solr Connector
+
+Now you're ready to install the connector:
 
 1.  Start @product@, then deploy the Solr connector by copying the LPKG you
     downloaded to `Liferay_Home/deploy`.
@@ -177,8 +189,10 @@ Install and configure the Solr connector:
     You'll see a `STARTED` message in your @product@ log once the Solr connector is
     installed. Here's what the log message looks like:
 
-        2018-11-06 19:59:49.396 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.api_2.0.5 [943]
-        2018-11-06 19:59:49.490 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.impl_2.0.11 [944]
+    ```sh
+    2018-11-06 19:59:49.396 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.api_2.0.5 [943]
+    2018-11-06 19:59:49.490 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.impl_2.0.11 [944]
+    ```
 
 2.  To re-index against Solr, navigate to *Control Panel* &rarr; *Configuration*
     &rarr; *Search*, and click *Execute* next to the *Reindex all
