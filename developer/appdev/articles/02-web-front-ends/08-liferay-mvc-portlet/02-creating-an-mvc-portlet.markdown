@@ -6,14 +6,10 @@ header-id: creating-an-mvc-portlet
 
 [TOC levels=1-4]
 
-Your first step in developing an [MVC
-Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet) is to create
-one. Generating MVC portlet projects is a snap using Liferay's project
-templates. Here you'll generate an MVC Portlet project and deploy the portlet to
-@product@. 
+Generating MVC portlet projects is a snap using Liferay's project templates.
+Here you'll generate an MVC Portlet project and deploy the portlet to @product@. 
 
-1.  Generate an [MVC Portlet
-    project](/docs/7-2/reference/-/knowledge_base/r/using-the-mvc-portlet-template)
+1.  Generate an [MVC Portlet project](/docs/7-2/reference/-/knowledge_base/r/using-the-mvc-portlet-template)
     using a Gradle or Maven.
 
     Here's the resulting folder structure for an MVC Portlet class named
@@ -44,7 +40,7 @@ templates. Here you'll generate an MVC Portlet project and deploy the portlet to
         - `gradlew`
 
     The Maven-generated project includes a `pom.xml` file and does not include
-    the Gradle-specific files, but otherwise, appears exactly the same.
+    the Gradle-specific files, but otherwise is exactly the same.
 
     Here's the resulting MVC Portlet class: 
 
@@ -86,37 +82,36 @@ on the portlet's deployment.
 
 2.  Set any portlet configuration or Liferay portlet configuration values
     using `javax.portlet.*` and `com.liferay.portlet.*` `@Component` annotation properties 
-    [`javax.portlet.*` and `com.liferay.portlet.*` `@Component` annotation
-    properties](/docs/7-2/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map)
+    [`javax.portlet.*` and `com.liferay.portlet.*` `@Component` annotation properties](/docs/7-2/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map)
     respectively. 
 
     Here are the example component's properties: 
-    
+
     -   `"com.liferay.portlet.display-category=category.sample"`: Sets the 
         Widget's category to "Sample". 
-        
+
     -   `"com.liferay.portlet.instanceable=true"`: Activates the component 
         immediately when its bundle installs. 
-        
+
     -   `"javax.portlet.display-name=my-mvc-portlet-project Portlet"`: Sets the 
         portlet's Widget name. 
-        
+
     -   `"javax.portlet.init-param.template-path=/"`: The path under
         `src/main/resources/META-INF/resources/` where the templates reside. 
-        
+
     -   `"javax.portlet.init-param.view-template=/view.jsp"`: Default view 
         template. 
-        
+
     -   `"javax.portlet.name=" + MyMvcPortletKeys.MyMvc`: The portlet's unique 
         identity. 
-        
+
     -   `"javax.portlet.resource-bundle=content.Language"`: Sets the portlet's 
         [resource bundle](/docs/7-2/frameworks/-/knowledge_base/f/localization)
         to the `content/Language*.properties` file(s) in the
         `src/main/resources/` folder. 
-        
+
     -   `"javax.portlet.security-role-ref=power-user,user"`: Makes the @product@
-        virtual instance's power user and user roles available for defining the
+        virtual instance's power user and user Roles available for defining the
         portlet's permissions. 
 
 3.  The portlet renders content via the view template 
