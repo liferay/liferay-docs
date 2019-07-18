@@ -6,25 +6,22 @@ header-id: writing-mvc-portlet-controller-code
 
 [TOC levels=1-4]
 
-In MVC, your controller receives requests from the front-end, and it pulls data
-from the back-end. It's a traffic director: it provides data to the right
+In MVC, your controller is a traffic director: it provides data to the right
 front-end view for display to the user, and it takes data the user entered in
 the front-end and passes it to the right back-end service. For this reason, the
 controller must process requests from the front-end, and it must determine the
 right front-end view to pass data back to the user. 
 
-If you have a small application that's not heavy on controller logic (maybe just
-a couple of action methods), you can put all your controller code in the
-`-Portlet` class. If you have more complex needs (lots of actions, complex
-render logic to implement, or maybe even some resource serving code), consider
-breaking the controller into [MVC Render Command
-classes](/docs/7-2/appdev/-/knowledge_base/a/mvc-render-command), [MVC Action
-Command classes](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command), and
-[MVC Resource Command
-classes](/docs/7-2/appdev/-/knowledge_base/a/mvc-resource-command). Here you'll
-implement controller logic for small applications. You'll learn to implement a
-Liferay MVC portlet with all the controller code in the `-Portlet` class. It
-involves these things: 
+If you have a small application that's not heavy on controller logic, you can
+put all your controller code in the `-Portlet` class. If you have more complex
+needs (lots of actions, complex render logic to implement, or maybe even some
+resource serving code), consider breaking the controller into [MVC Render
+Command classes](/docs/7-2/appdev/-/knowledge_base/a/mvc-render-command), [MVC
+Action Command classes](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command),
+and
+[MVC Resource Command classes](/docs/7-2/appdev/-/knowledge_base/a/mvc-resource-command). 
+Here you'll implement controller logic for small applications, where all the
+controller code is in the `-Portlet` class. It involves these things: 
 
 - Action methods
 - Render logic
@@ -34,11 +31,8 @@ Start with creating action methods.
 
 ## Action Methods
 
-In a small application, you can implement all your controller logic in the
-[`MVCPortlet` class you
-created](/docs/7-2/appdev/-/knowledge_base/a/creating-an-mvc-portlet). It can
-act as your controller by itself and process requests using action methods.
-Here's a sample action method: 
+Your portlet class can act as your controller by itself and process requests
+using action methods. Here's a sample action method: 
 
 ```java
 public void addGuestbook(ActionRequest request, ActionResponse response)
@@ -65,13 +59,13 @@ public void addGuestbook(ActionRequest request, ActionResponse response)
 }
 ```
 
-This action method has one job: call a service to add a guestbook. If a call
+This action method has one job: call a service to add a guestbook. If the call
 succeeds, the message `"guestbookAdded"` is associated with the request and
-added to the  [`SessionMessages`
-object](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/SessionMessages.html).
+added to the 
+[`SessionMessages` object](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/SessionMessages.html).
 If an exception is thrown, it's caught, and the class name is associated with
-the request and added to the [`SessionErrors`
-object](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/SessionErrors.html),
+the request and added to the 
+[`SessionErrors` object](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/SessionErrors.html),
 and the response is set to render `edit_guestbook.jsp`. Setting the `mvcPath`
 render parameter is a Liferay `MVCPortlet` framework convention that denotes the
 next view to render to the user. 
@@ -108,18 +102,18 @@ docs.liferaymvc.web/src/main/resources/META-INF/resources/view.jsp
 ```
 
 and that's the application's default view. When the portlet's `init` method
-(e.g., your portlet's override of `MVCPortlet.init()`) is called, the
-initialization parameters you specify are read and used to direct rendering to
-the default JSP. Throughout the controller, you can render different views (JSP
-files) by setting the render parameter `mvcPath` like this:
+(e.g., your portlet's override of `MVCPortlet.init()`) is called, Liferay reads the
+initialization parameters you specify and directs rendering to the default JSP.
+Throughout the controller, you can render different views (JSP files) by setting
+the render parameter `mvcPath` like this:
 
 ```java
 actionResponse.setRenderParameter("mvcPath", "/error.jsp");
 ```
 
-It's possible to avoid render logic by using initialization parameters and
-render parameters, but most of the time you'll override the portlet's `render`
-method. Here's an example:
+You can avoid render logic by using initialization parameters and render
+parameters, but most of the time you'll override the portlet's `render` method.
+Here's an example:
 
 ```java
 @Override
@@ -169,19 +163,20 @@ passes the render request and render response objects to the base class via its
 `render` method. 
 
 | **Note:** Are you wondering how to call
-| [Service Builder services]](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
+| [Service Builder services](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 | in @product-ver@? In short, obtain a reference to the service by annotating
 | one of  your fields of that service type with the `@Reference`
 | [Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)
 | annotation.
 | 
-|     @Reference
-|     private GuestbookService _guestbookService;
+| `
+| @Reference
+| private GuestbookService _guestbookService;`
 | 
 | Once done, you can call the service's methods.
 | 
-|     _guestbookService.addGuestbook(serviceContext.getUserId(), "Main",
-|             serviceContext);
+| `_guestbookService.addGuestbook(serviceContext.getUserId(), "Main",
+|         serviceContext);`
 
 Before venturing into the view layer, the next section demonstrates ways to pass
 information between the controller and view layers. 
@@ -197,7 +192,7 @@ or a
 For example, this JSP passes a parameter named `guestbookId` in an action
 URL.
 
-```javascript
+```jsp
 <portlet:actionURL name="doSomething" var="doSomethingURL">
     <portlet:param name="guestbookId" 
             value="<%= String.valueOf(entry.getGuestbookId()) %>" />
