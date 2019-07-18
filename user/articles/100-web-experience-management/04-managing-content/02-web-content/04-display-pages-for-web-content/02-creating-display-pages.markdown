@@ -9,10 +9,10 @@ header-id: creating-display-pages
 Display Page Templates are created initially in much the same way as Content
 Pages. You  select any number of page fragments and add them to the page.
 Display pages differ in that after you add the fragments, you can then map
-editable fields in those fragments to the fields of an web content article. You
+editable fields in those fragments to the fields of a web content article. You
 can learn more about creating Page Fragments in the 
-[Creating Content pages](/docs/7-2/user/-/knowledge_base/u/creating-content-pages).
-article
+[Creating Content Pages](/docs/7-2/user/-/knowledge_base/u/creating-content-pages)
+article.
 
 Looking at the example of a template for a long form article, we can see how
 Display Page Templates utilize Page Fragments. The article can have an image, a
