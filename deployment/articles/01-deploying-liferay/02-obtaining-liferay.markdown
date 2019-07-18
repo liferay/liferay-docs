@@ -37,7 +37,7 @@ for a complete listing). Here are the ways to install @product@:
 -   [Install a Liferay Tomcat bundle](#liferay-tomcat-bundle)
     (Tomcat application server with @product@ pre-installed).
 
--   [Install the Liferay WAR](#installing-the-product-war)
+-   [Install the Liferay WAR](#downloading-the-liferay-war-and-dependency-jars)
     (and supporting libraries) onto an existing application server.
 
 Since the Liferay Tomcat bundle is the easiest way, it's described first. 
