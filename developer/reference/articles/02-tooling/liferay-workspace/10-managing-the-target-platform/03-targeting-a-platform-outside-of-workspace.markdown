@@ -18,7 +18,7 @@ To do this, follow the steps below.
     ```groovy
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.1.11"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "2.0.0"
         }
         repositories {
             maven {
@@ -43,6 +43,7 @@ To do this, follow the steps below.
     dependencies {
         targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.2.0"
         targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.2.0"
+        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.third.party", version: "7.2.0"
     }
     ```
 
@@ -55,10 +56,14 @@ To do this, follow the steps below.
     included in @product@, but are necessary to reference during the build
     (e.g., `org.osgi.core`).
 
+    `release.portal.bom.third.party`: provides all third party artifacts that
+    make up the Liferay Portal bundle.
+
     Liferay DXP users must replace the artifact names and versions:
 
     - `release.portal.bom` &rarr; `release.dxp.bom`
     - `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
+    - `release.portal.bom.third.party` &rarr; `release.dxp.bom.third.party`
     - `7.2.0` &rarr; `7.2.10`
 
 4.  If you're interested in
