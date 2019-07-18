@@ -11,7 +11,7 @@ reliable, scalable, and fault tolerant. Read more about it
 [here](http://lucene.apache.org/solr/).
 
 Although 
-[Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0)
+[Elasticsearch](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector)
 is the default search engine that ships with @product@, it's perfectly valid to
 use Solr instead. In particular, if you've already been using Solr with
 a previous version of @product@, or your platform (for example, your OS or JVM)
@@ -20,7 +20,7 @@ might choose to use Solr to search and index your @product@ data.
 
 There are circumstances that force you to use Elasticsearch instead of Solr.
 Read
-[here](/docs/7-1/deploy/-/knowledge_base/d/installing-a-search-engine#choosing-a-search-engine)
+[here](/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine#choosing-a-search-engine)
 for more information.
 
 @product-ver@ supports Solr 7.5.x through the Liferay Connector to Solr 7 application. 

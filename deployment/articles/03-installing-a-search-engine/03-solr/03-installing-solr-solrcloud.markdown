@@ -114,7 +114,7 @@ Liferay's Solr connector.
 
 <!-- | **Note:** For a complete list of settings available in the Solr connector, see the
 <!-- | Solr Settings reference
-<!-- | article(/discover/reference/-/knowledge_base/7-1/solr-settings).
+<!-- | article(/discover/reference/-/knowledge_base/7-2/solr-settings).
 
 Now you can configure @product@ for Solr and Solr for @product@. Remember that
 Elasticsearch is the default search engine, so if you're not constrained to use

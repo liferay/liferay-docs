@@ -132,7 +132,7 @@ Connector to Elasticsearch 6 module and click the Actions
 This leaves the bundle installed, but stops it in the OSGi runtime.
 
 Alternatively, use the 
-[Felix Gogo shell](/developer/tutorials/-/knowledge_base/7-1/using-the-felix-gogo-shell) 
+[Felix Gogo shell](/developer/tutorials/-/knowledge_base/7-2/using-the-felix-gogo-shell) 
 to stop the Elasticsearch connector. Enter
 
     lb elasticsearch
@@ -153,7 +153,7 @@ Stop the API bundle by entering
 In the example above, the `[bundle ID]` is `476`. 
 
 | **Liferay DXP:** DXP customers should
-| [blacklist](/docs/7-1/user/-/knowledge_base/u/blacklisting-osgi-modules-and-components)
+| [blacklist](/docs/7-2/user/-/knowledge_base/u/blacklisting-osgi-bundles-and-components)
 | the Elasticsearch, Shield, and Marvel plugins.
 | 
 | 1.  Create a
