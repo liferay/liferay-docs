@@ -24,16 +24,16 @@ Here how to create your own MVC Resource Command:
     [resource-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/resource-command-portlet)
     sample resource URL invokes an MVC resource command named `/blade/captcha`.
 
-    ```javascript
+    ```jsp
     <portlet:resourceURL id="/blade/captcha" var="captchaURL" />
     ```
 
-    1.  Name the resource URL via it's `id` attribute. 
+2.  Name the resource URL via its `id` attribute. 
 
-    2.  Assign the resource URL's `var` attribute a variable name to pass to a 
-        UI component. 
+3.  Assign the resource URL's `var` attribute a variable name to pass to a 
+    UI component. 
 
-2.  Assign the resource URL variable (`var`) to a UI component, such as a button
+4.  Assign the resource URL variable (`var`) to a UI component, such as a button
     or icon. When the user triggers the UI component, the `*MVCResourceCommand`
     class that matches the resource URL handles the resource request.
 
@@ -42,11 +42,11 @@ Here how to create your own MVC Resource Command:
     [`liferay-captcha`](@app-ref@/foundation/latest/taglibdocs/liferay-captcha/captcha.html)
     component:
 
-    ```javascript
+    ```jsp
     <liferay-captcha:captcha url="<%= captchaURL %>" />
     ```
 
-3.  Create a class that implements the
+5.  Create a class that implements the
     [`MVCResourceCommand`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCResourceCommand.html)
     interface, or that extends the
     [`BaseMVCResourceCommand`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCResourceCommand.html)
@@ -59,7 +59,7 @@ Here how to create your own MVC Resource Command:
     | its class `CaptchaMVCResourceCommand`. If your application has several MVC
     | command classes, naming them this way helps differentiate them. 
 
-4.  Annotate your class with an
+6.  Annotate your class with an
     [`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html)
     annotation, like this one:
 
@@ -77,15 +77,15 @@ Here how to create your own MVC Resource Command:
     ```
 
     1.  Set a `javax.portlet.name` property to your portlet's internal ID. 
-    
+ 
     2.  Set the `mvc.command.name` property to your `<portlet:resourceURL>` 
         tag's `id`. This maps your class to the resource URL of the same name. 
 
     3.  Register your class as an `MVCResourceCommand` service by setting the
         `service` attribute to `MVCResourceCommand.class`. 
 
-        
-5.  Implement your resource logic by overriding the appropriate method of the 
+
+7.  Implement your resource logic by overriding the appropriate method of the 
     class you're implementing or extending. 
 
     -   [`MVCResourceCommand`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCResourceCommand.html)
