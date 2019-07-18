@@ -15,14 +15,14 @@ methods in your portlet class.
 
 ## Using the init.jsp 
 
-Liferay's best practice puts all Java imports, tag library declarations, and
+Liferay's  practice puts all Java imports, tag library declarations, and
 variable initializations into a JSP called `init.jsp`. If you use 
 [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) or 
 [Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide)
 to create a module based on the `mvc-portlet` project template, these taglib
 declarations and initializations are added automatically to your `init.jsp`:
 
-```javascript
+```jsp
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
@@ -41,19 +41,19 @@ Here are the tag libraries it gives you:
 
 -   [`c`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/c/tld-frame.html): JSTL core tags. 
 -   [`portlet`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/portlet/tld-frame.html): Standard portlet component tags. 
--   [`aui`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/aui/tld-summary.html): [AlloyUI](https://alloyui.com/) component tags.  
+-   [`aui`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/aui/tld-summary.html): [AlloyUI](https://alloyui.com/) component tags.
 -   [`liferay-portlet`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/liferay-portlet/tld-frame.html): Liferay portlet component tags. 
 -   [`liferay-theme`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/liferay-theme/tld-frame.html): Liferay theme component tags. 
 -   [`liferay-ui`](https://docs.liferay.com/ce/portal/7.2-latest/taglibs/util-taglib/liferay-ui/tld-frame.html): Liferay UI component tags. 
 
-These tags make portlet and Liferay objects available as JavaScript variables:  
+These tags make portlet and Liferay objects available:
 
--   `<portlet:defineObjects />`: Implicit JavaScript variables that reference 
+-   `<portlet:defineObjects />`: Implicit Java variables that reference 
     Portlet API objects. The objects available are limited to those available in
     the current portlet request. For details, see the `defineObjects` tag in
     [JSR-286](https://jcp.org/en/jsr/detail?id=286). 
 
--   `<liferay-theme:defineObjects />`: Implicit JavaScript variables that 
+-   `<liferay-theme:defineObjects />`: Implicit Java variables that 
     reference Liferay objects. 
 
 To use all that the `init.jsp` has, include it in your other JSPs:
@@ -62,12 +62,13 @@ To use all that the `init.jsp` has, include it in your other JSPs:
 <%@include file="/html/init.jsp"%>
 ```
 
-A JSP can use render URLs to display other pages and use action URLs to invoke
+A JSP uses render URLs to display other pages and action URLs to invoke
 controller methods. 
 
 ## Using Render URLs
 
-A render URL attached to a UI component action displays another page. For example, this render URL displays the JSP `/path/to/foo.jsp`. 
+A render URL attached to a UI component action displays another page. For
+example, this render URL displays the JSP `/path/to/foo.jsp`. 
 
 ```javascript
 <portlet:renderURL var="adminURL">
@@ -94,10 +95,10 @@ Here's how to use a render URL:
 
 3.  As sub-element to the `<portlet:renderURL>` tag, add a 
     [`<portlet:param>`](@platform-ref@/7.2-latest/taglibs/util-taglib/portlet/param.html)
-    tag that has the following attributes:
+    tag with the following attributes:
 
-    `name="mvcPath"`: Your controller's `render` method displays the JSP whose 
-    value is associated with the `mvcPath` parameter. 
+    `name="mvcPath"`: Your controller's `render` method forwards processing to
+    the JSP at the path specified in the `value`.
 
     `value="/path/to/foo.jsp"`: The path to the JSP to render. Replace the value
     `/path/to/foo.jsp` with your JSP path. 
@@ -117,7 +118,7 @@ Invoking the UI component causes the controller's render method to display the
 ## Using Action URLs
 
 Action methods are different because they invoke an action (i.e., code), rather
-than just linking to another page. For example, this action URL invokes a
+than link to another page. For example, this action URL invokes a
 controller method called `doSomething` and passes a parameter called `redirect`.
 The `redirect` parameter contains the path of the JSP to render after invoking
 the action: 
@@ -142,7 +143,7 @@ Here's how to use an action URL:
 
     `var`: Variable to assign the action URL to. 
 
-```javascript
+```jsp
 <portlet:actionURL name="doSomething" var="doSomethingURL">
    ...
 </portlet:actionURL>
@@ -159,7 +160,7 @@ Here's how to use an action URL:
     invoking the action. Replace the value `/path/to/bar.jsp` with your JSP
     path. 
 
-```javascript
+```jsp
 <portlet:actionURL name="doSomething" var="doSomethingURL">
     <portlet:param name="redirect" value="/path/to/bar.jsp" />
 </portlet:actionURL>
