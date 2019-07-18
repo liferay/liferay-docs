@@ -22,19 +22,18 @@ Here are the steps:
     [action-command-portlet](https://github.com/liferay/liferay-blade-samples/blob/7.1/gradle/apps/action-command-portlet/src/main/resources/META-INF/resources/view.jsp)
     sample uses this action URL:
 
-    ```javascript
+    ```jsp
     <liferay-portlet:actionURL name="greet" var="greetURL" />
     ```
 
     Name the action URL via its `name` attribute. Your `*MVCActionCommand` class
-    maps to this name. Assign the `var` attribute a variable name to pass to a
-    UI component. 
+    maps to this name. Assign the `var` attribute a variable name. 
 
 2.  Assign the action URL variable (`var`) to a UI component. Acting on the UI 
     component invokes the action. For  example, the sample's `greetURL` action
     URL variable triggers on submitting this form: 
 
-    ```javascript
+    ```jsp
     <aui:form action="<%= greetURL %>" method="post" name="fm">
     	<aui:input name="name" type="text" />
 
@@ -71,36 +70,36 @@ Here are the steps:
     )
     ```
 
-    1.  Set a `javax.portlet.name` property to your portlet's internal ID. 
+5.  Set a `javax.portlet.name` property to your portlet's internal ID. 
 
-        Note, you can apply MVC Command classes to multiple portlets by setting
-        a `javax.portlet.name` property for each portlet. For example, the
-        `javax.portlet.name` properties in this component apply it to three
-        specific portlets. 
+    Note, you can apply MVC Command classes to multiple portlets by setting
+    a `javax.portlet.name` property for each portlet. For example, the
+    `javax.portlet.name` properties in this component apply it to three
+    specific portlets. 
 
-        ```java
-        @Component(
-            immediate = true,
-            property = {
-                "javax.portlet.name=" + BlogsPortletKeys.BLOGS,
-                "javax.portlet.name=" + BlogsPortletKeys.BLOGS_ADMIN,
-                "javax.portlet.name=" + BlogsPortletKeys.BLOGS_AGGREGATOR,
-                "mvc.command.name=/blogs/edit_entry"
-            },
-            service = MVCActionCommand.class
-        )
-        public class EditEntryMVCActionCommand extends BaseMVCActionCommand {
-            ...
-        }
-        ```
+    ```java
+    @Component(
+        immediate = true,
+        property = {
+            "javax.portlet.name=" + BlogsPortletKeys.BLOGS,
+            "javax.portlet.name=" + BlogsPortletKeys.BLOGS_ADMIN,
+            "javax.portlet.name=" + BlogsPortletKeys.BLOGS_AGGREGATOR,
+            "mvc.command.name=/blogs/edit_entry"
+        },
+        service = MVCActionCommand.class
+    )
+    public class EditEntryMVCActionCommand extends BaseMVCActionCommand {
+        ...
+    }
+    ```
 
-    2.  Set the `mvc.command.name` property to your `<portlet:actionURL>` tag's 
-        `name`. This maps your class to the action URL of the same name. 
+6.  Set the `mvc.command.name` property to your `<portlet:actionURL>` tag's 
+    `name`. This maps your class to the action URL of the same name. 
 
-    3.  Register your class as an `MVCActionCommand` service by setting the
-        `service` attribute to `MVCActionCommand.class`. 
+7.  Register your class as an `MVCActionCommand` service by setting the
+    `service` attribute to `MVCActionCommand.class`. 
 
-5.  Implement your action logic by overriding the appropriate method of the 
+8.  Implement your action logic by overriding the appropriate method of the 
     class you're implementing or extending. 
 
     -   [`MVCActionCommand`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html)
