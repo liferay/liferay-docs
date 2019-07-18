@@ -65,34 +65,36 @@ Verify its status by running the *status* command:
 
 You'll see log output like this:
 
-    Found 2 Solr nodes: 
+```sh
+Found 2 Solr nodes: 
 
-    Solr process 16989 running on port 8983
-    INFO  - 2018-08-06 13:54:17.665; org.apache.solr.util.configuration.SSLCredentialProviderFactory; Processing SSL Credential Provider chain: env;sysprop
-    {
-      "solr_home":"/home/russell/liferay-bundles/solr-7-dxp/solr-7.4.0/example/cloud/node1/solr",
-      "version":"7.4.0 9060ac689c270b02143f375de0348b7f626adebc - jpountz - 2018-06-18 16:55:13",
-      "startTime":"2018-08-06T17:52:01.519Z",
-      "uptime":"0 days, 0 hours, 2 minutes, 16 seconds",
-      "memory":"68.5 MB (%14) of 490.7 MB",
-      "cloud":{
-        "ZooKeeper":"localhost:9983",
-        "liveNodes":"2",
-        "collections":"1"}}
+Solr process 12828 running on port 8983
+INFO  - 2019-07-18 16:46:35.137; org.apache.solr.util.configuration.SSLCredentialProviderFactory; Processing SSL Credential Provider chain: env;sysprop
+{
+  "solr_home":"/home/russell/liferay-bundles/liferay-portal-7.2.10-ga1/solr-7.5.0/example/cloud/node1/solr",
+  "version":"7.5.0 b5bf70b7e32d7ddd9742cc821d471c5fabd4e3df - jimczi - 2018-09-18 13:07:55",
+  "startTime":"2019-07-18T20:44:13.138Z",
+  "uptime":"0 days, 0 hours, 2 minutes, 22 seconds",
+  "memory":"56.4 MB (%11.5) of 490.7 MB",
+  "cloud":{
+    "ZooKeeper":"localhost:9983",
+    "liveNodes":"2",
+    "collections":"1"}}
 
 
-    Solr process 17127 running on port 7574
-    INFO  - 2018-08-06 13:54:18.507; org.apache.solr.util.configuration.SSLCredentialProviderFactory; Processing SSL Credential Provider chain: env;sysprop
-    {
-      "solr_home":"/home/russell/liferay-bundles/solr-7-dxp/solr-7.4.0/example/cloud/node2/solr",
-      "version":"7.4.0 9060ac689c270b02143f375de0348b7f626adebc - jpountz - 2018-06-18 16:55:13",
-      "startTime":"2018-08-06T17:52:11.987Z",
-      "uptime":"0 days, 0 hours, 2 minutes, 6 seconds",
-      "memory":"56.4 MB (%11.5) of 490.7 MB",
-      "cloud":{
-        "ZooKeeper":"localhost:9983",
-        "liveNodes":"2",
-        "collections":"1"}}
+Solr process 12995 running on port 7574
+INFO  - 2019-07-18 16:46:35.848; org.apache.solr.util.configuration.SSLCredentialProviderFactory; Processing SSL Credential Provider chain: env;sysprop
+{
+  "solr_home":"/home/russell/liferay-bundles/liferay-portal-7.2.10-ga1/solr-7.5.0/example/cloud/node2/solr",
+  "version":"7.5.0 b5bf70b7e32d7ddd9742cc821d471c5fabd4e3df - jimczi - 2018-09-18 13:07:55",
+  "startTime":"2019-07-18T20:44:16.847Z",
+  "uptime":"0 days, 0 hours, 2 minutes, 19 seconds",
+  "memory":"108.2 MB (%22.1) of 490.7 MB",
+  "cloud":{
+    "ZooKeeper":"localhost:9983",
+    "liveNodes":"2",
+    "collections":"1"}}
+```
 
 To stop Solr while running in SolrCloud mode, use the *stop* command, like this:
 
@@ -111,10 +113,6 @@ Liferay's Solr connector.
 2. Start @product@ if it's not running already.
 
 ![Figure 1: From the Solr 7 System Settings entry, set the _Client Type_ to _Cloud_.](../../../images/solr-client-type.png)
-
-<!-- | **Note:** For a complete list of settings available in the Solr connector, see the
-<!-- | Solr Settings reference
-<!-- | article(/discover/reference/-/knowledge_base/7-2/solr-settings).
 
 Now you can configure @product@ for Solr and Solr for @product@. Remember that
 Elasticsearch is the default search engine, so if you're not constrained to use

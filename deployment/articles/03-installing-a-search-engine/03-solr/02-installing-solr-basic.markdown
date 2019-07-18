@@ -8,6 +8,7 @@ header-id: installing-solr-basic-installation
 
 There are two ways to install the Liferay Connector to Solr 7:
 
+<!-- verify still correct -->
 1. Navigate to 
    [Liferay Marketplace](https://web.liferay.com/marketplace/)
    and download the app that corresponds to your portal:
@@ -176,8 +177,8 @@ Install and configure the Solr connector:
     You'll see a `STARTED` message in your @product@ log once the Solr connector is
     installed. Here's what the log message looks like:
 
-        2018-11-06 19:59:49.396 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.api_1.0.0 [943]
-        2018-11-06 19:59:49.490 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.impl_1.0.0 [944]
+        2018-11-06 19:59:49.396 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.api_2.0.5 [943]
+        2018-11-06 19:59:49.490 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.impl_2.0.11 [944]
 
 2.  To re-index against Solr, navigate to *Control Panel* &rarr; *Configuration*
     &rarr; *Search*, and click *Execute* next to the *Reindex all
