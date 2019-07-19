@@ -53,39 +53,39 @@ adapter in CLOUD mode.
 ## Solr 7 HTTP Client Factory
 
 `basicAuthPassword=solr`
-: 
+: A String ...
 
 `basicAuthUserName=solr`
-: 
+: A String ...
 
 `defaultMaxConnectionsPerRoute=20`
-: 
+: An int ...
 
 `maxTotalConnections=20`
-: 
+: An int ...
 
 ## Solr 7 SSL Factory
 
 `keyStorePassword=secret`
-: 
+: A String ...
 
 `keyStorePath=classpath:/keystore.jks`
-: 
+: A String ...
 
 `keyStoreType=JKS`
-: 
+: A String ...
 
 `trustStorePassword=secret`
-: 
+: A String ...
 
 `trustStorePath=classpath:/truststore.jks`
-: 
+: A String ...
 
 `trustStoreType=JKS`
-: 
+: A String ...
 
 `verifyServerCertificate=true`
-: 
+: A boolean ...
 
 `verifyServerName=true`
-: 
+: A boolean ...
