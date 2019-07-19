@@ -57,6 +57,8 @@ The `search` method takes the following parameters:
 - `orderByType`---whether to sort the results in ascending order or descending
     order.  Will be one of "asc" or "desc". For pagination.
 
+- `start` ---the starting index of the result set. For pagination.
+
 - `end`---the ending index of the result set. For pagination.
 
 The `searchCount` method takes the following parameters, which are treated
@@ -139,7 +141,8 @@ the entity passed to this method.
 
 `isUserOwned` returns whether or not the given entity is owned by the user
 
-Additionally, implement this method in the `*UADDisplay` class of all containers:
+Additionally, implement this method in the `*UADDisplay` class for all types
+classified as _containers_:
 
 `getTopLevelContainer` is used to derive the count of how many user-owned
 entities are contained inside a given container's tree.
@@ -147,17 +150,19 @@ entities are contained inside a given container's tree.
 It answers the question "which type `T` ancestor of `childObject` is an
 immediate child of the container identified by `parentContainerClass` and
 `parentContainerId`?" The method may return null, if `childObject` is not a
-child of the parent container at all. It's method is the most complicated to
+child of the parent container at all. This method is the most complicated to
 implement and requires some consideration for each case. Refer to the test case
 for examples of the requirements used for `DLFolder`:
 [DLFolderUADDisplayTest#testGetTopLevelContainer](https://github.com/liferay/liferay-portal/blob/c8f78609353d6a83a0b755b0bbf93764959821ee/modules/apps/document-library/document-library-uad-test/src/testIntegration/java/com/liferay/document/library/uad/display/test/DLFolderUADDisplayTest.java#L67)
 
 See the actual implementation for `DLFolder` in [DLFolderUADDisplay#getTopLevelContainer](https://github.com/liferay/liferay-portal/blob/c8f78609353d6a83a0b755b0bbf93764959821ee/modules/apps/document-library/document-library-uad/src/main/java/com/liferay/document/library/uad/display/DLFolderUADDisplay.java#L105).
 
-The method returns either `null` or the `childObject` (could be any `Object`)
-representing the top level container that holds entities for the given User in
-this particular UAD task, so that the User's entities inside the container can
-be counted.
+The method returns either `null` or the container object of type T that is the
+top level container of the `childObject` (which could be any type of object that
+is a part of the hierarchy). This container does not necessarily have to be
+owned by the user, but is understood to contain data related to the user. This
+information is used to count how much user data is inside the container
+designated by `parentContainerClass` and `parentContainerId`.
 
 ```java
 @Override

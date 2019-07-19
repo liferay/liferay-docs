@@ -17,21 +17,14 @@ methods in the `UADDisplay` class (in your application's `-uad` module):
 ## Filtering
 
 The `isSiteScoped` method returns a boolean based on whether or not the
-entities can be associated with a particular site. This is used to determine
-which filter they will be associated with ("instance", "personal-site", or
+entities can be associated with a particular site: return `false` if not, and
+`true` if the entities are scoped to a site. This is used to determine which
+filter they will be associated with ("instance", "personal-site", or
 "regular-sites").
-
-<!-- I want to show some realistic dummy code for third party devs. Is this fine?-->
-<!--Straight out of BaseModelUADDisaply: -->
 
 ```java
 @Override
 public boolean isSiteScoped() {
-    Class<FooEntry> typeClass = FooEntry.class;
-
-    if (GroupedModel.class.isAssignableFrom(typeClass)) {
-        return true;
-    }
 
     return false;
 }
