@@ -6,12 +6,10 @@ header-id: solr-settings
 
 [TOC levels=1-4]
 
-![Figure x: Solr has three System Settings entries.](../../images/solr-system-settings.png)
-
 Solr can be configured for use with @product-ver@. Liferay Marketplace includes
 a Solr connector app called the Liferay Connector to Solr 7. The connector is
 configurable through System Settings or an OSGi configuration file named
-`com.liferay.portal.search.solr.configuration.SolrConfiguration.cfg` and
+`com.liferay.portal.search.solr7.configuration.SolrConfiguration.config` and
 deployed to `[Liferay_Home]/osgi/configs`.
 
 The list below is all the configuration settings for Liferay's Solr connector, in
@@ -50,42 +48,3 @@ indexing (write) and searching (read).
 : A String with the ZooKeeper host and port. This is required when using the
 adapter in CLOUD mode.
 
-## Solr 7 HTTP Client Factory
-
-`basicAuthPassword=solr`
-: A String ...
-
-`basicAuthUserName=solr`
-: A String ...
-
-`defaultMaxConnectionsPerRoute=20`
-: An int ...
-
-`maxTotalConnections=20`
-: An int ...
-
-## Solr 7 SSL Factory
-
-`keyStorePassword=secret`
-: A String ...
-
-`keyStorePath=classpath:/keystore.jks`
-: A String ...
-
-`keyStoreType=JKS`
-: A String ...
-
-`trustStorePassword=secret`
-: A String ...
-
-`trustStorePath=classpath:/truststore.jks`
-: A String ...
-
-`trustStoreType=JKS`
-: A String ...
-
-`verifyServerCertificate=true`
-: A boolean ...
-
-`verifyServerName=true`
-: A boolean ...
