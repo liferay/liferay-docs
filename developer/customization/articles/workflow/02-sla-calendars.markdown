@@ -6,7 +6,7 @@ header-id: creating-sla-calendars
 
 [TOC levels=1-4]
 
-By default, an internal calendar assumes the 
+By default, an internal calendar assumes the
 [SLA deadline clock](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement-sla)
 should continue counting all the time: in other words, 24 hours per day, seven
 days per week. If you need a different calendar format, provide your own
@@ -57,7 +57,7 @@ compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", v
 Implement a
 `com.liferay.portal.workflow.metrics.sla.calendar.WorkflowMetricsSLACalendar` to
 define your own SLA calendar logic. When you're finished, use the created
-calendar when creating the 
+calendar when creating the
 [SLA definition](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement-sla).
 
 Let's walk through the default calendar:
@@ -127,7 +127,7 @@ overdue date/time.
 
 }
 
-Use `getTitle` to provide the title for the given locale. Make sure you 
+Use `getTitle` to provide the title for the given locale. Make sure you
 [properly localize](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application)
 this extension by providing a `Language.properties` file, and any
 `Language_xx.properties` files for translation of the value. At runtime, the
@@ -135,4 +135,3 @@ User's locale will be used to return the correct translation.
 
 If the 24/7 default calendar works for you, use it. Otherwise create your own
 `WorkflowMetricsSLACalendar`s.
-
