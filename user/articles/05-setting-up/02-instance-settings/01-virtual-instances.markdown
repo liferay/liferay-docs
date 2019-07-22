@@ -28,7 +28,7 @@ customizations:
 -   Application server configuration.
 
 Administrators can manage Virtual Instances in *Control Panel* &rarr; 
-*Configuration* &rarr; *System Settings*.  
+*Configuration* &rarr; *System Settings*.
 
 ![Figure 1: Add and manage virtual instances of Liferay in the Control Panel's *Configuration* &rarr; *Virtual Instances* section.](../../../images/virtual-instances.png)
 

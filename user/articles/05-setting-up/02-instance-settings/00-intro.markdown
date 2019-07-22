@@ -12,7 +12,7 @@ the virtual instance scope. There's an important difference between the system
 scope and the instance scope. The system scope is the highest level scope you 
 can make configurations at. All virtual instances are impacted by configuration 
 done at this scope. The instance scope applies only to one particular virtual 
-instance.  
+instance.
 
 Virtual instances have unique domain names but share a server and database. Each 
 virtual instance can have independent data and configurations. 
