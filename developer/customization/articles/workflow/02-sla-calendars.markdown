@@ -90,11 +90,11 @@ The component property `sla.calendar.key` is required to identify this calendar.
 ```
 
 Use `getDuration` to return the time `Duration` when elapsed SLA time should be
-computed. The start and end dates that this method receives are those set by
-administrators during the creation of the SLA. For example, given a start date
-_2019-05-13T16:00:00_ and end date _2019-05-13T18:00:00_, The 24/7 calendar
-returns 2 elapsed hours, while a 9-17 weekdays calendar returns 1 hour as the
-elapsed time. 
+computed. The start and end dates that this method receives are dates that
+represents the time that a workflow task was running. For example, given a
+task that was started at _2019-05-13T16:00:00_ and was finished at
+_2019-05-13T18:00:00_, then The 24/7 calendar returns 2 elapsed hours, while a
+9-17 weekdays calendar returns 1 hour as the elapsed time.
 
 ```java
     @Override
