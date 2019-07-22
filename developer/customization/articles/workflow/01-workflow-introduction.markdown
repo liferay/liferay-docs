@@ -16,9 +16,8 @@ your business needs.
 
 In @product@ version 7.2, a new set of workflow features was introduced around
 the concept of [Workflow
-Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement-sla). 
+Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement-sla).
 
 The embedded calendar that ships out of the box can be replaced by your own
 custom calendar service. More customization points will likely be added in the
 future.
-
