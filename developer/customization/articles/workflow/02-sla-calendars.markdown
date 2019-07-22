@@ -82,7 +82,7 @@ calendar when creating the
 
 2.  Override `getDuration` to return the time `Duration` when elapsed SLA time
     should be computed. The start and end dates that this method receives are
-    dates that represents the time that a workflow task was running. For
+    date representing the time a workflow task has been running. For
     example, given a task that was started at _2019-05-13T16:00:00_ and was
     finished at _2019-05-13T18:00:00_, then The 24/7 calendar returns 2 elapsed
     hours, while a 9-17 weekdays calendar returns 1 hour as the elapsed time.
