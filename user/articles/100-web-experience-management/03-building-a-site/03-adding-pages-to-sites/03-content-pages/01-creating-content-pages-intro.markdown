@@ -36,11 +36,6 @@ capabilities. In many cases, though, you need to create your own Fragments.
 Creating Fragments is done by developers and covered in detail in our
 [Page Fragment development guide](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments).
 
-
-
-
-<!-- Configurable Fragments mention -->
-
 ## Building Content Pages
 
 After you've got your materials, you need to arrange them on a page. Content 

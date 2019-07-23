@@ -20,8 +20,8 @@ overlay is an example of something you might build as a section.
 ![Figure 1: A Section named *Banner* being displayed while editing a Content Page.](../../../../../images/content-page-section-example.png)
 
 **Layouts** are special Sections that define spaces where you can add fragments
-*or widgets. Each layout you add fills the width of the page. You can add  any
-*number of layouts to the page.
+or widgets. Each layout you add fills the width of the page. You can add any
+number of layouts to the page.
 
 ![Figure 2: A 3 Column and 1 Column layout stacked on top of each other.](../../../../../images/content-page-layout-example.png)
 

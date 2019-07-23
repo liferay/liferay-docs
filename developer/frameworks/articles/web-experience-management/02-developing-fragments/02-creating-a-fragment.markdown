@@ -118,7 +118,59 @@ article.
 
 ## Making a Fragment Configurable
 
+| **Note:** Defining configurations for Page Fragments is available in Liferay
+| DXP 7.2 Fix Pack 1+ and Liferay Portal GA2+. Currently, only `select` fields
+| are supported for Fragment configurations. Development for additional field
+| types like `checkbox`, `color`, `item-selector`, and `text` are in progress.
 
+Defining configuration options for a Fragment gives it more flexibility,
+reducing the number of Fragments you must maintain. To make a Fragment
+configurable,
+
+1.  Go back to the *Site Builder* &rarr; *Page Fragments* page.
+
+2.  Click the *Actions* button (![Actions](../../../images/icon-actions.png))
+    &rarr; *Edit* for the Fragment (Section or Component) you want to make
+    configurable.
+
+3.  Select the *Configuration* tab at the top of the page.
+
+4.  In the editor, add your custom JSON code. This code is added to your
+    fragment's `configuration.json` file. For example, the code below provides
+    the `select` option to choose *dark* or *light* for a Fragment's heading:
+
+    ```json
+    {
+        "fieldSets": [
+            {
+                "label": "heading",
+                "fields": [
+                    {
+                        "name": "headingAppliedStyle",
+                        "label": "applied-style",
+                        "description": "this-is-the-style-that-will-be-applied",
+                        "type": "select",
+                        "dataType": "string",
+                        "typeOptions": {
+                            "validValues": [
+                                "dark",
+                                "light"
+                            ]
+                        },
+                        "defaultValue": "light"
+                    }
+                ]
+            }
+        ]
+    }
+    ```
+
+5.  Click *Publish* to save your work and make it available to add to a content 
+    page.
+
+![Figure 3: You can click your Fragment to view its configuration options.](../../../images/fragment-config.png)
+
+Awesome! You now have a configurable Fragment!
 
 ## Managing Fragments and Collections
 
@@ -127,7 +179,7 @@ managing them. To access the collections management menu,
 
 1.  Select the Collection you want to manage from the *Collections* list.
 
-2.  Click on the [Options](../../../images/icon-options.png) menu next to the 
+2.  Click on the ![Actions](../../../images/icon-actions.png) menu next to the 
     collection name.
  
 3.  Select whether you want to *Edit*, *Export*, *Import*, or *Delete* the
@@ -146,7 +198,7 @@ To access the fragment management menu,
 1.  Select the Collection containing the Fragment you want to manage from the 
     *Collections* list.
  
-2.  Click on the [Options](../../../images/icon-options.png) menu next to the 
+2.  Click on the ![Actions](../../../images/icon-actions.png) menu next to the 
     Fragment name.
 
 3.  Select whether you want to *Edit*, *Rename*, *Move*, *Make a Copy*, *Change 

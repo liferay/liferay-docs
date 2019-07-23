@@ -23,11 +23,18 @@ links as editable and provide for "rich" text with formatting. Liferay
 portlets can also be embedded in Fragments as widgets, making pages with
 Fragments more dynamic than regular web content.
 
+Page Fragments are also configurable; defining configuration options for your
+fragment eliminates the need to maintain multiple other fragments similar in
+style. For example, if you'd like to provide a dark background banner and a
+light background banner, you can create one banner with a configuration option
+for background type. For more information on making your fragment configurable,
+see
+[this section](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-fragment#making-a-fragment-configurable).
 
+| **Note:** Defining configurations for Page Fragments is available in Liferay
+| DXP 7.2 Fix Pack 1+ and Liferay Portal GA2+.
 
-
-
-<!-- Add summary info here for Fragment configuration -->
+Now you'll step through some Page Fragment basics.
 
 ## Creating Page Fragments
 
