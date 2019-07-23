@@ -68,28 +68,3 @@ the template variables listed at the bottom of the configuration under the
 "Definition of Terms" heading to help build your email template. 
 
 ![Figure 2: There are some handy variables available for use in email templates.](../../../../images/instance-settings-definition-of-terms.png)
-
-<!--
-## Content Sharing
-
-Choose if Site administrators can display content in Sites from other Sites they
-administer. For example, suppose that a certain User is a Site administrator of
-two Sites: *Engineering* and *Marketing*. The checkbox in the Content Sharing
-section of Instance Settings determines if the Site administrator can display
-content from the Marketing Site in the Engineering Site and vice versa.
-
-You can also choose if sub-sites can display content from parent Sites and
-configure the defaults. There are three options:
-
-**Enabled by Default**: Subsites can display content from parent Sites by
-default, but this can be disabled by a Site administrator.
-
-**Disabled by Default**: Subsites cannot display content from parent Sites by
-default, but this can be enabled by a Site administrator.
-
-**Disabled**: Subsites cannot display content from parent Sites, and this
-behavior cannot be changed by a Site administrator.
-
-That covers a lot of Instance Settings, but you're not finished yet. The next
-article covers the identification and social settings.
--->

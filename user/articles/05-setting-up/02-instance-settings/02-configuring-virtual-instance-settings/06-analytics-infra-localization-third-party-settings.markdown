@@ -28,7 +28,7 @@ the Language Selector's look and feel from the Widget Scope.
 
 To access the Localization settings, Open the Control Panel and navigate to 
 *Configuration* &rarr; *Instance Settings*, and select the *Localization* 
-category under the *PLATFORM* section.  
+category under the *PLATFORM* section.
 
 ## Analytics
 

@@ -10,11 +10,11 @@ The User Authentication settings define how Users can authenticate, the various
 authentication methods that are required for them, and the screen names and 
 email addresses that are reserved and can't be registered by Users. 
 
-To access the User Authentication settings, Open the Control Panel and navigate 
-to *Configuration* &rarr; *Instance Settings*, and select the 
-*User Authentication* category under the *PLATFORM* section. 
+Access the User Authentication settings in the Control Panel's *Configuration*
+&rarr; *Instance Settings* section, and select the *User Authentication*
+category under the *PLATFORM* section. 
 
-The User Authentication contains two entries:
+User Authentication contains two entries:
 
 - General
 - Reserved Credentials

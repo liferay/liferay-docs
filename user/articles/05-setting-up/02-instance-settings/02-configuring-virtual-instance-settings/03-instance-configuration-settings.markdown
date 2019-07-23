@@ -6,11 +6,11 @@ header-id: instance-configuration-instance-settings
 
 [TOC levels=1-4]
 
-The Instance Configuration settings define the basic configuration information 
-for the virtual instance, from the appearance to the Terms of Use for your Users 
-to agree to. To access the Instance Configuration settings, Open the Control 
-Panel and navigate to *Configuration* &rarr; *Instance Settings*, and select the 
-*Instance Configuration* category under the *PLATFORM* section. The Instance 
+The Instance Configuration settings define the basic configuration information
+for the virtual instance, from the appearance to the Terms of Use for your
+Users to agree to. Access the Instance Configuration settings from the Control
+Panel's *Configuration* &rarr; *Instance Settings* section, and select the
+*Instance Configuration* category under the *PLATFORM* section. The Instance
 Configuration contains four entries:
 
 - Appearance
@@ -22,8 +22,9 @@ Each configuration entry is described in the corresponding section below.
 
 ## Appearance
 
-The Appearance configuration entry defines the default logo and overall look and 
-feel for the virtual instance. It's organized into the sections below:
+The Appearance configuration entry defines the default logo and overall look
+and feel for the virtual instance. It's organized into LOGO and LOOK AND FEEL
+sections:
 
 **LOGO:** Change the default logo and check/uncheck the 
 *Allow site administrators to use their own logo?* checkbox, enabled by default, 
@@ -35,9 +36,9 @@ the space. Large images might overlap with the navigation.
 
 ## Contact Information
 
-The Contact Information configuration entry specifies how to contact the 
-organization that owns the virtual instance. It's divided into the sections 
-listed below:
+The Contact Information configuration entry specifies how to contact the
+organization that owns the virtual instance. It's divided into several
+sections:
 
 **ADDRESSES:** Specify the primary, mailing, shipping, P.O. Box, etc. address of 
 the organization. 
@@ -56,9 +57,9 @@ minus buttons respectively.
 
 ## General
 
-The General entry specifies the virtual instance's configuration information, 
-landing pages, and the associated organization's basic legal information. It's 
-organized into the sections below:
+The General entry specifies the virtual instance's configuration information,
+landing pages, and the associated organization's basic legal information. It
+has two sections:
 
 **Main Configuration:** Configure this information for the virtual instance:
 
@@ -91,7 +92,9 @@ All virtual instances share the values specified in the properties file. Changes
 made in Instance Settings override the values set in the properties file. For 
 more information, see the [Portal Properties documentation](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html).
 
-**Additional Information:** Specify a Legal name, ID, company type, SIC code, ticker symbol, industry and industry type for the owner of the virtual instance. 
+**Additional Information:** Specify a Legal name, ID, company type, SIC code,
+ticker symbol, industry and industry type for the owner of the virtual
+instance. 
 
 ## Terms of Use
 
