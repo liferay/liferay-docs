@@ -23,6 +23,12 @@ links as editable and provide for "rich" text with formatting. Liferay
 portlets can also be embedded in Fragments as widgets, making pages with
 Fragments more dynamic than regular web content.
 
+
+
+
+
+<!-- Add summary info here for Fragment configuration -->
+
 ## Creating Page Fragments
 
 There are two types of Page Fragments: *Sections* and *Components*. A Section

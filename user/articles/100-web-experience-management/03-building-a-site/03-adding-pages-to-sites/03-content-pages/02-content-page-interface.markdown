@@ -35,12 +35,12 @@ to work together to build something piece by piece.
 
 ![Figure 3: Here are several of Liferay's out of the box components arranged in the layout you saw previously.](../../../../../images/content-page-component-example.png)
 
+<!-- Add fragment config info here. -->
+
 Out of the box, you are provided with a plethora of Layouts, Sections, and 
 Components to use to build page, and a
-[web developer can create their own Fragments](dev-guide-link)
+[web developer can create their own Fragments](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments)
 to add to these.
-
-<!-- TODO: provide dev link for creating fragments above, when available -->
 
 ## Editable Elements
 
@@ -138,7 +138,6 @@ available for widgets on Widget Pages.
 
 ### Page Structure
 
-
 Page Structure provides a high level view of every Fragment and every field
 within each Fragment on the page.
 
@@ -153,14 +152,14 @@ access items that might be hard to click on  directly.
 The last icon on the right side of the page will bring you to the *Look and 
 Feel* configuration for the page where you can change the theme or manage other 
 options for the page. These options are fully documented in the
-[Page Management](docs/7-2/user/-/knowledge_base/user/creating-pages) section.
+[Page Management](/docs/7-2/user/-/knowledge_base/u/creating-pages) section.
 
 ### The Title Bar
 
 The title bar provides navigation back to the Main Menu, a link to page
 configuration, and the ability to search for other pages. The title bar is
 covered in more detail in the
-[Page Management](docs/7-2/user/-/knowledge_base/user/creating-pages) section.
+[Page Management](/docs/7-2/user/-/knowledge_base/u/creating-pages) section.
 
 ![Figure 12: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
 
