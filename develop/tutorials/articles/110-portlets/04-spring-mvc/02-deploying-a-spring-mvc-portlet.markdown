@@ -27,15 +27,23 @@ runtime. Here are the high points on why that works in Liferay:
     OSGi headers directly into a `WEB-INF/liferay-plugin-package.properties`
     file for the WAB.
 
+[Import class packages](/docs/7-1/tutorials/-/knowledge_base/t/importing-packages)
+your portlet's descriptor files reference by adding the packages to an
+`Import-Package` header in your `liferay-plugin-package.properties` file. 
+
+Here's an example `Import-Package` header:
+
+    Import-Package:\
+        org.springframework.beans.factory.xml,\
+        org.springframework.context.config,\
+        org.springframework.security.config,\
+        org.springframework.web.servlet.config
+
 The auto-deploy process and Liferay's WAB generator convert your project to a
 Liferay-ready WAB. The WAB generator detects your class's `import` statements
 and adds all external packages to the WAB's `Import-Package` header. The
-generator also merges packages from your plugin's
-`liferay-plugin-package.properties` into the header. You can 
-[manually add
-imports](/docs/7-1/tutorials/-/knowledge_base/t/importing-packages) for any
-module packages that aren't picked up automatically. Follow the instructions for
-[resolving any third party package dependencies from standard library artifacts](/docs/7-1/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module). 
+generator merges packages from your plugin's `liferay-plugin-package.properties`
+into the header also. 
 
 If you depend on a package from Java's `rt.jar` other than a `java.*` package,
 override
