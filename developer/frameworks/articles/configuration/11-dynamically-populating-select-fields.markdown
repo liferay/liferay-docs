@@ -6,18 +6,30 @@ header-id: dynamically-populating-select-list-fields-in-the-configuration-ui
 
 [TOC levels=1-4]
 
-Previously you had to hardcode config options in the [Configuration interface](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-configuration-interface) 
-if you wanted to populate select list fields. This is no longer the case, thanks 
-to the [`ConfigurationFieldOptionsProvider` interface](@app-ref@/configuration-admin/latest/javadocs/com/liferay/configuration/admin/definition/ConfigurationFieldOptionsProvider.html). 
-Rather than hardcode these values, the `ConfigurationFieldOptionsProvider` 
-interface defines these values at runtime. 
+Configuration options can be presented in a select list, directly entering each
+label and value in the `@Meta.AD` annotation in the [Configuration
+interface](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-configuration-interface).
+
+```java
+@Meta.AD(
+    deflt = "enabled-with-warning", name = "csv-export",
+    optionLabels = {"Enabled", "enabled-with-warning", "Disabled"},
+    optionValues = {"enabled", "enabled-with-warning", "disabled"},
+    required = false
+)
+public String csvExport();
+```
+
+Now, thanks to the [`ConfigurationFieldOptionsProvider`
+interface](@app-ref@/configuration-admin/latest/javadocs/com/liferay/configuration/admin/definition/ConfigurationFieldOptionsProvider.html),
+you can populate select list configurations dynamically, using custom logic. 
 
 Follow these steps to dynamically populate the select list fields in your 
 configuration UI:
 
-1.  Create a class and add an `@Component` annotation that registers the 
-    `ConfigurationFieldOptionsProvider.class` service and includes the two 
-    properties shown below:
+1.  Use a `@Component` annotation to register the
+    `ConfigurationFieldOptionsProvider.class` service, and include two
+    properties:
 
     - `configuration.field.name`: The name of the attribute in the configuration 
       interface
@@ -25,7 +37,7 @@ configuration UI:
     - `configuration.pid`: The ID of the corresponding configuration interface 
       (usually the fully qualified class name)
 
-    An example configuration is shown below:
+    For example,
 
     ```java
     @Component(
@@ -38,8 +50,7 @@ configuration UI:
     )
     ```
 
-2.  Create a class that implements the `ConfigurationFieldOptionsProvider` 
-    interface:
+2.  Implement the `ConfigurationFieldOptionsProvider` interface:
 
     ```java    
     public class MyConfigurationFieldOptionsProvider implements 
@@ -88,6 +99,6 @@ configuration UI:
     	);
     }
     ```
-    
+
 Great! Now you know how to dynamically populate select fields in your 
 configuration's UI. 
