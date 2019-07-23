@@ -186,9 +186,7 @@ Do so now by following these steps:
         public Entry deleteEntry (long entryId, ServiceContext serviceContext)
             throws PortalException {
 
-            Entry entry = getEntry(entryId);
-
-            entry = deleteEntry(entryId);
+            Entry entry = deleteEntry(entryId);
 
             return entry;
         }
