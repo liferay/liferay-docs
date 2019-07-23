@@ -1,8 +1,8 @@
 ---
-header-id: infrastructure-localization-and-integrations-instance-settings
+header-id: more-platform-section-instance-settings
 ---
 
-# Infrastructure, Localization, and Integrations Instance Settings
+# More Platform Section Instance Settings
 
 [TOC levels=1-4]
 
