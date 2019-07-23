@@ -20,7 +20,7 @@ integration. Contact
 | 6.5 and @product@, you must use the proper connector to Elasticsearch.  
 | 
 | The [_Liferay Connector to Elasticsearch 6_, version
-| 1.1.0+](https://web.liferay.com/marketplace) is required to set up Elasticsearch
+| 1.1.0+](https://customer.liferay.com/downloads?p_p_id=com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_productAssetCategoryId=118191013&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_fileTypeAssetCategoryId=118191060) is required to set up Elasticsearch
 | 6.5 with security and monitoring.
 
 Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:

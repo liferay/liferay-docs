@@ -131,13 +131,13 @@ It's time to migrate and update your document store configuration to
         dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
         dl.store.impl=com.liferay.portal.store.s3.S3Store
 
--   JCR Store was deprecated as of Liferay DXP Digital Enterprise 7.0 Fix Pack 
-    14 and Liferay Portal CE 7.0 GA4. The
-    [Document Repository Configuration](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration)
-    documentation describes other store options.
-    [Migrate your document data](/discover/user/-/knowledge_base/7-0/server-administration)
-    to one of the other store options before upgrading from your current Liferay
-    version. 
+-   CMIS Store and JCR Store were deprecated as of Liferay DXP Digital 
+    Enterprise 7.0 Fix Pack 14 (SP3) and Liferay Portal CE 7.0 GA4. The
+    [Document Repository
+    Configuration](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration)
+    documentation describes other store options. [Migrate your document
+    data](/discover/user/-/knowledge_base/7-0/server-administration) to one of
+    the other store options before upgrading from your current Liferay version. 
 
 -   Since @product@ 7.0, document store specific configuration (e.g., 
     configurations specific to Simple File Store, Advanced File Store, S3, etc.)

@@ -34,18 +34,20 @@ store files.
 **Advanced File System Store**: in addition to using the file system (local or a
 mounted share) to store files, Advanced File System Store nests the files into
 more directories by version, for faster performance and to store more files.
-
-**CMIS Store (Content Management Interoperability Services)**: uses a system
 separate from @product@ to store files. 
 
 **DBStore (Database Storage)**: stores files in the @product@ database.
 
-**JCRStore (Java Content Repository)**: stores files to a JSR-170 compliant
+**S3Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage solution.
+
+**CMIS Store (deprecated as of Liferay DXP Digital Enterprise 7.0 Fix Pack 14
+(SP3) and Liferay Portal CE 7.0 GA4)**: uses a system
+
+**JCRStore (deprecated as of Liferay DXP Digital Enterprise 7.0 Fix Pack 14 
+(SP3) and Liferay Portal CE 7.0 GA4)**: stores files to a JSR-170 compliant
 document repository. You can use any JCR client to access the files. The files
 are stored to the server's file system by default. You can optionally configure
 JCRStore to store files in a database. 
-
-**S3Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage solution.
 
 Here are the details for each one. 
 
@@ -69,7 +71,9 @@ folder structure that looks like the figure below.
 
 The folder path used by @product@ for storing documents is this:
 
-    /companyId/folderId/numericFileEntryName/versionNumber
+```bash
+/companyId/folderId/numericFileEntryName/versionNumber
+```
 
 The first folder name is the company ID to which the site belongs. The second
 folder name is the  Documents and Media folder's ID where the document resides.
@@ -121,7 +125,9 @@ at the same time from two different nodes.
 
 Create the following file inside your app server's `osgi/configs` folder: 
 
-    com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg
+```bash
+com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg
+```
 
 | **Note:** you can also generate the config file by exporting the
 | configurations from the Control Panel under *System Settings* &rarr;
@@ -138,7 +144,9 @@ your document library is stored**.
 
 Next, configure `portal-ext.properties`: 
 
-    dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
+```properties
+dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
+```
 
 With both the `.config` file and `portal-ext.properties` configured, you can 
 start @product@. 
@@ -148,6 +156,35 @@ your needs. If this is the case, you can of course mount other file systems into
 the documents and media library. In addition to this, you can also redefine the
 @product@ store to use one of three other supported protocols. We'll look at these
 next. 
+
+## Using Amazon Simple Storage Service
+
+Amazon's simple storage service (S3) is a cloud-based storage solution that you
+can use with @product@. All you need is an account, and you can store your
+documents to the cloud from all nodes, seamlessly. 
+
+When you sign up for the service, Amazon assigns you unique keys that link
+you to your account. In Amazon's interface, you can create "buckets" of data
+optimized by region. Once you've created these to your specifications, use [these instructions](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration#s3) 
+to connect your S3 account to @product@. 
+
+If you are using Tomcat as your app server, it doesn't contain a `SAXParser`.
+You must include this property in `system-ext.properties`: 
+
+```properties
+org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
+```
+
+Other app servers also need this configuration if they don't contain a
+`SAXParser`. Remember to place your `system-ext.properties` file in a folder
+that resides in your @product@ installation's class path  (e.g.,
+`/WEB-INF/classes/`).
+
+| **Note:** No action is required to support AWS Signature Version 4 request
+| authorization.
+
+Consult the Amazon Simple Storage documentation for additional details on using
+Amazon's service.
 
 ## Using the CMIS Store
 
@@ -159,13 +196,15 @@ repository. It would be nice if that @product@ repository was connected to a
 clustered CMIS repository by the administrator without having to mount it
 through the UI. The CMIS store allows you to do just that. 
 
-| **Note:** CMIS Store is not suitable for production use and is deprecated as of
-| Liferay Portal CE 7.0 and Liferay DXP. Because it can have performance issues
-| with large repositories, it's recommended that you use one of the other
-| configurations listed above, such as Advanced File System Store, to store your
-| Documents and Media files. This deprecation does not affect the use of external
-| repositories. You can still [connect to external repositories](/docs/7-0/user/-/knowledge_base/u/using-external-repositories)
-| using CMIS.
+| **Note:** CMIS Store is not suitable for production use and is deprecated as 
+| of Liferay DXP Digital  Enterprise 7.0 Fix Pack 14 (SP3) and Liferay Portal CE
+| 7.0 GA4. Because it can have performance issues with large repositories, it's
+| recommended that you use one of the other configuration repositories listed
+| above, such as Advanced File System Store, to store your Documents and Media
+| files. This deprecation does not affect the use of external repositories. You
+| can still
+| [connect to external repositories](/docs/7-0/user/-/knowledge_base/u/using-external-repositories)
+| using CMIS. 
 
 If you wish to use the CMIS store, follow the instructions [here](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration#cmis)
 to set it up. The @product@ repository is connected to CMIS via the CMIS store. As
@@ -182,8 +221,9 @@ documents on the local file system where @product@ is installed, in the
 `[Liferay Home]/liferay/jackrabbit` folder. Inside this folder is Jackrabbit's
 configuration file, called `repository.xml`. 
 
-| **Note:** JCR Store is deprecated as of Liferay DXP Digital Enterprise Fix Pack
-| 14 and Liferay Portal CE 7.0 GA4.
+| **Note:** JCR Store is deprecated as of Liferay DXP Digital Enterprise Fix 
+| Pack 14 (SP3) and Liferay Portal CE 7.0 GA4. You should use one of the other 
+| documentation repositories listed above. 
 
 Using the default settings, the JCR store is not very different from the file
 system stores, except you can use any JCR client to access the files. You can,
@@ -240,57 +280,18 @@ For example, you can store documents and media files in your @product@ instance'
 database using DBStore. To enable DBStore, add the following [`dl.store.impl`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Document%20Library%20Service)
 portal property to a `portal-ext.properties` file in your [Liferay Home](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home):
 
-    dl.store.impl=com.liferay.portal.store.db.DBStore
+```properties
+dl.store.impl=com.liferay.portal.store.db.DBStore
+```
 
 Remember to restart your @product@ server after updating your
 `portal-ext.properties` file in order for your customizations to take effect.
-
-
-## Using Amazon Simple Storage Service
-
-Amazon's simple storage service (S3) is a cloud-based storage solution that you
-can use with @product@. All you need is an account, and you can store your
-documents to the cloud from all nodes, seamlessly. 
-
-When you sign up for the service, Amazon assigns you unique keys that link
-you to your account. In Amazon's interface, you can create "buckets" of data
-optimized by region. Once you've created these to your specifications, use [these instructions](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration#s3) 
-to connect your S3 account to @product@. 
-
-If you are using Tomcat as your app server, it doesn't contain a `SAXParser`.
-You must include this property in `system-ext.properties`: 
-
-    org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
-
-Other app servers also need this configuration if they don't contain a
-`SAXParser`. Remember to place your `system-ext.properties` file in a folder
-that resides in your @product@ installation's class path  (e.g.,
-`/WEB-INF/classes/`).
-
-| **Note:** No action is required to support AWS Signature Version 4 request
-| authorization.
-
-Consult the Amazon Simple Storage documentation for additional details on using
-Amazon's service.
 
 ## Configuration Details
 
 There are properties related to document library stores that have been moved
 from `portal-ext.properties` to OSGi configuration files. The following mapping
 shows you how to configure those properties if needed:
-
-### CMIS Store
-
-From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.cmis.CMISStore`
-
-To `osgi/configs/com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg`:
-
-Property | Default | Required
----------|---------|---------
-`repositoryUrl` | `http://localhost:8080/alfresco/service/api/cmis` | `true`
-`credentialsUsername` | none | `true`
-`credentialsPassword` | none | `true`
-`systemRootDir` | Liferay Home | `true`
 
 ### File Store
 
@@ -315,25 +316,6 @@ To `osgi/configs/com.liferay.portal.store.file.system.configuration.AdvancedFile
 Property | Default | Required
 ---------|---------|---------
 `rootDir` | `data/document_library` | `true`
-
-### JCR
-
-From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.jcr.JCRStore`
-
-To `osgi/configs/com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg`:
-
-Property | Default | Required
----------|---------|---------
-`initializeOnStartup` | `false`| `true`
-`wrapSession` | `true` | `true`
-`moveVersionLabels` | `false` | `true`
-`workspaceName` | `liferay` | `true`
-`nodeDocumentlibrary` | `documentlibrary` | `true`
-`jackrabbitRepositoryRoot` | `data/jackrabbit` | `true`
-`jackrabbitConfigFilePath` | `repository.xml` | `true`
-`jackrabbitRepositoryHome` | `home` | `true`
-`jackrabbitCredentialsUsername` | none | `true`
-`jackrabbitCredentialsPassword` | none | `true`
 
 ### S3
 
@@ -363,8 +345,40 @@ Property | Default | Required
 | that uses a file system based store, file system changes that have occurred
 | since the start of the transaction won't be reversed. Inconsistencies between
 | Document Library files and those in the file system store can occur and may
-| require manual synchronization. All stores except DBStore are vulnerable to this
-| limitation.
+| require manual synchronization. All stores except DBStore are vulnerable to 
+| this limitation.
+
+### CMIS Store
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.cmis.CMISStore`
+
+To `osgi/configs/com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg`:
+
+Property | Default | Required
+---------|---------|---------
+`repositoryUrl` | `http://localhost:8080/alfresco/service/api/cmis` | `true`
+`credentialsUsername` | none | `true`
+`credentialsPassword` | none | `true`
+`systemRootDir` | Liferay Home | `true`
+
+### JCR
+
+From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.jcr.JCRStore`
+
+To `osgi/configs/com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg`:
+
+Property | Default | Required
+---------|---------|---------
+`initializeOnStartup` | `false`| `true`
+`wrapSession` | `true` | `true`
+`moveVersionLabels` | `false` | `true`
+`workspaceName` | `liferay` | `true`
+`nodeDocumentlibrary` | `documentlibrary` | `true`
+`jackrabbitRepositoryRoot` | `data/jackrabbit` | `true`
+`jackrabbitConfigFilePath` | `repository.xml` | `true`
+`jackrabbitRepositoryHome` | `home` | `true`
+`jackrabbitCredentialsUsername` | none | `true`
+`jackrabbitCredentialsPassword` | none | `true`
 
 Please refer to the [Document Library property reference](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Document%20Library%20Portlet)
 for a complete list of supported customizations. You can customize features such
