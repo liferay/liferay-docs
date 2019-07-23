@@ -63,6 +63,9 @@ configuration UI:
     interface and populate the configuration fields with their labels and 
     values, as shown in the example below:
 
+    <!-- Drew or Pei-Jung, we need to describe this code, or provide more
+    realistic example code if we want to. Whatever will best help third party
+    devs see what they can do with the interface. -->
     ```java    
     public List<Option> getOptions() {
     	List<AssetRendererFactory<?>> assetRendererFactories =
