@@ -23,13 +23,13 @@ To see the Workflow sample in action, complete the following steps:
 4.  Go to *User* &rarr; *My Workflow Tasks* &rarr; *Assigned to My Roles* and
     assigned the task to me and Approve the Task.
 
-You've successfully passed an entity through the workflow process in your
-sample!
+Now you've taken the entity and successfully run it through a workflow.
 
 ## What API(s) and/or code components does this sample highlight?
 
-This sample demonstrates @product@'s Workflow Handler API.  Specifically, it
-demonstrates how to create a `WorkflowHandler` for your custom entity.
+This sample demonstrates @product@'s Workflow Handler API. Specifically, it
+demonstrates how to create a `WorkflowHandler` for your custom entity that is
+[asset enabled](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework).
 
 ## How does this sample leverage the API(s) and/or code component?
 
@@ -70,4 +70,4 @@ public Qux updateStatus(
 ```
 
 For more information on the workflow framework, visit its dedicated
-[documentation](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework/docs/7-0/tutorials/-/knowledge_base/t/liferays-workflow-framework).
+[documentation](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework).

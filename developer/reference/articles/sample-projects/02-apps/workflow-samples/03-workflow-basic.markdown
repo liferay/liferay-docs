@@ -6,9 +6,9 @@ header-id: workflow-application
 
 [TOC levels=1-4]
 
-This sample is similar to the
-[`basic` Workflow sample](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/apps/workflow/basic),
-which lets you enabling workflow to the entity.
+The
+[`basic`](https://github.com/liferay/liferay-blade-samples/tree/7.2/gradle/apps/workflow/basic)
+sample demonstrates workflow enabling an entity that is not an asset.
 
 To see the Workflow sample in action, complete the following steps:
 
@@ -25,7 +25,7 @@ To see the Workflow sample in action, complete the following steps:
 4.  Go to *User* &rarr; *My Workflow Tasks* &rarr; *Assigned to My Roles* and
     assigned the task to me and Approve the Task.
 
-You've successfully passed an entity through the workflow process in your sample!
+Now you've taken the entity and successfully run it through a workflow.
 
 ## What API(s) and/or code components does this sample highlight?
 
@@ -71,4 +71,4 @@ public Baz updateStatus(
 ```
 
 For more information on the workflow framework, visit its dedicated
-[documentation](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework/docs/7-0/tutorials/-/knowledge_base/t/liferays-workflow-framework).
+[documentation](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework).

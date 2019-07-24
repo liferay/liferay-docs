@@ -6,7 +6,7 @@ header-id: workflow-samples
 
 [TOC levels=1-4]
 
-This section focuses on Liferay’s Workflow Framework sample projects built with
+This section focuses on Liferay's Workflow Framework sample projects built with
 various build tools. You can view these samples by visiting the
 `apps/workflow` folder corresponding to your preferred build tool:
 
