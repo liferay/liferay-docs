@@ -46,49 +46,48 @@ Developer Features:
 
 - From Portal Core (Module: `portal-kernel`, Artifact:
     `com.liferay.portal.kernel`):
-    -  `com.liferay.portal.kernel.search.generic.NestedQuery`
-    -  `com.liferay.portal.kernel.search.filter`:
-        -  `ComplexQueryPart`
-        -  `GeoBoundingBoxFilter`
-        -  `GeoDistanceFilter`
-        -  `GeoDistanceRangeFilter`
-        -  `GeoPolygonFilter`
-- Portal Search API (Module: `portal-search-api`, Artifact:
+    - `com.liferay.portal.kernel.search.generic.NestedQuery`
+    - `com.liferay.portal.kernel.search.filter`:
+        - `ComplexQueryPart`
+        - `GeoBoundingBoxFilter`
+        - `GeoDistanceFilter`
+        - `GeoDistanceRangeFilter`
+        - `GeoPolygonFilter`
+- From the Portal Search API (Module: `portal-search-api`, Artifact:
     `com.liferay.portal.search.api`):
-    -  `com.liferay.portal.search.filter`:
+    - `com.liferay.portal.search.filter`:
         - `ComplexQueryPart`
         - `TermsSetFilter`
-    -  `com.liferay.portal.search.geolocation.*`
-    -  `com.liferay.portal.search.highlight.*`
-    -  `com.liferay.portal.search.query.function.*`
-    -  `com.liferay.portal.search.query`:
-        -  `BoostingQuery`
-        -  `CommonTermsQuery`
-        -  `ConstantScoreQuery`
-        -  `DateRangeTermQuery`
-        -  `ExistsQuery`
-        -  `FunctionScoreQuery`
-        -  `IdsQuery`
-        -  `NestedQuery`
-        -  `PercolateQuery`
-        -  `PrefixQuery`
-        -  `RangeTermQuery`
-        -  `RegexQuery`
-        -  `ScriptQuery`
-        -  `SimpleStringQuery`
-    -  `com.liferay.portal.search.script.*`
-    -  `com.liferay.portal.search.significance.*`
-    -  `com.liferay.portal.search.sort.*`: only `Sort` is supported
+    - `com.liferay.portal.search.geolocation.*`
+    - `com.liferay.portal.search.highlight.*`
+    - `com.liferay.portal.search.query.function.*`
+    - `com.liferay.portal.search.query`:
+        - `BoostingQuery`
+        - `CommonTermsQuery`
+        - `ConstantScoreQuery`
+        - `DateRangeTermQuery`
+        - `ExistsQuery`
+        - `FunctionScoreQuery`
+        - `IdsQuery`
+        - `NestedQuery`
+        - `PercolateQuery`
+        - `PrefixQuery`
+        - `RangeTermQuery`
+        - `RegexQuery`
+        - `ScriptQuery`
+        - `SimpleStringQuery`
+    - `com.liferay.portal.search.script.*`
+    - `com.liferay.portal.search.significance.*`
+    - `com.liferay.portal.search.sort.*`: only `Sort` is supported
 - Portal Search Engine Adapter API (Module: `portal-search-engine-adapter-api`,
     Artifact: `com.liferay.portal.search.engine.adapter.api`)
-    -  `com.liferay.portal.search.engine.adapter.cluster.*`
-    -  `com.liferay.portal.search.engine.adapter.document.UpdateByQueryDocumentRequest`
-    -  `com.liferay.portal.search.engine.adapter.index.*`: only
-        - `RefreshIndexRequest` is supported
-    -  `com.liferay.portal.search.engine.adapter.search.*`: 
-        -`MultisearchSearchRequest` 
+    - `com.liferay.portal.search.engine.adapter.cluster.*`
+    - `com.liferay.portal.search.engine.adapter.document.UpdateByQueryDocumentRequest`
+    - `com.liferay.portal.search.engine.adapter.index.*`: only `RefreshIndexRequest` is supported
+    - `com.liferay.portal.search.engine.adapter.search.*`: 
+        - `MultisearchSearchRequest` 
         - `SuggestSearchRequest`
-    -  `com.liferay.portal.search.engine.adapter.snapshot.*`
+    - `com.liferay.portal.search.engine.adapter.snapshot.*`
 
 Liferay Commerce requires the `TermsSetFilter` implementation, only available
 in the Elasticsearch connector.
