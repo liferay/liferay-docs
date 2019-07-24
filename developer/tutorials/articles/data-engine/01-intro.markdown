@@ -26,6 +26,8 @@ framework in the past.
 2.  Data Record Collections
 3.  Data Records
 
+For detailed information on the Data Engine API, visit the [SwaggerHub profile](https://app.swaggerhub.com/apis/liferayinc/data-engine/1.0).
+
 ##  Data Definitions
 
 Data Definitions (`DEDataDefinition`s) hold the form's field types (e.g., text,
@@ -35,7 +37,10 @@ Collection. For example, you could create a data definition with two text
 fields: one for a user's name, and one for their comments. You could then
 display a form that gathers user feedback via a dynamic data list that uses that
 data definition. 
-<!--Link to swaggerhub for data defs, and the other entities?-->
+
+It's important to understand that deleting a data definition will
+simultaneously delete all the entities associated with it (Data Record
+Collections, Data Records, and Data Layouts).
 
 ## Data Record Collections
 
@@ -48,10 +53,10 @@ its backing data definition.
 Data Records are the individual form entries for a given Data Record
 Collection.
 
-## Data Views
+## Data Layouts
 
-There's another important piece to the Data Engine framework: displays.
+There's another important piece to the Data Engine framework: data display.
 
-Once you have a Data Definition and a Data Collection, it's common to need
-control over display. Do this with FreeMarker templates, like in the Dynamic
-Data Lists application.
+Once you have a Data Definition and a Data Record Collection, it's common to
+need control over display. Use Data Layouts to add rows and columns for visual
+structuring of the data.

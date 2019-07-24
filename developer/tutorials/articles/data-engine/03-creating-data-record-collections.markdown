@@ -75,11 +75,11 @@ curl -i -X DELETE \
   -H 'Content-Type: application/json'
 ```
 
-<!-- Do we need to warn about deleting record collections that are in use?-->
-
 For more examples, paste the contents of
 [`data-engine-rest-impl/rest-openapi.yaml`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/data-engine/data-engine-rest-impl/rest-openapi.yaml)
 into the [Swagger Editor](https://editor.swagger.io/) and get auto-generated
-Open API docs. 
+Open API docs. Better yet, just visit the `liferayinc` section of
+[SwaggerHub](https://app.swaggerhub.com/search?type=API&owner=liferayinc) and
+see all the headless APIs you can consume.
 
 

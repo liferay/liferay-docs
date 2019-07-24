@@ -155,4 +155,5 @@ curl -i -X DELETE \
   -H 'Content-Type: application/json' \
 ```
 
-<!-- Do we need to warn about deleting data definitions that are in use?-->
+Deleting a data definition also deletes all associated Data Record Collections,
+Data Records, and Data Layouts.
