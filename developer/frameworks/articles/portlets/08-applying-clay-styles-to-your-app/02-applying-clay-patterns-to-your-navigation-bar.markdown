@@ -13,39 +13,39 @@ your app:
 
 1.  Add the required imports to your app's `init.jsp`:
 
-```markup
-// Import the clay tld file to be able to use the new tag
-<%@ taglib uri="http://liferay.com/tld/clay" prefix="clay" %>
+    ```markup
+    // Import the clay tld file to be able to use the new tag
+    <%@ taglib uri="http://liferay.com/tld/clay" prefix="clay" %>
 
-// Import the NavigationItem utility class to create the items model
-<%@ page import="com.liferay.frontend.taglib.clay.servlet.taglib.util.JSPNavigationItemList" %>
-```
+    // Import the NavigationItem utility class to create the items model
+    <%@ page import="com.liferay.frontend.taglib.clay.servlet.taglib.util.JSPNavigationItemList" %>
+    ```
 
 2.  Add the `frontend-taglib-clay` and `frontend.taglib.soy` module dependencies 
     to your app's `build.gradle` file:
 
-```groovy
-compileOnly group: "com.liferay", name: "com.liferay.frontend.taglib.soy", 
-version: "1.0.10"
+    ```groovy
+    compileOnly group: "com.liferay", name: "com.liferay.frontend.taglib.soy", 
+    version: "1.0.10"
 
-compileOnly group: "com.liferay", name: "com.liferay.frontend.taglib.clay", 
-version: "1.0.0"
-```
+    compileOnly group: "com.liferay", name: "com.liferay.frontend.taglib.clay", 
+    version: "1.0.0"
+    ```
 
 3.  Inside your JSP view, add a java scriplet to retrieve the navigation 
     variable and portlet URL. An example configuration is shown below:
 
-```markup
-<%
-final String navigation = ParamUtil.getString(request, "navigation", 
-"entries");
+    ```markup
+    <%
+    final String navigation = ParamUtil.getString(request, "navigation", 
+    "entries");
 
-PortletURL portletURL = renderResponse.createRenderURL();
+    PortletURL portletURL = renderResponse.createRenderURL();
 
-portletURL.setParameter("mvcRenderCommandName", "/blogs/view");
-portletURL.setParameter("navigation", navigation);
-%>
-```
+    portletURL.setParameter("mvcRenderCommandName", "/blogs/view");
+    portletURL.setParameter("navigation", navigation);
+    %>
+    ```
 
 4.  Add the `<clay:navigation-bar />` tag to your app, and use the `items` 
     attribute to specify the navigation items. The navigation bar should be dark 
@@ -54,48 +54,48 @@ portletURL.setParameter("navigation", navigation);
     keep the navigation bar light by setting the `inverted` attribute to 
     `false`. An example configuration for an admin app is shown below:
 
-```markup
-<clay:navigation-bar
-	inverted="<%= true %>"
-	navigationItems="<%=
-		new JSPNavigationItemList(pageContext) {
-			{
-				add(
-				navigationItem -> {
-					navigationItem.setActive(navigation.equals("entries"));
-					navigationItem.setHref(renderResponse.createRenderURL());
-					navigationItem.setLabel(LanguageUtil.get(request, "entries"));
-				});
+    ```markup
+    <clay:navigation-bar
+    	inverted="<%= true %>"
+    	navigationItems="<%=
+    		new JSPNavigationItemList(pageContext) {
+    			{
+    				add(
+    				navigationItem -> {
+    					navigationItem.setActive(navigation.equals("entries"));
+    					navigationItem.setHref(renderResponse.createRenderURL());
+    					navigationItem.setLabel(LanguageUtil.get(request, "entries"));
+    				});
 
-				add(
-				navigationItem -> {
-					navigationItem.setActive(navigation.equals("images"));
-					navigationItem.setHref(renderResponse.createRenderURL(), 
-          "navigation", "images");
-					navigationItem.setLabel(LanguageUtil.get(request, "images"));
-				});
-			}
-		}
-	%>"
-/>
-```
+    				add(
+    				navigationItem -> {
+    					navigationItem.setActive(navigation.equals("images"));
+    					navigationItem.setHref(renderResponse.createRenderURL(), 
+              "navigation", "images");
+    					navigationItem.setLabel(LanguageUtil.get(request, "images"));
+    				});
+    			}
+    		}
+    	%>"
+    />
+    ```
 
 5.  Add a conditional block to display the proper JSP for the selected 
     navigation item. An example configuration for the Blogs Admin portlet is 
     shown below:
 
-```markup
-<c:choose>
-	<c:when test='<%= navigation.equals("entries") %>'>
-		<liferay-util:include page="/blogs_admin/view_entries.jsp" 
-    servletContext="<%= application %>" />
-	</c:when>
-	<c:otherwise>
-		<liferay-util:include page="/blogs_admin/view_images.jsp" 
-    servletContext="<%= application %>" />
-	</c:otherwise>
-</c:choose>
-```
+    ```markup
+    <c:choose>
+    	<c:when test='<%= navigation.equals("entries") %>'>
+    		<liferay-util:include page="/blogs_admin/view_entries.jsp" 
+        servletContext="<%= application %>" />
+    	</c:when>
+    	<c:otherwise>
+    		<liferay-util:include page="/blogs_admin/view_images.jsp" 
+        servletContext="<%= application %>" />
+    	</c:otherwise>
+    </c:choose>
+    ```
 
 Live site navigation bar:
 

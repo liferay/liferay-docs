@@ -112,7 +112,7 @@ deployment.
 
 For more information about securing a @product@ installation, please see 
 [our security statement](https://www.liferay.com/security), 
-[the community security team](https://dev.liferay.com/web/community-security-team), 
+[the community security team](https://portal.liferay.dev/people/community-security-team), 
 and the resources listed on those pages.
 
 Also, customers are advised to deploy security patches as described on the
@@ -122,5 +122,5 @@ For community and CE deployments, the stay secure by always using the latest
 community version, which contains all previous security patches. Until a new
 version is released, the Community Security Team issues patches for the latest
 CE version via the
-[community security team](https://dev.liferay.com/web/community-security-team)
+[community security team](https://portal.liferay.dev/people/community-security-team)
 page.

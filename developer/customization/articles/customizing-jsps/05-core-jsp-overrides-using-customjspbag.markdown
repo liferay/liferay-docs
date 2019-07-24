@@ -70,16 +70,16 @@ Add back URL for Core Override JSP Sample Project code once it's ported:
 2.  Register your class as an OSGi service by adding an `@Component` annotation 
     to it, like this: 
 
-```java
-@Component(
-    immediate = true,
-    property = {
-    	"context.id=BladeCustomJspBag",
-        "context.name=Test Custom JSP Bag",
-    	"service.ranking:Integer=100"
-    }
-)
-```
+    ```java
+    @Component(
+        immediate = true,
+        property = {
+        	"context.id=BladeCustomJspBag",
+            "context.name=Test Custom JSP Bag",
+        	"service.ranking:Integer=100"
+        }
+    )
+    ```
 
     - **`immediate = true`:** Makes the service available on module activation. 
     -  **`context.id`:** Your custom JSP bag class name. Replace 
@@ -92,46 +92,46 @@ Add back URL for Core Override JSP Sample Project code once it's ported:
 3.  Implement the `getCustomJspDir` method to return the folder path in your 
     module's JAR  where the JSPs reside (for example, `META-INF/jsps`). 
 
-```java
-@Override
-public String getCustomJspDir() {
-    return "META-INF/jsps/";
-}
-```
+    ```java
+    @Override
+    public String getCustomJspDir() {
+        return "META-INF/jsps/";
+    }
+    ```
 
 4.  Create an `activate` method and the following fields. The method adds the 
     URL paths of all your custom JSPs to a list when the module is activated.
 
-```java
-@Activate
-protected void activate(BundleContext bundleContext) {
-	_bundle = bundleContext.getBundle();
+    ```java
+    @Activate
+    protected void activate(BundleContext bundleContext) {
+    	_bundle = bundleContext.getBundle();
 
-	_customJsps = new ArrayList<>();
+    	_customJsps = new ArrayList<>();
 
-	Enumeration<URL> entries = _bundle.findEntries(
-		getCustomJspDir(), "*.jsp", true);
+    	Enumeration<URL> entries = _bundle.findEntries(
+    		getCustomJspDir(), "*.jsp", true);
 
-	while (entries.hasMoreElements()) {
-		URL url = entries.nextElement();
+    	while (entries.hasMoreElements()) {
+    		URL url = entries.nextElement();
 
-		_customJsps.add(url.getPath());
-	}
-}
+    		_customJsps.add(url.getPath());
+    	}
+    }
 
-private Bundle _bundle;
-private List<String> _customJsps;
-```
+    private Bundle _bundle;
+    private List<String> _customJsps;
+    ```
 
 5.  Implement the `getCustomJsps` method to return the list of this module's 
     custom JSP URL paths.
 
-```java
-@Override
-public List<String> getCustomJsps() {
-    return _customJsps;
-}
-```
+    ```java
+    @Override
+    public List<String> getCustomJsps() {
+        return _customJsps;
+    }
+    ```
 
 6.  Implement the `getURLContainer` method to return a new 
     `com.liferay.portal.kernel.url.URLContainer`. Instantiate the URL container 
@@ -142,43 +142,43 @@ public List<String> getCustomJsps() {
     name (the path included). The sample's `BladeCustomJspBag` class implements 
     `getURLContainer` like this: 
 
-```java
-@Override
-public URLContainer getURLContainer() {
-    return _urlContainer;
-}
-
-private final URLContainer _urlContainer = new URLContainer() {
-
+    ```java
     @Override
-    public URL getResource(String name) {
-        return _bundle.getEntry(name);
+    public URLContainer getURLContainer() {
+        return _urlContainer;
     }
 
-    @Override
-    public Set<String> getResources(String path) {
-        Set<String> paths = new HashSet<>();
+    private final URLContainer _urlContainer = new URLContainer() {
 
-        for (String entry : _customJsps) {
-            if (entry.startsWith(path)) {
-               paths.add(entry);
-            }
+        @Override
+        public URL getResource(String name) {
+            return _bundle.getEntry(name);
         }
 
-        return paths;
-    }
+        @Override
+        public Set<String> getResources(String path) {
+            Set<String> paths = new HashSet<>();
 
-};
-```
+            for (String entry : _customJsps) {
+                if (entry.startsWith(path)) {
+                   paths.add(entry);
+                }
+            }
+
+            return paths;
+        }
+
+    };
+    ```
 
 7.  Implement the `isCustomJspGlobal` method to return `true`.
 
-```java
-@Override
-public boolean isCustomJspGlobal() {
-    return true;
-}
-```
+    ```java
+    @Override
+    public boolean isCustomJspGlobal() {
+        return true;
+    }
+    ```
 
 Now your module provides custom JSPs and a custom JSP bag implementation. When 
 you deploy it, @product@ uses its custom JSPs in place of the core JSPs they 

@@ -25,9 +25,9 @@ a language properties file for it with translations:
 
 2.  Run the translate target with the command below:
 
-```bash
-npm run translate
-```
+    ```bash
+    npm run translate
+    ```
 
 3.  The translate target automatically creates a language properties file for 
     each new **supported** locale with translations for your language keys. It 
@@ -41,4 +41,4 @@ in your app.
 
 - [Configuring System Settings and Instance Settings for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/configuring-system-settings-and-instance-settings-for-your-js-widget)
 - [Localizing Your Widget](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-widget)
-- [Setting Portlet Properties for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/setting-portlet-properties-for-your-javascript-widget)
+- [Setting Portlet Properties for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/configuring-portlet-properties-for-your-widget)

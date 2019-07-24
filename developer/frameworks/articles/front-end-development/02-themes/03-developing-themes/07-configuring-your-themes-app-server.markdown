@@ -41,7 +41,7 @@ such as those created with the
     ```
 
 Awesome! Now you can 
-[deploy your theme](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-your-theme) 
+[deploy your theme](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes) 
 to the proper server. 
 
 ## Related Topics

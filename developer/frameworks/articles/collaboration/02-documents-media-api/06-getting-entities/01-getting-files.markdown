@@ -51,8 +51,10 @@ Site's default repository, sorted by title:
         ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
         long groupId = themeDisplay.getScopeGroupId();
 
+<!--Uncomment once article is available
     For more information, see 
-    [Data Scopes](/docs/7-2/frameworks/-/knowledge_base/f/data-scopes). 
+    Data Scopes. 
+-->
 
 3.  Use the data from the previous step to call the service reference method you
     want to use to get the files. This example calls the above `getFileEntries`

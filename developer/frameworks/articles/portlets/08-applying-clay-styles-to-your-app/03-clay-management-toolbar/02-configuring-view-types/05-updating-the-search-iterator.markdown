@@ -10,18 +10,18 @@ Once the view type's display styles are defined, you must update the search
 iterator to show the selected view type. Follow these steps:
 
 1.  If your management toolbar only has one view type, you can set the 
-`displayStyle` attribute to the style you defined, otherwise follow the pattern 
-below:
+    `displayStyle` attribute to the style you defined, otherwise follow the 
+    pattern below:
 
-```html
-<liferay-ui:search-iterator
-    displayStyle="<%= displayStyle %>"
-    markupView="lexicon"
-    searchContainer="<%= searchContainer %>"
-/>
-```
+    ```html
+    <liferay-ui:search-iterator
+        displayStyle="<%= displayStyle %>"
+        markupView="lexicon"
+        searchContainer="<%= searchContainer %>"
+    />
+    ```
 
-The `displayStyle`'s value is set to the [current view type](/docs/7-2/frameworks/-/knowledge_base/f/implementing-the-view-types).
+    The `displayStyle`'s value is set to the [current view type](/docs/7-2/frameworks/-/knowledge_base/f/implementing-the-view-types).
 
 2.  Save the changes. 
 

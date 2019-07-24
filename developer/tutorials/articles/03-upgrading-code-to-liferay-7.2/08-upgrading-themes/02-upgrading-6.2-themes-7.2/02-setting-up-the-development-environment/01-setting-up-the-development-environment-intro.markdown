@@ -18,4 +18,4 @@ Setting up your development environment involves these steps:
 
 * Import the 6.2 theme to use the Liferay JS Theme Toolkit
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-2/installing-the-liferay-theme-generator-to-import-a-6-2-theme">Let's Go<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/installing-the-liferay-theme-generator-to-import-a-6-2-theme">Let's Go<span class="icon-circle-arrow-right"></span></a>

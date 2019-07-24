@@ -6,8 +6,8 @@ header-id: converting-a-service-builder-module-from-spring-di-to-osgi-ds
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Service Builder Services<br>Step 2 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Service Builder Services</p><p>Step 2 of 3</p>
 </div>
 
 Prior to @product@ 7.2, Service Builder modules could only use Spring for
@@ -87,8 +87,10 @@ steps:
 2.  Replace all the `@ServiceReference` and `@BeanReference` field annotations 
     with the DS `@Reference` annotation. 
     
-3.  [Run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
-    to regenerate the interfaces based on your implementation changes. 
+3.  Run Service Builder to regenerate the interfaces based on your 
+    implementation changes. 
+
+    <!--Add back link to 'Run Service Builder' once running-service-builder article is available-->
 
 4.  Replace the following methods:
 
@@ -116,11 +118,11 @@ dependencies.
     in step 3.1. 
 
     - Run `system:check` in
-      [Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/felix-gogo-shell)
+      [Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)
       to detect obvious circular dependencies.
     
     - Run `scr:info [component]` in the
-      [Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/felix-gogo-shell)
+      [Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)
       to examine components and determine the best places to break circular
       dependencies.
 
@@ -129,9 +131,5 @@ Congratulations on converting your service module to use Declarative Services.
 ## Related Topics 
 
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
-
-[Understanding the Code Service Builder Generates](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder)
-
-[Spring Dependency Injection](/docs/7-2/frameworks/-/knowledge_base/f/spring-dependency-injection)
 
 [Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)

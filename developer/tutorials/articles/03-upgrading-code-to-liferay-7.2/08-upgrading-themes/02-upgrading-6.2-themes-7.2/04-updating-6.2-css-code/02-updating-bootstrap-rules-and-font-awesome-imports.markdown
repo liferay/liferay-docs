@@ -6,8 +6,8 @@ header-id: updating-6-2-css-rules-and-imports
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 CSS Code<br>Step 1 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 CSS Code<p><p>Step 1 of 2</p>
 </div>
 
 @product-ver@ uses Bootstrap 4.3's CSS rule syntax. Font Awesome icons have been 
@@ -55,74 +55,74 @@ imports:
 
     Original:
 
-```css
-#reserveBtn {
-	background-color: #00C4FB;
-	border-radius: 10px;
-	color: #FFF;
-	font-size: 1.5em;
-	height: 62px;
-	margin: 30px;
-	padding: 10px 0;
-	...
-}
-```
+    ```css
+    #reserveBtn {
+    	background-color: #00C4FB;
+    	border-radius: 10px;
+    	color: #FFF;
+    	font-size: 1.5em;
+    	height: 62px;
+    	margin: 30px;
+    	padding: 10px 0;
+    	...
+    }
+    ```
 
     Updated:
 
-```css
-#reserveBtn {
-	background-color: #00C4FB;
-	border-radius: 10px;
-	color: #FFF;
-	font-size: 1.5em;
-	height: 82px;
-	margin: 30px;
-	padding: 10px 0;
-	...
-}
-```
+    ```css
+    #reserveBtn {
+    	background-color: #00C4FB;
+    	border-radius: 10px;
+    	color: #FFF;
+    	font-size: 1.5em;
+    	height: 82px;
+    	margin: 30px;
+    	padding: 10px 0;
+    	...
+    }
+    ```
 
-| **Note:** For individual elements, you can overwrite the 
-| `box-sizing:border-box` rule with `box-sizing:content-box`. 
+    | **Note:** For individual elements, you can overwrite the 
+    | `box-sizing:border-box` rule with `box-sizing:content-box`. 
 
 2.  The following variables are removed in Bootstrap 4. Remove these variables 
     where they are used in the theme:
 
-```scss
-$line-height-computed
-$padding-base-horizontal
-$padding-base-vertical
-$padding-large-horizontal
-$padding-large-vertical
-$padding-small-horizontal
-$padding-small-vertical
-$padding-xs-horizontal
-$padding-xs-vertical
-$gray-base
-$gray-darker
-$gray-dark
-$gray
-$gray-light
-$gray-lighter
-$brand-primary
-$brand-success
-$brand-info
-$brand-warning
-$brand-danger
-$state-success-text
-$state-success-bg
-$state-success-border
-$state-info-text
-$state-info-bg
-$state-info-border
-$state-warning-text
-$state-warning-bg
-$state-warning-border
-$state-danger-text
-$state-danger-bg
-$state-danger-border
-```
+    ```scss
+    $line-height-computed
+    $padding-base-horizontal
+    $padding-base-vertical
+    $padding-large-horizontal
+    $padding-large-vertical
+    $padding-small-horizontal
+    $padding-small-vertical
+    $padding-xs-horizontal
+    $padding-xs-vertical
+    $gray-base
+    $gray-darker
+    $gray-dark
+    $gray
+    $gray-light
+    $gray-lighter
+    $brand-primary
+    $brand-success
+    $brand-info
+    $brand-warning
+    $brand-danger
+    $state-success-text
+    $state-success-bg
+    $state-success-border
+    $state-info-text
+    $state-info-bg
+    $state-info-border
+    $state-warning-text
+    $state-warning-bg
+    $state-warning-border
+    $state-danger-text
+    $state-danger-bg
+    $state-danger-border
+    ```
 
     See the 
     [Migrating from 2.x to 3.0 guide](http://getbootstrap.com/migration/#migrating-from-2x-to-30) 
@@ -134,10 +134,10 @@ $state-danger-border
     avoid the IE9 CSS selector limitation. If these imports are included in the 
     theme's `_custom.scss` file, they must be removed:
 
-```scss
-@import "aui/alloy-font-awesome/scss/mixins-alloy";
-@import "aui/alloy-font-awesome/scss/variables";
-```
+    ```scss
+    @import "aui/alloy-font-awesome/scss/mixins-alloy";
+    @import "aui/alloy-font-awesome/scss/variables";
+    ```
 
 Great! The rules and imports are updated. You can update the responsiveness 
 next. 

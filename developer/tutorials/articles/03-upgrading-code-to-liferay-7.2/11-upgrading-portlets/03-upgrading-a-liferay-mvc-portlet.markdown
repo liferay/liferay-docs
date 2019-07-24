@@ -6,8 +6,8 @@ header-id: upgrading-a-liferay-mvc-portlet
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Portlets<br>Step 2 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Portlets</p><p>Step 2 of 6</p>
 </div>
 
 Liferay's MVC Portlet framework is used extensively in @product@'s portlets and

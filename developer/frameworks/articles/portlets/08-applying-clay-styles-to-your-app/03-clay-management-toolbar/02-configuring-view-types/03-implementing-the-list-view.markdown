@@ -16,11 +16,11 @@ Follow these steps to configure the List view:
 1.  Inside the `<c:choose>` conditional block, add a condition for the 
     descriptive display style (list view type):
 
-```markup
-<c:when test='<%= Objects.equals(displayStyle, "descriptive") %>'>
-    <%-- list view type configuration goes here --%>
-</c:when>
-```
+    ```markup
+    <c:when test='<%= Objects.equals(displayStyle, "descriptive") %>'>
+        <%-- list view type configuration goes here --%>
+    </c:when>
+    ```
 
 2.  Follow the example below to add the three columns to the conditional block:
 

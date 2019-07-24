@@ -8,7 +8,7 @@ header-id: preparing-for-install
 
 @product@ doesn't require much to deploy. You need a Java Development Kit (JDK)
 and a database. Several configuration topics (e.g.,
-[search engine integration]((/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine),
+[search engine integration](/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine),
 [document repository configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration),
 [security management](/docs/7-2/deploy/-/knowledge_base/d/securing-product),
 [clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering),
@@ -116,7 +116,7 @@ To workaround this issue, add this property after your application server JVM op
 
 ```properties
  --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
-``` 
+```
 
 It's time to prepare your database. 
 
@@ -137,9 +137,6 @@ The recommended way to set up your @product@ database is also the simplest.
 
     | **Note:** If you plan to migrate from one database vendor to another,
     | [configure the database to use the default query result order you expect for entities @product@ lists](/docs/7-2/deploy/-/knowledge_base/d/sort-order-changed-with-a-different-database). 
-
-    | **Note:** If you use Sybase, configure the database to allow nulls by 
-    | default. 
 
 3.  Create a database user for accessing this database. Grant this database user
     all rights, including the rights to create and drop tables, to the blank

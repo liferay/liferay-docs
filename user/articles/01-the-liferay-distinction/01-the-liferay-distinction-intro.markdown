@@ -22,7 +22,7 @@ The documentation here shows you how to use it. This is the
 which describes the features of an installed @product@, how to configure its
 applications, and how to build your website. 
 
-The [**Developer**](/docs/7-2/dev) section is divided into five subsections: 
+The **Developer** section is divided into five subsections: 
 
 [**Application Development**](/docs/7-2/appdev) shows you how you can build applications using
 industry standard tools and frameworks on @product@. 

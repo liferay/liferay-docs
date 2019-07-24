@@ -58,12 +58,12 @@ Next you'll explore an Ext plugin's advanced configuration files.
 
 @product@ uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks
-@product@ depends on, like Struts and Spring. Configuration could be
-accomplished using fewer files with more properties in each, but maintenance and
-use is made easier by splitting up the configuration properties into several
-files. For advanced customization needs, it may be useful to override the
-configuration specified in multiple configuration files. @product@ provides a
-clean way to do this from an Ext plugin without modifying the original files. 
+@product@ depends on (e.g., Spring). Configuration could be accomplished using
+fewer files with more properties in each, but maintenance and use is made easier
+by splitting up the configuration properties into several files. For advanced
+customization needs, it may be useful to override the configuration specified in
+multiple configuration files. @product@ provides a clean way to do this from an
+Ext plugin without modifying the original files. 
 
 All the configuration files in @product@ are listed below by their path in an
 Ext plugin folder. Here are descriptions of what each file is for and the path
@@ -86,7 +86,7 @@ to the original file in @product@:
       to configure appenders for log file location, naming, and rotation. See
       the
       [Log4j XML Configuration Primer](https://wiki.apache.org/logging-log4j/Log4jXmlFormat). 
-      [Increasing or decreasing the log level of a class or class hierarchy](/docs/7-2/frameworks/-/knowledge_base/f/adjusting-module-logging)
+      [Increasing or decreasing the log level of a class or class hierarchy](/docs/7-2/appdev/-/knowledge_base/a/adjusting-module-logging)
       is best done outside of an Ext plugin, in @product@'s' UI or a Log4j XML
       file in a module or the `osgi/log4j` folder. 
     - **Original file in Liferay:** `portal-impl/src/META-INF/portal-log4j.xml`

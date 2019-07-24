@@ -105,11 +105,11 @@ Spanish, the `language_es.properties` file contains these values:
 	lang.user.name.required.field.names=last-name
 
 For more information, see 
-[Using Liferay Language Settings](/docs/7-2/frameworks/-/knowledge_base/f/using-liferays-language-settings).
+[Using Liferay Language Settings](/docs/7-2/frameworks/-/knowledge_base/f/using-liferays-localization-settings).
 
 ## Related Topics
 
-[Using Liferay Language Settings](/docs/7-2/frameworks/-/knowledge_base/f/using-liferays-language-settings)
+[Using Liferay Language Settings](/docs/7-2/frameworks/-/knowledge_base/f/using-liferays-localization-settings)
 
 [Overriding Global Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-global-language-keys)
 

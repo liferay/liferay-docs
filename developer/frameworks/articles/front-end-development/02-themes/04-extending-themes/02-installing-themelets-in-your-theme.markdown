@@ -19,10 +19,13 @@ follow the steps below to install it into your theme.
 
 2.  Choose *Themelet* as the theme asset to extend.
 
-3.  Select *Search globally installed npm modules* or *Search npm registry* to 
-    locate the themelet.
+3.  Select *Search globally installed npm modules*, *Search npm registry*, or 
+    *Specify a package URL* to locate the themelet.
 
     ![Figure 1: You can extend your theme using globally installed npm modules or published npm modules.](../../../../images/install-themelet.png)
+
+    | **Note:** You can retrieve the URL for a package by running 
+    | `npm show package-name dist.tarball`. 
 
 4.  Highlight your themelet, press spacebar to activate it, and press *Enter* to
     install it. 

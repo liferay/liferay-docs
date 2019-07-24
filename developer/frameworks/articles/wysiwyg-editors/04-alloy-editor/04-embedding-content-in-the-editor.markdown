@@ -33,22 +33,22 @@ Follow these steps to create an `*EmbedProvider`:
 
 2.  Add the following dependencies to the `build.gradle` file:
 
-```groovy
-compileOnly group: "com.liferay", name:
-"com.liferay.frontend.editor.api", version: "1.0.1"
+    ```groovy
+    compileOnly group: "com.liferay", name:
+    "com.liferay.frontend.editor.api", version: "1.0.1"
 
-compileOnly group: "com.liferay", name: "com.liferay.petra.string",
-version: "2.0.0"
-```
+    compileOnly group: "com.liferay", name: "com.liferay.petra.string",
+    version: "2.0.0"
+    ```
 
 3.  Create a component class that implements the `EditorEmbedProvider` service:
 
-```java
-@Component(
-  immediate = true,
-  service = EditorEmbedProvider.class
-)
-```
+    ```java
+    @Component(
+      immediate = true,
+      service = EditorEmbedProvider.class
+    )
+    ```
 
 4.  Optionally set the `type` property to the content's type. If creating a 
     provider for a content type other than video, you can create a new type 
@@ -62,31 +62,31 @@ version: "2.0.0"
     `VIDEO` type, using a constant provided by the 
     [`EditorEmbedProviderTypeConstants` class](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-editor/frontend-editor-api/src/main/java/com/liferay/frontend/editor/api/embed/EditorEmbedProviderTypeConstants.java):
 
-```java
-@Component(
-  immediate = true,
-  property = "type=" + EditorEmbedProviderTypeConstants.VIDEO,
-  service = EditorEmbedProvider.class
-)
-```
+    ```java
+    @Component(
+      immediate = true,
+      property = "type=" + EditorEmbedProviderTypeConstants.VIDEO,
+      service = EditorEmbedProvider.class
+    )
+    ```
 
 5.  Implement the 
     [`EditorEmbedProvider` interface](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-editor/frontend-editor-api/src/main/java/com/liferay/frontend/editor/api/embed/EditorEmbedProvider.java). 
     An example configuration is shown below:
 
-```java
-public class MyEditorEmbedProvider implements EditorEmbedProvider {
+    ```java
+    public class MyEditorEmbedProvider implements EditorEmbedProvider {
 
-}
-```
+    }
+    ```
 
 6.  Add the required imports:
 
-```java
-import com.liferay.frontend.editor.api.embed.EditorEmbedProvider;
-import com.liferay.frontend.editor.api.embed.EditorEmbedProviderTypeConstants;
-import com.liferay.petra.string.StringBundler;
-```
+    ```java
+    import com.liferay.frontend.editor.api.embed.EditorEmbedProvider;
+    import com.liferay.frontend.editor.api.embed.EditorEmbedProviderTypeConstants;
+    import com.liferay.petra.string.StringBundler;
+    ```
 
     Note the `*TypeConstants` import is only needed if you're adding a Video 
     type provider. 
@@ -94,28 +94,28 @@ import com.liferay.petra.string.StringBundler;
 7.  Override the `*EmbedProvider`'s `getId()` method to return the ID for the 
     provider. An example configuration is shown below:
 
-```java
-@Override
-public String getId() {
-	return "providerName";
-}
-```
+    ```java
+    @Override
+    public String getId() {
+    	return "providerName";
+    }
+    ```
 
 8.  Override the `*EmbedProvider`'s `getTpl()` method to provide the embed 
     template code (usually an iframe for the provider). The example below 
     defines the template for a streaming video service. Note that `{embedId}` is 
     a placeholder for the unique identifier for the embedded content:
 
-```java
-@Override
-public String getTpl() {
-	return StringBundler.concat(
-		"<iframe allow=\"autoplay; encrypted-media\" allowfullscreen ",
-		"height=\"315\" frameborder=\"0\" ",
-		"src=\"https://www.liferaylunarresortstreaming.com/embed/{embedId}?rel=0\" ",
-		"width=\"560\"></iframe>");
-}
-```
+    ```java
+    @Override
+    public String getTpl() {
+    	return StringBundler.concat(
+    		"<iframe allow=\"autoplay; encrypted-media\" allowfullscreen ",
+    		"height=\"315\" frameborder=\"0\" ",
+    		"src=\"https://www.liferaylunarresortstreaming.com/embed/{embedId}?rel=0\" ",
+    		"width=\"560\"></iframe>");
+    }
+    ```
 
 9.  Override the `*EmbedProvider`'s `getURLSchemes()` method to return an array 
     of supported URL schemes that have an embedded representation for the 
@@ -124,14 +124,14 @@ public String getTpl() {
     contain a single matching group. Matches replace the `{embedId}` placeholder 
     defined in the previous step:
 
-```java
-@Override
-public String[] getURLSchemes() {
-	return new String[] {
-		"https?:\\/\\/(?:www\\.)?liferaylunarresortstreaming.com\\/watch\\?v=(\\S*)$"
-	};
-}
-```
+    ```java
+    @Override
+    public String[] getURLSchemes() {
+    	return new String[] {
+    		"https?:\\/\\/(?:www\\.)?liferaylunarresortstreaming.com\\/watch\\?v=(\\S*)$"
+    	};
+    }
+    ```
 
 10.  Deploy your module and open an app that uses the AlloyEditor, such as 
      Blogs, and create a new entry. Click the *add button* and select the video 

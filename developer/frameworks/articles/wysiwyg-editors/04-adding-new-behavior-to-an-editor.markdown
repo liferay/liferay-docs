@@ -59,9 +59,9 @@ these steps to inject JavaScript into the WYSIWYG editor to modify its behavior:
 
 4.  Directly above the class's declaration, insert the following annotation:
 
-```java
-@Component(immediate = true, service = DynamicInclude.class)
-```
+    ```java
+    @Component(immediate = true, service = DynamicInclude.class)
+    ```
 
     This declares the component's implementation class and starts the module 
     once deployed to Portal. 
@@ -75,15 +75,15 @@ these steps to inject JavaScript into the WYSIWYG editor to modify its behavior:
     Here's the code that does this for the `creole_dialog_definition.js` 
     file:
 
-```java
-Bundle bundle = _bundleContext.getBundle();
+    ```java
+    Bundle bundle = _bundleContext.getBundle();
 
-URL entryURL = bundle.getEntry(
-    "/META-INF/resources/html/editors/ckeditor/extension" +
-        "/creole_dialog_definition.js");
+    URL entryURL = bundle.getEntry(
+        "/META-INF/resources/html/editors/ckeditor/extension" +
+            "/creole_dialog_definition.js");
 
-StreamUtil.transfer(entryURL.openStream(), response.getOutputStream());
-```
+    StreamUtil.transfer(entryURL.openStream(), response.getOutputStream());
+    ```
 
     In the `include(...)` method, you can also retrieve editor configurations
     and choose the JS file to inject based on the configuration selected by the
@@ -99,14 +99,14 @@ StreamUtil.transfer(entryURL.openStream(), response.getOutputStream());
     method and then setting the `BundleContext` as a private field. Here's an 
     example: 
 
-```java
-@Activate
-protected void activate(BundleContext bundleContext) {
-    _bundleContext = bundleContext;
-}
+    ```java
+    @Activate
+    protected void activate(BundleContext bundleContext) {
+        _bundleContext = bundleContext;
+    }
 
-private BundleContext _bundleContext;
-```
+    private BundleContext _bundleContext;
+    ```
 
     This method uses the `@Activate` annotation, which specifies that it 
     should be invoked once the service component has satisfied its requirements. 
@@ -117,10 +117,10 @@ private BundleContext _bundleContext;
     injecting JS code into the CKEditor's JSP file, the code would look like 
     this:
 
-```java
-dynamicIncludeRegistry.register(
-    "com.liferay.frontend.editor.ckeditor.web#ckeditor#onEditorCreate");
-```
+    ```java
+    dynamicIncludeRegistry.register(
+        "com.liferay.frontend.editor.ckeditor.web#ckeditor#onEditorCreate");
+    ```
 
     This registers the CKEditor into the Dynamic Include registry and specifies 
     that JS code will be injected into the editor once it's created. 

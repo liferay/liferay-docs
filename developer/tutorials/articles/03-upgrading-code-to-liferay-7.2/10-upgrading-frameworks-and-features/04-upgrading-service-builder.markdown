@@ -6,8 +6,8 @@ header-id: upgrading-service-builder
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Frameworks and Features<br>Step 3 of 4</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Frameworks and Features</p><p>Step 3 of 4</p>
 </div>
 
 @product-ver@ continues to use 
@@ -69,9 +69,9 @@ tutorial. Once your dependencies are upgraded, rebuild your services!
 
 ## Step 3: Build the Services
 
-To rebuild your portlet's services, see the
-[Running Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
-article.
+<!--Uncomment once article is available
+To rebuild your portlet's services, see the Running Service Builder article.
+-->
 
 An example change where upgrading legacy Service Builder code can produce
 differing results is explained below.

@@ -81,9 +81,9 @@ Follow these steps to configure your project to use the liferay-npm-bundler:
 
 3.  Run the following command to install the liferay-npm-bundler:
 
-```bash
-npm install --save-dev liferay-npm-bundler
-```
+    ```bash
+    npm install --save-dev liferay-npm-bundler
+    ```
 
     | **Note:** Use npm from within your portlet project's root folder (where the
     | `package.json` file lives), as you normally do on a typical web project.
@@ -91,20 +91,20 @@ npm install --save-dev liferay-npm-bundler
 4.  Add the `liferay-npm-bundler` to your `package.json`'s build script to pack 
     the needed npm packages and transform them to AMD:
 
-```json
-"scripts": {
-      "build": "[... && ] liferay-npm-bundler"
-}
-```
+    ```json
+    "scripts": {
+          "build": "[... && ] liferay-npm-bundler"
+    }
+    ```
 
     The `[...&&]` refers to any previous steps you need to perform (for example, 
     transpiling your sources with Babel, compiling SOY templates, transpiling 
     Typescript, etc.). The example includes the Typescript compiler (`tsc`) in 
     its build script because Angular requires it for transpiling code to ES5:
 
-```json
-"build": "tsc && liferay-npm-bundler" 
-```
+    ```json
+    "build": "tsc && liferay-npm-bundler" 
+    ```
 
     | **Note:** You can use any languages you like as long as they can be
     | transpiled to ECMAscript 5 or higher. The only requirements are:
@@ -132,37 +132,37 @@ npm install --save-dev liferay-npm-bundler
     `npm-angular5-provider` is imported. That import, in turn, loads 
     `npm-angular5-provider`'s main file (`bootstrap.js`):
 
-```json
-{
-    ...
-    "exclude": {
-        "*": true
-    },
-    "config": {
-        "imports": {
-            "npm-angular5-provider": {
-                "@angular/animations": "^5.0.0",
-                "@angular/cdk": "^5.0.0",
-                "@angular/common": "^5.0.0",
-                "@angular/compiler": "^5.0.0",
-                ...
-            },
-            "": {
-                "npm-angular5-provider": "^1.0.0"
+    ```json
+    {
+        ...
+        "exclude": {
+            "*": true
+        },
+        "config": {
+            "imports": {
+                "npm-angular5-provider": {
+                    "@angular/animations": "^5.0.0",
+                    "@angular/cdk": "^5.0.0",
+                    "@angular/common": "^5.0.0",
+                    "@angular/compiler": "^5.0.0",
+                    ...
+                },
+                "": {
+                    "npm-angular5-provider": "^1.0.0"
+                }
             }
         }
     }
-}
-```
+    ```
 
 6.  Run `npm install` to install the required dependencies.
 
 7.  Run the build script to bundle your dependencies with the 
     liferay-npm-bundler:
 
-```bash
-npm run-script build
-```
+    ```bash
+    npm run-script build
+    ```
 
 The resulting build for the example widget is shown below:
 

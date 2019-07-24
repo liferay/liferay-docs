@@ -97,9 +97,10 @@ When styling the page, you must keep the navigation menus in mind, especially
 for absolutely positioned elements, such as a fixed navbar. If the user is 
 logged in and can view the Control Menu, the fixed navbar must have a top margin 
 equal to the Control Menu's height. 
-<!--TODO: Uncomment once these articles are ported to 7.2
+
+<!--Uncomment once these articles are ported to 7.2
 See the 
-[Product Navigation tutorials section](/docs/7-2/frameworks/-/knowledge_base/f/product-navigation) 
+Product Navigation tutorials section
 for more information on customizing these menus. 
 -->
 

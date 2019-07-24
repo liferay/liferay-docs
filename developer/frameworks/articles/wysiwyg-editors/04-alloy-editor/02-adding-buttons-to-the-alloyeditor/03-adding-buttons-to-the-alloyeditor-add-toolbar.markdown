@@ -15,22 +15,22 @@ Follow these steps to add a button to the AlloyEditor's Add Toolbar:
  
 1.  Inside the `populateConfigJSONObject()` method, retrieve the Add Toolbar:
 
-```json
-JSONObject addToolbar = toolbarsJSONObject.getJSONObject("add");
-```
+    ```json
+    JSONObject addToolbar = toolbarsJSONObject.getJSONObject("add");
+    ```
 
 2.  Retrieve the existing Add Toolbar buttons:
 
-```json    
-JSONArray addToolbarButtons = addToolbar.getJSONArray("buttons");
-```
+    ```json    
+    JSONArray addToolbarButtons = addToolbar.getJSONArray("buttons");
+    ```
 
 3.  Add the button to the existing buttons. Note that the button's name is case 
     sensitive. The example below adds the `camera` button to the Add Toolbar:
 
-```json    
-addToolbarButtons.put("camera");
-```
+    ```json    
+    addToolbarButtons.put("camera");
+    ```
 
     The camera button is just one of the buttons available by default with
     AlloyEditor, but they are not all enabled. Here's the full list of available
@@ -47,13 +47,13 @@ addToolbarButtons.put("camera");
 
 4.  Update the AlloyEditor's configuration with the changes you made:
 
-```java
-addToolbar.put("buttons", addToolbarButtons);
+    ```java
+    addToolbar.put("buttons", addToolbarButtons);
 
-toolbarsJSONObject.put("add", addToolbar);
+    toolbarsJSONObject.put("add", addToolbar);
 
-jsonObject.put("toolbars", toolbarsJSONObject);
-```
+    jsonObject.put("toolbars", toolbarsJSONObject);
+    ```
 
 5.  [Deploy your module](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project) 
     and create new content that uses the AlloyEditor---like a blog entry or web 

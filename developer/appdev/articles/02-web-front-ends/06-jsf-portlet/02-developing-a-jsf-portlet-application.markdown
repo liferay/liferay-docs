@@ -32,12 +32,22 @@ Follow these steps:
     - `com.liferay.faces.archetype.richfaces.portlet` (Liferay RichFaces
       portlet)
 
-    Choose the archetype that matches your web app's JSF component suite. The
-    above archetypes support both Gradle and Maven development by providing a
-    `build.gradle` and `pom.xml`, respectively. See the
-    [Generating a JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/generating-a-jsf-portlet)
-    article for information on how to generate a JSF portlet.
+    Choose the archetype that matches your web app's JSF component suite. For
+    example,
 
+    ```bash
+    mvn archetype:generate \
+        -DarchetypeGroupId=com.liferay.faces.archetype \
+        -DarchetypeArtifactId=com.liferay.faces.archetype.jsf.portlet \
+        -DarchetypeVersion=5.0.6 \
+        -DgroupId=com.mycompany \
+        -DartifactId=com.mycompany.my.jsf.portlet
+    ```
+
+    The above archetypes support both Gradle and Maven development by providing
+    a `build.gradle` and `pom.xml`, respectively. For more information, visit
+    [faces.liferay.dev](https://faces.liferay.dev).
+    
     Here's the resulting project structure for a JSF Standard portlet:
 
     - [liferay-jsf-portlet]/ &rarr; Arbitrary project name
@@ -138,9 +148,20 @@ Follow these steps:
 10. Replace your new JSF portlet's `webapp/WEB-INF/web.xml` with your web app's
     `web.xml` file. The `web.xml` file serves as a deployment descriptor that
     provides necessary configurations for your JSF portlet to deploy and
-    function in @product@. You can see the
-    [Defining JSF Portlet Descriptors](/docs/7-2/appdev/-/knowledge_base/a/defining-jsf-portlet-descriptors)
-    article for more information on a Liferay JSF portlet's `web.xml`.
+    function in @product@. 
+
+    Make sure the Faces Servlet is configured in your `web.xml`:
+
+    ```xml
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    ```
+
+    This is required to initialize JSF and should be defined in all JSF portlets
+    deployed to @product@.
 
 11. Modify your `webapp/WEB-INF/portlet.xml` as desired. The `portlet.xml`
     descriptor describes the portlet to the portlet container. For example, it

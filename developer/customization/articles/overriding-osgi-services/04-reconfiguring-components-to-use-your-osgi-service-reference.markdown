@@ -45,14 +45,14 @@ example module root generates the module JAR to the `build/libs` folder.
 -->
 
 -   `override-my-service-reference` 
-    <!--TODO: Uncomment once zip is ported to new site.([download](https://dev.liferay.com/documents/10184/656312/override-my-service-reference.zip))-->:
+    ([download](https://portal.liferay.dev/documents/113763090/114000186/override-my-service-reference.zip)):
     This module's portlet component `OverrideMyServiceReferencePortlet`'s field 
     `_someService` references a service of type `SomeService`. The reference's 
     policy is static and reluctant. By default, it binds to an implementation 
     called `SomeServiceImpl`. 
 
--   `overriding-service-reference` 
-    <!--TODO: Uncomment once zip is ported to new site.([download](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip))-->:
+-   `overriding-service-reference`
+    ([download](https://portal.liferay.dev/documents/113763090/114000186/overriding-service-reference.zip)):
     Provides a custom `SomeService` implementation called `CustomServiceImpl`. 
     The module's configuration file overrides 
     `OverrideMyServiceReferencePortlet`'s `SomeService` reference so that it 
@@ -77,9 +77,9 @@ service references on the fly.
 2.  In the configuration file, add a reference target entry that filters on your
     custom service. Follow this format for the entry:
 
-```properties
-[reference].target=[filter]
-```
+    ```properties
+    [reference].target=[filter]
+    ```
 
     Replace `[reference]` with the name of the reference you're overriding. 
     Replace `[filter]` with service properties that filter on your custom 
@@ -87,27 +87,28 @@ service references on the fly.
 
     This example filters on the `component.name` service property:
 
-```properties
-_someService.target="(component.name\=overriding.service.reference.service.CustomServiceImpl)" 
-```
+    ```properties
+    _someService.target="(component.name\=overriding.service.reference.service.CustomServiceImpl)" 
+    ```
+    
     This example filters on the `service.vendor` service property:
 
-```properties
-_someService.target="(service.vendor\=Acme, Inc.)"
-```
+    ```properties
+    _someService.target="(service.vendor\=Acme, Inc.)"
+    ```
 
 3.  Optionally, you can add a `cardinality.minimum` entry to specify the number 
     of services the reference can use. Here's the format:
 
-```properties
-[reference].cardinality.minimum=[int]
-```
+    ```properties
+    [reference].cardinality.minimum=[int]
+    ```
 
     Here's an example cardinality minimum:
 
-```properties
-_someService.cardinality.minimum=1
-```
+    ```properties
+    _someService.cardinality.minimum=1
+    ```
 
 4.  Deploy the configuration by copying the configuration file into the folder
     `[Liferay_Home]/osgi/configs`. 
@@ -160,6 +161,5 @@ which in turn bound the custom service to the referencing component!
 
 ## Related Topics
 
-- [OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services)
-- [Finding Extension Points](/docs/7-2/customization/-/knowledge_base/c/finding-extension-points)
+- [OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)
 - [Using Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)

@@ -8,12 +8,15 @@ header-id: generating-staged-models-using-service-builder
 
 Instead of having to create staged models for your app manually, you can
 leverage
-[Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/service-builder) to
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder) to
 generate the necessary staged model logic for you. If your app doesn't 
-use Liferay's Service Builder, you must
-[configure it in your project](/docs/7-2/frameworks/-/knowledge_base/f/defining-an-object-relational-map-with-service-builder).
-This tutorial assumes you have a Service Builder project with `*api` and
-`*service` modules. If you want to follow along with this tutorial, download the
+use Liferay's Service Builder, you must configure it in your project. This 
+<!-- 
+Add link back for 'configure it in your project' once 
+defining-an-object-relational-map-with-service-builder article is available 
+-->
+tutorial assumes you have a Service Builder project with `*api` and `*service` 
+modules. If you want to follow along with this tutorial, download the 
 [staged-model-example](/documents/10184/656312/staged-model-example.zip/5b2a8b0f-fa04-ca4a-2345-015871c0a14a)
 Service Builder project (Gradle-based). 
 

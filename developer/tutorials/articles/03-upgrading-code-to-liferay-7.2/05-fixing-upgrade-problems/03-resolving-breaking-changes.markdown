@@ -6,8 +6,8 @@ header-id: resolving-breaking-changes
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Fixing Upgrade Problems<br>Step 2 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Fixing Upgrade Problems</p><p>Step 2 of 2</p>
 </div>
 
 Liferay goes to great lengths to maintain backwards compatibility. Sometimes,
@@ -32,7 +32,7 @@ Liferay provides a list of breaking changes for every major release to ensure
 you can easily adapt your code during the upgrade process.
 
 - [@product@ 7.0 Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes)
-- [@product@ 7.1 Breaking Changes](/docs/7-1/reference/7-1/-/knowledge_base/r/breaking-changes)
+- [@product@ 7.1 Breaking Changes](/docs/7-1/reference/-/knowledge_base/r/breaking-changes)
 - [@product-ver@ Breaking Changes](/docs/7-2/reference/-/knowledge_base/r/breaking-changes)
 
 The easiest way to resolve breaking changes is by using the

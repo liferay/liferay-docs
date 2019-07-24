@@ -6,8 +6,8 @@ header-id: upgrading-model-listener-hooks
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Customization Plugins<br>Step 7 of 11</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Customization Plugins</p><p>Step 7 of 11</p>
 </div>
 
 Developers have been creating model listeners for several @product@
