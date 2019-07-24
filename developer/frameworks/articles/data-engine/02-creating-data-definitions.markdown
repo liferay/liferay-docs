@@ -1,4 +1,10 @@
+---
+header-id: creating-data-definitions-with-rest-calls
+---
+
 # Creating Data Definitions with REST Calls
+
+[TOC levels=1-4]
 
 These example calls use cURL, a cross-platform tool for making HTTP calls. Feel
 free to use any REST client you're familiar with.

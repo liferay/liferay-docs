@@ -1,4 +1,10 @@
+---
+header-id: data-engine
+---
+
 # Data Engine
+
+[TOC levels=1-4]
 
 Past versions of @product@ included a robust framework for creating form and
 list-based applications, either programmatically or from the Dynamic Data Lists
@@ -16,7 +22,7 @@ applications. For now, developers can use the API to
 
 To start discovering the Data Engine API and the other headless REST APIs of
 @product@, read
-[here](/docs/7-2/deploy/-/knowledge_base/d/get-started-discover-the-api). 
+[here](/docs/7-2/frameworks/-/knowledge_base/f/get-started-discover-the-api). 
 
 The Data Engine framework has three fundamental entities. You'll be familiar
 with the roles of each Data Engine entity if you used the Dynamic Data List
@@ -57,6 +63,9 @@ Collection.
 
 There's another important piece to the Data Engine framework: data display.
 
-Once you have a Data Definition and a Data Record Collection, it's common to
-need control over display. Use Data Layouts to add rows and columns for visual
-structuring of the data.
+Data Layouts are used to display the form fields (defined in the data
+definition) in rows and columns.
+
+The articles in this section will show example calls to the Data Engine REST
+API for each entity. For a complete reference guide to the API, visit the
+[SwaggerHub profile](https://app.swaggerhub.com/apis/liferayinc/data-engine/1.0).

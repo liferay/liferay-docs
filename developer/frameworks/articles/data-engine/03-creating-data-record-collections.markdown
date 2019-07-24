@@ -1,4 +1,10 @@
+---
+header-id: creating-data-record-collections-with-http
+---
+
 # Creating Data Record Collections with HTTP
+
+[TOC levels=1-4]
 
 Data Record Collections are used to collect Data Records in the Data Engine. A
 Data Definition defines the fields present in the Data Record, while the Data
