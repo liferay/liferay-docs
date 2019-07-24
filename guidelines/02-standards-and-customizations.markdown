@@ -174,22 +174,179 @@ to a code alias. For example, a Java code snippet would look like this:
 
 The available syntax highlighting aliases are listed below:
 
-- Markup: `markup`
-- HTML: `html`
-- XML: `xml`
-- SVG: `svg`
-- MathML: `mathml`
-- CSS: `css`
-- C-like: `clike`
-- JavaScript: `javascript`, `js`
-- Bash: `bash`
-- Shell: `shell`
+- ABAP: `abap`
+- Augmented Backus–Naur form: `abnf`
+- ActionScript: `actionscript`
+- Ada: `ada`
+- Apache Configuration: `apacheconf`
+- APL: `apl`
+- AppleScript: `applescript`
+- Arduino: `arduino`
+- ARFF: `arff`
+- AsciiDoc: `asciidoc`, `adoc`
+- 6502 Assembly: `asm6502`
+- ASP.NET (C#): `aspnet`
+- AutoHotkey: `autohotkey`
+- AutoIt: `autoit`
+- Bash: `bash`, `shell`
+- BASIC: `basic`
+- Batch: `batch`
+- Bison: `bison`
+- Backus–Naur form: `bnf`, `rbnf`
+- Brainfuck: `brainfuck`
+- Bro: `bro`
+- C: `c`
+- C#: `csharp`, `cs`, `dotnet`
+- C++: `cpp`
+- CIL: `cil`
+- CoffeeScript: `coffeescript`, `coffee`
+- CMake: `cmake`
+- Clojure: `clojure`
+- Crystal: `crystal`
+- Content-Security-Policy: `csp`
+- CSS Extras: `css-extras`
+- D: `d`
+- Dart: `dart`
+- Diff: `diff`
+- Django/Jinja2: `django`, `jinja2`
 - Docker: `docker`, `dockerfile`
+- Extended Backus–Naur form: `ebnf`
+- Eiffel: `eiffel`
+- EJS: `ejs`
+- Elixir: `elixir`
+- Elm: `elm`
+- ERB: `erb`
+- Erlang: `erlang`
+- F#: `fsharp`
+- Flow: `flow`
+- Fortran: `fortran`
+- G-code: `gcode`
+- GEDCOM: `gedcom`
+- Gherkin: `gherkin`
+- Git: `git`
+- GLSL: `glsl`
+- GameMaker Language: `gml`, `gamemakerlanguage`
+- Go: `go`
+- GraphQL: `graphql`
 - Groovy: `groovy`
+- Haml: `haml`
+- Handlebars: `handlebars`
+- Haskell: `haskell`, `hs`
+- Haxe: `haxe`
+- HCL: `hcl`
+- HTTP: `http`
+- HTTP Public-Key-Pins: `hpkp`
+- HTTP Strict-Transport-Security: `hsts`
+- IchigoJam: `ichigojam`
+- Icon: `icon`
+- Inform 7: `inform7`
+- Ini: `ini`
+- Io: `io`
+- J: `j`
 - Java: `java`
+- JavaDoc: `javadoc`
+- JavaDoc-like: `javadoclike`
+- Java stack trace: `javastacktrace`
+- Jolie: `jolie`
+- JQ: `jq`
+- JSDoc: `jsdoc`
+- JS Extras: `js-extras`
+- JSON: `json`
+- JSONP: `jsonp`
+- JSON5: `json5`
+- Julia: `julia`
+- Keyman: `keyman`
+- Kotlin: `kotlin`
+- LaTeX: `latex`, `tex`, `context`
+- Less: `less`
+- Liquid: `liquid`
+- Lisp: `lisp`, `emacs`, `elisp`, `emacs-lisp`
+- LiveScript: `livescript`
+- LOLCODE: `lolcode`
+- Lua: `lua`
+- Makefile: `makefile`
+- Markdown: `markdown`, `md`
+- Markup templating: `markup-templating`
+- MATLAB: `matlab`
+- MEL: `mel`
+- Mizar: `mizar`
+- Monkey: `monkey`
+- N1QL: `n1ql`
+- N4JS: `n4js`, `n4jsd`
+- Nand To Tetris HDL: `nand2tetris-hdl`
+- NASM: `nasm`
+- nginx: `nginx`
+- Nim: `nim`
+- Nix: `nix`
+- NSIS: `nsis`
+- Objective-C: `objectivec`
+- OCaml: `ocaml`
+- OpenCL: `opencl`
+- Oz: `oz`
+- PARI/GP: `parigp`
+- Parser: `parser`
+- Pascal: `pascal`, `objectpascal`
+- Perl: `perl`
+- PHP: `php`
+- PHPDoc: `phpdoc`
+- PHP Extras: `php-extras`
+- PL/SQL: `plsql`
+- PowerShell: `powershell`
+- Processing: `processing`
+- Prolog: `prolog`
 - .properties: `properties`
-- Sass: `sass`
+- Protocol Buffers: `protobuf`
+- Pug: `pug`
+- Puppet: `puppet`
+- Pure: `pure`
+- Python: `python`, `py`
+- Q (kdb+ database): `q`
+- Qore: `qore`
+- R: `r`
+- React JSX: `jsx`
+- React TSX: `tsx`
+- Ren'py: `renpy`
+- Reason: `reason`
+- Regex: `regex`
+- reST (reStructuredText): `rest`
+- Rip: `rip`
+- Roboconf: `roboconf`
+- Ruby: `ruby`, `rb`
+- Rust: `rust`
+- SAS: `sas`
+- Sass (Sass): `sass`
+- Sass (Scss): `scss`
+- Scala: `scala`
+- Scheme: `scheme`
+- Shell session: `shell-session`
+- Smalltalk: `smalltalk`
+- Smarty: `smarty`
+- SQL: `sql`
+- Soy (Closure Template): `soy`
+- Stylus: `stylus`
+- Swift: `swift`
+- TAP: `tap`
+- Tcl: `tcl`
+- Textile: `textile`
+- TOML: `toml`
+- Template Toolkit 2: `tt2`
+- Twig: `twig`
 - TypeScript: `typescript`, `ts`
+- T4 Text Templates (C#): `t4-cs`, `t4`
+- T4 Text Templates (VB): `t4-vb`
+- T4 templating: `t4-templating`
+- Vala: `vala`
+- VB.Net: `vbnet`
+- Velocity: `velocity`
+- Verilog: `verilog`
+- VHDL: `vhdl`
+- vim: `vim`
+- Visual Basic: `visual-basic`, `vb`
+- WebAssembly: `wasm`
+- Wiki markup: `wiki`
+- Xeora: `xeora`, `xeoracube`
+- Xojo (REALbasic): `xojo`
+- XQuery: `xquery`
 - YAML: `yaml`, `yml`
 
 ## Markdown Image Numbers Tool

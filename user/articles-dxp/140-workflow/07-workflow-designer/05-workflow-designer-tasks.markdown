@@ -158,7 +158,7 @@ the `roles` variable is where you specify any Roles the task is assigned to. For
 example, when `roles.add(adminRole);` is called, the Administrator role is added
 to the assignment.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Kaleo Forms](/docs/7-2/user/-/knowledge_base/u/kaleo-forms)
 

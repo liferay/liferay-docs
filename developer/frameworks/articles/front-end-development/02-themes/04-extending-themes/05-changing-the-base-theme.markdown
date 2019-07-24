@@ -27,11 +27,14 @@ such as those created with the
     [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme) 
     are based off of the 
     [styled theme](https://www.npmjs.com/package/liferay-theme-styled). You can 
-    extend the styled or unstyled base theme, a globally installed theme, or a 
-    theme published on the npm registry. Enter the number for the option you 
-    wish to select. 
+    extend the styled or unstyled base theme, a globally installed theme, a 
+    theme published on the npm registry, or you can specify a package URL. 
+    Enter the number for the option you wish to select. 
 
-    ![Figure 2: You can extend the styled or unstyled base theme, a globally installed theme, or a theme published to the npm registry.](../../../../images/theme-ext-changing-base-themes-gulp-extend-base-theme-choice.png)
+    | **Note:** You can retrieve the URL for a package by running 
+    | `npm show package-name dist.tarball`. 
+
+    ![Figure 2: You can extend the styled or unstyled base theme, a globally installed theme, a theme published to the npm registry, or you can specify a package URL.](../../../../images/theme-ext-changing-base-themes-gulp-extend-base-theme-choice.png)
 
     | **Note:** The Classic theme is an implementation of an existing base theme 
     | and is therefore not meant to be extended. Extending Liferay's Classic 
@@ -49,9 +52,9 @@ Your theme's `package.json` contains the updated base theme configuration:
 ```
 
 Great! You've updated your base theme. When you 
-[build your theme's files](/docs/7-1/frameworks/-/knowledge_base/frameworks/building-your-themes-files) 
+[build your theme's files](/docs/7-2/frameworks/-/knowledge_base/f/building-your-themes-files) 
 or 
-[deploy it](/docs/7-1/frameworks/-/knowledge_base/frameworks/deploying-your-theme), 
+[deploy it](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes), 
 your theme will inherit the updated base theme's files. 
 
 ## Related Topics

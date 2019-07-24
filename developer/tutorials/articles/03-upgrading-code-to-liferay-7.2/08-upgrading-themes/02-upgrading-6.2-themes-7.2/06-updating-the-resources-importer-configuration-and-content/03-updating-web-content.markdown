@@ -6,8 +6,8 @@ header-id: updating-6-2-web-content
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 Resources Importer<br>Step 2 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 Resources Importer</p><p>Step 2 of 3</p>
 </div>
 
 All web content articles must be written in XML and have a structure for article 

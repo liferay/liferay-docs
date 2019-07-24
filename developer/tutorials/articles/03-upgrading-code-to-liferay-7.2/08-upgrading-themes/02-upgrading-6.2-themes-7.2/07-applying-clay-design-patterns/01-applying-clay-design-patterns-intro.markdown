@@ -6,10 +6,6 @@ header-id: applying-clay-design-patterns-to-6-2-themes
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Applying Clay to 6.2 Themes<br>Step 1 of 1</p>
-</div>
-
 @product-ver@ uses [Clay](https://clayui.com/), a web implementation of 
 Liferay's [Lexicon Experience Language](https://lexicondesign.io/). The Lexicon 
 Experience Language provides styling guidelines and best practices for 

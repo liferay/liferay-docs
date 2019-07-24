@@ -9,7 +9,7 @@ header-id: content-publication-management
 Managing content publication is primarily controlled by two frameworks:
 
 <!-- - Change Lists -->
-- [Export/Import](#export-import)
+- [Export/Import](#exportimport)
 - [Staging](#staging)
 
 These features give you the power to plan page publication and manage content.

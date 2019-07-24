@@ -6,8 +6,8 @@ header-id: upgrading-a-liferay-jsf-portlet
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Portlets<br>Step 3 of 6</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Portlets</p><p>Step 3 of 6</p>
 </div>
 
 Liferay JSF portlets are easy to upgrade and require few changes. They interface

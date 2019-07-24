@@ -6,8 +6,8 @@ header-id: resolving-breaking-changes
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Fixing Upgrade Problems<br>Step 2 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Fixing Upgrade Problems</p><p>Step 2 of 2</p>
 </div>
 
 Liferay goes to great lengths to maintain backwards compatibility. Sometimes,

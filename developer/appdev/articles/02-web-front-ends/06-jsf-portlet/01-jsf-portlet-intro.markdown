@@ -31,7 +31,7 @@ following projects:
   portlets.
 
 For a comprehensive demo for the JSF component suite, visit the
-[Liferay Faces Showcase](http://www.liferayfaces.org).
+[Liferay Faces Developer site](https://faces.liferay.dev).
 
 If you're new to JSF, you may want to know its strengths, its weaknesses,
 and how it stacks up to developing portlets with CSS/JavaScript. 

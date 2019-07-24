@@ -6,8 +6,8 @@ header-id: updating-6-2-css-rules-and-imports
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 CSS Code<br>Step 1 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 CSS Code<p><p>Step 1 of 2</p>
 </div>
 
 @product-ver@ uses Bootstrap 4.3's CSS rule syntax. Font Awesome icons have been 

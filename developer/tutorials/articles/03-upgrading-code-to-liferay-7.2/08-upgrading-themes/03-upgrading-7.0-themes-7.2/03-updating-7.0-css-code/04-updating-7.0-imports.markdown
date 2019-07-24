@@ -6,8 +6,8 @@ header-id: updating-7-0-imports
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 7.0 CSS Code<br>Step 3 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 7.0 CSS Code</p><p>Step 3 of 3</p>
 </div>
 
 Font Awesome imports and core imports have changed. Follow these steps to update 
