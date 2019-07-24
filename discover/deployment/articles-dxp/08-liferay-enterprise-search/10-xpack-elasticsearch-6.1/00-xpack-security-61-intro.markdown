@@ -239,7 +239,7 @@ Here's the complete list of configuration options for the X-Pack Connector:
 - `transportSSLVerificationMode`
 - `transportSSLEnabled`
 - `sslKeystorePath`
-- `sslKeyStorePassword`
+- `sslKeystorePassword`
 - `sslTruststorePath`
 - `sslTruststorePassword`
 
