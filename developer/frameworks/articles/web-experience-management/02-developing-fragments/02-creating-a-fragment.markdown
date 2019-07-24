@@ -135,9 +135,9 @@ configurable,
 
 3.  Select the *Configuration* tab at the top of the page.
 
-4.  In the editor, add your custom JSON code. This code is added to your
-    fragment's `configuration.json` file. For example, the code below provides
-    the `select` option to choose *dark* or *light* for a Fragment's heading:
+4.  In the editor, add your custom JSON code. For example, the code below
+    provides the `select` option to choose *dark* or *light* for a Fragment's
+    heading:
 
     ```json
     {
@@ -165,7 +165,20 @@ configurable,
     }
     ```
 
-5.  Click *Publish* to save your work and make it available to add to a content 
+    The configuration values selected by the user are made available to the
+    Fragment developer through the FreeMarker context. A configuration value can
+    be referenced using the notation `${configuration.<fieldName>}`. For the
+    example snippet above, `${configuration.headingAppliedStyle}` would return
+    `dark` or `light` depending on the configuration value selected by the user.
+
+    Note, configuration values inserted into the FreeMarker context honor the
+    defined `datatype` value specified in the JSON file.
+
+
+<!-- Add info on language keys if available for FP1. Also change validValues
+specification above if it's included. -->
+
+6.  Click *Publish* to save your work and make it available to add to a content 
     page.
 
 ![Figure 3: You can click your Fragment to view its configuration options.](../../../images/fragment-config.png)
