@@ -9,13 +9,15 @@ Defining configuration options for a Fragment gives it more flexibility,
 reducing the number of Fragments you must maintain. To make a Fragment
 configurable,
 
-1.  Go back to the *Site Builder* &rarr; *Page Fragments* page.
+1.  Navigate to the *Site Builder* &rarr; *Page Fragments* page.
 
 2.  Click the *Actions* button (![Actions](../../../images/icon-actions.png))
     &rarr; *Edit* for the Fragment (Section or Component) you want to make
     configurable.
 
 3.  Select the *Configuration* tab at the top of the page.
+
+    ![Figure 1: Switch from the Code tab to the Configuration tab to create your configuration logic.](../../../images/fragment-config-tab.png)
 
 4.  In the editor, add your custom JSON code. This code is added to your
     fragment's `index.json` file. For example, the code below provides the
@@ -64,9 +66,9 @@ configurable,
     ```html
     [#if configuration.headingAppliedStyle == 'dark']
     ...
-	  [#else]
-		...
-	  [/#if]
+    [#else]
+    ...
+    [/#if]
     ```
 
     Note, configuration values inserted into the FreeMarker context honor the
@@ -76,7 +78,7 @@ configurable,
 6.  Click *Publish* to save your work and make it available to add to a content 
     page.
 
-    ![Figure 3: You can click your Fragment to view its configuration options.](../../../images/fragment-config.png)
+    ![Figure 2: You can click your Fragment to view its configuration options.](../../../images/fragment-config.png)
 
 7.  Your configuration JSON file referred to several language keys. You must
     define these in your Fragment's collection folder so they render properly.
@@ -93,6 +95,6 @@ configurable,
     Now reimport your Fragment using the
     [Fragments Toolkit](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments-desktop-tools#importing-and-exporting-fragments).
 
-    ![Figure 4: Once your language keys are created, they're displayed in your Fragment.](../../../images/fragment-lang-keys.png)
+    ![Figure 3: Once your language keys are created, they're displayed in your Fragment.](../../../images/fragment-lang-keys.png)
 
 Awesome! You now have a configurable Fragment!
