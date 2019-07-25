@@ -35,11 +35,9 @@ public boolean isSiteScoped() {
 Implement the `search` and `searchCount` methods to enable search in the UAD
 interface:
 
-<!--Is this realistic dummy code for third party devs? -->
-<!-- Straight out of DummyUADDisplay.java -->
-
 1.  The `search` method must return a `List` of entities associated with the
-    `userId`:
+    `userId`. It could be as simple as searching the database for records
+    associated with the `userId`:
 
     ```java
     @Override
@@ -53,8 +51,74 @@ interface:
     }
     ```
 
+    But if you've gone through the trouble of idnexing your model entity's
+    fields in a search engine, it's mroe likely you'll want to do the initial
+    search, and filtering by the `userId`, at the search engine level, then
+    retrieve the matching entities from the database.
+
+    ```java
+    @Override
+    public List<T> search(
+        long userId, long[] groupIds, String keywords, String orderByField,
+        String orderByType, int start, int end) {
+
+        SearchContext searchContext = new SearchContext();
+
+        searchContext.setStart(start);
+        searchContext.setEnd(end);
+        searchContext.setGroupIds(groupIds);
+        searchContext.setKeywords(keywords);
+
+        BooleanQuery booleanQuery = BooleanQueryFactoryUtil.create(
+            searchContext);
+
+        booleanQuery.addExactTerm("userId", userId);
+
+        BooleanClause booleanClause = BooleanClauseFactoryUtil.create(
+            booleanQuery, BooleanClauseOccur.MUST.getName());
+
+        searchContext.setBooleanClauses(new BooleanClause[] {booleanClause});
+
+        Indexer indexer = IndexerRegistryUtil.getIndexer(FooEntry.class);
+
+        Hits hits = indexer.search(searchContext);
+
+        List<FooEntry> fooEntries = new ArrayList<FooEntry>();
+
+        for (int i = 0; i < hits.getDocs().length; i++) {
+                Document doc = hits.doc(i);
+
+                long entryId = GetterUtil
+                .getLong(doc.get(Field.ENTRY_CLASS_PK));
+
+                Entry entry = null;
+
+                try {
+                        entry = _fooEntryLocalService.getFooEntry(fooEntryId);
+                } catch (PortalException pe) {
+                        _log.error(pe.getLocalizedMessage());
+                } catch (SystemException se) {
+                        _log.error(se.getLocalizedMessage());
+                }
+
+                fooEntries.add(fooEntry);
+        }
+
+        return fooEntries;
+    }
+    ```
+
+    It largely boils down to instantiating and populating the search context,
+    which gets passed to the `indexer.search` call to retrieve the `Hits`.
+    Subsequently, populate the `List` by iterating through the `Hits`, using
+    each one's `ENTRY_CLASS_PK` field as the primary key of the entity in the
+    call to the entity's getter. The `BooleanClause` construction and inclusion
+    in the search context ensures that all the results returned correspond to
+    the `userId` that's passed to this method.
+
 2.  The `searchCount` method  returns a long of the result `List`'s `size`
-    method.
+    method. You could just invoke the class's `search` method, then call the
+    `List` object's `size` method.
 
     ```java
     @Override
@@ -66,4 +130,10 @@ interface:
         return results.size();
     }
     ```
+
+    But, again, if the model entity is being indexed in a search engine, you can
+    use it to get a count without ever hitting the database. Using the `Hits`
+    object returned from a search (see the code from step 1, but don't include
+    `start` and `end` parameters in the `SearchContext`), call
+    `hits.getLegnth()` and you get the count, as an `int`.
 
