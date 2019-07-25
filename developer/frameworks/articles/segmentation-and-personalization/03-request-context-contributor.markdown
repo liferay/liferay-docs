@@ -32,7 +32,7 @@ the context with a custom attribute. You can view the
 )
 ```
 
-4.  Add your class's constructor:
+4.  Add the class declaration:
 
 ```java
 public class SampleRequestContextContributor
@@ -83,7 +83,7 @@ field by its key. Create one now.
 )
 ```
 
-4.  Create the class constructor:
+4.  Create the class declaration:
 
 ```java
 public class SampleSegmentsFieldCustomizer implements SegmentsFieldCustomizer {
