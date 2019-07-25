@@ -44,7 +44,7 @@ choose Elasticsearch.
 
 ### Developer Feature Limitations of Liferay's Solr Integration
 
-The following APIs are not supported by Liferay's Solr connector and may be added n in the future.
+Implementation for the following APIs may be added in the future though currently they are not supported by Liferay's Solr connector.
 
 - From Portal Core (Module: `portal-kernel`, Artifact:
     `com.liferay.portal.kernel`):
