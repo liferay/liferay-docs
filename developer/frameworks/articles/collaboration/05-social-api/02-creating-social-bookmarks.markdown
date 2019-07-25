@@ -112,7 +112,7 @@ these steps to create a JSP for your own social bookmark:
 
 1.  Add the `clay` and `liferay-theme` taglib declarations: 
 
-    ```jsp
+    ```markup
     <%@ taglib uri="http://liferay.com/tld/clay" prefix="clay" %>
     <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
     ```
@@ -121,7 +121,7 @@ these steps to create a JSP for your own social bookmark:
     [`GetterUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/GetterUtil.html) 
     and `SocialBookmark`: 
 
-    ```jsp
+    ```markup
     <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
     <%@ page import="com.liferay.social.bookmarks.SocialBookmark" %>
     ```
@@ -144,7 +144,7 @@ these steps to create a JSP for your own social bookmark:
     [documentation](https://clayui.com/docs/components/link.html) 
     for a full description of its attributes. 
 
-    ```jsp
+    ```markup
     <clay:link
             buttonStyle="secondary"
             elementClasses="btn-outline-borderless btn-sm lfr-portal-tooltip"

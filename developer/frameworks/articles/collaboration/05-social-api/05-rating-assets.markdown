@@ -27,7 +27,7 @@ a guestbook.
 
 3.  In the JSP, include the `liferay-ui` taglib declaration:
 
-    ```jsp
+    ```markup
     <%@ taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui" %>
     ```
 
@@ -47,7 +47,7 @@ a guestbook.
 5.  Use the `liferay-ui:ratings` tag to add the ratings component for the 
     entity. This example uses the stars rating type: 
 
-    ```jsp
+    ```markup
     <liferay-ui:ratings className="<%=Entry.class.getName()%>"
         classPK="<%=entry.getEntryId()%>" type="stars" />
     ```

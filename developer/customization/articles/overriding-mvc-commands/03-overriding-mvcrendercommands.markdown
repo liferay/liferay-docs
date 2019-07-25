@@ -30,7 +30,7 @@ This MVC render command can be invoked from any of the portlets specified by
 the `javax.portlet.name` parameter, by calling a render URL that names the 
 MVC command:
 
-```jsp
+```markup
 <portlet:renderURL var="addEntryURL">
 	<portlet:param name="mvcRenderCommandName" value="/blogs/edit_entry" />
 	<portlet:param name="redirect" value="<%= viewEntriesURL %>" />

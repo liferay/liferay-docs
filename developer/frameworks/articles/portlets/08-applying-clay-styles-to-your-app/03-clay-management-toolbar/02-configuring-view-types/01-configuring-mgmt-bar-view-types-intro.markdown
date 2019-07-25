@@ -24,7 +24,7 @@ Follow these steps to define the view types for your management toolbar:
 1.  Import the `ViewTypeItemList` utility class to create the action items 
     model:
 
-    ```jsp
+    ```markup
     <%@ page import="com.liferay.frontend.taglib.clay.servlet.taglib.util.JSPViewTypeItemList" %>
     ```
 
@@ -54,7 +54,7 @@ Follow these steps to define the view types for your management toolbar:
     view types, only one view type is required. The default or active view type 
     is set by adding `viewTypeItem.setActive(true)` to the view type:
 
-    ```jsp
+    ```markup
     <clay:management-toolbar
         disabled=<%= assetTagsDisplayContext.isDisabledTagsManagementBar() %>
         namespace="<%= renderResponse.getNamespace() %>"
@@ -89,7 +89,7 @@ Follow these steps to define the view types for your management toolbar:
 5.  Create a conditional block to check for the view types. If you only have 
     one view type, you can skip this step.
 
-    ```jsp
+    ```markup
     <c:choose>
         <%-- view type configuration goes here --%>
     </c:choose>

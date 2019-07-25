@@ -230,7 +230,7 @@ following these steps:
 
 3.  Finally, update your JSP to use the appropriate getter.
 
-    ```jsp
+    ```markup
     <liferay-ui:search-container-results
         results="<%= FooEntityLocalServiceUtil.getFooEntities(
             scopeGroupId, fooEntityId(), Workflowconstants.STATUS_APPROVED,
@@ -244,7 +244,7 @@ following these steps:
 When you want to display the workflow status, use the `<aui:worklfow-status>`
 tag.
 
-```jsp
+```markup
 <aui:workflow-status markupView="lexicon" showIcon="<%= false %>" showLabel="<%= false %>" status="<%= fooEntity.getStatus() %>" />
 ```
 

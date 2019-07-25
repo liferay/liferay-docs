@@ -122,7 +122,7 @@ view layer.
 2.  Read configuration values from a JSP. First add these imports to the top of
     your `view.jsp` file:
 
-    ```jsp
+    ```markup
     <%@ page import="com.liferay.docs.exampleconfig.ExampleConfiguration" %>
     <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
     ```
@@ -131,7 +131,7 @@ view layer.
     the desired configuration value from it. Here's a `view.jsp` file that does
     this:
 
-    ```jsp
+    ```markup
     <%@ include file="/init.jsp" %>
 
     <p>

@@ -11,7 +11,7 @@ It's easy to include WYSIWYG editors in your portlet, thanks to the
 
 1.  Add the liferay-editor taglib declaration to your portlet's JSP:
 
-    ```jsp
+    ```markup
     <%@ taglib uri="http://liferay.com/tld/editor" prefix="liferay-editor" %>
     ```
 
@@ -57,7 +57,7 @@ It's easy to include WYSIWYG editors in your portlet, thanks to the
     example configuration that uses the `onInitMethod` attribute to pass a 
     JavaScript function called `OnDescriptionEditorInit`:
 
-    ```jsp
+    ```markup
     <%@ taglib uri="http://liferay.com/tld/editor" prefix="liferay-editor" %>
 
     <div class="alloy-editor-container">

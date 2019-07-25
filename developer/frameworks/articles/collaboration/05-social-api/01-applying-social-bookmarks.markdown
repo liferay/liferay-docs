@@ -33,7 +33,7 @@ Follow these steps to add social bookmarks to your app:
 4.  In your view's JSP, include the `liferay-social-bookmarks` taglib 
     declaration: 
 
-    ```jsp
+    ```markup
     <%@ taglib uri="http://liferay.com/tld/social-bookmarks" prefix="liferay-social-bookmarks" %>
     ```
 
@@ -56,7 +56,7 @@ Follow these steps to add social bookmarks to your app:
     for information on this tag's attributes. Here's an example of using this 
     tag to add social bookmarks for a blog entry in the Blogs app: 
 
-    ```jsp
+    ```markup
     <liferay-social-bookmarks:bookmarks
             className="<%= BlogsEntry.class.getName() %>"
             classPK="<%= entry.getEntryId() %>"

@@ -23,7 +23,7 @@ Follow these steps to enable commenting on your app's content:
 3.  Include the `liferay-ui`, `liferay-comment`, and `portlet` taglib 
     declarations in your JSP: 
 
-    ```jsp
+    ```markup
     <%@ taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui" %>
     <%@ taglib prefix="liferay-comment" uri="http://liferay.com/tld/comment" %>
     <%@ taglib prefix="portlet" uri="http://java.sun.com/portlet_2_0" %>
@@ -46,7 +46,7 @@ Follow these steps to enable commenting on your app's content:
     `liferay-ui:panel-container` and `liferay-ui:panel` tags. This lets users 
     hide the discussion area: 
 
-    ```jsp
+    ```markup
     <liferay-ui:panel-container extended="<%=false%>"
       id="guestbookCollaborationPanelContainer" persistState="<%=true%>">
       <liferay-ui:panel collapsible="<%=true%>" extended="<%=true%>"
@@ -56,7 +56,7 @@ Follow these steps to enable commenting on your app's content:
 
 6.  Create a URL for the discussion using the `portlet:actionURL` tag: 
 
-    ```jsp
+    ```markup
     <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
     ```
 
@@ -67,7 +67,7 @@ Follow these steps to enable commenting on your app's content:
     `request` object. In this example, the current URL was earlier set to the 
     `currentURL` variable: 
 
-    ```jsp
+    ```markup
         <liferay-comment:discussion className="<%=Entry.class.getName()%>"
           classPK="<%=entry.getEntryId()%>"
           formAction="<%=discussionURL%>" formName="fm2"

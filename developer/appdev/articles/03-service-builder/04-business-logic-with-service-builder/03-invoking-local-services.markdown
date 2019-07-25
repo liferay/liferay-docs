@@ -79,7 +79,7 @@ service object from the `RenderRequest` attribute. For example, the
 `JSPPortlet`'s `init.jsp` file retrieves the `FooLocalService` object from the
 `"fooLocalService"` attribute. 
 
-```jsp
+```markup
 ...
 <%@
 page import="com.liferay.blade.samples.servicebuilder.service.FooLocalService" %>
@@ -111,7 +111,7 @@ The `basic-web` sample module's `view.jsp` and `edit_foo.jsp` files include the
 `view.jsp` file uses the component's `getFoosCount` method and `getFoos` method
 in a Liferay Search Container that lists `Foo` instances. 
 
-```jsp
+```markup
 <liferay-ui:search-container
     total="<%= fooLocalService.getFoosCount() %>"
 >
@@ -125,7 +125,7 @@ in a Liferay Search Container that lists `Foo` instances.
 The `edit_foo.jsp` file calls `getFoo(long id)` to retrieve a `Foo` entity based
 on the entity instance's ID.
 
-```jsp
+```markup
 long fooId = ParamUtil.getLong(request, "fooId");
 Foo foo = null;
 if (fooId > 0) {

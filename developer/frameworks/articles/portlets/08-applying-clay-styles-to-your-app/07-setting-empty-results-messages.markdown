@@ -19,14 +19,14 @@ Follow these steps:
 1.  Add the `liferay-frontend` taglib declaration into your portlet's 
     `init.jsp`:
 
-    ```jsp
+    ```markup
     <%@ taglib uri="http://liferay.com/tld/frontend" prefix="liferay-frontend" %>
     ```
 
 2.  Add an [`empty-result-message` tag](@app-ref@/frontend-taglib/latest/taglibdocs/liferay-frontend/empty-result-message.html) 
     to your portlet's view:
 
-    ```jsp
+    ```markup
     <liferay-frontend:empty-result-message
     />
     ```
@@ -46,7 +46,7 @@ Follow these steps:
 
     An example configuration is shown below:
 
-    ```jsp
+    ```markup
     <liferay-frontend:empty-result-message
         actionDropdownItems="<%= (availableSegmentsEntries.size() > 0) ? 
         editAssetListDisplayContext.getAssetListEntryVariationActionDropdownItems() : null %>"

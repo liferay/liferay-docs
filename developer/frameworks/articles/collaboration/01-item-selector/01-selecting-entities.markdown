@@ -106,7 +106,7 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 2.  Define the UI element you'll use to open the Item Selector dialog. For 
     example, this creates a *Choose* button with the ID `chooseImage`:
 
-    ```jsp
+    ```markup
     <aui:button name="chooseImage" value="Choose" />
     ```
 
@@ -121,7 +121,7 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 3.  Add the `<aui:script>` tag and set it to use the 
     `liferay-item-selector-dialog` module: 
 
-    ```jsp
+    ```markup
     <aui:script use="liferay-item-selector-dialog">
 
     </aui:script>

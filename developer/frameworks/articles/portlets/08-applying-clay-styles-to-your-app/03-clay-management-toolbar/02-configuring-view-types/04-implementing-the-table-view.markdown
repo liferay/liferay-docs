@@ -15,7 +15,7 @@ Follow these steps to configure the Table view:
 1.  Inside the `<c:choose>` conditional block, add a condition for the list 
     display style (table view type):
 
-    ```jsp
+    ```markup
     <c:when test='<%= Objects.equals(displayStyle, "list") %>'>
       <%-- table view type configuration goes here --%>
     </c:when>

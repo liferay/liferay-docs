@@ -201,7 +201,7 @@ on the original JSP including the `-ext.jsp`. For an example, open
 `portal-web/docroot/html/common/themes/bottom.jsp`, and scroll to the end. 
 You'll see this:
 
-```jsp
+```markup
 <liferay-util:include page="/html/common/themes/bottom-ext.jsp" />
 ```
 

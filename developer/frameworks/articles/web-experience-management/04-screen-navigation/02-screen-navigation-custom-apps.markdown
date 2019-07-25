@@ -240,7 +240,7 @@ The `render` method that you created in your last step references
 3.  Inside the JSP add the `liferay-frontend:screen-navigation` taglib with the 
     required parameters:
 
-    ```jsp
+    ```markup
     <liferay-frontend:screen-navigation key="<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"
     	modelBean="<%= category %>"
     	portletURL="<%= portletURL %>"

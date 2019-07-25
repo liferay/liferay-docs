@@ -213,7 +213,7 @@ do that:
     The button for this, therefore, should only appear if a user has permission
     to add entries: 
 
-    ```jsp
+    ```markup
     <c:if test="<%= BlogsPermission.contains(permissionChecker, scopeGroupId, ActionKeys.ADD_ENTRY) %>">
         <div class="button-holder">
             <portlet:renderURL var="editEntryURL" windowState="<%= WindowState.MAXIMIZED.toString() %>">
@@ -230,7 +230,7 @@ do that:
     [step 3](/docs/7-2/frameworks/-/knowledge_base/f/associating-permissions-with-resources)
     should definitely be protected by permissions: 
 
-    ```jsp
+    ```markup
     <c:if test="<%= BlogsEntryPermission.contains(permissionChecker, entry, ActionKeys.PERMISSIONS) %>">
         <liferay-security:permissionsURL
             modelResource="<%= BlogsEntry.class.getName() %>"

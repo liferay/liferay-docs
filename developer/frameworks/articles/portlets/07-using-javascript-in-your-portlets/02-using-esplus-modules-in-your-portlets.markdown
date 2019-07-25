@@ -14,7 +14,7 @@ Follow the steps below to use your exposed modules in your portlets:
 
 1.  Declare the `aui` taglib in your view JSP:
 
-    ```jsp
+    ```markup
     <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
     ```
 

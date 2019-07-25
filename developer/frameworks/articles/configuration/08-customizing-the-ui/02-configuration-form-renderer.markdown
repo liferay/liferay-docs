@@ -239,7 +239,7 @@ markup for the form.
 
 Now write the JSP:
 
-```jsp
+```markup
 <%@ include file="/init.jsp" %>
 
 <%

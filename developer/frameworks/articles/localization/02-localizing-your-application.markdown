@@ -97,7 +97,7 @@ locale automatically, without requiring you to access
     JSP could use the `howdy-partner` property via the
     [`<liferay-ui:message />`](@platform-ref@/7.2-latest/taglibs/util-taglib/liferay-ui/message.html) tag. 
 
-    ```jsp
+    ```markup
     <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %> 
     ...
     <liferay-ui:message key="howdy-partner" />

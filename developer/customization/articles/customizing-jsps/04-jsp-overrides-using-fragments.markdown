@@ -78,7 +78,7 @@ There are two possible naming conventions for targeting the host original JSP:
 `/META-INF/resources/login.jsp`, then the fragment bundle should contain a JSP 
 with the same path, using the following pattern:
 
-```jsp
+```markup
 <liferay-util:include 
     page="/login.original.jsp" (or login.portal.jsp) 
     servletContext="<%= application %>" 
@@ -89,7 +89,7 @@ After that, make your modifications. Just make sure you mimic the host module's
 folder structure when overriding its JAR. If you're overriding Liferay's login 
 application's `login.jsp` for example, you'd put your own `login.jsp` in 
 
-```jsp
+```markup
 my-jsp-fragment/src/main/resources/META-INF/resources/login.jsp
 ```
 
@@ -97,7 +97,7 @@ If you must post-process the output, you can update the pattern to include
 @product@'s buffering mechanism. Below is an example that overrides the original 
 `create_account.jsp`:
 
-```jsp
+```markup
 <%@ include file="/init.jsp" %>
 
 <liferay-util:buffer var="html">

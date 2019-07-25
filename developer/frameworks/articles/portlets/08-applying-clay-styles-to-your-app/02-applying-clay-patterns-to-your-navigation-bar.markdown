@@ -13,7 +13,7 @@ your app:
 
 1.  Add the required imports to your app's `init.jsp`:
 
-    ```jsp
+    ```markup
     // Import the clay tld file to be able to use the new tag
     <%@ taglib uri="http://liferay.com/tld/clay" prefix="clay" %>
 
@@ -54,7 +54,7 @@ your app:
     keep the navigation bar light by setting the `inverted` attribute to 
     `false`. An example configuration for an admin app is shown below:
 
-    ```jsp
+    ```markup
     <clay:navigation-bar
     	inverted="<%= true %>"
     	navigationItems="<%=
@@ -84,7 +84,7 @@ your app:
     navigation item. An example configuration for the Blogs Admin portlet is 
     shown below:
 
-    ```jsp
+    ```markup
     <c:choose>
     	<c:when test='<%= navigation.equals("entries") %>'>
     		<liferay-util:include page="/blogs_admin/view_entries.jsp" 

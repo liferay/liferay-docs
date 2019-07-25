@@ -23,7 +23,7 @@ Follow these steps to enable content flagging in your app:
 
 3.  In your JSP, include the `liferay-flags` taglib declaration: 
 
-    ```jsp
+    ```markup
     <%@ taglib prefix="liferay-flags" uri="http://liferay.com/tld/flags" %>
     ```
 
@@ -43,7 +43,7 @@ Follow these steps to enable content flagging in your app:
     [`liferay-flags:flags`](@app-ref@/collaboration/latest/taglibdocs/liferay-flags/flags.html) 
     tag to add the flags component: 
 
-    ```jsp
+    ```markup
     <liferay-flags:flags
     	className="<%= Entry.class.getName() %>"
     	classPK="<%= entry.getEntryId() %>"

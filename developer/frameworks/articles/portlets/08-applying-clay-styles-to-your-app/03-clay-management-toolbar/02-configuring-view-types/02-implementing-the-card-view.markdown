@@ -22,7 +22,7 @@ Follow the steps below to create your card view:
 1.  Inside the `<c:choose>` conditional block, add a condition for the icon 
     display style (Card view type):
     
-    ```jsp
+    ```markup
     <c:when test='<%= Objects.equals(displayStyle, "icon") %>'>
         <%-- card view type configuration goes here --%>
     </c:when>
@@ -52,7 +52,7 @@ Follow the steps below to create your card view:
     or user profile, and the entry's title. An example configuration is shown 
     below:
 
-    ```jsp
+    ```markup
     <liferay-frontend:icon-vertical-card
       actionJsp='<%= dlPortletInstanceSettingsHelper.isShowActions() ? 
       "/image_gallery_display/image_action.jsp" : StringPool.BLANK %>'

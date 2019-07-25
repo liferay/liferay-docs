@@ -74,7 +74,7 @@ Administration.
 5.  At the top of your JSP class, insert the following scriptlet to use the 
     Screen Navigation UI:
 
-    ```jsp
+    ```markup
     <%
     String redirect = ParamUtil.getString(request, "redirect", assetCategoriesDisplayContext.getEditCategoryRedirect());
 
@@ -95,7 +95,7 @@ Administration.
 
 6.  Below that, insert the following tag:
 
-    ```jsp
+    ```markup
     <liferay-frontend:screen-navigation key=
     "<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"
     modelBean="<%= category %>"

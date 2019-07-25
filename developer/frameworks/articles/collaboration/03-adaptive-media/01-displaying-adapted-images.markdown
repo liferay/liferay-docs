@@ -21,14 +21,14 @@ For more information, see
 
 2.  Declare the taglib in your JSP: 
 
-    ```jsp
+    ```markup
     <%@ taglib uri="http://liferay.com/tld/adaptive-media-image" prefix="liferay-adaptive-media" %>
     ```
 
 3.  Use the taglib wherever you want the adapted image to appear in your app's 
     JSP files: 
 
-    ```jsp
+    ```markup
     <liferay-adaptive-media:img class="img-fluid" fileVersion="<%= fileEntry.getFileVersion() %>" />
     ```
 
@@ -36,7 +36,7 @@ For more information, see
     in a grid with the `col-md-6` 
     [column container class](/docs/7-2/frameworks/-/knowledge_base/f/layout-templates-intro): 
 
-    ```jsp
+    ```markup
     <%@ include file="/init.jsp" %>
 
     <div class="container">

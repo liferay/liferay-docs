@@ -256,7 +256,7 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
 2.  This snippet imports a CSS file for styling and places it in the `<head>` of 
     the page: 
 
-    ```jsp
+    ```markup
     <liferay-util:html-top>
             <link href="<%= PortalUtil.getStaticResourceURL(
             request, application.getContextPath() + "/css/main.css", 
@@ -364,7 +364,7 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
     adds the `CKEditorFuncNum` for the editor to the JSON object's `data` 
     attribute: 
 
-    ```jsp
+    ```markup
             <c:choose>
                     <c:when test="<%= Objects.equals(layoutItemSelectorViewDisplayContext.getItemSelectorReturnTypeName(), URLItemSelectorReturnType.class.getName()) %>">
                             data.value = url;

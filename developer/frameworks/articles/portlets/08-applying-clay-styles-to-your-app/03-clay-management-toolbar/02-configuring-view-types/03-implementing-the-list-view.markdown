@@ -16,7 +16,7 @@ Follow these steps to configure the List view:
 1.  Inside the `<c:choose>` conditional block, add a condition for the 
     descriptive display style (list view type):
 
-    ```jsp
+    ```markup
     <c:when test='<%= Objects.equals(displayStyle, "descriptive") %>'>
         <%-- list view type configuration goes here --%>
     </c:when>

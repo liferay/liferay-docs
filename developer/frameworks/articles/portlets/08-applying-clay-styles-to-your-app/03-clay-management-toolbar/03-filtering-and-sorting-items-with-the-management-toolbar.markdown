@@ -89,7 +89,7 @@ filters.
     `displayContext` attribute to the Display Context you created. An example 
     configuration is shown below:
 
-    ```jsp
+    ```markup
     <clay:management-toolbar
     	displayContext="<%= myManagementToolbarDisplayContext %>"
     />
