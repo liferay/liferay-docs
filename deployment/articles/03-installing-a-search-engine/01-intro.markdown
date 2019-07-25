@@ -29,8 +29,8 @@ engines.
 ## Choosing a Search Engine
 
 Elasticsearch and Solr are both supported, but there are limitations to
-Liferay's Solr integration. To use any of the following features, you must
-choose Elasticsearch. 
+Liferay's Solr integration. To make use of some features, you must choose
+Elasticsearch. 
 
 ### End User Feature Limitations of Liferay's Solr Integration
 
@@ -44,7 +44,8 @@ choose Elasticsearch.
 
 ### Developer Feature Limitations of Liferay's Solr Integration
 
-Implementation for the following APIs may be added in the future though currently they are not supported by Liferay's Solr connector.
+Implementation for the following APIs may be added in the future, but they are
+not currently supported by Liferay's Solr connector.
 
 - From Portal Core (Module: `portal-kernel`, Artifact:
     `com.liferay.portal.kernel`):
