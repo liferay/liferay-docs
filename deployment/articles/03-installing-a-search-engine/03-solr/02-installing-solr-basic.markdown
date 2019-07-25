@@ -149,10 +149,12 @@ an API and an IMPL bundle.
 
 ```sh
 ID|State      |Level|Name
-476|Active     |   10|Liferay CE Connector to Elasticsearch 6 - API (2.0.0)
-478|Active     |   10|Liferay Portal Search Elasticsearch 6 API (2.0.6)
-706|Active     |   10|Liferay CE Connector to Elasticsearch 6 - Impl (2.0.0)
-707|Active     |   10|Liferay Portal Search Elasticsearch 6 Implementation (2.0.5)
+476|Active     |   10|Liferay (CE) Connector to Elasticsearch 6 - API (3.0.0)
+478|Active     |   10|Liferay Portal Search Elasticsearch 6 API (3.0.4)
+480|Active     |   10|Liferay Portal Search Elasticsearch 6 SPI (3.2.1)
+706|Active     |   10|Liferay (CE) Connector to Elasticsearch 6 - Impl (3.0.0)
+707|Active     |   10|Liferay Portal Search Elasticsearch 6 Implementation (3.0.15)
+
 ```
 
 Stop the API bundle by entering 
