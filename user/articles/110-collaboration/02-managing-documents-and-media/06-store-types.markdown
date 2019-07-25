@@ -36,7 +36,7 @@ bound to @product@'s database. The store's default root folder is
 `[Liferay Home]/data/document_library`. You can change this via the
 `dl.store.file.system.root.dir=` property in a `portal-ext.properties` file, or
 in the Control Panel. For instructions on this, see the 
-[Document Repository Configuration guide](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration).
+[Document Repository Configuration guide](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration).
 
 The Simple File System Store uses a local folder to store files. You can use the 
 file system for your clustered configuration, but you must make sure the folder 
