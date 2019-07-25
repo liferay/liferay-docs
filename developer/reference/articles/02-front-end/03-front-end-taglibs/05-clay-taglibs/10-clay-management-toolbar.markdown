@@ -26,7 +26,7 @@ options for your management toolbar---to define all or some of the configuration
 options for the toolbar, you can specify the Display Context with the 
 `displayContext` attribute. An example is shown below:
 
-```html
+```markup
 <clay:management-toolbar 
     displayContext="<%= viewUADEntitiesManagementToolbarDisplayContext %>" 
 />
@@ -212,7 +212,7 @@ of the Management Toolbar is reserved for the search form.
 
 An example configuration is shown below:
 
-```html
+```markup
 <clay:management-toolbar
     clearResultsURL="<%= searchURL %>"
     disabled="<%= isDisabled %>"
@@ -242,7 +242,7 @@ In the example configuration below, the `showInfoButton` attribute is provided
 in the Display Context---specified with the `displayContext` attribute---and the 
 `infoPanelId` is explicitly set in the JSP:
 
-```html
+```markup
 <clay:management-toolbar
     displayContext="<%= journalDisplayContext %>"
     infoPanelId="infoPanelId"

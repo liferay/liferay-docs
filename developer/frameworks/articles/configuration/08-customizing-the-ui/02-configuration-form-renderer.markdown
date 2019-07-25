@@ -240,28 +240,28 @@ markup for the form.
 Now write the JSP:
 
 ```jsp
-    <%@ include file="/init.jsp" %>
+<%@ include file="/init.jsp" %>
 
-    <%
-    LanguageTemplateConfigurationDisplayContext
-        languageTemplateConfigurationDisplayContext = (LanguageTemplateConfigurationDisplayContext)request.getAttribute(LanguageTemplateConfigurationDisplayContext.class.getName());
+<%
+LanguageTemplateConfigurationDisplayContext
+    languageTemplateConfigurationDisplayContext = (LanguageTemplateConfigurationDisplayContext)request.getAttribute(LanguageTemplateConfigurationDisplayContext.class.getName());
 
 Admin: Instance Settings    String currentTemplateName = languageTemplateConfigurationDisplayContext.getCurrentTemplateName();
+%>
+
+<aui:select label="<%= HtmlUtil.escape(languageTemplateConfigurationDisplayContext.getFieldLabel()) %>" name="ddmTemplateKey" value="<%= currentTemplateName %>">
+
+    <%
+    for (String[] templateValue : languageTemplateConfigurationDisplayContext.getTemplateValues()) {
     %>
 
-    <aui:select label="<%= HtmlUtil.escape(languageTemplateConfigurationDisplayContext.getFieldLabel()) %>" name="ddmTemplateKey" value="<%= currentTemplateName %>">
+        <aui:option label="<%= templateValue[1] %>" selected="<%= currentTemplateName.equals(templateValue[0]) %>" value="<%= templateValue[0] %>" />
 
-        <%
-        for (String[] templateValue : languageTemplateConfigurationDisplayContext.getTemplateValues()) {
-        %>
+    <%
+    }
+    %>
 
-            <aui:option label="<%= templateValue[1] %>" selected="<%= currentTemplateName.equals(templateValue[0]) %>" value="<%= templateValue[0] %>" />
-
-        <%
-        }
-        %>
-
-    </aui:select>
+</aui:select>
 ```
 
 The opening scriptlet gets the display context object from the request so that

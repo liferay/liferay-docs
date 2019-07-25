@@ -31,7 +31,7 @@ Follow these steps:
     The Blogs app's `view_entry.jsp` has a dynamic include tag at the top and 
     another at the very bottom. 
 
-    ```markup
+    ```jsp
     <%@ include file="/blogs/init.jsp" %>
 
     <liferay-util:dynamic-include key="com.liferay.blogs.web#/blogs/view_entry.jsp#pre" />

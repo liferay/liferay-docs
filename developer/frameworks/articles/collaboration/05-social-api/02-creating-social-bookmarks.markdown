@@ -24,17 +24,21 @@ Follow these steps to implement the `SocialBookmark` interface:
 
     For example, here's the definition for a Twitter social bookmark class: 
 
-        @Component(immediate = true, property = "social.bookmarks.type=twitter")
-        public class TwitterSocialBookmark implements SocialBookmark {...
+    ```java
+    @Component(immediate = true, property = "social.bookmarks.type=twitter")
+    public class TwitterSocialBookmark implements SocialBookmark {...
+    ```
 
 2.  Create a 
     [`ResourceBundleLoader`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) 
     reference to help localize the social bookmark's name. 
 
-        @Reference(
-                target = "(bundle.symbolic.name=com.liferay.social.bookmark.twitter)"
-        )
-        private ResourceBundleLoader _resourceBundleLoader;
+    ```java
+    @Reference(
+            target = "(bundle.symbolic.name=com.liferay.social.bookmark.twitter)"
+    )
+    private ResourceBundleLoader _resourceBundleLoader;
+    ```
 
 3.  Implement the `getName` method to return the social bookmark's name as a 
     string. This method takes a 
@@ -44,31 +48,37 @@ Follow these steps to implement the `SocialBookmark` interface:
     and 
     [`ResourceBundle`](https://docs.oracle.com/javase/8/docs/api/java/util/ResourceBundle.html): 
 
-        @Override
-        public String getName(Locale locale) {
-            ResourceBundle resourceBundle = _resourceBundleLoader.loadResourceBundle(locale);
+    ```java
+    @Override
+    public String getName(Locale locale) {
+        ResourceBundle resourceBundle = _resourceBundleLoader.loadResourceBundle(locale);
 
-            return LanguageUtil.get(resourceBundle, "twitter");
-        }
+        return LanguageUtil.get(resourceBundle, "twitter");
+    }
+    ```
 
 4.  Implement the `getPostURL` method to return the share URL. This method 
     constructs the share URL from a title and URL, and uses 
     [`URLCodec`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/URLCodec.html) 
     to encode the title in the URL: 
 
-        @Override
-        public String getPostURL(String title, String url) {
-            return String.format(
-                "https://twitter.com/intent/tweet?text=%s&tw_p=tweetbutton&url=%s", 
-                URLCodec.encodeURL(title), url);
-        }
+    ```java
+    @Override
+    public String getPostURL(String title, String url) {
+        return String.format(
+            "https://twitter.com/intent/tweet?text=%s&tw_p=tweetbutton&url=%s", 
+            URLCodec.encodeURL(title), url);
+    }
+    ```
 
 5.  Create a `ServletContext` reference: 
 
-        @Reference(
-                target = "(osgi.web.symbolicname=com.liferay.social.bookmark.twitter)"
-        )
-        private ServletContext _servletContext;
+    ```java
+    @Reference(
+            target = "(osgi.web.symbolicname=com.liferay.social.bookmark.twitter)"
+    )
+    private ServletContext _servletContext;
+    ```
 
 6.  Implement the `render` method, which is called when the inline display style 
     is selected. Typically, this method renders a link to the share URL (e.g., a 
@@ -79,17 +89,19 @@ Follow these steps to implement the `SocialBookmark` interface:
     This example gets a `RequestDispatcher` for the JSP that contains a Clay 
     icon (`page.jsp`), and then includes that JSP in the response: 
 
-        @Override
-        public void render(
-                        String target, String title, String url, HttpServletRequest request,
-                        HttpServletResponse response)
-                throws IOException, ServletException {
+    ```java
+    @Override
+    public void render(
+                    String target, String title, String url, HttpServletRequest request,
+                    HttpServletResponse response)
+            throws IOException, ServletException {
 
-                RequestDispatcher requestDispatcher =
-                        _servletContext.getRequestDispatcher("/page.jsp");
+            RequestDispatcher requestDispatcher =
+                    _servletContext.getRequestDispatcher("/page.jsp");
 
-                requestDispatcher.include(request, response);
-        }
+            requestDispatcher.include(request, response);
+    }
+    ```
 
 ## Creating Your JSP
 
@@ -100,24 +112,30 @@ these steps to create a JSP for your own social bookmark:
 
 1.  Add the `clay` and `liferay-theme` taglib declarations: 
 
-        <%@ taglib uri="http://liferay.com/tld/clay" prefix="clay" %>
-        <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+    ```jsp
+    <%@ taglib uri="http://liferay.com/tld/clay" prefix="clay" %>
+    <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+    ```
 
 2.  Import 
     [`GetterUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/GetterUtil.html) 
     and `SocialBookmark`: 
 
-        <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
-        <%@ page import="com.liferay.social.bookmarks.SocialBookmark" %>
+    ```jsp
+    <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
+    <%@ page import="com.liferay.social.bookmarks.SocialBookmark" %>
+    ```
 
 3.  From the request, get a `SocialBookmark` instance and the social bookmark's 
     title and URL: 
 
-        <%
-        SocialBookmark socialBookmark = (SocialBookmark)request.getAttribute("liferay-social-bookmarks:bookmark:socialBookmark");
-        String title = GetterUtil.getString((String)request.getAttribute("liferay-social-bookmarks:bookmark:title"));
-        String url = GetterUtil.getString((String)request.getAttribute("liferay-social-bookmarks:bookmark:url"));
-        %>
+    ```java
+    <%
+    SocialBookmark socialBookmark = (SocialBookmark)request.getAttribute("liferay-social-bookmarks:bookmark:socialBookmark");
+    String title = GetterUtil.getString((String)request.getAttribute("liferay-social-bookmarks:bookmark:title"));
+    String url = GetterUtil.getString((String)request.getAttribute("liferay-social-bookmarks:bookmark:url"));
+    %>
+    ```
 
     The title and URL are set via the `liferay-social-bookmarks` taglib when 
     [applying the social bookmark](/docs/7-2/frameworks/-/knowledge_base/f/applying-social-bookmarks). 
@@ -126,13 +144,15 @@ these steps to create a JSP for your own social bookmark:
     [documentation](https://clayui.com/docs/components/link.html) 
     for a full description of its attributes. 
 
-        <clay:link
-                buttonStyle="secondary"
-                elementClasses="btn-outline-borderless btn-sm lfr-portal-tooltip"
-                href="<%= socialBookmark.getPostURL(title, url) %>"
-                icon="twitter"
-                title="<%= socialBookmark.getName(locale) %>"
-        />
+    ```jsp
+    <clay:link
+            buttonStyle="secondary"
+            elementClasses="btn-outline-borderless btn-sm lfr-portal-tooltip"
+            href="<%= socialBookmark.getPostURL(title, url) %>"
+            icon="twitter"
+            title="<%= socialBookmark.getName(locale) %>"
+    />
+    ```
 
     This example sets the following `clay:link` attributes: 
 

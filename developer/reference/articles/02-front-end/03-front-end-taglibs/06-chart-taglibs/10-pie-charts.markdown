@@ -36,7 +36,7 @@ Follow these steps to configure your portlet to use pie charts.
 3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_pieChartConfig` 
     as the `config` attribute's value:
 
-    ```html
+    ```markup
     <chart:pie
       config="<%= _pieChartConfig %>"
     />

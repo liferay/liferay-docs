@@ -19,7 +19,7 @@ on the page include the same resource with this tag, you can specify the same
 The example configuration below uses the `<liferay-util:html-top>` tag to 
 include additional CSS styles provided by the portlet's bundle:
 
-```html
+```markup
 <liferay-util:html-top outputKey="htmltop">
 				<link data-senna-track="permanent" 
         href="/o/my-liferay-util-portlet/css/my-custom-styles.css" 

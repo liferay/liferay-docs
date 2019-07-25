@@ -75,7 +75,7 @@ Add back URL for Core Override JSP Sample Project code once it's ported:
         immediate = true,
         property = {
         	"context.id=BladeCustomJspBag",
-            "context.name=Test Custom JSP Bag",
+          "context.name=Test Custom JSP Bag",
         	"service.ranking:Integer=100"
         }
     )
@@ -201,7 +201,7 @@ on the original JSP including the `-ext.jsp`. For an example, open
 `portal-web/docroot/html/common/themes/bottom.jsp`, and scroll to the end. 
 You'll see this:
 
-```markup
+```jsp
 <liferay-util:include page="/html/common/themes/bottom-ext.jsp" />
 ```
 

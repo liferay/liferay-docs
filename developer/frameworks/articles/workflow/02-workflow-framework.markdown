@@ -175,6 +175,7 @@ is used to create database fields. First, you must update the service layer:
     		return fooEntity;
 	  }
     ```
+
 6.  Add a call to `deleteWorkflowInstanceLinks` in the `deleteEntity` method:
 
     ```java

@@ -14,7 +14,7 @@ for you to choose. Both taglibs with several examples are shown below.
 
 Basic dropdown menu:
 
-```html
+```markup
 <clay:dropdown-menu
 	items="<%= dropdownsDisplayContext.getDefaultDropdownItems() %>"
 	label="Default"
@@ -70,7 +70,7 @@ group1NavigationItem.setType(NavigationItem.TYPE_GROUP);
 
 Corresponding taglib:
 
-```html
+```markup
 <clay:dropdown-menu
 	items="<%= dropdownsDisplayContext.getGroupDropdownItems() %>"
 	label="Dividers"
@@ -94,7 +94,7 @@ navigationItem.setType(NavigationItem.TYPE_CHECKBOX);
 
 Corresponding taglib:
 
-```html
+```markup
 <clay:dropdown-menu
 	buttonLabel="Done"
 	items="<%= dropdownsDisplayContext.getInputDropdownItems() %>"
@@ -114,7 +114,7 @@ navigationItem.setIcon("check-circle-full")
 
 Corresponding taglib:
 
-```html
+```markup
 <clay:dropdown-menu
 	items="<%= dropdownsDisplayContext.getIconDropdownItems() %>"
 	itemsIconAlignment="left"
@@ -128,7 +128,7 @@ Corresponding taglib:
 
 Basic actions menu:
 
-```html
+```markup
 <clay:dropdown-actions
 	items="<%= dropdownsDisplayContext.getDefaultDropdownItems() %>"
 />
@@ -138,7 +138,7 @@ Basic actions menu:
 
 An actions menu can also display help text to the user: 
 
-```html
+```markup
 <clay:dropdown-actions
 	buttonLabel="More"
 	buttonStyle="secondary"

@@ -38,7 +38,7 @@ portlet to use scatter charts.
 3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_scatterChartConfig` 
     as the `config` attribute's value:
 
-    ```html
+    ```markup
     <chart:scatter
       config="<%= _scatterChartConfig %>"
     />

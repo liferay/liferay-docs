@@ -23,29 +23,35 @@ Follow these steps to enable content flagging in your app:
 
 3.  In your JSP, include the `liferay-flags` taglib declaration: 
 
-        <%@ taglib prefix="liferay-flags" uri="http://liferay.com/tld/flags" %>
+    ```jsp
+    <%@ taglib prefix="liferay-flags" uri="http://liferay.com/tld/flags" %>
+    ```
 
 4.  Use 
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html) 
     to get the entity's ID from the render request. Then use your 
     `-LocalServiceUtil` class to create an entity object: 
 
-        <%
-        long entryId = ParamUtil.getLong(renderRequest, "entryId");
-        entry = EntryLocalServiceUtil.getEntry(entryId);
-        %>
+    ```java
+    <%
+    long entryId = ParamUtil.getLong(renderRequest, "entryId");
+    entry = EntryLocalServiceUtil.getEntry(entryId);
+    %>
+    ```
 
 5.  Use the 
     [`liferay-flags:flags`](@app-ref@/collaboration/latest/taglibdocs/liferay-flags/flags.html) 
     tag to add the flags component: 
 
-        <liferay-flags:flags
-        	className="<%= Entry.class.getName() %>"
-        	classPK="<%= entry.getEntryId() %>"
-        	contentTitle="<%= title %>"
-        	message="flag-this-content"
-        	reportedUserId="<%= reportedUserId %>"
-        />
+    ```jsp
+    <liferay-flags:flags
+    	className="<%= Entry.class.getName() %>"
+    	classPK="<%= entry.getEntryId() %>"
+    	contentTitle="<%= title %>"
+    	message="flag-this-content"
+    	reportedUserId="<%= reportedUserId %>"
+    />
+    ```
 
     The `reportedUserId` attribute specifies the ID of the user who flagged the 
     asset. 

@@ -15,10 +15,10 @@ portlet instance settings for your widget:
 1.  Add a `/features` folder in your project's root folder if it doesn't already 
     exist. 
 
-| **Note:** This location can be overridden with the 
-| `create-jar.features.configuration` option in your project's `.npmbundlerrc` 
-| file. See [OSGi bundle configuration options](/docs/7-2/reference/-/knowledge_base/r/understanding-the-npmbundlerrcs-structure#osgi-bundle-creation-options) 
-| for all the available options for the bundle.
+    | **Note:** This location can be overridden with the 
+    | `create-jar.features.configuration` option in your project's `.npmbundlerrc` 
+    | file. See [OSGi bundle configuration options](/docs/7-2/reference/-/knowledge_base/r/understanding-the-npmbundlerrcs-structure#osgi-bundle-creation-options) 
+    | for all the available options for the bundle.
 
 2.  Create a `configuration.json` file in the `/features` folder and follow the 
     pattern below. See the [Configuration JSON](/docs/7-2/reference/-/knowledge_base/r/configuration-json-available-options) 

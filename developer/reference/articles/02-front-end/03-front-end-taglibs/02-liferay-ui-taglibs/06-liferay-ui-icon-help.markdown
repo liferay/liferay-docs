@@ -24,7 +24,7 @@ information. Define the informational text with the required `message`
 attribute. Below is an example snippet for one of the Server Administration's 
 clean up actions:
 
-```html
+```markup
 <h5>
     <liferay-ui:message key="clean-up-permissions" />
     <liferay-ui:icon-help message="clean-up-permissions-help" />

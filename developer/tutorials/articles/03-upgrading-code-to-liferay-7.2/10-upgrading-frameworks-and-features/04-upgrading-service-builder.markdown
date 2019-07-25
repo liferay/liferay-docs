@@ -41,7 +41,7 @@ The `view.jsp` file specifies a tag library attribute `total` that doesn't exist
 in @product-ver@'s `liferay-ui` tag library. Notice the second attribute
 `total`. 
 
-```
+```jsp
 <liferay-ui:search-container-results
     results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
                     guestbookId, searchContainer.getStart(),
@@ -52,7 +52,7 @@ in @product-ver@'s `liferay-ui` tag library. Notice the second attribute
 
 Remove the `total` attribute assignment to make the tag like this:
 
-```
+```jsp
 <liferay-ui:search-container-results
     results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId,
                     guestbookId, searchContainer.getStart(),

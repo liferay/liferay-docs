@@ -49,22 +49,22 @@ To create a configuration bean declaration:
 
 1.  Register the configuration class by implementing `ConfigurationBeanDeclaration`.
 
-```java
+    ```java
     @Component
     public class JournalGroupServiceConfigurationBeanDeclaration
         implements ConfigurationBeanDeclaration {
-```
+    ```
 
 2.  This class has one method that returns the class of the configuration
     interface you created. It enables the system to keep track of configuration
     changes as they happen, making requests for the configuration very fast.
 
-```java
+    ```java
     @Override
     public Class<?> getConfigurationBeanClass() {
         return JournalGroupServiceConfiguration.class;
     }
-```
+    ```
 
 That's all there is to it. Now the configuration is scoped and supports scoped
 retrieval via `ConfigurationProvider`. See the next section for details on

@@ -26,7 +26,7 @@ comprises a collection of loosely coupled micro-frameworks, so that developers
 can choose which features to use and ignore the others. This lowers the learning
 curve and minimizes work for developers.
 
-| Note: Liferay veterans may notice similarities between the [Asset Framework](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework) and Info 
+| **Note:** Liferay veterans may notice similarities between the [Asset Framework](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework) and Info 
 | Frameworks. The Info Framework can be considered a generalization of the 
 | Asset Framework and its design has considered lots of lessons learned from 
 | the Asset Framework. In particular, the Info Framework provides many similar 

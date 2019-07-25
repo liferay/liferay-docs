@@ -18,7 +18,7 @@ prior JSP.
 
 Below is an example configuration for the `<liferay-util:include>` tag:
 
-```html
+```markup
 <liferay-util:include 
   page="/relative/path/to/file.jsp" 
   servletContext="<%= application %>"

@@ -17,16 +17,18 @@ First, you must configure your selection view's OSGi module:
 
 1.  Add these dependencies to your module's `build.gradle`: 
 
-        dependencies {
-                compileOnly group: "com.liferay", name: "com.liferay.item.selector.api", version: "2.0.0"
-                compileOnly group: "com.liferay", name: "com.liferay.item.selector.criteria.api", version: "2.0.0"
-                compileOnly group: "com.liferay.portal", name: "com.liferay.portal.impl", version: "2.0.0"
-                compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-                compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
-                compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
-                compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
-                compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
-        }
+    ```groovy
+    dependencies {
+            compileOnly group: "com.liferay", name: "com.liferay.item.selector.api", version: "2.0.0"
+            compileOnly group: "com.liferay", name: "com.liferay.item.selector.criteria.api", version: "2.0.0"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.portal.impl", version: "2.0.0"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
+            compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+            compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+            compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+    }
+    ```
 
 2.  Add your module's information to the `bnd.bnd` file. For example, this 
     configuration adds the information for a module called `My Custom View`: 
@@ -64,12 +66,14 @@ Follow these steps to implement your selection view's class:
     `item.selector.view.order` property to `200` and registers the class as an 
     `ItemSelectorView` service: 
 
-        @Component(
-            property = {"item.selector.view.order:Integer=200"},
-            service = ItemSelectorView.class
-        )
-        public class SampleItemSelectorView
-            implements ItemSelectorView<ImageItemSelectorCriterion> {...
+    ```java
+    @Component(
+        property = {"item.selector.view.order:Integer=200"},
+        service = ItemSelectorView.class
+    )
+    public class SampleItemSelectorView
+        implements ItemSelectorView<ImageItemSelectorCriterion> {...
+    ```
 
 2.  Create getter methods for the criterion class, servlet context, and return 
     types. Do this by implementing the methods 
@@ -78,40 +82,44 @@ Follow these steps to implement your selection view's class:
     [`getSupportedItemSelectorReturnTypes()`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#getSupportedItemSelectorReturnTypes--), 
     respectively: 
 
-        @Override
-        public Class<ImageItemSelectorCriterion> getItemSelectorCriterionClass() 
-        {
-            return ImageItemSelectorCriterion.class;
-        }
+    ```java
+    @Override
+    public Class<ImageItemSelectorCriterion> getItemSelectorCriterionClass() 
+    {
+        return ImageItemSelectorCriterion.class;
+    }
 
-        @Override            
-        public ServletContext getServletContext() {
-            return _servletContext;
-        }
+    @Override            
+    public ServletContext getServletContext() {
+        return _servletContext;
+    }
 
-        @Override            
-        public List<ItemSelectorReturnType> getSupportedItemSelectorReturnTypes() {
-            return _supportedItemSelectorReturnTypes;
-        }
+    @Override            
+    public List<ItemSelectorReturnType> getSupportedItemSelectorReturnTypes() {
+        return _supportedItemSelectorReturnTypes;
+    }
+    ```
 
 3.  Configure the selection view's title, search options, and visibility 
     settings. Here's an example configuration for the `Sample Selector` 
     selection view: 
 
-        @Override
-        public String getTitle(Locale locale) {
-            return "Sample Selector";
-        }
+    ```java
+    @Override
+    public String getTitle(Locale locale) {
+        return "Sample Selector";
+    }
 
-        @Override
-        public boolean isShowSearch() {
-            return false;
-        }
+    @Override
+    public boolean isShowSearch() {
+        return false;
+    }
 
-        @Override
-        public boolean isVisible(ThemeDisplay themeDisplay) {
-            return true;
-        }
+    @Override
+    public boolean isVisible(ThemeDisplay themeDisplay) {
+        return true;
+    }
+    ```
 
     See [The Selection View's Class](/docs/7-2/frameworks/-/knowledge_base/f/item-selector#the-selection-views-class)
     for more information on these methods. 
@@ -127,25 +135,27 @@ Follow these steps to implement your selection view's class:
     method `getRequestDispatcher`. Although this example uses a JSP, you can 
     render the markup in another language such as FreeMarker. 
 
-        @Override
-        public void renderHTML(
-            ServletRequest request, ServletResponse response,
-            ImageItemSelectorCriterion itemSelectorCriterion,
-            PortletURL portletURL, String itemSelectedEventName,
-            boolean search
-        )
-        throws IOException, ServletException {
+    ```java
+    @Override
+    public void renderHTML(
+        ServletRequest request, ServletResponse response,
+        ImageItemSelectorCriterion itemSelectorCriterion,
+        PortletURL portletURL, String itemSelectedEventName,
+        boolean search
+    )
+    throws IOException, ServletException {
 
-            request.setAttribute(_ITEM_SELECTED_EVENT_NAME,
-                itemSelectedEventName);
+        request.setAttribute(_ITEM_SELECTED_EVENT_NAME,
+            itemSelectedEventName);
 
-            ServletContext servletContext = getServletContext();
+        ServletContext servletContext = getServletContext();
 
-            RequestDispatcher requestDispatcher =
-                servletContext.getRequestDispatcher("/sample.jsp");
+        RequestDispatcher requestDispatcher =
+            servletContext.getRequestDispatcher("/sample.jsp");
 
-            requestDispatcher.include(request, response);
-        }
+        requestDispatcher.include(request, response);
+    }
+    ```
 
 5.  Use the `@Reference` annotation to reference your module's class 
     for the `setServletContext` method. In the annotation, use the `target` 
@@ -155,14 +165,16 @@ Follow these steps to implement your selection view's class:
     also use the `unbind = _` parameter to specify that there's no unbind method 
     for this module. In the method body, set the servlet context variable: 
 
-        @Reference(
-            target =
-            "(osgi.web.symbolicname=com.liferay.item.selector.sample.web)",
-            unbind = "-"
-        )
-        public void setServletContext(ServletContext servletContext) {
-            _servletContext = servletContext;
-        }
+    ```java
+    @Reference(
+        target =
+        "(osgi.web.symbolicname=com.liferay.item.selector.sample.web)",
+        unbind = "-"
+    )
+    public void setServletContext(ServletContext servletContext) {
+        _servletContext = servletContext;
+    }
+    ```
 
 6.  Define the `_supportedItemSelectorReturnTypes` list with the return types 
     that this view supports (you referenced this list in step two). This example 
@@ -174,16 +186,18 @@ Follow these steps to implement your selection view's class:
     return types means that the view is more reusable. Also note that this 
     example defines its servlet context variable at the bottom of the file: 
 
-        private static final List<ItemSelectorReturnType>
-            _supportedItemSelectorReturnTypes =
-            Collections.unmodifiableList(
-                ListUtil.fromArray(
-                    new ItemSelectorReturnType[] {
-                        new FileEntryItemSelectorReturnType(),
-                        new URLItemSelectorReturnType()
-                    }));
+    ```java
+    private static final List<ItemSelectorReturnType>
+        _supportedItemSelectorReturnTypes =
+        Collections.unmodifiableList(
+            ListUtil.fromArray(
+                new ItemSelectorReturnType[] {
+                    new FileEntryItemSelectorReturnType(),
+                    new URLItemSelectorReturnType()
+                }));
 
-         private ServletContext _servletContext;
+     private ServletContext _servletContext;
+    ```
 
 For a real-world example of a view class, see 
 [`SiteNavigationMenuItemItemSelectorView`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/site-navigation/site-navigation-item-selector-web/src/main/java/com/liferay/site/navigation/item/selector/web/internal/SiteNavigationMenuItemItemSelectorView.java). 
@@ -202,15 +216,17 @@ The example view class in the previous section passes the JavaScript event name
 as a request attribute in the `renderHTML` method. You can therefore use this 
 event name in the markup: 
 
-    Liferay.fire(
-            `<%= {ITEM_SELECTED_EVENT_NAME} %>',
+```javascript
+Liferay.fire(
+        `<%= {ITEM_SELECTED_EVENT_NAME} %>',
 
-            {
-                data:{
-                    the-data-your-client-needs-according-to-the-return-type
-                }
+        {
+            data:{
+                the-data-your-client-needs-according-to-the-return-type
             }
-    );
+        }
+);
+```
 
 For a complete, real-world example, see 
 [`layouts.jsp`](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp)
@@ -223,27 +239,31 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
     `LayoutItemSelectorViewDisplayContext` is an optional class that contains 
     additional information about the criteria and view: 
 
-        <%
-        LayoutItemSelectorViewDisplayContext layoutItemSelectorViewDisplayContext = 
-            (LayoutItemSelectorViewDisplayContext)request.getAttribute(
-            BaseLayoutsItemSelectorView.LAYOUT_ITEM_SELECTOR_VIEW_DISPLAY_CONTEXT);
+    ```java
+    <%
+    LayoutItemSelectorViewDisplayContext layoutItemSelectorViewDisplayContext = 
+        (LayoutItemSelectorViewDisplayContext)request.getAttribute(
+        BaseLayoutsItemSelectorView.LAYOUT_ITEM_SELECTOR_VIEW_DISPLAY_CONTEXT);
 
-        LayoutItemSelectorCriterion layoutItemSelectorCriterion = 
-            layoutItemSelectorViewDisplayContext.getLayoutItemSelectorCriterion();
+    LayoutItemSelectorCriterion layoutItemSelectorCriterion = 
+        layoutItemSelectorViewDisplayContext.getLayoutItemSelectorCriterion();
 
-        Portlet portlet = PortletLocalServiceUtil.getPortletById(company.getCompanyId(), 
-            portletDisplay.getId());
-        %>
+    Portlet portlet = PortletLocalServiceUtil.getPortletById(company.getCompanyId(), 
+        portletDisplay.getId());
+    %>
+    ```
 
 2.  This snippet imports a CSS file for styling and places it in the `<head>` of 
     the page: 
 
-        <liferay-util:html-top>
-                <link href="<%= PortalUtil.getStaticResourceURL(
-                request, application.getContextPath() + "/css/main.css", 
-                portlet.getTimestamp()) 
-                %>" rel="stylesheet" type="text/css" />
-        </liferay-util:html-top>
+    ```jsp
+    <liferay-util:html-top>
+            <link href="<%= PortalUtil.getStaticResourceURL(
+            request, application.getContextPath() + "/css/main.css", 
+            portlet.getTimestamp()) 
+            %>" rel="stylesheet" type="text/css" />
+    </liferay-util:html-top>
+    ```
 
     You can learn more about using the `liferay-util` taglibs in 
     [Using the Liferay Util Taglib](/docs/7-2/reference/-/knowledge_base/r/using-the-liferay-util-taglib). 
@@ -255,25 +275,27 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
     design language to create 
     [cards](https://clayui.com/docs/components/cards.html): 
 
-        <div class="container-fluid-1280 layouts-selector">
-            <div class="card-horizontal main-content-card">
-                    <div class="card-row card-row-padded">
-                            <liferay-layout:layouts-tree
-                                    checkContentDisplayPage="<%= layoutItemSelectorCriterion.isCheckDisplayPage() %>"
-                                    draggableTree="<%= false %>"
-                                    expandFirstNode="<%= true %>"
-                                    groupId="<%= scopeGroupId %>"
-                                    portletURL="<%= layoutItemSelectorViewDisplayContext.getEditLayoutURL() %>"
-                                    privateLayout="<%= layoutItemSelectorViewDisplayContext.isPrivateLayout() %>"
-                                    rootNodeName="<%= layoutItemSelectorViewDisplayContext.getRootNodeName() %>"
-                                    saveState="<%= false %>"
-                                    selectedLayoutIds="<%= layoutItemSelectorViewDisplayContext.getSelectedLayoutIds() %>"
-                                    selPlid="<%= layoutItemSelectorViewDisplayContext.getSelPlid() %>"
-                                    treeId="treeContainer"
-                            />
-                    </div>
-            </div>
+    ```html
+    <div class="container-fluid-1280 layouts-selector">
+        <div class="card-horizontal main-content-card">
+                <div class="card-row card-row-padded">
+                        <liferay-layout:layouts-tree
+                                checkContentDisplayPage="<%= layoutItemSelectorCriterion.isCheckDisplayPage() %>"
+                                draggableTree="<%= false %>"
+                                expandFirstNode="<%= true %>"
+                                groupId="<%= scopeGroupId %>"
+                                portletURL="<%= layoutItemSelectorViewDisplayContext.getEditLayoutURL() %>"
+                                privateLayout="<%= layoutItemSelectorViewDisplayContext.isPrivateLayout() %>"
+                                rootNodeName="<%= layoutItemSelectorViewDisplayContext.getRootNodeName() %>"
+                                saveState="<%= false %>"
+                                selectedLayoutIds="<%= layoutItemSelectorViewDisplayContext.getSelectedLayoutIds() %>"
+                                selPlid="<%= layoutItemSelectorViewDisplayContext.getSelPlid() %>"
+                                treeId="treeContainer"
+                        />
+                </div>
         </div>
+    </div>
+     ```
  
     This renders the following UI: 
 
@@ -281,76 +303,82 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
 
 4.  This portion of the `aui:script` returns the path for the page:
 
-        <aui:script use="aui-base">
-            var LString = A.Lang.String;
-    
-            var getChosenPagePath = function(node) {
-                    var buffer = [];
-    
-                    if (A.instanceOf(node, A.TreeNode)) {
-                            var labelText = LString.escapeHTML(node.get('labelEl').text());
-    
-                            buffer.push(labelText);
-    
-                            node.eachParent(
-                                    function(treeNode) {
-                                            var labelEl = treeNode.get('labelEl');
-    
-                                            if (labelEl) {
-                                                    labelText = LString.escapeHTML(labelEl.text());
-    
-                                                    buffer.unshift(labelText);
-                                            }
-                                    }
-                            );
-                    }
-    
-                    return buffer.join(' > ');
-            };
+    ```javascript
+    <aui:script use="aui-base">
+        var LString = A.Lang.String;
+
+        var getChosenPagePath = function(node) {
+                var buffer = [];
+
+                if (A.instanceOf(node, A.TreeNode)) {
+                        var labelText = LString.escapeHTML(node.get('labelEl').text());
+
+                        buffer.push(labelText);
+
+                        node.eachParent(
+                                function(treeNode) {
+                                        var labelEl = treeNode.get('labelEl');
+
+                                        if (labelEl) {
+                                                labelText = LString.escapeHTML(labelEl.text());
+
+                                                buffer.unshift(labelText);
+                                        }
+                                }
+                        );
+                }
+
+                return buffer.join(' > ');
+        };
+    ```
 
 5.  The following snippet passes the return type data when the layout (entity) 
     is selected. Note the `url` and `uuid` variables retrieve the URL or UUID 
     for the layout: 
 
-            var setSelectedPage = function(event) {
-                    var disabled = true;
-    
-                    var messageText = '<%= UnicodeLanguageUtil.get(request, "there-is-no-selected-page") %>';
-    
-                    var lastSelectedNode = event.newVal;
-    
-                    var labelEl = lastSelectedNode.get('labelEl');
-    
-                    var link = labelEl.one('a');
-    
-                    var url = link.attr('data-url');
-                    var uuid = link.attr('data-uuid');
-    
-                    var data = {};
-    
-                    if (link && url) {
-                            disabled = false;
-    
-                            data.layoutpath = getChosenPagePath(lastSelectedNode);
+    ```javascript
+    var setSelectedPage = function(event) {
+            var disabled = true;
+
+            var messageText = '<%= UnicodeLanguageUtil.get(request, "there-is-no-selected-page") %>';
+
+            var lastSelectedNode = event.newVal;
+
+            var labelEl = lastSelectedNode.get('labelEl');
+
+            var link = labelEl.one('a');
+
+            var url = link.attr('data-url');
+            var uuid = link.attr('data-uuid');
+
+            var data = {};
+
+            if (link && url) {
+                    disabled = false;
+
+                    data.layoutpath = getChosenPagePath(lastSelectedNode);
+    ```
 
 6.  This checks if the return type information is a URL or a UUID. It then sets 
     the value for the JSON object's `data` attribute accordingly. The last line 
     adds the `CKEditorFuncNum` for the editor to the JSON object's `data` 
     attribute: 
 
-                            <c:choose>
-                                    <c:when test="<%= Objects.equals(layoutItemSelectorViewDisplayContext.getItemSelectorReturnTypeName(), URLItemSelectorReturnType.class.getName()) %>">
-                                            data.value = url;
-                                    </c:when>
-                                    <c:when test="<%= Objects.equals(layoutItemSelectorViewDisplayContext.getItemSelectorReturnTypeName(), UUIDItemSelectorReturnType.class.getName()) %>">
-                                            data.value = uuid;
-                                    </c:when>
-                            </c:choose>
-                    }
+    ```jsp
+            <c:choose>
+                    <c:when test="<%= Objects.equals(layoutItemSelectorViewDisplayContext.getItemSelectorReturnTypeName(), URLItemSelectorReturnType.class.getName()) %>">
+                            data.value = url;
+                    </c:when>
+                    <c:when test="<%= Objects.equals(layoutItemSelectorViewDisplayContext.getItemSelectorReturnTypeName(), UUIDItemSelectorReturnType.class.getName()) %>">
+                            data.value = uuid;
+                    </c:when>
+            </c:choose>
+    }
 
-                    <c:if test="<%= Validator.isNotNull(layoutItemSelectorViewDisplayContext.getCkEditorFuncNum()) %>">
-                            data.ckeditorfuncnum: <%= layoutItemSelectorViewDisplayContext.getCkEditorFuncNum() %>;
-                    </c:if>
+    <c:if test="<%= Validator.isNotNull(layoutItemSelectorViewDisplayContext.getCkEditorFuncNum()) %>">
+            data.ckeditorfuncnum: <%= layoutItemSelectorViewDisplayContext.getCkEditorFuncNum() %>;
+    </c:if>
+    ```
 
     The `data-url` and `data-uuid` attributes are in the HTML for the Layouts 
     Item Selector. The HTML for an instance of the Layouts Item Selector is 
@@ -362,26 +390,30 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
     fired, passing the data JSON object with the required return type 
     information: 
 
-                    Liferay.Util.getOpener().Liferay.fire(
-                            '<%= layoutItemSelectorViewDisplayContext.getItemSelectedEventName() %>',
-                            {
-                                    data: data
-                            }
-                    );
-            };
+    ```javascript
+            Liferay.Util.getOpener().Liferay.fire(
+                    '<%= layoutItemSelectorViewDisplayContext.getItemSelectedEventName() %>',
+                    {
+                            data: data
+                    }
+            );
+    };
+    ```
 
 8.  Finally, the layout is set to the selected page: 
 
-            var container = A.one('#<portlet:namespace />treeContainerOutput');
+    ```javascript
+        var container = A.one('#<portlet:namespace />treeContainerOutput');
 
-            if (container) {
-                    container.swallowEvent('click', true);
+        if (container) {
+                container.swallowEvent('click', true);
 
-                    var tree = container.getData('tree-view');
+                var tree = container.getData('tree-view');
 
-                    tree.after('lastSelectedChange', setSelectedPage);
-            }
-        </aui:script>
+                tree.after('lastSelectedChange', setSelectedPage);
+        }
+    </aui:script>
+    ```
 
 Your new selection view is automatically rendered by the Item Selector in every 
 app that uses the criterion and return types you defined, without modifying 

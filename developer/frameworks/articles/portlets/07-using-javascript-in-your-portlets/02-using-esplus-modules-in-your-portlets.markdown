@@ -14,12 +14,12 @@ Follow the steps below to use your exposed modules in your portlets:
 
 1.  Declare the `aui` taglib in your view JSP:
 
-```markup
-<%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
-```
+    ```jsp
+    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
+    ```
 
-    **Note:** if you created the portlet using Blade, the `aui` taglib is 
-    already provided for you in the `init.jsp`. 
+    | **Note:** if you created the portlet using Blade, the `aui` taglib is 
+    | already provided for you in the `init.jsp`. 
 
 2.  Add an `aui:script` tag to the JSP and set the `require` attribute to the 
     relative path for your module. 
@@ -29,17 +29,17 @@ Follow the steps below to use your exposed modules in your portlets:
     faux Console Logger Portlet's `view.jsp` shown below includes the module 
     `logger.es`:
 
-```javascript
-<aui:script require="js-logger/logger.es">
-    var Logger = jsLoggerLoggerEs.default;
+    ```javascript
+    <aui:script require="js-logger/logger.es">
+        var Logger = jsLoggerLoggerEs.default;
 
-    var loggerOne = new Logger('*** -> ');
-    loggerOne.log('Hello');
+        var loggerOne = new Logger('*** -> ');
+        loggerOne.log('Hello');
 
-    var loggerDefault = new Logger();
-    loggerDefault.log('World');
-</aui:script>
-```
+        var loggerDefault = new Logger();
+        loggerDefault.log('World');
+    </aui:script>
+    ```
 
     References to the module within the script tag are named after the `require` 
     value, in camel-case and with all invalid characters removed. The 

@@ -24,7 +24,6 @@ used Spring. The only difference is how you inject the services when you
 Declarative Services Dependency Injector: 
 
 ```xml
-
 <?xml version="1.0"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
 
@@ -35,7 +34,6 @@ Declarative Services Dependency Injector:
 Spring Dependency Injector: 
 
 ```xml
-
 <?xml version="1.0"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
 
@@ -119,7 +117,6 @@ use.
 | strong restrictions on database table name lengths.
 
 ```xml
-
 <namespace>GB</namespace>
 ```
 
@@ -131,7 +128,6 @@ with the specified name to all the Java classes and interfaces it generates.
 Save your `service.xml` file. Next, you'll add entities for your services. 
 
 ```xml
-
 <author>Liferay</author>
 ```
 

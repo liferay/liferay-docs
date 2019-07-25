@@ -18,7 +18,7 @@ example configuration shown below:
 
 `more-content.jsp`:
 
-```html
+```markup
 <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
 
 <%
@@ -33,7 +33,7 @@ String answer = ParamUtil.getString(request, "answer");
 Then in `my-app.jsp`, you can include `more-content.jsp` and set the value of 
 the `answer` parameter:
 
-```html    
+```markup
 <liferay-util:include page="/path/to/more-content.jsp" servletContext="<%= application %>">
   <liferay-util:param name="answer" value="42" />
 </liferay-util:include>

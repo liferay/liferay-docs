@@ -54,7 +54,7 @@ your portlet to use combination charts.
 3.  Add the `<chart>` taglib to the `view.jsp`, passing the 
     `_combinationChartConfig` as the `config` attribute's value:
 
-    ```html
+    ```markup
     <chart:combination
       config="<%= _combinationChartConfig %>"
     />

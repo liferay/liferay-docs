@@ -23,7 +23,7 @@ Examples of each card are shown below.
 Horizontal cards are used primarily to display documents, such as files and 
 folders. An example configuration is shown below:
 
-```html
+```markup
 <liferay-frontend:horizontal-card
 	text="Documents"
   url="https://portal.liferay.dev/docs/7-1/tutorials/-/knowledge_base/t/clay-icons"
@@ -50,7 +50,7 @@ have an associated image. Instead, an icon representing the type of content is
 displayed. The example snippet below displays information for a web content
 article:
 
-```html
+```markup
 <liferay-frontend:icon-vertical-card
   cssClass="article-preview-content"
   icon="web-content"
@@ -85,7 +85,7 @@ associated image, you can use an icon vertical card to represent the content's
 type instead (e.g. a PDF file). The example below displays a vertical card for
 a web content article when an image preview is available:
 
-```html
+```markup
 <liferay-frontend:vertical-card
   cssClass="article-preview-content"
   imageUrl="<%= articleImageURL %>"
@@ -116,7 +116,7 @@ a web content article when an image preview is available:
 The HTML Vertical card lets you display custom HTML in the header of the 
 vertical card. The example below embeds a video:
 
-```html
+```markup
 <liferay-util:buffer var = "customThumbnailHtml">
 	<div class="embed-responsive embed-responsive-16by9">
 	  <iframe class="embed-responsive-item" 
@@ -145,7 +145,7 @@ vertical card. The example below embeds a video:
 The User Vertical card displays user profile selections in the icon view of the
 Management Bar. Below is an example snippet from the User Admin portlet:
 
-```html
+```markup
 <liferay-frontend:user-vertical-card
   actionJsp="/membership_request_action.jsp"
   actionJspServletContext="<%= application %>"

@@ -13,13 +13,13 @@ is used.
 
 A basic configuration for the `<liferay-util:get-url>` tag is shown below:
 
-```html
+```markup
 <liferay-util:get-url url="https://www.liferay.com/" />
 ```
 
 Here is an example that uses the `var` attribute:
 
-```html
+```markup
 <liferay-util:get-url url="https://www.liferay.com/" var="Liferay" />
 
 <div>

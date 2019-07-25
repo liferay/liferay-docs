@@ -15,7 +15,7 @@ white text (inverted).
 
 Default navigation bar:
 
-```html
+```markup
 <clay:navigation-bar 
     navigationItems="<%= navigationBarsDisplayContext.getNavigationItems() %>" 
 />
@@ -25,7 +25,7 @@ Default navigation bar:
 
 Inverted navigation bar (set `inverted` attribute to `true`):
 
-```html
+```markup
 <clay:navigation-bar 
     inverted="<%= true %>" 
     navigationItems="<%= navigationBarsDisplayContext.getNavigationItems() %>" 

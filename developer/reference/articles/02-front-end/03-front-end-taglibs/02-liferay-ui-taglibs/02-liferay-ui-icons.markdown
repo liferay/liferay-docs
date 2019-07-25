@@ -16,7 +16,7 @@ The `image` attribute specifies
 to use (as defined in the Unstyled theme's `images/common` folder). Here's an 
 example configuration for a JSP:
 
-```html
+```markup
 <div class="col-md-3">
 	<liferay-ui:icon image="subscribe" />
 
@@ -31,7 +31,7 @@ icon, provide the `../language/` relative path before the icon's name. Below is
 an example snippet from the Web Content Search portlet that displays the 
 current language's flag along with a localized message:
 
-```html
+```markup
 <liferay-ui:icon
     image='<%= "../language/" + languageId %>'
     message='<%= LanguageUtil.format(
@@ -73,7 +73,7 @@ The `icon` attribute specifies
 [Font Awesome icons](https://fontawesome.com/v3.2.1/icons/) 
 to use:
 
-```html
+```markup
 <liferay-ui:icon icon="angle-down" />
 ```
 
@@ -83,7 +83,7 @@ The `iconCssClass` attribute specifies a
 [glyphicon](http://marcoceppi.github.io/bootstrap-glyphicons/) 
 to use:
 
-```html
+```markup
 <liferay-ui:icon
     iconCssClass="icon-remove-sign"
     label="<%= true %>"

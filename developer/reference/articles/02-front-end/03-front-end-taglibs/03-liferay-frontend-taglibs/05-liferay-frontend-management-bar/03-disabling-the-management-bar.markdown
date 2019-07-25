@@ -12,7 +12,7 @@ Management Bar's buttons, except the sidenav toggler button.
 You can disable the Management Bar by adding the `disabled` attribute to the 
 `liferay-frontend:management-bar` tag:
 
-```html
+```markup
 <liferay-frontend:management-bar
         disabled="<%= total == 0 %>"
         includeCheckBox="<%= true %>"
@@ -25,7 +25,7 @@ the corresponding tag. The example below disables the display buttons when the
 search container displays 0 results, since changing the display style has no 
 effect when there aren't any results to view:
 
-```html
+```markup
 <liferay-frontend:management-bar-display-buttons
         disabled="<%= total == 0 %>"
         displayViews='<%= new String[] {"descriptive", "icon", "list"} %>'

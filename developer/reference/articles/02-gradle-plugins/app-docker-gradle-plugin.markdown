@@ -17,7 +17,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in the build script of the root project:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.app.docker", version: "1.0.9"
@@ -41,7 +41,7 @@ Since the plugin automatically resolves the [Java Docker API Client](https://git
 library as a dependency, you must configure a repository that hosts the library
 and its transitive dependencies. The Liferay CDN repository hosts them all:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"

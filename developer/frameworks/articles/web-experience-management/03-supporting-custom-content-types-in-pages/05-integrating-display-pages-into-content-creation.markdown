@@ -20,7 +20,7 @@ To provide the Display Page selector for the User type after you
 2.  Add this code in the appropriate place in the layout to add the Display Page
     selector:
 
-    ```
+    ```jsp
     <liferay-asset:select-asset-display-page
         classNameId="<%= PortalUtil.getClassNameId(User.class) %>"
       	classPK="<%= userId %>"

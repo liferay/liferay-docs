@@ -25,7 +25,7 @@ a user export every time the user logs in. You can prevent updates to users'
 `lastLoginDate` fields from triggering LDAP user exports by setting the
 following property in your `portal-ext.properties` file:
 
-        users.update.last.login=false
+    users.update.last.login=false
 
 **Enable Group Export:** Export groups to LDAP. 
 

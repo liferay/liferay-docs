@@ -26,60 +26,60 @@ First, create the Navigation Category:
 2.  In the `@Component` declaration, set your priority property which determines
     what order items appear in in the side navigation:
 
-```java
-property = "screen.navigation.category.order:Integer=10",
-```
+    ```java
+    property = "screen.navigation.category.order:Integer=10",
+    ```
 
 3.  Add the following methods to the class body:
 
-```java
-@Override
-public String getCategoryKey() {
-	return SampleScreenNavigationConstants.
-		CATEGORY_KEY_SAMPLE_CONFIGURATION;
-}
+    ```java
+    @Override
+    public String getCategoryKey() {
+    	return SampleScreenNavigationConstants.
+    		CATEGORY_KEY_SAMPLE_CONFIGURATION;
+    }
 
-@Override
-public String getLabel(Locale locale) {
-	return LanguageUtil.get(locale, "general");
-}
+    @Override
+    public String getLabel(Locale locale) {
+    	return LanguageUtil.get(locale, "general");
+    }
 
-@Override
-public String getScreenNavigationKey() {
-	return SampleScreenNavigationConstants.
-		SAMPLE_KEY_METHOD;
-}
-``` 
+    @Override
+    public String getScreenNavigationKey() {
+    	return SampleScreenNavigationConstants.
+    		SAMPLE_KEY_METHOD;
+    }
+    ```
  
-When you're finished, your `ScreenNavigationCategory` class looks 
-like this:
+    When you're finished, your `ScreenNavigationCategory` class looks 
+    like this:
  
-```java
-@Component(
-property = "screen.navigation.category.order:Integer=10",
-service = ScreenNavigationCategory.class
-)
-public class SampleScreenNavigationCategory
-  implements ScreenNavigationCategory {
+    ```java
+    @Component(
+    property = "screen.navigation.category.order:Integer=10",
+    service = ScreenNavigationCategory.class
+    )
+    public class SampleScreenNavigationCategory
+      implements ScreenNavigationCategory {
 
-  @Override
-  public String getCategoryKey() {
-    return SampleScreenNavigationConstants.
-        CATEGORY_KEY_SAMPLE_CONFIGURATION;
-  }
+      @Override
+      public String getCategoryKey() {
+        return SampleScreenNavigationConstants.
+            CATEGORY_KEY_SAMPLE_CONFIGURATION;
+      }
 
-  @Override
-  public String getLabel(Locale locale) {
-    return LanguageUtil.get(locale, "general");
-  }
+      @Override
+      public String getLabel(Locale locale) {
+        return LanguageUtil.get(locale, "general");
+      }
 
-  @Override
-  public String getScreenNavigationKey() {
-    return SampleScreenNavigationConstants.
-        SAMPLE_KEY_METHOD;
-  }
-}
-```        
+      @Override
+      public String getScreenNavigationKey() {
+        return SampleScreenNavigationConstants.
+            SAMPLE_KEY_METHOD;
+      }
+    }
+    ```
  
 Next, add a Navigation Entry: 
 
@@ -88,140 +88,140 @@ Next, add a Navigation Entry:
 
 2.  Create the the `@Reference` variables you need for the render logic:
 
-```java
-@Reference
-private ConfigurationProvider _configurationProvider;
+    ```java
+    @Reference
+    private ConfigurationProvider _configurationProvider;
 
-@Reference
-private JSPRenderer _jspRenderer;
+    @Reference
+    private JSPRenderer _jspRenderer;
 
-@Reference
-private Portal _portal;
+    @Reference
+    private Portal _portal;
 
-@Reference(
-    target = "(osgi.web.symbolicname=com.liferay.commerce.payment.method.sample)"
-)
-private ServletContext _servletContext;
-```
+    @Reference(
+        target = "(osgi.web.symbolicname=com.liferay.commerce.payment.method.sample)"
+    )
+    private ServletContext _servletContext;
+    ```
 
 3.  Implement the following methods in your component:
 
-```java
-@Override
-public String getCategoryKey() {
-    return SampleScreenNavigationConstants.
-    	CATEGORY_KEY_SAMPLE_CONFIGURATION;
-}
-
-@Override
-public String getEntryKey() {
-    return SampleScreenNavigationConstants.
-        ENTRY_KEY_SAMPLE_CONFIGURATION;
-}
-
-@Override
-public String getLabel(Locale locale) {
-    return LanguageUtil.get(
-    	locale,
-    	SampleScreenNavigationConstants.
-    		CATEGORY_KEY_SAMPLE_CONFIGURATION);
-}
-
-@Override
-public String getScreenNavigationKey() {
-    return SpaceShipScreenNavigationConstants.
-    	SAMPLE_KEY_METHOD;
-}
-
-@Override
-public boolean isVisible(
-    User user, SamplePermissions spaceShipPermissions) {
-
-    if (samplePermissions.criteriaMethod()) 
-    {
-
-    	return true;
-    }
-
-    return false;
-}
-
-@Override
-public void render(HttpServletRequest request, HttpServletResponse response)
-throws IOException {
-            
-    _jspRenderer.renderJSP(request, response, "/my-category/view-category.jsp");
-}
-```    
-    
-    Here is what the `SampleScreenNavigationEntry` class looks like:
-
-```java
-@Component(
-property = "screen.navigation.entry.order:Integer=20",
-service = ScreenNavigationEntry.class
-)
-public class
-    SampleScreenNavigationEntry
-    implements ScreenNavigationEntry<SampleApplication> {
-    
-    public static final String
-    	ENTRY_KEY_SAMPLE_CONFIGURATION =
-    		"sample-configuration";
-
+    ```java
     @Override
     public String getCategoryKey() {
-    	return SpaceShipScreenNavigationConstants.
-    		CATEGORY_KEY_SAMPLE_CONFIGURATION;
+        return SampleScreenNavigationConstants.
+        	CATEGORY_KEY_SAMPLE_CONFIGURATION;
     }
 
     @Override
     public String getEntryKey() {
-    	return ENTRY_KEY_SAMPLE_CONFIGURATION;
+        return SampleScreenNavigationConstants.
+            ENTRY_KEY_SAMPLE_CONFIGURATION;
     }
 
     @Override
     public String getLabel(Locale locale) {
-    	return LanguageUtil.get(
-    		locale,
-    		SpaceShipScreenNavigationConstants.
-    	    	CATEGORY_KEY_SAMPLE_CONFIGURATION);
+        return LanguageUtil.get(
+        	locale,
+        	SampleScreenNavigationConstants.
+        		CATEGORY_KEY_SAMPLE_CONFIGURATION);
     }
 
     @Override
     public String getScreenNavigationKey() {
-    	return SpaceShipScreenNavigationConstants.
-    		SAMPLE_KEY_METHOD;
+        return SpaceShipScreenNavigationConstants.
+        	SAMPLE_KEY_METHOD;
     }
 
     @Override
     public boolean isVisible(
-    	User user, SamplePermissions spaceShipPermissions) {
+        User user, SamplePermissions spaceShipPermissions) {
 
-    	if (samplePermissions.criteriaMethod()) 
+        if (samplePermissions.criteriaMethod()) 
         {
 
-    		return true;
-    	}
+        	return true;
+        }
 
-       	    return false;
-    	}
+        return false;
+    }
 
     @Override
     public void render(HttpServletRequest request, HttpServletResponse response)
     throws IOException {
-            
+                
         _jspRenderer.renderJSP(request, response, "/my-category/view-category.jsp");
     }
-                	
-    @Reference
-    private JSPRenderer _jspRenderer;
+    ```
+    
+    Here is what the `SampleScreenNavigationEntry` class looks like:
 
-    @Reference(
-    	target = "(osgi.web.symbolicname=com.liferay.commerce.payment.method.sample);
-    	
-    }
-```
+    ```java
+    @Component(
+    property = "screen.navigation.entry.order:Integer=20",
+    service = ScreenNavigationEntry.class
+    )
+    public class
+        SampleScreenNavigationEntry
+        implements ScreenNavigationEntry<SampleApplication> {
+        
+        public static final String
+        	ENTRY_KEY_SAMPLE_CONFIGURATION =
+        		"sample-configuration";
+
+        @Override
+        public String getCategoryKey() {
+        	return SpaceShipScreenNavigationConstants.
+        		CATEGORY_KEY_SAMPLE_CONFIGURATION;
+        }
+
+        @Override
+        public String getEntryKey() {
+        	return ENTRY_KEY_SAMPLE_CONFIGURATION;
+        }
+
+        @Override
+        public String getLabel(Locale locale) {
+        	return LanguageUtil.get(
+        		locale,
+        		SpaceShipScreenNavigationConstants.
+        	    	CATEGORY_KEY_SAMPLE_CONFIGURATION);
+        }
+
+        @Override
+        public String getScreenNavigationKey() {
+        	return SpaceShipScreenNavigationConstants.
+        		SAMPLE_KEY_METHOD;
+        }
+
+        @Override
+        public boolean isVisible(
+        	User user, SamplePermissions spaceShipPermissions) {
+
+        	if (samplePermissions.criteriaMethod()) 
+            {
+
+        		return true;
+        	}
+
+           	    return false;
+        	}
+
+        @Override
+        public void render(HttpServletRequest request, HttpServletResponse response)
+        throws IOException {
+                
+            _jspRenderer.renderJSP(request, response, "/my-category/view-category.jsp");
+        }
+                    	
+        @Reference
+        private JSPRenderer _jspRenderer;
+
+        @Reference(
+        	target = "(osgi.web.symbolicname=com.liferay.commerce.payment.method.sample);
+        	
+        }
+    ```
 
 You can implement your render method any way that you want as long as it
 provides a way to render HTML. Liferay developers typically use JSPs, shown
@@ -240,12 +240,12 @@ The `render` method that you created in your last step references
 3.  Inside the JSP add the `liferay-frontend:screen-navigation` taglib with the 
     required parameters:
 
-```jsp
-<liferay-frontend:screen-navigation key="<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"
-	modelBean="<%= category %>"
-	portletURL="<%= portletURL %>"
-/>
-```
+    ```jsp
+    <liferay-frontend:screen-navigation key="<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"
+    	modelBean="<%= category %>"
+    	portletURL="<%= portletURL %>"
+    />
+    ```
 
 After that tag, add the rest of the content of the JSP file to handle user
 interactions and communication with the back-end for configuration.

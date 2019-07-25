@@ -40,7 +40,7 @@ Follow these steps to build a form using AUI tags:
 
     An example form is shown below:
 
-    ```html
+    ```markup
     <aui:form name="fm">
     	<aui:fieldset-group markupView="lexicon">
     		<aui:fieldset label="Personal Information">
@@ -83,7 +83,7 @@ Follow these steps to build a form using AUI tags:
     default validation error message with the `errorMessage` attribute. An 
     example configuration is shown below:
 
-    ```html
+    ```markup
     <aui:form name="myForm">
         <aui:input name="password" id="password" label="Password" 
         required="true" />

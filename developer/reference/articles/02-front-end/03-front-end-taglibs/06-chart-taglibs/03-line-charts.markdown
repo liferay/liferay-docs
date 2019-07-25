@@ -38,7 +38,7 @@ portlet to use line charts.
 3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_lineChartConfig` 
     as the `config` attribute's value:
 
-    ```html
+    ```markup
     <chart:line
       config="<%= _lineChartConfig %>"
     />

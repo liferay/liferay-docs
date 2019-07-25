@@ -15,7 +15,7 @@ a String, letting you post-process it. For example, you can use this to
 The example below saves the link's generated markup to a buffer and then uses 
 the returned string as the argument for a `liferay-ui:message` key:
 
-```html
+```markup
 <liferay-util:buffer
 		var="linkContent"
 >

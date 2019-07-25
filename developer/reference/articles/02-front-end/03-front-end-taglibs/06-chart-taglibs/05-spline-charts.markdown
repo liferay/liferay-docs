@@ -38,7 +38,7 @@ portlet to use spline charts.
 3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_splineChartConfig` 
     as the `config` attribute's value:
 
-    ```html
+    ```markup
     <chart:spline
       config="<%= _splineChartConfig %>"
     />
@@ -49,7 +49,7 @@ portlet to use spline charts.
 You can also use an area spline chart if you prefer. An area spline chart 
 highlights the area under the spline curve.
 
-```html
+```markup
 <chart:area-spline 
   config="<%= _splineChartConfig %>" 
 />

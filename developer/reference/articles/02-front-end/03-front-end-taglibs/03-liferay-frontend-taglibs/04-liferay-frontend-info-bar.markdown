@@ -17,7 +17,7 @@ sidebar panel.
 
 Info bar:
 
-```html
+```markup
 <liferay-frontend:info-bar>
   <liferay-frontend:info-bar-buttons>
     <liferay-frontend:info-bar-sidenav-toggler-button
@@ -34,7 +34,7 @@ for the `icon` attribute.
 
 Sidebar panel:
 
-```html
+```markup
 <div class="closed container-fluid-1280 sidenav-container sidenav-right" id="<portlet:namespace />infoPanelId">
     <liferay-frontend:sidebar-panel>
       <div>

@@ -27,7 +27,9 @@ database and store it in its local cache.
 
 To enable Cluster Link, add this property to `portal-ext.properties`: 
 
-    cluster.link.enabled=true
+```properties
+cluster.link.enabled=true
+```
 
 Cluster Link depends on 
 [JGroups](http://www.jgroups.org) 
@@ -58,8 +60,10 @@ groups of
 to implement this: a control group and a transport group. If you want to
 customize the channel properties, you can do so in `portal-ext.properties`: 
 
-    cluster.link.channel.name.control=[your control channel name]
-    cluster.link.channel.properties.control=[your control channel properties]
+```properties
+cluster.link.channel.name.control=[your control channel name]
+cluster.link.channel.properties.control=[your control channel properties]
+```
 
 Please see 
 [JGroups's documentation](http://www.jgroups.org/manual/index.html#protlist) 
@@ -77,15 +81,19 @@ logically or physically on the network, or by configuring each cluster's
 JGroups sets a bind address automatically. If you want to set a manual address,
 you can do this. By default, these are set to `localhost`: 
 
-    cluster.link.bind.addr["cluster-link-control"]=localhost
-    cluster.link.bind.addr["cluster-link-udp"]=localhost
+```properties
+cluster.link.bind.addr["cluster-link-control"]=localhost
+cluster.link.bind.addr["cluster-link-udp"]=localhost
+```
 
 In some configurations, however, `localhost` is bound to the internal loopback
 network (`127.0.0.1` or `::1`), rather than the host's real address. If for some
 reason you need this configuration, you can make @product@ auto detect its real
 address with this property: 
 
-    cluster.link.autodetect.address=www.google.com:80
+```properties
+cluster.link.autodetect.address=www.google.com:80
+```
 
 Set it to connect to some other host that's contactable by your server. By
 default, it points to Google, but this may not work if your server is behind a
@@ -101,8 +109,10 @@ methods are all provided by JGroups.
 1.  If you are binding the IP address instead of using `localhost`, make sure
     the right IP addresses are declared using these properties: 
 
-        `cluster.link.bind.addr["cluster-link-control"]=localhost` 
-        `cluster.link.bind.addr["cluster-link-udp"]=localhost`
+    ```properties
+    cluster.link.bind.addr["cluster-link-control"]=localhost
+    cluster.link.bind.addr["cluster-link-udp"]=localhost
+    ```
 
 3.  Test your load and then optimize your settings if necessary.
 
@@ -168,8 +178,10 @@ different geographical locations.
 6.  Save the file. Modify that node's `portal-ext.properties` file to point to
     it: 
 
-        cluster.link.channel.properties.control=[CONFIG_FILE_PATH]/tcp.xml
-        cluster.link.channel.properties.transport.0=[CONFIG_FILE_PATH]/tcp.xml
+    ```properties
+    cluster.link.channel.properties.control=[CONFIG_FILE_PATH]/tcp.xml
+    cluster.link.channel.properties.transport.0=[CONFIG_FILE_PATH]/tcp.xml
+    ```
 
 You're now set up for Unicast over TCP clustering! Repeat this process for each
 node you want to add to the cluster. 

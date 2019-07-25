@@ -13,7 +13,7 @@ To add tabs to your app, use the `<liferay-ui:tabs>` tag and specify each tab's
 name as a comma-separated list for the `names` attribute. For example, three 
 tabs named `tab1`, `tab2`, and `tab3`, look like this in the JSP:
 
-```html
+```markup
 <liferay-ui:tabs names="tab1,tab2,tab3">
 
 </liferay-ui:tabs>
@@ -25,7 +25,7 @@ HTML content or add content indirectly by including content from another JSP
 (via the `<%@ includefile="filepath"%>` directive). The example snippet below is 
 from the Calendar portlet's `configuration.jsp`:
 
-```html
+```markup
 <liferay-ui:tabs
     names='<%= "user-settings,display-settings,rss" %>'
     param="tabs2"

@@ -15,62 +15,62 @@ For more information, see
     Gradle you must add the following line in your project's `build.gradle` 
     file: 
 
-```groovy
+    ```groovy
     provided group: "com.liferay", name: "com.liferay.adaptive.media.image.taglib", version: "1.0.0"
-```
+    ```
 
 2.  Declare the taglib in your JSP: 
 
-```markup
+    ```jsp
     <%@ taglib uri="http://liferay.com/tld/adaptive-media-image" prefix="liferay-adaptive-media" %>
-```
+    ```
 
 3.  Use the taglib wherever you want the adapted image to appear in your app's 
     JSP files: 
 
-```markup
+    ```jsp
     <liferay-adaptive-media:img class="img-fluid" fileVersion="<%= fileEntry.getFileVersion() %>" />
-```
+    ```
 
-For example, this `view.jsp` uses the taglib to display the adapted images 
-in a grid with the `col-md-6` 
-[column container class](/docs/7-2/frameworks/-/knowledge_base/f/layout-templates-intro): 
+    For example, this `view.jsp` uses the taglib to display the adapted images 
+    in a grid with the `col-md-6` 
+    [column container class](/docs/7-2/frameworks/-/knowledge_base/f/layout-templates-intro): 
 
-```markup
-        <%@ include file="/init.jsp" %>
+    ```jsp
+    <%@ include file="/init.jsp" %>
 
-        <div class="container">
+    <div class="container">
 
-        <%
-        String[] mimeTypes = {"image/bmp", "image/gif", "image/jpeg", "image/pjpeg", "image/png", "image/tiff", "image/x-citrix-jpeg", "image/x-citrix-png", "image/x-ms-bmp", "image/x-png", "image/x-tiff"};
+    <%
+    String[] mimeTypes = {"image/bmp", "image/gif", "image/jpeg", "image/pjpeg", "image/png", "image/tiff", "image/x-citrix-jpeg", "image/x-citrix-png", "image/x-ms-bmp", "image/x-png", "image/x-tiff"};
 
-        List<FileEntry> fileEntries = DLAppServiceUtil.getFileEntries(scopeGroupId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, mimeTypes);
+    List<FileEntry> fileEntries = DLAppServiceUtil.getFileEntries(scopeGroupId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, mimeTypes);
 
-        int columns = 0;
+    int columns = 0;
 
-        for (FileEntry fileEntry : fileEntries) {
-                boolean row = ((columns % 2) == 0);
-        %>
+    for (FileEntry fileEntry : fileEntries) {
+            boolean row = ((columns % 2) == 0);
+    %>
 
-                <c:if test="<%= row %>">
-                        <c:if test="<%= columns != 0 %>">
-                                </div>
-                        </c:if>
+            <c:if test="<%= row %>">
+                    <c:if test="<%= columns != 0 %>">
+                            </div>
+                    </c:if>
 
-                        <div class="row">
-                </c:if>
+                    <div class="row">
+            </c:if>
 
-                <div class="col-md-6">
-                        <liferay-adaptive-media:img class="img-fluid" fileVersion="<%= fileEntry.getFileVersion() %>" />
-                </div>
+            <div class="col-md-6">
+                    <liferay-adaptive-media:img class="img-fluid" fileVersion="<%= fileEntry.getFileVersion() %>" />
+            </div>
 
-                <%
-                columns++;
-        }
-        %>
+            <%
+            columns++;
+    }
+    %>
 
-        </div>
-```
+    </div>
+    ```
 
 Looking at the generated markup, you can see that it uses the `<picture>` 
 tag as described in 

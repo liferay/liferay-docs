@@ -18,7 +18,7 @@ in the My Sites portlet:
 
 Example JSP configuration:
 
-```html
+```markup
 <liferay-ui:icon-menu
     direction="left-side"
     icon="<%= StringPool.BLANK %>"

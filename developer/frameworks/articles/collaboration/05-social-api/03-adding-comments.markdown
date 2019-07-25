@@ -23,9 +23,11 @@ Follow these steps to enable commenting on your app's content:
 3.  Include the `liferay-ui`, `liferay-comment`, and `portlet` taglib 
     declarations in your JSP: 
 
-        <%@ taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui" %>
-        <%@ taglib prefix="liferay-comment" uri="http://liferay.com/tld/comment" %>
-        <%@ taglib prefix="portlet" uri="http://java.sun.com/portlet_2_0" %>
+    ```jsp
+    <%@ taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui" %>
+    <%@ taglib prefix="liferay-comment" uri="http://liferay.com/tld/comment" %>
+    <%@ taglib prefix="portlet" uri="http://java.sun.com/portlet_2_0" %>
+    ```
 
 4.  Use 
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html) 
@@ -33,24 +35,30 @@ Follow these steps to enable commenting on your app's content:
     using the `-LocalServiceUtil` class. Here's an example that does this for a 
     guestbook entry in the example Guestbook app:
 
-        <%
-        long entryId = ParamUtil.getLong(renderRequest, "entryId");
-        entry = EntryLocalServiceUtil.getEntry(entryId);
-        %>
+    ```java
+    <%
+    long entryId = ParamUtil.getLong(renderRequest, "entryId");
+    entry = EntryLocalServiceUtil.getEntry(entryId);
+    %>
+    ```
 
 5.  Create a collapsible panel for the comments using the 
     `liferay-ui:panel-container` and `liferay-ui:panel` tags. This lets users 
     hide the discussion area: 
 
-        <liferay-ui:panel-container extended="<%=false%>"
-          id="guestbookCollaborationPanelContainer" persistState="<%=true%>">
-          <liferay-ui:panel collapsible="<%=true%>" extended="<%=true%>"
-            id="guestbookCollaborationPanel" persistState="<%=true%>"
-            title="Collaboration">
+    ```jsp
+    <liferay-ui:panel-container extended="<%=false%>"
+      id="guestbookCollaborationPanelContainer" persistState="<%=true%>">
+      <liferay-ui:panel collapsible="<%=true%>" extended="<%=true%>"
+        id="guestbookCollaborationPanel" persistState="<%=true%>"
+        title="Collaboration">
+    ```
 
 6.  Create a URL for the discussion using the `portlet:actionURL` tag: 
 
-        <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
+    ```jsp
+    <portlet:actionURL name="invokeTaglibDiscussion" var="discussionURL" />
+    ```
 
 7.  Use the `liferay-comment:discussion` tag to add the discussion. To let the 
     user return to the JSP after making a comment, set the tag's `redirect` 
@@ -59,14 +67,16 @@ Follow these steps to enable commenting on your app's content:
     `request` object. In this example, the current URL was earlier set to the 
     `currentURL` variable: 
 
-            <liferay-comment:discussion className="<%=Entry.class.getName()%>"
-              classPK="<%=entry.getEntryId()%>"
-              formAction="<%=discussionURL%>" formName="fm2"
-              ratingsEnabled="<%=true%>" redirect="<%=currentURL%>"
-              userId="<%=entry.getUserId()%>" />
+    ```jsp
+        <liferay-comment:discussion className="<%=Entry.class.getName()%>"
+          classPK="<%=entry.getEntryId()%>"
+          formAction="<%=discussionURL%>" formName="fm2"
+          ratingsEnabled="<%=true%>" redirect="<%=currentURL%>"
+          userId="<%=entry.getUserId()%>" />
 
-          </liferay-ui:panel>
-        </liferay-ui:panel-container>
+      </liferay-ui:panel>
+    </liferay-ui:panel-container>
+    ```
 
 If you haven't already connected your portlet's view to the JSP for your entity, 
 see 
