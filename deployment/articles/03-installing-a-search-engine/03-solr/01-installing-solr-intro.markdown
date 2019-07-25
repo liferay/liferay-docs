@@ -23,5 +23,5 @@ Read
 [here](/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine#choosing-a-search-engine)
 for more information.
 
-@product-ver@ supports Solr 7.5.x through the Liferay Connector to Solr 7
-application. 
+Liferay DXP 7.2, Fix Pack 1 and later, supports Solr 7.5.x through the Liferay
+Connector to Solr 7 application. 
