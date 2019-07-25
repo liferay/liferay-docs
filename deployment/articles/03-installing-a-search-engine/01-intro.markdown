@@ -32,7 +32,7 @@ Elasticsearch and Solr are both supported, but there are limitations to
 Liferay's Solr integration. To use any of the following features, you must
 choose Elasticsearch. 
 
-End User features:
+### End User Feature Limitations of Liferay's Solr Integration
 
 - [Liferay Commerce](https://help.liferay.com/hc/en-us/articles/360017869952)
 - [Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement) 
@@ -42,7 +42,9 @@ End User features:
 - Search Tuning: Result Rankings - Confirming with Dennis
 - Search Tuning: Synonyms - Confirming with Dennis-->
 
-Developer Features:
+### Developer Feature Limitations of Liferay's Solr Integration
+
+The following APIs are not supported by Liferay's Solr connector and may be added n in the future.
 
 - From Portal Core (Module: `portal-kernel`, Artifact:
     `com.liferay.portal.kernel`):
@@ -92,8 +94,7 @@ Developer Features:
 Liferay Commerce requires the `TermsSetFilter` implementation, only available
 in the Elasticsearch connector.
 
-Some of these Elasticsearch-only developer features may be added to the Solr
-integration in the future.
+### Elasticsearch Java Distribution Compatibility
 
 Another factor to consider in your search engine selection is JDK version. The
 search engine and @product@ must use the same JDK version and distribution
