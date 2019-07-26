@@ -83,7 +83,7 @@ As you work, you can observe your changes in the preview pane.
 
 ## Creating a Component
 
-Components are simple, reusable elements for building a parts of a page. Next
+Components are simple, reusable elements for building parts of a page. Next
 create a button with a link as a Component:
 
 1.  Go back to the *Site Builder* &rarr; *Page Fragments* page and select the
