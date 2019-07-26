@@ -6,14 +6,15 @@ header-id: dynamically-populating-select-list-fields-in-the-configuration-ui
 
 [TOC levels=1-4]
 
-Configuration options can be presented in a select list, directly entering each
-label and value in the `@Meta.AD` annotation in the [Configuration
+You've always been able to provide a select list for your configuration options
+by directly entering each label and value in the `@Meta.AD` annotation of the
+[Configuration
 interface](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-configuration-interface).
 
 ```java
 @Meta.AD(
     deflt = "enabled-with-warning", name = "csv-export",
-    optionLabels = {"Enabled", "enabled-with-warning", "Disabled"},
+    optionLabels = {"enabled", "enabled-with-warning", "disabled"},
     optionValues = {"enabled", "enabled-with-warning", "disabled"},
     required = false
 )
@@ -59,13 +60,11 @@ configuration UI:
     }
     ```
 
-3.  Use the `getOptions()` method to retrieve the options from the Configuration 
-    interface and populate the configuration fields with their labels and 
-    values, as shown in the example below:
+3.  The `getOptions` method returns a list of `Option`s, which consist of the
+    label and value fields. The labels provided here are translated to
+    `optionLabels`, and the values as `optionValues`, in the configuration
+    interface. 
 
-    <!-- Drew or Pei-Jung, we need to describe this code, or provide more
-    realistic example code if we want to. Whatever will best help third party
-    devs see what they can do with the interface. -->
     ```java    
     public List<Option> getOptions() {
     	List<AssetRendererFactory<?>> assetRendererFactories =
@@ -103,5 +102,15 @@ configuration UI:
     }
     ```
 
-Great! Now you know how to dynamically populate select fields in your 
-configuration's UI. 
+    This code gets a list of `AssetRendererFactory` objects and iterates through
+    the list, populating a new list of `Option`s, using the asset's type name as
+    the label and the class name as the value. It comes from the
+    [`EnabledClassNamesConfigurationFieldOptionsProvider`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/asset/asset-auto-tagger-service/src/main/java/com/liferay/asset/auto/tagger/internal/configuration/admin/definition/EnabledClassNamesConfigurationFieldOptionsProvider.java),
+    which populates the configuration field labeled _Enable Google Cloud Natural
+    Language Text Auto Tagging For_ with all the asset types that have
+    registered a `TextExtractor`.
+
+    ![Figure x: The select list in the Google Cloud Natural Language Text Auto Tagging entry is populated programmatically, using the `ConfigurationFieldOptionsProvider`.](../../images/configuration-field-options-provider.png)
+
+The `ConfigurationFieldOptionsProvider` allows you to populate select list with
+configuration options defined by your custom logic.
