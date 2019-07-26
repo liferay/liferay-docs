@@ -558,5 +558,370 @@ caption {
       </td>
   </tr>
 
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/contacts/latest/javadocs/" target="_blank">
+      Contacts<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/contacts/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+          com.liferay.contacts.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/friendly-url/latest/javadocs/" target="_blank">
+      Friendly URL<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/friendly-url/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+          com.liferay.friendly.url.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/frontend-editor/latest/javadocs/" target="_blank">
+      Frontend Editor<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/frontend-editor/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+          com.liferay.frontend.editor.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/frontend-image-editor/latest/javadocs/" target="_blank">
+      Frontend Image Editor<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/frontend-image-editor/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+           com.liferay.frontend.image.editor.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/frontend-js/latest/javadocs/" target="_blank">
+      Frontend JS<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/frontend-js/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+            com.liferay.frontend.js.loader.modules.extender.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/map/latest/javadocs/" target="_blank">
+      Map<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/map/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.map.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/mobile-device-rules/latest/javadocs/" target="_blank">
+      Mobile Device Rules<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/mobile-device-rules/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.mobile.device.rules.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">
+      <a href="@app-ref@/organizations/latest/javadocs/" target="_blank">
+      Organizations<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/organizations/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.organizations.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.organizations.item.selector.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/password-policies-admin/latest/javadocs/" target="_blank">
+      Password Policies Admin<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/password-policies-admin/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.password.policies.admin.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-cache/latest/javadocs/" target="_blank">
+      Portal Cache<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-cache/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.cache.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-configuration/latest/javadocs/" target="_blank">
+      Portal Configuration<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-configuration/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.configuration.upgrade.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-instances/latest/javadocs/" target="_blank">
+      Portal Instances<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-instances/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.instances.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-lock/latest/javadocs/" target="_blank">
+      Portal Lock<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-lock/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.lock.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-remote/latest/javadocs/" target="_blank">
+      Portal Remote<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-remote/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.remote.soap.extender.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-scripting/latest/javadocs/" target="_blank">
+      Portal Scripting<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-scripting/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.scripting.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="3">
+      <a href="@app-ref@/portal-search/latest/javadocs/" target="_blank">
+      Portal Search<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-search/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.search.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.search.engine.adapter.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.search.web.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="3">
+      <a href="@app-ref@/portal-security-audit/latest/javadocs/" target="_blank">
+      Portal Security Audit<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-security-audit/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.security.audit.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.audit.event.generators.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.audit.storage.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="8">
+      <a href="@app-ref@/portal-security-sso/latest/javadocs/" target="_blank">
+      Portal Security SSO<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-security-sso/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.security.sso.cas.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.sso.facebook.connect.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.sso.google.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.sso.ntlm.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.sso.openid.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.sso.openid.connect.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.sso.opensso.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.sso.token.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="5">
+      <a href="@app-ref@/portal-security/latest/javadocs/" target="_blank">
+      Portal Security<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-security/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.security.exportimport.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.ldap.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.permission.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.service.access.policy.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.security.service.access.quota.api
+      </td>
+  </tr>
+
 </table>
 
