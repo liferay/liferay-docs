@@ -51,10 +51,10 @@ interface:
     }
     ```
 
-    But if you've gone through the trouble of idnexing your model entity's
-    fields in a search engine, it's mroe likely you'll want to do the initial
-    search, and filtering by the `userId`, at the search engine level, then
-    retrieve the matching entities from the database.
+    But if you've gone through the trouble of indexing your model entity's
+    fields in a search engine, it's more likely you'll want to do the initial
+    search, querying for documents matching the `userId`, at the search engine
+    level. After the search, retrieve the matching entities from the database.
 
     ```java
     @Override
