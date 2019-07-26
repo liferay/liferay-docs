@@ -78,23 +78,6 @@ configurable,
 6.  Click *Publish* to save your work and make it available to add to a content 
     page.
 
-    ![Figure 2: You can click your Fragment to view its configuration options.](../../../images/fragment-config.png)
-
-7.  Your configuration JSON file referred to several language keys. You must
-    define these in your Fragment's collection folder so they render properly.
-    Create the `[COLLECTION]/src/main/resources/content/Language.properties` and
-    add the language keys:
-
-    ```properties
-    applied-style=Applied Style
-    this-is-the-style-that-will-be-applied=This is the style that will be applied.
-    dark=Dark
-    light=Light
-    ```
-
-    Now reimport your Fragment using the
-    [Fragments Toolkit](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments-desktop-tools#importing-and-exporting-fragments).
-
-    ![Figure 3: Once your language keys are created, they're displayed in your Fragment.](../../../images/fragment-lang-keys.png)
+    ![Figure 2: You can click your Fragment to view its configuration options.](../../../images/fragment-lang-keys.png)
 
 Awesome! You now have a configurable Fragment!

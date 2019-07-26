@@ -86,7 +86,7 @@ module:
     `/com/liferay/fragments/collection/contributor/demo`.
 
 2.  Copy the Fragments you want to distribute into the folder. You can learn 
-    how to create a Fragments in the
+    how to create a Fragment in the
     [Creating Fragments section](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments).
 
 3.  Create a file named `collections.json` in the same folder with this format:
@@ -106,6 +106,11 @@ module:
     If a fragment is not listed in `collections.json`, it will not be available
     in the Contributed Collection, even if the files are included in the module.
 
+Next, you'll dive into providing thumbnail images and language
+keys/translations.
+
+## Providing Thumbnail Images
+
 You can also provide thumbnail images for reference for your fragments:
 
 1.  Under `resources/META-INF/resources` create a folder named `thumbnails`.
@@ -116,11 +121,34 @@ You can also provide thumbnail images for reference for your fragments:
 | **Note:** All fragments added through a Contributed Fragment Collection
 | will be available globally to all Sites.
 
+## Providing Language Keys
+
+Providing language keys in your Fragment gives you the option for translating
+the text you display. Here's how to do it:
+
+1.  You must define your language keys in the Fragment's collection folder.
+    Create the `[COLLECTION]/src/main/resources/content/Language.properties`
+    file.
+
+2.  Add your language keys. For example,
+
+    ```properties
+    applied-style=Applied Style
+    this-is-the-style-that-will-be-applied=This is the style that will be applied.
+    dark=Dark
+    light=Light
+    ```
+
+You can learn more about providing translations in the
+[Localizing Your Application](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application)
+article.
+
 ## Deploy the Contributed Fragment Collection
 
-Now that you have created the necessary pieces of the module, you can build 
-it and
-[deploy it](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project) to
-@product@. After it's deployed, the Fragments will be available for use.
+Now that you have created the necessary pieces of the module, you can build it
+and [deploy it](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project) to
+@product@. After it's deployed, the Fragments will be available for use. This
+can also be done by using the
+[Fragments Toolkit](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments-desktop-tools#importing-and-exporting-fragments).
 Contributed Fragments cannot be edited with Liferay, and can only be updated by
 editing the fragments in your module and the building and redeploying them.
