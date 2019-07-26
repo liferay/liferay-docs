@@ -64,24 +64,11 @@ not currently supported by Liferay's Solr connector.
     - `com.liferay.portal.search.geolocation.*`
     - `com.liferay.portal.search.highlight.*`
     - `com.liferay.portal.search.query.function.*`
-    - `com.liferay.portal.search.query`:
-        - `BoostingQuery`
-        - `CommonTermsQuery`
-        - `ConstantScoreQuery`
-        - `DateRangeTermQuery`
-        - `ExistsQuery`
-        - `FunctionScoreQuery`
-        - `IdsQuery`
-        - `NestedQuery`
-        - `PercolateQuery`
-        - `PrefixQuery`
-        - `RangeTermQuery`
-        - `RegexQuery`
-        - `ScriptQuery`
-        - `SimpleStringQuery`
+    - `com.liferay.portal.search.query.*`:
     - `com.liferay.portal.search.script.*`
     - `com.liferay.portal.search.significance.*`
-    - `com.liferay.portal.search.sort.*`: only `Sort` is supported
+    - `com.liferay.portal.search.sort.*`: only `Sort`,`FieldSort`, and
+        `ScoreSort` are supported
 - Portal Search Engine Adapter API (Module: `portal-search-engine-adapter-api`,
     Artifact: `com.liferay.portal.search.engine.adapter.api`)
     - `com.liferay.portal.search.engine.adapter.cluster.*`
