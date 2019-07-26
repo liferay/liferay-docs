@@ -1,9 +1,7 @@
 # Making a Fragment Configurable
 
 | **Note:** Defining configurations for Page Fragments is available in Liferay
-| DXP 7.2 Fix Pack 1+ and Liferay Portal GA2+. Currently, only `select` fields
-| are supported for Fragment configurations. Development for additional field
-| types like `checkbox`, `color`, `item-selector`, and `text` are in progress.
+| DXP 7.2 Fix Pack 1+ and Liferay Portal GA2+.
 
 Defining configuration options for a Fragment gives it more flexibility,
 reducing the number of Fragments you must maintain. To make a Fragment
@@ -53,6 +51,9 @@ configurable,
     }
     ```
 
+    | **Note:** The `label` property is optional. If it's left out, your
+    | configuration option will not have a title.
+
     The configuration values selected by the user are made available to the
     Fragment developer through the FreeMarker context. A configuration value can
     be referenced using the notation `${configuration.<fieldName>}`. For the
@@ -75,8 +76,8 @@ configurable,
     defined `datatype` value specified in the JSON file. Therefore, for this
     example, `configuration.headingAppliedStyle?is_string` is `true`.
 
-6.  Click *Publish* to save your work and make it available to add to a content 
-    page.
+6.  Click *Publish* to save your work and make it available to add to a Content 
+    Page.
 
     ![Figure 2: You can click your Fragment to view its configuration options.](../../../images/fragment-lang-keys.png)
 
