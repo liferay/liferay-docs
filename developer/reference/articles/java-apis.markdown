@@ -147,7 +147,7 @@ caption {
   </tr>
 
   <tr>
-    <th rowspan="1">
+    <th rowspan="2">
       <a href="@app-ref@/comment/latest/javadocs/" target="_blank">
       Comment<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
