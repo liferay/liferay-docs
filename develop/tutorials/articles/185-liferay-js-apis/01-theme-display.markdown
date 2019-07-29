@@ -111,12 +111,10 @@ table below:
 | getParentGroupId | number | |
 | getPathContext | string | |
 | getPathImage | string | Returns the relative path of the portlet's image directory |
-| getPathJavaScript | string | Returns the relative path of the directory containing the
-portlet's JavaScript source files |
+| getPathJavaScript | string | Returns the relative path of the directory containing the portlet's JavaScript source files |
 | getPathMain | string | Returns the path of the portal instance's main directory |
 | getPathThemeImages | string | Returns the path of the current theme's image directory |
-| getPathThemeRoot | string | Returns the relative path of the current theme's root
-directory |
+| getPathThemeRoot | string | Returns the relative path of the current theme's root directory |
 | getPlid | string | Returns the primary key of the page |
 | getPortalURL | string | Returns the portal instance's base URL |
 | getScopeGroupId | number | Returns the ID of the scoped or sub-scoped active group (e.g. site) |
