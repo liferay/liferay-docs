@@ -49,6 +49,16 @@ assume you've followed the earlier section on *Installing and Configuring Solr
        ```sh
         Starting up Solr on port 8983 using command:
         "bin/solr" start -cloud -p 8983 -s "example/cloud/node1/solr"
+
+        Waiting up to 180 seconds to see Solr running on port 8983 [|]  [-]  
+        Started Solr server on port 8983 (pid=8846). Happy searching!
+
+            
+        Starting up Solr on port 7574 using command:
+        "bin/solr" start -cloud -p 7574 -s "example/cloud/node2/solr" -z localhost:9983
+
+        Waiting up to 180 seconds to see Solr running on port 7574 [|]  [/]  
+        Started Solr server on port 7574 (pid=9026). Happy searching!
         ```
 
     -  Name the collection *liferay*.
