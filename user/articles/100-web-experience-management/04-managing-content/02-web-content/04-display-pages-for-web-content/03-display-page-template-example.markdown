@@ -86,3 +86,14 @@ you click on the content in an Asset Publisher with *Asset Link Behavior* set to
 *View in Context*.
 
 ![Figure 5: Selecting the Asset type and Subtype.](../../../../../images/display-page-in-context.png)
+
+You can go back and edit the display page template by navigating to *Site
+Administration* &rarr; *Site Builder* &rarr; *Pages* &rarr; *Display Page
+Templates* and clicking *Actions*
+(![Actions](../../../../../images/icon-staging-bar-options.png)) &rarr; *Edit*
+next to the display page template you want to edit. If you're viewing the
+published display page, you can also select the *Edit* button
+(![Edit](../../../../../images/icon-edit-pencil.png)) from the Control Menu.
+
+Awesome! You now know how to create and configure a display page using display
+page templates.
