@@ -51,9 +51,9 @@ and `liferay-portlet.xml`, and you'll need a `portlet.xml` descriptor.
 
 Develop a Spring MVC portlet WAR file with the appropriate descriptor files. 
 
-Import class packages your portlet's descriptor files reference by adding the
-packages to an `Import-Package` header in the
-`liferay-plugin-package.properties` file. 
+[Import class packages](/docs/7-0/tutorials/-/knowledge_base/t/importing-packages)
+your portlet's descriptor files reference by adding the packages to an
+`Import-Package` header in your `liferay-plugin-package.properties` file. 
 
 Here's an example `Import-Package` header:
 
