@@ -34,7 +34,7 @@ With all of the Fragments and Collections that are included in @product-ver@
 many projects can be completed using only the out of the Fragments and 
 capabilities. In many cases, though, you need to create your own Fragments. 
 Creating Fragments is done by developers and covered in detail in our [Page 
-Fragment development guide](dev-guide-link).
+Fragment development guide](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments).
 
 ## Building Content Pages
 
