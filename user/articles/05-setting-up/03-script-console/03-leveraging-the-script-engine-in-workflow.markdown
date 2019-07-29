@@ -22,46 +22,53 @@ Usually when you're scripting in Groovy, you must define your variables.
 KaleoInstanceToken kaleoInstanceToken=new KaleoInstanceToken;
 ```
 
-
-In
-workflow scripts, though, there are several [pre-defined variables](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-workflow/portal-workflow-kaleo-runtime-scripting-impl/src/main/java/com/liferay/portal/workflow/kaleo/runtime/scripting/internal/util/ScriptingContextBuilderImpl.java) injected into
-your script context. Call these without defining them first:
+In workflow scripts, there are several [pre-defined
+variables](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-workflow/portal-workflow-kaleo-runtime-scripting-impl/src/main/java/com/liferay/portal/workflow/kaleo/runtime/scripting/internal/util/ScriptingContextBuilderImpl.java)
+injected into your script context, to be called without defining them first:
 
 ### Variables that are Always Available
 
 These variables are available from anywhere that you can run a workflow script:
 
 `kaleoInstanceToken`
-: A token for each instance of a workflow (each time a User clicks _Submit for
-Publication_, a workflow instance, and its corresponding `KaleoInstanceToken`,
-is created). Use this to retrieve the ID of the token, by calling
-`kaleoInstanceToken.getKaleoInstanceTokenId()`.
+: A workflow instance and corresponding instance token (the
+`KaleoInstanceToken`) are created each time a User clicks _Submit for
+Publication_. Use the injected token to retrieve its ID, by calling
+`kaleoInstanceToken.getKaleoInstanceTokenId()`. This is often passed as a method
+parameter in a script.
 
 `userId`
-: The `userId` returned is context dependent. It's the ID of the last User to
-intervene in the workflow at the time the script is run. In the `created` node,
-this would be the User that clicked _Submit for Publication_, whereas it's the
-ID of the reviewer upon exit of the `review` node of the Single Approver
-definition.
+: The `userId` returned is context dependent. Technically, the logic works like
+this: if the `KaleoTaskInstanceToke.getcompletionUserId()` is null, check
+`KaloeTaskInstanceToken.getUserId()`. If that's null too, call
+`KaleoInstanceToken.getUserId()`. It's the ID of the last User to intervene in
+the workflow at the time the script is run. In the `created` node, this would be
+the User that clicked _Submit for Publication_, whereas it's the ID of the
+reviewer upon exit of the `review` node of the Single Approver definition.
 
-`workflowContext` : The workflow context is full of useful information you can
+`workflowContext`
+: The workflow context is full of useful information you can
 use in your scripts. Usually you'll pass this as a parameter to a method that
-requires a `WorkflowContext` object.
+requires a `WorkflowContext` object, but all of the `WorkflowContext`'s
+attributes are available in the script as well. The workflow context in the
+script is context dependent. If a call to
+`ExecutionContext.getWorkflowContext()` comes back null, then the workflow
+context is obtained by `KaleoInstanceModel.getWorkflowContext()`.
 
-### Injected Variables in a Task Node
+### Variables Injected into Task Nodes
 
 If a `kaleoTaskInstanceToken` has been created:
 
 `kaleoTaskInstanceToken`
-: The token itself is available in the workflow script. Use it to get its ID, to
-use in other useful programmatic workflow activities, like programmatic
+: The task's token itself is available in the workflow script. Use it to get its
+ID, to use in other useful programmatic workflow activities, like programmatic
 assignment.
 
 `taskName`
-: The task's own name is accessible.
+: The task's own name is accessible (returns the same as `KaleoTak.getName()`).
 
 `workflowTaskAssignees`
-: If the script is inside a task node, get a list of its assignees.
+: If the script is inside a task node, get a `List` of its assignees.
 
 `kaleoTimerInstanceToken`
 : If a [task timer](/docs/7-2/reference/-/knowledge_base/r/workflow-task-nodes/#task-timers)
