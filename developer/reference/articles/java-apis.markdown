@@ -1050,7 +1050,7 @@ caption {
   </tr>
 
   <tr>
-    <th rowspan="1">
+    <th rowspan="2">
       <a href="@app-ref@/user-groups-admin/" target="_blank">
       User Groups Admin<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
