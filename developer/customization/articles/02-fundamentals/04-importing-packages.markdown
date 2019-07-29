@@ -152,7 +152,20 @@ type:
 | Module JAR (uses bnd)     | `[project]/bnd.bnd` |
 | Module JAR (doesn't use bnd) | `[module JAR]/META-INF/MANIFEST.MF` |
 | Plugin WAR | `WEB-INF/liferay-plugin-package.properties` |
- 
+
+| **Note:** The
+| [WAB Generator](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
+| refrains from adding WAR project embedded
+| third-party JARs to a WAB if
+| [@product@ already exports the JAR's packages](/docs/7-2/customization/-/knowledge_base/c/understanding-excluded-jars).
+| 
+| If your WAR requires a different version of a third-party package that
+| @product@ exports, specify that package in your `Import-Package:` list. Then 
+| if the package provider is an OSGi module, publish its exported packages by
+| deploying the module. If the package provider is not an OSGi module, follow  
+| the instructions for
+| [adding third-party libraries](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module). 
+
 Congratulations! Now you can import all kinds of packages for your modules and
 plugins to use.
 
