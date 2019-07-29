@@ -23,26 +23,45 @@ The number of views per day (or hour, if *Yesterday* or *Last 24 Hours* are
 selected) is plotted over the selected time period to establish a View trend
 line. Use this to evaluate how well the content engages visitors over time.
 
-## Views by Segment
+## Audience
 
-Scroll down from the Visitor Behavior chart to see the Views by Segment bar
-graph, which is present for all Asset types and Pages.
+The Audience report uses charts to present information about the audience 
+interaction with the asset. It answers these questions: 
 
-The Views by Segment bar graph shows how many times the Asset was viewed by up
-to the top seven Segments over the selected time period. If more than seven
-Segments viewed the Asset, the top six are displayed, and views by the remaining
-Segments are aggregated in the seventh bar on the graph, labeled _X More
-Segments_.
+-   How many users are interacting with my content?
+-   Of these users, how many are known or anonymous?
+-   Of the known users who interacted with my content, how many belong to 
+    Analytics Cloud Segments?
+-   Of the users in Segments, what are the top 15 segments? 
 
-![Figure 3: Which Segments are looking at the Asset most frequently?](../../images/assets-vbs.png)
+Here are the charts in the Audience report: 
+
+**Unique Visitors:** A donut chart that presents the percentage of total unique 
+visitors who are known or anonymous. The center of the chart shows the total 
+number of unique visitors. Tooltips on each chart section show the number of 
+users for that section (e.g, the number of known or anonymous users). 
+
+**Known Individuals:** A donut chart that presents the percentage of known 
+individuals who belong or do not belong to one or more Analytics Cloud Segment. 
+The center of the chart shows the total number of known individuals. Tooltips on 
+each chart section show the number of users for that section (e.g, the number of 
+users belonging to one or more Segments). Click the chart title (Known 
+Individuals) to view a list of all the known individuals who comprise the 
+chart's data. 
+
+**Known Individuals Segments:** A bar chart that shows the percentage of known 
+individuals that comprise each Segment. The chart shows a bar for each of the 
+top five Segments, and then aggregates the remaining Segments into the last bar. 
+A tooltip on the last bar shows the values for each of the remaining Segments. 
+
+![Figure 3: The Audience report visualizes how individuals interact with the asset.](../../images/audience-report.png)
 
 ## Views by Location
 
-View a bubble chart to compare the views by country over the selected period. Up
-to the top five countries are displayed, and the sixth bubble is an aggregation
-of the remaining countries.
+The map in the Views by Location panel shows the number of views by country in 
+the selected time period. 
 
-![Figure 4: Which location interacts with the Asset most frequently?](../../images/assets-interaction-location.png)
+![Figure 4: From which location do users interact with the Asset most frequently?](../../images/assets-interaction-location.png)
 
 ## Views by Technology
 

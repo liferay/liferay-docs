@@ -4,138 +4,167 @@ header-id: creating-segments
 
 # Creating Segments
 
-Individuals share common properties and behavior. Aggregating them into Segments
-helps you understand groups of similar people. Segment analytics gives you
-insight into people's interests. In the navigation panel, *Segments* is at the
-top of the *People* section because it's where you'll spend most of your time
-gaining customer insights. 
+Segments aggregate Individuals based on common properties and behavior. For 
+example, you can create a Segment that contains users who are interested in a 
+given topic, work in a specific industry, or both. Analytics Cloud then analyzes 
+and 
+[profiles](https://help.liferay.com/hc/en-us/articles/360006947851-Profiling-Segments) 
+Segments. You can then integrate your Analytics Cloud Segments with 
+[personalization in Liferay DXP](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/02-liferay-dxp-personalization.markdown). 
+This lets you deliver content of interest to each Segment via Liferay DXP. 
 
-You can create Segments dynamically based on criteria or statically (comprising
-hand-selected Individuals). Dynamic Segment criteria can be based on
-Individuals' properties and behavior. You can use an *industry* property, for
-example, as criteria. Analytics on industry Segments shows industries engaging
-with you most and identifies your content that interests them.
+Here, you'll learn how to create segments in Analytics Cloud. In Analytics 
+Cloud's navigation panel, *Segments* is at the top of the *People* section 
+because it's where you'll spend most of your time gaining customer insights. 
 
-## Dynamic Segments
+![Figure 1: You can access Segments in the navigation panel.](../../images/ac-segments-panel.png)
 
-Dynamic Segments aggregate Individuals based on their properties and interaction
-with your @product@ site pages and assets. As Individuals match the criteria,
-they are automatically added to the Segment. Here's how to create a Dynamic
-Segment:
+There are two types of Segments: 
 
-1. Click on *Segments* in the navigation panel. The list of existing Segments
-   appears.
+[**Dynamic Segments:**](#creating-dynamic-segments) 
+Individuals aggregated automatically based on criteria that you specify. 
+Criteria can be based on Individuals' properties and interaction with your 
+Liferay DXP Site pages and assets. For example, you can use an *industry* 
+property as criteria. Analytics on industry Segments show which industries 
+engage with you the most, and what content they're interested in. 
 
-2. Click on the *Create Segment* button. The *Create Individuals Segment* screen
-   appears. 
+[**Static Segments:**](#creating-static-segments) 
+Individuals aggregated manually. Static Segments are therefore comprised of 
+hand-selected individuals. 
 
-3. Name the Segment.
+## Creating Dynamic Segments
 
-4. Select the *Dynamic* Segment Type. 
+Follow these steps to create a Dynamic Segment:
 
-5. In the *Criteria* section, click on *Create Criteria*. The criteria options
-   appear.
+1.  Click *Segments* in the navigation panel. A table with existing Segments 
+    appears.
 
-You can create these types of criteria:
+2.  Click *Create Segment* &rarr; *Dynamic Segment*. The 
+    *Create Individuals Segment* screen appears for creating a Dynamic Segment. 
 
-- *Individuals with Property:* Matches Individuals described by the property 
-  condition. 
+3.  Click the *Edit* icon next to *Unnamed Segment*, and give your segment a 
+    name. 
 
-- *Individuals with Behavior:* Matches Individuals exhibiting the behavior 
-  condition.
+4.  To create your Segment's criteria, drag and drop them from the panel on the 
+    right to the canvas on the center of the screen. The selector menu at the 
+    top of the panel lets you select from these criteria types: 
 
-![Figure 1: You can define Dynamic Segment criteria based on Individual properties and behavior.](../../images/create-dynamic-segment-on-property-or-behavior.png)
+    **Individual Properties:** Properties that belong to a person (e.g., age, 
+    country, industry, etc.). 
 
-Start with defining property criteria for matching Individuals. 
+    **Account Properties:** Properties that belong to a Salesforce Account 
+    (e.g., account name, industry, website, etc.). 
 
-### Property Criteria
+    **Interests:** Topics and content types that interest the person. For more 
+    information on interests in Analytics Cloud, see 
+    [Customer Insights](https://help.liferay.com/hc/en-us/articles/360006947951-Customer-Insights). 
 
-Here's how to add criteria for an Individual property. 
+    **Session Properties:** Properties that belong to a person's web session 
+    (e.g., browser, geolocation, etc.). 
 
-1. In the *Criteria* section, select *Individuals with Property* from the
-   selector.
+    **Web Behaviors:** Actions taken by a person (e.g., submitted a form, viewed 
+    a blog, etc.). 
 
-2. Select a field (property) from the *Select Field* selector.
+    For further instructions, see 
+    [Creating Criteria](#creating-criteria). 
 
-3. Set the *Condition* between the selected field and value. The condition type
-   depends on the field type. Here are some common conditions:
+5.  Anonymous users are excluded from Segments by default. To include them, 
+    enable the *Include Anonymous* toggle. Note, however, that criteria with 
+    individual and/or account properties will exclude anonymous users regardless 
+    of your setting here. Such properties only apply to known users. 
 
-    - Contains (text)
-    - Equals
-    - Greater than (number)
-    - Is known
-    - Less than (number)
-    - Does not contain (text)
-    - Does not equal
-    - Is not known
-    - Greater than or equals (number)
-    - Less than or equals (number)
+    ![Figure 2: You can also include anonymous users in your segment.](../../images/anonymous-toggle.png)
 
-4. Set the *Value* field. A preview list of matching Individuals appears on the
-   right. *Search* lets find Individuals in the list. 
+6.  Click *Save Segment* when you're finished. 
 
-You've set a criteria based on an Individual property. Adding behavior criteria
-is next.
+### Creating Criteria
 
-### Behavior Criteria
+The criteria creation canvas is very flexible. Once added to the canvas, you can 
+move, delete, or duplicate any criterion: 
 
-This type of criteria matches Individuals based on their interaction (behavior)
-with your Liferay DXP pages and assets. Here's how you set behavior criteria:
+**To move:** Click and drag the criterion using the vertical dots 
+(![Handle](../../images/icon-handle.png)) 
+on its left. 
 
-1. In the *Criteria* section for the Segment, select *Individuals with Behavior*
-   from the selector.
+**To delete:** Click the criterion's trash icon 
+(![Trash](../../images/icon-trash.png)). 
+Alternatively, you can click the criterion's Actions icon 
+(![Actions](../../images/icon-actions.png)) 
+and select *Delete*. 
 
-2. Select a page or asset activity from the *Select Activity* selector.
+**To duplicate:** Click the criterion's Actions icon 
+(![Actions](../../images/icon-actions.png)) 
+and select *Duplicate*. 
 
-    - *Downloaded:* Asset downloads.
-    - *Visited:* Page visits.
-    - *Submitted:* Form submissions.
+Each criterion that you add contains fields that let you customize it to your 
+needs. The first field is typically a selector menu in which you specify a 
+condition for any remaining fields. The condition's values depend on the data 
+type for the remaining fields. Here are some common condition values: 
 
-3. Select the page or asset acted on from the *Select Asset* selector. 
+-   Contains (text)
+-   Equals
+-   Greater than (number)
+-   Is known
+-   Less than (number)
+-   Does not contain (text)
+-   Does not equal
+-   Is not known
+-   Greater than or equals (number)
+-   Less than or equals (number)
+-   Is
+-   Is not
+-   Is before (date)
+-   Is after (date)
+-   Has (behavior)
+-   Has not (behavior)
 
-4. Select a timeframe from the *Since* selector. A preview list of matching 
-Individuals appears on the right. *Search* lets you find Individuals in the
-list. 
+For example, the `birthDate` criterion's first field is a selector menu that 
+contains the options *is before*, *is*, and *is after*. The second field is a 
+date field. You can therefore, for example, specify a criterion in which only 
+Individuals with a birthday after 31 December 1980 are part of the Segment. 
 
-You've set a behavior criteria.
+![Figure 3: This criterion specifies Individuals with a birthday after 31 December 1980.](../../images/criteria-birthdate.png)
 
-Now that you know how to add property and behavior criteria, you can use logical
-AND and OR to add and chain together all the criteria your Segment needs. 
+You can also control the way adjacent criteria interact with each other. For 
+example, if you place criteria next to each other, a small box appears between 
+them with the text *AND*. This means that the two criteria are joined by a 
+logical *And*. Clicking the box changes it to *OR*, which represents a logical 
+*Or*. Selecting *And* narrows the Segment's selection of Individuals; *Or* 
+broadens it. 
 
-- *AND:* Click on the *AND* button to combine a new criteria with the previous 
-  criteria. This narrows the Segment's selection of Individuals. 
+For example, joining two `birthDate` criteria with the following conditions 
+creates a Segment targeting the Millennial generation (born 1981 - 1996): 
 
-- *OR:* Click on the *OR* button to add a alternative criteria an alternative to
-  the previous criteria. This broadens the selection of Individuals.
+-   Is after 31 December 1980
+-   AND
+-   Is before 01 January 1997
 
-Once you've completed defining your Segment, click on the *Create* button. Your
-[Segment profile](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/03-profiling-segments.markdown)
-appears. 
+You can also form subgroups of criteria by dragging and dropping criteria onto 
+each other. An AND/OR box then appears between the subgroup and any adjacent 
+criteria. Together, these tools let you build complex criteria for your Segment. 
 
-![Figure 2: As you define criteria and chain them together using AND and OR logic, a preview of Individuals that match the criteria appears on the right.](../../images/create-dynamic-segment.png)
+![Figure 4: Millennials interested in Liferay love avocado toast.](../../images/criteria-groups.png)
 
-Static Segments provide analytics for hand-selected Individuals. 
+## Creating Static Segments
 
-## Static Segments
+Follow these steps to create a Dynamic Segment: 
 
-To analyze specific Individuals together, add them to a Static Segment.
+1.  Click *Segments* in the navigation panel. A table with existing Segments 
+    appears. 
 
-1. Click on *Segments* in the navigation panel. The list of existing Segments
-   appears.
+2.  Click *Create Segment* &rarr; *Static Segment*. The 
+    *Create Individuals Segment* screen appears for creating a Static Segment. 
 
-2. Click on the *Create Segment* button. The *Create Individuals Segment* screen
-   appears. 
+3.  Name the Segment. 
 
-3. Name the Segment.
+4.  Click *Add Members* to bring up the Add Members screen, which contains a 
+    searchable list of all Individuals. 
 
-4. Select the *Static* Segment Type. A paginated list of all Individuals shows
-   below the Segment configuration.
+5.  Select the Individuals to add to the Segment, then click *Add*. 
 
-5. Search for and select specific Individuals, and click on the *Add Member*
-   button to add them to the Segment. 
+6.  To change or undo your selections, click the *View Added Members* link and 
+    click *Undo* for each Individual you want to remove. Alternatively, select 
+    each Individual and click the *Undo Changes* button that appears. To remove 
+    all Individuals, click *Undo All*. 
 
-6. Once you've added all the Individuals, click on the *Create* button.
-
-Congratulations on creating a Static Segment with hand-selected Individuals. Now
-that you've created Segments, it's time to learn about them by viewing their
-profiles. 
+7.  Click *Create* when you're finished. 

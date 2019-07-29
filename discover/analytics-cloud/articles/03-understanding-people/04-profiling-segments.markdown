@@ -27,14 +27,14 @@ The Segment's profile appears, showing its *Overview* panel.
 
 The *Overview* tab's main area shows membership growth. As a marketer, you might
 want to generate more customer prospects in a specific industry. If you create a
-Dynamic Segment with that industry as criterion, you can view its membership
-histogram to monitor customer growth in that industry. 
-
-![Figure 1: The Overview tab's main area shows the Segment's membership growth.](../../images/segment-overview.png)
+Dynamic Segment with that industry as criterion, you can view its membership 
+chart to monitor customer growth in that industry. 
 
 The Overview tab also gives you a glimpse of the Segment's criteria, interests,
-and demographics. Each one links to more details, or you can click on their
+and demographics. Each one links to more details, or you can click on their 
 respective tabs. 
+
+![Figure 1: The Overview tab's main area shows the Segment's membership growth.](../../images/segment-overview.png)
 
 ## Interests
 
