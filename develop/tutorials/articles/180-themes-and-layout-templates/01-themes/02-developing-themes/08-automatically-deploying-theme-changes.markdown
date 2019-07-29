@@ -8,15 +8,15 @@ header-id: automatically-deploying-theme-changes
 
 You may have noticed that you have to deploy your theme manually each time you 
 make a change. This can become tedious during the development process. The 
-`gulp watch` task lets you see the changes you make to your theme without 
-requiring a full redeploy.
+`gulp watch` task lets you preview changes to your theme without requiring a 
+full redeploy. 
 
 | **Note:** Gulp is included as a local dependency in generated themes, so you
 | are not required to install it. It can be accessed by running
 | `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's
 | root folder.
 
-Follow these steps to deploy changes to your theme automatically: 
+Follow these steps to preview changes to your theme automatically: 
 
 1.  Enable
     [Developer Mode](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes)
@@ -30,7 +30,7 @@ Follow these steps to deploy changes to your theme automatically:
     
     | **Note:** Live changes are only viewable on port `9080`
     | (`http://localhost:9080`). Live changes **are not viewable** on your app
-    | server (e.g. `http://localhost:8080`).
+    | server (e.g. `http://localhost:8080`). 
 
     ![Figure 1: Run the `gulp watch` task to automatically deploy any changes to your theme.](../../../../images/theme-dev-watching-themes-gulp-watch-startup.png)
 
@@ -51,11 +51,14 @@ Follow these steps to deploy changes to your theme automatically:
         }
 
 3.  Make a change to your theme and save the file. The updated files are built, 
-    compiled, and copied directly to your app server. CSS changes are deployed 
+    compiled, and copied directly to port `9080`. CSS changes are deployed 
     live, so no page reload is needed. For JS and template changes, **you must** 
     reload the browser to see the changes.
 
     ![Figure 2: The watch task notifies you that the changes are deployed.](../../../../images/theme-dev-watching-themes-gulp-watch-auto-deploy.png)
+
+4.  Once you're happy with the previewed changes, deploy your theme to your app 
+    server to apply the changes.
 
 ## Related Topics
 
