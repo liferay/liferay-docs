@@ -18,15 +18,30 @@ contents in the following format:
 - `collection.json`: a text file which describes your collection with the 
      format `{"name":"<collection-name>","description":"<collection-description>"}`.
 
+- `language.properties`: the language keys defined for the collection.
+
     - `[fragment-name]/`: a folder containing all of the files for a single 
      Page Fragment.
 
         - `fragment.json`: a text file that describes a Page Fragment with the 
-          format `{"jsPath":"src/index.js","htmlPath":"src/index.html","cssPath":"src/index.css","name":"<fragment-name>"}`.
+          format
+
+          ```json
+          {
+              "cssPath": "index.css",
+              "configurationPath": "index.json",
+              "htmlPath": "index.html",
+              "jsPath": "index.js",
+              "name": "<fragment-name>",
+              "type": "<fragment-type>"
+           }
+           ```
+
+        - `index.css`: the CSS source for the fragment.
 
         - `index.html`: the HTML source for the fragment.
 
-        - `index.css`: the CSS source for the fragment.
+        - `index.json`: a JSON file that defines the fragment's configuration.
 
         - `index.js`: the JavaScript source for the fragment.
 

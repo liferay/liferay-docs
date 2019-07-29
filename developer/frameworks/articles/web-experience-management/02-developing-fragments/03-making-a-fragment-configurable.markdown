@@ -81,4 +81,10 @@ configurable,
 
     ![Figure 2: You can click your Fragment to view its configuration options.](../../../images/fragment-lang-keys.png)
 
+| **Note:** You can also make a Fragment configurable by leveraging the
+| Fragments Toolkit. You can create/modify the Fragment's configuration JSON
+| file and then reimport the Fragment to your Liferay instance. For more
+| information, see
+| [this article](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments-desktop-tools).
+
 Awesome! You now have a configurable Fragment!
