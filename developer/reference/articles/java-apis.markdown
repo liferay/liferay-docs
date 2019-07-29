@@ -839,7 +839,7 @@ caption {
   </tr>
 
   <tr>
-    <th rowspan="8">
+    <th rowspan="7">
       <a href="@app-ref@/portal-security-sso/latest/javadocs/" target="_blank">
       Portal Security SSO<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
@@ -855,11 +855,6 @@ caption {
   <tr>
     <td>
        com.liferay.portal.security.sso.facebook.connect.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.security.sso.google.api
       </td>
   </tr>
   <tr>
@@ -920,6 +915,354 @@ caption {
   <tr>
     <td>
        com.liferay.portal.security.service.access.quota.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-security-sso-google/latest/javadocs/" target="_blank">
+      Portal Security SSO Google<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-security-sso-google/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.security.sso.google.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-settings/latest/javadocs/" target="_blank">
+      Portal Settings<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+      <br>
+      <a href="@app-ref@/portal-settings/latest/" target="_blank">
+       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.settings.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-template/" target="_blank">
+      Portal Template<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.template.soy.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-url-builder/" target="_blank">
+      Portal URL Builder<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.url.builder.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="7">
+      <a href="@app-ref@/portal/" target="_blank">
+      Portal<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.custom.jsp.bag.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.dao.orm.custom.sql.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.instance.lifecycle.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.jmx.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.output.stream.container.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.spring.extender.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.portal.upgrade.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">
+      <a href="@app-ref@/roles/" target="_blank">
+      Roles<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.roles.admin.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.roles.item.selector.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/text-localizer/" target="_blank">
+      Text Localizer<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.text.localizer.address.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/user-associated-data/" target="_blank">
+      User-associated Data<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.user.associated.data.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/user-groups-admin/" target="_blank">
+      User Groups Admin<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.user.groups.admin.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.user.groups.admin.item.selector.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">
+      <a href="@app-ref@/users-admin/" target="_blank">
+      Users Admin<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.users.admin.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.users.admin.item.selector.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/xstream/" target="_blank">
+      XStream<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.xstream.configurator.api
+      </td>
+  </tr>
+
+<!-- WEM -->
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/application-list/" target="_blank">
+      Application List<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.application.list.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="11">
+      <a href="@app-ref@/asset/" target="_blank">
+      Asset<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.asset.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.categories.navigation.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.category.property.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.display.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.display.page.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.display.page.item.selector.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.entry.rel.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.publisher.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.tag.stats.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.tags.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.asset.tags.navigation.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">
+      <a href="@app-ref@/export-import/" target="_blank">
+      Export Import<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.exportimport.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.exportimport.changeset.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">
+      <a href="@app-ref@/fragment/" target="_blank">
+      Fragment<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.fragment.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.fragment.item.selector.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/html-preview/" target="_blank">
+      HTML Preview<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.html.preview.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="3">
+      <a href="@app-ref@/journal/" target="_blank">
+      Journal<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.journal.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.journal.content.asset.addon.entry.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.journal.item.selector.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="6">
+      <a href="@app-ref@/layout/" target="_blank">
+      Layout<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.layout.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.layout.admin.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.layout.item.selector.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.layout.page.template.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.layout.prototype.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.layout.set.prototype.api
       </td>
   </tr>
 
