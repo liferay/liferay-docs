@@ -10,7 +10,7 @@ In this article, you'll learn how to create a Liferay fragment as a Liferay
 module. You can learn more about fragment modules in the
 [Declaring a Fragment Host](/docs/7-0/tutorials/-/knowledge_base/t/overriding-a-modules-jsps#declaring-a-fragment-host)
 article and in section 3.14 of the
-[OSGi Alliance's core specification document](https://www.osgi.org/developer/downloads/release-6/).
+[OSGi Alliance's core specification document](https://osgi.org/download/r6/osgi.core-6.0.0.pdf).
 
 To create a Liferay fragment via the command line using Blade CLI or
 Maven, use one of the commands with the following parameters:
