@@ -1086,5 +1086,112 @@ caption {
       </td>
   </tr>
 
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portlet-display-template/" target="_blank">
+      Portlet Display Template<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.portlet.display.template.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="3">
+      <a href="@app-ref@/product-navigation/" target="_blank">
+      Product Navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.product.navigation.control.menu.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.product.navigation.product.menu.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.product.navigation.simulation.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/rss/" target="_blank">
+      RSS<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.rss.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="4">
+      <a href="@app-ref@/site-navigation/" target="_blank">
+      Site Navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.site.navigation.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.site.navigation.admin.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.site.navigation.item.selector.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.site.navigation.language.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">
+      <a href="@app-ref@/site/" target="_blank">
+      Site<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.site.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+       com.liferay.site.item.selector.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/staging/" target="_blank">
+      Staging<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.staging.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/trash/" target="_blank">
+      Trash<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      </a>
+    </th>
+    <td>
+             com.liferay.trash.api
+      </td>
+  </tr>
+
 </table>
 
