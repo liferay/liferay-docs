@@ -24,15 +24,34 @@ these steps to create a layout template:
     | bundle it with the theme. This adds the layout template to the theme's
     | `src/layouttpl/custom` folder. This **only works** for generated themes.
 
-2.  Run The Layouts sub-generator with the command below, and use the 
-    [available options](/docs/7-2/reference/-/knowledge_base/r/layouts-sub-generator-options) 
-    to create your layout: 
+2.  Run The Layouts sub-generator with the command below, and use the options 
+    listed below to create your layout: 
 
     ```bash
     yo liferay-theme:layout
     ```
 
-    ![Figure 2: The Layouts sub-generator automates the layout creation process.](../../../images/layout-prompt.png)
+    ![Figure 2: You must specify the width for each column in the row.](../../../images/layout-column-widths.png)
+
+    ![Figure 3: The Layouts sub-generator automates the layout creation process.](../../../images/layout-prompt.png)
+
+    - **Add a row:** Adds a row below the last row.
+    
+    - **Insert row:** Displays a vi to insert your row. Use your arrow keys to 
+    choose where to insert your row, highlighted in blue, then press Enter to 
+    insert the row.
+    
+    ![Figure 4: Rows can be inserted using the layout vi.](../../../images/insert-row.png)
+    
+    - **Remove row:** Displays a vi to remove your row. Use your arrow keys to 
+    select the row you want to remove, highlighted in red, then press Enter to 
+    remove the row.
+    
+    ![Figure 5: Rows are removed using the layout vi.](../../../images/remove-row.png)
+    
+    - **Finish Layout:** Complete the layout template.
+    
+    ![Figure 6: Select the *Finish layout* option to complete your design.](../../../images/finish-layout.png)
 
 3.  Run `gulp deploy` to deploy your layout template to the server you 
     specified, or deploy your theme if the layout is [bundled with it](/docs/7-2/frameworks/-/knowledge_base/f/including-layout-templates-with-a-theme).

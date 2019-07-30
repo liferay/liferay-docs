@@ -51,13 +51,19 @@ Sites can also be organized hierarchically, just like Organizations. The
 difference between Sites and Organizations, of course, is that Sites organize
 pages, content, application data, and users (via Site memberships) whereas
 organizations only group users. Content sharing is available for Sites within
-the same hierarchy. For instance, if a parent Site has a document called *Lunar
-Goals and Objectives* and want all its child Sites to have a copy, the parent
-Site's administrator can enable content sharing to share the document
+the same hierarchy. For instance, if a parent Site has a document type called
+*Lunar Presentation* and all its child Sites should have a copy, the parent
+Site's administrator can enable content sharing to share the document type
 automatically with its child Sites. Also, content sharing privileges can be set
-to let every Site administrator share content across Sites they manage. Some
-examples of content you can share across Sites include web content structures
-and templates, categories, widget templates, etc.
+to let every Site administrator share content across Sites they manage. You can
+share the following content across Sites:
+
+- Web Content Structures
+- Web Content Templates
+- Document Types
+- Vocabularies and Categories
+- Widget Templates
+- Data Definitions (Dynamic Data Lists)
 
 Please refer to the 
 [Sites Admin Portlet](https://docs.liferay.com/portal/7.2/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
