@@ -4,6 +4,8 @@ header-id: what-is-saml
 
 # What is SAML?
 
+[TOC levels=1-4]
+
 The SAML (Security Assertion Markup Language) adapter lets you execute Single
 Sign On (SSO) and Single Log Off (SLO) in your deployment. Each @product@
 instance serves as either the Service Provider (SP) or the Identity Provider

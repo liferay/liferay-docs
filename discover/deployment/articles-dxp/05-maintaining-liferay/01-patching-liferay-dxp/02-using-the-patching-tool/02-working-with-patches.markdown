@@ -4,6 +4,8 @@ header-id: working-with-patches
 
 # Working with Patches
 
+[TOC levels=1-4]
+
 Here are some things you might need to do with patches:
 
 - [Report Patch Levels to Liferay Support](#including-support-info-in-support-tickets)

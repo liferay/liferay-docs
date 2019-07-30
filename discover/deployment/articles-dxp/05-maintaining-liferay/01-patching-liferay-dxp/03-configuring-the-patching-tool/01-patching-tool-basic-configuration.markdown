@@ -4,6 +4,8 @@ header-id: patching-tool-basic-configuration
 
 # Patching Tool Basic configuration
 
+[TOC levels=1-4]
+
 There are two ways to configure the Patching Tool:
 
 1.  Automatically by executing the `auto-discovery` command

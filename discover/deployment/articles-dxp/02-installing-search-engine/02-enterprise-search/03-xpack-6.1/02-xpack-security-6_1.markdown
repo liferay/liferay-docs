@@ -4,6 +4,8 @@ header-id: installing-x-pack-security-6-1
 
 # Installing X-Pack Security (6.1)
 
+[TOC levels=1-4]
+
 Once X-Pack is installed, start securing Elasticsearch by configuring the
 built-in user passwords.
 

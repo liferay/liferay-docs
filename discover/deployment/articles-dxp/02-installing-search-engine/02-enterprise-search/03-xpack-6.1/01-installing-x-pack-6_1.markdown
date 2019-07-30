@@ -4,6 +4,8 @@ header-id: installing-x-pack-0
 
 # Installing X-Pack
 
+[TOC levels=1-4]
+
 Here are the X-Pack installation steps:
 
 1.  To 

@@ -4,6 +4,8 @@ header-id: installing-x-pack
 
 # Installing Liferay Enterprise Search
 
+[TOC levels=1-4]
+
 X-Pack is an 
 [Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-xpack.html)
 for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,

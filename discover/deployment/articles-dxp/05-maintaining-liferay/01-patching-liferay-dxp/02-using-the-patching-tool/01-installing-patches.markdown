@@ -4,6 +4,8 @@ header-id: installing-patches
 
 # Installing Patches
 
+[TOC levels=1-4]
+
 Before installing any patches, you must shut down your server. On Windows
 operating systems, files in use are locked by the OS, and can't be patched. On
 Unix-style systems, you can usually replace files that are running, but the old

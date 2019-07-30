@@ -4,6 +4,8 @@ header-id: installing-liferay-dxp-on-websphere
 
 # Installing @product@ on WebSphere
 
+[TOC levels=1-4]
+
 IBM &reg; WebSphere &reg; is a trademark of International Business Machines 
 Corporation, registered in many jurisdictions worldwide. 
 

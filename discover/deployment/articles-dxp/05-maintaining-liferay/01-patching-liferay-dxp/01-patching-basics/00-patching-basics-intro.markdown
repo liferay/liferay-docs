@@ -4,6 +4,8 @@ header-id: patching-basics
 
 # Patching Basics
 
+[TOC levels=1-4]
+
 Liferay ships @product-ver@ fixes through three different channels: 
 
 - Fix packs 

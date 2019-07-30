@@ -4,6 +4,8 @@ header-id: keeping-up-with-fix-packs-and-service-packs
 
 # Keeping up with Fix packs and Service Packs
 
+[TOC levels=1-4]
+
 The *Announcements* section on
 [Liferay's Help Center page](https://help.liferay.com/hc)
 lists all fix pack updates, security alerts, product releases, and system updates. The

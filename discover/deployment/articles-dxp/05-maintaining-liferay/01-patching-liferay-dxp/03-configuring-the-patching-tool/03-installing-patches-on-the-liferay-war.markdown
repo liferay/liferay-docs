@@ -4,6 +4,8 @@ header-id: installing-patches-on-the-liferay-de-war
 
 # Installing patches on the @product-ver@ WAR
 
+[TOC levels=1-4]
+
 If you
 [installed @product@ manually](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-manually)
 as a WAR file on a supported application server, you must apply patches to the

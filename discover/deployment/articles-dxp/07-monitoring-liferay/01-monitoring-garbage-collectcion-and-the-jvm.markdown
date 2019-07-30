@@ -4,6 +4,8 @@ header-id: monitoring-garbage-collection-and-jvm
 
 # Monitoring Garbage Collection and the JVM
 
+[TOC levels=1-4]
+
 Although the 
 [tuning parameters](/docs/7-1/deploy/-/knowledge_base/d/tuning-guidelines)
 give you a good start to JVM tuning, you must monitor GC performance to ensure

@@ -4,6 +4,8 @@ header-id: installing-product-on-jboss-eap
 
 # Installing @product@ on JBoss EAP
 
+[TOC levels=1-4]
+
 Installing @product@ on JBoss EAP 7.1 takes three steps:
 
 - [Installing @product@ dependencies to your application server](#installing-dependencies)

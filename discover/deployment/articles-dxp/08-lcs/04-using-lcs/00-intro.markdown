@@ -4,6 +4,8 @@ header-id: using-lcs
 
 # Using LCS
 
+[TOC levels=1-4]
+
 Once your @product@ server is connected to LCS, you can get down to the business 
 that LCS is designed for---managing and monitoring your servers. If you're not 
 already there, log in with your account on 

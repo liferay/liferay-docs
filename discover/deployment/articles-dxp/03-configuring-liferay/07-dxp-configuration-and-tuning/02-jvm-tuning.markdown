@@ -4,6 +4,8 @@ header-id: java-virtual-machine-tuning
 
 # Java Virtual Machine Tuning
 
+[TOC levels=1-4]
+
 Java Virtual Machine (JVM) tuning primarily focuses on adjusting the garbage
 collector and the Java memory heap. We used Oracle's 1.8 JVM for the reference
 architecture. You may choose other supported JVM versions and implementations.

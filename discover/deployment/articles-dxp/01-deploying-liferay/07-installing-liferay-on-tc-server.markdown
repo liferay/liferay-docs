@@ -4,6 +4,8 @@ header-id: installing-liferay-on-tc-server
 
 # Installing @product@ on tc Server
 
+[TOC levels=1-4]
+
 Installing @product@ on tc server requires the following files: 
 
 - A @product@ WAR file

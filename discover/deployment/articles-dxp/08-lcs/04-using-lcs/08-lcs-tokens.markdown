@@ -4,6 +4,8 @@ header-id: understanding-environment-tokens
 
 # Understanding Environment Tokens
 
+[TOC levels=1-4]
+
 To register a server in an environment, you must use that environment's token 
 file. LCS Administrators and Environment Managers can generate and distribute 
 this file. It contains all the information the LCS client app needs to register 

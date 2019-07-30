@@ -4,6 +4,8 @@ header-id: installing-x-pack-6-1
 
 # Installing X-Pack (6.1)
 
+[TOC levels=1-4]
+
 X-Pack is an 
 [Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
 for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,

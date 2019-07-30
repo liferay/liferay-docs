@@ -4,6 +4,8 @@ header-id: patching-tool
 
 # Using the Patching Tool
 
+[TOC levels=1-4]
+
 The Patching Tool installs, removes, compares, and prepares @product@ patches.
 It is pre-installed in @product@ bundles, easy to install into @product@ manual
 installations, and easy to update. The Patching Tool's executable scripts

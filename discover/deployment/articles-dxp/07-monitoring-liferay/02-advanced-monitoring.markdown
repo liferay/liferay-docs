@@ -4,6 +4,8 @@ header-id: advanced-monitoring-apm-tools-dynatrace-id
 
 # Advanced Monitoring: APM Tools; Dynatrace
 
+[TOC levels=1-4]
+
 Advanced performance monitoring tools like
 [Dynatrace's](https://www.dynatrace.com)
 provide detailed performance information about your @product@ servers and
