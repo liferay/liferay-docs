@@ -78,6 +78,17 @@ caption {
 
 ## @product@ App Java APIs
 
+The tables in this section link you to the API modules for apps in these 
+categories: 
+
+-   [Collaboration](#collaboration)
+-   [Forms and Workflow](#forms-and-workflow)
+-   [Foundation](#foundation)
+-   [Web Experience](#web-experience)
+
+Note that the root location for these modules' Javadoc is 
+[@app-ref@](@app-ref@). 
+
 ### Collaboration
 
 <style>
@@ -105,18 +116,13 @@ th, td {
   </tr>
 
   <tr>
-    <th rowspan="4">
+    <th rowspan="3">
       <a href="@app-ref@/blogs/" target="_blank">
       Blogs<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
     <td>
        com.liferay.blogs.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.blogs.demo.data.creator.api
       </td>
   </tr>
   <tr>
@@ -131,7 +137,7 @@ th, td {
   </tr>
 
   <tr>
-    <th rowspan="2">
+    <th rowspan="1">
       <a href="@app-ref@/comment/" target="_blank">
       Comment<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
@@ -140,14 +146,9 @@ th, td {
        com.liferay.comment.api
       </td>
   </tr>
-  <tr>
-    <td>
-       com.liferay.comment.demo.data.creator.api
-      </td>
-  </tr>
 
   <tr>
-    <th rowspan="8">
+    <th rowspan="7">
       <a href="@app-ref@/document-library/" target="_blank">
       Document Library<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
@@ -159,11 +160,6 @@ th, td {
   <tr>
     <td>
        com.liferay.document.library.content.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.document.library.demo.data.creator.api
       </td>
   </tr>
   <tr>
@@ -242,18 +238,13 @@ th, td {
   </tr>
 
   <tr>
-    <th rowspan="2">
+    <th rowspan="1">
       <a href="@app-ref@/message-boards/" target="_blank">
       Message Boards<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
     </th>
     <td>
        com.liferay.message.boards.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.message.boards.demo.data.creator.api
       </td>
   </tr>
 
@@ -340,7 +331,7 @@ th, td {
 
 </table>
 
-### Forms & Workflow
+### Forms and Workflow
 
 <style>
 table, th, td {
