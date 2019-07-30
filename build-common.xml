@@ -128,7 +128,7 @@
 		</classpath>
 	</taskdef>
 
-	<taskdef name="distdiff" classname="com.liferay.documentation.util.DistDiffTask">
+	<taskdef name="distdiff" classname="com.liferay.documentation.util.CheckLatestCommitTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -415,6 +415,36 @@
 				<include name="images/**"/>
 			</fileset>
 		</copy>
+	</target>
+
+	<target name="dist-diff-ce" depends="dist-ce" description="Generates files from differing commits based on CE content.">
+		<property file="${project.dir}/release-site.properties" />
+		<distdiff
+			docdir="${doc.dir}"
+			doclocation="${purpose.dir}/${doc.dir}"
+			distdir="${dist.dir}"
+			zipname="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}"
+			dxpparam="false"
+		>
+		</distdiff>
+
+		<delete dir="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}"/>
+		<delete file="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip"/>
+	</target>
+
+	<target name="dist-diff-dxp" depends="dist-dxp" description="Generates files from differing commits based on CE and DXP content.">
+		<property file="${project.dir}/release-site.properties" />
+		<distdiff
+			docdir="${doc.dir}"
+			doclocation="${purpose.dir}/${doc.dir}"
+			distdir="${dist.dir}"
+			zipname="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}"
+			dxpparam="true"
+		>
+		</distdiff>
+
+		<delete dir="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}"/>
+		<delete file="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}.zip"/>
 	</target>
 
 	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, add-toc-dxp, number-headers-dxp, number-images-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
