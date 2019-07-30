@@ -427,6 +427,7 @@ public class CheckLatestCommitTask extends Task {
 				
 				if (entry.getChangeType().toString().equals("RENAME")) {
 					renamedFiles.put(entry.getOldPath(), entryPath);
+					modifiedFiles.add(entryPath);
 				}
 				else {
 					modifiedFiles.add(entryPath);
