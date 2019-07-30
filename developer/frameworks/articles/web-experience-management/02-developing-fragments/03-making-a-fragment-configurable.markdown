@@ -1,4 +1,10 @@
+---
+header-id: making-a-fragment-configurable
+---
+
 # Making a Fragment Configurable
+
+[TOC levels=1-4]
 
 | **Note:** Defining configurations for Page Fragments is available in Liferay
 | DXP 7.2 Fix Pack 1+ and Liferay Portal GA2+.

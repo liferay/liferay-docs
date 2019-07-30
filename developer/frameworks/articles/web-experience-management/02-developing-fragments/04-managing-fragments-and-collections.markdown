@@ -1,4 +1,10 @@
+---
+header-id: managing-fragments-and-collections
+---
+
 # Managing Fragments and Collections
+
+[TOC levels=1-4]
 
 After you create Collections and Fragments, you have a handful of options for 
 managing them. You'll explore several management options next.
