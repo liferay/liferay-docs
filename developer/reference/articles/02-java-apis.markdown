@@ -78,6 +78,8 @@ caption {
 
 ## @product@ App Java APIs
 
+### Collaboration
+
 <style>
 table, th, td {
     border: 1px solid black;
@@ -87,20 +89,10 @@ th, td {
     padding: 5px;
     text-align: left;
 }
-caption {
-    text-align: left;
-}
 </style>
-<table style="width:100%">
-  <caption>
-    This table links you to @product@ application APIs. Their root location is 
-    <a href="@app-ref@" target="_blank">
-    here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
-    </a>
-    <br>
-  </caption>
 
-<!-- Collab -->
+<table style="width:100%">
+
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/announcements/" target="_blank">
@@ -346,7 +338,23 @@ caption {
       </td>
   </tr>
 
-<!-- Forms & Workflow -->
+</table>
+
+### Forms & Workflow
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+
+<table style="width:100%">
+
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/calendar/" target="_blank">
@@ -439,7 +447,23 @@ caption {
       </td>
   </tr>
 
-<!-- Foundation -->
+</table>
+
+### Foundation
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+
+<table style="width:100%">
+
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/captcha/" target="_blank">
@@ -912,7 +936,22 @@ caption {
       </td>
   </tr>
 
-<!-- WEM -->
+</table>
+
+### Web Experience
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+
+<table style="width:100%">
 
   <tr>
     <th rowspan="1">
