@@ -4,6 +4,8 @@ header-id: oauth
 
 # OAuth
 
+[TOC levels=1-4]
+
 @product@'s OAuth utility authorizes third-party applications to interact with a
 user's resources. It's available as an app from Liferay Marketplace. Let's say
 you're hosting @product@ and have users and customers coming to your web

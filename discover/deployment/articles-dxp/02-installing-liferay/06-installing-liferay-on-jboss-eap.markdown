@@ -4,6 +4,8 @@ header-id: installing-liferay-on-jboss-eap-6-4
 
 # Installing @product@ on JBoss EAP 6.4
 
+[TOC levels=1-4]
+
 Installing @product@ manually requires these basic steps:
 
 - Installing @product@ dependencies to your application server

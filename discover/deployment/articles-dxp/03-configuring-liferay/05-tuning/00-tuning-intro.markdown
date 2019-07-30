@@ -4,6 +4,8 @@ header-id: liferay-digital-enterprise-configuration-and-tuning-guidelines
 
 # Liferay Digital Enterprise Configuration and Tuning Guidelines
 
+[TOC levels=1-4]
+
 When tuning @product@ installation, there are several factors to take into
 consideration; some are specific to @product@, while others are concepts that
 apply to all Java and Java enterprise applications. The following guidelines are

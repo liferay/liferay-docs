@@ -4,6 +4,8 @@ header-id: backing-up-your-search-engine
 
 # Backing Up Liferay Enterprise Search
 
+[TOC levels=1-4]
+
 @product@'s search solution is pluggable. Once you [install a search engine and
 configure the appropriate
 adapter](/docs/7-0/deploy/-/knowledge_base/d/installing-a-search-engine),

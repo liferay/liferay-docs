@@ -4,6 +4,8 @@ header-id: lcs-preconfiguration
 
 # LCS Preconfiguration
 
+[TOC levels=1-4]
+
 Before registering your server with LCS, there are a few things you must 
 configure. The sections in this guide walk you through these steps: 
 

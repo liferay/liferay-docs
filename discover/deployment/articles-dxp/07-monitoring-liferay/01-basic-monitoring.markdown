@@ -4,6 +4,8 @@ header-id: monitoring-garbage-collection-and-jvm
 
 # Monitoring Garbage Collection and JVM
 
+[TOC levels=1-4]
+
 Although the 
 [tuning parameters](/docs/7-0/deploy/-/knowledge_base/d/liferay-digital-enterprise-configuration-and-tuning-guidelines)
 give you a good start to tuning your JVM, you must monitor GC performance to

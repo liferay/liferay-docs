@@ -4,6 +4,8 @@ header-id: installing-liferay-dxp-on-weblogic-12c-r2
 
 # Installing @product@ on WebLogic 12c R2
 
+[TOC levels=1-4]
+
 Although it's possible to install @product@ in a WebLogic Admin
 Server, this isn't recommended. It's best practice to install web apps,
 including @product@, in a WebLogic Managed server. By deploying to a Managed

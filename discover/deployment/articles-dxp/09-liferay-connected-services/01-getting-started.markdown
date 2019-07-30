@@ -4,6 +4,8 @@ header-id: getting-started-with-lcs
 
 # Getting Started with LCS
 
+[TOC levels=1-4]
+
 To use LCS, you must register a server in an LCS environment. An LCS environment 
 represents a physical cluster of servers or a virtual or logical aggregation of 
 servers. Each environment is part of an LCS project. An LCS project represents a 

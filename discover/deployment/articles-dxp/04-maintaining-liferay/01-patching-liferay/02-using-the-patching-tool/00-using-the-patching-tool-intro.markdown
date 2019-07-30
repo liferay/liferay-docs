@@ -4,6 +4,8 @@ header-id: patching-tool
 
 # Using the Patching Tool
 
+[TOC levels=1-4]
+
 If you're using a @product@ bundle, the Patching Tool is already installed. When
 an update is necessary to install a patch, the Patching Tool automatically
 asks for an update.

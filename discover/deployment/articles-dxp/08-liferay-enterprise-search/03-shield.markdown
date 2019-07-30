@@ -4,6 +4,8 @@ header-id: securing-elasticsearch-with-shield
 
 # Securing Elasticsearch with Shield
 
+[TOC levels=1-4]
+
 Elasticsearch makes storing, searching, and analyzing your @product@ search data
 easy. When it comes to securing that data, use Elasticsearch's [Shield
 plugin](https://www.elastic.co/guide/en/shield/2.4/index.html). To use Shield

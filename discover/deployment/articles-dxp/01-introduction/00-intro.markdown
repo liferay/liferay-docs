@@ -4,6 +4,8 @@ header-id: introduction-to-product-deployment
 
 # Introduction to @product@ Deployment
 
+[TOC levels=1-4]
+
 @product@ is one of the most flexible applications on the market today with
 respect to database and application server support. @product@ supports a wide
 variety of databases and application servers, freeing you to use the ones you
