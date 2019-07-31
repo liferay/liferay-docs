@@ -1,3 +1,7 @@
+---
+header-id: fragment-configuration-types
+---
+
 # Fragment Configuration Types
 
 [TOC levels=1-4]
