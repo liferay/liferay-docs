@@ -1,6 +1,7 @@
 # Java APIs
 
-Here you'll find Javadoc for @product-ver@ and @product@ apps. 
+Here you'll find Javadoc for @product-ver@ and @product@ apps. Note that each 
+link to the Javadoc listed here opens in a new window. 
 
 ## @product-ver@ Java APIs
 
@@ -22,11 +23,11 @@ caption {
     This table links you to the @product-ver@ API modules. Their
     root location is  
     <a href="@platform-ref@/7.2-latest/javadocs/" target="_blank">
-    here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
+    here.
     </a> The 
     reference doc Zip is available  
     <a href="@platform-ref@/7.2-latest/" target="_blank">
-    here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
+    here.
     </a>
     <br>
   </caption>
@@ -35,7 +36,7 @@ caption {
     <th rowspan="5">Core:</th>
     <td>
 	<a href="@platform-ref@/7.2-latest/javadocs/portal-kernel/index.html" target="_blank">
-	com.liferay.portal.kernel (portal-kernel):<span class="opens-new-window-accessible"> (Opens New Window) </span>
+	com.liferay.portal.kernel (portal-kernel):
 	</a>&nbsp;for developing applications on @product@
     </td>
   </tr>
@@ -43,7 +44,7 @@ caption {
   <tr>
     <td>
        <a href="@platform-ref@/7.2-latest/javadocs/util-bridges/index.html" target="_blank">
-	com.liferay.util.bridges (util-bridges):<span class="opens-new-window-accessible"> (Opens New Window) </span>
+	com.liferay.util.bridges (util-bridges):
 	</a>&nbsp;for using various non-proprietary computing languages, frameworks, and utilities
        on @product@
     </td>
@@ -52,7 +53,7 @@ caption {
   <tr>
     <td>
        <a href="@platform-ref@/7.2-latest/javadocs/util-java/index.html" target="_blank">
-	com.liferay.util.java (util-java):<span class="opens-new-window-accessible"> (Opens New Window) </span>
+	com.liferay.util.java (util-java):
 	</a>&nbsp;for using various Java-related frameworks and utilities on @product@
     </td>
   </tr>
@@ -60,7 +61,7 @@ caption {
   <tr>
     <td>
        <a href="@platform-ref@/7.2-latest/javadocs/util-slf4j/index.html" target="_blank">
-	com.liferay.util.slf4j (util-slf4j):<span class="opens-new-window-accessible"> (Opens New Window) </span>
+	com.liferay.util.slf4j (util-slf4j):
 	</a>&nbsp;for using the Simple Logging Facade for Java (SLF4J)
     </td>
   </tr>
@@ -68,7 +69,7 @@ caption {
   <tr>
     <td>
        <a href="@platform-ref@/7.2-latest/javadocs/portal-impl/index.html" target="_blank">
-	com.liferay.portal.impl (portal-impl):<span class="opens-new-window-accessible"> (Opens New Window) </span>
+	com.liferay.portal.impl (portal-impl):
 	</a>&nbsp;refer to this only if you are an advanced Liferay developer that needs a deeper
        understanding of @product-ver@'s implementation in order to contribute to it
     </td>
@@ -78,8 +79,7 @@ caption {
 
 ## @product@ App Java APIs
 
-The tables in this section link you to the API modules for apps in these 
-categories: 
+The tables in this section link to the API modules for apps in these categories: 
 
 -   [Collaboration](#collaboration)
 -   [Forms and Workflow](#forms-and-workflow)
@@ -107,7 +107,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/announcements/" target="_blank">
-      Announcements<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Announcements
       </a>
     </th>
     <td>
@@ -118,7 +118,7 @@ th, td {
   <tr>
     <th rowspan="3">
       <a href="@app-ref@/blogs/" target="_blank">
-      Blogs<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Blogs
       </a>
     </th>
     <td>
@@ -139,7 +139,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/comment/" target="_blank">
-      Comment<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Comment
       </a>
     </th>
     <td>
@@ -150,7 +150,7 @@ th, td {
   <tr>
     <th rowspan="7">
       <a href="@app-ref@/document-library/" target="_blank">
-      Document Library<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Document Library
       </a>
     </th>
     <td>
@@ -191,7 +191,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/flags/" target="_blank">
-      Flags<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Flags
       </a>
     </th>
     <td>
@@ -202,7 +202,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/invitation/" target="_blank">
-      Invitation<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Invitation
       </a>
     </th>
     <td>
@@ -213,7 +213,7 @@ th, td {
   <tr>
     <th rowspan="2">
       <a href="@app-ref@/item-selector/" target="_blank">
-      Item Selector<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Item Selector
       </a>
     </th>
     <td>
@@ -229,7 +229,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/mentions/" target="_blank">
-      Mentions<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Mentions
       </a>
     </th>
     <td>
@@ -240,7 +240,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/message-boards/" target="_blank">
-      Message Boards<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Message Boards
       </a>
     </th>
     <td>
@@ -251,7 +251,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/ratings/" target="_blank">
-      Ratings<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Ratings
       </a>
     </th>
     <td>
@@ -262,7 +262,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/reading-time/" target="_blank">
-      Reading Time<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Reading Time
       </a>
     </th>
     <td>
@@ -273,7 +273,7 @@ th, td {
   <tr>
     <th rowspan="4">
       <a href="@app-ref@/social/" target="_blank">
-      Social<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Social
       </a>
     </th>
     <td>
@@ -299,7 +299,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/subscription/" target="_blank">
-      Subscription<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Subscription
       </a>
     </th>
     <td>
@@ -310,7 +310,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/upload/" target="_blank">
-      Upload<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Upload
       </a>
     </th>
     <td>
@@ -321,7 +321,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/wiki/" target="_blank">
-      Wiki<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Wiki
       </a>
     </th>
     <td>
@@ -349,7 +349,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/calendar/" target="_blank">
-      Calendar<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Calendar
       </a>
     </th>
     <td>
@@ -360,7 +360,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/dynamic-data-lists/" target="_blank">
-      Dynamic Data Lists<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Dynamic Data Lists
       </a>
     </th>
     <td>
@@ -371,7 +371,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/dynamic-data-mapping/" target="_blank">
-      Dynamic Data Mapping<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Dynamic Data Mapping
       </a>
     </th>
     <td>
@@ -382,7 +382,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/polls/" target="_blank">
-      Polls<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Polls
       </a>
     </th>
     <td>
@@ -393,7 +393,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-reports-engine/" target="_blank">
-      Portal Reports Engine<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Reports Engine
       </a>
     </th>
     <td>
@@ -404,7 +404,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-rules-engine/" target="_blank">
-      Portal Rules Engine<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Rules Engine
       </a>
     </th>
     <td>
@@ -415,7 +415,7 @@ th, td {
   <tr>
     <th rowspan="4">
       <a href="@app-ref@/portal-workflow/" target="_blank">
-      Portal Workflow<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Workflow
       </a>
     </th>
     <td>
@@ -458,7 +458,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/captcha/" target="_blank">
-      Captcha<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Captcha
       </a>
     </th>
     <td>
@@ -469,7 +469,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/configuration-admin/" target="_blank">
-      Configuration Admin<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Configuration Admin
       </a>
     </th>
     <td>
@@ -480,7 +480,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/contacts/" target="_blank">
-      Contacts<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Contacts
       </a>
     </th>
     <td>
@@ -491,7 +491,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/friendly-url/" target="_blank">
-      Friendly URL<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Friendly URL
       </a>
     </th>
     <td>
@@ -502,7 +502,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/frontend-editor/" target="_blank">
-      Frontend Editor<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Frontend Editor
       </a>
     </th>
     <td>
@@ -513,7 +513,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/frontend-image-editor/" target="_blank">
-      Frontend Image Editor<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Frontend Image Editor
       </a>
     </th>
     <td>
@@ -524,7 +524,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/frontend-js/" target="_blank">
-      Frontend JS<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Frontend JS
       </a>
     </th>
     <td>
@@ -535,7 +535,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/map/" target="_blank">
-      Map<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Map
       </a>
     </th>
     <td>
@@ -546,7 +546,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/mobile-device-rules/" target="_blank">
-      Mobile Device Rules<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Mobile Device Rules
       </a>
     </th>
     <td>
@@ -557,7 +557,7 @@ th, td {
   <tr>
     <th rowspan="2">
       <a href="@app-ref@/organizations/" target="_blank">
-      Organizations<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Organizations
       </a>
     </th>
     <td>
@@ -573,7 +573,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/password-policies-admin/" target="_blank">
-      Password Policies Admin<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Password Policies Admin
       </a>
     </th>
     <td>
@@ -584,7 +584,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-cache/" target="_blank">
-      Portal Cache<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Cache
       </a>
     </th>
     <td>
@@ -595,7 +595,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-configuration/" target="_blank">
-      Portal Configuration<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Configuration
       </a>
     </th>
     <td>
@@ -606,7 +606,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-instances/" target="_blank">
-      Portal Instances<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Instances
       </a>
     </th>
     <td>
@@ -617,7 +617,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-lock/" target="_blank">
-      Portal Lock<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Lock
       </a>
     </th>
     <td>
@@ -628,7 +628,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-remote/" target="_blank">
-      Portal Remote<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Remote
       </a>
     </th>
     <td>
@@ -639,7 +639,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-scripting/" target="_blank">
-      Portal Scripting<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Scripting
       </a>
     </th>
     <td>
@@ -650,7 +650,7 @@ th, td {
   <tr>
     <th rowspan="3">
       <a href="@app-ref@/portal-search/" target="_blank">
-      Portal Search<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Search
       </a>
     </th>
     <td>
@@ -671,7 +671,7 @@ th, td {
   <tr>
     <th rowspan="3">
       <a href="@app-ref@/portal-security-audit/" target="_blank">
-      Portal Security Audit<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Security Audit
       </a>
     </th>
     <td>
@@ -692,7 +692,7 @@ th, td {
   <tr>
     <th rowspan="7">
       <a href="@app-ref@/portal-security-sso/" target="_blank">
-      Portal Security SSO<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Security SSO
       </a>
     </th>
     <td>
@@ -733,7 +733,7 @@ th, td {
   <tr>
     <th rowspan="5">
       <a href="@app-ref@/portal-security/" target="_blank">
-      Portal Security<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Security
       </a>
     </th>
     <td>
@@ -764,7 +764,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-security-sso-google/" target="_blank">
-      Portal Security SSO Google<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Security SSO Google
       </a>
     </th>
     <td>
@@ -775,7 +775,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-settings/" target="_blank">
-      Portal Settings<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Settings
       </a>
     </th>
     <td>
@@ -786,7 +786,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-template/" target="_blank">
-      Portal Template<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal Template
       </a>
     </th>
     <td>
@@ -797,7 +797,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portal-url-builder/" target="_blank">
-      Portal URL Builder<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal URL Builder
       </a>
     </th>
     <td>
@@ -808,7 +808,7 @@ th, td {
   <tr>
     <th rowspan="7">
       <a href="@app-ref@/portal/" target="_blank">
-      Portal<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portal
       </a>
     </th>
     <td>
@@ -849,7 +849,7 @@ th, td {
   <tr>
     <th rowspan="2">
       <a href="@app-ref@/roles/" target="_blank">
-      Roles<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Roles
       </a>
     </th>
     <td>
@@ -865,7 +865,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/text-localizer/" target="_blank">
-      Text Localizer<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Text Localizer
       </a>
     </th>
     <td>
@@ -876,7 +876,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/user-associated-data/" target="_blank">
-      User-associated Data<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      User-associated Data
       </a>
     </th>
     <td>
@@ -887,7 +887,7 @@ th, td {
   <tr>
     <th rowspan="2">
       <a href="@app-ref@/user-groups-admin/" target="_blank">
-      User Groups Admin<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      User Groups Admin
       </a>
     </th>
     <td>
@@ -903,7 +903,7 @@ th, td {
   <tr>
     <th rowspan="2">
       <a href="@app-ref@/users-admin/" target="_blank">
-      Users Admin<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Users Admin
       </a>
     </th>
     <td>
@@ -919,7 +919,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/xstream/" target="_blank">
-      XStream<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      XStream
       </a>
     </th>
     <td>
@@ -947,7 +947,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/application-list/" target="_blank">
-      Application List<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Application List
       </a>
     </th>
     <td>
@@ -958,7 +958,7 @@ th, td {
   <tr>
     <th rowspan="11">
       <a href="@app-ref@/asset/" target="_blank">
-      Asset<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Asset
       </a>
     </th>
     <td>
@@ -1019,7 +1019,7 @@ th, td {
   <tr>
     <th rowspan="2">
       <a href="@app-ref@/export-import/" target="_blank">
-      Export Import<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Export Import
       </a>
     </th>
     <td>
@@ -1035,7 +1035,7 @@ th, td {
   <tr>
     <th rowspan="2">
       <a href="@app-ref@/fragment/" target="_blank">
-      Fragment<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Fragment
       </a>
     </th>
     <td>
@@ -1051,7 +1051,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/html-preview/" target="_blank">
-      HTML Preview<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      HTML Preview
       </a>
     </th>
     <td>
@@ -1062,7 +1062,7 @@ th, td {
   <tr>
     <th rowspan="3">
       <a href="@app-ref@/journal/" target="_blank">
-      Journal<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Journal
       </a>
     </th>
     <td>
@@ -1083,7 +1083,7 @@ th, td {
   <tr>
     <th rowspan="6">
       <a href="@app-ref@/layout/" target="_blank">
-      Layout<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Layout
       </a>
     </th>
     <td>
@@ -1119,7 +1119,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/portlet-display-template/" target="_blank">
-      Portlet Display Template<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Portlet Display Template
       </a>
     </th>
     <td>
@@ -1130,7 +1130,7 @@ th, td {
   <tr>
     <th rowspan="3">
       <a href="@app-ref@/product-navigation/" target="_blank">
-      Product Navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Product Navigation
       </a>
     </th>
     <td>
@@ -1151,7 +1151,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/rss/" target="_blank">
-      RSS<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      RSS
       </a>
     </th>
     <td>
@@ -1162,7 +1162,7 @@ th, td {
   <tr>
     <th rowspan="4">
       <a href="@app-ref@/site-navigation/" target="_blank">
-      Site Navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Site Navigation
       </a>
     </th>
     <td>
@@ -1188,7 +1188,7 @@ th, td {
   <tr>
     <th rowspan="2">
       <a href="@app-ref@/site/" target="_blank">
-      Site<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Site
       </a>
     </th>
     <td>
@@ -1204,7 +1204,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/staging/" target="_blank">
-      Staging<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Staging
       </a>
     </th>
     <td>
@@ -1215,7 +1215,7 @@ th, td {
   <tr>
     <th rowspan="1">
       <a href="@app-ref@/trash/" target="_blank">
-      Trash<span class="opens-new-window-accessible"> (Opens New Window) </span>
+      Trash
       </a>
     </th>
     <td>
