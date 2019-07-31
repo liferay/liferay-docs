@@ -1225,3 +1225,271 @@ th, td {
 
 </table>
 
+## Taglibs
+
+Here you'll find tag library documentation for the @product-ver@, @product@
+apps, and Liferay Faces. 
+
+### @product-ver@ Taglibs
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+caption {
+    text-align: left;
+}
+</style>
+
+<table style="width:100%">
+  <caption>
+    <br>
+  </caption>
+
+  <tr>
+    <th rowspan="10">
+    <a href="@platform-ref@/7.2-latest/taglibs/util-taglib/">
+    Util Taglibs
+    </a>
+    </th>
+    <td>
+    JSTL core
+    </td>
+  </tr>
+  <tr>
+    <td>
+    aui
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-portlet
+    </td>
+  </tr>
+  <tr>
+    <td>
+    portlet
+    </td>
+  </tr>
+  <tr>
+    <td>
+    portlet_1_0
+    </td>
+  </tr>
+  <tr>
+    <td>
+    portlet_2_0
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-security
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-theme
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-ui
+    </td>
+  </tr>
+  <tr>
+    <td>
+    liferay-util
+    </td>
+  </tr>
+</table>
+
+### @product@ App Taglibs
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+caption {
+    text-align: left;
+}
+</style>
+
+<table style="width:100%">
+  <caption>
+    <br>
+  </caption>
+
+  <tr>
+    <th rowspan="1">
+    <a href="@app-ref@/adaptive-media/" target="_blank">
+      Adaptive Media
+    </a>
+    </th>
+    <td>
+      liferay-adaptive-media
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+    <a href="@app-ref@/application-list/" target="_blank">
+      Application List
+    </a>
+    </th>
+    <td>
+      liferay-application-list
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+    <a href="@app-ref@/asset/" target="_blank">
+      Asset
+    </a>
+    </th>
+    <td>
+      liferay-asset
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+    <a href="@app-ref@/trash/" target="_blank">
+      Trash
+    </a>
+    </th>
+    <td>
+      liferay-trash
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">
+    <a href="@app-ref@/dynamic-data-mapping/" target="_blank">
+      Dynamic Data Mapping
+    </a>
+    </th>
+    <td>
+      liferay-ddm
+    </td>
+  </tr>
+  <tr>
+    <td>
+      liferay-form
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">Foundation:</th>
+    <td>
+	 <a href="@app-ref@/foundation/latest/taglibdocs/liferay-map/tld-summary.html" target="_blank">
+        liferay-map
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<a href="@app-ref@/foundation/latest/taglibdocs/liferay-frontend/tld-summary.html" target="_blank">
+       liferay-frontend
+       </a>
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">Import, Export, &amp; Staging:</th>
+    <td>
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-staging/tld-summary.html" target="_blank">
+        liferay-staging
+        </a>
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">Item Selector:</th>
+    <td>
+	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-item-selector/tld-summary.html" target="_blank">
+        liferay-item-selector
+        </a>
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">Product Navigation:</th>
+    <td>
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-product-navigation/tld-summary.html" target="_blank">
+        liferay-product-navigation
+        </a>
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">Sites:</th>
+    <td>
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-layout/tld-summary.html" target="_blank">
+        liferay-layout
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-site-navigation/tld-summary.html" target="_blank">
+        liferay-site-navigation
+        </a>
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">Social:</th>
+    <td>
+	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-flags/tld-summary.html" target="_blank">
+        liferay-flags
+        </a>
+    </td>
+  </tr>
+
+</table>
+
+<!-- TODO: Add additional TLD categories once they're finalized for 7.1. Still
+in the works and have not all been properly published. -Cody -->
+
+For help finding module attributes and configuring dependencies, see 
+[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies). 
+
+### Faces Taglibs
+
+[**Faces 3.2 Taglibs**](https://docs.liferay.com/faces/3.2/vdldoc/): the latest
+version of Liferay Faces JSF tag docs in View Declaration Language (VDL) format.
+VDL docs for all versions of Liferay Faces are available
+[here](http://docs.liferay.com/faces/).
+
+## JavaScript and CSS
+
+[**Lexicon**](https://lexicondesign.io/): A system for building applications in
+and outside of @product@, designed to be fluid and extensible, as well as
+provide a consistent and documented API.
+
+[**Clay**](https://clayui.com/): The web implementation of Liferay's
+[Lexicon Experience Language](https://lexicondesign.io/).
+
+[**Bootstrap**](http://getbootstrap.com/): The base CSS library onto which
+Lexicon is built. @product@ uses Bootstrap natively and all of its CSS classes 
+and JavaScript features are available within portlets, templates, and themes.
+
+[**AlloyUI**](http://alloyui.com): Liferay includes AlloyUI and all of its
+JavaScript APIs are available within portlets, templates and themes.
+
+## Descriptor Definitions
+
+[**DTDs**](@platform-ref@/7.1-latest/definitions/): Describes the XML
+files used in configuring @product@ apps, @product@ plugins, and @product-ver@.
+
