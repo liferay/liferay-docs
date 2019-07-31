@@ -14,7 +14,7 @@ front-end frameworks, along with the front-end technologies you love the most:
 -   [Metal.js](https://metaljs.com/) (developed by Liferay)
 -   [AlloyUI](https://alloyui.com/) (developed by Liferay)
 -   jQuery (included)
--   Lodash (included, but disabled by default)
+-   Lodash (included, [but disabled by default](https://github.com/liferay/liferay-portal/blob/master/readme/BREAKING_CHANGES.markdown#lodash-is-no-longer-included-by-default))
 
 To load modules, you must know when they are needed, where they are at build
 time, whether they should be bundled together or loaded independently, and

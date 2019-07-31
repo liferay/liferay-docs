@@ -70,7 +70,7 @@ Out of the box, widgets use the _Barebone_ Application Decorators: unless
 there's content to render in the widget, the widget body is hidden. The
 header is displayed if you hover over it. 
 
-![Figure x: At first glance, not much is happening on the search page. But, there's more than meets the eye.](../../images/search-barebone-widgets.png)
+![Figure 1: At first glance, not much is happening on the search page. But, there's more than meets the eye.](../../images/search-barebone-widgets.png)
 
 Because of this, when you visit a search page created from the default search
 page template, you won't see certain widgets fully rendered.
@@ -90,19 +90,19 @@ the out-of-the-box search experience has two components for end users:
 Behind the scenes, The search bar widget points to a hidden search page with the
 friendly URL `/search`.
 
-![Figure 1: By default, the embedded search bar points to the pre-configured `/search` destination page.](../../images/search-dest-page.png)
+![Figure 2: By default, the embedded search bar points to the pre-configured `/search` destination page.](../../images/search-dest-page.png)
 
 Enter a search term and you're redirected to the default search page, where
 results are displayed in the Search Results widget.
 
-![Figure 2: The default page is pre-configured with the Search Results widget and the various Facet widgets to provide a full search experience.](../../images/search-default-page.png)
+![Figure 3: The default page is pre-configured with the Search Results widget and the various Facet widgets to provide a full search experience.](../../images/search-default-page.png)
 
 The default search page is based on a Search page template, but it doesn't
 inherit changes from the page template by default. That means you can customize
 the search page directly without changing the template's inheritance
 configuration.
 
-![Figure 3: Configure the Search page. By default, it doesn't inherit changes from the page template.](../../images/search-page-config.png)
+![Figure 4: Configure the Search page. By default, it doesn't inherit changes from the page template.](../../images/search-page-config.png)
 
 If you require just a few changes to the default page, don't abandon it and
 create one manually. Just make the configuration changes you need, including
@@ -126,7 +126,7 @@ a new site:
     Once deleted, the search bar disappears from your site pages, replaced by a
     warning message visible only to site administrators:
 
-    ![Figure 4: The search bar is only visible if it points to an existent page.](../../images/search-bar-warning.png)
+    ![Figure 5: The search bar is only visible if it points to an existent page.](../../images/search-bar-warning.png)
 
 2.  Create a new page named whatever you want (_Finders Keepers_, perhaps). Make
     it hidden or add it to the navigation as you please (the default search
@@ -136,7 +136,7 @@ a new site:
     template. Find the template in the Add Site Page form. It's under *Global
     Templates*.
 
-    ![Figure 5: There's a handy page template for creating search pages.](../../images/search-page-template.png)
+    ![Figure 6: There's a handy page template for creating search pages.](../../images/search-page-template.png)
 
 3.  If you're creating a page not backed by the template, add and configure all
     the widgets you need. You'll find all the available search widgets in the

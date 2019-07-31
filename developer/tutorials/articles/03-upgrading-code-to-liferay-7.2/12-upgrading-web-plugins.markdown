@@ -6,8 +6,8 @@ header-id: upgrading-web-plugins
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Web Plugins<br>Step 1 of 1</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Web Plugins</p><p>Step 1 of 1</p>
 </div>
 
 Web plugins are regular

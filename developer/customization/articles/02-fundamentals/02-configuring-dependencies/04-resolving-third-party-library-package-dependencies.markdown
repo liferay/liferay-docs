@@ -34,6 +34,20 @@ for it in your project. When you deploy your project, the OSGi framework wires
 the dependency module to your project's module or web application bundle (WAB).
 If you don't find an OSGi module based on the Java library, follow Option 2. 
 
+| **Tip:** Refrain from embedding library JARs that provide the same 
+| [packages that @product@ or existing modules provide already](/docs/7-2/reference/-/knowledge_base/r/third-party-packages-portal-exports). 
+ 
+| **Note:** If you're developing a WAR that requires a different version of a
+| third-party package that
+| [@product@ or another module exports](/docs/7-2/reference/-/knowledge_base/r/third-party-packages-portal-exports),
+| specify that package in your
+| [`Import-Package:` list](/docs/7-2/customization/-/knowledge_base/c/importing-packages).
+| If the package provider is an OSGi module, publish its exported packages by 
+| deploying that module. Otherwise, rename the third-party library (not an OSGi 
+| module) differently from the
+| [JAR that the WAB generator excludes](/docs/7-2/customization/-/knowledge_base/c/understanding-excluded-jars)
+| and embed the JAR in your project. 
+
 **Option 2 - Resolve the Java packages privately in your project**: Copy
 *required packages* only from libraries into your project, if you can or embed
 *libraries* wholesale, if you must. The rest of this article shows you how to

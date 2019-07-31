@@ -6,7 +6,7 @@ header-id: automatically-deploying-theme-changes
 
 [TOC levels=1-4]
 
-Follow these steps to automatically deploy your theme's changes with the Watch 
+Follow these steps to automatically preview your theme's changes with the Watch 
 task. Note that this task only works for themes that use the 
 [liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
 such as those created with the 
@@ -42,8 +42,8 @@ such as those created with the
     ```
 
 2.  Make a change to your theme and save the file. The updated files are built, 
-    compiled, and copied directly to the proxy port. CSS changes are deployed 
-    live, so no page reload is needed. 
+    compiled, and copied directly to the proxy port (e.g. `9080`). CSS changes 
+    are deployed live, so no page reload is needed.
     
 3.  Once you're happy with the changes, 
     [re-deploy](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes) 

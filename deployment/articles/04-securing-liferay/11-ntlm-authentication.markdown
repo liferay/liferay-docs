@@ -14,7 +14,8 @@ authentication. NTLM v2 is more secure and has a stronger authentication process
 than NTLMv1.
 
 | **Note:** NTLM authentication was deprecated in @product-ver@ and was removed.
-| You can still install it from Marketplace. 
+| You can still install it from Marketplace [here](https://web.liferay.com/marketplace/-/mp/application/125668266) 
+| or [here](https://web.liferay.com/marketplace/-/mp/application/125668305). 
 
 Note that in order to use NTLM SSO, @product@'s portal instance authentication
 type must be set to screen name. 

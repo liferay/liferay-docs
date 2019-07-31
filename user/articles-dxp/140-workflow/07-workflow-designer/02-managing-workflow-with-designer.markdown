@@ -82,7 +82,7 @@ Of course, there's more you can do besides changing node names. Actions,
 Notifications, and Assignments can be used to make your workflow definition
 useful and interactive. Keep reading to learn about these features.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Kaleo Forms](/docs/7-2/user/-/knowledge_base/u/kaleo-forms)
 

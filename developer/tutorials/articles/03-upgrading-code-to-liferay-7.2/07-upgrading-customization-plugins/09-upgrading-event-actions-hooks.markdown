@@ -6,8 +6,8 @@ header-id: upgrading-event-action-hooks
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Customization Plugins<br>Step 8 of 11</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Customization Plugins</p><p>Step 8 of 11</p>
 </div>
 
 Event action hooks can be upgraded by completing these steps:

@@ -58,12 +58,12 @@ Next you'll explore an Ext plugin's advanced configuration files.
 
 @product@ uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks
-@product@ depends on, like Struts and Spring. Configuration could be
-accomplished using fewer files with more properties in each, but maintenance and
-use is made easier by splitting up the configuration properties into several
-files. For advanced customization needs, it may be useful to override the
-configuration specified in multiple configuration files. @product@ provides a
-clean way to do this from an Ext plugin without modifying the original files. 
+@product@ depends on (e.g., Spring). Configuration could be accomplished using
+fewer files with more properties in each, but maintenance and use is made easier
+by splitting up the configuration properties into several files. For advanced
+customization needs, it may be useful to override the configuration specified in
+multiple configuration files. @product@ provides a clean way to do this from an
+Ext plugin without modifying the original files. 
 
 All the configuration files in @product@ are listed below by their path in an
 Ext plugin folder. Here are descriptions of what each file is for and the path

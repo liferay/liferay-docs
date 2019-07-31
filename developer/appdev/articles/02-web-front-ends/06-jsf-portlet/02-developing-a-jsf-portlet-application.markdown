@@ -32,15 +32,21 @@ Follow these steps:
     - `com.liferay.faces.archetype.richfaces.portlet` (Liferay RichFaces
       portlet)
 
-    Choose the archetype that matches your web app's JSF component suite. The
-    above archetypes support both Gradle and Maven development by providing a
-    `build.gradle` and `pom.xml`, respectively. 
-    
-    <!-- Uncomment once article is available
-    See the
-    Generating a JSF Portlet article for information on how to generate a JSF 
-    portlet.
-    -->
+    Choose the archetype that matches your web app's JSF component suite. For
+    example,
+
+    ```bash
+    mvn archetype:generate \
+        -DarchetypeGroupId=com.liferay.faces.archetype \
+        -DarchetypeArtifactId=com.liferay.faces.archetype.jsf.portlet \
+        -DarchetypeVersion=5.0.6 \
+        -DgroupId=com.mycompany \
+        -DartifactId=com.mycompany.my.jsf.portlet
+    ```
+
+    The above archetypes support both Gradle and Maven development by providing
+    a `build.gradle` and `pom.xml`, respectively. For more information, visit
+    [faces.liferay.dev](https://faces.liferay.dev).
     
     Here's the resulting project structure for a JSF Standard portlet:
 
@@ -143,12 +149,19 @@ Follow these steps:
     `web.xml` file. The `web.xml` file serves as a deployment descriptor that
     provides necessary configurations for your JSF portlet to deploy and
     function in @product@. 
-    
-    <!-- Uncomment once article is available
-    You can see the 
-    Defining JSF Portlet Descriptors
-    article for more information on a Liferay JSF portlet's `web.xml`.
-    -->
+
+    Make sure the Faces Servlet is configured in your `web.xml`:
+
+    ```xml
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    ```
+
+    This is required to initialize JSF and should be defined in all JSF portlets
+    deployed to @product@.
 
 11. Modify your `webapp/WEB-INF/portlet.xml` as desired. The `portlet.xml`
     descriptor describes the portlet to the portlet container. For example, it
