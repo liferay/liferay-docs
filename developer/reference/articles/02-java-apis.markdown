@@ -5,6 +5,10 @@ link to the Javadoc listed here opens in a new window.
 
 ## @product-ver@ Java APIs
 
+This table contains links to the Javadoc for @product-ver@ API modules. The root 
+location for these modules' Javadoc is 
+[here](@platform-ref@/7.2-latest/javadocs/). 
+
 <style>
 table, th, td {
     border: 1px solid black;
@@ -14,23 +18,8 @@ th, td {
     padding: 5px;
     text-align: left;
 }
-caption {
-    text-align: left;
-}
 </style>
 <table style="width:100%">
-  <caption>
-    This table links you to the @product-ver@ API modules. Their
-    root location is  
-    <a href="@platform-ref@/7.2-latest/javadocs/" target="_blank">
-    here.
-    </a> The 
-    reference doc Zip is available  
-    <a href="@platform-ref@/7.2-latest/" target="_blank">
-    here.
-    </a>
-    <br>
-  </caption>
 
   <tr>
     <th rowspan="5">Core:</th>
@@ -578,6 +567,17 @@ th, td {
     </th>
     <td>
              com.liferay.password.policies.admin.api
+      </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+      <a href="@app-ref@/portal-background-task/" target="_blank">
+      Portal Background Task
+      </a>
+    </th>
+    <td>
+             com.liferay.portal.background.task.api
       </td>
   </tr>
 
