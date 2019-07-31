@@ -93,4 +93,8 @@ configurable,
 | information, see
 | [this article](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments-desktop-tools).
 
+For more examples of Fragment configuration, visit the
+[Fragment Configuration Types](/docs/7-2/reference/-/knowledge_base/r/fragment-configuration-types)
+article.
+
 Awesome! You now have a configurable Fragment!

@@ -58,6 +58,8 @@ The following field types are supported for Fragment configurations:
 - `select`
 - `text`
 
+This is available for all Fragment types (e.g., Fragment Renderer, etc.).
+
 For more information on making your fragment configurable, see
 [this section](/docs/7-2/frameworks/-/knowledge_base/f/making-a-fragment-configurable).
 
