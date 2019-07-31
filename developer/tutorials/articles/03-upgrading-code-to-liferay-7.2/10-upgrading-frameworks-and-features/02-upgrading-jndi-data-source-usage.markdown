@@ -6,8 +6,8 @@ header-id: upgrading-jndi-data-source-usage
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Frameworks and Features<br>Step 1 of 4</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Frameworks and Features</p><p>Step 1 of 4</p>
 </div>
 
 In @product@'s OSGi environment, you must use the portal's class loader to load

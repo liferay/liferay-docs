@@ -15,7 +15,7 @@ link is created. To configure propagation of changes:
 1.  Select the Site from the Sites dropdown in the Menu by selecting the
     *Site Selector* button (![Compass](../../../../images/icon-compass.png)). 
  
-2.  Navigate to the *Configuration* &rarr; *Site Settings* page and uncheck or 
+2.  Navigate to the *Configuration* &rarr; *Settings* page and uncheck or 
     recheck the *Enable propagation of changes from the Site template* checkbox.
  
 In this section, you'll learn about the propagation of changes from Site 
@@ -26,14 +26,19 @@ Site template administrators.
 
 If a Site's page set has been created from a Site template and the propagation
 of changes from the Site template is enabled, Site administrators can add new
-pages but cannot remove or reorder the pages imported from the Site Template.
-If a Site has both pages imported from a Site template and custom Site pages,
-the Site Template pages always appear first; custom pages added by Site
-administrators appear after the Site template pages. Only Site template
-administrators can remove, reorder, or add Site template pages. Site
+pages but cannot remove or reorder the pages imported from the Site Template. If
+a Site has both pages imported from a Site template and custom Site pages, the
+Site Template pages always appear first in the Site page hierarchy; custom pages
+added by Site administrators appear after the Site template pages. Only Site
+template administrators can remove, reorder, or add Site template pages. Site
 administrators can add or remove custom Site pages. They can also reorder custom
 Site pages as long as they're all positioned after the Site template pages. Site
 template administrators cannot add, remove, or reorder custom Site pages.
+
+| **Note:** Pages containing a fragment (e.g., 
+| [Content Pages](/docs/7-2/user/-/knowledge_base/u/creating-content-pages))
+| cannot propagate changes after a Site is *first* created based on a site
+| template.
 
 If a Site administrator changes a page that was imported from a Site Template
 and refreshes the page, the following Information icon
@@ -45,7 +50,7 @@ in the Control Menu with the following message:
 
 ![Figure 1: You can click the Information icon to view important information about your Site template.](../../../../images/site-template-update-message.png)
 
-## Merging and Reseting Changes
+## Merging and Resetting Changes
 
 If the Site administrator clicks the *Reset Changes* button, changes are
 propagated from the Site template page to the corresponding Site page that was
@@ -92,12 +97,12 @@ that has a Wiki app with lots of wiki articles, the wiki articles are copied
 from the Site template's scope to the Site's scope and the Site's Wiki app is
 updated with the IDs of the copied wiki articles.
 
-| **Important:** App data, related resources, and permissions on resources are
-| only copied from a Site template to a Site when that Site is *first* created
-| based on the template. No changes made in a a template's portlet data, related
-| resources, or permissions are propagated to the Site after the Site is created.
-| Neither are such changes propagated to a Site by the *Reset* or *Reset and
-| Propagate* features.
+| **Important:** App data, fragment-based pages, related resources, and
+| permissions on resources are only copied from a Site template to a Site when
+| that Site is *first* created based on the template. No changes made to these
+| entities are propagated to the Site after the Site is created. Neither are
+| such changes propagated to a Site by the *Reset* or *Reset and Propagate*
+| features.
 
 For example, consider a Site template administrator who includes a Message
 Boards app as part of a Site template. They even create Message Board

@@ -6,8 +6,8 @@ header-id: upgrading-customization-modules
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Customization Plugins<br>Step 1 of 11</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Customization Plugins</p><p>Step 1 of 11</p>
 </div>
 
 Customization modules include any module extension or override used to

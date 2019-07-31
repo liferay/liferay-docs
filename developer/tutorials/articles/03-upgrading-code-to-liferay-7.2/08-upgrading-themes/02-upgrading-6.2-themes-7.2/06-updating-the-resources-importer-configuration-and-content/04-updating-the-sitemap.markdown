@@ -6,8 +6,8 @@ header-id: updating-the-6-2-sitemap
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 Resources Importer<br>Step 3 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 Resources Importer</p><p>Step 3 of 3</p>
 </div>
 
 In @product@ 6.2, portlet IDs were incremental numbers. In @product-ver@, 

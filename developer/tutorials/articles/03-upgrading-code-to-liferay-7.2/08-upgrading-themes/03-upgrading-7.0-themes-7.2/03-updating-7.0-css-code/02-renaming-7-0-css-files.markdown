@@ -6,8 +6,8 @@ header-id: updating-7-0-css-file-names-for-clay
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 7.0 CSS Code<br>Step 1 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 7.0 CSS Code</p><p>Step 1 of 3</p>
 </div>
 
 Some of the CSS filenames have changed to reflect the introduction of Clay 

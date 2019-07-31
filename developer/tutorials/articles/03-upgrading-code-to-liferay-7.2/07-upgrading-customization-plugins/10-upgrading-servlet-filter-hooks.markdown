@@ -6,8 +6,8 @@ header-id: upgrading-servlet-filter-hooks
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Customization Plugins<br>Step 9 of 11</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Customization Plugins</p><p>Step 9 of 11</p>
 </div>
 
 If you have servlet filter hooks ready to be upgraded, this tutorial's for you.
