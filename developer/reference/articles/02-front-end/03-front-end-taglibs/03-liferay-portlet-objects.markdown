@@ -22,6 +22,8 @@ objects are described in the table below:
 | `ActionResponse actionResponse` | Represents the portlet response to an action request. `actionResponse` is only available to a JSP if the JSP was included in the action-processing phase. |
 | `EventRequest eventRequest` | Represents the request sent to the portlet to handle an event. `eventRequest` is only available to a JSP if the JSP was included during the event-processing phase. |
 | `EventResponse eventResponse` | Represents the portlet response to an event request. `eventResponse` is only available to a JSP if the JSP was included in the event-processing phase. |
+| [`LiferayPortletRequest liferayPortletRequest`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/LiferayPortletRequest.html) | Provides access to the `HttpServletRequest`, the `Portlet`, and the portlet name and lifecycle value. `liferayPortletRequest` is available in all portlet phases. |
+| [`LiferayPortletResponse liferayPortletResponse`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/LiferayPortletResponse.html) | Includes the properties returned to the portal and provides a means to add or change properties. `liferayPortletResponse` is available in all portlet phases. |
 | `RenderRequest renderRequest` | Represents the request sent to the portlet to render the portlet. `renderRequest` is only available to a JSP if the JSP was included during the render request phase. |
 | `RenderResponse renderResponse` | Represents an object that assists the portlet in sending a response to the portal. `renderResponse` is only available to a JSP if the JSP was included during the render request phase. |
 | `ResourceRequest resourceRequest` | Represents the request sent to the portlet for rendering resources. `resourceRequest` is only available to a JSP if the JSP was included during the resource-serving phase. |
@@ -31,3 +33,6 @@ objects are described in the table below:
 | `Map<String, String[]> portletPreferencesValues` | Provides a Map equivalent to the `portletPreferences.getMap()` call or an empty Map if no portlet preferences exist. |
 | `PortletSession portletSession` | Provides a way to identify a user across more than one request and to store transient information about a user. A `portletSession` is created for each user client. `portletSession` is always available to a portlet JSP, regardless of the request-processing phase in which it was included. `portletSession` is `null` if no session exists. |
 | `Map<String, Object> portletSessionScope` | Provides a Map equivalent to the `PortletSession.getAtrributeMap()` call or an empty Map if no session attributes exist. |
+
+For more details, visit the
+[Portlet 3.0 API Javadoc](https://docs.liferay.com/portlet-api/3.0/javadocs/). 
