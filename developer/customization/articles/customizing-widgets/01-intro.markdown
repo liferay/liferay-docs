@@ -8,18 +8,17 @@ header-id: customizing-widgets
 
 It would be nice to apply particular display changes to specific widget
 instances without having to create a hook (e.g., HTML-related change) or change
-a theme (e.g., CSS-related change). Ideally, you should be able to provide
-authorized portal users the ability to apply custom display interfaces to
-widgets.
+a theme (e.g., CSS-related change). Ideally, you should be able to enable
+authorized users to apply custom display interfaces to widgets.
 
 Be of good cheer! That's precisely what
 [Widget Templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates)
-provide--the ability to customize the way widgets appear on a page, removing
-limitations to the way your site's content is displayed. With Widget Templates,
-you can define custom display templates used to render asset-centric widgets.
-Some default widgets already have templating capabilities (e.g., *Web Content*
-and *Dynamic Data Lists*), in which you can add as many display options (or
-templates) as you want. You can also add them to your custom portlets, too.
+provide. Now you can customize the way widgets appear on a page, removing
+limitations to the way content is displayed. With Widget Templates, you can
+define display templates to render asset-centric widgets. Some default widgets
+already have templating capabilities (e.g., *Web Content* and *Dynamic Data
+Lists*), in which you can add as many display options (or templates) as you
+want. You can also add them to your own applications.
 
 Some portlets that already support Widget Templates are
 
@@ -35,19 +34,15 @@ Some portlets that already support Widget Templates are
 - *Tags Navigation*
 - *Wiki*
 
-To leverage the Widget Template API, there are several steps you must follow.
-These steps involve
+To leverage the Widget Template API, follow these steps: 
 
-- registering your portlet to use Widget Templates
-- defining permissions
-- exposing the Widget Template functionality to users
+- register your portlet to use Widget Templates
+- define permissions
+- expose the Widget Template functionality to users
 
-These steps are followed in detail in the
+The detailed steps are in the
 [Implementing Widget Templates](/docs/7-2/customization/-/knowledge_base/c/implementing-widget-templates)
-article. You'll read an overview of these steps next.
-
-First, you'll learn about what interface to implement so you can register your
-portlet to use Widget Templates.
+article. Here's a high level overview of what you'll do. 
 
 ## Implementing the TemplateHandler Interface
 
@@ -60,28 +55,27 @@ Each of the methods in this class have a significant role in defining and
 implementing Widget Templates for your custom portlet. The list below highlights
 some of the methods defined specifically for Widget Templates:
 
-**getClassName():** Defines the type of entry your portlet is rendering.
+`getClassName():` Defines the type of entry your portlet is rendering.
 
-**getName():** Declares the name of your Widget Template type (typically,
+`getName()`: Declares the name of your Widget Template type (typically,
 the name of the portlet).
 
-**getResourceName():** Specifies which resource is using the Widget
+`getResourceName()`: Specifies which resource is using the Widget
 Template (e.g., a portlet) for permission checking. This method must return
 the portlet's fully qualified portlet ID (e.g.,
 `com_liferay_wiki_web_portlet_WikiPortlet`).
 
-**getTemplateVariableGroups():** Defines the variables exposed in the
+`getTemplateVariableGroups()`: Defines the variables exposed in the
 template editor.
 
-Next, you'll explore how to define permissions for your portlet's Widget
-Templates.
+Next, you define permissions for your portlet's Widget Templates.
 
 ## Defining Permissions
 
 Once you've registered your portlet to use Widget Templates, you must define
-permissions for them; without permissioning, anyone in the site could access and
+permissions for them; without permissions, anyone in the Site could access and
 change your widget's display templates. Configuring permissions lets
-administrative users grant permissions only to the roles that should create and
+administrative users grant permissions only to the Roles that should create and
 manage display templates.
 
 This is done by creating a `default.xml` file in your portlet defining the
@@ -94,46 +88,43 @@ Next, you'll learn how to expose Widget Template selection for users.
 
 ## Exposing the Widget Template Selection
 
-To expose the Widget Template option to your users, you can use the
-`<liferay-ui:ddm-template-selector>` tag in the JSP file you're using to control
+To expose the Widget Template option to your users, use the
+`<liferay-ui:ddm-template-selector>` tag in the JSP file that controls
 your portlet's configuration. This tag requires the following parameters:
 
-- `className`: your entity's class name.
-- `contextObjects`: accepts a `Map<String, Object>` with any object you want
- to the template context.
-- `displayStyle`: your portlet's display style.
-- `displayStyleGroupId`: your portlet's display style group ID.
-- `entries`: accepts a list of your entities (e.g., `List<YourEntity>`).
+`className`: your entity's class name.
+
+`contextObjects`: accepts a `Map<String, Object>` with any object you want
+to the template context.
+
+`displayStyle`: your portlet's display style.
+
+`displayStyleGroupId`: your portlet's display style group ID.
+
+`entries`: accepts a list of your entities (e.g., `List<YourEntity>`).
 
 The variables `displayStyle` and `displayStyleGroupId` are preferences that your
 portlet stores when you use this taglib and your portlet uses the
-[BaseJSPSettingsConfigurationAction](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BaseJSPSettingsConfigurationAction.html)
+[`BaseJSPSettingsConfigurationAction`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BaseJSPSettingsConfigurationAction.html)
 or
-[DefaultConfigurationAction](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/DefaultConfigurationAction.html).
+[`DefaultConfigurationAction`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/DefaultConfigurationAction.html).
 Otherwise, you must obtain the value of those parameters and store them
 manually in your configuration class.
-
-For more information on configuring the `<liferay-ui:ddm-template-selector>`
-tag, see
-[this article](/docs/7-2/customization/-/knowledge_base/c/implementing-widget-templates).
-
-Next, you'll consider some useful tips when applying Widget Templates.
 
 ## Recommendations for Using Widget Templates
 
 You can harness a lot of power by leveraging the Widget Template API. Be
-careful, for with great power, comes great responsibility! To that end, you'll
-learn about some practices you can use to optimize your portlet's performance
-and security.
+careful, for with great power, comes great responsibility! Here are some
+practices you can use to optimize your portlet's performance and security.
  
 First let's talk about security. You may want to hide some classes or packages
-from the template context, to limit the operations that Widget Templates can
-perform on your portal. @product@ provides some portal system settings, which
-can be accessed by navigating to *Control Panel* &rarr; *Configuration* &rarr;
-*System Settings* &rarr; *Template Engines* &rarr; *FreeMarker Engine*, to
-define the restricted classes, packages, and variables. In particular, you may
-want to add `serviceLocator` to the list of default values assigned to the
-FreeMarker Engine Restricted variables.
+from the template context to limit the operations that Widget Templates can
+perform. @product@ provides some system settings, which can be accessed by
+navigating to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
+&rarr; *Template Engines* &rarr; *FreeMarker Engine*, to define the restricted
+classes, packages, and variables. In particular, you may want to add
+`serviceLocator` to the list of default values assigned to the FreeMarker Engine
+Restricted variables.
 
 Widget Templates introduce additional processing tasks when your portlet is
 rendered. To minimize negative effects on performance, make your templates as
@@ -147,21 +138,20 @@ To navigate to the template editor for Widget Templates, go to the Site Admin
 menu and select *Configuration* &rarr; *Widget Templates* and then click *Add*
 and select the specific portlet on which you decide to create a custom template.
 
-The template editor provides fields, general variables, and util variables
-customized for the portlet you chose. These variable references can be found on
-the left-side panel of the template editor. You can use them by simply placing
-your cursor where you'd like the variable placed, and clicking the desired
-variable to place it there. You can learn more about the template editor in the
-[Styling Widgets with Widget Templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates)
-section.
+The template editor provides fields, general variables, and utility variables
+customized for the portlet you chose. These variable references are on the
+left-side panel of the template editor. Place your cursor where you want the
+variable placed and click the desired variable to insert it. You can learn more
+about the template editor in 
+[Styling Widgets with Widget Templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates).
 
 Finally, don't forget to run performance tests and tune the template cache
 options by modifying the *Resource modification check* field in *System
 Settings* &rarr; *Template Engines* &rarr; *FreeMarker Engine*.
 
-The cool thing about Widget Templates is the power they provide to your portlets,
-providing infinite ways of editing your portlet to provide new interfaces for
-your portal users. Be sure to configure your FreeMarker templates appropriately
-for the most efficient customization process.
+Widget Templates provide power to your portlets by providing infinite ways of
+editing your portlet to create new interfaces for your users. Be sure to
+configure your FreeMarker templates appropriately for the most efficient
+customization process.
 
-Continue on to add support for Widget Templates in your custom portlet.
+Continue on to add support for Widget Templates in your portlet.
