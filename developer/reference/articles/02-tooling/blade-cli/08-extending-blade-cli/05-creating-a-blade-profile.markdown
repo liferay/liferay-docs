@@ -6,7 +6,7 @@ header-id: creating-a-blade-profile
 
 [TOC levels=1-4]
 
-There are two steps when adding a new Blade profile:
+There are two steps to follow when adding a new Blade profile:
 
 - [Creating a new profile](#creating-a-new-profile)
 - [Setting the profile in Liferay Workspace](#setting-a-profile)
@@ -114,10 +114,10 @@ your profile name:
 profile.name=myprofile
 ```
 
-This specifies which Blade profile is active and uses the commands with that
-defined profile. The default setting is `gradle`. You can also set this property
-to `maven` out-of-the-box, which is applied for Maven-based workspaces. You can
-only set one profile for a workspace.
+This specifies which Blade profile is active and uses its defined commands. The
+default setting is `gradle`. You can also set this property to `maven`
+out-of-the-box, which is applied for Maven-based workspaces. You can only set
+one profile for a workspace.
 
 You can specify the Blade profile for a workspace when initializing it too. This
 is done by passing the profile name as an argument when creating the workspace:
