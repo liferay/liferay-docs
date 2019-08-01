@@ -1,4 +1,10 @@
+---
+header-id: java-apis
+---
+
 # Java APIs
+
+[TOC levels=1-4]
 
 Here you'll find Javadoc for @product-ver@ and @product@ apps. Note that each 
 link to the Javadoc listed here opens in a new window. 
