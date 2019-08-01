@@ -1512,33 +1512,31 @@ caption {
 </table>
 
 For help finding module attributes and configuring dependencies, see 
-[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies). 
+[Configuring Dependencies](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies). 
 
 ### Faces Taglibs
 
-[**Faces 3.2 Taglibs**](https://docs.liferay.com/faces/3.2/vdldoc/): the latest
-version of Liferay Faces JSF tag docs in View Declaration Language (VDL) format.
-VDL docs for all versions of Liferay Faces are available
-[here](http://docs.liferay.com/faces/).
+[**Faces 3.2 Taglibs**](https://docs.liferay.com/faces/3.2/vdldoc/): The latest 
+version of Liferay Faces JSF tag docs in View Declaration Language (VDL) format. 
+VDL docs for all versions of Liferay Faces are available 
+[here](http://docs.liferay.com/faces/). 
 
 ## JavaScript and CSS
 
-[**Lexicon**](https://lexicondesign.io/): A system for building applications in
-and outside of @product@, designed to be fluid and extensible, as well as
-provide a consistent and documented API.
+[**Lexicon**](https://liferay.design/lexicon/): A system for building 
+applications in and outside of @product@, designed to be fluid and extensible, 
+as well as provide a consistent and documented API. 
 
-[**Clay**](https://clayui.com/): The web implementation of Liferay's
-[Lexicon Experience Language](https://lexicondesign.io/).
+[**Clay**](https://clayui.com/): The web implementation of Lexicon. 
 
-[**Bootstrap**](http://getbootstrap.com/): The base CSS library onto which
+[**Bootstrap**](http://getbootstrap.com/): The base CSS library onto which 
 Lexicon is built. @product@ uses Bootstrap natively and all of its CSS classes 
-and JavaScript features are available within portlets, templates, and themes.
+and JavaScript features are available within portlets, templates, and themes. 
 
-[**AlloyUI**](http://alloyui.com): Liferay includes AlloyUI and all of its
-JavaScript APIs are available within portlets, templates and themes.
+[**AlloyUI**](http://alloyui.com): AlloyUI and all of its JavaScript APIs are 
+available within portlets, templates, and themes. 
 
 ## Descriptor Definitions
 
-[**DTDs**](@platform-ref@/7.1-latest/definitions/): Describes the XML
-files used in configuring @product@ apps, @product@ plugins, and @product-ver@.
-
+[**DTDs**](@platform-ref@/7.2-latest/definitions/): Describes the XML files used 
+in configuring @product@ apps, @product@ plugins, and @product-ver@. 
