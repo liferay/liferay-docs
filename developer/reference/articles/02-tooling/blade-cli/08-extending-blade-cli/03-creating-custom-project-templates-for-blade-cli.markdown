@@ -11,6 +11,9 @@ those are too simple or don't fit the need for your development team. You can
 create new custom project templates that fit your team's workflow and have Blade
 use it instead.
 
+| **Important:** An extension JAR can only contain one template; therefore, for
+| multiple templates, each must be deployed in a separate JAR.
+
 The setup of a custom project template should mimic that of a Maven archetype.
 The best way to illustrate this is by visualizing a
 [sample template](https://github.com/liferay/liferay-blade-cli/tree/master/extensions/sample-template)'s
@@ -21,7 +24,7 @@ folder structure:
         - `META-INF`
             - `maven`
                 - `archetype-metadata.xml`
-            - `archetype-post-generate.groovy`
+            - `archetype-post-generate.groovy` (optional; only invoked by Maven projects)
         - `archetype-resources`
             - Folder structure to be generated
 - `bnd.bnd`
@@ -68,7 +71,9 @@ follow these steps:
 
     The `Bundle-SymbolicName` of your template JAR must have the pattern
     `*.project.templates.<name>.*`. The `-removeheaders` definition is a
-    packaging requirement for all project templates.
+    packaging requirement for all project templates. For more information on
+    Bnd versioning, visit
+    [Bnd's official docs](https://bnd.bndtools.org/chapters/170-versioning.html).
 
 3.  Generate the extension's JAR file (e.g., `gradlew build`).
 

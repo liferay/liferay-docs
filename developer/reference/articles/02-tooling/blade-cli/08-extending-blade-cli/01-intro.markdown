@@ -37,4 +37,8 @@ command. For more information, see the
 [Creating a Blade Profile](/docs/7-2/reference/-/knowledge_base/r/creating-a-blade-profile)
 article.
 
+| **Note:** Blade CLI leverages the profile system internally for Maven support.
+| The Maven specific code is stored in an extension JAR and embedded inside the
+| default Blade JAR.
+
 Continue on to learn more!

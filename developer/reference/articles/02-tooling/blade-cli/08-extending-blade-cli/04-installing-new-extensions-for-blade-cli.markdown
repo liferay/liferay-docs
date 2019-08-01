@@ -21,24 +21,10 @@ valid Blade extensions. You'll learn how to install new extensions next.
 
 To install an extension, you must move the extension JAR to the user's
 `${user.home}/.blade/extensions` folder. You can do this automatically from
-Blade CLI. There are three ways to install a new Blade extension:
-
-**Local JAR file:**
+Blade CLI by running
 
 ```bash
 blade extension install /path/to/my_extension.JAR
-```
-
-**Remote JAR file indicated by a URL:**
-
-```bash
-blade extension install https://repository.liferay.com/public/group/com/liferay/blade/com.liferay.blade.extension/1.0.0/com.liferay.blade.extension-1.0.0.JAR
-```
-
-**Github repository that contains an extension:**
-
-```bash
-blade extension install https://github.com/liferay/liferay-blade-cli/tree/master/extensions/sample-command
 ```
 
 You can verify that the extension is available by running the following

@@ -48,8 +48,9 @@ To create a custom command for Blade CLI, follow these steps:
     }
     ```
 
-    This registers your new command with Blade. The `BaseCommand` class expects
-    an arguments class as its parameter. You'll create this next.
+    This registers your new command with Blade. You must define the `execute()`
+    command for all classes extending `BaseCommand`. The `BaseCommand` class
+    expects an arguments class as its parameter. You'll create this next.
 
 4.  Create a class that holds your command's arguments:
 
@@ -66,8 +67,8 @@ To create a custom command for Blade CLI, follow these steps:
             return _name;
         }
 
-    @Parameter(description = "The name to say hello to", names = "--name", required = true)
-    private String _name;
+        @Parameter(description = "The name to say hello to", names = "--name", required = true)
+        private String _name;
 
     }
     ```
@@ -92,9 +93,16 @@ To create a custom command for Blade CLI, follow these steps:
     com.liferay.extensions.sample.command.Hello
     ```
 
+    | **Note:** Java's Service Loader Interface (SPI) is used to load the
+    | fully qualified classes in the `META-INF/services` folder. You can learn
+    | more about SPIs
+    | [here](https://docs.oracle.com/javase/7/docs/api/java/util/ServiceLoader.html).
+
 6.  Generate the extension's JAR file (e.g., `gradlew build`).
 
-Awesome! You've created a custom command! See the
+Awesome! You've created a custom command! You can deploy multiple custom
+commands in a single JAR, so you can continue adding custom command projects to
+this module, if desired. See the
 [Installing New Extensions](/docs/7-2/reference/-/knowledge_base/r/installing-new-extensions-for-blade-cli)
 article to install the command (JAR) to Blade CLI.
 
