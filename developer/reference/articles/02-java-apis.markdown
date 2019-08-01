@@ -1390,77 +1390,126 @@ caption {
   </tr>
 
   <tr>
-    <th rowspan="2">Foundation:</th>
+    <th rowspan="1">
+    <a href="@app-ref@/map/" target="_blank">
+      Map
+    </a>
+    </th>
     <td>
-	 <a href="@app-ref@/foundation/latest/taglibdocs/liferay-map/tld-summary.html" target="_blank">
-        liferay-map
-        </a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-	<a href="@app-ref@/foundation/latest/taglibdocs/liferay-frontend/tld-summary.html" target="_blank">
-       liferay-frontend
-       </a>
+      liferay-map
     </td>
   </tr>
 
   <tr>
-    <th rowspan="1">Import, Export, &amp; Staging:</th>
+    <th rowspan="5">
+    <a href="@app-ref@/frontend-taglib/" target="_blank">
+      Frontend Taglib
+    </a>
+    </th>
     <td>
-	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-staging/tld-summary.html" target="_blank">
-        liferay-staging
-        </a>
+      liferay-frontend
+    </td>
+  </tr>
+  </tr>
+  <tr>
+    <td>
+      liferay-clay
+    </td>
+  </tr>
+  <tr>
+    <td>
+      soy
+    </td>
+  </tr>
+  <tr>
+    <td>
+      liferay-chart
+    </td>
+  </tr>
+  <tr>
+    <td>
+      liferay-dynamic-section
     </td>
   </tr>
 
   <tr>
-    <th rowspan="1">Item Selector:</th>
+    <th rowspan="1">
+    <a href="@app-ref@/staging/" target="_blank">
+      Staging
+    </a>
+    </th>
     <td>
-	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-item-selector/tld-summary.html" target="_blank">
-        liferay-item-selector
-        </a>
+      liferay-staging
     </td>
   </tr>
 
   <tr>
-    <th rowspan="1">Product Navigation:</th>
+    <th rowspan="1">
+    <a href="@app-ref@/item-selector/" target="_blank">
+      Item Selector
+    </a>
+    </th>
     <td>
-	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-product-navigation/tld-summary.html" target="_blank">
-        liferay-product-navigation
-        </a>
+      liferay-item-selector
     </td>
   </tr>
 
   <tr>
-    <th rowspan="2">Sites:</th>
+    <th rowspan="1">
+    <a href="@app-ref@/product-navigation/" target="_blank">
+      Product Navigation
+    </a>
+    </th>
     <td>
-	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-layout/tld-summary.html" target="_blank">
-        liferay-layout
-        </a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-site-navigation/tld-summary.html" target="_blank">
-        liferay-site-navigation
-        </a>
+      liferay-product-navigation
     </td>
   </tr>
 
   <tr>
-    <th rowspan="1">Social:</th>
+    <th rowspan="1">
+    <a href="@app-ref@/layout/" target="_blank">
+      Layout
+    </a>
+    </th>
     <td>
-	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-flags/tld-summary.html" target="_blank">
-        liferay-flags
-        </a>
+      liferay-layout
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+    <a href="@app-ref@/layout/" target="_blank">
+      Layout
+    </a>
+    </th>
+    <td>
+      liferay-layout
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+    <a href="@app-ref@/site-navigation/" target="_blank">
+      Site Navigation
+    </a>
+    </th>
+    <td>
+      liferay-site-navigation
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="1">
+    <a href="@app-ref@/flags/" target="_blank">
+      Flags
+    </a>
+    </th>
+    <td>
+      liferay-flags
     </td>
   </tr>
 
 </table>
-
-<!-- TODO: Add additional TLD categories once they're finalized for 7.1. Still
-in the works and have not all been properly published. -Cody -->
 
 For help finding module attributes and configuring dependencies, see 
 [Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies). 
