@@ -283,7 +283,7 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
     It describes the portlet application's packaging and version information
     and specifies any required OSGi metadata. For example, the generated
     `liferay-plugin-package.properties` file uses this OSGi metadata header to
-    import required Java packages:
+    [import required Java packages](/docs/7-2/customization/-/knowledge_base/c/importing-packages):
 
     ```properties
     Import-Package: com.liferay.portal.webserver,\

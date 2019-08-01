@@ -64,8 +64,32 @@ and Maven:
 </dependency>
 ```
 
-| **Note**: To configure third-party libraries in a module, see
-| [Adding Third Party Libraries to a Module](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module). 
+| **Important:**
+| [@product@ exports many third-party packages](/docs/7-2/reference/-/knowledge_base/r/third-party-packages-portal-exports).
+| Deploy your module to check if @product@ or another module in your Liferay
+| instance's OSGi runtime framework provides the package you need. If it's
+| provided already, specify the corresponding dependency as being "provided".
+| Here's how to specify a provided dependency:
+| 
+| Maven: `<scope>provided</scope>`
+|  
+| Gradle: `providedCompile`
+|
+| Don't deploy a provided package's JAR again or embed the JAR in  your project.
+| Exporting the same package from different JARs leads to "split package" 
+| issues, whose side affects differ from case to case. If the package is in a
+| third-party library (not an OSGi module), refer to
+| [Resolving Third
+Party Library Dependencies](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module). 
+|
+| If you're developing a WAR that requires a different version of a third-party 
+| package that
+| [@product@ or another module exports](/docs/7-2/reference/-/knowledge_base/r/third-party-packages-portal-exports),
+| specify that package in your
+| [`Import-Package:` list](/docs/7-2/customization/-/knowledge_base/c/importing-packages).
+| If the package provider is an OSGi module, publish its exported packages by 
+| deploying that module. Otherwise, follow the instructions for
+| [adding a third-party library (not an OSGi module)](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module). 
 
 Nice! You know how to specify artifact dependencies. Now that's a skill you can
 depend on! 

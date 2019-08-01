@@ -8,7 +8,7 @@ header-id: using-the-chart-taglib-in-your-portlets
 
 Lines, splines, bars, pies and more, the Chart tag Library provides everything 
 you need to model data. Each taglib gives you access to the corresponding 
-[Clay component](https://github.com/liferay/clay/tree/develop/packages/clay-charts/src). 
+[Clay component](https://github.com/liferay/clay/tree/2.x-stable/packages/clay-charts/src). 
 These components contain the default configuration for the UI.
 
 To use the Chart taglib in your apps, add the following declaration to your JSP:
