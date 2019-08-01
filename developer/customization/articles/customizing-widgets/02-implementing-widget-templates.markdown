@@ -7,13 +7,12 @@ header-id: implementing-widget-templates
 [TOC levels=1-4]
 
 [Widget Templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates)
-let you add custom display templates to your widgets from the portal. The figure
-below shows what the Display Template option looks like in a widget's
-Configuration menu.
+are ways to customize how an application looks. You can create templates for an
+application's display and then choose which template is active. 
 
 ![Figure 1: By using a custom display template, your portlet's display can be customized.](../../images/widget-template-dropdown.png)
 
-To add Widget Template support in your custom portlet, follow the steps below.
+To add Widget Template support to your portlet, follow the steps below.
 
 1.  Create and register a custom `*PortletDisplayTemplateHandler` component.
     Liferay provides the
@@ -36,16 +35,13 @@ To add Widget Template support in your custom portlet, follow the steps below.
     )
     ```
 
-    As an example `*PortletDisplayTemplateHandler` implementation, you can look
-    at the
+    The
     [`WikiPortletDisplayTemplateHandler`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/wiki/wiki-web/src/main/java/com/liferay/wiki/web/internal/portlet/template/WikiPortletDisplayTemplateHandler.java)
-    class.
+    is a good example `*PortletDisplayTemplateHandler` implementation.
 
-2.  Since the ability to add Widget Templates is new to your portlet, you must
-    configure permissions so that administrative users can grant permissions to
-    the roles that will be allowed to create and manage display templates. Add
-    the action key `ADD_PORTLET_DISPLAY_TEMPLATE` to your portlet's
-    `/src/main/resources/resource-actions/default.xml` file:
+2.  Your application must define permissions for creating and managing display
+    templates. Add the action key `ADD_PORTLET_DISPLAY_TEMPLATE` to your
+    portlet's `/src/main/resources/resource-actions/default.xml` file:
 
     ```xml
     <?xml version="1.0"?>
@@ -68,8 +64,7 @@ To add Widget Template support in your custom portlet, follow the steps below.
     </resource-action-mapping>
     ```
 
-3.  Next, you must ensure that @product@ can find the updated `default.xml` 
-    with the new resource action when you deploy the module. Create a file 
+3.  If your application hasn't defined Liferay permissions before, Create a file
     named `portlet.properties` in the `/resources` folder and add the following
     contents providing the path to your `default.xml`:
 
@@ -78,15 +73,17 @@ To add Widget Template support in your custom portlet, follow the steps below.
     resource.actions.configs=resource-actions/default.xml
     ```
 
-4.  Now that your portlet officially supports Widget Templates, you should
-    expose the Widget Template option to your users. Include the
+4.  Now expose the Widget Template selector to your users. Include the
     `<liferay-ui:ddm-template-selector>` tag in the JSP file you're using to
     control your portlet's configuration.
+
+    <!-- The tag above doesn't match the tag in the code snippet below. -Rich
+    -->
 
     For example, it may be helpful for you to insert an `<aui:fieldset>` in your
     configuration JSP file like this:
 
-    ```
+    ```markup
     <aui:fieldset>
         <div class="display-template">
             <liferay-ddm:template-selector
@@ -106,27 +103,26 @@ To add Widget Template support in your custom portlet, follow the steps below.
     As an example JSP, see the Wiki widget's
     [`configuration.jsp`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/wiki/wiki-web/src/main/resources/META-INF/resources/wiki/configuration.jsp). 
 
-5.  You must now extend your view code to render your portlet with the selected
-    Widget Template. This lets you decide which part of your view is rendered by
-    the Widget Template and what is available in the template context.
+5.  You must now extend your view code to render your portlet using the selected
+    Widget Template. 
 
     First, initialize the Java variables needed for the Widget Template: 
 
-    ```
+    ```markup
     <%
     String displayStyle = GetterUtil.getString(portletPreferences.getValue("displayStyle", StringPool.BLANK));
     long displayStyleGroupId = GetterUtil.getLong(portletPreferences.getValue("displayStyleGroupId", null), scopeGroupId);
     %>
     ```
 
-    Next, you can test if the Widget Template is configured, grabs the entities
-    to be rendered, and renders them using the Widget Template. The tag
+    Next, you can test if the Widget Template is configured, grab the entities
+    to be rendered, and render them using the Widget Template. The tag
     `<liferay-ddm:template-renderer>` aids with this process. It automatically
-    uses the selected template, or renders its body if no template is selected.
+    uses the selected template or renders its body if no template is selected.
 
     Here's some example code that demonstrates implementing this:
 
-    ```
+    ```markup
     <liferay-ddm:template-renderer
         className="<%= YourEntity.class.getName() %>"
         contextObjects="<%= contextObjects %>"
@@ -135,8 +131,7 @@ To add Widget Template support in your custom portlet, follow the steps below.
         entries="<%= yourEntities %>"
     >
 
-        <%-- The code that will be rendered by default when there is no
-        template available should be inserted here. --%>
+        <%-- The code that renders the default view should be inserted here. --%>
 
     </liferay-ddm:template-renderer>
     ```
@@ -149,8 +144,8 @@ To add Widget Template support in your custom portlet, follow the steps below.
     [`configuration.jsp`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/site-navigation/site-navigation-site-map-web/src/main/resources/META-INF/resources/configuration.jsp).
 
 Awesome! Your portlet now supports Widget Templates! Once your script is
-uploaded into the portal and saved, users with the specified roles can select
-the template when they're configuring the display settings of your portlet on a
+uploaded and saved, Users with the specified Roles can select the template when
+they're configuring the display settings of your portlet on a
 page. You can visit the
 [Styling Widgets with Widget Templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates)
 section for more details on using Widget Templates.
