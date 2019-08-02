@@ -37,6 +37,7 @@ Elasticsearch.
 - [Liferay Commerce](https://help.liferay.com/hc/en-us/articles/360017869952)
 - [Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement) 
 - [Custom Filter search widget](/docs/7-2/user/-/knowledge_base/u/filtering-search-results-with-the-custom-filter-widget)
+- [The Low Level Search Options widget](/docs/7-2/user/-/knowledge_base/u/low-level-search-options-searching-additional-or-alternate-indexes)
 
 <!-- Not yet released
 - Search Tuning: Result Rankings - Confirming with Dennis
