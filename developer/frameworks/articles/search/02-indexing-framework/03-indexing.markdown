@@ -1,7 +1,7 @@
 # Indexing Model Entities
 
-Model entities are searchable when their data fields are sent to the search
-engine, to be later used during a search.
+Model entities are searchable when their data fields are indexed by the search
+engine. 
 
 ## Contributing Model Entity Fields to the Index
 
@@ -26,37 +26,34 @@ public class FooEntryModelDocumentContributor
 Implement the `contribute` method, calling the
 `com.liferay.portal.kernel.Document.add()` method appropriate for the data type
 the index should use (e.g., `addText` for fields that should be searched using a
-[full text search
-strategy](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/text.html)).
+[full text search strategy](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/text.html)).
 
 ```java
-	@Override
-	public void contribute(Document document, FooEntry fooEntry) {
+@Override
+public void contribute(Document document, FooEntry fooEntry) {
 
-		document.addDate(Field.DISPLAY_DATE, fooEntry.getDisplayDate());
-		document.addDate(Field.MODIFIED_DATE, fooEntry.getModifiedDate());
-		document.addText(Field.SUBTITLE, fooEntry.getSubtitle());
+    document.addDate(Field.DISPLAY_DATE, fooEntry.getDisplayDate());
+    document.addDate(Field.MODIFIED_DATE, fooEntry.getModifiedDate());
+    document.addText(Field.SUBTITLE, fooEntry.getSubtitle());
 ```
 
 For fields that should be
 [localized](/docs/7-2/deploy/-/knowledge_base/d/localization), index a field for
-each locale in the site. Many times you'll want to localize the title and
+each locale in the Site. Many times you'll want to localize the title and
 content fields, for example:
 
 ```java
-		for (Locale locale :
-				LanguageUtil.getAvailableLocales(fooEntry.getGroupId())) {
+for (Locale locale :
+        LanguageUtil.getAvailableLocales(fooEntry.getGroupId())) {
 
-			String languageId = LocaleUtil.toLanguageId(locale);
+    String languageId = LocaleUtil.toLanguageId(locale);
 
-			document.addText(
-				LocalizationUtil.getLocalizedName(Field.CONTENT, languageId),
-				content);
-			document.addText(
-				LocalizationUtil.getLocalizedName(Field.TITLE, languageId),
-				fooEntry.getTitle());
-		}
-	}
+    document.addText(
+        LocalizationUtil.getLocalizedName(Field.CONTENT, languageId),
+        content);
+    document.addText(
+        LocalizationUtil.getLocalizedName(Field.TITLE, languageId),
+        fooEntry.getTitle());
 }
 ```
 
