@@ -1,12 +1,13 @@
 # Searching the Index for Model Entities
 
-Query what you indexed. That's the heart of searching for your model entity
-documents. To do this, contribute search terms to the @product@ search query.
+The heart of searching for your model entity documents is querying for what you
+indexed. To do this, contribute search terms to the @product@ search query.
 
 The extension points (i.e., the interfaces to implement) on this page are
 provided by the `com.liferay.portal.search.spi` bundle.
 
-The Gradle dependency for @product@ 7.2.0 GA1:
+Here's the Gradle dependency for @product@ 7.2.0 GA1:
+
 ```groovy
 dependencies {
 	compileOnly group: "com.liferay", name: "com.liferay.portal.search.spi", version: "3.2.1"
@@ -79,13 +80,12 @@ private static final String[] _ALWAYS_PRESENT_FIELDS = {
 `*PreFilterContributor` classes control how search results are filtered before
 they're returned from the search engine. For example, adding the workflow status
 to the query ensures that an entity in the trash isn't returned in the search
-results. 
+results. They're constructed each time a query for the model entity is made. 
 
 **Extension Pointi (SPI):** [`ModelPreFilterContributor`s](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/query/contributor/ModelPreFilterContributor.java)
 
-To contribute filter clauses specific to a model entity, to be constructed each
-time a query for the model entity is made, use a `ModelPreFilterContributor`.
-This one adds a filter for workflow status:
+To contribute filter clauses specific to a model entity, use
+a `ModelPreFilterContributor`. This one adds a filter for workflow status:
 
 ```java
 @Component(
@@ -130,6 +130,6 @@ during a search. For example, see
 What's the difference between `QueryPreFilterContributor` and
 `ModelPreFilterContributor`? `QueryPreFilterContributor` is constructed only
 once under the root filter during a search, while `ModelPreFilterContributor`
-is constructed once per model entity, and added under each specific entity's
+is constructed once per model entity and added under each specific entity's
 sub-filter.
 
