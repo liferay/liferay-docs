@@ -48,7 +48,7 @@ Out of the box, the Search Page Template includes these widgets:
 
 - [Search Results](/docs/7-2/user/-/knowledge_base/u/search-results)
 
-- [Search Options](/docs/7-2/user/-/knowledge_base/u/whats-new-with-search#search-options)
+- [Search Options](/docs/7-2/user/-/knowledge_base/u/configuring-search#widget-scoped-search-configuration)
 
 - [Site Facet](/docs/7-2/user/-/knowledge_base/u/site-facet): This widget is
     hidden unless the Search Bar is configured to search the _Everything_ scope

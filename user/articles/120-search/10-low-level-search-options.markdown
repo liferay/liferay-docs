@@ -1,4 +1,10 @@
+---
+header-id: low-level-search-options-searching-additional-or-alternate-indexes
+---
+
 # Low Level Search Options: Searching Additional or Alternate Indexes
+
+[TOC levels=1-4]
 
 Low level search is a new concept in @product@ version 7.2: it's a search that
 doesn't go through the [Search and Indexing
@@ -38,7 +44,7 @@ Configuration, or by clicking the hypertext URL in the widget body:
 
 _Configure additional low level search options in this page._
 
-![Figure x: The Low Level Options widget has several configuration options.](../../images/search-lowlvl-options.png)
+![Figure 1: The Low Level Options widget has several configuration options.](../../images/search-lowlvl-options.png)
 
 **Indexes:**
 : Enter the comma-separated names of the alternative indexes to search. Do not
@@ -111,7 +117,7 @@ typically be the name of an application-defined index.
 If you're using _liferay-0_ in your Federated Search Key and Indexes settings,
 search for _dynamic_ in the search bar. You'll see results like this:
 
-![Figure x: Configure the search page to search a different index.](../../images/search-federated.png)
+![Figure 2: Configure the search page to search a different index.](../../images/search-federated.png)
 
 Now you're able to configure the out of the box search widgets to participate in
 searches against any Elasticsearch index in the cluster.
