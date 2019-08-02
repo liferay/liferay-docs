@@ -2,17 +2,17 @@
 
 The search framework must know about your entity and how to handle it during a
 search request. To register model entities with Liferay's search framework,
-`SearchRegistrar`s use the [search framework's
-registry](https://github.com/liferay/liferay-portal/tree/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/registrar)
+`SearchRegistrar`s use the 
+[search framework's registry](https://github.com/liferay/liferay-portal/tree/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/registrar)
 to define certain things about your model entity's
 [`ModelSearchDefinition`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/registrar/ModelSearchDefinition.java):
-which fields are used by default to retrieve documents from the search engine,
-and which optional search services are registered for your entity (for example,
-the `ModelIndexWriterContributor` for you entity. Registration occurs as soon
+the default fields used to retrieve documents from the search engine,
+and the optional search services registered for your entity (for example,
+the `ModelIndexWriterContributor` for you entity). Registration occurs as soon
 as the Component is activated (during portal startup or deployment of the
 bundle). Search and indexing code relies on Search APIs and SPIs:
 
-The extension points (i.e., the interfaces to implement) in this articles are
+The extension points (i.e., the interfaces to implement) in this article are
 provided by the `com.liferay.portal.search.spi` bundle. Calls are also made to
 the `com.liferay.portal.search.api` bundle's methods.
 
@@ -28,18 +28,16 @@ dependencies {
 | **APIs and SPIs:** SPIs are a special type of API. Generally, code inside a SPI
 | module (e.g., `portal-search-spi`) is used to customize existing behavior, while
 | API modules contain behavior you want to use. Put simply, implement interfaces
-| from a SPI, and consume the code form the API.
+| from an SPI, and consume the code form the API.
 | 
 | SPI example:
-|  `ModelDocumentContributor` lives in a SPI module because you're supposed
-|  to implement it directly, defining your own indexing behavior.
+| `ModelDocumentContributor` lives in an SPI module because you're supposed
+| to implement it directly, defining your own indexing behavior.
 | 
 | API example: `SearchRequest` lives in an API module because its behavior
-|  is leveraged inside your code to build a search request.
+| is leveraged inside your code to build a search request.
 
-A Registrar is required. Without it, all your indexing, searching, and summary
-logic (covered in the other tutorials of this section) isn't worth the bytes
-used to store it.
+A Registrar is required so the container knows about your implementation.
 
 1.  First, declare the class a component and create the class declaration:
 
@@ -47,9 +45,10 @@ used to store it.
     @Component(immediate = true, service = {})
     public class FooEntrySearchRegistrar {
     ```
+
 2.  Next write the `activate` method, annotated with the OSGi annotation
-    `@Activate`. On activation of this component, you want to call the
-    `ModelSearchRegistrarHelper.register` method, and use the call to build out
+    `@Activate`. On activation of this component, call the
+    `ModelSearchRegistrarHelper.register` method and use the call to build out
     a `ModelSearchDefinition`:
 
     ```java
@@ -104,7 +103,7 @@ used to store it.
     ```
 
 4.  Get references to the services needed in the class. For the search services
-    you're providing, specify them by entering the FQCN ofyour model entity in
+    you're providing, specify them by entering the FQCN of your model entity in
     the reference target's `indexer.class.name` property:
 
     ```java
