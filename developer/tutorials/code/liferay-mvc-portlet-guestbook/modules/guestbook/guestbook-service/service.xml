@@ -6,9 +6,10 @@
 	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
 	<entity name="Guestbook" local-service="true" remote-service="true" uuid="true">
 
-		<!-- PK fields -->
+		<!-- Guestbook fields -->
 
 		<column name="guestbookId" primary="true" type="long" />
+		<column name="name" type="String" />
 
 		<!-- Group instance -->
 
@@ -29,19 +30,19 @@
         <column name="statusByUserName" type="String" />
         <column name="statusDate" type="Date" />
 
-		<!-- Other fields -->
-
-		<column name="name" type="String" />
-
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId" />
         </finder>
 	</entity>
     <entity name="GuestbookEntry" local-service="true" remote-service="true" uuid="true">
 
-		<!-- PK fields -->
+		<!-- Guestbook Entry fields -->
 
         <column name="entryId" primary="true" type="long" />
+        <column name="name" type="String" />
+        <column name="email" type="String" />
+        <column name="message" type="String" />
+        <column name="guestbookId" type="long" />
 
         <!-- Group instance -->
 
@@ -61,13 +62,6 @@
         <column name="statusByUserId" type="long" />
         <column name="statusByUserName" type="String" />
         <column name="statusDate" type="Date" />
-
-        <!-- Other fields -->
-
-        <column name="name" type="String" />
-        <column name="email" type="String" />
-        <column name="message" type="String" />
-        <column name="guestbookId" type="long" />
 
         <!-- Finders -->
 
