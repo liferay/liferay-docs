@@ -7,7 +7,7 @@ recommended in most cases), each asset in @product@ must be indexed in the
 search engine. The indexing code is specific to each asset, as the asset's
 developers know what fields to index and what filters to apply to the search
 query. This paradigm applies to Liferay's own developers and anyone developing
-custom model entities for use with @product@.
+model entities for use with @product@.
 
 In past versions of @product@, when your asset required indexing, you would
 implement a new Indexer by extending
@@ -19,16 +19,13 @@ That said, if you want to use the old approach, feel free to extend
 
 ## Search and Indexing Overview
 
-Liferay's original Search API was built around the Lucene search and indexing
-library. To this day, familiarity with Lucene will jump-start your understanding
-of Liferay's Search API. However, starting with the 7.0 version of @product@,
-the Search API had been reworked, so that the parts closely tied to Lucene have
-become more generic. Elasticsearch support was added (in addition to Solr), and
-most of the newer searching and indexing APIs aim to leverage/map Elasticsearch
-APIs. This means that in many cases (for example the `Query` types) there is a
-one-to-one mapping between the Liferay and Elasticsearch APIs.
+Starting with the 7.0 version of @product@, the Search API has become less tied
+to Lucene. Elasticsearch support was added (in addition to Solr), and most of
+the newer searching and indexing APIs aim to leverage/map Elasticsearch APIs.
+This means that in many cases (for example the `Query` types) there is
+a one-to-one mapping between the Liferay and Elasticsearch APIs.
 
-In addition to the Elasticsearch centered APIs, Liferay's Search Infrastructure
+In addition to the Elasticsearch-centered APIs, Liferay's Search Infrastructure
 includes additional APIs serving these purposes: 
 
 -   Ensure all indexed documents include some required fields (e.g., 
@@ -70,7 +67,7 @@ accomplished in `BaseIndexer`'s `getBaseModelDocument`. Now you implement an
 [`DLFileEntryExpandoBridgeRetriever`](https://github.com/liferay/liferay-portal/blob/7.2.0-gal/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryExpandoBridgeRetriever.java)
 for an example implementation.
 
-## Permissions Aware Searching and Indexing
+## Permissions-Aware Searching and Indexing
 
 In previous versions of @product@, search was only _permissions
 aware_ (indexed with the entity's permissions and searched with those
@@ -86,23 +83,24 @@ is implemented for an application.
 
 ## Annotating Service Methods to Trigger Indexing
 
-Having entities translated into database entities _and_ search engine documents
+Having objects translated into database entities _and_ search engine documents
 means that there's a possibility for a state mismatch between the database and
-search engine. For example, when a Blogs Entry is added, updated or removed from
+search engine. For example, when a Blogs Entry is added, updated, or removed from
 the database, corresponding changes must be made in the search engine. To do
-this, intervention must be made into the service layer. For Service Builder
-entities, this occurs in the `LocalServiceImpl` classes. There's an annotation
-that simplifies this: `@Indexable`. It takes a `type` property that can have two
+this, intervention must be made in the service layer. For Service Builder
+entities, this occurs in the `LocalServiceImpl` classes. An annotation
+simplifies this: `@Indexable`. It takes a `type` property that can have two
 values: `REINDEX` or `DELETE`. Commonly, a `deleteEntity` method in the service
 layer is annotated like this:
 
-
-	@Indexable(type = IndexableType.DELETE)
-	@Override
-	@SystemEvent(type = SystemEventConstants.TYPE_DELETE)
-	public BlogsEntry deleteEntry(BlogsEntry entry) throws PortalException {
-        ...
-    }
+```java
+@Indexable(type = IndexableType.DELETE)
+@Override
+@SystemEvent(type = SystemEventConstants.TYPE_DELETE)
+public BlogsEntry deleteEntry(BlogsEntry entry) throws PortalException {
+    ...
+}
+```
 
 The `@Indexable` annotation is executed by Liferay's Spring infrastructure, so
 if you have a method with that annotation, you must call it using a service
@@ -110,19 +108,25 @@ instance variable with the spring wrapped logic. The reference is available by
 default in Service Builder generated `*LocalServiceImpl` classes because of this
 declaration in the parent `*LocalServiceBaseImpl`:
 
-    @BeanReference(type = BlogsEntryLocalService.class)
-        protected BlogsEntryLocalService blogsEntryLocalService;
+```java
+@BeanReference(type = BlogsEntryLocalService.class)
+    protected BlogsEntryLocalService blogsEntryLocalService;
+```
 
 This means that in the `*LocalServiceImpl`, you must not call
 
-    this.deleteEntry(...) 
+```java
+this.deleteEntry(...) 
+```
 
 The annotation won't be executed and you'll be left with a state mismatch
 between the search engine document and the database column. Instead follow the
 pattern in @product@'s code, using the service instance variable to call service
 methods:
 
-    blogsEntryLocalService.deleteEntry(entry);
+```java
+blogsEntryLocalService.deleteEntry(entry);
+```
 
 ## Search and Localization: a Cheat Sheet
 
@@ -131,13 +135,13 @@ important. Search and localization can play nicely together, if you take some
 precautions:
 
 - For each field that should be localized (e.g., `content`), index a separate
-    field for each of the site's languages (e.g., `content_en_US`,
-    `content_ja_JP`, `content_es_ES`, ...).
+  field for each of the site's languages (e.g., `content_en_US`,
+  `content_ja_JP`, `content_es_ES`, ...).
 - Search the localized fields. Whatever you index, that's what you should be
-    querying for.
+  querying for.
 - Don't index content in plain (unlocalized) fields if you expect the content to
-    be present in multiple locales.
+  be present in multiple locales.
 - Don't index both the plain and the localized field.
 
 The indexing and searching articles included in this section demonstrate how to
-properly handle localized fields in the search code.
+handle localized fields in the search code properly. 
