@@ -403,7 +403,7 @@ public class CheckLatestCommitTask extends Task {
 
 		List<String> modifiedFiles = new ArrayList<String> ();
 		List<String> deletedFiles = new ArrayList<String> ();
-		HashMap<String, String> renamedFiles = new HashMap<String, String> ();
+		//HashMap<String, String> renamedFiles = new HashMap<String, String> ();
 
 		for (DiffEntry entry : entries) {
 
@@ -425,13 +425,13 @@ public class CheckLatestCommitTask extends Task {
 					entryPath = entryPath.replace("/images-dxp/", "/images/");
 				}
 				
-				if (entry.getChangeType().toString().equals("RENAME")) {
-					renamedFiles.put(entry.getOldPath(), entryPath);
-					modifiedFiles.add(entryPath);
-				}
-				else {
-					modifiedFiles.add(entryPath);
-				}
+				//if (entry.getChangeType().toString().equals("RENAME")) {
+				//	renamedFiles.put(entry.getOldPath(), entryPath);
+				//	modifiedFiles.add(entryPath);
+				//}
+				//else {
+				modifiedFiles.add(entryPath);
+				//}
 			}
 			else if (entry.getOldPath().startsWith(docLocation) &&
 					entry.getChangeType().toString().equals("DELETE")) {
@@ -444,8 +444,8 @@ public class CheckLatestCommitTask extends Task {
 			System.exit(0);
 		}
 
-		if (!deletedFiles.isEmpty() || !renamedFiles.isEmpty()) {
-			writeDeletedTextFile(deletedFiles, renamedFiles, distDir);
+		if (!deletedFiles.isEmpty()) {
+			writeDeletedTextFile(deletedFiles, distDir);
 		}
 
 		repo.close();
@@ -645,19 +645,17 @@ public class CheckLatestCommitTask extends Task {
 	}
 
 	/**
-	 * Writes deleted and renamed files to a {@code .txt} file. This is useful
-	 * to notify the publisher of the files that must be manually deleted from
-	 * the Knowledge Base portlet, since the import of a Zip only adds files or
-	 * modifies existing files, but cannot delete them.
+	 * Writes deleted files to a {@code .txt} file. This is useful to notify the
+	 * publisher of the files that must be manually deleted from the Knowledge
+	 * Base portlet, since the import of a Zip only adds files or modifies
+	 * existing files, but cannot delete them.
 	 *
 	 * @param  deletedFiles the files that were deleted in the Git repo since
-	 *         the last publication
-	 * @param  renamedFiles the files that were renamed in the Git repo since
 	 *         the last publication
 	 * @param  distDir the folder where the Zip is generated (e.g., {@code dist})
 	 * @throws IOException if an IO exception occurred
 	 */
-	private static void writeDeletedTextFile(List<String> deletedFiles, HashMap<String, String> renamedFiles, String distDir)
+	private static void writeDeletedTextFile(List<String> deletedFiles, String distDir)
 			throws IOException {
 
 		PrintWriter writer = new PrintWriter(distDir + "/delete-files.txt", "UTF-8");
@@ -667,12 +665,12 @@ public class CheckLatestCommitTask extends Task {
 			writer.println(file);
 		}
 
-		writer.println("");
-		writer.println("\nRENAMED:\n");
+		//writer.println("");
+		//writer.println("\nRENAMED:\n");
 
-		for (Map.Entry<String, String> entry : renamedFiles.entrySet()) {
-			writer.println("Old article to delete: " + entry.getKey() + " (renamed/moved to: " + entry.getValue() + ")");
-		}
+		//for (Map.Entry<String, String> entry : renamedFiles.entrySet()) {
+		//	writer.println("Old article to delete: " + entry.getKey() + " (renamed/moved to: " + entry.getValue() + ")");
+		//}
 
 		writer.close();
 	}
