@@ -1,7 +1,32 @@
 # Indexing Model Entities
 
 Model entities are searchable when their data fields are indexed by the search
-engine. 
+engine. Search and indexing code relies on Search APIs and SPIs.
+
+The extension points (i.e., the interfaces to implement) in this section are
+provided by the `com.liferay.portal.search.spi` bundle. Calls are also made to
+the `com.liferay.portal.search.api` bundle's methods.
+
+Here are the Gradle dependencies for @product@ 7.2.0 GA1:
+
+```groovy
+dependencies {
+    compileOnly group: "com.liferay", name: "com.liferay.portal.search.spi", version: "3.2.1"
+    compileOnly group: "com.liferay", name: "com.liferay.portal.search.api", version: "3.7.0"
+}
+```
+
+| **APIs and SPIs:** SPIs are a special type of API. Generally, code inside a SPI
+| module (e.g., `portal-search-spi`) is used to customize existing behavior, while
+| API modules contain behavior you want to use. Put simply, implement interfaces
+| from an SPI, and consume the code form the API.
+| 
+| SPI example:
+| `ModelDocumentContributor` lives in an SPI module because you're supposed
+| to implement it directly, defining your own indexing behavior.
+| 
+| API example: `SearchRequest` lives in an API module because its behavior
+| is leveraged inside your code to build a search request.
 
 ## Contributing Model Entity Fields to the Index
 
