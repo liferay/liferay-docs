@@ -55,7 +55,7 @@ Each of the methods in this class have a significant role in defining and
 implementing Widget Templates for your custom portlet. The list below highlights
 some of the methods defined specifically for Widget Templates:
 
-`getClassName():` Defines the type of entry your portlet is rendering.
+`getClassName()`: Defines the type of entry your portlet is rendering.
 
 `getName()`: Declares the name of your Widget Template type (typically,
 the name of the portlet).

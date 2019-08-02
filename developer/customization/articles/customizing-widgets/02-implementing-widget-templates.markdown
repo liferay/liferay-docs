@@ -35,9 +35,70 @@ To add Widget Template support to your portlet, follow the steps below.
     )
     ```
 
-    The
-    [`WikiPortletDisplayTemplateHandler`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/wiki/wiki-web/src/main/java/com/liferay/wiki/web/internal/portlet/template/WikiPortletDisplayTemplateHandler.java)
-    is a good example `*PortletDisplayTemplateHandler` implementation.
+    The Site Map widget provides a good example implementation:
+
+    ```java
+    @Component(
+        immediate = true,
+        property = "javax.portlet.name=" + SiteNavigationSiteMapPortletKeys.SITE_NAVIGATION_SITE_MAP,
+        service = TemplateHandler.class
+    )
+    public class SiteNavigationSiteMapPortletDisplayTemplateHandler
+        extends BasePortletDisplayTemplateHandler {
+
+        @Override
+        public String getClassName() {
+            return LayoutSet.class.getName();
+        }
+
+        @Override
+        public String getName(Locale locale) {
+            String portletTitle = _portal.getPortletTitle(
+                SiteNavigationSiteMapPortletKeys.SITE_NAVIGATION_SITE_MAP,
+                ResourceBundleUtil.getBundle(locale, getClass()));
+
+            return LanguageUtil.format(locale, "x-template", portletTitle, false);
+        }
+
+        @Override
+        public String getResourceName() {
+            return SiteNavigationSiteMapPortletKeys.SITE_NAVIGATION_SITE_MAP;
+        }
+
+        @Override
+        public Map<String, TemplateVariableGroup> getTemplateVariableGroups(
+                long classPK, String language, Locale locale)
+            throws Exception {
+
+            Map<String, TemplateVariableGroup> templateVariableGroups =
+                super.getTemplateVariableGroups(classPK, language, locale);
+
+            TemplateVariableGroup templateVariableGroup =
+                templateVariableGroups.get("fields");
+
+            templateVariableGroup.empty();
+
+            templateVariableGroup.addCollectionVariable(
+                "pages", List.class, PortletDisplayTemplateConstants.ENTRIES,
+                "page", Layout.class, "curPage", "getName(locale)");
+            templateVariableGroup.addVariable(
+                "site-map-display-context",
+                SiteNavigationSiteMapDisplayContext.class, "siteMapDisplayContext");
+
+            return templateVariableGroups;
+        }
+
+        @Override
+        protected String getTemplatesConfigPath() {
+            return "com/liferay/site/navigation/site/map/web/portlet/template" +
+                "/dependencies/portlet-display-templates.xml";
+        }
+
+        @Reference
+        private Portal _portal;
+
+    }
+    ```
 
 2.  Your application must define permissions for creating and managing display
     templates. Add the action key `ADD_PORTLET_DISPLAY_TEMPLATE` to your
@@ -64,7 +125,7 @@ To add Widget Template support to your portlet, follow the steps below.
     </resource-action-mapping>
     ```
 
-3.  If your application hasn't defined Liferay permissions before, Create a file
+3.  If your application hasn't defined Liferay permissions before, create a file
     named `portlet.properties` in the `/resources` folder and add the following
     contents providing the path to your `default.xml`:
 
@@ -74,17 +135,17 @@ To add Widget Template support to your portlet, follow the steps below.
     ```
 
 4.  Now expose the Widget Template selector to your users. Include the
-    `<liferay-ui:ddm-template-selector>` tag in the JSP file you're using to
+    `<liferay-ddm:template-selector>` tag in the JSP file you're using to
     control your portlet's configuration.
 
-    <!-- The tag above doesn't match the tag in the code snippet below. -Rich
-    -->
-
-    For example, it may be helpful for you to insert an `<aui:fieldset>` in your
-    configuration JSP file like this:
+    For example, it may be helpful for you to insert a
+    `<liferay-frontend:fieldset>` in your configuration JSP file like this:
 
     ```markup
-    <aui:fieldset>
+    <liferay-frontend:fieldset
+        collapsible="<%= true %>"
+        label="templates"
+    >
         <div class="display-template">
             <liferay-ddm:template-selector
                 classNameId="<%= YourEntity.class.getName() %>"
@@ -94,14 +155,11 @@ To add Widget Template support to your portlet, follow the steps below.
                 showEmptyOption="<%= true %>"
             />
         </div>
-    </aui:fieldset>
+    </liferay-frontend:fieldset>
     ```
 
     In this JSP, the `<liferay-ddm:template-selector>` tag specifies the Display
     Template drop-down menu to be used in the widget's Configuration menu.
-
-    As an example JSP, see the Wiki widget's
-    [`configuration.jsp`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/wiki/wiki-web/src/main/resources/META-INF/resources/wiki/configuration.jsp). 
 
 5.  You must now extend your view code to render your portlet using the selected
     Widget Template. 
@@ -140,8 +198,23 @@ To add Widget Template support to your portlet, follow the steps below.
     (`displayStyle` and `displayStyleGroupId`) and passed them to the tag along
     with other parameters.
 
-    For an example that demonstrates implementing this, see
-    [`configuration.jsp`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/site-navigation/site-navigation-site-map-web/src/main/resources/META-INF/resources/configuration.jsp).
+    As an example, the Site Map widget implements the
+    `<liferay-ddm:template-renderer>` tag in its `view.jsp` like this:
+
+    ```markup
+    <liferay-ddm:template-renderer
+        className="<%= LayoutSet.class.getName() %>"
+        contextObjects="<%= contextObjects %>"
+        displayStyle="<%= siteNavigationSiteMapPortletInstanceConfiguration.displayStyle() %>"
+        displayStyleGroupId="<%= siteNavigationSiteMapDisplayContext.getDisplayStyleGroupId() %>"
+        entries="<%= siteNavigationSiteMapDisplayContext.getRootLayouts() %>"
+    >
+        <%= siteNavigationSiteMapDisplayContext.buildSiteMap() %>
+    </liferay-ddm:template-renderer>
+    ```
+
+    This logic builds the site's navigation map when the widget is added to a
+    page.
 
 Awesome! Your portlet now supports Widget Templates! Once your script is
 uploaded and saved, Users with the specified Roles can select the template when
