@@ -10,10 +10,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -404,6 +402,11 @@ public class CheckLatestCommitTask extends Task {
 		List<String> modifiedFiles = new ArrayList<String> ();
 		List<String> deletedFiles = new ArrayList<String> ();
 		//HashMap<String, String> renamedFiles = new HashMap<String, String> ();
+
+		// Be sure to convert single nested folders (e.g., user) so they're searchable
+		if (docLocation.equals("./" + docDir)) {
+			docLocation = docDir;
+		}
 
 		for (DiffEntry entry : entries) {
 
