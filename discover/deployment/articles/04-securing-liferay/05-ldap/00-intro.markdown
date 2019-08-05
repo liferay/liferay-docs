@@ -45,17 +45,15 @@ several configuration options that are explained in the next article.
 **Import/Export:** You can import and export user data from LDAP directories
 using the following options:
 
-**Enable Import:** Enable User import from LDAP directories. Users are imported
-as they log in, rather than all at once. 
+**Enable Import:** Check this box to do a mass import from your LDAP
+directories. Otherwise, Users are imported as they log in. 
 
-**Enable Import on Startup:** Checking this box causes a mass import from your
-LDAP directories. Leave this unchecked to keep the default behavior, which
-synchronizes Users only when they log in. Definitely leave this unchecked if you
-are working in a clustered environment. Otherwise, all your nodes would try to
-do a mass import when each of them starts up.
+**Enable Import on Startup:** Check this box to do the mass import when
+@product@ starts. Note: this box only appears if you check **Enable Import**,
+described above. Definitely leave this unchecked if you have a @product@
+cluster, or all your nodes will do a mass import when each of them starts up.
 
-**Import Interval:** When mass importing users, enter the number of users batch
-imported at a time. 
+**Import Interval:** When mass importing users, import users every X minutes. 
 
 **Import Method:** Set either User or Group. If you set this to User, @product@
 imports all users from the specified portion of the LDAP tree. If you set this
