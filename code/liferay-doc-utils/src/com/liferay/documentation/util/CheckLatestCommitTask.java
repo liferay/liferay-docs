@@ -63,7 +63,7 @@ public class CheckLatestCommitTask extends Task {
 
 		// Create new metadata file with current HEAD commit, if one doesn't exist.
 		if (!commitFile.exists()) {
-			System.out.println("Creating ./last-publication-commit.txt file. "
+			System.out.println("No previous publication commit available. Creating ./last-publication-commit.txt file. "
 					+ "Subsequent dists will generate Zip with only modified files.");
 
 			generateLatestCommitFile(headCommit);
@@ -85,7 +85,7 @@ public class CheckLatestCommitTask extends Task {
 
 			// Separate modified/new MD files and images
 			for (String file : modifiedFiles) {
-				if (file.endsWith(".png") || file.endsWith(".jpg")) {
+				if (file.endsWith(".png") || file.endsWith(".jpg") || file.endsWith(".gif")) {
 					modifiedImages.add(file);
 				}
 				else if (file.endsWith(".markdown") || file.endsWith(".md")) {
@@ -358,7 +358,8 @@ public class CheckLatestCommitTask extends Task {
 		File[] images = (File[])ArrayUtils.addAll(imageDir.listFiles());
 		
 		for (File img : images) {
-			if (img.toString().endsWith(".png") || img.toString().endsWith(".jpg")) {
+			if (img.toString().endsWith(".png") || img.toString().endsWith(".jpg") ||
+					img.toString().endsWith(".gif")) {
 				imageFiles.add(img);
 			}
 		}
@@ -536,17 +537,22 @@ public class CheckLatestCommitTask extends Task {
 				while (scanner.hasNextLine()) {
 					String lineFromFile = scanner.nextLine();
 
-					if (lineFromFile.contains(".png")) {
-						int w = lineFromFile.indexOf(".png");
-						int x = w + 4;
-						int y = lineFromFile.indexOf("../images");
+					// Match lines containing expressions of the form ![...](...)
+					String regex = ".*!\\[.*\\]\\(.*\\).*";
 
-						if (y < 0) {
+					lineFromFile = lineFromFile.trim();
+
+					if (lineFromFile.matches(regex)) {
+						int begin = lineFromFile.indexOf("../images");
+
+						if (begin < 0) {
 							continue;
 						}
 
-						int z = y + 3;
-						String img = lineFromFile.substring(z, x);
+						begin = begin + 3;
+						int end = lineFromFile.indexOf(")", begin);
+
+						String img = lineFromFile.substring(begin, end);
 
 						File markdownImage = new File(img);
 
