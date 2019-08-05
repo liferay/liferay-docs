@@ -19,7 +19,7 @@ dependencies {
 | **APIs and SPIs:** SPIs are a special type of API. Generally, code inside a SPI
 | module (e.g., `portal-search-spi`) is used to customize existing behavior, while
 | API modules contain behavior you want to use. Put simply, implement interfaces
-| from an SPI, and consume the code form the API.
+| from an SPI, and consume the code from the API.
 | 
 | SPI example:
 | `ModelDocumentContributor` lives in an SPI module because you're supposed

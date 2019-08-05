@@ -102,31 +102,27 @@ public BlogsEntry deleteEntry(BlogsEntry entry) throws PortalException {
 }
 ```
 
-The `@Indexable` annotation is executed by Liferay's Spring infrastructure, so
-if you have a method with that annotation, you must call it using a service
-instance variable with the spring wrapped logic. The reference is available by
-default in Service Builder generated `*LocalServiceImpl` classes because of this
-declaration in the parent `*LocalServiceBaseImpl`:
+The `@Indexable` annotation is executed by Liferay's AOP infrastructure, so if
+you have a method with that annotation, you must call it using a service
+instance variable injected by your dependency injector, and not using the `this`
+keyword. Whether using OSGi's Declarative Services (DS) or Spring for dependency
+injection, there's a protected variable declared in the superclass
+(`*LocalServiceBaseImpl`) that can be used in the `*LocalServiceImpl`, like
+this.
 
 ```java
-@BeanReference(type = BlogsEntryLocalService.class)
-    protected BlogsEntryLocalService blogsEntryLocalService;
+blogsEntryLocalService.deleteEntry(entry);
 ```
 
-This means that in the `*LocalServiceImpl`, you must not call
+Since you're using the injected service variable, that means you must not call
 
 ```java
 this.deleteEntry(...) 
 ```
 
-The annotation won't be executed and you'll be left with a state mismatch
-between the search engine document and the database column. Instead follow the
-pattern in @product@'s code, using the service instance variable to call service
-methods:
-
-```java
-blogsEntryLocalService.deleteEntry(entry);
-```
+in your `*LocalServiceImpl` methods. The annotation won't be executed and you'll
+be left with a state mismatch between the search engine document and the
+database column.
 
 ## Search and Localization: a Cheat Sheet
 
