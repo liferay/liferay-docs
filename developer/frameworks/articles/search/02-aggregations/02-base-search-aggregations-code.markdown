@@ -20,9 +20,9 @@ information to the search request in a similar way between all aggregations.
         aggregations.percentiles("percentiles", Field.PRIORITY);
     ```
 
-    To discover what fields each aggregation must have (e.g., `Sting name, String
-    field` in the case of the above `PercentilesAggregation`),LINK TO
-    AGGREGATIONS INTERFACE
+    To discover what fields each aggregation must have (e.g., `Sting name,
+    String field` in the case of the above `PercentilesAggregation`), see the
+    [`Aggregations` interface](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/aggregation/Aggregations.java).
 
 2.  Build out the aggregation to get the desired response. This looks
     different for each aggregation type, but Elasticsearch's documentation on the aggregation
