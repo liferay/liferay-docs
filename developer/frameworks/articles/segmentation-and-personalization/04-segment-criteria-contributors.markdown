@@ -96,7 +96,7 @@ public class KBArticleODataRetriever implements ODataRetriever<KBArticle> {
 }
 ```
 
-2.  Add the `@Component` declaration above the class constructor:
+2.  Add the `@Component` declaration above the class declaration:
 
 ```java
 @Component(
