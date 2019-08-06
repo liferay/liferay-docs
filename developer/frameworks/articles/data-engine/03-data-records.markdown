@@ -15,9 +15,10 @@ see all the headless APIs you can consume.
 
 ## Adding Data Records
 
-Add Data Records using the Data Record Collections API, specifying the record
-collection's ID and the `data-records` endpoint in the URL. As usual, send the
-requests with the Authorization and Content-Type headers:
+Add Data Records using a POST call to the Data Record Collections API,
+specifying the record collection's ID and the `data-records` endpoint in the
+URL. As usual, send the requests with the Authorization and Content-Type
+headers:
 
 ```sh
 curl -i -X POST \
@@ -32,7 +33,7 @@ curl -i -X POST \
 }
 ```
 
-Send the `dataRecordValues` for the form fields in the request payload:
+The `dataRecordValues` for the form fields must be sent in the request body:
 
 ## Retrieving Data Records
 
@@ -94,6 +95,18 @@ This returns a String array of the data records, in the format
 This contrasts with the GET call above (that hits the `data-records` endpoint,
 instead of `export`), which results in a fuller response of structured JSON.
 
+### Retrieve a Data Record by Its ID
+
+Send a GEt request to the `data-records` endpoint, adding the data record's ID
+as a URL parameter:
+
+```sh
+curl -i -X GET \
+    http://localhost:8080/o/data-engine/v1.0/data-records/{data_record_id} \
+    -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
+    -H 'Content-Type: application/json' \ 
+```
+
 ## Deleting Data Records
 
 ### Delete a Data Record
@@ -108,6 +121,30 @@ curl -i -X DELETE
     -H 'Content-Type: application/json' \ 
 ```
 
+## Updating Data Records
+
+Send a PUT request to the `data-records` endpoint, passing the record ID as a URL
+parameter:
+
+```sh
+curl -i -X PUT
+    http://localhost:8080/o/data-engine/v1.0/data-records/37303 \
+    -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
+    -H 'Content-Type: application/json' \ 
+```
+
+Create the request body with the JSON to send to the service:
+
+```json
+{
+    "dataRecordValues": {
+        "Product":"Bike"
+    }
+}
+```
+
+If  there's an existing record with the ID sent in the URL parameter (`37303` in
+this case), it will be updated with the data sent in the request body. If record `37303` was created with a _Product_ field name of _Bicycle_, this request would change the value to _Bike_.
 For more endpoints, visit the `liferayinc/data-engine` section of
 [SwaggerHub](https://app.swaggerhub.com/apis/liferayinc/data-engine/1.0#/DataRecord).
 
