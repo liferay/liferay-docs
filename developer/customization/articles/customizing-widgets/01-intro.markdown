@@ -6,10 +6,10 @@ header-id: customizing-widgets
 
 [TOC levels=1-4]
 
-It would be nice to apply particular display changes to specific widget
-instances without having to create a hook (e.g., HTML-related change) or change
-a theme (e.g., CSS-related change). Ideally, you should be able to enable
-authorized users to apply custom display interfaces to widgets.
+It would be nice to apply display changes to specific widget instances without
+having to create a hook (e.g., HTML-related change) or change a theme (e.g.,
+CSS-related change). Ideally, you should be able to enable authorized users to
+apply custom display interfaces to widgets.
 
 Be of good cheer! That's precisely what
 [Widget Templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates)
@@ -37,6 +37,7 @@ Some portlets that already support Widget Templates are
 To leverage the Widget Template API, follow these steps: 
 
 - register your portlet to use Widget Templates
+- define your display template definitions
 - define permissions
 - expose the Widget Template functionality to users
 
@@ -68,15 +69,30 @@ the portlet's fully qualified portlet ID (e.g.,
 `getTemplateVariableGroups()`: Defines the variables exposed in the
 template editor.
 
+`getTemplatesConfigPath()`: Defines the configuration file containing the
+display template definition.
+
+Next, you must define your display template definition(s).
+
+## Defining Display Template Definitions
+
+Once you've registered your portlet to use Widget Templates, you should create
+the display template definitions. These are used to style the content displayed
+in the widget.
+
+You must create a `portlet-display-templates.xml` configuration file to define
+the definitions and point to their styled templated (e.g., FreeMarker). Then
+you must create the templates. These template definitions are available to apply
+from a widget's Configuration menu.
+
 Next, you define permissions for your portlet's Widget Templates.
 
 ## Defining Permissions
 
-Once you've registered your portlet to use Widget Templates, you must define
-permissions for them; without permissions, anyone in the Site could access and
-change your widget's display templates. Configuring permissions lets
-administrative users grant permissions only to the Roles that should create and
-manage display templates.
+You must define permissions for your Widget Templates; without permissions,
+anyone in the Site could access and change your widget's display templates.
+Configuring permissions lets administrative users grant permissions only to the
+Roles that should create and manage display templates.
 
 This is done by creating a `default.xml` file in your portlet defining the
 permissions you want to enforce, wiring it up with your portlet, and

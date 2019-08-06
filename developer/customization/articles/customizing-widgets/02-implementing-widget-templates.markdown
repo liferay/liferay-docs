@@ -7,7 +7,7 @@ header-id: implementing-widget-templates
 [TOC levels=1-4]
 
 [Widget Templates](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-widget-templates)
-are ways to customize how a widget looks. You can create templates for an
+are ways to customize how a widget looks. You can create templates for a
 widget's display and then choose which template is active. 
 
 ![Figure 1: By using a custom display template, your portlet's display can be customized.](../../images/widget-template-dropdown.png)
@@ -78,11 +78,11 @@ To add Widget Template support to your portlet, follow the steps below.
     These methods return the template handler's class name, the template
     handler's name (via
     [resource bundle](/docs/7-2/frameworks/-/knowledge_base/f/localization)),
-    and the resource name associated with the widget template, respectively.
+    and the resource name associated with the Widget Template, respectively.
 
 3.  Override the `getTemplateVariableGroups(...)` method to return your widget
-    template's map of script variable groups. These are used to display hints
-    in the template editor palette.
+    template's script variable groups. These are used to display hints in the
+    template editor palette.
 
     ```java
     @Override
@@ -146,10 +146,10 @@ To add Widget Template support to your portlet, follow the steps below.
     ```
 
     This defined template option is read and presented to the user through the
-    widget's configuration. Navigate to the Site Map widget's Configuration menu
-    and you can confirm the *Multi Column Layout* option is available.
+    widget's Configuration menu. Navigate to the Site Map widget's Configuration
+    menu and you can confirm the *Multi Column Layout* option is available.
 
-    ![Figure 3: You can choose the widget template you want to apply from the widget's Configuration menu.](../../images/widget-config-display.png)
+    ![Figure 3: You can choose the Widget Template you want to apply from the widget's Configuration menu.](../../images/widget-config-display.png)
 
     This template is created using FreeMarker. You'll create this template
     option next.
