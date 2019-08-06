@@ -93,7 +93,7 @@ Once the container is started, the configurations stored in `configs/commmon`
 and `configs/docker` are transferred to the `build/docker/files` folder, which
 applies all configurations to the container's file system. For more information
 on workspace's `configs` folder, see
-[this section](/docs/7-1/reference/-/knowledge_base/r/development-lifecycle-for-a-liferay-workspace#testing-projects).
+[this section](/docs/7-1/tutorials/-/knowledge_base/t/development-lifecycle-for-a-liferay-workspace#testing-projects).
 
 | **Note:** You can call the `deployDocker` Gradle task from your workspace's
 | root folder to initiate the Docker configuration transfer to the
