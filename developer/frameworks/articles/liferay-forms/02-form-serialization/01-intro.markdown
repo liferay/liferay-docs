@@ -21,38 +21,40 @@ Form_, with one text field, _Full Name_, is first created as a `DDMForm` Java
 object, then _serialized_ into JSON for storage in the @product@ database when
 saved.
 
-    {
-        "availableLanguageIds":["en_US"],
-        "successPage":{"body":{},
-        "title":{},
-        "enabled":false},
-        "defaultLanguageId":"en_US",
-        "fields":[{
-            "autocomplete":false,
-            "ddmDataProviderInstanceId":"[]",
-            "dataType":"string",
-            "predefinedValue":{"en_US":""},
-            "tooltip":{"en_US":""},
-            "readOnly":false,
-            "label":{"en_US":"Full Name"},
-            "type":"text",
-            "required":false,
-            "showLabel":true,
-            "displayStyle":"singleline",
-            "fieldNamespace":"",
-            "indexType":"keyword",
-            "visibilityExpression":"",
-            "ddmDataProviderInstanceOutput":"[]",
-            "repeatable":false,
-            "name":"FullName",
-            "options":[{"label":{"en_US":"Option"},"value":"Option"}],
-            "localizable":true,
-            "tip":{"en_US":""},
-            "placeholder":{"en_US":""},
-            "dataSourceType":"",
-            "validation":{"expression":"","errorMessage":""}
-        }]
-    }
+```json
+{
+    "availableLanguageIds":["en_US"],
+    "successPage":{"body":{},
+    "title":{},
+    "enabled":false},
+    "defaultLanguageId":"en_US",
+    "fields":[{
+        "autocomplete":false,
+        "ddmDataProviderInstanceId":"[]",
+        "dataType":"string",
+        "predefinedValue":{"en_US":""},
+        "tooltip":{"en_US":""},
+        "readOnly":false,
+        "label":{"en_US":"Full Name"},
+        "type":"text",
+        "required":false,
+        "showLabel":true,
+        "displayStyle":"singleline",
+        "fieldNamespace":"",
+        "indexType":"keyword",
+        "visibilityExpression":"",
+        "ddmDataProviderInstanceOutput":"[]",
+        "repeatable":false,
+        "name":"FullName",
+        "options":[{"label":{"en_US":"Option"},"value":"Option"}],
+        "localizable":true,
+        "tip":{"en_US":""},
+        "placeholder":{"en_US":""},
+        "dataSourceType":"",
+        "validation":{"expression":"","errorMessage":""}
+    }]
+}
+```
 
 From its initial state as a `DDMForm` Java object, the form is _serialized_ into
 JSON format, and upon retrieval from the database, it's _deserialized_: 
@@ -64,20 +66,22 @@ the JSON object into an actual form field using your deserialization logic.
 Here's the logic from `DDMFormJsonDeserializer` that parses the JSON `"fields"`
 element into a list of `DDMFormFields`:
 
-	protected List<DDMFormField> getDDMFormFields(JSONArray jsonArray)
-		throws PortalException {
+```java
+protected List<DDMFormField> getDDMFormFields(JSONArray jsonArray)
+    throws PortalException {
 
-		List<DDMFormField> ddmFormFields = new ArrayList<>();
+    List<DDMFormField> ddmFormFields = new ArrayList<>();
 
-		for (int i = 0; i < jsonArray.length(); i++) {
-			DDMFormField ddmFormField = getDDMFormField(
-				jsonArray.getJSONObject(i));
+    for (int i = 0; i < jsonArray.length(); i++) {
+        DDMFormField ddmFormField = getDDMFormField(
+            jsonArray.getJSONObject(i));
 
-			ddmFormFields.add(ddmFormField);
-		}
+        ddmFormFields.add(ddmFormField);
+    }
 
-		return ddmFormFields;
-	}
+    return ddmFormFields;
+}
+```
 
 Now calling `DDMForm.setDDMFormFields(ddmFormFields)` in the deserializer
 completes the translation process from the JSON array back to a `DDMFormField`

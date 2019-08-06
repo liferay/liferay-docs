@@ -11,7 +11,7 @@ scenes. Here are some of the frameworks:
 
 -   [Portlet Providers](#portlet-providers)
 -   [Data Scopes](#data-scopes)
--   [Service Bus](#service-bus)
+-   [Message Bus](#message-bus)
 
 You can use these frameworks to provide important functionality to your
 applications. 
@@ -121,13 +121,13 @@ method `getSiteGroupId()` is here! This method always gets the Site scope, no
 matter your app's current scope. For an example of using this method, see 
 [Enabling and Accessing Data Scopes](/docs/7-2/frameworks/-/knowledge_base/f/enabling-and-accessing-data-scopes). 
 
-## Service Bus
+## Message Bus
 
 If you must ever do data processing outside the scope of the web's
-request/response, look no further than the Service Bus. It's conceptually
+request/response, look no further than the Message Bus. It's conceptually
 similar to Java Messaging Service (JMS) Topics, but sacrifices transactional,
 reliable delivery capabilities, making it much lighter-weight. @product@ uses
-Service Bus in many places: 
+Message Bus in many places: 
 
 - Auditing
 - Search engine integration
@@ -138,14 +138,14 @@ Service Bus in many places:
 - Cluster-wide request execution
 - Clustered cache replication
 
-You can use it too! Here are some of Service Bus's most important features:
+You can use it too! Here are some of Message Bus's most important features:
 
 -   publish/subscribe messaging 
 -   request queuing and throttling
 -   flow control
 -   multi-thread message processing
 
-There are also tools, such as the Java SE's JConsole, that can monitor Service
+There are also tools, such as the Java SE's JConsole, that can monitor Message 
 Bus activities. 
 
-![Figure 1: JConsole shows statistics on Service Bus messages sent, messages pending, and more.](../../images/service-bus-jconsole.png)
+![Figure 1: JConsole shows statistics on Message Bus messages sent, messages pending, and more.](../../images/message-bus-jconsole.png)

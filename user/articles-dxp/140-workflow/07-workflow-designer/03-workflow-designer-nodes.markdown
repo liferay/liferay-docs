@@ -152,7 +152,7 @@ what it would look like in Groovy:
 
 Next, you'll learn to do parallel processing using fork and join nodes.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Kaleo Forms](/docs/7-2/user/-/knowledge_base/u/kaleo-forms)
 

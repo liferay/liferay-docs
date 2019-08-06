@@ -6,8 +6,8 @@ header-id: importing-the-theme-into-the-liferay-js-theme-toolkit
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Setting up the Development Environment<br>Step 2 of 2</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Setting up the Development Environment</p><p>Step 2 of 2</p>
 </div>
 
 Now you'll import your theme to use the Liferay JS Theme Toolkit. The Liferay JS 

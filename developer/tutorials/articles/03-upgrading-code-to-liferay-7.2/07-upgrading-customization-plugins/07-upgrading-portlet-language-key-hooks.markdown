@@ -6,8 +6,8 @@ header-id: upgrading-portlet-language-key-hooks
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Customization Plugins<br>Step 6 of 11</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Customization Plugins</p><p>Step 6 of 11</p>
 </div>
 
 You can upgrade your portlet language key hooks to @product-ver@ by following

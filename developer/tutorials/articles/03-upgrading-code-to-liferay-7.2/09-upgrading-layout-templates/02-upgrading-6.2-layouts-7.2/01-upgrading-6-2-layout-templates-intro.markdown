@@ -6,10 +6,6 @@ header-id: upgrading-6-2-layout-templates-to-7-2
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading 6.2 Layout Templates<br>Step 1 of 1</p>
-</div>
-
 Upgrading your @product@ 6.2 layout template to @product-ver@ requires a few 
 updates:
 
