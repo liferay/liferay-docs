@@ -31,27 +31,27 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
 4.  Create a component class that implements the `EditorConfigContributor` 
     service:
 
-```java
-@Component(
-    property = {
+    ```java
+    @Component(
+        property = {
 
-    },
+        },
 
-    service = EditorConfigContributor.class
-)
-```
+        service = EditorConfigContributor.class
+    )
+    ```
 
 5.  Add the following imports:
 
-```java
-import com.liferay.portal.kernel.editor.configuration.BaseEditorConfigContributor;
-import com.liferay.portal.kernel.editor.configuration.EditorConfigContributor;
-import com.liferay.portal.kernel.json.JSONArray;
-import com.liferay.portal.kernel.json.JSONFactoryUtil;
-import com.liferay.portal.kernel.json.JSONObject;
-import com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory;
-import com.liferay.portal.kernel.theme.ThemeDisplay;
-```
+    ```java
+    import com.liferay.portal.kernel.editor.configuration.BaseEditorConfigContributor;
+    import com.liferay.portal.kernel.editor.configuration.EditorConfigContributor;
+    import com.liferay.portal.kernel.json.JSONArray;
+    import com.liferay.portal.kernel.json.JSONFactoryUtil;
+    import com.liferay.portal.kernel.json.JSONObject;
+    import com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory;
+    import com.liferay.portal.kernel.theme.ThemeDisplay;
+    ```
 
 6.  Specify the editor's name, editor's configuration key, and/or the portlet 
     name(s) where the editor resides. These three properties can be specified 
@@ -76,18 +76,18 @@ import com.liferay.portal.kernel.theme.ThemeDisplay;
     configuration overrides the default one by providing a higher 
     [service ranking](/docs/7-2/customization/-/knowledge_base/c/creating-a-custom-osgi-service):
 
-```java
-@Component(
-    property = {
-        "editor.config.key=contentEditor", "editor.name=alloyeditor",
-        "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
-        "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", 
-        "service.ranking:Integer=100"
-    },
+    ```java
+    @Component(
+        property = {
+            "editor.config.key=contentEditor", "editor.name=alloyeditor",
+            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", 
+            "service.ranking:Integer=100"
+        },
 
-    service = EditorConfigContributor.class
-)
-```
+        service = EditorConfigContributor.class
+    )
+    ```
 
     | **NOTE:** If you want to create a global configuration that applies to an
     | editor everywhere it's used, you must create two separate configurations:
@@ -129,15 +129,15 @@ import com.liferay.portal.kernel.theme.ThemeDisplay;
     JSON object. It can also Update or delete existing configurations, or any 
     other configuration introduced by another `*EditorConfigContributor`. 
 
-```java
-@Override
-public void populateConfigJSONObject(
-    JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
-    ThemeDisplay themeDisplay,
-    RequestBackedPortletURLFactory requestBackedPortletURLFactory) {
+    ```java
+    @Override
+    public void populateConfigJSONObject(
+        JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
+        ThemeDisplay themeDisplay,
+        RequestBackedPortletURLFactory requestBackedPortletURLFactory) {
 
-}
-```
+    }
+    ```
 
 8.  In the `populateConfigJSONObject` method, you must instantiate a 
     [`JSONObject`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/json/JSONObject.html) 
@@ -145,9 +145,9 @@ public void populateConfigJSONObject(
     use the code snippet below to retrieve the available toolbars for the 
     editor:
 
-```java
-JSONObject toolbars = jsonObject.getJSONObject("toolbars");
-```
+    ```java
+    JSONObject toolbars = jsonObject.getJSONObject("toolbars");
+    ```
 
     | **Note:** This toolbar configuration is only applicable for the AlloyEditor.
     | If you choose a configuration that is supported by multiple editors, you
@@ -165,17 +165,17 @@ JSONObject toolbars = jsonObject.getJSONObject("toolbars");
     [`JSONArray`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/json/JSONArray.html), 
     and then adds the button to that `JSONArray`:
 
-```java
-if (toolbars != null) {
-    JSONObject toolbarAdd = toolbars.getJSONObject("add");
+    ```java
+    if (toolbars != null) {
+        JSONObject toolbarAdd = toolbars.getJSONObject("add");
 
-    if (toolbarAdd != null) {
-        JSONArray addButtons = toolbarAdd.getJSONArray("buttons");
+        if (toolbarAdd != null) {
+            JSONArray addButtons = toolbarAdd.getJSONArray("buttons");
 
-        addButtons.put("camera");
+            addButtons.put("camera");
+        }
     }
-}
-```
+    ```
 
     The configuration JSON object is passed to the editor with the modifications 
     you've implemented in the `populateConfigJSONObject` method.

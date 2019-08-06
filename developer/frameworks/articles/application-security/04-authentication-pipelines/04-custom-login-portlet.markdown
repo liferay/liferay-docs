@@ -92,8 +92,8 @@ hard-coded, as this is an example project. The current page is sent as a hidden
 field on the form so the portlet can redirect the user to it, but you can of
 course set this to any value you want. 
 
-The portlet handles all processing of this form using a single 
-[Action Command](/docs/7-2/appdev/-/knowledge_base/a/mvc-action-command) 
+The portlet handles all processing of this form using a single Action Command 
+<!--Add link back for 'Action Command' once MVC Action Command article is available-->
 (imports left out for brevity): 
 
 ```jsp

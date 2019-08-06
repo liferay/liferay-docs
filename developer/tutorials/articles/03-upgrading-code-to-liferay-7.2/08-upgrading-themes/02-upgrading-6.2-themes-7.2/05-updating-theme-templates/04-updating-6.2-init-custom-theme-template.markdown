@@ -6,8 +6,8 @@ header-id: updating-6-2-init-custom-theme-template
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 Theme Templates<br>Step 3 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 Theme Templates</p><p>Step 3 of 3</p>
 </div>
 
 The Lunar Resort theme has a couple theme settings defined in `init_custom.ftl`. 
@@ -17,43 +17,43 @@ the theme setting syntax:
 1.  Replace the `getterUtil.getBoolean(theme_settings` method with 
     `getterUtil.getBoolean(themeDisplay.getThemeSetting`:
       
-Original:
+    Original:
 
-```markup
-<#assign show_breadcrumbs = 
-getterUtil.getBoolean(theme_settings["show-breadcrumbs"])/>
+    ```markup
+    <#assign show_breadcrumbs = 
+    getterUtil.getBoolean(theme_settings["show-breadcrumbs"])/>
 
-<#assign show_page_title = 
-getterUtil.getBoolean(theme_settings["show-page-title"])/>
-```
+    <#assign show_page_title = 
+    getterUtil.getBoolean(theme_settings["show-page-title"])/>
+    ```
 
-Updated:
+    Updated:
 
-```markup
-<#assign show_breadcrumbs = 
-getterUtil.getBoolean(themeDisplay.getThemeSetting("show-breadcrumbs"))/>
+    ```markup
+    <#assign show_breadcrumbs = 
+    getterUtil.getBoolean(themeDisplay.getThemeSetting("show-breadcrumbs"))/>
 
-<#assign show_page_title = 
-getterUtil.getBoolean(themeDisplay.getThemeSetting("show-page-title"))/>
-```
+    <#assign show_page_title = 
+    getterUtil.getBoolean(themeDisplay.getThemeSetting("show-page-title"))/>
+    ```
 
 2.  Although the Lunar Resort theme doesn't have any String variables, you would 
     replace the `getterUtil.getString(theme_settings` method with 
     `themeDisplay.getThemeSetting`:
 
-Original:
+    Original:
 
-```markup
-<#assign string_setting = 
-getterUtil.getString(theme_settings["my-string-key"])/>
-```
+    ```markup
+    <#assign string_setting = 
+    getterUtil.getString(theme_settings["my-string-key"])/>
+    ```
 
-Updated:
+    Updated:
 
-```markup
-<#assign string_setting = 
-themeDisplay.getThemeSetting("my-string-key")/>
-```
+    ```markup
+    <#assign string_setting = 
+    themeDisplay.getThemeSetting("my-string-key")/>
+    ```
 
 Awesome! The theme templates are updated. You can always compare theme templates 
 with the updated ones found in the 

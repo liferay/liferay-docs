@@ -17,13 +17,15 @@ First, create a custom field to use for the Segment:
 
 2.  Click on *User*.
 
-3.  Click the [Add](../../images/icon-add.png) button in the top right.
+3.  Click the *Add* button (![Add](../../images/icon-add.png)) button in the top
+    right.
 
 4.  On the next page, click on *Dropdown*.
 
 5.  For the *Field Name* enter *Cardholder Type*.
 
-6.  For values, enter *None,* *Basic*, *Silver*, and *Gold* on four separate lines.
+6.  For values, enter *None,* *Basic*, *Gold*, and *Platinum* on four separate
+    lines.
 
 7.  Click *Save*.
 
@@ -32,18 +34,20 @@ and existing users can select it from their user profiles.
 
 ![Figure 1: You can easily create custom fields to capture whatever kind of data you need.](../../images/sp-create-custom-field.png)
 
-For more information on creating Custom Fields, see [Creating Customer Fields](link)
+For more information on adding Custom Fields, see
+[Adding Custom Fields](/docs/7-2/user/-/knowledge_base/u/custom-fields#adding-custom-fields).
 
-## Creating the Premium Card Prospects Segment
+## Defining a Segment with a Custom Field
 
 Next, use a custom field to define another segment. 
 
-1.  From Segments Administration, click the [Add](../../images/icon-add.png) button.
+1.  From Segments Administration, click the *Add* button
+    (![Add](../../images/icon-add.png)).
 
-2.  Click in the text area where it says *Unnamed Segment* and enter the name 
-    *Premium Card Prospects*.
+2.  Click in the text area at the top of the page, enter the name *Premium Card
+    Prospects*.
 
-3.  For *User Properties* select *Cardholder Type*.
+3.  For User Properties select *Cardholder Type*.
 
 4.  Click on the operator field and set it to *equals*.
 
@@ -53,29 +57,31 @@ Next, use a custom field to define another segment.
 
 9.  Click *Save* to save your Segment.
 
-As you can see, segment criteria can be easily defined using Liferay's built-in
-criteria or your own custom fields. Now, let use session data to make this
-Segment definition even more robust.
+As you can see, segment criteria can be easily defined using @product@'s
+built-in criteria or your own custom fields. Now, you'll use session data to
+make this Segment definition even more robust.
 
-## Extending the Segment With Session Data
+## Extending a Segment With Session Data
 
 So far, you've used criteria derived from user profiles to determine if they
 should be members of a segment; now it's time to use session data to make your
 criteria more effective.
 
-| Note: For this exercise to work, you must have set a cookie on the 
+| **Note:** For this exercise to work, you must have set a cookie on the 
 | specified page.
 
-1.  Click the icon to edit *Session Properties* from the *Premium Card 
-    Prospects* segment.
+1.  Click the *Actions* button (![Actions](../../images/icon-actions.png)) next
+    to the *Premium Card Prospects* segment and select *Edit*.
+
+2.  Click the *Session* dropdown from the Properties menu.
  
-2.  Set the comparator for *Session Properties* to *Or*.
+3.  Set the comparator for Session Properties to *Or*.
 
-3.  Drag *Cookies* into the *Session Properties* section.
+4.  Drag *Cookies* into the Session Properties section.
 
-4.  Change the selection box to *contains*.
+5.  Change the selection box to *contains*.
 
-5.  Enter *cards* in the first text box.
+6.  Enter *Cards* in the Key text box.
 
 Now any user who has a cookie from visiting the *Cards* page is evaluated as
 part of the *Premium Card Prospects* segment.

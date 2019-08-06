@@ -16,4 +16,4 @@ The theme upgrade process involves conforming to these changes. Now you'll
 update the theme's CSS files to reflect these changes. Start with updating CSS 
 file names. 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-2/updating-7-0-css-file-names-for-clay">Let's Go<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/updating-7-0-css-file-names-for-clay">Let's Go<span class="icon-circle-arrow-right"></span></a>

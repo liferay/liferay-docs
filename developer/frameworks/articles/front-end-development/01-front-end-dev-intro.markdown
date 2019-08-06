@@ -14,7 +14,7 @@ front-end frameworks, along with the front-end technologies you love the most:
 -   [Metal.js](https://metaljs.com/) (developed by Liferay)
 -   [AlloyUI](https://alloyui.com/) (developed by Liferay)
 -   jQuery (included)
--   Lodash (included, but disabled by default)
+-   Lodash (included, [but disabled by default](https://github.com/liferay/liferay-portal/blob/master/readme/BREAKING_CHANGES.markdown#lodash-is-no-longer-included-by-default))
 
 To load modules, you must know when they are needed, where they are at build
 time, whether they should be bundled together or loaded independently, and
@@ -54,9 +54,8 @@ classes or our
 
 ## Templates
 
-For templating, you can use Java EE's JSP, FreeMarker, Google's 
-[Soy (aka Closure Templates)](/docs/7-2/frameworks/-/knowledge_base/f/liferay-soy-portlet), 
-or whatever else you like. 
+For templating, you can use Java EE's JSP, FreeMarker, or whatever else you 
+like. 
 
 ## Themes
 
@@ -71,8 +70,6 @@ From the
 [Theme Builder Gradle Plugin](/docs/7-2/reference/-/knowledge_base/r/theme-builder-gradle-plugin), 
 to the 
 [Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme), 
-to 
-[@ide@](/docs/7-2/frameworks/-/knowledge_base/f/creating-themes-with-liferay-ide), 
 to 
 [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli)'s 
 [Theme Template](/docs/7-2/reference/-/knowledge_base/r/theme-template), you 

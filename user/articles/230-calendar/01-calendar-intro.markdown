@@ -18,7 +18,7 @@ email reminders to users, and more.
 | the event was added or updated in a calendar that the current user has
 | permission to view, the social activity is viewable in the Activities widget.
 
-## Configuring the Calendar[](id=configuring-the-calendar-portlet)
+## Configuring the Calendar
 
 Once the Calendar widget is on a page, open the
 ![Options](../../images/icon-app-options.png) menu in the widget's header and

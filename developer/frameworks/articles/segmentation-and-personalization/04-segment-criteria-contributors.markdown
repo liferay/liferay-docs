@@ -96,7 +96,7 @@ public class KBArticleODataRetriever implements ODataRetriever<KBArticle> {
 }
 ```
 
-2.  Add the `@Component` declaration above the class constructor:
+2.  Add the `@Component` declaration above the class declaration:
 
 ```java
 @Component(
@@ -321,7 +321,7 @@ public Criteria.Type getType() {
 }
 ```
 
-6.  [Deploy your module](/docs/7-2/reference/-/knowledge_base/deploying-a-project).
+6.  [Deploy your module](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project).
 
 After deploying your extension, the segment criteria editor includes a new 
 section containing Knowledge Base properties. Notice that the section's UI, 

@@ -23,19 +23,19 @@ imposed. liferay-npm-bundler 2.x handles these transformations by default:
 1.  Remove the *liferay-project* preset from your project's `.babelrc` file. All 
     that should remain is the `es2015` preset shown below:
 
-```json
-{
-  "presets": ["es2015"]
-}
-```
+    ```json
+    {
+      "presets": ["es2015"]
+    }
+    ```
 
     If your project uses React, make sure the `react` preset remains as well:
 
-```json    
-{
-  "presets": ["es2015", "react"]
-}
-```
+    ```json    
+    {
+      "presets": ["es2015", "react"]
+    }
+    ```
 
 2.  Remove the `babel-preset-liferay-project` dependency from your 
     `package.json`.

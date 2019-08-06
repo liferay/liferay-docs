@@ -23,9 +23,16 @@ details to make these decisions.
 ## Gathering Information on a Service
 
 1.  Since component service references are extension points, start with 
-    following the steps provided in [Finding Extension Points](/docs/7-2/customization/-/knowledge_base/c/finding-extension-points) 
-    to determine the service you want to override and components that use that 
+    determining the service you want to override and components that use that 
     service. 
+    
+    <!--replace step 1 text with text below once article is available
+    Since component service references are extension points, start with 
+    following the steps provided in 
+    Finding Extension Points 
+    to determine the service you want to override and components that use that 
+    service.
+    -->
 
 2.  Once you know the service and components that use it, use Gogo Shell's 
     Service Component Runtime (SCR) to inspect the components and get the 
@@ -34,13 +41,10 @@ details to make these decisions.
     command `scr:info [componentName]` lists the component's attributes and 
     service references. 
 
-Here's an example `scr:info` command and results (abbreviated with `...`) that 
-describe component `override.my.service.reference.OverrideMyServiceReference` 
-
-<!--TODO: Uncomment once zip is ported to new site
-(from sample module 
-[override-my-service-reference](https://dev.liferay.com/documents/10184/656312/override-my-service-reference.zip))
--->
+Here's an example `scr:info` command and results (abbreviated with `...`) that
+describe component `override.my.service.reference.OverrideMyServiceReference`
+(from sample module
+[override-my-service-reference](https://portal.liferay.dev/documents/113763090/114000186/override-my-service-reference.zip))
 and its reference to a service of type
 `override.my.service.reference.service.api.SomeService`: 
 
@@ -194,6 +198,5 @@ Congratulations on getting the details required for overriding the OSGi service!
 
 ## Related Topics
 
-- [OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services)
-- [Finding Extension Points](/docs/7-2/customization/-/knowledge_base/c/finding-extension-points)
+- [OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)
 - [Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)

@@ -131,7 +131,7 @@ Now you're equipped with the basic knowledge to design beautiful, effective
 workflows so that your assets can be properly reviewed before they're published
 in your sites.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Kaleo Forms](/docs/7-2/user/-/knowledge_base/u/kaleo-forms)
 

@@ -24,7 +24,7 @@ attributes. Artifacts have these attributes:
 
 Here you'll learn how to find artifact attributes to specify artifact dependencies. 
 
-## Finding Core @product@ Artifact Attributes
+## Finding Core Artifact Attributes
 
 Each Liferay artifact is a JAR file whose `META-INF/MANIFEST.MF` file specifies
 OSGi bundle metadata the artifact's attributes. For example, these two OSGi
@@ -55,7 +55,7 @@ where to find the artifact's manifest, which lists the artifact version:
 Next, you'll learn how to find @product@ app and independent module artifact
 attributes. 
 
-## Finding @product@ App and Independent Artifacts
+## Finding Liferay App and Independent Artifacts
 
 Independent modules and @product@ app modules aren't part of the  @product@
 core. You must still, however, find their artifact attributes if you  depend on
@@ -64,7 +64,7 @@ independent modules:
 
 | Resource | Artifact Type |
 | :-------- | :-------------- |
-| [App Manager](#products-app-manager) | Deployed modules |
+| [App Manager](#app-manager) | Deployed modules |
 | [Reference Docs](#reference-docs) | @product@ modules (per release) |
 | [Maven Central](#maven-central) | All artifact types: @product@ and third party, module and non-module |
 
@@ -74,7 +74,7 @@ independent modules:
 The App Manager is the best source for information on deployed modules. You'll 
 learn about it next. 
 
-### @product@'s App Manager
+### App Manager
 
 [The App Manager](/docs/7-2/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager) 
 knows what's deployed on your Liferay instance. Use it to find deployed module
@@ -183,6 +183,6 @@ it.
 
 [Exporting Packages](/docs/7-2/customization/-/knowledge_base/c/exporting-packages)
 
-[Resolving Third Party Library Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/resolving-third-party-library-package-dependencies)
+[Resolving Third Party Library Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module)
 
 [Deploying WARs \(WAB Generator\)](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)

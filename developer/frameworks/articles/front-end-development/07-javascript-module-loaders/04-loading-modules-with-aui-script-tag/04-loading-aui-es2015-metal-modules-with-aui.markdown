@@ -18,24 +18,24 @@ Follow these steps to load your ES2015, Metal.js, and AUI modules together with
 
 1.  Add the following declaration to your portlet's JSP:
 
-```markup
-<%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
-```
+    ```markup
+    <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+    ```
 
 2.  Add the `<aui:script>` tag and use the `require` attribute to load ES2015 
     and Metal.js modules, while using the `AUI().use()` function to load AUI 
     modules, as shown in the example below:
 
-```javascript
-<aui:script require="path-to/metal/module">
- AUI().use(
-    'liferay-aui-module', 
-    function(A) {
-        let var = pathToMetalModule.default;
-    }
-);
-</aui:script>
-```
+    ```javascript
+    <aui:script require="path-to/metal/module">
+     AUI().use(
+        'liferay-aui-module', 
+        function(A) {
+            let var = pathToMetalModule.default;
+        }
+    );
+    </aui:script>
+    ```
 
 Great! Now you know how to load all your modules with `aui:script`. 
 

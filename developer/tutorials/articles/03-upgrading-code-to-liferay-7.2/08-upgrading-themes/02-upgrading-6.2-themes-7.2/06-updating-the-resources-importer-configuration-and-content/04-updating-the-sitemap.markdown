@@ -6,8 +6,8 @@ header-id: updating-the-6-2-sitemap
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 Resources Importer<br>Step 3 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 Resources Importer</p><p>Step 3 of 3</p>
 </div>
 
 In @product@ 6.2, portlet IDs were incremental numbers. In @product-ver@, 
@@ -33,53 +33,53 @@ portlet IDs. Follow these steps to update the sitemap:
     The original and updated versions of the Lunar Resort theme's `sitemap.json` 
     are shown below:
 
-Original:
+    Original:
 
-```json
-{
-	"name": "Collaboration",
-	"title": "Collaboration",
-	"friendlyURL": "/collaboration",
-	"layoutTemplateId": "2_columns",
-	"columns": [
-		[
-			{
-			"portletId": "36"
-			}
-		],
-		[
-			{
-			"portletId": "115"
-			}
-		]
-	
-	]
-}
-```
+    ```json
+    {
+    	"name": "Collaboration",
+    	"title": "Collaboration",
+    	"friendlyURL": "/collaboration",
+    	"layoutTemplateId": "2_columns",
+    	"columns": [
+    		[
+    			{
+    			"portletId": "36"
+    			}
+    		],
+    		[
+    			{
+    			"portletId": "115"
+    			}
+    		]
+    	
+    	]
+    }
+    ```
 
-Updated:
+    Updated:
 
-```json
-{
-  "name": "Collaboration",
-  "title": "Collaboration",
-  "friendlyURL": "/collaboration",
-  "layoutTemplateId": "2_columns",
-  "columns": [
-    [
-      {
-      "portletId": "com_liferay_wiki_web_portlet_WikiPortlet"
-      }
-    ],
-    [
-      {
-      "portletId": "com_liferay_blogs_web_portlet_BlogsAgreggatorPortlet"
-      }
-    ]
-  
-  ]
-},
-```
+    ```json
+    {
+      "name": "Collaboration",
+      "title": "Collaboration",
+      "friendlyURL": "/collaboration",
+      "layoutTemplateId": "2_columns",
+      "columns": [
+        [
+          {
+          "portletId": "com_liferay_wiki_web_portlet_WikiPortlet"
+          }
+        ],
+        [
+          {
+          "portletId": "com_liferay_blogs_web_portlet_BlogsAgreggatorPortlet"
+          }
+        ]
+      
+      ]
+    },
+    ```
 
 2.  Update references to the web content articles in the `sitemap.json` to use 
     the XML file extensions.

@@ -6,8 +6,8 @@ header-id: migrating-off-of-velocity-templates
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Frameworks and Features<br>Step 4 of 4</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Frameworks and Features</p><p>Step 4 of 4</p>
 </div>
 
 Velocity templates were deprecated in Liferay Portal 7.0 and are now removed in
@@ -24,5 +24,5 @@ this move:
 
 Although Velocity templates still work in @product-ver@, we highly recommend
 migrating to FreeMarker templates. For more information on this topic, see the
-[Upgrading Layout Templates](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-layout-templates)
+[Upgrading Layout Templates](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-layout-template-to-7-2)
 section.

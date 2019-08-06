@@ -101,5 +101,8 @@ substitute `jdbc/TestDB` with your data source name.
 |     java.lang.ClassNotFoundException:
 |     org.apache.naming.java.javaURLContextFactory]
 
-An easier way to work with databases is to 
-[connect to them using Service Builder](/docs/7-2/appdev/-/knowledge_base/a/connecting-service-builder-to-external-databases). 
+An easier way to work with databases is to connect to them using Service Builder. 
+
+<!--
+add link back for 'connect to them using Service Builder' once article is available 
+-->

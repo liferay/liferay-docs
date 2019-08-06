@@ -46,9 +46,13 @@ There are many parts of @product@ that now provide an extension point via OSGi
 bundle. You should follow this three step process to decide whether an Ext
 project is necessary:
 
-1.  Find the OSGi extension point that you need. You can follow the
-    [Finding Extension Points](/docs/7-2/customization/-/knowledge_base/c/finding-extension-points)
+1.  Find the OSGi extension point that you need. 
+
+    <!--Uncomment once article is available
+    You can follow the
+    Finding Extension Points
     tutorial as a guide.
+    -->
 
 2.  If an OSGi extension point does not exist, use an Ext project.
 
@@ -62,15 +66,12 @@ Your first step is to examine the custom projects that extend popular @product@
 extension points stored in the
 [Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
 repository. For
-more information on these sample projects, see the
-[Liferay Sample Projects](/docs/7-2/reference/-/knowledge_base/r/liferay-sample-projects)
-tutorial. Usable extension points are also documented throughout Liferay's
-Developer Network categorized by the @product@ section involved. For example,
+more information on these sample projects, see 
+[Sample Projects](/docs/7-2/reference/-/knowledge_base/r/sample-projects). 
+Usable extension points are also documented throughout Liferay's Developer 
+Network categorized by the @product@ section involved. For example, 
 [Overriding MVC Commands](/docs/7-2/customization/-/knowledge_base/c/overriding-liferay-mvc-commands)
-and
-[Customizing the Product Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-product-menu)
-are articles describing how to extend a @product@ extension point. Want to
-learn how to
+describes how to extend a @product@ extension point. Want to learn how to 
 [customize JSPs](/docs/7-2/customization/-/knowledge_base/c/customizing-jsps)?
 Those processes are documented too!
 

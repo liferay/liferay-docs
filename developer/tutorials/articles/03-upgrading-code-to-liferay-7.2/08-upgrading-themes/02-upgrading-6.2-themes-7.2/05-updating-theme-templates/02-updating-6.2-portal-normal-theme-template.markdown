@@ -6,8 +6,8 @@ header-id: updating-6-2-portal-normal-theme-template
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Updating 6.2 Theme Templates<br>Step 1 of 3</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Updating 6.2 Theme Templates</p><p>Step 1 of 3</p>
 </div>
 
 Follow these steps to update `portal_normal.ftl`:
@@ -29,54 +29,54 @@ Follow these steps to update `portal_normal.ftl`:
 
 2.  Remove the breadcrumbs and page title code:
 
-```html
-<nav id="breadcrumbs">		
-    <@liferay.breadcrumbs />		
-</nav>
-...
-<h2 class="page-title">
-    <span>${the_title}</span>
-</h2>
-```
+    ```html
+    <nav id="breadcrumbs">		
+        <@liferay.breadcrumbs />		
+    </nav>
+    ...
+    <h2 class="page-title">
+        <span>${the_title}</span>
+    </h2>
+    ```
 
 3.  Remove `dockbar-split` from the `body` element's `class` value so it matches 
     the markup below:
 
-```html    
-<body class="${css_class}">
-```
+    ```html    
+    <body class="${css_class}">
+    ```
 
 4.  Find the 
     `<a href="#main-content" id="skip-to-content"><@liferay.language key="skip-to-content" /></a>` 
     element and replace it with the updated Liferay UI quick access macro shown 
     below:
 
-```markup    
-<@liferay_ui["quick-access"] contentId="#main-content" />
-```
+    ```markup    
+    <@liferay_ui["quick-access"] contentId="#main-content" />
+    ```
 
 5.  Replace the `<@liferay.dockbar />` macro with the updated Control menu 
     macro:
 
-```markup
-<@liferay.control_menu />
-```
+    ```markup
+    <@liferay.control_menu />
+    ```
 
 6.  Replace the ` || is_signed_in` condition for the `navigation.ftl` theme template include with `&& is_setup_complete`:
 
-```markup    
-<#if has_navigation && is_setup_complete>
-	<#include "${full_templates_path}/navigation.ftl" />
-</#if>
-```
+    ```markup    
+    <#if has_navigation && is_setup_complete>
+    	<#include "${full_templates_path}/navigation.ftl" />
+    </#if>
+    ```
 
 7.  Replace the `content` `<div>` with an HTML 5 `section` element. The `section` 
     element is more accurate and provides better accessibility for screen 
     readers:
 
-```html
-<section id="content">
-```
+    ```html
+    <section id="content">
+    ```
 
 8.  Add the `<h1 class="hide-accessible">${the_title}</h1>` header element just 
     inside the `content` `<section>` to support accessibility, and remove the

@@ -52,7 +52,7 @@ your script like this:
             <script>
                 <![CDATA[*the contents of your script*]]>
             </script>
-            <script-language>*your scripting language of choice*</script-language>
+            <script-language>groovy</script-language>
         </action>
         ...
     </actions>

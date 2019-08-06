@@ -6,8 +6,8 @@ header-id: upgrading-portlet-jsp-hooks
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Customization Plugins<br>Step 3 of 11</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Customization Plugins</p><p>Step 3 of 11</p>
 </div>
 
 Getting a portlet JSP hook running on @product-ver@ takes two steps:

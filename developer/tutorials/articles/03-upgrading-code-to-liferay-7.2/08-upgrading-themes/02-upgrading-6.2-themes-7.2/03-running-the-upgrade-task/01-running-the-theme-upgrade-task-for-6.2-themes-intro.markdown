@@ -6,10 +6,6 @@ header-id: running-the-upgrade-task-for-6-2-themes
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Running the Upgrade Task for 6.2 Themes<br>Step 1 of 1</p>
-</div>
-
 You can upgrade a Liferay Portal 6.2 theme to @product-ver@, regardless of the
 development environment you use. This tutorial uses the Liferay JS Theme 
 Toolkit's Gulp `upgrade` task to automate much of the steps. Because the theme 
@@ -36,18 +32,18 @@ Follow these steps to take the theme through the upgrade process:
 1.  Navigate to the theme's root directory and run the command below to update 
     the theme's `liferay-theme-tasks` dependency to version `8.x.x`:
     
-```bash
-npm install --save-dev liferay-theme-tasks@8.x.x
-```
+    ```bash
+    npm install --save-dev liferay-theme-tasks@8.x.x
+    ```
 
 2.  Run the command below to initially upgrade it from 6.2 to 7.0.
     
     | **Note**: The Upgrade task overwrites the theme's files. We recommend that 
     | you backup your files before proceeding with the upgrade process.
 
-```bash
-gulp upgrade
-```
+    ```bash
+    gulp upgrade
+    ```
 
     Here's what the 6.2 to 7.0 upgrade task does:
  
@@ -79,11 +75,11 @@ gulp upgrade
     tool will be compatible with the @product-ver@ theme. Both commands are 
     shown below. Run them separately:
     
-```bash
-npm install --save-dev liferay-theme-tasks@9.x.x
+    ```bash
+    npm install --save-dev liferay-theme-tasks@9.x.x
 
-npm install -g generator-liferay-theme@9.x.x
-```
+    npm install -g generator-liferay-theme@9.x.x
+    ```
 
 5.  With the `9.x.x` versions of the `liferay-theme-tasks` and Liferay Theme 
     Generator installed, run the `gulp upgrade` command for the final time to 

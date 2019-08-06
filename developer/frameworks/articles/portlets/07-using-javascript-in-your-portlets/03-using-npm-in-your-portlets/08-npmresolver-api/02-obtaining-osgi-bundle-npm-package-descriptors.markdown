@@ -23,9 +23,9 @@ Follow these steps:
 1.  Retrieve a reference to the OSGi bundle's npm package using the 
     [`getJSPackage()` method](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html#getJSPackage): 
 
-```java
-JSPackage jsPackage = _npmResolver.getJSPackage();
-```
+    ```java
+    JSPackage jsPackage = _npmResolver.getJSPackage();
+    ```
 
 2.  Grab the npm package's resolved ID (the current package version, 
     in the format `<package name>@<version>`, defined in the OSGi module's 
@@ -36,81 +36,81 @@ JSPackage jsPackage = _npmResolver.getJSPackage();
     variable, and assigns the entire value to the attribute `bootstrapRequire`. 
     This ensures that the package version is always up to date:
 
-```java
-renderRequest.setAttribute(
-  "bootstrapRequire",
-  jsPackage.getResolvedId() + " as bootstrapRequire");
-```
+    ```java
+    renderRequest.setAttribute(
+      "bootstrapRequire",
+      jsPackage.getResolvedId() + " as bootstrapRequire");
+    ```
 
 3.  Include the reference to the [`NPMResolver`](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html):
 
-```java
-@Reference
-private NPMResolver _npmResolver;
-```
+    ```java
+    @Reference
+    private NPMResolver _npmResolver;
+    ```
 
 4.  Resolve the `JSPackage` and `NPMResolver` imports:
 
-```java
-import com.liferay.frontend.js.loader.modules.extender.npm.JSPackage;
-import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
-```
+    ```java
+    import com.liferay.frontend.js.loader.modules.extender.npm.JSPackage;
+    import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
+    ```
 
 5.  In the portlet's JSP, retrieve the aliased attribute (`bootstrapRequire` in 
     the example):
 
-```java
-<%
-String bootstrapRequire =
-	(String)renderRequest.getAttribute("bootstrapRequire");
-%>
-```
+    ```java
+    <%
+    String bootstrapRequire =
+    	(String)renderRequest.getAttribute("bootstrapRequire");
+    %>
+    ```
 
 6.  Finally, use the attribute as the `<aui:script>` require attribute's value:
 
-```javascript
-<aui:script require="<%= bootstrapRequire %>">
-	bootstrapRequire.default();
-</aui:script>
-```
+    ```javascript
+    <aui:script require="<%= bootstrapRequire %>">
+    	bootstrapRequire.default();
+    </aui:script>
+    ```
 
-Below is the full example `*Portlet` class:
+    Below is the full example `*Portlet` class:
 
-```java
-public class MyPortlet extends MVCPortlet {
-	
-	@Override
-	public void doView(
-			RenderRequest renderRequest, RenderResponse renderResponse)
-		throws IOException, PortletException {
+    ```java
+    public class MyPortlet extends MVCPortlet {
+    	
+    	@Override
+    	public void doView(
+    			RenderRequest renderRequest, RenderResponse renderResponse)
+    		throws IOException, PortletException {
 
-		JSPackage jsPackage = _npmResolver.getJSPackage();
+    		JSPackage jsPackage = _npmResolver.getJSPackage();
 
-		renderRequest.setAttribute(
-			"bootstrapRequire",
-			jsPackage.getResolvedId() + " as bootstrapRequire");
+    		renderRequest.setAttribute(
+    			"bootstrapRequire",
+    			jsPackage.getResolvedId() + " as bootstrapRequire");
 
-		super.doView(renderRequest, renderResponse);
-	}
-	
-	@Reference
-	private NPMResolver _npmResolver;
-	
-}
-```
+    		super.doView(renderRequest, renderResponse);
+    	}
+    	
+    	@Reference
+    	private NPMResolver _npmResolver;
+    	
+    }
+    ```
 
-And here is the corresponding example `view.jsp`:
+    And here is the corresponding example `view.jsp`:
 
-```markup
-<%
-String bootstrapRequire =
-  (String)renderRequest.getAttribute("bootstrapRequire");
-%>
+    ```markup
+    <%
+    String bootstrapRequire =
+      (String)renderRequest.getAttribute("bootstrapRequire");
+    %>
 
-<aui:script require="<%= bootstrapRequire %>">
-  bootstrapRequire.default();
-</aui:script>
-```
+    <aui:script require="<%= bootstrapRequire %>">
+      bootstrapRequire.default();
+    </aui:script>
+    ```
 
 Now you know how to reference an npm module's package! 
 

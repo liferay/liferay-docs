@@ -6,8 +6,8 @@ header-id: upgrading-struts-action-hooks
 
 [TOC levels=1-4]
 
-<div class="learn-path-step">
-    <p>Upgrading Customization Plugins<br>Step 11 of 11</p>
+<div class="learn-path-step row">
+    <p id="stepTitle">Upgrading Customization Plugins</p><p>Step 11 of 11</p>
 </div>
 
 In Liferay Portal 6.1 and 6.2, developers could customize the Portal and Portlet

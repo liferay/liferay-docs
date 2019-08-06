@@ -53,6 +53,11 @@ The Ext plugin will update the session timeout to one minute.
 
 Notice that the `<session-timeout>` tag has been updated to `1`.
 
+| **Note:** You can configure an uninterrupted session by setting the
+| `<session-timeout>` tag to `-1`. Leaving a session permanently active is a
+| risk and is not recommended for production environments, but is useful for
+| testing.
+
 That's it! Now when your Ext plugin is deployed, your @product@ installation
 will timeout after one minute of inactivity. Follow the instructions in the
 [Deploy the Plugin](/docs/7-2/reference/-/knowledge_base/r/deploying-an-ext-plugin)

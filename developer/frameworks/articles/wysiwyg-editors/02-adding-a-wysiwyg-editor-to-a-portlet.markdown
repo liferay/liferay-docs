@@ -11,9 +11,9 @@ It's easy to include WYSIWYG editors in your portlet, thanks to the
 
 1.  Add the liferay-editor taglib declaration to your portlet's JSP:
 
-```markup
-<%@ taglib uri="http://liferay.com/tld/editor" prefix="liferay-editor" %>
-```
+    ```markup
+    <%@ taglib uri="http://liferay.com/tld/editor" prefix="liferay-editor" %>
+    ```
 
 2.  Add the editor to your JSP with the `<liferay-editor:editor />` tag. 
     Configure it using the attributes shown in the table below:
@@ -39,50 +39,50 @@ It's easy to include WYSIWYG editors in your portlet, thanks to the
 
     Below is an example configuration:
 
-```html    
-<div class="alloy-editor-container">
-    <liferay-editor:editor
-    		contents="Default Content"
-    		cssClass="my-alloy-editor"
-    		editorName="alloyeditor"
-    		name="myAlloyEditor"
-    		placeholder="description"
-    		showSource="true" 
-    /> 
-</div>
-```
+    ```html    
+    <div class="alloy-editor-container">
+        <liferay-editor:editor
+        		contents="Default Content"
+        		cssClass="my-alloy-editor"
+        		editorName="alloyeditor"
+        		name="myAlloyEditor"
+        		placeholder="description"
+        		showSource="true" 
+        /> 
+    </div>
+    ```
 
 3.  Optionally pass JavaScript functions through the `onBlurMethod`, 
     `onChangeMethod`, `onFocusMethod`, and `onInitMethod` attributes. Here is an 
     example configuration that uses the `onInitMethod` attribute to pass a 
     JavaScript function called `OnDescriptionEditorInit`:
 
-```markup
-<%@ taglib uri="http://liferay.com/tld/editor" prefix="liferay-editor" %>
+    ```markup
+    <%@ taglib uri="http://liferay.com/tld/editor" prefix="liferay-editor" %>
 
-<div class="alloy-editor-container">
-    <liferay-editor:editor
-        contents="Default Content"
-        cssClass="my-alloy-editor"
-        editorName="alloyeditor"
-        name="myAlloyEditor"
-        onInitMethod="OnDescriptionEditorInit"
-        placeholder="description"
-        showSource="true" />
-</div>
-```
+    <div class="alloy-editor-container">
+        <liferay-editor:editor
+            contents="Default Content"
+            cssClass="my-alloy-editor"
+            editorName="alloyeditor"
+            name="myAlloyEditor"
+            onInitMethod="OnDescriptionEditorInit"
+            placeholder="description"
+            showSource="true" />
+    </div>
+    ```
 
-```javascript 
-<aui:script>
-    function <portlet:namespace />OnDescriptionEditorInit() {
-        <c:if test="<%= !customAbstract %>">
-            document.getElementById(
-              '<portlet:namespace />myAlloyEditor'
-            ).setAttribute('contenteditable', false);
-        </c:if>
-    }
-</aui:script>
-```
+    ```javascript 
+    <aui:script>
+        function <portlet:namespace />OnDescriptionEditorInit() {
+            <c:if test="<%= !customAbstract %>">
+                document.getElementById(
+                  '<portlet:namespace />myAlloyEditor'
+                ).setAttribute('contenteditable', false);
+            </c:if>
+        }
+    </aui:script>
+    ```
 
 As you can see, it's easy to include WYSIWYG editors in your portlets! 
 

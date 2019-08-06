@@ -17,27 +17,27 @@ Follow these steps:
     [UMD](https://github.com/umdjs/umd) (Universal Module Definition). You can 
     configure your code to support UMD with the template shown below:
 
-```javascript
-    // Assuming your "module" will be exported as "mylibrary"
-    (function (root, factory) {
-        if (typeof Liferay.Loader.define === 'function' && Liferay.Loader.define.amd) {
-            // AMD. Register as a "named" module.
-            Liferay.Loader.define('mylibrary', [], factory);
-        } else if (typeof module === 'object' && module.exports) {
-            // Node. Does not work with strict CommonJS, but
-            // only CommonJS-like environments that support module.exports,
-            // like Node.
-            module.exports = factory();
-        } else {
-            // Browser globals (root is window)
-            root.mylibrary = factory();
-      }
-    }(this, function () {
+    ```javascript
+        // Assuming your "module" will be exported as "mylibrary"
+        (function (root, factory) {
+            if (typeof Liferay.Loader.define === 'function' && Liferay.Loader.define.amd) {
+                // AMD. Register as a "named" module.
+                Liferay.Loader.define('mylibrary', [], factory);
+            } else if (typeof module === 'object' && module.exports) {
+                // Node. Does not work with strict CommonJS, but
+                // only CommonJS-like environments that support module.exports,
+                // like Node.
+                module.exports = factory();
+            } else {
+                // Browser globals (root is window)
+                root.mylibrary = factory();
+          }
+        }(this, function () {
 
-        // Your library code goes here
-        return {};
-    }));
-```
+            // Your library code goes here
+            return {};
+        }));
+    ```
 
 2.  If you're hosting the library (and not loading it from a CDN), you must hide 
     the Liferay AMD Loader to use your Library. Open the Control Panel, navigate 
@@ -59,5 +59,5 @@ Loaders.
 ## Related Topics
 
 - [Liferay AMD Module Loader](/docs/7-2/frameworks/-/knowledge_base/f/loading-amd-modules-in-liferay)
-- [Using ES2015+ Modules in Your Portlet](/docs/7-2/frameworks/-/knowledge_base/f/preparing-your-javascript-files-for-esplus)
+- [Using ES2015+ Modules in Your Portlet](/docs/7-2/frameworks/-/knowledge_base/f/using-esplus-modules-in-your-portlet)
 - [Loading Modules with AUI Script](/docs/7-2/frameworks/-/knowledge_base/f/loading-modules-with-aui-script)

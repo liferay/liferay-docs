@@ -61,7 +61,7 @@ portlet data handler's `activate()` method:
 
 Other setter methods are available that control both Export/Import and Staging
 settings. You can reference them by visiting the
-[Understanding the `PortletDataHandler` Interface](/docs/7-2/frameworks/-/knowledge_base/f/developing-data-handlers#understanding-the-portlet-data-handler-interface)
+[Understanding the `PortletDataHandler` Interface](/docs/7-2/frameworks/-/knowledge_base/f/developing-data-handlers#understanding-the-portletdatahandler-interface)
 section.
 
 You can also control whether your app is enabled on the Staged Content screen by

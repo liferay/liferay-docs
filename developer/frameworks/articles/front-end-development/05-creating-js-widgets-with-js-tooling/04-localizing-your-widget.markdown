@@ -15,24 +15,24 @@ Follow the steps below to learn how to localize your widget:
     key to your `.npmbuildrc` file that points to the `Language.properties`
     file. An example configuration is shown below:
  
-```json
-{
-	"create-jar": {
-		"output-dir": "dist",
-		"features": {
-			"js-extender": true,
-			"web-context": "/my-test-js-widget",
-			"localization": "features/localization/Language",
-			"settings": "features/settings.json"
-		}
-	},
-	...
-}
-```
+    ```json
+    {
+    	"create-jar": {
+    		"output-dir": "dist",
+    		"features": {
+    			"js-extender": true,
+    			"web-context": "/my-test-js-widget",
+    			"localization": "features/localization/Language",
+    			"settings": "features/settings.json"
+    		}
+    	},
+    	...
+    }
+    ```
 
-| **Note:** The default file path is shown above. You can update this value, 
-| if you want to place your `Language.properties` file in a different 
-| location.
+    | **Note:** The default file path is shown above. You can update this value, 
+    | if you want to place your `Language.properties` file in a different 
+    | location.
 
 2.  Configure the `Language.properties` file and provide the localized property 
     files (e.g. `Language_[locale].properties`) with the 
@@ -41,18 +41,18 @@ Follow the steps below to learn how to localize your widget:
     [available translation](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones). 
     The *JavaScript based widget* configuration is shown below:
 
-```properties
-javax.portlet.title.my_js_portlet_project=My JS Widget Project
-portlet-namespace=Portlet Namespace
-context-path=Context Path
-portlet-element-id=Portlet Element Id
-configuration=Configuration
-fruit=Favourite fruit
-fruit-help=Choose the fruit you like the most
-an-orange=An orange
-a-pear=A pear
-an-apple=An apple
-```
+    ```properties
+    javax.portlet.title.my_js_portlet_project=My JS Widget Project
+    portlet-namespace=Portlet Namespace
+    context-path=Context Path
+    portlet-element-id=Portlet Element Id
+    configuration=Configuration
+    fruit=Favourite fruit
+    fruit-help=Choose the fruit you like the most
+    an-orange=An orange
+    a-pear=A pear
+    an-apple=An apple
+    ```
 
 3.  Retrieve a language key's localized value in JavaScript with the 
     `Liferay.Language.get('key')` method.

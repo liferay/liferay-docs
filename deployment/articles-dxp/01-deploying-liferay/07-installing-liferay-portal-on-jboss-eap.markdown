@@ -6,24 +6,21 @@ header-id: installing-product-on-jboss-eap
 
 Installing @product@ on JBoss EAP 7.1 takes three steps:
 
-- [Installing @product@ dependencies to your application server](#installing-dependencies)
+- [Installing dependencies to your application server](#installing-dependencies)
 - [Configuring your application server for @product@](#configuring-jboss)
 - [Installing the @product@ WAR file to your application server](#deploying-liferay)
 
-Before proceeding, download these files from the 
-[Customer Portal](https://customer.liferay.com/downloads):
+| **Important:** Before installing @product@, familiarize yourself with
+| [preparing for install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install). 
 
-- @product@ WAR file
-- Dependencies ZIP file
-- OSGi JARs ZIP file
+Now, [download the @product@ WAR and Dependency
+JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the liferay-war-and-dependency-jars):
 
-You should also read the following articles to familiarize yourself with 
-@product@'s general installation steps: 
+-   @product@ WAR file
+-   Dependencies ZIP file
+-   OSGi Dependencies ZIP file
 
--   [Preparing for Install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install)
--   [Installing @product@](/docs/7-2/deploy/-/knowledge_base/d/installing-product)
-
-[*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
+Not that [*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
 is the folder containing your JBoss server folder. After installing and
 deploying @product@, the Liferay Home folder contains the JBoss server folder as
 well as `data`, `deploy`, `logs`, and `osgi` folders. `$JBOSS_HOME` refers to
@@ -53,8 +50,8 @@ Download and install the required JARs as described below.
     - `portlet.jar`
 
 2.  Download your database driver `.jar` file and copy it into the same folder.
-    For example
-    [copy MySQL's driver](http://dev.mysql.com/downloads/connector/j/)
+    For example, download and extract
+    [MySQL's driver](http://dev.mysql.com/downloads/connector/j/)
     into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
 3.  Create the file `module.xml` in the
@@ -95,16 +92,18 @@ Download and install the required JARs as described below.
     If you use a different database, replace the MySQL `.jar` with the driver
     JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
-4.  Create an `osgi` folder in your Liferay Home folder. Extract the OSGi ZIP
-    file that you downloaded into the `osgi` folder.
+4.  Create an `osgi` folder in your [Liferay
+    Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) folder. Extract the
+    OSGi Dependencies ZIP file that you downloaded into the `[Liferay
+    Home]/osgi` folder.
 
     The `osgi` folder provides the necessary modules for @product@'s OSGi
     runtime.
 
 **Checkpoint:**
 
-1.  Verify the `$JBOSS_HOME/modules/com/liferay/portal/main` folder has the
-    following files: 
+1.  The following files are in the
+    `$JBOSS_HOME/modules/com/liferay/portal/main` folder: 
 
     - `com.liferay.petra.concurrent`
     - `com.liferay.petra.executor.jar`
@@ -132,6 +131,13 @@ Download and install the required JARs as described below.
 
 Great! You have your `.jar` files ready.
 
+Note, @product@ creates these `osgi` subfolders the first time it starts:
+
+-   `modules`
+-   `portal`
+-   `static`
+-   `war`
+
 ## Running @product@ on JBoss EAP in Standalone Mode vs. Domain Mode
 
 JBoss EAP can be launched in either *standalone* mode or *domain* mode. Domain
@@ -155,9 +161,8 @@ The command line interface is recommended for domain mode deployments.
 | **Note:** This does not prevent @product@ from running in a clustered
 | environment on multiple JBoss servers. You can set up a cluster of @product@
 | instances running on JBoss EAP servers running in standalone mode. Please 
-| refer to the
-| [@product@ Clustering](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
-| section for information on setting up a @product@ cluster.
+| refer to the [@product@ clustering articles](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
+| for more information.
 
 ## Configuring JBoss
 
@@ -167,10 +172,8 @@ Configuring JBoss to run @product@ includes these things:
 - Setting properties and descriptors
 - Removing unnecessary configurations
 
-Optionally, you can configure JBoss to manage these things for @product@:
-
-- [Data source](#database-configuration)
-- [Mail session](#mail-configuration)
+Optionally, you can configure JBoss to manage @product@'s data source and mail
+session. 
 
 Start with configuring JBoss to run @product@.
 
@@ -215,7 +218,7 @@ Make the following modifications to
     </security-domain>
     ```
 
-5.  Remove the two code snippets providing welcome content:
+5.  Remove the welcome content code snippets:
 
     ```xml
     <location name="/" handler="welcome-content"/>
@@ -256,9 +259,8 @@ Before continuing, verify the following properties have been set in the
 
 Now you should configure your JVM and startup scripts.
  
-In the `$JBOSS_HOME/bin` folder, you must make these modifications to your
-standalone domain's configuration script file `standalone.conf`
-(`standalone.conf.bat` on Windows):
+In the `$WILDFLY_HOME/bin/` folder, modify your standalone domain's
+configuration script file `standalone.conf` (`standalone.conf.bat` on Windows):
 
 - Set the file encoding to `UTF-8`
 - Set the user time zone to `GMT`
@@ -292,7 +294,7 @@ Make the following edits as applicable to your operating system:
     statement:
 
     ```bash
-    JAVA_OPTS="-Xms1303m -Xmx1303m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=2560m -Djava.net.preferIPv4Stack=true
+    JAVA_OPTS="-Xms1303m -Xmx1303m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=2560m -Djava.net.preferIPv4Stack=true"
     ```
 
     with this:
@@ -308,12 +310,12 @@ Make the following edits as applicable to your operating system:
     ```
     
 
-| **Note:** On JDK 11, it's recommended to add this JVM argument to display
-| four-digit years.
-|
-| ```properties
-| -Djava.locale.providers=JRE,COMPAT,CLDR
-| ```
+On JDK 11, it's recommended to add this JVM argument to display four-digit
+years.
+
+```bash
+-Djava.locale.providers=JRE,COMPAT,CLDR
+```
 
 | **Note:** If you plan on using the IBM JDK with your JBoss server, you must
 | complete some additional steps. First, navigate to the
@@ -361,7 +363,9 @@ different database, modify the data source and driver snippets as necessary.
 
 If you want JBoss to manage your data source, follow these steps:
 
-1.  Add your data source inside the `<datasources>` element.
+1.  Add your data source inside the
+    `$JBOSS_HOME/standalone/configuration/standalone.xml` file's the
+    `<datasources>` element.
 
     ```xml
     <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
@@ -374,7 +378,7 @@ If you want JBoss to manage your data source, follow these steps:
     </datasource>
     ```
 
-    Be sure to replace the database name (i.e., `lportal`), user name, and
+    Make sure to replace the database name (i.e., `lportal`), user name, and
     password with the appropriate values. 
 
     | **Note:** If you must change your datasource `jndi-name` to something
@@ -392,7 +396,7 @@ If you want JBoss to manage your data source, follow these steps:
     </drivers>
     ```
 
-    Your final data sources subsystem should look like this:
+    A final data sources subsystem that uses MySQL should look like this:
 
     ```xml
     <subsystem xmlns="urn:jboss:domain:datasources:5.0">
@@ -463,6 +467,8 @@ You've got mail! Next, you'll deploy @product@ to your JBoss app server.
 
 ## Deploy Liferay
 
+Now you're ready to deploy @product@ using the @product@ WAR file.
+
 1.  If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists
     in your JBoss installation, delete all of its subfolders and files.
     Otherwise, create a new folder called
@@ -472,8 +478,7 @@ You've got mail! Next, you'll deploy @product@ to your JBoss app server.
 
 3.  To trigger deployment of `ROOT.war`, create an empty file named
     `ROOT.war.dodeploy` in  your `$JBOSS_HOME/standalone/deployments/` folder.
-    On startup, JBoss detects the presence of this file and deploys it as a web
-    application.
+    On startup, JBoss detects this file and deploys it as a web application.
 
 4.  Start the JBoss application server by navigating to `$JBOSS_HOME/bin`
     and running `standalone.bat` or `standalone.sh`.

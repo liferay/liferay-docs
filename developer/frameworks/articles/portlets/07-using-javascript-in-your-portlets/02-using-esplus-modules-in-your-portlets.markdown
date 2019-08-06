@@ -53,4 +53,4 @@ in your portlet is a piece of cake!
 ## Related Topics
 
 - [Customizing JSPs](/docs/7-2/customization/-/knowledge_base/c/customizing-jsps)
-- [Web Services](/docs/7-2/appdev/-/knowledge_base/a/web-services)
+- [Web Services](/docs/7-2/frameworks/-/knowledge_base/f/web-services)

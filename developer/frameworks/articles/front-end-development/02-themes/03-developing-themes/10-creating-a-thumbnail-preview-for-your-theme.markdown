@@ -44,5 +44,5 @@ steps below to create a thumbnail preview for your theme:
 ## Related Topics
 
 - [Installing the Theme Generator and Creating a Theme](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme)
-- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/f/creating-reusable-pieces-of-code-for-your-themes)
+- [Creating Themelets with the Theme Generator](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator)
 - [Creating Color Schemes for Your Theme](/docs/7-2/frameworks/-/knowledge_base/f/creating-color-schemes-for-your-theme)
