@@ -25,15 +25,15 @@ database and store it in its local cache.
 
 ![Figure 1: @product@'s cache algorithm is extremely efficient. ](../../../images/clustering-cache-efficient-algorithm.png)
 
-To enable Cluster Link, add this portal property to your `portal-ext.properties`
-file: 
+To enable Cluster Link, add this [portal
+property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties) to a
+`portal-ext.properties` file: 
 
     cluster.link.enabled=true
 
-| **Note:** The Cluster Link
-| [portal properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
-| are defined
-| [here](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link). 
+| **Note:** See the
+| [Cluster Link portal property definitions](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link)
+| for details. 
 
 Cluster Link depends on 
 [JGroups](http://www.jgroups.org) 
