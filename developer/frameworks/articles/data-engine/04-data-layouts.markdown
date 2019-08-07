@@ -43,7 +43,6 @@ Here you can create multiple pages, laying out your fields in column and rows.
 Each page can have a title and description, and the `dataLayout` itself can have
 a name and description (a name is required).
 
-
 ## Retrieving Data Layouts
 
 ### Retrieving all the Data Layouts for a Data Definition
@@ -86,6 +85,7 @@ curl -i -X GET \
 ```
 
 - `dataLayoutKey` is 
+<!-- a little help here ;) -->
 
 ### Retrieving a Paginated List of Data Layouts Matching Keywords
 

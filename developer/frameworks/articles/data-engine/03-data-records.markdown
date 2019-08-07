@@ -11,7 +11,7 @@ For more examples, paste the contents of
 into the [Swagger Editor](https://editor.swagger.io/) and get auto-generated
 Open API docs. Better yet, just visit the `liferayinc` section of
 [SwaggerHub](https://app.swaggerhub.com/search?type=API&owner=liferayinc) and
-see all the headless APIs you can consume.
+see all the headless APIs you can consume, including the Data Engine.
 
 ## Adding Data Records
 
@@ -22,7 +22,7 @@ headers:
 
 ```sh
 curl -i -X POST \
-    http://localhost:8080/o/data-engine/v1.0/data-record-collections/37296/data-records \
+    http://localhost:8080/o/data-engine/v1.0/data-record-collections/{data_record_collection_id}/data-records \
     -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
     -H 'Content-Type: application/json' \ 
 {
@@ -37,6 +37,9 @@ The `dataRecordValues` must contain the field names with their values. In
 addition, send any other required properties in the request body:
 
 ## Retrieving Data Records
+
+Construct GET requests, which will differ depending on what data you're
+interested in retrieving.
 
 ### Retrieving all the Data Records for a Data Record Collection
 
@@ -87,7 +90,8 @@ curl -i -X GET \
     -H 'Content-Type: application/json' \ 
 ```
 
-This returns a String array of the data records, in the format
+This returns a String array of the data records for the record collection with
+the ID `37296`, in the format
 
 ```json
 [{\"Record 1 Field Name\":\"Field Value"},{\"Record 2 Field Name\":\"Field Value"}]
@@ -98,29 +102,43 @@ instead of `export`), which results in a fuller response of structured JSON.
 
 ### Retrieve a Data Record by Its ID
 
-Send a GEt request to the `data-records` endpoint, adding the data record's ID
+Send a GET request to the `data-records` endpoint, adding the data record's ID
 as a URL parameter:
 
 ```sh
 curl -i -X GET \
-    http://localhost:8080/o/data-engine/v1.0/data-records/{data_record_id} \
+    http://localhost:8080/o/data-engine/v1.0/data-records/37602 \
     -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
     -H 'Content-Type: application/json' \ 
 ```
 
-## Deleting Data Records
+The JSON for the record is returned:
 
-### Delete a Data Record
+```json
+{
+  "dataRecordCollectionId": 37296,
+  "dataRecordValues": {
+    "Product": "Roller Skates"
+  },
+  "id": 37602
+}
+```
+
+## Deleting Data Records
 
 Send a DELETE request to the `data-records` endpoint, adding the data record's
 ID as a URL parameter.
 
 ```sh
 curl -i -X DELETE
-    http://localhost:8080/o/data-engine/v1.0/data-records/37296 \
+    http://localhost:8080/o/data-engine/v1.0/data-records/37602 \
     -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
     -H 'Content-Type: application/json' \ 
 ```
+
+This request deletes the record with the ID `37602`. To delete all the records
+associated with a record collection, instead delete the record collection
+itself.
 
 ## Updating Data Records
 
