@@ -85,6 +85,8 @@ curl -i -X GET \
     -H 'Content-Type: application/json' \ 
 ```
 
+- `dataLayoutKey` is 
+
 ### Retrieving a Paginated List of Data Layouts Matching Keywords
 
 To retrieve data layouts matching some keywords (perhaps passed via user input,
@@ -93,8 +95,9 @@ like a search), send a GET request to the `data-layout` endpoint:
 ```sh
 curl -i -X GET \
     http://localhost:8080/o/data-engine/v1.0/sites/{site_id}/data-layout?keywords=dog&page=1&pageSize=5
+    -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
+    -H 'Content-Type: application/json' \ 
 ```
-
 Notice that the keywords, page number, and page size are added as query
 parameters.
 
@@ -121,7 +124,6 @@ curl -i -X DELETE \
 
 To update an existing data layout, send a PUT request to the `data-layouts`
 endpoint, using the `dataLayoutId` as a URL parameter:
-
 
 ```sh
 curl -i -X PUT \
@@ -151,7 +153,6 @@ curl -i -X PUT \
     "name": {"en_US":"name"},
     "paginationMode": "single-page"
 }
-
 ```
 
 This example just changes the description and title for the layout added in the
