@@ -8,10 +8,10 @@ header-id: jax-rs
 
 JAX-RS web services work in Liferay modules the same way they work outside of
 Liferay. The only difference is that you must register the class in the OSGi
-framework. Liferay's development tools make this easy by providing a template. 
+framework. Liferay makes this easy by providing a template. 
 
 [Create a project](/docs/7-2/reference/-/knowledge_base/r/creating-a-project)
-using your preferred method, making sure you choose the *rest* template. 
+and choose the *rest* template. 
 
 The class that's generated contains a working JAX-RS web service. You can deploy
 it and use it immediately. 
@@ -19,11 +19,13 @@ it and use it immediately.
 While it's beyond the scope of this article to cover 
 [JAX-RS Whiteboard](https://blog.osgi.org/2018/03/osgi-r7-highlights-jax-rs-whiteboard.html)
 in its entirety, essentially it's JAX-RS unchanged except for configuration
-properties in the `@Component` annotation. These properties declare two things: 
+properties in the `@Component` annotation. These properties declare three things: 
 
 1.  The endpoint for the service
 
 2.  The service name as it appears in the OAuth 2.0 configuration
+
+3.  (Optional) Properties you may want to set for further configuration.
 
 The generated class contains this configuration: 
 
@@ -47,7 +49,44 @@ If you're testing this locally on Tomcat, the URL is
 As you might guess, you don't have access to the service by just calling the URL
 above. You must authenticate first, which you'll learn how to do next. 
 
-## Using OAuth 2.0 to Invoke a JAX-RS Web Service
+## Authenticating to JAX-RS Web Services
+
+Authentication during development can be done through Basic Authentication or
+portal sessions, but you don't want to leave that enabled for production. For
+production, you want OAuth 2.0. Here's how to configure JAX-RS authentication. 
+
+### During Development: Basic Auth
+
+When you deploy a JAX-RS application, an 
+[Auth Verifier](/docs/7-2/deploy/-/knowledge_base/d/authentication-verifiers)
+filter is registered for it. You can set its properties in your `@Component`
+annotation by prefixing the properties with `auth.verifier`. For example, to
+disable guest access to the service, configure it like this: 
+
+```java
+@Component( 
+        property = { 
+            JaxrsWhiteboardConstants.JAX_RS_APPLICATION_BASE + "=/greetings", 
+            JaxrsWhiteboardConstants.JAX_RS_NAME + "=Greetings.Rest",
+            "auth.verifier.guest.allowed=false"
+        }, 
+        service = Application.class)
+```
+
+Basic Auth is great during development, but credentials passed on the URL appear
+in server logs, so when you're done developing, you should disable Basic Auth
+and use OAuth2 instead. To disable Basic Auth, create and deploy a configuration
+file called
+`com.liferay.portal.security.auth.verifier.internal.tracker.AuthVerifierFilterTracker.config` 
+that contains this property: 
+
+```properties
+default.registration.property=["filter.init.auth.verifier.OAuth2RESTAuthVerifier.urls.includes=*","filter.init.auth.verifier.PortalSessionAuthVerifier.urls.includes=*"]
+```
+This disables Basic Auth for all JAX-RS applications, but keeps Portal Session
+and OAuth2 enabled. 
+
+### Using OAuth 2.0 to Invoke a JAX-RS Web Service
 
 Your JAX-RS web service requires authorization by default. To enable this, you
 must create an 
@@ -114,6 +153,67 @@ for further information. Additionally, OAuth 2.0 assumes the use of HTTPS for
 its security: the above URLs are only for local testing purposes. You certainly
 would not want to pass OAuth tokens between clients and servers in the clear.
 Make sure that in production your server uses HTTPS. 
+
+#### OAuth2 Scopes
+
+Without any special Liferay OAuth2 annotations or properties, a standard OSGi
+JAX-RS application is inspected by the Liferay OAuth2 runtime, and scopes are
+derived by default based on the HTTP verbs supported by the application.
+
+When developers want more control, they can use the property
+`oauth2.scopechecker.type=annotations` and the annotation
+`com.liferay.oauth2.provider.scope.RequiresScope` exported from the `Liferay
+OAuth2 Provider Scope API` bundle to annotate endpoint resource methods or whole
+classes like this:
+
+```java
+@RequiresScope("scopeName")
+```
+
+Once deployed, this becomes a scope in the 
+[OAuth 2.0 configuration](/docs/7-2/deploy/-/knowledge_base/d/oauth2-scopes). 
+You can disable scope checking (not recommended) by setting the scope checker to
+a non-existent type: 
+
+```properties
+oauth2.scope.checker.type=none
+```
+#### Requiring OAuth2
+
+You can specify OAuth2 authorization as required for your JAX-RS application by
+using this property: 
+
+```properties
+osgi.jaxrs.extension.select=(osgi.jaxrs.name=Liferay.OAuth2)
+```
+
+### JAX-RS and Service Access Policies
+
+When authenticating via Basic Auth, the 
+[Service Access Policy](/docs/7-2/deploy/-/knowledge_base/d/service-access-policies)
+`SYSTEM_USER_PASSWORD` is enforced. When authenticating via OAuth 2.0, the
+`AUTHORIZED_OAUTH2_SAP` policy is enforced. Configure them appropriately for
+your environment, as by default, they allow invoking all remote services. To
+disable Service Access Policy enforcement (not recommended), set this property: 
+
+```properties
+liferay.access.control.disable=true
+```
+
+## Public JAX-RS Services
+
+To create a public endpoint (not recommended), all you must do is set two
+properties: 
+
+```java
+@Component(
+    property={
+        "auth.verifier.guest.allowed=true",
+        "liferay.access.control.disable=true"
+    },
+    service = Application.class
+)
+```
 
 ## Using JAX-RS with CORS
 
