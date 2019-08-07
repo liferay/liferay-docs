@@ -25,9 +25,15 @@ database and store it in its local cache.
 
 ![Figure 1: @product@'s cache algorithm is extremely efficient. ](../../../images/clustering-cache-efficient-algorithm.png)
 
-To enable Cluster Link, add this property to `portal-ext.properties`: 
+To enable Cluster Link, add this portal property to your `portal-ext.properties`
+file: 
 
     cluster.link.enabled=true
+
+| **Note:** The Cluster Link
+| [portal properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
+| are defined
+| [here](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link). 
 
 Cluster Link depends on 
 [JGroups](http://www.jgroups.org) 
@@ -53,10 +59,11 @@ UDP multicast, but unicast and TCP are also available.
 
 When you enable Cluster Link, @product@'s default clustering configuration is
 enabled. This configuration defines IP multicast over UDP. @product@ uses two
-groups of 
-[channels from JGroups](http://www.jgroups.org/manual4/index.html#_channel) 
-to implement this: a control group and a transport group. If you want to
-customize the channel properties, you can do so in `portal-ext.properties`: 
+groups of [channels from
+JGroups](http://www.jgroups.org/manual4/index.html#_channel) to implement this:
+a control group and a transport group. If you want to customize the [channel
+properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link),
+you can do so in `portal-ext.properties`: 
 
     cluster.link.channel.name.control=[your control channel name]
     cluster.link.channel.properties.control=[your control channel properties]
@@ -165,8 +172,9 @@ different geographical locations.
     [JGroups documentation](http://www.jgroups.org/manual4/index.html#_transport_protocols)
     for more information. 
 
-6.  Save the file. Modify that node's `portal-ext.properties` file to point to
-    it: 
+6.  Save the file. Modify the [cluster link channel portal 
+    properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link)
+    in that node's `portal-ext.properties` file to point to it: 
 
         cluster.link.channel.properties.control=[CONFIG_FILE_PATH]/tcp.xml
         cluster.link.channel.properties.transport.0=[CONFIG_FILE_PATH]/tcp.xml
