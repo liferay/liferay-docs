@@ -33,7 +33,8 @@ curl -i -X POST \
 }
 ```
 
-The `dataRecordValues` for the form fields must be sent in the request body:
+The `dataRecordValues` must contain the field names with their values. In
+addition, send any other required properties in the request body:
 
 ## Retrieving Data Records
 
@@ -144,7 +145,10 @@ Create the request body with the JSON to send to the service:
 ```
 
 If  there's an existing record with the ID sent in the URL parameter (`37303` in
-this case), it will be updated with the data sent in the request body. If record `37303` was created with a _Product_ field name of _Bicycle_, this request would change the value to _Bike_.
+this case), it will be updated with the data sent in the request body. If record
+`37303` was created with a _Product_ field name of _Bicycle_, this request would
+change the value to _Bike_.
+
 For more endpoints, visit the `liferayinc/data-engine` section of
 [SwaggerHub](https://app.swaggerhub.com/apis/liferayinc/data-engine/1.0#/DataRecord).
 
