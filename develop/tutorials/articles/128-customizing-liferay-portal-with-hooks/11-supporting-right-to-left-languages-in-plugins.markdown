@@ -23,7 +23,7 @@ your site's content for RTL languages. The app is available on the Liferay
 [Marketplace](http://www.liferay.com/marketplace). You can purchase, install,
 and deploy the app as described in the
 [Leveraging the Liferay Marketplace](/docs/6-2/user/-/knowledge_base/u/leveraging-the-liferay-marketplace)
-chapter of [Using Liferay Portal](/discover/portal). 
+chapter of [Using Liferay Portal](/docs/6-2/user). 
 
 As a before-and-after example, the figure below shows a page displayed in
 English, an LTR language. 

@@ -2,7 +2,7 @@
 
 As a Liferay developer, you're undoubtedly already familiar with the concept of
 plugins (portlets, hooks, themes, etc). If you're not familiar with Liferay
-plugins, see the [Tutorials Introduction](/develop/tutorials/-/knowledge_base/6-2/tutorials).
+plugins, see the [Tutorials Introduction](/docs/6-2/tutorials).
 A *Liferay App* (sometimes just called an *app*) is a collection of one or more
 of these plugins, packaged together to represent the full functionality of an
 application on the Liferay platform. In addition to the plugins contained within
@@ -23,8 +23,8 @@ etc.) that identifies the app. The publication process is described in detail
 later.
 
 At this point in preparing to publish your app, you've developed your app and,
-if you're preparing a paid app, you've specified a portal access control list [\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
-so that your app can be deployed on Liferay instances that have their [Plugin Security Manager](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl#enabling-the-security-manager)
+if you're preparing a paid app, you've specified a portal access control list [\(PACL\)](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl),
+so that your app can be deployed on Liferay instances that have their [Plugin Security Manager](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl#enabling-the-security-manager)
 running. But before you start the formal publishing process, you must prepare
 your app's files and app metadata. 
 
@@ -250,9 +250,9 @@ action. You can read more about themes and even find examples in the [Tutorials]
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
 other Liferay plugins, as explained in the tutorials on creating
-[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-a-liferay-mvc-portlet-project)
+[MVC Portlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-liferay-mvc-portlet-project)
 and creating
-[JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets).
+[JSF Portlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-and-deploying-jsf-portlets).
 
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:
@@ -295,7 +295,7 @@ keep in mind:
       for free apps. Setting this property to `true` enables Liferay's Plugin
       Security Manager. If you're enabling the security manager, you'll also
       need to define your Portal Access Control List (PACL) in this file.  Read
-      [Plugins Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+      [Plugins Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
       for information on developing secure apps. 
 - *Deployment contexts*:
     - Liferay reserves the right to deny an application if any of its plugin
@@ -304,23 +304,19 @@ keep in mind:
     - Liferay reserves the right to replace app plugin WAR files that have
       the same deployment context as plugins built by Liferay.
 
-+$$$
-
-**Important:** If you're developing a
- paid app or want your free app to satisfy Liferay's Plugin Security Manager,
- see the tutorial
- [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl),
- for details. Give yourself adequate time to develop your app's PACL and time to
- test your app thoroughly with the security manager enabled. 
-
-$$$
+| **Important:** If you're developing a
+|  paid app or want your free app to satisfy Liferay's Plugin Security Manager,
+|  see the tutorial
+|  [Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl),
+|  for details. Give yourself adequate time to develop your app's PACL and time to
+|  test your app thoroughly with the security manager enabled.
 
 Apps usually consist of multiple components (e.g., multiple
 `.war` file plugins) that are spread across multiple plugin types. In addition,
 you may want to consider how to package your app for running on different
 versions of Liferay. 
 
-## Considering Package Variations to Target Different Versions of Liferay [](id=considering-package-variations-to-target-different-versions-of-liferay)
+## Considering Package Variations to Target Different Versions of Liferay
 
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you want to publish version 1.0 of your app, which you're
@@ -352,7 +348,7 @@ compatible with (and therefore which packages should be created for eventual
 download on the Marketplace), you first need to understand how Liferay releases
 are named and how they relate to the underlying Liferay release version. Details
 can be found in 
-[Understanding Liferay's Releases](/discover/portal/-/knowledge_base/6-2/understanding-liferays-releases). 
+[Understanding Liferay's Releases](/docs/6-2/user/-/knowledge_base/u/understanding-liferays-releases). 
 Accordingly, Liferay 6.2 CE GA1 is designated as version `6.2.0`. CE GA2 is then
 `6.2.1`, and so on. Liferay 6.2 EE GA1 is designated as `6.2.10`. EE versions 
 follow a slightly different policy given the presence of fix packs and service
@@ -369,14 +365,10 @@ specify CE versions first, followed by EE versions, using this form:
 `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE` are replaced with
 the corresponding Liferay Releases with which your app is compatible).
 
-+$$$
-
-**Note:** If your app is compatible with both CE and EE, you must specify a set
-of versions for both CE and EE releases. If you only specify compatibility with
-CE, then your app will not be compatible with (and will fail to deploy to) any
-EE release.
-
-$$$
+| **Note:** If your app is compatible with both CE and EE, you must specify a set
+| of versions for both CE and EE releases. If you only specify compatibility with
+| CE, then your app will not be compatible with (and will fail to deploy to) any
+| EE release.
  
 For example, to specify that a particular plugin in your app is compatible with
 Liferay 6.1 CE GA3 (and later), and 6.1 EE GA3 (and later), add this line to
@@ -389,17 +381,13 @@ This means that the app works with any 6.1 CE release starting with CE GA3 and
 is compatible with the 6.1 CE GA3 release and *later*, and another that is
 compatible with 6.1 EE GA3 release and *later*.
 
-+$$$
-
-**Note:** Any CE or EE versions you include in your packaging directives *must*
-be terminated with a version using the plus (`+`) symbol. This ensures that your
-app will be deployable onto future versions of Liferay (but does not guarantee
-your app will work in future versions). So, `liferay-versions=6.1.1,6.1.2`
-doesn't work, but `liferay-versions=6.1.1,6.1.2+` does. Similarly,
-`liferay-versions=6.1.2+,6.1.30,6.1.31` doesn't work (as the EE versions are not
-properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` does.
-
-$$$
+| **Note:** Any CE or EE versions you include in your packaging directives *must*
+| be terminated with a version using the plus (`+`) symbol. This ensures that your
+| app will be deployable onto future versions of Liferay (but does not guarantee
+| your app will work in future versions). So, `liferay-versions=6.1.1,6.1.2`
+| doesn't work, but `liferay-versions=6.1.1,6.1.2+` does. Similarly,
+| `liferay-versions=6.1.2+,6.1.30,6.1.31` doesn't work (as the EE versions are not
+| properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` does.
 
 Here are some additional examples:
 
@@ -418,31 +406,27 @@ You may find it advantageous to implement one of your app's plugins in multiple
 ways, customizing that plugin for different Liferay releases. The section below
 contains an example that demonstrates doing this. 
 
-+$$$
-
-**Example: Using Different Versions of a Hook in an App**
-
-Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
-standard API calls that work on all Liferay 6.1 releases. Your hook, on the
-other hand, needs to interact with EE GA3 differently than it does with CE GA3,
-because you want the hook to take advantage of an exclusive EE feature. For your
-app, how do you provide one version of your hook plugin for EE and another
-version of it for CE, while applying your portlet plugin to both EE and CE? 
-
-It's easy. In this case, you'd specify versions
-`liferay-versions=6.1.2+,6.1.30+` for your portlet plugin, indicating that it is
-compatible with CE GA3 and later, as well as EE GA3 and later. As for your hook
-plugin, you'd create and build *two* versions of it, one version of the hook to
-use with Liferay EE and the other version of the hook to use with Liferay CE.
-You'd specify `liferay-versions=6.1.30+` for your EE hook and
-`liferay-versions=6.1.2+` for your CE hook. The EE hook would work exclusively
-with EE GA3 and later, while the CE hook would work exclusively with CE GA3 and
-later. You might think that it's difficult to arrange the packaging for an app
-that has plugins targeted to different Liferay releases, but it's easy.
-Marketplace takes care of it based on the `liferay-versions` values you
-specified for each plugin. We'll talk about that next.
-
-$$$
+| **Example: Using Different Versions of a Hook in an App**
+| 
+| Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
+| standard API calls that work on all Liferay 6.1 releases. Your hook, on the
+| other hand, needs to interact with EE GA3 differently than it does with CE GA3,
+| because you want the hook to take advantage of an exclusive EE feature. For your
+| app, how do you provide one version of your hook plugin for EE and another
+| version of it for CE, while applying your portlet plugin to both EE and CE?
+| 
+| It's easy. In this case, you'd specify versions
+| `liferay-versions=6.1.2+,6.1.30+` for your portlet plugin, indicating that it is
+| compatible with CE GA3 and later, as well as EE GA3 and later. As for your hook
+| plugin, you'd create and build *two* versions of it, one version of the hook to
+| use with Liferay EE and the other version of the hook to use with Liferay CE.
+| You'd specify `liferay-versions=6.1.30+` for your EE hook and
+| `liferay-versions=6.1.2+` for your CE hook. The EE hook would work exclusively
+| with EE GA3 and later, while the CE hook would work exclusively with CE GA3 and
+| later. You might think that it's difficult to arrange the packaging for an app
+| that has plugins targeted to different Liferay releases, but it's easy.
+| Marketplace takes care of it based on the `liferay-versions` values you
+| specified for each plugin. We'll talk about that next.
 
 Now that you've prepared your app's files and specified its metadata, it's
 time to get it to submit it to Liferay for publishing on the Marketplace! 
