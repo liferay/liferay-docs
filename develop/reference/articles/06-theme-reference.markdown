@@ -253,6 +253,6 @@ the [Definitions docs](@platform-ref@/7.0-latest/definitions/liferay-look-and-fe
 
 ### liferay-plugin-package.properties
 
-Contains general properties for the theme. [Resources Importer]{/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme} 
+Contains general properties for the theme. [Resources Importer]{/docs/7-0/tutorials/-/knowledge_base/t/importing-resources-with-a-theme} 
 configuration settings are also placed in this file. For a full explanation of 
 the properties available for this file please see the [7.0 Propertiesdoc](@platform-ref@/7.0-latest/propertiesdoc/liferay-plugin-package_7_0_0.properties.html).

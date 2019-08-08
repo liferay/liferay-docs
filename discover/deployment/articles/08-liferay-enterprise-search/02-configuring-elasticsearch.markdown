@@ -199,12 +199,12 @@ configuration file:
 As you can see from the System Settings entry for Elasticsearch, there are a lot
 more configuration options available that help you tune your system for optimal
 performance. For a detailed accounting of these, refer to the reference article
-on [Elasticsearch Settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings).
+on [Elasticsearch Settings](/docs/7-0/deploy/-/knowledge_base/d/elasticsearch-settings).
 
 What follows here are some known good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
 testing under load, and tuning again, so we encourage you to examine the
-[settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) as
+[settings](/docs/7-0/deploy/-/knowledge_base/d/elasticsearch-settings) as
 well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/important-settings.html#important-settings) 
 and go through that process once you have a working configuration. 
 
@@ -260,7 +260,7 @@ shards is `1`:
 | through TCP. See the Elasticsearch documentation for the available properties
 | (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 | Adapter's [reference
-| article](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
+| article](/docs/7-0/deploy/-/knowledge_base/d/elasticsearch-settings)
 | for the adapter's available settings.
 | 
 | At a minimum, provide the list of hosts to act as gossip routers during unicast
@@ -292,7 +292,7 @@ adapter.
 ### Adding Settings and Mappings to the Liferay Elasticsearch Adapter
 
 The [available configuration
-options](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) are
+options](/docs/7-0/deploy/-/knowledge_base/d/elasticsearch-settings) are
 divided into two groups: the ones you'll use most often by default, and a
 catch-all for everything else. So if the necessary setting isn't available by
 default, you can still configure it with the Liferay Elasticsearch adapter. Just
@@ -317,7 +317,7 @@ in remote mode. In production, only one additional configuration can be added he
 
 The rest of the settings for the client are available as default configuration
 options in the Liferay Elasticsearch adapter. See the [Elasticsearch
-Settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
+Settings](/docs/7-0/deploy/-/knowledge_base/d/elasticsearch-settings)
 reference article for more information. See the [Elasticsearch
 documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.4/transport-client.html)
 for a description of all the client settings and for an example.

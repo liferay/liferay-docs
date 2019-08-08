@@ -953,4 +953,4 @@ upgraded themes.
 
 [Migrating a theme to @product-ver@](/docs/7-0/tutorials/-/knowledge_base/t/migrating-a-6-2-theme-to-liferay-7)
 
-[Upgrading to @product-ver@] (/discover/deployment/-/knowledge_base/7-0/upgrading-to-liferay-7)
+[Upgrading to @product-ver@] (/docs/7-0/deploy/-/knowledge_base/d/upgrading-to-liferay-7)

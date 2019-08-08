@@ -7,7 +7,7 @@ header-id: adding-settings-to-form-field-types
 [TOC levels=1-4]
 
 Once you develop a 
-[Form Field Type](/developer/tutorials/-/knowledge_base/7-0/creating-form-field-types), 
+[Form Field Type](/docs/7-0/tutorials/-/knowledge_base/t/creating-form-field-types), 
 you might need to add settings to it. For example, your time field might need to
 be configured to accept different time formats. Here you'll learn how to add
 settings to form field types by adding a *mask* and a *placeholder* to the Time

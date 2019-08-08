@@ -131,7 +131,7 @@ Portal Search Elasticsearch module and click the edit
 ((![Edit](../../images/icon-edit.png))) button. Choose the Deactivate
 option. This leaves the bundle installed, but stops it in the OSGi runtime.
 
-Alternatively, use the [Felix Gogo shell](/developer/tutorials/-/knowledge_base/7-0/using-the-felix-gogo-shell) to
+Alternatively, use the [Felix Gogo shell](/docs/7-0/tutorials/-/knowledge_base/t/using-the-felix-gogo-shell) to
 stop the Elasticsearch adapter.  First, open a Gogo shell and enter
 
     lb elasticsearch
@@ -300,7 +300,7 @@ Liferay's Solr adapter.
 
 | **Note:** For a complete list of settings available in the Solr adapter, see the
 | [Solr Settings reference
-| article](/discover/reference/-/knowledge_base/7-0/solr-settings).
+| article](/docs/7-0/deploy/-/knowledge_base/d/solr-settings).
 
 Now you're able to configure @product@ for Solr, and Solr for @product@. Remember
 that Elasticsearch is the default search engine for @product@, so if you're not
