@@ -41,7 +41,7 @@ Now install Kibana.
 ## Install Kibana
 
 Make sure to install the correct version of Kibana. Check the 
-[Liferay Enterprise Search compatibility matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/enterprise-search)
+[Liferay Enterprise Search compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651)
 for details.
 
 1.  [Download Kibana](https://www.elastic.co/downloads/kibana)
