@@ -19,7 +19,7 @@ Elasticsearch and Solr do not make API level distinctions between queries and
 filters. In the past, Liferay's API explicitly provided two sets of APIs, one
 for queries and one for filters. Both APIs lived in `portal-kernel` (the 7.1
 source code for filters is 
-[here](https://github.com/liferay/liferay-portal/tree/7.1.x/portal-kernel/src/com/liferay/portal/kernel/search/filter).
+[here](https://github.com/liferay/liferay-portal/tree/7.1.x/portal-kernel/src/com/liferay/portal/kernel/search/filter)).
 
 In @product-ver@, there's a new way of querying and filtering via Liferay's
 Search API, and the APIs for it live in the `portal-search-api` module. Instead
