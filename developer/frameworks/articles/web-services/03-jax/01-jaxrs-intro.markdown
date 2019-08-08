@@ -194,15 +194,19 @@ When authenticating via Basic Auth, the
 `SYSTEM_USER_PASSWORD` is enforced. When authenticating via OAuth 2.0, the
 `AUTHORIZED_OAUTH2_SAP` policy is enforced. Configure them appropriately for
 your environment, as by default, they allow invoking all remote services. To
-disable Service Access Policy enforcement (not recommended), set this property: 
+disable Service Access Policy enforcement for JAX-RS endpoints (not recommended),
+set this property: 
 
 ```properties
 liferay.access.control.disable=true
 ```
 
+With this configured, guests can call these endpoints without administrators
+having to define a default Service Access Policy.
+
 ## Public JAX-RS Services
 
-To create a public endpoint (not recommended), all you must do is set two
+To create a public endpoint for development purposes, all you must do is set two
 properties: 
 
 ```java
@@ -214,6 +218,11 @@ properties:
     service = Application.class
 )
 ```
+
+Don't keep this configuration for production. For public services, it's best to
+leave the security in place and whitelist the particular endpoints you're making
+public. See [Service Access Policies](/docs/7-2/deploy/-/knowledge_base/d/service-access-policies)
+for further information. 
 
 ## Using JAX-RS with CORS
 
