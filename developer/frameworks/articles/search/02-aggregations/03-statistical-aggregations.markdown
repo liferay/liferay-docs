@@ -7,9 +7,9 @@ header-id: statistical-aggregations
 [TOC levels=1-4]
 
 Support for 
-[GroupBy](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/search/GroupBy.java) 
+[GroupBy](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/portal-kernel/src/com/liferay/portal/kernel/search/GroupBy.java) 
 and 
-[Stats](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/search/Stats.java) 
+[Stats](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/portal-kernel/src/com/liferay/portal/kernel/search/Stats.java) 
 aggregations were introduced in 7.0.
 
 Cardinality Aggregations extend @product@'s metrics aggregation capabilities,
@@ -21,9 +21,9 @@ for more details.
 
 While this functionality was available in the past directly in the portal kernel
 code, it's been extracted and re-implemented in 
-[`StatsRequest`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/stats/StatsRequest.java) 
+[`StatsRequest`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/stats/StatsRequest.java) 
 and 
-[`StatsResponse`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/stats/StatsResponse.java), 
+[`StatsResponse`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/stats/StatsResponse.java), 
 both introduced in the `com.liferay.portal.search.api` module to avoid modifying
 `portal-kernel`. `StatsRequest` provides the same statistical features that the
 legacy `com.liferay.portal.kernel.search.Stats` does, and adds the new
@@ -65,15 +65,19 @@ StatsRequestBuilderFactory statsRequestBuilderFactory;
    metrics:
 
 ```java
-StatsRequestBuilder statsRequestBuilder = statsRequestBuilderFactory.getStatsRequestBuilder();
+StatsRequestBuilder statsRequestBuilder = 
+    statsRequestBuilderFactory.getStatsRequestBuilder();
 
-StatsResponse expectedStatsResponse = statsResponseBuilder.cardinality(31)
-    .count(31)
-    .field(field).max(31)
-    .mean(16)
-    .min(1)
-    .sum(496)
-    .sumOfSquares(10416)
+StatsRequest statsRequest = statsRequestBuilder
+    .cardinality(true)
+    .count(true)
+    .field(field)
+    .max(true)
+    .mean(true)
+    .min(true)
+    .missing(true)
+    .sum(true)
+    .sumOfSquares(true)
     .build();
 ```
 
@@ -97,7 +101,7 @@ protected Searcher searcher;
 SearchResponse searcher.search(searchRequest);
 ```
 
-[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128 )
+[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128 )
 
 ### `StatsResponse`
 
@@ -122,7 +126,7 @@ StatsResponse statsResponse = map.get(field);
         statsResponse.getCardinality();
 ```
 
-[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128)
+[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128)
 
 ### Using the Legacy `Stats` Object
 
@@ -148,7 +152,7 @@ Stats stats = new Stats() {
 searchRequestBuilder.withSearchContext(searchContext -> searchContext.addStats(stats));
 ```
 
-[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L42)
+[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L42)
 
 ## External References
 
