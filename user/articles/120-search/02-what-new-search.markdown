@@ -88,16 +88,16 @@ match the `title` field of a document.
 **Maximum Expansions:** Limit the number of documents to return when matching
 searched keywords to the `title` field as a phrase prefix. See Elasticsearch's
 [Match Phrase Query
-documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-match-query-phrase.html)
+documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-match-query-phrase.html)
 for more information.
 
 ## New Infrastructure
 
 There are some important search infrastructure changes to know about.
 
-### Elasticsearch 6.5.x Support
+### Elasticsearch Support
 
-@product-ver@ supports Elasticsearch 6.5.x, and it's included as the embedded
+@product-ver@ supports Elasticsearch 6.5.x through 6.8.x, and 6.5.0 is included as the embedded
 version to use for testing out-of-the-box search behavior. See the [deployment
 guide](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch) for more information.
 

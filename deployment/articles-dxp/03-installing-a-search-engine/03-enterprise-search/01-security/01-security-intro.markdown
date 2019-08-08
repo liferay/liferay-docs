@@ -27,11 +27,11 @@ X-Pack users are important:
 - `elastic`
 
 Set the passwords for all X-Pack's 
-[built-in users](https://www.elastic.co/guide/en/x-pack/6.5/setting-up-authentication.html#built-in-users).
+[built-in users](https://www.elastic.co/guide/en/x-pack/6.8/setting-up-authentication.html#built-in-users).
 The `setup-passwords` command is the simplest method to set the built-in users'
 first-use passwords for the first time. To update a password subsequently, use
 Kibana's UI or the 
-[Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/security-api-change-password.html).
+[Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/security-api-change-password.html).
 
 The `interactive` argument sets the passwords for all built-in users. The
 configuration shown in these articles assumes you set all passwords to
@@ -40,7 +40,7 @@ configuration shown in these articles assumes you set all passwords to
     ./bin/elasticsearch-setup-passwords interactive
 
 Elastic's 
-[setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-passwords.html) 
+[setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/setup-passwords.html) 
 documentation describes additional options.
 
 Since you're securing Elasticsearch, remember the `elastic` user's password. 
@@ -58,12 +58,12 @@ whenever one is needed. Use your own passwords for your installation.
 
 ### Generate Node Certificates
 
-[Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#node-certificates)
+[Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/configuring-tls.html#node-certificates)
 for each node. Alternatively, use a Certificate Authority to obtain node
 certificates.
 
 1.  Create a certificate authority, using 
-    [X-Pack's `certutil`](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/certutil.html)
+    [X-Pack's `certutil`](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/certutil.html)
     command:
 
         ./bin/elasticsearch-certutil ca --pem --ca-dn CN=localhost
@@ -84,7 +84,7 @@ certificates.
 
 ### Enable TLS
 
-[Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#enable-ssl) 
+[Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/configuring-tls.html#enable-ssl) 
 on each node via its `elasticsearch.yml`.
 
 1.  Add the certificate, key and certificate authority paths to each node's

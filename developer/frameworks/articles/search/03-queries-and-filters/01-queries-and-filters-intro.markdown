@@ -182,7 +182,7 @@ ScriptQuery
 
 The proper search query is entirely context- and search engine-specific, so you
 should read the Query documentation straight from
-[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl.html) 
+[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html) 
 or 
 [Solr](https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html)
 to determine which queries are available and what they do.
@@ -225,7 +225,7 @@ in a query context.
 
 ## External References
 
-* <https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl.html>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html>
 * <https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html>
 
 ## Search Engine Connector Support

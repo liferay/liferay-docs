@@ -21,9 +21,9 @@ translatable might not support searching for the content in that language.
 In localized search, fields are indexed with locale information appended (for
 example, `en_US` for English, making a localized title field indexed as
 `title_en_US`). It's then passed to the proper 
-[language analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis-lang-analyzer.html) 
+[language analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analysis-lang-analyzer.html) 
 in the search engine so that the 
-[analysis](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis.html) 
+[analysis](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analysis.html) 
 process is performed properly. There are two common approaches: fully localized
 search and site-localized search.
 

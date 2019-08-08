@@ -35,7 +35,7 @@ developer tutorial Introduction to Liferay Search (not yet written).
 These terms are useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
-   installation (for example, `elasticsearch-6.5.1`). 
+   installation (for example, `elasticsearch-6.8.2`). 
 
 -  [*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
    refers to the root folder of your @product@ installation. It contains the
@@ -89,8 +89,8 @@ configuration options in more detail.
 
 **Cluster Sniffing (Additional Configurations):**
 : Elasticsearch clusters can have multiple node 
-[types](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#modules-node).
-[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.5/transport-client.html), 
+[types](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-node.html#modules-node).
+[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.8/transport-client.html), 
 enabled by default in the @product@ connector, looks for `data` nodes
 configured in the `transportAddresses` property. If none are available, the
 connector may throw a `NoNodeAvailableException` in the console log. If cluster

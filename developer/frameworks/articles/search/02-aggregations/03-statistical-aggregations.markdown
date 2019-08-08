@@ -16,7 +16,7 @@ Cardinality Aggregations extend @product@'s metrics aggregation capabilities,
 providing an approximate (i.e., statistical) count of distinct values returned
 by a search query. For example, you could compute a count of distinct values of
 the _tag_ field. Refer to the 
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics-cardinality-aggregation.html) 
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-metrics-cardinality-aggregation.html) 
 for more details.
 
 While this functionality was available in the past directly in the portal kernel
@@ -152,8 +152,8 @@ searchRequestBuilder.withSearchContext(searchContext -> searchContext.addStats(s
 
 ## External References
 
-* https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics.html
-* https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics-cardinality-aggregation.html
+* https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-metrics.html
+* https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-metrics-cardinality-aggregation.html
 * https://lucene.apache.org/solr/guide/7_5/the-stats-component.html
 
 ## Search Engine Connector Support
