@@ -30,7 +30,7 @@ modules, you can let developers leverage your API.
 <!-- Uncomment when the article is published. Jim
 To see a list of @product@'s
 API modules, see the reference article
-Finding Liferay API Modules(/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules). 
+Finding Liferay API Modules(/docs/7-1/reference/-/knowledge_base/r/finding-liferay-api-modules). 
 -->
 
 OSGi modules can also contain apps that have a UI: portlets. The next section 

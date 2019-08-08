@@ -32,7 +32,7 @@ won't have enough information about the devices being used to make page
 requests.
 <!-- Uncomment when the referenced article is published. Jim
 To learn how to tap into @product@'s Device API, see the 
-Using the Device Recognition API(/develop/tutorials/-/knowledge_base/7-1/using-the-device-recognition-api)
+Using the Device Recognition API(/docs/7-1/tutorials/-/knowledge_base/t/using-the-device-recognition-api)
 tutorial.
 -->
 

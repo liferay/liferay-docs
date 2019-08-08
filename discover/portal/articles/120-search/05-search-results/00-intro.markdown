@@ -14,7 +14,7 @@ at the top of a list of other extremely relevant hits. Like this:
 
 The developers of an asset control much about how the asset's information is
 stored in the search engine (this process is called
-*indexing*<!--(/develop/tutorials/-/knowledge_base/7-1/understanding-search-and-indexing)-->),
+*indexing*<!--(/docs/7-1/tutorials/-/knowledge_base/t/understanding-search-and-indexing)-->),
 and how its information is searched and returned in the search results.
 Developers who dislike how a particular asset behaves in search can use an
 *Indexer Post Processor* to modify the asset's indexing behavior and how search

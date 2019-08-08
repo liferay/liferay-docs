@@ -9,7 +9,7 @@ former Liferay Portal 6 JAR file <em>portal-service.jar</em> have been moved
 into application and framework API modules. The table below provides details
 about these classes and the modules they've moved to. Package changes 
 and each module's symbolic name (artifact ID) are listed, to facilitate 
-<a href="/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies">configuring dependencies</a>. 
+<a href="/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies">configuring dependencies</a>. 
 
 <style>
 table, th, td {

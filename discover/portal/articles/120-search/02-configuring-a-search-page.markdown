@@ -22,7 +22,7 @@ If you're in need of a fully customized experience,
 After choosing your approach and reading here to get it up and running, find
 the articles on the [Search
 Bar](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#search-bar),
-[Search Facets](/docs/7-1/user/-/knowledge_base/u/facets), and [Search Results](/discover/portal/-/knowledge_base/7-1/search-results) to understand the full suite of
+[Search Facets](/docs/7-1/user/-/knowledge_base/u/facets), and [Search Results](/docs/7-1/user/-/knowledge_base/u/search-results) to understand the full suite of
 configuration options. 
 
 Search display pages are where users go to enter search terms and browse search
