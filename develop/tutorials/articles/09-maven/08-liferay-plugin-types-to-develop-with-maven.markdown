@@ -245,8 +245,8 @@ Java source | `src/main/java`   | `docroot/WEB-INF/src` |
 Web source  | `src/main/webapp` | `docroot`             |
 
 To view the directory structure of a hook developed by Ant, visit the *Anatomy
-of a Hook* section of the [Creating a
-Hook](/docs/6-1/tutorials/-/knowledge_base/t/anatomy-of-the-hook)
+of a Hook* section of the
+[Creating a Hook](/docs/6-1/develop/-/knowledge_base/t/creating-a-hook)
 section in this guide. 
 
 ### Deployment
@@ -257,7 +257,7 @@ Plugins with Maven* section.
 ### More Information
 
 For detailed information on creating hooks, see Chapter 7,
-[Hooks](/docs/6-1/tutorials/-/knowledge_base/t/creating-a-hook). 
+[Hooks](/docs/6-1/develop/-/knowledge_base/t/creating-a-hook). 
 
 You're nearly a Maven expert now; you're able to create portlets, themes, and
 hooks. Let's round things out by learning to develop layout templates. 

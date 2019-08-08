@@ -127,8 +127,8 @@ conceivablly salvage it by making it into a purchase request application:
 Departments have to enter purchase requests, and the message bus automatically
 emails certain departments when a purchase request is entered. -Rich -->
 
-Jungle Gyms R-Us could use Liferay's [Workflow with
-Kaleo](/docs/6-1/user/-/knowledge_base/u/workflow-with-kaleo)
+Jungle Gyms R-Us could use Liferay's
+[Workflow with Kaleo](/docs/6-1/develop/-/knowledge_base/t/designing-workflows-with-kaleo-designer-for-java)
 to resolve the communication breakdown, but we'll resolve the Jungle Gym's
 communication woes using Message Bus, to show you how it works. 
 Here are the inter-department message exchanges we'll accommodate:
