@@ -167,3 +167,24 @@ Here's the complete list of configuration options for the X-Pack Connector:
 
 When you're finished configuring X-Pack Security, restart Elasticsearch. These
 steps require a full cluster restart.
+
+### Disabling Elasticsearch Deprecation Logging
+
+Some Elasticsearch APIs that Liferay's Elasticsearch 6 connector is using were deprecated as of Elasticsearch 6.6 and 6.7. This can result WARN log entries in Elasticsearch's deprecation log when @product@ is configured with Elasticsearch 6.8.x and X-Pack Security is enabled:
+
+```bash
+2019-07-16T14:47:05,779][WARN ][o.e.d.c.j.Joda           ] [
+ode_name]'y' year should be replaced with 'u'. Use 'y' for year-of-era. Prefix your date format with '8' to use the new specifier.
+[2019-07-16T14:47:06,007][WARN ][o.e.d.c.s.Settings       ] [
+ode_name][xpack.ssl.certificate] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+[2019-07-16T14:47:06,007][WARN ][o.e.d.c.s.Settings       ] [
+ode_name][xpack.ssl.certificate_authorities] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+[2019-07-16T14:47:06,008][WARN ][o.e.d.c.s.Settings       ] [
+ode_name][xpack.ssl.key] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+[2019-07-16T14:47:06,463][WARN ][o.e.d.x.c.s.SSLService   ] [
+ode_name]SSL configuration [xpack.http.ssl] relies upon fallback to another configuration for [key configuration, trust configuration], which is deprecated.
+[2019-07-16T14:47:06,464][WARN ][o.e.d.x.c.s.SSLService   ] [
+ode_name]SSL configuration [xpack.security.transport.ssl.] relies upon fallback to another configuration for [key configuration, trust configuration], which is deprecated.
+```
+
+It has no functional impact and can be disabled (see [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/logging.html#deprecation-logging) how).
