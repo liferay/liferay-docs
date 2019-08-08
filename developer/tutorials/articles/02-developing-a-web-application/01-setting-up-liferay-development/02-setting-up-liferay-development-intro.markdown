@@ -1,59 +1,58 @@
 ---
-header-id: development-setup-overview
+header-id: setting-up-a-development-environment
 ---
 
-# Development Setup Overview
+# Setting Up a Development Environment
 
 [TOC levels=1-4]
 
-Liferay's development tools help you get started fast. The basic steps for
-installing Liferay @ide@ are
+Liferay's development tools help you get started fast. All you need as
+a prerequisite is a Java Development Kit version 8 ([JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+or [OpenJDK](https://jdk.java.net/java-se-ri/8) is fine).
+Once that's installed, there are only three steps. 
 
-* Download a Liferay @ide@ bundle. 
+- Download a Liferay @ide@ bundle. 
 
-* Unzip the downloaded package to a location on your system. 
+- Unzip the downloaded package to a location on your system. 
 
-* Start @ide@. 
+- Start @ide@. 
 
-You'll follow these steps and then generate an environment for developing your 
-first @product@ application. 
+You'll follow these steps and then generate a Liferay Workspace for developing
+your first @product@ application. 
 
 ## Installing a Liferay @ide@ Bundle
 
 Follow these steps: 
 
 1.  Download and install 
-    [the Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
-    @product@ runs on Java. The JDK is required because you'll be developing
-    @product@ apps in Liferay @ide@. The JDK is an enhanced version of the Java
-    Environment used for developing new Java technology. Use JDK 8 or JDK 11. 
+    [Liferay @ide@](/docs/7-2/reference/-/knowledge_base/r/installing-liferay-dev-studio)
+    Installing it is easy: run the installer.
 
-2.  Download and install 
-    [Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/installing-liferay-ide)
-    Installing it is easy: unzip it to a convenient location on your system. 
-
-3. To run Liferay @ide@, run the `LiferayDeveloperStudio` executable. 
+2. To run Liferay @ide@, run the `DeveloperStudio` executable. On Windows, the
+   installer doesn't create a menu entry, so you should add a shortcut to it to
+   your desktop or task bar.
 
 The first time you start Liferay @ide@, it prompts you to select an Eclipse
 workspace.  If you specify an empty folder, Liferay @ide@ creates a new
 workspace in that folder. Follow these steps to create a new workspace:
 
 1.  When prompted, indicate your workspace's path. Name your new workspace 
-    `guestbook-workspace` and click *OK*. 
+    `guestbook-workspace` and click *OK*. Windows has path length limitations,
+    so on that OS, you may want to create your workspace the root folder
+    (`C:\`). 
 
 2.  When Liferay @ide@ first launches, it presents a welcome page. Click the
     *Workbench* icon to continue. 
 
-Nice job! Your development environment is installed and your workspace is set 
-up. 
+Nice job! Your development environment is installed and your Eclipse workspace
+is set up. 
 
 ## Creating a Liferay Workspace
 
-Now you'll create another kind of workspace---a 
-[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace). 
-By holding and managing your @product@ projects, a Liferay Workspace provides a 
-simplified, straightforward way to develop @product@ applications. In the 
-background, a Liferay Workspace uses 
+Now you'll create another kind of workspace: a 
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace). 
+Liferay Workspace helps manage Liferay projects by providing various build
+scripts, properties, and configuration for you. Liferay Workspace uses 
 [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) and 
 [Gradle](https://gradle.org/) to manage dependencies and organize your build 
 environment. Note that to avoid configuration issues, you can only create one 
@@ -65,7 +64,7 @@ Follow these steps to create a Liferay Workspace in Liferay @ide@:
     have to select *File* &rarr; *New* &rarr; *Other*, then choose *Liferay 
     Workspace Project* in the *Liferay* category. 
 
-    ![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your @product@ projects.](../../../images/selecting-liferay-workspace.png)
+    ![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your @product@ projects.](../../../images/dev-studio-create-workspace.png)
 
     A *New Liferay Workspace* dialog appears, which presents several 
     configuration options. 
@@ -75,19 +74,16 @@ Follow these steps to create a Liferay Workspace in Liferay @ide@:
 3.  Next, choose your workspace's location. Leave the default setting checked. 
     This places your Liferay Workspace inside your Eclipse workspace. 
  
-4.  For *Liferay Version* select *7.1*.
+4.  For *Liferay Version*, 7.2 should already be selected. 
 
-5.  Check the *Download Liferay bundle* checkbox to download and 
+5.  Leave the rest of the defaults. 
+
+6.  Check the *Download Liferay bundle* checkbox to download and 
 	unzip a @product@ instance in your workspace automatically.  When prompted,
 	name the server `liferay-tomcat-bundle`. 
 
 6.  Click *Finish* to create your Liferay Workspace. This may take a while 
     because Liferay @ide@ downloads the @product@ bundle in the background. 
-
-    ![Figure 2: Liferay @ide@ provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/guestbook-workspace-menu.png)
-
-A dialog appears prompting you to open the Liferay Workspace perspective. Click 
-*Yes*, and your perspective switches to Liferay Workspace. 
 
 Congratulations! Your development environment is ready! Next, you'll get started 
 developing your first @product@ application. 
