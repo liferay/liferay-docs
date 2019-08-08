@@ -50,7 +50,7 @@ for details.
 2.  Tell Kibana where to send monitoring data by setting Elasticsearch's URL in
     `kibana.yml`:
 
-        elasticsearch.hosts: ["https://localhost:9200"]
+        elasticsearch.hosts: [ "https://localhost:9200" ]
 
 On 6.5 and below you have to use
 
@@ -105,7 +105,7 @@ Add these settings to `kibana.yml`:
     xpack.security.encryptionKey: "xsomethingxatxleastx32xcharactersx"
     xpack.security.sessionTimeout: 600000
 
-    elasticsearch.hosts: ["https://localhost:9200"]
+    elasticsearch.hosts: [ "https://localhost:9200" ]
     elasticsearch.ssl.verificationMode: certificate
     elasticsearch.ssl.certificateAuthorities: [ "/path/to/ca.crt" ]
 
