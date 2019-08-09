@@ -10,7 +10,7 @@ Before registering your server with LCS, there are a few things you must
 configure. The sections in this guide walk you through these steps: 
 
 1.  [Downloading the LCS Client App](#downloading-the-lcs-client-app)
-2.  [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+2.  [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-lcs-to-connect-through-a-proxy)
 3.  [Ensuring Access to LCS](#ensuring-access-to-lcs)
 4.  [NTP Server Synchronization](#ntp-server-synchronization)
 5.  [Configuring the Patching Tool](#configuring-the-patching-tool)
