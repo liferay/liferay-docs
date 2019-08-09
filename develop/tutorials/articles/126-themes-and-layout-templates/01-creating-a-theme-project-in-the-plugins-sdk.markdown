@@ -151,6 +151,6 @@ structure.
 
 ## Related Topics
 
-[Creating Liferay Maven Plugins from Liferay IDE] (/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-maven-plugins-from-liferay-ide)
 
 [Creating Liferay Maven Plugins from the Command Line](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-maven-plugins-from-the-command-lin)

@@ -128,15 +128,11 @@ In order to release an approved app under a different license term you must
 submit another app under a new name (title). So make sure you think through the
 license term that makes the most sense for your app. 
 
-+$$$
-
-**Note:** If you are a foreign developer based outside of the United States,
-non-perpetual license sales (considered to be royalty income) to US customers
-are subject to a 30% withholding tax. This tax does not apply to perpetual
-licenses. For more information on licensing terms and fees, please refer to the
-[FAQ](/distribute/faq). 
-
-$$$
+| **Note:** If you are a foreign developer based outside of the United States,
+| non-perpetual license sales (considered to be royalty income) to US customers
+| are subject to a 30% withholding tax. This tax does not apply to perpetual
+| licenses. For more information on licensing terms and fees, please refer to the
+| [FAQ](/distribute/faq).
 
 ### Determining License Type and License Unit Pricing [](id=determining-license-type-and-license-unit-pricing)
 
@@ -288,12 +284,8 @@ provides what your app needs from Liferay.
 Read the section below for details on how to specify support for specific
 versions of Liferay. 
 
-+$$$
-
-**Note:** If you haven't yet done so, make sure to read 
- [Leveraging the Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace)! 
-
-$$$
+| **Note:** If you haven't yet done so, make sure to read 
+| [Leveraging the Marketplace](/docs/6-2/user/-/knowledge_base/u/leveraging-the-liferay-marketplace)! 
 
 Lastly, you should determine a versioning scheme for your app. How will you
 refer to the first version of your app, the second version, and so on. 
@@ -317,7 +309,7 @@ discourage it, as such characters may confuse customers as to how your app's
 versions relate to one another.
 
 Keep in mind that the releases of Liferay with which your app works must be
-specified using Liferay's versioning scheme, as explained in [Understanding Liferay's Releases](/discover/portal/-/knowledge_base/6-2/understanding-liferays-releases).
+specified using Liferay's versioning scheme, as explained in [Understanding Liferay's Releases](/docs/6-2/user/-/knowledge_base/u/understanding-liferays-releases).
 See the later section *Specify App Packaging Directives* for details on
 specifying the releases of Liferay for which your app is designed. 
 

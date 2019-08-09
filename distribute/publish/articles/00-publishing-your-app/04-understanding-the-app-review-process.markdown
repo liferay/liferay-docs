@@ -8,14 +8,10 @@ your own testing and debugging team*. Ultimately, it is the responsibility of
 the developer to test, refine, and ensure that the app functions as promised and
 performs as expected.
 
-+$$$
-
-**Note:** Liferay is not responsible for the behavior (or misbehavior) of apps
-on the Marketplace. For details regarding this, consult the *Liferay Marketplace
-User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual
-*End User License Agreements* associated with each app.
-
-$$$
+| **Note:** Liferay is not responsible for the behavior (or misbehavior) of apps
+| on the Marketplace. For details regarding this, consult the *Liferay Marketplace
+| User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual
+| *End User License Agreements* associated with each app.
 
 Once you've submitted your app for review, your app will change its status as it
 moves through the review process. You will be updated via email as your app's

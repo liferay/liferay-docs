@@ -195,10 +195,10 @@ download, and install metrics.
 
 [Beginning Liferay Development](/develop/learning-paths/mvc/-/knowledge_base/6-2/beginning-liferay-development)
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing with Maven](/docs/6-2/tutorials/-/knowledge_base/t/maven)
 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
