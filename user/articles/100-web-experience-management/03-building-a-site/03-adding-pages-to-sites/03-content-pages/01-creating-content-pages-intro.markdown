@@ -30,8 +30,8 @@ you have a number of Fragments associated with a certain marketing campaign,
 you could create a Collection for that campaign, so that you have all of those 
 Fragments readily available when you're working on a page for that campaign.
 
-With all of the Fragments and Collections that are included in @product-ver@ 
-many projects can be completed using only the out of the Fragments and 
+With all of the Fragments and Collections that are included in @product-ver@, 
+many projects can be completed using only the out-of-the-box Fragments and 
 capabilities. In many cases, though, you need to create your own Fragments. 
 Creating Fragments is done by developers and covered in detail in our [Page 
 Fragment development guide](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments).
@@ -45,7 +45,7 @@ intended to be reusable, so each Fragment is like a single puzzle piece that
 can fit in many different puzzles. Using the tools you have available, you can 
 create stunning pages through an intuitive, empowering interface. In the 
 [Building Content Pages guide](/docs/7-2/user/-/knowledge_base/u/building-content-pages)
-you will create Content Pages  using a variety of the features and capabilities
+you will create Content Pages using a variety of the features and capabilities
 of Content Pages.
 
 ## The Content Page Interface
