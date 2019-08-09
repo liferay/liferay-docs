@@ -159,6 +159,14 @@ Of course, this isn't a very imaginative name; you may choose to name your
 cluster `finders_keepers` or something else you can remember more easily. Save
 the file. 
 
+| **X-Pack Security**: Disable X-Pack Security in `elasticsearch.yml` unless you have an
+| Liferay Enterprise Search Premium subscription which gives you access to
+| Liferay's X-Pack Security connector:
+| 
+| ```yml
+| xpack.security.enabled: false
+| ```
+
 Now you can start Elasticsearch. Run the executable for your operating system
 from the `[Elasticsearch Home]/bin` folder: 
 
