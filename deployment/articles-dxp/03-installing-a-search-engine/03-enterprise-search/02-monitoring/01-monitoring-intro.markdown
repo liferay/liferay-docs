@@ -52,7 +52,7 @@ for details.
 
         elasticsearch.hosts: [ "https://localhost:9200" ]
 
-On 6.5 and below you have to use
+On 6.5 and below, use
 
         elasticsearch.url: "http://localhost:9200"
 
@@ -113,7 +113,7 @@ Add these settings to `kibana.yml`:
     server.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
     server.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
 
-On 6.5 and below you have to use
+On 6.5 and below, use
 
         elasticsearch.url: "http://localhost:9200"
 

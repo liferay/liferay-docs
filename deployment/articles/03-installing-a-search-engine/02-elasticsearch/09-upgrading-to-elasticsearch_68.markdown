@@ -21,9 +21,9 @@ existing Elasticsearch 6.1.x server (or cluster) to Elasticsearch 6.8.x:
 
 2. Disable X-Pack Security in `elasticsearch.yml` unless you have an Liferay Enterprise Search Premium subscription which gives you access to Liferay's X-Pack Security connector:
 
-```yml
-xpack.security.enabled: false
-```
+    ```yml
+    xpack.security.enabled: false
+    ```
 
 3.  Configure the bundled Liferay Connector to Elasticsearch 6.
 

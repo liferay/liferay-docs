@@ -81,7 +81,7 @@ A JSON document is returned that looks similar to this:
   "cluster_name" : "LiferayElasticsearchCluster",
   "cluster_uuid" : "ziPGEBeSToGHc7lVqaYHnA",
   "version" : {
-    "number" : "6.5.0",
+    "number" : "6.8.0",
     "build_flavor" : "unknown",
     "build_type" : "unknown",
     "build_hash" : "816e6f6",
@@ -96,7 +96,7 @@ A JSON document is returned that looks similar to this:
 ```
 
 The version of Elasticsearch that's running is the value of the `"number"` field.
-In this example, it's 6.5.0. 
+In this example, it's 6.8.0. 
 
 Shut down the @product@ server. In a local, single-machine testing environment,
 if you continue without shutting down, the Elasticsearch server you're about to
@@ -159,22 +159,26 @@ Of course, this isn't a very imaginative name; you may choose to name your
 cluster `finders_keepers` or something else you can remember more easily. Save
 the file. 
 
-| **X-Pack Security**: Disable X-Pack Security in `elasticsearch.yml` unless you have an
-| Liferay Enterprise Search Premium subscription which gives you access to
-| Liferay's X-Pack Security connector:
-| 
-| ```yml
-| xpack.security.enabled: false
-| ```
+Disable X-Pack Security in `elasticsearch.yml` unless
+you have an Liferay Enterprise Search Premium subscription, which gives you
+access to Liferay's X-Pack Security connector:
+
+```yml
+xpack.security.enabled: false
+```
 
 Now you can start Elasticsearch. Run the executable for your operating system
 from the `[Elasticsearch Home]/bin` folder: 
 
-    ./elasticsearch
+```sh
+./elasticsearch
+```
 
 Elasticsearch starts, and one of its status messages includes a transport address: 
 
-    [2019-04-01T16:55:50,127][INFO ][o.e.t.TransportService   ] [HfkqdKv] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+```sh
+[2019-04-01T16:55:50,127][INFO ][o.e.t.TransportService   ] [HfkqdKv] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+```
 
 Take note of this address; you'll need to give it to your @product@ server so it
 can find Elasticsearch on the network. 
@@ -211,35 +215,41 @@ in the Elasticsearch log.
 When restarting @product@, `update_mappings` messages will appear in the
 Elasticsearch logs:
 
-    [2019-04-01T17:08:57,462][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:08:57,474][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:08:58,393][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:08:58,597][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:09:07,040][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/OJidpYkgR5OcCD5dgWB8Aw] update_mapping [LiferayDocumentType]
+```sh
+[2019-04-01T17:08:57,462][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
+[2019-04-01T17:08:57,474][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
+[2019-04-01T17:08:58,393][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
+[2019-04-01T17:08:58,597][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
+[2019-04-01T17:09:07,040][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/OJidpYkgR5OcCD5dgWB8Aw] update_mapping [LiferayDocumentType]
+```
 
 Once you reindex, more log messages appear in Elasticsearch:
 
-    [2019-04-01T17:11:17,338][INFO ][o.e.c.m.MetaDataDeleteIndexService] [HfkqdKv] [liferay-20101/OJidpYkgR5OcCD5dgWB8Aw] deleting index
-    [2019-04-01T17:11:17,389][INFO ][o.e.c.m.MetaDataCreateIndexService] [HfkqdKv] [liferay-20101] creating index, cause [api], templates [], shards [1]/[0], mappings [LiferayDocumentType]
-    [2019-04-01T17:11:17,471][INFO ][o.e.c.r.a.AllocationService] [HfkqdKv] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[liferay-20101][0]] ...]).
-    [2019-04-01T17:11:17,520][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:19,047][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:19,133][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:19,204][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:19,249][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:21,215][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:21,262][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:21,268][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:21,275][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:21,282][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
-    [2019-04-01T17:11:21,373][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+```sh
+[2019-04-01T17:11:17,338][INFO ][o.e.c.m.MetaDataDeleteIndexService] [HfkqdKv] [liferay-20101/OJidpYkgR5OcCD5dgWB8Aw] deleting index
+[2019-04-01T17:11:17,389][INFO ][o.e.c.m.MetaDataCreateIndexService] [HfkqdKv] [liferay-20101] creating index, cause [api], templates [], shards [1]/[0], mappings [LiferayDocumentType]
+[2019-04-01T17:11:17,471][INFO ][o.e.c.r.a.AllocationService] [HfkqdKv] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[liferay-20101][0]] ...]).
+[2019-04-01T17:11:17,520][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:19,047][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:19,133][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:19,204][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:19,249][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:21,215][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:21,262][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:21,268][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:21,275][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:21,282][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+[2019-04-01T17:11:21,373][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+```
 
 Reindexing the spell check dictionaries produces log messages like these:
 
-    2019-04-29 14:02:22.034 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:278] Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
-    2019-04-29 14:02:34.166 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:299] Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
-    2019-04-29 14:02:34.167 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:278] Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/es_ES.txt
-    2019-04-29 14:02:39.379 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:299] Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/es_ES.txt
+```sh
+2019-04-29 14:02:22.034 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:278] Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
+2019-04-29 14:02:34.166 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:299] Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
+2019-04-29 14:02:34.167 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:278] Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/es_ES.txt
+2019-04-29 14:02:39.379 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:299] Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/es_ES.txt
+```
 
 For additional confirmation that @product@ recognizes the remote search engine,
 navigate to the Search Control Panel application and note the subtle change
@@ -249,5 +259,5 @@ installation of the remote Elasticsearch server, it said _Elasticsearch
 
 ![Figure 1: To see information about the currently connected search engine, go to _Control Panel &rarr; Configuration &rarr; Search_.](../../../images/search-admin-engineinfo-remote.png)
 
-For additional details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/_installation.html).
+For additional details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/getting-started-install.html).
 

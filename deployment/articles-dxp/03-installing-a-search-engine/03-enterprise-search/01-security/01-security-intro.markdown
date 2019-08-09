@@ -170,9 +170,12 @@ steps require a full cluster restart.
 
 ### Disabling Elasticsearch Deprecation Logging
 
-Some Elasticsearch APIs that Liferay's Elasticsearch 6 connector is using were deprecated as of Elasticsearch 6.6 and 6.7. This can result WARN log entries in Elasticsearch's deprecation log when @product@ is configured with Elasticsearch 6.8.x and X-Pack Security is enabled:
+Some Elasticsearch APIs used by Liferay's Elasticsearch 6 connector were
+deprecated as of Elasticsearch 6.6 and 6.7. This can result WARN log entries in
+Elasticsearch's deprecation log when @product@ is configured with Elasticsearch
+6.8.x and X-Pack Security is enabled:
 
-```bash
+```sh
 2019-07-16T14:47:05,779][WARN ][o.e.d.c.j.Joda           ] [
 ode_name]'y' year should be replaced with 'u'. Use 'y' for year-of-era. Prefix your date format with '8' to use the new specifier.
 [2019-07-16T14:47:06,007][WARN ][o.e.d.c.s.Settings       ] [
@@ -187,4 +190,6 @@ ode_name]SSL configuration [xpack.http.ssl] relies upon fallback to another conf
 ode_name]SSL configuration [xpack.security.transport.ssl.] relies upon fallback to another configuration for [key configuration, trust configuration], which is deprecated.
 ```
 
-It has no functional impact and can be disabled (see [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/logging.html#deprecation-logging) how).
+These warnings do not signal any functional issues, and can be disabled (see
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/logging.html#deprecation-logging)
+to learn how).
