@@ -19,7 +19,7 @@ The example configuration below uses the `<liferay-util:dynamic-include>` tag to
 include an extension point before the primary code and an extension point after 
 the primary code:
 
-```html
+```markup
 <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
 
 <liferay-util:dynamic-include key="/path/to/jsp#pre" />

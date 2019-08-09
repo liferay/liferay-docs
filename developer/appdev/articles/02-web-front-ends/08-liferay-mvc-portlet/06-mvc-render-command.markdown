@@ -27,7 +27,7 @@ Here are the steps:
     [render-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/render-command-portlet)
     sample render URL invokes an MVC render command named `/blade/render`. 
 
-    ```jsp
+    ```markup
     <portlet:renderURL var="bladeRender">
     	<portlet:param name="mvcRenderCommandName" value="/blade/render" />
     </portlet:renderURL>
@@ -46,7 +46,7 @@ Here are the steps:
 
     For example, the render URL with the variable `bladeRender` triggers on users clicking this button.
 
-    ```jsp
+    ```markup
     <aui:button href="<%= bladeRender %>" value="goto page render" />
     ```
 

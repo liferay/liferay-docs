@@ -31,16 +31,22 @@ Follow these steps to create your JavaScript widget:
 
 2.  Install [Yeoman](http://yeoman.io/) for the generator:
 
-        npm install -g yeoman
+    ```bash
+    npm install -g yeoman
+    ```
 
 3.  Install the Liferay JS Generator:
 
-        npm install -g generator-liferay-js
+    ```bash
+    npm install -g generator-liferay-js
+    ```
 
 4.  Run the generator with the command below, select the JavaScript widget you 
     want to create, and answer the prompts that follow.
 
-        yo liferay-js
+    ```bash
+    yo liferay-js
+    ```
 
     ![Figure 1: The liferay-bundle generator prompts you for widget options.](../../../images/liferay-js-generator-prompts.png)
 
@@ -49,6 +55,8 @@ Follow these steps to create your JavaScript widget:
     verify this by checking the value of the `liferayDir` entry in the widget's 
     `.npmbuildrc`.
 
-        npm run deploy
+    ```bash
+    npm run deploy
+    ```
 
 Great! Now you know how to install and run the Liferay JS Generator. 

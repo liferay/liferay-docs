@@ -13,7 +13,7 @@ circle and square.
 
 Square sticker with label:
 
-```html
+```markup
 <clay:sticker label="JPG" />
 ```
 
@@ -21,7 +21,7 @@ Square sticker with label:
 
 Square sticker with icon:
 
-```html
+```markup
 <clay:sticker icon="picture" />
 ```
 
@@ -29,7 +29,7 @@ Square sticker with icon:
 
 Circle sticker:
 
-```html
+```markup
 <clay:sticker label="JPG" shape="circle" />
 ```
 
@@ -39,7 +39,7 @@ Stickers can be positioned in any corner of a div. Indicate their position with
 the `position` attribute: `top-left`, `bottom-left`, `top-right`, or 
 `bottom-right`:
 
-```html
+```markup
 <div class="aspect-ratio">
 
 	<img class="aspect-ratio-item-fluid" src="https://claycss.com/images/thumbnail_hot_air_ballon.jpg" />

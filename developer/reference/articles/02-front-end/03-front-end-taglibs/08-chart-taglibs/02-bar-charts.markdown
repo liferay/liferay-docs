@@ -39,7 +39,7 @@ portlet to use bar charts.
 3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_barChartConfig` as 
     the `config` attribute's value:
 
-    ```html
+    ```markup
     <chart:bar
       config="<%= _barChartConfig %>"
     />

@@ -12,7 +12,7 @@ configuration for the `<liferay-util:whitespace-remover>` tag:
 
 with remover:
 
-```html
+```markup
 <liferay-util:whitespace-remover>
 	<p>Here is some text with        tabs.</p>
 </liferay-util:whitespace-remover>

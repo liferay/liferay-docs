@@ -56,7 +56,7 @@ selected items for you.
 
 For example, here's the Management Bar configuration in the Trash app:
 
-```html
+```markup
 <liferay-frontend:management-bar
    includeCheckBox="<%= true %>"
    searchContainerId="trash"

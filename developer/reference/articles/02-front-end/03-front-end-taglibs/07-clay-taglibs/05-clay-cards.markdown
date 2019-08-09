@@ -22,7 +22,7 @@ Image Cards are used for image/document galleries.
 
 Image Card:
 
-```html
+```markup
 <clay:image-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	href="#1"
@@ -37,7 +37,7 @@ Image Card:
 
 Image Card with icon:
 
-```html
+```markup
 <clay:image-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	icon="camera"
@@ -50,7 +50,7 @@ Image Card with icon:
 
 Image Card empty:
 
-```html
+```markup
 <clay:image-card 
   actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	subtitle="Author Action"
@@ -63,7 +63,7 @@ Image Card empty:
 Cards can also contain file types. Specify the file type with the `filetype` 
 attribute:
 
-```html
+```markup
 <clay:image-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	fileType="JPG"
@@ -80,7 +80,7 @@ attribute:
 
 Include the `labels` attribute to add a label to a Card:
 
-```html
+```markup
 <clay:image-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	fileType="JPG"
@@ -98,7 +98,7 @@ Include the `labels` attribute to add a label to a Card:
 
 Include the `selectable` attribute to make cards selectable (include a checkbox):
 
-```html
+```markup
 <clay:image-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	fileType="JPG"
@@ -121,7 +121,7 @@ Include the `selectable` attribute to make cards selectable (include a checkbox)
 File Cards display an icon of the file's type. They represent file types other
 than image files (i.e. PDF, MP3, DOC, etc.).
 
-```html
+```markup
 <clay:file-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	fileType="MP3"
@@ -142,7 +142,7 @@ multiple labels, as shown above.
 
 The example below specifies a list `icon` instead of the default file icon: 
 
-```html
+```markup
 <clay:file-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	fileType="DOC"
@@ -166,7 +166,7 @@ name+surname.
 
 User Card with initials:
 
-```html
+```markup
 <clay:user-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	initials="HS"
@@ -180,7 +180,7 @@ User Card with initials:
 
 User Card with profile image:
 
-```html
+```markup
 <clay:user-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	disabled="<%= true %>"
@@ -201,7 +201,7 @@ Horizontal Cards represent folders and can have the same amount of information
 as other Cards. The key difference is that horizontal Cards let you remove the
 image portion of the Card, since only the folder icon is required.
 
-```html
+```markup
 <clay:horizontal-card
 	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
 	selectable="<%= true %>"

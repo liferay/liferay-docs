@@ -26,7 +26,7 @@ Info labels are dark-blue, and since they stand out a bit more than status
 labels, they are best for conveying general information. To use an info label, 
 set the `style` attribute to `info`:
 
-```html
+```markup
 <clay:label label="Label text" style="info" />
 ```
 
@@ -36,7 +36,7 @@ Status labels are light-gray, and due to their neutral color, they are best for
 conveying basic information. Status labels are the default label and therefore 
 require no `style` attribute: 
 
-```html
+```markup
 <clay:label label="Status" />
 ```
 
@@ -46,7 +46,7 @@ Warning labels are orange, and due to their color, they are best for conveying
 a warning message. To use a warning label, set the `style` attribute to
 `warning`:
 
-```html
+```markup
 <clay:label label="Pending" style="warning" />
 ```
 
@@ -55,7 +55,7 @@ a warning message. To use a warning label, set the `style` attribute to
 Danger labels are red and indicate that something is wrong or has failed. To use 
 a danger label, set the `style` attribute to `danger`:
 
-```html
+```markup
 <clay:label label="Rejected" style="danger" />
 ```
 
@@ -64,7 +64,7 @@ a danger label, set the `style` attribute to `danger`:
 Success labels are green and indicate that something has completed successfully. 
 To use a success label, set the `style` attribute to `success`:
 
-```html
+```markup
 <clay:label label="Approved" style="success" />
 ```
 
@@ -73,7 +73,7 @@ To use a success label, set the `style` attribute to `success`:
 Labels can also be bigger. Set the `size` attribute to `lg` to display large
 labels:
 
-```html    
+```markup    
 <clay:label label="Approved" size="lg" style="success" />
 ```
 
@@ -82,7 +82,7 @@ labels:
 If you want to let a user close a label (e.g. a temporary notification), you can 
 make the label removable by setting the `closeable` attribute to `true`.
 
-```html
+```markup
 <clay:label closeable="<%= true %>" label="Normal Label" />
 ```
 
@@ -93,7 +93,7 @@ make the label removable by setting the `closeable` attribute to `true`.
 You can make a label a link by adding the `href` attribute to it just as you 
 would an anchor tag:
 
-```html
+```markup
 <clay:label href="#" label="Label Text" />
 ```
 
@@ -103,7 +103,7 @@ would an anchor tag:
 
 You can add traditional hyperlinks to your app with the `<clay:link>` tag:
 
-```html
+```markup
 <clay:link href="#" label="link text" />
 ```
 

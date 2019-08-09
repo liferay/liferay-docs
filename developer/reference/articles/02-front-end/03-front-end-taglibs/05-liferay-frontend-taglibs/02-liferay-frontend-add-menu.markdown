@@ -19,7 +19,7 @@ menu and nest a `<liferay-frontend:add-menu-item>` tag for each item.
 When the menu has one item, the button triggers the item's action as shown in 
 the example below for the Blogs Admin App:
 
-```html
+```markup
 <liferay-frontend:management-bar>
   <liferay-frontend:management-bar-buttons>
       ...
@@ -41,7 +41,7 @@ the example below for the Blogs Admin App:
 When the menu has multiple items, they display in a pop-up menu. For example, 
 the Message Boards Admin application has the configuration below:
 
-```html
+```markup
 <liferay-frontend:add-menu>
     ...
     <liferay-frontend:add-menu-item title='<%= LanguageUtil.get(request,

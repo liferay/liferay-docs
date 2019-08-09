@@ -13,7 +13,7 @@ An example of each tag is shown below.
 
 Checkboxes give the user a true or false input.
 
-```html		
+```markup		
 <clay:checkbox 
 		checked="<%= true %>" 
 		hideLabel="<%= true %>" 
@@ -42,7 +42,7 @@ Attributes:
 
 A radio button lets the user select one choice from a set of options in a form.
 
-```html
+```markup
 <clay:radio 
 		checked="<%= true %>" 
 		hideLabel="<%= true %>" 
@@ -86,7 +86,7 @@ for (int i = 0; i < 8; i++) {
 %>
 ```
 
-```html
+```markup
 <clay:select 
 		label="Regular Select Element" 
 		name="name" 
@@ -99,7 +99,7 @@ for (int i = 0; i < 8; i++) {
 If you want let users select multiple options at once, set the `multiple` 
 attribute to `true`:
 
-```html
+```markup
 <clay:select 
 		label="Multiple Select Element" 
 		multiple="<%= true %>" 

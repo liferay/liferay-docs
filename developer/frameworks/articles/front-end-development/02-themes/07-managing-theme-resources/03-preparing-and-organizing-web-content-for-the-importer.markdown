@@ -21,42 +21,42 @@ articles. Follow these steps to prepare your web content articles:
     content article's XML fills in the data required by the structure. An 
     example web content article's XML is shown below:
 
-```xml
-<?xml version="1.0"?>
+    ```xml
+    <?xml version="1.0"?>
 
-<root available-locales="en_US" default-locale="en_US">
-  <dynamic-element name="content" type="text_area" index-type="keyword" index="0">
-    <dynamic-content language-id="en_US">
-	    <![CDATA[
-		    <center>
-		    <p><img alt="" src="[$FILE=space-program-history.jpg$]" /></p>
-		    </center>
+    <root available-locales="en_US" default-locale="en_US">
+      <dynamic-element name="content" type="text_area" index-type="keyword" index="0">
+        <dynamic-content language-id="en_US">
+    	    <![CDATA[
+    		    <center>
+    		    <p><img alt="" src="[$FILE=space-program-history.jpg$]" /></p>
+    		    </center>
 
-		    <p>In the mid-20th century, after two of the 
-		    most violent wars in history, mankind turned 
-		    its gaze upwards to the stars. Instead of 
-		    continuing to strive against one another, 
-		    man choose instead to strive against the 
-		    limits that we had bound ourselves to. And 
-		    so the Great Space Race began.</p>
+    		    <p>In the mid-20th century, after two of the 
+    		    most violent wars in history, mankind turned 
+    		    its gaze upwards to the stars. Instead of 
+    		    continuing to strive against one another, 
+    		    man choose instead to strive against the 
+    		    limits that we had bound ourselves to. And 
+    		    so the Great Space Race began.</p>
 
-		    <p>At first the race was to reach space--get 
-		    outside the earth's atmosphere, and when 
-		    that had been reached, we shot for the moon. 
-		    After sending men to the moon, robots to 
-		    Mars, and probes beyond the reaches of our 
-		    solar system, it seemed that there was 
-		    nowhere left to go.</p>
+    		    <p>At first the race was to reach space--get 
+    		    outside the earth's atmosphere, and when 
+    		    that had been reached, we shot for the moon. 
+    		    After sending men to the moon, robots to 
+    		    Mars, and probes beyond the reaches of our 
+    		    solar system, it seemed that there was 
+    		    nowhere left to go.</p>
 
-		    <p>The Space Program aims to change that. 
-		    Beyond national boundaries, beyond what 
-		    anyone can imagine that we can do. The sky 
-		    is not the limit.</p>
-	    ]]>
-    </dynamic-content>
-  </dynamic-element>
-</root>
-```
+    		    <p>The Space Program aims to change that. 
+    		    Beyond national boundaries, beyond what 
+    		    anyone can imagine that we can do. The sky 
+    		    is not the limit.</p>
+    	    ]]>
+        </dynamic-content>
+      </dynamic-element>
+    </root>
+    ```
 
 2.  Download the web content article's structure. Open the structure and click 
     the *Source* tab to view the structure's file. Copy and paste its contents 
@@ -65,40 +65,40 @@ articles. Follow these steps to prepare your web content articles:
     you're saving a basic web content article, you can copy the structure below 
     (replace `en_US` with your language):
     
-```json
-{
-    "availableLanguageIds": [
-        "en_US"
-    ],
-    "defaultLanguageId": "en_US",
-    "fields": [
-        {
-            "label": {
-                "en_US": "Content"
-            },
-            "predefinedValue": {
-                "en_US": ""
-            },
-            "style": {
-                "en_US": ""
-            },
-            "tip": {
-                "en_US": ""
-            },
-            "dataType": "html",
-            "fieldNamespace": "ddm",
-            "indexType": "text",
-            "localizable": true,
-            "name": "content",
-            "readOnly": false,
-            "repeatable": false,
-            "required": false,
-            "showLabel": true,
-            "type": "ddm-text-html"
-        }
-    ]
-}
-```
+    ```json
+    {
+        "availableLanguageIds": [
+            "en_US"
+        ],
+        "defaultLanguageId": "en_US",
+        "fields": [
+            {
+                "label": {
+                    "en_US": "Content"
+                },
+                "predefinedValue": {
+                    "en_US": ""
+                },
+                "style": {
+                    "en_US": ""
+                },
+                "tip": {
+                    "en_US": ""
+                },
+                "dataType": "html",
+                "fieldNamespace": "ddm",
+                "indexType": "text",
+                "localizable": true,
+                "name": "content",
+                "readOnly": false,
+                "repeatable": false,
+                "required": false,
+                "showLabel": true,
+                "type": "ddm-text-html"
+            }
+        ]
+    }
+    ```
 
 3.  Download the structure's matching template. Open the Actions menu for the 
     structure and select *Manage Templates* to view the templates that use it. 
@@ -108,9 +108,9 @@ articles. Follow these steps to prepare your web content articles:
     you're saving a basic web content article, you can copy the FreeMarker 
     template below:
 
-```markup
-${content.getData()}
-```
+    ```markup
+    ${content.getData()}
+    ```
 
 Repeat the steps above for each web content article you have. Note that some web 
 content articles may share the same structure and template; In these cases, only 

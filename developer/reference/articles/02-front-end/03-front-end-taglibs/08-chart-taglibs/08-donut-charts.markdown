@@ -38,7 +38,7 @@ Follow these steps to configure your portlet to use donut charts.
 3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_donutChartConfig` 
     as the `config` attribute's value:
 
-    ```html
+    ```markup
     <chart:donut
       config="<%= _donutChartConfig %>"
     />

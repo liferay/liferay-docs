@@ -13,7 +13,7 @@ can provide a minimum value (`minValue`) and a maximum value (`maxValue`).
 
 Default progress bar:
 
-```html
+```markup
 <clay:progressbar 
     maxValue="<%= 100 %>" 
     minValue="<%= 0 %>" 
@@ -25,7 +25,7 @@ Default progress bar:
 
 Warning progress bar:
 
-```html
+```markup
 <clay:progressbar 
     maxValue="<%= 100 %>" 
     minValue="<%= 0 %>" 
@@ -38,7 +38,7 @@ Warning progress bar:
 
 Complete progress bar:
 
-```html
+```markup
 <clay:progressbar 
     status="complete" 
 />

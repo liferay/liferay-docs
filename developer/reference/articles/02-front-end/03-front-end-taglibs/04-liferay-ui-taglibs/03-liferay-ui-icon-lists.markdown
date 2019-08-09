@@ -18,7 +18,7 @@ Create the list menu with the `liferay-ui:icon-list` tag and nest
 [icons](/docs/7-2/reference/-/knowledge_base/r/liferay-ui-icons) 
 for each list item, as shown below:
 
-```html
+```markup
 <div class="thread-actions">
     <liferay-ui:icon-list>
 

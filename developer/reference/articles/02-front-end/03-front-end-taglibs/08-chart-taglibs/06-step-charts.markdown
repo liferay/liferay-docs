@@ -38,7 +38,7 @@ portlet to use step charts.
 3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_stepChartConfig` 
     as the `config` attribute's value:
 
-    ```html
+    ```markup
     <chart:step
       config="<%= _stepChartConfig %>"
     />
@@ -49,7 +49,7 @@ portlet to use step charts.
 You can also use an area step chart if you prefer. An area step chart highlights 
 the area covered by a step graph. 
 
-```html
+```markup
 <chart:area-step 
   config="<%= _stepChartConfig %>" 
 />

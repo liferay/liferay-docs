@@ -27,21 +27,21 @@ navigating the collection:
 
 ```json
 {
-      "items": [
-        {
-          "id": 20130,
-          ...
-        },
-        {
-          "id": 59347,
-          ...
-        }
-      ],
-      "lastPage": 5,
-      "page": 1,
-      "pageSize": 30,
-      "totalCount": 123
+  "items": [
+    {
+      "id": 20130,
+      ...
+    },
+    {
+      "id": 59347,
+      ...
     }
+  ],
+  "lastPage": 5,
+  "page": 1,
+  "pageSize": 30,
+  "totalCount": 123
+}
 ```
 
 The attributes `page` and `pageSize` allow client applications to navigate 

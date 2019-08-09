@@ -19,7 +19,7 @@ on the page include the same resource with this tag, you can specify the same
 The example configuration below uses the `<liferay-util:html-bottom>` tag to 
 include JavaScript (a common use case) provided by the portlet's bundle:
 
-```html
+```markup
 <liferay-util:html-bottom outputKey="htmlbottom">
 
     <script src="/o/my-liferay-util-portlet/js/my_custom_javascript.js" 

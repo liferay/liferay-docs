@@ -19,7 +19,7 @@ on the page include the same resource with this tag, you can specify the same
 The example configuration below uses the `<liferay-util:body-bottom>` tag to 
 include JavaScript provided by the portlet's bundle:
 
-```html
+```markup
 <liferay-util:body-bottom outputKey="bodybottom" >
 	<script 
   src="/o/my-liferay-util-portlet/js/my_custom_javascript_body_bottom.js" 

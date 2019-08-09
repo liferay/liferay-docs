@@ -12,7 +12,9 @@ methods in `DLAppService`. This is discussed in more detail in
 The steps here show you how to call these `getFolders` methods. As an example, 
 this method is used to get a parent folder's subfolders: 
 
-    getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
+```java
+getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
+```
 
 For general information on using the Documents and Media API, see 
 [Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
@@ -21,8 +23,10 @@ Follow these steps to call a `getFolders` method:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the method's arguments any way you wish.
     This `getFolders` method needs a repository ID, a parent folder ID, and
@@ -32,7 +36,9 @@ Follow these steps to call a `getFolders` method:
     (`javax.portlet.ActionRequest`) via 
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html): 
 
-        long groupId = ParamUtil.getLong(actionRequest, "groupId");
+    ```java
+    long groupId = ParamUtil.getLong(actionRequest, "groupId");
+    ```
 
     It's also possible to get the group ID via the 
     [`ThemeDisplay`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
@@ -44,8 +50,10 @@ Follow these steps to call a `getFolders` method:
     Data Scopes. 
     -->
 
-        ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
-        long groupId = themeDisplay.getScopeGroupId();
+    ```java
+    ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+    long groupId = themeDisplay.getScopeGroupId();
+    ```
 
     Note that getting the parent folder ID isn't necessary because this example 
     uses the root folder, for which @product@ provides a constant. Also, the 
@@ -58,7 +66,9 @@ Follow these steps to call a `getFolders` method:
     repository's root folder as the parent folder. It also uses `true` to 
     include any mount folders in the results: 
 
-        _dlAppService.getFolders(groupId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, true)
+    ```java
+    _dlAppService.getFolders(groupId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, true)
+    ```
 
 This is one of many methods you can use to get folders. The rest are listed in 
 the `DLAppService` 
