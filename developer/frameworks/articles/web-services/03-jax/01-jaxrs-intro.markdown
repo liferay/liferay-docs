@@ -226,8 +226,13 @@ for further information.
 
 ## Using JAX-RS with CORS
 
-You can use the `@CORS` annotation to define [CORS policies](/docs/7-2/deploy/-/knowledge_base/d/configuring-cors) 
-on your deployed JAX-RS applications. It only takes three steps: 
+If you foresee that JavaScript in a browser might access your JAX-RS web service
+from a different domain, you might want to use the CORS annotation. You can use
+the `@CORS` annotation to define 
+[CORS policies](/docs/7-2/deploy/-/knowledge_base/d/configuring-cors) on your deployed
+JAX-RS applications. Note that the annotations 
+[can be overridden by an administrator](/docs/7-2/deploy/-/knowledge_base/d/configuring-cors). 
+It only takes three steps: 
 
 1.  Add the Portal Remote CORS API dependency to your module: 
 
