@@ -24,7 +24,7 @@ directly, the class that wants to access it must
 2.  Be registered with a `ConfigurationBeanDeclaration`.
 
 The tutorial on 
-[scoping configurations]/develop/tutorials/-/knowledge_base/7-1/scoping-configurations) 
+[scoping configurations](/docs/7-1/tutorials/-/knowledge_base/t/scoping-configurations) 
 demonstrates how to register the configuration with a `ConfigurationBeanDeclaration`.
 
 After registering with a `ConfigurationBeanDeclaration`, you're ready to use a

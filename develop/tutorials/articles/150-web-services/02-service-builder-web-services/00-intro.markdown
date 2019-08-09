@@ -38,7 +38,7 @@ possibilities. This section includes the following tutorials:
   Learn how to use Liferay's JSON Web Services Invoker to optimize your JSON web 
   service calls. 
 
-- [Configuring JSON Web Services]/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services):
+- [Configuring JSON Web Services](/docs/7-1/tutorials/-/knowledge_base/t/configuring-json-web-services):
   Learn which properties you can use to control how JSON web services behave in 
   your Liferay instance. 
 

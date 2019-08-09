@@ -37,9 +37,9 @@ to navigate quickly to the content you want:
 
 These articles are planned but not yet written:
 
-- Password Policies(/discover/portal/-/knowledge_base/7-1/password-policies)
-- Monitoring Users(/discover/portal/-/knowledge_base/7-1/monitoring-users)
-- Auditing Users(/discover/portal/-/knowledge_base/7-1/auditing-users)
+- Password Policies(/docs/7-1/user/-/knowledge_base/u/password-policies)
+- Monitoring Users(/docs/7-1/user/-/knowledge_base/u/monitoring-users)
+- Auditing Users(/docs/7-1/user/-/knowledge_base/u/auditing-users)
 -->
 
 | **Anonymous User:** *Anonymous Anonymous* is used for the new

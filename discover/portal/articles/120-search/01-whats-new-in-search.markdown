@@ -89,7 +89,7 @@ term. The URL is now friendly:
 
 ## Code Changes and Improvements
 See the developer guide
-<!--(/develop/tutorials/-/knowledge_base/7-1/search)--> to learn about the new,
+<!--(/docs/7-1/tutorials/-/knowledge_base/t/search)--> to learn about the new,
 deprecated, and removed APIs and extension points for search infrastructure.
 
 ## Solr 7.x Support

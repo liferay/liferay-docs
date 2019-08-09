@@ -21,12 +21,12 @@ definitions.
 ## Workflow Definition Publication Permissions
 
 Users with permission to edit or publish workflow definitions can add 
-[Groovy scripts](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
+[Groovy scripts](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow) 
 to the workflow. Access to the scripting engine means access to the Java Virtual
 Machine (JVM) of the server. Users who publish (or edit) workflow definitions
 containing scripts, therefore, can get access to any data within the reach of
 the JVM, such as data contained in a separate 
-[Virtual Instance](/discover/portal/-/knowledge_base/7-1/virtual-instances) 
+[Virtual Instance](/docs/7-1/user/-/knowledge_base/u/virtual-instances) 
 of @product@ itself. 
 
 Because of this far-reaching access, permission to create or edit workflow

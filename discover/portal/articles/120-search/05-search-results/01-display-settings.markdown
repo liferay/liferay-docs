@@ -18,11 +18,11 @@ summary.
 
 **Display Results in Document Form**
 : Display results as 
-search documents<!--(/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search)-->.
+search documents<!--(/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-liferay-search)-->.
 Never use this in production. Developers use this feature to view search
 responses in their indexed, document-based format. Part of a developer's job
 when writing 
-search indexers<!--(/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search#indexers)-->
+search indexers<!--(/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-liferay-search#indexers)-->
 is to convert documents (the objects that get indexed) to the actual object and
 back again. Thus, developers can see how their objects are being indexed. Once
 enabled, click the *Details...* link below the result summary to expand the

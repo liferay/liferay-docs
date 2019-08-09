@@ -112,4 +112,4 @@ in your upgraded themes.
 
 [Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 
-[Upgrading to @product-ver@] (/discover/deployment/-/knowledge_base/7-1/upgrading-to-liferay-71)
+[Upgrading to @product-ver@](/docs/7-1/deploy/-/knowledge_base/d/upgrading-to-liferay-71)

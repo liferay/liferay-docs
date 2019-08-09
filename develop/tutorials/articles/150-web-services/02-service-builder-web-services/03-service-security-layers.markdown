@@ -149,7 +149,7 @@ have been configured to allow access.
 
 **Related Topics**
 
-[Configuring JSON Web Services]/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services)
+[Configuring JSON Web Services](/docs/7-1/tutorials/-/knowledge_base/t/configuring-json-web-services)
 
 [Invoking Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-remote-services)
 

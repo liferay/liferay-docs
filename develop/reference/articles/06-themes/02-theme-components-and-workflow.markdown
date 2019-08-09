@@ -175,7 +175,7 @@ themes:
 - [Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 - [Dev Studio](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes-with-liferay-ide)
 - [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)'s 
-  [Theme Template](/develop/reference/-/knowledge_base/7-1/theme-template). 
+  [Theme Template](/docs/7-1/reference/-/knowledge_base/r/theme-template). 
 
 Depending on the tool you choose 
 (

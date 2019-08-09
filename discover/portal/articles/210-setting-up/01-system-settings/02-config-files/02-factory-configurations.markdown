@@ -10,9 +10,9 @@ Configurations supporting multiple entries are called *factory configurations*.
 
 | **Factory Configuration Example:**
 | JAX-WS and JAX-RS web
-| services<!--(/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs)--> are
+| services<!--(/docs/7-1/tutorials/-/knowledge_base/t/jax-ws-and-jax-rs)--> are
 | supported. These services must use a CXF Endpoint<!--
-| (/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#cxf-endpoints)-->,
+| (/docs/7-1/tutorials/-/knowledge_base/t/jax-ws-and-jax-rs#cxf-endpoints)-->,
 | which is a context path where the web services are deployed and accessed.
 | Endpoints can be created via factory configuration by navigating to the CXF
 | Endpoints entry in System Settings (System Settings &rarr; Platform &rarr; Web
