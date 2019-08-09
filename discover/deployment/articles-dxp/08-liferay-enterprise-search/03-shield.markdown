@@ -262,7 +262,7 @@ for the details.
 
 Now Shield is fully configured, with both authentication and encryption
 protecting your Elasticsearch cluster. Next, you can learn how to 
-[install and configure Marvel](/docs/igu/deploy/-/knowledge_base/d/e Marvel](/discover/deployment/monitoring-elasticsearch-with-marvel),
+[install and configure Marvel](/docs/6-2/deploy/-/knowledge_base/d/monitoring-elasticsearch-with-marvel),
 Elasticsearch's monitoring plugin, to visualize the health and performance of
 your Elasticsearch cluster.
 

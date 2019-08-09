@@ -17,4 +17,4 @@ a good idea how content creation works in @product@. What's stopping you?
 
 [Download the necessary files to complete the exercises.](https://portal.liferay.dev/documents/113763090/113763156/Creating+Content+Exercise+Images.zip)
 
-<a class="go-link btn btn-primary" href="/discover/portal/-/knowledge_base/7-0/initial-setup">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-0/user/-/knowledge_base/u/initial-setup">Let's Go!<span class="icon-circle-arrow-right"></span></a>

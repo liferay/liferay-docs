@@ -587,7 +587,7 @@ changes from your Ext plugin. Before you deploy the aggregated @product@
 `.war` file, copy the dependency `.jar` files for @product@ and your Ext plugin
 to the global application server class loader in the production server. The
 precise location varies from server to server; refer to
-[Deployment](/discover/deployment) to get the details for your application
+[Deployment](/docs/7-2/deploy) to get the details for your application
 server. 
 
 To create the aggregated `.war` file, deploy the Ext plugin first to the

@@ -217,6 +217,6 @@ generate user avatars.
 user initials.](../../images/users-alternate-default-image.png)
 
 Learn how to take advantage of more localization strategies by leveraging
-[language settings](/developer/tutorials/-/knowledge_base/7-0/using-liferays-language-settings).
+[language settings](/docs/7-0/tutorials/-/knowledge_base/t/using-liferays-language-settings).
 
 Next, learn about collecting users in organizations.

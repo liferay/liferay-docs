@@ -94,7 +94,7 @@ need to create:
 - `[name-of-field-type]_field.js`: The JavaScript file that models your field.
 - `[name-of-field-type].soy`: The template that defines the appearance of the field. 
 - `Language_xx.properties`: Define any terms that need to be 
-    [translated into different languages](/developer/tutorials/-/knowledge_base/7-0/localizing-your-application).
+    [translated into different languages](/docs/7-0/tutorials/-/knowledge_base/t/localizing-your-application).
 
 <!-- Add the additional classes from the Google doc when this intro is split
 out, according to the form fields tutorial planning section -->
@@ -106,7 +106,7 @@ example follows those patterns.
 
 <!-- UPDATE WHEN TEMPLATE PROJECT IS PUBLISHED ON repository.liferay.com
 | **Blade Template:** There's a [Blade
-| CLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli) template you can use
+| CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli) template you can use
 | to generate the project skeleton, some basic configuration, and give you a head
 | start on dependency management. To generate your form field type project with
 | Blade CLI, enter

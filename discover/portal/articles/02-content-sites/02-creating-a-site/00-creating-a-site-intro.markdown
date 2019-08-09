@@ -15,4 +15,4 @@ navigation.
 
 ![Figure 1: A preview of part of the site you'll create.](../../../images/001-final-site-preview.png)
 
-<a class="go-link btn btn-primary" href="/discover/portal/-/knowledge_base/7-0/creating-pages-with-layouts">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-0/user/-/knowledge_base/u/creating-pages-with-layouts">Let's Go!<span class="icon-circle-arrow-right"></span></a>

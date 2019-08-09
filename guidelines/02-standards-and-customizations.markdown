@@ -44,7 +44,7 @@ documenting. -Cody -->
     `-Darticle=articles/path/article_name.markdown`) and its supporting
     `intro.markdown` articles and images, to a folder called `temp` and prepares
     them for
-    [importing to a Knowledge Base](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/informing-users-with-the-knowledge-base#importing-articles-from-markdown-source-files).
+    [importing to a Knowledge Base](https://portal.liferay.dev/docs/7-0/user/-/knowledge_base/u/informing-users-with-the-knowledge-base#importing-articles-from-markdown-source-files).
     Optionally use this target
     to add as many articles as you like  to the `temp` folder for putting in the
     distribution.

@@ -851,7 +851,7 @@ This concludes the short tour of a sampling of Knowledge Base configuration
 settings.
 
 For a full list of the available System Settings for Knowledge Base see 
-[Knowledge Base Configuration](/discover/reference/-/knowledge_base/7-0/knowledge-base-configuration).
+[Knowledge Base Configuration](/docs/7-0/deploy/-/knowledge_base/d/knowledge-base-configuration).
 
 You've learned the benefits of publishing articles using the Knowledge Base app.
 You've seen how easy it is to create, organize, and manage articles, and you've

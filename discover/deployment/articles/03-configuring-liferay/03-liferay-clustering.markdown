@@ -22,7 +22,7 @@ server node, there are several optimizations that need to be made. At a minimum,
 @product@ should be configured in the following way for a clustered environment:
 
 1.  (Liferay Portal CE only)
-    [Build and deploy the cluster modules to all cluster nodes.](/discover/reference/-/knowledge_base/7-0/building-clustering-for-liferay)
+    [Build and deploy the cluster modules to all cluster nodes.](/docs/7-0/deploy/-/knowledge_base/d/building-clustering-for-liferay)
 
 2.  All nodes should point to the same @product@ database or database cluster. 
 
