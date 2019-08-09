@@ -13,7 +13,7 @@ type example, you'll want to retrieve profiles by a user's screen name.
 To do this, follow the steps below.
 
 1.  Open the `*InfoDisplayContributor` class you created previously (covered
-    [here](/docs/7-2/frameworks/-/knowledge_base/f/mapping-a-content-type-to-a-display-page-template)).
+    [here](/docs/7-2/frameworks/-/knowledge_base/f/mapping-a-content-type-to-a-page)).
     Implement the `getInfoDisplayObjectProvider` method. For the User example,
     it looks like this:
 

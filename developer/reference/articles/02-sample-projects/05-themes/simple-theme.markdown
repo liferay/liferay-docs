@@ -29,7 +29,7 @@ provides the `src/main/resources/resources-importer`, `src/main/webapp/WEB-INF`,
 and `src/main/webapp/css` folders for you. Add your style modifications to the
 provided `css/_custom.scss` file. For a complete explanation of a theme's files,
 see the
-[Theme Reference Guide](/docs/7-2/reference/-/knowledge_base/r/themes-reference).
+[Theme Reference Guide](/docs/7-2/reference/-/knowledge_base/r/theme-reference-guide).
 
 ## Where Is This Sample?
 
