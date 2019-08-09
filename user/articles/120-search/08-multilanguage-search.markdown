@@ -7,7 +7,7 @@ header-id: searching-for-localized-content
 [TOC levels=1-4]
 
 @product@ supports setting a virtual instance-wide [default
-language](/docs/7-2/user/-/knowledge_base/u/localization-and-integrations)
+language](/docs/7-2/user/-/knowledge_base/u/infrastructure-localization-and-integrations-instance-settings#localization)
 and setting a In addition, many out of the box assets [support
 translation](/docs/7-2/user/-/knowledge_base/u/other-content-options#localizing-content).
 
