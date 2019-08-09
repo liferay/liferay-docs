@@ -22,8 +22,10 @@ default Site repository's root folder:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the method's arguments any way you wish. To
     specify the default Site repository, you can use the group ID as the
@@ -31,7 +33,9 @@ default Site repository's root folder:
     (`javax.portlet.ActionRequest`) via 
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html): 
 
-        long groupId = ParamUtil.getLong(actionRequest, "groupId");
+    ```java
+    long groupId = ParamUtil.getLong(actionRequest, "groupId");
+    ```
 
     Getting the parent folder ID, workflow status, and start and end parameters 
     isn't necessary because @product@ provides constants for them. The next step 
@@ -42,13 +46,15 @@ default Site repository's root folder:
     `getFileEntriesAndFileShortcuts` with the group ID from the previous step 
     and constants for the remaining arguments: 
 
-        _dlAppService.getFileEntriesAndFileShortcuts(
-                groupId, 
-                DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, 
-                WorkflowConstants.STATUS_APPROVED, 
-                QueryUtil.ALL_POS, 
-                QueryUtil.ALL_POS
-        )
+    ```java
+    _dlAppService.getFileEntriesAndFileShortcuts(
+            groupId, 
+            DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, 
+            WorkflowConstants.STATUS_APPROVED, 
+            QueryUtil.ALL_POS, 
+            QueryUtil.ALL_POS
+    )
+    ```
 
     Here's a description of the arguments used in this example: 
 

@@ -14,7 +14,7 @@ fields, and for embedding widgets.
 You can make text of a fragment editable by enclosing it in an 
 `<lfr-editable>` tag like this:
  
-```html
+```markup
 <lfr-editable id="unique-id" type="text">
    This is editable text!
 </lfr-editable>
@@ -22,7 +22,7 @@ You can make text of a fragment editable by enclosing it in an
  
 If you need formatting options like text or color styles, use `rich-text`:
  
-```html
+```markup
 <lfr-editable id="unique-id" type="rich-text">
    This is editable text that I can make bold or italic! 
 </lfr-editable>
@@ -39,7 +39,7 @@ The `lfr-editable` tag doesn't render without a unique `id`.
 Images use the same `<lfr-editable>` tag as text, but with the `image` type, 
 like this:
  
-```
+```markup
 <lfr-editable id="unique-id" type="image">
    <img src="...">
 </lfr-editable>
@@ -82,7 +82,7 @@ to display a preview image for a Web Content Article. For more information on ma
 
 There is also a specific syntax for creating editable link elements:
  
-```html
+```markup
 <lfr-editable id="unique-id" type="link">
     <a href="default-target-url-goes-here">Link text goes here</a>
 </lfr-editable>
@@ -154,7 +154,7 @@ com.liferay.fragment.entry.processor.portlet.alias=app-name
 When you deploy your widget, it's available to add. The name you specify in the
 property must be appended to the `lfr-widget` tag like this:
 
-```html
+```markup
 <lfr-widget-app-name>
 </lfr-widget-app-name>
 ```

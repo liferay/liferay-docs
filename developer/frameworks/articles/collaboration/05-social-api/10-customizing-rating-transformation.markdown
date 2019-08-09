@@ -15,45 +15,53 @@ rating value transformation, see
 
 1.  Create an OSGi component class that implements `RatingsDataTransformer`: 
 
-        @Component
-        public class DummyRatingsDataTransformer implements RatingsDataTransformer {...
+    ```java
+    @Component
+    public class DummyRatingsDataTransformer implements RatingsDataTransformer {...
+    ```
 
 2.  In this class, implement the `transformRatingsData` method. Note that it 
     contains the `RatingsType` variables `fromRatingsType` and `toRatingsType`: 
 
-        @Override
-        public ActionableDynamicQuery.PerformActionMethod transformRatingsData(
-                final RatingsType fromRatingsType, final RatingsType toRatingsType)
-            throws PortalException {
+    ```java
+    @Override
+    public ActionableDynamicQuery.PerformActionMethod transformRatingsData(
+            final RatingsType fromRatingsType, final RatingsType toRatingsType)
+        throws PortalException {
 
-        }
+    }
+    ```
 
 3.  In the `transformRatingsData` method, implement the interface 
     `ActionableDynamicQuery.PerformActionMethod` as an anonymous inner class: 
 
-        return new ActionableDynamicQuery.PerformActionMethod() {
+    ```java
+    return new ActionableDynamicQuery.PerformActionMethod() {
 
-        };
+    };
+    ```
 
 4.  In the anonymous `ActionableDynamicQuery.PerformActionMethod` 
     implementation, implement the `performAction` method to perform your 
     transformation: 
 
-        @Override
-        public void performAction(Object object)
-            throws PortalException {
+    ```java
+    @Override
+    public void performAction(Object object)
+        throws PortalException {
 
-            if (fromRatingsType.getValue().equals(RatingsType.LIKE) &&
-                toRatingsType.getValue().equals(RatingsType.STARS)) {
+        if (fromRatingsType.getValue().equals(RatingsType.LIKE) &&
+            toRatingsType.getValue().equals(RatingsType.STARS)) {
 
-                RatingsEntry ratingsEntry = (RatingsEntry) object;
+            RatingsEntry ratingsEntry = (RatingsEntry) object;
 
-                ratingsEntry.setScore(0);
+            ratingsEntry.setScore(0);
 
-                RatingsEntryLocalServiceUtil.updateRatingsEntry(
-                    ratingsEntry);
-            }
+            RatingsEntryLocalServiceUtil.updateRatingsEntry(
+                ratingsEntry);
         }
+    }
+    ```
 
     This example irreversibly transforms the rating type from likes to stars, 
     resetting the value to `0`. The `if` statement uses the `fromRatingsType` 
@@ -67,34 +75,36 @@ rating value transformation, see
 
 Here's the complete class for this example: 
 
-    @Component
-    public class DummyRatingsDataTransformer implements RatingsDataTransformer {
-        @Override
-        public ActionableDynamicQuery.PerformActionMethod transformRatingsData(
-                final RatingsType fromRatingsType, final RatingsType toRatingsType)
-            throws PortalException {
+```java
+@Component
+public class DummyRatingsDataTransformer implements RatingsDataTransformer {
+    @Override
+    public ActionableDynamicQuery.PerformActionMethod transformRatingsData(
+            final RatingsType fromRatingsType, final RatingsType toRatingsType)
+        throws PortalException {
 
-            return new ActionableDynamicQuery.PerformActionMethod() {
+        return new ActionableDynamicQuery.PerformActionMethod() {
 
-                @Override
-                public void performAction(Object object)
-                    throws PortalException {
+            @Override
+            public void performAction(Object object)
+                throws PortalException {
 
-                    if (fromRatingsType.getValue().equals(RatingsType.LIKE) &&
-                        toRatingsType.getValue().equals(RatingsType.STARS)) {
+                if (fromRatingsType.getValue().equals(RatingsType.LIKE) &&
+                    toRatingsType.getValue().equals(RatingsType.STARS)) {
 
-                        RatingsEntry ratingsEntry = (RatingsEntry) object;
+                    RatingsEntry ratingsEntry = (RatingsEntry) object;
 
-                        ratingsEntry.setScore(0);
+                    ratingsEntry.setScore(0);
 
-                        RatingsEntryLocalServiceUtil.updateRatingsEntry(
-                            ratingsEntry);
-                    }
+                    RatingsEntryLocalServiceUtil.updateRatingsEntry(
+                        ratingsEntry);
                 }
-            };
-        }
-    
+            }
+        };
     }
+
+}
+```
 
 ## Related Topics
 

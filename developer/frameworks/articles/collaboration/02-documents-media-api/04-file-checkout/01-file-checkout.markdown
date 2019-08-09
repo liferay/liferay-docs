@@ -16,8 +16,10 @@ Follow these steps to check out a file:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the `checkOutFileEntry` method's arguments. 
     Since it's common to check out a file in response to an action by the end 
@@ -26,9 +28,11 @@ Follow these steps to check out a file:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get the data any way you wish: 
 
-        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+    ```java
+    long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
 
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
+    ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
+    ```
 
 <!--Uncomment once article is available
     For more information on `ServiceContext`, see the tutorial 
@@ -38,7 +42,9 @@ Follow these steps to check out a file:
 3.  Call the service reference's `checkOutFileEntry` method with the data from 
     the previous step: 
 
-        _dlAppService.checkOutFileEntry(fileEntryId, serviceContext);
+    ```java
+    _dlAppService.checkOutFileEntry(fileEntryId, serviceContext);
+    ```
 
 You can find the full code for this example in the `checkOutFileEntries` method 
 of @product@'s 

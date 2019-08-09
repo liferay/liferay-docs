@@ -33,11 +33,17 @@ required if the templates are modified in the theme:
     from the bottom of the template, including all uses throughout the rest of 
     the template.
     
-5.  Open `portlet.ftl`, find the 
-    `<a class="icon-monospaced portlet-icon-back text-default" 
-    href="${portlet_back_url}" title="<@liferay.language 
-    key="return-to-full-page" />">` element and add the `list-unstyled` class 
-    to it:
+5.  Open `portlet.ftl` and find the code snippet below:
+
+    ```html
+    <a 
+      class="icon-monospaced portlet-icon-back text-default" 
+      href="${portlet_back_url}" 
+      title="<@liferay.language key="return-to-full-page" />"
+    >
+    ```
+    
+    Add the `list-unstyled` class to it:
 
     ```html
     <a 

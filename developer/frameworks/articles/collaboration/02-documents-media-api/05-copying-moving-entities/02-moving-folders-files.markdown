@@ -17,8 +17,10 @@ a file, respectively. This example does both to demonstrate the procedures:
 
 1.  Get a reference to `DLAppService`: 
 
+    ```java
         @Reference
         private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the method arguments. Since moving folders 
     and files is typically done in response to a user action, you can get the 
@@ -27,15 +29,17 @@ a file, respectively. This example does both to demonstrate the procedures:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get the data any way you wish: 
 
-        // Get the folder IDs
-        long folderId = ParamUtil.getLong(actionRequest, "folderId");
-        long newFolderId = ParamUtil.getLong(actionRequest, "newFolderId");
+    ```java
+    // Get the folder IDs
+    long folderId = ParamUtil.getLong(actionRequest, "folderId");
+    long newFolderId = ParamUtil.getLong(actionRequest, "newFolderId");
 
-        // Get the file ID
-        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+    // Get the file ID
+    long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
 
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                DLFileEntry.class.getName(), actionRequest);
+    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+            DLFileEntry.class.getName(), actionRequest);
+    ```
 
 <!--uncomment once article is available
     For more information on `ServiceContext`, see the tutorial 
@@ -47,9 +51,11 @@ a file, respectively. This example does both to demonstrate the procedures:
     calls `moveFileEntry` to move a file (`fileEntryId`) to the same destination 
     folder: 
 
-        _dlAppService.moveFolder(folderId, newFolderId, serviceContext);
+    ```java
+    _dlAppService.moveFolder(folderId, newFolderId, serviceContext);
 
-        _dlAppService.moveFileEntry(fileEntryId, newFolderId, serviceContext);
+    _dlAppService.moveFileEntry(fileEntryId, newFolderId, serviceContext);
+    ```
 
 ## Related Topics
 

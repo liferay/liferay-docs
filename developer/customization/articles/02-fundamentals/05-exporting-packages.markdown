@@ -60,6 +60,10 @@ file to the `META-INF/MANIFEST.MF` file in the generated Web Application Bundle 
 | [Peter Kriens' blog post](http://blog.osgi.org/2007/04/importance-of-exporting-nd-importing.html)
 | provides more details on how substitutable exports works.
 
+| **Important:** Don't export the same package from different JARs. Multiple 
+| exports of the same package leads to "split package" issues, whose side 
+| affects differ from case to case. 
+
 Now you can share your module's or plugin's terrific [EDITOR: or terrible!]
 packages with other OSGi bundles! 
 

@@ -97,9 +97,9 @@ configurations appear in the Instance Settings UI, they can only be used to set
 defaults for the current instance. No corresponding UI is auto-generated to
 configure the app at the Site or Portlet level.
 
-|Note: An Instance Settings UI is not currently generated for factory
-|configurations. You can track the progress of this issue
-|[here](https://issues.liferay.com/browse/LPS-94490).
+| **Note:** An Instance Settings UI is not currently generated for factory
+| configurations. You can track the progress of this issue
+| [here](https://issues.liferay.com/browse/LPS-94490).
 
 **Default Configurations**
 : Default values for any scoped configuration can be set at any wider scope.

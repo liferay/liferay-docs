@@ -174,7 +174,7 @@ variables required to create the starting tag. You can use the variables in the
 `start.jsp`. The logic from `FieldsetTag`'s `processStart` method converted to 
 JSP code for `start.jsp` (renamed from `start.jsp.readme`) would look like this:
 
-```html
+```markup
 <%@ include file="/html/taglib/aui/fieldset/init.jsp" %>
 
 <fieldset class="fieldset <%= cssClass %>" <%= Validator.isNotNull(id) ? "id=\"" + id + "\"" : StringPool.BLANK %> <%= InlineUtil.buildDynamicAttributes(dynamicAttributes) %>>
@@ -210,7 +210,7 @@ works, you'll print the word *test* surrounded by asterisks before the end of
 the `fieldset` tag's starting logic. Insert this line before the `start.jsp`'s 
 last `div` tag: 
 
-```html
+```markup
 <c:out value="**********test**********"/>
 ```
 

@@ -16,7 +16,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "2.2.46"
@@ -40,7 +40,7 @@ library as a dependency, you have to configure a repository that hosts the
 library and its transitive dependencies. The Liferay CDN repository hosts them
 all:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -85,7 +85,7 @@ usually contained in the root directory of `myapp-service`. In the
 `com.liferay.service.builder` plugin [as described](#usage), and then add the 
 following snippet to enable the use of Liferay Service Builder:
 
-```gradle
+```groovy
 buildService {
     apiDir = "../myapp-api/src/main/java"
     testDir = "../myapp-test/src/testIntegration/java"
@@ -157,7 +157,7 @@ a dependency to the latest released version of Liferay Service Builder. It is
 possible to override this setting and use a specific version of the tool by
 manually adding a dependency to the `serviceBuilder` configuration:
 
-```gradle
+```groovy
 dependencies {
     serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.292"
 }
@@ -176,7 +176,7 @@ To do this, you must customize the classpath of the `buildService` task. If
 you're supplying the customized Service Builder plugin through a module named
 `custom-sb-api`, you could modify the `buildService` task like this:
 
-```gradle
+```groovy
 buildService {
     apiDir = "../custom-sb-api/src/main/java"
     classpath = configurations.serviceBuilder.filter { file -> !file.name.contains("com.liferay.portal.tools.service.builder") }

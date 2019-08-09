@@ -29,13 +29,13 @@ First, you must get an Item Selector for your use case. Follow these steps:
 2.  Use Declarative Services to get an `ItemSelector` OSGi Service Component: 
 
     ```java
-        import com.liferay.item.selector.ItemSelector;
-        import org.osgi.service.component.annotations.Reference;
+    import com.liferay.item.selector.ItemSelector;
+    import org.osgi.service.component.annotations.Reference;
 
-        ...
+    ...
 
-        @Reference
-        private ItemSelector _itemSelector
+    @Reference
+    private ItemSelector _itemSelector
     ```
 
     The component annotations are available in the module 
@@ -47,41 +47,33 @@ First, you must get an Item Selector for your use case. Follow these steps:
     `PortletRequest`: 
 
     ```java
-
-        RequestBackedPortletURLFactory requestBackedPortletURLFactory =
-            RequestBackedPortletURLFactoryUtil.create(request);
-
+    RequestBackedPortletURLFactory requestBackedPortletURLFactory =
+        RequestBackedPortletURLFactoryUtil.create(request);
     ```
 
 4.  Create a list of return types expected for the entity. For example, the 
     return types list here consists of `URLItemSelectorReturnType`: 
 
     ```java
-
-        List<ItemSelectorReturnType> desiredItemSelectorReturnTypes =
-            new ArrayList<>();
-        desiredItemSelectorReturnTypes.add(new URLItemSelectorReturnType());
-
+    List<ItemSelectorReturnType> desiredItemSelectorReturnTypes =
+        new ArrayList<>();
+    desiredItemSelectorReturnTypes.add(new URLItemSelectorReturnType());
     ```
 
 5.  Create an object for the criterion. This example creates a new 
     `ImageItemSelectorCriterion`: 
 
     ```java
-
-        ImageItemSelectorCriterion imageItemSelectorCriterion =
-            new ImageItemSelectorCriterion();
-
+    ImageItemSelectorCriterion imageItemSelectorCriterion =
+        new ImageItemSelectorCriterion();
     ```
 
 6.  Use the criterion's `setDesiredItemSelectorReturnTypes` method to set the 
     return types list to the criterion: 
 
     ```java
-
-        imageItemSelectorCriterion.setDesiredItemSelectorReturnTypes(
-            desiredItemSelectorReturnTypes);
-
+    imageItemSelectorCriterion.setDesiredItemSelectorReturnTypes(
+        desiredItemSelectorReturnTypes);
     ```
 
 7.  Call the Item Selector's `getItemSelectorURL` method to get an Item Selector 
@@ -89,11 +81,9 @@ First, you must get an Item Selector for your use case. Follow these steps:
     event name, and a series of criterion instances (one, in this case): 
 
     ```java
-
-        PortletURL itemSelectorURL = _itemSelector.getItemSelectorURL(
-            requestBackedPortletURLFactory, "sampleTestSelectItem",
-            imageItemSelectorCriterion);
-
+    PortletURL itemSelectorURL = _itemSelector.getItemSelectorURL(
+        requestBackedPortletURLFactory, "sampleTestSelectItem",
+        imageItemSelectorCriterion);
     ```
 
 ## Using the Item Selector Dialog
@@ -110,43 +100,49 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 1.  Declare the AUI tag library: 
 
     ```java
-
-        <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
-
+    <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
     ```
 
 2.  Define the UI element you'll use to open the Item Selector dialog. For 
     example, this creates a *Choose* button with the ID `chooseImage`:
 
-        <aui:button name="chooseImage" value="Choose" />
+    ```markup
+    <aui:button name="chooseImage" value="Choose" />
+    ```
 
 3.  Get the Item Selector's URL: 
 
-        <%
-        String itemSelectorURL = GetterUtil.getString(request.getAttribute("itemSelectorURL"));
-        %>
+    ```java
+    <%
+    String itemSelectorURL = GetterUtil.getString(request.getAttribute("itemSelectorURL"));
+    %>
+    ```
 
 3.  Add the `<aui:script>` tag and set it to use the 
     `liferay-item-selector-dialog` module: 
 
-        <aui:script use="liferay-item-selector-dialog">
+    ```markup
+    <aui:script use="liferay-item-selector-dialog">
 
-        </aui:script>
+    </aui:script>
+    ```
 
 4.  Inside the `<aui:script>` tag, attach an event handler to the UI element you 
     created in step two. For example, this attaches a click event and a function 
     to the *Choose* button: 
 
-        <aui:script use="liferay-item-selector-dialog">
+    ```javascript
+    <aui:script use="liferay-item-selector-dialog">
 
-            $('#<portlet:namespace />chooseImage').on(
-            'click',
-              function(event) {
-                <!-- function logic goes here -->
-              }
-            );
+        $('#<portlet:namespace />chooseImage').on(
+        'click',
+          function(event) {
+            <!-- function logic goes here -->
+          }
+        );
 
-        </aui:script>
+    </aui:script>
+    ```
 
     Inside the function, you must create a new instance of the 
     `LiferayItemSelectorDialog` AlloyUI component and configure it to use the 
@@ -155,18 +151,22 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 5.  Create the function's logic. First, create a new instance of the 
     Liferay Item Selector dialog: 
 
-        var itemSelectorDialog = new A.LiferayItemSelectorDialog(  
-            {
-                ...
-            }
-        );
+    ```javascript
+    var itemSelectorDialog = new A.LiferayItemSelectorDialog(  
+        {
+            ...
+        }
+    );
+    ```
 
 6.  Inside the braces of the `LiferayItemSelectorDialog` constructor, first set 
     set the `eventName` attribute. This makes the dialog listen for the item 
     selected event. The event name is the Item Selector's event name that 
     you specified in your Java code (the code that gets the Item Selector URL): 
 
-        eventName: 'ItemSelectedEventName',
+    ```javascript
+    eventName: 'ItemSelectedEventName',
+    ```
 
 7.  Immediately after the `eventName` setting, set the `on` attribute to 
     implement a function that operates on the selected item change. For example, 
@@ -174,83 +174,89 @@ Follow these steps to use the Item Selector's dialog in a JSP:
     information available to parse depends on the return type(s). As the comment
     below indicates, you must add the logic for using the selected element: 
 
-        on: {
-                selectedItemChange: function(event) {
-                    var selectedItem = event.newVal;
+    ```javascript
+    on: {
+            selectedItemChange: function(event) {
+                var selectedItem = event.newVal;
 
-                    if (selectedItem) {
-                        var itemValue = JSON.parse(
-                        selectedItem.value
-                        );
-                        itemSrc = itemValue.url;
+                if (selectedItem) {
+                    var itemValue = JSON.parse(
+                    selectedItem.value
+                    );
+                    itemSrc = itemValue.url;
 
-                        <!-- use item as needed -->
-                    }
+                    <!-- use item as needed -->
                 }
-        },
+            }
+    },
+    ```
 
 8.  Immediately after the `on` setting, set the `title` attribute to the 
     dialog's title: 
 
-        title: '<liferay-ui:message key="select-image" />',
+    ```javascript
+    title: '<liferay-ui:message key="select-image" />',
+    ```
 
 9.  Immediately after the `title` setting, set the `url` attribute to the 
     previously retrieved Item Selector URL. This concludes the attribute 
     settings inside the `LiferayItemSelectorDialog` constructor: 
 
-        url: '<%= itemSelectorURL.toString() %>'
+    ```javascript
+    url: '<%= itemSelectorURL.toString() %>'
+    ```
 
 10. To conclude the logic of the function from step four, open the Item Selector 
     dialog by calling its `open` method: 
 
-        itemSelectorDialog.open();
+    ```javascript
+    itemSelectorDialog.open();
+    ```
 
 When the user clicks the *Choose* button, a new dialog opens, rendering the Item
 Selector with the views that support the criterion and return type(s). 
 
 Here's the complete example code for these steps: 
 
-```java
+```javascript
+<%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
 
-    <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+<aui:button name="chooseImage" value="Choose" />
 
-    <aui:button name="chooseImage" value="Choose" />
+<%
+String itemSelectorURL = GetterUtil.getString(request.getAttribute("itemSelectorURL"));
+%>
 
-    <%
-    String itemSelectorURL = GetterUtil.getString(request.getAttribute("itemSelectorURL"));
-    %>
+<aui:script use="liferay-item-selector-dialog">
 
-    <aui:script use="liferay-item-selector-dialog">
+    $('#<portlet:namespace />chooseImage').on(
+        'click', 
+        function(event) {
+            var itemSelectorDialog = new A.LiferayItemSelectorDialog(  
+                {
+                    eventName: 'ItemSelectedEventName',
+                    on: {
+                            selectedItemChange: function(event) {
+                                var selectedItem = event.newVal;
 
-        $('#<portlet:namespace />chooseImage').on(
-            'click', 
-            function(event) {
-                var itemSelectorDialog = new A.LiferayItemSelectorDialog(  
-                    {
-                        eventName: 'ItemSelectedEventName',
-                        on: {
-                                selectedItemChange: function(event) {
-                                    var selectedItem = event.newVal;
+                                if (selectedItem) {
+                                    var itemValue = JSON.parse(
+                                    selectedItem.value
+                                    );
+                                    itemSrc = itemValue.url;
 
-                                    if (selectedItem) {
-                                        var itemValue = JSON.parse(
-                                        selectedItem.value
-                                        );
-                                        itemSrc = itemValue.url;
-    
-                                        <!-- use item as needed -->
-                                    }
+                                    <!-- use item as needed -->
                                 }
-                        },
-                        title: '<liferay-ui:message key="select-image" />',
-                        url: '<%= itemSelectorURL.toString() %>'
-                    }
-                );
-                itemSelectorDialog.open();
-            }
-        );
-    </aui:script>
-
+                            }
+                    },
+                    title: '<liferay-ui:message key="select-image" />',
+                    url: '<%= itemSelectorURL.toString() %>'
+                }
+            );
+            itemSelectorDialog.open();
+        }
+    );
+</aui:script>
 ```
 
 ## Related Topics

@@ -15,7 +15,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.rest.builder", version: "1.0.21"
@@ -39,7 +39,7 @@ library as a dependency, you have to configure a repository that hosts the
 library and its transitive dependencies. The Liferay CDN repository hosts them
 all:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -94,7 +94,7 @@ There are additional configurations added to use REST Builder.
 By default, the plugin creates a configuration called `restBuilder` and adds
 a dependency to the latest released version of Liferay REST Builder.
 
-```gradle
+```groovy
 dependencies {
     restBuilder group: "com.liferay", name: "com.liferay.portal.tools.rest.builder", version: "1.0.22"
 }

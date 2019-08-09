@@ -50,7 +50,9 @@ Recycle Bin---once you delete them, they're gone forever.
 
 You can delete file versions with the `DLAppService` method `deleteFileVersion`: 
 
-    deleteFileVersion(long fileEntryId, String version)
+```java
+deleteFileVersion(long fileEntryId, String version)
+```
 
 See this method's 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFileVersion-long-java.lang.String-) 
@@ -73,15 +75,17 @@ current version (`fileEntry.getVersion()`). If this comparison is greater than
 `0`, then the iteration's file version (`fileVersion`) is old and is deleted by 
 `deleteFileVersion`: 
 
-    FileVersionVersionComparator comparator = new FileVersionVersionComparator();
+```java
+FileVersionVersionComparator comparator = new FileVersionVersionComparator();
 
-    for (FileVersion fileVersion: fileEntry.getVersions(WorkflowConstants.STATUS_APPROVED)) {
+for (FileVersion fileVersion: fileEntry.getVersions(WorkflowConstants.STATUS_APPROVED)) {
 
-        if (comparator.compare(fileEntry.getVersion(), fileVersion.getVersion()) > 0) {
+    if (comparator.compare(fileEntry.getVersion(), fileVersion.getVersion()) > 0) {
 
-            dlAppService.deleteFileVersion(fileVersion.getFileEntryId(), fileVersion.getVersion());
-        }
+        dlAppService.deleteFileVersion(fileVersion.getFileEntryId(), fileVersion.getVersion());
     }
+}
+```
 
 ## File Shortcuts
 
@@ -89,7 +93,9 @@ To delete file shortcuts, use the `DLAppService` method
 [`deleteFileShortcut`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFileShortcut-long-) 
 with the ID of the shortcut you want to delete: 
 
-    deleteFileShortcut(long fileShortcutId)
+```java
+deleteFileShortcut(long fileShortcutId)
+```
 
 For step-by-step instructions on using this method, see 
 [Deleting File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/f/deleting-file-shortcuts). 

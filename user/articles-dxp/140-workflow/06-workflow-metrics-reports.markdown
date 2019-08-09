@@ -17,6 +17,11 @@ Overdue, how many are On Time, and how many are Pending in the workflow process.
 There's more to Metrics than the overview report though. Get more detailed
 reports by clicking on one of the workflow processes.
 
+| **Requires Elasticsearch:** To use Workflow Metrics, you must be using
+| Elasticsearch to index your @product data. Read
+| [here](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch) to learn
+| about installing Elasticsearch.
+
 ## Understanding Reports
 
 The Reports UI has two main views, represented as tabs: _Pending_ and

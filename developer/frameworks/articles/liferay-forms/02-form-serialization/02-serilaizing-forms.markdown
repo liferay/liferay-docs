@@ -13,33 +13,33 @@ writing a deserializer.
 
 To serialize form data into YAML:
 
-1. Create a class that implements `DDMFormSerializer`:
+1.  Create a class that implements `DDMFormSerializer`:
 
-```java
-@Component(immediate = true, property = "ddm.form.serializer.type=yaml") public
-class DDMFormYamlSerializer implements DDMFormSerializer { .....  }
-```
+    ```java
+    @Component(immediate = true, property = "ddm.form.serializer.type=yaml") public
+    class DDMFormYamlSerializer implements DDMFormSerializer { .....  }
+    ```
 
-The property `ddm.form.serializer.type=yaml` marks the Component so that
-`DDMFormSerializerTracker` can find the YAML serializer.
+    The property `ddm.form.serializer.type=yaml` marks the Component so that
+    `DDMFormSerializerTracker` can find the YAML serializer.
 
 2.  Add the serializing logic to the overridden `serialize` method. It takes a
     `DDMFormSerializerSerializeRequest` and returns a
     `DDMFormSerializerSerializeResponse` with the serialized string in it.
 
-```java
-@Override public DDMFormSerializerSerializeResponse serialize(
-DDMFormSerializerSerializeRequest ddmFormSerializerSerializeRequest) {
+    ```java
+    @Override public DDMFormSerializerSerializeResponse serialize(
+    DDMFormSerializerSerializeRequest ddmFormSerializerSerializeRequest) {
 
-        DDMForm ddmForm = ddmFormSerializerSerializeRequest.getDDMForm(); 
+            DDMForm ddmForm = ddmFormSerializerSerializeRequest.getDDMForm(); 
 
-        ...YOUR CODE FOR BUILDING A YAML OBJECT GOES HERE ...  
+            ...YOUR CODE FOR BUILDING A YAML OBJECT GOES HERE ...  
 
-        DDMFormSerializerSerializeResponse.Builder builder = 
-            DDMFormSerializerSerializeResponse.Builder.newBuilder(yamlObject.toString());
+            DDMFormSerializerSerializeResponse.Builder builder = 
+                DDMFormSerializerSerializeResponse.Builder.newBuilder(yamlObject.toString());
 
-        return builder.build(); }
-```
+            return builder.build(); }
+    ```
 
 This is what you need to create your serializer. Of course, `YOUR CODE FOR
 BUILDING A YAML OBJECT GOES HERE` requires some explanation. While you can

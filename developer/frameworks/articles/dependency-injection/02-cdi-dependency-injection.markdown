@@ -39,40 +39,40 @@ beans and Portlet Predefined Beans:
     `src/main/webapp/WEB-INF/beans.xml` file to it. This file tells CDI to
     scan the project for CDI annotations. 
 
-```xml 
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee" bean-discovery-mode="all" version="1.2"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd">
-	<!-- This file is necessary in order to inform CDI that scanning should occur for CDI annotations. -->
-</beans>
-``` 
+    ```xml 
+    <?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://xmlns.jcp.org/xml/ns/javaee" bean-discovery-mode="all" version="1.2"
+    	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd">
+    	<!-- This file is necessary in order to inform CDI that scanning should occur for CDI annotations. -->
+    </beans>
+    ``` 
 
 3.  Add the
     [`@ApplicationScoped`](https://docs.oracle.com/javaee/7/api/javax/enterprise/context/ApplicationScoped.html)
     annotation to your portlet class. 
 
-```java 
-import javax.enterprise.context.ApplicationScoped;
+    ```java 
+    import javax.enterprise.context.ApplicationScoped;
 
-@ApplicationScoped
-public class MyPortlet ... {
-    ...
-}
-```
+    @ApplicationScoped
+    public class MyPortlet ... {
+        ...
+    }
+    ```
 
 4.  Make sure all concrete classes you want to make injectable have the default 
     constructor. These classes are now CDI beans. 
 
 5.  Add a scope to each CDI bean. 
 
-| Bean Scope              | Description      |
-| ----------------------- | ---------------- |
-| [`@ApplicationScoped`](https://docs.oracle.com/javaee/7/api/javax/enterprise/context/ApplicationScoped.html) | Shares the bean's state across all users' interactions with the portlet. |
-| [`@Dependent`](https://docs.oracle.com/javaee/7/api/javax/enterprise/context/Dependent.html) | (default scope) Designates the bean to be for the client bean and share the client bean's lifecycle. |
-| [`@PortletRequestScoped`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/PortletRequestScoped.html) | Associates the bean with the portlet request. |
-| [`@PortletSessionScoped`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/PortletSessionScoped.html) | Places the bean in the portlet session. |
-| [`@RenderStateScoped`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/RenderStateScoped.html) | Stores the bean as part of the portlet's render state. **Important:** The bean must implement the `PortletSerializable` interface. |
+    | Bean Scope              | Description      |
+    | ----------------------- | ---------------- |
+    | [`@ApplicationScoped`](https://docs.oracle.com/javaee/7/api/javax/enterprise/context/ApplicationScoped.html) | Shares the bean's state across all users' interactions with the portlet. |
+    | [`@Dependent`](https://docs.oracle.com/javaee/7/api/javax/enterprise/context/Dependent.html) | (default scope) Designates the bean to be for the client bean and share the client bean's lifecycle. |
+    | [`@PortletRequestScoped`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/PortletRequestScoped.html) | Associates the bean with the portlet request. |
+    | [`@PortletSessionScoped`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/PortletSessionScoped.html) | Places the bean in the portlet session. |
+    | [`@RenderStateScoped`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/RenderStateScoped.html) | Stores the bean as part of the portlet's render state. **Important:** The bean must implement the `PortletSerializable` interface. |
 
 6.  Use the [JSR 330](https://jcp.org/en/jsr/detail?id=330)
     [`@Inject`](https://docs.oracle.com/javaee/7/api/javax/inject/Inject.html)
@@ -80,37 +80,37 @@ public class MyPortlet ... {
     this code informs @product@'s CDI bean container to inject a `GuestBook` CDI
     bean into this `guestbook` field. 
 
-```java
-@Inject 
-private GuestBook guestbook;
-```
+    ```java
+    @Inject 
+    private GuestBook guestbook;
+    ```
 
 7.  Inject any [Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans)
     (portlet request scoped or dependent scoped beans) into your
     `@PortletRequestScoped` CDI beans. 
 
-```java 
-@PortletRequestScoped 
-public class RequestProcessor ... {
+    ```java 
+    @PortletRequestScoped 
+    public class RequestProcessor ... {
 
-    @Inject 
-    private PortletRequest portletRequest;
-    ...
-}
-```
+        @Inject 
+        private PortletRequest portletRequest;
+        ...
+    }
+    ```
 
 8.  Inject any [dependent scoped Portlet Predefined Beans](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans) 
     into your `ApplicationScoped` or `@Dependent` scoped CDI beans. For example,
 
-```java
-@ApplicationScoped
-public class MyPortlet ... {
+    ```java
+    @ApplicationScoped
+    public class MyPortlet ... {
 
-    @Inject 
-    private PortletConfig portletConfig; 
-    ...
-}
-```
+        @Inject 
+        private PortletConfig portletConfig; 
+        ...
+    }
+    ```
 
 9.  Use bean EL names to reference any 
     [portlet redefined *named beans*](/docs/7-2/reference/-/knowledge_base/r/cdi-portlet-predefined-beans)

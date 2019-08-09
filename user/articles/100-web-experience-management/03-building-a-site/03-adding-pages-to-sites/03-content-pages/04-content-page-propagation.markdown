@@ -32,7 +32,7 @@ To update a page or template,
 2.  Click the *Propagate* icon (
     ![Propagate](../../../../../images/icon-propagate.png))
     
-After you propagate changes, visit any effected pages to verify there were no
+After you propagate changes, visit any effected page to verify there were no
 unexpected side effects of the changes. Changes to existing `editable` fields 
 are not propagated since this overwrites content currently in content 
 pages. To force propagation to content in an `editable` field, a developer must 

@@ -30,23 +30,23 @@ As a result of the upgrade process,
   Table below).
 - Audience Targeting tables have been removed from your @product@ Database.
 
-| Audience Targeting Rule | @product@ 7.2. Segment Criteria Field | Upgrade Path
-|---                      |---                      |---
-| Browser                 | Browser                 | Automated. Use user agent field with `contains` operation as an alternative
-| Custom Field            | Custom Field            | Automated
-| Language                | Language                | Automated
-| Last Login Date         | Last Sign In Date       | Automated
-| Organization Member     | Organization            | Automated
-| OS                      | User Agent              | Automated
-| Previous Visited Site   | Not Available           | Automated
-| Regular Role            | Role                    | Automated
-| Site Member             | Site                    | Automated
-| User Group Member       | User Group              | Automated
-| Age                     | Not Available           | Suggested: custom field
-| Facebook (various)      | Not Available           | Suggested: custom field
-| Gender                  | Not Available           | Suggested: custom field
-| Score Points            | Not Available           | Suggested: cookie
-| Visited Page/Content    | Not Available           | Suggested: cookie
+| Audience Targeting Rule | @product@ 7.2. Segment Criteria Field | Upgrade Path |
+| ---                     | ---                     | --- |
+| Browser                 | Browser                 | Automated. Use user agent field with `contains` operation as an alternative |
+| Custom Field            | Custom Field            | Automated |
+| Language                | Language                | Automated |
+| Last Login Date         | Last Sign In Date       | Automated |
+| Organization Member     | Organization            | Automated |
+| OS                      | User Agent              | Automated |
+| Previous Visited Site   | Not Available           | Automated |
+| Regular Role            | Role                    | Automated |
+| Site Member             | Site                    | Automated |
+| User Group Member       | User Group              | Automated |
+| Age                     | Not Available           | Suggested: custom field |
+| Facebook (various)      | Not Available           | Suggested: custom field |
+| Gender                  | Not Available           | Suggested: custom field |
+| Score Points            | Not Available           | Suggested: cookie |
+| Visited Page/Content    | Not Available           | Suggested: cookie |
 
 Here's an example user segment as it would appear in Audience Targeting for
 @product@ 7.1:
