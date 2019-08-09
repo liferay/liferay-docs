@@ -59,12 +59,12 @@ applications for building forms to collect precisely the data you need:
 
 | **Kaleo Forms:** If you're a Liferay Digital Enterprise customer, there's a
 | third form building tool called
-| [Kaleo Forms](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-forms).
+| [Kaleo Forms](https://help.liferay.com/hc/en-us/articles/360018174191-Kaleo-Forms).
 | It integrates form building with workflow to create form-based business
 | processes, like a Conference Room Checkout Form, or a Support Ticket Process so
 | support tickets go through the proper channels on their way to resolution. Read
 | more about Kaleo Forms in the
-| workflow [section](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-forms).
+| workflow [section](https://help.liferay.com/hc/en-us/articles/360018174191-Kaleo-Forms).
 
 ## Which Form Builder Should I Use?
 
