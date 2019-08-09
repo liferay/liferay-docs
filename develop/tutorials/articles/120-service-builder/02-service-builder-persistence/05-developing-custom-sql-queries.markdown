@@ -109,7 +109,7 @@ to generate the `*Finder` interface based on the `*FinderImpl` class. Modify
 your `*FinderImpl` class to have it implement the `*Finder` interface you just
 generated:
 
-    public class EntryFinderImpl extends BasePersistenceImpl<Event>
+    public class EntryFinderImpl extends BasePersistenceImpl<Entry>
         implements EntryFinder {
 
     }
