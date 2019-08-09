@@ -12,7 +12,7 @@ should continue counting all the time: in other words, 24 hours per day, seven
 days per week. If you need a different calendar format, provide your own
 implementation of the `WorkflowMetricsSLACalendar` interface. New
 implementations of this service are picked up automatically by the Workflow
-Metrics application, so it becomes available as soon as the module holding the
+Metrics application, so they become available as soon as the module holding the
 service implementation is deployed. The interface has three methods to
 implement:
 
@@ -32,9 +32,9 @@ public interface WorkflowMetricsSLACalendar {
 
 If you define a new calendar, a new option becomes available in the Add SLA
 form, allowing you to choose from the default 24/7 calendar or any custom ones
-you've provided. For example, make the timer run for 8 hours per day, from 9-17
-by a 24-hour clock, for 5 days per week. Even stop the calendar from counting
-during lunch hours if you need to.
+you've provided. For example, you can make the timer run for 8 hours per day,
+from 9-17 by a 24-hour clock, for 5 days per week. If you need to, you can even
+stop the calendar from counting during lunch hours!
 
 ![Figure 1: Write a Custom SLA Calendar if the default, 24/7 calendar isn't sufficient.](../../images/workflow-custom-sla-calendar.png)
 
@@ -81,11 +81,11 @@ calendar when creating the
     The component property `sla.calendar.key` is required to identify this calendar.
 
 2.  Override `getDuration` to return the time `Duration` when elapsed SLA time
-    should be computed. The start and end dates that this method receives are
-    date representing the time a workflow task has been running. For
-    example, given a task that was started at _2019-05-13T16:00:00_ and was
-    finished at _2019-05-13T18:00:00_, then The 24/7 calendar returns 2 elapsed
-    hours, while a 9-17 weekdays calendar returns 1 hour as the elapsed time.
+    should be computed. The start and end dates that this method receives
+    represent the time a workflow task has been running. For example, given
+    a task that started at _2019-05-13T16:00:00_ and finished at
+    _2019-05-13T18:00:00_, then The 24/7 calendar returns 2 elapsed hours, while
+    a 9-17 weekdays calendar returns 1 hour as the elapsed time.
 
     ```java
     @Override
@@ -97,14 +97,14 @@ calendar when creating the
     ```
 
 3.  `getOverdueLocalDateTime` must return the date (as a `LocalDateTime`) when
-    this SLA will be considered overdue given the parameter values. For example;
+    this SLA is considered overdue given the parameter values. For example,
     given that `nowLocalDateTime`=_2019-05-13T17:00:00_ and
     `remainingDuration`=_24H_, The 24/7 calendar returns a `localDateTime` of
     _2019-05-14T17:00:00_ as the overdue date. Given the same parameters, the
     9-17 weekdays calendar should return _2019-05-17T09:00:00_. The remaining
     duration of time left in the SLA is available in the method as a `Duration`
-    object; your job is to write the logic that will consider your calendar and
-    create a `LocalDateTime` with the proper overdue date/time.
+    object; your job is to write logic that considers your calendar and create
+    a `LocalDateTime` with the proper overdue date/time.
 
     ```java
     @Override
@@ -116,11 +116,10 @@ calendar when creating the
     ```
 
 4.  Use `getTitle` to provide the title for the given locale. Make sure you
-    [properly
-    localize](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application)
-    this extension by providing a `Language.properties` file, and any
+    [properly localize](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application)
+    this extension by providing a `Language.properties` file and any
     `Language_xx.properties` files for translation of the value. At runtime, the
-    User's locale will be used to return the correct translation.
+    User's locale is used to return the correct translation.
 
     ```java
     @Override
