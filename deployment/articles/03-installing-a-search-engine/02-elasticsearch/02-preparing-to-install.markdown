@@ -74,6 +74,3 @@ Elasticsearch relies on clustering and sharding to deliver fast, accurate search
 results, and thus requires a fast and reliable network. Most modern data centers
 provide 1 GbE or 10 GbE between machines. 
 
-Elasticsearch 6.5 does not support multi-data center deployments. However, Cross
-Cluster Replication support was added in 6.7. Therefore, if you are using
-Elasticsearch 6.8.x, multi-data center deployments are an option for you.

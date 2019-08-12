@@ -81,7 +81,7 @@ A JSON document is returned that looks similar to this:
   "cluster_name" : "LiferayElasticsearchCluster",
   "cluster_uuid" : "ziPGEBeSToGHc7lVqaYHnA",
   "version" : {
-    "number" : "6.8.0",
+    "number" : "6.5.0",
     "build_flavor" : "unknown",
     "build_type" : "unknown",
     "build_hash" : "816e6f6",
@@ -96,7 +96,10 @@ A JSON document is returned that looks similar to this:
 ```
 
 The version of Elasticsearch that's running is the value of the `"number"` field.
-In this example, it's 6.8.0. 
+In this example, it's 6.5.0. 
+
+| **Note:** Although the embedded server uses Elasticsearch 6.5, Elasticsearch
+| 6.8.x has been tested with @product@-ver, and is fully supported.
 
 Shut down the @product@ server. In a local, single-machine testing environment,
 if you continue without shutting down, the Elasticsearch server you're about to
