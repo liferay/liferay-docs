@@ -167,6 +167,6 @@ this case), it will be updated with the data sent in the request body. If record
 `37303` was created with a _Product_ field name of _Bicycle_, this request would
 change the value to _Bike_.
 
-For more endpoints, visit the `liferayinc/data-engine` section of
+For more endpoints and details, visit the `liferayinc/data-engine` section of
 [SwaggerHub](https://app.swaggerhub.com/apis/liferayinc/data-engine/1.0#/DataRecord).
 

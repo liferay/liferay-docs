@@ -70,8 +70,10 @@ curl -i -X GET \
     -H 'Content-Type: application/json' \ 
 ```
 
-- `dataLayoutKey` is 
-<!-- a little help here ;) -->
+- `dataLayoutKey` is a String that can be set when adding a data layout via
+    POST. Think of it like an identifier for data layouts that you,. the
+    developer can control. And here, in this GET request, you can retrieve data
+    layouts by the same key.
 
 ### Retrieving a Paginated List of Data Layouts Matching Keywords
 
