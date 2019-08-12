@@ -20,8 +20,10 @@ Follow these steps to create a file shortcut with the `DLAppService` method
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the `addFileShortcut` method's arguments. 
     Since it's common to create a file shortcut with data submitted by the end 
@@ -30,12 +32,14 @@ Follow these steps to create a file shortcut with the `DLAppService` method
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get the data any way you wish: 
 
-        long repositoryId = ParamUtil.getLong(actionRequest, "repositoryId");
-        long folderId = ParamUtil.getLong(actionRequest, "folderId");
-        long toFileEntryId = ParamUtil.getLong(actionRequest, "toFileEntryId");
+    ```java
+    long repositoryId = ParamUtil.getLong(actionRequest, "repositoryId");
+    long folderId = ParamUtil.getLong(actionRequest, "folderId");
+    long toFileEntryId = ParamUtil.getLong(actionRequest, "toFileEntryId");
 
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                            DLFileShortcutConstants.getClassName(), actionRequest);
+    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                        DLFileShortcutConstants.getClassName(), actionRequest);
+    ```
 
 <!--Uncomment once article is available
     For more information on `ServiceContext`, see the tutorial 
@@ -45,9 +49,11 @@ Follow these steps to create a file shortcut with the `DLAppService` method
 3.  Call the service reference's `addFileShortcut` method with the data from the 
     previous step: 
 
-        FileShortcut fileShortcut = _dlAppService.addFileShortcut(
-                                            repositoryId, folderId, toFileEntryId, 
-                                            serviceContext);
+    ```java
+    FileShortcut fileShortcut = _dlAppService.addFileShortcut(
+                                        repositoryId, folderId, toFileEntryId, 
+                                        serviceContext);
+    ```
 
     The method returns a `FileShortcut` object, which this example sets to a 
     variable for later use. Note, however, that you don't have to do this. 

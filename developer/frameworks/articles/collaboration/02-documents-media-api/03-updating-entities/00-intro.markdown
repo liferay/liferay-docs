@@ -72,7 +72,9 @@ folders to a different location. Options for in-place folder updates, however,
 are limited. You can only update a folder's name and description. You can do 
 this with the `DLAppService` method `updateFolder`: 
 
-    updateFolder(long folderId, String name, String description, ServiceContext serviceContext)
+```java
+updateFolder(long folderId, String name, String description, ServiceContext serviceContext)
+```
 
 All parameters except the description are mandatory. For a full description of 
 this method and its parameters, see its 
@@ -86,7 +88,9 @@ You can update a file shortcut (`FileShortcut` entities) to change the file it
 points to or the folder it resides in. Do this via the `DLAppService` method 
 `updateFileShortcut`: 
 
-    updateFileShortcut(long fileShortcutId, long folderId, long toFileEntryId, ServiceContext serviceContext)
+```java
+updateFileShortcut(long fileShortcutId, long folderId, long toFileEntryId, ServiceContext serviceContext)
+```
 
 All of this method's parameters are mandatory. To retain any of the shortcut's 
 original values, you must provide them to this method. For a full description of 

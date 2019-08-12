@@ -14,23 +14,23 @@ theme, skip to step 3.
     Atlas, add a file named `clay.scss` to your theme's `/src/css/` folder and 
     import `clay/atlas` instead:
 
-```scss
-@import "clay/atlas";
-```
+    ```scss
+    @import "clay/atlas";
+    ```
 
 2.  By default, Clay base variables are imported into the theme. If you're 
     overwriting Atlas, add an `_imports.scss` file to your theme's `/src/css/` 
     folder and import Atlas variables instead:
 
-```scss
-@import "bourbon";
+    ```scss
+    @import "bourbon";
 
-@import "mixins";
+    @import "mixins";
 
-@import "compat/mixins";
+    @import "compat/mixins";
 
-@import "clay/atlas-variables";
-```
+    @import "clay/atlas-variables";
+    ```
 
 3.  Add a file named `_clay_variables.scss`. Place your Atlas, Bootstrap, and 
     Clay Base variable modifications in this file.

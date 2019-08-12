@@ -38,6 +38,7 @@ information to the search request in a similar way between all aggregations.
     ```java
     percentilesAggregation.setPercentilesMethod(PercentilesMethod.HDR);
     ```
+
 Once the aggregation itself is in good shape, feed it to the search query.
 
 ## Build the Search Query
@@ -57,10 +58,11 @@ Once the aggregation itself is in good shape, feed it to the search query.
     SearchRequest searchRequest =
         searchRequestBuilder.addAggregation(percentilesAggregation).build();
     ```
+
 ## Execute the Search Query
 
 1.  Perform a search using the `Searcher` service and the `SearchRequest` to get
-   a `com.liferay.portal.search.searcher.SearchResponse`:
+    a `com.liferay.portal.search.searcher.SearchResponse`:
 
     ```java
     SearchResponse searcher.search(searchRequest);

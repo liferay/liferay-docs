@@ -22,7 +22,7 @@ Here are the steps:
     [action-command-portlet](https://github.com/liferay/liferay-blade-samples/blob/7.1/gradle/apps/action-command-portlet/src/main/resources/META-INF/resources/view.jsp)
     sample uses this action URL:
 
-    ```jsp
+    ```markup
     <liferay-portlet:actionURL name="greet" var="greetURL" />
     ```
 
@@ -33,7 +33,7 @@ Here are the steps:
     component invokes the action. For  example, the sample's `greetURL` action
     URL variable triggers on submitting this form: 
 
-    ```jsp
+    ```markup
     <aui:form action="<%= greetURL %>" method="post" name="fm">
     	<aui:input name="name" type="text" />
 

@@ -40,46 +40,46 @@ First, create the Entity Model for `KBArticle`.
 1.  Inside the `...internal.odata.entity` package, create the 
     `KBArticleEntityModel` class which implements `EntityModel`:
 
-```java
-public class KBArticleEntityModel implements EntityModel {
+    ```java
+    public class KBArticleEntityModel implements EntityModel {
 
-}
-```
+    }
+    ```
 
 2.  Create the key for the entity name:
 
-```java
-public static final String NAME = "KBArticle";
-```
+    ```java
+    public static final String NAME = "KBArticle";
+    ```
 
 3.  Create the variable for the entity field map:
 
-```java
-private final Map<String, EntityField> _entityFieldsMap;
-```
+    ```java
+    private final Map<String, EntityField> _entityFieldsMap;
+    ```
 
 4.  Create the methods to retrieve the `KBArticleEntity`, entity map, and entity
     name key:
 
-```java
-public KBArticleEntityModel() {
-    _entityFieldsMap = Stream.of(
-        new StringEntityField("title", locale -> "titleKeyword")
-        ).collect(
-            Collectors.toMap(EntityField::getName, Function.identity())
-        );
-}
+    ```java
+    public KBArticleEntityModel() {
+        _entityFieldsMap = Stream.of(
+            new StringEntityField("title", locale -> "titleKeyword")
+            ).collect(
+                Collectors.toMap(EntityField::getName, Function.identity())
+            );
+    }
 
-@Override
-public Map<String, EntityField> getEntityFieldsMap() {
-    return _entityFieldsMap;
-}
+    @Override
+    public Map<String, EntityField> getEntityFieldsMap() {
+        return _entityFieldsMap;
+    }
 
-@Override
-public String getName() {
-    return NAME;
-}
-```
+    @Override
+    public String getName() {
+        return NAME;
+    }
+    ```
 
 Next, you'll create the OData Retriever.
 
@@ -90,96 +90,96 @@ Next, create the `ODataRetriever` which gets the data using the relevant filter.
 1.  Inside the `...internal.odata.retreiver` package, create 
     `KBArticleODataRetriever.java` which implements `ODataRetriever`:
 
-```java
-public class KBArticleODataRetriever implements ODataRetriever<KBArticle> {
-	
-}
-```
+    ```java
+    public class KBArticleODataRetriever implements ODataRetriever<KBArticle> {
+    	
+    }
+    ```
 
-2.  Add the `@Component` declaration above the class constructor:
+2.  Add the `@Component` declaration above the class declaration:
 
-```java
-@Component(
-    immediate = true,
-    property = "model.class.name=com.liferay.knowledge.base.model.KBArticle",
-    service = ODataRetriever.class
-)
-```
+    ```java
+    @Component(
+        immediate = true,
+        property = "model.class.name=com.liferay.knowledge.base.model.KBArticle",
+        service = ODataRetriever.class
+    )
+    ```
 
 3.  Create the `@Reference` objects that you need for the Filter Parser,
     Knowledge Base Article Service, and OData Search Adapter:
 
-```java
-@Reference
-private FilterParserProvider _filterParserProvider;
+    ```java
+    @Reference
+    private FilterParserProvider _filterParserProvider;
 
- @Reference
-private KBArticleLocalService _kbArticleLocalService;
+     @Reference
+    private KBArticleLocalService _kbArticleLocalService;
 
-@Reference
-private ODataSearchAdapter _oDataSearchAdapter;
-```
+    @Reference
+    private ODataSearchAdapter _oDataSearchAdapter;
+    ```
 
 4.  Create and instantiate the `_entityModel` object for the `KBArticle` model:
 
-```java
-private static final EntityModel _entityModel = new KBArticleEntityModel();
-```
+    ```java
+    private static final EntityModel _entityModel = new KBArticleEntityModel();
+    ```
 
 5.  Create the public methods to retrieve the results and the results count from
     the OData filter:
 
-```java
-@Override
-public List<KBArticle> getResults(
-        long companyId, String filterString, Locale locale, int start,  int end)
-    throws PortalException {
+    ```java
+    @Override
+    public List<KBArticle> getResults(
+            long companyId, String filterString, Locale locale, int start,  int end)
+        throws PortalException {
 
-    Hits hits = _oDataSearchAdapter.search(
-        companyId, filterString, KBArticle.class.getName(), _entityModel,
-        	_getFilterParser(), locale, start, end);
+        Hits hits = _oDataSearchAdapter.search(
+            companyId, filterString, KBArticle.class.getName(), _entityModel,
+            	_getFilterParser(), locale, start, end);
 
-    return _getKBArticles(hits);
-}
+        return _getKBArticles(hits);
+    }
 
-@Override
-public int getResultsCount(
-        long companyId, String filterString, Locale locale)
-    throws PortalException {
+    @Override
+    public int getResultsCount(
+            long companyId, String filterString, Locale locale)
+        throws PortalException {
 
-    return _oDataSearchAdapter.searchCount(
-        companyId, filterString, KBArticle.class.getName(), _entityModel,
-            _getFilterParser(), locale);
-}
-```
+        return _oDataSearchAdapter.searchCount(
+            companyId, filterString, KBArticle.class.getName(), _entityModel,
+                _getFilterParser(), locale);
+    }
+    ```
 
 6.  Create the private methods for instantiating the `FilterParser` and
     retrieving the Knowledge Base article(s) that meet the criteria:
 
-```java
-private FilterParser _getFilterParser() {
-    return _filterParserProvider.provide(_entityModel);
-}
-
-private KBArticle _getKBArticle(Document document) throws PortalException {
-    long resourcePrimKey = GetterUtil.getLong(
-        document.get(Field.ENTRY_CLASS_PK));
-
-    return _kbArticleLocalService.getLatestKBArticle(resourcePrimKey, 0);
-}
-
-private List<KBArticle> _getKBArticles(Hits hits) throws PortalException {
-    Document[] documents = hits.getDocs();
-
-    List<KBArticle> kbArticles = new ArrayList<>(documents.length);
-
-    for (Document document : documents) {
-        kbArticles.add(_getKBArticle(document));
+    ```java
+    private FilterParser _getFilterParser() {
+        return _filterParserProvider.provide(_entityModel);
     }
 
-    return kbArticles;
-}
-```
+    private KBArticle _getKBArticle(Document document) throws PortalException {
+        long resourcePrimKey = GetterUtil.getLong(
+            document.get(Field.ENTRY_CLASS_PK));
+
+        return _kbArticleLocalService.getLatestKBArticle(resourcePrimKey, 0);
+    }
+
+    private List<KBArticle> _getKBArticles(Hits hits) throws PortalException {
+        Document[] documents = hits.getDocs();
+
+        List<KBArticle> kbArticles = new ArrayList<>(documents.length);
+
+        for (Document document : documents) {
+            kbArticles.add(_getKBArticle(document));
+        }
+
+        return kbArticles;
+    }
+    ```
 
 You're all set to create the Segments Criteria Contributor!
 
@@ -194,132 +194,132 @@ authored.
     `UserKBArticleSegmentCritieriaContributor` class that implements 
     `SegmentsCriteriaContributor`.
 
-```java
-public class UserKBArticleSegmentsCriteriaContributor
-    implements SegmentsCriteriaContributor {
+    ```java
+    public class UserKBArticleSegmentsCriteriaContributor
+        implements SegmentsCriteriaContributor {
 
-}
-```
+    }
+    ```
 
 2.  Create the `@Component` declaration to set properties and declare the 
     service class.
 
-```java
-@Component(
-    immediate = true,
-    property = {
-        "segments.criteria.contributor.key=" + UserKBArticleSegmentsCriteriaContributor.KEY,
-        "segments.criteria.contributor.model.class.name=com.liferay.portal.kernel.model.User",
-        "segments.criteria.contributor.priority:Integer=70"
-    },
-    service = SegmentsCriteriaContributor.class
-)
-```
+    ```java
+    @Component(
+        immediate = true,
+        property = {
+            "segments.criteria.contributor.key=" + UserKBArticleSegmentsCriteriaContributor.KEY,
+            "segments.criteria.contributor.model.class.name=com.liferay.portal.kernel.model.User",
+            "segments.criteria.contributor.priority:Integer=70"
+        },
+        service = SegmentsCriteriaContributor.class
+    )
+    ```
 
 3.  Create the variables to enable logging, retrieve the entity model, and 
     entity key.
 
-```java
-private static final Log _log = LogFactoryUtil.getLog(
-    UserKBArticleSegmentsCriteriaContributor.class);
+    ```java
+    private static final Log _log = LogFactoryUtil.getLog(
+        UserKBArticleSegmentsCriteriaContributor.class);
 
-    private static final EntityModel _entityModel = new KBArticleEntityModel();
+        private static final EntityModel _entityModel = new KBArticleEntityModel();
 
-    public static final String KEY = "user-kb-article";
-```
+        public static final String KEY = "user-kb-article";
+    ```
 
 4.  Create the reference variables for the OData retriever and Portal instance.
 
-```java
-@Reference(
-    target = "(model.class.name=com.liferay.knowledge.base.model.KBArticle)"
-)
+    ```java
+    @Reference(
+        target = "(model.class.name=com.liferay.knowledge.base.model.KBArticle)"
+    )
 
-private ODataRetriever<KBArticle> _oDataRetriever;
+    private ODataRetriever<KBArticle> _oDataRetriever;
 
-@Reference
-private Portal _portal;
-```
+    @Reference
+    private Portal _portal;
+    ```
 
 5.  Create the methods to define the implementation of
     `SegmentsCriteriaContributor`.
 
-```java
-@Override
-public void contribute(
-    Criteria criteria, String filterString,
-        Criteria.Conjunction conjunction) {
+    ```java
+    @Override
+    public void contribute(
+        Criteria criteria, String filterString,
+            Criteria.Conjunction conjunction) {
 
-    criteria.addCriterion(getKey(), getType(), filterString, conjunction);
+        criteria.addCriterion(getKey(), getType(), filterString, conjunction);
 
-    long companyId = CompanyThreadLocal.getCompanyId();
-    String newFilterString = null;
+        long companyId = CompanyThreadLocal.getCompanyId();
+        String newFilterString = null;
 
-    try {
-        StringBundler sb = new StringBundler();
+        try {
+            StringBundler sb = new StringBundler();
 
-        List<KBArticle> kbArticles = _oDataRetriever.getResults(
-            companyId, filterString, LocaleUtil.getDefault(),
-            QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+            List<KBArticle> kbArticles = _oDataRetriever.getResults(
+                companyId, filterString, LocaleUtil.getDefault(),
+                QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 
-        for (int i = 0; i < kbArticles.size(); i++) {
-            KBArticle kbArticle = kbArticles.get(i);
+            for (int i = 0; i < kbArticles.size(); i++) {
+                KBArticle kbArticle = kbArticles.get(i);
 
-            sb.append("(userId eq '");
-            sb.append(kbArticle.getUserId());
-            sb.append("')");
+                sb.append("(userId eq '");
+                sb.append(kbArticle.getUserId());
+                sb.append("')");
 
-            if (i < (kbArticles.size() - 1)) {
-                sb.append(" or ");
+                if (i < (kbArticles.size() - 1)) {
+                    sb.append(" or ");
+                }
             }
+
+            newFilterString = sb.toString();
+        }
+        catch (PortalException pe) {
+            _log.error(
+                com.liferay.petra.string.StringBundler.concat(
+                    "Unable to evaluate criteria ", criteria, " with filter ",
+                    filterString, " and conjunction ", conjunction.getValue()),
+                pe);
         }
 
-        newFilterString = sb.toString();
-    }
-    catch (PortalException pe) {
-        _log.error(
-            com.liferay.petra.string.StringBundler.concat(
-                "Unable to evaluate criteria ", criteria, " with filter ",
-                filterString, " and conjunction ", conjunction.getValue()),
-            pe);
+        if (Validator.isNull(newFilterString)) {
+            newFilterString = "(userId eq '0')";
+        }
+
+        criteria.addFilter(getType(), newFilterString, conjunction);
     }
 
-    if (Validator.isNull(newFilterString)) {
-        newFilterString = "(userId eq '0')";
+    @Override
+    public EntityModel getEntityModel() {
+        return _entityModel;
     }
 
-    criteria.addFilter(getType(), newFilterString, conjunction);
-}
+    @Override
+    public String getEntityName() {
+        return KBArticleEntityModel.NAME;
+    }
 
-@Override
-public EntityModel getEntityModel() {
-    return _entityModel;
-}
+    @Override
+    public List<Field> getFields(PortletRequest portletRequest) {
+        return Collections.singletonList(
+            new Field(
+                "title",
+                LanguageUtil.get(_portal.getLocale(portletRequest), "title"),
+                "string"));
+    }
 
-@Override
-public String getEntityName() {
-    return KBArticleEntityModel.NAME;
-}
+    @Override
+    public String getKey() {
+        return KEY;
+    }
 
-@Override
-public List<Field> getFields(PortletRequest portletRequest) {
-    return Collections.singletonList(
-        new Field(
-            "title",
-            LanguageUtil.get(_portal.getLocale(portletRequest), "title"),
-            "string"));
-}
-
-@Override
-public String getKey() {
-    return KEY;
-}
-
-@Override
-public Criteria.Type getType() {
-    return Criteria.Type.MODEL;
-}
-```
+    @Override
+    public Criteria.Type getType() {
+        return Criteria.Type.MODEL;
+    }
+    ```
 
 6.  [Deploy your module](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project).
 

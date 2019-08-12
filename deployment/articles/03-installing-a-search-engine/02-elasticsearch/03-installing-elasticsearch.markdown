@@ -46,7 +46,7 @@ If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
 using the same version and distribution (e.g., Oracle Open JDK 1.8.0_201). You
 can specify this in `[Elasticsearch Home]/bin/elasticsearch.in.sh`:
 
-        JAVA_HOME=/path/to/java
+    JAVA_HOME=/path/to/java
 
 <!-- UNCOMMENT WHEN WE HAVE A COMPAT MATRIX 
 Consult the 
@@ -153,7 +153,9 @@ Elasticsearch. Edit the following file:
 Uncomment the line that begins with `cluster.name`. Set the cluster name to
 whatever you want to name your cluster: 
 
-    cluster.name: LiferayElasticsearchCluster
+```yml
+cluster.name: LiferayElasticsearchCluster
+```
 
 Of course, this isn't a very imaginative name; you may choose to name your
 cluster `finders_keepers` or something else you can remember more easily. Save
@@ -162,7 +164,9 @@ the file.
 Now you can start Elasticsearch. Run the executable for your operating system
 from the `[Elasticsearch Home]/bin` folder: 
 
-    ./elasticsearch
+```bash
+./elasticsearch
+```
 
 Elasticsearch starts, and one of its status messages includes a transport address: 
 

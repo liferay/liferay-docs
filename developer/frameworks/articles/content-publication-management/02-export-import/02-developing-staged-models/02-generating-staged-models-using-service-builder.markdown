@@ -49,7 +49,7 @@ staged model type.
 
 3.  Add the `userId` and `userName` columns to your `service.xml` file:
 
-    ```markup
+    ```xml
     <column name="userId" type="long" />
     <column name="userName" type="String" />
     ```
@@ -65,7 +65,7 @@ staged model type.
 
 5.  Add the `lastPublishDate` column to your `service.xml` file:
 
-    ```markup
+    ```xml
     <column name="lastPublishDate" type="Date" />
     ```
 

@@ -157,14 +157,16 @@ Parameter Name | Type | Default Value | Description
 You can change the default parameter values of the `init` goal by creating an
 `<execution>` section containing `<configuration>` tags. For example,
 
-    <execution>
-        <id>init</id>
-        <goals>
-            <goal>init</goal>
-        </goals>
-        <configuration>
-        </configuration>
-    </execution>
+```xml
+<execution>
+    <id>init</id>
+    <goals>
+        <goal>init</goal>
+    </goals>
+    <configuration>
+    </configuration>
+</execution>
+```
 
 You can set the following parameters in the `init` execution's `<configuration>`
 section of the POM:

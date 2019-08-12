@@ -33,7 +33,7 @@ Follow these steps:
     your JavaScript module file to create an alias in the `<aui:script>`'s 
     `require` attribute. An example configuration is shown below:
 
-    ```jsp
+    ```markup
     <aui:script 
       require='<%= npmResolvedPackageName + 
       "/js/my-module.es as myModule" %>'>
@@ -42,7 +42,7 @@ Follow these steps:
 
 4.  Use the alias inside the `aui:script` to refer to your module:
 
-    ```jsp
+    ```markup
     <aui:script 
       require='<%= npmResolvedPackageName + 
       "/js/my-module.es as myModule" %>'>

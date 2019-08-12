@@ -12,6 +12,11 @@ on a workflow process's events. These deadline configurations are referred to as
 SLAs (Service Level Agreements). Once defined, Workflow Reports measure compliance
 with the SLAs.
 
+| **Requires Elasticsearch:** To use Workflow Metrics, you must be using
+| Elasticsearch to index your @product data. Read
+| [here](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch) to learn
+| about installing Elasticsearch.
+
 SLAs define the deadlines on a workflow process's events. They're like a
 contract between the workflow participants and Users submitting workflow items.
 

@@ -16,8 +16,10 @@ Follow these steps to use `copyFolder` to copy a folder:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the `copyFolder` method's arguments. How you 
     do this depends on your use case. The copy operation in this example takes 
@@ -37,15 +39,17 @@ Follow these steps to use `copyFolder` to copy a folder:
     `getName()`, and `getDescription()` methods then get the folder's group ID, 
     name, and description, respectively: 
 
-        long folderId = ParamUtil.getLong(actionRequest, "folderId");
+    ```java
+    long folderId = ParamUtil.getLong(actionRequest, "folderId");
 
-        Folder folder = _dlAppService.getFolder(folderId);
-        long groupId = folder.getGroupId();
-        String folderName = folder.getName();
-        String folderDescription = folder.getDescription();
+    Folder folder = _dlAppService.getFolder(folderId);
+    long groupId = folder.getGroupId();
+    String folderName = folder.getName();
+    String folderDescription = folder.getDescription();
 
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                    DLFolder.class.getName(), actionRequest);
+    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                DLFolder.class.getName(), actionRequest);
+    ```
 
 <!--Uncomment once article is available
     For more information on `ServiceContext`, see the tutorial 
@@ -58,9 +62,11 @@ Follow these steps to use `copyFolder` to copy a folder:
     constant `DEFAULT_PARENT_FOLDER_ID` to specify the repository's root folder 
     as the destination folder: 
 
-        _dlAppService.copyFolder(
-                groupId, folderId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, 
-                folderName, folderDescription, serviceContext);
+    ```java
+    _dlAppService.copyFolder(
+            groupId, folderId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, 
+            folderName, folderDescription, serviceContext);
+    ```
 
 Note that you can change any of these values to suit your copy operation. For 
 example, if your copy takes place in a repository other than the default Site 

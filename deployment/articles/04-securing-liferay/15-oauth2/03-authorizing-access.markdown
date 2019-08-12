@@ -56,13 +56,15 @@ With the following parameters in the body (encoded as
 
 In the body of HTTP response to this request, you receive JSON like this:
 
-	{
-		"access_token": "[authorization server generated access token]",
-		"token_type": "Bearer",
-		"expires_in": 600,
-		"scope": "[the scopes that were authorized by the user]",
-		"refresh_token": "[authorization server generated refresh token]"
-	}
+```json
+{
+	"access_token": "[authorization server generated access token]",
+	"token_type": "Bearer",
+	"expires_in": 600,
+	"scope": "[the scopes that were authorized by the user]",
+	"refresh_token": "[authorization server generated refresh token]"
+}
+```
 
 From this you should extract and persist the access token. If you intend to use 
 the token for an indefinite amount of time (beyond 600 seconds from the above 

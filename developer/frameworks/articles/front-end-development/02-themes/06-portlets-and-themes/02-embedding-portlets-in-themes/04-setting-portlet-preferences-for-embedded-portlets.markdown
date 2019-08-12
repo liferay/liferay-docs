@@ -11,21 +11,21 @@ Follow these steps to set default portlet preferences for an embedded portlet:
 1.  Retrieve portlet preferences using the `freeMarkerPortletPreferences` 
     object. The example below retrieves the `barebone`:
 
-```markup
-<#assign preferences = freeMarkerPortletPreferences.getPreferences(
-  "portletSetupPortletDecoratorId", "barebone"
-) />
- ```
+    ```markup
+    <#assign preferences = freeMarkerPortletPreferences.getPreferences(
+      "portletSetupPortletDecoratorId", "barebone"
+    ) />
+     ```
  
 2.  Set the `defaultPreferences` attribute of the embedded portlet to the 
     `freeMarkerPortletPreferences` object you just configured:
 
-```markup
-<@liferay_portlet["runtime"]
-    defaultPreferences="${preferences}"
-    portletName="com_liferay_login_web_portlet_LoginPortlet"
-/>
-```
+    ```markup
+    <@liferay_portlet["runtime"]
+        defaultPreferences="${preferences}"
+        portletName="com_liferay_login_web_portlet_LoginPortlet"
+    />
+    ```
 
 Below are some additional attributes you can define for embedded portlets:
 

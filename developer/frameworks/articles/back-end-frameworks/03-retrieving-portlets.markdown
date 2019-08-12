@@ -55,7 +55,7 @@ portlet ID or URL for adding the portlet to the current page. Here's the
 relevant code from the 
 [`asset_display/preview.jsp`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/asset/asset-taglib/src/main/resources/META-INF/resources/asset_display/preview.jsp#L75-L91): 
 
-```jsp
+```markup
 <%
 Map<String, Object> data = new HashMap<String, Object>();
 
@@ -87,7 +87,7 @@ data.put("portlet-id", portletId);
 Then it passes the `data` map to a new *Add* button that adds the portlet to
 the page:
 
-```jsp
+```markup
 <aui:button cssClass="add-button-preview" data="<%= data %>" value="add" />
 ```
 

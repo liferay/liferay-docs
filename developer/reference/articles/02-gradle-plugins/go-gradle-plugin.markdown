@@ -15,7 +15,7 @@ The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.go", version: "1.0.0"
