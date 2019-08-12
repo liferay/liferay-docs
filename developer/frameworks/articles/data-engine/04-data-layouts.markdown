@@ -34,14 +34,15 @@ curl -i -X POST \
     ],
     "description": {"en_US":"description"},
     "name": {"en_US":"name"},
-    "paginationMode": "single-page"
+    "paginationMode": "pagination"
 }
 
 ```
 
 Here you can create multiple pages, laying out your fields in column and rows.
-Each page can have a title and description, and the `dataLayout` itself can have
-a name and description (a name is required).
+The `paginationMode` element can be set to `pagination` or `wizard`.  Each page
+can have a title and description, and the `dataLayout` itself can have a name
+and description (a name is required).
 
 ## Retrieving Data Layouts
 
@@ -56,21 +57,6 @@ curl -i -X GET \
     -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
     -H 'Content-Type: application/json' \ 
 ```
-
-### Retrieving all the Data Layouts in a Site 
-
-Send a GET request to the `data-definitions` resource's `data-layouts` endpoint,
-passing in the data definition ID as a URL parameter: 
-
-```sh
-curl -i -X GET \
-    http://localhost:8080/o/data-engine/v1.0/data-definitions/{data_definition_id}/data-layouts \
-    -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
-    -H 'Content-Type: application/json' \ 
-```
-
-You could use this call to get the data layout key for a particular data layout,
-then get the layout by this key.
 
 ### Retrieving the Data Layout Matching a Key
 
@@ -101,9 +87,9 @@ curl -i -X GET \
 Notice that the keywords, page number, and page size are added as query
 parameters.
 
-- `keywords` are the search keywords to match data layouts by. Data layout
-    fields that are matched to the keywords include `name`, `description`, and
-    `fieldNames`.
+- `keywords` are the search keywords to match data layouts by. The `name` and
+    `description` Data layout
+    fields are matched to the keywords sent here.
 - `page` specifies the page of results to return (as an integer), if there are
     more layouts returned than the `pageSize`.
 - `pageSize` is the number of layouts to include on each page. 
@@ -151,7 +137,7 @@ curl -i -X PUT \
     ],
     "description": {"en_US":"description"},
     "name": {"en_US":"name"},
-    "paginationMode": "single-page"
+    "paginationMode": "pagination"
 }
 ```
 
