@@ -205,7 +205,7 @@ What follows here are some known good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
 testing under load, and tuning again, so we encourage you to examine the
 [settings](/docs/7-0/deploy/-/knowledge_base/d/elasticsearch-settings) as
-well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/important-settings.html#important-settings) 
+well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup.html) 
 and go through that process once you have a working configuration. 
 
 ## Configuring a Remote Elasticsearch Host
