@@ -8,10 +8,10 @@ header-id: overriding-core-classes-with-ext-plugins
 
 A supported use case for using Ext plugins in @product@ is overriding its core
 classes (e.g., `portal-impl`, `portal-kernel`, etc.). You can reference the
-[Finding Core Liferay Portal Artifacts](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies#finding-core-liferay-portal-artifacts)
+[Finding Core Liferay Portal Artifacts](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts#finding-core-artifact-attributes)
 section for help distinguishing core classes. Make sure you've reviewed the
 generalized
-[Customization with Ext Plugins](/docs/7-2/reference/-/knowledge_base/r/customizing-core-functionality-with-ext)
+[Customization with Ext Plugins](/docs/7-2/customization/-/knowledge_base/c/customizing-core-functionality-with-ext)
 section before creating an Ext plugin.
 
 As an example, you'll create a sample Ext plugin that overwrites the
@@ -71,5 +71,5 @@ When your Ext plugin is deployed, your new Java class will override the core
 
 Awesome! You've created an Ext plugin that overrides a core class in @product@!
 Follow the instructions in the
-[Deploy the Plugin](/docs/7-2/reference/-/knowledge_base/r/deploying-an-ext-plugin)
+[Deploy the Plugin](/docs/7-2/customization/-/knowledge_base/c/deploying-an-ext-plugin)
 article to deploy it to your server.

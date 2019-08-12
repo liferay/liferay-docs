@@ -11,7 +11,7 @@ By default, the configuration UI for your app is generated in *System Settings*
 there; by categorizing your configuration you can place it somewhere intuitive
 and easy to find.
 
-| Note: If you
+| **Note:** If you
 | [scope](/docs/7-2/frameworks/-/knowledge_base/f/scoping-configurations) your
 | configuration so that a UI is generated in Instance Settings as well, your
 | categorization will apply to that UI also.
@@ -44,10 +44,10 @@ right before the interface's `@Meta.OCD` annotation, places the UI in the
 `dynamic-data-mapping` category in the Content management section:
 
 ```java
-    @ExtendedObjectClassDefinition(
-        category = "dynamic-data-mapping",
-        scope = ExtendedObjectClassDefinition.Scope.GROUP
-    )
+@ExtendedObjectClassDefinition(
+    category = "dynamic-data-mapping",
+    scope = ExtendedObjectClassDefinition.Scope.GROUP
+)
 ```
 
 This annotation does two things:

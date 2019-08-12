@@ -30,7 +30,9 @@ file is `elasticsearch.yml`, used for configuring Elasticsearch modules.
 To set the name of the Elasticsearch cluster, open `[Elasticsearch
 Home]/config/elasticsearch.yml` and specify
 
-    cluster.name: LiferayElasticsearchCluster
+```yml
+cluster.name: LiferayElasticsearchCluster
+```
 
 Since `LiferayElasticsearchCluster` is the default name given to the cluster in
 the @product@ Elasticsearch connector, this works just fine. Of course, you can
@@ -43,7 +45,9 @@ setting for this, it exists only in each Elasticsearch node's
 If you'd rather work from the command line than in the configuration file,
 navigate to Elasticsearch Home and enter
 
-    ./bin/elasticsearch --cluster.name clustery_mcclusterface --node.name nody_mcnodeface
+```bash
+./bin/elasticsearch --cluster.name clustery_mcclusterface --node.name nody_mcnodeface
+```
 
 Feel free to change the node name or the cluster name. Once you configure
 Elasticsearch to your liking, start it up.
@@ -52,17 +56,23 @@ Elasticsearch to your liking, start it up.
 
 Start Elasticsearch by navigating to Elasticsearch Home and typing 
 
-    ./bin/elasticsearch
+```bash
+./bin/elasticsearch
+```
 
 if you run Linux, or 
 
-    \bin\elasticsearch.bat
+```bash
+\bin\elasticsearch.bat
+```
 
 if you run Windows.
 
 To run as a daemon in the background, add the `-d` switch to either command:
 
-    ./bin/elasticsearch -d
+```bash
+./bin/elasticsearch -d
+```
 
 Once both Elasticsearch and @product@ are installed and running, introduce them
 to each other. 

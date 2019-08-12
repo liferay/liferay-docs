@@ -15,12 +15,12 @@ providing its instance ID and name. Follow these steps:
 2.  Add the `liferay_portlet["runtime"]` macro to the template, as shown below. 
     The portlet name **must** be the same as `javax.portlet.name`'s value.
 
-```markup
-<@liferay_portlet["runtime"]
-    instanceId="INSTANCE_ID"
-    portletName="PORTLET_NAME"
-/>
-```
+    ```markup
+    <@liferay_portlet["runtime"]
+        instanceId="INSTANCE_ID"
+        portletName="PORTLET_NAME"
+    />
+    ```
 
 | **Note:** If your portlet is instanceable, an instance ID must be provided;
 | otherwise, you can remove this line. To set your portlet to non-instanceable,

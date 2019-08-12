@@ -138,7 +138,7 @@ Follow these steps to create an upgrade process for your module:
     `1.1.0`, and `1.1.0` to `2.0.0`). 
 
     The first registration is applied if the module hasn't been installed 
-    previously. It contains only one empty upgrade step: `new [DummyUpgradeStep](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/upgrade/DummyUpgradeStep.java)()`. 
+    previously. It contains only one empty upgrade step: [new `DummyUpgradeStep`](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/upgrade/DummyUpgradeStep.java)(). 
     This registration records the module's latest schema version (i.e., `2.0.0`) 
     in @product@'s `Release_` table. Note that if the same class name is used in 
     multiple packages, you must provide the fully qualified class name for the 
@@ -191,7 +191,6 @@ Follow these steps to create an upgrade process for your module:
     to be available in the run time environment:
     
     ```java
-    
     @Component(immediate = true, service = UpgradeStepRegistrator.class)
     public class WikiServiceUpgrade implements UpgradeStepRegistrator {
     

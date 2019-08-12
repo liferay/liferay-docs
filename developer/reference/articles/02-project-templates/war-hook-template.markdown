@@ -11,7 +11,7 @@ create a Liferay WAR hook via the command line using Blade CLI or Maven, use one
 of the commands with the following parameters:
 
 ```bash
-    blade create -t war-hook [-p packageName] [-c className] projectName
+blade create -t war-hook [-p packageName] [-c className] projectName
 ```
 
 or

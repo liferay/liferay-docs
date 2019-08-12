@@ -13,7 +13,7 @@ iterator to show the selected view type. Follow these steps:
     `displayStyle` attribute to the style you defined, otherwise follow the 
     pattern below:
 
-    ```html
+    ```markup
     <liferay-ui:search-iterator
         displayStyle="<%= displayStyle %>"
         markupView="lexicon"

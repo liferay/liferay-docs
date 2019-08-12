@@ -96,19 +96,21 @@ Because the Storage Adapter handles User entered data during the `add` and
 appropriate data. Add a `validate` method to the `StorageAdapter`, calling the
 Liferay Forms' `DDMFormValuesValidator` method to do the heavy lifting. 
 
-	protected void validate(
-        DDMFormValues ddmFormValues, ServiceContext serviceContext)
-		throws Exception {
+```java
+protected void validate(
+      DDMFormValues ddmFormValues, ServiceContext serviceContext)
+	throws Exception {
 
-		boolean validateDDMFormValues = GetterUtil.getBoolean(
-			serviceContext.getAttribute("validateDDMFormValues"), true);
+	boolean validateDDMFormValues = GetterUtil.getBoolean(
+		serviceContext.getAttribute("validateDDMFormValues"), true);
 
-		if (!validateDDMFormValues) {
-			return;
-		}
-
-		_ddmFormValuesValidator.validate(ddmFormValues);
+	if (!validateDDMFormValues) {
+		return;
 	}
+
+	_ddmFormValuesValidator.validate(ddmFormValues);
+}
+```
 
 Make sure to do three things:
 

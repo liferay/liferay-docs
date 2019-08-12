@@ -40,7 +40,7 @@ To copy your Plugins SDK project and convert it to Gradle, use the Blade
     This Gradle conversion process also works for themes; they're converted to
     automatically leverage NodeJS. If you're converting a Java-based theme, add
     the `-t` option to your command too. This will incorporate the
-    [Theme Builder](/docs/reference/7-2/-/knowledge_base/r/theme-builder-gradle-plugin)
+    [Theme Builder](/docs/7-2/reference/-/knowledge_base/r/theme-builder-gradle-plugin)
     Gradle plugin for the theme instead. For more information on upgrading
     6.2 themes, see the
     [Upgrade a 6.2 Theme to 7.2](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-6-2-themes-to-7-2).

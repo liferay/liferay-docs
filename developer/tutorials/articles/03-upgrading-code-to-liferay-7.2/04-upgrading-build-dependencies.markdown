@@ -29,7 +29,7 @@ If you're using a Gradle-based workspace, the repository URL is updated to point
 to the latest Liferay CDN repository. This is set in your workspace's
 `settings.gradle` file within the `buildscript` block like this:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -73,7 +73,7 @@ Initiate this step to remove your dependency versions from your project's
 As an example of what a `build.gradle`'s `dependencies` block should look like,
 see the below snippet:
 
-```gradle
+```groovy
 dependencies {
     compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"
     compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib"

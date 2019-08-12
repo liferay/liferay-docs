@@ -15,7 +15,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.gulp", version: "2.0.59"

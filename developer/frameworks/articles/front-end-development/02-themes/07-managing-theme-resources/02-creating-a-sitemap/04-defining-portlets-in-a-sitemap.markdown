@@ -21,36 +21,38 @@ Follow these steps:
     
 2.  List the portlet ID in the column of the layout you want to display the 
     portlet on. An example configuration is shown below:
-    
-        {
-            "layoutTemplateId": "2_columns_ii",
-            "publicPages": [
-                {
-                    "columns": [
-                        [
-                            {
-                                "portletId": "com_liferay_login_web_portlet_LoginPortlet"
-                            },
-                            {
-                                "portletId": 
-                                "com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet"
-                            }
-                        ],
-                        [
-                            {
-                                "portletId": "com_liferay_hello_world_web_portlet_HelloWorldPortlet"
-                            }
-                        ]
+
+    ```json
+    {
+        "layoutTemplateId": "2_columns_ii",
+        "publicPages": [
+            {
+                "columns": [
+                    [
+                        {
+                            "portletId": "com_liferay_login_web_portlet_LoginPortlet"
+                        },
+                        {
+                            "portletId": 
+                            "com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet"
+                        }
                     ],
-                    "friendlyURL": "/home",
-                    "nameMap": {
-                        "en_US": "Welcome",
-                        "fr_FR": "Bienvenue"
-                    },
-                    "title": "Welcome"
-                }
-            ]
-        }
+                    [
+                        {
+                            "portletId": "com_liferay_hello_world_web_portlet_HelloWorldPortlet"
+                        }
+                    ]
+                ],
+                "friendlyURL": "/home",
+                "nameMap": {
+                    "en_US": "Welcome",
+                    "fr_FR": "Bienvenue"
+                },
+                "title": "Welcome"
+            }
+        ]
+    }
+    ```
 
     This approach embeds the portlet with its default settings. To customize the 
     portlet, you must configure the portlet's preferences, as described in the 
@@ -60,16 +62,18 @@ Follow these steps:
     `portletPreferences` key. Below is an example for the Web Content Display 
     portlet:
 
-        {
-            "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet",
-            "portletPreferences": {
-                "articleId": "Custom Title.xml",
-                "groupId": "${groupId}",
-                "portletSetupPortletDecoratorId": "decorate",
-                "portletSetupTitle_en_US": "Web Content Display with Custom Title",
-                "portletSetupUseCustomTitle": "true"
-            }
+    ```json
+    {
+        "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet",
+        "portletPreferences": {
+            "articleId": "Custom Title.xml",
+            "groupId": "${groupId}",
+            "portletSetupPortletDecoratorId": "decorate",
+            "portletSetupTitle_en_US": "Web Content Display with Custom Title",
+            "portletSetupUseCustomTitle": "true"
         }
+    }
+    ```
 
     **portletSetupPortletDecoratorId:** Specifies the [portlet decorator]() 
     to use for the portlet (`borderless` || `barebone` || `decorate`). See 

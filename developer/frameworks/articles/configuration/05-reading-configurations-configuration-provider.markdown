@@ -68,15 +68,15 @@ obtain a reference to it:
     export of content from a running portal:
 
     ```java
-	protected boolean isValidateLayoutReferences() throws PortalException {
-		long companyId = CompanyThreadLocal.getCompanyId();
+  	protected boolean isValidateLayoutReferences() throws PortalException {
+  		long companyId = CompanyThreadLocal.getCompanyId();
 
-		ExportImportServiceConfiguration exportImportServiceConfiguration =
-			ConfigurationProviderUtil.getCompanyConfiguration(
-				ExportImportServiceConfiguration.class, companyId);
+  		ExportImportServiceConfiguration exportImportServiceConfiguration =
+  			ConfigurationProviderUtil.getCompanyConfiguration(
+  				ExportImportServiceConfiguration.class, companyId);
 
-		return exportImportServiceConfiguration.validateLayoutReferences();
-	}
+  		return exportImportServiceConfiguration.validateLayoutReferences();
+  	}
     ```
 
 To retrieve the configuration, use one of the following methods of the provider:

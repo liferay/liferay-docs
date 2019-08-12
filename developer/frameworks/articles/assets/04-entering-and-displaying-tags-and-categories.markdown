@@ -15,7 +15,7 @@ entities. Here's what the tags look like in the
 [edit_entry.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp) 
 for the Blogs portlet: 
 
-```jsp
+```markup
 <liferay-ui:asset-categories-error />
 <liferay-ui:asset-tags-error />
 ...
@@ -48,7 +48,7 @@ markup view.
 Tags and categories should be displayed with the content of the asset. Here's
 how to display the tags and categories: 
 
-```jsp
+```markup
 <liferay-asset:asset-categories-available
     className="<%= [AssetEntry].class.getName() %>"
     classPK="<%= entry.getEntryId() %>"

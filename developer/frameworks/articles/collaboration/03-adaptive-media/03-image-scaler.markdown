@@ -33,37 +33,45 @@ steps customizes the scaling of PNG images:
     This example image scaler scales PNG and x-PNG images and has a service 
     ranking of `100`: 
 
-        @Component(
-            immediate = true,
-            property = {"mime.type=image/png", "mime.type=image/x-png", "service.ranking:Integer=100"},
-            service = {AMImageScaler.class}
-        )
-        public class SampleAMPNGImageScaler implements AMImageScaler {...
+    ```java
+    @Component(
+        immediate = true,
+        property = {"mime.type=image/png", "mime.type=image/x-png", "service.ranking:Integer=100"},
+        service = {AMImageScaler.class}
+    )
+    public class SampleAMPNGImageScaler implements AMImageScaler {...
+    ```
 
     This requires these imports: 
 
-        import com.liferay.adaptive.media.image.scaler.AMImageScaler;
-        import org.osgi.service.component.annotations.Component;
+    ```java
+    import com.liferay.adaptive.media.image.scaler.AMImageScaler;
+    import org.osgi.service.component.annotations.Component;
+    ```
 
 2.  Implement the `isEnabled()` method to return `true` when you want to enable 
     the scaler. In many cases, you always want the scaler enabled, so you can 
     simply return `true` in this method. This is the case with the image scaler 
     in this example: 
 
-        @Override
-        public boolean isEnabled() {
-            return true;
-        }
+    ```java
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+    ```
 
     This method gets more interesting when the scaler depends on other tools or 
     features. For example, the `isEnabled()` method in `AMGIFImageScaler` 
     determines whether gifsicle is enabled. This scaler must only be enabled 
     when the tool it depends on, gifsicle, is also enabled: 
 
-        @Override
-        public boolean isEnabled() {
-            return _amImageConfiguration.gifsicleEnabled();
-        }
+    ```java
+    @Override
+    public boolean isEnabled() {
+        return _amImageConfiguration.gifsicleEnabled();
+    }
+    ```
 
 3.  Implement the `scaleImage` method. This method contains the scaler's 
     business logic and must return an `AMImageScaledImage` instance. For 
@@ -74,78 +82,82 @@ steps customizes the scaling of PNG images:
     `_getScalePNGHeight`, `_getScalePNGWidth`, and `_getScalePNGSize` implement 
     the actual scaling: 
 
+    ```java
+    @Override
+    public AMImageScaledImage scaleImage(FileVersion fileVersion,
+        AMImageConfigurationEntry amImageConfigurationEntry) {
+
+        Map<String, String> properties = amImageConfigurationEntry.getProperties();
+
+        int maxHeight = GetterUtil.getInteger(properties.get("max-height"));
+        int maxWidth = GetterUtil.getInteger(properties.get("max-width"));
+
+        try {
+            InputStream inputStream = 
+                _scalePNG(fileVersion.getContentStream(false), maxHeight, maxWidth);
+
+            int height = _getScalePNGHeight();
+            int width = _getScalePNGWidth();
+            long size = _getScalePNGSize();
+
+            return new AMImageScaledImageImpl(inputStream, height, width, size);
+        }
+        catch (PortalException pe) {
+            throw new AMRuntimeException.IOException(pe);
+        }
+    }
+
+    private class AMImageScaledImageImpl implements AMImageScaledImage {
+
         @Override
-        public AMImageScaledImage scaleImage(FileVersion fileVersion,
-            AMImageConfigurationEntry amImageConfigurationEntry) {
-
-            Map<String, String> properties = amImageConfigurationEntry.getProperties();
-
-            int maxHeight = GetterUtil.getInteger(properties.get("max-height"));
-            int maxWidth = GetterUtil.getInteger(properties.get("max-width"));
-
-            try {
-                InputStream inputStream = 
-                    _scalePNG(fileVersion.getContentStream(false), maxHeight, maxWidth);
-
-                int height = _getScalePNGHeight();
-                int width = _getScalePNGWidth();
-                long size = _getScalePNGSize();
-
-                return new AMImageScaledImageImpl(inputStream, height, width, size);
-            }
-            catch (PortalException pe) {
-                throw new AMRuntimeException.IOException(pe);
-            }
+        public int getHeight() {
+            return _height;
         }
 
-        private class AMImageScaledImageImpl implements AMImageScaledImage {
-
-            @Override
-            public int getHeight() {
-                return _height;
-            }
-
-            @Override
-            public InputStream getInputStream() {
-                return _inputStream;
-            }
-
-            @Override
-            public long getSize() {
-                return _size;
-            }
-
-            @Override
-            public int getWidth() {
-                return _width;
-            }
-
-            private AMImageScaledImageImpl(InputStream inputStream, int height, 
-                int width, long size) {
-
-                _inputStream = inputStream;
-                _height = height;
-                _width = width;
-                _size = size;
-            }
-
-            private final int _height;
-            private final InputStream _inputStream;
-            private final long _size;
-            private final int _width;
-
+        @Override
+        public InputStream getInputStream() {
+            return _inputStream;
         }
+
+        @Override
+        public long getSize() {
+            return _size;
+        }
+
+        @Override
+        public int getWidth() {
+            return _width;
+        }
+
+        private AMImageScaledImageImpl(InputStream inputStream, int height, 
+            int width, long size) {
+
+            _inputStream = inputStream;
+            _height = height;
+            _width = width;
+            _size = size;
+        }
+
+        private final int _height;
+        private final InputStream _inputStream;
+        private final long _size;
+        private final int _width;
+
+    }
+    ```
 
     This requires these imports: 
 
-        import com.liferay.adaptive.media.exception.AMRuntimeException;
-        import com.liferay.adaptive.media.image.configuration.AMImageConfigurationEntry;
-        import com.liferay.adaptive.media.image.scaler.AMImageScaledImage;
-        import com.liferay.portal.kernel.exception.PortalException;
-        import com.liferay.portal.kernel.repository.model.FileVersion;
-        import com.liferay.portal.kernel.util.GetterUtil;
-        import java.io.InputStream;
-        import java.util.Map;
+    ```java
+    import com.liferay.adaptive.media.exception.AMRuntimeException;
+    import com.liferay.adaptive.media.image.configuration.AMImageConfigurationEntry;
+    import com.liferay.adaptive.media.image.scaler.AMImageScaledImage;
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.repository.model.FileVersion;
+    import com.liferay.portal.kernel.util.GetterUtil;
+    import java.io.InputStream;
+    import java.util.Map;
+    ```
 
 ## Related Topics
 

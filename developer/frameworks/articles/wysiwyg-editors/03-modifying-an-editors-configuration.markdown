@@ -65,11 +65,13 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
     | `editor.config.key` is not required. For example, if you just want to target
     | the Web Content portlet's editors, you can provide the configuration below:
     | 
-    |     @Component(
-    |     property = {"editor.name=ckeditor",
-    |     "javax.portlet.name=com_liferay_journal_web_portlet_JournalPortlet",
-    |     "service.ranking:Integer=100"
-    |     }
+    | ```java
+    | @Component(
+    | property = {"editor.name=ckeditor",
+    | "javax.portlet.name=com_liferay_journal_web_portlet_JournalPortlet",
+    | "service.ranking:Integer=100"
+    | }
+    | ```
     
     Two portlet names are declared (Blogs and Blogs Admin), specifying that the 
     service applies to the content editors in those portlets. Lastly, the 
