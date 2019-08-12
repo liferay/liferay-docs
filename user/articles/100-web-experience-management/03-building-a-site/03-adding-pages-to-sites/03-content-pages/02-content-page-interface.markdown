@@ -140,7 +140,6 @@ available for widgets on Widget Pages.
 
 ### Page Structure
 
-
 Page Structure provides a high level view of every Fragment and every field
 within each Fragment on the page.
 
@@ -152,18 +151,51 @@ access items that might be hard to click on  directly.
 
 ### Look and Feel
 
-The last icon on the right side of the page will bring you to the *Look and 
-Feel* configuration for the page where you can change the theme or manage other 
-options for the page. These options are fully documented in the
-[Page Management](docs/7-2/user/-/knowledge_base/user/creating-pages) section.
+Click the *Look and Feel* icon 
+(![Look and Feel](../../../../../images/icon-look-and-feel.png)) 
+to change the theme or manage other options for the page. These options are 
+fully documented in 
+[Creating Pages](/docs/7-2/user/-/knowledge_base/u/creating-pages). 
+
+### Comments
+
+You can also comment on any page fragments. This allows discussion and 
+collaboration for teams creating content pages. 
+
+Comments are disabled by default, but administrators can enable them from 
+*Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Pages* 
+&rarr; *Content Page Editor*. Select the *Comments Enabled* checkbox and click 
+*Update*. This enables content page comments for all instances. To control this 
+on an instance-by-instance basis, navigate to the same setting in 
+*Instance Settings* (instead of System Settings). 
+
+![Figure 12: Administrators can enable comments for content pages.](../../../../../images/enable-content-page-comments.png)
+
+If comments are enabled, you can access them via the *Comments* icon 
+(![Comments](../../../../../images/icon-comments.png)). 
+The comments appear for the selected fragment. You can take the following 
+actions in the comments UI for a fragment:
+
+-   Add new comments and reply to any existing ones. 
+-   Resolve comments by clicking the checkmark for each. Resolving a comment 
+    hides it from view, unless *Show Resolved Comments* is selected. 
+-   Edit and delete your own comments via the Actions button 
+    (![Actions](../../../../../images/icon-actions.png)) 
+    for each. 
+
+If you unselect a fragment or enter the comments UI without a fragment selected, 
+a list of the fragments on the page appears with the number of comments for 
+each. Selecting a fragment then shows its comments. 
+
+![Figure 13: When creating content pages, you and your team can comment on any fragments.](../../../../../images/content-page-comments.png)
 
 ### The Title Bar
 
 The title bar provides navigation back to the Main Menu, a link to page
 configuration, and the ability to search for other pages. The title bar is
-covered in more detail in the
-[Page Management](docs/7-2/user/-/knowledge_base/user/creating-pages) section.
+covered in more detail in 
+[Creating Pages](/docs/7-2/user/-/knowledge_base/u/creating-pages). 
 
-![Figure 12: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
+![Figure 14: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
 
 Great! Now you know how to use the content page interface!
