@@ -15,7 +15,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "3.0.0"
@@ -35,7 +35,7 @@ Since the plugin automatically resolves the Liferay CSS Builder library as a
 dependency, you have to configure a repository that hosts the library and its
 transitive dependencies. The Liferay CDN repository hosts them all:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -145,7 +145,7 @@ dependency to the latest released version of the Liferay CSS Builder. It is
 possible to override this setting and use a specific version of the tool by
 manually adding a dependency to the `cssBuilder` configuration:
 
-```gradle
+```groovy
 dependencies {
     cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.0.0"
 }
@@ -159,7 +159,7 @@ artifact. It is possible to override this setting and use a specific version of
 the artifact by manually adding a dependency to the `portalCommonCSS`
 configuration:
 
-```gradle
+```groovy
 dependencies {
     portalCommonCSS group: "com.liferay", name: "com.liferay.frontend.css.common", version: "2.0.1"
 }

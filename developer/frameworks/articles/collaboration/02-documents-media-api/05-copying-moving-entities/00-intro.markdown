@@ -33,8 +33,10 @@ folder also copies its contents.
 
 To copy a folder, use the `DLAppService` method `copyFolder`: 
 
-    copyFolder(long repositoryId, long sourceFolderId, long parentFolderId, String name, 
-            String description, ServiceContext serviceContext)
+```java
+copyFolder(long repositoryId, long sourceFolderId, long parentFolderId, String name, 
+        String description, ServiceContext serviceContext)
+```
 
 For a full description of the method and its parameters, see its 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#copyFolder-long-long-long-java.lang.String-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
@@ -58,7 +60,9 @@ however, works with files and folders within or between repositories.
 
 To move a folder, use the `DLAppService` method `moveFolder`: 
 
-    moveFolder(long folderId, long parentFolderId, ServiceContext serviceContext)
+```java
+moveFolder(long folderId, long parentFolderId, ServiceContext serviceContext)
+```
 
 For a full description of this method and its parameters, see its 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#moveFolder-long-long-com.liferay.portal.kernel.service.ServiceContext-). 
@@ -69,7 +73,9 @@ moved with the folder.
 The operation for moving a file is almost identical to moving a folder. To move 
 a file, use the `DLAppService` method `moveFileEntry`: 
 
-    moveFileEntry(long fileEntryId, long newFolderId, ServiceContext serviceContext)
+```java
+moveFileEntry(long fileEntryId, long newFolderId, ServiceContext serviceContext)
+```
 
 For a full description of this method and its parameters, see its 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#moveFileEntry-long-long-com.liferay.portal.kernel.service.ServiceContext-). 

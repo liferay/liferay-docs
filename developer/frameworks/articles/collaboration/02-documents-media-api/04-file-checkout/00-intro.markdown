@@ -30,7 +30,9 @@ Here's what happens when you check out a file:
 The main `DLAppService` method for checking out a file is this 
 `checkOutFileEntry` method: 
 
-    checkOutFileEntry(long fileEntryId, ServiceContext serviceContext)
+```java
+checkOutFileEntry(long fileEntryId, ServiceContext serviceContext)
+```
 
 If this method throws an exception, then you should assume the checkout failed 
 and repeat the operation. For a full description of the method and its 
@@ -63,7 +65,9 @@ To set these attributes, use the `ServiceContext` method
 [`setAttribute(String name, Serializable value)`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html#setAttribute-java.lang.String-java.io.Serializable-). 
 Here's an example of setting the `manualCheckInRequired` attribute to `true`: 
 
-    serviceContext.setAttribute("manualCheckInRequired", Boolean.TRUE)
+```java
+serviceContext.setAttribute("manualCheckInRequired", Boolean.TRUE)
+```
 
 ## File Checkin
 
@@ -74,8 +78,10 @@ are overwritten.
 
 The `DLAppService` method for checking in a file is `checkInFileEntry`: 
 
-    checkInFileEntry(long fileEntryId, boolean majorVersion, String changeLog, 
-                    ServiceContext serviceContext)
+```java
+checkInFileEntry(long fileEntryId, boolean majorVersion, String changeLog, 
+                ServiceContext serviceContext)
+```
 
 For a full description of the method and its parameters, see its 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#checkInFileEntry-long-boolean-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
@@ -94,7 +100,9 @@ You can also cancel a checkout. Use caution with this operation---it discards
 any edits made since checkout. If you're sure you want to cancel a checkout, do 
 so with the `DLAppService` method `cancelCheckOut`: 
 
-    cancelCheckOut(long fileEntryId)
+```java
+cancelCheckOut(long fileEntryId)
+```
 
 For a full description of this method and its parameter, see its 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#cancelCheckOut-long-). 

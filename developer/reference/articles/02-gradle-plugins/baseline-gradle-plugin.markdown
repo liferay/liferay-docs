@@ -22,7 +22,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.baseline", version: "2.1.0"
@@ -45,7 +45,7 @@ Since the plugin needs to download the baseline, you have to configure a
 [repository](https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html#sec:repositories_tutorial)
 that hosts it; for example, the central Maven 2 repository:
 
-```gradle
+```groovy
 repositories {
     mavenCentral()
 }

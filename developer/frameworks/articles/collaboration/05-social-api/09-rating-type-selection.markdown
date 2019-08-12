@@ -19,27 +19,31 @@ detailed explanation of these steps and rating type selection, see
     definition is for a blog entry, so the `model.class.name` property is set to 
     `com.liferay.portlet.blogs.model.BlogsEntry`: 
 
-        @Component(
-            property = {
-                "model.class.name=com.liferay.portlet.blogs.model.BlogsEntry"
-            }
-        )
-        public class BlogsPortletRatingsDefinition implements PortletRatingsDefinition {...
+    ```java
+    @Component(
+        property = {
+            "model.class.name=com.liferay.portlet.blogs.model.BlogsEntry"
+        }
+    )
+    public class BlogsPortletRatingsDefinition implements PortletRatingsDefinition {...
+    ```
 
 2.  Implement the `PortletRatingsDefinition` methods `getDefaultRatingsType` and 
     `getPortletId` to return the entity's default rating type and the portlet ID 
     of the main portlet that uses the entity, respectively. In this example, the 
     rating type is thumbs and the portlet ID is for the Blogs portlet: 
 
-        @Override
-        public RatingsType getDefaultRatingsType() {
-            return RatingsType.THUMBS;
-        }
+    ```java
+    @Override
+    public RatingsType getDefaultRatingsType() {
+        return RatingsType.THUMBS;
+    }
 
-        @Override
-        public String getPortletId() {
-            return PortletKeys.BLOGS;
-        }
+    @Override
+    public String getPortletId() {
+        return PortletKeys.BLOGS;
+    }
+    ```
 
 ## Related Topics
 

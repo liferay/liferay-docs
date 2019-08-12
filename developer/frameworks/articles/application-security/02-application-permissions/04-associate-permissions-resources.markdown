@@ -20,7 +20,7 @@ permissions interface to the UI. Add these two Liferay UI tags to your JSP:
 
 The Blogs application uses these tags like this: 
 
-```jsp
+```markup
 <liferay-security:permissionsURL
             modelResource="<%= BlogsEntry.class.getName() %>"
             modelResourceDescription="<%= BlogsEntryUtil.getDisplayTitle(resourceBundle, entry) %>"

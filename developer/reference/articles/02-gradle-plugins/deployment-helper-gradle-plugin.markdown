@@ -15,7 +15,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.deployment.helper", version: "1.0.5"
@@ -35,7 +35,7 @@ Since the plugin automatically resolves the Liferay Deployment Helper library as
 a dependency, you have to configure a repository that hosts the library and its
 transitive dependencies. The Liferay CDN repository hosts them all:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -96,7 +96,7 @@ Helper. It is possible to override this setting and use a specific version of
 the tool by manually adding a dependency to the `deploymentHelper`
 configuration:
 
-```gradle
+```groovy
 dependencies {
     deploymentHelper group: "com.liferay", name: "com.liferay.deployment.helper", version: "1.0.4"
 }

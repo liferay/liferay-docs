@@ -76,8 +76,10 @@ to
 [get a service reference in an OSGi component via Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services).
 For example, this code gets a reference to `DLAppService`: 
 
-    @Reference
-    private DLAppService _dlAppService;
+```java
+@Reference
+private DLAppService _dlAppService;
+```
 
 If you're using a standard web module (WAR file), use a 
 [Service Tracker](/docs/7-2/frameworks/-/knowledge_base/f/using-a-service-tracker) 
@@ -106,16 +108,20 @@ and file shortcut (`FileShortcut`) entities. Each of these entities has a
 `getRepositoryId` method that gets its repository's ID. For example, this code 
 gets the repository ID of the `FileEntry` object `fileEntry`: 
 
-    long repositoryId = fileEntry.getRepositoryId();
+```java
+long repositoryId = fileEntry.getRepositoryId();
+```
 
 There may also be cases that require a `Repository` object. You can get one by 
 creating a `RepositoryProvider` reference and passing the repository ID to its 
 `getRepository` method: 
 
-    @Reference
-    private RepositoryProvider repositoryProvider;
+```java
+@Reference
+private RepositoryProvider repositoryProvider;
 
-    Repository repository = repositoryProvider.getRepository(repositoryId);
+Repository repository = repositoryProvider.getRepository(repositoryId);
+```
 
 Even if you only have an entity ID (e.g., a file or folder ID), you can still 
 use `RepositoryProvider` to get a `Repository` object. To do so, call the 
@@ -123,7 +129,9 @@ use `RepositoryProvider` to get a `Repository` object. To do so, call the
 argument. For example, this code gets a folder's `Repository` by calling the 
 `RepositoryProvider` method `getFolderRepository` with the folder's ID: 
 
-    Repository repository = repositoryProvider.getFolderRepository(folderId);
+```java
+Repository repository = repositoryProvider.getFolderRepository(folderId);
+```
 
 See the `RepositoryProvider` 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/RepositoryProvider.html) 

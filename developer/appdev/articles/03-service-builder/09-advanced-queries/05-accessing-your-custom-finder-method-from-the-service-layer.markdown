@@ -31,12 +31,14 @@ module can access the services.
 For example, for the Guestbook application, you'd add the following method to
 the `GuestbookEntryLocalServiceImpl` class:
 
-    public List<GuestbookEntry> findByEntryNameGuestbookName(String entryName,
-        String guestbookName) throws SystemException {
+```java
+public List<GuestbookEntry> findByEntryNameGuestbookName(String entryName,
+    String guestbookName) throws SystemException {
 
-        return entryFinder.findByEntryNameGuestbookName(String entryName,
-            String guestbookName);
-    }
+    return entryFinder.findByEntryNameGuestbookName(String entryName,
+        String guestbookName);
+}
+```
 
 After you've added your `findBy*` method to your `*LocalServiceImpl` class, run
 Service Builder to generate the interface and make the finder method available

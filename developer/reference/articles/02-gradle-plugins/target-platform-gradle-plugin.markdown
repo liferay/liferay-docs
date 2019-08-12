@@ -16,7 +16,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
 	dependencies {
 		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "2.0.0"
@@ -38,7 +38,7 @@ the root project.
 your projects to build against an established set of platform artifacts,
 including Java and OSGi dependencies.
 
-	```gradle
+	```groovy
 	apply plugin: "com.liferay.target.platform"
 	```
 
@@ -47,7 +47,7 @@ of the Target Platform Plugin (it applies the above plugin) and also adds IDE
 integration for searching and debugging source code in the target platform
 artifacts.
 
-	```gradle
+	```groovy
 	apply plugin: "com.liferay.target.platform.ide"
 	```
 
@@ -55,7 +55,7 @@ Since the plugin automatically resolves target platform configurations as
 dependencies, you must configure a repository that hosts these artifacts. The
 Liferay CDN repository hosts them all:
 
-```gradle
+```groovy
 repositories {
 	maven {
 		url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -163,7 +163,7 @@ The plugin creates a configuration called `targetPlatformBoms` with no defaults.
 You can use this dependency to set which BOMs to import to configure your target
 platform.
 
-```gradle
+```groovy
 dependencies {
 	targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.2.0"
 	targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.2.0"
@@ -179,7 +179,7 @@ task). This can be used to specify additional bundles that should be added to
 the set of bundles given to `resolve` task to resolve against when checking for
 OSGi requirements.
 
-```gradle
+```groovy
 dependencies {
 	targetPlatformBundles group: "com.google.guava", name: "guava", version: "23.0"
 }
@@ -191,7 +191,7 @@ The plugin creates a configuration called `targetPlatformDistro`. It is has no
 default so you must specify which artifact you want to use as the distribution
 to resolve against.
 
-```gradle
+```groovy
 dependencies {
 	targetPlatformDistro group: "com.liferay.portal", name: "release.portal.distro", version: "7.2.0"
 }
@@ -200,7 +200,7 @@ dependencies {
 If you have created your own custom distro JAR that is available locally, you
 can use the `files` method to add it to the configuration.
 
-```gradle
+```groovy
 dependencies {
 	targetPlatformDistro files("custom-distro.jar")
 }
@@ -215,7 +215,7 @@ task). This is can be used to specify additional bundles that should be added to
 the set of bundles given to the `resolve` task to set as `osgi.identity`
 requirements.
 
-```gradle
+```groovy
 dependencies {
 	targetPlatformRequirements group: "com.liferay", name: "com.liferay.other.bundle", version: "1.0"
 }

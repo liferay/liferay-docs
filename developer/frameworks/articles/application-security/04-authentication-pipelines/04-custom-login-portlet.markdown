@@ -33,7 +33,7 @@ and then redirect the user to a location of your choice.
 It has only one view, which is used for logging in or showing the user who is
 already logged in: 
 
-```jsp
+```markup
 <%@ include file="/init.jsp" %>
 
 <p>
@@ -96,7 +96,7 @@ The portlet handles all processing of this form using a single Action Command
 <!--Add link back for 'Action Command' once MVC Action Command article is available-->
 (imports left out for brevity): 
 
-```jsp
+```markup
 @Component(
     property = {
         "javax.portlet.name=MyLoginPortlet",

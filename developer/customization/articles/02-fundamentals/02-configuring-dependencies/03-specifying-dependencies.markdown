@@ -48,10 +48,12 @@ and Maven:
 
 *Gradle (`build.gradle` entry):*
 
-    dependencies {
-        compileOnly group: "com.liferay", name: "com.liferay.journal.api", version: "1.0.1"
-        ...
-    }
+```groovy
+dependencies {
+    compileOnly group: "com.liferay", name: "com.liferay.journal.api", version: "1.0.1"
+    ...
+}
+```
 
 *Maven (`pom.xml` entry):*
 

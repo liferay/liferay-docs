@@ -16,8 +16,10 @@ Follow these steps to use `checkInFileEntry` to check in a file:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the `checkInFileEntry` method's arguments. 
     Since it's common to check in a file in response to an action by the end 
@@ -26,11 +28,13 @@ Follow these steps to use `checkInFileEntry` to check in a file:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get the data any way you wish: 
 
-        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
-        boolean majorVersion = ParamUtil.getBoolean(actionRequest, "majorVersion");
-        String changeLog = ParamUtil.getString(actionRequest, "changeLog");
+    ```java
+    long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+    boolean majorVersion = ParamUtil.getBoolean(actionRequest, "majorVersion");
+    String changeLog = ParamUtil.getString(actionRequest, "changeLog");
 
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
+    ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
+    ```
 
 <!--Uncomment once article is available
     For more information on `ServiceContext`, see the tutorial 
@@ -40,8 +44,10 @@ Follow these steps to use `checkInFileEntry` to check in a file:
 3.  Call the service reference's `checkInFileEntry` method with the data from 
     the previous step: 
 
-        _dlAppService.checkInFileEntry(
-                fileEntryId, majorVersion, changeLog, serviceContext);
+    ```java
+    _dlAppService.checkInFileEntry(
+            fileEntryId, majorVersion, changeLog, serviceContext);
+    ```
 
 You can find the full code for this example in the `checkInFileEntries` method 
 of @product@'s 

@@ -27,7 +27,7 @@ languages.
 This example retrieves user information from the database, makes changes, and
 then saves the changes in the database. Suppose that your company has
 updated the 
-[terms of use](/docs/7-2/user/-/knowledge_base/u/terms-of-use)
+[terms of use](/docs/7-2/user/-/knowledge_base/u/instance-configuration-instance-settings#terms-of-use)
 and wants present users with the updated terms of use whenever they sign in
 next. When they agree to the terms of use, a boolean attribute called
 `agreedToTermsOfUse` is set in their user records. As long as the value of this

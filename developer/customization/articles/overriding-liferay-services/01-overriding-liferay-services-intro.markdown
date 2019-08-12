@@ -77,23 +77,23 @@ works, you need to override at least one service method.
 Open your `UserLocalServiceOverride` class and add the following methods:
 
 ```java
-    @Override
-    public int authenticateByEmailAddress(long companyId, String emailAddress,
-            String password, Map<String, String[]> headerMap,
-            Map<String, String[]> parameterMap, Map<String, Object> resultsMap)
-        throws PortalException {
+@Override
+public int authenticateByEmailAddress(long companyId, String emailAddress,
+        String password, Map<String, String[]> headerMap,
+        Map<String, String[]> parameterMap, Map<String, Object> resultsMap)
+    throws PortalException {
 
-        System.out.println(
-            "Authenticating user by email address " + emailAddress);
-        return super.authenticateByEmailAddress(companyId, emailAddress, password,
-            headerMap, parameterMap, resultsMap);
-    }
+    System.out.println(
+        "Authenticating user by email address " + emailAddress);
+    return super.authenticateByEmailAddress(companyId, emailAddress, password,
+        headerMap, parameterMap, resultsMap);
+}
 
-    @Override
-    public User getUser(long userId) throws PortalException {
-        System.out.println("Getting user by id " + userId);
-        return super.getUser(userId);
-    }
+@Override
+public User getUser(long userId) throws PortalException {
+    System.out.println("Getting user by id " + userId);
+    return super.getUser(userId);
+}
 ```
 
 Each of these methods overrides a Liferay service method. These implementations 
@@ -104,10 +104,10 @@ Lastly, you must add the following method to the bottom of your service wrapper
 so it can find the appropriate service it's overriding on deployment. 
 
 ```java
-    @Reference(unbind = "-")
-    private void serviceSetter(UserLocalService userLocalService) {
-        setWrappedService(userLocalService);
-    }
+@Reference(unbind = "-")
+private void serviceSetter(UserLocalService userLocalService) {
+    setWrappedService(userLocalService);
+}
 ```
 
 [Build and deploy your module](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project). 

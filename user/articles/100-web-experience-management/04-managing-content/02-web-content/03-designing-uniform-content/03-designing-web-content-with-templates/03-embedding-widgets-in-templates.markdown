@@ -10,7 +10,7 @@ You can also embed widgets in web content templates. Core apps and custom apps,
 instanceable or non-instanceable can be embedded in web content templates. Below
 is an example of embedding a Language widget in FreeMarker:
 
-```
+```markup
 <@liferay_portlet_ext["runtime"] portletName="com_liferay_portal_kernel_servlet_taglib_ui_LanguageEntry" />
 ```
 
@@ -26,7 +26,7 @@ scripts, or macros.
 
 Below is an example of embedding a template in FreeMarker:
 
-```
+```markup
 <#include "${templatesPath}/[template-key]" />
 ```   
 

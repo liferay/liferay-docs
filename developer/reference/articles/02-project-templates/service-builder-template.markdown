@@ -24,16 +24,24 @@ mvn archetype:generate \
     -DartifactId=[projectName] \
     -Dpackage=[packageName] \
     -DapiPath=[apiPath] \
+    -DdependencyInjector=[dependencyInjector] \
     -DliferayVersion=7.2
 ```
+
+By default, the Service Builder project uses OSGi Declarative Services (`ds`)
+for its dependency injector. If you prefer using Spring, you can set the
+parameter `--dependency-injector spring` with Blade CLI or
+`-DdependencyInjector=spring` with Maven. See the
+[Dependency Injection](/docs/7-2/frameworks/-/knowledge_base/f/dependency-injection)
+section for more information on these options.
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
 
 The template for this kind of project is `service-builder`. Suppose you want to
 create a Service Builder project called `tasks` with a package name of
-`com.liferay.docs.tasks`. You could run the following command to accomplish
-this:
+`com.liferay.docs.tasks` using OSGi Declarative Services. You could run the
+following command to accomplish this:
 
 ```bash
 blade create -t service-builder -p com.liferay.docs.tasks tasks
@@ -50,6 +58,7 @@ mvn archetype:generate \
     -Dpackage=com.liferay.docs.tasks \
     -Dversion=1.0 \
     -DapiPath=com.liferay.api.path \
+    -DdependencyInjector=ds \
     -DliferayVersion=7.2
 ```
 

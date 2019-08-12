@@ -78,7 +78,7 @@ placed inside the `aui:fieldset` tags of the JSP.
 1.  Add the `liferay-asset:input-asset-links` tag to your form. Here's how it's
     added in the Blogs application: 
 
-    ```jsp
+    ```markup
     <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="related-assets">
             <liferay-asset:input-asset-links
                 className="<%= [AssetEntry].class.getName() %>"
@@ -118,7 +118,7 @@ Publisher portlet.
 
 1.  You must get the `AssetEntry` object associated with your entity: 
 
-    ```jsp
+    ```markup
     <%
     long insultId = ParamUtil.getLong(renderRequest, "insultId");
     Insult ins = InsultLocalServiceUtil.getInsult(insultId);
@@ -133,7 +133,7 @@ Publisher portlet.
     assets linked to your asset.
 
 
-    ```jsp
+    ```markup
     <liferay-asset:asset-links
         assetEntryId="<%= (assetEntry != null) ? assetEntry.getEntryId() : 0 %>"
         className="<%= [myAssetEntry].class.getName() %>"

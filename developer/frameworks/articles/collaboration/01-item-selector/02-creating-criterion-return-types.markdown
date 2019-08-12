@@ -25,28 +25,26 @@ Selector criterion and return types, see the
     primary key information to the view: 
 
     ```java
+    public class JournalItemSelectorCriterion extends BaseItemSelectorCriterion {
 
-        public class JournalItemSelectorCriterion extends BaseItemSelectorCriterion {
-
-                public JournalItemSelectorCriterion() {
-                }
-        
-                public JournalItemSelectorCriterion(long resourcePrimKey) {
-                        _resourcePrimKey = resourcePrimKey;
-                }
-        
-                public long getResourcePrimKey() {
-                        return _resourcePrimKey;
-                }
-        
-                public void setResourcePrimKey(long resourcePrimKey) {
-                        _resourcePrimKey = resourcePrimKey;
-                }
-        
-                private long _resourcePrimKey;
-        
-        }
-
+            public JournalItemSelectorCriterion() {
+            }
+    
+            public JournalItemSelectorCriterion(long resourcePrimKey) {
+                    _resourcePrimKey = resourcePrimKey;
+            }
+    
+            public long getResourcePrimKey() {
+                    return _resourcePrimKey;
+            }
+    
+            public void setResourcePrimKey(long resourcePrimKey) {
+                    _resourcePrimKey = resourcePrimKey;
+            }
+    
+            private long _resourcePrimKey;
+    
+    }
     ```
 
 2.  Create a criterion handler by creating an OSGi component class that 
@@ -57,23 +55,21 @@ Selector criterion and return types, see the
     OSGi component: 
 
     ```java
+    @Component(service = ItemSelectorCriterionHandler.class)
+    public class TaskItemSelectorCriterionHandler extends 
+        BaseItemSelectorCriterionHandler<TaskItemSelectorCriterion> {
 
-        @Component(service = ItemSelectorCriterionHandler.class)
-        public class TaskItemSelectorCriterionHandler extends 
-            BaseItemSelectorCriterionHandler<TaskItemSelectorCriterion> {
-
-            public Class <TaskItemSelectorCriterion> getItemSelectorCriterionClass() {
-                return TasksItemSelectorCriterionHandler.class;
-            }
-
-            @Activate
-            @Override
-            protected void activate(BundleContext bundleContext) {
-                    super.activate(bundleContext);
-            }
-
+        public Class <TaskItemSelectorCriterion> getItemSelectorCriterionClass() {
+            return TasksItemSelectorCriterionHandler.class;
         }
 
+        @Activate
+        @Override
+        protected void activate(BundleContext bundleContext) {
+                super.activate(bundleContext);
+        }
+
+    }
     ```
 
 3.  If you need a new return type, create it by implementing 
@@ -83,17 +79,15 @@ Selector criterion and return types, see the
     type classes need no content. For example, here's a return type for a task: 
 
     ```java
+    /**
+    * This return type should return the task ID and the user who
+    * created the task as a string.
+    *
+    * @author Joe Bloggs
+    */
+    public class TaskItemSelectorReturnType implements ItemSelectorReturnType{
 
-        /**
-        * This return type should return the task ID and the user who
-        * created the task as a string.
-        *
-        * @author Joe Bloggs
-        */
-        public class TaskItemSelectorReturnType implements ItemSelectorReturnType{
-
-        }
-
+    }
     ```
 
 ## Related Topics

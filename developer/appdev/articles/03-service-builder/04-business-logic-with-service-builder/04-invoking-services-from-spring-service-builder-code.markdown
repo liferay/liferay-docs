@@ -144,4 +144,4 @@ Bean in the Application Context of your Service Builder Spring Bean.
 
 [JSON Web Services Invoker](/docs/7-2/appdev/-/knowledge_base/a/json-web-services-invoker)
 
-[Service Trackers](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers)
+[Service Trackers](/docs/7-2/frameworks/-/knowledge_base/f/using-a-service-tracker)
