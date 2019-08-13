@@ -21,12 +21,14 @@ curl -i -X POST \
   -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
   -H 'Content-Type: application/json' \
   -d '{
+    "availableLanguageIds": ["en_US"],
     "dataDefinitionFields": [
         {
             "fieldType": "text",
             "name": "product"
         }
     ],
+    "defaultLangugageId": "en_US",
     "description": {
             "en_US": "Description"
     },
