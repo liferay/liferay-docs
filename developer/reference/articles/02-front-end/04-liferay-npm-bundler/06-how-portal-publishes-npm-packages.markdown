@@ -149,31 +149,31 @@ Note that each package dependency is namespaced with the bundle's name
 own dependencies and avoid potential collisions with projects that export the 
 same package. For example, consider the two widget projects below:
 
-    - `my-widget`
-        - package.json
+- `my-widget`
+    - package.json
+        - dependencies:
+            - a-library 1.0.0
+            - a-helper 1.0.0
+    - node_modules
+        - a-library
+            - version: 1.0.0
             - dependencies:
-                - a-library 1.0.0
-                - a-helper 1.0.0
-        - node_modules
-            - a-library
-                - version: 1.0.0
-                - dependencies:
-                    - a-helper ^1.0.0
-            - a-helper
-                - version: 1.0.0
+                - a-helper ^1.0.0
+        - a-helper
+            - version: 1.0.0
 
-    - `another-widget`
-        - package.json
+- `another-widget`
+    - package.json
+        - dependencies:
+            - a-library 1.0.0
+            - a-helper 1.2.0
+    - node_modules
+        - a-library
+            - version: 1.0.0
             - dependencies:
-                - a-library 1.0.0
-                - a-helper 1.2.0
-        - node_modules
-            - a-library
-                - version: 1.0.0
-                - dependencies:
-                    - a-helper ^1.0.0
-            - a-helper
-                - version: 1.2.0
+                - a-helper ^1.0.0
+        - a-helper
+            - version: 1.2.0
 
 In this example, `a-library` depends on `a-helper` at version 1.0.0 or higher 
 (note the caret ^ expression in the dependencies). The bundler implements 

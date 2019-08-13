@@ -29,7 +29,9 @@ Then enable a read-writer database in your `portal-ext.properties` file:
     to `dbcp`, `tomcat`, or `c3po`. Note, provider HikariCP does not support
     read/write splitting. Here's an example setting: 
 
-        jdbc.default.liferay.pool.provider=dbcp
+    ```properties
+    jdbc.default.liferay.pool.provider=dbcp
+    ```
 
     All the portal JDBC configuration properties are documented
     [here](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#JDBC).
@@ -38,33 +40,41 @@ Then enable a read-writer database in your `portal-ext.properties` file:
 
 2.  Configure two different data sources, one for reading, and one for writing:
 
-        jdbc.read.driverClassName=com.mysql.jdbc.Driver
-        jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-        jdbc.read.username=**your user name**
-        jdbc.read.password=**your password**
+    ```properties
+    jdbc.read.driverClassName=com.mysql.jdbc.Driver
+    jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.read.username=**your user name**
+    jdbc.read.password=**your password**
 
-        jdbc.write.driverClassName=com.mysql.jdbc.Driver
-        jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-        jdbc.write.username=**your user name**
-        jdbc.write.password=**your password**
+    jdbc.write.driverClassName=com.mysql.jdbc.Driver
+    jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.write.username=**your user name**
+    jdbc.write.password=**your password**
+    ```
 
 3.  To use the JNDI instead of the JDBC data sources, set the `*.username` and
     `*.password` properties from step 2 to your JNDI user name and password and set
     these additional properties:
 
-        jdbc.read.jndi.name=**your read JNDI name**
-        jdbc.write.jndi.name=**your read-write JNDI name**
+    ```properties
+    jdbc.read.jndi.name=**your read JNDI name**
+    jdbc.write.jndi.name=**your read-write JNDI name**
+    ```
 
 4.  Avoid using the `default` data source, by setting this:
 
-        counter.jdbc.prefix=jdbc.write.
+    ```properties
+    counter.jdbc.prefix=jdbc.write.
+    ```
 
     And if you're using a `dbcp` or `tomcat` database connection pool provider,
     set these:
 
-        jdbc.default.validationQuery=
-        jdbc.read.validationQuery=SELECT releaseId FROM Release_
-        jdbc.write.validationQuery=SELECT releaseId FROM Release_
+    ```properties
+    jdbc.default.validationQuery=
+    jdbc.read.validationQuery=SELECT releaseId FROM Release_
+    jdbc.write.validationQuery=SELECT releaseId FROM Release_
+    ```
 
     These settings are related to issue 
     [LPS-64624](https://issues.liferay.com/browse/LPS-64624).
@@ -73,15 +83,17 @@ Then enable a read-writer database in your `portal-ext.properties` file:
     Spring configuration files from the `spring.configs` and
     `spring.infrastructure.configs` properties:
 
-        spring.configs=\
-            [..]
-            META-INF/dynamic-data-source-spring.xml,\
-            [..]
+    ```properties
+    spring.configs=\
+        [..]
+        META-INF/dynamic-data-source-spring.xml,\
+        [..]
 
-        spring.infrastructure.configs=\
-            [..]
-            META-INF/dynamic-data-source-infrastructure-spring.xml,\
-            [..]
+    spring.infrastructure.configs=\
+        [..]
+        META-INF/dynamic-data-source-infrastructure-spring.xml,\
+        [..]
+    ```
 
     The Spring configuration portal properties are documented 
     [here](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Spring).

@@ -192,7 +192,7 @@ or a
 For example, this JSP passes a parameter named `guestbookId` in an action
 URL.
 
-```jsp
+```markup
 <portlet:actionURL name="doSomething" var="doSomethingURL">
     <portlet:param name="guestbookId" 
             value="<%= String.valueOf(entry.getGuestbookId()) %>" />

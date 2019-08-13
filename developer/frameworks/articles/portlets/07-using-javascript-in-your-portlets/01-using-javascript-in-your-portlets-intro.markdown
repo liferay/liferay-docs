@@ -19,7 +19,7 @@ are available to you if you import the `polyfillBabel` class from the
 `polyfill-babel` module:
 
 ```javascript
-    import polyfillBabel from 'polyfill-babel'
+import polyfillBabel from 'polyfill-babel'
 ```
 
 The [Babel Polyfill](http://babeljs.io/docs/usage/polyfill/) emulates a complete 
@@ -33,10 +33,10 @@ create this in your module's root folder. Below is an example `package.json`
 file for a `js-logger` module:
 
 ```json
-    {
-        "name": "js-logger",
-        "version": "1.0.0"
-    }
+{
+    "name": "js-logger",
+    "version": "1.0.0"
+}
 ```
 
 The Module Config Generator creates the module based on this information. In 

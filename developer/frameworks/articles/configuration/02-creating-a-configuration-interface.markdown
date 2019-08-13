@@ -63,11 +63,11 @@ This automatically scopes your configuration to `SYSTEM`.
     on the bnd library. We recommend using bnd version 3. Here's an example of
     how to include this dependency in a Gradle project: 
 
-```groovy
+    ```groovy
     dependencies {
         compile group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
     }
-```
+    ```
 
 | **Note:** The annotations `@Meta.OCD` and `@Meta.AD` are part of the bnd
 | library, but as of OSGi standard version R6, they're included in the OSGi core

@@ -20,16 +20,16 @@ Follow these steps to upgrade the theme:
 
 1.  Install the Liferay Theme Generator v9.x.x with the command below:
 
-```bash
-npm install -g generator-liferay-theme@9.x.x
-```
+    ```bash
+    npm install -g generator-liferay-theme@9.x.x
+    ```
 
 2.  You must update the theme's `liferay-theme-tasks` dependency to version 
     `9.x.x` as well to run the upgrade process:
     
-```bash
-npm install --save-dev liferay-theme-tasks@9.x.x
-```
+    ```bash
+    npm install --save-dev liferay-theme-tasks@9.x.x
+    ```
 
 3.  With the `9.x.x` versions of the `liferay-theme-tasks` and Liferay Theme 
     Generator installed, run the `gulp upgrade` command to upgrade the 7.1 theme 

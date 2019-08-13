@@ -21,12 +21,12 @@ It's easy to include WYSIWYG editors in your portlet, thanks to the
     | Attribute | Type | Description |
     | --- | --- | --- |
     | `autoCreate` | `java.lang.String` | Whether to show the HTML edit view of the editor initially |
-    | contents | `java.lang.String` | Sets the initial contents of the editor |
+    | `contents` | `java.lang.String` | Sets the initial contents of the editor |
     | `contentsLanguageId` | `java.lang.String` | Sets the language ID for the input editor's text |
     | `cssClass` | `java.lang.String` | A CSS class for styling the component. |
-    | data | `java.util.Map` | Data that can be used as the editorConfig |
+    | `data` | `java.util.Map` | Data that can be used as the editorConfig |
     | `editorName` | `java.lang.String` | The editor you want to use (alloyeditor, ckeditor, tinymce, simple) |
-    | name | `java.lang.String` | A name for the input editor. The default value is `editor`. |
+    | `name` | `java.lang.String` | A name for the input editor. The default value is `editor`. |
     | `onBlurMethod` | `java.lang.String` | A function to be called when the input editor loses focus. |
     | `onChangeMethod` | `java.lang.String` | A function to be called on a change in the input editor. |
     | `onFocusMethod` | `java.lang.String` | A function to be called when the input editor gets focus. |

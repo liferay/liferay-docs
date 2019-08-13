@@ -22,7 +22,7 @@ variable initializations into a JSP called `init.jsp`. If you use
 to create a module based on the `mvc-portlet` project template, these taglib
 declarations and initializations are added automatically to your `init.jsp`:
 
-```jsp
+```markup
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
@@ -58,7 +58,7 @@ These tags make portlet and Liferay objects available:
 
 To use all that the `init.jsp` has, include it in your other JSPs:
 
-```javascript
+```markup
 <%@include file="/html/init.jsp"%>
 ```
 
@@ -70,7 +70,7 @@ controller methods.
 A render URL attached to a UI component action displays another page. For
 example, this render URL displays the JSP `/path/to/foo.jsp`. 
 
-```javascript
+```markup
 <portlet:renderURL var="adminURL">
     <portlet:param name="mvcPath" value="/path/to/foo.jsp" />
 </portlet:renderURL>
@@ -87,7 +87,7 @@ Here's how to use a render URL:
     variable. For example, this render URL is assigned to the variable named
     `adminURL`: 
 
-    ```javascript
+    ```markup
     <portlet:renderURL var="adminURL">
        ...
     </portlet:renderURL>
@@ -103,11 +103,11 @@ Here's how to use a render URL:
     `value="/path/to/foo.jsp"`: The path to the JSP to render. Replace the value
     `/path/to/foo.jsp` with your JSP path. 
 
-```javascript
-<portlet:renderURL var="adminURL">
-    <portlet:param name="mvcPath" value="/path/to/foo.jsp" />
-</portlet:renderURL>
-```
+    ```markup
+    <portlet:renderURL var="adminURL">
+        <portlet:param name="mvcPath" value="/path/to/foo.jsp" />
+    </portlet:renderURL>
+    ```
 
 4.  To invoke the render URL, assign its variable (`var`) to a UI component 
     action, such as a button or navigation bar item action. 
@@ -123,7 +123,7 @@ controller method called `doSomething` and passes a parameter called `redirect`.
 The `redirect` parameter contains the path of the JSP to render after invoking
 the action: 
 
-```javascript
+```markup
 <portlet:actionURL name="doSomething" var="doSomethingURL">
     <portlet:param name="redirect" value="<%= redirect %>" />
 </portlet:actionURL>
@@ -143,11 +143,11 @@ Here's how to use an action URL:
 
     `var`: Variable to assign the action URL to. 
 
-```jsp
-<portlet:actionURL name="doSomething" var="doSomethingURL">
-   ...
-</portlet:actionURL>
-```
+    ```markup
+    <portlet:actionURL name="doSomething" var="doSomethingURL">
+       ...
+    </portlet:actionURL>
+    ```
 
 3.  As sub-element to the `<portlet:actionURL>` tag, add a 
     [`<portlet:param>`](@platform-ref@/7.2-latest/taglibs/util-taglib/portlet/param.html)
@@ -160,11 +160,11 @@ Here's how to use an action URL:
     invoking the action. Replace the value `/path/to/bar.jsp` with your JSP
     path. 
 
-```jsp
-<portlet:actionURL name="doSomething" var="doSomethingURL">
-    <portlet:param name="redirect" value="/path/to/bar.jsp" />
-</portlet:actionURL>
-```
+    ```markup
+    <portlet:actionURL name="doSomething" var="doSomethingURL">
+        <portlet:param name="redirect" value="/path/to/bar.jsp" />
+    </portlet:actionURL>
+    ```
 
 4.  To invoke the action URL, assign its variable (`var`) to a UI component 
     action, such as a button or navigation bar item action. 

@@ -61,15 +61,15 @@ area where content can be entered:
 
 2.  Replace the code in the CSS pane with the following:
 
-   ```css
-   .basic-section {
-   }
+    ```css
+    .basic-section {
+    }
 
-   .basic-section .aspect-ratio {
-   	    max-width: inherit;
+    .basic-section .aspect-ratio {
+    	    max-width: inherit;
         width: 100%;
-   }
-   ```
+    }
+    ```
 
 3.  Click *Publish* to save your work and make it available to add to a content
     page.

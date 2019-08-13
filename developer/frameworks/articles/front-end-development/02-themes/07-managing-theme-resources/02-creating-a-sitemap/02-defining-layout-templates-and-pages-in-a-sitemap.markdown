@@ -15,18 +15,18 @@ your theme's `sitemap.json`:
     scope of a page, the `layoutTemplateId` sets the default layout template for 
     the theme's pages:
 
-```json
-{
-  "layoutTemplateId": "2_columns_ii",
-  "publicPages": [
+    ```json
     {
-      "friendlyURL": "/my-page",
-      "name": "My Page",
-      "title": "My Page"
+      "layoutTemplateId": "2_columns_ii",
+      "publicPages": [
+        {
+          "friendlyURL": "/my-page",
+          "name": "My Page",
+          "title": "My Page"
+        }
+      ]  
     }
-  ]  
-}
-```
+    ```
 
     You can override this by defining a layout template inside a page 
     configuration. In the example below, the Hidden Page and the Welcome page 
@@ -34,38 +34,38 @@ your theme's `sitemap.json`:
     Page overrides the default layout template and uses the `2_columns_i` layout 
     template instead:
 
-```json
-{
-  "layoutTemplateId":"2_columns_ii",
-  "publicPages": [
-      {
-        "friendlyURL": "/welcome-page",
-        "name": "Welcome",
-        "title": "Welcome"
-      },
-      {
-        "friendlyURL": "/custom-layout-page",
-        "name": "Custom Layout Page",
-        "title": "Custom Layout Page",
-        "layoutTemplateId": "2_columns_i"
-      },
-      {
-        "friendlyURL": "/hidden-page",
-        "name": "Hidden Page",
-        "title": "Hidden Page",
-        "hidden": "true"
-      }
-  ]
-}
-```
+    ```json
+    {
+      "layoutTemplateId":"2_columns_ii",
+      "publicPages": [
+          {
+            "friendlyURL": "/welcome-page",
+            "name": "Welcome",
+            "title": "Welcome"
+          },
+          {
+            "friendlyURL": "/custom-layout-page",
+            "name": "Custom Layout Page",
+            "title": "Custom Layout Page",
+            "layoutTemplateId": "2_columns_i"
+          },
+          {
+            "friendlyURL": "/hidden-page",
+            "name": "Hidden Page",
+            "title": "Hidden Page",
+            "hidden": "true"
+          }
+      ]
+    }
+    ```
     
-| **Note:** Pages are imported into a site template by default. Site templates
-| only support the importing of either public page sets or private page sets, not
-| both.
-| 
-| If you want to import both public and private page sets, as shown in the example
-| `sitemap.json` below, you must
-| [import your resources into a site](/docs/7-2/frameworks/-/knowledge_base/f/specifying-where-to-import-your-themes-resources).
+    | **Note:** Pages are imported into a site template by default. Site templates
+    | only support the importing of either public page sets or private page sets, not
+    | both.
+    | 
+    | If you want to import both public and private page sets, as shown in the example
+    | `sitemap.json` below, you must
+    | [import your resources into a site](/docs/7-2/frameworks/-/knowledge_base/f/specifying-where-to-import-your-themes-resources).
   
 2.  Follow the pattern below to specify the public and (optionally) private 
     pages for your theme. You can specify a name for a page, title, friendly 
@@ -74,63 +74,63 @@ your theme's `sitemap.json`:
     a site. See [Sitemap Page Configuration Options](/docs/7-2/reference/-/knowledge_base/r/sitemap-page-configuration-options) 
     for a full list of the available options.
 
-```json
-        {
-          "layoutTemplateId": "2_columns_ii",
-          "privatePages": [
-              {
-                "friendlyURL": "/private-page",
-            		"name": "Private Page",
-            		"title": "Private Page"
-              }
-          ],
-          "publicPages": [
-              {
-                "friendlyURL": "/welcome-page",
-                "nameMap": {
-                    "en_US": "Welcome",
-                    "fr_FR": "Bienvenue"
-                },
-                "title": "Welcome"
-              },
-              {
-                "friendlyURL": "/custom-layout-page",
-                "name": "Custom Layout Page",
-                "title": "Custom Layout Page",
-                "layoutTemplateId": "2_columns_i"
-              },
-              {
-                "friendlyURL": "/hidden-page",
-                "name": "Hidden Page",
-                "title": "Hidden Page",
-                "hidden": "true"
-              }
-          ]
-        }
-```
+    ```json
+            {
+              "layoutTemplateId": "2_columns_ii",
+              "privatePages": [
+                  {
+                    "friendlyURL": "/private-page",
+                		"name": "Private Page",
+                		"title": "Private Page"
+                  }
+              ],
+              "publicPages": [
+                  {
+                    "friendlyURL": "/welcome-page",
+                    "nameMap": {
+                        "en_US": "Welcome",
+                        "fr_FR": "Bienvenue"
+                    },
+                    "title": "Welcome"
+                  },
+                  {
+                    "friendlyURL": "/custom-layout-page",
+                    "name": "Custom Layout Page",
+                    "title": "Custom Layout Page",
+                    "layoutTemplateId": "2_columns_i"
+                  },
+                  {
+                    "friendlyURL": "/hidden-page",
+                    "name": "Hidden Page",
+                    "title": "Hidden Page",
+                    "hidden": "true"
+                  }
+              ]
+            }
+    ```
 
     You can create child pages by configuring the `layouts` element for a page 
     configuration:
 
-```json
-{      
-"friendlyURL": "/parent-page",
-"layouts": [
-    {
-        "friendlyURL": "/child-page-1",
-        "name": "Child Page 1",
-        "title": "Child Page 1"
-    },
-    {
-        "friendlyURL": "/child-page-2",
-        "name": "Child Page 2",
-        "title": "Child Page 2"
+    ```json
+    {      
+    "friendlyURL": "/parent-page",
+    "layouts": [
+        {
+            "friendlyURL": "/child-page-1",
+            "name": "Child Page 1",
+            "title": "Child Page 1"
+        },
+        {
+            "friendlyURL": "/child-page-2",
+            "name": "Child Page 2",
+            "title": "Child Page 2"
+        }
+    ],
+    "name": "Parent Page",
+    "title": "Parent Page"
     }
-],
-"name": "Parent Page",
-"title": "Parent Page"
-}
-```
+    ```
 
 Great! Now you know how to configure pages for the Resources Importer. 
 

@@ -17,7 +17,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.soy", version: "3.1.8"
@@ -36,14 +36,14 @@ There are two Soy Gradle plugins you can apply to your project:
 - Apply the [*Soy Plugin*](#soy-plugin) to compile Closure Templates into
 JavaScript functions:
 
-    ```gradle
+    ```groovy
     apply plugin: "com.liferay.soy"
     ```
 
 - Apply the [*Soy Translation Plugin*](#soy-translation-plugin) to use a custom
 localization mechanism in the generated `.soy.js` files:
 
-    ```gradle
+    ```groovy
     apply plugin: "com.liferay.soy.translation"
     ```
 
@@ -51,7 +51,7 @@ Since the Soy Gradle plugin automatically resolves the Soy library as a
 dependency, you have to configure a repository that hosts the library and its
 transitive dependencies. The Liferay CDN repository hosts them all:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -105,7 +105,7 @@ dependency to the `2015-04-10` version of the Soy library. It is possible to
 override this setting and use a specific version of the tool by manually adding
 a dependency to the `soy` configuration:
 
-```gradle
+```groovy
 dependencies {
     soy group: "com.google.template", name: "soy", version: "2015-04-10"
 }

@@ -13,11 +13,13 @@ Here's how:
 1.  Add a project dependency on the OSGi CDI Integration artifact. For example,
     here's the dependency to use in a Maven `pom.xml` file:
 
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.cdi</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+    ```xml
+    <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.service.cdi</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    ```
 
 2.  Obtain and inject the OSGi service by using the
     `@org.osgi.service.cdi.annotations.Reference` and `@javax.inject.Inject`

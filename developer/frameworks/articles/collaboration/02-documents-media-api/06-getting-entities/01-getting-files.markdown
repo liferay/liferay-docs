@@ -13,14 +13,16 @@ The steps here show you how, using this
 [`getFileEntries`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntries-long-long-java.lang.String:A-int-int-com.liferay.portal.kernel.util.OrderByComparator-) 
 method as an example: 
 
-    List<FileEntry> getFileEntries(
-            long repositoryId, 
-            long folderId, 
-            String[] mimeTypes, 
-            int start, 
-            int end, 
-            OrderByComparator<FileEntry> obc
-    )
+```java
+List<FileEntry> getFileEntries(
+        long repositoryId, 
+        long folderId, 
+        String[] mimeTypes, 
+        int start, 
+        int end, 
+        OrderByComparator<FileEntry> obc
+)
+```
 
 For general information on using the Documents and Media API, see 
 [Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
@@ -31,8 +33,10 @@ Site's default repository, sorted by title:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the method's arguments. You can do this any 
     way you wish. As the next step describes, @product@ provides constants and a 
@@ -41,15 +45,19 @@ Site's default repository, sorted by title:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html) 
     with the request (`javax.portlet.ActionRequest`): 
 
-        long groupId = ParamUtil.getLong(actionRequest, "groupId");
+    ```java
+    long groupId = ParamUtil.getLong(actionRequest, "groupId");
+    ```
 
     It's also possible to get the group ID via the 
     [`ThemeDisplay`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
     Calling the `ThemeDisplay` method `getScopeGroupId()` gets the ID of your 
     app's current site (group): 
 
-        ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
-        long groupId = themeDisplay.getScopeGroupId();
+    ```java
+    ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+    long groupId = themeDisplay.getScopeGroupId();
+    ```
 
 <!--Uncomment once article is available
     For more information, see 
@@ -61,15 +69,17 @@ Site's default repository, sorted by title:
     method with the group ID from the previous step, and constants and a 
     comparator for the remaining arguments: 
 
-        List<FileEntry> fileEntries = 
-                _dlAppService.getFileEntries(
-                        groupId, 
-                        DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, 
-                        new String[] {ContentTypes.IMAGE_PNG}, 
-                        QueryUtil.ALL_POS, 
-                        QueryUtil.ALL_POS, 
-                        new RepositoryModelTitleComparator<>()
-                );
+    ```java
+    List<FileEntry> fileEntries = 
+            _dlAppService.getFileEntries(
+                    groupId, 
+                    DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, 
+                    new String[] {ContentTypes.IMAGE_PNG}, 
+                    QueryUtil.ALL_POS, 
+                    QueryUtil.ALL_POS, 
+                    new RepositoryModelTitleComparator<>()
+            );
+    ```
 
     Here's a description of the arguments used in this example: 
 
