@@ -19,11 +19,11 @@ portlet instance settings for your widget:
     | **Note:** This location can be overridden with the
     | `create-jar.features.configuration` option in your project's `.npmbundlerrc`
     | file. See
-    | [OSGi bundle configuration options](/docs/7-1/reference/-/knowledge_base/r/configuring-liferay-npm-bundler#osgi-bundle-configuration-options)
+    | [OSGi bundle configuration options](/docs/7-1/reference/-/knowledge_base/r/configuring-liferay-npm-bundler#osgi-bundle-creation-options)
     | for all the available options for the bundle.
 
 2.  Create a `configuration.json` file in the `/features` folder and follow the 
-    pattern below. See the [Configuration JSON](/docs/7-1/reference/-/knowledge_base/r/configuration-json-available-options) 
+    pattern below. See the [Configuration JSON](/docs/7-1/reference/-/knowledge_base/r/configuring-system-settings-for-osgi-bundles-created-with-the-bundler) 
     reference for an explanation of each of the available options:
     
     {
@@ -83,5 +83,5 @@ settings for your widget.
 ## Related Topics
 
 - [Localizing Your Widget](/docs/7-1/tutorials/-/knowledge_base/t/localizing-your-portlet)
-- [Using Translation Features in Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/using-translation-features-in-your-javascript-portlet)
+- [Using Translation Features in Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/using-translation-features-in-your-portlet)
 - [Configuring Portlet Properties for Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/configuring-portlet-properties-for-your-js-portlet)

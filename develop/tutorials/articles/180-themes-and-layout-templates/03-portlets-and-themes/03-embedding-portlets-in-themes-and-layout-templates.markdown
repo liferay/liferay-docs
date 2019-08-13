@@ -74,11 +74,11 @@ find the portlet that fits the theme's request.
     based on the entity type and action type, followed by *PortletProvider* 
     (e.g., `SiteNavigationLanguageEntryViewPortletProvider`). The class should 
     extend the 
-    [`BasePortletProvider`](@platform-ref@/7.1/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html) 
+    [`BasePortletProvider`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html) 
     class and implement the appropriate portlet provider interface based on the 
     action you chose in your theme (e.g., 
-    [`ViewPortletProvider`](@platform-ref@/7.1/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/ViewPortletProvider.html), 
-    [`BrowsePortletProvider`](@platform-ref@/7.1/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BrowsePortletProvider.html), 
+    [`ViewPortletProvider`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/ViewPortletProvider.html), 
+    [`BrowsePortletProvider`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BrowsePortletProvider.html), 
     etc.). 
 
 3.  Directly above the class's declaration, insert the following annotation:

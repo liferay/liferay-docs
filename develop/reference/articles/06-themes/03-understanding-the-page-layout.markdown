@@ -26,7 +26,7 @@ fragments are contained inside the `#main-content` `div`. @product@ ships with
 a default set of applications that provide common functionality, such as forums
 and Wikis, documents and media, blogs, and more. For more information on using
 @product@ and its native portlets, see the 
-[User & Admin documentation](/discover/portal). 
+[User & Admin documentation](/docs/7-1/user). 
 You can also create custom portlets for your site. Portlets can be added via the
 Add Menu (referred to as widget), included in a sitemap through the 
 [Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/importing-resources-with-a-theme),

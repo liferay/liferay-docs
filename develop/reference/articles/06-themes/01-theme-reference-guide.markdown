@@ -24,28 +24,28 @@ the core theme files are the same.
 - `theme-name/`
     - `src/`
         - `css/`
-            - [`_clay_custom.scss`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#claycustom-scss)
-            - [`_clay_variables.scss`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#auivariables-scss)
-            - [`_custom.scss`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#custom-scss)
-            - [`_liferay_variables_custom.scss`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#liferayvariablescustom-scss)
+            - [`_clay_custom.scss`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide##-clay-customscss)
+            - [`_clay_variables.scss`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#-clay-variablesscss)
+            - [`_custom.scss`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#-customscss)
+            - [`_liferay_variables_custom.scss`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#-liferay-variables-customscss)
         - `images/`
             -   (custom images)
         - `js/`
-            - [`main.js`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#main-js)
+            - [`main.js`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#mainjs)
         - `templates/`
-            - [`init_custom.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#initcustom-ftl)
-            - [`navigation.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#navigation-ftl)
-            - [`portal_normal.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#portalnormal-ftl)
-            - [`portal_pop_up.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#portalpopup-ftl)
-            - [`portlet.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#portlet-ftl)
+            - [`init_custom.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#init-customftl)
+            - [`navigation.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#navigationftl)
+            - [`portal_normal.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#portal-normalftl)
+            - [`portal_pop_up.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#portal-pop-upftl)
+            - [`portlet.ftl`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#portletftl)
         - `WEB-INF/`
-            - [`liferay-look-and-feel.xml`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#liferay-look-and-feel-xml)
-            - [`liferay-plugin-package.properties`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#liferay-plugin-package-properties)
+            - [`liferay-look-and-feel.xml`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#liferay-look-and-feelxml)
+            - [`liferay-plugin-package.properties`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#liferay-plugin-packageproperties)
             - `src/`
                 - `resources-importer/`
                     - (Many directories)
-    - [`liferay-theme.json`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#liferay-theme-json)
-    - [`package.json`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#package-json)
+    - [`liferay-theme.json`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#liferay-themejson)
+    - [`package.json`](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide#packagejson)
  
 Regarding CSS files, you should only modify `_clay_custom.scss`,
 `_clay_variables.scss`, `_custom.scss`, and `_liferay_variables_custom.scss`.
