@@ -121,7 +121,7 @@ command and following the prompts.
 
 Next you can learn how to customize the Lexicon Base.
 
-## Customizing Lexicon Base in @product@
+## Customizing Lexicon Base
 
 You can customize Lexicon Base with just a few imports.
 
@@ -149,8 +149,8 @@ Third party themes must be built with Sass to be compatible with @product@.
 
 Follow these steps to add a third party theme:
 
-1.  Follow the steps in the 
-    [Customizing Lexicon Base in @product@](/docs/7-0/tutorials/-/knowledge_base/t/importing-lexicon-css-into-a-theme#customizing-lexicon-base-in-liferay) section.
+1.  Follow the steps above in the 
+    [Customizing Lexicon Base](/docs/7-0/tutorials/-/knowledge_base/t/importing-lexicon-css-into-a-theme#customizing-lexicon-base) section.
 
 2.  Create a folder inside `/src/css` (for legacy ant themes, `/_diff/css`) 
     that contains your third party theme (e.g. `/src/css/awesome-theme` or 

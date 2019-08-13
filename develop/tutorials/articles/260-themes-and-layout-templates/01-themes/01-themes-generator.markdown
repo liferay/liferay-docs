@@ -22,7 +22,7 @@ This tutorial demonstrates how to:
 
 - [Install the Liferay Theme Generator](#installing-the-theme-generator)
 
-- [Generate a theme](#running-the-themes-generator)
+- [Generate a theme](#running-the-liferay-theme-generator)
 
 The first step is to install the Liferay Theme Generator.
 
