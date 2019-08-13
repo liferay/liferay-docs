@@ -14,8 +14,8 @@ based on the underlying OSGi platform, and then correct them.
 
 Here are the troubleshooting sections:
 
--   [Modules](#troubleshooting-modules)
--   [Services and Components](#troubleshooting-services-and-components)
+-   [Modules](#modules)
+-   [Services and Components](#services-and-components)
 
 Click a question to view the answer.
 

@@ -31,7 +31,7 @@ include source code in your @product@ backup plan.
 
 Next, let's examine the @product@ installation items you should back up.
 
-## Backing up @product@'s File System
+## Backing up Liferay's File System
 
 The
 [Liferay Home folder](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)

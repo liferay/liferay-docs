@@ -16,7 +16,7 @@ but can make things unstable when the host module is upgraded:
     JSPs are still available and the module is functional (but lacks your JSP
     enhancements).
 
-[Liferay's API based approaches to overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps#using-portals-api-to-override-a-jsp),
+[Liferay's API based approaches to overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps#using-liferays-api-to-override-a-jsp),
 on the other hand, provide more stability as they let you customize specific
 parts of the JSP that are safe to override. Also, the API based approaches don't
 limit your override to a specific host module version. In case you're

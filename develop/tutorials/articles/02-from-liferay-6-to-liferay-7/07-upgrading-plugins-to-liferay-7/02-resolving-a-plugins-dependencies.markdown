@@ -91,10 +91,10 @@ The following table shows each Liferay utility module's symbolic name.
  util-taglib             | `com.liferay.util.taglib` |
 
 You can use @product@'s
-[App Manager](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts),
+[App Manager](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-app-and-independent-artifacts),
 [Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell),
 or
-[module JAR file manifests](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-core-liferay-portal-artifacts)
+[module JAR file manifests](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-core-artifacts)
 to find versions of modules deployed on your @product@ instance. 
 
 | **Note:** Previous versions of the Plugins SDK made `portal-service.jar`
@@ -112,7 +112,7 @@ available to your plugin project. The modules your plugin uses must be available
 to it at compile time and run time. Here are two options for resolving module
 dependencies in your traditional plugin project: 
 
-[**Option 1: Use a dependency management tool**](#managing-dependencies-with-ivy)
+[**Option 1: Use a dependency management tool**](#using-a-dependency-management-tool)
 
 [**Option 2: Manage dependencies manually**](#managing-dependencies-manually)
 

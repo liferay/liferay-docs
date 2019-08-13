@@ -10,8 +10,8 @@ header-id: overriding-language-keys
 internationalization. They're fully customizable, too. This tutorial
 demonstrates this in the following topics:
 
--   [Overriding Global Language Keys](#modifying-liferays-language-keys) 
--   [Overriding a Module's Language Keys](#overriding-a-modules-language-keys)
+-   Overriding Global Language Keys
+-   Overriding a Module's Language Keys
 
 ## Modifying Global Language Keys
 
@@ -187,12 +187,12 @@ What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? Since module
 language keys are in the respective module, the process for overriding a
 module's language keys is different from
-[the process of overriding global language keys](#modifying-liferays-language-keys). 
+[the process of overriding global language keys](#modifying-global-language-keys). 
 
 Here is the process:
 
 1.  [Find the module and its metadata and language keys](#find-the-module-and-its-metadata-and-language-keys)
-2.  [Write your custom language key values](#providing-language-keys) 
+2.  [Write your custom language key values](#write-custom-language-key-values) 
 3.  [Prioritize your module's resource bundle](#prioritize-your-modules-resource-bundle)
 
 ### Find the module and its metadata and language keys
@@ -346,7 +346,7 @@ to see the language keys you've overridden.
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
 core. You can
-[override global language keys](#modifying-liferays-language-keys) too.
+[override global language keys](#modifying-global-language-keys) too.
 
 ## Related Topics
 

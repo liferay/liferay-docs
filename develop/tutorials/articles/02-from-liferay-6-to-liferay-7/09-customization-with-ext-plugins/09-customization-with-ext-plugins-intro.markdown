@@ -28,7 +28,7 @@ header-id: advanced-customization-with-ext-plugins
 |   instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
 |   overridden beans are still relevant if converting your legacy Ext plugin.
 | - Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
-|   the [Finding Core @product@ Artifacts](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-core-liferay-portal-artifacts)
+|   the [Finding Core @product@ Artifacts](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-core-artifacts)
 |   section.
 | - Modifying @product@'s `web.xml` file.
 | - Adding to @product@'s `web.xml` file.

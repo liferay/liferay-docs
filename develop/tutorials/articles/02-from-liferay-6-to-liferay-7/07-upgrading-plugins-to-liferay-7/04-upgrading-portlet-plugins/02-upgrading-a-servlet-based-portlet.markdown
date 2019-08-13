@@ -78,7 +78,7 @@ The server prints messages that indicate the following portlet status:
 | property per the
 | [instructions](resolving-a-plugins-dependencies#using-packages-liferay-portal-exports)
 | for using packages that @portal@ exports. After upgrading, consider
-| [using a dependency management tool](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+| [using a dependency management tool](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-a-dependency-management-tool)
 | in your project. This helps prepare it for future @product@ versions and
 | facilitates managing dependencies.
 
@@ -93,7 +93,7 @@ Congratulations! You've upgraded and deployed your servlet-based portlet to
 
 [Migrating Plugins SDK Projects to Workspace and Gradle](/docs/7-0/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 
-[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-a-dependency-management-tool)
 
 [Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 

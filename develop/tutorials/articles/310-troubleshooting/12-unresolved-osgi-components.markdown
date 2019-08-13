@@ -23,7 +23,7 @@ The troubleshooting instructions are divided into these sections:
 
 -   [Declarative Services Components](#declarative-services-components)
     -   [Declarative Services Unsatisfied Component Scanner](#declarative-services-unsatisfied-component-scanner)
-    -   [ds:unsatisfied Command](#ds-unsatisfied-command)
+    -   [ds:unsatisfied Command](#dsunsatisfied-command)
 -   [Service Builder Components](#service-builder-components)
     -   [Unavailable Component Scanner](#unavailable-component-scanner)
     -   [ServiceProxyFactory](#serviceproxyfactory)
@@ -39,7 +39,7 @@ unsatisfied service reference. How can you detect this? Two ways:
     to report unsatisfied references automatically or 
 
 -   You can use the
-    [Gogo shell command `ds:unsatisfied`](#ds-unsatisfied-command)
+    [Gogo shell command `ds:unsatisfied`](#dsunsatisfied-command)
     to check for them manually.
 
 ### Declarative Services Unsatisfied Component Scanner
