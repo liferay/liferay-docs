@@ -95,12 +95,12 @@ all sub-Sites.
 
 You can manage this globally by navigating to the Control Panel &rarr;
 *Configuration* &rarr; *Instance Settings* &rarr; *Content & Data* &rarr;
-*Sharing* &rarr; *Content Sharing*. You can choose if Site administrators can
-display content in Sites from other Sites they administer. For example, suppose
-that a certain User is a Site administrator of two Sites: *Engineering* and
-*Marketing*. The checkbox in the Content Sharing section of Instance Settings
-determines if the Site administrator can display content from the Marketing Site
-in the Engineering Site and vice versa.
+*Sharing* &rarr; *Content Sharing*. First, you can choose if Site administrators
+can display content in Sites from other Sites they administer. For example,
+suppose that a certain User is a Site administrator of two Sites: *Engineering*
+and *Marketing*. The checkbox in the Content Sharing section of Instance
+Settings determines if the Site administrator can display content from the
+Marketing Site in the Engineering Site and vice versa.
 
 You can also choose if subsites can display content from parent Sites and
 configure the defaults. There are three options:
