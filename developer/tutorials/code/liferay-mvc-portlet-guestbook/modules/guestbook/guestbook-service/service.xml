@@ -34,6 +34,7 @@
             <finder-column name="groupId" />
         </finder>
 	</entity>
+
     <entity name="GuestbookEntry" local-service="true" remote-service="true" uuid="true">
 
 		<!-- Guestbook Entry fields -->

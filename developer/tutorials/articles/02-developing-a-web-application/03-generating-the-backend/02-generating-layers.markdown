@@ -10,11 +10,6 @@ header-id: generating-model-service-and-persistence-layers
     <p id="stepTitle">Generating the Back-end</p><p>Step 2 of 3</p>
 </div>
 
-The persistence layer saves and retrieves your model data. The service layer is
-a buffer between your application and persistence layers: having it lets you
-swap out your persistence layer for a different implementation without
-modifying anything but the calls in the service layer. 
-
 To model the guestbooks and entries, you'll create guestbook and entry model 
 classes. But you won't do this directly in Java. Instead, you'll define them in 
 Service Builder, which generates your object model and maps it to all the SQL 
@@ -30,147 +25,193 @@ It's time to get started. You'll create the `Guestbook` entity first:
     *Source* tab is selected. 
 
 2.  When Liferay @ide@ generated your project, it filled this file with dummy 
-    entities, which you'll replace. First replace the file's opening contents 
-    (below the `DOCTYPE`) with the following code: 
+    entities, which you'll replace. Remove everything in the file below the
+    `DOCTYPE`. Replace the file's opening contents with the following code: 
 
-        <service-builder auto-namespace-tables="true" package-path="com.liferay.docs.guestbook">
-            <author>liferay</author>
-            <namespace>GB</namespace>
-            <entity name="Guestbook" local-service="true" uuid="true">
+    ```xml
+    <service-builder auto-namespace-tables="true" package-path="com.liferay.docs.guestbook">
+        <author>liferay</author>
+        <namespace>GB</namespace>
+        <entity name="Guestbook" local-service="true" uuid="true" remote-service="true">
+    ```
 
     This defines the author, namespace, and the entity name. The namespace keeps 
     the database field names from conflicting. The last tag is the opening tag 
-    for the `Guestbook` entity definition. In this tag, you enable local 
-    services for the entity, define its name, and specify that it should have a 
+    for the `Guestbook` entity definition. In this tag, you enable local and
+    remote services for the entity, define its name, and specify that it should
+    have a 
     [universally unique identifier (UUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier). 
 
-3.  Next, replace the PK fields section: 
+3.  The Guestbook requires only two fields: a primary key to identify it
+    uniquely in the database, and a name. Add these fields: 
 
-        <column name="guestbookId" primary="true" type="long" />
+    ```xml
+    <!-- Guestbook fields -->
 
-    This defines `guestbookId` as the entity's primary key of the type `long`. 
+    <column name="guestbookId" primary="true" type="long" />
+    <column name="name" type="String" />
+    ```
 
-4.  The group instance can be left alone.
+    This defines `guestbookId` as the entity's primary key of the type `long`
+    and the name as a `String`. 
 
-        <column name="groupId" type="long" />
-
-    This defines the ID of the Site in @product@ that the entity instance 
-    belongs to (more on this in a moment). 
-
-5.  Leave the Audit Fields section alone. Add status fields:
-
-        <!-- Status fields -->
-
-        <column name="status" type="int" />
-        <column name="statusByUserId" type="long" />
-        <column name="statusByUserName" type="String" />
-        <column name="statusDate" type="Date" />
-
-    The Audit section defines @product@ metadata. The `companyId` is the primary
+4.  Next, define the group instance. The `groupId` defines the ID of the Site in
+    @product@ where the entity instance exists. The `companyId` is the primary
     key of a 
-    [portal instance](/docs/7-1/user/-/knowledge_base/u/setting-up).
-    The `userId` is the primary key of a user. The `createDate` and
-    `modifiedDate` store the respective dates on which the entity instance is
-    created and modified. The Status section is used later to implement
-    workflow. 
+    [portal instance](/docs/7-2/user/-/knowledge_base/u/setting-up).
 
-6. In the Other fields section, replace the generated fields with this one: 
+    ```xml
+    <!-- Group instance -->
 
-        <column name="name" type="String" />
+    <column name="groupId" type="long" />
+    <column name="companyId" type="long" />
+    ```
 
-7.  Next, remove everything else from the Guestbook entity. Before the closing 
-    `</entity>` tag, add this finder definition: 
+5.  Next, add audit fields. These fields help you track owners of entity
+    instances, along with those instances' create and modify dates: 
 
-            <finder name="GroupId" return-type="Collection">
-                <finder-column name="groupId" />
-            </finder>
+    ```xml
+    <!-- Audit fields -->
 
-    A finder generates a `get` method you'll use to retrieve Guestbook entities.
-    The fields used by the finder define the scope of the data retrieved. This
-    finder gets all Guestbooks by their `groupId`, which corresponds to the
-    [Site](/docs/7-1/user/-/knowledge_base/u/building-a-site) the
-    application is on. This lets administrators put Guestbooks on multiple 
-    Sites, and each `Guestbook` has its own data scoped to its Site. 
+    <column name="userId" type="long" />
+    <column name="userName" type="String" />
+    <column name="createDate" type="Date" />
+    <column name="modifiedDate" type="Date" />
+    ```
 
-The `Guestbook` entity is finished for now. Next, you'll create the `Entry` 
-entity: 
+6.  After this, add fields that support Liferay's workflow system. These provide
+    fields in the database to track your entity's status as it passes through
+    the workflow. 
+
+    ```xml
+    <!-- Status fields -->
+
+    <column name="status" type="int" />
+    <column name="statusByUserId" type="long" />
+    <column name="statusByUserName" type="String" />
+    <column name="statusDate" type="Date" />
+    ```
+
+7.  Before the closing `</entity>` tag, add this finder definition: 
+
+    ```xml
+    <finder name="GroupId" return-type="Collection">
+        <finder-column name="groupId" />
+    </finder>
+    ```
+
+A [finder](/docs/7-2/appdev/-/knowledge_base/a/defining-service-entity-finder-methods) 
+generates a `get` method for retrieving Guestbook entities. The fields used by
+the finder define the scope of the data retrieved. This finder gets all
+Guestbooks by their `groupId`. This is how administrators put Guestbooks on
+multiple Sites, and each `Guestbook` has its own data scoped to its Site. 
+
+The `Guestbook` entity is finished for now. Next, you'll create the
+`GuestbookEntry` entity: 
 
 1.  Add the opening entity tag:
 
-        <entity name="Entry" local-service="true" uuid="true">
+    ```xml
+    <entity name="GuestbookEntry" local-service="true" remote-service="true" uuid="true">
+    ```
 
-    As with the `Guestbook` entity, you enable local services, define the 
-    entity's name, and specify that it should have a UUID. 
+    As with the `Guestbook` entity, you enable local and remote services, define
+    the entity's name, and specify that it should have a UUID. 
 
-2.  Add the tag to define the primary key and the `groupId`: 
+2.  Add the fields that define the `GuestbookEntry`'s data: 
 
-        <column name="entryId" primary="true" type="long" />
+    ```xml
+    <!-- Guestbook Entry fields -->
 
-        <column name="groupId" type="long" />
+    <column name="entryId" primary="true" type="long" />
+    <column name="name" type="String" />
+    <column name="email" type="String" />
+    <column name="message" type="String" />
+    <column name="guestbookId" type="long" />
+    ```
 
-3.  Add audit fields to match the fields in the `Guestbook` entity:
+    The `name`, `email`, and `message` fields comprise a `GuestbookEntry`. These
+    fields define the name of the person creating the entry, an email address,
+    and the Guestbook message, respectively. The `guestbookId` is assigned
+    automatically by code you'll write, and is a foreign key to the `Guestbook`
+    where this entry belongs. 
 
-        <column name="companyId" type="long" />
-        <column name="userId" type="long" />
-        <column name="userName" type="String" />
-        <column name="createDate" type="Date" />
-        <column name="modifiedDate" type="Date" />
+3.  Add fields to track the portal instance and group: 
 
-4. Add status fields like you did for the guestbook:
+    ```xml
+    <!-- Group instance -->
 
-        <!-- Status fields -->
+    <column name="groupId" type="long" />
+    <column name="companyId" type="long" />
+    ```
 
-        <column name="status" type="int" />
-        <column name="statusByUserId" type="long" />
-        <column name="statusByUserName" type="String" />
-        <column name="statusDate" type="Date" />
+4. Add audit fields: 
 
-5.  Add the fields that define an `Entry`: 
+    ```xml
+    <!-- Audit fields -->
 
-        <column name="name" type="String" />
-        <column name="email" type="String" />
-        <column name="message" type="String" />
-        <column name="guestbookId" type="long" />
+    <column name="userId" type="long" />
+    <column name="userName" type="String" />
+    <column name="createDate" type="Date" />
+    <column name="modifiedDate" type="Date" />
+    ```
 
-    The `name`, `email`, and `message` fields comprise an `Entry`. These fields
-    define the name of the person creating the entry, an email address, and the
-    Guestbook message, respectively. The `guestbookId` is assigned automatically
-    by code you'll write, and is a `Guestbook` foreign key. This ties the
-    `Entry` to a specific `Guestbook`. 
+5.  Add status fields to track workflow: 
 
-6.  Add your finder and closing entity tag:
+    ```xml
+    <!-- Status fields -->
+   
+    <column name="status" type="int" />
+    <column name="statusByUserId" type="long" />
+    <column name="statusByUserName" type="String" />
+    <column name="statusDate" type="Date" />
+    ```
 
-            <finder name="G_G" return-type="Collection">
-                <finder-column name="groupId" />
-                <finder-column name="guestbookId" />
-            </finder>
-        </entity>
+6.  When querying for `GuestbookEntry`s, you can order them by one or more
+    columns. Since visitors sign `Guestbook`s in order by time, order your
+    `GuestbookEntry` instances by the date they were created: 
 
-    Here, you define a finder that gets guestbook entries by `groupId` and 
-    `guestbookId`. As before, the `groupId` corresponds to the
-    [Site](/docs/7-1/user/-/knowledge_base/u/building-a-site) the
-    application is on. The `guestbookId` defines the guestbook the entries come 
-    from. This finder returns a `Collection` of entries. 
+    ```xml
+    <order>
+        <order-column name="createDate" order-by="desc" />
+    </order>
+    ```
 
-7.  Define your exception types outside the `<entity>` tags, just before the 
-    closing `</service-builder>` tag: 
+7.  Add a finder that retrieves `GuestbooEntry`s by a combination of `groupId`
+    and `guestbookId`. This supports @product@'s multi-tenancy by only returning
+    those entries that belong both to the current Site and the current
+    Guestbook. After defining your finder add the closing entity tag:
 
-        <exceptions>
-            <exception>EntryEmail</exception>
-            <exception>EntryMessage</exception>
-            <exception>EntryName</exception>
-            <exception>GuestbookName</exception>
-        </exceptions>
+    ```xml
+        <finder name="G_G" return-type="Collection">
+            <finder-column name="groupId" />
+            <finder-column name="guestbookId" />
+        </finder>
+    </entity>
+    ```
+
+8.  Define exception types outside the `<entity>` tags, just before the closing
+    `</service-builder>` tag: 
+
+    ```xml
+    <exceptions>
+        <exception>EntryEmail</exception>
+        <exception>EntryMessage</exception>
+        <exception>EntryName</exception>
+        <exception>GuestbookName</exception>
+    </exceptions>
+    ```
 
     These generate exception classes you'll use later in try/catch statements. 
 
-8.  Save your `service.xml` file.
+9.  Save your `service.xml` file.
 
 Now you're ready to run Service Builder to generate your model, service, and
 persistence layers!
 
-1.  In the Gradle Tasks pane on the right side of @ide@, open `guestbook-service`
-    &rarr; `build`. 
+1.  In the Gradle Tasks pane on the right side of @ide@, open
+    `com-liferay-docs-guestbook` &rarr; `modules` &rarr; `guestbook` &rarr;
+    `guestbook-service` &rarr; `build`. 
 
 2.  Run `buildService` by right-clicking it and selecting *Run Gradle Tasks*.
     Make sure you're connected to the Internet, as Gradle downloads dependencies
@@ -196,11 +237,11 @@ module.
 ![Figure 1: The Model, Service, and Persistence Layer comprise a loose coupling design.](../../../images/model-service-persistence.png)
 
 Each layer is implemented using Java Interfaces and implementations of those
-interfaces. Rather than have one `Entry` class that represents your model, 
-Service Builder generates a system of classes that include a `Guestbook` 
-interface, a `GuestbookBaseImpl` abstract class that Service Builder manages, 
-and a `GuestbookImpl` class that you can customize. This design lets you 
-customize your model, while Service Builder generates code that's tedious to 
-write. That's why Service Builder is a code generator for code generator haters. 
+interfaces. Rather than have one `Guestbook` class that represents your
+model, Service Builder generates a system of classes that includes a `Guestbook`
+interface, a `GuestbookBaseImpl` abstract class that Service Builder manages,
+and a `GuestbookImpl` class that you can customize. With this design, you can
+customize your model and let Service Builder generate the tedious-to-write
+code. That's why Service Builder is a code generator for code generator haters. 
 
 Next, you'll create the service implementations. 
