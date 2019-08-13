@@ -43,12 +43,10 @@ curl -i -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "description": {
-        	"key": "en_US",
-          "value": "description"
+        	"en_US": "description"
     },
     "name": {
-         	"key": "en_US",
-          "value": "All Orders"
+         	"en_US": "All Orders"
     }
 }'
 ```
@@ -73,7 +71,6 @@ curl -i -X GET \
 Delete data record collections with a DELETE request. You'll need the data
 record collection ID:
 
-```sh
 ```sh
 curl -i -X DELETE \
   http://localhost:8080/o/data-engine/v1.0/data-record-collections/85637 \

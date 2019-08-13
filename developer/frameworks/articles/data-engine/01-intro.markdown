@@ -36,7 +36,7 @@ For detailed information on the Data Engine API, visit the [SwaggerHub profile](
 
 ##  Data Definitions
 
-Data Definitions (`DEDataDefinition`s) hold the form's field types (e.g., text,
+Data Definitions (`DataDefinition`s) hold the form's field types (e.g., text,
 boolean, date, radio buttons, selector menus, etc.) and those fields' labels and
 settings. Data definitions effectively serve as data models for a Data
 Collection. For example, you could create a data definition with two text
@@ -50,7 +50,7 @@ Collections, Data Records, and Data Layouts).
 
 ## Data Record Collections
 
-Data Record Collections (`DEDataRecordCollection`s) collect Data Records.
+Data Record Collections (`DataRecordCollection`s) collect Data Records.
 They're used to associate a displayed form with the data records it holds and
 its backing data definition.
 
