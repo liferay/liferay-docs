@@ -7,7 +7,7 @@ header-id: shield-adapter-settings
 [TOC levels=1-4]
 
 The following is a complete list of the settings you can configure with
-[Liferay's Shield adapter](/docs/7-0/deploy/-/knowledge_base/d/shield).
+[Liferay's Shield adapter](/docs/7-0/deploy/-/knowledge_base/d/securing-elasticsearch-with-shield).
 
 `password=liferay`
 :The String value used for the password part of the authentication token.
