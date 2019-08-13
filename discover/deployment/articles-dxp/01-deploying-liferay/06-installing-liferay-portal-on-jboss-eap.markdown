@@ -318,7 +318,7 @@ installation on JBoss. Next you'll configure the database and mail.
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. The 
-[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)
+[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-the-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 

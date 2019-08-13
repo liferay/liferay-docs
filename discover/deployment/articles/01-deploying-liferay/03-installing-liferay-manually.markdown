@@ -31,7 +31,7 @@ Start with data sources.
 We recommend the built-in data source. @product@'s data source is configured
 by properties set in a properties file. By default, you can enter database
 connection information on the 
-[Basic Configuration page](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferay-portals-setup-wizard)
+[Basic Configuration page](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-the-setup-wizard)
 that appears when @product@ starts for the first time. The Setup Wizard stores
 the information you entered in a configuration file called
 `portal-setup-wizard.properties` in your 
