@@ -153,7 +153,7 @@ com.liferay.fragment.entry.processor.portlet.alias=app-name
 When you deploy your widget, it's available to add. The name you specify in the
 property must be appended to the `lfr-widget` tag like this:
 
-```html
+```markup
 <lfr-widget-app-name>
 </lfr-widget-app-name>
 ```

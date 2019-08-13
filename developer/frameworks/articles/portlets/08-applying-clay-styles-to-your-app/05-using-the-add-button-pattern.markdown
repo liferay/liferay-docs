@@ -19,7 +19,7 @@ any of your app's screens. Follow these steps to add a plus button to your app:
 2.  Add an [`add-menu` tag](@app-ref@/frontend-taglib/latest/taglibdocs/liferay-frontend/add-menu.html) 
     to your portlet's view:
 
-    ```html
+    ```markup
     <liferay-frontend:add-menu>
     </liferay-frontend:add-menu>
     ```
@@ -28,7 +28,7 @@ any of your app's screens. Follow these steps to add a plus button to your app:
     tag for every menu item you have. Here's an example of the add button 
     pattern with a single item:
 
-    ```html
+    ```markup
     <liferay-frontend:add-menu>
         <liferay-frontend:add-menu-item 
           title='<%= LanguageUtil.get(request,"titleName") %>' 
@@ -45,7 +45,7 @@ any of your app's screens. Follow these steps to add a plus button to your app:
 
 The `com.liferay.mobile.device.rules.web` module's add menu is shown below:
 
-```html
+```markup
 <liferay-frontend:add-menu
   inline="<%= true %>"
 >

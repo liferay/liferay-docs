@@ -20,12 +20,12 @@ you're using Service Builder, this is very easy to do.
 2.  In your method that adds an entity, add a call to add a resource with the
     entity. For example, Liferay's Blogs application adds resources this way: 
  
-```java
-resourceLocalService.addResources(
-	entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
-	BlogsEntry.class.getName(), entry.getEntryId(), false,
-	addGroupPermissions, addGuestPermissions);
-```
+    ```java
+    resourceLocalService.addResources(
+    	entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
+    	BlogsEntry.class.getName(), entry.getEntryId(), false,
+    	addGroupPermissions, addGuestPermissions);
+    ```
 
     This method requires passing in the company ID, the group ID, the user ID,
     the entity's class name, the entity's primary key, and some boolean
@@ -85,55 +85,55 @@ class.
     method to register the permissions logic you want for your entities. For
     example, this is how the Blogs application registers its permissions: 
 
-```java
-@Component(immediate = true)
-public class BlogsEntryModelResourcePermissionRegistrar {
+    ```java
+    @Component(immediate = true)
+    public class BlogsEntryModelResourcePermissionRegistrar {
 
-    @Activate
-    public void activate(BundleContext bundleContext) {
-        Dictionary<String, Object> properties = new HashMapDictionary<>();
+        @Activate
+        public void activate(BundleContext bundleContext) {
+            Dictionary<String, Object> properties = new HashMapDictionary<>();
 
-        properties.put("model.class.name", BlogsEntry.class.getName());
+            properties.put("model.class.name", BlogsEntry.class.getName());
 
-        _serviceRegistration = bundleContext.registerService(
-            ModelResourcePermission.class,
-            ModelResourcePermissionFactory.create(
-                BlogsEntry.class, BlogsEntry::getEntryId,
-                _blogsEntryLocalService::getEntry, _portletResourcePermission,
-                (modelResourcePermission, consumer) -> {
-                    consumer.accept(
-                        new StagedModelPermissionLogic<>(
-                            _stagingPermission, BlogsPortletKeys.BLOGS,
-                            BlogsEntry::getEntryId));
-                    consumer.accept(
-                        new WorkflowedModelPermissionLogic<>(
-                            _workflowPermission, modelResourcePermission,
-                            BlogsEntry::getEntryId));
-                }),
-            properties);
+            _serviceRegistration = bundleContext.registerService(
+                ModelResourcePermission.class,
+                ModelResourcePermissionFactory.create(
+                    BlogsEntry.class, BlogsEntry::getEntryId,
+                    _blogsEntryLocalService::getEntry, _portletResourcePermission,
+                    (modelResourcePermission, consumer) -> {
+                        consumer.accept(
+                            new StagedModelPermissionLogic<>(
+                                _stagingPermission, BlogsPortletKeys.BLOGS,
+                                BlogsEntry::getEntryId));
+                        consumer.accept(
+                            new WorkflowedModelPermissionLogic<>(
+                                _workflowPermission, modelResourcePermission,
+                                BlogsEntry::getEntryId));
+                    }),
+                properties);
+        }
+
+        @Deactivate
+        public void deactivate() {
+            _serviceRegistration.unregister();
+        }
+
+        @Reference
+        private BlogsEntryLocalService _blogsEntryLocalService;
+
+        @Reference(target = "(resource.name=" + BlogsConstants.RESOURCE_NAME + ")")
+        private PortletResourcePermission _portletResourcePermission;
+
+        private ServiceRegistration<ModelResourcePermission> _serviceRegistration;
+
+        @Reference
+        private StagingPermission _stagingPermission;
+
+        @Reference
+        private WorkflowPermission _workflowPermission;
+
     }
-
-    @Deactivate
-    public void deactivate() {
-        _serviceRegistration.unregister();
-    }
-
-    @Reference
-    private BlogsEntryLocalService _blogsEntryLocalService;
-
-    @Reference(target = "(resource.name=" + BlogsConstants.RESOURCE_NAME + ")")
-    private PortletResourcePermission _portletResourcePermission;
-
-    private ServiceRegistration<ModelResourcePermission> _serviceRegistration;
-
-    @Reference
-    private StagingPermission _stagingPermission;
-
-    @Reference
-    private WorkflowPermission _workflowPermission;
-
-}
-```
+    ```
 
 We call these types of classes Registrars because the classes' job is to configure, 
 register and unregister the `ModelResourcePermission`.

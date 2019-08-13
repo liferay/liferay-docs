@@ -15,7 +15,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "4.6.18"
@@ -72,7 +72,7 @@ command line is not supported. It can only be set via Gradle script, which can
 be done by adding the following code to the `build.gradle` file in the root of
 a project (e.g., Liferay Workspace):
 
-```gradle
+```groovy
 allprojects {
     plugins.withId("com.liferay.node") {
         node.global = true

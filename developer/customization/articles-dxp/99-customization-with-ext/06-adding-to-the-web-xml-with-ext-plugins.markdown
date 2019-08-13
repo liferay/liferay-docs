@@ -9,7 +9,7 @@ header-id: adding-to-the-web-xml-with-ext-plugins
 A supported use case for using Ext Plugins in @product@ is adding additional
 functionality to its `web.xml` file. Before beginning, make sure you've reviewed
 the generalized
-[Customization with Ext Plugins](/docs/7-2/reference/-/knowledge_base/r/customizing-core-functionality-with-ext)
+[Customization with Ext Plugins](/docs/7-2/customization/-/knowledge_base/c/customizing-core-functionality-with-ext)
 section.
 
 As an example, you'll create a sample Ext plugin that adds to your @product@'s
@@ -80,5 +80,5 @@ will create a `ServletContextListener` instance, which will initialize a custom
 servlet context event. This event will be recognized by the `web.xml` file,
 which will add the new functionality to your @product@ installation. Follow the
 instructions in the
-[Deploy the Plugin](/docs/7-2/reference/-/knowledge_base/r/deploying-an-ext-plugin)
+[Deploy the Plugin](/docs/7-2/customization/-/knowledge_base/c/deploying-an-ext-plugin)
 article for help deploying the Ext plugin to your server.

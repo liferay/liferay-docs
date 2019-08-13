@@ -31,7 +31,7 @@ portlet's `EditEntryMVCActionCommand`, you would extend base class
 `BaseMVCActionCommand`. 
 
 ```java
-    public class CustomBlogsMVCActionCommand extends BaseMVCActionCommand {...}
+public class CustomBlogsMVCActionCommand extends BaseMVCActionCommand {...}
 ```
 
 Check the MVC command interfaces for existing base classes:

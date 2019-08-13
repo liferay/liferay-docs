@@ -16,7 +16,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.transpiler", version: "2.4.36"
@@ -37,7 +37,7 @@ There are two JS Transpiler Gradle plugins you can apply to your project:
 - [*JS Transpiler Plugin*](#js-transpiler-plugin): builds Metal.js code,
 compiles Soy files, and transpiles ES6 to ES5:
 
-    ```gradle
+    ```groovy
     apply plugin: "com.liferay.js.transpiler"
     ```
 
@@ -46,7 +46,7 @@ use Gradle dependencies (such as an [external module](https://docs.gradle.org/cu
 or [project dependencies](https://docs.gradle.org/current/userguide/dependency_management.html#sub:project_dependencies))
 in Node.js scripts:
 
-    ```gradle
+    ```groovy
     apply plugin: "com.liferay.js.transpiler.base"
     ```
 

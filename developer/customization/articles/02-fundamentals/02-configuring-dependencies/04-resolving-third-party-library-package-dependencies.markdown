@@ -145,9 +145,11 @@ using both build utilities.
 Open your module's `build.gradle` file and add the library as a dependency in
 the `compileInclude` configuration:
 
-    dependencies {
-        compileInclude group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0'
-    }
+```groovy
+dependencies {
+    compileInclude group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0'
+}
+```
 
 The `com.liferay.plugin` plugin's `compileInclude` configuration is transitive.
 The `compileInclude` configuration embeds the artifact and all its dependencies

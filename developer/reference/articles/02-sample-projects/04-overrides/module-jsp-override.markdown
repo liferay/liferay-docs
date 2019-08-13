@@ -49,7 +49,7 @@ example, since the original JSP is in the folder
 If needed, you can also target the original JSP following one of the two
 possible naming conventions: `original` or `portal`. This pattern looks like
 
-```
+```markup
 <liferay-util:include
     page="/login.original.jsp"
     servletContext="<%= application %>"
@@ -58,7 +58,7 @@ possible naming conventions: `original` or `portal`. This pattern looks like
 
 or
 
-```
+```markup
 <liferay-util:include
     page="/login.portal.jsp"
     servletContext="<%= application %>"

@@ -97,9 +97,9 @@ configurations appear in the Instance Settings UI, they can only be used to set
 defaults for the current instance. No corresponding UI is auto-generated to
 configure the app at the Site or Portlet level.
 
-|Note: An Instance Settings UI is not currently generated for factory
-|configurations. You can track the progress of this issue
-|[here](https://issues.liferay.com/browse/LPS-94490).
+| **Note:** An Instance Settings UI is not currently generated for factory
+| configurations. You can track the progress of this issue
+| [here](https://issues.liferay.com/browse/LPS-94490).
 
 **Default Configurations**
 : Default values for any scoped configuration can be set at any wider scope.
@@ -124,7 +124,7 @@ If your configuration is scoped to `COMPANY` or `GROUP` you must use
 This allows your app to read different configuration values from each site,
 virtual instance, or whatever the configuration is scoped to.
 
-If your configuration is scoped to `PORTLET_INTSANCE`, you can still use
+If your configuration is scoped to `PORTLET_INSTANCE`, you can still use
 `ConfigurationProvider`, but using `PortletDisplay` is simpler and more
 convenient. See 
 [`PortletDisplay`](/docs/7-2/frameworks/-/knowledge_base/f/reading-scoped-configuration-values#accessing-the-portlet-instance-configuration-through-the-portletdisplay). 

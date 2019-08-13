@@ -16,8 +16,10 @@ Follow these steps to delete a file:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the arguments of the `deleteFileEntry*` 
     method you wish to use. Since it's common to delete a file specified by the 
@@ -27,7 +29,9 @@ Follow these steps to delete a file:
     but you can get the data any way you wish. Also note that this example gets 
     only the file entry ID because it uses `deleteFileEntry`: 
 
-        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+    ```java
+    long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+    ```
 
     If you want to use `deleteFileEntryByTitle` instead, you can also get the 
     repository ID, folder ID, and title from the request. 
@@ -36,7 +40,9 @@ Follow these steps to delete a file:
     the data from the previous step. This example calls `deleteFileEntry` with 
     the file entry's ID: 
 
-        _dlAppService.deleteFileEntry(fileEntryId);
+    ```java
+    _dlAppService.deleteFileEntry(fileEntryId);
+    ```
 
 You can find the full code for this example in the `deleteFileEntry` method of 
 @product@'s 

@@ -40,7 +40,7 @@ a Component that isn't part of a portlet:
 3.  Once the activate method is set up, retrieve particular properties from the
     configuration wherever they're needed:
 
-   ```java 
+    ```java 
     public void orderCar(String model) {
         order("car", model, _configuration.favoriteColor());
     }
