@@ -4,6 +4,8 @@ header-id: targeting-content-to-your-audience
 
 # Targeting Content To Your Audience
 
+[TOC levels=1-4]
+
 Audience Targeting provides tools to customize user experience based on 
 demographics, browsing data, or other criteria. You can divide your audience 
 into user segments, target content to them, and create campaigns to get content

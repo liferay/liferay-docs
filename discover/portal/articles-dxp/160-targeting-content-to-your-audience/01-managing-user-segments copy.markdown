@@ -4,6 +4,8 @@ header-id: managing-user-segments
 
 # Managing User Segments
 
+[TOC levels=1-4]
+
 Go to *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting*
 to manage user segments and campaigns.
 

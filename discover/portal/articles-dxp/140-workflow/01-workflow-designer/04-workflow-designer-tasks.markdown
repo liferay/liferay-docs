@@ -4,6 +4,8 @@ header-id: creating-tasks-in-workflow-designer
 
 # Creating Tasks in Kaleo Designer
 
+[TOC levels=1-4]
+
 Task nodes have several parts and are the most complex parts of a workflow
 definition. Unlike other workflow nodes, task nodes have Assignments, because a
 User is expected to *do something* (often approve or reject the submitted asset)

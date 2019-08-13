@@ -4,6 +4,8 @@ header-id: auditing-users
 
 # Auditing Users
 
+[TOC levels=1-4]
+
 You've just finished lunch and are ready to get back to work. You have a Site
 you use to manage your project and before you left, you were about to create a
 folder in your Documents and Media library for sharing some requirements

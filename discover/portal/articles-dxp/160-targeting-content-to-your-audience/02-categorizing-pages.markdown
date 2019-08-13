@@ -4,6 +4,8 @@ header-id: categorizing-pages-and-content-for-user-segments
 
 # Categorizing Pages and Content for User Segments
 
+[TOC levels=1-4]
+
 Each new user segment that's created can be used to categorize pages or content.
 The Audience Targeting app adds a new *User Segment* select button to the SEO
 section of pages and Metadata section for assets. These buttons can assign one

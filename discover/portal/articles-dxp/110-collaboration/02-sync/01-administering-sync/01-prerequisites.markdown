@@ -4,6 +4,8 @@ header-id: installing-liferay-syncs-prerequisites
 
 # Installing Liferay Sync's Prerequisites
 
+[TOC levels=1-4]
+
 Liferay Sync requires that you install the following apps from Liferay 
 Marketplace. Be sure to install them in this order: 
 

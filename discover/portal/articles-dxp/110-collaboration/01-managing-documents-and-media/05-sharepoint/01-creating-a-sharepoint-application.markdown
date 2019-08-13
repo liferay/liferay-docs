@@ -4,6 +4,8 @@ header-id: creating-a-sharepoint-application
 
 # Creating a SharePoint Application
 
+[TOC levels=1-4]
+
 The steps covered in this section apply to SharePoint Online. If you're using 
 SharePoint On-Premises, please consult your administrator for the requirements.
 
