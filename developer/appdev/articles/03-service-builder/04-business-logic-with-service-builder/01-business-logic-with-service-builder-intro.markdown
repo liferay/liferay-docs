@@ -66,4 +66,26 @@ now, make sure to
 [run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 again to generate the service interfaces. 
 
+## Service Method Prefixes and Database Transactions
+
+There are two kinds of database transaction precipitated by your Service Builder
+project's `*LocalServiceImpl` methods: READ-WRITE and plain old READ.  Methods
+making persistence changes must be recognized as READ-WRITE methods, and the
+method name prefix is used to ascertain this need. If a service [method is
+prefixed](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-service-builder/src/main/java/com/liferay/portal/tools/service/builder/ServiceBuilderArgs.java)
+with any of these words, it's going to precipitate a database READ:
+
+- `dynamicQuery`
+- `fetch`
+- `get`
+- `has`
+- `is`
+- `load`
+- `reindex`
+- `search`
+
+Otherwise, a READ-WRITE transaction is made. Therefore, avoid naming your
+persistence methods (for adding, updating, and deleting, for example) with any
+of these prefixes.
+
 Now you're ready to implement your business logic. 
