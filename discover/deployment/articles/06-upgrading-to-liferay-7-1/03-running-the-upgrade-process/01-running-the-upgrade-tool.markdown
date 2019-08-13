@@ -26,7 +26,7 @@ Before running the upgrade tool, learn the tool's usage and how to configure the
 core upgrade and non-core module upgrades. 
 
 - [Upgrade Tool Usage](#upgrade-tool-usage)
-- [Configuring Non-Core Module Upgrades](#configuring-module-upgrades)
+- [Configuring Non-Core Module Upgrades](#configuring-non-core-module-upgrades)
 - [Configuring the Core Upgrade](#configuring-the-core-upgrade)
 
 Start with the tool's usage. 
@@ -97,7 +97,7 @@ finishing the upgrade process.
 | - If execution stopped during an upgrade process for Core 7.1 or higher, or any
 |   module upgrade process, restart the upgrade tool to continue the upgrade from
 |   that point. You can also use Gogo shell to
-|   [check module upgrade status](/docs/7-1/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)
+|   [check module upgrade status](/docs/7-1/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades#checking-upgrade-status)
 |   and continue upgrading modules.
 | - If execution stopped during an upgrade process for Core 7.0 or lower, you must
 |   [restore the data from a backup](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
@@ -141,7 +141,7 @@ Home]/tools/portal-tools-db-upgrade-client/`:
     the upgrade requires. You might want to copy your current portal properties
     (except your database properties) into this file. Before copying your
     current properties, make sure you've
-    [updated the portal properties for @product-ver@](/docs/7-1/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
+    [updated the portal properties for @product-ver@](/docs/7-1/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#step-5-update-your-portal-properties). 
 
 Each file's properties are described next. 
 
@@ -215,7 +215,7 @@ Specify the following information to configure the upgrade itself:
 library store. This property's default value is
 `com.liferay.portal.store.file.system.FileSystemStore`.
 If you updated the property
-[in your `portal-ext.properties`](/docs/7-1/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store)
+[in your `portal-ext.properties`](/docs/7-1/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#step-6-configuring-your-documents-and-media-file-store)
 to use a different implementation, specify the updated property here. 
 
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
@@ -290,7 +290,7 @@ it. If a core upgrade step for @product@ 7.1 (or newer) fails, executing the
 upgrade tool again starts it from that step. 
 
 If you
-[configured the upgrade tool to upgrade non-core modules](#configuring-module-upgrades),
+[configured the upgrade tool to upgrade non-core modules](#configuring-non-core-module-upgrades),
 the tool opens a
 Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules,
 check module upgrade status, verify upgrades, and restart module upgrades. Read
