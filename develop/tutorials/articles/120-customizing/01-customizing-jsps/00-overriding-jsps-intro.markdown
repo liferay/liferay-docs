@@ -12,7 +12,7 @@ JSP by other means, new versions of the JSP can render your customization
 invalid and leave you with runtime errors. It's highly recommended to use one of
 the API-based ways. 
 
-## Using @product@'s API to Override a JSP
+## Using Liferay's API to Override a JSP
 
 Here are API-based approaches to overriding JSPs in @product@:
 
@@ -25,7 +25,7 @@ Here are API-based approaches to overriding JSPs in @product@:
 Inlined content | Some @product@ JSPs include content from other JSPs that you can modify. This "inlines" the content from the other JSPs into specific places in the root JSP. | Limited to JSPs that inline other JSPs. |
 -->
 
-## Overriding a JSP Without Using @product@'s API
+## Overriding a JSP Without Using Liferay's API
 
 It's strongly recommended to customize JSPs using @product@'s API, as the
 previous section describes. Since overriding a JSP using an OSGi fragment or a

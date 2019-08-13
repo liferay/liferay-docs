@@ -1,0 +1,179 @@
+
+check-links-dxp:
+[checklinks] No DXP articles in ..\..\distribute\publish
+[checklinks] 1. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\240-product-navigation\03-extending-the-simulation-menu.markdown:23
+[checklinks]  Line: [`SimulationPanelCategory`](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/simulation/application/list/SimulationPanelCategory.html)
+[checklinks] 
+[checklinks] 2. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\240-product-navigation\04-providing-the-user-personal-bar.markdown:78
+[checklinks]  Line:     [BasePortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
+[checklinks] 
+[checklinks] 3. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles-dxp\100-tooling\02-liferay-ide\01-installing-liferay-ide.markdown:17
+[checklinks]  Line: - [install the Dev Studio bundle from scratch](#install-the-liferay-developer-studio-bundle)
+[checklinks] 
+[checklinks] 4. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles-dxp\100-tooling\02-liferay-ide\01-installing-liferay-ide.markdown:18
+[checklinks]  Line: - [install Dev Studio into an existing Eclipse instance using an update URL](#install-liferay-developer-studio-into-eclipse-environment)
+[checklinks] 
+[checklinks] 5. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles-dxp\100-tooling\02-liferay-ide\01-installing-liferay-ide.markdown:19
+[checklinks]  Line: - [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-liferay-ide-into-eclipse-from-a-zip-file)
+[checklinks] 
+[checklinks] 6. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\100-tooling\02-liferay-ide\08-managing-projects-with-liferay-ide.markdown:41
+[checklinks]  Line: [Developer Mode](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes#setting-developer-mode-for-your-server-in-liferay-ide)
+[checklinks] 
+[checklinks] 7. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\100-tooling\02-liferay-ide\14-using-maven-in-liferay-ide.markdown:12
+[checklinks]  Line: - [Installing Maven Plugins for Liferay Dev Studio](#installing-maven-plugins-for-liferay-ide)
+[checklinks] 
+[checklinks] 8. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\100-tooling\03-blade-cli\06-managing-your-liferay-server-with-blade-cli.markdown:51
+[checklinks]  Line: [Developer Mode](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes#setting-developer-mode-for-your-server-using-portal-developer-properties)
+[checklinks] 
+[checklinks] 9. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\110-portlets\02-soy-portlets\01-creating-a-soy-portlet.markdown:126
+[checklinks]  Line: [`MVCPortlet` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html),
+[checklinks] 
+[checklinks] 10. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\170-assets\05-rendering-an-asset\01-creating-asset-renderer.markdown:12
+[checklinks]  Line: [`BlogsEntryAssetRenderer`](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
+[checklinks] 
+[checklinks] 11. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\170-assets\05-rendering-an-asset\01-creating-asset-renderer.markdown:21
+[checklinks]  Line:     [`AssetEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
+[checklinks] 
+[checklinks] 12. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\170-assets\05-rendering-an-asset\01-creating-asset-renderer.markdown:28
+[checklinks]  Line:     [`BaseJSPAssetRenderer`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
+[checklinks] 
+[checklinks] 13. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\170-assets\05-rendering-an-asset\01-creating-asset-renderer.markdown:33
+[checklinks]  Line:     [`TrashRenderer`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
+[checklinks] 
+[checklinks] 14. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\170-assets\05-rendering-an-asset\03-creating-factory-asset-renderer.markdown:19
+[checklinks]  Line:     [`BlogsEntryAssetRendererFactory`](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRendererFactory.html)
+[checklinks] 
+[checklinks] 15. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\180-themes-and-layout-templates\02-layout-templates\05-upgrading-6-2-layout-templates-to-7-1.markdown:27
+[checklinks]  Line: | [Creating Layout Templates Manually](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-manually#anatomy)
+[checklinks] 
+[checklinks] 16. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\180-themes-and-layout-templates\02-layout-templates\06-upgrading-7-0-layout-templates-to-7-1.markdown:25
+[checklinks]  Line: | [Creating Layout Templates Manually](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-manually#anatomy)
+[checklinks] 
+[checklinks] 17. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\180-themes-and-layout-templates\03-portlets-and-themes\03-embedding-portlets-in-themes-and-layout-templates.markdown:77
+[checklinks]  Line:     [`BasePortletProvider`](@platform-ref@/7.1/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html) 
+[checklinks] 
+[checklinks] 18. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\180-themes-and-layout-templates\03-portlets-and-themes\03-embedding-portlets-in-themes-and-layout-templates.markdown:80
+[checklinks]  Line:     [`ViewPortletProvider`](@platform-ref@/7.1/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/ViewPortletProvider.html), 
+[checklinks] 
+[checklinks] 19. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\180-themes-and-layout-templates\03-portlets-and-themes\03-embedding-portlets-in-themes-and-layout-templates.markdown:81
+[checklinks]  Line:     [`BrowsePortletProvider`](@platform-ref@/7.1/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BrowsePortletProvider.html), 
+[checklinks] 
+[checklinks] 20. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\200-integrating-with-front-end-frameworks\04-creating-and-bundling-javascript-portlets-with-js-tooling\03-configuring-system-and-instance-settings-for-your-js-portlets.markdown:22
+[checklinks]  Line:     | [OSGi bundle configuration options](/docs/7-1/reference/-/knowledge_base/r/configuring-liferay-npm-bundler#osgi-bundle-configuration-options)
+[checklinks] 
+[checklinks] 21. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\200-integrating-with-front-end-frameworks\04-creating-and-bundling-javascript-portlets-with-js-tooling\03-configuring-system-and-instance-settings-for-your-js-portlets.markdown:26
+[checklinks]  Line:     pattern below. See the [Configuration JSON](/docs/7-1/reference/-/knowledge_base/r/configuration-json-available-options) 
+[checklinks] 
+[checklinks] 22. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\200-integrating-with-front-end-frameworks\04-creating-and-bundling-javascript-portlets-with-js-tooling\03-configuring-system-and-instance-settings-for-your-js-portlets.markdown:86
+[checklinks]  Line: - [Using Translation Features in Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/using-translation-features-in-your-javascript-portlet)
+[checklinks] 
+[checklinks] 23. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\200-integrating-with-front-end-frameworks\04-creating-and-bundling-javascript-portlets-with-js-tooling\04-localizing-your-js-portlet.markdown:61
+[checklinks]  Line: - [Using Translation Features in Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/using-translation-features-in-your-javascript-portlet)
+[checklinks] 
+[checklinks] 24. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\210-front-end-taglibs\05-chart-taglibs\01-bar-charts.markdown:12
+[checklinks]  Line: [`MultiValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MultiValueColumn.html), 
+[checklinks] 
+[checklinks] 25. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\210-front-end-taglibs\05-chart-taglibs\02-line-charts.markdown:12
+[checklinks]  Line: [`MultiValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MultiValueColumn.html), 
+[checklinks] 
+[checklinks] 26. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\210-front-end-taglibs\05-chart-taglibs\03-scatter-charts.markdown:12
+[checklinks]  Line: [`MultiValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MultiValueColumn.html), 
+[checklinks] 
+[checklinks] 27. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\210-front-end-taglibs\05-chart-taglibs\04-spline-charts.markdown:12
+[checklinks]  Line: [`MultiValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MultiValueColumn.html), 
+[checklinks] 
+[checklinks] 28. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\210-front-end-taglibs\05-chart-taglibs\05-step-charts.markdown:12
+[checklinks]  Line: [`MultiValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MultiValueColumn.html), 
+[checklinks] 
+[checklinks] 29. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\210-front-end-taglibs\05-chart-taglibs\07-donut-charts.markdown:12
+[checklinks]  Line: [`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html). 
+[checklinks] 
+[checklinks] 30. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\210-front-end-taglibs\05-chart-taglibs\08-gauge-charts.markdown:12
+[checklinks]  Line: [`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html). 
+[checklinks] 
+[checklinks] 31. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\210-front-end-taglibs\05-chart-taglibs\09-pie-charts.markdown:11
+[checklinks]  Line: [`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html). 
+[checklinks] 
+[checklinks] 32. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\210-front-end-taglibs\05-chart-taglibs\11-predictive-charts.markdown:25
+[checklinks]  Line:     [`MixedDataColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MixedDataColumn.html)
+[checklinks] 
+[checklinks] 33. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\220-mobile\01-android-apps-with-liferay-screens\19-screens-android-troubleshooting-faq.markdown:104
+[checklinks]  Line:     [overridden the default IP address in `server_context.xml`](/docs/7-1/tutorials/-/knowledge_base/t/preparing-android-projects-for-liferay-screens#configuring-communication-with-liferay), 
+[checklinks] 
+[checklinks] 34. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\220-mobile\02-ios-apps-with-liferay-screens\23-ios-best-practices.markdown:121
+[checklinks]  Line: [see the Configuring Communication with Liferay section](/docs/7-1/tutorials/-/knowledge_base/t/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay) 
+[checklinks] 
+[checklinks] 35. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\290-configuration\01-making-apps-configurable\05-reading-configurations-configuration-provider.markdown:48
+[checklinks]  Line:     [how to integrate Spring beans with OSGi services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-from-service-builder-code#referencing-an-osgi-service)
+[checklinks] 
+[checklinks] 36. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\100-tooling\04-liferay-workspace\07-validating-modules-against-the-target-platform\02-modifying-the-target-platforms-capabilities.markdown:39
+[checklinks]  Line: - [Add the third party library's capabilities to the current static set of resolver capabilities](#add-the-third-party-librarys-capabilities-to-the-current-static-set-of-reso)
+[checklinks] 
+[checklinks] 37. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\110-portlets\05-jsf-portlets-with-liferay-faces\03-generating-a-jsf-project-manually\03-defining-jsf-portlet-descriptors.markdown:169
+[checklinks]  Line: [Liferay Descriptors](/docs/7-1/tutorials/-/knowledge_base/t/spring-mvc#liferay-descriptors)
+[checklinks] 
+[checklinks] 38. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\180-themes-and-layout-templates\01-themes\02-developing-themes\15-injecting-additional-context-variables-and-functionality-into-your-templates.markdown:75
+[checklinks]  Line:     The [ProductMenuTemplateContextContributor](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
+[checklinks] 
+[checklinks] 39. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\180-themes-and-layout-templates\01-themes\02-developing-themes\15-injecting-additional-context-variables-and-functionality-into-your-templates.markdown:96
+[checklinks]  Line: [`ProductMenuTemplateContextContributor` class](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
+[checklinks] 
+[checklinks] 40. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\220-mobile\01-android-apps-with-liferay-screens\10-supporting-offline-mode\06-offline-mode-list-screenlets.markdown:26
+[checklinks]  Line: - [Creating the Event](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-interactor-0#creating-the-screenlets-event)
+[checklinks] 
+[checklinks] 41. **INVALID URL**
+[checklinks]  File: ..\tutorials\articles\220-mobile\02-ios-apps-with-liferay-screens\05-architecture\03-screenlet-layer.markdown:61
+[checklinks]  Line:     [in the tutorial on preparing your iOS project for Screens](/docs/7-1/tutorials/-/knowledge_base/t/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay). 
+[checklinks] 
+[checklinks] 42. **CORRUPT URL FORMATTING**
+[checklinks]  File: ..\tutorials\articles\250-collaboration\02-documents-media-api\06-copying-moving-entities\01-copying-folders.markdown:47
+[checklinks]  Line:     [`getFolder`](/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFolder-long-) 
+[checklinks] 
+
+BUILD FAILED
+C:\git\liferay-docs-7.1.x\build-common.xml:568: 
+
+**Total Broken Links: 42**
+
+
+Total time: 2 minutes 17 seconds

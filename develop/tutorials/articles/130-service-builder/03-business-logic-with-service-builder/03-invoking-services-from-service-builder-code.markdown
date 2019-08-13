@@ -44,7 +44,7 @@ Services annotation to inject Spring Beans and OSGi services. Here are the
 recommended Liferay annotations a Service Builder Spring Bean can use.
 
 - [Use `@BeanReference` to reference a Spring Bean that is in the Application Context.](#referencing-a-spring-bean-that-is-in-the-application-context)
-- [Use `@ServiceReference` to reference an OSGi service.](#referencing-an-osgi-service)
+- [Use `@ServiceReference` to reference an OSGi service.](#referencing-osgi-services)
 
 | **Important:** When invoking service entity updates (e.g.,
 | `fooService.update(object)`) for services that have MVCC enabled, make sure to

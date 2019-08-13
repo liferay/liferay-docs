@@ -14,9 +14,9 @@ module's language keys is different from
 
 Here is the process:
 
-1.  [Find the module and its metadata and language keys](#find-the-module-and-its-metadata-and-language-keys)
-2.  [Write your custom language key values](#providing-language-keys) 
-3.  [Prioritize your module's resource bundle](#prioritize-your-modules-resource-bundle)
+1.  Find the module and its metadata and language keys
+2.  Write your custom language key values 
+3.  Prioritize your module's resource bundle
 
 ## Find the module and its metadata and language keys
 

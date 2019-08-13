@@ -6,7 +6,7 @@ header-id: resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bun
 
 [TOC levels=1-4]
 
-``ClassNotFoundException` and `NoClassDefFoundError` are common, well known
+`ClassNotFoundException` and `NoClassDefFoundError` are common, well known
 exceptions:
 
 -   `ClassNotFoundException` is thrown when looking up a class that isn't on the

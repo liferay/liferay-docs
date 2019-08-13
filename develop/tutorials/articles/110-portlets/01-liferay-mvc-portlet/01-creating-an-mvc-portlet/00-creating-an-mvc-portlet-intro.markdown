@@ -14,11 +14,11 @@ environment.
 Here are the general steps for implementing a Liferay MVC Portlet component
 module: 
 
-1. [Configuring a Web module](#configuring-a-web-module)
+1. Configuring a Web module
 
-2. [Specifying OSGi metadata](#specifying-osgi-metadata)
+2. Specifying OSGi metadata
 
-3. [Creating a portlet Component](#creating-a-portlet-component)
+3. Creating a portlet Component
 
 Start by creating a web module for your portlet. 
 
