@@ -4,6 +4,8 @@ header-id: liferay-ide
 
 # Liferay @ide@
 
+[TOC levels=1-4]
+
 Liferay @ide@ provides an all-in-one, integrated development environment based
 on Eclipse for @product@. Dev Studio includes Liferay IDE plugins paired with
 a pre-installed Liferay Digital Enterprise server.
