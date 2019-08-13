@@ -4,6 +4,8 @@ header-id: content-targeting-rule-template
 
 # Content Targeting Rule Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay Content Targeting Rule
 application as a Liferay module. To create a Content Targeting Rule via the
 command line using Blade CLI or Maven, use one of the commands with the

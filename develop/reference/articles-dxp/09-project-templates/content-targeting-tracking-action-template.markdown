@@ -4,6 +4,8 @@ header-id: content-targeting-tracking-action-template
 
 # Content Targeting Tracking Action Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay Content Targeting Tracking
 Action application as a Liferay module. To create a Content Targeting Tracking
 Action via the command line using Blade CLI or Maven, use one of the commands

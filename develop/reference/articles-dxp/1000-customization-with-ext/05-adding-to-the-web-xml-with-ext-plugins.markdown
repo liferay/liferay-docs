@@ -4,6 +4,8 @@ header-id: adding-to-the-web-xml-with-ext-plugins
 
 # Adding to the web.xml with Ext Plugins
 
+[TOC levels=1-4]
+
 A supported use case for using Ext Plugins in @product@ is adding additional
 functionality to its `web.xml` file. Before beginning, make sure you've reviewed
 the generalized
