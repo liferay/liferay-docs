@@ -41,13 +41,14 @@ curl -i -X POST \
 Here you're specifying the endpoint for the data definitions API, passing in
 the `siteId`. Then you're creating a request body that includes:
 
+- `availableLanguageIds`: the IDs of the available languages.
 - `dataDefinitionFields`: The example is simple, with just a `fieldType` and a
     `name` element for one field. Here's the complete list of elements that each
     field can have:
-    - `customProperties` <!-- DESCRIBE -->
+    - `customProperties`: properties that depend on the type of the field.
     - `defaultValue`: provide a default value for a field. 
-    - `id` <!-- is this a key that you can set yourself? Like the old
-        DDMTemplateKey that could be configured in the UI? DESCRIBE --> 
+    - `fieldType`: the type of a field
+    - `id`: set by the system.
     - `indexable` can be set to `true` (default)  or `false` to control whether the
         fields is indexed in the search engine.
     - `label`: set a human readable label for each of the custom properties the
@@ -55,20 +56,85 @@ the `siteId`. Then you're creating a request body that includes:
     - `localizable`: can be set to `true` (default) or `false` to control
         whether the locale of the User is appended when he or she adds a data
         record.
+    - `name`: a required element that names the field. This defaults to `string`
+        if left blank.
+    - `nestedDataDefinitionFields`: set of data definition fields.
     - `repeatable`: set to `true` or `false` to control whether the field
         accepts multiple values per data record.
     - `tip`: provide help text for the field's properties.
-    - `name`: a required element that names the field. This defaults to `string`
-        if left blank.
-- `description`: use this optional element to describe the data definition.
-- `name`: name the data definition.
+- `dataDefinitionKey`: set by the system.
 - `dataDefinitionRules`: set validation rules for the data definition.
 - `dateCreated` and `dateModified`: these are set by the system, so it's not
     necessary to do anything here.
+- `defaultLangugageId`: the ID of the default language.
+- `description`: use this optional element to describe the data definition.
+- `id`: set by the system.
+- `name`: name the data definition.
 - `siteId`: the ID of the site the data definition is scoped to.
 - `storageType`: the default is `string`, which is how the JSON is stored in the
     database.
 - `userId`: the ID of the User making the service call.
+
+All the types that a field can be is specified below:
+- `checkbox`
+- `checkbox_multiple`
+- `date`
+- `document_library`
+- `editor`
+- `fieldset`
+- `grid`
+- `numeric`
+- `paragraph`
+- `radio`
+- `select`
+- `text`
+
+Each field has its own custom properties. Here is the complete list:
+- `checkbox`
+    - `showAsSwitcher`: set to `true` or `false` to control whether the checkbox is going to be shown as a switcher.
+    - `predefinedValue`: provide a predefined value for the field. 
+- `checkbox_multiple`
+    - `inline`: set to `true` or `false` to control whether the options are going to be shown inline or not.
+    - `options`: set the options of the field.
+    - `showAsSwitcher`: set to `true` or `false` to control whether the options are going to be shown as a switcher.
+    - `predefinedValue`: provide a predefined value for the field.
+- `date`
+    - `predefinedValue`: provide a predefined value for the field.
+- `document_library`
+    - `groupId`: set the group id.
+    - `itemSelectorAuthToken`: set the auth token.
+    - `lexiconIconsPath`: set the icons path.
+    - `strings`: set the strings.
+- `editor`
+    - `placeholder`: set a placeholder for the field.
+- `fieldset`
+    - `orientation`: set the orientation in how the nested fields are going to be shown: horizontal or vertical. The default value is horizontal.
+- `grid`
+    - `columns`: set the options for the columns in the grid field.
+    - `rows`: set the options for the rows in the grid field
+- `numeric`
+    - `dataType`: set if the number is going to be `decimal` or `integer`.
+    - `placeholder`: set a placeholder for the field.
+    - `predefinedValue`: provide a predefined value for the field.
+    - `tooltip`: set a tooltip for the field.
+- `paragraph`
+    - `text`: set the text that will fill the paragraph.
+- `radio`
+    - `inline`: set to `true` or `false` to control whether the options are going to be shown inline or not.
+    - `options`: set the options of the field.
+    - `predefinedValue`: provide a predefined value for the field.
+- `select`
+    - `dataSourceType`: set how the data options are going to be filled, can be manually, from a Data Provider or from Autofill. This property accepts: `manual`, `data-provider` or `from-autofill`.
+    - `multiple`: set to `true` or `false` to control if the field will accept more than one option as a value.
+    - `options`: set the options of the field.
+    - `predefinedValue`: provide a predefined value for the field.
+- `text`
+    - `autocompleteEnabled`: set to `true` or `false` if the field should autocomplete the text input.
+    - `displayStyle`: set if the display style is going to be as a single line or as multiple lines. This property accepts: `singleline` or `multiline`.
+    - `options`: set the options of the field.
+    - `placeholder`: set a placeholder for the field.
+    - `predefinedValue`: provide a predefined value for the field.
+    - `tooltip`: set a tooltip for the field.
 
 For a complete view of the JSON structure of a data definitions, see the
 [`data-engine-rest-impl/rest-openapi.yaml`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/data-engine/data-engine-rest-impl/rest-openapi.yaml)
