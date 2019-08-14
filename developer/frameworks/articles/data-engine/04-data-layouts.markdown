@@ -1,6 +1,8 @@
 # Data Layouts
 
-Data Layouts control the display of a from backed by the data engine. The basic
+[TOC levels=1-4]
+
+Data Layouts control the display of a form backed by the data engine. The basic
 functionality is to lay the field out in _rows_ and _columns_.
 
 ## Adding Data Layouts
@@ -36,13 +38,13 @@ curl -i -X POST \
     "name": {"en_US":"name"},
     "paginationMode": "pagination"
 }
-
 ```
 
 Here you can create multiple pages, laying out your fields in column and rows.
-The `paginationMode` element can be set to `pagination` or `wizard`.  Each page
-can have a title and description, and the `dataLayout` itself can have a name
-and description (a name is required).
+The `paginationMode` element can be set to `pagination` (for numbered pages) or
+`wizard` (for navigation buttons, like arrows). Each page can have a title and
+description, and the `dataLayout` itself can have a name and description (a name
+is required).
 
 ## Retrieving Data Layouts
 
@@ -90,8 +92,7 @@ Notice that the keywords, page number, and page size are added as query
 parameters.
 
 - `keywords` are the search keywords to match data layouts by. The `name` and
-    `description` Data layout
-    fields are matched to the keywords sent here.
+    `description` Data layout fields are matched to the keywords sent here.
 - `page` specifies the page of results to return (as an integer), if there are
     more layouts returned than the `pageSize`.
 - `pageSize` is the number of layouts to include on each page. 

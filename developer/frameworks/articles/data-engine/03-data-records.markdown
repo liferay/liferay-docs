@@ -1,15 +1,17 @@
 # Data Records
 
+[TOC levels=1-4]
+
 Once you have a data definition and a Data Record Collection, it's time to start
 collecting data.
 
-These example calls use cURL, a cross-platform tool for making HTTP calls. Feel
-free to use any REST client you're familiar with.
+The example calls in this article use cURL, a cross-platform tool for making
+HTTP calls. Feel free to use any REST client you're familiar with.
 
-For more examples, paste the contents of
+For more API documentation, paste the contents of
 [`data-engine-rest-impl/rest-openapi.yaml`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/data-engine/data-engine-rest-impl/rest-openapi.yaml)
 into the [Swagger Editor](https://editor.swagger.io/) and get auto-generated
-Open API docs. Better yet, just visit the `liferayinc` section of
+Open API docs. Better yet, visit the `liferayinc` section of
 [SwaggerHub](https://app.swaggerhub.com/search?type=API&owner=liferayinc) and
 see all the headless APIs you can consume, including the Data Engine.
 
@@ -38,8 +40,7 @@ addition, send any other required properties in the request body:
 
 ## Retrieving Data Records
 
-Construct GET requests, which will differ depending on what data you're
-interested in retrieving.
+Construct GET requeststo retrieve data records.
 
 ### Retrieving all the Data Records for a Data Record Collection
 
