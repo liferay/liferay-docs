@@ -4,6 +4,8 @@ header-id: securing-elasticsearch-with-shield
 
 # Securing Elasticsearch with Shield
 
+[TOC levels=1-4]
+
 Elasticsearch makes storing, searching, and analyzing your @product@ search data
 easy. When it comes to securing that data, use Elasticsearch's [Shield
 plugin](https://www.elastic.co/guide/en/shield/2.4/index.html). To use Shield
@@ -260,7 +262,7 @@ for the details.
 
 Now Shield is fully configured, with both authentication and encryption
 protecting your Elasticsearch cluster. Next, you can learn how to 
-[install and configure Marvel](/docs/igu/deploy/-/knowledge_base/d/e Marvel](/docs/d/e/deploy/-/knowledge_base/d/Marvel](/discover/deployment/monitoring-elasticsearch-with-marvel),
+[install and configure Marvel](/docs/6-2/deploy/-/knowledge_base/d/monitoring-elasticsearch-with-marvel),
 Elasticsearch's monitoring plugin, to visualize the health and performance of
 your Elasticsearch cluster.
 

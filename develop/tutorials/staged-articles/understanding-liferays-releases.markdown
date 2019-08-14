@@ -88,7 +88,7 @@ installation.
   also work in Liferay Portal 6.2 GA2 or a GA2 fix pack.
 
 For more details on updating Liferay Portal, see the
-[Upgrading Liferay](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
+[Upgrading Liferay](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay)
 article.
 
 Liferay Portal is a very flexible application that runs well on several

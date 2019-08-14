@@ -4,6 +4,8 @@ header-id: securing-elasticsearch-6-with-x-pack
 
 # Securing Elasticsearch 6.5 with X-Pack
 
+[TOC levels=1-4]
+
 X-Pack is an 
 [Elastic extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-xpack.html)
 for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,
@@ -185,7 +187,7 @@ Here's the complete list of configuration options for the X-Pack Connector:
 - `transportSSLVerificationMode`
 - `transportSSLEnabled`
 - `sslKeystorePath`
-- `sslKeyStorePassword`
+- `sslKeystorePassword`
 - `sslTruststorePath`
 - `sslTruststorePassword`
 

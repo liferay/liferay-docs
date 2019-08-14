@@ -4,6 +4,8 @@ header-id: installing-patches-on-the-liferay-de-war
 
 # Installing patches on the @product-ver@ WAR
 
+[TOC levels=1-4]
+
 Because of your app server choice, you may not be able to patch the @product@
 instance that's installed, because the files aren't available on the file
 system. Instead, you must patch the @product@ WAR file and then re-deploy it.

@@ -4,6 +4,8 @@ header-id: installing-liferay-on-tc-server
 
 # Installing @product@ on tc Server
 
+[TOC levels=1-4]
+
 @product@ is supported on tc Server. Please see the 
 [Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
 for the supported version. 

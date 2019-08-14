@@ -4,6 +4,8 @@ header-id: patching-tool-advanced-configuration
 
 # Patching Tool Advanced Configuration
 
+[TOC levels=1-4]
+
 By default, the Patching Tool's configuration file is in its installation folder
 and called `default.properties`.
 

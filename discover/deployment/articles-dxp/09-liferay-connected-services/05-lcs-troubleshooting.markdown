@@ -4,6 +4,8 @@ header-id: troubleshooting-your-lcs-connection
 
 # Troubleshooting Your LCS Connection
 
+[TOC levels=1-4]
+
 If you use LCS to activate @product@, your server must maintain its connection 
 to LCS at all times. If this connection is interrupted, your server enters a 
 grace period to allow for reconnection. Lengthy interruptions, however, can 

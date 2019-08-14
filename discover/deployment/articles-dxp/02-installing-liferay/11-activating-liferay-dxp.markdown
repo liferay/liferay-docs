@@ -4,6 +4,8 @@ header-id: activating-liferay-dxp
 
 # Activating Liferay DXP
 
+[TOC levels=1-4]
+
 There are 2 ways to activate your Liferay DXP instance: 
 
 -   With an XML activation key that you request and receive from Liferay 

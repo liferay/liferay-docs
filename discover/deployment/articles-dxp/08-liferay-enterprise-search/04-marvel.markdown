@@ -4,6 +4,8 @@ header-id: monitoring-elasticsearch-with-marvel
 
 # Installing Marvel for Elasticsearch
 
+[TOC levels=1-4]
+
 Marvel is a monitoring tool for Elasticsearch. It lets you view the performance
 and health of your Elasticsearch cluster, so you can anticipate issues ahead of
 time, troubleshoot them quickly, and scale your cluster appropriately.

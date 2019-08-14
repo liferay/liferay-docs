@@ -4,6 +4,8 @@ header-id: securing-elasticsearch-6-1-with-x-pack
 
 # Securing Elasticsearch 6.1 with X-Pack
 
+[TOC levels=1-4]
+
 **Elasticsearch 6.1 is EOL as of [June 13,
 2019](https://www.elastic.co/support/eol). If possible, install Elastic stack
 6.5 products.**
@@ -239,7 +241,7 @@ Here's the complete list of configuration options for the X-Pack Connector:
 - `transportSSLVerificationMode`
 - `transportSSLEnabled`
 - `sslKeystorePath`
-- `sslKeyStorePassword`
+- `sslKeystorePassword`
 - `sslTruststorePath`
 - `sslTruststorePassword`
 

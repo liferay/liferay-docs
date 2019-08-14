@@ -4,6 +4,8 @@ header-id: monitoring-product
 
 # Monitoring @product@
 
+[TOC levels=1-4]
+
 In this section, you will learn more about how to monitor @product@. Monitoring
 vital statistics such as Java memory heaps, garbage collection, database
 connection pools, and the application server itself means that administrators

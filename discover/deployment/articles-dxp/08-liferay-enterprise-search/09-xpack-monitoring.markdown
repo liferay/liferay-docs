@@ -4,6 +4,8 @@ header-id: installing-x-pack-monitoring-for-elasticsearch-6
 
 # Installing X-Pack Monitoring for Elasticsearch 6.5
 
+[TOC levels=1-4]
+
 To monitor Elasticsearch, use X-Pack Monitoring. First 
 [install X-Pack onto Elasticsearch](/docs/7-0/deploy/-/knowledge_base/d/securing-elasticsearch-6-with-x-pack)
 and configure security if you're using X-Pack's security features. Then come

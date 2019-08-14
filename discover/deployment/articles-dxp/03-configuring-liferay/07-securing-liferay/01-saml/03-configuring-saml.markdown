@@ -4,6 +4,8 @@ header-id: configuring-saml
 
 # Configuring SAML
 
+[TOC levels=1-4]
+
 As noted in the previous tutorials, anything related to configuring SP
 connections must be done through the SAML Admin UI where configurations are
 saved to Liferay's database. SP connections can no longer be made via properties

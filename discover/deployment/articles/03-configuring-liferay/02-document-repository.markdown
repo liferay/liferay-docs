@@ -380,6 +380,9 @@ Property | Default | Required
 `jackrabbitCredentialsUsername` | none | `true`
 `jackrabbitCredentialsPassword` | none | `true`
 
+| **Note:** Use the absolute path for `jackrabbitRepositoryRoot`, 
+| `jackrabbitConfigFilePath`, and `jackrabbitRepositoryHome`. 
+
 Please refer to the [Document Library property reference](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Document%20Library%20Portlet)
 for a complete list of supported customizations. You can customize features such
 as the maximum allowed size of documents and media files, the list of allowed

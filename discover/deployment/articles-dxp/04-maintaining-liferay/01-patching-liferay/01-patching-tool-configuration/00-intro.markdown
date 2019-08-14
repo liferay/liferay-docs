@@ -4,6 +4,8 @@ header-id: configuring-the-patching-tool-0
 
 # Configuring the Patching Tool
 
+[TOC levels=1-4]
+
 @product@ patches can be installed by using the Patching Tool. In the
 prepackaged @product@ installation (bundles), the Patching Tool is already
 configured. If you've installed @product@ manually, however, you must also

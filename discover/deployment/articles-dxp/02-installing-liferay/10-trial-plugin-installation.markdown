@@ -4,6 +4,8 @@ header-id: liferay-dxp-trial-plugin-installation
 
 # @product@ Trial Plugin Installation
 
+[TOC levels=1-4]
+
 For Liferay customers who are evaluating @product@ on a trial
 basis, **the plugins can be accessed from within the Marketplace section
 of the Control Panel in the product**. 
