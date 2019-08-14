@@ -45,12 +45,13 @@ the `siteId`. Then you're creating a request body that includes:
 - `dataDefinitionFields`: The example is simple, with just a `fieldType` and a
     `name` element for one field. Here's the complete list of elements that each
     field can have:
-    - `customProperties`: properties that depend on the type of the field.
+    - `customProperties`: properties that depend on the type of the field
+        (listed below).
     - `defaultValue`: provide a default value for a field. 
     - `fieldType`: the type of a field
     - `id`: set by the system.
     - `indexable` can be set to `true` (default)  or `false` to control whether the
-        fields is indexed in the search engine.
+        fields are indexed in the search engine.
     - `label`: set a human readable label for each of the custom properties the
         fields has.
     - `localizable`: can be set to `true` (default) or `false` to control
@@ -75,28 +76,19 @@ the `siteId`. Then you're creating a request body that includes:
     database.
 - `userId`: the ID of the User making the service call.
 
-All the types that a field can be is specified below:
-- `checkbox`
-- `checkbox_multiple`
-- `date`
-- `document_library`
-- `editor`
-- `fieldset`
-- `grid`
-- `numeric`
-- `paragraph`
-- `radio`
-- `select`
-- `text`
+Each field has its own custom properties. Here is the complete list of fields
+and properties:
 
-Each field has its own custom properties. Here is the complete list:
 - `checkbox`
-    - `showAsSwitcher`: set to `true` or `false` to control whether the checkbox is going to be shown as a switcher.
+    - `showAsSwitcher`: set to `true` or `false` to control whether the checkbox
+        is displayed as a switcher.
     - `predefinedValue`: provide a predefined value for the field. 
 - `checkbox_multiple`
-    - `inline`: set to `true` or `false` to control whether the options are going to be shown inline or not.
+    - `inline`: set to `true` or `false` to control whether the options are
+        going to be shown inline or not.
     - `options`: set the options of the field.
-    - `showAsSwitcher`: set to `true` or `false` to control whether the options are going to be shown as a switcher.
+    - `showAsSwitcher`: set to `true` or `false` to control whether the options
+        are displayed as a switcher.
     - `predefinedValue`: provide a predefined value for the field.
 - `date`
     - `predefinedValue`: provide a predefined value for the field.
@@ -106,9 +98,10 @@ Each field has its own custom properties. Here is the complete list:
     - `lexiconIconsPath`: set the icons path.
     - `strings`: set the strings.
 - `editor`
-    - `placeholder`: set a placeholder for the field.
+    - `placeholder`: set a placeholder value for the field.
 - `fieldset`
-    - `orientation`: set the orientation in how the nested fields are going to be shown: horizontal or vertical. The default value is horizontal.
+    - `orientation`: set the orientation in how the nested fields are going to
+        be shown: horizontal or vertical. The default orientation is horizontal.
 - `grid`
     - `columns`: set the options for the columns in the grid field.
     - `rows`: set the options for the rows in the grid field
@@ -118,20 +111,26 @@ Each field has its own custom properties. Here is the complete list:
     - `predefinedValue`: provide a predefined value for the field.
     - `tooltip`: set a tooltip for the field.
 - `paragraph`
-    - `text`: set the text that will fill the paragraph.
+    - `text`: set the text that populates the paragraph.
 - `radio`
-    - `inline`: set to `true` or `false` to control whether the options are going to be shown inline or not.
+    - `inline`: set to `true` or `false` to control whether the options are
+        shown inline or not.
     - `options`: set the options of the field.
     - `predefinedValue`: provide a predefined value for the field.
 - `select`
-    - `dataSourceType`: set how the data options are going to be filled, can be manually, from a Data Provider or from Autofill. This property accepts: `manual`, `data-provider` or `from-autofill`.
-    - `multiple`: set to `true` or `false` to control if the field will accept more than one option as a value.
-    - `options`: set the options of the field.
+    - `dataSourceType`: set how the options are populated; manually (`manual`),
+        from a Data Provider (`data-provider`), or from Autofill
+        (`from-autofill`).
+    - `multiple`: set to `true` or `false` to control whether the field accepts
+        more than one option as a value.
+    - `options`: set the options.
     - `predefinedValue`: provide a predefined value for the field.
 - `text`
-    - `autocompleteEnabled`: set to `true` or `false` if the field should autocomplete the text input.
-    - `displayStyle`: set if the display style is going to be as a single line or as multiple lines. This property accepts: `singleline` or `multiline`.
-    - `options`: set the options of the field.
+    - `autocompleteEnabled`: set to `true` or `false` to control whether the
+        field autocompletes the text input.
+    - `displayStyle`: set the display style, as a single line (`singleline`)
+        or as multiple lines (`multiline`).
+    - `options`: set the options.
     - `placeholder`: set a placeholder for the field.
     - `predefinedValue`: provide a predefined value for the field.
     - `tooltip`: set a tooltip for the field.
