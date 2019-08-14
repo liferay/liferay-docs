@@ -21,12 +21,12 @@ Liberty Profile.
 You should also read the following articles to familiarize yourself with 
 @product@'s general installation steps: 
 
-- [Preparing for Install](/docs/7-0/deploy/-/knowledge_base/d/preparing-for-install)
-- [Installing @product@](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-dxp)
+- [Preparing for install](/docs/7-0/deploy/-/knowledge_base/d/preparing-for-install)
+- [Installing @product@](/docs/7-0/deploy/-/knowledge_base/d/installing-product)
 - [Installing @product@ Manually](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-manually)
 
 Note that the 
-[*Liferay Home* folder](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-portal#liferay-home)
+[*Liferay Home* folder](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
 is important to the operation of @product@. In Liferay Home, @product@ creates 
 certain files and folders that it needs to run. On WebSphere, Liferay Home is 
 typically `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
