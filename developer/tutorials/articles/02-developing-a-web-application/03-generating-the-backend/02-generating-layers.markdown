@@ -29,7 +29,7 @@ It's time to get started. You'll create the `Guestbook` entity first:
     `DOCTYPE`. Replace the file's opening contents with the following code: 
 
     ```xml
-    <service-builder auto-namespace-tables="true" package-path="com.liferay.docs.guestbook">
+    <service-builder dependency-injector="ds" package-path="com.liferay.docs.guestbook" mvcc-enabled="true">
         <author>liferay</author>
         <namespace>GB</namespace>
         <entity name="Guestbook" local-service="true" uuid="true" remote-service="true">
@@ -95,9 +95,10 @@ It's time to get started. You'll create the `Guestbook` entity first:
 7.  Before the closing `</entity>` tag, add this finder definition: 
 
     ```xml
-    <finder name="GroupId" return-type="Collection">
-        <finder-column name="groupId" />
-    </finder>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId" />
+        </finder>
+    </entity>
     ```
 
 A [finder](/docs/7-2/appdev/-/knowledge_base/a/defining-service-entity-finder-methods) 
