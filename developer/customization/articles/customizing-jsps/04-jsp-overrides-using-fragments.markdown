@@ -133,21 +133,25 @@ type="hidden" value="<%= ParamUtil.getString(request, "openId") %>" />
 <%=html %>
 ```
 
-| **Note:** An OSGi fragment can access all of the fragment host's packages---it
-| doesn't need to import them from another bundle. bnd adds external packages the
-| fragment uses (even ones in the fragment host) to the fragment's
-| `Import-Package: [package],...` OSGi manifest header. That's fine for packages
-| exported to the OSGi runtime. The problem is, however, when bnd tries to import
-| a host's internal package (a package the host doesn't export). The OSGi runtime
-| can't activate the fragment because the internal package remains an `Unresolved
-| requirement`---a fragment shouldn't import a fragment host's packages.
-| 
-| If your fragment uses an internal package from the fragment host, continue using
-| it but explicitly exclude the package from your bundle's `Import-Package` OSGi
-| manifest header. This `Import-Package` header, for example, excludes packages
-| that match `com.liferay.portal.search.web.internal.*`.
-| 
-|     Import-Package: !com.liferay.portal.search.web.internal.*,*
+## Using Fragment Host Internal Packages
+
+To use an internal (unexported) host package, the fragment must explicitly
+exclude the package from its `Import-Package:` manifest header. For example,
+this `Import-Package` header excludes packages that match
+`com.liferay.portal.search.web.internal.*`.
+
+```groovy
+Import-Package: !com.liferay.portal.search.web.internal.*,*
+```
+
+Unless you explicitly exclude the package, bnd adds the package to the
+`Import-Package:` header. Attempting to start the fragment while requiring an
+unexported package fails because the package is an unresolved requirement. For
+this reason, make sure to exclude such packages from your fragment's
+`Import-Package:` header. 
+
+Each fragment has full access to the host packages, including its internal
+(unexported) packages already. 
 
 Now you can easily modify the JSPs of any application in Liferay.
 
