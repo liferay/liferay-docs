@@ -101,7 +101,7 @@ example's goal is to only override the English and Spanish keys, the
 This approach can be used to override any application's language keys (i.e.,
 `language.properties` files that are inside a module deployed to @product@'s
 OSGi runtime). If you need to override @product@'s core language keys, see the
-[Modifying Liferay's Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-liferays-language-keys)
+[Modifying Global Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-global-language-keys)
 tutorial.
 
 For more information on using a resource bundle to override an application's
