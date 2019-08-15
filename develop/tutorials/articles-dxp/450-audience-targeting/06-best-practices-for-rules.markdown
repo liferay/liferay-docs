@@ -66,7 +66,7 @@ rules:
 - As an alternative to storing complex information in the `typeSettings` field,
 which is managed by the framework in the Rule Instance table, you may want to
 consider persisting to a database by using 
-[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/business-logic-and-data-access),
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder),
 which is supported for Rule plugins. 
 
 - If you deploy your rule into a production environment, you may want to

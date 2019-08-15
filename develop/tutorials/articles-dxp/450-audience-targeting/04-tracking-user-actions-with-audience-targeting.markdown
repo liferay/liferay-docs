@@ -105,7 +105,7 @@ dependencies.
     [com.liferay.content.targeting.api.model.TrackingAction` interface](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html).
 
     You must implement the
-    [TrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html}
+    [TrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
     interface, but there are
     `TrackingAction` extension classes that provide helpful utilities that you
     can extend. For example, your metric can extend the
@@ -115,7 +115,7 @@ dependencies.
     [TrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
     interface is implemented by extending the `BaseJSPTrackingAction` class. For
     more information on choosing a UI for your metric, see the
-    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-metrics#selecting-a-ui-technology)
+    [Selecting a UI Technology](/docs/7-0/tutorials/-/knowledge_base/t/best-practices-for-metrics#selecting-a-ui-technology)
     section.
 
 4.  Directly above the class's declaration, insert the following annotation:
@@ -269,7 +269,7 @@ file is already created.
     | your metric's information to a database. You should invoke your services'
     | update logic within the `processTrackingAction` method. For more information
     | on creating services, see the
-    | [Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/business-logic-and-data-access)
+    | [Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder)
     | tutorials.
 
     Once the metric processing ends, the form is reloaded and the lifecycle

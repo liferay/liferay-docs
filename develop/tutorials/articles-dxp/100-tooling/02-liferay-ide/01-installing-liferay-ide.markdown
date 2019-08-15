@@ -44,7 +44,7 @@ compatible and can be copied to the new 3.1 version.
     your `~/.liferay/bundles` folder, so if you decide to initialize another
     @product@ instance of the same version, the bundle is not re-downloaded. See
     the
-    [Adding a Liferay Bundle to a Workspace](/docs/7-0/tutorials/-/knowledge_base/t/adding-a-liferay-bundle-to-a-workspace)
+    [Adding a Liferay Bundle to a Workspace](/docs/7-0/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
 
     **Important:** The token generator sometimes has issues generating a token
@@ -83,7 +83,7 @@ folder you specified. To run @ide@, execute the `DeveloperStudio` executable. A
 Liferay Workspace has also been initialized in that same folder. For more
 information on the Liferay Workspace installation related to this installation
 process, see the
-[Using @ide@'s Liferay Workspace Installer](/docs/7-0/tutorials/-/knowledge_base/t/using-developer-studios-liferay-workspace-installer)
+[Installing Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/installing-liferay-workspace)
 section.
 
 ## Install Liferay @ide@ into Eclipse Environment

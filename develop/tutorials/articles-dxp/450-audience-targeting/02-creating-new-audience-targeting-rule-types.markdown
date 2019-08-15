@@ -91,7 +91,7 @@ dependencies.
     class to support generating your rule's UI using JSPs. This tutorial demonstrates implementing the UI using a JSP,
     and assumes the `Rule` interface is implemented by extending the `BaseJSPRule` class. For more information on
     choosing a UI for your rule, see the
-    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-rules#selecting-a-ui-technology)
+    [Selecting a UI Technology](/docs/7-0/tutorials/-/knowledge_base/t/best-practices-for-rules#selecting-a-ui-technology)
     section.
 
 4.  Directly above the class's declaration, insert the following code:
@@ -475,7 +475,7 @@ When the user selects an option, it's passed from the view template to the
 
 | The weather rule uses JSP templates to display the rule's view. Audience
 | Targeting, however, is compatible with any UI technology. Visit the
-| [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-rules#selecting-a-ui-technology)
+| [Selecting a UI Technology](/docs/7-0/tutorials/-/knowledge_base/t/best-practices-for-rules#selecting-a-ui-technology)
 | section for details on how to use other UI technologies like FreeMarker.
 
 Congratulations! You've created the weather rule and can now target users based
