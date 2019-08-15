@@ -6,7 +6,9 @@ header-id: architecture
 
 [TOC levels=1-4]
 
-@product@'s architecture helps you build sites that offer powerful functionality and terrific styling. The following goals contributed to the architecture's success: 
+@product@'s architecture helps you build sites that offer powerful functionality
+and terrific styling. The following goals contributed to the architecture's
+success: 
 
 - Supports using the best, most popular development technologies
 
@@ -81,10 +83,10 @@ Here are the main UI components you can develop:
 ### Themes 
 
 A theme styles your site with a unique look and feel. It's developed as a plugin
-that includes CSS and content. Liferay's tooling facilitates [theme
+that includes CSS and content. Bootstrap-based components are readily available
+and Liferay's tooling facilitates [theme
 development](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes), but you
-can develop themes however you like. Bootstrap-based CSS is the main thing
-you'll work with. 
+can develop themes however you like. 
 
 ![Figure 2: Liferay makes it easy to develop and try out attractive site themes.](../../images/architecture-ui-themes.png)
 
