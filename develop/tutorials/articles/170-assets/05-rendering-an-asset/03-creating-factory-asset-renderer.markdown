@@ -16,7 +16,7 @@ renderer factory.
 
 1.  Create an `-AssetRenderFactory` class in the same folder as its asset
     renderer class. For blogs, the
-    [`BlogsEntryAssetRendererFactory`](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRendererFactory.html)
+    [`BlogsEntryAssetRendererFactory`](https://github.com/liferay/liferay-portal/blob/7.1.3-ga4/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/asset/BlogsEntryAssetRendererFactory.java)
     class resides in the `com.liferay.blogs.web` module's
     `com.liferay.blogs.web.asset` package. The factory class should extend the
     `BaseAssetRendererFactory` class and the asset type should be specified as

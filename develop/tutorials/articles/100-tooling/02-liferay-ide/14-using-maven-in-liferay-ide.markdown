@@ -9,7 +9,7 @@ header-id: using-maven-in-liferay-ide
 You can take full advantage of Maven in Liferay Dev Studio with its built-in
 Maven support. In this tutorial, you'll learn about the following topics:
 
-- [Installing Maven Plugins for Liferay Dev Studio](#installing-maven-plugins-for-liferay-ide)
+- [Installing Maven Plugins for Liferay Dev Studio](#installing-maven-plugins-for-liferay-dev-studio)
 - [Creating Maven Projects](#creating-maven-projects)
 - [Importing Maven Projects](#importing-maven-projects)
 - [Using the POM Graphic Editor](#using-the-pom-graphic-editor)

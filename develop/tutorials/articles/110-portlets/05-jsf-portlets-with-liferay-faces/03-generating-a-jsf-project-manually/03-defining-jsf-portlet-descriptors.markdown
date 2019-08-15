@@ -166,7 +166,7 @@ WAR-style portlet descriptors.
 Great! You now have a good idea of how to specify and define general descriptor
 files for your JSF portlet. JSF portlets also use Liferay descriptors, which you
 can learn more about in the
-[Liferay Descriptors](/docs/7-1/tutorials/-/knowledge_base/t/spring-mvc#liferay-descriptors)
+[Liferay Descriptors](/docs/7-1/tutorials/-/knowledge_base/t/configuring-a-spring-mvc-portlet#liferay-descriptors)
 sub-section.
 
 Now that your portlet descriptors are defined, you'll begin working on your JSF
