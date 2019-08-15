@@ -195,7 +195,7 @@ You can track many other user actions by creating a custom report. You can drag
 and drop different kinds of metrics to track for your campaign, which shows the
 number of times each metric has been triggered by users. For a complete
 reference of all report metrics available, see the
-[Audience Targeting Metrics](/docs/7-0/tutorials/-/knowledge_base/t/audience-targeting-metrics)
+[Audience Targeting Metrics](/docs/7-0/user/-/knowledge_base/u/audience-targeting-metrics)
 tutorial.
 
 Consider the example that we introduced earlier in the section on metrics:

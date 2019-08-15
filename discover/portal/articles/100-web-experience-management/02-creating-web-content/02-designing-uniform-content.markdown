@@ -143,7 +143,7 @@ administrators are capable of adding, browsing, editing, and deleting structures
 and templates on a remote server. After you complete your structure, you can
 access the WebDAV URL by re-opening the structure or template and clicking the
 *Details* section. If you'd like the see WebDAV in action, visit the
-[WebDAV Access](/docs/7-0/user/-/knowledge_base/u/publishing-files#desktop-access-to-documents-and-media)
+[WebDAV Access](/docs/7-0/user/-/knowledge_base/u/collaborating-on-files#desktop-access-to-documents-and-media)
 section.
 
 | **Note:** Some operating systems require a WebDAV server to be class level 2
@@ -558,7 +558,7 @@ After you've saved your template, @product@ provides a WebDAV URL and static URL
 These values access the XML source of your structure. You can find these URLs by
 returning to your template after it's been saved and expanding the *Details*
 section. For more information on WebDAV and the uses of the WebDAV URL,
-reference the [WebDAV Access](/docs/7-0/user/-/knowledge_base/u/publishing-files#desktop-access-to-documents-and-media)
+reference the [WebDAV Access](/docs/7-0/user/-/knowledge_base/u/collaborating-on-files#desktop-access-to-documents-and-media)
 section.
 
 Now that you've created a handsome template and know how to use the template

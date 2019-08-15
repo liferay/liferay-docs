@@ -62,7 +62,7 @@ different user segments.
 | **Note:** You can also provide similar functionality from the Asset Publisher
 | application. You're able to configure a User Segments Filter that will only
 | display content for particular user segments. To learn more about this, see the
-| [Categorizing Pages and Content for User Segments](/docs/7-0/tutorials/-/knowledge_base/t/categorizing-pages-and-content-for-user-segments)
+| [Categorizing Pages and Content for User Segments](/docs/7-0/user/-/knowledge_base/u/managing-user-segments#categorizing-pages-and-content-for-user-segments)
 | tutorial.
 
 ## User Segment Content List
