@@ -54,11 +54,11 @@ Here are each module's file structures:
 
 Here are the things you can learn using the sample modules:
 
-1.  [Binding a component's service reference to the highest ranked service instance that's available initially.](#binding-a-newly-deployed-components-service-reference-to-the-highest-rankin)
+1.  [Binding a component's service reference to the highest ranked service instance that's available initially.](#binding-a-newly-deployed-components-service-reference-to-the-highest-ranking-service-instance-thats-available-initially)
 
-2.  [Deploying a module with a higher ranked service instance for binding to greedy references immediately.](#deploying-a-module-with-a-higher-ranked-service-instance-for-binding-to-gre)
+2.  [Deploying a module with a higher ranked service instance for binding to greedy references immediately.](#deploying-a-module-with-a-higher-ranked-service-instance-for-binding-to-greedy-references-immediately)
 
-3.  [Configuring a component to reference a different service instance dynamically.](#configuring-a-component-to-reference-a-different-service-instance-dynamical)
+3.  [Configuring a component to reference a different service instance dynamically.](#configuring-a-component-to-reference-a-different-service-instance-dynamically)
 
 Let's walk through the demonstration.
 
@@ -155,7 +155,7 @@ The `GreedyPortlet` class is similar to `ReluctantPortlet`, except its
 
 The greedy policy option lets the component switch to using a higher ranked
 `SomeService` instance if one becomes active in the system. The section
-[*Deploying a module with a higher ranked service instance for binding to greedy references immediately*](#deploying-a-module-with-a-higher-ranked-service-instance-for-binding-to-gre)
+[*Deploying a module with a higher ranked service instance for binding to greedy references immediately*](#deploying-a-module-with-a-higher-ranked-service-instance-for-binding-to-greedy-references-immediately)
 demonstrates this portlet switching to a higher ranked service.
 
 It's time to see this module's portlets and service in action.

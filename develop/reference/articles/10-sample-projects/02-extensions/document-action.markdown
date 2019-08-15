@@ -28,7 +28,7 @@ selecting *Show Actions* from the portlet's Configuration menu.
 ## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
-[PortletConfigurationIcon](@product-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/PortletConfigurationIcon.html)
+[PortletConfigurationIcon](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/PortletConfigurationIcon.html)
 API.
 
 ## How does this sample leverage the API(s) and/or code component?
