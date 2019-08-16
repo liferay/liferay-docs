@@ -8,18 +8,17 @@ header-id: filtering-and-searching-uad-marked-entities
 
 When you 
 
-![Figure 1: The UAD UI has filtering and searching elements you can leverage in
-custom entities.](../../images/uad-filter-search.png)
+![Figure 1: The UAD UI has filtering and searching elements you can leverage in custom entities.](../../images/uad-filter-search.png)
 
 To add filtering and searching for your custom entities, implement three
 methods in the `UADDisplay` class (in your application's `-uad` module):
 
 ## Filtering
 
-The `isSiteScoped` method returns a boolean based on whether or not the
-entities can be associated with a particular site: return `false` if not, and
-`true` if the entities are scoped to a site. This is used to determine which
-filter they will be associated with ("instance", "personal-site", or
+The `isSiteScoped` method returns a boolean denoting if the
+entities can be associated with a particular Site: `false` if not, and
+`true` if the entities are scoped to a Site. This determines which
+filter they are associated with ("instance", "personal-site", or
 "regular-sites").
 
 ```java
@@ -36,7 +35,7 @@ Implement the `search` and `searchCount` methods to enable search in the UAD
 interface:
 
 1.  The `search` method must return a `List` of entities associated with the
-    `userId`. It could be as simple as searching the database for records
+    `userId`. For example, you could search the database for records
     associated with the `userId`:
 
     ```java
@@ -131,9 +130,9 @@ interface:
     }
     ```
 
-    But, again, if the model entity is being indexed in a search engine, you can
-    use it to get a count without ever hitting the database. Using the `Hits`
-    object returned from a search (see the code from step 1, but don't include
-    `start` and `end` parameters in the `SearchContext`), call
-    `hits.getLegnth()` and you get the count, as an `int`.
+But, again, if the model entity is being indexed in a search engine, you can
+use it to get a count without ever hitting the database. Using the `Hits`
+object returned from a search (see the code from step 1, but don't include
+`start` and `end` parameters in the `SearchContext`), call
+`hits.getLegnth()` and you get the count, as an `int`.
 
