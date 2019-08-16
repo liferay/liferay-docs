@@ -83,8 +83,8 @@ These steps are covered in more detail (with examples)
 
 ## External References
 
-* https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
-* https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html#_structuring_aggregations
+* <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html#_structuring_aggregations>
 
 ## Search Engine Connector Support
 
@@ -93,6 +93,6 @@ These steps are covered in more detail (with examples)
 
 ## New/Related APIs
 
-API (FQCN) | Provided by Artifact | Notes |
------------|:--------------------:|:--------:|
-`com.liferay.portal.search.aggregation.*` | com.liferay.portal.search.api | The whole ["aggregation" package](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/aggregation) is new as of @product-ver@
+| API (FQCN) | Provided by Artifact | Notes |
+| -----------|:--------------------:|:--------:|
+| `com.liferay.portal.search.aggregation.*` | com.liferay.portal.search.api | The whole ["aggregation" package](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/aggregation) is new as of @product-ver@
