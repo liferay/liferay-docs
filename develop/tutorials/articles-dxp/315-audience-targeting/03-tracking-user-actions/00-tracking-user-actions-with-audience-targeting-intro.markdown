@@ -1,4 +1,10 @@
-# Tracking User Actions with Audience Targeting [](id=tracking-user-actions-with-audience-targeting)
+---
+header-id: tracking-user-actions-with-audience-targeting
+---
+
+# Tracking User Actions with Audience Targeting
+
+[TOC levels=1-4]
 
 In Audience Targeting, a campaign defines a set of content targeted to specific 
 user segments during a time period. Reports allow campaign administrators to 
@@ -60,10 +66,10 @@ For this tutorial, you'll create a newsletter that can track who views it. To do
 Now that you have an idea of how to plan your new metric, you'll begin
 creating one next!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-blade-cli)
+[Creating Modules with Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli)
 
-[Defining Metrics](/discover/portal/-/knowledge_base/7-1/managing-campaigns#defining-metrics)
+[Defining Metrics](/docs/7-1/user/-/knowledge_base/u/managing-campaigns#defining-metrics)
 
-[Audience Targeting Metrics](/discover/portal/-/knowledge_base/7-1/audience-targeting-metrics)
+[Audience Targeting Metrics](/docs/7-1/user/-/knowledge_base/u/audience-targeting-metrics)

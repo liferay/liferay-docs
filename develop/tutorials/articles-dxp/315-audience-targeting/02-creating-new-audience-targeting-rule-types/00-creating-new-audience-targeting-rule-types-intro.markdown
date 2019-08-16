@@ -1,4 +1,10 @@
-# Creating New Audience Targeting Rule Types [](id=creating-new-audience-targeting-rule-types)
+---
+header-id: creating-new-audience-targeting-rule-types
+---
+
+# Creating New Audience Targeting Rule Types
+
+[TOC levels=1-4]
 
 In Audience Targeting, a User Segment is defined as a group of users that match 
 a set of rules. Out of the box, Liferay provides several types of rules that are

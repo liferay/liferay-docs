@@ -1,4 +1,10 @@
-# Using a Tracking Mechanism [](id=using-a-tracking-mechanism)
+---
+header-id: using-a-tracking-mechanism
+---
+
+# Using a Tracking Mechanism
+
+[TOC levels=1-4]
 
 An administrator has successfully configured and saved your custom metric to 
 his or her report. Now what? Your metric needs to fulfill its purpose, which is 

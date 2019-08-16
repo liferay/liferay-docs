@@ -1,10 +1,16 @@
-# Creating a Custom Rule Type [](id=creating-a-custom-rule-type)
+---
+header-id: creating-a-custom-rule-type
+---
+
+# Creating a Custom Rule Type
+
+[TOC levels=1-4]
 
 First, you must create a module and ensure it has the necessary Content 
 Targeting API dependencies.
 
-1.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
-    project for deploying a rule. A Blade CLI [content-targeting-rule](/develop/reference/-/knowledge_base/7-1/content-targeting-rule-template)
+1.  [Create a module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
+    project for deploying a rule. A Blade CLI [content-targeting-rule](/docs/7-1/reference/-/knowledge_base/r/content-targeting-rule-template)
     template is available to help you get started quickly. It sets the default
     configuration for you, and it contains boilerplate code so you can skip the
     file creation steps and get started right away. To use it, use this Blade
@@ -28,7 +34,7 @@ Targeting API dependencies.
         }
 
     You can learn more about exposing the Content Targeting API in the
-    [Accessing the Content Targeting API](/develop/tutorials/-/knowledge_base/7-1/accessing-the-content-targeting-api)
+    [Accessing the Content Targeting API](/docs/7-1/tutorials/-/knowledge_base/t/accessing-the-content-targeting-api)
     tutorial. Once you've created your module and specified its dependencies,
     you must define your rule's behavior. How your rule behaves is controlled
     by a Java class file that you create.
@@ -63,14 +69,10 @@ implementing the
 [Rule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
 interface's methods. You'll begin implementing these methods next.
 
-+$$$
-
-**Note:** If you're planning on developing a social rule type that classifies
-users based on their social network profile, remember that the specific social
-network's SSO (Single Sign On) must be enabled and configured properly. Visit
-the [Social Rules](/discover/portal/-/knowledge_base/7-1/liferay-audience-targeting-rules#social-rules)
-section for more details.
-
-$$$
+| **Note:** If you're planning on developing a social rule type that classifies
+| users based on their social network profile, remember that the specific social
+| network's SSO (Single Sign On) must be enabled and configured properly. Visit
+| the [Social Rules](/docs/7-1/user/-/knowledge_base/u/liferay-audience-targeting-rules#social-rules)
+| section for more details.
 
 Next you'll define the view/save lifecycle for the weather rule.

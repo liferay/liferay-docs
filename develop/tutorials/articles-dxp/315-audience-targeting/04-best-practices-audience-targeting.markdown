@@ -1,4 +1,10 @@
+---
+header-id: best-practices-for-audience-targeting
+---
+
 # Best Practices for Audience Targeting
+
+[TOC levels=1-4]
 
 Now that you've created a rule, here are some best practices to keep in mind 
 when creating additional rules. Before going through some best practices, you
@@ -10,10 +16,10 @@ should understand the three components you can specify for a rule:
 
 You discuss rule behavior and its UI configuration in great detail in the
 To learn more about language keys and how to create, use, and generate
-them, visit the [Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
+them, visit the [Internationalization](/docs/7-1/tutorials/-/knowledge_base/t/internationalization)
 tutorials.
 
-## Selecting a UI Technology [](id=selecting-a-ui-technology)
+## Selecting a UI Technology
 
 Audience Targeting gives you the option to choose whatever frontend technology
 you like, but JSP is the preferred technology for Audience Targeting
@@ -49,7 +55,7 @@ choose, and to return it as a string that is viewable from your rule's form.
 If you plan, therefore, on using an alternative to JSP or FreeMarker, you
 must override this method by creating and modifying it in your `-Rule` or `-TrackingAction` class.
 
-## Other Best Practices [](id=other-best-practices)
+## Other Best Practices
 
 Here are some things to consider as you implement and deploy Audience Targeting
 rules:
@@ -57,7 +63,7 @@ rules:
 - As an alternative to storing complex information in the `typeSettings` field,
 which is managed by the framework in the Rule Instance table, you may want to
 consider persisting to a database by using 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/business-logic-and-data-access),
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/business-logic-and-data-access),
 which is supported for Rule plugins. 
 
 - If you deploy your rule into a production environment, you may want to

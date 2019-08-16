@@ -1,4 +1,10 @@
-# Defining a Metric's View/Save Lifecycle [](id=defining-a-metrics-view-save-lifecycle)
+---
+header-id: defining-a-metrics-view-save-lifecycle
+---
+
+# Defining a Metric's View/Save Lifecycle
+
+[TOC levels=1-4]
 
 In this section you will define the metric's view/save lifecycle: what happens 
 when a user applies a metric to a report using the Report Editor.
@@ -65,7 +71,7 @@ file is already created.
     To understand what this method accomplishes, you should look at the
     metric's configuration lifecycle.
 
-    ![Figure 2: An Audience Targeting metric must be configured by the user and processed before it can become part of a Report.](../../../images-dxp/metric-lifecycle.png)
+    ![Figure 1: An Audience Targeting metric must be configured by the user and processed before it can become part of a Report.](../../../images-dxp/metric-lifecycle.png)
 
     When the user opens the Report Editor, the render phase begins for the
     metric. The `getFormHTML(...)` method retrieves the HTML to display. You
@@ -105,13 +111,13 @@ file is already created.
     You can think of the `populateContext` method as the intermediary between
     your JSP and your backend code. You can see how to create the newsletter
     metric's UI using a JSP by skipping to the
-    [Defining the Metric's UI](/develop/tutorials/-/knowledge_base/7-1/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
+    [Defining the Metric's UI](/docs/7-1/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     section. Once the HTML is successfully retrieved and the user has set the
     newsletter's values and clicked *Save*, the action phase begins. 
 
 3.  Once the action phase begins, AT processes the tracking action (metric). The
     `processTrackingAction(...)` method takes the values from the
-    [metric's UI form](/develop/tutorials/-/knowledge_base/7-1/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
+    [metric's UI form](/docs/7-1/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     and stores them in the corresponding fields of the `trackingActionInstance`.
     Since the
     [BaseTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
@@ -123,16 +129,12 @@ file is already created.
     `typeSettings` field of the `trackingActionInstance`, return their value
     instead of `null`.
 
-    +$$$
-
-    **Note:** For more complex cases, you can create your own services to store
-    your metric's information to a database. You should invoke your services'
-    update logic within the `processTrackingAction` method. For more information
-    on creating services, see the
-    [Service Builder](/develop/tutorials/-/knowledge_base/7-1/business-logic-and-data-access)
-    tutorials.
-
-    $$$
+    | **Note:** For more complex cases, you can create your own services to store
+    | your metric's information to a database. You should invoke your services'
+    | update logic within the `processTrackingAction` method. For more information
+    | on creating services, see the
+    | [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/business-logic-and-data-access)
+    | tutorials.
 
     Once the metric processing ends, the form is reloaded and the lifecycle
     restarts again. The value(s) specified in the metric are stored and are

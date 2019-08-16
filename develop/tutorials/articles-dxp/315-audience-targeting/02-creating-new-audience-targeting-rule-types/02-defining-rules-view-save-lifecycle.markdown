@@ -1,11 +1,17 @@
-# Defining a Rule's View/Save Lifecycle [](id=defining-a-rules-view-save-lifecycle)
+---
+header-id: defining-a-rules-view-save-lifecycle
+---
+
+# Defining a Rule's View/Save Lifecycle
+
+[TOC levels=1-4]
 
 The view/save lifecycle describes the process behind the scenes when an 
 administrator applies a rule to a user segment using the User Segment Editor. 
 You'll implement that now.
 
 When the user opens the User Segment Editor, the render phase begins for the 
-rule creation. During the render phase, the HTML for the form is generated, 
+rule creation. During the render phase, the HTML for the form is generated 
 and, if necessary, the `context` map is generated with any parameters that you 
 need to create the form. Once the HTML is successfully retrieved and the user 
 has set the values and clicked *Save*, the action phase begins.
@@ -15,10 +21,8 @@ provided by the form and persists them. Once the rule processing ends, the form
 is reloaded and the lifecycle restarts again. The value(s) selected in the rule 
 are stored and  are ready to be accessed once user segment evaluation begins.
 
-## Creating the Rule Creation Methods
-
 In this section, you'll begin defining the weather rule's Java class. This
-assumes that you followed the instructions in the previous [tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-a-custom-rule-type),
+assumes that you followed the instructions in the previous [tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-custom-rule-type),
 creating the `WeatherRule` class and extending
 [`BaseJSPRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html).
 If you used the `content-targeting-rule` Blade CLI template, your project 
@@ -66,7 +70,7 @@ created.
     and
     [`UserAttributesRoleCategory`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/UserAttributesRuleCategory.html).
 
-    ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../../images-dxp/new-category-rule.png)
+    ![Figure 1: This example Weather rule was modified to reside in the Session Attributes category.](../../../images-dxp/new-category-rule.png)
 
 3.  Find the `populateContext()` method and replace it with the code below:
 
@@ -90,7 +94,7 @@ created.
     To understand what this method accomplishes, you must examine the rule's
     configuration lifecycle.
 
-    ![Figure 3: An Audience Targeting rule must be configured by the user and processed before it can become part of a User Segment.](../../../images-dxp/rule-lifecycle.png)
+    ![Figure 2: An Audience Targeting rule must be configured by the user and processed before it can become part of a User Segment.](../../../images-dxp/rule-lifecycle.png)
 
     When the user opens the User Segment Editor, the render phase begins for the
     rule. The `getFormHTML(...)` method retrieves the HTML to display. You don't
@@ -137,7 +141,7 @@ created.
     You can think of the `populateContext` method as the intermediary between
     your JSP and your back-end code. Creating the weather
     rule's UI using a JSP is covered in
-    [Defining the Rule's UI](/develop/tutorials/-/knowledge_base/7-1/defining-the-rules-ui). 
+    [Defining the Rule's UI](/docs/7-1/tutorials/-/knowledge_base/t/defining-the-rules-ui). 
     Once the HTML is successfully retrieved and the user has set the
     weather value and clicked *Save*, the action phase begins. 
 

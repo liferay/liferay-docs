@@ -1,4 +1,10 @@
-# Evaluating a Rule [](id=evaluating-a-rule)
+---
+header-id: evaluating-a-rule
+---
+
+# Evaluating a Rule
+
+[TOC levels=1-4]
 
 After the administrator has successfully configured and saved your custom rule
 to his or her user segment, your rule needs to fulfill its purpose:

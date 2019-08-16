@@ -1,9 +1,15 @@
-# Creating a Metric [](id=creating-a-metric)
+---
+header-id: creating-a-metric
+---
+
+# Creating a Metric
+
+[TOC levels=1-4]
 
 Now that all of your criteria has been defined, you can get started developing the actual metric:
 
-1.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
-    project for deploying a metric. A Blade CLI [content-targeting-tracking-action](/develop/reference/-/knowledge_base/7-1/content-targeting-tracking-action-template)
+1.  [Create a module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
+    project for deploying a metric. A Blade CLI [content-targeting-tracking-action](/docs/7-1/reference/-/knowledge_base/r/content-targeting-tracking-action-template)
     template is available to help you get started quickly. It sets the default
     configuration for you, and it contains boilerplate code so you can skip the
     file creation steps and get started right away.
@@ -25,7 +31,7 @@ Now that all of your criteria has been defined, you can get started developing t
         }
 
     You can learn more about exposing the Content Targeting API in the
-    [Accessing the Content Targeting API](/develop/tutorials/-/knowledge_base/7-1/accessing-the-content-targeting-api)
+    [Accessing the Content Targeting API](/docs/7-1/tutorials/-/knowledge_base/t/accessing-the-content-targeting-api)
     tutorial. Once you've created your module and specified its dependencies,
     you'll need to define your metric's behavior. How your metric behaves is
     controlled by a Java class file that you create.

@@ -1,4 +1,10 @@
-# Defining the Rule's UI [](id=defining-the-rules-ui)
+---
+header-id: defining-the-rules-ui
+---
+
+# Defining the Rule's UI
+
+[TOC levels=1-4]
 
 The Java code you've added to this point has assumed that a preset weather value
 is available for comparing during the evaluation process. To let administrators
@@ -26,16 +32,12 @@ The `weather` variable in the `context` map should be set for the weather rule.
 When the user selects an option, it's passed from the view template to the
 `populateContext` method.
 
-![Figure 4: The weather rule uses a `select` drop-down box to set the weather value.](../../../images-dxp/select-box-rule.png)
+![Figure 1: The weather rule uses a `select` drop-down box to set the weather value.](../../../images-dxp/select-box-rule.png)
 
-+$$$
-
-The weather rule uses JSP templates to display the rule's view. Audience
-Targeting, however, is compatible with any UI technology. Visit the
-[Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-1/best-practices-for-rules#selecting-a-ui-technology)
-section for details on how to use other UI technologies like FreeMarker.
-
-$$$
+| The weather rule uses JSP templates to display the rule's view. Audience
+| Targeting, however, is compatible with any UI technology. Visit the
+| [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-1/best-practices-for-rules#selecting-a-ui-technology)
+| section for details on how to use other UI technologies like FreeMarker.
 
 You've created the weather rule and can now target users based on their weather conditions. You can view the finished version of the weather rule by downloading its
 [ZIP file](https://dev.liferay.com/documents/10184/2061898/weather-7-1.zip/cefa8c43-1188-49b2-b400-57228d1423fd?version=1.0&download=true).

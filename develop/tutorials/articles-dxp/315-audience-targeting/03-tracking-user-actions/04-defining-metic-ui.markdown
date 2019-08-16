@@ -1,4 +1,10 @@
-# Defining the Metric's UI [](id=defining-the-metrics-ui)
+---
+header-id: defining-the-metrics-ui
+---
+
+# Defining the Metric's UI
+
+[TOC levels=1-4]
 
 The Java code you've added to this point has assumed that there are three
 configurable fields for your newsletter metric: 
@@ -69,7 +75,7 @@ multi-instantiable metrics, which are metrics that return `true` in the
 `isInstantiable` method of their `-TrackingAction` class and can be added more
 than once to the Metrics form.
 
-![Figure 3: Once you've saved the metric, you can copy the generated transparent image URL into your newsletter's HTML to track who views it.](../../../images-dxp/metric-generated-url.png)
+![Figure 1: Once you've saved the metric, you can copy the generated transparent image URL into your newsletter's HTML to track who views it.](../../../images-dxp/metric-generated-url.png)
 
 Congratulations! You've created the newsletter metric and can now track whether
 users viewed a newsletter. You can test if the metric is working by copying the

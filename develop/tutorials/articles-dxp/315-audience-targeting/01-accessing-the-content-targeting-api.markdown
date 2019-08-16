@@ -1,4 +1,10 @@
-# Accessing the Content Targeting API [](id=accessing-the-content-targeting-api)
+---
+header-id: accessing-the-content-targeting-api
+---
+
+# Accessing the Content Targeting API
+
+[TOC levels=1-4]
 
 With the Content Targeting API you can integrate Audience Targeting features 
 with third party applications or customize how Liferay's applications interact 
@@ -9,7 +15,7 @@ In this tutorial, you'll learn how to give your application access to the
 Content Targeting API. Then you can view some examples of how to use the Java
 and JSON APIs that are available. 
 
-## Exposing the Content Targeting API [](id=exposing-the-content-targeting-api)
+## Exposing the Content Targeting API
 
 Configuring your app to have access to the Content Targeting API requires only
 one line of code. This line of code is a dependency that should be added to your
@@ -27,7 +33,7 @@ Your app now has access to the Content Targeting API and can take advantage of
 everything Audience Targeting has to offer. Next, you'll learn how to use the
 Content Targeting API by studying a few examples.
 
-## Using the Content Targeting Java API [](id=using-the-content-targeting-java-api)
+## Using the Content Targeting Java API
 
 You can call the Content Targeting API through Java or through JSON. 
 
@@ -102,7 +108,7 @@ To display a list of existing user segments in your portlet using Java,
     classes into your files, you have direct access to your portal's user 
     segments through the Content Targeting Java API. 
 
-## Using the Content Targeting JSON API [](id=using-the-content-targeting-json-api)
+## Using the Content Targeting JSON API
 
 You could do the same thing using the JSON API.
 
