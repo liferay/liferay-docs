@@ -14,7 +14,8 @@ text-based assets. This lets you use tags without requiring anyone to manually
 apply them. 
 
 | **Note:** Currently, text auto tagging is only available for text-based 
-| documents and web content. Tags applied automatically are English only. 
+| documents, text-based web content, and blog entries. Tags applied 
+| automatically are English only. 
 
 Text auto tagging is disabled by default. To use it, you must enable it: 
 
@@ -22,24 +23,24 @@ Text auto tagging is disabled by default. To use it, you must enable it:
     [asset auto tagging](/docs/7-2/user/-/knowledge_base/u/configuring-asset-auto-tagging) 
     is enabled. Although it's enabled by default, administrators can disable it. 
 
-2.  Ensure that a text auto tagging provider is configured. These providers
-    aren't configured by default. Here, you'll learn how to configure them. 
+2.  Ensure that a text auto tagging provider is configured and enabled for the 
+    asset types you want to auto tag. You'll learn how to do this here. Note 
+    that these providers aren't configured or enabled by default. 
 
-3.  For the asset type you want to tag automatically (e.g., documents, web 
-    content), enable the text auto-tagging provider that you configured in step 
-    two. This step is covered in separate articles on text auto tagging for 
-    specific asset types: 
-
-    -   [Auto Tagging Documents](/docs/7-2/user/-/knowledge_base/u/auto-tagging-documents)
-    -   [Auto Tagging Web Content](/docs/7-2/user/-/knowledge_base/u/auto-tagging-web-content)
+| **Note:** Prior to Liferay DXP Fix Pack 1 and Liferay Portal CE GA2, you must 
+| enable these providers separately for each content type in System/Instance 
+| Settings. For example, you must enable text auto tagging for documents and 
+| web content in *Documents and Media* and *Web Content*, respectively. 
 
 There are two text auto-tagging providers in the portal: 
 
-**Google Cloud Natural Language Text Auto Tagging:** Uses the 
+[**Google Cloud Natural Language Text Auto Tagging:**](#configuring-google-cloud-natural-language-text-auto-tagging) 
+Uses the 
 [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) 
 to analyze and automatically tag portal content. 
 
-**OpenNLP Text Auto Tagging:** Uses the open source 
+[**OpenNLP Text Auto Tagging:**](#configuring-opennlp-text-auto-tagging) 
+Uses the open source 
 [Apache OpenNLP](https://opennlp.apache.org/) 
 library to analyze and automatically tag portal content. Three models are used: 
 location name finder, organization finder, and person name finder. Use this 
@@ -74,6 +75,15 @@ Natural Language API:
     **Salience:** The salience score for an entity provides information about 
     the importance or centrality of that entity to the entire text. 
 
+    **Enable Google Cloud Natural Language Text Auto Tagging For:** The asset 
+    types to enable text auto tagging for. Use the menu to select *Document*, 
+    *Blogs Entry*, or *Web Content Article*. To add multiple asset types, click 
+    the *Add* icon 
+    (![Add](../../../images/icon-add.png)) 
+    and select the asset type from the menu. You can delete any additional asset 
+    types by clicking the Trash icon 
+    (![Trash](../../../images/icon-trash-list.png)).
+
 3.  Click *Save* to save your changes. 
 
 You can override these settings for each instance from *Control Panel* &rarr; 
@@ -96,8 +106,13 @@ Follow these steps to configure the OpenNLP Text Auto Tagging provider:
     values yield fewer tags because the provider needs more confidence before it 
     applies a tag. Likewise, lower values yield more tags. 
 
-    **Enable OpenNLP Text Auto Tagging:** Whether to enable OpenNLP text auto 
-    tagging for every portal instance. 
+    **Enable OpenNLP Text Auto Tagging For:** The asset types to enable text 
+    auto tagging for. Use the menu to select *Document*, *Blogs Entry*, or 
+    *Web Content Article*. To add multiple asset types, click the *Add* icon 
+    (![Add](../../../images/icon-add.png)) 
+    and select the asset type from the menu. You can delete any additional asset 
+    types by clicking the Trash icon 
+    (![Trash](../../../images/icon-trash-list.png)). 
 
 3.  Click *Save* to save your changes. 
 
