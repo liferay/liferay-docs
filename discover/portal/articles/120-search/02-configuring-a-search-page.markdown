@@ -54,9 +54,9 @@ Out of the box, the Search Page Template includes these widgets:
 
 - [Type Facet](/docs/7-2/user/-/knowledge_base/u/type-facet)
 
-- [Tag Facet](/docs/7-1/user/-/knowledge_base/u/tag-and-category-facets#tag-and-category-facets)
+- [Tag Facet](/docs/7-1/user/-/knowledge_base/u/tag-and-category-facets)
 
-- [Category Facet](/docs/7-1/user/-/knowledge_base/u/tag-and-category-facets#tag-and-category-facets)
+- [Category Facet](/docs/7-1/user/-/knowledge_base/u/tag-and-category-facets)
 
 - [Folder Facet](/docs/7-1/user/-/knowledge_base/u/folder-facet)
 
