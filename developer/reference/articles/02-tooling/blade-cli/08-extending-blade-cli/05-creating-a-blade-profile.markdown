@@ -29,7 +29,7 @@ To create a new Blade profile, follow these steps:
     `src/main/java/PACKAGE_NAME` folder. These classes register your command and
     arguments to Blade CLI.
 
-3.  To override a default command, you should follow the same steps outlined
+3.  To override a default command, follow the same steps outlined
     [here](/docs/7-2/reference/-/knowledge_base/r/creating-custom-commands-for-blade-cli):
 
     - Create a command class
@@ -123,7 +123,7 @@ You can specify the Blade profile for a workspace when initializing it too. This
 is done by passing the profile name as an argument when creating the workspace:
 
 ```bash
-blade init -P <profile-name> <workspace-name>
+blade init -P [profile-name] [workspace-name]
 ```
 
 For example, if you execute the following command:
@@ -132,7 +132,7 @@ For example, if you execute the following command:
 blade init -P myprofile my-new-custom-workspace
 ```
 
-Your `my-new-custom-workspace` will have the following properties set in its
+Your `my-new-custom-workspace` has the following properties set in its
 `${workspaceDir}/.blade.properties` file:
 
 ```properties
@@ -141,7 +141,7 @@ profile.name=myprofile
 ```
 
 | **Note:** The `-P` profile parameter can be used for any command to specify
-| the profile to use for that command. This is helpful if you'd like to run a
+| the profile to use for that command. This is helpful if you want to run a
 | command not associated with the workspace's current profile.
 
 Awesome! You've set your new Blade profile!
