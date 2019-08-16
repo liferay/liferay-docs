@@ -22,7 +22,7 @@ liferay-versions=7.1.0+
 | **Note:** Velocity layout templates are supported, but deprecated as of
 | @product-ver@. We recommend that you convert your Velocity layout templates to
 | FreeMarker at your earliest convenience. See
-| [Creating Layout Templates Manually](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-manually#anatomy)
+| [Creating Layout Templates Manually](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-manually#understanding-the-anatomy)
 | for an example of the updated syntax.
 
 ## Related Topics

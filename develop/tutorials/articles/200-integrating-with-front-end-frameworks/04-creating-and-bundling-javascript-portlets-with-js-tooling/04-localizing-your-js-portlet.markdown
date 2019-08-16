@@ -58,5 +58,5 @@ Great! Now you know how to localize your widget!
 ## Related Topics
 
 - [Configuring System Settings and Instance Settings for Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/configuring-system-settings-and-instance-settings-for-your-js-portlet)
-- [Using Translation Features in Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/using-translation-features-in-your-javascript-portlet)
+- [Using Translation Features in Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/using-translation-features-in-your-portlet)
 - [Configuring Portlet Properties for Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/configuring-portlet-properties-for-your-js-portlet)

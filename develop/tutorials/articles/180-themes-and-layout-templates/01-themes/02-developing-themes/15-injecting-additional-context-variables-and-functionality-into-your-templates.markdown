@@ -72,8 +72,8 @@ examine one example of how @product@ uses context contributors.
     in @product@, like themes, ADTs, DDM templates, etc. Finally, your `service`
     element should be set to `TemplateContextContributor.class`.
 
-    The [ProductMenuTemplateContextContributor](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
-    class's `@Component` annotation follows a similar layout:
+    The `ProductMenuTemplateContextContributor` class's `@Component` annotation 
+    follows a similar layout:
 
         @Component(
             immediate = true,
@@ -93,10 +93,9 @@ examine one example of how @product@ uses context contributors.
 
 For a quick example of how you can implement the `TemplateContextContributor`
 interface to inject variables into a template's context, examine the 
-[`ProductMenuTemplateContextContributor` class](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/product/menu/theme/contributor/internal/ProductMenuTemplateContextContributor.html)
-used by @product@ by default. This class injects variables into @product@'s
-FreeMarker theme and determines whether the Product Menu is displayed in the
-current theme.
+`ProductMenuTemplateContextContributor` class used by @product@ by default. This 
+class injects variables into @product@'s FreeMarker theme and determines whether 
+the Product Menu is displayed in the current theme. 
 
 The `ProductMenuTemplateContextContributor` class implements the `prepare(...)`
 method, which injects a modified variable (`bodyCssClass`) and a new variable
