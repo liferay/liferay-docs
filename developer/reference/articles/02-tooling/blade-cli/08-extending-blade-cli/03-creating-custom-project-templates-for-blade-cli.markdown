@@ -6,15 +6,15 @@ header-id: creating-custom-project-templates-for-blade-cli
 
 [TOC levels=1-4]
 
-Blade comes with over 32+ project templates, but many times you may feel that
+Blade comes with 32+ project templates, but many times you may feel that
 those are too simple or don't fit the need for your development team. You can
 create new custom project templates that fit your team's workflow and have Blade
-use it instead.
+use them instead.
 
-| **Important:** An extension JAR can only contain one template; therefore, for
+| **Important:** An extension JAR can only contain one template. If you have
 | multiple templates, each must be deployed in a separate JAR.
 
-The setup of a custom project template should mimic that of a Maven archetype.
+Implementing a custom project template should mimic that of a Maven archetype.
 The best way to illustrate this is by visualizing a
 [sample template](https://github.com/liferay/liferay-blade-cli/tree/master/extensions/sample-template)'s
 folder structure:
