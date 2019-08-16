@@ -19,15 +19,17 @@ and JSON APIs that are available.
 
 Configuring your app to have access to the Content Targeting API requires only
 one line of code. This line of code is a dependency that should be added to your
-Gradle project. Follow the instructions below to add the Content Targeting API
-dependency.
+project's build file. Follow the instructions below to add the Content Targeting
+API dependency for a Gradle project.
 
 1.  Open the `build.gradle` file in your app's project folder.
 
 2.  Find the `dependencies { ... }` declaration and add the following line 
     within that section:
-   
-        compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: 5.0.0"
+
+    ```groovy
+    compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: 5.0.0"
+    ```
 
 Your app now has access to the Content Targeting API and can take advantage of
 everything Audience Targeting has to offer. Next, you'll learn how to use the
@@ -43,17 +45,19 @@ To display a list of existing user segments in your portlet using Java,
     Audience Targeting by adding the following code to your Portlet class (e.g.,
     the class that extends the `MVCPortlet` class):
 
-        @Reference(unbind = "-")
-        protected void setUserSegmentLocalService(
-          UserSegmentLocalService userSegmentLocalService) {
+    ```java
+    @Reference(unbind = "-")
+    protected void setUserSegmentLocalService(
+        UserSegmentLocalService userSegmentLocalService) {
 
-          _userSegmentLocalService = userSegmentLocalService;
-        }
+        _userSegmentLocalService = userSegmentLocalService;
+    }
 
-        private UserSegmentLocalService _userSegmentLocalService;
+    private UserSegmentLocalService _userSegmentLocalService;
+    ```
 
     When the Audience Targeting application is installed and an implementation 
-    of the `UserSegmentLocalService` is available the 
+    of the `UserSegmentLocalService` is available, the 
     `_userSegmentLocalService` field is populated. Otherwise, the portlet is
     unavailable till this dependency is resolved.
 
@@ -62,46 +66,48 @@ To display a list of existing user segments in your portlet using Java,
     to your portlet class that obtains user segments and exposes them in
     a request attribute, like this:
 
-        ThemeDisplay themeDisplay = (ThemeDisplay)renderRequest.getAttribute(
-          WebKeys.THEME_DISPLAY);
+    ```java
+    ThemeDisplay themeDisplay = (ThemeDisplay)renderRequest.getAttribute(
+        WebKeys.THEME_DISPLAY);
 
-        List<UserSegment> userSegments = null;
+    List<UserSegment> userSegments = null;
 
-        try {
-          userSegments = _userSegmentLocalService.getUserSegments(
-              themeDisplay.getScopeGroupId());
-        }
-        catch (Exception e) {
-          _log.error(e, e);
-        }
+    try {
+        userSegments = _userSegmentLocalService.getUserSegments(
+            themeDisplay.getScopeGroupId());
+    }
+    catch (Exception e) {
+        _log.error(e, e);
+    }
 
-        renderRequest.setAttribute("userSegments", userSegments);
+    renderRequest.setAttribute("userSegments", userSegments);
 
-        private static final Log _log = LogFactoryUtil.getLog(MyPortlet.class)
+    private static final Log _log = LogFactoryUtil.getLog(MyPortlet.class)
+    ```
 
     Notice that the `userSegments` list is populated by calling
     `UserSegmentLocalService`'s `getUserSegments` method. This service is part
     of the Content Targeting API. 
 
-3.  Add this logic needs to your portlet's `view.jsp`:
+3.  Add this logic to your portlet's `view.jsp`:
 
-        <h2>User Segments</h2>
+    ```markup
+    <h2>User Segments</h2>
 
-        <ul>
+    <ul>
 
         <%
         List<UserSegment> userSegments = (List<UserSegment>)request.getAttribute("userSegments");
 
         for (UserSegment userSegment : userSegments) {
         %>
-
             <li><%= userSegment.getName(locale) %></li>
-
         <%
         }
         %>
 
-        </ul>
+    </ul>
+    ```
 
     This logic uses the `UserSegment` object to list the existing user segments.
     That's it! By importing the `UserSegment` and `UserSegmentLocalService` 
@@ -114,37 +120,39 @@ You could do the same thing using the JSON API.
 
 1.  Open your portlet's `view.jsp` file and insert the following code:
 
-        <h2>Campaigns</h2>
+    ```markup
+    <h2>Campaigns</h2>
 
-        <ul id="<portlet:namespace/>campaigns">
-        </ul>
+    <ul id="<portlet:namespace/>campaigns">
+    </ul>
 
-        <aui:script use="aui-base">
-            var campaignsList = A.one('#<portlet:namespace/>campaigns');
+    <aui:script use="aui-base">
+        var campaignsList = A.one('#<portlet:namespace/>campaigns');
 
-            Liferay.Service(
-               '/ct.campaign/get-campaigns',
-               {
-               groupId: '<%= scopeGroupId %>'
-               },
-               function(response) {
-                  if (response.length) {
-                      A.Array.each(response, function(item) {
-                          campaignsList.append('<li>' + item.name + '</li>');
-                        });
-                    }
+        Liferay.Service(
+            '/ct.campaign/get-campaigns',
+            {
+                groupId: '<%= scopeGroupId %>'
+            },
+            function(response) {
+                if (response.length) {
+                    A.Array.each(response, function(item) {
+                        campaignsList.append('<li>' + item.name + '</li>');
+                    });
                 }
-            );
-        </aui:script>
+            }
+        );
+    </aui:script>
+    ```
 
     Notice that the Content Targeting API is called to retrieve the existing
     campaigns:
 
-        ...
-        Liferay.Service(
-            '/ct.campaign/get-campaigns',
-            {
-        ...
+    ```markup
+    Liferay.Service(
+        '/ct.campaign/get-campaigns',
+        {
+    ```
 
     Then, each campaign is listed in the `campaignsList` and displayed in your
     portlet for users to see.

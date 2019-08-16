@@ -43,13 +43,13 @@ There are four steps to create a custom rule type:
 1.  Create a module and ensure it has the necessary Content Targeting API
     dependencies.
 
-2.  Define how your rule works by implementing the  [Rule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
+2.  Define how your rule works by implementing the 
+    [Rule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
     interface's methods
 
 3.  Create the rule evaluation criteria.
 
 4.  Define the Rule's UI.
-
 
 ![Figure 1: This diagram breaks down the evaluation process for the weather rule.](../../../images-dxp/weather-rule-diagram.png)
 

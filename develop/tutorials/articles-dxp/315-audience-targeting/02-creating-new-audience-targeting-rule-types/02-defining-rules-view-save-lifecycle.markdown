@@ -19,10 +19,11 @@ has set the values and clicked *Save*, the action phase begins.
 When the action phase begins, the `processRule(...)` method takes the values
 provided by the form and persists them. Once the rule processing ends, the form 
 is reloaded and the lifecycle restarts again. The value(s) selected in the rule 
-are stored and  are ready to be accessed once user segment evaluation begins.
+are stored and are ready to be accessed once user segment evaluation begins.
 
 In this section, you'll begin defining the weather rule's Java class. This
-assumes that you followed the instructions in the previous [tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-custom-rule-type),
+assumes that you followed the instructions in the previous
+[tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-custom-rule-type),
 creating the `WeatherRule` class and extending
 [`BaseJSPRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html).
 If you used the `content-targeting-rule` Blade CLI template, your project 
@@ -32,17 +33,19 @@ created.
 1.  If you didn't use the template, add the activation and deactivation methods
     to your class.
 
-        @Activate
-        @Override
-        public void activate() {
-            super.activate();
-        }
+    ```java
+    @Activate
+    @Override
+    public void activate() {
+        super.activate();
+    }
 
-        @Deactivate
-        @Override
-        public void deActivate() {
-            super.deActivate();
-        }
+    @Deactivate
+    @Override
+    public void deActivate() {
+        super.deActivate();
+    }
+    ```
 
     These methods call the super class
     [`BaseRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseRule.html)
@@ -56,15 +59,18 @@ created.
 2.  Define the category for the Rule when displayed in the User Segment Editor.
     Find the `getRuleCategoryKey()` method and replace it with the code below: 
 
-        @Override
-        public String getRuleCategoryKey() {
-            return SessionAttributesRuleCategory.KEY;
-        }
+    ```java
+    @Override
+    public String getRuleCategoryKey() {
+        return SessionAttributesRuleCategory.KEY;
+    }
+    ```
 
     This code puts the weather rule in the Session Attributes category. To
     put your rule into the appropriate category, use the `getRuleCategoryKey`
     method to return the category class's key. Available category classes
-    include [`BehaviourRuleCategory`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/BehaviorRuleCategory.html),
+    include
+    [`BehaviourRuleCategory`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/BehaviorRuleCategory.html),
     [`SessionAttributesRuleCategory`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/SessionAttributesRuleCategory.html),
     [`SocialRuleCategory`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/SocialRuleCategory.html),
     and
@@ -74,22 +80,24 @@ created.
 
 3.  Find the `populateContext()` method and replace it with the code below:
 
-        @Override
-        protected void populateContext(
-            RuleInstance ruleInstance, Map<String, Object> context,
-            Map<String, String> values) {
+    ```java
+    @Override
+    protected void populateContext(
+        RuleInstance ruleInstance, Map<String, Object> context,
+        Map<String, String> values) {
 
-            String weather = "";
+        String weather = "";
 
-            if (!values.isEmpty()) {
-                weather = GetterUtil.getString(values.get("weather"));
-            }
-            else if (ruleInstance != null) {
-                weather = ruleInstance.getTypeSettings();
-            }
-
-            context.put("weather", weather);
+        if (!values.isEmpty()) {
+            weather = GetterUtil.getString(values.get("weather"));
         }
+        else if (ruleInstance != null) {
+            weather = ruleInstance.getTypeSettings();
+        }
+
+        context.put("weather", weather);
+    }
+    ```
 
     To understand what this method accomplishes, you must examine the rule's
     configuration lifecycle.
@@ -139,21 +147,23 @@ created.
        store values.
 
     You can think of the `populateContext` method as the intermediary between
-    your JSP and your back-end code. Creating the weather
-    rule's UI using a JSP is covered in
+    your JSP and your back-end code. Creating the weather rule's UI using a JSP
+    is covered in
     [Defining the Rule's UI](/docs/7-1/tutorials/-/knowledge_base/t/defining-the-rules-ui). 
-    Once the HTML is successfully retrieved and the user has set the
-    weather value and clicked *Save*, the action phase begins. 
+    Once the HTML is successfully retrieved and the user has set the weather
+    value and clicked *Save*, the action phase begins. 
 
 4.  Replace the `processRule()` method with this code:
 
-        @Override
-        public String processRule(
-            PortletRequest portletRequest, PortletResponse portletResponse,
-            String id, Map<String, String> values) {
+    ```java
+    @Override
+    public String processRule(
+        PortletRequest portletRequest, PortletResponse portletResponse,
+        String id, Map<String, String> values) {
 
-            return values.get("weather");
-        }
+        return values.get("weather");
+    }
+    ```
 
     The `processRule(...)` method is invoked when the action phase is initiated.
     The `values` parameter only contains the value(s) the user added in the
@@ -184,22 +194,26 @@ created.
     the rule's type settings, which contains the selected weather condition. Replace
     the generated `getSummary()` method with this one: 
 
-        @Override
-        public String getSummary(RuleInstance ruleInstance, Locale locale) {
-            return ruleInstance.getTypeSettings();
-        }
+    ```java
+    @Override
+    public String getSummary(RuleInstance ruleInstance, Locale locale) {
+        return ruleInstance.getTypeSettings();
+    }
+    ```
 
 6.  Set the servlet context for your rule. This method was generated and can be
     left alone:
 
-        @Override
-        @Reference(
-            target = "(osgi.web.symbolicname=weather)",
-            unbind = "-"
-        )
-        public void setServletContext(ServletContext servletContext) {
-            super.setServletContext(servletContext);
-        }
+    ```java
+    @Override
+    @Reference(
+        target = "(osgi.web.symbolicname=weather)",
+        unbind = "-"
+    )
+    public void setServletContext(ServletContext servletContext) {
+        super.setServletContext(servletContext);
+    }
+    ```
 
     Setting the servlet context is only required for rules extending the
     [`BaseJSPRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
