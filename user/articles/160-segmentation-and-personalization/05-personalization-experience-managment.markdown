@@ -64,7 +64,7 @@ can personalize them. To create a new Personalized Variation of a Content Set,
 
 3.  Select a Segment from the next page to create a variation for that Segment.
 
-![Figure 2: Select a Segment to create a variation for.](../../images/select-content-set-variation.png)
+![Figure 3: Select a Segment to create a variation for.](../../images/select-content-set-variation.png)
 
 You can create a personalized variation for any existing Segment. Each new 
 variation copies the default Content Set, but then essentially functions as its 
@@ -76,7 +76,7 @@ own Content Set after that. To edit or manage a Content Set Variation,
     and you can select *View Content* to preview the content in that set or
     *Delete* to remove it.
 
-![Figure 3: You can preview or delete a Personalized Variation from the *Actions* menu.](../../images/manage-content-set-segments.png)
+![Figure 4: You can preview or delete a Personalized Variation from the *Actions* menu.](../../images/manage-content-set-segments.png)
 
 ## Previewing User Experiences
 
@@ -93,4 +93,4 @@ experiences that users can have on that page.
 Viewing the perspective of a segment previews for the administrator any
 personalizations for Content Pages or Content Sets for that Segment.
 
-![Figure 4: You can preview different experiences from the Preview Panel.](../../images/personalization-segment-preview.png)
+![Figure 5: You can preview different experiences from the Preview Panel.](../../images/personalization-segment-preview.png)

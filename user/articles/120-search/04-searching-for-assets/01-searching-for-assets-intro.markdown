@@ -34,7 +34,7 @@ article on [configuring search
 pages](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages#legacy-search-experience)
 to learn more about these options.
 
-![Figure 1: The default search configuration displays a search bar in its default view, beckoning users to enter the search context.](../../images/search-bar.png)
+![Figure 1: The default search configuration displays a search bar in its default view, beckoning users to enter the search context.](../../../images/search-bar.png)
 
 ### Entering Search Terms
 
@@ -57,7 +57,7 @@ or
 [Solr](https://lucene.apache.org/solr/guide/6_6/query-syntax-and-parsing.html)
 documentation for the details.
 
-![Figure 2: Search for text in a specific field using Elasticsearch's Query String syntax.](../../images/search-advanced-syntax.png)
+![Figure 2: Search for text in a specific field using Elasticsearch's Query String syntax.](../../../images/search-advanced-syntax.png)
 
 ### Matching Exact Phrases: Quoted Search
 
@@ -68,7 +68,7 @@ _agile_ and _frameworks_, and hits containing both terms but separated by other
 text, as well as results with the exact phrase match. To ensure that only hits
 with the exact phrase are returned, enclose it in quotes: _"agile frameworks"_.
 
-![Figure 3: Search for exact phrase matches by enclosing search terms in quotes. If a user searched for _"agile frameworks"_, this result would not be returned.](../../images/search-quoted.png)
+![Figure 3: Search for exact phrase matches by enclosing search terms in quotes. If a user searched for _"agile frameworks"_, this result would not be returned.](../../../images/search-quoted.png)
 
 ### Prefix Searching
 
@@ -77,7 +77,7 @@ term *instrument*. This search returns documents with the full word in them, but
 it also returns variants with *instrument* as the prefix. For example, results
 with *instruments*, *instrumental*, and *instrumentation* are also returned.
 
-![Figure 4: Searching for *lever* also returns *leverage* and *leveraging*.](../../images/search-prefix.png)
+![Figure 4: Searching for *lever* also returns *leverage* and *leveraging*.](../../../images/search-prefix.png)
 
 | **Note:** Prefix searching is available for many fields out of the box, but as
 | with most things related to search behavior, it's more complicated under the
@@ -91,7 +91,7 @@ Another way to ensure users see results is through
 
 Configure the Search Bar's behavior via its portlet configuration screen.
 
-![Figure 5: Configure the search bar behavior in its configuration screen.](../../images/search-bar-configuration.png)
+![Figure 5: Configure the search bar behavior in its configuration screen.](../../../images/search-bar-configuration.png)
 
 | **Note:** When you configure the globally embedded Search Bar widget at the top
 | of one page, it configures the page-top Search Bar widget on all pages in the
@@ -120,7 +120,7 @@ search is executed are searched. Expand the scope of the search to all sites by
 selecting *Everything*. To let users choose which scope they want to search,
 select *Let the User Choose*.
 
-![Figure 6: Let the user choose which scope the search is executed for.](../../images/search-scope.png)
+![Figure 6: Let the user choose which scope the search is executed for.](../../../images/search-scope.png)
 
 **Scope Parameter Name** : Set the URL parameter name for the scope where the
 search is taking place. This parameter only appears in the URL if the scope _Let
@@ -161,9 +161,9 @@ To configure the spell check settings,
 
 2.  Add the Suggestions widget to the search page.
 
-3.  Open its configuration screen. Click the widget Options button (![Options](../../images/icon-app-options.png)) and select *Configuration*.
+3.  Open its configuration screen. Click the widget Options button (![Options](../../../images/icon-app-options.png)) and select *Configuration*.
 
-![Figure 7: Configure the suggestion settings to allow for user input mistakes and help lead users to results.](../../images/search-suggestions.png)
+![Figure 7: Configure the suggestion settings to allow for user input mistakes and help lead users to results.](../../../images/search-suggestions.png)
 
 There are three main settings here:
 

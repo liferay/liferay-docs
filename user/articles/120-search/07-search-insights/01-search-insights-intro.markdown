@@ -31,14 +31,14 @@ for more (_boosting_ the fields is the term for this).
 
 To see the Search Insights widget in action, navigate to a Search Page in your
 test server and add it from the Add menu
-(![Add](../../images/icon-add-widget.png)).
+(![Add](../../../images/icon-add-widget.png)).
 
-![Figure 1: The Search Insights widget is helpful during testing and development.](../../images/search-insights-default.png)
+![Figure 1: The Search Insights widget is helpful during testing and development.](../../../images/search-insights-default.png)
 
 Once you search for keywords that return Search Results, the Search Insights
 portlet displays the returned query string in all its glory. 
 
-![Figure 2: The full query string isn't for the faint of heart. This example is clipped to spare the reader.](../../images/search-insights-test-search.png)
+![Figure 2: The full query string isn't for the faint of heart. This example is clipped to spare the reader.](../../../images/search-insights-test-search.png)
 
 ## Explaining Search Results
 

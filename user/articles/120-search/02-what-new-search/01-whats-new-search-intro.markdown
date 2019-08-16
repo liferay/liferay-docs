@@ -12,7 +12,7 @@ new widgets to new APIs and infrastructure.
 ## New and Improved Widgets
 
 Add search widgets by clicking the Add
-(![Add](../../images/icon-add-widget.png)) icon on the page. Then expand
+(![Add](../../../images/icon-add-widget.png)) icon on the page. Then expand
 the Widgets &rarr; Search section.
 
 ### Custom Filter
@@ -37,7 +37,7 @@ field. The default order is determined by the search engine's _Relevance_
 calculation.
 
 Add more fields to the sort widget if the default options aren't enough. Click
-the widget Options (![Options](../../images/icon-app-options.png)) menu &rarr;
+the widget Options (![Options](../../../images/icon-app-options.png)) menu &rarr;
 Configuration. Enter a human readable label and the `fieldName` to sort by. Just
 make sure it's a `keyword` field.
 
