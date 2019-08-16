@@ -1,3 +1,7 @@
+---
+header-id: solr-connector-settings
+---
+
 # Solr Connector Settings
 
 [TOC levels=1-4]
