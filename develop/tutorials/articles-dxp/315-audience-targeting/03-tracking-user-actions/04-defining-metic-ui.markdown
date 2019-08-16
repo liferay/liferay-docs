@@ -85,7 +85,7 @@ the newsletter metric and select *Update Report*. A chart and table with the
 newsletter's view count is shown.
 
 You can view the finished version of the newsletter metric by downloading its
-[ZIP file](https://dev.liferay.com/documents/10184/2061898/newsletter-7-1.zip/a4d79384-2317-12ae-9f24-475e4decc784?version=1.0&download=true).
+[ZIP file](https://portal.liferay.dev/documents/113763090/114000653/newsletter-7-1.zip/47e5b490-dd9d-9201-8abd-09b534ff7507?t=1565967901027).
 
 Now you've created and examined a fully functional metric and have the knowledge
 to create your own.

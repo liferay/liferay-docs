@@ -44,7 +44,7 @@ When the user selects an option, it's passed from the view template to the
 You've created the weather rule and can now target users based on their weather
 conditions. You can view the finished version of the weather rule by downloading
 its
-[ZIP file](https://dev.liferay.com/documents/10184/2061898/weather-7-1.zip/cefa8c43-1188-49b2-b400-57228d1423fd?version=1.0&download=true).
+[ZIP file](https://portal.liferay.dev/documents/113763090/114000653/weather-7-1.zip/c1865f26-c4df-f4fa-a012-459e23d3b3c8?t=1565967914487).
 
 Now you've created and examined a fully functional rule and have the knowledge
 to create your own.
