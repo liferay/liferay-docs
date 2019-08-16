@@ -7,7 +7,7 @@ header-id: creating-data-definitions-with-rest-calls
 [TOC levels=1-4]
 
 These example calls use cURL, a cross-platform tool for making HTTP calls. Feel
-free to use any REST client you're familiar with.
+free to use any REST client you know.
 
 ### Adding Data Definitions
 
@@ -38,8 +38,8 @@ curl -i -X POST \
 }'
 ```
 
-Here you're specifying the endpoint for the data definitions API, passing in
-the `siteId`. Then you're creating a request body that includes:
+Here you specify the endpoint for the data definitions API, passing in the
+`siteId`. Then you create a request body that includes
 
 - `availableLanguageIds`: the IDs of the available languages.
 - `dataDefinitionFields`: The example is simple, with just a `fieldType` and a
@@ -188,10 +188,10 @@ Here you can see that some information was added by the data engine itself:
 - `userId` is set to the numeric ID of the User that created the definition.
 
 Before we move on, it's important to understand the relationship between the
-data definition and the information you're going to collect from Users, as a
-data record. A data record must conform to the fields defined in this data
-definition creation step. Therefore, when you add a data record in a later step
-your request will use a `dataRecordValues` structure like this:
+data definition and the information you'll collect from Users, as a data record.
+A data record must conform to the fields defined in this data definition
+creation step. Therefore, when you add a data record in a later step
+your request must use a `dataRecordValues` structure like this:
 
 ```json
     "dataRecordValues": {
@@ -203,7 +203,7 @@ your request will use a `dataRecordValues` structure like this:
 ### Retrieving Data Definitions
 
 In addition to adding data definitions, you can make GET calls to the service.
-Retrieve all the data definitions in a site by passing in the site ID (`20123`
+Retrieve all the data definitions in a Site by passing in the Site ID (`20123`
 here):
 
 ```sh
