@@ -13,21 +13,21 @@ fields, and for embedding widgets.
 
 You can make text of a fragment editable by enclosing it in an 
 `<lfr-editable>` tag like this:
- 
-```markup
+
+```html
 <lfr-editable id="unique-id" type="text">
    This is editable text!
 </lfr-editable>
 ```
- 
+
 If you need formatting options like text or color styles, use `rich-text`:
- 
-```markup
+
+```html
 <lfr-editable id="unique-id" type="rich-text">
    This is editable text that I can make bold or italic! 
 </lfr-editable>
 ```
- 
+
 The `lfr-editable` tag doesn't render without a unique `id`. 
 
 | **Note:** If you want to make text inside an HTML element editable, you must 
@@ -39,7 +39,7 @@ The `lfr-editable` tag doesn't render without a unique `id`.
 Images use the same `<lfr-editable>` tag as text, but with the `image` type, 
 like this:
  
-```markup
+```html
 <lfr-editable id="unique-id" type="image">
    <img src="...">
 </lfr-editable>
@@ -81,13 +81,13 @@ to display a preview image for a Web Content Article. For more information on ma
 ## Creating Editable Links
 
 There is also a specific syntax for creating editable link elements:
- 
-```markup
+
+```html
 <lfr-editable id="unique-id" type="link">
     <a href="default-target-url-goes-here">Link text goes here</a>
 </lfr-editable>
 ```
- 
+
 Marketers can edit the link text, target URL, and basic link styling---primary
 button, secondary button, link.
 
@@ -136,9 +136,8 @@ These are the widgets that can be embedded and their accompanying tags:
 |Tag Cloud	|`<lfr-widget-tag-cloud>`|
 |Tags Navigation	|`<lfr-widget-tags-nav>`|
 |Web Content Display	|`<lfr-widget-web-content>`
-|Rss Publisher (Deprecated)	|`<lfr-widget-rss>`|
+|RSS Publisher (Deprecated)	|`<lfr-widget-rss>`|
 |Iframe	|`<lfr-widget-iframe>`|
-
 
 ## Enabling Embedding for Your Widget
 
@@ -158,7 +157,8 @@ property must be appended to the `lfr-widget` tag like this:
 <lfr-widget-app-name>
 </lfr-widget-app-name>
 ```
-| **NOTE:** According to the W3C HTML standards, custom elements cannot be self 
+
+| **Note:** According to the W3C HTML standards, custom elements cannot be self 
 | closing. Therefore, even though you cannot add anything between the opening and
 | closing `<lfr-widget...>` tags, you cannot use the self closing notation for 
 | the tag.
