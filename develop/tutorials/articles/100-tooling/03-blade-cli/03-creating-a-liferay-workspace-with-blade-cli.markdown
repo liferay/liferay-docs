@@ -109,5 +109,5 @@ files into the `plugins-sdk` folder. Lastly, generate its requirements by
 running `gradlew tasks`. Once this command successfully downloads all your
 Plugins SDK dependencies, it's ready to use in your workspace. For more
 information on manually configuring a Plugins SDK, see the
-[Using a Plugins SDK from Your Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+[Using a Plugins SDK from Your Workspace](/docs/7-0/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
 section.

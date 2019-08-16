@@ -102,7 +102,7 @@ ADT from the menu and expanding the *Details* section. With the WebDAV URL, site
 administrators are capable of adding, browsing, editing, and deleting ADTs on a
 remote server. If you'd like to learn more about what the WebDAV URL can do,
 visit the section on
-[WebDAV access](/docs/7-0/user/-/knowledge_base/u/publishing-files#desktop-access-to-documents-and-media).
+[WebDAV access](/docs/7-0/user/-/knowledge_base/u/collaborating-on-files#desktop-access-to-documents-and-media).
 
 | **Note:** Embedding apps into ADTs, although possible, is not recommended
 | because this could cause conflicts with other apps or unexpected behavior (e.g.,

@@ -77,7 +77,7 @@ this information accessible in your Facebook app. @product@ cannot read this
 information from Facebook users without these granted permissions.
 
 Read the
-[Integrating with Facebook](/docs/7-0/user/-/knowledge_base/u/integrating-with-facebook)
+[Integrating with Facebook](/docs/7-0/user/-/knowledge_base/u/integrating-with-facebook-twitter-and-more#integrating-with-facebook)
 section for more information on using Facebook with @product@.
 
 ### Facebook Age

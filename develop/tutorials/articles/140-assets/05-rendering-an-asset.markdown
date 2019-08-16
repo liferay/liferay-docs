@@ -79,7 +79,7 @@ JSP templates to render an asset's HTML. You'll learn how to associate your JSP
 templates with an asset renderer, along with configuring several other options. 
 
 To learn how an asset renderer is created, you'll create the pre-existing
-[BlogsEntryAssetRenderer](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
+[BlogsEntryAssetRenderer](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.java)
 class, which configures the asset renderer framework for the Blogs application.
 
 1.  Create a new package in your existing project for your asset-related
@@ -515,7 +515,7 @@ renderer factory.
 
 1.  Create an `-AssetRenderFactory` class in the same folder as its asset
     renderer class. For blogs, the
-    [BlogsEntryAssetRendererFactory](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRendererFactory.html)
+    [BlogsEntryAssetRendererFactory](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/asset/BlogsEntryAssetRendererFactory.java)
     class resides in the `com.liferay.blogs.web` module's
     `com.liferay.blogs.web.asset` package. The factory class should extend the
     `BaseAssetRendererFactory` class and the asset type should be specified as
