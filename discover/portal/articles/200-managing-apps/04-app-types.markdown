@@ -53,7 +53,7 @@ portlet projects because the portal server generates these objects dynamically.
 Portlets can be composed of OSGi modules (recommended), or contained in WAR 
 files. For information on developing OSGi modules for Liferay, including 
 portlets, see 
-[Liferay's developer tutorials](/develop/tutorials). 
+[Liferay's developer tutorials](/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-liferay-development). 
 
 ## Web Plugins
 

@@ -14,8 +14,8 @@ correct problems.
 
 Here are the troubleshooting sections:
 
--   [Modules](#troubleshooting-modules)
--   [Services and Components](#troubleshooting-services-and-components)
+-   [Modules](#modules)
+-   [Services and Components](#services-and-components)
 -   [Front-end](/docs/7-1/tutorials/-/knowledge_base/t/troubleshooting-front-end-development-issues)
 
 Click a question to view the answer.

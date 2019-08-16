@@ -9,14 +9,14 @@ header-id: overriding-mvcactioncommand
 In case you want add to a Liferay MVC action command, you can. The OSGi
 framework lets you override MVC action commands if you follow the instructions
 for [adding logic to MVC commands](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands).
-It involves [registering your custom MVC action command as an OSGi component](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands#publish-as-a-component)
+It involves [registering your custom MVC action command as an OSGi component](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands#step-2-publish-as-a-component)
 with the same properties as the original, but with a higher service ranking.
 
 Custom MVC action commands typically extend the [`BaseMVCActionCommand` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html),
 and override its `doProcessAction` method, which returns `void`. Add your logic
 to the original behavior of the action method by
-[getting a reference to the original service](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands#refer-to-the-original-implementation),
-and [calling it after your own logic](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands#add-the-logic).
+[getting a reference to the original service](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands#step-3-refer-to-the-original-implementation),
+and [calling it after your own logic](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands#step-4-add-the-logic).
 For example, this `MVCActionCommand` override checks whether the `delete` action
 is invoked on a blog entry, and prints a message to the log, before continuing
 with the original processing:

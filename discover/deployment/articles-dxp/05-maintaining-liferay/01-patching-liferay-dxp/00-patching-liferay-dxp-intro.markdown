@@ -21,7 +21,7 @@ hotfixes.
 | [micro changes](/docs/7-1/tutorials/-/knowledge_base/t/meaningful-schema-versioning#micro-change-examples)---they're
 | optional and revertible. Module upgrades and any micro changes they include
 | are applied at server startup by default, or can be applied manually by
-| [disabling the `autoUpgrade` property](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade#configuring-module-upgrades).
+| [disabling the `autoUpgrade` property](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade).
 | Server startup skips all Core micro changes. Instead, you
 | can apply them using the [upgrade
 | tool](/docs/7-1/deploy/-/knowledge_base/d/upgrading-to-liferay-71)

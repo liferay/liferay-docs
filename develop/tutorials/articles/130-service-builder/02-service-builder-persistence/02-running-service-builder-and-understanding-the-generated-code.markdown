@@ -13,12 +13,12 @@ make sure to do so before proceeding with this tutorial.
 
 There are two ways to build services from a `service.xml` file:
 
-- [Liferay @ide@](#using-liferay-ide-or-developer-studio)
+- [Liferay Dev Studio](#using-liferay-dev-studio)
 - [Command line](#using-the-command-line) 
 
 Liferay @ide@ is demonstrated first. 
 
-## Using Liferay @ide@
+## Using Liferay Dev Studio
 
 From the Package Explorer, right-click on your service module and then select
 *Liferay* &rarr; *build-service*. 
@@ -64,4 +64,3 @@ SUCCESSFUL`. Many generated files appear in your project. They represent a model
 layer, service layer, and persistence layer for your entities. Don't worry about
 the number of generated files--they're explained in the next tutorial. Its time
 to review the code Service Builder generates for your entities.
-

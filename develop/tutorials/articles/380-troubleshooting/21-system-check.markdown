@@ -14,7 +14,7 @@ Portal startup step and you can execute it any time in Gogo shell.
 
 `system:check` aggregates these commands:
 
--  [`ds:unsatisfied`](/docs/7-1/tutorials/-/knowledge_base/t/detecting-unresolved-osgi-components#ds-unsatisfied-command):
+-  [`ds:unsatisfied`](/docs/7-1/tutorials/-/knowledge_base/t/detecting-unresolved-osgi-components#dsunsatisfied-command):
     Reports unsatisfied Declarative Service components.
 
 -  [`dm na`](/docs/7-1/tutorials/-/knowledge_base/t/detecting-unresolved-osgi-components#dm-na-command):
@@ -24,7 +24,7 @@ Portal startup step and you can execute it any time in Gogo shell.
 System checking functionality from future Liferay tools will be added to
 `system:check`.
 
-[Developer mode](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes#setting-developer-mode-for-your-server-in-liferay-ide)
+[Developer mode](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes)
 runs `system:check` automatically on every startup. 
 
 You can enable `system:check` to run on startup outside of developer mode by

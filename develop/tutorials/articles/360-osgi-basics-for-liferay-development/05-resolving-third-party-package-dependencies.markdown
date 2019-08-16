@@ -71,7 +71,7 @@ must. The rest of the tutorial shows you how to do these things.
 |     apply plugin: "com.liferay.plugin"
 | 
 | If you use Gradle without the `com.liferay.plugin` plugin, you must
-| [embed the third party libraries wholesale](#embedding-libraries-using-gradle).
+| [embed the third party libraries wholesale](#embedding-a-library-using-gradle).
 
 The recommended package resolution workflow is next. 
 

@@ -14,7 +14,7 @@ application. Here's how:
 
 1. [Add a reference to the local service component.](#step-1-reference-the-local-service-component) 
 
-2. [Call the component's methods.](#step-2-call-the-service-component-methods)
+2. [Call the component's methods.](#step-2-call-the-components-methods)
 
 There's a Blade sample called 
 [Basic Service Builder](/docs/7-1/reference/-/knowledge_base/r/service-builder-samples).

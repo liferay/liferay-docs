@@ -18,7 +18,7 @@ performance metrics down to the individual user.
 | [*Dynatrace SaaS*](https://www.dynatrace.com/support/dynatrace/).
 | Its default configuration detects lots of interesting data. Although the
 | Dynatrace SaaS offering doesn't offer dashboards as deep as those in the
-| [Liferay FastPack](#liferay-digital-enterprise-fastpack),
+| [Liferay FastPack](#liferay-dxp-fastpack),
 | its UI is very intuitive. Dynatrace SaaS's big advantage over the installed
 | Dynatrace app is that it requires no installation, maintenance, or upgrade.
  

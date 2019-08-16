@@ -11,7 +11,7 @@ Here are some things you might need to do with patches:
 - [Report Patch Levels to Liferay Support](#including-support-info-in-support-tickets)
 - [Uninstall Patches](#uninstalling-patches) 
 - [Compare Patch Levels](#comparing-patch-levels)
-- [Show collisions between patches and deployed plugins](#list-collisions)
+- [Show collisions between patches and deployed plugins](#showing-collisions-between-patches-and-deployed-plugins)
 - [Separate Patches from your Installation](#separating-patches-from-the-installation)
 
 Start with reporting patch levels to Liferay Support.

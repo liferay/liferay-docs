@@ -25,9 +25,9 @@ This tutorial demonstrates implementing controller logic for small applications.
 In this tutorial you'll learn to implement a Liferay MVC portlet with all the
 controller code in the `-Portlet` class. It involves these things:
 
-- [Action methods](#action-methods)
-- [Render logic](#render-logic)
-- [Setting and retrieving request parameters and attributes](#setting-and-retrieving-request-parameters-and-attributes) 
+- Action methods
+- Render logic
+- Setting and retrieving request parameters and attributes 
 
 Start with creating action methods. 
 

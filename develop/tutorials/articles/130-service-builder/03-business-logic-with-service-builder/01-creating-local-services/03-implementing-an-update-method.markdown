@@ -23,17 +23,17 @@ An `update*` method for a local service resembles an
 most because it has parameters for setting entity attribute values. Create an
 `update*` method this way:
 
-1.  [Declare an `update*` method with parameters for updating the entity.](#declare-an-update-method-with-parameters-for-updating-the-entity)
+1.  Declare an `update*` method with parameters for updating the entity.
 
-2.  [Validate the parameters.](#validate-the-parameters)
+2.  Validate the parameters.
 
-3.  [Retrieve the entity instance, if necessary.](#retrieve-the-entity-instance)
+3.  Retrieve the entity instance, if necessary.
 
-4.  [Update the entity attributes.](#update-the-entity-attributes)
+4.  Update the entity attributes.
 
-5.  [Persist the updated entity.](#persist-and-return-the-updated-entity)
+5.  Persist the updated entity.
 
-6.  [Run Service Builder.](#run-service-builder)
+6.  Run Service Builder.
 
 The following code snippets from 
 [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s
@@ -113,7 +113,7 @@ Similar to validating the
 [`add*` method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method)
 parameters, validate your `update*` parameters. Your `add*` and `update*`
 methods might be able to use the same validation code. Throw a 
-[`PortalException`](@platform-ref@/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
+[`PortalException`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
 or an extension of `PortalException` for any invalid parameters. 
 
 ### Step 3: Retrieve the entity instance

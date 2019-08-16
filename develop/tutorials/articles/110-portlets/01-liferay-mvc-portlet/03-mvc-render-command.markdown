@@ -6,7 +6,7 @@ header-id: mvc-render-command
 
 [TOC levels=1-4]
 
-If you're here, that means you know that `MVCRenderCommand`s are used to [respond to portlet render URLs](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-mvc-portlet#render-logic),
+If you're here, that means you know that `MVCRenderCommand`s are used to [respond to portlet render URLs](/docs/7-1/tutorials/-/knowledge_base/t/writing-controller-code#render-logic),
 and you want to know how to create and use MVC render commands. If you just want
 to learn about Liferay's MVC Portlet framework in general, that information is
 in a [separate article](/docs/7-1/tutorials/-/knowledge_base/t/liferay-mvc-portlet).

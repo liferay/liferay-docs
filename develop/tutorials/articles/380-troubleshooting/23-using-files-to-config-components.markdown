@@ -109,7 +109,7 @@ configuration file names:
     [PID].config
 
 When you're done creating a configuration file, you can
-[deploy it](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files#deploying-a-configuration-file). 
+[deploy it](/docs/7-1/user/-/knowledge_base/u/creating-configuration-files#deploying-a-configuration-file). 
 
 ## Resolving Configuration File Deployment Failures
 

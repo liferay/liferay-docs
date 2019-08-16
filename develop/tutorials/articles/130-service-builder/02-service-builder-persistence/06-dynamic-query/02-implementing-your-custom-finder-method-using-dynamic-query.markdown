@@ -119,7 +119,7 @@ returns a list of all guestbook entry entities. The
 `.add(RestrictionsFactoryUtil.eq("name", entryName))` restriction limits the
 results to only those guestbook entries whose names match the finder method's
 `entryName` parameter.
-[`PropertyFactoryUtil`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
+[`PropertyFactoryUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
 is a Liferay utility class whose method `forName(String propertyName)` returns
 the specified property. This property can be passed to another Liferay dynamic
 query. This is exactly what happens in the following line of our example:
@@ -252,7 +252,7 @@ information on restrictions and projections, please refer to Hibernate's
 [documentation](http://docs.jboss.org/hibernate/orm/3.6/reference/en-US/html/querycriteria.html).
 
 Similarly, to set projections, create properties via Liferay's
-[PropertyFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
+[PropertyFactoryUtil](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
 service instead of through Hibernate's `Property` class. Thus, instead of 
 
     entryCriteria.setProjection(Property.forName("guestbookId"));

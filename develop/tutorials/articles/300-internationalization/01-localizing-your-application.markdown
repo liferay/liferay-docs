@@ -315,7 +315,7 @@ plugin's language keys.
 Did you know that @product@'s core language keys are also available to your
 module? They're up next. 
 
-## Using @product@'s Language Properties
+## Using Liferay's Language Properties
 
 If you have @product@'s source code, you can check out @product@'s core language
 properties by looking in the `portal-impl/src/main/content` folder. Otherwise,

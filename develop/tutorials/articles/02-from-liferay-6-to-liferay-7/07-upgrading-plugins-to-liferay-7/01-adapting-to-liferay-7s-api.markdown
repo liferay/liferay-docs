@@ -35,8 +35,8 @@ through the steps required to use the Code Upgrade Tool:
  Step | Name | Description |
 :----- | :------ | :------------ |
 1.  | [Welcome to the Liferay Code Upgrade Tool](#step-1-welcome-to-the-liferay-code-upgrade-tool) | Introduces the Code Upgrade Tool. |
-2.  | [Configure the Project](#step-2-configure-the-project) | Imports an existing Maven project or Plugins SDK project, and prepares its plugins for upgrading. |
-Maven only | [Upgrade POM Files](#upgrade-pom-files) | Upgrades POM files so they use the latest Maven plugins and Liferay dependencies. |
+2.  | [Select Projects to Upgrade](#step-2-select-projects-to-upgrade) | Imports an existing Maven project or Plugins SDK project, and prepares its plugins for upgrading. |
+Maven only | [Upgrade POM Files](#upgrade-pom-files-maven-projects-only)) | Upgrades POM files so they use the latest Maven plugins and Liferay dependencies. |
 3.  | [Find Breaking Changes](#step-3-find-breaking-changes) | Finds breaking changes, describes them, and prescribes adaptations (some of which can be applied automatically). |
 4.  | [Upgrade Descriptor Files](#step-4-upgrade-descriptor-files) | Moves descriptor files to their new versions. |
 5.  | [Build Services](#step-5-build-services) | Runs Service Builder on plugins that use it. |
@@ -45,12 +45,12 @@ Maven only | [Upgrade POM Files](#upgrade-pom-files) | Upgrades POM files so the
 8.  | [Build](#step-8-build) | Compiles the plugins |
 9.  | [Summary](#step-9-summary) | Lists each upgrade step's status |
 
-After completing [step 2](#step-2-configure-the-project), you can execute the
-steps in any order. Also, be aware that you may not be presented with all nine
-steps for your project. For example, if you don't have a JSP hook in your
-Plugins SDK, step 7 will not be available. Likewise, if you're upgrading a 7.0
-project already residing in Liferay Workspace, you'll have fewer upgrade steps
-since fewer changes are required.
+After selecting and configuring projects to upgrade, you can execute the steps
+in any order. Also, be aware that you may not be presented with all nine steps
+for your project. For example, if you don't have a JSP hook in your Plugins SDK,
+step 7 will not be available. Likewise, if you're upgrading a 7.0 project
+already residing in Liferay Workspace, you'll have fewer upgrade steps since
+fewer changes are required.
 
 Launch the Code Upgrade Tool now. 
 

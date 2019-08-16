@@ -16,10 +16,10 @@ maintainable, and easy to understand.
 
 Here are the steps for adding logic to MVC commands.
 
-1.  [Implement the interface](#implement-the-interface)
-2.  [Publish as a component](#publish-as-a-component)
-3.  [Refer to the original implementation](#refer-to-the-original-implementation)
-4.  [Add the logic, and call the original](#add-the-logic)
+1.  Implement the interface
+2.  Publish as a component
+3.  Refer to the original implementation
+4.  Add the logic, and call the original
 
 ## Step 1: Implement the interface
 

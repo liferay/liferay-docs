@@ -62,10 +62,7 @@ place your custom JSP at
 [`CustomJspBagRegistryUtil` class](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBagRegistryUtil.html))
 loads JSPs from
 [`CustomJspBag`](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
-services. The
-[Core Override JSP sample project](/docs/7-1/reference/-/knowledge_base/r/core-jsp-hook)
-provides a working custom JSP bag implementation. The following steps for
-implementing a custom JSP bag refer to that sample class code. 
+services. The following steps implement a custom JSP bag. 
 
 1.  In your module, create a class that implements   
     [`CustomJspBag`](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html).
@@ -173,8 +170,7 @@ implementing a custom JSP bag refer to that sample class code.
 
 Now your module provides custom JSPs and a custom JSP bag implementation. When
 you deploy it, @product@ uses its custom JSPs in place of the core JSPs they
-override. For a working example, examine the
-[Core Override JSP sample project](/docs/7-1/reference/-/knowledge_base/r/core-jsp-hook).
+override. 
 
 ## Extend a JSP
 
@@ -205,7 +201,7 @@ Remember, this type of customization is a last resort. Your override may break
 due to the nature of this implementation, and core functionality in Liferay can
 go down with it. If the JSP you want to override is in another module, refer to
 the section on 
-[API based approaches to overriding JSPs](/docs/7-1/tutorials/-/knowledge_base/t/jsp-overrides-using-custom-jsp-bag#using-portals-api-to-override-a-jsp).
+[Liferay API based approaches to overriding JSPs](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps).
 
 ## Site Scoped JSP Customization
 
@@ -226,7 +222,5 @@ another story. See the documentation on [using Dynamic Include](/docs/7-1/tutori
 -->
 
 ## Related Topics
-
-[Core Override JSP sample project](/docs/7-1/reference/-/knowledge_base/r/core-jsp-hook)
 
 [Upgrading Core JSP Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-core-jsp-hooks)

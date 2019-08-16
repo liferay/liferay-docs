@@ -32,7 +32,7 @@ primary key for an entity. In this case, the combination of columns makes up
 a compound primary key for the entity.
 
 | **Note:** The
-| [Implementing an Add Method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method#generate-a-primary-key)
+| [Implementing an Add Method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method#step-3-generate-a-primary-key)
 | article demonstrates how to generate unique primary keys for entity instances.
 
 ## Create Entity Columns
