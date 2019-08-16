@@ -24,19 +24,26 @@ Image auto tagging is disabled by default. To use it, you must do two things:
 2.  Ensure that an image auto tagging provider is enabled. These providers are
     disabled by default. Here, you'll learn how to enable/disable them. 
 
+| **Note:** Prior to Liferay DXP Fix Pack 1 and Liferay Portal CE GA2, you must 
+| configure the providers shown here in *Documents and Media* instead of 
+| *Assets* (in System/Instance Settings). 
+
 Three such providers are available: 
 
-**TensorFlow:** An open-source library that provides machine learning 
-capabilities. TensorFlow image auto-tagging in @product@ is based on 
+[**TensorFlow:**](#configuring-tensorflow-image-auto-tagging) 
+An open-source library that provides machine learning capabilities. TensorFlow 
+image auto-tagging in @product@ is based on 
 [TensorFlow's `LabelImage` sample for Java](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/java/src/main/java/org/tensorflow/examples/LabelImage.java), 
 and uses the Inception5h model. Use this with caution, since its accuracy is 
 limited. 
 
-**Google Cloud Vision:** Uses the 
+[**Google Cloud Vision:**](#configuring-google-cloud-vision) 
+Uses the 
 [Google Cloud Vision API](https://cloud.google.com/vision/) 
 to automatically tag images. 
 
-**Microsoft Cognitive Services:** Uses 
+[**Microsoft Cognitive Services:**](#configuring-microsoft-cognitive-services) 
+Uses 
 [Microsoft Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/) 
 to automatically tag images. 
 
@@ -47,7 +54,7 @@ to automatically tag images.
 Follow these steps to configure TensorFlow Image Auto Tagging: 
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
-    *Documents and Media*. 
+    *Assets*. 
 
 2.  Under *VIRTUAL INSTANCE SCOPE*, select *TensorFlow Image Auto Tagging*. The 
     following settings are available: 
@@ -66,15 +73,15 @@ Follow these steps to configure TensorFlow Image Auto Tagging:
 3.  Click *Save* to save your changes. 
 
 You can override these settings for each instance from *Control Panel* &rarr;
-*Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
+*Configuration* &rarr; *Instance Settings* &rarr; *Assets*. 
 
 ![Figure 2: Configure TensorFlow image auto-tagging for your portal instances.](../../../images/auto-tagging-tensorflow.png)
 
-To optimize performance, you can also control the process that runs the 
-TensorFlow image auto tagging in @product@: 
+To optimize performance, you can also control the process that runs TensorFlow 
+image auto tagging: 
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
-    *Documents and Media*. 
+    *Assets*. 
 
 2.  Under *SYSTEM SCOPE*, select *TensorFlow Image Auto Tagging Process*. The 
     following settings are available: 
@@ -89,22 +96,12 @@ TensorFlow image auto tagging in @product@:
 
 ![Figure 3: You can fine tune the process that runs the TensorFlow image auto tagging in the portal.](../../../images/auto-tagging-tensorflow-process.png)
 
-## Additional Auto-tagging Providers
-
-As mentioned above, @product@ contains two image auto-tagging providers besides 
-TensorFlow:
-
--   Google Cloud Vision
--   Microsoft Cognitive Services
-
-Here, you'll learn how to configure each. 
-
-### Configuring Google Cloud Vision
+## Configuring Google Cloud Vision
 
 Follow these steps to configure Google Cloud Vision image auto tagging: 
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
-    *Documents and Media*. 
+    *Assets*. 
 
 2.  Under *VIRTUAL INSTANCE SCOPE*, select 
     *Google Cloud Vision Image Auto Tagging*. The following settings are 
@@ -119,16 +116,16 @@ Follow these steps to configure Google Cloud Vision image auto tagging:
 3.  Click *Save* to save your changes. 
 
 You can override these settings for each instance from *Control Panel* &rarr; 
-*Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
+*Configuration* &rarr; *Instance Settings* &rarr; *Assets*. 
 
 ![Figure 4: The Google Cloud Vision provider requires an API key.](../../../images/auto-tagging-image-google.png)
 
-### Configuring Microsoft Cognitive Services
+## Configuring Microsoft Cognitive Services
 
 Follow these steps to configure Microsoft Cognitive Services image auto tagging: 
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
-    *Documents and Media*. 
+    *Assets*. 
 
 2.  Under *VIRTUAL INSTANCE SCOPE*, select 
     *Microsoft Cognitive Services Image Auto Tagging*. The following settings 
@@ -138,7 +135,7 @@ Follow these steps to configure Microsoft Cognitive Services image auto tagging:
     [API key](https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/?apiSlug=computer-services) 
     for the Computer Vision API V2. 
 
-    **Endpoint:** The endpoint for the Computer Vision API V2 (e.g., 
+    **API Endpoint:** The endpoint for the Computer Vision API V2 (e.g., 
     `https://westcentralus.api.cognitive.microsoft.com/vision/v2.0`). 
 
     **Enabled:** Whether Microsoft Cognitive Services image auto tagging is 
@@ -150,6 +147,6 @@ Follow these steps to configure Microsoft Cognitive Services image auto tagging:
 3.  Click *Save* to save your changes. 
 
 You can override these settings for each instance from *Control Panel* &rarr; 
-*Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
+*Configuration* &rarr; *Instance Settings* &rarr; *Assets*. 
 
 ![Figure 5: The Microsoft Cognitive Services provider requires an API key and an endpoint.](../../../images/auto-tagging-image-microsoft.png)

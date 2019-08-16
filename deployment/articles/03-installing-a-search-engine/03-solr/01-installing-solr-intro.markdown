@@ -24,4 +24,7 @@ Read
 for more information.
 
 Liferay DXP 7.2, Fix Pack 1 and later, supports Solr 7.5.x through the Liferay
-Connector to Solr 7 application. 
+Connector to Solr 7 application.
+
+Liferay Portal CE 7.2, GA2 and later (not available at time of writing), support
+Solr 7.5.x through the Liferay CE Connector to Solr 7 application.

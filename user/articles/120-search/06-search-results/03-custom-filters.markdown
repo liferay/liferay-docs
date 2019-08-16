@@ -58,13 +58,13 @@ require special notation, as in the case of the _Regexp_ filter.
 : Select the query type to filter results by. Available types include Bool,
 Exists, Fuzzy, Match, Match Phrase, Match Phrase Prefix, Multi Match, Prefix,
 Query String, Regexp, Script, Simple Query String, Term, Wildcard. To learn more
-about these queries, visit the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl.html).
+about these queries, visit the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html).
 
 **Occur (select list)**
 : Set the occurrence type for the query being contributed to the search. Options
 include Filter, must, must_not, and should. To understand each type, see the
 [Elasticsearch
-documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-bool-query.html). 
+documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-bool-query.html). 
 
 **Query Name (text)**
 : Set the name of the contributed query. This is unnecessary unless this filter
