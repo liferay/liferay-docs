@@ -28,7 +28,7 @@ you're ready to download and install patches. You can install patches manually
 or automatically.
 
 If you specified the wrong folder or @product@ is not installed in the parent
-folder, the Patching Tool won't be able to find the [Liferay Home](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-portal#liferay-home)
+folder, the Patching Tool won't be able to find the [Liferay Home](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
 folder and shows an error: 
 
     The .liferay-home has not been detected in the given directory tree.
@@ -46,4 +46,3 @@ create the `.liferay-home` file and re-run the auto-discovery process.
 
 
 When the patching tool is configured, you can run `patching-tool info` and receive information about the product version.
-

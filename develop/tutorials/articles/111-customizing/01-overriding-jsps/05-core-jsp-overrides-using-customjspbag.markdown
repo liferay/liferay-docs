@@ -6,7 +6,7 @@ header-id: overriding-core-jsps
 
 [TOC levels=1-4]
 
-[Liferay's API based approaches to overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps#using-portals-api-to-override-a-jsp)
+[Liferay's API based approaches to overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps#using-liferays-api-to-override-a-jsp)
 are the best way to override JSPs in apps and in the core. You can also use
 Custom JSP Bags to override core JSPs. But the approach is not as stable as the
 API based approaches. If your Custom JSP Bag's JSP is buggy (because of your
@@ -146,7 +146,7 @@ in your module to add functionality and content.
 Remember, this type of customization should be seen as a last resort. There's a
 risk that your override will break due to the nature of this implementation, and
 core functionality in Liferay can go down with it. If the JSP you want to
-override is in another module, refer to the section on [API based approaches to overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps#using-portals-api-to-override-a-jsp).
+override is in another module, refer to the section on [API based approaches to overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps#using-liferays-api-to-override-a-jsp).
 
 ## Site Scoped JSP Customization
 

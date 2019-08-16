@@ -17,8 +17,8 @@ production environment. Here's a summary of the steps:
     [recent complete backup](/docs/7-0/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
     from production to a non-production environment in which you can analyze
     your database and test upgrading, as explained in the remaining steps. 
-2.  [Examine your database](#analyzing-your-database-step-2).
-3.  [Use Liferay's API to delete unused content](#remove-unused-data-from-the-database-using-liferays-api-step-3).
+2.  [Examine your database](#examine-your-database-step-2).
+3.  [Use Liferay's API to delete unused content](#use-liferays-api-to-remove-unused-objects-step-3).
 4.  [Run the upgrade process on your non-production environment](#execute-the-upgrade-process-step-4).
 5.  Check the upgrade log for the processes that took the most time.
 6.  Remove unused content from the upgrade processes that took the longest. If

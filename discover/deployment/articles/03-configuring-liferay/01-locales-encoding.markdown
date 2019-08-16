@@ -78,7 +78,7 @@ all nodes.
 
 Developers can add or modify certain core UI messages (e.g. *Your request
 completed successfully.*) by 
-[modifying the language keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-liferays-language-keys) 
+[modifying the language keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-global-language-keys) 
 that ship by default. 
 
 ### Right to Left
@@ -106,6 +106,6 @@ For more information, see
 
 [Using Liferay Language Settings](/docs/7-0/tutorials/-/knowledge_base/t/using-liferays-language-settings)
 
-[Modifying @product@'s Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-liferays-language-keys)
+[Modifying @product@'s Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-global-language-keys)
 
 [Overriding a Module's Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#overriding-a-modules-language-keys)

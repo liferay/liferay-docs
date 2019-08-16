@@ -77,11 +77,11 @@ Here's the Sample Struts portlet's folder structure:
 
 Upgrading a Struts portlet involves these steps:
 
-1.  [Adapt the code to @product-ver@'s API](#adapting-the-code-to-liferay-portal-7-0s-api)
+1.  Adapt the code to Liferay 7.0's API
 
-2.  [Resolve dependencies](#resolving-dependencies)
+2.  Resolve dependencies
 
-## Adapting the code to Liferay Portal 7.0's API
+## Adapting the code to Liferay 7.0's API
 
 Liferay's 
 [Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
@@ -212,7 +212,7 @@ JAR | [System exports the packages](https://github.com/liferay/liferay-portal/bl
 | Note: The official
 | [Sample Struts portlet](https://github.com/liferay/liferay-plugins/tree/master/portlets/sample-struts-portlet)
 | for @product-ver@ uses
-| [Apache Ant/Ivy](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+| [Apache Ant/Ivy](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-a-dependency-management-tool)
 | to manage dependencies.
 
 For more details on resolving dependencies, see the tutorial
@@ -262,4 +262,4 @@ Congratulations on upgrading your Struts portlet to @product-ver@!
 
 [Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 
-[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-a-dependency-management-tool)

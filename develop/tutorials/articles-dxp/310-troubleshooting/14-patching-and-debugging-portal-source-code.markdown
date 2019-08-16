@@ -19,11 +19,11 @@ customizations.
 
 Here's how:
 
-[Step 1: Download DXP, the DXP source code, and patches](#download-dxp-the-dxp-source-code-and-patches)
+1. Download DXP, the DXP source code, and patches
 
-[Step 2: Prepare DXP](#prepare-dxp)
+2. Prepare DXP
 
-[Step 3: Patch the DXP source code](#patch-the-dxp-source-code)
+3. Patch the DXP source code
 
 ## Step 1: Download DXP, the DXP source code, and patches
 
@@ -39,7 +39,7 @@ Here's how:
 Next you'll install and configure DXP. DXP's patching tool lets you install fix
 packs and fix pack source code. If you have a patched DXP installation already
 and want to use it, skip to the section
-[Patching the DXP Source Code](#patch-the-dxp-source-code).
+*Patching the DXP Source Code*.
 
 ## Step 2: Prepare DXP
 
@@ -49,7 +49,7 @@ Preparing DXP locally involves installing, configuring, and patching DXP.
 
 Here's how to install and configure DXP: 
 
-1.   [Install and Deploy DXP](/docs/7-0/deploy/-/knowledge_base/d/deploying-liferay-portal)
+1.   [Install and Deploy DXP](/docs/7-0/deploy/-/knowledge_base/d/deploying-product)
 locally. 
 
 2.  Start DXP.

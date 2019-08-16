@@ -46,11 +46,11 @@ These files have Spring-related content:
 
 Here are the Spring MVC portlet upgrade steps:
 
-1.  [Adapt the code to @product-ver@'s API](#adapt-the-code-to-liferay-api-changes)
+1.  Adapt the code to Liferay 7.0's API
 
-2.  [Resolve dependencies](#resolve-dependencies)
+2.  Resolve dependencies
 
-## Adapt the code to @product-ver@'s API
+## Adapt the code to Liferay 7.0's API
 
 The
 [Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
@@ -173,6 +173,6 @@ You've upgraded a Spring MVC portlet to @product-ver@. Way to go!
 
 [Migrating Plugins SDK Projects to Workspace and Gradle](/docs/7-0/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 
-[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-a-dependency-management-tool)
 
 [Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)

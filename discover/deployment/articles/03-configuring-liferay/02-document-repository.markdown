@@ -206,7 +206,7 @@ through the UI. The CMIS store allows you to do just that.
 | [connect to external repositories](/docs/7-0/user/-/knowledge_base/u/using-external-repositories)
 | using CMIS. 
 
-If you wish to use the CMIS store, follow the instructions [here](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration#cmis)
+If you wish to use the CMIS store, follow the instructions [here](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration#cmis-store)
 to set it up. The @product@ repository is connected to CMIS via the CMIS store. As
 long as all nodes are pointing to your CMIS repository, everything in your
 @product@ cluster should be fine, as the CMIS protocol prevents multiple

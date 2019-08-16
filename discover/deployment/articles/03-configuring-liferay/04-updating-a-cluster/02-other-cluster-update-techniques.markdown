@@ -17,11 +17,11 @@ Maintenance changes ineligible for rolling restart are typically done on all
 nodes at once, when they're shut down. The following sections describe
 techniques for applying these changes.
 
-- [Custom Plugin/Module Data Schema Changes](#custom-plugin-module-data-schema-changes)
-- [Custom Plugin/Module Data Changes](#custom-plugin-module-data-changes)
-- [Non-revertible Fix Packs (DXP only)](#non-revertible-fix-packs-dxp-only)
-- [Service Builder Service Schema Version Changes](#service-builder-service-schema-version-changes)
-- [Cluster Code Changes](#cluster-code-changes)
+- Custom Plugin/Module Data Schema Changes
+- Custom Plugin/Module Data Changes
+- Non-revertible Fix Packs (DXP only)
+- Service Builder Service Schema Version Changes
+- Cluster Code Changes
 
 Data schema changes are explained first. 
 

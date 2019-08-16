@@ -24,11 +24,11 @@ attributes. Artifacts have these attributes:
 This tutorial shows you how to make sure your projects have the right
 dependencies: 
 
--   [Find Core @product@ artifacts](#finding-core-liferay-portal-artifacts)
--   [Find @product@ app and independent artifacts](#finding-liferay-portal-app-and-independent-artifacts)
--   [Configure dependencies](#configuring-dependencies)
+-   Find Core artifacts
+-   Find Liferay app and independent artifacts
+-   Configure dependencies
 
-## Finding Core @product@ Artifacts
+## Finding Core Artifacts
 
 Each Liferay artifact is a JAR file whose `META-INF/MANIFEST.MF` file contains
 the artifact's OSGi metadata. The manifest also specifies the artifact's
@@ -63,7 +63,7 @@ This table lists the group ID, artifact ID, version, and origin for each core
 Next, you'll learn how to find artifacts for @product@ apps and independent 
 modules. 
 
-## Finding @product@ App and Independent Artifacts
+## Finding Liferay App and Independent Artifacts
 
 Independent modules and modules that make up @product@'s apps aren't part of the 
 @product@ core. You must still, however, find their artifact attributes if you 
@@ -72,7 +72,7 @@ artifact details for @product@'s apps and independent modules:
 
  Resource | Artifact Type |
 :-------- | :-------------- |
-[App Manager](#liferay-portals-app-manager) | Deployed modules |
+[App Manager](#app-manager) | Deployed modules |
 [Reference Docs](#reference-docs) | @product@ modules (per release) |
 [Maven Central](#maven-central) | All artifact types: @product@ and third party, module and non-module |
 
@@ -82,7 +82,7 @@ artifact details for @product@'s apps and independent modules:
 The App Manager is the best source for information on deployed modules. You'll 
 learn about it next. 
 
-### @product@'s App Manager
+### App Manager
 
 [The App Manager](/docs/7-0/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager) 
 knows what's deployed on your @product@ server. You can use it to find whatever
@@ -160,7 +160,7 @@ aren't yet deployed to your @product@ instance.
 
 | **Note:** To find artifact information on a Core @product@ artifact, refer to
 | the previous section
-| [Finding Core @product@ artifacts](#finding-core-liferay-portal-artifacts).
+| [Finding Core artifacts](#finding-core-artifacts).
 
 Follow these steps to find a @product@ app module's attributes in the Javadoc: 
 

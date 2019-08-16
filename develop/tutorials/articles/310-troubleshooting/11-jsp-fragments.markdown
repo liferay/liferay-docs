@@ -21,7 +21,7 @@ specify the host module and host module version:
     Fragment-Host: com.liferay.login.web;bundle-version="1.1.18"
 
 For information on finding the versions of your deployed modules, 
-[click here](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts). 
+[click here](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-app-and-independent-artifacts). 
 
 For more information on overriding JSPs, 
 [click here](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps). 

@@ -34,7 +34,7 @@ Application localization topics:
 -   [Where do I Put Language Files?](#where-do-i-put-language-files)
 -   [Creating a Language Module](#creating-a-language-module)
 -   [Using a Language Module](#using-a-language-module)
--   [Using @product@'s Language Properties](#using-liferays-language-properties)
+-   [Using Global Language Properties](#using-global-language-properties)
 
 ## What are Language Keys?
 
@@ -319,7 +319,7 @@ plugin's language keys.
 Did you know that @product@'s core language keys are also available to your
 module? They're up next. 
 
-## Using @product@'s Language Properties
+## Using Global Language Properties
 
 If you have @product@'s source code, you can check out @product@'s core language
 properties by looking in the `portal-impl/src/main/content` folder. Otherwise,

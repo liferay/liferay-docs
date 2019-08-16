@@ -20,7 +20,7 @@ hotfixes.
 | Certain fix packs (service packs) can include data/schema micro
 | changes---they're optional and revertible. Module upgrades are applied at server
 | startup by default, or can be applied manually by
-| [disabling the `autoUpgrade` property](/docs/7-0/deploy/-/knowledge_base/d/running-the-upgrade-process#configuring-module-upgrades).
+| [disabling the `autoUpgrade` property](/docs/7-0/deploy/-/knowledge_base/d/running-the-upgrade-process#configuring-non-core-module-upgrades).
 | You can apply any upgrades using the
 | [upgrade tool](/docs/7-0/deploy/-/knowledge_base/d/upgrading-to-liferay-7)
 | before server startup.

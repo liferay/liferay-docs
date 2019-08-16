@@ -17,9 +17,9 @@ your new service.
 
 Here are the steps for overriding a component's service reference:
 
-1.  [Find the component and service details](#find-the-component-and-service-reference)
-2.  [Create a custom service](#create-a-custom-service)
-3.  [Configure the component to use the custom service](#configure-the-component-to-use-the-custom-service)
+1.  Find the component and service details.
+2.  Create a custom service.
+3.  Configure the component to use the custom service.
 
 Throughout the tutorial, example modules `override-my-service-reference` and
 `overriding-service-reference` are used. You can download them and build them

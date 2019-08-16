@@ -27,7 +27,7 @@ Workspace comes with [Blade
 CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli): a command line tool for
 creating and deploying modules, managing the runtime environment, and more. It
 provides all kinds of module
-[templates](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli#module-templates),
+[templates](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli#project-templates),
 to create modules for developing in any Gradle environment. 
 
 Liferay's tools also streamline the application upgrade process. Liferay @ide@'s
@@ -36,7 +36,7 @@ adapts traditional plugins to @product-ver@ APIs.
 [Liferay's Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 [migrates](/docs/7-0/tutorials/-/knowledge_base/t/migrating-a-6-2-theme-to-liferay-7)
 themes and layout templates to the new NodeJS-based environment and
-[adapts](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-themes#running-the-upgrade-task-for-themes-generator-themes)
+[adapts](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-themes#running-the-upgrade-task-for-themes-that-use-liferay-js-theme-toolkit)
 them to @product-ver@.
 
 @product@ offers you more with
@@ -65,7 +65,7 @@ Maven.
 
 Here are Workspace's key features:
 
--   [Module and component templates](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli#module-templates)
+-   [Module and component templates](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli#project-templates)
 -   [Sample projects](/docs/7-0/tutorials/-/knowledge_base/t/liferay-sample-modules)
 -   Portal server configurations
 -   Folder structure flexibility
