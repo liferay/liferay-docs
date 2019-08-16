@@ -1,4 +1,10 @@
+---
+header-id: returning-results
+---
+
 # Returning Results
+
+[TOC levels=1-4]
 
 When a model entity's indexed search document is obtained during a search
 request, it's converted into a summary of the model entity. You can exert

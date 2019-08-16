@@ -1,4 +1,10 @@
+---
+header-id: searching-the-index-for-model-entities
+---
+
 # Searching the Index for Model Entities
+
+[TOC levels=1-4]
 
 The heart of searching for your model entity documents is querying for what you
 indexed. To do this, contribute search terms to the @product@ search query.

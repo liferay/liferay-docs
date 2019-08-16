@@ -1,4 +1,10 @@
+---
+header-id: indexing-model-entities
+---
+
 # Indexing Model Entities
+
+[TOC levels=1-4]
 
 Model entities are searchable when their data fields are indexed by the search
 engine. Search and indexing code relies on Search APIs and SPIs.

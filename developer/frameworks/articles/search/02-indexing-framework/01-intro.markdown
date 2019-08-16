@@ -1,3 +1,7 @@
+---
+header-id: model-entity-indexing-framework
+---
+
 # Model Entity Indexing Framework
 
 [TOC levels=1-4]

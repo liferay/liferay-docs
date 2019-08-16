@@ -1,4 +1,10 @@
+---
+header-id: search-service-registration
+---
+
 # Search Service Registration
+
+[TOC levels=1-4]
 
 The search framework must know about your entity and how to handle it during a
 search request. To register model entities with Liferay's search framework,
