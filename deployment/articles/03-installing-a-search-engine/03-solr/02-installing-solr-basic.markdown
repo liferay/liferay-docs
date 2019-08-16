@@ -24,8 +24,7 @@ There are two ways to install the Liferay Connector to Solr 7:
    &rarr; *Store*. Sign in using your credentials, search for Solr Search
    Engine, and purchase (it's free) the Liferay Connector to Solr 7 entry.
 
-This guide leads you through installing and configuring Solr. As you proceed,
-remember these terms: 
+As you proceed, remember these terms: 
 
 *Solr Home*: The center of the Solr system (pun intended). This directory is
 `solr-[version]/server/solr`.
