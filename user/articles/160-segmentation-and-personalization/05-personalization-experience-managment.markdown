@@ -39,6 +39,17 @@ Segment for the Experience.
 Experience. If a user meets the criteria for more than one Experience, the
 highest ordered one is displayed.
 
+When creating a new Experience, you must define the audience by choosing a
+Segment. If your target audience for the Experience is not yet represented by a
+Segment, you can create one from the New Experience interface.
+
+![Figure 2: You can add a new Segment while creating a new Experience.](../../images/add-seg-from-exp.png)
+
+| **Note:** Creating new Segments from the New Experience interface is available
+| in Liferay DXP 7.2 Fix Pack 1+ and Liferay Portal GA2+.
+
+Next you'll learn about managing Content Set personalization.
+
 ## Managing Content Set Personalization
 
 Managing Personalization options for Content Sets is similar. First you must 
