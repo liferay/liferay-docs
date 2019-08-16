@@ -28,62 +28,62 @@ reference, and is generated when the theme is compiled.
 - `theme-name/`
     - `build/`(generated when the theme is compiled)
         - `css/`
-            - [`_application.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#application-scss)
-            - [`_aui_custom.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#auicustom-scss)
-            - [`_aui_variables.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#auivariables-scss)
-            - [`_base.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#base-scss)
-            - [`_custom.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#custom-scss)
-            - [`_extras.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#extras-scss)
-            - [`_imports.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#imports-scss)
-            - [`_layout.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#layout-scss)
-            - [`_liferay_custom.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#liferaycustom-scss)
-            - [`_liferay_variables_custom.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#liferayvariablescustom-scss)
-            - [`_liferay_variables.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#liferayvariables-scss)
-            - [`_navigation.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#navigation-scss)
-            - [`_portal.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#portal-scss)
-            - [`_portlet.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#portlet-scss)
-            - [`_taglib.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#taglib-scss)
+            - [`_application.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-applicationscss)
+            - [`_aui_custom.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-aui-customscss)
+            - [`_aui_variables.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-aui-variablesscss)
+            - [`_base.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-basescss)
+            - [`_custom.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-customscss)
+            - [`_extras.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-extrasscss)
+            - [`_imports.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-importsscss)
+            - [`_layout.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-layoutscss)
+            - [`_liferay_custom.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-liferay-customscss)
+            - [`_liferay_variables_custom.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-liferay-variables-customscss)
+            - [`_liferay_variables.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-liferay-variablesscss)
+            - [`_navigation.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-navigationscss)
+            - [`_portal.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-portalscss)
+            - [`_portlet.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-portletscss)
+            - [`_taglib.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#-taglibscss)
             - `application/`
             - `aui/`
-            - [`aui.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#aui-scss)
+            - [`aui.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#auiscss)
             - `base/`
-            - [`font-awesome.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#font-awesome-scss)
+            - [`font-awesome.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#font-awesomescss)
             - `layout/`
-            - [`main.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#main-scss)
+            - [`main.scss`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#mainscss)
             - `navigation/`
             - `portal/`
             - `portlet/`
             - `taglib/`
         - `templates/`
-            - [`init_custom.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#initcustom-ftl)
-            - [`init.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#init-ftl)
-            - [`navigation.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#navigation-ftl)
-            - [`portal_normal.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#portalnormal-ftl)
-            - [`portal_pop_up.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#portalpopup-ftl)
-            - [`portlet.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#portlet-ftl)
+            - [`init_custom.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#init-customftl)
+            - [`init.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#initftl)
+            - [`navigation.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#navigationftl)
+            - [`portal_normal.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#portal-normalftl)
+            - [`portal_pop_up.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#portal-pop-upftl)
+            - [`portlet.ftl`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#portletftl)
             - (other directories that have been copied from src)
     - `dist/` (generated when the theme is compiled. This is where the theme's 
     war file is placed after a build/deploy.)
     - [`gulpfile.js`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#gulpfile-js)
-    - [`liferay-theme.json`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#liferay-theme-json)
+    - [`liferay-theme.json`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#liferay-themejson)
     - `node_modules/` (generated when an `npm install` command is run from the 
     root of the theme, and can be deleted at anytime and re-generated by running 
     `npm install`.)
         - (many directories)
-    - [`package.json`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#package-json)
+    - [`package.json`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#packagejson)
     - `src/`
         - `css/`
             - (modified CSS files)
         - `images/`
             -   (many directories)
         - `js/`
-            - [`main.js`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#main-js)
+            - [`main.js`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#mainjs)
         - `templates/`
             - (Modified theme templates)
         - `WEB-INF/`
                 - `lib/`
-            - [`liferay-look-and-feel.xml`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#liferay-look-and-feel-xml)
-            - [`liferay-plugin-package.properties`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#liferay-plugin-package-properties)
+            - [`liferay-look-and-feel.xml`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#liferay-look-and-feelxml)
+            - [`liferay-plugin-package.properties`](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide#liferay-plugin-packageproperties)
             - `src/`
                 - `resources-importer/`
                     - (Many directories)

@@ -144,7 +144,7 @@ guide can't realistically cover. Therefore, it's recommended that you make
 changes gradually, rather than all at once. This allows you to more easily 
 identify any issues your theme may have.
 
-Please refer to the [Appendix](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-your-theme-from-6-1-to-7-0#appendix) 
+Please refer to the [Appendix](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-your-theme-from-6-1-to-7-0#appendix-making-manual-compatibility-adjustments-to-your-theme) 
 below for ways on how to update your theme manually.
 
 Follow the instructions in the next section to build and deploy your theme.
