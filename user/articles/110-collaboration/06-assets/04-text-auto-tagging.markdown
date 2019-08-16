@@ -27,6 +27,11 @@ Text auto tagging is disabled by default. To use it, you must enable it:
     asset types you want to auto tag. You'll learn how to do this here. Note 
     that these providers aren't configured or enabled by default. 
 
+| **Note:** Prior to Liferay DXP Fix Pack 1 and Liferay Portal CE GA2, you must 
+| enable these providers separately for each content type in System/Instance 
+| Settings. For example, you must enable text auto tagging for documents and 
+| web content in *Documents and Media* and *Web Content*, respectively. 
+
 There are two text auto-tagging providers in the portal: 
 
 [**Google Cloud Natural Language Text Auto Tagging:**](#configuring-google-cloud-natural-language-text-auto-tagging) 

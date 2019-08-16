@@ -24,6 +24,10 @@ Image auto tagging is disabled by default. To use it, you must do two things:
 2.  Ensure that an image auto tagging provider is enabled. These providers are
     disabled by default. Here, you'll learn how to enable/disable them. 
 
+| **Note:** Prior to Liferay DXP Fix Pack 1 and Liferay Portal CE GA2, you must 
+| configure the providers shown here in *Documents and Media* instead of 
+| *Assets* (in System/Instance Settings). 
+
 Three such providers are available: 
 
 [**TensorFlow:**](#configuring-tensorflow-image-auto-tagging) 
