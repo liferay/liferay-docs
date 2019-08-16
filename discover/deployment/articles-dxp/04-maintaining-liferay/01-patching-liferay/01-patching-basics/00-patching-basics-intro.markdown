@@ -31,15 +31,11 @@ application suites.
 
 ## Service Packs
 
-Service packs for the @product@ are released about every two months. The
-schedule depends on the need and security fix releases. They include the latest
-patches and updates for our customers who are just about to start their new
-projects. The service packs are built on the top of the original @product@
-release and repackaged with the latest fix pack, Patching Tool and modules.
-Since a service pack contains the latest fix pack, it contains all previous fix
-packs since the last service pack. If starting a new project, always start with
-the latest service pack. 
-
+Service packs are built on the top of the original @product@ release and
+repackaged with the latest fix pack, Patching Tool and modules. Since a service
+pack contains the latest fix pack, it contains all previous fix packs since the
+last service pack. If starting a new project, always start with the latest
+service pack. 
 
 Rather than use the service packs to keep existing systems updated, existing
 customers should
