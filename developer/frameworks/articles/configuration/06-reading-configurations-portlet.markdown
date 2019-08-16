@@ -28,7 +28,7 @@ class.
 
 1.  Imports first:
 
-```java
+    ```java
     package com.liferay.docs.exampleconfig;
 
     import java.io.IOException;
@@ -46,14 +46,14 @@ class.
     import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
     import com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil;
-```
+    ```
 
 2.  MVC Portlet classes are Component classes. If you have a Bean Portlet or
     PortletMVC4Spring class, the configuration below goes in `portlet.xml` and
     `liferay-portlet.xml`. To mate the configuration with the Component, provide
     the `configurationPid` property with the FQCN of the configuration class. 
 
-```java
+    ```java
     @Component(
         configurationPid = "com.liferay.docs.exampleconfig.ExampleConfiguration",
         immediate = true,
@@ -68,7 +68,7 @@ class.
         service = Portlet.class
     )
     public class ExampleConfigPortlet extends MVCPortlet {
-```
+    ```
 
     Note that you can specify more than one configuration PID here by enclosing
     the values in curly braces (`{}`) and placing commas between each PID.
@@ -77,7 +77,7 @@ class.
     This ensures that the method is invoked when the Component is started, and
     again whenever the configuration is changed.
 
-```java
+    ```java
     @Activate
     @Modified
     protected void activate(Map<String, Object> properties) {
@@ -86,7 +86,7 @@ class.
     }
 
     private volatile ExampleConfiguration _configuration;
-```
+    ```
 
 A volatile field `_configuration` is created by the `createConfigurable` method.
 Now the field can be used to retrieve configuration values or to set the values
@@ -98,10 +98,10 @@ In the case of reading from a JSP, add the configuration object to the request
 object so its values can be read from the JSPs that comprise the application's
 view layer. 
 
-1. Add the configuration object to the request. Here's what it looks like in a
-   simple portlet's `doView` method:
+1.  Add the configuration object to the request. Here's what it looks like in a
+    simple portlet's `doView` method:
 
-```java
+    ```java
     @Override
     public void doView(RenderRequest renderRequest,
         RenderResponse renderResponse) throws IOException, PortletException {
@@ -111,7 +111,7 @@ view layer.
 
         super.doView(renderRequest, renderResponse);
     }
-```
+    ```
 
     The main difference between this example and the component class covered in
     the
@@ -119,19 +119,19 @@ view layer.
     is that this class is a portlet class and it sets the configuration object
     as a request attribute in its `doView()` method. 
 
-2. Read configuration values from a JSP. First add these imports to the top of
-   your `view.jsp` file:
+2.  Read configuration values from a JSP. First add these imports to the top of
+    your `view.jsp` file:
 
-```jsp
+    ```markup
     <%@ page import="com.liferay.docs.exampleconfig.ExampleConfiguration" %>
     <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
-```
+    ```
 
-3. In the JSP, obtain the configuration object from the request object and read
-   the desired configuration value from it. Here's a `view.jsp` file that does
-   this:
+3.  In the JSP, obtain the configuration object from the request object and read
+    the desired configuration value from it. Here's a `view.jsp` file that does
+    this:
 
-```jsp
+    ```markup
     <%@ include file="/init.jsp" %>
 
     <p>
@@ -146,7 +146,7 @@ view layer.
     %>
 
     <p>Favorite color: <span style="color: <%= favoriteColor %>;"><%= favoriteColor %></span></p
-```
+    ```
 
 The example code here would make the application display a message like this:
 

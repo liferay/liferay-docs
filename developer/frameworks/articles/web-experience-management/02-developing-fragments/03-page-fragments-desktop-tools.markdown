@@ -107,7 +107,10 @@ toolkit imported into @product@ automatically.
 - To preview how a fragment will look when it's imported, run `npm run preview`.
   This renders a fragment on a specified Liferay server without importing it.
   When changes are made to the fragment while it's previewed, changes are auto
-  reloaded to rapidly display updates.
+  reloaded to rapidly display updates. Note, this is available for @product-ver@
+  Fix Pack 1 or higher. You must install the
+  [OAuth 2](https://web.liferay.com/marketplace/-/mp/application/109571986)
+  plugin in your portal instance for this command to work properly.
 
 - To create a `.zip` file that can be manually imported into @product@, run
   `npm run compress`.

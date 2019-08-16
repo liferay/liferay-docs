@@ -17,7 +17,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.wsdd.builder", version: "1.0.13"
@@ -40,7 +40,7 @@ Since the plugin automatically resolves the Liferay WSDD Builder library as a
 dependency, you have to configure a repository that hosts the library and its
 transitive dependencies. The Liferay CDN repository hosts them all:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -73,7 +73,7 @@ Liferay WSDD Build Service requires an additional classpath (configured with the
 The `buildWSDD` task uses the following default value, which creates an implicit
 dependency to the `compileJava` task:
 
-```gradle
+```groovy
 tasks.compileJava.outputs.files + sourceSets.main.compileClasspath + sourceSets.main.runtimeClasspath
 ```
 
@@ -115,7 +115,7 @@ dependency to the latest released version of the Liferay WSDD Builder. It is
 possible to override this setting and use a specific version of the tool by
 manually adding a dependency to the `wsddBuilder` configuration:
 
-```gradle
+```groovy
 dependencies {
     wsddBuilder group: "com.liferay", name: "com.liferay.portal.tools.wsdd.builder", version: "1.0.10"
 }

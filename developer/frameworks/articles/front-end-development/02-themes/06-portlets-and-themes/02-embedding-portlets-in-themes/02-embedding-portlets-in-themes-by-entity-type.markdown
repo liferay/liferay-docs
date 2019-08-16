@@ -14,25 +14,25 @@ based on those given parameters. Follow these steps:
     expects two parameters: the type of action and the class name of the entity 
     type the portlet should handle. An example configuration is shown below:
 
-```markup
-<@liferay_portlet["runtime"]
-    portletProviderAction=portletProviderAction.VIEW
-    portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry"
-/>
-```
+    ```markup
+    <@liferay_portlet["runtime"]
+        portletProviderAction=portletProviderAction.VIEW
+        portletProviderClassName="com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry"
+    />
+    ```
     This example declares that the theme is requesting to view language entries. 
     @product@ determines which deployed portlet to use in this case by providing 
     the portlet with the highest service ranking. 
 
-| **Note:** In some cases, a default portlet is already provided to fulfill
-| certain requests. You can override the default portlet with your custom
-| portlet by specifying a higher service rank. To do this, set the following
-| property in your class' `@Component` declaration:
-| 
-|     property= {"service.ranking:Integer=20"}
-| 
-| Make sure you set the service ranking higher than the default portlet being
-| used.
+    | **Note:** In some cases, a default portlet is already provided to fulfill
+    | certain requests. You can override the default portlet with your custom
+    | portlet by specifying a higher service rank. To do this, set the following
+    | property in your class' `@Component` declaration:
+    | 
+    |     property= {"service.ranking:Integer=20"}
+    | 
+    | Make sure you set the service ranking higher than the default portlet being
+    | used.
 
 2.  The Portal is not yet configured to handle this request. You must create a 
     module that can find the portlet that fits the theme's request. 
@@ -52,13 +52,13 @@ based on those given parameters. Follow these steps:
 
 4.  Directly above the class's declaration, insert the following annotation:
 
-```java
-@Component(
-    immediate = true,
-    property = {"model.class.name=CLASS_NAME"},
-    service = INTERFACE.class
-)
-```
+    ```java
+    @Component(
+        immediate = true,
+        property = {"model.class.name=CLASS_NAME"},
+        service = INTERFACE.class
+    )
+    ```
 
     The `property` element must match the entity type you specified in your 
     theme declaration (e.g., 
@@ -73,30 +73,30 @@ based on those given parameters. Follow these steps:
     A common use case is to implement the `getPortletId()` and 
     `getPlid(ThemeDisplay)` methods. Below is an example configuration:
 
-```java    
-@Override
-public String getPortletName() {
-  return SiteNavigationLanguagePortletKeys.SITE_NAVIGATION_LANGUAGE;
-}
+    ```java    
+    @Override
+    public String getPortletName() {
+      return SiteNavigationLanguagePortletKeys.SITE_NAVIGATION_LANGUAGE;
+    }
 
-@Override
-public PortletURL getPortletURL(
-    HttpServletRequest httpServletRequest, Group group)
-  throws PortalException {
+    @Override
+    public PortletURL getPortletURL(
+        HttpServletRequest httpServletRequest, Group group)
+      throws PortalException {
 
-  return PortletURLFactoryUtil.create(
-    httpServletRequest, getPortletName(), PortletRequest.RENDER_PHASE);
-}
+      return PortletURLFactoryUtil.create(
+        httpServletRequest, getPortletName(), PortletRequest.RENDER_PHASE);
+    }
 
-/**
- * @deprecated As of Judson (7.1.x)
- */
-@Deprecated
-@Override
-protected long getPlid(ThemeDisplay themeDisplay) throws PortalException {
-  return themeDisplay.getPlid();
-}
-```
+    /**
+     * @deprecated As of Judson (7.1.x)
+     */
+    @Deprecated
+    @Override
+    protected long getPlid(ThemeDisplay themeDisplay) throws PortalException {
+      return themeDisplay.getPlid();
+    }
+    ```
 
     This returns the portlet ID and the PLID, which is the ID that uniquely 
     identifies a page used by your theme. By retrieving these, your theme will 

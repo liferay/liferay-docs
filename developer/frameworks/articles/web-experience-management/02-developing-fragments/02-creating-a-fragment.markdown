@@ -60,15 +60,15 @@ area where content can be entered:
 
 2.  Replace the code in the CSS pane with the following:
 
-   ```css
-   .basic-section {
-   }
+    ```css
+    .basic-section {
+    }
 
-   .basic-section .aspect-ratio {
-   	    max-width: inherit;
+    .basic-section .aspect-ratio {
+    	    max-width: inherit;
         width: 100%;
-   }
-   ```
+    }
+    ```
 
 3.  Click *Publish* to save your work and make it available to add to a content
     page.
@@ -94,13 +94,13 @@ a button with a link as a Component:
 
 4.  Back in the editor, add the following code inside the HTML pane:
 
-   ```html
-   <div class="basic-link-button">
-   	<lfr-editable id="btn00" type="link">
-   		<a href="#" class="btn btn-primary">Read More</a>
-   	</lfr-editable>
-   </div>
-   ```
+    ```html
+    <div class="basic-link-button">
+    	<lfr-editable id="btn00" type="link">
+    		<a href="#" class="btn btn-primary">Read More</a>
+    	</lfr-editable>
+    </div>
+    ```
 
 5.  Click *Publish* to save your work and make it available to add to a content 
     page.

@@ -26,49 +26,49 @@ Check out the Review task in the Single Approver definition, noting that several
 `<role>` tags are excluded from this snippet for brevity:
 
 ```xml
-	<task>
-		<name>review</name>
-		<actions>
-			<notification>
-				<name>Review Notification</name>
-				<template>${userName} sent you a ${entryType} for review in the workflow.</template>
-				<template-language>freemarker</template-language>
-				<notification-type>email</notification-type>
-				<notification-type>user-notification</notification-type>
-				<execution-type>onAssignment</execution-type>
-			</notification>
-			<notification>
-				<name>Review Completion Notification</name>
-				<template><![CDATA[Your submission was reviewed<#if taskComments?has_content> and the reviewer applied the following ${taskComments}</#if>.]]></template>
-				<template-language>freemarker</template-language>
-				<notification-type>email</notification-type>
-				<recipients>
-					<user />
-				</recipients>
-				<execution-type>onExit</execution-type>
-			</notification>
-		</actions>
-		<assignments>
-			<roles>
-				<role>
-					<role-type>organization</role-type>
-					<name>Organization Administrator</name>
-				</role>
-                ...
-			</roles>
-		</assignments>
-		<transitions>
-			<transition>
-				<name>approve</name>
-				<target>approved</target>
-			</transition>
-			<transition>
-				<name>reject</name>
-				<target>update</target>
-				<default>false</default>
-			</transition>
-		</transitions>
-	</task>
+<task>
+	<name>review</name>
+	<actions>
+		<notification>
+			<name>Review Notification</name>
+			<template>${userName} sent you a ${entryType} for review in the workflow.</template>
+			<template-language>freemarker</template-language>
+			<notification-type>email</notification-type>
+			<notification-type>user-notification</notification-type>
+			<execution-type>onAssignment</execution-type>
+		</notification>
+		<notification>
+			<name>Review Completion Notification</name>
+			<template><![CDATA[Your submission was reviewed<#if taskComments?has_content> and the reviewer applied the following ${taskComments}</#if>.]]></template>
+			<template-language>freemarker</template-language>
+			<notification-type>email</notification-type>
+			<recipients>
+				<user />
+			</recipients>
+			<execution-type>onExit</execution-type>
+		</notification>
+	</actions>
+	<assignments>
+		<roles>
+			<role>
+				<role-type>organization</role-type>
+				<name>Organization Administrator</name>
+			</role>
+              ...
+		</roles>
+	</assignments>
+	<transitions>
+		<transition>
+			<name>approve</name>
+			<target>approved</target>
+		</transition>
+		<transition>
+			<name>reject</name>
+			<target>update</target>
+			<default>false</default>
+		</transition>
+	</transitions>
+</task>
 ```
 
 There are two `actions` in the review task, both `<notification>`s. Each
@@ -90,25 +90,25 @@ define the assignment. For an example, see the
 `single-approver-definition-scripted-assignment.xml`.
 
 ```xml
-    <assignments>
-        <roles>
-            <role>
-                <role-type>organization</role-type>
-                <name>Organization Administrator</name>
-            </role>
-        </roles>
-    </assignments>
+<assignments>
+    <roles>
+        <role>
+            <role-type>organization</role-type>
+            <name>Organization Administrator</name>
+        </role>
+    </roles>
+</assignments>
 ```
 
 The above assignment specifies that an Organization Administrator must complete
 the task.
 
 ```xml
-    <assignments>
-        <user>
-            <user-id>20156</user-id>
-        </user>
-    </assignments>
+<assignments>
+    <user>
+        <user-id>20156</user-id>
+    </user>
+</assignments>
 ```
 
 The above assignment specifies that only the user with the user ID of 20156 may
@@ -200,11 +200,11 @@ permission for the VIEW action on the roles resource).
 Here's what the assignment's XML looks like:
 
 ```xml
-    <assignments>
-        <resource-actions>
-            <resource-action>UPDATE</resource-action>
-        </resource-actions>
-    </assignments>
+<assignments>
+    <resource-actions>
+        <resource-action>UPDATE</resource-action>
+    </resource-actions>
+</assignments>
 ```
 
 Now when the workflow proceeds to the task with the resource action assignment,
@@ -237,28 +237,28 @@ timer actions include sending an additional notification, reassigning the asset,
 or creating a timer action.
 
 ```xml
-    <task-timers>
-        <task-timer>
-            <name></name>
-            <delay>
-                <duration>1</duration>
-                <scale>hour</scale>
-            </delay>
-            <blocking>false</blocking>
-            <recurrence>
-                <duration>10</duration>
-                <scale>minute</scale>
-            </recurrence>
-            <timer-actions>
-                <timer-notification>
-                    <name></name>
-                    <template></template>
-                    <template-language>text</template-language>
-                    <notification-type>im</notification-type>
-                </timer-notification>
-            </timer-actions>
-        </task-timer>
-    </task-timers>
+<task-timers>
+    <task-timer>
+        <name></name>
+        <delay>
+            <duration>1</duration>
+            <scale>hour</scale>
+        </delay>
+        <blocking>false</blocking>
+        <recurrence>
+            <duration>10</duration>
+            <scale>minute</scale>
+        </recurrence>
+        <timer-actions>
+            <timer-notification>
+                <name></name>
+                <template></template>
+                <template-language>text</template-language>
+                <notification-type>im</notification-type>
+            </timer-notification>
+        </timer-actions>
+    </task-timer>
+</task-timers>
 ```
 
 The above task timer creates a notification. Specify a time period in the
@@ -271,19 +271,19 @@ the timer actions run again every ten minutes after the initial occurrence.
 Setting blocking to true prevents timer actions from recurring.
 
 ```xml
-    <timer-actions>
-        <reassignments>
-           <assignments>
-             <roles>
-              <role>
-                  <role-type></role-type>
-                  <name></name>
-              </role>
-              ...
-             </roles>
-           </assignments>
-        </reassignments>
-    </timer-actions>
+<timer-actions>
+    <reassignments>
+       <assignments>
+         <roles>
+          <role>
+              <role-type></role-type>
+              <name></name>
+          </role>
+          ...
+         </roles>
+       </assignments>
+    </reassignments>
+</timer-actions>
 ```
 
 The above snippet demonstrates how to set up a reassignment action.
@@ -291,16 +291,16 @@ The above snippet demonstrates how to set up a reassignment action.
 Like `<action>` elements, `<timer-action>` elements can contain scripts.
 
 ```xml
-    <timer-actions>
-        <timer-action>
-            <name>doSomething</name>
-            <description>Do something cool when time runs out.</description>
-            <script>
-               ...
-            </script>
-            <script-language>groovy</script-language>
-        </timer-action>
-    </timer-actions>
+<timer-actions>
+    <timer-action>
+        <name>doSomething</name>
+        <description>Do something cool when time runs out.</description>
+        <script>
+           ...
+        </script>
+        <script-language>groovy</script-language>
+    </timer-action>
+</timer-actions>
 ```
 
 The above example isn't functional but it demonstrates setting up a `<script>`

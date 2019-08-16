@@ -167,12 +167,12 @@ APIs. You can, however, enable them manually by following these steps:
     `com.liferay.headless.delivery.internal.jaxrs.application.HeadlessDeliveryApplication-default.config` 
     and add this code to it: 
 
-```properties
-oauth2.scopechecker.type="none"
-auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
-auth.verifier.auth.verifier.OAuth2RestAuthVerifier.urls.includes="*"
-auth.verifier.guest.allowed="true"
-```
+    ```properties
+    oauth2.scopechecker.type="none"
+    auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
+    auth.verifier.auth.verifier.OAuth2RestAuthVerifier.urls.includes="*"
+    auth.verifier.guest.allowed="true"
+    ```
 
     Note that the last property (`auth.verifier.guest.allowed`) lets guests 
     access public content via the APIs. To turn this off, set the property to 
@@ -184,9 +184,9 @@ auth.verifier.guest.allowed="true"
 
 3.  Test the APIs by making a request to an OpenAPI profile URL: 
 
-```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml"
-```
+    ```bash
+    curl "http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml"
+    ```
 
 You should get the OpenAPI profile for the API you sent the request to. 
 

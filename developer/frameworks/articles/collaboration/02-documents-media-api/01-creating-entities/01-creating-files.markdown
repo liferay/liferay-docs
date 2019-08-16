@@ -20,8 +20,10 @@ Follow these steps to create a file via the Documents and Media API:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the `addFileEntry` method's arguments. Since 
     it's common to create a file with data submitted by the end user, you can 
@@ -31,23 +33,24 @@ Follow these steps to create a file via the Documents and Media API:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get the data any way you wish: 
 
-        long repositoryId = ParamUtil.getLong(uploadPortletRequest, "repositoryId");
-        long folderId = ParamUtil.getLong(uploadPortletRequest, "folderId");
-        String sourceFileName = uploadPortletRequest.getFileName("file");
-        String title = ParamUtil.getString(uploadPortletRequest, "title");
-        String description = ParamUtil.getString(uploadPortletRequest, "description");
-        String changeLog = ParamUtil.getString(uploadPortletRequest, "changeLog");
-        boolean majorVersion = ParamUtil.getBoolean(uploadPortletRequest, "majorVersion");
+    ```java
+    long repositoryId = ParamUtil.getLong(uploadPortletRequest, "repositoryId");
+    long folderId = ParamUtil.getLong(uploadPortletRequest, "folderId");
+    String sourceFileName = uploadPortletRequest.getFileName("file");
+    String title = ParamUtil.getString(uploadPortletRequest, "title");
+    String description = ParamUtil.getString(uploadPortletRequest, "description");
+    String changeLog = ParamUtil.getString(uploadPortletRequest, "changeLog");
+    boolean majorVersion = ParamUtil.getBoolean(uploadPortletRequest, "majorVersion");
 
-        try (InputStream inputStream = uploadPortletRequest.getFileAsStream("file")) {
+    try (InputStream inputStream = uploadPortletRequest.getFileAsStream("file")) {
 
-            String contentType = uploadPortletRequest.getContentType("file");
-            long size = uploadPortletRequest.getSize("file");
+        String contentType = uploadPortletRequest.getContentType("file");
+        long size = uploadPortletRequest.getSize("file");
 
-            ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                    DLFileEntry.class.getName(), uploadPortletRequest);
-        }
-
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                DLFileEntry.class.getName(), uploadPortletRequest);
+    }
+    ```
 <!--Uncomment once article is available
     For more information on `ServiceContext`, see 
     Understanding ServiceContext. 
@@ -57,14 +60,16 @@ Follow these steps to create a file via the Documents and Media API:
     previous step. Note that this example does so inside the previous step's 
     try-with-resources statement: 
 
-        try (InputStream inputStream = uploadPortletRequest.getFileAsStream("file")) {
+    ```java
+    try (InputStream inputStream = uploadPortletRequest.getFileAsStream("file")) {
 
-            ...
+        ...
 
-            FileEntry fileEntry = _dlAppService.addFileEntry(
-                                repositoryId, folderId, sourceFileName, contentType, title, 
-                                description, changeLog, inputStream, size, serviceContext);
-        }
+        FileEntry fileEntry = _dlAppService.addFileEntry(
+                            repositoryId, folderId, sourceFileName, contentType, title, 
+                            description, changeLog, inputStream, size, serviceContext);
+    }
+    ```
 
     The method returns a `FileEntry` object, which this example sets to a 
     variable for later use. Note, however, that you don't have to do this. 

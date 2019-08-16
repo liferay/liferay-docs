@@ -25,7 +25,7 @@ a user export every time the user logs in. You can prevent updates to users'
 `lastLoginDate` fields from triggering LDAP user exports by setting the
 following property in your `portal-ext.properties` file:
 
-        users.update.last.login=false
+    users.update.last.login=false
 
 **Enable Group Export:** Export groups to LDAP. 
 
@@ -63,17 +63,17 @@ Password Compare bind method. This is rarely used.
 
 You can import user data from LDAP directories using the following options:
 
-**Enable Import:** Check this box to enable User import from LDAP directories.
-Users are imported as they log in. 
+**Enable Import:** Check this box to do a mass import from your LDAP
+directories. Otherwise, Users are imported as they log in. 
 
 ![Figure 1: Ziltoid and Rex have been imported because they logged in.](../../../images/imported-ldap-users.png)
 
-**Enable Import on Startup:** Check this box to do a mass import from your
-LDAP directories. Definitely leave this unchecked if you have a @product@
+**Enable Import on Startup:** Check this box to do the mass import when
+@product@ starts. Note: this box only appears if you check **Enable Import**,
+described above. Definitely leave this unchecked if you have a @product@
 cluster, or all your nodes will do a mass import when each of them starts up.
 
-**Import Interval:** When mass importing users, enter the number of users batch
-imported at a time. 
+**Import Interval:** When mass importing users, import users every X minutes. 
 
 **Import Method:** Set either User or Group. If you set this to User, @product@
 imports all users from the location specified in the server connection. If you

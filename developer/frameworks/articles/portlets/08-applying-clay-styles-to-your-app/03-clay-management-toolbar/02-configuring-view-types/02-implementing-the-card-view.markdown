@@ -52,7 +52,7 @@ Follow the steps below to create your card view:
     or user profile, and the entry's title. An example configuration is shown 
     below:
 
-    ```html
+    ```markup
     <liferay-frontend:icon-vertical-card
       actionJsp='<%= dlPortletInstanceSettingsHelper.isShowActions() ? 
       "/image_gallery_display/image_action.jsp" : StringPool.BLANK %>'

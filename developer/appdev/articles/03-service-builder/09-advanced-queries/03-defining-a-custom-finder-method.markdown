@@ -24,9 +24,11 @@ String guestbookName)`. The steps are below.
     `src/main/java` folder. Recall that you specify the `[package path]` in your
     `service.xml` file. Here's an example:
 
-        <service-builder package-path="com.liferay.docs.guestbook">
-            ...
-        </service-builder>
+    ```xml
+    <service-builder package-path="com.liferay.docs.guestbook">
+        ...
+    </service-builder>
+    ```
 
 2.  Define a `findBy*` finder method in the class you created. Make sure to add 
     any required arguments to your finder method signature.
@@ -44,13 +46,15 @@ String guestbookName)`. The steps are below.
 5.  Make sure that the finder class implements the interface. For example, the 
     class declaration should look like this:
 
-        public class GuestbookFinderImpl extends BasePersistenceImpl<Guestbook> implements GuestbookFinder
+    ```java
+    public class GuestbookFinderImpl extends BasePersistenceImpl<Guestbook> implements GuestbookFinder
+    ```
 
 Your next step is to implement the query in your finder. You can do this via the
 Dynamic Query API or Custom SQL. The next tutorial covers Dynamic Query. To
 simply call custom SQL you have written, create a finder method to run your SQL: 
 
-```xml
+```java
 public List<Entry> findByEntryNameEntryMessageGuestbookName(
     String entryName, String entryMessage, String guestbookName,
     int begin, int end) {

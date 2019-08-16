@@ -51,10 +51,10 @@ The entry point to Adaptive Media's API is
 To use it, you must first inject the OSGi component in your class (which must 
 also be an OSGi component) as follows: 
 
-    ```java
-    @Reference
-    private AMImageFinder _amImageFinder;
-    ```
+```java
+@Reference
+private AMImageFinder _amImageFinder;
+```
 
 This makes an `AMImageFinder` instance available. It has one method, 
 `getAdaptiveMediaStream`, that returns a stream of 
@@ -69,11 +69,11 @@ exact query you want to construct.
 
 For example, here's a general `getAdaptiveMediaStream` call:
 
-    ```java
-    Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
-        _amImageFinder.getAdaptiveMediaStream(
-            amImageQueryBuilder -> amImageQueryBuilder.methodToCall(arg).done());
-    ```
+```java
+Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
+    _amImageFinder.getAdaptiveMediaStream(
+        amImageQueryBuilder -> amImageQueryBuilder.methodToCall(arg).done());
+```
 
 The argument to `getAdaptiveMediaStream` is a lambda expression that returns an 
 `AMQuery` constructed via `AMImageQueryBuilder`. Note that `methodToCall(arg)` 

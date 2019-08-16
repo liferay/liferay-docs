@@ -16,8 +16,10 @@ Follow these steps to delete a file shortcut:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the file shortcut's ID. Since it's common to delete a file shortcut 
     specified by the end user, you can extract its ID from the request. This 
@@ -25,12 +27,16 @@ Follow these steps to delete a file shortcut:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can do this any way you wish: 
 
-        long fileShortcutId = ParamUtil.getLong(actionRequest, "fileShortcutId");
+    ```java
+    long fileShortcutId = ParamUtil.getLong(actionRequest, "fileShortcutId");
+    ```
 
 3.  Use the service reference to call the `deleteFileShortcut` method with the 
     file shortcut ID from the previous step: 
 
-        _dlAppService.deleteFileShortcut(fileShortcutId);
+    ```java
+    _dlAppService.deleteFileShortcut(fileShortcutId);
+    ```
 
 You can find the full code for this example in the `deleteFileShortcut` method 
 of @product@'s 

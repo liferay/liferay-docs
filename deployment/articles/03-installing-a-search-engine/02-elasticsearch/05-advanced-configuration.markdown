@@ -23,7 +23,7 @@ configurations requiring a more brute-force approach: these include the
 `additionalConfigurations`, `additionalIndexConfigurations`,
 `additionalTypeMappings`, and `overrideTypeMappings` settings. 
 
-Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
+[Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
 
 ### Additional Configurations
 
@@ -116,12 +116,16 @@ To see that your additional mappings have been added to the
 `LiferayDocumentType`, use `curl` to access this URL after saving your
 additions and re-indexing:
 
-    curl http://[HOST]:[ES_PORT]/liferay-[COMPANY_ID]/_mapping/LiferayDocumentType?pretty
+```bash
+curl http://[HOST]:[ES_PORT]/liferay-[COMPANY_ID]/_mapping/LiferayDocumentType?pretty
+```
 
 Here's what it would look like for an Elasticsearch instance running on
 `localhost:9200`, with a @product@ Company ID of `20116`:
 
-    curl http://localhost:9200/liferay-20116/_mapping/LiferayDocumentType?pretty
+```bash
+curl http://localhost:9200/liferay-20116/_mapping/LiferayDocumentType?pretty
+```
 
 In the above URL, `liferay-20116`is the index name. Including it indicates that
 you want to see the mappings that were used to create the index with that name.

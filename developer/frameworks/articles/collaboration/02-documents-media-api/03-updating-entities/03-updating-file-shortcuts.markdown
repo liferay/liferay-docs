@@ -16,8 +16,10 @@ Follow these steps to update a file shortcut:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the `updateFileShortcut` method's arguments. 
     Since it's common to update a file shortcut with data submitted by the end 
@@ -26,12 +28,14 @@ Follow these steps to update a file shortcut:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get the data any way you wish: 
 
-        long fileShortcutId = ParamUtil.getLong(actionRequest, "fileShortcutId");
-        long folderId = ParamUtil.getLong(actionRequest, "folderId");
-        long toFileEntryId = ParamUtil.getLong(actionRequest, "toFileEntryId");
+    ```java
+    long fileShortcutId = ParamUtil.getLong(actionRequest, "fileShortcutId");
+    long folderId = ParamUtil.getLong(actionRequest, "folderId");
+    long toFileEntryId = ParamUtil.getLong(actionRequest, "toFileEntryId");
 
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                    DLFileShortcutConstants.getClassName(), actionRequest);
+    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                DLFileShortcutConstants.getClassName(), actionRequest);
+    ```
 
 <!-- Uncomment once article is available
     For more information on `ServiceContext`, see the tutorial 
@@ -41,8 +45,10 @@ Follow these steps to update a file shortcut:
 3.  Call the service reference's `updateFileShortcut` method with the data from 
     the previous step: 
 
-        _dlAppService.updateFileShortcut(
-                fileShortcutId, folderId, toFileEntryId, serviceContext);
+    ```java
+    _dlAppService.updateFileShortcut(
+            fileShortcutId, folderId, toFileEntryId, serviceContext);
+    ```
 
 You can find the full code for this example in the `updateFileShortcut` method 
 of @product@'s 

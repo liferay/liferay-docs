@@ -75,7 +75,7 @@ Add back URL for Core Override JSP Sample Project code once it's ported:
         immediate = true,
         property = {
         	"context.id=BladeCustomJspBag",
-            "context.name=Test Custom JSP Bag",
+          "context.name=Test Custom JSP Bag",
         	"service.ranking:Integer=100"
         }
     )
