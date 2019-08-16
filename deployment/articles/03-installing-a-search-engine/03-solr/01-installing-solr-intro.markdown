@@ -12,10 +12,10 @@ reliable, scalable, and fault tolerant. Read more about it
 
 [Elasticsearch](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector)
 is the default search engine that ships with @product@, and some Liferay Search
-features are only available on Elasticsearch, but it's valid to use Solr
+features are only available on Elasticsearch. It's valid, however, to use Solr
 instead. In particular, if you've already been using Solr with a previous
-version of @product@, or your platform (for example, your OS or JVM) [isn't
-supported by Elasticsearch](https://www.elastic.co/support/matrix), you might
+version of @product@, or your platform (for example, your OS or JVM) 
+[isn't supported by Elasticsearch](https://www.elastic.co/support/matrix), you might
 choose to use Solr to search and index your @product@ data.
 
 There are circumstances that force you to use Elasticsearch instead of Solr.
