@@ -32,12 +32,21 @@ To update a page or template,
 2.  Click the *Propagate* icon (
     ![Propagate](../../../../../images/icon-propagate.png))
     
-After you propagate changes, visit any effected page to verify there were no
-unexpected side effects of the changes. Changes to existing `editable` fields 
-are not propagated since this overwrites content currently in content 
-pages. To force propagation to content in an `editable` field, a developer must 
-change the field ID. Any content created in that field will no longer display 
-in the Content Page when the changes are propagated, but it will remain in the 
-database and can be retrieved using the old ID.
+    After you propagate changes, visit any affected page to verify there were no
+    unexpected side effects of the changes.
+    
+    | **Note:** Developers or others testing a Fragment can enable Fragment change
+    | propagation from the Control Panel. You can learn more about this
+    | [here](/docs/7-2/frameworks/-/knowledge_base/f/managing-fragments-and-collections#propagating-fragment-changes).
+    | It's recommended to only leverage this functionality during testing, as
+    | automatic propagation on the production environment can cause unintended
+    | consequences.
+    
+    Changes to existing `editable` fields  are not propagated since this overwrites
+    content currently in content  pages. To force propagation to content in an
+    `editable` field, a developer must  change the field ID. Any content created in
+    that field will no longer display  in the Content Page when the changes are
+    propagated, but it will remain in the  database and can be retrieved using the
+    old ID.
 
 Next you'll learn how to import and export Page Fragments.

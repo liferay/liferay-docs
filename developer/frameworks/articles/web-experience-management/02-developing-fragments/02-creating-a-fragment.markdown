@@ -24,7 +24,8 @@ The list of Collections appears on the left in the Page Fragments page.
 
 1.  Ensure that you are in the *Developing Fragments* collection.
 
-2.  Click the [Add](../../../images/icon-add.png) button and select *Section*.
+2.  Click the *New* button ![New](../../../images/icon-add.png) and select
+    *Section*.
 
 3.  Name your Section *Basic Section*
 
@@ -73,7 +74,7 @@ area where content can be entered:
 3.  Click *Publish* to save your work and make it available to add to a content
     page.
 
-| Note: When you start typing the name of a tag, the HTML editor provides 
+| **Note:** When you start typing the name of a tag, the HTML editor provides 
 | auto-completion for `lfr` tags like editable elements and embeddable widgets.
 
 As you work, you can observe your changes in the preview pane.
@@ -82,13 +83,14 @@ As you work, you can observe your changes in the preview pane.
 
 ## Creating a Component
 
-Components simple, reusable elements for building a parts of a page. Next create
-a button with a link as a Component:
+Components are simple, reusable elements for building parts of a page. Next
+create a button with a link as a Component:
 
-1.  Go back to the *Page Fragments* page, and the *Developing Fragments* 
-    Collection.
+1.  Go back to the *Site Builder* &rarr; *Page Fragments* page and select the
+    *Developing Fragments* Collection.
 
-2.  Click the [Add](../../../images/icon-add.png) button and select *Component*.
+2.  Click the *New* button ![New](../../../images/icon-add.png) and select
+    *Component*.
 
 3.  Name it *Basic Component*.
 
@@ -96,9 +98,9 @@ a button with a link as a Component:
 
     ```html
     <div class="basic-link-button">
-    	<lfr-editable id="btn00" type="link">
-    		<a href="#" class="btn btn-primary">Read More</a>
-    	</lfr-editable>
+        <lfr-editable id="btn00" type="link">
+            <a href="#" class="btn btn-primary">Read More</a>
+        </lfr-editable>
     </div>
     ```
 
@@ -113,38 +115,3 @@ From here, the Fragment can be added to a Page. To see this process in action,
 see the
 [Building Content Pages](/docs/7-2/user/-/knowledge_base/u/building-content-pages)
 article.
-
-## Managing Fragments and Collections
-
-After you create Collections and Fragments, you have a handful of options for 
-managing them. To access the collections management menu,
-
-1.  Select the Collection you want to manage from the *Collections* list.
-
-2.  Click on the [Options](../../../images/icon-options.png) menu next to the 
-    collection name.
- 
-3.  Select whether you want to *Edit*, *Export*, *Import*, or *Delete* the
-    collection.
-
-**Edit**: change the name or description for the collection.
-
-**Export**: download a `.zip` file containing the full collection.
-
-**Import**: select a `.zip` file to upload with additional Fragments.
-
-**Delete**: remove the current collection and all of its contents.
-
-To access the fragment management menu,
-
-1.  Select the Collection containing the Fragment you want to manage from the 
-    *Collections* list.
- 
-2.  Click on the [Options](../../../images/icon-options.png) menu next to the 
-    Fragment name.
-
-3.  Select whether you want to *Edit*, *Rename*, *Move*, *Make a Copy*, *Change 
-    Thumbnail* *Export*, or *Delete*.
-
-Now that you've seen how to use Liferay's built-in tools to manage Fragments, 
-you can see how to do it using your own tools of choice and the Fragments CLI.
