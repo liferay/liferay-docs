@@ -8,26 +8,26 @@ header-id: data-engine
 
 Past versions of @product@ included a robust framework for creating form and
 list-based applications, either programmatically or from the Dynamic Data Lists
-Application. While Dynamic Data Lists continue to exist, a new framework was
-written, and it's much easier to use. In addition, it supports the new 
+Application. While Dynamic Data Lists continue to exist, the new Data Engine
+framework was written. It's much easier to use, and it supports the new
 [headless approach to writing APIs](/docs/7-1/tutorials/-/knowledge_base/t/headless-rest-apis). 
-In @product-ver@, only the backend APIs are available for developers. Future
-releases will add a frontend tool on top of the new Data Engine API to allow
+In @product-ver@, only the back-end APIs are available for developers. Future
+releases will add a front-end tool on top of the new Data Engine API to allow
 non-developers to create applications. For now, developers can use the API to 
 
-1.  Create frontend applications running outside the portal, making service
+1.  Create front-end applications running outside @product@, making service
     calls from a REST client to the Data Engine APIs.
 
-2.  Create applications inside the portal that call the Data Engine's local APIs
+2.  Create applications inside @product@ that call the Data Engine's local APIs
     APIs for their persistence code.
 
 To start discovering the Data Engine API and the other headless REST APIs of
 @product@, read
 [here](/docs/7-2/frameworks/-/knowledge_base/f/get-started-discover-the-api). 
 
-The Data Engine framework has four fundamental entities that you'll work with.
-You'll be familiar with the roles of each Data Engine entity if you used the
-Dynamic Data List framework in the past.
+The Data Engine framework has four fundamental entities. You'll be familiar with
+the roles of each Data Engine entity if you used the Dynamic Data List framework
+in the past.
 
 1.  Data Definitions
 2.  Data Record Collections
@@ -42,10 +42,10 @@ Data Definitions (`DataDefinition`s) hold the form's field types (e.g., text,
 boolean, date, radio buttons, selector menus, etc.) and those fields' labels and
 settings. Data definitions effectively serve as data models for a Data
 Collection. For example, you could create a data definition with two text
-fields: one for a user's name, and one for their comments. 
+fields: one for users' names and one for their comments. 
 
-It's important to understand that deleting a data definition will simultaneously
-delete all the entities associated with it (Data Record Collections, Data
+It's important to understand that deleting a data definition simultaneously
+deletes all the entities associated with it (Data Record Collections, Data
 Records, and Data Layouts).
 
 ## Data Record Collections
@@ -63,9 +63,9 @@ Collection.
 
 There's another important piece to the Data Engine framework: data display.
 
-Data Layouts are used to display the form fields (defined in the data
-definition) in rows and columns.
+Data Layouts display the form fields (defined in the data definition) in rows
+and columns.
 
-The articles in this section will show example calls to the Data Engine REST
-API for each entity. For a complete reference guide to the API, visit the
+The articles in this section show example calls to the Data Engine REST API for
+each entity. For a complete reference guide to the API, visit the
 [SwaggerHub profile](https://app.swaggerhub.com/apis/liferayinc/data-engine/1.0).
