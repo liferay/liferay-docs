@@ -7,19 +7,20 @@ header-id: low-level-search-options-searching-additional-or-alternate-indexes
 [TOC levels=1-4]
 
 Low level search is a new concept in @product@ version 7.2: it's a search that
-doesn't go through the [Search and Indexing
-Framework](/docs/7-2/frameworks/-/knowledge_base/f/model-entity-indexing-framework),
+doesn't go through the 
+[Search and Indexing Framework](/docs/7-2/frameworks/-/knowledge_base/f/model-entity-indexing-framework),
 which is infrastructure used for searching documents in the Liferay Index.
 
 A common use case for a low level search is to query an index other than the
-@product@ index. By default, [Search
-Pages](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages) search the
+@product@ index. By default, 
+[Search Pages](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages) search the
 @product@ index, but you can also search another index, as long as it's in the
-same Elasticsearch cluster (this feature does not work with Solr). Add the Low Level
-Search Options widget to a search page, and configure it to direct the search to
-the alternate index. To search multiple indexes from the same page, can add
-multiple Low Level Search Options widgets, and configure each one with its own
-Index Name and Federated Search Key.
+same Elasticsearch cluster (this feature does not work with Solr). 
+
+Add the Low Level Search Options widget to a search page and configure it to
+direct the search to the alternate index. To search multiple indexes from the
+same page, you can add multiple Low Level Search Options widgets and configure
+each one with its own Index Name and Federated Search Key.
 
 Searching alternate indexes is a low level operation that bypasses the @product@
 permission checking mechanisms, presenting whatever results the search engine
@@ -51,11 +52,11 @@ _Configure additional low level search options in this page._
 enter the standard Liferay index name.
 
 **Fields to Return:**
-: Enter the names of the stored fields to be returned from the search engine, in
-a comma-separated list. Leave it blank to return all stored fields are returned.
+: Enter the names of the stored fields to be returned from the search engine in
+a comma-separated list. Leave it blank to return all stored fields.
 
 **Contributors to Include:**
-: Enter the ids of registered search contributors to be included at this search,
+: Enter the ids of registered search contributors to be included in this search
 in a comma-separated list of each `SearchRequestContributor`'s Fully Qualified
 Class Name (e.g.,
 `com.liferay.docs.request.contributor.MySearchRequestContributor`). If not set,
@@ -69,17 +70,17 @@ contributors are applied.
 | **Note:** These _Contributors_ are components implementing the
 | `com.liferay.portal.search.spi.searcher.SearchRequestContributor` interface
 | (provided by the `com.liferay.portal.search.spi` artifact), which is an
-| extension point (SPI) used to intercept search requests and add query parts.
+| extension point (SPI) that intercepts search requests and adds query parts.
 
 **Federated Search Key:**
-: Enter the key of an alternate search this widget is participating on. If not
-set, this widget will participate on the default search. This value will
-typically be the name of an application-defined index.
+: Enter the key of an alternate search this widget is participating in. If not
+set, this widget participates in the default search. This value is usually the
+name of an application-defined index.
 
 ## Example: Searching an Alternate Index 
 
-1.  Whether testing on the default search page or creating a new [Search
-    Page](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages), include
+1.  Whether testing on the default search page or creating a new 
+    [Search Page](/docs/7-2/user/-/knowledge_base/u/configuring-search-pages), include
     the following widgets (removing extra widgets simplifies the exercise, but
     is not required for it to work):
 
