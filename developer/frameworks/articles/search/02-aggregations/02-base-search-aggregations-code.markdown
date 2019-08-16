@@ -43,7 +43,7 @@ Once the aggregation itself is in good shape, feed it to the search query.
 
 ## Build the Search Query
 
-2.  Get an instance of `com.liferay.portal.search.searcher.SearchRequestBuilder`
+1.  Get an instance of `com.liferay.portal.search.searcher.SearchRequestBuilder`
     from the `SearchRequestBuilderFactory` service:
 
     ```java
@@ -51,7 +51,7 @@ Once the aggregation itself is in good shape, feed it to the search query.
         searchRequestBuilderFactory.getSearchRequestBuilder();
     ```
 
-3.  Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the
+2.  Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the
     builder, then add the aggregation to it and run its `build` method:
 
     ```java
