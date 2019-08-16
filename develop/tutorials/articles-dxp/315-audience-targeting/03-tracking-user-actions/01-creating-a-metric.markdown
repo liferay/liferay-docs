@@ -6,10 +6,12 @@ header-id: creating-a-metric
 
 [TOC levels=1-4]
 
-Now that all of your criteria has been defined, you can get started developing the actual metric:
+Now that all of your criteria has been defined, you can get started developing
+the actual metric:
 
 1.  [Create a module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
-    project for deploying a metric. A Blade CLI [content-targeting-tracking-action](/docs/7-1/reference/-/knowledge_base/r/content-targeting-tracking-action-template)
+    project for deploying a metric. A Blade CLI
+    [content-targeting-tracking-action](/docs/7-1/reference/-/knowledge_base/r/content-targeting-tracking-action-template)
     template is available to help you get started quickly. It sets the default
     configuration for you, and it contains boilerplate code so you can skip the
     file creation steps and get started right away.
@@ -19,16 +21,18 @@ Now that all of your criteria has been defined, you can get started developing t
     and necessary Liferay packages. For example, this is the example
     `build.gradle` file used from a Gradle based metric:
 
-        dependencies {
-            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.analytics.api", version: "5.0.0"
-            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.anonymous.users.api", version: "3.0.0"
-            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "5.0.0"
-            compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.6.2"
-            compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
-            compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
-            compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
-            compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
-        }
+    ```groovy
+    dependencies {
+        compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.analytics.api", version: "5.0.0"
+        compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.anonymous.users.api", version: "3.0.0"
+        compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "5.0.0"
+        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.6.2"
+        compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
+        compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
+        compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+        compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+    }
+    ```
 
     You can learn more about exposing the Content Targeting API in the
     [Accessing the Content Targeting API](/docs/7-1/tutorials/-/knowledge_base/t/accessing-the-content-targeting-api)
@@ -44,10 +48,10 @@ Now that all of your criteria has been defined, you can get started developing t
     [com.liferay.content.targeting.api.model.TrackingAction` interface](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html).
 
     You must implement the
-    [TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html}
-    interface, but there are
-    `TrackingAction` extension classes that provide helpful utilities that you
-    can extend. For example, your metric can extend the
+    [TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
+    interface, but there are `TrackingAction` extension classes that provide
+    helpful utilities that you can extend. For example, your metric can extend
+    the
     [BaseJSPTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
     class to support generating your metric's UI using JSPs. This tutorial
     demonstrates implementing the UI using a JSP and assumes the
@@ -59,14 +63,14 @@ Now that all of your criteria has been defined, you can get started developing t
 
 4.  Directly above the class's declaration, insert the following annotation:
 
-        @Component(immediate = true, service = TrackingAction.class)
+    ```java
+    @Component(immediate = true, service = TrackingAction.class)
+    ```
 
     This declares the Component's implementation class and configures it to
     start immediately once deployed to @product@.
 
-Now that your Java class is set up, you'll need to define how your metric works
-by implementing the
+Now that your Java class is set up, you must define how your metric works by
+implementing the
 [TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
 interface's methods. You'll begin implementing these methods next.
-
-Now that the module is created, you'll define the view/save lifecycle.

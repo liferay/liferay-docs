@@ -21,50 +21,52 @@ a field to display the generated transparent image's URL. Create a `view.jsp`
 file in your metric's module (e.g.,
 `/src/main/resources/META-INF/resources/view.jsp`) and add the following logic:
 
-    <%
-    Map<String, Object> context = (Map<String, Object>)request.getAttribute("context");
+```markup
+<%
+Map<String, Object> context = (Map<String, Object>)request.getAttribute("context");
 
-    String alias = (String)context.get("alias");
-    String elementId = (String)context.get("elementId");
-    String eventType = (String)context.get("eventType");
-    List<String> eventTypes = (List<String>)context.get("eventTypes");
-    String trackImageHTML = (String)context.get("trackImageHTML");
-    %>
+String alias = (String)context.get("alias");
+String elementId = (String)context.get("elementId");
+String eventType = (String)context.get("eventType");
+List<String> eventTypes = (List<String>)context.get("eventTypes");
+String trackImageHTML = (String)context.get("trackImageHTML");
+%>
 
-    <aui:input helpMessage="name-help" label="name" name='<%= ContentTargetingUtil.GUID_REPLACEMENT + "alias" %>' type="text" value="<%= alias %>">
-        <aui:validator name="required" />
-    </aui:input>
+<aui:input helpMessage="name-help" label="name" name='<%= ContentTargetingUtil.GUID_REPLACEMENT + "alias" %>' type="text" value="<%= alias %>">
+    <aui:validator name="required" />
+</aui:input>
 
-    <aui:input helpMessage="enter-the-id-of-the-newsletter-to-be-tracked" label="newsletter-id" name='<%= ContentTargetingUtil.GUID_REPLACEMENT + "elementId" %>' type="text" value="<%= elementId %>">
-        <aui:validator name="required" />
-    </aui:input>
+<aui:input helpMessage="enter-the-id-of-the-newsletter-to-be-tracked" label="newsletter-id" name='<%= ContentTargetingUtil.GUID_REPLACEMENT + "elementId" %>' type="text" value="<%= elementId %>">
+    <aui:validator name="required" />
+</aui:input>
 
-    <c:if test="<%= ListUtil.isNotEmpty(eventTypes) %>">
-        <aui:select label="event-type" name='<%= ContentTargetingUtil.GUID_REPLACEMENT + "eventType" %>'>
+<c:if test="<%= ListUtil.isNotEmpty(eventTypes) %>">
+    <aui:select label="event-type" name='<%= ContentTargetingUtil.GUID_REPLACEMENT + "eventType" %>'>
 
-            <%
-            for (String curEventType : eventTypes) {
-            %>
+        <%
+        for (String curEventType : eventTypes) {
+        %>
 
-                <aui:option label="<%= curEventType %>" selected="<%= curEventType.equals(eventType) %>" value="<%= curEventType %>" />
+            <aui:option label="<%= curEventType %>" selected="<%= curEventType.equals(eventType) %>" value="<%= curEventType %>" />
 
-            <%
-            }
-            %>
+        <%
+        }
+        %>
 
-        </aui:select>
-    </c:if>
+    </aui:select>
+</c:if>
 
-    <c:if test="<%= !Validator.isBlank(trackImageHTML) %>">
-        <span class="h5">
-            <liferay-ui:message key="paste-this-code-at-the-beginning-of-your-newsletter" />
-        </span>
-        <label for='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' key="paste-this-code-at-the-beginning-of-your-newsletter" /></label>
+<c:if test="<%= !Validator.isBlank(trackImageHTML) %>">
+    <span class="h5">
+        <liferay-ui:message key="paste-this-code-at-the-beginning-of-your-newsletter" />
+    </span>
+    <label for='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' key="paste-this-code-at-the-beginning-of-your-newsletter" /></label>
 
-        <liferay-ui:input-resource id='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' url="<%= trackImageHTML %>" />
-    </c:if>
+    <liferay-ui:input-resource id='<%= renderResponse.getNamespace() + ContentTargetingUtil.GUID_REPLACEMENT + "trackImageHTML" %>' url="<%= trackImageHTML %>" />
+</c:if>
+```
 
-First you instantiate the `context` variable and its attributes you configured
+First, you instantiate the `context` variable and its attributes you configured
 in your Java class's `populateContext` method. Then you specify the appropriate
 fields Name, Newsletter ID, and Event Type. Finally, you present the generated
 transparent image URL.

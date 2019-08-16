@@ -6,7 +6,7 @@ header-id: defining-a-metrics-view-save-lifecycle
 
 [TOC levels=1-4]
 
-In this section you will define the metric's view/save lifecycle: what happens 
+In this section, you will define the metric's view/save lifecycle: what happens 
 when a user applies a metric to a report using the Report Editor.
 
 You'll begin defining the newsletter metric's Java class. This assumes that you 
@@ -19,17 +19,19 @@ file is already created.
 
 1.  Add the activation and deactivation methods to your class.
 
-        @Activate
-        @Override
-        public void activate() {
-            super.activate();
-        }
+    ```java
+    @Activate
+    @Override
+    public void activate() {
+        super.activate();
+    }
 
-        @Deactivate
-        @Override
-        public void deActivate() {
-            super.deActivate();
-        }
+    @Deactivate
+    @Override
+    public void deActivate() {
+        super.deActivate();
+    }
+    ```
 
     These methods call the super class
     [BaseTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
@@ -42,31 +44,33 @@ file is already created.
 
 2. Add the following method:
 
-        @Override
-        protected void populateContext(
-            TrackingActionInstance trackingActionInstance,
-            Map<String, Object> context, Map<String, String> values) {
+    ```java
+    @Override
+    protected void populateContext(
+        TrackingActionInstance trackingActionInstance,
+        Map<String, Object> context, Map<String, String> values) {
 
-            String alias = StringPool.BLANK;
-            String elementId = StringPool.BLANK;
-            String eventType = StringPool.BLANK;
+        String alias = StringPool.BLANK;
+        String elementId = StringPool.BLANK;
+        String eventType = StringPool.BLANK;
 
-            if (!values.isEmpty()) {
-                alias = values.get("alias");
-                elementId = values.get("elementId");
-                eventType = values.get("eventType");
-            }
-            else if (trackingActionInstance != null) {
-                alias = trackingActionInstance.getAlias();
-                elementId = trackingActionInstance.getElementId();
-                eventType = trackingActionInstance.getEventType();
-            }
-
-            context.put("alias", alias);
-            context.put("elementId", elementId);
-            context.put("eventType", eventType);
-            context.put("eventTypes", getEventTypes());
+        if (!values.isEmpty()) {
+            alias = values.get("alias");
+            elementId = values.get("elementId");
+            eventType = values.get("eventType");
         }
+        else if (trackingActionInstance != null) {
+            alias = trackingActionInstance.getAlias();
+            elementId = trackingActionInstance.getElementId();
+            eventType = trackingActionInstance.getEventType();
+        }
+
+        context.put("alias", alias);
+        context.put("elementId", elementId);
+        context.put("eventType", eventType);
+        context.put("eventTypes", getEventTypes());
+    }
+    ```
 
     To understand what this method accomplishes, you should look at the
     metric's configuration lifecycle.
@@ -87,7 +91,13 @@ file is already created.
     It's available by extending the `BaseJSPTrackingAction` class, and you'll
     need to add more logic to it for the newsletter metric.
     
-    The `populateContext` method generates a map with all the parameters your JSP view needs to render the metric's HTML. This map is stored in the `context` variable, which is pre-populated with basic values in the Portlet logic, and then each metric contributes its specific parameters to it. The `populateContext` method above populates the `alias`, `elementId`, `eventType`, and `eventTypes` context variables with the adjacent values from the `values` map parameter, which is then passed to the JSP.
+    The `populateContext` method generates a map with all the parameters your
+    JSP view needs to render the metric's HTML. This map is stored in the
+    `context` variable, which is pre-populated with basic values in the Portlet
+    logic, and then each metric contributes its specific parameters to it. The
+    `populateContext` method above populates the `alias`, `elementId`,
+    `eventType`, and `eventTypes` context variables with the adjacent values
+    from the `values` map parameter, which is then passed to the JSP.
 
     For the newsletter metric, the `populateContext` method accounts for three
     use cases:
@@ -115,8 +125,9 @@ file is already created.
     section. Once the HTML is successfully retrieved and the user has set the
     newsletter's values and clicked *Save*, the action phase begins. 
 
-3.  Once the action phase begins, AT processes the tracking action (metric). The
-    `processTrackingAction(...)` method takes the values from the
+3.  Once the action phase begins, Audience Targeting processes the tracking
+    action (metric). The `processTrackingAction(...)` method takes the values
+    from the
     [metric's UI form](/docs/7-1/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     and stores them in the corresponding fields of the `trackingActionInstance`.
     Since the
@@ -133,7 +144,7 @@ file is already created.
     | your metric's information to a database. You should invoke your services'
     | update logic within the `processTrackingAction` method. For more information
     | on creating services, see the
-    | [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/business-logic-and-data-access)
+    | [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
     | tutorials.
 
     Once the metric processing ends, the form is reloaded and the lifecycle
@@ -143,12 +154,14 @@ file is already created.
 
 4.  Add the following method and private field:
 
-        @Override
-        public List<String> getEventTypes() {
-            return ListUtil.fromArray(_EVENT_TYPES);
-        }
+    ```java
+    @Override
+    public List<String> getEventTypes() {
+        return ListUtil.fromArray(_EVENT_TYPES);
+    }
 
-        private static final String[] _EVENT_TYPES = {"view"};
+    private static final String[] _EVENT_TYPES = {"view"};
+    ```
 
     This specifies that your newsletter metric only tracks who views the
     newsletter.
@@ -159,25 +172,28 @@ file is already created.
     provide information about the ID of the newsletter being tracked, which is
     stored in the `alias` field of the `trackingActionInstance` object.
 
-        @Override
-        public String getSummary(
-            String summary = LanguageUtil.format(
-                locale, "tracking-newsletter-x",
-                new Object[] {trackingActionInstance.getAlias()});
+    ```java
+    @Override
+    public String getSummary(
+        TrackingActionInstance trackingActionInstance, Locale locale) {
 
-            return summary;
-        }
+        return LanguageUtil.get(
+            locale, trackingActionInstance.getTypeSettings());
+    }
+    ```
 
 6.  Set the servlet context for your metric.
 
-        @Override
-        @Reference(
-            target = "(osgi.web.symbolicname=newsletter)",
-            unbind = "-"
-        )
-        public void setServletContext(ServletContext servletContext) {
-            super.setServletContext(servletContext);
-        }
+    ```java
+    @Override
+    @Reference(
+        target = "(osgi.web.symbolicname=newsletter)",
+        unbind = "-"
+    )
+    public void setServletContext(ServletContext servletContext) {
+        super.setServletContext(servletContext);
+    }
+    ```
 
     This is only required for metrics extending the `BaseJSPTrackingAction`
     class. The servlet context must be set for the metric to render its own JSP

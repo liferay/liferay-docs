@@ -20,12 +20,14 @@ Audience Targeting app.
 1.  Set the analytics processor that the Content Targeting API provides
     for tracking events. Add the following method and private field:
 
-        @Reference
-        protected void setAnalyticsProcessor(AnalyticsProcessor analyticsProcessor) {
-            _analyticsProcessor = analyticsProcessor;
-        }
+    ```java
+    @Reference
+    protected void setAnalyticsProcessor(AnalyticsProcessor analyticsProcessor) {
+        _analyticsProcessor = analyticsProcessor;
+    }
 
-        private AnalyticsProcessor _analyticsProcessor;
+    private AnalyticsProcessor _analyticsProcessor;
+    ```
 
     The analytics processor contains a servlet to track analytics from Liferay 
     pages (views, clicks, etc.) and an API to leverage this tracking mechanism. 
@@ -41,41 +43,43 @@ Audience Targeting app.
 
 2.  Replace the `populateContext` method with the updated method:
 
-        @Override
-        protected void populateContext(
-            TrackingActionInstance trackingActionInstance,
-            Map<String, Object> context, Map<String, String> values) {
+    ```java
+    @Override
+    protected void populateContext(
+        TrackingActionInstance trackingActionInstance,
+        Map<String, Object> context, Map<String, String> values) {
 
-            String alias = StringPool.BLANK;
-            String elementId = StringPool.BLANK;
-            String eventType = StringPool.BLANK;
-            String trackImageHTML = StringPool.BLANK;
+        String alias = StringPool.BLANK;
+        String elementId = StringPool.BLANK;
+        String eventType = StringPool.BLANK;
+        String trackImageHTML = StringPool.BLANK;
 
-            if (!values.isEmpty()) {
-                alias = values.get("alias");
-                elementId = values.get("elementId");
-                eventType = values.get("eventType");
-            }
-            else if (trackingActionInstance != null) {
-                alias = trackingActionInstance.getAlias();
-                elementId = trackingActionInstance.getElementId();
-                eventType = trackingActionInstance.getEventType();
-
-                String trackImageURL = _analyticsProcessor.getTrackingURL(
-                    trackingActionInstance.getCompanyId(), 0, 0, "", 0,
-                    Campaign.class.getName(),
-                    new long[] {trackingActionInstance.getCampaignId()},
-                    trackingActionInstance.getElementId(), "view", "");
-
-                trackImageHTML = "<img alt=\"\" src=\"" + trackImageURL + "\" />";
-            }
-
-            context.put("alias", alias);
-            context.put("elementId", elementId);
-            context.put("eventType", eventType);
-            context.put("eventTypes", getEventTypes());
-            context.put("trackImageHTML", trackImageHTML);
+        if (!values.isEmpty()) {
+            alias = values.get("alias");
+            elementId = values.get("elementId");
+            eventType = values.get("eventType");
         }
+        else if (trackingActionInstance != null) {
+            alias = trackingActionInstance.getAlias();
+            elementId = trackingActionInstance.getElementId();
+            eventType = trackingActionInstance.getEventType();
+
+            String trackImageURL = _analyticsProcessor.getTrackingURL(
+                trackingActionInstance.getCompanyId(), 0, 0, "", 0,
+                Campaign.class.getName(),
+                new long[] {trackingActionInstance.getCampaignId()},
+                trackingActionInstance.getElementId(), "view", "");
+
+            trackImageHTML = "<img alt=\"\" src=\"" + trackImageURL + "\" />";
+        }
+
+        context.put("alias", alias);
+        context.put("elementId", elementId);
+        context.put("eventType", eventType);
+        context.put("eventTypes", getEventTypes());
+        context.put("trackImageHTML", trackImageHTML);
+    }
+    ```
 
     This updated method creates a new variable named `trackImageHTML`,
     retrieves a tracking URL using the analytics processor, and then populates

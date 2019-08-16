@@ -26,21 +26,18 @@ First you need to define some criteria about your metric:
 - Tracking Events
 - Differentiation Method
 
+Creating a metric involves targeting what you want to track in a report. Suppose
+you're the owner of a hardware store and you want to send emails to your
+customers with the store's weekly newsletter. You send the email every week, but
+you're in the dark about how many customers actually open and read the
+newsletter. For this example, your entity to track is the newsletter.
 
-
-Creating a metric involves targeting what you want to track in a report.
-Suppose you're the owner of a hardware store you want to send emails to
-your customers with the store's weekly newsletter. You send the
-email every week, but you're in the dark about how many customers actually open
-and read the newsletter. For this example, your entity to track is the 
-newsletter.
-
-To track how many customers view the newsletter, you must create a
-tracking mechanism. You can provide a custom tracking mechanism (e.g., a
-servlet) or you can use the ones provided by Audience Targeting. For a 
-newsletter, you could use a transparent image as the tracking mechanism, which
-would have the *View* tracking event capability. Whenever the image is viewed,
-the Audience Targeting app computes and stores the information.
+To track how many customers view the newsletter, you must create a tracking
+mechanism. You can provide a custom tracking mechanism (e.g., a servlet) or you
+can use the ones provided by Audience Targeting. For a newsletter, you could
+use a transparent image as the tracking mechanism, which would have the *View*
+tracking event capability. Whenever the image is viewed, the Audience Targeting
+app computes and stores the information.
 
 Finally, you must assign the metric to an entity. For a newsletter, you could
 provide a Newsletter ID field that the user could fill in to differentiate
@@ -51,7 +48,8 @@ visit the
 [Defining Metrics](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/managing-campaigns#defining-metrics)
 section.
 
-For this tutorial, you'll create a newsletter that can track who views it. To do this you will,
+For this tutorial, you'll create a newsletter that can track who views it. To do
+this you will,
 
 1.  Create a module with the necessary Content Targeting API dependencies.
 
