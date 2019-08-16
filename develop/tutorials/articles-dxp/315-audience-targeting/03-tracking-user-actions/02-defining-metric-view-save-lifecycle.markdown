@@ -9,13 +9,17 @@ header-id: defining-a-metrics-view-save-lifecycle
 In this section, you will define the metric's view/save lifecycle: what happens 
 when a user applies a metric to a report using the Report Editor.
 
-You'll begin defining the newsletter metric's Java class. This assumes that you 
-followed the instructions in the previous article to create the 
+| **Note:** To view the Javadoc for the Content Targeting classes mentioned in
+| this article, download the
+| [Javadoc JAR](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc).
+
+You'll begin defining the newsletter metric's Java class. This assumes that you
+followed the instructions in the previous article to create the
 `NewsletterTrackingAction` class and extend
-[BaseJSPTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html).
-If you used the `content-targeting-tracking-action` Blade CLI template, your
-project is already extending `BaseJSPTrackingAction` and a default `view.jsp`
-file is already created.
+`com.liferay.content.targeting.api.model.BaseJSPTrackingAction`. If you used the
+`content-targeting-tracking-action` Blade CLI template, your project is already
+extending `BaseJSPTrackingAction` and a default `view.jsp` file is already
+created.
 
 1.  Add the activation and deactivation methods to your class.
 
@@ -34,9 +38,9 @@ file is already created.
     ```
 
     These methods call the super class
-    [BaseTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
-    to implement necessary logging and processing for when your metric starts
-    and stops. Make sure to include the
+    `com.liferay.content.targeting.api.model.BaseTrackingAction` to implement
+    necessary logging and processing for when your metric starts and stops. Make
+    sure to include the
     [@Activate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Activate.html)
     and
     [@Deactivate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Deactivate.html)
@@ -80,14 +84,11 @@ file is already created.
     When the user opens the Report Editor, the render phase begins for the
     metric. The `getFormHTML(...)` method retrieves the HTML to display. You
     don't have to worry about implementing this method because it's already
-    implemented in the
-    [BaseJSPTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
-    class you're extending. The `getFormHTML` method calls the
-    `populateContext(...)` method.
+    implemented in the `BaseJSPTrackingAction` class you're extending. The
+    `getFormHTML` method calls the `populateContext(...)` method.
 
     You'll notice the `populateContext` method is not available in the
-    [TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
-    interface. This is because it's not needed in all cases.
+    `TrackingAction` interface. This is because it's not needed in all cases.
     It's available by extending the `BaseJSPTrackingAction` class, and you'll
     need to add more logic to it for the newsletter metric.
     
@@ -121,19 +122,18 @@ file is already created.
     You can think of the `populateContext` method as the intermediary between
     your JSP and your backend code. You can see how to create the newsletter
     metric's UI using a JSP by skipping to the
-    [Defining the Metric's UI](/docs/7-1/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
+    [Defining the Metric's UI](/docs/7-1/tutorials/-/knowledge_base/t/defining-the-metrics-ui)
     section. Once the HTML is successfully retrieved and the user has set the
     newsletter's values and clicked *Save*, the action phase begins. 
 
 3.  Once the action phase begins, Audience Targeting processes the tracking
     action (metric). The `processTrackingAction(...)` method takes the values
     from the
-    [metric's UI form](/docs/7-1/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
+    [metric's UI form](/docs/7-1/tutorials/-/knowledge_base/t/defining-the-metrics-ui)
     and stores them in the corresponding fields of the `trackingActionInstance`.
-    Since the
-    [BaseTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
-    class provides a default implementation of this method that returns `null`,
-    the `NewsletterTrackingAction` class does not need to implement it.
+    Since the `BaseTrackingAction` class provides a default implementation of
+    this method that returns `null`, the `NewsletterTrackingAction` class does
+    not need to implement it.
 
     If you need to process any custom fields in your metric, you should override
     this method. If you want your custom values to be stored in the

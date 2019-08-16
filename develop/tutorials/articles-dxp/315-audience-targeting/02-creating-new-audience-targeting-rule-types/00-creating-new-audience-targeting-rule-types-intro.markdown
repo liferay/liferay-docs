@@ -44,8 +44,8 @@ There are four steps to create a custom rule type:
     dependencies.
 
 2.  Define how your rule works by implementing the 
-    [Rule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
-    interface's methods
+    [`com.liferay.content.targeting.api.model.Rule`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc)
+    interface's methods.
 
 3.  Create the rule evaluation criteria.
 

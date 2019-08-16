@@ -66,8 +66,8 @@ creating one next!
 
 ## Related Topics
 
-[Creating Modules with Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli)
+[Creating Projects with Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/creating-projects-with-blade-cli)
 
-[Defining Metrics](/docs/7-1/user/-/knowledge_base/u/managing-campaigns#defining-metrics)
+[Defining a Metric's View/Save Lifecycle](/docs/7-1/user/-/knowledge_base/u/defining-a-metrics-view-save-lifecycle)
 
-[Audience Targeting Metrics](/docs/7-1/user/-/knowledge_base/u/audience-targeting-metrics)
+[Defining the Metric's UI](/docs/7-1/user/-/knowledge_base/u/defining-the-metrics-ui)

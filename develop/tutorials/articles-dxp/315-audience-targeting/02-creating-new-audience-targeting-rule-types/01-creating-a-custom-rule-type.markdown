@@ -9,6 +9,10 @@ header-id: creating-a-custom-rule-type
 First, you must create a module and ensure it has the necessary Content 
 Targeting API dependencies.
 
+| **Note:** To view the Javadoc for the Content Targeting classes mentioned in
+| this article, download the
+| [Javadoc JAR](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc).
+
 1.  [Create a module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
     project for deploying a rule. A Blade CLI
     [content-targeting-rule](/docs/7-1/reference/-/knowledge_base/r/content-targeting-rule-template)
@@ -48,19 +52,18 @@ Targeting API dependencies.
     conventions, your class name should begin with the rule name you're
     creating, and end with *Rule* (e.g., `WeatherRule.java`). Your Java class
     should implement the 
-    [`com.liferay.content.targeting.api.model.Rule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
+    [`com.liferay.content.targeting.api.model.Rule`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc)
     interface.
 
-    You must implement the
-    [Rule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
-    interface, but there are `Rule` extension classes that provide helpful
-    utilities that you can extend. For example, your rule can extend the
-    [`BaseJSPRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
+    You must implement the `Rule` interface, but there are `Rule` extension
+    classes that provide helpful utilities that you can extend. For example,
+    your rule can extend the
+    [`com.liferay.content.targeting.api.model.BaseJSPRule`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc)
     class to support generating your rule's UI using JSPs. This tutorial
     demonstrates implementing the UI using a JSP and assumes the `Rule`
     interface is implemented by extending the `BaseJSPRule` class. For more
     information on choosing a UI for your rule, see 
-    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-1/best-practices-for-rules#selecting-a-ui-technology).
+    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-1/best-practices-for-audience-targeting#selecting-a-ui-technology).
 
 4.  Directly above the class's declaration should be the following annotation:
 
@@ -72,9 +75,8 @@ Targeting API dependencies.
     specifies to start the module immediately once deployed to @product@.
 
 Now that your Java class is set up, you must define how your rule works by
-implementing the
-[Rule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
-interface's methods. You'll begin implementing these methods next.
+implementing the `Rule` interface's methods. You'll begin implementing these
+methods next.
 
 | **Note:** If you're planning on developing a social rule type that classifies
 | users based on their social network profile, remember that the specific social

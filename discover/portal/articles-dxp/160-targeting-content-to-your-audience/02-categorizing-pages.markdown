@@ -56,10 +56,9 @@ selecting the *Options* (![Options](../../images-dxp/icon-options.png)) &rarr;
 *Export* button. This downloads a CSV file with the list of users.
 
 Additional reports can be created by developers and deployed as OSGi plugins.
-See the [Reporting User Behavior with Audience Targeting](/docs/7-1/tutorials/-/knowledge_base/t/reporting-user-behavior-with-audience-targeting)
-tutorial for details. Reports are generated daily by default, but you can
-generate a report at any time. To generate a new report when currently viewing
-a report, click the *Update* button from the *Options* icon
+Reports are generated daily by default, but you can generate a report at any
+time. To generate a new report when currently viewing a report, click the
+*Update* button from the *Options* icon
 (![Options](../../images-dxp/icon-options.png)) in the top right corner.
 
 Next, you'll discover how to use your user segments in a campaign.

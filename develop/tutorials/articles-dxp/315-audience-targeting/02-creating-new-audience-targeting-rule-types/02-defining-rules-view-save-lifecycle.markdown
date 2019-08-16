@@ -25,7 +25,12 @@ In this section, you'll begin defining the weather rule's Java class. This
 assumes that you followed the instructions in the previous
 [tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-custom-rule-type),
 creating the `WeatherRule` class and extending
-[`BaseJSPRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html).
+`com.liferay.content.targeting.api.model.BaseJSPRule`.
+
+| **Note:** To view the Javadoc for the Content Targeting classes mentioned in
+| this article, download the
+| [Javadoc JAR](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc).
+
 If you used the `content-targeting-rule` Blade CLI template, your project 
 already extends `BaseJSPRule` and has a default `view.jsp` file already
 created. 
@@ -48,7 +53,7 @@ created.
     ```
 
     These methods call the super class
-    [`BaseRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseRule.html)
+    [`com.liferay.content.targeting.api.model.BaseRule`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc)
     to implement necessary logging and processing for when your rule starts and
     stops. Make sure to include the
     [@Activate](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Activate.html)
@@ -70,11 +75,11 @@ created.
     put your rule into the appropriate category, use the `getRuleCategoryKey`
     method to return the category class's key. Available category classes
     include
-    [`BehaviourRuleCategory`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/BehaviorRuleCategory.html),
-    [`SessionAttributesRuleCategory`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/SessionAttributesRuleCategory.html),
-    [`SocialRuleCategory`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/SocialRuleCategory.html),
+    [`com.liferay.content.targeting.rule.categories.BehaviourRuleCategory`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc),
+    [`com.liferay.content.targeting.rule.categories.SessionAttributesRuleCategory`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc),
+    [`com.liferay.content.targeting.rule.categories.SocialRuleCategory`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc),
     and
-    [`UserAttributesRoleCategory`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/UserAttributesRuleCategory.html).
+    [`com.liferay.content.targeting.rule.categories.UserAttributesRoleCategory`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc).
 
     ![Figure 1: This example Weather rule was modified to reside in the Session Attributes category.](../../../images-dxp/new-category-rule.png)
 
@@ -107,17 +112,14 @@ created.
     When the user opens the User Segment Editor, the render phase begins for the
     rule. The `getFormHTML(...)` method retrieves the HTML to display. You don't
     have to worry about implementing this method because it's already
-    implemented in the
-    [`BaseJSPRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
-    class you're extending. The `getFormHTML` method calls the
-    `populateContext(...)` method.
+    implemented in the `BaseJSPRule` class you're extending. The `getFormHTML`
+    method calls the `populateContext(...)` method.
 
     You'll notice the `populateContext` method is not available in the
-    [Rule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
+    [`com.liferay.content.targeting.api.model.Rule`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc)
     interface. This is because it's not needed in all cases. It's available by
-    extending the
-    [`BaseJSPRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
-    class, and it needs more logic for the weather rule. 
+    extending the `BaseJSPRule` class, and it needs more logic for the weather
+    rule. 
 
     The `populateContext` method generates a map with all the parameters your
     JSP view needs to render the rule's HTML. This map is stored in the
@@ -173,7 +175,7 @@ created.
 
     b. (Optional) Validate the data consistency and possible errors. If
        anything is wrong, throw an
-       [`InvalidRuleException`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/exception/InvalidRuleException.html)
+       [`com.liferay.content.targeting.exception.InvalidRuleException`](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc)
        and prohibit the values from being stored. In the weather rule scenario,
        when the rule is reloaded after an exception is thrown in the form, case 3b
        from the previous step occurs.
@@ -216,10 +218,9 @@ created.
     ```
 
     Setting the servlet context is only required for rules extending the
-    [`BaseJSPRule`](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
-    class. The servlet context must be set for the rule to render its own JSP
-    files. The `setServletContext` method is invoked automatically when the rule
-    module is installed and resolved in Liferay. Make sure the
+    `BaseJSPRule` class. The servlet context must be set for the rule to render
+    its own JSP files. The `setServletContext` method is invoked automatically
+    when the rule module is installed and resolved in Liferay. Make sure the
     `osgi.web.symbolicname` in the `target` property of the `@Reference`
     annotation is set to the same value as the `Bundle-SymbolicName` defined in
     the `bnd.bnd` file of the module.

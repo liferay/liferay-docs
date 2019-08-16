@@ -9,6 +9,10 @@ header-id: creating-a-metric
 Now that all of your criteria has been defined, you can get started developing
 the actual metric:
 
+| **Note:** To view the Javadoc for the Content Targeting classes mentioned in
+| this article, download the
+| [Javadoc JAR](https://repository.liferay.com/nexus/service/local/artifact/maven/redirect?r=liferay-public-releases&g=com.liferay.content-targeting&a=com.liferay.content.targeting.api&v=5.0.0&e=jar&c=javadoc).
+
 1.  [Create a module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
     project for deploying a metric. A Blade CLI
     [content-targeting-tracking-action](/docs/7-1/reference/-/knowledge_base/r/content-targeting-tracking-action-template)
@@ -45,20 +49,17 @@ the actual metric:
     name should begin with the metric's name you're creating and end with
     *TrackingAction* (e.g., `NewsletterTrackingAction.java`). Your Java class
     should implement the
-    [com.liferay.content.targeting.api.model.TrackingAction` interface](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html).
+    `com.liferay.content.targeting.api.model.TrackingAction` interface.
 
-    You must implement the
-    [TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
-    interface, but there are `TrackingAction` extension classes that provide
-    helpful utilities that you can extend. For example, your metric can extend
-    the
-    [BaseJSPTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
+    You must implement the `TrackingAction` interface, but there are
+    `TrackingAction` extension classes that provide helpful utilities that you
+    can extend. For example, your metric can extend the `BaseJSPTrackingAction`
     class to support generating your metric's UI using JSPs. This tutorial
     demonstrates implementing the UI using a JSP and assumes the
-    [TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
-    interface is implemented by extending the `BaseJSPTrackingAction` class. For
-    more information on choosing a UI for your metric, see the
-    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-1/best-practices-for-metrics#selecting-a-ui-technology)
+    `TrackingAction` interface is implemented by extending the
+    `BaseJSPTrackingAction` class. For more information on choosing a UI for
+    your metric, see the
+    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-1/best-practices-for-audience-targeting#selecting-a-ui-technology)
     section.
 
 4.  Directly above the class's declaration, insert the following annotation:
@@ -71,6 +72,5 @@ the actual metric:
     start immediately once deployed to @product@.
 
 Now that your Java class is set up, you must define how your metric works by
-implementing the
-[TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
-interface's methods. You'll begin implementing these methods next.
+implementing the `TrackingAction` interface's methods. You'll begin implementing
+these methods next.
