@@ -24,7 +24,7 @@ Here how to create your own MVC Resource Command:
     [resource-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/resource-command-portlet)
     sample resource URL invokes an MVC resource command named `/blade/captcha`.
 
-    ```jsp
+    ```markup
     <portlet:resourceURL id="/blade/captcha" var="captchaURL" />
     ```
 
@@ -42,7 +42,7 @@ Here how to create your own MVC Resource Command:
     [`liferay-captcha`](@app-ref@/foundation/latest/taglibdocs/liferay-captcha/captcha.html)
     component:
 
-    ```jsp
+    ```markup
     <liferay-captcha:captcha url="<%= captchaURL %>" />
     ```
 

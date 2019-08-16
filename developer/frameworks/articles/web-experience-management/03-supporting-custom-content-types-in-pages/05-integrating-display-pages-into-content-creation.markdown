@@ -12,7 +12,7 @@ integrate display page configuration into your entity's creation form.
 ## Display Page Taglib Example
 
 To provide the Display Page selector for the User type after you 
-[created fields for it](/docs/7-2/frameworks/-/knowledge_base/f/creating-an-asset-display-contributor),
+[created fields for it](/docs/7-2/frameworks/-/knowledge_base/f/specifying-the-fields-of-a-custom-content-type),
 
 1.  Open your JSP used for displaying the editing interface (e.g.,
     `.../META-INF/resources/.../edit_entry.jsp`).
@@ -20,7 +20,7 @@ To provide the Display Page selector for the User type after you
 2.  Add this code in the appropriate place in the layout to add the Display Page
     selector:
 
-    ```
+    ```markup
     <liferay-asset:select-asset-display-page
         classNameId="<%= PortalUtil.getClassNameId(User.class) %>"
       	classPK="<%= userId %>"

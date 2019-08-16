@@ -10,7 +10,7 @@ header-id: upgrading-your-maven-build-environment
 | Liferay Portal 7.0 Maven environment that are not upgrading to Liferay
 | Workspace. If you're interested in upgrading to a Maven-based Liferay
 | Workspace (recommended), see the
-| [Upgrading Code to @product-ver@](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-code-to-product-ver)
+| [Upgrading Code to @product-ver@](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver)
 | tutorials for more information.
 
 If you're an avid Maven user and have been using it for Liferay Portal 6.2
@@ -22,11 +22,11 @@ environment upgrade process that you must address:
 - [Updating Liferay Maven artifact dependencies](#updating-liferay-maven-artifact-dependencies)
 
 For more information on using Maven with @product-ver@, see the
-[Maven](/docs/reference/7-2/-/knowledge_base/r/maven) section.
+[Maven](/docs/7-2/reference/-/knowledge_base/r/maven) section.
 
 Liferay also offers a Maven development environment tailored specifically for
 @product-ver@ development. Learn more about this in the
-[Liferay Workspace](/docs/reference/7-2/-/knowledge_base/r/liferay-workspace)
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace)
 section.
 
 You'll start off by upgrading your Maven environment's Liferay Maven plugins.

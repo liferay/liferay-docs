@@ -135,12 +135,12 @@ method you use. For example, if you changed @product@'s authentication method to
 use screen names instead of the email addresses, you would modify the search
 filter so it can match the entered log in name:
 
-        (cn=@screen_name@)
+    (cn=@screen_name@)
 
 **Import Search Filter:** Depending on the LDAP schema, there are different
 ways to identify the user. The default setting is usually fine:
 
-        (objectClass=inetOrgPerson)
+    (objectClass=inetOrgPerson)
 
 If you want to search for only a subset of users or users that have
 different LDAP object classes, you can change this.
@@ -187,7 +187,7 @@ This section contains settings for mapping LDAP groups to @product@ user groups.
 **Import Search Filter:** This is the filter for mapping LDAP groups to
 @product@ user groups. For example, 
 
-        (objectClass=groupOfNames)
+    (objectClass=groupOfNames)
 
 Enter the LDAP group attributes you want retrieved for this mapping. The
 following attributes can be mapped. The *Group Name* and *User* fields are

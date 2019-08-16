@@ -15,7 +15,7 @@ In the JSP for adding and editing your asset, add the following input field
 that lets users set the asset's priority. This example also validates the input 
 to make sure the value the user sets is a number higher than zero: 
 
-```jsp
+```markup
 <aui:input label="priority" name="assetPriority" type="text" value="<%= priority %>">
     <aui:validator name="number" />
 

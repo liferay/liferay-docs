@@ -18,14 +18,14 @@ site templates. These options are covered below. Follow these steps:
     templates built by the Resources Importer each time you want to apply 
     changes from your theme's `src/WEB-INF/src/resources-importer` folder:
 
-```properties
-resources-importer-developer-mode-enabled=true
-```
+    ```properties
+    resources-importer-developer-mode-enabled=true
+    ```
 
-| **Warning:** the `resources-importer-developer-mode-enabled=true` setting can be
-| dangerous since it involves *deleting* (and re-creating) the affected site or
-| site template. It's only intended to be used during development. **Never use it
-| in production.**
+    | **Warning:** the `resources-importer-developer-mode-enabled=true` setting can be
+    | dangerous since it involves *deleting* (and re-creating) the affected site or
+    | site template. It's only intended to be used during development. **Never use it
+    | in production.**
 
 2.  Specify where to import your resources. By default, resources are imported 
     into a new site template named after the theme. If that's what you want, you 
@@ -34,11 +34,11 @@ resources-importer-developer-mode-enabled=true
     `resources-importer-target-value` property in your theme's 
     `liferay-plugin-package.properties` file:
 
-```properties
-#resources-importer-target-class-name
+    ```properties
+    #resources-importer-target-class-name
 
-resources-importer-target-value=[site-template-name]
-```
+    resources-importer-target-value=[site-template-name]
+    ```
 
     Alternatively, you can import resources into an existing site. **You must** 
     import your resources into a site if you define both public and private page 
@@ -46,26 +46,26 @@ resources-importer-target-value=[site-template-name]
     uncomment the `resources-importer-target-class-name` property and set it to 
     `com.liferay.portal.kernel.model.Group`:
 
-```properties
-resources-importer-target-class-name=com.liferay.portal.kernel.model.Group
+    ```properties
+    resources-importer-target-class-name=com.liferay.portal.kernel.model.Group
 
-resources-importer-target-value=[site-name] 
-```
+    resources-importer-target-value=[site-name] 
+    ```
 
     Double check the name that you're specifying. If you specify the wrong value, 
     you could end up deleting (and re-creating) the wrong site or site template! 
 
-| **Warning:** It's safer to import theme resources into a site template than into
-| an actual site. The
-| `resources-importer-target-class-name=com.liferay.portal.kernel.model.Group`
-| setting can be handy for development and testing but should be used cautiously.
-| Don't use this setting in a theme deployed to a production Liferay instance or
-| a theme submitted to Liferay Marketplace. To prepare a theme for deployment to
-| a production Liferay instance, use the default setting so that the resources are
-| imported into a site template. You can do this explicitly by setting
-| `resources-importer-target-class-name=com.liferay.portal.kernel.model.LayoutSetPrototype`
-| or implicitly by commenting out or removing the
-| `resources-importer-target-class-name` property.
+    | **Warning:** It's safer to import theme resources into a site template than into
+    | an actual site. The
+    | `resources-importer-target-class-name=com.liferay.portal.kernel.model.Group`
+    | setting can be handy for development and testing but should be used cautiously.
+    | Don't use this setting in a theme deployed to a production Liferay instance or
+    | a theme submitted to Liferay Marketplace. To prepare a theme for deployment to
+    | a production Liferay instance, use the default setting so that the resources are
+    | imported into a site template. You can do this explicitly by setting
+    | `resources-importer-target-class-name=com.liferay.portal.kernel.model.LayoutSetPrototype`
+    | or implicitly by commenting out or removing the
+    | `resources-importer-target-class-name` property.
 
 3.  Deploy the theme. To view your theme and its resources, log in as an 
     administrator, and check the Sites or Site Templates section of the Control 

@@ -16,8 +16,10 @@ Follow these steps to cancel a checkout:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the ID of the file whose checkout you want to cancel. Since it's common 
     to cancel a checkout in response to a user action, you can extract the file 
@@ -26,11 +28,15 @@ Follow these steps to cancel a checkout:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get it any way you wish: 
 
-        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+    ```java
+    long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+    ```
 
 3.  Call the service reference's `cancelCheckOut` method with the file's ID: 
 
-        _dlAppService.cancelCheckOut(fileEntryId);
+    ```java
+    _dlAppService.cancelCheckOut(fileEntryId);
+    ```
 
 You can find the full code for this example in the `cancelFileEntriesCheckOut` 
 method of @product@'s 

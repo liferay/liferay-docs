@@ -54,11 +54,11 @@ assets, and entities can be published in the Asset Publisher.
 -   [Social Bookmarks](/docs/7-2/frameworks/-/knowledge_base/f/applying-social-bookmarks):
     Users can share entity content on Twitter, Facebook, and more. 
 
-[Export/Import](/docs/7-2/frameworks/-/knowledge_base/f/export-import-and-staging):
+[Export/Import](/docs/7-2/frameworks/-/knowledge_base/f/export-import):
 Export entity data to and import entity data from files (`.lpkg` files).
 Exported data can be imported to another portal instance or saved for later use. 
 
-[Staging](/docs/7-2/frameworks/-/knowledge_base/f/export-import-and-staging): 
+[Staging](/docs/7-2/frameworks/-/knowledge_base/f/staging): 
 Modify content behind the scenes without affecting the live site, and then
 publish to the live site when the content is ready. 
 
@@ -72,7 +72,7 @@ a schedule).
 
 ## Related Topics
 
-[Internationalization](/docs/7-2/frameworks/-/knowledge_base/f/internationalization)
+[Internationalization](/docs/7-2/customization/-/knowledge_base/c/overriding-language-keys)
 
 [JavaScript Module Loaders](/docs/7-2/frameworks/-/knowledge_base/f/javascript-module-loaders)
 

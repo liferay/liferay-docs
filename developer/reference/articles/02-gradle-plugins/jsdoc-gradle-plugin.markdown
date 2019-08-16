@@ -15,7 +15,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.jsdoc", version: "2.0.33"
@@ -34,7 +34,7 @@ There are two JSDoc Gradle plugins you can apply to your project:
 - Apply the [JSDoc Plugin](#jsdoc-plugin) to generate JavaScript documentation
 for your project:
 
-    ```gradle
+    ```groovy
     apply plugin: "com.liferay.jsdoc"
     ```
 
@@ -43,7 +43,7 @@ generate the JavaScript documentation as a single, combined HTML document for an
 application that spans different subprojects, each one representing a different
 component of the same application:
 
-    ```gradle
+    ```groovy
     apply plugin: "com.liferay.app.jsdoc"
     ```
 

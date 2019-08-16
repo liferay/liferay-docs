@@ -20,7 +20,9 @@ Follow these steps to add social bookmarks to your app:
 2.  In your project's `build.gradle` file, add a dependency to the module 
     [`com.liferay.social.bookmarks.taglib`](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.social.bookmarks.taglib/): 
 
-        compileOnly group: "com.liferay", name: "com.liferay.social.bookmarks.taglib", version: "1.0.0"
+    ```groovy
+    compileOnly group: "com.liferay", name: "com.liferay.social.bookmarks.taglib", version: "1.0.0"
+    ```
 
 3.  Choose a view in which to show the social bookmarks. For example, you can 
     display them in one of your app's views. However, note that you don't need 
@@ -31,7 +33,9 @@ Follow these steps to add social bookmarks to your app:
 4.  In your view's JSP, include the `liferay-social-bookmarks` taglib 
     declaration: 
 
-        <%@ taglib uri="http://liferay.com/tld/social-bookmarks" prefix="liferay-social-bookmarks" %>
+    ```markup
+    <%@ taglib uri="http://liferay.com/tld/social-bookmarks" prefix="liferay-social-bookmarks" %>
+    ```
 
 5.  Get an instance of your entity. You can do this however you wish. This 
     example uses 
@@ -39,10 +43,12 @@ Follow these steps to add social bookmarks to your app:
     to get the entity's ID from the render request, then uses the entity's 
     `-LocalServiceUtil` class to create an entity object: 
 
-        <%
-        long entryId = ParamUtil.getLong(renderRequest, "entryId");
-        entry = EntryLocalServiceUtil.getEntry(entryId);
-        %>
+    ```java
+    <%
+    long entryId = ParamUtil.getLong(renderRequest, "entryId");
+    entry = EntryLocalServiceUtil.getEntry(entryId);
+    %>
+    ```
 
 6.  Use the `liferay-social-bookmarks:bookmarks` tag to add the social bookmarks 
     component. See 
@@ -50,14 +56,16 @@ Follow these steps to add social bookmarks to your app:
     for information on this tag's attributes. Here's an example of using this 
     tag to add social bookmarks for a blog entry in the Blogs app: 
 
-        <liferay-social-bookmarks:bookmarks
-                className="<%= BlogsEntry.class.getName() %>"
-                classPK="<%= entry.getEntryId() %>"
-                displayStyle="inline"
-                title="<%= entry.getTitle() %>"
-                types="facebook,twitter"
-                url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(), themeDisplay, layout) %>"
-        />
+    ```markup
+    <liferay-social-bookmarks:bookmarks
+            className="<%= BlogsEntry.class.getName() %>"
+            classPK="<%= entry.getEntryId() %>"
+            displayStyle="inline"
+            title="<%= entry.getTitle() %>"
+            types="facebook,twitter"
+            url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(), themeDisplay, layout) %>"
+    />
+    ```
 
 ## Related Topics
 

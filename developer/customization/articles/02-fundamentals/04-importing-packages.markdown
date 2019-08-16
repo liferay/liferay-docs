@@ -67,11 +67,13 @@ headers to your module JAR's `META-INF/MANIFEST.MF`.
 
 Here's an example dependencies section from a module's `build.gradle` file:
 
-    dependencies {
-        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-        compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
-        compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
-    }
+```groovy
+dependencies {
+    compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+    compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+    compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+}
+```
 
 And here's the `Import-Package` header that's generated in the module JAR's
 `META-INF/MANIFEST.MF` file:

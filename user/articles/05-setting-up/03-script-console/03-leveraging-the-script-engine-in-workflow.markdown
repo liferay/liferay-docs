@@ -19,15 +19,15 @@ The snippet below accesses the Java class associated with the workflow to set
 content's status to *approved*.
 
 ```xml
-    <script>
-        <![CDATA[
-            import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
-            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+<script>
+    <![CDATA[
+        import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
+        import com.liferay.portal.kernel.workflow.WorkflowConstants;
 
-            WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
-        ]]>
-    </script>
-    <script-language>groovy</script-language>
+        WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
+    ]]>
+</script>
+<script-language>groovy</script-language>
 ```
 
 At virtually any point in a workflow, you can use Liferay's script engine to
@@ -47,15 +47,15 @@ can be used in any XML type that can contain an `actions` tag: those types are
 your script like this:
 
 ```xml
-    <actions>
-        <action>
-            <script>
-                <![CDATA[*the contents of your script*]]>
-            </script>
-            <script-language>groovy</script-language>
-        </action>
-        ...
-    </actions>
+<actions>
+    <action>
+        <script>
+            <![CDATA[*the contents of your script*]]>
+        </script>
+        <script-language>*your scripting language of choice*</script-language>
+    </action>
+    ...
+</actions>
 ```
 
 Here's an example of a workflow script created in Groovy. This one is used with
@@ -66,55 +66,55 @@ applied to the asset, the asset is sent to the `Legal Review` task upon
 submission. Otherwise, the asset is sent to the `Default Review` task.
 
 ```xml
-    <script>
-        <![CDATA[
-            import com.liferay.portal.kernel.util.GetterUtil;
-            import com.liferay.portal.kernel.workflow.WorkflowConstants;
-            import com.liferay.portal.kernel.workflow.WorkflowHandler;
-            import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
-            import com.liferay.asset.kernel.model.AssetCategory;
-            import com.liferay.asset.kernel.model.AssetEntry;
-            import com.liferay.asset.kernel.model.AssetRenderer;
-            import com.liferay.asset.kernel.model.AssetRendererFactory;
-            import com.liferay.asset.kernel.service.AssetEntryLocalServiceUtil;
+<script>
+    <![CDATA[
+        import com.liferay.portal.kernel.util.GetterUtil;
+        import com.liferay.portal.kernel.workflow.WorkflowConstants;
+        import com.liferay.portal.kernel.workflow.WorkflowHandler;
+        import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
+        import com.liferay.asset.kernel.model.AssetCategory;
+        import com.liferay.asset.kernel.model.AssetEntry;
+        import com.liferay.asset.kernel.model.AssetRenderer;
+        import com.liferay.asset.kernel.model.AssetRendererFactory;
+        import com.liferay.asset.kernel.service.AssetEntryLocalServiceUtil;
 
-            import java.util.List;
+        import java.util.List;
 
-            String className = (String)workflowContext.get(
-                WorkflowConstants.CONTEXT_ENTRY_CLASS_NAME);
+        String className = (String)workflowContext.get(
+            WorkflowConstants.CONTEXT_ENTRY_CLASS_NAME);
 
-            WorkflowHandler workflowHandler =
-                WorkflowHandlerRegistryUtil.getWorkflowHandler(className);
+        WorkflowHandler workflowHandler =
+            WorkflowHandlerRegistryUtil.getWorkflowHandler(className);
 
-            AssetRendererFactory assetRendererFactory =
-                workflowHandler.getAssetRendererFactory();
+        AssetRendererFactory assetRendererFactory =
+            workflowHandler.getAssetRendererFactory();
 
-            long classPK =
-                GetterUtil.getLong((String)workflowContext.get
-                (WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
+        long classPK =
+            GetterUtil.getLong((String)workflowContext.get
+            (WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
 
-            AssetRenderer assetRenderer =
-                workflowHandler.getAssetRenderer(classPK);
+        AssetRenderer assetRenderer =
+            workflowHandler.getAssetRenderer(classPK);
 
-            AssetEntry assetEntry = assetRendererFactory.getAssetEntry(
-                assetRendererFactory.getClassName(), assetRenderer.getClassPK());
+        AssetEntry assetEntry = assetRendererFactory.getAssetEntry(
+            assetRendererFactory.getClassName(), assetRenderer.getClassPK());
 
-            List<AssetCategory> assetCategories = assetEntry.getCategories();
+        List<AssetCategory> assetCategories = assetEntry.getCategories();
 
-            returnValue = "Default Review";
+        returnValue = "Default Review";
 
-            for (AssetCategory assetCategory : assetCategories) {
-                String categoryName = assetCategory.getName();
+        for (AssetCategory assetCategory : assetCategories) {
+            String categoryName = assetCategory.getName();
 
-                if (categoryName.equals("legal")) {
-                    returnValue = "Legal Review";
+            if (categoryName.equals("legal")) {
+                returnValue = "Legal Review";
 
-                    return;
-                }
+                return;
             }
-           ]]>
-    </script>
-    <script-language>groovy</script-language>
+        }
+       ]]>
+</script>
+<script-language>groovy</script-language>
 ```
 
 Within a workflow, the next task or state is chosen based on the return value.
@@ -133,44 +133,44 @@ needs, and if not, do something appropriate in response. Here's a little example
 code to show you how this might look in Groovy:
 
 ```groovy
-    import com.liferay.journal.model.JournalArticle;
-    import com.liferay.journal.service.JournalArticleLocalService;
-    import com.liferay.portal.scripting.groovy.internal.GroovyExecutor;
+import com.liferay.journal.model.JournalArticle;
+import com.liferay.journal.service.JournalArticleLocalService;
+import com.liferay.portal.scripting.groovy.internal.GroovyExecutor;
 
-    import org.osgi.framework.Bundle;
-    import org.osgi.framework.FrameworkUtil;
-    import org.osgi.util.tracker.ServiceTracker;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
+import org.osgi.util.tracker.ServiceTracker;
 
-    ServiceTracker<JournalArticleLocalService, JournalArticleLocalService> st;
+ServiceTracker<JournalArticleLocalService, JournalArticleLocalService> st;
 
-    try {
-        Bundle bundle = FrameworkUtil.getBundle(GroovyExecutor.class);
+try {
+    Bundle bundle = FrameworkUtil.getBundle(GroovyExecutor.class);
 
-        st = new ServiceTracker(bundle.getBundleContext(), JournalArticleLocalService.class, null);
-        st.open();
+    st = new ServiceTracker(bundle.getBundleContext(), JournalArticleLocalService.class, null);
+    st.open();
 
-        JournalArticleLocalService jaService = st.waitForService(500);
-        
-        if (jaService == null) {
-            _log.warn("The required service 'JournalArticleLocalService' is not available.");
-        }
-        else {
-            java.util.List<JournalArticle>articles = jaService.getArticles();
-            if (articles != null) {
-                _log.info("Article count: " + articles.size());
-            } else {
-                _log.info("no articles");
-            }
-        }
+    JournalArticleLocalService jaService = st.waitForService(500);
+    
+    if (jaService == null) {
+        _log.warn("The required service 'JournalArticleLocalService' is not available.");
     }
-    catch(Exception e) {
-        //Handle error appropriately
-    }
-    finally {
-        if (st != null) {
-            st.close();
+    else {
+        java.util.List<JournalArticle>articles = jaService.getArticles();
+        if (articles != null) {
+            _log.info("Article count: " + articles.size());
+        } else {
+            _log.info("no articles");
         }
     }
+}
+catch(Exception e) {
+    //Handle error appropriately
+}
+finally {
+    if (st != null) {
+        st.close();
+    }
+}
 ```
 
 If you read the article on [service

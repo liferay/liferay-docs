@@ -19,7 +19,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
 	dependencies {
 		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.db.support", version: "1.0.5"
@@ -39,7 +39,7 @@ Since the plugin automatically resolves the Liferay DB Support library as
 a dependency, you have to configure a repository that hosts the library and its
 transitive dependencies. The Liferay CDN repository hosts them all:
 
-```gradle
+```groovy
 repositories {
 	maven {
 		url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -101,7 +101,7 @@ There are additional configurations that can help you use the Deployment Helper.
 The plugin creates a configuration called `dbSupport`, which can be used to
 provide the suitable JDBC driver for your Liferay database:
 
-```gradle
+```groovy
 dependencies {
 	dbSupport group: "mysql", name: "mysql-connector-java", version: "5.1.23"
 	dbSupport group: "org.mariadb.jdbc", name: "mariadb-java-client", version: "1.1.9"
@@ -116,7 +116,7 @@ dependency to the latest released version of the Liferay DB Support. It is
 possible to override this setting and use a specific version of the tool by
 manually adding a dependency to the `dbSupportTool` configuration:
 
-```gradle
+```groovy
 dependencies {
 	dbSupportTool group: "com.liferay", name: "com.liferay.portal.tools.db.support", version: "1.0.8"
 }

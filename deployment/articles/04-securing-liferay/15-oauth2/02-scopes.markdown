@@ -44,22 +44,6 @@ the *Scopes* tab in OAuth2 Administration.
 
 Now you can select it and save your application. 
 
-## Creating a Scope for a JAX-RS Service
-
-Without any special Liferay OAuth2 annotations or properties, a standard OSGi
-JAX-RS application is inspected by the Liferay OAuth2 runtime and scopes are
-derived based on the HTTP verbs supported by the application.
-
-When developers want more control, they can register their JAX-RS application
-with the property `oauth2.scopechecker.type=annotations` and use
-`com.liferay.oauth2.provider.scope.RequiresScope` exported from the `Liferay
-OAuth2 Provider Scope API` bundle to annotate endpoint resource methods or
-whole classes like this:
-
-    @RequiresScope("scopeName")
-
-Once deployed, this becomes a scope in the OAuth 2.0 configuration. 
-
 ## Creating the Authorization Page
 
 This step is optional. Users need an interface to authorize access to their

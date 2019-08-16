@@ -17,7 +17,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.tlddoc.builder", version: "1.3.3"
@@ -36,7 +36,7 @@ There are two TLDDoc Builder Gradle plugins you can apply to your project:
 - Apply the [*TLDDoc Builder Plugin*](#tlddoc-builder-plugin) to generate tag
 library documentation for your project:
 
-    ```gradle
+    ```groovy
     apply plugin: "com.liferay.tlddoc.builder"
     ```
 
@@ -45,7 +45,7 @@ parent project to generate the tag library documentation as a single, combined
 HTML document for an application that spans different subprojects, each one
 representing a different component of the same application:
 
-    ```gradle
+    ```groovy
     apply plugin: "com.liferay.app.tlddoc.builder"
     ```
 
@@ -54,7 +54,7 @@ library as a dependency, you must configure a repository that hosts the
 library and its transitive dependencies. The Liferay CDN repository hosts them
 all:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -216,7 +216,7 @@ dependency to the 1.3 version of the Tag Library Documentation Generator. It is
 possible to override this setting and use a specific version of the tool by
 manually adding a dependency to the `tlddoc` configuration:
 
-```gradle
+```groovy
 dependencies {
     tlddoc group: "taglibrarydoc", name: "tlddoc", version: "1.3"
 }
