@@ -68,9 +68,9 @@ assume you've followed the earlier section on *Installing and Configuring Solr
        should see a log message that concludes like this when the cluster has
        been started:
 
-       ```sh
-        SolrCloud example running, please visit http://localhost:8983/solr
-        ```
+   ```sh
+    SolrCloud example running, please visit http://localhost:8983/solr
+    ```
 
 Now you have a new collection called *liferay* in your local SolrCloud cluster.
 Verify its status by running the *status* command:
