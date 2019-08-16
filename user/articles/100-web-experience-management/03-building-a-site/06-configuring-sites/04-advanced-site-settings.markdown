@@ -102,16 +102,16 @@ and *Marketing*. The checkbox in the Content Sharing section of Instance
 Settings determines if the Site administrator can display content from the
 Marketing Site in the Engineering Site and vice versa.
 
-You can also choose if subsites can display content from parent Sites and
+You can also choose if child Sites can display content from parent Sites and
 configure the defaults. There are three options:
 
-**Enabled by Default**: Subsites can display content from parent Sites by
+**Enabled by Default**: Child Sites can display content from parent Sites by
 default, but this can be disabled by a Site administrator.
 
-**Disabled by Default**: Subsites cannot display content from parent Sites by
+**Disabled by Default**: Child Sites cannot display content from parent Sites by
 default, but this can be enabled by a Site administrator.
 
-**Disabled**: Subsites cannot display content from parent Sites, and this
+**Disabled**: Child Sites cannot display content from parent Sites, and this
 behavior cannot be changed by a Site administrator.
 
 That covers your Site's advanced settings. You're now equipped to manage all
