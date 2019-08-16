@@ -31,13 +31,13 @@ SolrCloud* for more information).
 without rethrowing them.
 
 `readURL=http://localhost:8983/solr/liferay`
-: A String array with the URLs to which Liferay will send search requests.  This
+: A String array with the URLs to which Liferay will send search requests. This
 will be different from the `writeURL` if you use separate servers for indexing
 (write) and searching (read).
 
 `writeURL=http://localhost:8983/solr/liferay`
 : A String array with the URLs to which Liferay will send indexing requests.
-This will be different from the `readURL` if you use separate servers for
+This is different from the `readURL` if you use separate servers for
 indexing (write) and searching (read).
 
 `zkHost=localhost:9983`
