@@ -27,12 +27,12 @@ information to the search request in a similar way between all aggregations.
 2.  Build out the aggregation to get the desired response. This looks
     different for each aggregation type, but Elasticsearch's documentation on the aggregation
     type explains it well (such as 
-    [Percentiles Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics-percentile-aggregation.html))
+    [Percentiles Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-metrics-percentile-aggregation.html))
     combined with the setters in Liferay's corresponding interface.
 
     For example, use the `setPercentilesMethod(PercentilesMethod.HDR)` method to
     use the 
-    [High Dynamic Range Histogram](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics-percentile-aggregation.html#_hdr_histogram)
+    [High Dynamic Range Histogram](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-metrics-percentile-aggregation.html#_hdr_histogram)
     for calculating the percentiles.
 
     ```java
