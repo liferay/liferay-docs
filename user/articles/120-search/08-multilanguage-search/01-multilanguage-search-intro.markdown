@@ -155,7 +155,7 @@ contain matches to the searched keyword.
 
 4.  Search in the site for the keyword _time_.
 
-    ![Figure 1: Even though the content of this DM File is written in Portuguese, it was appended with the _en_ locale, so it's searchable in an English language site.](../../images/search-site-localized1.png)
+    ![Figure 1: Even though the content of this DM File is written in Portuguese, it was appended with the _en_ locale, so it's searchable in an English language site.](../../../images/search-site-localized1.png)
 
     The file is returned because even though the text in the file is
     Portuguese, the locale appended to its _content_ field is for English.
@@ -166,7 +166,7 @@ contain matches to the searched keyword.
 6. Now search for _time_ in the site, and the document is not returned in the
    results, because the search is looking for the _pt_ locale.
 
-   ![Figure 2: The uploaded DM File doesn't appear when the site language is changed, because only fields with the site's locale are searched.](../../images/search-site-localized2.png)
+   ![Figure 2: The uploaded DM File doesn't appear when the site language is changed, because only fields with the site's locale are searched.](../../../images/search-site-localized2.png)
 
 7.  Now go to Control Panel &rarr; Configuration &rarr; Search, and click
     *Execute* next to _Reindex all search indexes._
@@ -175,7 +175,7 @@ contain matches to the searched keyword.
    returned in the results, because the content field's locale was changed
    from _en\_US_ to _pt\_BR_ when reindexed.
 
-   ![Figure 3: Once the field is reindexed with the site's locale, it can be returned as a search result in the site.](../../images/search-site-localized3.png)
+   ![Figure 3: Once the field is reindexed with the site's locale, it can be returned as a search result in the site.](../../../images/search-site-localized3.png)
 
 If an asset supports site-localized search, its fields must be reindexed after
 the site language is changed in order to be returned as search results.
