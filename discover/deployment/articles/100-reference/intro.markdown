@@ -12,8 +12,8 @@ some of the topics:
 [Database Templates](/docs/7-0/deploy/-/knowledge_base/d/database-templates):
 URL patterns for connecting to supported databases. 
 
-[Elasticsearch Settings](/docs/7-0/deploy/-/knowledge_base/elasticsearch-settings):
+[Elasticsearch Settings](/docs/7-0/deploy/-/knowledge_base/d/elasticsearch-settings):
 Configuration options for @product@'s search engine.
 
-[Form Field Types](/docs/7-0/deploy/-/knowledge_base/form-field-types): A list
+[Form Field Types](/docs/7-0/deploy/-/knowledge_base/d/form-field-types): A list
 of all the possible variations of form fields. 

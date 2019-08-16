@@ -67,7 +67,7 @@ Before you install Kibana or Marvel, make sure you've read and followed the
 instructions on
 [installing](/docs/7-0/deploy/-/knowledge_base/d/installing-elasticsearch)
 and
-[configuring](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch)
+[configuring](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0)
 Elasticsearch for @product@.
 
 1.  Install the `marvel-agent` plugin on Elasticsearch by navigating to
@@ -158,7 +158,7 @@ the steps below. If not, skip the steps that begin with *[Shield]*.
 
     Note: the `/o` prefix is a default. Change it if you're running @product@
     under a different
-    [web context path](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-manually#making-liferay-coexist-with-other-java-ee-applications).
+    [web context path](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-manually#making-liferay-portal-coexist-with-other-java-ee-applications).
 
 7.  Start Elasticsearch by running 
 
@@ -188,7 +188,7 @@ To run Kibana with SSL encryption you'll need to do these things:
 | Shield. If you try to secure Kibana with Shield, Marvel will not work inside
 | @product@'s portlet.
 
-## Configuring @product@'s Marvel Adapter
+## Configuring Liferay's Marvel Adapter
 
 Now that you have Marvel and Kibana configured, you can configure the Marvel
 adapter in @product@.
@@ -225,7 +225,7 @@ authenticating to Shield. This setting is ignored if Shield isn't installed.
 : Set the String password used for Shield authentication. This setting is
 ignored if Shield isn't configured.
 
-## Accessing Marvel's UI in @product@
+## Accessing Marvel's UI in Liferay
 
 As mentioned earlier, Liferay provides a Marvel Portlet that displays an
 embedded, proxied version of the Marvel UI from Kibana.

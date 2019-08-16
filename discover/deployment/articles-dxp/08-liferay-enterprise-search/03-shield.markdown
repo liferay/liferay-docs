@@ -21,7 +21,8 @@ convenient Shield adapter plugin.
 
 | **Note:** The Shield plugin can only be used when you're running Elasticsearch
 | in *remote mode*. If you're not sure what that means refer to the [Configuring
-| Elasticsearch article](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch).
+| Elasticsearch
+| article](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0).
 | It's not possible to install Shield into @product@'s default embedded
 | Elasticsearch--and you shouldn't be using embedded Elasticsearch in production
 | anyway.
