@@ -16,8 +16,10 @@ Follow these steps to update a folder:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the `updateFolder` method's arguments. Since 
     it's common to update a folder with data submitted by the end user, you can 
@@ -26,12 +28,14 @@ Follow these steps to update a folder:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get the data any way you wish: 
 
-        long folderId = ParamUtil.getLong(actionRequest, "folderId");
-        String name = ParamUtil.getString(actionRequest, "name");
-        String description = ParamUtil.getString(actionRequest, "description");
+    ```java
+    long folderId = ParamUtil.getLong(actionRequest, "folderId");
+    String name = ParamUtil.getString(actionRequest, "name");
+    String description = ParamUtil.getString(actionRequest, "description");
 
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                    DLFolder.class.getName(), actionRequest);
+    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                DLFolder.class.getName(), actionRequest);
+    ```
 
 <!--Uncomment once article is available
     For more information on `ServiceContext`, see the tutorial 
@@ -41,7 +45,9 @@ Follow these steps to update a folder:
 3.  Call the service reference's `updateFolder` method with the data from the 
     previous step: 
 
-        _dlAppService.updateFolder(folderId, name, description, serviceContext);
+    ```java
+    _dlAppService.updateFolder(folderId, name, description, serviceContext);
+    ```
 
 You can find the full code for this example in the `updateFolder` method of 
 @product@'s 

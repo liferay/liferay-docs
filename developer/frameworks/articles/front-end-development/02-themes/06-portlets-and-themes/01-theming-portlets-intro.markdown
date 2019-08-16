@@ -32,6 +32,7 @@ file that's included in @product-ver@'s Classic theme.
     portlet_title = htmlUtil.escape(portlet_display.getTitle())
 />
 ```
+
 These variables are described in the table below:
 
 **Portlet FTL Variables**

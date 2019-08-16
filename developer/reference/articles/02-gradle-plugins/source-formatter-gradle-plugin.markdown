@@ -16,7 +16,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "2.3.413"
@@ -36,7 +36,7 @@ Since the plugin automatically resolves the Liferay Source Formatter library as
 a dependency, you have to configure a repository that hosts the library and its
 transitive dependencies. The Liferay CDN repository hosts them all:
 
-```gradle
+```groovy
 repositories {
     maven {
         url "https://repository-cdn.liferay.com/nexus/content/groups/public"
@@ -57,7 +57,7 @@ If desired, it is possible to check for source formatting errors while executing
 the [`check`](https://docs.gradle.org/current/userguide/java_plugin.html#N15056)
 task by adding the following dependency:
 
-```gradle
+```groovy
 check {
     dependsOn checkSourceFormatting
 }
@@ -66,7 +66,7 @@ check {
 The same can be achieved by adding the following snippet to the `build.gradle`
 file in the root directory of a [*Liferay Workspace*](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace):
 
-```gradle
+```groovy
 subprojects {
     afterEvaluate {
         if (plugins.hasPlugin("base") && plugins.hasPlugin("com.liferay.source.formatter")) {
@@ -126,7 +126,7 @@ a dependency to the latest released version of Liferay Source Formatter. It is
 possible to override this setting and use a specific version of the tool by
 manually adding a dependency to the `sourceFormatter` configuration:
 
-```gradle
+```groovy
 dependencies {
     sourceFormatter group: "com.liferay", name: "com.liferay.source.formatter", version: "1.0.885"
 }

@@ -16,8 +16,10 @@ Follow these steps to use `deleteFileVersion` to delete a file version:
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the file entry ID and version for the file you want to delete. Since 
     it's common to delete a file version specified by the end user, you can 
@@ -26,13 +28,17 @@ Follow these steps to use `deleteFileVersion` to delete a file version:
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can do this any way you wish: 
 
-        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
-        String version = ParamUtil.getString(actionRequest, "version");
+    ```java
+    long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+    String version = ParamUtil.getString(actionRequest, "version");
+    ```
 
 3.  Use the service reference to call the `deleteFileVersion` method with the 
     file entry ID and version from the previous step: 
 
-        _dlAppService.deleteFileVersion(fileEntryId, version);
+    ```java
+    _dlAppService.deleteFileVersion(fileEntryId, version);
+    ```
 
 You can find the full code for this example in the `deleteFileEntry` method of 
 @product@'s 

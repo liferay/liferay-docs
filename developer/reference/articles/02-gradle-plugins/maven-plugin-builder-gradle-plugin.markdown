@@ -17,7 +17,7 @@ The plugin has been successfully tested with Gradle 4.10.2.
 
 To use the plugin, include it in your build script:
 
-```gradle
+```groovy
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.maven.plugin.builder", version: "1.2.4"
@@ -165,7 +165,7 @@ dependency to the 3.3.9 version of the Maven Embedder. It is possible to
 override this setting and use a specific version of the tool by manually adding
 a dependency to the `mavenEmbedder` configuration:
 
-```gradle
+```groovy
 dependencies {
     mavenEmbedder group: "org.apache.maven", name: "maven-embedder", version: "3.3.9"
     mavenEmbedder group: "org.apache.maven.wagon", name: "wagon-http", version: "2.10"

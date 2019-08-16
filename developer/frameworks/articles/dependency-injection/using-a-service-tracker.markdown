@@ -59,47 +59,47 @@ A better way is to create a class that extends
 
 1.  Create a class like this one that extends `ServiceTracker`: 
 
-```java
-public class SomeServiceTracker
-    extends ServiceTracker<SomeService, SomeService> {
+    ```java
+    public class SomeServiceTracker
+        extends ServiceTracker<SomeService, SomeService> {
 
-    public SomeServiceTracker(Object host) {
-        super(
-            FrameworkUtil.getBundle(host.getClass()).getBundleContext(),
-            SomeService.class, null);
+        public SomeServiceTracker(Object host) {
+            super(
+                FrameworkUtil.getBundle(host.getClass()).getBundleContext(),
+                SomeService.class, null);
+        }
     }
-}
-```
+    ```
 
 2.  Construct a new instance of your service tracker where you need it. The 
     `Object host` parameter obtains your own bundle context and must be an
     object from your own bundle in order to give accurate results. 
 
-```java
-ServiceTracker<SomeService, SomeService> someServiceTracker =
-    new SomeServiceTracker(this);
-```
+    ```java
+    ServiceTracker<SomeService, SomeService> someServiceTracker =
+        new SomeServiceTracker(this);
+    ```
 
 3.  When you want to use the service tracker, open it, typically as early as
     you can. 
 
-```java
-someServiceTracker.open();
-```
+    ```java
+    someServiceTracker.open();
+    ```
 
 4.  Before attempting to use a service, use the Service Tracker to interrogate
     the service's state. For example, check whether the service is `null`:
 
-```java
-SomeService someService = someServiceTracker.getService();
+    ```java
+    SomeService someService = someServiceTracker.getService();
 
-if (someService == null) {
-    _log.warn("The required service 'SomeService' is not available.");
-}
-else {
-    someService.doSomethingCool();
-}
-```
+    if (someService == null) {
+        _log.warn("The required service 'SomeService' is not available.");
+    }
+    else {
+        someService.doSomethingCool();
+    }
+    ```
 
 Note, service trackers have several other utility functions for
 introspecting tracked services.
@@ -107,9 +107,9 @@ introspecting tracked services.
 5.  Later when your application is being destroyed or undeployed, close the
     service tracker. 
 
-```java
-someServiceTracker.close();
-```
+    ```java
+    someServiceTracker.close();
+    ```
 
 If you need to track multiple services or their events, implement a service tracker that uses callback handlers. 
 

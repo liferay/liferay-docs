@@ -161,7 +161,7 @@ Follow these steps to create your button for AlloyEditor:
     }
     ```
 
-10.  Finally, add the button to the list of available buttons:
+10. Finally, add the button to the list of available buttons:
 
     ```javascript
     AlloyEditor.Buttons[LogSelectedTextButton.key] = AlloyEditor.LogSelectedTextButton = LogSelectedTextButton;

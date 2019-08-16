@@ -15,11 +15,13 @@ Bin. For an explanation of why you should use the Capabilities API for this, see
     `isCapabilityProvided` method with `TrashCapability.class` as its argument. 
     This example does so in `if` statement's condition: 
 
-        if (repository.isCapabilityProvided(TrashCapability.class)) {
+    ```java
+    if (repository.isCapabilityProvided(TrashCapability.class)) {
 
-            // The code to move the entity to the Recycle Bin
-            // You'll write this in the next step
-        }
+        // The code to move the entity to the Recycle Bin
+        // You'll write this in the next step
+    }
+    ```
 
 2.  Move the entity to the Recycle Bin if the repository supports it. To do 
     this, first get a `TrashCapability` reference by calling the repository 
@@ -28,11 +30,13 @@ Bin. For an explanation of why you should use the Capabilities API for this, see
     the Recycle Bin. For example, this code calls `moveFileEntryToTrash` to move 
     a file to the Recycle Bin: 
 
-        if (repository.isCapabilityProvided(TrashCapability.class)) {
+    ```java
+    if (repository.isCapabilityProvided(TrashCapability.class)) {
 
-            TrashCapability trashCapability = repository.getCapability(TrashCapability.class);
-            trashCapability.moveFileEntryToTrash(user.getUserId(), fileEntry);
-        }
+        TrashCapability trashCapability = repository.getCapability(TrashCapability.class);
+        trashCapability.moveFileEntryToTrash(user.getUserId(), fileEntry);
+    }
+    ```
 
     See the `TrashCapability` 
     [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/capabilities/TrashCapability.html) 

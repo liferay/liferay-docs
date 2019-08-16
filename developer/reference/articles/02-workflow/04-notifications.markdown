@@ -60,7 +60,7 @@ widget), `im` (instant message), or `private-message` in the
 `<notification-type>` tag.
 
 ```xml
-    <notification-type>email</notification-type>
+<notification-type>email</notification-type>
 ```
 
 **Execution Type**
@@ -73,9 +73,9 @@ sent on assignment, the assignee is notified automatically.
 : Decide who should receive the notification in the `<recipients>` tag:
 
 ```xml
-    <recipients>
-        [SEE BELOW FOR THE AVAILABLE RECIPIENT TAGS]
-    </recipients>
+<recipients>
+    [SEE BELOW FOR THE AVAILABLE RECIPIENT TAGS]
+</recipients>
 ```
 
 Available recipient tags are
@@ -85,35 +85,35 @@ Available recipient tags are
   `userId`:
 
 ```xml
-    <recipients>
-        <user />
-    </recipients>
-    <recipients>
-        <user>
-            <user-id>20139</user-id>
-        </user>
-    </recipients>
+<recipients>
+    <user />
+</recipients>
+<recipients>
+    <user>
+        <user-id>20139</user-id>
+    </user>
+</recipients>
 ```
 
 - `<roles>`: notify specific Roles, either by ID or by their type and name.
 
 ```xml
-    <recipients>
-        <roles>
-            <role>
-                <role-id>33621</role-id>
-            </role>
-        </roles>
-    </recipients>
-    <recipients>
-        <roles>
-            <role>
-                <role-type>regular</role-type>
-                <name>Power User</name>
-                <auto-create>false</auto-create>
-            </role>
-        </roles>
-    </recipients>
+<recipients>
+    <roles>
+        <role>
+            <role-id>33621</role-id>
+        </role>
+    </roles>
+</recipients>
+<recipients>
+    <roles>
+        <role>
+            <role-type>regular</role-type>
+            <name>Power User</name>
+            <auto-create>false</auto-create>
+        </role>
+    </roles>
+</recipients>
 ```
 
 - `<assignees />`: notify the task assignees.
@@ -121,14 +121,14 @@ Available recipient tags are
 - `<scripted-recipient>`: use a script to identify notification recipients.
 
 ```xml
-    <recipients>
-        <scripted-recipient>
-            <script>
-                <![CDATA[Script logic goes here]]>
-            </script>
-            <script-language>groovy</script-language>
-        </scripted-recipient>
-    </recipients>
+<recipients>
+    <scripted-recipient>
+        <script>
+            <![CDATA[Script logic goes here]]>
+        </script>
+        <script-language>groovy</script-language>
+    </scripted-recipient>
+</recipients>
 ```
 
 If the notification type is `email`, you can specify the `recipientType`

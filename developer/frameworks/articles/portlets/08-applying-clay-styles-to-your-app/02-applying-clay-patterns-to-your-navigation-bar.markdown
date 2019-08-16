@@ -35,7 +35,7 @@ your app:
 3.  Inside your JSP view, add a java scriplet to retrieve the navigation 
     variable and portlet URL. An example configuration is shown below:
 
-    ```markup
+    ```java
     <%
     final String navigation = ParamUtil.getString(request, "navigation", 
     "entries");

@@ -65,11 +65,13 @@ must use the
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 interface's `addFolder` method: 
 
-    addFolder(long repositoryId, 
-            long parentFolderId, 
-            String name, 
-            String description, 
-            ServiceContext serviceContext)
+```java
+addFolder(long repositoryId, 
+        long parentFolderId, 
+        String name, 
+        String description, 
+        ServiceContext serviceContext)
+```
 
 See this method's 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#addFolder-long-long-java.lang.String-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-) 
@@ -91,7 +93,9 @@ article is available
 -->
 using that Service Context in the `addFolder` method: 
 
-    serviceContext.setAttribute("mountPoint", true);
+```java
+serviceContext.setAttribute("mountPoint", true);
+```
 
 Note that the `repositoryId` of such a folder indicates the external repository 
 the folder points to---not the repository the folder exists in. Also, mount 
@@ -104,10 +108,12 @@ library, you must use the
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 interface's `addFileShortcut` method: 
 
-    addFileShortcut(long repositoryId, 
-                    long folderId, 
-                    long toFileEntryId, 
-                    ServiceContext serviceContext)
+```java
+addFileShortcut(long repositoryId, 
+                long folderId, 
+                long toFileEntryId, 
+                ServiceContext serviceContext)
+```
 
 See this method's 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#addFileShortcut-long-long-long-com.liferay.portal.kernel.service.ServiceContext-) 
