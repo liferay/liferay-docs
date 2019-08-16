@@ -107,26 +107,44 @@ Next, you'll work out any remaining references you need.
 
 ## Step 3: Resolve Any Circular Dependencies
 
-Service Builder avoids adding references that could cause circular
-dependencies.
+A circular dependency between two modules occurs when each module (directly or
+indirectly) requires the other module to be active. Both modules fail to
+activate because their requirements remain unresolved. Here are some examples:
 
-<!-- This is not explained well. Explain what a circular dependency is, what it
-looks like, why it affects DS and not Spring, and how to resolve it. -Rich -->
+**Example 1 (`A` &rarr; `B` and `B` &rarr; `A`):** A Declarative Service 
+(service) in module A references a service in module B and a service in module B
+references a service in module A. In short, A and B depend on each other. 
+
+**Example 2 (`A` &rarr; `B`, `B` &rarr; `C`, and `C` &rarr; `A`):** A service 
+in module A references a service in B, a service in B references a service in C,
+and a service in C references a service in A. In short, A indirectly depends on
+C and C depends on A. 
+
+Regarding circular dependencies, module deployment failing right away is a good
+thing. The failure messages describe the unresolved requirements. Additionally,
+Gogo shell commands (described below) provide ways to examine circular
+dependencies so you can resolve them fast. 
+
+Circular dependencies in Service Builder modules that use Spring DI behave
+differently. You can deploy modules whose Spring Bean services have circular
+references. At runtime, however, if a referenced Spring Bean isn't ready, the
+reference is null. 
+
+Here's how to detect and resolve circular dependencies in modules that use DS: 
 
 1.  Use the `@Reference` DS annotation on fields as desired. 
 
 2.  [Deploy](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)
     your module. 
 
-3.  Detect and resolve any circular dependencies. Local components failing to 
+3.  Detect and resolve any circular dependencies. Local components failing to
     resolve can be due to circular dependencies. If you have circular
     dependencies, they're most likely between `*LocalService` components. All
     circular dependencies originate from fields you annotate with `@Reference`
     in Step 3.1. 
 
-    -   Run `system:check` in [Gogo
-        Shell](/docs/7-2/reference/-/knowledge_base/r/gogo-shell) to detect
-        obvious circular dependencies.
+    -   Run `system:check` in
+        [Gogo Shell](/docs/7-2/reference/-/knowledge_base/r/gogo-shell) to detect obvious circular dependencies.
 
     -   Run `scr:info [component]` in Gogo Shell to examine components and 
         determine the best places to break circular dependencies. 
