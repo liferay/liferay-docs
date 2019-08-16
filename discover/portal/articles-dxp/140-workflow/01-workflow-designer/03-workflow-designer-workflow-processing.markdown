@@ -4,6 +4,8 @@ header-id: affecting-the-processing-of-workflow-definitions
 
 # Affecting the Processing of Workflow Definitions
 
+[TOC levels=1-4]
+
 Workflow definitions all contain nodes: a Start Node, and End node, and at least
 one Task node. You might know that for the workflow to progress from one node to
 the other, you need Transitions. In this tutorial you'll learn about using

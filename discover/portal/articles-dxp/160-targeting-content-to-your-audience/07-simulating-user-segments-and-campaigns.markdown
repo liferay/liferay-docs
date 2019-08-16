@@ -4,6 +4,8 @@ header-id: simulating-user-segments-and-campaigns
 
 # Simulating User Segments and Campaigns
 
+[TOC levels=1-4]
+
 Once you create all those segments, you'll likely want to test them. The
 Audience Targeting Simulator can preview the way pages appear to different
 user segments. It appears under the *Simulation* icon

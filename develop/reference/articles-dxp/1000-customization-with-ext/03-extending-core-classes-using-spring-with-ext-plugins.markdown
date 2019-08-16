@@ -4,10 +4,12 @@ header-id: extending-core-classes-using-spring-with-ext-plugins
 
 # Extending Core Classes Using Spring with Ext Plugins
 
+[TOC levels=1-4]
+
 A supported use case for using Ext plugins in @product@ is extending its core
 classes (e.g., `portal-impl`, `portal-kernel`, etc.) using Spring. You can
 reference the
-[Finding Core Liferay Portal Artifacts](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies#finding-core-liferay-portal-artifacts)
+[Finding Core Artifacts](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies#finding-core-artifacts)
 section for help distinguishing core classes. Make sure you've reviewed the
 generalized
 [Customization with Ext Plugins](/docs/7-1/reference/-/knowledge_base/r/customizing-core-functionality-with-ext)

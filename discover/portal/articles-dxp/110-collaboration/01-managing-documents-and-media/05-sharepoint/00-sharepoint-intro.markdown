@@ -4,6 +4,8 @@ header-id: using-a-sharepoint-repository
 
 # Using a SharePoint Repository
 
+[TOC levels=1-4]
+
 The Liferay Marketplace app 
 [*Liferay Connector for SharePoint*](https://web.liferay.com/marketplace/-/mp/application/105406871) 
 lets users access SharePoint 2013 and SharePoint 2016 libraries from @product@'s 

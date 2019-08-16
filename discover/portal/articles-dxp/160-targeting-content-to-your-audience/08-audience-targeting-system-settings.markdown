@@ -4,6 +4,8 @@ header-id: audience-targeting-system-settings
 
 # Audience Targeting System Settings
 
+[TOC levels=1-4]
+
 Audience Targeting's configuration options are provided in [System
 Settings](/docs/7-1/user/-/knowledge_base/u/system-settings). Configurations
 made here take effect system-wide. You can find Audience Targeting system

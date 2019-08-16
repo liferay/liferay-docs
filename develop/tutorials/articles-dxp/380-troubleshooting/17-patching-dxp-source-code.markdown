@@ -4,6 +4,8 @@ header-id: patching-dxp-source-code
 
 # Patching DXP Source Code
 
+[TOC levels=1-4]
+
 Auto mechanics, enthusiasts, and prospective owners ask about cars, "What's
 under the hood?" Here are common reasons for asking that question:
 

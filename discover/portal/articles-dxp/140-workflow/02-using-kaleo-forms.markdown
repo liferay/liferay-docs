@@ -4,6 +4,8 @@ header-id: kaleo-forms
 
 # Kaleo Forms
 
+[TOC levels=1-4]
+
 Business processes are often form-based and workflow-driven. They start with 
 entered data and progress by sending that data to other people or groups. Then
 it's processed in some way (for example, further data is entered or approval is

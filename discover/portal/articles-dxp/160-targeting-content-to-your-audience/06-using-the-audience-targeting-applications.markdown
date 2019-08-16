@@ -4,6 +4,8 @@ header-id: using-the-audience-targeting-applications
 
 # Using the Audience Targeting Widgets
 
+[TOC levels=1-4]
+
 Audience Targeting includes widgets that can be added to any portal page:
 
 - Campaign Content Display

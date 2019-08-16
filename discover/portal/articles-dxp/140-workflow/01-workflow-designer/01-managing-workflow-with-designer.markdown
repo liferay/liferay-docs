@@ -4,6 +4,8 @@ header-id: managing-workflows-with-kaleo-designer
 
 # Managing Workflows with Kaleo Designer
 
+[TOC levels=1-4]
+
 The Kaleo Designer gives you an intuitive interface for creating workflow
 definitions, from the simplest approval processes to the most complex business
 processes you can imagine. It features a drag and drop interface, workflow

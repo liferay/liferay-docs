@@ -4,6 +4,8 @@ header-id: campaign-reports
 
 # Campaign Reports
 
+[TOC levels=1-4]
+
 Campaigns are useless without reports showing what happened. Select the
 campaign name and click the *Reports* tab to see the list of reports available.
 More reports can be created by developers and deployed as OSGi plugins. See the
