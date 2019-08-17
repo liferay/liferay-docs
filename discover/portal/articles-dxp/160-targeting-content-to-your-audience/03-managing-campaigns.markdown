@@ -4,6 +4,8 @@ header-id: managing-campaigns
 
 # Managing Campaigns
 
+[TOC levels=1-4]
+
 A campaign is an effort to expose certain user segments to a set of
 assets within a specific period of time. To manage campaigns for a Site,
 

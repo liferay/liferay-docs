@@ -4,6 +4,8 @@ header-id: defining-metrics
 
 # Defining Metrics
 
+[TOC levels=1-4]
+
 To provide your marketing team with real feedback from users, you can define the
 user actions you want to track using *Metrics*. Metrics are used in reports to
 measure the effectiveness of a campaign by tracking certain user actions.

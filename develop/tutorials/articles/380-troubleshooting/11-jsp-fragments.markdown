@@ -29,7 +29,7 @@ specify the host module and host module version:
     Bundle-Version: 1.0.0
     Fragment-Host: com.liferay.login.web;bundle-version="1.1.18"
 
-[Finding versions of deployed modules](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts)
+[Finding versions of deployed modules](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-app-and-independent-artifacts)
 is straightforward.  
 
 ## Related Topics

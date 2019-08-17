@@ -26,8 +26,8 @@ you must download these files for
 
 Here are the basic steps for installing @product@ on Tomcat:
 
-- [Installing dependencies to your application server](#installing-liferay-dependencies)
-- [Configuring your application server for @product@](#tomcat-configuration)
+- [Installing dependencies to your application server](#installing-dependencies)
+- [Configuring your application server for @product@](#configuring-tomcat)
 - [Deploying the @product@ WAR file to your application server](#deploying-liferay)
 
 [*Liferay Home*](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
@@ -279,7 +279,7 @@ Your application server is configured to run @product@.
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. @product@'s
-[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)
+[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-the-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 
@@ -364,7 +364,7 @@ If you want to manage your mail session with Tomcat, follow these steps:
 You've created a mail session for Tomcat to manage and configured @product@ to
 use it. 
 
-## Deploying @product@
+## Deploying Liferay
 
 Now you're ready to deploy @product@ using the @product@ WAR file.
 

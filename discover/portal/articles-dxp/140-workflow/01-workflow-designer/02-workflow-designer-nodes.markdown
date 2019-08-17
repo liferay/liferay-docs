@@ -4,6 +4,8 @@ header-id: workflow-definition-nodes
 
 # Workflow Definition Nodes
 
+[TOC levels=1-4]
+
 Once you know the basics of [creating workflow definitions](/docs/7-1/user/-/knowledge_base/u/managing-workflows-with-kaleo-designer)
 with the workflow Designer, you can get into the details. In this tutorial
 you'll learn about Actions and Notifications, two important features your

@@ -149,7 +149,7 @@ Congratulations on upgrading and deploying a portlet that uses Service Builder.
 
 [Migrating Plugins SDK Projects to Workspace and Gradle](/docs/7-1/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 
-[Using Dependency Management Tools](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-a-dependency-management-tool)
 
 [Using the WAB Generator](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
 

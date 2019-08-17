@@ -49,7 +49,7 @@ files.  Here's the `portal-dependency-jars` property from the portlet's
         json-java.jar
 
 Instructions for using packages that @product@ exports are found
-[here](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-packages-liferay-portal-exports).
+[here](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-packages-portal-exports).
 @product-ver@'s core system exports the package this portlet needs from each of
 the above dependency JARs. 
 
@@ -77,7 +77,7 @@ The server prints messages that indicate the following portlet status:
 | property per the
 | [instructions](resolving-a-plugins-dependencies#using-packages-liferay-portal-exports)
 | for using packages that @product@ exports. After upgrading, consider
-| [using a dependency management tool](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+| [using a dependency management tool](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-a-dependency-management-tool)
 | in your project. This helps prepare it for future @product@ versions and
 | facilitates managing dependencies.
 
@@ -92,7 +92,7 @@ Congratulations! You've upgraded and deployed your servlet-based portlet to
 
 [Migrating Plugins SDK Projects to Workspace and Gradle](/docs/7-1/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 
-[Using Dependency Management Tools](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-a-dependency-management-tool)
 
 [Using the WAB Generator](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
 

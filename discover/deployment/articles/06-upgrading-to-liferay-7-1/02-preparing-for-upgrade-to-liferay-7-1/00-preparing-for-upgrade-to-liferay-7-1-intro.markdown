@@ -135,7 +135,7 @@ It's time to migrate and update your document store configuration to
     14 and Liferay Portal CE 7.0 GA4. The
     [Document Repository Configuration](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)
     documentation describes other store options.
-    [Migrate your document data](/discover/user/-/knowledge_base/7-1/server-administration)
+    [Migrate your document data](/docs/7-1/user/-/knowledge_base/u/server-administration)
     to one of the other store options before upgrading from your current Liferay
     version. 
 

@@ -4,6 +4,8 @@ header-id: tracking-custom-assets
 
 # Tracking Custom Assets
 
+[TOC levels=1-4]
+
 [Liferay Analytics Cloud](https://help.liferay.com/hc/en-us/categories/360000608871-Liferay-Analytics-Cloud-Admin-Guide) 
 can detect and analyze built-in Liferay DXP assets like Forms, Blogs, Documents 
 and Media, and Web Content. To analyze assets in your custom app, however, you 

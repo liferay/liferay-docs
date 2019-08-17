@@ -4,6 +4,8 @@ header-id: installing-liferay-ide
 
 # Installing Liferay @ide@
 
+[TOC levels=1-4]
+
 Liferay @ide@ is a plugin for Eclipse that provides many Liferay-specific
 features and additional enterprise only features. You can install it into your
 existing Eclipse environment, or Liferay provides a bundled version. Before

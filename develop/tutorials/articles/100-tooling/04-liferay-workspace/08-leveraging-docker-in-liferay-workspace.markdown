@@ -76,7 +76,8 @@ configurations. This could include things like
 You can do this by applying files (and their accompanying folder structures, if
 necessary) to your workspace's `configs/docker` folder. This folder is treated
 as your Liferay Home for Docker development; you add additional files that
-overlay your @product@ container's default configuration.
+overlay your workspace's `configs/common` folder and your @product@ container's
+default configuration.
 
 For example, to enable the Gogo shell for your container, add
 a `configs/docker/portal-ext.properties` file to your workspace with the
@@ -88,9 +89,11 @@ This lets you access your container using
 [Gogo shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 via telnet session.
 
-Once the container is started, the configurations stored in `configs/docker` are
-transferred to the `build/docker/files` folder, which applies all configurations
-to the container's file system.
+Once the container is started, the configurations stored in `configs/commmon`
+and `configs/docker` are transferred to the `build/docker/files` folder, which
+applies all configurations to the container's file system. For more information
+on workspace's `configs` folder, see
+[this section](/docs/7-1/tutorials/-/knowledge_base/t/development-lifecycle-for-a-liferay-workspace#testing-projects).
 
 | **Note:** You can call the `deployDocker` Gradle task from your workspace's
 | root folder to initiate the Docker configuration transfer to the
@@ -110,8 +113,8 @@ C).
 `dockerDeploy`: deploys the project to the container's `deploy` folder by
 copying the project archive file to workspace's `build/docker/deploy` folder.
 This command can also be executed from workspace's root folder to deploy all
-projects and copy all Docker configurations (i.e., from the `configs/docker`
-folder) to the container.
+projects and copy all Docker configurations (i.e., from the `configs/common` and
+`configs/docker` folders) to the container.
 
 `stopDockerContainer`: stops the container.
 

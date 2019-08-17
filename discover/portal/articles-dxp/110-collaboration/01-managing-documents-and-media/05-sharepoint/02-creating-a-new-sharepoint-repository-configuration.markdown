@@ -4,6 +4,8 @@ header-id: creating-a-new-sharepoint-repository-configuration
 
 # Creating a New SharePoint Repository Configuration
 
+[TOC levels=1-4]
+
 To connect to a remote SharePoint server you must create a repository 
 configuration: 
 

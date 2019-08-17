@@ -80,7 +80,7 @@ is running @product@. In this case, the `liferay` folder becomes Liferay Home.
 For example, if the operating system user's name is jbloggs, the Liferay Home
 folder is `/home/jbloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
-## Extracting a @product@ Bundle
+## Extracting a Liferay Bundle
 
 Getting a @product@ bundle up and running involves uncompressing the archive,
 possibly copying a JDBC driver, and then starting the application server. Let's
@@ -99,19 +99,19 @@ finished with the installation (and before you've started @product@ for the
 first time), come back to this spot, because you must hook it up to your
 database. 
 
-## Connecting @product@ to Your Database
+## Connecting to Your Database
 
 You can connect to your database with JNDI on your app server or the data source
 shipped with @product@ (recommended). Refer to the article on your app server
 for instructions on using JNDI. For the internal data source, you can configure
 it by specifying the configuration in a `portal-ext.properties` file or the
-[Setup Wizard](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard):
+[Setup Wizard](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-the-setup-wizard):
 
 1.  Create a `portal-ext.properties` file in your Liferay Home folder.
 
 2.  Copy a relevant example data source configuration from
     one of the
-    [data source configuration templates](/discover/reference/-/knowledge_base/7-0/database-templates)
+    [data source configuration templates](/docs/7-1/deploy/-/knowledge_base/d/database-templates)
     or
     [portal properties reference's JDBC section](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#JDBC)
     and paste it into the `portal-ext.properties` file.
@@ -121,7 +121,7 @@ it by specifying the configuration in a `portal-ext.properties` file or the
 
 You're ready to start @product@. 
 
-## Running @product@ for the First Time
+## Running for the First Time
 
 Next, start your app server, or start the @product@ app in your app server. 
 @product@ writes log files to folder `[Liferay Home]/logs`. 
@@ -132,7 +132,7 @@ the Basic Configuration page. If for some reason your browser doesn't load the
 Basic Configuration page, launch it and navigate to your app server's address
 and port (for example, http://localhost:8080). 
 
-## Using @product@'s Setup Wizard
+## Using the Setup Wizard
 
 The Setup Wizard runs when you start @product@ for the first time. The title of
 the setup wizard page is Basic Configuration. This page provides a convenient

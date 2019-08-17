@@ -11,7 +11,7 @@ the hood. You can learn more about Liferay AMD Loader in the
 [Liferay AMD Module Loader](/docs/7-1/tutorials/-/knowledge_base/t/loading-amd-modules-in-liferay) 
 tutorial.
 
-With [de-duplication](/docs/7-1/reference/-/knowledge_base/r/how-liferay-portal-publishes-npm-packages#package-deduplication) 
+With [de-duplication](/docs/7-1/reference/-/knowledge_base/r/how-liferay-portal-publishes-npm-packages#package-de-duplication) 
 in place, JavaScript modules are made available to Liferay AMD Loader through 
 the configuration returned by the `/o/js_loaded_modules` URL.
 

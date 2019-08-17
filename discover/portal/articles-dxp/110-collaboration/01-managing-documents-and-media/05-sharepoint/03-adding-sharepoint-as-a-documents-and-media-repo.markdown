@@ -4,6 +4,8 @@ header-id: adding-a-sharepoint-documents-and-media-repository
 
 # Adding a SharePoint Documents and Media Repository
 
+[TOC levels=1-4]
+
 Follow these steps to add your SharePoint Library to Documents and Media in 
 @product@:
 

@@ -13,10 +13,10 @@ what you can do with the commands:
 - [Get command usage](#command-usage)
 - [List modules to upgrade](#listing-module-upgrade-processes)
 - [Upgrade modules](#executing-module-upgrades) 
-- [Check upgrade status](#checking-the-upgrade-status) 
+- [Check upgrade status](#checking-upgrade-status) 
 - [Verify upgrades](#executing-verify-processes) 
 
-| **Note**: [Configuring the core upgrade](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade#configuring-the-core-upgrade)
+| **Note**: [Configuring the core upgrade](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade)
 | is required before using Gogo shell commands to upgrade the core.
 
 First explore the command usage. 

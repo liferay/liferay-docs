@@ -30,9 +30,6 @@ this integration.  Contact
 This document assumes you're enabling security *and* monitoring, though
 differences in the process are noted as appropriate.
 
-For the X-Pack installation procedure, refer to the 
-[X-Pack security article](/docs/art/deploy/-/knowledge_base/d/cle](/discover/deployment/-/knowledge_base-7-1/installing-x-pack-security).
-
 Start by enabling data collection in Elasticsearch.
 
 ## Enable Data Collection

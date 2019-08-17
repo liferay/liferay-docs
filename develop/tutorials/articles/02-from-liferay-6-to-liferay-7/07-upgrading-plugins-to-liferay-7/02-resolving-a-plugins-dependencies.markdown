@@ -91,10 +91,10 @@ The following table shows each Liferay utility module's symbolic name.
  util-taglib             | `com.liferay.util.taglib` |
 
 You can use @product@'s
-[App Manager](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts),
+[App Manager](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-app-and-independent-artifacts),
 [Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell),
 or
-[module JAR file manifests](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies#finding-core-liferay-portal-artifacts)
+[module JAR file manifests](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies#finding-core-artifacts)
 to find versions of modules deployed on your @product@ instance. 
 
 | **Note:** Previous versions of the Plugins SDK made `portal-service.jar`
@@ -112,9 +112,9 @@ available to your plugin project. The modules your plugin uses must be available
 to it at compile time and run time. Here are two options for resolving module
 dependencies in your traditional plugin project: 
 
-[**Option 1: Use a dependency management tool**](#managing-dependencies-with-ivy)
+[**Option 1: Use a dependency management tool**](#using-a-dependency-management-tool)
 
-[**Option 2: Manage dependencies manually**](#managing-dependencies-manually)
+[**Option 2: Manage dependencies manually**](#managing-plugin-dependencies-manually)
 
 The next sections explain and demonstrate these options.
 
@@ -211,7 +211,7 @@ find them: either 1) the dependency Java packages must already be active in
 generated for the plugin. Your plugin can use both the JARs it currently has and
 the packages @product@ exports. 
 
-#### Using Packages @product@ Exports
+#### Using Packages Portal Exports
 
 The Plugins SDK for Liferay Portal 6 provided a way to compile against JARs it
 had. You'd specify these JARs in  the `portal-dependency-jars` property in your
@@ -228,7 +228,7 @@ packages has replaced wholesale use of JARs, modules and WABs can import
 packages without concerning themselves with JARs. This means that @product@
 can't make available to plugins the same Java classes it did in the past. 
 
-These files list the packages @product-ver@ exports:
+These files list the packages that the portal exports:
 
 -   `modules/core/portal-bootstrap/system.packages.extra.bnd` file in the
     [GitHub repository](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/core/portal-bootstrap/system.packages.extra.bnd).
@@ -318,7 +318,7 @@ in your plugin's `WEB-INF/lib` but name it something other than
 `spring-aop-3.0.7.RELEASE.jar`) differentiates it from the excluded JAR and
 prevents it from being stripped from the WAB. 
 
-#### Using Packages @product@ Doesn't Export
+#### Using Packages Portal Doesn't Export
 
 You must download and install to your plugin's `WEB-INF/lib` folder JARs that
 provide packages @product@ doesn't export that your plugin requires. 

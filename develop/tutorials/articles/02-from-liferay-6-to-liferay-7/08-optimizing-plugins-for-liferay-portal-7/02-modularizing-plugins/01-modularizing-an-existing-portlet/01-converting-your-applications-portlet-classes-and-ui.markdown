@@ -235,7 +235,7 @@ Awesome! You've created your application's web client module and completed some
 of the most common tasks for modularizing your portlet classes and UI. To
 convert other parts of your application this tutorial hasn't covered, examine
 the
-[@product@ developer tutorials](/develop/tutorials)
+[@product@ developer tutorials](/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-liferay-development)
 to see how those parts fit into application modules. The tutorials  are divided
 into popular areas so you can easily find the topical information you need.
 

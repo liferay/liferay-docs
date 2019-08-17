@@ -4,6 +4,8 @@ header-id: categorizing-pages-and-content-for-user-segments
 
 # Categorizing Pages and Content for User Segments
 
+[TOC levels=1-4]
+
 Each new user segment that's created can be used to categorize pages or content.
 The Audience Targeting app adds a new *User Segment* select button to the SEO
 section of pages and Metadata section for assets. These buttons can assign one
@@ -56,10 +58,9 @@ selecting the *Options* (![Options](../../images-dxp/icon-options.png)) &rarr;
 *Export* button. This downloads a CSV file with the list of users.
 
 Additional reports can be created by developers and deployed as OSGi plugins.
-See the [Reporting User Behavior with Audience Targeting](/docs/7-1/tutorials/-/knowledge_base/t/reporting-user-behavior-with-audience-targeting)
-tutorial for details. Reports are generated daily by default, but you can
-generate a report at any time. To generate a new report when currently viewing
-a report, click the *Update* button from the *Options* icon
+Reports are generated daily by default, but you can generate a report at any
+time. To generate a new report when currently viewing a report, click the
+*Update* button from the *Options* icon
 (![Options](../../images-dxp/icon-options.png)) in the top right corner.
 
 Next, you'll discover how to use your user segments in a campaign.

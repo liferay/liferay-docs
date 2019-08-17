@@ -4,6 +4,8 @@ header-id: managing-user-segments
 
 # Managing User Segments
 
+[TOC levels=1-4]
+
 Go to *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting*
 to manage user segments and campaigns.
 
@@ -87,10 +89,6 @@ These are some of the rules that are included with the app by default:
 - Behavior
     - Viewed page or content
     - Score Points rule.
-
-For a complete reference of all rules available, see the
-[Liferay Audience Targeting Rules](/docs/7-1/tutorials/-/knowledge_base/t/liferay-audience-targeting-rules)
-tutorial.
 
 The Score Points rule assigns one point to a user each time the user views
 a page or content categorized under the user segment where the rule 
