@@ -116,9 +116,6 @@ Custom properties for the `document_library` field:
 `lexiconIconsPath`
 : set the icons path.
 
-`strings`
-: set the strings.
-
 Custom properties for the `editor` field:
 
 `placeholder`
