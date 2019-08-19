@@ -7,23 +7,23 @@ header-id: statistical-aggregations
 [TOC levels=1-4]
 
 Support for 
-[GroupBy](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/search/GroupBy.java) 
+[GroupBy](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/portal-kernel/src/com/liferay/portal/kernel/search/GroupBy.java) 
 and 
-[Stats](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/search/Stats.java) 
+[Stats](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/portal-kernel/src/com/liferay/portal/kernel/search/Stats.java) 
 aggregations were introduced in 7.0.
 
 Cardinality Aggregations extend @product@'s metrics aggregation capabilities,
 providing an approximate (i.e., statistical) count of distinct values returned
 by a search query. For example, you could compute a count of distinct values of
 the _tag_ field. Refer to the 
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics-cardinality-aggregation.html) 
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-metrics-cardinality-aggregation.html) 
 for more details.
 
 While this functionality was available in the past directly in the portal kernel
 code, it's been extracted and re-implemented in 
-[`StatsRequest`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/stats/StatsRequest.java) 
+[`StatsRequest`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/stats/StatsRequest.java) 
 and 
-[`StatsResponse`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/stats/StatsResponse.java), 
+[`StatsResponse`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/stats/StatsResponse.java), 
 both introduced in the `com.liferay.portal.search.api` module to avoid modifying
 `portal-kernel`. `StatsRequest` provides the same statistical features that the
 legacy `com.liferay.portal.kernel.search.Stats` does, and adds the new
@@ -97,7 +97,7 @@ that are to be computed for each field.
     SearchResponse searcher.search(searchRequest);
     ```
 
-[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128 )
+[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128 )
 
 ### `StatsResponse`
 
@@ -122,7 +122,7 @@ engine for a given field.
     statsResponse.getCardinality();
     ```
 
-[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128)
+[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128)
 
 ### Using the Legacy `Stats` Object
 
@@ -155,8 +155,8 @@ supported:
 
 ## External References
 
-* https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics.html
-* https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics-cardinality-aggregation.html
+* https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-metrics.html
+* https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-aggregations-metrics-cardinality-aggregation.html
 * https://lucene.apache.org/solr/guide/7_5/the-stats-component.html
 
 ## Search Engine Connector Support
