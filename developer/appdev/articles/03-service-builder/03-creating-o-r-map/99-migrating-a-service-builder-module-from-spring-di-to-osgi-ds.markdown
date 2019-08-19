@@ -91,11 +91,13 @@ must be updated to use DS.
     with the DS
     [`@Reference`](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Reference.html)
     annotation. 
+
+7.  Use the `@Reference` field annotation to access any other services you need.
  
-7.  [Run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
+8.  [Run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
     to regenerate the interfaces based on your implementation changes. 
 
-8.  Replace the following methods:
+9.  Replace the following methods:
 
     -   `afterPropertiesSet() {...}` &rarr; `activate() {...}` and annotate with
         [`@Activate`](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Activate.html).
@@ -107,47 +109,60 @@ Next, you'll work out any remaining references you need.
 
 ## Step 3: Resolve Any Circular Dependencies
 
-A circular dependency between two modules occurs when each module (directly or
-indirectly) requires the other module to be active. Both modules fail to
-activate because their requirements remain unresolved. Here are some examples:
+Circular dependencies occur in a module if two or more of its DS services refer
+to each another (either directly or indirectly). A direct reference in a module
+occurs, for example, when service `A` in the module references service `B` in
+the module, and `B` references `A`. Here's what the service components might
+look like:
 
-**Example 1 (`A` &rarr; `B` and `B` &rarr; `A`):** A Declarative Service 
-(service) in module A references a service in module B and a service in module B
-references a service in module A. In short, A and B depend on each other. 
+`AImpl.java`:
 
-**Example 2 (`A` &rarr; `B`, `B` &rarr; `C`, and `C` &rarr; `A`):** A service 
-in module A references a service in B, a service in B references a service in C,
-and a service in C references a service in A. In short, A indirectly depends on
-C and C depends on A. 
+```java
+@Component(service = A.class)
+public class AImpl implements A {
+    @Reference
+    private B _b;
+}
+```
 
-Regarding circular dependencies, module deployment failing right away is a good
-thing. The failure messages describe the unresolved requirements. Additionally,
-Gogo shell commands (described below) provide ways to examine circular
-dependencies so you can resolve them fast. 
+`BImpl.java`:
 
-Circular dependencies in Service Builder modules that use Spring DI behave
-differently. You can deploy modules whose Spring Bean services have circular
-references. At runtime, however, if a referenced Spring Bean isn't ready, the
-reference is null. 
+```java
+@Component(service = B.class)
+public class BImpl implements B {
+    @Reference
+    private A _a;
+} 
+```
 
-Here's how to detect and resolve circular dependencies in modules that use DS: 
+`AImpl` and `BImpl` directly depend on each other.  This circular dependency
+prevents each service component from resolving. DS service activation requires
+that all of a service's dependencies (references) be satisfied. 
 
-1.  Use the `@Reference` DS annotation on fields as desired. 
+The example above demonstrates a very small circle, composed of only two
+classes, but a circle can compose more classes. For example, `A` references `B`,
+`B` references `C`, `C` references `A`. Detecting and resolving such a
+dependency can be complicated. 
 
-2.  [Deploy](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)
-    your module. 
+There is no general, correct way to detect and resolve circular dependencies;
+cases vary. However, Liferay provides tools that facilitate detecting circular
+dependencies and examining the DS service components involved.
 
-3.  Detect and resolve any circular dependencies. Local components failing to
-    resolve can be due to circular dependencies. If you have circular
-    dependencies, they're most likely between `*LocalService` components. All
-    circular dependencies originate from fields you annotate with `@Reference`
-    in Step 3.1. 
+-   `system:check`: This
+    [Gogo shell](/docs/7-2/reference/-/knowledge_base/r/gogo-shell)
+    command provides several checks, including one that detects inactivate
+    service components whose required references are unresolved.
 
-    -   Run `system:check` in
-        [Gogo Shell](/docs/7-2/reference/-/knowledge_base/r/gogo-shell) to detect obvious circular dependencies.
+-   `scr:info [component]`: Execute this
+    [Gogo shell](/docs/7-2/reference/-/knowledge_base/r/gogo-shell)
+    command on an unresolved component to report its unresolved references. 
 
-    -   Run `scr:info [component]` in Gogo Shell to examine components and 
-        determine the best places to break circular dependencies. 
+| **Note:** Service resolution in DS dependency injection (DI) is different 
+| than in services that use Liferay's Spring DI. In the latter case, all Spring
+| beans in the same module act as a single bundle of services that activate
+| together and can bind together before activation. DS doesn't have this 
+| feature. With DS, each component in a module is its own service and must
+| resolve on its own. 
 
 Congratulations on converting your service module to use Declarative Services. 
 
