@@ -41,99 +41,170 @@ curl -i -X POST \
 Here you specify the endpoint for the data definitions API, passing in the
 `siteId`. Then you create a request body that includes
 
-- `availableLanguageIds`: the IDs of the available languages.
-- `dataDefinitionFields`: The example is simple, with just a `fieldType` and a
-    `name` element for one field. Here's the complete list of elements that each
-    field can have:
-    - `customProperties`: properties that depend on the type of the field
-        (listed below).
-    - `defaultValue`: provide a default value for a field. 
-    - `fieldType`: the type of a field
-    - `id`: set by the system.
-    - `indexable` can be set to `true` (default)  or `false` to control whether the
-        fields are indexed in the search engine.
-    - `label`: set a human readable label for each of the custom properties the
-        fields has.
-    - `localizable`: can be set to `true` (default) or `false` to control
-        whether the locale of the User is appended when he or she adds a data
-        record.
-    - `name`: a required element that names the field. This defaults to `string`
-        if left blank.
-    - `nestedDataDefinitionFields`: set of data definition fields.
-    - `repeatable`: set to `true` or `false` to control whether the field
-        accepts multiple values per data record.
-    - `tip`: provide help text for the field's properties.
-- `dataDefinitionKey`: set by the system.
-- `dataDefinitionRules`: set validation rules for the data definition.
-- `dateCreated` and `dateModified`: these are set by the system, so it's not
-    necessary to do anything here.
-- `defaultLangugageId`: the ID of the default language.
-- `description`: use this optional element to describe the data definition.
-- `id`: set by the system.
-- `name`: name the data definition.
-- `siteId`: the ID of the site the data definition is scoped to.
-- `storageType`: the default is `string`, which is how the JSON is stored in the
-    database.
-- `userId`: the ID of the User making the service call.
+`availableLanguageIds`
+: Enter the IDs of the available languages.
+
+`dataDefinitionFields`
+: The example above is simple, with just a `fieldType` and a `name` element for
+one field. Here's the complete list of elements that each field can have:
+
+| Property | Description |
+|----------|--------------------------------|
+| `customProperties` | these depend on the field type (listed below) |
+| `defaultValue` | set a default value for a field |
+| `fieldType` | the field type |
+| `id` | set by the system |
+| `indexable` | set to `true` (default)  or `false` to control whether the fields are indexed in the search engine |
+| `label` | set a human readable label for each of the custom properties the fields has |
+| `localizable` | can be set to `true` (default) or `false` to control whether the locale of the User is appended when he or she adds a data record |
+| `name` | a required element that names the field (defaults to `string`) |
+| `nestedDataDefinitionFields` | set of data definition fields |
+| `repeatable` | set to `true` or `false` to control whether the field accepts multiple values per data record |
+| `tip` | provide help text for the field's properties |
+| `dataDefinitionKey` | set by the system |
+| `dataDefinitionRules` | set validation rules for the data definition |
+| `dateCreated` and `dateModified` | these are set by the system, so it's not necessary to do anything here |
+| `defaultLangugageId` | the ID of the default language |
+| `description` | use this optional element to describe the data definition |
+| `id` | set by the system |
+| `name` | name the data definition |
+| `siteId` | the ID of the site the data definition is scoped to |
+| `storageType` | the default is `string`, which is how the JSON is stored in the database |
+| `userId` | the ID of the User making the service call |
 
 Each field has its own custom properties. Here is the complete list of fields
 and properties:
 
-- `checkbox`
-    - `showAsSwitcher`: set to `true` or `false` to control whether the checkbox
-        is displayed as a switcher.
-    - `predefinedValue`: provide a predefined value for the field. 
-- `checkbox_multiple`
-    - `inline`: set to `true` or `false` to control whether the options are
-        going to be shown inline or not.
-    - `options`: set the options of the field.
-    - `showAsSwitcher`: set to `true` or `false` to control whether the options
-        are displayed as a switcher.
-    - `predefinedValue`: provide a predefined value for the field.
-- `date`
-    - `predefinedValue`: provide a predefined value for the field.
-- `document_library`
-    - `groupId`: set the group id.
-    - `itemSelectorAuthToken`: set the auth token.
-    - `lexiconIconsPath`: set the icons path.
-    - `strings`: set the strings.
-- `editor`
-    - `placeholder`: set a placeholder value for the field.
-- `fieldset`
-    - `orientation`: set the orientation in how the nested fields are going to
-        be shown: horizontal or vertical. The default orientation is horizontal.
-- `grid`
-    - `columns`: set the options for the columns in the grid field.
-    - `rows`: set the options for the rows in the grid field
-- `numeric`
-    - `dataType`: set if the number is going to be `decimal` or `integer`.
-    - `placeholder`: set a placeholder for the field.
-    - `predefinedValue`: provide a predefined value for the field.
-    - `tooltip`: set a tooltip for the field.
-- `paragraph`
-    - `text`: set the text that populates the paragraph.
-- `radio`
-    - `inline`: set to `true` or `false` to control whether the options are
-        shown inline or not.
-    - `options`: set the options of the field.
-    - `predefinedValue`: provide a predefined value for the field.
-- `select`
-    - `dataSourceType`: set how the options are populated; manually (`manual`),
-        from a Data Provider (`data-provider`), or from Autofill
-        (`from-autofill`).
-    - `multiple`: set to `true` or `false` to control whether the field accepts
-        more than one option as a value.
-    - `options`: set the options.
-    - `predefinedValue`: provide a predefined value for the field.
-- `text`
-    - `autocompleteEnabled`: set to `true` or `false` to control whether the
-        field autocompletes the text input.
-    - `displayStyle`: set the display style, as a single line (`singleline`)
-        or as multiple lines (`multiline`).
-    - `options`: set the options.
-    - `placeholder`: set a placeholder for the field.
-    - `predefinedValue`: provide a predefined value for the field.
-    - `tooltip`: set a tooltip for the field.
+Custom properties for the `checkbox` field:
+
+`showAsSwitcher`
+: set to `true` or `false` to control whether the checkbox is displayed as a
+switcher.
+
+`predefinedValue`
+: provide a predefined value for the field. 
+
+Custom properties for the `checkbox_multiple` field:
+
+`inline`
+: set to `true` or `false` to control whether the options are going to be shown
+inline or not.
+
+`options`
+: set the options of the field.
+
+`showAsSwitcher`
+: set to `true` or `false` to control whether the options are displayed as a
+switcher.
+
+`predefinedValue`
+: provide a predefined value for the field.
+
+Custom properties for the `date` field:
+
+`predefinedValue`
+: provide a predefined value for the field.
+
+Custom properties for the `document_library` field:
+
+`groupId`
+: set the group id.
+
+`itemSelectorAuthToken`
+: set the auth token.
+
+`lexiconIconsPath`
+: set the icons path.
+
+`strings`
+: set the strings.
+
+Custom properties for the `editor` field:
+
+`placeholder`
+: set a placeholder value for the field.
+
+Custom properties for the `fieldset`:
+
+`orientation`
+: set the orientation in how the nested fields are going to be shown: horizontal
+or vertical. The default orientation is horizontal.
+
+Custom properties for the `grid` field:
+
+`columns`
+: set the options for the columns in the grid field.
+
+`rows`
+: set the options for the rows in the grid field
+
+Custom properties for the `numeric` field:
+
+`dataType`
+: set if the number is going to be `decimal` or `integer`.
+
+`placeholder`
+: set a placeholder for the field.
+
+`predefinedValue`
+: provide a predefined value for the field.
+
+`tooltip`
+: set a tooltip for the field.
+
+Custom properties for the `paragraph` field:
+
+`text`
+: set the text that populates the paragraph.
+
+Custom properties for the `radio` field:
+
+`inline` : set to `true` or `false` to control whether the options are shown
+inline or not.
+
+`options`
+: set the options of the field.
+
+`predefinedValue`
+: provide a predefined value for the field.
+
+Custom properties for the `select` field:
+
+`dataSourceType`
+: set how the options are populated; manually (`manual`), from a Data Provider
+(`data-provider`), or from Autofill (`from-autofill`).
+
+`multiple`
+: set to `true` or `false` to control whether the field accepts more than one
+option as a value.
+
+`options`
+: set the options.
+
+`predefinedValue`
+: provide a predefined value for the field.
+
+Custom properties for the `text` field:
+
+`autocompleteEnabled`
+: set to `true` or `false` to control whether the field autocompletes the text
+input.
+
+`displayStyle`
+: set the display style, as a single line (`singleline`) or as multiple lines
+(`multiline`).
+
+`options`
+: set the options.
+
+`placeholder`
+: set a placeholder for the field.
+
+`predefinedValue`
+: provide a predefined value for the field.
+
+`tooltip`
+: set a tooltip for the field.
 
 For a complete view of the JSON structure of a data definitions, see the
 [`data-engine-rest-impl/rest-openapi.yaml`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/data-engine/data-engine-rest-impl/rest-openapi.yaml)
@@ -177,15 +248,20 @@ Content-Length: 307
 
 Here you can see that some information was added by the data engine itself:
 
-- `id` is a number generated by the system.
-- `indexable` is set to `true` by default, so the field is indexed in the search
-    engine.
-- `localizable` is set to `false` by default.
-- `repeatable` is set to `false` by default, so submitting the same filed
-    multiple times for the same data record is not allowed.
-- `dateCreated` and `dateModified`: the data engine updates this metadata when
-    the data definition is first created and when it's updated, respectively.
-- `userId` is set to the numeric ID of the User that created the definition.
+`id` is a number generated by the system.
+
+`indexable` is set to `true` by default, so the field is indexed in the search
+engine.
+
+`localizable` is set to `false` by default.
+
+`repeatable` is set to `false` by default, so submitting the same field multiple
+times for the same data record is not allowed.
+
+`dateCreated` and `dateModified`: the data engine updates this metadata when the
+data definition is first created and when it's updated, respectively.
+
+`userId` is set to the numeric ID of the User that created the definition.
 
 Before we move on, it's important to understand the relationship between the
 data definition and the information you'll collect from Users, as a data record.
