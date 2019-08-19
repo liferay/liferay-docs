@@ -6,7 +6,9 @@ header-id: filtering-and-searching-uad-marked-entities
 
 [TOC levels=1-4]
 
-When you 
+In the data erasure UI, it's important that administrators can find what they're
+looking for. The native @product@ entities support filtering and search, and
+when you follow the steps here, your entities will, too.
 
 ![Figure 1: The UAD UI has filtering and searching elements you can leverage in custom entities.](../../images/uad-filter-search.png)
 
@@ -130,9 +132,11 @@ interface:
     }
     ```
 
-But, again, if the model entity is being indexed in a search engine, you can
-use it to get a count without ever hitting the database. Using the `Hits`
-object returned from a search (see the code from step 1, but don't include
-`start` and `end` parameters in the `SearchContext`), call
-`hits.getLegnth()` and you get the count, as an `int`.
+    But, again, if the model entity is being indexed in a search engine, you can
+    use it to get a count without ever hitting the database. Using the `Hits`
+    object returned from a search (see the code from step 1, but don't include
+    `start` and `end` parameters in the `SearchContext`), call
+    `hits.getLegnth()` and you get the count, as an `int`.
 
+Now administrators responsible for complying with GDPR or other data erasure
+concerns can search and filter your entity from the @product@ UAD interface.
