@@ -126,13 +126,26 @@ to be built and deployed.
     database (Hypersonic). Although this database isn't intended for production 
     use, it works fine for development and testing. 
 
-4.  To add an application to a page, click *Add* 
+4.  Click the menu button at the top left and select *Site Builder* &rarr;
+    *Pages*. 
+
+5.  Click the ![add](../../../images/icon-add.png) button at the top right to
+    add a Public Page. 
+
+6.  Choose *Widget Page* and name it *Guestbook*. 
+
+7.  Choose the *One Column* layout and click *Save*. 
+
+8.  Click *Go to Site* on the left, and then navigate to your new Guestbook
+    page. 
+ 
+9.  Click *Add* 
     (![Add Widget](../../../images/icon-add-app.png)) in the upper right hand 
     corner.
 
 5.  Select *Widgets*. In the Applications list, your application should
     appear in the Sample category. Its name is `Guestbook`. 
 
-![Figure 5: This is the default Liferay home page. It contains the Hello World widget and the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
+![Figure 5: This is your new page with the Guestbook application that you created.](../../../images/default-guestbook-application.png)
 
 Now you're ready to jump in and start developing your Guestbook portlet. 
