@@ -33,7 +33,7 @@ portlet can appear only once on a page or Site, depending on its scope.
               "javax.portlet.display-name=Guestbook",
               "javax.portlet.expiration-cache=0",
               "javax.portlet.init-param.template-path=/",
-              "javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
+              "javax.portlet.init-param.view-template=/guestbook/view.jsp",
               "javax.portlet.resource-bundle=content.Language",
               "javax.portlet.security-role-ref=power-user,user",
               "javax.portlet.supports.mime-type=text/html"
@@ -46,8 +46,17 @@ Guestbook portlet's display category to *Social*. The
 `com.liferay.portlet.instanceable=false` property specifies that the Guestbook 
 portlet is non-instanceable, so only one instance of the portlet can be added 
 to a page. In the property `javax.portlet.init-param.view-template`, you also 
-update the location of the main `view.jsp` to its new location in 
-`/guestbookwebportlet`.
+update the location of the main `view.jsp` to a folder in
+`src/main/resources/META-INF/resources` called `/guestbook`. You'll wind up
+creating two folders there for the two different portlets you'll create:
+`guestbook` and `guestbook-admin`. For now, just create the `guestbook` folder: 
+
+1.  Open `src/main/resources`, then open `META-INF`. Right-click on the
+    `resources` folder and select *New* &rarr; *Folder*. 
+
+2.  Name the folder *guestbook* and hit *Enter* (or click OK). 
+
+3.  Drag `view.jsp` and drop it onto the `guestbook` folder to move it there. 
 
 Since you edited the portlet's metadata, you must remove and re-add the portlet 
 to the page before continuing: 
