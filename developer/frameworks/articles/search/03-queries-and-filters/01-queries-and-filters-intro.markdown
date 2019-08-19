@@ -19,7 +19,7 @@ Elasticsearch and Solr do not make API level distinctions between queries and
 filters. In the past, Liferay's API explicitly provided two sets of APIs, one
 for queries and one for filters. Both APIs lived in `portal-kernel` (the 7.1
 source code for filters is 
-[here](https://github.com/liferay/liferay-portal/tree/7.1.x/portal-kernel/src/com/liferay/portal/kernel/search/filter).
+[here](https://github.com/liferay/liferay-portal/tree/7.1.x/portal-kernel/src/com/liferay/portal/kernel/search/filter)).
 
 In @product-ver@, there's a new way of querying and filtering via Liferay's
 Search API, and the APIs for it live in the `portal-search-api` module. Instead
@@ -182,7 +182,7 @@ ScriptQuery
 
 The proper search query is entirely context- and search engine-specific, so you
 should read the Query documentation straight from
-[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl.html) 
+[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html) 
 or 
 [Solr](https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html)
 to determine which queries are available and what they do.
@@ -225,7 +225,7 @@ in a query context.
 
 ## External References
 
-* <https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl.html>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html>
 * <https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html>
 
 ## Search Engine Connector Support

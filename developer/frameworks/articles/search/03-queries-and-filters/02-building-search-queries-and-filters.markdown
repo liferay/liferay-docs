@@ -31,7 +31,7 @@ your copying and pasting convenience at the end of this section.
 2.  Build out the query to get the desired response. This looks different
     for each query type, but Elasticsearch's documentation on the query type
     explains it (for example, 
-    [Terms Query](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-terms-query.html)).
+    [Terms Query](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-terms-query.html)).
 
     For a Terms Query, you might just add terms to the query:
 

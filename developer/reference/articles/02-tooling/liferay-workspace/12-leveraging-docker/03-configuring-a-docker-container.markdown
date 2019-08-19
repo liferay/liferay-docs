@@ -17,7 +17,8 @@ configurations. This could include things like
 You can do this by applying files (and their accompanying folder structures, if
 necessary) to your workspace's `configs/docker` folder. This folder is treated
 as your Liferay Home for Docker development; you add additional files that
-overlay your @product@ container's default configuration.
+overlay your workspace's `configs/common` folder and your @product@ container's
+default configuration.
 
 As an example, you'll enable the
 [Gogo shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)
@@ -36,9 +37,11 @@ for your container.
 
 3.  Start the container.
 
-    Once the container is started, the configurations stored in `configs/docker`
-    are transferred to the `build/docker/files` folder, which applies all
-    configurations to the container's file system.
+    Once the container is started, the configurations stored in `configs/common`
+    and `configs/docker` are transferred to the `build/docker/files` folder,
+    which applies all configurations to the container's file system. For more
+    information on workspace's `configs` folder, see
+    [this section](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace#testing-projects).
 
     | **Note:** You can call the `deployDocker` Gradle task from your
     | workspace's root folder to initiate the Docker configuration transfer to

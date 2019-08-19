@@ -12,7 +12,7 @@ new widgets to new APIs and infrastructure.
 ## New and Improved Widgets
 
 Add search widgets by clicking the Add
-(![Add](../../images/icon-add-widget.png)) icon on the page. Then expand
+(![Add](../../../images/icon-add-widget.png)) icon on the page. Then expand
 the Widgets &rarr; Search section.
 
 ### Custom Filter
@@ -37,7 +37,7 @@ field. The default order is determined by the search engine's _Relevance_
 calculation.
 
 Add more fields to the sort widget if the default options aren't enough. Click
-the widget Options (![Options](../../images/icon-app-options.png)) menu &rarr;
+the widget Options (![Options](../../../images/icon-app-options.png)) menu &rarr;
 Configuration. Enter a human readable label and the `fieldName` to sort by. Just
 make sure it's a `keyword` field.
 
@@ -88,18 +88,20 @@ match the `title` field of a document.
 **Maximum Expansions:** Limit the number of documents to return when matching
 searched keywords to the `title` field as a phrase prefix. See Elasticsearch's
 [Match Phrase Query
-documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-match-query-phrase.html)
+documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-match-query-phrase.html)
 for more information.
 
 ## New Infrastructure
 
 There are some important search infrastructure changes to know about.
 
-### Elasticsearch 6.5.x Support
+### Elasticsearch Support
 
-@product-ver@ supports Elasticsearch 6.5.x, and it's included as the embedded
-version to use for testing out-of-the-box search behavior. See the [deployment
-guide](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch) for more information.
+@product-ver@ supports Elasticsearch 6.5.x through 6.8.x, and 6.5.0 is included
+as the embedded version to use for testing out-of-the-box search behavior. See
+the 
+[deployment guide](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch)
+for more information.
 
 ### Application-Specific Indexes
 
@@ -110,8 +112,8 @@ will likely appear in future versions, and third party developers can use the
 `portal-search` APIs to create their own indexes. It's under development, so
 visit the [Search Framework
 documentation](/docs/7-2/frameworks/-/knowledge_base/f/search) 
-frequently to discover new search
-infrastructure changes that expose more functionality for developers.
+frequently to discover new search infrastructure changes that expose more
+functionality for developers.
 
 ### API Enhancements
 

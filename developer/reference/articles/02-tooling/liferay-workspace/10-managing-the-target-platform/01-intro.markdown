@@ -53,7 +53,12 @@ the targeted platform.
 
 For more information on BOMs, see the
 [Importing Dependencies](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism#Importing_Dependencies)
-section in Maven's official documentation.
+section in Maven's official documentation. To view a BOM file and its mapping of
+artifacts and versions, visit [repository.liferay.com](https://repository.liferay.com)
+and search for the BOM artifacts (e.g.,
+[release.portal.bom](https://repository.liferay.com/nexus/index.html#nexus-search;quick~release.portal.bom)
+and
+[release.dxp.bom](https://repository.liferay.com/nexus/index.html#nexus-search;quick~release.dxp.bom)).
 
 Pretty cool, right? Next, you'll learn how to leverage platform targeting in Dev
 Studio.
@@ -77,7 +82,9 @@ target.platform.index.sources=true
 ```
 
 | **Note:** Portal source indexing is disabled in Gradle workspace version
-| 2.0.3+ (Target Platform plugin version 2.0.0+).
+| 2.0.3+ (Target Platform plugin version 2.0.0+). See the
+| [Updating Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/updating-liferay-workspace)
+| article for instructions on how to update your workspace.
 
 These options in Dev Studio are only available when developing in a Liferay
 Workspace, or if you have the
