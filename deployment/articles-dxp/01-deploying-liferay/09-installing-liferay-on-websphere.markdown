@@ -459,7 +459,12 @@ IBM's official documentation for [WebSphere Application Server
 9.0.0.x](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_9.0.0/com.ibm.websphere.base.doc/ae/rweb_jspengine.html).
 
 ## Resolve LCS Boot Delegation
-It was discovered that after applying DXP 7.1 Fix Pack 5, there is a startup error in @product@ deployed on WebSphere 9 that uses Liferay Connected Services (LCS) to manage subscription and patches. The root cause is because the LCS boot delegation property conflicts with Elasticsearch Connector 6.5. 
+
+It was discovered that after applying DXP 7.1 Fix Pack 5, there is a startup
+error in @product@ deployed on WebSphere 9 that uses Liferay Connected Services
+(LCS) to manage subscription and patches. The root cause is because the LCS
+boot delegation property conflicts with the [Liferay Connector to Elasticsearch
+6](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch). 
 
 1.  In the
     [`portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/d/portal-properties),

@@ -13,7 +13,12 @@ By default, Elasticsearch runs as an embedded search engine, but it's only
 supported in production as a separate server or cluster. This guide walks you
 through the process of configuring Elasticsearch in remote mode.
 
-![Figure 1: To see information about the currently connected search engine, go to _Control Panel &rarr; Configuration &rarr; Search_.](../../../images/search-admin-engineinfo.png)
+![Figure 1: To see information about the currently connected search engine, go to _Control Panel_ &rarr; _Configuration_ &rarr; _Search_.](../../../images/search-admin-engineinfo.png)
+
+| **Note:** Although Elasticsearch 6.5 is shipped as the embedded Elasticsearch
+| server version, consider installing Elasticsearch  6.8.x, as 6.5.x will reach
+| end of life status in May of 2020, according to 
+| [Elastic's EOL policy](https://www.elastic.co/support/eol).
 
 <!-- Uncomment this when we release the Solr adapter
 If you'd rather use Solr, it's also supported. See the documentation on
@@ -35,7 +40,7 @@ developer tutorial Introduction to Liferay Search (not yet written).
 These terms are useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
-   installation (for example, `elasticsearch-6.5.1`). 
+   installation (for example, `elasticsearch-6.8.2`). 
 
 -  [*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
    refers to the root folder of your @product@ installation. It contains the
@@ -89,8 +94,8 @@ configuration options in more detail.
 
 **Cluster Sniffing (Additional Configurations):**
 : Elasticsearch clusters can have multiple node 
-[types](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#modules-node).
-[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.5/transport-client.html), 
+[types](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-node.html#modules-node).
+[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.8/transport-client.html), 
 enabled by default in the @product@ connector, looks for `data` nodes
 configured in the `transportAddresses` property. If none are available, the
 connector may throw a `NoNodeAvailableException` in the console log. If cluster

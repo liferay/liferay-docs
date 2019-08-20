@@ -30,7 +30,7 @@ Settings](/docs/7-2/user/-/knowledge_base/u/system-settings).
 
     Alternatively, search for *Search*.
 
-![Figure 1: There are numerous system scoped entries for search in System Settings.](../../images/search-category-system-settings.png)
+![Figure 1: There are numerous system scoped entries for search in System Settings.](../../../images/search-category-system-settings.png)
 
 These system scoped configurations are available in System Settings:
 
@@ -160,7 +160,7 @@ match the `title` field of a document.
 **Maximum Expansions:** Limit the number of documents to return when matching
 searched keywords to the `title` field as a phrase prefix. See Elasticsearch's
 [Match Phrase Query
-documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-match-query-phrase.html)
+documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-match-query-phrase.html)
 for more information.
 
 ### Elasticsearch 6

@@ -41,6 +41,13 @@ section defines the available and current locales.
 company.default.locale=en_GB 
 ```
 
+| **Note:** The `company.default.locale` portal property is only intended for 
+| use on initial startup. To change the language settings on an existing 
+| instance, open the Control Panel and navigate to *Configuration* &rarr; 
+| *Instance Settings* and select the Localization category under the PLATFORM 
+| heading. Under the Language entry you can change the default language, as well 
+| as define the current locales. 
+
 As an example, the above property changes the locale to English, Great Britain. 
  
 ## Set the JVM Time Zone to GMT

@@ -24,7 +24,8 @@ You'll complete this process next.
 
 1.  From Site Administration for your Site, go to *Site Builder* &rarr; *Pages*.
 
-2.  Click the (![Add](../../../../../images/icon-add.png)) and select *Content Page*.
+2.  Click the (![Add](../../../../../images/icon-add.png)) and select *Content
+    Page*.
 
 3.  Set the *Name* as *Space Landing Page* and click *Save*.
 

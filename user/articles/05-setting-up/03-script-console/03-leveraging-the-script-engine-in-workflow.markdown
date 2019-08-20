@@ -14,6 +14,69 @@ embedded in
 [XML workflow definitions](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions) 
 and run during the execution of the workflow.
 
+## Injected Variables
+
+Usually when you're scripting in Groovy, you must define your variables.
+
+```groovy
+KaleoInstanceToken kaleoInstanceToken=new KaleoInstanceToken();
+```
+
+In workflow scripts, there are several [pre-defined
+variables](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-workflow/portal-workflow-kaleo-runtime-scripting-impl/src/main/java/com/liferay/portal/workflow/kaleo/runtime/scripting/internal/util/ScriptingContextBuilderImpl.java)
+injected into your script context, to be called without defining them first.
+
+### Variables that are Always Available
+
+These variables are available from anywhere that you can run a workflow script:
+
+`kaleoInstanceToken` ([`KaleoInstanceToken`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-workflow/portal-workflow-kaleo-api/src/main/java/com/liferay/portal/workflow/kaleo/model/KaleoInstanceToken.java))
+: A workflow instance and corresponding instance token (the
+`KaleoInstanceToken`) are created each time a User clicks _Submit for
+Publication_. Use the injected token to retrieve its ID, by calling
+`kaleoInstanceToken.getKaleoInstanceTokenId()`. This is often passed as a method
+parameter in a script.
+
+`userId`
+: The `userId` returned is context dependent. Technically, the logic works like
+this: if the `KaleoTaskInstanceToke.getcompletionUserId()` is null, check
+`KaloeTaskInstanceToken.getUserId()`. If that's null too, call
+`KaleoInstanceToken.getUserId()`. It's the ID of the last User to intervene in
+the workflow at the time the script is run. In the `created` node, this would be
+the User that clicked _Submit for Publication_, whereas it's the ID of the
+reviewer upon exit of the `review` node of the Single Approver definition.
+
+`workflowContext` (`Map<String, Serializable>`)
+: The workflow context is full of useful information you can
+use in your scripts. Usually you'll pass this as a parameter to a method that
+requires a `WorkflowContext` object, but all of the `WorkflowContext`'s
+attributes are available in the script as well. The workflow context in the
+script is context dependent. If a call to
+`ExecutionContext.getWorkflowContext()` comes back null, then the workflow
+context is obtained by `KaleoInstanceModel.getWorkflowContext()`.
+
+### Variables Injected into Task Nodes
+
+If a `kaleoTaskInstanceToken` has been created:
+
+`kaleoTaskInstanceToken` ([`KaleoTaskInstanceToken`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-workflow/portal-workflow-kaleo-api/src/main/java/com/liferay/portal/workflow/kaleo/model/KaleoTaskInstanceToken.java))
+: The task's token itself is available in the workflow script. Use it to get its
+ID, to use in other useful programmatic workflow activities, like programmatic
+assignment.
+
+`taskName` (`String`)
+: The task's own name is accessible (returns the same as `KaleoTak.getName()`).
+
+`workflowTaskAssignees` (`List<`[`WorkflowTaskAssignee`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/portal-kernel/src/com/liferay/portal/kernel/workflow/WorkflowTaskAssignee.java)`>`)
+: If the script is inside a task node, get a `List` of its assignees.
+
+`kaleoTimerInstanceToken` ([`KaleoTimerInstanceToken`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-workflow/portal-workflow-kaleo-api/src/main/java/com/liferay/portal/workflow/kaleo/model/KaleoTimerInstanceToken.java))
+: If a [task timer](/docs/7-2/reference/-/knowledge_base/r/workflow-task-nodes/#task-timers)
+exists, use the `kaleoTimerInstanceToken` to get its ID, by calling
+`kaleoTimerInstanceToken.getKaleoTimerInstanceTokenId()`.
+
+## Scripting Examples
+
 The final step in a workflow runs a script that makes content available for use.
 The snippet below accesses the Java class associated with the workflow to set
 content's status to *approved*.
