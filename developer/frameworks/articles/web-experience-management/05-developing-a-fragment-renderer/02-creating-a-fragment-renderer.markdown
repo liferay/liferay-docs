@@ -3,7 +3,7 @@
 [TOC levels=1-4]
 
 Creating a Fragment Renderer lets you call Liferay's provided Java APIs for
-backend tasks related to your fragment. In this article, you'll create a sample
+backend tasks related to your Fragment. In this article, you'll create a sample
 Fragment Renderer that displays values stored in the current @product@
 instance's database.
 
@@ -98,9 +98,10 @@ instance's database.
     fragment.collection.label.sample-components=Sample Components
     ```
 
-8.  Provide the appropriate dependencies to compile your Fragment Renderer project.
-    For example, the following dependencies are defined for the Show Context
-    Fragment Renderer sample (Gradle build) deployed to Liferay Portal 7.2 GA1:
+8.  Provide the appropriate dependencies to compile your Fragment Renderer
+    project. For example, the following dependencies are defined for the Show
+    Context Fragment Renderer sample (Gradle build) deployed to Liferay Portal
+    7.2 GA1:
 
     ```groovy
     dependencies {
