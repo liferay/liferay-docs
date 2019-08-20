@@ -110,10 +110,9 @@ Next, you'll work out any remaining references you need.
 ## Step 3: Resolve Any Circular Dependencies
 
 Circular dependencies occur in a module if two or more of its DS services refer
-to each another (either directly or indirectly). A direct reference in a module
-occurs, for example, when service `A` in the module references service `B` in
-the module, and `B` references `A`. Here's what the service components might
-look like:
+to each another (either directly or indirectly). A direct reference occurs, for
+example, when service `A` references service `B`, and `B` references `A`. Here's
+what the service components might look like:
 
 `AImpl.java`:
 
@@ -138,6 +137,14 @@ public class BImpl implements B {
 `AImpl` and `BImpl` directly depend on each other.  This circular dependency
 prevents each service component from resolving. DS service activation requires
 that all of a service's dependencies (references) be satisfied. 
+
+**Note:** Service resolution is independent and separate from module (OSGi 
+bundle) resolution:
+
+-   Module resolution is determined by the module's manifest.
+-   Modules resolve before any of their services become active.
+-   Services inside a module cannot activate if the module cannot resolve.
+-   A module can resolve even if none of its services activate.
 
 The example above demonstrates a very small circle, composed of only two
 classes, but a circle can compose more classes. For example, `A` references `B`,
