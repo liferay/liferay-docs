@@ -1,3 +1,7 @@
+---
+header-id: creating-a-fragment-renderer
+---
+
 # Creating a Fragment Renderer
 
 [TOC levels=1-4]
@@ -100,8 +104,8 @@ instance's database.
 
 8.  Provide the appropriate dependencies to compile your Fragment Renderer
     project. For example, the following dependencies are defined for the Show
-    Context Fragment Renderer sample (Gradle build) deployed to Liferay Portal
-    7.2 GA1:
+    Context Component Fragment Renderer sample (Gradle build) deployed to
+    Liferay Portal 7.2 GA1:
 
     ```groovy
     dependencies {
@@ -122,7 +126,7 @@ instance's database.
     [Target Platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform)
     framework.
 
-That's it! You can compile the sample *Show Context* Fragment Renderer and
-[deploy it](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)! It'll
-be available to add for a Fragment-enabled page under the *Sample Components*
-collection.
+That's it! You can compile the sample *Show Context Component* Fragment Renderer
+and [deploy it](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)!
+It'll be available to add for a Fragment-enabled page under the *Sample
+Components* collection.

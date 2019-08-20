@@ -1,3 +1,7 @@
+---
+header-id: developing-a-fragment-renderer
+---
+
 # Developing a Fragment Renderer
 
 [TOC levels=1-4]
