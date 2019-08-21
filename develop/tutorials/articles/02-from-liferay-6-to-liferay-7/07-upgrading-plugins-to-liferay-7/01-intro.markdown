@@ -130,7 +130,7 @@ Here are the code upgrade steps:
 
         After fixing your upgrade problems, remove the problem markers.
 
-    5.  [Resolving a Project's Dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies)
+    5.  [Resolving a Project's Dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
     6.  [Resolving Breaking Changes](/docs/7-2/tutorials/-/knowledge_base/t/resolving-breaking-changes)
 

@@ -368,17 +368,3 @@ Experience Management App Suite is already installed (which is the case for a
 `com.liferay.journal.api.jar`. Searching for a module in @product@'s 
 [App Manager](/docs/7-1/user/-/knowledge_base/u/managing-and-configuring-apps) 
 is a sure-fire way to verify existing module installations.
-
-## Related Topics
-
-[Development Reference](/docs/7-1/reference/-/knowledge_base/r/development-reference)
-
-[Classes Moved from portal-service.jar](/docs/7-1/reference/-/knowledge_base/r/classes-moved-from-portal-service-jar)
-
-[Modularizing an Existing Portlet](/docs/7-1/tutorials/-/knowledge_base/t/modularizing-an-existing-portlet)
-
-[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
-
-[Invoking Services from Service Builder Code](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-from-service-builder-code)
-
-[Tooling](/docs/7-1/tutorials/-/knowledge_base/t/tooling)
