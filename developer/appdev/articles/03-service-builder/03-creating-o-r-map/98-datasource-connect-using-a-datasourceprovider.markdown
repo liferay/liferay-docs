@@ -1,5 +1,7 @@
 # Connecting the Data Source Using a DataSourceProvider
 
+[TOC levels=1-4]
+
 Connecting to an external database by creating and registering a `DataSourceProvider` as a JDK
 [ServiceProviderInterface](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)
 (SPI) is the easiest way. This approach works regardless of whether your Service Builder module uses the `ds` or `spring`

@@ -1,5 +1,7 @@
 # Connecting the Data Source Using Spring Beans 
 
+[TOC levels=1-4]
+
 Sometimes you want to use a database other than @product@'s. To do this, its
 data source must be defined in `portal-ext.properties` or configured as a JNDI
 data source on the app server. Here you'll connect
