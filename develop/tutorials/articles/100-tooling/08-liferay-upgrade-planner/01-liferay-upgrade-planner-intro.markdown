@@ -18,7 +18,7 @@ For step-by-step instructions for following the two upgrade paths, see the
 following documentation:
 
 - [Data Upgrade](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver)
-- [Code Upgrade](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver)
+- [Code Upgrade](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
 
 The Upgrade Planner is provided in
 [Liferay Dev Studio](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide) 
@@ -84,5 +84,5 @@ Upgrade Plan window. Each step can have several options:
 Great! You now have a good understanding of the Liferay Upgrade Planner's UI and
 how to get started. Visit the
 [Data Upgrade](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver) and
-[Code Upgrade](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver)
+[Code Upgrade](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
 sections for more information on those upgrade processes.
