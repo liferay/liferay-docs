@@ -1,8 +1,8 @@
 ---
-header-id: integrating-the-new-back-end
+header-id: integrating-the-back-end
 ---
 
-# Integrating the New Back-end
+# Integrating the Back-end
 
 [TOC levels=1-4]
 
@@ -10,31 +10,19 @@ header-id: integrating-the-new-back-end
     <p id="stepTitle">Refactoring the Prototype</p><p>Step 4 of 6</p>
 </div>
 
-It's a good practice to start with a working prototype as a proof of concept, 
-but eventually that prototype must transform into a real application. Up to this
-point, you've made all the preparations to do that, and now it's time to replace
-the prototype back-end with the real, database-driven back-end you created with
-Service Builder. 
+To use your Service Builder-generated back-end in your front-end, you must
+tell your front-end project that the back-end exists and where to find it. 
 
-For the prototype, you manually created the application's model. The first thing
-you want to do is remove it, because Service Builder generated a new one:
-
-1.  Find the `com.liferay.docs.guestbook.model` package in the `guestbook-web` 
-    module.
-
-2.  Delete it. You'll see errors in your project, but that's because you haven't
-    replaced the model yet. 
-
-Now you get to do some dependency management. For the web module to access the 
-generated services, you must make it aware of the API and service modules. Then 
-you can update the `addEntry` method in `GuestbookPortlet` to use the new 
-services: 
+For the web module to access the generated services, you must make it aware of
+the API and service modules: 
 
 1.  First, open `guestbook-web`'s `build.gradle` file and add these 
     dependencies:
 
-        compileOnly project(":modules:guestbook:guestbook-api")
-        compileOnly project(":modules:guestbook:guestbook-service")
+    ```groovy
+    compileOnly project(":modules:guestbook:guestbook-api")
+    compileOnly project(":modules:guestbook:guestbook-service")
+    ```
 
 2.  Right-click on the `guestbook-web` project and select *Gradle* &rarr;
     *Refresh Gradle Project*. 
@@ -44,25 +32,17 @@ services:
     setter methods. Open `GuestbookPortlet` and add these references to the 
     bottom of the file: 
 
-            @Reference(unbind = "-")
-            protected void setEntryService(EntryLocalService entryLocalService) {
-                _entryLocalService = entryLocalService;
-            }
-
-            @Reference(unbind = "-")
-            protected void setGuestbookService(GuestbookLocalService guestbookLocalService) {
-                _guestbookLocalService = guestbookLocalService;
-            }
-
-            private EntryLocalService _entryLocalService;
-            private GuestbookLocalService _guestbookLocalService;
+    ```java
+	@Reference
+	private GuestbookEntryLocalService _guestbookEntryLocalService;
+	
+	@Reference
+	private GuestbookLocalService _guestbookLocalService;
+    ```
 
     Note that it's Liferay's code style to add class variables this way. The
-    `@Reference` annotation on the setters allows Liferay's OSGi container to
-    inject references to your generated services so you can use them. The
-    `unbind` parameter tells the container there's no method for unbinding these
-    services: the references can die with the class during garbage collection
-    when they're no longer needed. 
+    `@Reference` annotation causes Liferay's OSGi container to
+    inject references to your generated services so you can use them. 
 
 4.  Now you can modify the `addEntry` method to use these service references: 
 
