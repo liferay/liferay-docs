@@ -58,6 +58,13 @@ creating two folders there for the two different portlets you'll create:
 
 3.  Drag `view.jsp` and drop it onto the `guestbook` folder to move it there. 
 
+4.  Open `view.jsp` and modify the path to `init.jsp` to include it from the
+    parent folder: 
+
+    ```markup
+    <%@ include file="../init.jsp" %>
+    ```
+
 Since you edited the portlet's metadata, you must remove and re-add the portlet 
 to the page before continuing: 
 

@@ -44,6 +44,10 @@ the API and service modules:
     `@Reference` annotation causes Liferay's OSGi container to
     inject references to your generated services so you can use them. 
 
+Now you're ready to begin building your front-end. 
+
+--------
+
 4.  Now you can modify the `addEntry` method to use these service references: 
 
         public void addEntry(ActionRequest request, ActionResponse response)
