@@ -6,10 +6,6 @@ header-id: upgrading-web-plugins
 
 [TOC levels=1-4]
 
-<div class="learn-path-step row">
-    <p id="stepTitle">Upgrading Web Plugins</p><p>Step 1 of 1</p>
-</div>
-
 Web plugins are regular
 [Java EE web modules](https://docs.oracle.com/cd/E19226-01/820-7627/bnadx/index.html)
 designed to work with @product@. These plugins were stored in the `webs` folder
