@@ -1,0 +1,42 @@
+---
+header-id: linking-to-another-page
+---
+
+# Linking to Another Page
+
+[TOC levels=1-4]
+
+<div class="learn-path-step row">
+    <p id="stepTitle">Developing Your First Portlet</p><p>Step 4 of 8</p>
+</div>
+
+In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
+
+1.  Right-click your project's `src/main/resources/META-INF/resources/guestbook`
+    folder and choose *New* &rarr; *File*.
+
+2.  Name the file `edit_entry.jsp` and click *Finish*.
+
+3.  Add this line to the top of the file:
+
+    ```markup
+    <%@ include file="../init.jsp" %>
+    ```
+
+    Remember, it's a best practice to add all JSP imports and tag library
+    declarations to a single file that's imported by your application's other 
+    JSP files. For `edit_entry.jsp`, you need these imports to access the 
+    portlet tags that create URLs and the Alloy tags that create the form. 
+
+4.  You'll create two URLs: one to submit the form and one to go back to
+    `view.jsp`. To create the URL to go back to `view.jsp`, add the following 
+    tag below the first line you added: 
+
+    ```markup
+    <portlet:renderURL var="viewURL">
+        <portlet:param name="mvcPath" value="/guestbook/view.jsp"></portlet:param>
+    </portlet:renderURL>
+    ```
+
+Next, you must create a new URL for submitting the form. This is a different
+kind of URL, for it triggers a portlet action.
