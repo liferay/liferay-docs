@@ -13,8 +13,8 @@ fragment is part of the host module. Section 3.14 of the
 explains module fragments in detail. This tutorial shows you how to upgrade your
 app JSP hooks to @product-ver@.
 
-Liferay @ide@'s Code Upgrade Tool's
-[*Convert Custom JSP Hooks* step](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+Liferay Upgrade Planner's
+[*Fixing Upgrade Problems* step](/docs/7-1/tutorials/-/knowledge_base/t/fixing-upgrade-problems)
 generates module fragments from app JSP hook plugins. The tool creates module
 fragments in the same folder as your Plugins SDK root if your hook is in a
 Plugins SDK or in the `[liferay_workspace]/modules` folder if your hook is in a
@@ -64,13 +64,11 @@ app's `init-ext.jsp` file here:
     src/main/resources/META-INF/resources/blogs/init-ext.jsp
 
 The tool's 
-[*Convert Custom JSP Hooks* step](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[*Fixing Upgrade Problems* step](/docs/7-1/tutorials/-/knowledge_base/t/fixing-upgrade-problems)
 lets you compare custom JSPs with originals:
 
 - Compare your custom 6.2 JSP with the original 6.2 JSP.
 - Compare your custom 7.1 JSP with your custom 6.2 JSP.
-
-![Figure 1: The Code Upgrade Tools lets you compare custom JSPs with originals.](../../../../images/upgrading-app-jsp-hook-convert-custom-jsp-hook.png)
 
 Make any additional needed changes in your 7.1 custom JSP. Then
 [deploy](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module)
