@@ -1,5 +1,5 @@
 ---
-header-id: upgrading-code-to-product-ver
+header-id: upgrading-plugins-to-liferay-7
 ---
 
 # Upgrading Code to @product-ver@
