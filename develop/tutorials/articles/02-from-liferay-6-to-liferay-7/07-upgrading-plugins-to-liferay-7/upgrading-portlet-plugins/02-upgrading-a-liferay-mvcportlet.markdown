@@ -13,14 +13,15 @@ is a lightweight extension of `javax.portlet.GenericPortlet`. Its `init` method
 saves you from writing a lot of boilerplate code. MVC portlets can upgraded
 to @product-ver@ without a hitch. 
 
-Upgrading a Liferay MVC Portlet involves these steps:
-
-1.  [Adapt the code to @product-ver@'s API](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-
-2.  [Resolve dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
+To upgrade a Liferay MVC Portlet, adapt your code to @product-ver@'s API using
+the Liferay Upgrade Planner. When you ran the planner's *Fix Upgrade Problems*
+step, many of the existing issues were autocorrected or flagged. For any
+remaining errors, consult the
+[Resolving a Plugin's Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
+article.
 
 Liferay's 
-[Code Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Upgrade Planner](/docs/7-1/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 identifies code affected by the new API, explains the API changes and how to
 adapt to them, and in many cases, provides options for adapting the code
 automatically. 

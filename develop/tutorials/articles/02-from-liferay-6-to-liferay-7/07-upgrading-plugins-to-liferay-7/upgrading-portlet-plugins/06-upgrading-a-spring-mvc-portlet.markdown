@@ -53,7 +53,7 @@ Here are the Spring MVC portlet upgrade steps:
 ## Adapt the code to liferay's API
 
 The
-[Code Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Liferay Upgrade Planner](/docs/7-1/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 facilitates updating the code and resolving compilation issues quickly.
 
 The Code Upgrade Tool detects if the value of the `liferay-versions` property in

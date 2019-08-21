@@ -28,16 +28,18 @@ Here are the sample portlet's characteristics:
 -   Embeds additional dependencies in its `WEB-INF/lib` folder
 -   Developed in a Liferay Plugins SDK 6.2
 
-Follow these steps to upgrade a servlet-based portlet: 
+To upgrade a servlet-base Portlet, adapt your code to @product-ver@'s API using
+the Liferay Upgrade Planner. When you ran the planner's *Fix Upgrade Problems*
+step, many of the existing issues were autocorrected or flagged. For any
+remaining errors, consult the
+[Resolving a Plugin's Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
+article.
 
-1.  [Adapt the code to @product-ver@'s API](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
-
-2.  [Resolve dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies).
-
-The 
-[Code Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-makes adapting a portlet's code straightforward, and it automates much of the
-process. 
+Liferay's 
+[Upgrade Planner](/docs/7-1/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
+identifies code affected by the new API, explains the API changes and how to
+adapt to them, and in many cases, provides options for adapting the code
+automatically. 
 
 The sample portlet relied on Liferay Portal to provide several dependency JAR
 files.  Here's the `portal-dependency-jars` property from the portlet's

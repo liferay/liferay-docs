@@ -11,7 +11,7 @@ all, `GenericPortlet` provides a default `javax.portlet.Portlet` interface
 implementation. Upgrading a `GenericPortlet` is straightforward and takes only
 two steps: 
 
-1.  Adapt the portlet to @product-ver@'s API using the Code Upgrade Tool.
+1.  Adapt the portlet to @product-ver@'s API using the Liferay Upgrade Planner.
 
 2.  Resolve its dependencies. 
 
@@ -41,12 +41,12 @@ The portlet uses a traditional Plugins SDK portlet project folder structure.
 
 Upgrading most `GenericPortlet` portlets involves these steps:
 
-1.  [Adapt the code to @product-ver@'s API](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+1.  [Adapt the code to @product-ver@'s API](/docs/7-1/tutorials/-/knowledge_base/t/fixing-upgrade-problems)
 2.  [Resolve dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
 Since the sample portlet's dependencies haven't changed, upgrading it involves
 only adapting the code to @product-ver@'s API. The
-[Code Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Liferay Upgrade Planner](/docs/7-1/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 facilitates updating the code and resolving compilation issues quickly. 
 
 | **Note**: Refer to tutorial
