@@ -27,7 +27,7 @@ Here are the plugin upgrade steps:
 
 3.  [Update your plugin's remaining dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies).
 
-4.  [Adapt your code to @product-ver@'s API using the Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+4.  [Adapt your code to @product-ver@'s API using the Upgrade Planner](/docs/7-1/tutorials/-/knowledge_base/t/liferay-upgrade-planner).
     The Upgrade Tool shows you where
     [breaking changes](/docs/7-1/reference/-/knowledge_base/r/breaking-changes)
     affect your code and addresses many of them automatically.
