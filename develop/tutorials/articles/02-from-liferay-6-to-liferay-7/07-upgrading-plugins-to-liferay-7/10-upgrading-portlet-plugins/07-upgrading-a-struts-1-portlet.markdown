@@ -54,7 +54,7 @@ Upgrading a Struts 1 portlet involves these steps:
     issues are autocorrected. For remaining issues, the planner identifies code
     affected by the new API and ways to adapt it.
 
-2.  [Resolve its dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
+2.  [Resolve its dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
 You've resolved the Sample Struts portlet's dependencies. It's ready to deploy. 
 

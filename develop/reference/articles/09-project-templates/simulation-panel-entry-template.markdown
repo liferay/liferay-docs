@@ -76,7 +76,7 @@ Gradle-specific files, but otherwise, appears exactly the same.
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
-[simulation-panel-app](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/simulation-panel-app)
+[simulation-panel-app](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/simulation-panel-app)
 sample project for a more expanded sample of a control menu entry. Likewise, see
 the
 [Extending the Simulation Menu](/docs/7-0/tutorials/-/knowledge_base/t/extending-the-simulation-menu)

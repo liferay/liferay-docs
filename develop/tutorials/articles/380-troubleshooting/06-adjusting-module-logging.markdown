@@ -51,9 +51,9 @@ Set each category's `priority` element to the log
 The log messages are printed to Liferay log files in `[Liferay_Home]/logs`.
 
 You can see examples of module logging in several Liferay sample projects. For
-example, the [action-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/action-command-portlet),
-[document-action](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/document-action), and
-[service-builder/jdbc](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/service-builder/jdbc)
+example, the [action-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/action-command-portlet),
+[document-action](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/extensions/document-action), and
+[service-builder/jdbc](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/service-builder/jdbc)
 samples (among others) leverage module logging.
 
 | Note: If the log level configuration isn't appearing (e.g., you set the log

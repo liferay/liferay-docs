@@ -72,7 +72,7 @@ Gradle-specific files, but otherwise, appears exactly the same.
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
-[template-context-contributor](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/themes/template-context-contributor)
+[template-context-contributor](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/themes/template-context-contributor)
 sample project for a more expanded sample of a template context contributor.
 Likewise, see the
 [Context Contributors](/docs/7-0/tutorials/-/knowledge_base/t/context-contributors)

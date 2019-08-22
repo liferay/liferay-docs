@@ -167,7 +167,7 @@ actions is performed:
 processing and prepares to redirect the portlet to an appropriate view. This
 shows you can do as much as you need for processing your portlet's actions. 
 
-| **Note**: [Liferay Blade Sample `action-command-portlet`]( https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/action-command-portlet)
+| **Note**: [Liferay Blade Sample `action-command-portlet`]( https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/action-command-portlet)
 | demonstrates implementing `MVCActionCommand` directly.
 
 Now you can create your own action URLs and `*MVCActionCommand` classes in your
