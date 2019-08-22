@@ -64,7 +64,7 @@ As part of the modularization, `portal-service.jar` has been renamed
 appropriately to `portal-kernel.jar`, as it continues to hold the portal 
 kernel's APIs. 
 
-![Figure 1: Liferay refactored the portal-service JAR for @product-ver@. Application APIs now exist in their own modules, and the portal-service JAR is now *portal-kernel*.](../../../images/from-liferay-6-portal-apis-before-after.png)
+![Figure 1: Liferay refactored the portal-service JAR for @product-ver@. Application APIs now exist in their own modules, and the portal-service JAR is now *portal-kernel*.](../../../../images/from-liferay-6-portal-apis-before-after.png)
 
 Each app module consists of a set of classes that are highly cohesive and have
 a specific purpose, such as providing the app's API, implementation, or UI. The 
@@ -324,7 +324,7 @@ Follow these steps to do this:
 
 5.  Add the JAR to your project's `WEB-INF/lib` folder.
 
-![Figure 2: After searching Maven Central, download an artifact's JAR file by clicking the *jar* link.](../../../images/resolving-plugin-dependencies-using-maven-central.png)
+![Figure 2: After searching Maven Central, download an artifact's JAR file by clicking the *jar* link.](../../../../images/resolving-plugin-dependencies-using-maven-central.png)
 
 As you manage module JARs, make sure **not** to deploy any OSGi framework JARs 
 or Liferay module JARs (e.g., `com.liferay.journal.api.jar`). If you deploy 
