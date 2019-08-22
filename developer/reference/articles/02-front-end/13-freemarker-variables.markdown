@@ -8,9 +8,9 @@ header-id: freemarker-variable-reference-guide
 
 By default, FreeMarker templates have access to several variables defined in 
 [`init.ftl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates/init.ftl) 
-that you can use in your themes and web content to access several theme objects, 
-settings, and resources. Several of these variables are listed below for 
-reference:
+that you can use in your [themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) 
+to access several theme objects, settings, and resources. Several of these 
+variables are listed below for reference:
 
 **Common Variables**
 
@@ -67,19 +67,19 @@ reference:
 | Variable | Description |
 | --- | --- |
 | `show_control_panel` | Returns whether the current user has permission to view the Control Panel |
-| `control_panel_text` | Returns "control-panel" language key in the current user's locale, if they have permission to view the Control Panel |
+| `control_panel_text` | Returns the "control-panel" language key in the current user's locale, if they have permission to view the Control Panel |
 | `control_panel_url` | Returns the URL to the Control Panel, if the current user has permission to view the Control Panel |
 | `show_home` | Returns whether the current user is on a page |
-| `home_text` | Returns "home" language key in the current user's locale |
+| `home_text` | Returns the "home" language key in the current user's locale |
 | `home_url` | Returns the URL to the home page |
 | `show_my_account` | Returns whether the current user's account icon is visible |
-| `my_account_text` | Returns "my-account" language key in the current user's locale, if the user's account icon is visible |
+| `my_account_text` | Returns the "my-account" language key in the current user's locale, if the user's account icon is visible |
 | `my_account_url` | Returns the URL to the user's Account Settings page if the user's account icon is visible |
 | `show_sign_in` | Returns whether the sign in link is visible |
-| `sign_in_text` | Returns "sign-in" language key in the current user's locale, if they are signed out |
+| `sign_in_text` | Returns the "sign-in" language key in the current user's locale, if they are signed out |
 | `sign_in_url` | Returns the sign in URL, if the current user is signed out |
 | `show_sign_out` | Returns whether the sign out link is visible |
-| `sign_out_text` | Returns "sign-out" language key in the current user's locale, if they are signed out |
+| `sign_out_text` | Returns the "sign-out" language key in the current user's locale, if they are signed in |
 | `sign_out_url` | Returns the sign out URL, if the current user is signed in |
 
 **Page**
@@ -108,17 +108,17 @@ reference:
 | `use_company_logo` | Returns whether the logo is displayed |
 | `site_logo_height` | Returns the logo's height |
 | `site_logo_width` | Returns the logo's width |
-| `show_site_name_supported` | Returns the logo's width |
-| `show_site_name_default` | Returns the logo's width |
-| `show_site_name` | Returns whether the show site name theme setting is enabled |
-| `logo_description` | Returns the description for the logo (nothing is the site name is displayed) |
+| `show_site_name_supported` | Returns whether the logo is configured to show the site name. The value is `true` if `show_site_name_default` is true. |
+| `show_site_name_default` | Returns whether the Show Site Name Default theme setting is enabled |
+| `show_site_name` | Returns whether the `showSiteName` property for the current pageset is enabled |
+| `logo_description` | Returns the Site's name or nothing if `show_site_name` is enabled. It is used for alternate text for the logo by default. |
 
 **Navigation**
 
 | Variable | Description |
 | --- | --- |
-| `has_navigation` | Returns whether their is navigation (i.e. at least one page exist) |
-| `nav_items` | Returns the logo's width |
+| `has_navigation` | Returns whether navigation exist (i.e. at least one page exist) |
+| `nav_items` | Returns the current pages as list |
 | `nav_css_class` | Returns a string of the current classes applied to the page's navigation |
 
 **My Sites**
@@ -127,7 +127,7 @@ reference:
 | --- | --- |
 | `show_my_sites` | Returns whether the current user has a My Sites page |
 | `show_my_places` | Returns whether the current user has a My Sites page |
-| `my_sites_text` | Returns "my-sites" language key in the current user's locale, if they are signed out |
+| `my_sites_text` | Returns the "my-sites" language key in the current user's locale |
 | `my_places_text` | Returns whether the current user has a My Sites page |
 
 **Includes**
@@ -145,6 +145,6 @@ reference:
 
 | Variable | Description |
 | --- | --- |
-| `date` | Gives access to the dateUtil Java Object and all its methods |
+| `date` | Gives access to the `dateUtil` Java Object and all its methods |
 | `current_time` | Returns the current time |
 | `the_year` | Returns the current year |
