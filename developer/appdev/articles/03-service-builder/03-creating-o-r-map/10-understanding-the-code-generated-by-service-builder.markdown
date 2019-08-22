@@ -171,7 +171,7 @@ and service layers and you understand the generated code.
 
 **Related Topics**
 
-[Service Builder](https://portal.liferay.dev/docs/7-2/appdev/-/knowledge_base/a/service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 
 [Running Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 
