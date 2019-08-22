@@ -31,7 +31,7 @@ Here are the sample portlet's characteristics:
 
 Follow these steps to upgrade a servlet-based portlet: 
 
-1.  [Adapt the code to @product-ver@'s API](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+1.  [Adapt the code to @product-ver@'s API](/docs/7-0/tutorials/-/knowledge_base/t/fixing-upgrade-problems)
 
 2.  [Resolve dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 

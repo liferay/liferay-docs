@@ -41,12 +41,12 @@ The portlet uses a traditional Plugins SDK portlet project folder structure.
 
 Upgrading most `GenericPortlet` portlets involves these steps:
 
-1.  [Adapt the code to @product-ver@'s API](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+1.  [Adapt the code to @product-ver@'s API](/docs/7-0/tutorials/-/knowledge_base/t/fixing-upgrade-problems)
 2.  [Resolve dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
 Since the sample portlet's dependencies haven't changed, upgrading it involves
 only adapting the code to @product-ver@'s API. The
-[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Upgrade Planner](/docs/7-0/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 facilitates updating the code and resolving compilation issues quickly. 
 
 | **Note**: Refer to tutorial

@@ -21,13 +21,13 @@ you finish the above steps, you can deploy your portlet to @product@.
 The portlet upgrade tutorials show you how to upgrade the following common
 portlets: 
 
--   [GenericPortlet](upgrading-a-genericportlet)
--   [Servlet-based portlet](upgrading-a-servlet-based-portlet)
--   [Liferay MVC Portlet](upgrading-a-liferay-mvc-portlet)
--   [Portlet that uses Service Builder](upgrading-portlets-that-use-service-builder)
--   [Liferay JSF Portlet](upgrading-a-liferay-jsf-portlet)
--   [Struts Portlet](upgrading-a-struts-portlet)
--   [Spring MVC Portlet](upgrading-a-spring-mvc-portlet)
+-   [GenericPortlet](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-a-genericportlet)
+-   [Servlet-based portlet](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-a-servlet-based-portlet)
+-   [Liferay MVC Portlet](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet)
+-   [Portlet that uses Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-portlets-that-use-service-builder)
+-   [Liferay JSF Portlet](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-a-liferay-jsf-portlet)
+-   [Struts Portlet](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-a-struts-portlet)
+-   [Spring MVC Portlet](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-a-spring-mvc-portlet)
 
 The tutorials provide example portlet source code from before and after
 upgrading the example portlet. Each tutorial's steps were applied to the example
