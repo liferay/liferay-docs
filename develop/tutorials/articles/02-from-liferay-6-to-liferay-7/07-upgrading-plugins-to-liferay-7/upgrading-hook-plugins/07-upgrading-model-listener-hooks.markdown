@@ -10,8 +10,11 @@ Developers have been creating model listeners for several Liferay Portal
 versions. Upgrading Model Listener Hooks from previous portal versions has never
 been easier. 
 
-1.  Adapt your plugin to @product-ver@'s API using
-    [Liferay @ide@'s Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+1.  Adapt your code to @product-ver@'s API using the Liferay Upgrade Planner. When
+    you ran the planner's *Fix Upgrade Problems* step, many of the existing
+    issues were autocorrected or flagged. For any remaining errors, consult the
+    [Resolving a Plugin's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
+    article.
 
 2.  Deploy the plugin.
 

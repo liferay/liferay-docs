@@ -90,7 +90,7 @@ Depending on the URL it is a different parameter:
 Once you have this information, you can override the `MVCCommand` by following the
 instructions found in these sections of the Overriding MVC Commands tutorial:
 
--   [/Overriding MVCActionCommands](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands#overriding-mvcactioncommand)
+-   [Overriding MVCActionCommands](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands#overriding-mvcactioncommand)
 -   [Overriding MVCResourceCommands](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands#overriding-mvcresourcecommand)
 -   [Overriding MVCRenderCommands](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands#adding-logic-to-an-existing-mvc-render-command)
 

@@ -120,7 +120,8 @@ The next sections explain and demonstrate these options.
 
 ### Using a Dependency Management Tool
 
-Dependency management tools such as [Ant/Ivy](http://ant.apache.org/ivy/), [Maven](/docs/7-0/tutorials/-/knowledge_base/t/maven), and
+Dependency management tools such as [Ant/Ivy](http://ant.apache.org/ivy/),
+[Maven](/docs/7-0/tutorials/-/knowledge_base/t/maven), and
 [Gradle](https://gradle.org/)
 facilitate acquiring Java artifacts that provide packages your plugins need.
 They can download artifacts from public repositories or from internal

@@ -25,16 +25,16 @@ Here are the steps for upgrading a core language key hook to @product-ver@.
 
 3.  [Create a resource bundle loader](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#create-a-resource-bundle-service-component). 
 
-4.  [Deploy your module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module). 
+4.  [Deploy your module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module). 
 
 Your core language key customizations are deployed to @product-ver@. 
 
 ## Related Topics
 
-[Overriding Global Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-global-language-keys)
+[Overriding Global Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-global-language-keys)
 
-[Upgrading Portlet Language Key Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-portlet-language-key-hooks)
+[Upgrading Portlet Language Key Hooks](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-portlet-language-key-hooks)
 
-[Resolving a Plugin's Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
-[Upgrading the Liferay Maven Build](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-the-liferay-maven-build)     
+[Upgrading the Liferay Maven Build](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-the-liferay-maven-build)     
