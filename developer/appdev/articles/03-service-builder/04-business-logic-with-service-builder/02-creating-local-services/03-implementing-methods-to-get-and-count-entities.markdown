@@ -124,7 +124,7 @@ entity counts.
 
 ## Related Topics
 
-[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
+[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)
 
 [Implementing an Add Method](/docs/7-2/appdev/-/knowledge_base/a/implementing-an-add-method)
 

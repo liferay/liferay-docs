@@ -12,9 +12,9 @@ Declarative Services (DS) components. These components are accessible to other
 DS components, so you can invoke them from other components, such as your web
 application. Here's how:
 
-1. [Add a reference to the local service component.](#step-1-reference-the-local-service-component) 
+1. Add a reference to the local service component.
 
-2. [Call the component's methods.](#step-2-call-the-service-component-methods)
+2. Call the component's methods.
 
 There's a Blade sample called 
 [Basic Service Builder](/docs/7-2/reference/-/knowledge_base/r/service-builder-samples).
@@ -28,7 +28,7 @@ component object.
 Your application's Service Builder-generated local services are DS components
 that you can inject into your application's other DS components (classes
 annotated with `@Component`)
-[using the `@Reference` annotation](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services).
+[using the `@Reference` annotation](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services).
 The `basic-web` module's `JSPPortlet` class is a `Portlet` service component
 that references the `FooLocalService` local service as a DS component.
 
@@ -146,14 +146,10 @@ JSPs access to the component instances via `RenderRequest` attributes.
 
 ## Related Topics
 
-[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
+[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)
 
-[Creating Remote Services](/docs/7-2/appdev/-/knowledge_base/a/creating-remote-services)
+[Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)
 
-[Invoking Remote Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-remote-services)
+[Invoking Local Services from Spring Service Builder Code](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-spring-service-builder-code)
 
-[Service Security Layers](/docs/7-2/appdev/-/knowledge_base/a/service-security-layers)
-
-[Invoking Services from Service Builder Code](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-service-builder-code)
-
-[OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/osgi-services-and-dependency-injection-with-declarative-services)
+[OSGi Services and Dependency Injection with Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)

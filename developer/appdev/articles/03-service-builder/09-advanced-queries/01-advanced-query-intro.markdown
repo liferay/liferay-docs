@@ -26,11 +26,11 @@ Criteria API, please see
 Whichever way you decide to implement your custom queries, this guide shows you
 how. Here are the steps: 
 
-1.  If using SQL, [create your SQL query](/docs/7-2/appdev/-/knowledge_base/a/create-your-sql-query).
+1.  If using SQL, [create your SQL query](/docs/7-2/appdev/-/knowledge_base/a/custom-sql).
 
-2.  [Define a custom finder class](/docs/7-2/appdev/-/knowledge_base/a/defining-a-custom-finder-class).
+2.  [Define a custom finder method](/docs/7-2/appdev/-/knowledge_base/a/defining-a-custom-finder-method).
 
-3.  [Implement your finder using Dynamic Query API or SQL](/docs/7-2/appdev/-/knowledge_base/a/implementing-a-custom-finder-method-using-dynamic-query).
+3.  [Implement your finder using Dynamic Query API or SQL](/docs/7-2/appdev/-/knowledge_base/a/dynamic-query).
 
 4.  [Add a method to your `*LocalServiceImpl` class that invokes your finder](/docs/7-2/appdev/-/knowledge_base/a/accessing-your-custom-finder-method-from-the-service-layer). 
 

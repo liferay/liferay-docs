@@ -99,7 +99,7 @@ scope is available in these ways:
 3.  By calling the `getScopeGroupId()` method on a 
     [`ServiceContext`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html) 
     object. See 
-    [Understanding Service Context](/docs/7-2/appdev/-/knowledge_base/a/understanding-servicecontext)
+    [Understanding Service Context](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext)
     for an example and more details. If you know your app always needs the 
     portal instance ID, use the `ServiceContext` object's `getCompanyId()` 
     method. 
