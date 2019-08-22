@@ -31,7 +31,7 @@ Your core language key customizations are deployed to @product-ver@.
 
 ## Related Topics
 
-[Overriding Global Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-global-language-keys)
+[Overriding Global Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-global-language-keys)
 
 [Upgrading Portlet Language Key Hooks](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-portlet-language-key-hooks)
 

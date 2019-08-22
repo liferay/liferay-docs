@@ -27,7 +27,7 @@ Getting a customization module running on @product-ver@ takes two steps:
 | @product@. Fragments are no longer recommended; you should upgrade a fragment
 | to a dynamic include or portlet filter. For more information on recommended
 | ways of customizing JSPs in @product-ver@, see the
-| [Customizing JSPs](/docs/7-0/tutorials/-/knowledge_base/t/customizing-jsps)
+| [Customizing JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps)
 | section.
 
 Great! Your customization module is upgraded for @product-ver@!

@@ -66,7 +66,7 @@ tutorial. Once your dependencies are upgraded, rebuild your services!
 ## Step 3: Build the Services
 
 To rebuild your portlet's services, see the
-[Running Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder)
+[Running Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code#running-service-builder)
 article.
 
 An example change where upgrading legacy Service Builder code can produce
