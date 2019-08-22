@@ -11,7 +11,7 @@ custom apps) to the new version. You'll learn how to upgrade your code in this
 section.
 
 The first upgrade process step is to adapt your existing plugin's code to
-@product-ver@'s APIs. The great news is that Liferay's Code Upgrade Tool makes
+@product-ver@'s APIs. The great news is that Liferay's Upgrade Planner makes
 this easier than ever. It identifies Liferay API changes affecting your code,
 explains the API changes, and offers resolution steps. And the tool offers
 auto-correction where it can. 

@@ -22,7 +22,7 @@ Liferay Workspace.
 
 Module fragments follow this name convention: `[plugin_name]-[app]-fragment`.
 For example, if the plugin's name is `app-jsp-hook` and it modifies a JSP in the
-Blogs app, the Code Upgrade Tool generates a module fragment named
+Blogs app, the Upgrade Planner generates a module fragment named
 `app-jsp-hook-blogs-fragment`.
 
 Here are the steps for upgrading app JSP hook plugins:
@@ -48,7 +48,7 @@ Updating the JSP is straightforward too.
 
 ## Update the JSP
 
-The Code Upgrade Tool creates a module fragment that contains an upgraded
+The Upgrade Planner creates a module fragment that contains an upgraded
 version of your custom app JSP. 
 
 The following table shows the old and new JSP paths.
@@ -58,7 +58,7 @@ Liferay Portal version | JSP File Path |
 **6.2** | `docroot/META-INF/custom_jsps/html/portlet/[jsp_file_path]`
 **7.1** | `src/main/resources/META-INF/resources/[jsp_file_path]`
 
-For example, the Code Upgrade Tool generates a customized version of the Blogs
+For example, the Upgrade Planner generates a customized version of the Blogs
 app's `init-ext.jsp` file here:
 
     src/main/resources/META-INF/resources/blogs/init-ext.jsp

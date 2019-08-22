@@ -80,5 +80,5 @@ accompanying marker information are out of date and must be removed before
 continuing. Initiate this step to remove all the problem markers.
 
 Great! You've fixed all the upgrade problems that could be automatically
-detected by the Code Upgrade Tool. Next, you'll take a deeper look at resolving
+detected by the Upgrade Planner. Next, you'll take a deeper look at resolving
 project dependency errors.

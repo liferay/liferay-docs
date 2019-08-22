@@ -14,7 +14,7 @@ platform, and start to think in terms of how you'd solve problems most
 effectively using the platform's tools. 
 
 @product-ver@ was designed as an enhancement that builds off of what you already
-know. Its Code Upgrade Tool and this Learning Path help get your existing
+know. Its Upgrade Planner and this Learning Path help get your existing
 plugins running on @product-ver@ right away. The tool automates much of the
 process. After you upgrade your plugins, you can build and deploy them as you
 always have. 
