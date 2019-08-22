@@ -45,11 +45,16 @@ the Page Editor.
 
 The remaining methods are optional, but can be useful in many scenarios:
 
+<!-- Add when Configurable fragments are released for SP1. -Cody
+`getConfiguration`: returns the Fragment's configuration JSON code.
+-->
+
 `getImagePreviewURL`: returns the URL for previewing the Fragment's image.
 
 `getKey`: returns the Fragment's key.
 
-`getType`: returns the Fragment's type.
+`getType`: returns the Fragment's type. Type values include
+`FragmentConstants.TYPE_COMPONENT` and `FragmentConstants.TYPE_SECTION`.
 
 `isSelectable`: defines which conditions page authors can select the Fragment
 Renderer for. You'll learn more about this in the
@@ -79,10 +84,8 @@ Fragment was added, when it was added, the user who added it, etc.
 
 - **VIEW**: The component is being rendered within a page being viewed (not
   edited).
-- **ASSET_DISPLAY_PAGE**: Similar to the *VIEW* mode, but for Display Pages.
-  This mode is used when content is being visualized through its Display Page
-  Template.
-- **EDIT**: The component is being rendered within the Page Editor.
+- **ASSET_DISPLAY_PAGE**: The component is being edited on a Display Page.
+- **EDIT**: The component is being edited on a Content Page.
 
 There are other fields which should only be necessary for advanced use cases:
 
@@ -100,7 +103,8 @@ values include
 **Field Values**: Fragments can have editable elements through `<lfr-editable>`
 tags; this also applies to those created with `FragmentRenderer`. The
 `getFieldValuesOptional()` method retrieves the field values the user may have
-introduced in them.
+introduced in them. This only applies in the context of a Display Page with the
+values of the mapped structure.
 
 **Segment Experience IDs**: A list of identifiers for experiences that have been
 configured for the current page.
