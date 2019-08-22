@@ -2,7 +2,8 @@
 
 [TOC levels=1-4]
 
-Sometimes you want to use a database other than @product@'s. Doing this for a Service Builder module involves these general steps:
+Sometimes you want to use a database other than @product@'s. Doing this for a
+Service Builder module involves these general steps:
 
 1.  Define a data source for your database. 
 
@@ -15,11 +16,13 @@ There are two different ways to create the connection:
 1.  **`DataSourceProvider`:** This approach involves implementing a
     [`DataSourceProvider`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/jdbc/DataSourceProvider.html)
     [ServiceProviderInterface](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)
-    (SPI). This way requires the fewest files and steps, and works regardless of whether your Service Builder module uses the `ds` or `spring`
+    (SPI). This way requires the fewest files and steps, and works regardless of
+    whether your Service Builder module uses the `ds` or `spring`
     [dependency injector](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#dependency-injector).  
 
 2.  **Spring Beans:** Configure the connection using Spring XML files. This 
-    approach only works with Service Builder module that use the `spring` [dependency injection option](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#dependency-injector). 
+    approach only works with Service Builder module that use the `spring` 
+    [dependency injection option](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#dependency-injector). 
 
 | **Note:** All entities defined in a Service Builder module's
 | [`service.xml`](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file)

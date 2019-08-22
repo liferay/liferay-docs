@@ -2,9 +2,11 @@
 
 [TOC levels=1-4]
 
-Connecting to an external database by creating and registering a `DataSourceProvider` as a JDK
+Connecting to an external database by creating and registering a
+`DataSourceProvider` as a JDK
 [ServiceProviderInterface](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)
-(SPI) is the easiest way. This approach works regardless of whether your Service Builder module uses the `ds` or `spring`
+(SPI) is the easiest way. This approach works regardless of whether your Service
+Builder module uses the `ds` or `spring`
 [dependency injection option](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#dependency-injector)
 and it requires the fewest files and steps.  
 
