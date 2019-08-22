@@ -11,7 +11,7 @@ all, `GenericPortlet` provides a default `javax.portlet.Portlet` interface
 implementation. Upgrading a `GenericPortlet` is straightforward and takes only
 two steps: 
 
-1.  Adapt the portlet to @product-ver@'s API using the Code Upgrade Tool.
+1.  Adapt the portlet to @product-ver@'s API using the Upgrade Planner.
 
 2.  Resolve its dependencies. 
 

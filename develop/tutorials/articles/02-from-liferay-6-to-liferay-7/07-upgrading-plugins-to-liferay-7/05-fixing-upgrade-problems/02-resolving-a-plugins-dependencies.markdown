@@ -21,7 +21,7 @@ Liferay class changes and required adaptations are described here:
 1.  **Class moved to a package that's in the classpath**:  This change is 
     common and easy to fix. Since the module is already on your classpath, you
     need only update the class import. You can do this by using the Liferay Code 
-    Upgrade Tool or by organizing imports in @ide@. The Code Upgrade Tool 
+    Upgrade Tool or by organizing imports in @ide@. The Upgrade Planner
     reports each moved class for you to address one by one. Organizing imports 
     in @ide@ automatically resolves multiple classes at once. 
 
@@ -38,7 +38,7 @@ Liferay class changes and required adaptations are described here:
     the module and specifying your project's dependency on it. 
 
 3.  **Class replaced or removed**: The class has been replaced by another class
-    or removed from the product. The Code Upgrade Tool (discussed later)
+    or removed from the product. The Upgrade Planner (discussed later)
     explains what happened to the class, how to handle the change, and why the 
     change was made.
 

@@ -20,7 +20,7 @@ Upgrading a Liferay MVC Portlet involves these steps:
 2.  [Resolve dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
 Liferay's 
-[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Upgrade Planner](/docs/7-0/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 identifies code affected by the new API, explains the API changes and how to
 adapt to them, and in many cases, provides options for adapting the code
 automatically. 

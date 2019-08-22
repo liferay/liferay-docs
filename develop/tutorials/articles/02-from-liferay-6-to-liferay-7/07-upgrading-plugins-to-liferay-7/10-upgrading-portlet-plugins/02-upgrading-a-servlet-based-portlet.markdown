@@ -36,7 +36,7 @@ Follow these steps to upgrade a servlet-based portlet:
 2.  [Resolve dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
 The 
-[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Upgrade Planner](/docs/7-0/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 makes adapting a portlet's code straightforward, and it automates much of the
 process. 
 

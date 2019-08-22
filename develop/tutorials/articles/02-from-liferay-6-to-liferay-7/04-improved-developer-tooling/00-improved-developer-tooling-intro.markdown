@@ -31,7 +31,7 @@ provides all kinds of module
 to create modules for developing in any Gradle environment. 
 
 Liferay's tools also streamline the application upgrade process. Liferay @ide@'s
-[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Upgrade Planner](/docs/7-0/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 adapts traditional plugins to @product-ver@ APIs. 
 [Liferay's Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 [migrates](/docs/7-0/tutorials/-/knowledge_base/t/migrating-a-6-2-theme-to-liferay-7)
@@ -78,7 +78,7 @@ tutorials later in this series show how
 that demonstrates how you can optionally
 [migrate traditional plugins to Workspace](/docs/7-0/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications).
 
-![Figure 1: Liferay @ide@'s Code Upgrade Tool automates many aspects of the plugin upgrade process.](../../../images/improved-tooling-code-upgrade-configure-proj.png)
+![Figure 1: Liferay @ide@'s Upgrade Planner automates many aspects of the plugin upgrade process.](../../../images/improved-tooling-code-upgrade-configure-proj.png)
 
 Here's an example Workspace folder structure:
 

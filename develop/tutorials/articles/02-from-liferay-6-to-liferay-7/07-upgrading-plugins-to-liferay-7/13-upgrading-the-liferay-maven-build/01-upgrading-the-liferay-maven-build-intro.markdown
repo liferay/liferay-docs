@@ -17,7 +17,7 @@ upgrade process that you must address:
 For more information on using Maven with @product-ver@, see the
 [Maven tutorial section](/docs/7-0/tutorials/-/knowledge_base/t/maven). For a
 guided and expedited upgrade process for your Maven build, try the
-[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+[Upgrade Planner](/docs/7-0/tutorials/-/knowledge_base/t/liferay-upgrade-planner).
 
 <!-- Mention Maven Workspace here when documentation is available. -Cody -->
 

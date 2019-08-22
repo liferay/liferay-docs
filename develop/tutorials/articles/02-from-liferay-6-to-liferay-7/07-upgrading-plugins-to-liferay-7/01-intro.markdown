@@ -11,7 +11,7 @@ custom apps) to the new version. You'll learn how to upgrade your code in this
 section.
 
 The first upgrade process step is to adapt your existing plugin's code to
-@product-ver@'s APIs. The great news is that Liferay's Code Upgrade Tool makes this
+@product-ver@'s APIs. The great news is that Liferay's Upgrade Planner makes this
 easier than ever. It identifies Liferay API changes affecting your code, 
 explains the API changes, and offers resolution steps. And the tool offers 
 auto-correction where it can. 
@@ -160,11 +160,15 @@ Here are the code upgrade steps:
 
     11. [Upgrade Struts Action Hooks](/docs/7-1/tutorials/-/knowledge_base/t/converting-strutsactionwrappers-to-mvccommands)
 
-6.  [Upgrade Themes](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-6-2-themes-intro)
+6.  [Upgrade Themes](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-themes-intro)
 
     Upgrade your themes so they're deployable to @product-ver@.
 
-7.  [Upgrade Layout Templates](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-6-2-layout-templates)
+    1. [Upgrading Your Theme from Liferay Portal 6.1 to 7.0](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-your-theme-from-6-1-to-7-0)
+
+    2. [Upgrading Your Theme from Liferay Portal 6.2 to 7.0](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-themes)
+
+7.  [Upgrade Layout Templates](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-layout-templates)
 
     Upgrade your layout templates so they're deployable to @product-ver@.
 

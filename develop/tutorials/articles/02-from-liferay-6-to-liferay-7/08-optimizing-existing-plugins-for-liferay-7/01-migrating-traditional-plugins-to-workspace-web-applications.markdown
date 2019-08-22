@@ -7,7 +7,7 @@ header-id: migrating-traditional-plugins-to-workspace-web-applications
 [TOC levels=1-4]
 
 After you've
-[adapted your traditional plugin](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[adapted your traditional plugin](/docs/7-0/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 to @product@'s API, you can continue maintaining it in the Plugins SDK. The
 Plugins SDK, however, is deprecated as of @product-ver@. Maintaining plugins in
 the SDK will become increasingly difficult.

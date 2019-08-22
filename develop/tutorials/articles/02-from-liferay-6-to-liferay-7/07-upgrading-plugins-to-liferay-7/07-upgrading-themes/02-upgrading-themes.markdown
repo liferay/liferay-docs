@@ -92,7 +92,7 @@ A *breaking change* is a code modification between versions of @product@ that
 might be incompatible with existing plugins, including themes. Liferay minimized
 the number of breaking changes, but couldn't avoid some. The [Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes)
 reference document describes them. The theme's `gulp upgrade` command and the 
-[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool),
+[Upgrade Planner](/docs/7-0/tutorials/-/knowledge_base/t/liferay-upgrade-planner),
 in Liferay @ide@ identify and address these changes.
 
 The Gulp `upgrade` task jump-starts the upgrade process, but it doesn't complete
