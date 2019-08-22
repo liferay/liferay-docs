@@ -44,6 +44,8 @@ the API and service modules:
     `@Reference` annotation causes Liferay's OSGi container to
     inject references to your generated services so you can use them. 
 
+4.  Press Ctrl-Shift-O to add the imports you need. 
+
 Now you're ready to begin building your front-end. 
 
 --------
