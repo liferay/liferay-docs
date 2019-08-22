@@ -54,7 +54,7 @@ Here are the persistence, service, and model classes:
       referencing it with the
       [`@Reference` annotation](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services). 
 
-    ![Figure 1: Service Builder generates these persistence classes and interfaces for an example entity called *Event*. You shouldn't (and you won't need to) customize any of these classes or interfaces.](../../../images/service-builder-persistence-diagram.png)
+    ![Figure 1: Service Builder generates these persistence classes and interfaces for an example entity called *Event*. You shouldn't (and you won't need to) customize any of these classes or interfaces.](../../../../images/service-builder-persistence-diagram.png)
 
 - Local Service (generated for an entity only if the entity's `local-service`
   attribute is set to `true` in `service.xml`)
@@ -77,7 +77,7 @@ Here are the persistence, service, and model classes:
       lets you
       [customize the entity's local services](/docs/7-2/customization/-/knowledge_base/c/overriding-service-builder-services-service-wrappers).
 
-![Figure 2: Service Builder generates these service classes and interfaces. Only the [ENTITY_NAME]LocalServiceImpl (e.g., EventLocalServiceImpl for the Event entity) allows custom methods to be added to the service layer.](../../../images/service-builder-service-diagram.png)
+![Figure 2: Service Builder generates these service classes and interfaces. Only the [ENTITY_NAME]LocalServiceImpl (e.g., EventLocalServiceImpl for the Event entity) allows custom methods to be added to the service layer.](../../../../images/service-builder-service-diagram.png)
 
 - Remote Service (generated for an entity only if an entity's `remote-service`
   attribute is *not* set to `false` in `service.xml`)
@@ -123,7 +123,7 @@ Here are the persistence, service, and model classes:
       designed to be extended and it lets you
       [customize the entity](/docs/7-2/customization/-/knowledge_base/c/overriding-service-builder-services-service-wrappers).
 
-![Figure 3: Service Builder generates these model classes and interfaces. Only `[ENTITY_NAME]Impl`  (e.g., `EventImpl` for the Event entity) allows custom methods to be added to the service layer.](../../../images/service-builder-model-diagram.png)
+![Figure 3: Service Builder generates these model classes and interfaces. Only `[ENTITY_NAME]Impl`  (e.g., `EventImpl` for the Event entity) allows custom methods to be added to the service layer.](../../../../images/service-builder-model-diagram.png)
 
 | **Note:** `*Util` classes are generated for backwards compatibility purposes
 | only. Your module applications should avoid calling the util classes. Use the
