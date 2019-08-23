@@ -21,30 +21,30 @@ with the theme. An `assets.json` file lets you provide this information.
     `Custom Title.xml` web content article, and an abstract summary and small 
     image for the `Child Web Content 1.json` article structure:
 
-```json
-{
-    "assets": [
-        {
-            "name": "company_logo.png",
-            "tags": [
-                "logo",
-                "company"
-            ]
-        },
-        {
-            "name": "Custom Title.xml",
-            "tags": [
-                "web content"
-            ]
-        },
-        {
-            "abstractSummary": "This is an abstract summary.",
-            "name": "Child Web Content 1.json",
-            "smallImage": "company_logo.png"
-        }
-    ]
-}
-```
+    ```json
+    {
+        "assets": [
+            {
+                "name": "company_logo.png",
+                "tags": [
+                    "logo",
+                    "company"
+                ]
+            },
+            {
+                "name": "Custom Title.xml",
+                "tags": [
+                    "web content"
+                ]
+            },
+            {
+                "abstractSummary": "This is an abstract summary.",
+                "name": "Child Web Content 1.json",
+                "smallImage": "company_logo.png"
+            }
+        ]
+    }
+    ```
 
 Now you know how to configure assets for your web content! 
 

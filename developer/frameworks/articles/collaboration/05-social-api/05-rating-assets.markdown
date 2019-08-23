@@ -27,7 +27,9 @@ a guestbook.
 
 3.  In the JSP, include the `liferay-ui` taglib declaration:
 
-        <%@ taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui" %>
+    ```markup
+    <%@ taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui" %>
+    ```
 
 4.  Use 
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html) 
@@ -35,16 +37,20 @@ a guestbook.
     using the `-LocalServiceUtil` class. Here's an example that does this for a 
     guestbook entry in the example Guestbook app: 
 
-        <%
-        long entryId = ParamUtil.getLong(renderRequest, "entryId");
-        entry = EntryLocalServiceUtil.getEntry(entryId);
-        %>
+    ```java
+    <%
+    long entryId = ParamUtil.getLong(renderRequest, "entryId");
+    entry = EntryLocalServiceUtil.getEntry(entryId);
+    %>
+    ```
 
 5.  Use the `liferay-ui:ratings` tag to add the ratings component for the 
     entity. This example uses the stars rating type: 
 
-        <liferay-ui:ratings className="<%=Entry.class.getName()%>"
-            classPK="<%=entry.getEntryId()%>" type="stars" />
+    ```markup
+    <liferay-ui:ratings className="<%=Entry.class.getName()%>"
+        classPK="<%=entry.getEntryId()%>" type="stars" />
+    ```
 
 ## Related Topics
 

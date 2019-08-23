@@ -7,7 +7,7 @@ header-id: installing-liferay-enterprise-search
 [TOC levels=1-4]
 
 X-Pack is an 
-[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-xpack.html)
+[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/setup-xpack.html)
 for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,
 you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
@@ -41,7 +41,7 @@ Here's an overview of using X-Pack with @product@:
 
 Elastic's documentation explains additional configuration options, features,
 and the architecture of
-[X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-security.html). 
+[X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/configuring-security.html). 
 
 | **Note:** Out of the box, X-Pack comes with a [30-day
 | trial](https://www.elastic.co/guide/en/x-pack/current/license-management.html).

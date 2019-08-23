@@ -27,10 +27,10 @@ The following Docker commands (Gradle-based) are available in Liferay Workspace:
 
 Command | Description
 ------- | -------------
-`buildDockerImage` | Builds the Docker image with all modules/configs deployed.
+`buildDockerImage` | Builds the Docker image with all modules/configurations deployed.
 `createDockerContainer` | Creates a Docker container from the @product@ image and mounts the workspace's `/build/docker` folder to the container's `/etc/liferay` folder.
 `createDockerfile` | Creates a `Dockerfile` to build the Docker image.
-`dockerDeploy` | Deploys the project to the container's `deploy` folder by copying the project archive file to workspace's `build/docker/deploy` folder. This command can also be executed from workspace's root folder to deploy all projects and copy all Docker configurations (i.e., from the `configs/docker` folder) to the container.
+`dockerDeploy` | Deploys the project to the container's `deploy` folder by copying the project archive file to workspace's `build/docker/deploy` folder. This command can also be executed from workspace's root folder to deploy all projects and copy all Docker configurations (i.e., from the `configs/common` and `configs/docker` folders) to the container.
 `logsDockerContainer` | Prints the portal runtime's logs. You can exit log tracking mode while maintaining a running container (e.g., [Ctrl&#124;Command] + C).
 `pullDockerImage` | Pulls the Docker image.
 `removeDockerContainer` | Removes the container from Docker's system.

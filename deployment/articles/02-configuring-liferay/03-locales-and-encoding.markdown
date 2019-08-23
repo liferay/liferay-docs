@@ -37,7 +37,16 @@ section defines the default locale. The
 [Languages and Time Zones](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
 section defines the available and current locales.
 
-	company.default.locale=en_GB 
+```properties
+company.default.locale=en_GB 
+```
+
+| **Note:** The `company.default.locale` portal property is only intended for 
+| use on initial startup. To change the language settings on an existing 
+| instance, open the Control Panel and navigate to *Configuration* &rarr; 
+| *Instance Settings* and select the Localization category under the PLATFORM 
+| heading. Under the Language entry you can change the default language, as well 
+| as define the current locales. 
 
 As an example, the above property changes the locale to English, Great Britain. 
  
@@ -59,18 +68,20 @@ In addition to configuring instance settings, you can also define unique URLs
 for specific languages using the `I18nServlet` by editing Portal's `web.xml`
 file: 
 
-	<servlet-mapping>
-		<servlet-name>I18n Servlet</servlet-name>
-		<url-pattern>/ar/*</url-pattern>
-	</servlet-mapping>
-    .
-    .
-	.
-	<servlet-mapping>
-		<servlet-name>I18n Servlet</servlet-name>
-		<url-pattern>/de/*</url-pattern>
-	</servlet-mapping>
-	
+```xml
+<servlet-mapping>
+	<servlet-name>I18n Servlet</servlet-name>
+	<url-pattern>/ar/*</url-pattern>
+</servlet-mapping>
+  .
+  .
+.
+<servlet-mapping>
+	<servlet-name>I18n Servlet</servlet-name>
+	<url-pattern>/de/*</url-pattern>
+</servlet-mapping>
+```
+
 The defaults should be sufficient for nearly all circumstances. Because
 `web.xml` changes require stopping and possibly redeploying @product@ (depending
 on your app server), test the defaults and make sure you really need to modify
@@ -88,9 +99,11 @@ that ship by default.
 For languages that are displayed right to left, use the following language
 properties settings:
 
-	lang.dir=rtl
-	lang.line.begin=right
-	lang.line.end=left
+```properties
+lang.dir=rtl
+lang.line.begin=right
+lang.line.end=left
+```
 
 To display right to left by default,
 [override these properties globally](/docs/7-2/customization/-/knowledge_base/c/overriding-global-language-keys). 
@@ -100,9 +113,11 @@ To display right to left by default,
 Users can change the prefix and suffix values for a locale. For example, for
 Spanish, the `language_es.properties` file contains these values: 
 
-	lang.user.name.field.names=prefix,first-name,last-name
-	lang.user.name.prefix.values=Sr,Sra,Sta,Dr,Dra
-	lang.user.name.required.field.names=last-name
+```properties
+lang.user.name.field.names=prefix,first-name,last-name
+lang.user.name.prefix.values=Sr,Sra,Sta,Dr,Dra
+lang.user.name.required.field.names=last-name
+```
 
 For more information, see 
 [Using Liferay Language Settings](/docs/7-2/frameworks/-/knowledge_base/f/using-liferays-localization-settings).

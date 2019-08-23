@@ -26,7 +26,6 @@ interface. For this example, refer to this configuration interface from
 Liferay's Currency Converter application:
 
 ```java
-
 @ExtendedObjectClassDefinition(category = "localization")
 @Meta.OCD(
     id = "com.liferay.currency.converter.web.configuration.CurrencyConverterConfiguration",
@@ -38,7 +37,6 @@ public interface CurrencyConverterConfiguration {
     @Meta.AD(deflt = "GBP|CNY|EUR|JPY|USD", name = "symbols", required = false)
     public String[] symbols();
 }
-
 ```
 
 This example defines one configuration option, `symbols`, which takes an array
@@ -61,7 +59,6 @@ Implement `ConfigurationFormRenderer`'s three methods:
 Here's a complete `ConfigurationFormRenderer` implementation:
 
 ```java
-
 @Component(immediate = true, service = ConfigurationFormRenderer.class)
 public class CurrencyConverterConfigurationFormRenderer
     implements ConfigurationFormRenderer {
@@ -96,7 +93,6 @@ public class CurrencyConverterConfigurationFormRenderer
         return params;
     }
 }
-
 ```
 
 The above example generates a custom rendering (HTML) for the form in the

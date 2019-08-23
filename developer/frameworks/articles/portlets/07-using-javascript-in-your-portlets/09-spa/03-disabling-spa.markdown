@@ -22,9 +22,9 @@ Follow the steps in the corresponding section to disable SPA for that scope.
 To disable SPA across an entire @product@ instance, add the following line to 
 your `portal-ext.properties`:
 
-    ```properties
-    javascript.single.page.application.enabled = false
-    ```
+```properties
+javascript.single.page.application.enabled = false
+```
 
 ## Disabling SPA for a Portlet
 

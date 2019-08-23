@@ -26,7 +26,7 @@ Follow these steps:
 2.  Add an [`empty-result-message` tag](@app-ref@/frontend-taglib/latest/taglibdocs/liferay-frontend/empty-result-message.html) 
     to your portlet's view:
 
-    ```html
+    ```markup
     <liferay-frontend:empty-result-message
     />
     ```
@@ -46,7 +46,7 @@ Follow these steps:
 
     An example configuration is shown below:
 
-    ```html
+    ```markup
     <liferay-frontend:empty-result-message
         actionDropdownItems="<%= (availableSegmentsEntries.size() > 0) ? 
         editAssetListDisplayContext.getAssetListEntryVariationActionDropdownItems() : null %>"

@@ -16,6 +16,10 @@ Setting the target platform version to develop for takes two steps:
     liferay.workspace.target.platform.version=7.2.0
     ```
 
+    | **Note:** You must explicitly uncomment the property in your workspace's
+    | `gradle.properties` file to set it. Target Platform is not enabled by
+    | default.
+
     If you're using Liferay DXP, you can set the property like this:
 
     ```properties

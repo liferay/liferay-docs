@@ -22,7 +22,7 @@ blade update
 Although Blade CLI is frequently released, if you want bleeding edge features
 not yet available, you can install the latest snapshot version:
 
-```
+```bash
 blade update -s
 ```
 

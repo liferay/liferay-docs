@@ -25,9 +25,17 @@ database and store it in its local cache.
 
 ![Figure 1: @product@'s cache algorithm is extremely efficient. ](../../../images/clustering-cache-efficient-algorithm.png)
 
-To enable Cluster Link, add this property to `portal-ext.properties`: 
+To enable Cluster Link, add this [portal
+property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties) to a
+`portal-ext.properties` file: 
 
-    cluster.link.enabled=true
+```properties
+cluster.link.enabled=true
+```
+
+| **Note:** See the
+| [Cluster Link portal property definitions](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link)
+| for details. 
 
 Cluster Link depends on 
 [JGroups](http://www.jgroups.org) 
@@ -53,16 +61,19 @@ UDP multicast, but unicast and TCP are also available.
 
 When you enable Cluster Link, @product@'s default clustering configuration is
 enabled. This configuration defines IP multicast over UDP. @product@ uses two
-groups of 
-[channels from JGroups](http://www.jgroups.org/manual/index.html#_channel) 
-to implement this: a control group and a transport group. If you want to
-customize the channel properties, you can do so in `portal-ext.properties`: 
+groups of [channels from
+JGroups](http://www.jgroups.org/manual4/index.html#_channel) to implement this:
+a control group and a transport group. If you want to customize the [channel
+properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link),
+you can do so in `portal-ext.properties`: 
 
-    cluster.link.channel.name.control=[your control channel name]
-    cluster.link.channel.properties.control=[your control channel properties]
+```properties
+cluster.link.channel.name.control=[your control channel name]
+cluster.link.channel.properties.control=[your control channel properties]
+```
 
 Please see 
-[JGroups's documentation](http://www.jgroups.org/manual/index.html#protlist) 
+[JGroups's documentation](http://www.jgroups.org/manual4/index.html#protlist) 
 for channel properties. The default configuration sets many properties whose
 settings are discussed there. 
 
@@ -77,15 +88,19 @@ logically or physically on the network, or by configuring each cluster's
 JGroups sets a bind address automatically. If you want to set a manual address,
 you can do this. By default, these are set to `localhost`: 
 
-    cluster.link.bind.addr["cluster-link-control"]=localhost
-    cluster.link.bind.addr["cluster-link-udp"]=localhost
+```properties
+cluster.link.bind.addr["cluster-link-control"]=localhost
+cluster.link.bind.addr["cluster-link-udp"]=localhost
+```
 
 In some configurations, however, `localhost` is bound to the internal loopback
 network (`127.0.0.1` or `::1`), rather than the host's real address. If for some
 reason you need this configuration, you can make @product@ auto detect its real
 address with this property: 
 
-    cluster.link.autodetect.address=www.google.com:80
+```properties
+cluster.link.autodetect.address=www.google.com:80
+```
 
 Set it to connect to some other host that's contactable by your server. By
 default, it points to Google, but this may not work if your server is behind a
@@ -101,8 +116,10 @@ methods are all provided by JGroups.
 1.  If you are binding the IP address instead of using `localhost`, make sure
     the right IP addresses are declared using these properties: 
 
-        `cluster.link.bind.addr["cluster-link-control"]=localhost` 
-        `cluster.link.bind.addr["cluster-link-udp"]=localhost`
+    ```properties
+    cluster.link.bind.addr["cluster-link-control"]=localhost
+    cluster.link.bind.addr["cluster-link-udp"]=localhost
+    ```
 
 3.  Test your load and then optimize your settings if necessary.
 
@@ -151,7 +168,7 @@ different geographical locations.
 5.  Add to the same tag the parameter `singleton_name="liferay_cluster"`. This
     merges the transport and control channels to reduce the number of thread
     pools. See 
-    [JGroups documentation](http://www.jgroups.org/manual-3.x/html/user-advanced.html) 
+    [JGroups documentation](www.jgroups.org/manual4/index.html#user-advanced) 
     for further information. 
 
     Usually, no further JGroups configuration is required. However, in a very
@@ -162,14 +179,17 @@ different geographical locations.
     separated. By setting this, clustered nodes deployed to separate networks
     (e.g. separated by different firewalls) can communicate together. This
     configuration may be flagged in security audits of your system. See 
-    [JGroups documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#Transport)
+    [JGroups documentation](http://www.jgroups.org/manual4/index.html#_transport_protocols)
     for more information. 
 
-6.  Save the file. Modify that node's `portal-ext.properties` file to point to
-    it: 
+6.  Save the file. Modify the [cluster link channel portal 
+    properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link)
+    in that node's `portal-ext.properties` file to point to it: 
 
-        cluster.link.channel.properties.control=[CONFIG_FILE_PATH]/tcp.xml
-        cluster.link.channel.properties.transport.0=[CONFIG_FILE_PATH]/tcp.xml
+    ```properties
+    cluster.link.channel.properties.control=[CONFIG_FILE_PATH]/tcp.xml
+    cluster.link.channel.properties.transport.0=[CONFIG_FILE_PATH]/tcp.xml
+    ```
 
 You're now set up for Unicast over TCP clustering! Repeat this process for each
 node you want to add to the cluster. 
@@ -190,7 +210,7 @@ corresponding `JDBCPING` tag:
 
 The above example uses MySQL as the database. For further information about
 JDBC Ping, please see the 
-[JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
+[JGroups Documentation](http://www.jgroups.org/manual4/index.html#DiscoveryProtocols). 
 
 ### S3 Ping
 
@@ -209,13 +229,13 @@ tag:
 
 Supply your Amazon keys as values for the parameters above. For further
 information about S3 Ping, please see the 
-[JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
+[JGroups Documentation](http://www.jgroups.org/manual4/index.html#_s3_ping). 
 
 ### Other Pings
 
 JGroups supplies other means for cluster members to discover each other,
 including Rackspace Ping, BPing, File Ping, and others. Please see the 
-[JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols)
+[JGroups Documentation](http://www.jgroups.org/manual4/index.html#DiscoveryProtocols)
 for information about these discovery methods. 
 
 ## Modifying the Cache Configuration with a Module

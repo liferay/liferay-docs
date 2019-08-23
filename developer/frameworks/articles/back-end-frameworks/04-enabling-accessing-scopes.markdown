@@ -61,7 +61,7 @@ scope is available in these ways:
     uses its `scopeGroupId` to retrieve the bookmarks and total number of 
     bookmarks in the current scope: 
 
-    ```jsp
+    ```markup
     ...
     total = BookmarksEntryServiceUtil.getGroupEntriesCount(scopeGroupId, groupEntriesUserId);
 

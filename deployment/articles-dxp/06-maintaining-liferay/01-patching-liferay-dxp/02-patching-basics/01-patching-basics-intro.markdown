@@ -34,13 +34,10 @@ a short-term fix. Hotfixes can patch the core, the applications, and modules.
 
 ## Service Packs
 
-Every tenth fix pack is a service pack, so their frequency varies. Their version
-numbers always end in a zero (e.g., `10`, `20`, etc.). Service packs are built
-on top of the original @product@ release and repackaged with the latest fix
-pack, Patching Tool, and modules. Since a service pack is a fix pack, it
-contains all previous fix packs since the last service pack. Each one includes
-the most recent patches and updates. If starting a new project, always start 
-with the latest service pack. 
+Service packs are built on top of the original @product@ release and repackaged
+with the latest fix pack, Patching Tool, and modules. Since a service pack is a
+fix pack, it contains all previous fix packs since the last service pack. Each
+one includes the most recent patches and updates. 
 
 Service packs can also include changes that have these characteristics:
 

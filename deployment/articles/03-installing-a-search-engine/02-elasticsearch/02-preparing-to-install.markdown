@@ -74,5 +74,3 @@ Elasticsearch relies on clustering and sharding to deliver fast, accurate search
 results, and thus requires a fast and reliable network. Most modern data centers
 provide 1 GbE or 10 GbE between machines. 
 
-Elasticsearch 6.5 doesn't support multi-data center deployments.
-

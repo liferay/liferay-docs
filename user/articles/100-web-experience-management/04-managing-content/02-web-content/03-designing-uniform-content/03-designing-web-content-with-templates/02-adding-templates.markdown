@@ -43,7 +43,7 @@ Now create the template and connect it to the structure.
     *Title*, *Abstract*, *Image* and *Body* into the editor area. It should
     look like this:
 
-    ```
+    ```markup
     ${title.getData()}
     ${abstract.getData()}
     <#if image.getData()?? && image.getData() != ""> <img alt="${image.getAttribute("alt")}" data-fileentryid="${image.getAttribute("fileEntryId")}" src="${image.getData()}" /> </#if>
@@ -53,7 +53,7 @@ Now create the template and connect it to the structure.
 8.  Next, add heading and `<p>` tags and align the image to center to  style your
     elements like this:
 
-    ```
+    ```markup
     <h1>${title.getData()}</h1>
     <p>${abstract.getData()}</p>
     <#if image.getData()?? && image.getData() != ""> <img alt="${image.getAttribute("alt")}" data-fileentryid="${image.getAttribute("fileEntryId")}" src="${image.getData()}" align="center" /> </#if>

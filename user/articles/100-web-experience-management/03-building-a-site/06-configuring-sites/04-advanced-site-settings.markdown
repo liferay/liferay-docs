@@ -92,3 +92,27 @@ widget templates, and more from this parent Site. Even if you
 initially allowed content sharing between the parent Site and its sub-Sites,
 you can disable this option and immediately revoke content sharing from
 all sub-Sites.
+
+You can manage this globally by navigating to the Control Panel &rarr;
+*Configuration* &rarr; *Instance Settings* &rarr; *Content & Data* &rarr;
+*Sharing* &rarr; *Content Sharing*. First, you can choose if Site administrators
+can display content in Sites from other Sites they administer. For example,
+suppose that a certain User is a Site administrator of two Sites: *Engineering*
+and *Marketing*. The checkbox in the Content Sharing section of Instance
+Settings determines if the Site administrator can display content from the
+Marketing Site in the Engineering Site and vice versa.
+
+You can also choose if child Sites can display content from parent Sites and
+configure the defaults. There are three options:
+
+**Enabled by Default**: Child Sites can display content from parent Sites by
+default, but this can be disabled by a Site administrator.
+
+**Disabled by Default**: Child Sites cannot display content from parent Sites by
+default, but this can be enabled by a Site administrator.
+
+**Disabled**: Child Sites cannot display content from parent Sites, and this
+behavior cannot be changed by a Site administrator.
+
+That covers your Site's advanced settings. You're now equipped to manage all
+aspects of your Site's configuration.

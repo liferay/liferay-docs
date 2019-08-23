@@ -20,8 +20,10 @@ Follow these steps to create a folder with the `DLAppService` method
 
 1.  Get a reference to `DLAppService`: 
 
-        @Reference
-        private DLAppService _dlAppService;
+    ```java
+    @Reference
+    private DLAppService _dlAppService;
+    ```
 
 2.  Get the data needed to populate the `addFolder` method's arguments. Since 
     it's common to create a folder with data submitted by the end user, you can 
@@ -29,13 +31,15 @@ Follow these steps to create a folder with the `DLAppService` method
     `javax.portlet.ActionRequest` and 
     [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html): 
 
-        long repositoryId = ParamUtil.getLong(actionRequest, "repositoryId");
-        long parentFolderId = ParamUtil.getLong(actionRequest, "parentFolderId");
-        String name = ParamUtil.getString(actionRequest, "name");
-        String description = ParamUtil.getString(actionRequest, "description");
+    ```java
+    long repositoryId = ParamUtil.getLong(actionRequest, "repositoryId");
+    long parentFolderId = ParamUtil.getLong(actionRequest, "parentFolderId");
+    String name = ParamUtil.getString(actionRequest, "name");
+    String description = ParamUtil.getString(actionRequest, "description");
 
-        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                    DLFolder.class.getName(), actionRequest);
+    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                DLFolder.class.getName(), actionRequest);
+    ```
 
 <!--Uncomment once article is available
     For more information on `ServiceContext`, see the tutorial 
@@ -45,9 +49,11 @@ Follow these steps to create a folder with the `DLAppService` method
 3.  Call the service reference's `addFolder` method with the data from the 
     previous step: 
 
-        Folder folder = _dlAppService.addFolder(
-                                repositoryId, parentFolderId, name, description, 
-                                serviceContext);
+    ```java
+    Folder folder = _dlAppService.addFolder(
+                            repositoryId, parentFolderId, name, description, 
+                            serviceContext);
+    ```
 
     The method returns a `Folder` object, which this example sets to a variable 
     for later use. Note, however, that you don't have to do this. 

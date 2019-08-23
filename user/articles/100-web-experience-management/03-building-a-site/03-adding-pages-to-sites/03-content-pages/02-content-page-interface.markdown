@@ -20,8 +20,8 @@ overlay is an example of something you might build as a section.
 ![Figure 1: A Section named *Banner* being displayed while editing a Content Page.](../../../../../images/content-page-section-example.png)
 
 **Layouts** are special Sections that define spaces where you can add fragments
-*or widgets. Each layout you add fills the width of the page. You can add  any
-*number of layouts to the page.
+or widgets. Each layout you add fills the width of the page. You can add  any
+number of layouts to the page.
 
 ![Figure 2: A 3 Column and 1 Column layout stacked on top of each other.](../../../../../images/content-page-layout-example.png)
 
@@ -37,10 +37,8 @@ to work together to build something piece by piece.
 
 Out of the box, you are provided with a plethora of Layouts, Sections, and 
 Components to use to build page, and a
-[web developer can create their own Fragments](dev-guide-link)
-to add to these.
-
-<!-- TODO: provide dev link for creating fragments above, when available -->
+[web developer can create their own Fragments](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments)
+to add to these. 
 
 ## Editable Elements
 
@@ -71,7 +69,7 @@ Unlike Widget Pages, Content Pages can only be edited through the *Site
 Builder* and cannot be edited live on the page. Any edits that you make to a 
 page are saved as a draft until you publish the page. Subsequent changes 
 after the initial publication are again saved as a draft, without affecting the 
-live page, until the page published again. is To create a Content Page,
+live page, until the page is published again. To create a Content Page,
 
 1.  Go to *Site Management* &rarr; *Site Builder* &rarr; *Pages*.
 
@@ -85,11 +83,15 @@ live page, until the page published again. is To create a Content Page,
 
 To edit an existing Content Page,
 
-1.  Go to *Site Management* &rarr; *Site Builder* &rarr; *Pages*.
+1.  Go to *Site Administration* &rarr; *Site Builder* &rarr; *Pages*.
 
-2.  Click ![Options](../../../../../images/icon-edit-pencil.png) &rarr; *Edit*
-    next to the Content Page that you want to edit.
-    
+2.  Click *Actions* (![Actions](../../../../../images/icon-staging-bar-options.png))
+    &rarr; *Edit* next to the Content Page you want to edit.
+
+You can also get to this page by selecting the *Edit* button
+(![Edit](../../../../../images/icon-edit-pencil.png)) from the Control Menu if
+you're viewing the published Content Page.
+
 On this page you can view a preview of your page, add Fragments and Widgets, 
 and manage the configuration for the page or any Fragments and Widgets 
 currently residing on the page.
@@ -160,7 +162,7 @@ options for the page. These options are fully documented in the
 The title bar provides navigation back to the Main Menu, a link to page
 configuration, and the ability to search for other pages. The title bar is
 covered in more detail in the
-[Page Management](docs/7-2/user/-/knowledge_base/user/creating-pages) section.
+[Page Management](docs/7-2/user/-/knowledge_base/u/creating-pages) section.
 
 ![Figure 12: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
 

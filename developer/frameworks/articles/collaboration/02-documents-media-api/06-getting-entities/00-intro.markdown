@@ -90,7 +90,9 @@ including any mount folders, use this
 [`getFolders`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFolders-long-long-boolean-) 
 method: 
 
-    getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
+```java
+getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
+```
 
 Note that there are several other `getFolders` methods in `DLAppService`. Use 
 the one that best matches your use case. See 
@@ -109,7 +111,9 @@ parameter specifies a
 status. As before, the `start` and `end` parameters control pagination of the 
 entities: 
 
-    getFileEntriesAndFileShortcuts(long repositoryId, long folderId, int status, int start, int end)
+```java
+getFileEntriesAndFileShortcuts(long repositoryId, long folderId, int status, int start, int end)
+```
 
 For step-by-step instructions on calling this method and others like it, see 
 [Getting Multiple Entity Types](/docs/7-2/frameworks/-/knowledge_base/f/getting-multiple-entity-types). 

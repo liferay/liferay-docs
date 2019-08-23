@@ -31,7 +31,7 @@ your copying and pasting convenience at the end of this section.
 2.  Build out the query to get the desired response. This looks different
     for each query type, but Elasticsearch's documentation on the query type
     explains it (for example, 
-    [Terms Query](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-terms-query.html)).
+    [Terms Query](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-terms-query.html)).
 
     For a Terms Query, you might just add terms to the query:
 
@@ -43,21 +43,21 @@ Once the query itself is in good shape, feed it to the search request.
 
 ### Build the Search Request
 
-2.  Get an instance of `com.liferay.portal.search.searcher.SearchRequestBuilder`
+1.  Get an instance of `com.liferay.portal.search.searcher.SearchRequestBuilder`
     from the `com.liferay.portal.search.legacy.searcher.SearchRequestBuilderFactory` service:
 
     ```java
     SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
     ```
 
-3.  Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the
+2.  Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the
     builder, then add the query to it and run its `build` method:
 
     ```java
     SearchRequest searchRequest = searchRequestBuilder.query(termsQuery).build();
     ```
 
-4.  To instead use the constructed query in a filter context, call the
+3.  To instead use the constructed query in a filter context, call the
     `postFilterQuery` method:
 
     ```java
@@ -97,9 +97,9 @@ Once the query itself is in good shape, feed it to the search request.
     SearchRequestBuilderFactory searchRequestBuilderFactory;
     ```
 
-Here's the complete code snippet:
+    Here's the complete code snippet:
 
-```java
+    ```java
     TermsQuery termsQuery = queries.terms("fieldName");
 
     termsQuery.addValues("value1", "value2");
@@ -115,7 +115,7 @@ Here's the complete code snippet:
 
     @Reference
     SearchRequestBuilderFactory searchRequestBuilderFactory;
-```
+    ```
 
 ### Process the Search Response
 
