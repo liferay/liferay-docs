@@ -374,6 +374,54 @@ Closure Template library.
 
 ---------------------------------------
 
+### Converted liferay-ui Tags to Module-Specific Tags
+- **Date:** 2017-Aug-28
+- **JIRA Ticket:** [LPS-74331](https://issues.liferay.com/browse/LPS-74331)
+
+#### What changed?
+
+Many `liferay-ui` taglibs have been moved out of Portal's kernel into OSGi
+modules. This change modified many of the taglib names. The list of converted
+names is below:
+
+- `liferay-ui:asset-add-button` &rarr; `liferay-asset:asset-add-button`
+- `liferay-ui:asset-addon-entry-display` &rarr; `liferay-asset:asset-addon-entry-display`
+- `liferay-ui:asset-addon-entry-selector` &rarr; `liferay-asset:asset-addon-entry-selector`
+- `liferay-ui:asset-categories-available`  &rarr; `liferay-asset:asset-categories-available`
+- `liferay-ui:asset-categories-error` &rarr; `liferay-asset:asset-categories-error`
+- `liferay-ui:asset-display` &rarr; `liferay-asset:asset-display`
+- `liferay-ui:asset-links` &rarr; `liferay-asset:asset-links`
+- `liferay-ui:asset-metadata` &rarr; `liferay-asset:asset-metadata`
+- `liferay-ui:asset-tags-available` &rarr; `liferay-asset:asset-tags-available`
+- `liferay-ui:asset-tags-error` &rarr; `liferay-asset:asset-tags-error`
+- `liferay-ui:asset-tags-navigation` &rarr; `liferay-asset:asset-tags-navigation `
+- `liferay-ui:input-asset-links` &rarr; `liferay-asset:input-asset-links`
+- `liferay-ui:journal-content-search` &rarr; Removed (`journal-content-search-web` was deprecated)
+- `liferay-ui:restore-entry` &rarr; Removed
+- `liferay-ui:rss` &rarr;` liferay-rss:rss`
+- `liferay-ui:rss-settings` &rarr; `liferay-rss:rss-settings`
+
+#### Who is affected?
+
+This affects anyone who is using the taglibs listed above.
+
+#### How should I update my code?
+
+You must migrate your `liferay-ui` tags to the new tag names. If you prefer
+keeping the old names temporarily, you can rely on the compatibility layer
+offered by Liferay. To set this, add the `com.liferay.portal.web.compat`
+dependency to your project's build file.
+
+Be sure to update to the new tag names soon, as this compatibility layer is
+deprecated and will not be available for future releases.
+
+#### Why was this change made?
+
+This change was made to categorize taglibs properly by moving them to their
+respective OSGi modules.
+
+---------------------------------------
+
 ### Changed Default Value for Browser Cache Properties
 - **Date:** 2017-Sep-05
 - **JIRA Ticket:** [LPS-74452](https://issues.liferay.com/browse/LPS-74452)
