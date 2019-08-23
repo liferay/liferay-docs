@@ -70,7 +70,8 @@ portlets, use taglibs, access theme objects, and more. Examples of these appear
 in `portal_normal.ftl`. These utilities are included in the files listed below:
 
 - [`Init.ftl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates/init.ftl):
-  Provides access to common theme variables.
+  Provides access to common theme variables. For convenience, these are listed 
+  in the [FreeMarker Variable Reference Guide](/docs/7-2/reference/-/knowledge_base/r/freemarker-variable-reference-guide).
 - [`FTL_Liferay.ftl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl): 
   Provides 
   [macros](/docs/7-2/reference/-/knowledge_base/r/product-freemarker-macros) 
