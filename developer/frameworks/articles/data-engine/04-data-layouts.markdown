@@ -3,7 +3,7 @@
 [TOC levels=1-4]
 
 Data Layouts control the display of a form backed by the data engine. The basic
-functionality is to lay the field out in _rows_ and _columns_.
+functionality is to lay the fields out in _rows_ and _columns_.
 
 ## Adding Data Layouts
 
@@ -72,10 +72,9 @@ curl -i -X GET \
     -H 'Content-Type: application/json' \ 
 ```
 
-- `dataLayoutKey` is a String that can be set when adding a data layout via
-    POST. Think of it like an identifier for data layouts that you,. the
-    developer can control. And here, in this GET request, you can retrieve data
-    layouts by the same key.
+`dataLayoutKey` is a String that can be set when adding a data layout via
+POST. Think of it like an identifier for data layouts that you, can control. And
+here, in this GET request, you can retrieve data layouts by the same key.
 
 ### Retrieving a Paginated List of Data Layouts Matching Keywords
 
@@ -91,11 +90,14 @@ curl -i -X GET \
 Notice that the keywords, page number, and page size are added as query
 parameters.
 
-- `keywords` are the search keywords to match data layouts by. The `name` and
-    `description` Data layout fields are matched to the keywords sent here.
-- `page` specifies the page of results to return (as an integer), if there are
-    more layouts returned than the `pageSize`.
-- `pageSize` is the number of layouts to include on each page. 
+`keywords` are the search keywords to match data layouts by. The `name` and
+
+`description` Data layout fields are matched to the keywords sent here.
+
+`page` specifies the page of results to return (as an integer), if there are
+more layouts returned than the `pageSize`.
+
+`pageSize` is the number of layouts to include on each page. 
 
 ## Deleting Data Layouts
 

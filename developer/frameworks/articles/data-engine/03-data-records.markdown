@@ -5,7 +5,7 @@
 Once you have a data definition and a Data Record Collection, it's time to start
 collecting data.
 
-The example calls in this article use cURL, a cross-platform tool for making
+The example calls in this article use [cURL](https://curl.haxx.se/), a cross-platform tool for making
 HTTP calls. Feel free to use any REST client you're familiar with.
 
 For more API documentation, paste the contents of
@@ -40,7 +40,7 @@ addition, send any other required properties in the request body:
 
 ## Retrieving Data Records
 
-Construct GET requeststo retrieve data records.
+Construct GET requests to retrieve data records.
 
 ### Retrieving all the Data Records for a Data Record Collection
 
