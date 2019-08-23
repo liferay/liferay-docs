@@ -33,7 +33,7 @@ automatically adapts existing plugins to @product-ver@. There's also a tutorial
 that demonstrates how you can optionally
 [migrate traditional plugins to Workspace](/docs/7-1/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications).
 
-![Figure 1: Liferay @ide@'s Code Upgrade Tool automates many aspects of the plugin upgrade process.](../../../images/improved-tooling-code-upgrade-configure-proj.png)
+![Figure 1: Liferay @ide@'s Upgrade Planner automates many aspects of the plugin upgrade process.](../../../images/improved-tooling-code-upgrade-configure-proj.png)
 
 Here's an example Workspace folder structure:
 

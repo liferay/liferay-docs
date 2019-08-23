@@ -32,7 +32,7 @@ configuration. Subsequent tutorials show you how to
 
 | **Note:** To see a working application configuration, deploy the
 | `configuration-action`
-| [Blade sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
+| [Blade sample](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/configuration-action)
 | and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
 | *System Settings*). In the Other category, click the *Message display
 | configuration* entry.

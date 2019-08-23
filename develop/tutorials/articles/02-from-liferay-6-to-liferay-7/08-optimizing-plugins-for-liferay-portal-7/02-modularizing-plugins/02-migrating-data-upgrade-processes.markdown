@@ -18,7 +18,7 @@ migrate to the new framework.
     [upgraded plugin](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
     is a traditional WAR, you don't need to do anything special; existing
     upgrade processes
-    [adapted to @product-ver@'s API](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+    [adapted to @product-ver@'s API](/docs/7-1/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
     work as is. The new data upgrade framework is for modules only. 
 
 -   If you converted your upgraded plugin to a module or you have an upgraded

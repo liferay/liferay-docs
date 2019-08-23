@@ -33,6 +33,6 @@ you've finished reading all of them, continue this Learning Path.
 Liferay's developer tooling for @product-ver@ compliments module development. It
 supports traditional plugin development and facilitates moving applications to
 modules. There are improvements for developing themes and using Maven and Gradle
-build systems, and there's even a code upgrade tool that adapts existing code to
+build systems, and there's even a Upgrade Planner tool that adapts existing code to
 @product-ver@'s API and automates much of the plugin upgrade process. Developer
 tooling improvements are next. 

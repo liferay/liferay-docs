@@ -203,9 +203,9 @@ Avoid the painful process of deploying modules only to be met with console
 errors or mysterious problems by resolving modules before deployment. This can
 be done by calling the new *resolve* Gradle task provided by Liferay Workspace. 
 
-### 7.1 Code Upgrade Tool
+### 7.1 Upgrade Planner
 
-The Code Upgrade Tool in Liferay Developer Studio helps you upgrade your legacy
+The Upgrade Planner in Liferay Developer Studio helps you upgrade your legacy
 application code to @product@: 
 
 - Identifies code affected by the API changes

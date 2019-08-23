@@ -6,9 +6,9 @@ header-id: upgrading-plugins-from-liferay-7-0-to-7-1
 
 [TOC levels=1-4]
 
-Liferay Workspace's Target Platform feature and Code Upgrade Tool take a lot of
+Liferay Workspace's Target Platform feature and Upgrade Planner take a lot of
 manual intervention out of upgrading to @product-ver@. Target Platform
-facilitates updating dependencies to @product-ver@, and the Code Upgrade Tool
+facilitates updating dependencies to @product-ver@, and the Upgrade Planner
 helps you adapt plugins to @product-ver@'s API. This tutorial explains the
 plugin upgrade steps. 
 
@@ -27,7 +27,7 @@ Here are the plugin upgrade steps:
 
 3.  [Update your plugin's remaining dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies).
 
-4.  [Adapt your code to @product-ver@'s API using the Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+4.  [Adapt your code to @product-ver@'s API using the Upgrade Planner](/docs/7-1/tutorials/-/knowledge_base/t/liferay-upgrade-planner).
     The Upgrade Tool shows you where
     [breaking changes](/docs/7-1/reference/-/knowledge_base/r/breaking-changes)
     affect your code and addresses many of them automatically.

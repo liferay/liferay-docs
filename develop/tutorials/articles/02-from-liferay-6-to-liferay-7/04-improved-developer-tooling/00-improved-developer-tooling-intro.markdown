@@ -39,7 +39,7 @@ more. It provides all kinds of
 to create modules for developing in any Gradle or Maven environment. 
 
 Liferay's tools also streamline the application upgrade process. Liferay @ide@'s
-[Code Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Upgrade Planner](/docs/7-1/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 adapts traditional plugins to @product-ver@ APIs. The
 [Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes) 
 [migrates](/docs/7-0/tutorials/-/knowledge_base/t/migrating-a-6-2-theme-to-liferay-7)
