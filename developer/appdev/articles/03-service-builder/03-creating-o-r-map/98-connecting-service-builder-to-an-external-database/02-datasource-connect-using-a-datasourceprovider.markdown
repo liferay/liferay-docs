@@ -4,11 +4,11 @@
 
 Connecting to an external database by creating and registering a
 `DataSourceProvider` as a JDK
-[ServiceProviderInterface](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)
+[`ServiceProviderInterface`](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)
 (SPI) is the easiest way. This approach works regardless of whether your Service
 Builder module uses the `ds` or `spring`
 [dependency injection option](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#dependency-injector)
-and it requires the fewest files and steps.  
+and it requires the fewest files and steps. 
 
 | **Note:** All entities defined in a Service Builder module's
 | [`service.xml`](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file) 
@@ -76,7 +76,7 @@ public class DataSourceProviderImpl implements DataSourceProvider {
 ```
 
 4.  Register the implementation as a JDK
-    [ServiceProviderInterface](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)
+    [`ServiceProviderInterface`](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)
     (SPI) in a
     `/META-INF/services/com.liferay.portal.kernel.dao.jdbc.DataSourceProvider`
     file in your `*-service` module. For example, this file registers the
