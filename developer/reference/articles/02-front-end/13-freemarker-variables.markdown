@@ -16,8 +16,8 @@ variables are listed below for reference:
 
 | Variable | Description |
 | --- | --- |
-| `theme_display` | Gives access to the `themeDisplay` Java Object and all its method |
-| `portlet_display` | Gives access to the `portletDisplay` Java Object and all its methods |
+| `theme_display` | Returns the `themeDisplay` Java Object and all its methods |
+| `portlet_display` | Returns the `portletDisplay` Java Object and all its methods |
 | `layoutSet` | Returns the page set |
 | `theme_timestamp` | Prints the date in the current locale with the given format |
 | `theme_settings` | Retrieves theme settings. See [configurable theme settings](/docs/7-2/frameworks/-/knowledge_base/f/making-configurable-theme-settings) for more information. |
@@ -117,7 +117,7 @@ variables are listed below for reference:
 
 | Variable | Description |
 | --- | --- |
-| `has_navigation` | Returns whether navigation exist (i.e. at least one page exist) |
+| `has_navigation` | Returns whether navigation exists (i.e. at least one page exists) |
 | `nav_items` | Returns the current pages as list |
 | `nav_css_class` | Returns a string of the current classes applied to the page's navigation |
 
