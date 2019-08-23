@@ -7,7 +7,7 @@ header-id: creating-a-fragment-renderer
 [TOC levels=1-4]
 
 Creating a Fragment Renderer lets you call Liferay's provided Java APIs for
-backend tasks related to your Fragment. In this article, you'll create a sample
+back-end tasks related to your Fragment. In this article, you'll create a sample
 Fragment Renderer that displays values stored in the current @product@
 instance's database.
 

@@ -7,15 +7,15 @@ header-id: developing-a-fragment-renderer
 [TOC levels=1-4]
 
 When creating Fragments through @product@'s provided UI, you're given three
-frontend languages to leverage: CSS, HTML, and JavaScript. Although you can
+front-end languages to leverage: CSS, HTML, and JavaScript. Although you can
 harness a lot of power with these languages alone, they do not provide an easy
 way to retrieve and process information from the database or third party
 systems. A common solution for this issue is creating a full-fledged portlet to
-complete common backend necessities, but this is sometimes overkill for what you
+complete common back-end necessities, but this is sometimes overkill for what you
 need.
 
-For a light weight alternative, you can develop a *Fragment Renderer* to use
-Liferay's provided Java APIs for backend tasks related to your Fragment. To do
+For a lightweight alternative, you can develop a *Fragment Renderer* to use
+Liferay's provided Java APIs for back-end tasks related to your Fragment. To do
 this, you must
 [implement the `FragmentRenderer` interface](#implementing-the-fragmentrenderer-interface).
 
@@ -56,8 +56,8 @@ The remaining methods are optional, but can be useful in many scenarios:
 `getType`: returns the Fragment's type. Type values include
 `FragmentConstants.TYPE_COMPONENT` and `FragmentConstants.TYPE_SECTION`.
 
-`isSelectable`: defines which conditions page authors can select the Fragment
-Renderer for. You'll learn more about this in the
+`isSelectable`: defines whether page authors can select the Fragment
+Renderer. You'll learn more about this in the
 [Choosing When to Display a Component](#choosing-when-to-display-a-component)
 section.
 
@@ -90,9 +90,9 @@ Fragment was added, when it was added, the user who added it, etc.
 There are other fields which should only be necessary for advanced use cases:
 
 **Preview Class PK**: If the Fragment supports displaying content, this field
-is used to support previewing an *In progress* version of the content before
-it's ready to publish. In this case, the `render` method returns the primary key
-of the content.
+supports previewing an *In progress* version of the content before
+it's ready to publish. In this case, the `render` method returns the content's
+primary key. 
 
 **Preview Type**: Represents the preview type you want to show. The accepted
 values include
@@ -113,7 +113,7 @@ configured for the current page.
 
 Usually you'll want to avoid writing HTML in your Java code. Fortunately, you
 can use the `render` method to use any templating mechanism of your choice. JSP
-integration is provided out-of-the box for @product@.
+integration is provided out-of-the box. 
 
 For example, rendering a JSP for your Fragment Renderer would look like this:
 
