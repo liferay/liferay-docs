@@ -7,9 +7,8 @@ header-id: dynamically-populating-select-list-fields-in-the-configuration-ui
 [TOC levels=1-4]
 
 You've always been able to provide a select list for your configuration options
-by directly entering each label and value in the `@Meta.AD` annotation of the
-[Configuration
-interface](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-configuration-interface).
+by entering each label and value directly in the `@Meta.AD` annotation of the
+[Configuration interface](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-configuration-interface).
 
 ```java
 @Meta.AD(
@@ -25,18 +24,18 @@ Now, thanks to the [`ConfigurationFieldOptionsProvider`
 interface](@app-ref@/configuration-admin/latest/javadocs/com/liferay/configuration/admin/definition/ConfigurationFieldOptionsProvider.html),
 you can populate select list configurations dynamically, using custom logic. 
 
-Follow these steps to dynamically populate the select list fields in your 
+Follow these steps to populate the select list fields dynamically in your 
 configuration UI:
 
-1.  Use a `@Component` annotation to register the
-    `ConfigurationFieldOptionsProvider.class` service, and include two
+1.  Use an `@Component` annotation to register the
+    `ConfigurationFieldOptionsProvider.class` service and include two
     properties:
 
-    - `configuration.field.name`: The name of the attribute in the configuration 
-      interface
+    `configuration.field.name`: The name of the attribute in the configuration 
+    interface
 
-    - `configuration.pid`: The ID of the corresponding configuration interface 
-      (usually the fully qualified class name)
+    `configuration.pid`: The ID of the corresponding configuration interface 
+    (usually the fully qualified class name)
 
     For example,
 
@@ -60,7 +59,7 @@ configuration UI:
     }
     ```
 
-3.  The `getOptions` method returns a list of `Option`s, which consist of the
+3.  The `getOptions` method returns a list of `Option`s consisting of the
     label and value fields. The labels provided here are translated to
     `optionLabels`, and the values as `optionValues`, in the configuration
     interface. 
@@ -110,7 +109,7 @@ configuration UI:
     Language Text Auto Tagging For_ with all the asset types that have
     registered a `TextExtractor`.
 
-    ![Figure x: The select list in the Google Cloud Natural Language Text Auto Tagging entry is populated programmatically, using the `ConfigurationFieldOptionsProvider`.](../../images/configuration-field-options-provider.png)
+    ![Figure 1: The select list in the Google Cloud Natural Language Text Auto Tagging entry is populated programmatically, using the `ConfigurationFieldOptionsProvider`.](../../images/configuration-field-options-provider.png)
 
-The `ConfigurationFieldOptionsProvider` allows you to populate select list with
+The `ConfigurationFieldOptionsProvider` allows you to populate select lists with
 configuration options defined by your custom logic.
