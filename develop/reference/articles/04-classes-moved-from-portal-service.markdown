@@ -5654,6 +5654,6 @@ caption {
 
 **Related Topics**
 
-[Adapting to @product-ver@'s API with the Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Liferay Upgrade Planner](/docs/7-0/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
 
 [Development Reference](/docs/7-0/reference/-/knowledge_base/r/development-reference)

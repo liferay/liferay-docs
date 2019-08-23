@@ -341,7 +341,7 @@ There are some additional requirements for uploading Liferay Digital Enterprise 
 
 - **WAR (`.war`) files**:
     - WAR-based plugins must be adapted to run on Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. See 
-      [this tutorial](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool) 
+      [this tutorial](/docs/7-0/tutorials/-/knowledge_base/t/liferay-upgrade-planner) 
       for information on adapting WAR plugins that run on Liferay Portal 6.2 and 
       earlier to run on Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. 
 
