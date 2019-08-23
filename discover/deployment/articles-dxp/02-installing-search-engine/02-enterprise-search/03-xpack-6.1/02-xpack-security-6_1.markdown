@@ -119,18 +119,22 @@ The exact contents of the file depend on your X-Pack setup. To configure the
 adapter according to the Elasticsearch setup documented here, populate the file
 like this:
 
-    sslKeyPath="/path/to/[Elasticsearch Home]/config/localhost.key"
-    sslCertificatePath="/path/to/[Elasticsearch Home]/config/localhost.crt"
+    sslKeyPath="/path/to/localhost.key"
+    sslCertificatePath="/path/to/localhost.crt"
     certificateFormat="PEM"
     requiresAuthentication="true"
     username="elastic"
     password="liferay"
-    sslCertificateAuthoritiesPaths="/path/to/[Elasticsearch Home]/config/ca.crt"
+    sslCertificateAuthoritiesPaths="/path/to/ca.crt"
     transportSSLVerificationMode="certificate"
     transportSSLEnabled="true"
 
 Note that the `password` should match what you set during the X-Pack password
 setup above. 
+
+The certificate and key files referenced here are the same ones used on the
+Elasticsearch server. Copy them to the @product@ server and update their paths
+in the configuration accordingly.
 
 Enable authentication by setting authentication to `required` and providing the
 credentials for the Elasticsearch user. For SSL, enable transport SSL, set the
