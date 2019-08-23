@@ -1,3 +1,7 @@
+---
+header-id: connecting-the-data-source-using-a-datasourceprovider
+---
+
 # Connecting the Data Source Using a DataSourceProvider
 
 [TOC levels=1-4]

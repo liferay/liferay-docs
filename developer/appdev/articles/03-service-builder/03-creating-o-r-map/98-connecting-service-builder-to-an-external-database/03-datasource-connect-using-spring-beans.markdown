@@ -1,4 +1,8 @@
-# Connecting the Data Source Using Spring Beans 
+---
+header-id: connecting-the-data-source-using-spring-beans
+---
+
+# Connecting the Data Source Using Spring Beans
 
 [TOC levels=1-4]
 

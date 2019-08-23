@@ -1,4 +1,8 @@
-# Connecting Service Builder to an External Database 
+---
+header-id: connecting-service-builder-to-an-external-database
+---
+
+# Connecting Service Builder to an External Database
 
 [TOC levels=1-4]
 
