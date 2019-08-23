@@ -159,7 +159,7 @@ dependencies and examining the DS service components involved.
 
 -   `system:check`: This
     [Gogo shell](/docs/7-2/reference/-/knowledge_base/r/gogo-shell)
-    command provides several checks, including one that detects inactivate
+    command provides several checks, including one that detects inactive
     service components whose required references are unresolved.
 
 -   `scr:info [component]`: Execute this
