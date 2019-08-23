@@ -9,7 +9,7 @@ header-id: creating-an-asset-renderer
 In this tutorial, you'll learn how to create an `Asset Renderer` and associate your JSP templates with it, along with configuring several other options.
 
 To learn how an asset renderer is created, you'll create the pre-existing
-[`BlogsEntryAssetRenderer`](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
+[`BlogsEntryAssetRenderer`](https://github.com/liferay/liferay-portal/blob/7.1.3-ga4/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.java)
 class, which configures the asset renderer framework for the Blogs application.
 
 1.  Create a new package in your existing project for your asset-related
@@ -18,19 +18,19 @@ class, which configures the asset renderer framework for the Blogs application.
 
 2.  Create your `-AssetEntry` class for your application in the new `-.asset`
     package and have it implement the
-    [`AssetEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
+    [`AssetEntry`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
     interface. Consider the `BlogsEntryAssetRenderer` class as an example:
 
         public class BlogsEntryAssetRenderer
             extends BaseJSPAssetRenderer<BlogsEntry> implements TrashRenderer {
 
     The `BlogsEntryAssetRenderer` class extends the
-    [`BaseJSPAssetRenderer`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
+    [`BaseJSPAssetRenderer`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
     which is an extension class intended for those who plan on using JSP
     templates to generate their asset's HTML. The `BaseJSPAssetRenderer` class
     implements the `AssetRenderer` interface. You'll notice the asset renderer
     is also implementing the
-    [`TrashRenderer`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
+    [`TrashRenderer`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
     interface. This is a common practice for many applications, so they can use
     @product@'s Recycle Bin.
 

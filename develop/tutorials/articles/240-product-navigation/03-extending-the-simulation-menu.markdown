@@ -20,7 +20,7 @@ with this tutorial.
 There are few differences between the Simulation Menu and Product Menu, mostly
 because they extend the same base classes. The Simulation Menu, by default, is
 made up of only one panel category and one panel app. Liferay provides the
-[`SimulationPanelCategory`](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/simulation/application/list/SimulationPanelCategory.html)
+[`SimulationPanelCategory`](https://github.com/liferay/liferay-portal/blob/7.1.3-ga4/modules/apps/product-navigation/product-navigation-simulation-web/src/main/java/com/liferay/product/navigation/simulation/web/internal/application/list/SimulationPanelCategory.java)
 class, a hidden category needed to hold the `DevicePreviewPanelApp`. This is the
 app and functionality you see in the Simulation Menu by default.
 

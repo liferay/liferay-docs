@@ -75,7 +75,7 @@ existing default portlet.
      `service` element should be `ViewPortletProvider.class`.
 
 4.  Update the class's declaration to extend the 
-    [BasePortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
+    [BasePortletProvider](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
     abstract class and implement `ViewPortletProvider`:
 
         public class ExampleViewPortletProvider extends BasePortletProvider implements ViewPortletProvider {

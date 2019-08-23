@@ -12,7 +12,7 @@ portlet. You can access this portlet in the Control Panel &rarr; *Configuration*
 
 | **Note:** You can also interact with @product@'s module framework via a local
 | telnet session. To do this, you must have
-| [Developer Mode enabled](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes#setting-developer-mode-for-your-server-using-portal-developer-properties).
+| [Developer Mode enabled](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes#setting-developer-mode-for-your-server-using-portal-developerproperties).
 | 
 | To open the Gogo shell via telnet, execute the following command:
 | 

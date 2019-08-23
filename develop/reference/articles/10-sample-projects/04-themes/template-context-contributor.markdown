@@ -18,7 +18,7 @@ Context contributors allow non-JSP developers an easy way to inject variables
 into their Liferay templates.
 
 This sample leverages the
-[TemplateContextContributor](@product-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
+[TemplateContextContributor](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/template/TemplateContextContributor.html)
 API.
 
 ## How does this sample leverage the API(s) and/or code component?

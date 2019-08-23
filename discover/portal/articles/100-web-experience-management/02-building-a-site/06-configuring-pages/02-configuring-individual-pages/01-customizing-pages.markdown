@@ -136,5 +136,5 @@ JavaScript code remains in one place.
 
 This configuration option is also available for Page Sets like Public Pages and
 Private Pages. Visit 
-[Executing JavaScript in Site Pages](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-pages#executing-javascript-in-site-pages)
+[Executing JavaScript in Site Pages](/docs/7-1/user/-/knowledge_base/u/advanced-page-set-options#executing-javascript-in-site-pages)
 for more information on doing this for Page Sets.

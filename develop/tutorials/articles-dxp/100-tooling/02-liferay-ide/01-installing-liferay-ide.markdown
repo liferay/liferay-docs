@@ -16,9 +16,9 @@ to get acquainted with its supported Liferay versions and application servers.
 In this tutorial, you'll learn the different methods available for installing
 Liferay Dev Studio:
 
-- [install the Dev Studio bundle from scratch](#install-the-liferay-developer-studio-bundle)
-- [install Dev Studio into an existing Eclipse instance using an update URL](#install-liferay-developer-studio-into-eclipse-environment)
-- [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-liferay-ide-into-eclipse-from-a-zip-file)
+- [install the Dev Studio bundle from scratch](#install-the-liferay-dev-studio-bundle)
+- [install Dev Studio into an existing Eclipse instance using an update URL](#install-liferay-dev-studio-into-eclipse-environment)
+- [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-liferay-dev-studio-into-eclipse-from-a-zip-file)
 
 **Important:** If you're installing Dev Studio into an existing Eclipse
 environment, you must be on Eclipse Oxygen or newer. For instructions on
