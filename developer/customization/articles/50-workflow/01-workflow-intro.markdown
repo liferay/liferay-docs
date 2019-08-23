@@ -15,7 +15,8 @@ Workflow is flexible, in that you can design workflow processes in XML to suit
 your business needs.
 
 In @product@ version 7.2, a new set of workflow features was introduced around
-the concept of [Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement-sla).
+the concept of
+[Workflow Metrics](/docs/7-2/customization/-/knowledge_base/c/creating-sla-calendars).
 
 The embedded calendar that ships out of the box can be replaced by your own
 custom calendar service. More customization points will likely be added in the
