@@ -10,8 +10,6 @@ In the data erasure UI, it's important that administrators can find what they're
 looking for. The native @product@ entities support filtering and search, and
 when you follow the steps here, your entities will, too.
 
-![Figure 1: The UAD UI has filtering and searching elements you can leverage in custom entities.](../../images/uad-filter-search.png)
-
 To add filtering and searching for your custom entities, implement three
 methods in the `UADDisplay` class (in your application's `-uad` module):
 
