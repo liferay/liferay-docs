@@ -1,3 +1,7 @@
+---
+header-id: data-layouts
+---
+
 # Data Layouts
 
 [TOC levels=1-4]
