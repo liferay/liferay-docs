@@ -31,7 +31,7 @@ attribute set to true, the combination of columns makes up a compound primary
 key for the entity.
 
 | **Note:** The
-| [Implementing an Add Method](/docs/7-2/appdev/-/knowledge_base/a/implementing-an-add-method#generate-a-primary-key)
+| [Implementing an Add Method](/docs/7-2/appdev/-/knowledge_base/a/implementing-an-add-method#step-3-generate-a-primary-key)
 | article demonstrates how to generate unique primary keys for entity instances.
 
 ## Create Entity Columns

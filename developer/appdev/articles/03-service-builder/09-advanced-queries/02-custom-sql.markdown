@@ -94,6 +94,4 @@ application!
 
 ## Related Topics
 
-[Customizing Liferay Services](/docs/7-2/appdev/-/knowledge_base/a/customizing-liferay-services-service-wrappers)
-
-[Service Builder Web Services](/docs/7-2/appdev/-/knowledge_base/a/service-builder-web-services)
+[Customizing Liferay Services](/docs/7-2/customization/-/knowledge_base/c/overriding-service-builder-services-service-wrappers)
