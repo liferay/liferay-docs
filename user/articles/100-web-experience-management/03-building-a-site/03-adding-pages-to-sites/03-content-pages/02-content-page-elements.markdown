@@ -1,3 +1,7 @@
+---
+header-id: content-page-elements
+---
+
 # Content Page Elements
 
 [TOC levels=1-4]

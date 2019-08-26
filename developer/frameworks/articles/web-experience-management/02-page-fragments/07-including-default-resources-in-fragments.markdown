@@ -1,3 +1,7 @@
+---
+header-id: including-default-resources-in-fragments
+---
+
 # Including Default Resources in Fragments
 
 [TOC levels=1-4]
@@ -15,7 +19,7 @@ Once you've uploaded your resource to a Fragment Collection, you can specify it
 in your Fragment like this:
 
 1.  Navigate to the Fragment editing page by clicking your Fragment's *Actions*
-    ![Actions](../../../../../images/icon-actions.png) &rarr; *Edit* button.
+    ![Actions](../../../images/icon-actions.png) &rarr; *Edit* button.
 
 2.  Specify the image by using this syntax: `[resources:IMAGE_NAME]`. For
     example, you could include an image `building.png` within an HTML image tag

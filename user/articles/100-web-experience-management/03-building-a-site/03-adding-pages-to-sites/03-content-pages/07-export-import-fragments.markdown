@@ -1,3 +1,7 @@
+---
+header-id: exporting-and-importing-fragments
+---
+
 # Exporting and Importing Fragments
 
 [TOC levels=1-4]

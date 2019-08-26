@@ -34,7 +34,7 @@ With all of the Fragments and Collections that are included in @product-ver@,
 many projects can be completed using only the out-of-the-box Fragments and 
 capabilities. In many cases, though, you need to develop your own Fragments.
 You can learn about the Fragment creation process and editing interface in the
-[Creating Page Fragments](/docs/7-2/frameworks/-/knowledge_base/f/creating-page-fragments)
+[Creating Page Fragments](/docs/7-2/user/-/knowledge_base/u/creating-page-fragments)
 article. Developing Fragments is covered in more detail in the
 [Page Fragment development guide](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments).
 
