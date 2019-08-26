@@ -69,5 +69,17 @@ can be edited during the final Content Page publication process. Fragment
 development is covered in depth in 
 [Developing Fragments](/docs/7-1/tutorials/-/knowledge_base/t/developing-fragments).
 
+You can also include default resources in your Fragment Collection that your
+created Fragments can reference. This is helpful when exporting/importing
+Fragments; their resources are automatically included instead of them being
+stored somewhere else in Portal (e.g., Documents and Media) and having to
+export/import separately. Click the *Resources* tab for your Collection and add
+the resource (e.g., image, document, etc.) there. Then you can reference that
+resource from your Fragment's code and never have to worry about its
+availability. You can learn more about doing this in the
+[]()
+section.
+
+
 After some Fragments have been created and published, you can start creating 
 Page Templates to combine Fragments into pages.

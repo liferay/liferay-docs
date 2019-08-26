@@ -7,16 +7,16 @@ header-id: creating-fragments
 [TOC levels=1-4]
 
 This tutorial assumes you understand Fragments and Collections. If you don't,
-read
-[Creating Page Fragments](/docs/7-2/user/-/knowledge_base/u/creating-content-pages#creating-page-fragments)
-first. Once, you're ready, start by creating a Collection:
+read the
+[Creating Page Fragments](/docs/7-2/user/-/knowledge_base/u/creating-page-fragments)
+article first. Once, you're ready, start by creating a Collection:
 
 1.  From the menu for your selected site, click *Site Builder* &rarr; *Page
     Fragments*.
  
 2.  Create a new Collection named *Developing Fragments*.
 
-Next, create a *Section* and a *Component*.
+First, you'll create a *Section*.
 
 ## Creating a Section
 
@@ -31,7 +31,8 @@ The list of Collections appears on the left in the Page Fragments page.
 
 You're now on the Fragment editing page. There are four panes on this screen.
 You enter HTML in the top left pane, CSS in the top right, JavaScript in the
-bottom left, and preview the results in the bottom right.
+bottom left, and preview the results in the bottom right. The Fragment Editor
+even comes with autocomplete functionality!
 
 ![Figure 1: The Fragment editor provides autocomplete for Liferay Fragment specific tags.](../../../images/fragment-editor-autocomplete.png)
 
