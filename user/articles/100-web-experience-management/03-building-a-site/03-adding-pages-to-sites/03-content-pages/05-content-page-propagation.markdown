@@ -49,4 +49,4 @@ To update a page or template,
     propagated, but it will remain in the  database and can be retrieved using the
     old ID.
 
-Next you'll learn how to import and export Page Fragments.
+Next you'll learn how to create your own Page Fragments.

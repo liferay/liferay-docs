@@ -80,6 +80,4 @@ availability. You can learn more about doing this in the
 []()
 section.
 
-
-After some Fragments have been created and published, you can start creating 
-Page Templates to combine Fragments into pages.
+Next you'll learn how to import and export Page Fragments.
