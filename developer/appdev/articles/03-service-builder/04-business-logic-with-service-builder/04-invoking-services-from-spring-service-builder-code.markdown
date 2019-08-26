@@ -45,8 +45,9 @@ components, they don't use the `@Reference` Declarative Services annotation to
 inject themselves. Here are the recommended Liferay annotations a Service
 Builder Spring Bean can use.
 
-- [Use `@BeanReference` to reference a Spring Bean that is in the Application Context.](#referencing-a-spring-bean-that-is-in-the-application-context)
-- [Use `@ServiceReference` to reference an OSGi service.](#referencing-an-osgi-service)
+-   Use `@BeanReference` to reference a Spring Bean that is in the 
+    Application Context.
+-   Use `@ServiceReference` to reference an OSGi service.
 
 | **Important:** When invoking service entity updates (e.g.,
 | `fooService.update(object)`) for services that have MVCC enabled, make sure to
@@ -139,9 +140,5 @@ Bean in the Application Context of your Service Builder Spring Bean.
 ## Related Topics
 
 [Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)
-
-[Invoking Remote Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-remote-services)
-
-[JSON Web Services Invoker](/docs/7-2/appdev/-/knowledge_base/a/json-web-services-invoker)
 
 [Service Trackers](/docs/7-2/frameworks/-/knowledge_base/f/using-a-service-tracker)

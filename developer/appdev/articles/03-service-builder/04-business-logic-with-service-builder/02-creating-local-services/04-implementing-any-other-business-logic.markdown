@@ -95,8 +95,8 @@ application.
 
 **Related Topics**
 
-[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
+[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)
 
 [Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)
 
-[Invoking Services from Service Builder Code](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-service-builder-code)
+[Invoking Services from Spring Service Builder Code](/docs/7-2/appdev/-/knowledge_base/a/invoking-services-from-spring-service-builder-code)

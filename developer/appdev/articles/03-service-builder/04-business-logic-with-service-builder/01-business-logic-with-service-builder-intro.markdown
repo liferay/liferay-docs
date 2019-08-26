@@ -7,7 +7,7 @@ header-id: business-logic-with-service-builder
 [TOC levels=1-4]
 
 Once you've
-[defined your application's entities](/docs/7-2/appdev/-/knowledge_base/a/creating-a-service-xml)
+[defined your application's entities](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file)
 and
 [run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 to generate your service and persistence layers, you can begin adding business
@@ -51,8 +51,8 @@ practices described here:
 
 2.  Implement your business logic in `*LocalServiceImpl`. 
 
-3.  [Create corresponding remote services methods](/docs/7-2/appdev/-/knowledge_base/a/creating-remote-services)
-    in your `*ServiceImpl`.
+3.  Create corresponding remote services methods in your 
+    `*ServiceImpl`.
 
 4.  Use the remote service methods to call the local service, wrapping the calls
     in permission checks. 

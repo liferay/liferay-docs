@@ -25,7 +25,7 @@ on them.
 [Configurable Applications](/docs/7-2/frameworks/-/knowledge_base/f/configurable-applications):
 Provide configuration screens in the Control Panel. 
 
-[Workflow](/docs/7-2/frameworks/-/knowledge_base/f/workflow):
+[Workflow](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework):
 Equips entities for reviewing in workflows before publishing. 
 
 [Item Selector](/docs/7-2/frameworks/-/knowledge_base/f/item-selector): 
@@ -43,7 +43,7 @@ assets, and entities can be published in the Asset Publisher.
     Users can ascribe numerical priorities to entities. 
 -   [Related Assets](/docs/7-2/frameworks/-/knowledge_base/f/relating-assets):
     Users can associate one entity with another as an asset. 
--   [Asset Renderer](/docs/7-2/frameworks/-/knowledge_base/f/rendering-an-asset):
+-   [Asset Renderer](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework):
     Enables entities appearing in Asset Publisher queries. 
 -   [Comments](/docs/7-2/frameworks/-/knowledge_base/f/adding-comments-to-your-app):
     Lets users comment on entities.
@@ -76,6 +76,6 @@ a schedule).
 
 [JavaScript Module Loaders](/docs/7-2/frameworks/-/knowledge_base/f/javascript-module-loaders)
 
-[Front-End Taglibs](/docs/7-2/frameworks/-/knowledge_base/f/front-end-taglibs)
+[Java Taglibs](/docs/7-2/reference/-/knowledge_base/r/front-end-taglibs)
 
-[Data Upgrades](/docs/7-2/appdev/-/knowledge_base/a/data-upgrades)
+[Upgrade Processes](/docs/7-2/frameworks/-/knowledge_base/f/upgrade-processes)
