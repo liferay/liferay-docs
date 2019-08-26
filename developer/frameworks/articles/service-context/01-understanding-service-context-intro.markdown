@@ -2,7 +2,7 @@
 header-id: understanding-servicecontext
 ---
 
-# Understanding ServiceContext
+# ServiceContext
 
 [TOC levels=1-4]
 
