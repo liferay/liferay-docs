@@ -47,28 +47,40 @@ area where content can be entered:
 1.  Add the following code inside the HTML pane:
 
     ```html
-    <div class="basic-section">
-        <div class="container">
-	        <div class="row">
-                <div class="card-body">
-			        <lfr-editable id="card00" type="rich-text">
-				        <p class="card-text">This is a space for the user to enter content</p>
-    				</lfr-editable>
-        		</div>
-	        </div>
-    	</div>
+    <div class="banner py-6 py-md-8 text-white" data-lfr-background-image-id="banner">
+        <div class="container my-lg-6">
+            <div class="row">
+                <div class="col-12 col-md-8 col-xl-6">
+                    <h1>
+                        <lfr-editable id="01-title" type="rich-text">
+                            Banner Title Example
+                        </lfr-editable>
+                    </h1>
+
+                    <div class="mb-4 lead">
+                        <p>
+                            <lfr-editable id="02-subtitle" type="rich-text">
+                                This is a simple banner component that you can use must provide extra information.
+                            </lfr-editable>
+                        </p>
+                    </div>
+
+                    <lfr-editable id="03-link" type="link">
+                        <a href="#" class="btn btn-primary">Go Somewhere</a>
+                    </lfr-editable>
+                </div>
+            </div>
+        </div>
     </div>
     ```
 
 2.  Replace the code in the CSS pane with the following:
 
     ```css
-    .basic-section {
-    }
-
-    .basic-section .aspect-ratio {
-    	    max-width: inherit;
-        width: 100%;
+    .banner {
+        background-color:#415fa9;
+        background-position: center;
+        background-size: cover;
     }
     ```
 
