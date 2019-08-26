@@ -84,33 +84,53 @@ request object so that it becomes the current guestbook.
 Now that you have your controller preparing your data for display, your next
 step is to implement the view so users can see guestbook entries. 
 
---------Start Here-------------
-
 ## Displaying Guestbook Entries
 
 Liferay's development framework makes it easy to loop through data and display 
 it nicely to the end user. You'll use a Liferay UI construct called *Search 
 Container* to make this happen. 
 
-1.  Add these tags to your `view.jsp` in between the `</portlet:renderURL>` and 
-    `<aui:button-row>` tags: 
+1.  Replace the contents of `view.jsp` with this code: 
 
-        <jsp:useBean id="entries" class="java.util.ArrayList" scope="request"/>
+```markup
+<%@include file="../init.jsp"%>
 
-        <liferay-ui:search-container>
-            <liferay-ui:search-container-results results="<%= entries %>" />
+<%
+long guestbookId = Long.valueOf((Long) renderRequest
+		.getAttribute("guestbookId"));
+%>
 
-            <liferay-ui:search-container-row
-                className="com.liferay.docs.guestbook.model.Entry"
-                modelVar="entry"
-            >
-                <liferay-ui:search-container-column-text property="message" />
+<aui:button-row cssClass="guestbook-buttons">
 
-                <liferay-ui:search-container-column-text property="name" />
-            </liferay-ui:search-container-row>
+	<portlet:renderURL var="addEntryURL">
+		<portlet:param name="mvcPath" value="/guestbook/edit_entry.jsp" />
+		<portlet:param name="guestbookId"
+			value="<%=String.valueOf(guestbookId)%>" />
+	</portlet:renderURL>
 
-            <liferay-ui:search-iterator />
-        </liferay-ui:search-container>
+	<aui:button onClick="<%=addEntryURL.toString()%>" value="Add Entry"></aui:button>
+
+</aui:button-row>
+
+<liferay-ui:search-container total="<%=GuestbookEntryLocalServiceUtil.getGuestbookEntriesCount()%>">
+<liferay-ui:search-container-results
+	results="<%=GuestbookEntryLocalServiceUtil.getGuestbookEntries(scopeGroupId.longValue(),
+					guestbookId, searchContainer.getStart(),
+					searchContainer.getEnd())%>" />
+
+<liferay-ui:search-container-row
+	className="com.liferay.docs.guestbook.model.GuestbookEntry" modelVar="entry">
+
+	<liferay-ui:search-container-column-text property="message" />
+
+	<liferay-ui:search-container-column-text property="name" />
+
+</liferay-ui:search-container-row>
+
+<liferay-ui:search-iterator />
+
+</liferay-ui:search-container>
+```
 
 Save your work, deploy your application, and try adding some guestbook entries. 
 
@@ -118,9 +138,8 @@ Save your work, deploy your application, and try adding some guestbook entries.
 
 ![Figure 2: Submitted entries are displayed here..](../../../images/guestbook-prototype-container.png)
 
-Awesome! You've finished your prototype! You have a working application that
-adds and saves guestbook entries. 
+Awesome! You have a working application that adds and saves guestbook entries. 
 
-The way you're saving the entries isn't the best way to persist data in your 
-application. Next, you'll use Service Builder to generate your persistence 
-classes and the methods you need to store your application data in the database. 
+Remember that part of the goal was to be able to host multiple guestbooks in the
+one application. This is supported in the back-end, but you haven't yet exposed
+that functionality in the front-end. That's what you'll do next. 
