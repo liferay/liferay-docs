@@ -35,6 +35,13 @@ Follow these steps to upgrade the theme:
     Generator installed, run the `gulp upgrade` command to upgrade the 7.1 theme 
     to 7.2.
 
+    | **Note:** Since Liferay DXP Fix Pack 2 and Liferay Portal 7.2 CE GA2, Font 
+    | Awesome is available globally as a system setting, which is enabled by 
+    | default. If you're using Font Awesome icons in your theme, answer yes (y) 
+    | to the Font Awesome question during the Upgrade task to include Font 
+    | Awesome imports in your theme. This ensures that your icons won't break if 
+    | a Site Administrator disables the global setting. 
+
     | **Note**: The Upgrade task overwrites the theme's files. We recommend that 
     | you backup your files before proceeding with the upgrade process.
 

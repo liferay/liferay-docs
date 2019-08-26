@@ -67,6 +67,13 @@ Follow these steps to take the theme through the upgrade process:
     - Updates Liferay version references
     - Updates theme dependencies
 
+    | **Note:** Since Liferay DXP Fix Pack 2 and Liferay Portal 7.2 CE GA2, Font 
+    | Awesome is available globally as a system setting, which is enabled by 
+    | default. If you're using Font Awesome icons in your theme, answer yes (y) 
+    | to the Font Awesome question during the Upgrade task to include Font 
+    | Awesome imports in your theme. This ensures that your icons won't break if 
+    | a Site Administrator disables the global setting. 
+
 5.  Run `gulp init` from your theme's root directory to update the path of your 
     @product@ server to point to your 7.2 @product@ server. 
 

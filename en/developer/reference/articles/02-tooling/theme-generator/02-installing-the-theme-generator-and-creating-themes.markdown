@@ -52,6 +52,13 @@ theme:
     ```
 
     ![Figure 2: You can generate a theme by answering just a few configuration questions.](../../../images/theme-generator-theme-prompt.png)
+    
+    | **Note:** Since Liferay DXP Fix Pack 2 and Liferay Portal 7.2 CE GA2, Font 
+    | Awesome is available globally as a system setting, which is enabled by 
+    | default. If you're using Font Awesome icons in your theme, answer yes (y) 
+    | to the Font Awesome question to include Font Awesome imports in your 
+    | theme. This ensures that your icons won't break if a Site Administrator 
+    | disables the global setting. 
 
 5.  Navigate to your theme folder and run `gulp deploy` to deploy your new theme 
     to the server.

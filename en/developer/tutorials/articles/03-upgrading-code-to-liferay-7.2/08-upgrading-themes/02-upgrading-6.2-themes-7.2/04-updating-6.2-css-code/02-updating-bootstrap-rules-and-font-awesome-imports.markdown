@@ -11,10 +11,11 @@ header-id: updating-6-2-css-rules-and-imports
 </div>
 
 @product-ver@ uses Bootstrap 4.3's CSS rule syntax. Font Awesome icons have been 
-moved, requiring changes to the imports. The Gulp `upgrade` task reports 
-automatic CSS updates and suggests manual updates. For example, here is part of 
-the task log for the Lunar Resort theme upgrade from 6.2 to 7.0. For each update 
-performed and suggested, the task reports a file name and line number range:
+removed from base themes, so you should remove those stale imports if you have 
+them. The Gulp `upgrade` task reports automatic CSS updates and suggests manual 
+updates. For example, here is part of the task log for the Lunar Resort theme 
+upgrade from 6.2 to 7.0. For each update performed and suggested, the task 
+reports a file name and line number range:
 
 ```bash
 ----------------------------------------------------------------
@@ -130,9 +131,10 @@ imports:
     [Migrating to v4 guide](https://getbootstrap.com/docs/4.3/migration/) 
     for updating CSS rules to Bootstrap 4. 
 
-3.  Font Awesome icons were moved to their own file (`font-awesome.scss`) to 
-    avoid the IE9 CSS selector limitation. If these imports are included in the 
-    theme's `_custom.scss` file, they must be removed:
+3.  Font Awesome icons were removed from the theme and are now automatically 
+    included in `custom.css` if you answered yes (y) to the include Font 
+    Awesome in your theme. If you included the old imports in `_custom.scss`, 
+    they must be removed:
 
     ```scss
     @import "aui/alloy-font-awesome/scss/mixins-alloy";
