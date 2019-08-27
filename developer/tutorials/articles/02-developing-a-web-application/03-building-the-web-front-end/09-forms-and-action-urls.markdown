@@ -45,17 +45,29 @@ Add the following tags to the end of your `edit_entry.jsp` file:
 
 ```markup
 <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
-        <aui:fieldset>
-            <aui:input name="name"></aui:input>
-            <aui:input name="message"></aui:input>
-        </aui:fieldset>
 
-        <aui:button-row>
-            <aui:button type="submit"></aui:button>
-            <aui:button type="cancel" onClick="<%= viewURL.toString() %>"></aui:button>
-        </aui:button-row>
+<aui:model-context bean="<%= entry %>" model="<%= GuestbookEntry.class %>" />
+
+	<aui:fieldset>
+
+		<aui:input name="name" />
+		<aui:input name="email" />
+		<aui:input name="message" />
+		<aui:input name="entryId" type="hidden" />
+		<aui:input name="guestbookId" type="hidden" value='<%= entry == null ? guestbookId : entry.getGuestbookId() %>'/>
+
+	</aui:fieldset>
+
+	<aui:button-row>
+
+		<aui:button type="submit"></aui:button>
+		<aui:button type="cancel" onClick="<%= viewURL.toString() %>"></aui:button>
+
+	</aui:button-row>
 </aui:form>
 ```
+
+Liferay uses its Alloy UI tag library to create forms. 
 
 Save `edit_entry.jsp` and redeploy your application. If you refresh the page and
 click the *Add Entry* button, your form appears. If you click the *Cancel*

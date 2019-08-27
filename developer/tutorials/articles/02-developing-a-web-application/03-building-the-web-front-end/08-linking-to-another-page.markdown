@@ -28,7 +28,30 @@ In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
     JSP files. For `edit_entry.jsp`, you need these imports to access the 
     portlet tags that create URLs and the Alloy tags that create the form. 
 
-4.  You'll create two URLs: one to submit the form and one to go back to
+4.  Next, you need a scriptlet that helps determine the function the user
+    accessed. You named this JSP `edit_entry.jsp` because it's used both for
+    adding and editing. Add this scriptlet to add logic for determining which
+    function the user wants: 
+
+    ```markup
+    <% 
+
+    long entryId = ParamUtil.getLong(renderRequest, "entryId");
+
+    GuestbookEntry entry = null;
+    if (entryId > 0) {
+      entry = GuestbookEntryLocalServiceUtil.getGuestbookEntry(entryId);
+    }
+
+    long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+
+    %>
+    ```
+
+    If an `entryId` greater than `0` is found in the request, editing
+    a `GuestbookEntry` is assumed. Otherwise, the user is adding. 
+
+5.  You'll create two URLs: one to submit the form and one to go back to
     `view.jsp`. To create the URL to go back to `view.jsp`, add the following 
     tag below the first line you added: 
 
