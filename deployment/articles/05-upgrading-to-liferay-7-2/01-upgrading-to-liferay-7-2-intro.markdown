@@ -206,7 +206,7 @@ Here are the upgrade steps:
         3.  Checkpoint: You've completed upgrading the Liferay data. It's time
             to get your server ready for production.{.summary}
 
-9.  [Execute the Post-Upgrade Tasks](/deployment/-/knowledge_base/executing-post-upgrade-tasks){.title}
+9.  [Execute the Post-Upgrade Tasks](/docs/7-2/deploy/-/knowledge_base/d/executing-post-upgrade-tasks){.title}
 
     Now that your database is upgraded, clean up remnants of upgrading by
     restoring your database optimizations, enabling and regenerating your search
