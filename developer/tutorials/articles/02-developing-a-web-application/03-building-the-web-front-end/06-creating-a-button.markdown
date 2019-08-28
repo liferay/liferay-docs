@@ -7,7 +7,7 @@ header-id: creating-an-add-guestbook-button
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Developing Your First Portlet</p><p>Step 2 of 8</p>
+    <p id="stepTitle">Building the Web Front-End</p><p>Step 5 of 11</p>
 </div>
 
 A guestbook application is pretty simple, right? People come to your site and 

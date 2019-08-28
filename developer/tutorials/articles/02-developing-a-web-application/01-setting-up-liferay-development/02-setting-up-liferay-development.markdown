@@ -53,7 +53,7 @@ Now you'll create another kind of workspace: a
 [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace). 
 Liferay Workspace helps manage Liferay projects by providing various build
 scripts, properties, and configuration for you. Liferay Workspace uses 
-[Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) and 
+[Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) and 
 [Gradle](https://gradle.org/) to manage dependencies and organize your build 
 environment. Note that to avoid configuration issues, you can only create one 
 Liferay Workspace for each Eclipse Workspace. 

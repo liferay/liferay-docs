@@ -27,5 +27,5 @@ every database @product@ supports.
 
 Ready to begin? 
 
-<a class="go-link btn btn-primary" href="/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder-0">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/what-is-service-builder-0">Let's Go!<span class="icon-circle-arrow-right"></span></a>
 

@@ -7,7 +7,7 @@ header-id: what-is-service-builder-0
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Generating the Back-end</p><p>Step 1 of 3</p>
+    <p id="stepTitle">Generating the Back-End</p><p>Step 1 of 3</p>
 </div>
 
 Now you'll use Service Builder to generate your application's Model, Service,

@@ -7,7 +7,7 @@ header-id: creating-portlet-keys
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Refactoring the Prototype</p><p>Step 3 of 6</p>
+    <p id="stepTitle">Building the Web Front-End</p><p>Step 3 of 11</p>
 </div>
 
 `PortletKeys` manage important things like the portlet name or other repeatable,

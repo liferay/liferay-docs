@@ -7,7 +7,7 @@ header-id: viewing-guestbook-entries
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Developing Your First Portlet</p><p>Step 8 of 8</p>
+    <p id="stepTitle">Building the Web Front-End</p><p>Step 10 of 11</p>
 </div>
 
 To display guestbook entries, you must do the reverse of what you did to store
@@ -92,54 +92,88 @@ Container* to make this happen.
 
 1.  Replace the contents of `view.jsp` with this code: 
 
-```markup
-<%@include file="../init.jsp"%>
+    ```markup
+    <%@include file="../init.jsp"%>
 
-<%
-long guestbookId = Long.valueOf((Long) renderRequest
-		.getAttribute("guestbookId"));
-%>
+    <%
+    long guestbookId = Long.valueOf((Long) renderRequest
+            .getAttribute("guestbookId"));
+    %>
 
-<aui:button-row cssClass="guestbook-buttons">
+    <aui:button-row cssClass="guestbook-buttons">
 
-	<portlet:renderURL var="addEntryURL">
-		<portlet:param name="mvcPath" value="/guestbook/edit_entry.jsp" />
-		<portlet:param name="guestbookId"
-			value="<%=String.valueOf(guestbookId)%>" />
-	</portlet:renderURL>
+        <portlet:renderURL var="addEntryURL">
+            <portlet:param name="mvcPath" value="/guestbook/edit_entry.jsp" />
+            <portlet:param name="guestbookId"
+                value="<%=String.valueOf(guestbookId)%>" />
+        </portlet:renderURL>
 
-	<aui:button onClick="<%=addEntryURL.toString()%>" value="Add Entry"></aui:button>
+        <aui:button onClick="<%=addEntryURL.toString()%>" value="Add Entry"></aui:button>
 
-</aui:button-row>
+    </aui:button-row>
 
-<liferay-ui:search-container total="<%=GuestbookEntryLocalServiceUtil.getGuestbookEntriesCount()%>">
-<liferay-ui:search-container-results
-	results="<%=GuestbookEntryLocalServiceUtil.getGuestbookEntries(scopeGroupId.longValue(),
-					guestbookId, searchContainer.getStart(),
-					searchContainer.getEnd())%>" />
+    <liferay-ui:search-container total="<%=GuestbookEntryLocalServiceUtil.getGuestbookEntriesCount()%>">
+    <liferay-ui:search-container-results
+        results="<%=GuestbookEntryLocalServiceUtil.getGuestbookEntries(scopeGroupId.longValue(),
+                        guestbookId, searchContainer.getStart(),
+                        searchContainer.getEnd())%>" />
 
-<liferay-ui:search-container-row
-	className="com.liferay.docs.guestbook.model.GuestbookEntry" modelVar="entry">
+    <liferay-ui:search-container-row
+        className="com.liferay.docs.guestbook.model.GuestbookEntry" modelVar="entry">
 
-	<liferay-ui:search-container-column-text property="message" />
+        <liferay-ui:search-container-column-text property="message" />
 
-	<liferay-ui:search-container-column-text property="name" />
+        <liferay-ui:search-container-column-text property="name" />
 
-</liferay-ui:search-container-row>
+    </liferay-ui:search-container-row>
 
-<liferay-ui:search-iterator />
+    <liferay-ui:search-iterator />
 
-</liferay-ui:search-container>
-```
+    </liferay-ui:search-container>
+    ```
+
+2.  You've used a lot of new objects in this JSP, so you must declare them in
+    `init.jsp`. Replace the contents of `init.jsp` with this: 
+
+    ```markup
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet"%>
+    <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui"%>
+    <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet"%>
+    <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme"%>
+    <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui"%>
+    <%@ taglib uri="http://liferay.com/tld/frontend" prefix="liferay-frontend" %>
+    <%@ taglib uri="http://liferay.com/tld/security" prefix="liferay-security" %>
+
+    <%@ page import="java.util.List" %>
+    <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
+    <%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
+    <%@ page import="com.liferay.petra.string.StringPool" %>
+    <%@ page import="com.liferay.portal.kernel.model.PersistedModel" %>
+    <%@ page import="com.liferay.portal.kernel.dao.search.SearchEntry" %>
+    <%@ page import="com.liferay.portal.kernel.dao.search.ResultRow" %>
+    <%@ page import="com.liferay.docs.guestbook.model.Guestbook" %>
+    <%@ page import="com.liferay.docs.guestbook.service.GuestbookEntryLocalServiceUtil" %>
+    <%@ page import="com.liferay.docs.guestbook.service.GuestbookLocalServiceUtil" %>
+    <%@ page import="com.liferay.docs.guestbook.model.GuestbookEntry" %> 
+
+    <liferay-theme:defineObjects />
+
+    <portlet:defineObjects />
+    ```
+
+Many of these objects, such as `HtmlUtil`, `ParamUtil`, and `StringPool`, are
+Liferay helper utilities that enable you with a single line of code do things
+like extract parameters, escape data, or provide `String`s that otherwise have
+to be escaped. 
 
 Save your work, deploy your application, and try adding some guestbook entries. 
 
 ![Figure 1: You have a form to enter information.](../../../images/guestbook-prototype-form.png)
 
-![Figure 2: Submitted entries are displayed here..](../../../images/guestbook-prototype-container.png)
+![Figure 2: Submitted entries are displayed here.](../../../images/guestbook-prototype-container.png)
 
 Awesome! You have a working application that adds and saves guestbook entries. 
 
-Remember that part of the goal was to be able to host multiple guestbooks in the
-one application. This is supported in the back-end, but you haven't yet exposed
-that functionality in the front-end. That's what you'll do next. 
+Next is a review of what's been done so far. 
+

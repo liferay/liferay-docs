@@ -19,4 +19,4 @@ goes in the Content menu for Sites.
 
 Ready to begin? 
 
-<a class="go-link btn btn-primary" href="/docs/7-1/tutorials/-/knowledge_base/t/organizing-folders-for-larger-applications">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/creating-the-web-project">Let's Go!<span class="icon-circle-arrow-right"></span></a>

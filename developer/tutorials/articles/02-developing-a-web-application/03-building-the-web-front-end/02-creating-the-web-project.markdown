@@ -7,7 +7,7 @@ header-id: creating-the-web-project
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Refactoring the Prototype</p><p>Step 1 of 6</p>
+    <p id="stepTitle">Building the Web Front-End</p><p>Step 1 of 11</p>
 </div>
 
 Your first step is to create a *Liferay Module Project*. Modules are the core 

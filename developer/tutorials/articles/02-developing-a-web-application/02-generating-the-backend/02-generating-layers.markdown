@@ -7,7 +7,7 @@ header-id: generating-model-service-and-persistence-layers
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Generating the Back-end</p><p>Step 2 of 3</p>
+    <p id="stepTitle">Generating the Back-End</p><p>Step 2 of 3</p>
 </div>
 
 To model the guestbooks and entries, you'll create guestbook and entry model 

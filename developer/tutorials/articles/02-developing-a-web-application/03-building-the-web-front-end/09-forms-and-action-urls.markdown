@@ -7,7 +7,7 @@ header-id: forms-and-action-urls
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Developing Your First Portlet</p><p>Step 5 of 8</p>
+    <p id="stepTitle">Building the Web Front-End/p><p>Step 8 of 11</p>
 </div>
 
 Recall that portlets run in a portion of a page, and a page can contain multiple 

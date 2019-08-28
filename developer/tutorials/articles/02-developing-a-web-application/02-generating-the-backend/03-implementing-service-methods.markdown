@@ -7,7 +7,7 @@ header-id: implementing-service-methods
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Generating the Back-end</p><p>Step 3 of 3</p>
+    <p id="stepTitle">Generating the Back-End</p><p>Step 3 of 3</p>
 </div>
 
 When you use Service Builder, you implement the services in the service module.

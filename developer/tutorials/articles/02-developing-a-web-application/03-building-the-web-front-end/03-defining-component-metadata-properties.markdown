@@ -7,7 +7,7 @@ header-id: defining-the-component-metadata-properties
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Refactoring the Prototype</p><p>Step 2 of 6</p>
+    <p id="stepTitle">Building the Web Front-End</p><p>Step 2 of 11</p>
 </div>
 
 When users add applications to a page, they pick them from a list of *display

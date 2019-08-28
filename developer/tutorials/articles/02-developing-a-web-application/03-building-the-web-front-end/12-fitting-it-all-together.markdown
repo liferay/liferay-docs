@@ -7,11 +7,24 @@ header-id: fitting-it-all-together
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Refactoring the Prototype</p><p>Step 6 of 6</p>
+    <p id="stepTitle">Building the Web Front-End</p><p>Step 11 of 11</p>
 </div>
 
 You've created a complete data-driven application from the back-end to the 
 display. It's a great time to review how everything connects together. 
+
+## The Back-End
+
+The first thing you did was generate back-end services for your application
+using Liferay's object-relational mapper, Service Builder. 
+
+![Figure 1: Service Builder makes generating your database entities and your Java objects a snap.](../../images/service-builder-guestbook.png)
+
+Using a single `service.xml` file, you generated your object model, SQL to
+create your tables, a persistence layer to perform all CRUD operations on your
+data, and a service layer for your business logic. 
+
+----- Start Here -------
 
 ## The Entry
 
