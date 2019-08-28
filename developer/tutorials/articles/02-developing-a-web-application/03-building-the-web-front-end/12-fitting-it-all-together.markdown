@@ -22,118 +22,33 @@ using Liferay's object-relational mapper, Service Builder.
 
 Using a single `service.xml` file, you generated your object model, SQL to
 create your tables, a persistence layer to perform all CRUD operations on your
-data, and a service layer for your business logic. 
+data, and a service layer for your business logic. Then you added business logic
+to your service layer to expose the persistence layer's functionality according
+to your business rules. 
 
------ Start Here -------
+With all of that ready, it was time to build a front-end client. 
 
-## The Entry
+## The Front-End
 
-First, you defined your model in Service Builder's configuration file, 
-`service.xml`. The main part of this is your `Entry` object: 
+Once you completed your back-end, you decided to develop a web front-end
+using Liferay's MVC Portlet framework. You generated a Liferay MVC Portlet
+project and used its Model View Controller development paradigm to implement
+a user interface for your back-end functionality. 
 
-    <entity local-service="true" name="Entry" uuid="true">
+![Figure 2: The controller directs page flow in an MVC Portlet application.](../../images/guestbook-mvc-diagram-1.png)
 
-        <!-- PK fields -->
+First, you created a default view in `view.jsp`. You created a button there that
+links to `edit_entry.jsp`, which is used for both adding and editing Guestbook
+entries (though you haven't implemented editing yet). Here, you created a form
+to capture information from Users adding Guestbook entries. The form's Action
+URL directs processing to your controller's portlet action of the same name.
+This action extracts the data from the form (in the `ActionRequest` object) and
+passes it to the business logic you created in your service layer. 
 
-        <column name="entryId" primary="true" type="long" />
+After the business logic runs, your controller passes processing back to
+`view.jsp`, where the new Guestbook entry is displayed. 
 
-        <!-- Group instance -->
-
-        <column name="groupId" type="long" />
-
-        <!-- Audit fields -->
-
-        <column name="companyId" type="long" />
-        <column name="userId" type="long" />
-        <column name="userName" type="String" />
-        <column name="createDate" type="Date" />
-        <column name="modifiedDate" type="Date" />
-        <column name="name" type="String" />
-        <column name="email" type="String" />
-        <column name="message" type="String" />
-        <column name="guestbookId" type="long" />
-
-        <finder name="G_G" return-type="Collection">
-            <finder-column name="groupId" />
-            <finder-column name="guestbookId" />
-        </finder>
-    </entity>
- 
-Next, you created a service implementation in `EntryLocalServiceImpl` that 
-defined how to get and store the entry. Every field you defined was accounted 
-for in the `addEntry` method. 
-
-    public Entry addEntry(long userId, long guestbookId, String name, String email,
-            String message, ServiceContext serviceContext)
-            throws PortalException {
-
-            long groupId = serviceContext.getScopeGroupId();
-
-            User user = userLocalService.getUserById(userId);
-
-            Date now = new Date();
-
-            validate(name, email, message);
-
-            long entryId = counterLocalService.increment();
-
-            Entry entry = entryPersistence.create(entryId);
-
-            entry.setUuid(serviceContext.getUuid());
-            entry.setUserId(userId);
-            entry.setGroupId(groupId);
-            entry.setCompanyId(user.getCompanyId());
-            entry.setUserName(user.getFullName());
-            entry.setCreateDate(serviceContext.getCreateDate(now));
-            entry.setModifiedDate(serviceContext.getModifiedDate(now));
-            entry.setExpandoBridgeAttributes(serviceContext);
-            entry.setGuestbookId(guestbookId);
-            entry.setName(name);
-            entry.setEmail(email);
-            entry.setMessage(message);
-        
-            entryPersistence.update(entry);
-
-            return entry;
-    }
-
-Notice that all the fields you described in Service Builder (including things 
-like the `uuid`) are present here. 
- 
-You also added ways to get entries:
-
-        public List<Entry> getEntries(long groupId, long guestbookId) {
-            return entryPersistence.findByG_G(groupId, guestbookId);
-        }
-
-        public List<Entry> getEntries(
-            long groupId, long guestbookId, int start, int end, OrderByComparator<Entry> obc) {
-
-            return entryPersistence.findByG_G(groupId, guestbookId, start, end, obc);
-        }
-
-        public List<Entry> getEntries(long groupId, long guestbookId, int start, int end)
-            throws SystemException {
-
-            return entryPersistence.findByG_G(groupId, guestbookId, start, end);
-        }
-
-In `service.xml` you defined `groupId` and `guestbookId` as the two finder 
-fields, and in these methods you called methods generated to the persistence 
-layer. 
-
-After you implemented all that, Service Builder propagated your implementation
-to the interfaces, so they could be called. Then, in the portlet class, you
-created references to the service classes that Service Builder generated, and
-used those references to access the service to add an entry: 
-    
-    _entryLocalService.addEntry( serviceContext.getUserId(), guestbookId, 
-        userName, email,message, serviceContext);
- 
-Finally, you wrapped all this up in a user interface that lets users enter the 
-information they want, and displays the data they've entered. 
-
-Now that you've built the application, and you can see a clear picture of how it 
+Now that you've built the application and you can see a clear picture of how it 
 all works, it's time to test it. 
 
 ## Deploying and Testing the Application
@@ -142,20 +57,22 @@ all works, it's time to test it.
 
 2.  Drag and drop the `guestbook-service` module onto the server.
 
-3.  Look for the STARTED messages from the console. 
+3.  Drag and drop the `guestbook-web` module onto the server.
 
-4.  Go to your @product@ instance at `localhost:8080` in your browser to test 
+4.  Look for the STARTED messages from the console. 
+
+5.  Go to your @product@ instance at `localhost:8080` in your browser to test 
     your updated application. 
 
-8.  Click *Add Entry*.
+6.  Click *Add Entry*.
 
-9.  Enter a *Name*, *Message*, and *Email Address*.
+7.  Enter a *Name*, *Message*, and *Email Address*.
 
-10. Click *Submit*.
+8.  Click *Submit*.
 
-11. Verify that your entry appears.
+9.  Verify that your entry appears.
 
-![Figure 1: Your first guestbook and entry appears. Nice job!](../../../images/guestbook-entry-test.png)
+![Figure 3: Your first guestbook and entry appears. Nice job!](../../../images/guestbook-entry-test.png)
 
 ## What's Next?
 
