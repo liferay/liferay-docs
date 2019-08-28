@@ -12,9 +12,9 @@ application servers, consult the provider's documentation for specific settings.
 
 Here are the tuning topics:
 
-- [Database Connection Pool](#database-connection-pool)
-- [Deactivating Development Settings in the JSP Engine](#deactivate-development-settings-in-the-jsp-engine)
-- [Thread Pool](#thread-pool)
+- Database Connection Pool
+- Deactivating Development Settings in the JSP Engine
+- Thread Pool
 
 ## Database Connection Pool
 

@@ -139,7 +139,7 @@ same keystore manager.
 If using the Filesystem Keystore Manager (the default):
 
 1.  Configure each node of your 
-    [@product@ cluster](/docs/7-2/deploy/-/knowledge_base/deployment/liferay-clustering) 
+    [@product@ cluster](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering) 
     as a SAML service provider as above. 
 
 2.  Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from

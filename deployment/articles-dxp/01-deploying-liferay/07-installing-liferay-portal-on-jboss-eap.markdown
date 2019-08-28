@@ -6,15 +6,15 @@ header-id: installing-product-on-jboss-eap
 
 Installing @product@ on JBoss EAP 7.1 takes three steps:
 
-- [Installing dependencies to your application server](#installing-dependencies)
-- [Configuring your application server for @product@](#configuring-jboss)
-- [Installing the @product@ WAR file to your application server](#deploying-liferay)
+- Installing dependencies to your application server
+- Configuring your application server for @product@
+- Installing the @product@ WAR file to your application server
 
 | **Important:** Before installing @product@, familiarize yourself with
 | [preparing for install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install). 
 
 Now, [download the @product@ WAR and Dependency
-JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the liferay-war-and-dependency-jars):
+JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the-liferay-war-and-dependency-jars):
 
 -   @product@ WAR file
 -   Dependencies ZIP file
