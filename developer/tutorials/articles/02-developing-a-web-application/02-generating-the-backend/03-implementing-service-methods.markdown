@@ -111,10 +111,8 @@ Follow these steps to implement services for guestbooks in
 4.  Press [CTRL]+[SHIFT]+O to organize imports and select the following classes
     when prompted: 
 
-    - `java.util.Date`
     - `java.util.List`
-    - `com.liferay.portal.kernel.service.ServiceContext`
-    - `com.liferay.docs.guestbook.model.GuestbookEntry`
+    - `java.util.Date`
     - `com.liferay.portal.kernel.util.Validator`
 
 Now you're ready to implement services for entries in `GuestbookEntryLocalServiceImpl`. 
@@ -287,9 +285,8 @@ Now you're ready to implement services for entries in `GuestbookEntryLocalServic
 5.  Press [CTRL]+[SHIFT]+O to organize imports and select the following classes
     when prompted: 
 
+    - `java.util.List`
     - `java.util.Date`
-    - `com.liferay.portal.kernel.service.ServiceContext`
-    - `com.liferay.docs.guestbook.model.Entry`
     - `com.liferay.portal.kernel.util.Validator`
 
 Nice work! These local service methods implement the services that are 

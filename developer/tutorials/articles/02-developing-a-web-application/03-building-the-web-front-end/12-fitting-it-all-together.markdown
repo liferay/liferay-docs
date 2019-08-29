@@ -57,12 +57,13 @@ all works, it's time to test it.
 
 2.  Drag and drop the `guestbook-service` module onto the server.
 
-3.  Drag and drop the `guestbook-web` module onto the server.
+3.  Look for the STARTED messages from the console. 
 
-4.  Look for the STARTED messages from the console. 
-
-5.  Go to your @product@ instance at `localhost:8080` in your browser to test 
+4.  Go to your @product@ instance at `localhost:8080` in your browser to test 
     your updated application. 
+
+5.  Like you did before, use your administrative account to remove the Guestbook
+    from the page and add it again. 
 
 6.  Click *Add Entry*.
 

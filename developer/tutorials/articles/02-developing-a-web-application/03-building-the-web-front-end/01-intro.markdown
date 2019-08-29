@@ -14,8 +14,8 @@ classes. Now you can add a front-end to match new back-end, creating a fully
 functional application. 
 
 You'll create two portlets: the Guestbook portlet for users to use to add
-entries and a Guestbook Admin portlet for administrators to add Guestbooks. This
-goes in the Content menu for Sites. 
+entries and in a later step, a Guestbook Admin portlet for administrators to add
+Guestbooks. 
 
 Ready to begin? 
 

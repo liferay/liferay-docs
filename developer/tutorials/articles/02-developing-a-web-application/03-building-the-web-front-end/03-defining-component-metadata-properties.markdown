@@ -24,22 +24,24 @@ portlet can appear only once on a page or Site, depending on its scope.
 1.  Open the `GuestbookPortlet` class and update the component class metadata 
     properties to match this configuration: 
 
-        @Component(
-            immediate = true,
-            property = {
-              "com.liferay.portlet.display-category=category.social",
-              "com.liferay.portlet.instanceable=false",
-              "com.liferay.portlet.scopeable=true",
-              "javax.portlet.display-name=Guestbook",
-              "javax.portlet.expiration-cache=0",
-              "javax.portlet.init-param.template-path=/",
-              "javax.portlet.init-param.view-template=/guestbook/view.jsp",
-              "javax.portlet.resource-bundle=content.Language",
-              "javax.portlet.security-role-ref=power-user,user",
-              "javax.portlet.supports.mime-type=text/html"
-            },
-            service = Portlet.class
-        )
+    ```java
+    @Component(
+        immediate = true,
+        property = {
+          "com.liferay.portlet.display-category=category.social",
+          "com.liferay.portlet.instanceable=false",
+          "com.liferay.portlet.scopeable=true",
+          "javax.portlet.display-name=Guestbook",
+          "javax.portlet.expiration-cache=0",
+          "javax.portlet.init-param.template-path=/",
+          "javax.portlet.init-param.view-template=/guestbook/view.jsp",
+          "javax.portlet.resource-bundle=content.Language",
+          "javax.portlet.security-role-ref=power-user,user",
+          "javax.portlet.supports.mime-type=text/html"
+        },
+        service = Portlet.class
+    )
+    ```
 
 The `com.liferay.portlet.display-category=category.social` property sets the 
 Guestbook portlet's display category to *Social*. The 
@@ -76,9 +78,9 @@ to the page before continuing:
     (at the top-right of the portlet), then select *Remove* and click *OK* to 
     confirm.
 
-4.  Open the *Add* menu and select *Applications*.
+4.  Open the *Add* menu and select *Widgets*.
 
-5.  Open the *Social* category and drag and drop the *Guestbook* application
+5.  Open the *Social* category and drag and drop the *Guestbook* widget
     onto the page.
 
 Great! Now the Guestbook portlet appears in an appropriate category. Though you 

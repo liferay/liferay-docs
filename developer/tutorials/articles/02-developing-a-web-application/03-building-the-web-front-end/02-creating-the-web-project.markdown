@@ -10,10 +10,10 @@ header-id: creating-the-web-project
     <p id="stepTitle">Building the Web Front-End</p><p>Step 1 of 11</p>
 </div>
 
-Your first step is to create a *Liferay Module Project*. Modules are the core 
-building blocks of @product@ applications. Every application is made from one or
-more modules. Each module encapsulates a functional piece of an application.
-Multiple modules form a complete application. 
+Your first step is to create another Liferay Module Project. Modules are the
+core building blocks of @product@ applications. Every application is made from
+one or more modules. Each module encapsulates a functional piece of an
+application. Multiple modules form a complete application. 
 
 Modules can be web modules or [OSGi](https://www.osgi.org/) modules. Since
 you'll be creating a Liferay MVC Portlet, you'll create an OSGI module. The OSGi
@@ -70,6 +70,10 @@ Builder modules, it should be in the `guestbook` folder.
 Your `guestbook-web` folder now appears in the structure with the other modules.
 
 ![Figure 2: After you move it, all of your modules are in the same folder..](../../../images/guestbook-refactor.png)
+
+| **Note:** Sometimes Eclipse refuses to move your project. If that happens,
+| close Eclipse, use your operating system's file manager to move the
+| `guestbook-web` folder into the `guestbook` folder, and then restart Eclipse. 
 
 You're now ready to begin writing your front-end, but first some explanation is
 in order. 
@@ -143,8 +147,8 @@ to be built and deployed.
     (![Add Widget](../../../images/icon-add-app.png)) in the upper right hand 
     corner.
 
-5.  Select *Widgets*. In the Applications list, your application should
-    appear in the Sample category. Its name is `Guestbook`. 
+5.  Select *Widgets*. In the Applications list, your application appears in the
+    Sample category. Its name is `Guestbook`. 
 
 ![Figure 5: This is your new page with the Guestbook application that you created.](../../../images/default-guestbook-application.png)
 

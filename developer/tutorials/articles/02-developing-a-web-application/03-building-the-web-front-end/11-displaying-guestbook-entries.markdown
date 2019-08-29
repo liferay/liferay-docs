@@ -12,11 +12,14 @@ header-id: viewing-guestbook-entries
 
 To display guestbook entries, you must do the reverse of what you did to store
 them: retrieve them the database, loop through them, and present them on the
-page. 
+page. To do this, you must override the default MVC Portlet `render` method so
+you can tell your portlet how to render itself. 
 
-```java
-@Override
-public void render(RenderRequest renderRequest, RenderResponse renderResponse)
+1.  Add the following `render` method to `GuestbookPortlet`: 
+
+    ```java
+    @Override
+    public void render(RenderRequest renderRequest, RenderResponse renderResponse)
         throws IOException, PortletException {
 
         try {
@@ -48,15 +51,15 @@ public void render(RenderRequest renderRequest, RenderResponse renderResponse)
         }
 
         super.render(renderRequest, renderResponse);
-}
-```
+    }
+    ```
 
-This `render` method checks for guestbooks in the current Site. If there aren't
-any, it creates one. The `guestbookId` that it has (either the first one or one
-that has been selected in functionality you haven't written yet) is set in the
-request object so that it becomes the current guestbook. 
+    This `render` method checks for guestbooks in the current Site. If there aren't
+    any, it creates one. The `guestbookId` that it has (either the first one or one
+    that has been selected in functionality you haven't written yet) is set in the
+    request object so that it becomes the current guestbook. 
 
-3. Press [CTRL]+[SHIFT]+O to organize imports. 
+2.  Press [CTRL]+[SHIFT]+O to organize imports and then save the file. 
 
 | Note: When you are prompted to choose imports, here are some guidelines:
 | 
@@ -167,13 +170,14 @@ Liferay helper utilities that enable you with a single line of code do things
 like extract parameters, escape data, or provide `String`s that otherwise have
 to be escaped. 
 
-Save your work, deploy your application, and try adding some guestbook entries. 
+Save your work. 
 
 ![Figure 1: You have a form to enter information.](../../../images/guestbook-prototype-form.png)
 
 ![Figure 2: Submitted entries are displayed here.](../../../images/guestbook-prototype-container.png)
 
-Awesome! You have a working application that adds and saves guestbook entries. 
+Awesome! You've now completed the first iteration of your Guestbook application. 
 
-Next is a review of what's been done so far. 
+Next you'll review what's been done so far, and you'll deploy and test your
+application. 
 

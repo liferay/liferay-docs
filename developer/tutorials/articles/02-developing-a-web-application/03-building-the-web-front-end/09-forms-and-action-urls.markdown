@@ -31,15 +31,16 @@ Add the following tag in `edit_entry.jsp` after the closing
 `</portlet:renderURL>` tag: 
 
 ```markup
-<portlet:actionURL name="addEntry" var="addEntryURL"></portlet:actionURL>
+<portlet:actionURL name="addEntry" var="addEntryURL" />
 ```
 
 You now have the two required URLs for your form. 
 
 ## Forms
 
-The form for creating guestbook entries has two fields: one for the name of the
-person submitting the entry and one for the entry itself. 
+The form for creating guestbook entries has three fields: one for the name of the
+person submitting the entry, one for the person's email address, and one for the
+entry itself. 
 
 Add the following tags to the end of your `edit_entry.jsp` file: 
 

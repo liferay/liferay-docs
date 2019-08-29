@@ -98,6 +98,7 @@ It's time to get started. You'll create the `Guestbook` entity first:
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId" />
         </finder>
+
     </entity>
     ```
 
@@ -195,12 +196,14 @@ The `Guestbook` entity is finished for now. Next, you'll create the
     `</service-builder>` tag: 
 
     ```xml
-    <exceptions>
-        <exception>EntryEmail</exception>
-        <exception>EntryMessage</exception>
-        <exception>EntryName</exception>
-        <exception>GuestbookName</exception>
-    </exceptions>
+        <exceptions>
+            <exception>GuestbookEntryEmail</exception>
+            <exception>GuestbookEntryMessage</exception>
+            <exception>GuestbookEntryName</exception>
+            <exception>GuestbookName</exception>
+        </exceptions>
+
+    </service-builder>
     ```
 
     These generate exception classes you'll use later in try/catch statements. 

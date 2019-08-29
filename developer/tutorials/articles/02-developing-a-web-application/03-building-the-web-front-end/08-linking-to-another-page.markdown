@@ -51,9 +51,9 @@ In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
     If an `entryId` greater than `0` is found in the request, editing
     a `GuestbookEntry` is assumed. Otherwise, the user is adding. 
 
-5.  You'll create two URLs: one to submit the form and one to go back to
-    `view.jsp`. To create the URL to go back to `view.jsp`, add the following 
-    tag below the first line you added: 
+5.  You'll create two URLs: one in the next step to submit the form and one in
+    this step to go back to `view.jsp`. To create the URL to go back to
+    `view.jsp`, add the following tag below the first line you added: 
 
     ```markup
     <portlet:renderURL var="viewURL">

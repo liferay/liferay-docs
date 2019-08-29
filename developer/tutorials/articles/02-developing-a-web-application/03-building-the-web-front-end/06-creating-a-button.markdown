@@ -1,5 +1,5 @@
 ---
-header-id: creating-an-add-guestbook-button
+header-id: creating-an-add-entry-button
 ---
 
 # Creating an Add Entry Button
@@ -20,7 +20,7 @@ folder. This file contains the default view for users when the portlet is added
 to the page. Right now it contains sample content: 
 
 ```markup
-<%@ include file="/init.jsp" %>
+<%@ include file="../init.jsp" %>
 
 <p>
     <b><liferay-ui:message key="guestbook-web.caption"/></b>
@@ -37,7 +37,7 @@ language key. This key and its value are declared in your project's
 `src/main/resources/content/Language.properties` file. 
 
 It's time to start developing the Guestbook application. First, users need a way 
-to add a guestbook entry. In `view.jsp`, follow these steps to add this button: 
+to add a Guestbook entry. In `view.jsp`, follow these steps to add this button: 
 
 1.  Remove everything under the include for `init.jsp`. 
 
