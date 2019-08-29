@@ -282,10 +282,9 @@ Awesome Icon imports.
 
 Originally in Liferay Portal CE 7.0 and Liferay DXP, Font Awesome icons were 
 imported in `_aui_variables.scss` (now renamed `_clay_variables.scss`). Font 
-Awesome icons were later moved to their own file (`font-awesome.scss`) to avoid 
-the IE9 CSS selector limitation. If your 7.0 theme was made prior to this move 
-and you modified `_aui_variables.scss`, you must remove the Font Awesome 
-imports shown below:
+Awesome icons were later moved to the [compatibility layer](/docs/7-1/tutorials/-/knowledge_base/t/using-the-bootstrap-3-lexicon-css-compatibility-layer). 
+If your 7.0 theme was made prior to this move and you modified 
+`_aui_variables.scss`, you must remove the Font Awesome imports shown below:
 
 		// Icon paths
 		$FontAwesomePath: "aui/lexicon/fonts/alloy-font-awesome/font";
