@@ -101,8 +101,8 @@ As you can see, you are using two Java annotations to provide some metadata abou
 the configuration. Here is what they do:
 
 1.  **Meta.OCD** Registers this class as a configuration with a specific id.
-    You can choose any string you want, but make sure it's unique. A common
-    pattern is to use the fully qualified class name.
+    **The ID must be the fully qualified configuration class name.**
+
 2.  **Meta.AD** Specifies the default value of a configuration field as well
     as whether it's required or not. Note that if you set a field as required
     and don't specify a default value, the system administrator must specify a
