@@ -18,7 +18,7 @@ display. It's a great time to review how everything connects together.
 The first thing you did was generate back-end services for your application
 using Liferay's object-relational mapper, Service Builder. 
 
-![Figure 1: Service Builder makes generating your database entities and your Java objects a snap.](../../images/service-builder-guestbook.png)
+![Figure 1: Service Builder makes generating your database entities and your Java objects a snap.](../../../images/service-builder-guestbook.png)
 
 Using a single `service.xml` file, you generated your object model, SQL to
 create your tables, a persistence layer to perform all CRUD operations on your
@@ -35,7 +35,7 @@ using Liferay's MVC Portlet framework. You generated a Liferay MVC Portlet
 project and used its Model View Controller development paradigm to implement
 a user interface for your back-end functionality. 
 
-![Figure 2: The controller directs page flow in an MVC Portlet application.](../../images/guestbook-mvc-diagram-1.png)
+![Figure 2: The controller directs page flow in an MVC Portlet application.](../../../images/guestbook-mvc-diagram-1.png)
 
 First, you created a default view in `view.jsp`. You created a button there that
 links to `edit_entry.jsp`, which is used for both adding and editing Guestbook

@@ -31,7 +31,7 @@ your Liferay Workspace.
 
 2.  Complete the first screen of the wizard with the following information: 
 
-    ![Figure 1: Complete the New Module Project wizard.](../../images/new-module-project.png)
+    ![Figure 1: Complete the New Module Project wizard.](../../../images/new-module-project.png)
 
     - Enter `guestbook-web` for the Project name. 
     - Use the *Gradle* Build type.
