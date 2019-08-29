@@ -21,6 +21,9 @@ search engine, by doing these things:
 
 3.  Add results that aren't returned by a certain search.
 
+4.  Configure a search page to see the results from the Result Rankings
+    customization and the un-manipulated results. LPS-96212
+
 Pin, hide, and add search results with Result Rankings.
 
 **Use Case:**
@@ -97,9 +100,7 @@ results, choose to pin them or hide them as you please.
 
 **Trying it out:**
 
-
 **More Details and Warnings:**
-
 
 - Result Rankings Scope
 
@@ -159,5 +160,5 @@ Some answers may be contained in the LPS story tickets or other sources. If so, 
     Result_ view, for cases when the Admin wants to browse all the assets.
 
 4.  To delete rankings, I have to perform the action twice. The first time it
-    doesn't work, the second time it does.
+    doesn't work, the second time it does. Probably the same as LPS-99865
 
