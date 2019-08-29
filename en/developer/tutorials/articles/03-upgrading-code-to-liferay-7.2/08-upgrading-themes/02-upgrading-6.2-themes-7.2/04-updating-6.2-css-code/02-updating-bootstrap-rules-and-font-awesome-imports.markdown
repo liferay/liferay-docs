@@ -131,10 +131,10 @@ imports:
     [Migrating to v4 guide](https://getbootstrap.com/docs/4.3/migration/) 
     for updating CSS rules to Bootstrap 4. 
 
-3.  Font Awesome icons were removed from the theme and are now automatically 
-    included in `custom.css` if you answered yes (y) to the include Font 
-    Awesome in your theme. If you included the old imports in `_custom.scss`, 
-    they must be removed:
+3.  Font Awesome icons were removed from the theme and Font are now included as 
+    a package dependency if you answer yes (y) to include Font Awesome during 
+    the upgrade task. If you included the old imports in `_custom.scss`, they 
+    must be removed:
 
     ```scss
     @import "aui/alloy-font-awesome/scss/mixins-alloy";

@@ -10,8 +10,7 @@ By default, [Font Awesome v3.2.1](https://fontawesome.com/v3.2.1/)
 and [Bootstrap 3 Glyphicons](https://getbootstrap.com/docs/3.3/components/) 
 are enabled globally in @product@ via a system setting. This means that you can 
 use them in your themes to create social media links, for example. A Site 
-Administrator can disable this to improve performance, if they choose 
-(see below). 
+Administrator can disable this to improve performance, if they choose. 
 
 ## Disabling Enabling Global Font Awesome and Glyphicons in Portal
 
@@ -35,10 +34,10 @@ steps:
 As a safeguard, you should include Font Awesome and Glyphicons with your theme 
 if you want to use them. This ensures that your icons won't break if the global 
 system setting is disabled. If you created the theme with the Liferay Theme 
-Generator and answered yes(y) to the Font Awesome prompt, then nothing else is 
-required. If you didn't include Font Awesome and Glyphicons when you initially 
-created the theme, follow these steps to include Font Awesome and Glyphicons 
-with your theme:
+Generator and answered yes (y) to the Font Awesome prompt, the Font Awesome 
+dependency is added which includes Font Awesome and Glyphicons for you. If you 
+didn't include Font Awesome and Glyphicons when you initially created the theme, 
+follow these steps to include them in your theme now:
 
 1.  Use the Font Awesome v3.2.1 or Bootstrap 3 Glyphicons in your theme's 
     template. The example below uses Font Awesome icons:
@@ -98,7 +97,7 @@ with your theme:
     ```
 
 3.  Run `gulp deploy` from the theme's root folder to build and deploy the 
-    theme's files. This includes a `/css/font/` folder in the `build` folder 
+    theme's files. This adds a `/css/font/` folder to the theme's `build` folder 
     that contains the Font Awesome and Glyphicon fonts. 
     
 ## Related Topics
