@@ -7,13 +7,16 @@ header-id: token-based-single-sign-on-authentication
 [TOC levels=1-4]
 
 Token-based SSO authentication was introduced in @product-ver@ to standardize
-support for Shibboleth, SiteMinder, and any other SSO product which works on
-the basis of propagating a token via one of the following mechanisms:
+support for Shibboleth, SiteMinder, Oracle OAM, or any other SSO product that
+works by propagating a token via one of the following mechanisms:
 
 - HTTP request parameter
 - HTTP request header
 - HTTP cookie
 - Session attribute
+
+Since these providers have a built-in web server module, you should use the
+Token SSO configuration. 
 
 The authentication token contains either the @product@ user's screen name
 or email address, whichever @product@ has been configured to use for the
@@ -84,11 +87,7 @@ from the bad URL character list. Restart SiteMinder to make your configuration
 update take effect. For more information, please refer to SiteMinder's
 [documentation](https://support.ca.com/cadocs/0/CA%20SiteMinder%20r6%200%20SP6-ENU/Bookshelf_Files/HTML/index.htm?toc.htm?258201.html)
 
----
-header-id: summary
----
-
-# Summary
+## Summary
 
 @product@'s token-based SSO authentication mechanism is highly flexible
 and compatible with any SSO solution which can provide it with a valid @product@
