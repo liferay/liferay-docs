@@ -16,7 +16,7 @@ default page layout is organized into three key sections:
 - **Main Content:** Contains the portlets or fragments for the page.
 - **Footer:** contains additional information, such as the copyright or author.
 
-![Figure 1: The page layout is broken into three key sections.](../../../images/portal-layout-sections.png)
+![Figure 1: The page layout is broken into three key sections.](../../../../images/portal-layout-sections.png)
 
 ## Portlets or Fragments
 
@@ -44,7 +44,7 @@ You can target the elements and IDs shown in the table below to style the page:
 | `section` | `#content` > `#main-content` | The main contents of the page (portlets or fragments) |
 | `footer` | `#footer` | The page's footer |
 
-![Figure 2: Each section of the page has elements and IDs that you can target for styling.](../../../images/portal-layout-elements.png)
+![Figure 2: Each section of the page has elements and IDs that you can target for styling.](../../../../images/portal-layout-elements.png)
 
 As shown in the diagram above, you can also add 
 [fragments](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments) 
@@ -85,13 +85,13 @@ can trigger through the Control Menu. These are listed below:
   user account settings, profile, and dashboard page
 - **Simulation Panel:** Simulates how the page appears on different devices
 
-![Figure 3: Remember to account for the product navigation sidebars and panels when styling your site.](../../../images/portal-layout-nav-control-menu.png)
+![Figure 3: Remember to account for the product navigation sidebars and panels when styling your site.](../../../../images/portal-layout-nav-control-menu.png)
 
-![Figure 4: The Add Menu pushes the main contents to the left.](../../../images/portal-layout-nav-add-menu.png)
+![Figure 4: The Add Menu pushes the main contents to the left.](../../../../images/portal-layout-nav-add-menu.png)
 
-![Figure 5: The Product Menu pushes the main contents to the right.](../../../images/portal-layout-nav-product-menu.png)
+![Figure 5: The Product Menu pushes the main contents to the right.](../../../../images/portal-layout-nav-product-menu.png)
 
-![Figure 6: The Simulation Panel pushes the main contents to the left.](../../../images/portal-layout-nav-simulation-panel.png)
+![Figure 6: The Simulation Panel pushes the main contents to the left.](../../../../images/portal-layout-nav-simulation-panel.png)
 
 When styling the page, you must keep the navigation menus in mind, especially 
 for absolutely positioned elements, such as a fixed navbar. If the user is 

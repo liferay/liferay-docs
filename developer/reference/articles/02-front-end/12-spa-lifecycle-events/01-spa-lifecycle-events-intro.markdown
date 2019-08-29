@@ -32,4 +32,4 @@ Liferay.on('beforeNavigate', function(event) {
 The alert takes advantage of the payload for the `beforeNavigate` event, 
 retrieving the URL from the `path` attribute of the JSON payload object. 
 
-![Figure 1: You can leverage SPA lifecycle events in your apps.](../../images/private-messaging-before-navigate.png)
+![Figure 1: You can leverage SPA lifecycle events in your apps.](../../../images/private-messaging-before-navigate.png)

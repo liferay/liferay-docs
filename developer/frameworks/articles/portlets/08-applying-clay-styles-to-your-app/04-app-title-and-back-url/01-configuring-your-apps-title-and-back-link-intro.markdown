@@ -11,7 +11,7 @@ the app and the associated back link should be moved to the portlet titles. If
 you open the Blogs Admin application in the Control Panel and add a new blog 
 entry, you'll see this behavior in action:
 
-![Figure 1: Adding a new blog entry displays the portlet title at the top, along with a back link.](../../../images/new-blog-entry-title.png)
+![Figure 1: Adding a new blog entry displays the portlet title at the top, along with a back link.](../../../../images/new-blog-entry-title.png)
 
 The Blogs Admin application is used as an example throughout this article. 
 Follow these steps to configure your app's title and back URL:

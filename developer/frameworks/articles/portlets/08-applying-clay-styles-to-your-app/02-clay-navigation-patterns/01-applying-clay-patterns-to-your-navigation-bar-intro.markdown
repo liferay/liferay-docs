@@ -99,11 +99,11 @@ your app:
 
 Live site navigation bar:
 
-![Figure 1: The navigation bar should be light for apps on the live site.](../../../images/clay-patterns-navbar.png)
+![Figure 1: The navigation bar should be light for apps on the live site.](../../../../images/clay-patterns-navbar.png)
 
 Admin app navigation bar:
 
-![Figure 2: The navigation bar should be dark (inverted) in admin apps.](../../../images/clay-patterns-navbar-inverted.png)
+![Figure 2: The navigation bar should be dark (inverted) in admin apps.](../../../../images/clay-patterns-navbar-inverted.png)
 
 Sweet! Now you know how to style a navigation bar with Clay. 
 

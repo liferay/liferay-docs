@@ -10,7 +10,7 @@ An info bar provides a button that toggles the visibility of additional sidebar
 information. This is perfect for providing more detailed metadata for a search 
 result, such as the file size, type, URL, etc. 
 
-![Figure 1: The info bar tags create a sidebar panel toggler that reveals additional info.](../../../../images/liferay-frontend-taglib-info-bar-article.png)
+![Figure 1: The info bar tags create a sidebar panel toggler that reveals additional info.](../../../../../images/liferay-frontend-taglib-info-bar-article.png)
 
 The configuration has two key parts: the info bar---and buttons---and the
 sidebar panel. 
@@ -50,7 +50,7 @@ Note that the sidebar panel's wrapper `<div>` has the classes `closed` and
 showing and hiding the sidebar panel. The `sidenav-right` class specifies that 
 the panel should open on the right.
 
-![Figure 2: The info bar tags create a sidebar panel toggler that reveals additional info.](../../../../images/liferay-frontend-taglib-info-bar.png)
+![Figure 2: The info bar tags create a sidebar panel toggler that reveals additional info.](../../../../../images/liferay-frontend-taglib-info-bar.png)
 
 The examples above use some of the available attributes. See the 
 [info bar](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/info-bar.html), 

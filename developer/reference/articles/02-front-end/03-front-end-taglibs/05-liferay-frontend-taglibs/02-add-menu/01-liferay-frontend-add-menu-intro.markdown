@@ -36,7 +36,7 @@ the example below for the Blogs Admin App:
 </liferay-frontend:management-bar>
 ```
 
-![Figure 1: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../../images/liferay-frontend-taglib-add-menu-one-item.png)
+![Figure 1: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../../../images/liferay-frontend-taglib-add-menu-one-item.png)
 
 When the menu has multiple items, they display in a pop-up menu. For example, 
 the Message Boards Admin application has the configuration below:
@@ -55,7 +55,7 @@ the Message Boards Admin application has the configuration below:
 </liferay-frontend:add-menu>
 ```
 
-![Figure 2: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../../images/liferay-frontend-taglib-add-menu-items.png)
+![Figure 2: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../../../images/liferay-frontend-taglib-add-menu-items.png)
 
 The examples above use some of the available attributes. See the 
 [add menu](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/add-menu.html) 

@@ -36,7 +36,7 @@ folders. An example configuration is shown below:
 </liferay-frontend:horizontal-card>
 ```
 
-![Figure 1: Horizontal cards are perfect to display files and documents.](../../../../images/liferay-frontend-taglib-cards-horizontal.png)
+![Figure 1: Horizontal cards are perfect to display files and documents.](../../../../../images/liferay-frontend-taglib-cards-horizontal.png)
 
 The `<liferay-frontend:horizontal-card-icon>` tag uses 
 [Clay Icons](/docs/7-2/reference/-/knowledge_base/r/clay-icons) for its `icon` 
@@ -74,7 +74,7 @@ article:
 </liferay-frontend:icon-vertical-card>
 ```
 
-![Figure 2: Vertical icon cards are perfect to display an entity selection, such as a web content article.](../../../../images/liferay-frontend-taglib-cards-icon-vertical.png)
+![Figure 2: Vertical icon cards are perfect to display an entity selection, such as a web content article.](../../../../../images/liferay-frontend-taglib-cards-icon-vertical.png)
 
 ## Vertical Card
 
@@ -109,7 +109,7 @@ a web content article when an image preview is available:
 </liferay-frontend:vertical-card>
 ```
 
-![Figure 3: Vertical cards are perfect to display files and documents.](../../../../images/liferay-frontend-taglib-cards-vertical.png)
+![Figure 3: Vertical cards are perfect to display files and documents.](../../../../../images/liferay-frontend-taglib-cards-vertical.png)
 
 ## HTML Vertical Card
 
@@ -138,7 +138,7 @@ vertical card. The example below embeds a video:
 </div>
 ```
 
-![Figure 4: Html vertical cards let you display custom HTML in the card's header.](../../../../images/liferay-frontend-taglib-cards-html-vertical.png)
+![Figure 4: Html vertical cards let you display custom HTML in the card's header.](../../../../../images/liferay-frontend-taglib-cards-html-vertical.png)
 
 ## User Vertical Card
 
@@ -167,7 +167,7 @@ Management Bar. Below is an example snippet from the User Admin portlet:
 </liferay-frontend:user-vertical-card>
 ```
 
-![Figure 5: User vertical cards are perfect to display files and documents.](../../../../images/liferay-frontend-taglib-cards-user-vertical.png)
+![Figure 5: User vertical cards are perfect to display files and documents.](../../../../../images/liferay-frontend-taglib-cards-user-vertical.png)
 
 ## Related Topics
 

@@ -9,7 +9,7 @@ header-id: setting-empty-results-messages
 If you've toured the UI, you've probably noticed messages or possibly even 
 animations in the search containers when no results are found. 
 
-![Figure 1: This is a still frame from the Web Content portlet's empty results animation.](../../../images/no-web-content-found.png)
+![Figure 1: This is a still frame from the Web Content portlet's empty results animation.](../../../../images/no-web-content-found.png)
 
 You can configure your apps to use empty results messages and animations too, 
 thanks to the `liferay-frontend:empty-results-message` tag. 
@@ -67,15 +67,15 @@ Follow these steps:
 
 empty_state.gif:
 
-![Figure 2: If you can use the add button to add entities to the app, use the empty state animation.](../../../images/empty_state.gif)
+![Figure 2: If you can use the add button to add entities to the app, use the empty state animation.](../../../../images/empty_state.gif)
 
 search_state.gif:
 
-![Figure 3: If you can use the add button to add entities to the app, use the search state animation.](../../../images/search_state.gif)
+![Figure 3: If you can use the add button to add entities to the app, use the search state animation.](../../../../images/search_state.gif)
 
 success_state.gif:
 
-![Figure 4: If you can use the add button to add entities to the app, use the success state animation.](../../../images/success_state.gif)
+![Figure 4: If you can use the add button to add entities to the app, use the success state animation.](../../../../images/success_state.gif)
 
 
 | **Note:** Empty results messages can also contain static images if you prefer. 

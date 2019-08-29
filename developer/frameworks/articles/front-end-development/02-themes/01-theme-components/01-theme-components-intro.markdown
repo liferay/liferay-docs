@@ -53,7 +53,7 @@ page functionality:
 </#if>
 ```
 
-![Figure 1: The collapsed navbar provides simplified user-friendly navigation for mobile devices.](../../../images/portal-layout-mobile-nav.png)
+![Figure 1: The collapsed navbar provides simplified user-friendly navigation for mobile devices.](../../../../images/portal-layout-mobile-nav.png)
 
 - `portal_pop_up.ftl`: Controls pop up dialogs for the
   theme's portlets. Similar to `portal_normal.ftl`, `portal_pop_up.ftl` provides
@@ -61,7 +61,7 @@ page functionality:
   menu. It also has access to the FreeMarker variables defined in `init.ftl` and 
   `init_custom.ftl`.
 
-![Figure 2: Each theme template provides a portion of the page's markup and functionality.](../../../images/portal-layout-theme-templates.png)
+![Figure 2: Each theme template provides a portion of the page's markup and functionality.](../../../../images/portal-layout-theme-templates.png)
 
 ### Theme Template Utilities
 
@@ -151,7 +151,7 @@ You can customize portlets with these mechanisms and extensions:
   [Web Content Templates User Guide articles](/docs/7-2/user/-/knowledge_base/u/designing-web-content-with-templates) 
   for more information.
 
-![Figure 3: There are several extension points for customizing portlets](../../../images/portal-layout-portlet-customizations.png)
+![Figure 3: There are several extension points for customizing portlets](../../../../images/portal-layout-portlet-customizations.png)
 
 ## Related Topics
 

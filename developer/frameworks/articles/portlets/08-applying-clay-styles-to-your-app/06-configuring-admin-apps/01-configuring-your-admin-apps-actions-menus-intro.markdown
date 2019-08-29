@@ -13,7 +13,7 @@ the administrative portlet, leaving the primary action (often an
 visible in the add menu. For example, the web content application has the 
 actions menu shown below:
 
-![Figure 1: The upper right ellipsis menu contains most of the actions for the app.](../../../images/actions-menu.png)
+![Figure 1: The upper right ellipsis menu contains most of the actions for the app.](../../../../images/actions-menu.png)
 
 Follow these steps to configure the actions menu in your admin app:
 

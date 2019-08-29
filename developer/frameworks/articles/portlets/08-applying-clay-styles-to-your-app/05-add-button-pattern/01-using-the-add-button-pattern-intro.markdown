@@ -41,7 +41,7 @@ any of your app's screens. Follow these steps to add a plus button to your app:
     item. If there's multiple items, clicking the plus icon displays a menu 
     containing them. 
 
-    ![Figure 1: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../images/add-button-diagram.png)
+    ![Figure 1: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../../images/add-button-diagram.png)
 
 The `com.liferay.mobile.device.rules.web` module's add menu is shown below:
 
