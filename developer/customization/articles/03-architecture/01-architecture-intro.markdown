@@ -22,7 +22,7 @@ You can use the @product@ UI and services; or focus on the services via
 
 ![Figure 1: @product@ portal instances provide UIs for people to interact with content and functionality. @product@ can also be used "headless"---without the UIs.](../../images/architecture-options.png)
 
-The architecture meets these requirements:
+This section shows how the architecture satisfies these requirements:
 
 - Supports using the best, most popular development technologies
 
@@ -47,7 +47,7 @@ service components. Here are some component examples:
 -   Service customizations
 -   Portlets (portlet and controller classes, templates, and resources)
 -   JavaScript applications (templates, routers, and resources)
--   Portlet JSP customization via a PortletFilters 
+-   Portlet JSP customization via PortletFilters 
 -   Themes
 -   Shared Language Keys
 -   Navigation components
@@ -56,23 +56,18 @@ The following figure shows these component types in a runtime environment.
 
 ![Figure 2: The Core provides a runtime environment for UI and service components, such as the ones here. New component implementations can compete with existing implementations to replace or extend them.](../../images/component-runtime-environment.png)
 
-In the component runtime, components can be added, replaced, or extended on the
-fly. In Figure 2, for example if *ServiceC Impl 2*'s rank is higher, it replaces
-*ServiceC Impl 1* (more on service rankings later).  Also, the *PortletA Filter*
-intercepts and modifies requests to and responses from *PortletA* to affect
-template content. 
+The component runtime supports adding, replacing, and customizing components on-the-fly. In Figure 2 shows examples of replacing and customizing components.
+
+**Replacement:** If the `ServiceC Impl 2` component is ranked higher than existing component `ServiceC Impl 1`, `ServiceC Impl 2` is used in place of `ServiceC Impl 1`. 
+
+**Customization:** The `PortletA Filter` intercepts and modifies requests to and responses from `PortletA`, affecting content `PortletA`'s JSPs display. 
 
 Components are developed in WAR or module JAR projects and install as
 [OSGi bundles](https://www.osgi.org/)
-(modules). The
-[WAB Generator](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
-generates an OSGi bundle from a deployed WAR project automatically for
-installing to @product@. The runtime framework defines the module lifecycle,
+(modules). The runtime framework defines the module lifecycle,
 enforces dependencies, and provides an API and CLI
 ([Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell))
-for managing modules and components. 
-
-The Core is configured via
+for managing modules and components. The Core is configured via
 [portal properties files](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
 and
 [Server Administration panels](/docs/7-2/user/-/knowledge_base/u/server-administration). 
@@ -81,7 +76,8 @@ and
 
 Liferay services provide functionality. Built-in services operate on Liferay
 models such as users, roles, web content, documents and media, and more. Custom
-services can use custom models and leverage other required services. 
+services introduce new models and functionality. Services access each other via 
+[dependency injection](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services). 
 
 UI applications invoke the services to do work. @product@ Java-based
 applications can call services directly using the
@@ -103,9 +99,7 @@ Liferay services are built using
 and
 [REST Builder](/docs/7-2/appdev/-/knowledge_base/a/rest-builder).
 Service Builder generates the models and the service classes that operate on and
-[persist the models](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file)
-to the
-[@product@ data source](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#preparing-a-database). 
+[persist the models](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file). 
 
 Services are easy to
 [override and extend](/docs/7-2/customization/-/knowledge_base/c/overriding-osgi-services)
@@ -119,15 +113,21 @@ implementation
 3.  [deploy](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)
     it. 
 
-Liferay UIs are a great way to provide functionality and content to people. 
+The Liferay UI is a great way to provide content and functionality to people. 
 
 ## UI 
 
-@product@'s UI enables people to do work, collaborate, and share and enjoy content. 
+[@product@'s UI](/docs/7-2/user/-/knowledge_base/u/the-liferay-distinction)
+helps people do work,
+[collaborate](/docs/7-2/user/-/knowledge_base/u/collaboration),
+and
+[share and enjoy content](/docs/7-2/user/-/knowledge_base/u/web-experience-management). 
 
--   Applications (widgets and portlets) expose functionality to accomplish tasks
--   Product navigation helps privileged users develop sites
--   Themes style sites with a unique look and feel
+-   [Applications](/docs/7-2/appdev/-/knowledge_base/a/application-development)
+    (widgets and portlets) expose functionality to accomplish tasks
+-   Product navigation helps users develop sites
+-   [Themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction)
+    style sites with a unique look and feel
 
 ### Applications 
 
@@ -139,22 +139,22 @@ as other web front-ends, except @product@ installs them as
 @product@ supports developing JavaScript-based applications using popular
 front-end frameworks:
 
--   [Angular](https://portal.liferay.dev/docs/7-2/appdev/-/knowledge_base/a/developing-an-angular-application)
--   [React](https://portal.liferay.dev/docs/7-2/appdev/-/knowledge_base/a/developing-a-react-application)
--   [Vue](https://portal.liferay.dev/docs/7-2/appdev/-/knowledge_base/a/developing-a-vue-application)
+-   [Angular](/docs/7-2/appdev/-/knowledge_base/a/developing-an-angular-application)
+-   [React](/docs/7-2/appdev/-/knowledge_base/a/developing-a-react-application)
+-   [Vue](/docs/7-2/appdev/-/knowledge_base/a/developing-a-vue-application)
 
 Java-based portlet applications are developed using the latest portlet standards
 and frameworks, including ones familiar to experienced Liferay portlet
 developers: 
 
--   [Bean Portlet](https://portal.liferay.dev/docs/7-2/appdev/-/knowledge_base/a/bean-portlet)
--   [JSF Portlet](https://portal.liferay.dev/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet)
--   [PortletMVC4Spring](https://portal.liferay.dev/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring)
--   [Liferay MVC Portlet](https://portal.liferay.dev/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
+-   [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet)
+-   [JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet)
+-   [PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring)
+-   [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
 
 Applications are categorized in the UI for users to add to pages as widgets.
-Administrative applications are developed as portlets and made available to
-privileged users via the product menu. 
+Administrative applications are developed as portlets and made available in the
+product menu. 
 
 ![Figure 4: Widget pages offer users functionality. Widgets are organized into the page template's rows and columns. On this page, users select tags in the Tags Navigation and Tag Cloud widgets to display images in an Asset Publisher widget.](../../images/architecture-ui-widgets.png)
 
@@ -167,9 +167,11 @@ customize the navigation and add to it.
 
 ### Themes 
 
-A theme styles a site with a unique look and feel. It's developed as a WAR
-project that includes CSS and content. You can develop themes however you like,
-but @product@ offers Bootstrap-based components and 
+A
+[theme](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction)
+styles a site with a unique look and feel. It's developed as a WAR project that
+includes CSS and content. You can develop themes however you like, but @product@
+offers Bootstrap-based components and 
 [theme tooling](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes). 
 
 ![Figure 6: Liferay makes it easy to develop and try out attractive site themes.](../../images/architecture-ui-themes.png)
@@ -183,11 +185,11 @@ but @product@ offers Bootstrap-based components and
 -   Override navigation 
 -   Modify portlet JSP content 
 
-As you can see, the @product@ architecture supports developing services, UI
-components, and customizations. The Core's runtime framework makes components
-accessible for examining and managing. 
+As you can see, the @product@ architecture supports developing services, the UI,
+and customizations. The Core's runtime framework makes components accessible for
+examining and managing. 
 
-The architecture articles cover Core, service, and UI topics. The initial
+The architecture section covers Core, service, and UI topics. The initial
 articles dive deeper into the Core to describe class loading, modularity, and
-more. But you can jump ahead to service and UI architecture topics if you like.
-Enjoy exploring the @product@ architecture! 
+more. But you can jump ahead to any service or UI architecture topics, if you
+like. Enjoy exploring the @product@ architecture! 
