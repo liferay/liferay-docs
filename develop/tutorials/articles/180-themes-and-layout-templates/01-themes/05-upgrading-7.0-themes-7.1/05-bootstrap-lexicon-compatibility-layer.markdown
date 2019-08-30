@@ -14,8 +14,10 @@ and
 that may be cause for concern if your theme uses Bootstrap 3 or Lexicon CSS. Not 
 to worry though. To ensure that your upgrade runs smoothly, @product@ includes a 
 compatibility layer so you can use Bootstrap 3 markup and Lexicon CSS markup 
-alongside the new Bootstrap 4 and Clay CSS. If your theme extends the 
-[Styled base theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled), 
+alongside the new Bootstrap 4 and Clay CSS. The bundled icon fonts (Font Awesome 
+v3.2.1 and Glyphicons 3) were moved to the compatibility layer's 
+[`_components.scss`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/compat/_components.scss#L3-L4) 
+file as well. If your theme extends the [Styled base theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled), 
 this compatibility layer is included by default. 
 
 | **Note:** This compatibility layer is meant as a short-term solution to ensure
