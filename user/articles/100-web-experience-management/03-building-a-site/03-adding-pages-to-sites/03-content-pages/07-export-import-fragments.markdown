@@ -6,10 +6,8 @@ header-id: exporting-and-importing-fragments
 
 [TOC levels=1-4]
 
-Often you'll want to reuse Fragments or re-purpose some of the code from
-Fragments in another Site or somewhere else altogether. Since all the content is
-plain text, copy/pasting your code would always be an option, but there's
-a much more elegant solution: exporting your Fragment Collections.
+Often you'll want to reuse or re-purpose code from Fragments. To do this, export
+your Fragment Collections.
 
 ## Exporting Fragments
 
@@ -31,8 +29,7 @@ To export a single Collection,
 
     ![Figure 1: Select Collections to export.](../../../../../images/collections-export.png)
 
-Each Collection `.zip` contains all data for the Collection as well as the
-Fragments within it.
+Each Collection `.zip` contains all Collection data and Fragments.
 
 To export individual Fragments,
 
@@ -50,20 +47,18 @@ To export individual Fragments,
     (![Actions](../../../../../images/icon-actions.png)) &rarr; *Export* next
     to the Fragment. A `.zip` file is generated and downloaded automatically.
 
-When you export a single Fragment or a group of Fragments without a collection,
-you must have an existing Collection to import them into.
+Note that if you export a single Fragment or a group of Fragments without
+a collection, they must be imported into an existing Collection. 
 
-Now that you've done all this exporting, it's time to import it all back it.
+Now it's time to import your Fragments to where you need them. 
 
 ## Importing
 
-There are a few options for importing fragments, depending on how you exported
-them. You can import a Collection that was created in @product@, a Collection
-created using external tools, or any number of Page Fragments without
-a collection. Any time you import any Page Fragments they aren't available for
-use until you have gone to each imported fragment and approved it for use. This
-is to ensure that there are no errors in any imported fragments before they are
-added to a page.
+You can import a Collection that was created in @product@, a Collection
+created using external tools, or Page Fragments without a collection. When you
+first import Page Fragments, they aren't available for use until you have
+approved them for use. This is to ensure that there are no errors in any
+imported fragments before they are added to a page.
 
 See 
 [Developing a Fragment Using Desktop Tools](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments-desktop-tools#importing-and-exporting-fragments) for more information on 
@@ -71,8 +66,7 @@ creating and importing Fragments using other tools.
 
 ### Importing Collections
 
-You can import collections that were exported from @product@ or that were
-created using other tools. To import a collection, follow these steps:
+To import a collection, follow these steps:
 
 1.  Go to *Site Administration* &rarr; *Build* &rarr; *Page Fragments*.
 
@@ -106,7 +100,7 @@ a collection.
 
 5.  Click *Import*
 
-The Fragments are imported into the Collection where you performed the import.
+The Fragments are imported into the Collection. 
 
-Export and Import let you use your preferred developer tools or share Fragment
-functionality elsewhere. 
+Exporting and importing fragments is the preferred way to share code or bring it
+into your Site. 
