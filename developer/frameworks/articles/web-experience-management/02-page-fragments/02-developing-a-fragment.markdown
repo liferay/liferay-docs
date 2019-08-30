@@ -2,21 +2,21 @@
 header-id: creating-fragments
 ---
 
-# Creating Fragments
+# Developing Fragments
 
 [TOC levels=1-4]
 
 This tutorial assumes you understand Fragments and Collections. If you don't,
-read
-[Creating Page Fragments](/docs/7-2/user/-/knowledge_base/u/creating-content-pages#creating-page-fragments)
-first. Once, you're ready, start by creating a Collection:
+read the
+[Creating Page Fragments](/docs/7-2/user/-/knowledge_base/u/creating-page-fragments)
+article first. Once, you're ready, start by creating a Collection:
 
 1.  From the menu for your selected site, click *Site Builder* &rarr; *Page
     Fragments*.
  
 2.  Create a new Collection named *Developing Fragments*.
 
-Next, create a *Section* and a *Component*.
+First, you'll create a *Section*.
 
 ## Creating a Section
 
@@ -31,7 +31,8 @@ The list of Collections appears on the left in the Page Fragments page.
 
 You're now on the Fragment editing page. There are four panes on this screen.
 You enter HTML in the top left pane, CSS in the top right, JavaScript in the
-bottom left, and preview the results in the bottom right.
+bottom left, and preview the results in the bottom right. The Fragment Editor
+even comes with autocomplete functionality!
 
 ![Figure 1: The Fragment editor provides autocomplete for Liferay Fragment specific tags.](../../../images/fragment-editor-autocomplete.png)
 
@@ -46,28 +47,40 @@ area where content can be entered:
 1.  Add the following code inside the HTML pane:
 
     ```html
-    <div class="basic-section">
-        <div class="container">
-	        <div class="row">
-                <div class="card-body">
-			        <lfr-editable id="card00" type="rich-text">
-				        <p class="card-text">This is a space for the user to enter content</p>
-    				</lfr-editable>
-        		</div>
-	        </div>
-    	</div>
+    <div class="banner py-6 py-md-8 text-white" data-lfr-background-image-id="banner">
+        <div class="container my-lg-6">
+            <div class="row">
+                <div class="col-12 col-md-8 col-xl-6">
+                    <h1>
+                        <lfr-editable id="01-title" type="rich-text">
+                            Banner Title Example
+                        </lfr-editable>
+                    </h1>
+
+                    <div class="mb-4 lead">
+                        <p>
+                            <lfr-editable id="02-subtitle" type="rich-text">
+                                This is a simple banner component that you can use must provide extra information.
+                            </lfr-editable>
+                        </p>
+                    </div>
+
+                    <lfr-editable id="03-link" type="link">
+                        <a href="#" class="btn btn-primary">Go Somewhere</a>
+                    </lfr-editable>
+                </div>
+            </div>
+        </div>
     </div>
     ```
 
 2.  Replace the code in the CSS pane with the following:
 
     ```css
-    .basic-section {
-    }
-
-    .basic-section .aspect-ratio {
-    	    max-width: inherit;
-        width: 100%;
+    .banner {
+        background-color:#415fa9;
+        background-position: center;
+        background-size: cover;
     }
     ```
 

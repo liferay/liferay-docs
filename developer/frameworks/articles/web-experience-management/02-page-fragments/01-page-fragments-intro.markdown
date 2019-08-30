@@ -23,7 +23,7 @@ links as editable and provide for "rich" text with formatting. Liferay
 portlets can also be embedded in Fragments as widgets, making pages with
 Fragments more dynamic than regular web content.
 
-## Creating Page Fragments
+## Developing Page Fragments
 
 There are two types of Page Fragments: *Sections* and *Components*. A Section
 defines columns, padding, and spacing on the page. A Component contains content
@@ -37,7 +37,7 @@ preferred web development tools. For an explanation of Fragment creation using
 Liferay's built in tools, see 
 [Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments). 
 
-### Fragment CLI
+### Fragments CLI
 
 To streamline fragment development, @product-ver@ provides command line tools
 for generating, importing, and exporting fragments and fragment collections. For
@@ -59,7 +59,8 @@ Contributed Fragment Collections are deployable modules containing Page
 Fragments. Those fragments can be used just like regular fragments, but are not 
 contained in the database, and cannot be modified except by updating the module 
 they came from. Use the 
-[Creating Contributed Collections guide](/docs/7-2/frameworks/-/knowledge_base/f/creating-contributed-fragment-collection) to learn to create your own Contributed Collections.
+[Creating Contributed Collections guide](/docs/7-2/frameworks/-/knowledge_base/f/creating-contributed-fragment-collection)
+to learn to create your own Contributed Collections.
 
 ## Fragment Specific Tags
 

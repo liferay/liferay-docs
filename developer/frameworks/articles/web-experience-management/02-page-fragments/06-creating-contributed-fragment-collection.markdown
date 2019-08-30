@@ -83,7 +83,7 @@ Next you need to include the fragments that you want to contribute in your
 module:
 
 1.  In your module's `resources/` folder, create the folder structure
-    `/com/liferay/fragments/collection/contributor/demo`.
+    `/com/liferay/fragments/collection/contributor/demo/dependencies`.
 
 2.  Copy the Fragments you want to distribute into the folder. You can learn 
     how to create a Fragment in the
