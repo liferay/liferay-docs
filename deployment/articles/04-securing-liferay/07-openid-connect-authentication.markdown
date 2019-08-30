@@ -16,7 +16,7 @@ providers, making it easy for users with existing accounts to authenticate to
 your system. 
 
 | **Note:** You can add multiple providers to your installation, but @product@
-| can't yet be an OpenID Connect provider.
+| can't be an OpenID Connect provider.
 
 Because OpenID Connect is built on OAuth 2.0, its token flow is similar. OAuth
 2.0 is only an authorization protocol, so it sends an *access token* that grants

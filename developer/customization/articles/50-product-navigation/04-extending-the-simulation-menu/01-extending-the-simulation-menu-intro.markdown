@@ -103,7 +103,7 @@ with this article.
     [Segmentation and Personalization](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization)
     section.
 
-    ![Figure 1: The Simulation Menu also displays Segments to help simulate different user experiences.](../../images/segments-preview.png)
+    ![Figure 1: The Simulation Menu also displays Segments to help simulate different user experiences.](../../../images/segments-preview.png)
 
 5.  You can combine your simulation options with the device simulation options 
     by interacting with the device preview iFrame. To retrieve the device 

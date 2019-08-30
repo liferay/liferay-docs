@@ -15,7 +15,7 @@ directly, but rather make any necessary property overrides in a
 Here are some of the properties the `service.properties` file includes:
 
 - `build.namespace`: This is the
-  [namespace you defined in your `service.xml`](/docs/7-2/appdev/-/knowledge_base/a/defining-an-object-relational-map-with-service-builder).
+  [namespace you defined in your `service.xml`](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file).
   Liferay distinguishes different modules from each other using their
   namespaces.
 - `build.number`: Liferay distinguishes your module's different Service Builder 
@@ -39,6 +39,6 @@ Awesome! You now have all the tools necessary to set up your own
 
 ## Related Topics
 
-[What is Service Builder?](/docs/7-2/appdev/-/knowledge_base/a/what-is-service-builder)
+[Service Builder?](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 
-[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
+[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)

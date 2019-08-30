@@ -31,7 +31,7 @@ name as the `Guestbook` object's primary key, a relationship is created between
 the two objects. If you're using Liferay @ide@, you can see this relationship in
 its diagram mode. 
 
-![Figure 1: Relating entities is a snap in Liferay @ide@'s *Diagram* mode for `service.xml`.](../../../images/service-builder-relate-entities.png)
+![Figure 1: Relating entities is a snap in Liferay @ide@'s *Diagram* mode for `service.xml`.](../../../../images/service-builder-relate-entities.png)
 
 Congratulations! You've related two entities. 
 

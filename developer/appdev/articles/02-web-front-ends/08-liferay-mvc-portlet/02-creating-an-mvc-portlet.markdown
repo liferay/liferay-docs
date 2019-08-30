@@ -71,7 +71,7 @@ public class MyMvcPortlet extends MVCPortlet {
 ```
 
 The class extends
-[`MVCPortlet`](@@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html).
+[`MVCPortlet`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html).
 The
 [`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html)
 annotation and `service = Portlet.class` attribute makes the class an OSGi

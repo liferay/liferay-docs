@@ -69,7 +69,7 @@ public void contribute(Document document, FooEntry fooEntry) {
 ```
 
 For fields that should be
-[localized](/docs/7-2/deploy/-/knowledge_base/d/localization), index a field for
+[localized](/docs/7-2/frameworks/-/knowledge_base/f/localization), index a field for
 each locale in the Site. Many times you'll want to localize the title and
 content fields, for example:
 

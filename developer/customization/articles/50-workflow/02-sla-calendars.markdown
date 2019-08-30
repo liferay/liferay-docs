@@ -7,7 +7,7 @@ header-id: creating-sla-calendars
 [TOC levels=1-4]
 
 By default, an internal calendar assumes the
-[SLA deadline clock](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement-sla)
+[SLA deadline clock](/docs/7-2/customization/-/knowledge_base/c/creating-sla-calendars)
 should continue counting all the time: in other words, 24 hours per day, seven
 days per week. If you need a different calendar format, provide your own
 implementation of the `WorkflowMetricsSLACalendar` interface. New
@@ -58,7 +58,7 @@ Implement a
 `com.liferay.portal.workflow.metrics.sla.calendar.WorkflowMetricsSLACalendar` to
 define your own SLA calendar logic. When you're finished, use the created
 calendar when creating the 
-[SLA definition](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement-sla).
+[SLA definition](/docs/7-2/customization/-/knowledge_base/c/creating-sla-calendars).
 
 1.  Declare the component and the class:
 

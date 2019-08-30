@@ -52,8 +52,6 @@ a custom finder and exposing it as a service for your portlet!
 
 ## Related Topics
 
-[Service Builder Web Services](/docs/7-2/appdev/-/knowledge_base/a/service-builder-web-services)
-
-[Creating Local Service](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
+[Creating Local Service](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)
 
 [Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)

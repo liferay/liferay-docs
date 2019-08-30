@@ -8,7 +8,7 @@ header-id: running-service-builder
 
 Here you'll learn how to run Service Builder. If want to use Service Builder in 
 your application but haven't yet
-[created a `service.xml` file that defines an object-relational map for you application](/docs/7-2/appdev/-/knowledge_base/a/defining-an-object-relational-map-with-service-builder),
+[created a `service.xml` file that defines an object-relational map for you application](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file),
 make sure to do so before proceeding. 
 
 Open a command line and navigate to your application folder (the folder that
@@ -55,4 +55,3 @@ SUCCESSFUL`. Many generated files appear in your project. They represent a model
 layer, service layer, and persistence layer for your entities. Don't worry about
 the number of generated files---they're explained in the next article, where you
 can review the code Service Builder generates for your entities.
-
