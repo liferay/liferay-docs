@@ -60,18 +60,18 @@ Here are the apps deprecated in @product-ver@.
 
 | App | Availability | Notes |
 | --- | ------------------ | ----------- |
-| Web Form | Nexus &rarr; Will be removed. | Final version released for 7.0. |
+| Web Form | Removed | Final version released for 7.0. |
 
 ## Security
 
 | App |  Availability |  Notes |
 | --- | ------------------ | ----------- |
 | Central Authentication Service | Bundled | Migrate to [SAML based authentication](https://help.liferay.com/hc/en-us/articles/360028711032-Introduction-to-Authenticating-Using-SAML). |
-| Google Login | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
-| NTLM | Marketplace release planned | Replaced by [Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos). |
-| OAuth 1.0a | Marketplace release planned | Replaced by OAuth 2.0, which is included in the bundle. |
+| Google Login | Marketplace | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
+| NTLM | Marketplace | Replaced by [Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos). |
+| OAuth 1.0a | Marketplace | Replaced by OAuth 2.0, which is included in the bundle. |
 | OpenAM / OpenSSO | Bundled | Migrate to [SAML based authentication](https://help.liferay.com/hc/en-us/articles/360028711032-Introduction-to-Authenticating-Using-SAML). |
-| OpenID | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
+| OpenID | Marketplace | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
 
 ## User and System Management
 
