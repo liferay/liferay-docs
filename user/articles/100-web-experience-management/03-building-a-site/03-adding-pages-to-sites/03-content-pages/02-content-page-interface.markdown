@@ -177,13 +177,13 @@ The comments appear for the selected fragment. You can take the following
 actions in the comments UI for a fragment:
 
 -   Add new comments and reply to any existing ones. 
--   Resolve comments by clicking the checkmark for each. Resolving a comment 
+-   Resolve comments by clicking the checkbox for each. Resolving a comment 
     hides it from view, unless *Show Resolved Comments* is selected. 
 -   Edit and delete your own comments via the Actions button 
     (![Actions](../../../../../images/icon-actions.png)) 
     for each. 
 
-If you unselect a fragment or enter the comments UI without a fragment selected, 
+If you de-select a fragment or enter the comments UI without a fragment selected, 
 a list of the fragments on the page appears with the number of comments for 
 each. Selecting a fragment then shows its comments. 
 
