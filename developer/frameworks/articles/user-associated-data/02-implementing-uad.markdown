@@ -31,9 +31,11 @@ dependencies {
 
 ### Choose the Fields to Anonymize
 
-In the `service.xml` file, choose the fields to be handled by the framework by adding a `uad-anonymize-field-name="[fieldName]"` or `uad-nonanonymizable=true` . 
+In the `service.xml` file, choose the fields to be handled by the framework by
+adding a `uad-anonymize-field-name="[fieldName]"` or `uad-nonanonymizable=true`. 
 
-For example, to replace the `userName` field of your custom entity with the `fullName` of the anonymous user,
+For example, to replace the `userName` field of your custom entity with the
+`fullName` of the anonymous user,
 
 ```xml
 <column name="userName" type="String" uad-anonymize-field-name="fullName" />
@@ -50,6 +52,9 @@ Run Service Builder. A new module is generated alongside your other modules,
 called `my-app-uad`. It requires a little massaging.
 
 ## Update the UAD Module
+
+First, include your dependencies, and then provide your application's name to
+the user interface. 
 
 ### Include Dependencies
 
@@ -83,7 +88,7 @@ The bracketed text is the `Bundle-SymbolicName` from your `-uad` module's
 
 While this approach is recommended, it has one downside: multiple language keys
 are used to label a single application. @product@ applications use the
-`com.liferay.lang.merger.` plugin to avoid this. Here's the relevant part of the
+`com.liferay.lang.merger` plugin to avoid this. Here's the relevant part of the
 Blogs application's `blogs-uad/build.gradle`:
 
 ```groovy

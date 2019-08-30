@@ -62,9 +62,9 @@ Each Sort option has two fields: _Label_ and _Field_.
 **Field**
 : The `fieldName` of the indexed field to sort. Most of the time
 this is a
-[keyword](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/keyword.html)
+[keyword](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/keyword.html)
 field. Other acceptable options are `date` and any 
-[numeric datatype](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/number.html).
+[numeric datatype](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/number.html).
 There's even a way for persistent search administrators to coerce `text` fields
 into behaving with the Sort widget. Keep reading for details.
 

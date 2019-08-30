@@ -19,9 +19,17 @@ existing Elasticsearch 6.1.x server (or cluster) to Elasticsearch 6.5.x:
 
 1.  [Install and configure Elasticsearch 6.5.x](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch).
 
-2.  Configure the bundled Liferay Connector to Elasticsearch 6.
+2. Disable X-Pack Security in `elasticsearch.yml` unless you have an Liferay
+   Enterprise Search Premium subscription, which gives you access to Liferay's
+   X-Pack Security connector:
 
-3.  Re-index all search  and spell check indexes.
+    ```yml
+    xpack.security.enabled: false
+    ```
+
+3.  Configure the bundled Liferay Connector to Elasticsearch 6.
+
+4.  Re-index all search  and spell check indexes.
 
 | **Before Proceeding,** back up your existing data before upgrading
 | Elasticsearch. If something goes wrong during or after the upgrade, roll back
@@ -49,7 +57,7 @@ is straightforward:
 
 1.  Stop the Liferay Connector to Elasticsearch 6.
 
-3.  Stop Elasticsearch 6.5 and make sure that the Elasticsearch 6.1
+2.  Stop Elasticsearch 6.5 and make sure that the Elasticsearch 6.1
     `elasticsearch.yml` and the connector app are configured to use the same
     port (9200 by default).
 

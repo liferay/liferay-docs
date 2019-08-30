@@ -20,8 +20,8 @@ overlay is an example of something you might build as a section.
 ![Figure 1: A Section named *Banner* being displayed while editing a Content Page.](../../../../../images/content-page-section-example.png)
 
 **Layouts** are special Sections that define spaces where you can add fragments
-*or widgets. Each layout you add fills the width of the page. You can add  any
-*number of layouts to the page.
+or widgets. Each layout you add fills the width of the page. You can add  any
+number of layouts to the page.
 
 ![Figure 2: A 3 Column and 1 Column layout stacked on top of each other.](../../../../../images/content-page-layout-example.png)
 
@@ -37,7 +37,7 @@ to work together to build something piece by piece.
 
 Out of the box, you are provided with a plethora of Layouts, Sections, and 
 Components to use to build page, and a
-[web developer can create their own Fragments](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments)
+[web developer can create their own Fragments](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments)
 to add to these. 
 
 ## Editable Elements
@@ -77,8 +77,8 @@ live page, until the page is published again. To create a Content Page,
 
 3.  On the next page, select *Content Page* and provide a name for the page.
 
-    You will be brought to the Content Page management interface.
-    
+    You are brought to the Content Page management interface.
+
     ![Figure 6: Each Content Page starts as a blank page.](../../../../../images/content-page-edit-blank-page.png)
 
 To edit an existing Content Page,

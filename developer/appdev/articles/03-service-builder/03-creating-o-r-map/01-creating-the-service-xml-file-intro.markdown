@@ -11,7 +11,8 @@ file. The DTD (Document Type Declaration) file
 [liferay-service-builder_7_2_0.dtd](https://docs.liferay.com/ce/portal/7.2-latest/definitions/liferay-service-builder_7_2_0.dtd.html)
 specifies the format and requirements of the XML to use. 
 
-A `service.xml` was created for you when you [created your Service Builder project](/docs/7-2/appdev/-/knowledge_base/creating-a-service-builder-project). 
+A `service.xml` was created for you when you
+[created your Service Builder project](/docs/7-2/appdev/-/knowledge_base/a/creating-a-service-builder-project). 
 It's in your `*-service` module's root folder with an `entity` element named
 *Foo*. This is (obviously) an example entity, but you can use it as a pattern
 for creating your own. 

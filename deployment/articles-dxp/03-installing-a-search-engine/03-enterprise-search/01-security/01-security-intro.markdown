@@ -27,11 +27,11 @@ X-Pack users are important:
 - `elastic`
 
 Set the passwords for all X-Pack's 
-[built-in users](https://www.elastic.co/guide/en/x-pack/6.5/setting-up-authentication.html#built-in-users).
+[built-in users](https://www.elastic.co/guide/en/x-pack/6.8/setting-up-authentication.html#built-in-users).
 The `setup-passwords` command is the simplest method to set the built-in users'
 first-use passwords for the first time. To update a password subsequently, use
 Kibana's UI or the 
-[Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/security-api-change-password.html).
+[Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/security-api-change-password.html).
 
 The `interactive` argument sets the passwords for all built-in users. The
 configuration shown in these articles assumes you set all passwords to
@@ -40,7 +40,7 @@ configuration shown in these articles assumes you set all passwords to
     ./bin/elasticsearch-setup-passwords interactive
 
 Elastic's 
-[setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-passwords.html) 
+[setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/setup-passwords.html) 
 documentation describes additional options.
 
 Since you're securing Elasticsearch, remember the `elastic` user's password. 
@@ -58,12 +58,12 @@ whenever one is needed. Use your own passwords for your installation.
 
 ### Generate Node Certificates
 
-[Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#node-certificates)
+[Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/configuring-tls.html#node-certificates)
 for each node. Alternatively, use a Certificate Authority to obtain node
 certificates.
 
 1.  Create a certificate authority, using 
-    [X-Pack's `certutil`](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/certutil.html)
+    [X-Pack's `certutil`](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/certutil.html)
     command:
 
         ./bin/elasticsearch-certutil ca --pem --ca-dn CN=localhost
@@ -84,7 +84,7 @@ certificates.
 
 ### Enable TLS
 
-[Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#enable-ssl) 
+[Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/configuring-tls.html#enable-ssl) 
 on each node via its `elasticsearch.yml`.
 
 1.  Add the certificate, key and certificate authority paths to each node's
@@ -130,18 +130,22 @@ The exact contents of the file depend on your X-Pack setup. To configure the
 adapter according to the Elasticsearch setup documented here, populate the file
 like this:
 
-    sslKeyPath="/path/to/[Elasticsearch Home]/config/localhost.key"
-    sslCertificatePath="/path/to/[Elasticsearch Home]/config/localhost.crt"
+    sslKeyPath="/path/to/localhost.key"
+    sslCertificatePath="/path/to/localhost.crt"
     certificateFormat="PEM"
     requiresAuthentication="true"
     username="elastic"
     password="liferay"
-    sslCertificateAuthoritiesPaths="/path/to/[Elasticsearch Home]/config/ca.crt"
+    sslCertificateAuthoritiesPaths="/path/to/ca.crt"
     transportSSLVerificationMode="certificate"
     transportSSLEnabled="true"
 
-Note that the `password` should match what you set during the X-Pack password
+The `password` should match what you set during the X-Pack password
 setup above. 
+
+The certificate and key files referenced here are the same ones used on the
+Elasticsearch server. Copy them to the @product@ server and update their paths
+in the configuration accordingly.
 
 Enable authentication by setting `requiresAuthentication` to `true` and providing the
 credentials for the Elasticsearch user. For TLS, enable transport TLS, set the
@@ -167,3 +171,29 @@ Here's the complete list of configuration options for the X-Pack Connector:
 
 When you're finished configuring X-Pack Security, restart Elasticsearch. These
 steps require a full cluster restart.
+
+### Disabling Elasticsearch Deprecation Logging
+
+Some Elasticsearch APIs used by Liferay's Elasticsearch 6 connector were
+deprecated as of Elasticsearch 6.6 and 6.7. This can result WARN log entries in
+Elasticsearch's deprecation log when @product@ is configured with Elasticsearch
+6.8.x and X-Pack Security is enabled:
+
+```sh
+2019-07-16T14:47:05,779][WARN ][o.e.d.c.j.Joda           ] [
+ode_name]'y' year should be replaced with 'u'. Use 'y' for year-of-era. Prefix your date format with '8' to use the new specifier.
+[2019-07-16T14:47:06,007][WARN ][o.e.d.c.s.Settings       ] [
+ode_name][xpack.ssl.certificate] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+[2019-07-16T14:47:06,007][WARN ][o.e.d.c.s.Settings       ] [
+ode_name][xpack.ssl.certificate_authorities] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+[2019-07-16T14:47:06,008][WARN ][o.e.d.c.s.Settings       ] [
+ode_name][xpack.ssl.key] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+[2019-07-16T14:47:06,463][WARN ][o.e.d.x.c.s.SSLService   ] [
+ode_name]SSL configuration [xpack.http.ssl] relies upon fallback to another configuration for [key configuration, trust configuration], which is deprecated.
+[2019-07-16T14:47:06,464][WARN ][o.e.d.x.c.s.SSLService   ] [
+ode_name]SSL configuration [xpack.security.transport.ssl.] relies upon fallback to another configuration for [key configuration, trust configuration], which is deprecated.
+```
+
+These warnings do not signal any functional issues, and can be disabled (see
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/logging.html#deprecation-logging)
+to learn how).

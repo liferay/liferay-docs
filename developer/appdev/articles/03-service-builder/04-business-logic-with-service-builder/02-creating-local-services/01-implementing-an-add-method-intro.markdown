@@ -16,19 +16,19 @@ Liferay's convention is to implement this in an `add*` method, where the part
 after `add` is the entity name (or a shortened version of it). Here are the
 steps for implementing an `add*` method:
 
-1.  [Declare an `add*` method with parameters for creating the entity.](#declare-an-add-method-with-parameters-for-creating-the-entity)
+1.  Declare an `add*` method with parameters for creating the entity.
 
-2.  [Validate the parameters.](#validate-the-parameters)
+2.  Validate the parameters.
 
-3.  [Generate a primary key.](#generate-a-primary-key)
+3.  Generate a primary key.
 
-4.  [Create an entity instance.](#create-an-entity-instance)
+4.  Create an entity instance.
 
-5.  [Populate the entity attributes.](#populate-the-entity-attributes)
+5.  Populate the entity attributes.
 
-6.  [Persist the entity.](#persist-the-entity)
+6.  Persist the entity.
 
-7.  [Return the entity instance.](#return-the-entity)
+7.  Return the entity instance.
 
 This article refers to the Guestbook application's `addGuestbookEntry` method
 from `GuestbookEntryLocalServiceImpl`. To keep things simple, we have excluded
