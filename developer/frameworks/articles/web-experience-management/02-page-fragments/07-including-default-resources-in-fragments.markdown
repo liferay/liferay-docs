@@ -6,17 +6,15 @@ header-id: including-default-resources-in-fragments
 
 [TOC levels=1-4]
 
-When creating Page Fragments, you have the option to upload resources (e.g.,
-images, documents, etc.) to your Fragment Collection. This gives you the
-flexibility to reference resources that are always available from the
+When creating Page Fragments, you can upload resources (e.g., images, documents,
+etc.) to your Fragment Collection to make them always available from the
 Collection, rather than relying on resources uploaded in other areas of your
 Site (e.g., Documents and Media). For more information on how to include
-resources in your Fragment Collection from the Page Fragments interface, see the
-[Creating Page Fragments](/docs/7-2/user/-/knowledge_base/u/creating-page-fragments)
-article.
+resources in your Fragment Collection from the Page Fragments interface, see 
+[Creating Page Fragments](/docs/7-2/user/-/knowledge_base/u/creating-page-fragments).
 
 Once you've uploaded your resource to a Fragment Collection, you can specify it
-in your Fragment like this:
+in your Fragment:
 
 1.  Navigate to the Fragment editing page by clicking your Fragment's *Actions*
     ![Actions](../../../images/icon-actions.png) &rarr; *Edit* button.
@@ -39,7 +37,7 @@ in your Fragment like this:
     </div>
     ```
 
-3.  Add any additional HTML, CSS, or JS to your Fragment and then click
+3.  Add any additional HTML, CSS, or JavaScript to your Fragment and then click
     *Publish*.
 
     | **Note:** You can also reference your Fragment Collection's resources
