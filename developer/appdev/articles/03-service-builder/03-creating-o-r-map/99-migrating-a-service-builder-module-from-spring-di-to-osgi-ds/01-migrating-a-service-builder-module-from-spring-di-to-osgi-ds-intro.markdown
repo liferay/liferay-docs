@@ -158,12 +158,12 @@ cases vary. However, Liferay provides tools that facilitate detecting circular
 dependencies and examining the DS service components involved.
 
 -   `system:check`: This
-    [Gogo shell](/docs/7-2/reference/-/knowledge_base/r/gogo-shell)
+    [Gogo shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)
     command provides several checks, including one that detects inactive
     service components whose required references are unresolved.
 
 -   `scr:info [component]`: Execute this
-    [Gogo shell](/docs/7-2/reference/-/knowledge_base/r/gogo-shell)
+    [Gogo shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell)
     command on an unresolved component to report its unresolved references. 
 
 | **Note:** Service resolution in DS dependency injection (DI) is different 
@@ -180,7 +180,5 @@ Congratulations on converting your service module to use Declarative Services.
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 
 [Understanding the Code Service Builder Generates](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder)
-
-[Spring Dependency Injection](/docs/7-2/frameworks/-/knowledge_base/f/spring-dependency-injection)
 
 [Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)
