@@ -156,14 +156,14 @@ Applications are categorized in the UI for users to add to pages as widgets.
 Administrative applications are developed as portlets and made available to
 privileged users via the product menu. 
 
-![Figure 3: Widget pages offer users functionality. Widgets are organized into the page template's rows and columns. On this page, users select tags in the Tags Navigation and Tag Cloud widgets to display images in an Asset Publisher widget.](../../images/architecture-ui-widgets.png)
+![Figure 4: Widget pages offer users functionality. Widgets are organized into the page template's rows and columns. On this page, users select tags in the Tags Navigation and Tag Cloud widgets to display images in an Asset Publisher widget.](../../images/architecture-ui-widgets.png)
 
 ### Product Navigation
 
 @product@'s navigation makes apps and widgets available to users. You can
 customize the navigation and add to it. 
 
-![Figure 4: Liferay facilitates integrating custom administrative functionality through navigation menus and administrative applications.](../../images/architecture-ui-menus-and-panel-app.png)
+![Figure 5: Liferay facilitates integrating custom administrative functionality through navigation menus and administrative applications.](../../images/architecture-ui-menus-and-panel-app.png)
 
 ### Themes 
 
@@ -172,7 +172,7 @@ project that includes CSS and content. You can develop themes however you like,
 but @product@ offers Bootstrap-based components and 
 [theme tooling](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes). 
 
-![Figure 2: Liferay makes it easy to develop and try out attractive site themes.](../../images/architecture-ui-themes.png)
+![Figure 6: Liferay makes it easy to develop and try out attractive site themes.](../../images/architecture-ui-themes.png)
 
 @product@'s UI can be customized in many ways:
 
