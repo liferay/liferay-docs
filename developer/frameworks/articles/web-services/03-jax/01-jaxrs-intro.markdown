@@ -317,4 +317,4 @@ Great! Now you know how to create, deploy, and invoke JAX-RS web services on
 
 ## Related Topics
 
-[Service Builder Web Services](/docs/7-2/appdev/-/knowledge_base/a/service-builder-web-services)
+[REST Builder](/docs/7-2/appdev/-/knowledge_base/a/rest-builder)

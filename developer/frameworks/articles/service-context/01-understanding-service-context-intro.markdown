@@ -2,7 +2,7 @@
 header-id: understanding-servicecontext
 ---
 
-# Understanding ServiceContext
+# ServiceContext
 
 [TOC levels=1-4]
 
@@ -173,9 +173,6 @@ curl, or click on *URL example* to see how to invoke the web service via a URL.
 
 ![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../images/jsonws-simple-example.png) 
 
-To learn more about Liferay's JSON web services, see 
-[JSON Web Services](/docs/7-2/appdev/-/knowledge_base/a/registering-json-web-services).
-
 Next, you'll learn how to access information from a `ServiceContext` object. 
 
 ## Accessing Service Context Data
@@ -299,6 +296,8 @@ Liferay application development.
 
 ## Related Topics
 
-[Creating Local Services](/docs/7-2/appdev/-/knowledge_base/a/creating-local-services)
+[Business Logic with Service Builder](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)
 
 [Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)
+
+[Web Services](/docs/7-2/frameworks/-/knowledge_base/f/web-services)
