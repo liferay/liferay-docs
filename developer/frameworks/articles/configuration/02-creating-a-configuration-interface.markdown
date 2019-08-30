@@ -44,7 +44,7 @@ This automatically scopes your configuration to `SYSTEM`.
     the above snippet do:
 
     **Meta.OCD:** Registers this class as a configuration with a specific
-    id. The ID must be the fully qualified configuration class name.
+    id. **The ID must be the fully qualified configuration class name.**
 
     **Meta.AD:** Specifies [optional metadata](http://bnd.bndtools.org/chapters/210-metatype.html) 
     about the field, such as whether it's a required field or if it has
