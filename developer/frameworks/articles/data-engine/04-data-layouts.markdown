@@ -1,8 +1,8 @@
 ---
-header-id: data-layouts
+header-id: managing-data-layouts-with-the-rest-api
 ---
 
-# Data Layouts
+# Managing Data Layouts with the REST API
 
 [TOC levels=1-4]
 

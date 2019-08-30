@@ -1,8 +1,8 @@
 ---
-header-id: data-records
+header-id: managing-data-records-with-the-rest-api
 ---
 
-# Data Records
+# Managing Data Records with the REST API
 
 [TOC levels=1-4]
 
