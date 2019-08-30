@@ -113,8 +113,8 @@ First, you'll learn how to create a configuration at the system scope.
     list, but defaults to descriptive. Here's what the two Java annotations in
     the above snippet do:
 
-    1.  **Meta.OCD:** Registers this class as a configuration with a specific id. The
-        ID must be the fully qualified configuration class name.
+    1.  **Meta.OCD:** Registers this class as a configuration with a specific id. **The
+        ID must be the fully qualified configuration class name.**
 
     2.  **Meta.AD:** Specifies 
         [optional metadata](http://bnd.bndtools.org/chapters/210-metatype.html) 
