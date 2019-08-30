@@ -24,15 +24,16 @@ reports by clicking on one of the workflow processes.
 
 ## Understanding Reports
 
-The Reports UI has two main views, represented as tabs: _Pending_ and
-_Completed_.
+The Reports UI has two main views, represented as tabs: _Pending_ (changed to
+_Dashboard_ as of @product-ver@ Service Pack 1---SP1) and
+_Completed_ (changed to _Performance_ in SP1).
 
-_Pending_ items are those currently in the workflow process, and include items
+_Pending/Dashboard_ items are those currently in the workflow process, and include items
 untracked by the SLA. This might include items in the paused step of the
 workflow, or items that are outside the scope of the SLA duration.
 
-_Completed_ items are just as they sound: any item that has completed processing
-in the workflow.
+_Completed/Performance_ items show any item that has completed processing in the
+workflow. SP1 includes a new chart on this screen: _Completion Velocity_.
 
 When you first click into the metrics for a specific process, you're presented
 with two valuable reports on pending items: the Pending Items overview and
@@ -53,15 +54,57 @@ workflow process, by their SLA status (Overdue or On Time).
 
 ### Completed Items
 
-Click the *Completed* tab to see the items that have completed the workflow
-process. Workload by Step data doesn't make sense in this case, because by
-definition, these items are no longer in any workflow process step.
+Click the *Completed* tab (*Performance* on SP1) to see the items that have
+completed the workflow process. Workload by Step data doesn't make sense in this
+case, because by definition, these items are no longer in any workflow process
+step. Instead, there's a _Completion Velocity_ chart that shows the performance
+over time.
+
+## Completion Velocity
+
+A line chart shows you the completion rate for the workflow process.
+
+![Figure 3: View the completion rate of items in a workflow process over time.](../../images/workflow-reports-completion-velocity.png)
+
+The overall completion rate for the time period is displayed in the top right
+corner of the chart (as _inst/timeUnit_), while the trend-line is presented in
+the chart body. Both are updated when you select a new time period, and the time
+unit is selectable, depending on the time period you're measuring:
+
+Today
+: Calculate _Inst/Hour_ from _00:00_, or _12:00 AM_, of the current day until the
+current time (rounded to the nearest whole hour). 
+
+Yesterday
+: Calculate _Inst/Hour_  From _00:00-23:59_, or _12:00 AM to 11:59 PM_, of the
+previous day.
+
+Last 7 Days
+: Calculate _Inst/Day_. The current day counts as 1 day, so this is 6 days ago
+to the current day.
+
+Last 30 Days
+: Calculate the _Inst/Week_ or the _Inst/Day_. The current day counts as 1 day,
+so this is 29 days ago to the current day.
+
+Last 90 Days
+: Calculate the _Inst/Month_, _Inst/Week_, or _Inst/Day_. The current day counts
+as 1 day, so this is 89 days ago to the current day.
+
+Last 180 Days
+: Calculate the _Inst/Month_ or _Inst/Week_. The current day counts as 1 day, so
+this is 179 days ago to the current day.
+
+Last Year
+: Calculate the _Inst/Month_ or _Inst/Week_. The current day counts as 1 day, so
+this is 364 days ago to the current day.
 
 ## Items View
 
 Hover over the status you're interested in, from either the _Pending_ or the
-_Completed_ tabs. Click into the All Items screen from the overview
-report and you'll see a more detailed table including the following columns:
+_Completed_ tabs (on SP1, these tabs were renamed to _Dashboard_ and
+_Completion_. Click into the All Items screen from the overview report and
+you'll see a more detailed table including the following columns:
 
 **ID**
 : This is the workflow item's numeric identifier to the system. Importantly, you
@@ -87,7 +130,7 @@ to analyze.
 
 Filter items based on whether they're Overdue, On Time, or Untracked.
 
-![Figure 3: Filter by SLA status: Overdue, On Time, or Untracked.](../../images/workflow-metrics-reports4.png)
+![Figure 4: Filter by SLA status: Overdue, On Time, or Untracked.](../../images/workflow-metrics-reports4.png)
 
 **Overdue**
 : Overdue items have breached at least one SLAs defined deadline.
@@ -119,7 +162,7 @@ option: filter items by the Completion Period. Select from these time periods:
 - Last Year
 - All Time
 
-![Figure 4: Filter by Process Status and Completion Period.](../../images/workflow-reports-process-status-period.png)
+![Figure 5: Filter by Process Status and Completion Period.](../../images/workflow-reports-process-status-period.png)
 
 ### Filtering by Process Step
 
@@ -134,14 +177,14 @@ example, below are all items in the Single Approver process's Review task that
 have the status Completed or Pending, whether On time or Overdue. Untracked
 items aren't shown.
 
-![Figure 5: Combine filters to see just the items you want.](../../images/workflow-metrics-reports13.png)
+![Figure 6: Combine filters to see just the items you want.](../../images/workflow-metrics-reports13.png)
 
 ## Item Details
 
 To see the metrics for a single workflow process item, click the ID field while
 in the All Items view. A pop-up shows you more detailed information on the item.
 
-![Figure 6: Item Details include SLA status information and whether the item is Resolved or Open.](../../images/workflow-reports-item-detail.png)
+![Figure 7: Item Details include SLA status information and whether the item is Resolved or Open.](../../images/workflow-reports-item-detail.png)
 
 From here you can view detailed information about the asset and even click *Go
 to Submission Page*, which redirects you to the item's view in the Submissions
