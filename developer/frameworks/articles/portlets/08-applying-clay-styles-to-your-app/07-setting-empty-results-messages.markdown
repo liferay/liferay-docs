@@ -27,8 +27,7 @@ Follow these steps:
     to your portlet's view:
 
     ```markup
-    <liferay-frontend:empty-result-message
-    />
+    <liferay-frontend:empty-result-message />
     ```
 
 3.  Configure the tag's attributes to define your search container's empty 
@@ -38,8 +37,7 @@ Follow these steps:
     | Attribute | Description |
     | --- | --- |
     | `actionDropdownItems` | Specifies the action or actions to display for the empty results in either a dropdown menu, a link, or a button, depending on the number of available actions. |
-    | `animationType` | The CSS class for the animation. Four values are 
-    available by default with these CSS classes: `EmptyResultMessageKeys.AnimationType.EMPTY` (`taglib-empty-state`), `EmptyResultMessageKeys.AnimationType.SEARCH` (`taglib-search-state`), `EmptyResultMessageKeys.AnimationType.SUCCESS` (`taglib-success-state`), and `EmptyResultMessageKeys.AnimationType.NONE`. You can also specify a custom CSS class if you prefer. |
+    | `animationType` | The CSS class for the animation. Four values are available by default with these CSS classes: `EmptyResultMessageKeys.AnimationType.EMPTY` (`taglib-empty-state`), `EmptyResultMessageKeys.AnimationType.SEARCH` (`taglib-search-state`), `EmptyResultMessageKeys.AnimationType.SUCCESS` (`taglib-success-state`), and `EmptyResultMessageKeys.AnimationType.NONE`. You can also specify a custom CSS class if you prefer. |
     | `componentId` | Specifies the ID for the `actionDropdownItems` component (dropdown menu, link, or button)|
     | `description` | The descriptive text to display beneath the main message. |
     | `elementType` | The type of element to replace the `x` parameter in the main message's language key `no-x-yet`. |
@@ -67,16 +65,15 @@ Follow these steps:
 
 empty_state.gif:
 
-![Figure 2: If you can use the add button to add entities to the app, use the empty state animation.](../../../images/empty_state.gif)
+![Figure 2: Use the empty state animation to signify there are no entries to search.](../../../images/empty_state.gif)
 
 search_state.gif:
 
-![Figure 3: If you can use the add button to add entities to the app, use the search state animation.](../../../images/search_state.gif)
+![Figure 3: Use the search state animation to signify no search results were found.](../../../images/search_state.gif)
 
 success_state.gif:
 
-![Figure 4: If you can use the add button to add entities to the app, use the success state animation.](../../../images/success_state.gif)
-
+![Figure 4: Use the success state animation to signify search results were found.](../../../images/success_state.gif)
 
 | **Note:** Empty results messages can also contain static images if you prefer. 
 | Just use a valid image type instead. All animations must be of type `GIF` 
