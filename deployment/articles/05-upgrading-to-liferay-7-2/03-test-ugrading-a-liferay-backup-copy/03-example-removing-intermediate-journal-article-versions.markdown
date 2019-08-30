@@ -27,7 +27,7 @@ Here are example steps for removing intermediate Journal Article versions:
     If it's a [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder) entity,
     examine the `delete*` methods in the entity's `*LocalServiceUtil` class. For
     example, this `deleteArticle` in
-    [`JournalArticleLocalServiceUtil`](@app-ref@/apps/web-experience/latest/javadocs/com/liferay/journal/service/JournalArticleLocalServiceUtil.html#deleteArticle-long-java.lang.String-double-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-)
+    [`JournalArticleLocalServiceUtil`](@app-ref@/web-experience/latest/javadocs/com/liferay/journal/service/JournalArticleLocalServiceUtil.html#deleteArticle-long-java.lang.String-double-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-)
     deletes a Journal Article version:
 
     ```java
