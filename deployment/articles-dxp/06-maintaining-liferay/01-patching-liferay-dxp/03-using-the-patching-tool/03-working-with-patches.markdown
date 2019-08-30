@@ -8,10 +8,10 @@ header-id: working-with-patches
 
 Here are some things you might need to do with patches:
 
-- [Report Patch Levels to Liferay Support](#including-support-info-in-support-tickets)
-- [Uninstall Patches](#uninstalling-patches)
-- [Show collisions between patches and deployed plugins](#list-collisions)
-- [Separate Patches from your Installation](#separating-patches-from-the-installation)
+- Report Patch Levels to Liferay Support
+- Uninstall Patches
+- Show collisions between patches and deployed plugins
+- Separate Patches from your Installation
 
 Start with reporting patch levels to Liferay Support.
 

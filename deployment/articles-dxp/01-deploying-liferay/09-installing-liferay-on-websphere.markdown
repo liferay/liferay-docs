@@ -21,7 +21,7 @@ Liberty Profile.
 | [preparing for install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install). 
 
 Now, [download the @product@ WAR and Dependency
-JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the liferay-war-and-dependency-jars):
+JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the-liferay-war-and-dependency-jars):
 
 -   @product@ WAR file
 -   Dependencies ZIP file
