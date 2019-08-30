@@ -137,10 +137,6 @@ configuration, and the ability to search for other pages. The title bar is
 covered in more detail in 
 [Creating Pages](/docs/7-2/user/-/knowledge_base/u/creating-pages). 
 
-<<<<<<< HEAD:user/articles/100-web-experience-management/03-building-a-site/03-adding-pages-to-sites/03-content-pages/02-content-page-interface.markdown
 ![Figure 9: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
-=======
-![Figure 10: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
->>>>>>> pr-4529:user/articles/100-web-experience-management/03-building-a-site/03-adding-pages-to-sites/03-content-pages/03-content-page-interface.markdown
 
 Great! Now you know how to use the content page interface!
