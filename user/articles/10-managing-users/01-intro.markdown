@@ -15,7 +15,7 @@ anything else? You do it from the Control Panel.
 ![Figure 1: Administrators can access the Control Panel from the Product Menu.](../../images/usrmgmt-control-panel.png)
 
 The Control Panel is divided into six main areas: Users, Sites, Apps,
-Configuration, Workflow, and Change Lists. The Users section lets you create and
+Configuration, and Workflow. The Users section lets you create and
 manage Users, Organizations, User Groups, Roles, and Password Policies. If
 monitoring has been enabled, you can also view all the live sessions of your
 Users.

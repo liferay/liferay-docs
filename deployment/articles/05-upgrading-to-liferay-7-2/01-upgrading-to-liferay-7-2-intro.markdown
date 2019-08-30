@@ -20,8 +20,10 @@ Here are the installation upgrade paths:
 | Liferay Portal 6.2+ &rarr; @product@ 7.2       |                            |
 | @product@ 7.0+ &rarr; @product@ 7.2            |                            |
 
-| **Note:** Liferay Portal 6.0+ *code* can be upgraded directly to @product@ 
-| 7.2.
+| **Note:** Themes and custom apps from Liferay Portal 6.0 through @product@ 
+| 7.1 can be upgraded directly to @product@ 7.2. See the
+| [code upgrade instructions](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver)
+| for details. 
 
 Here are the upgrade steps: 
 
@@ -206,7 +208,7 @@ Here are the upgrade steps:
         3.  Checkpoint: You've completed upgrading the Liferay data. It's time
             to get your server ready for production.{.summary}
 
-9.  [Execute the Post-Upgrade Tasks](/deployment/-/knowledge_base/executing-post-upgrade-tasks){.title}
+9.  [Execute the Post-Upgrade Tasks](/docs/7-2/deploy/-/knowledge_base/d/executing-post-upgrade-tasks){.title}
 
     Now that your database is upgraded, clean up remnants of upgrading by
     restoring your database optimizations, enabling and regenerating your search

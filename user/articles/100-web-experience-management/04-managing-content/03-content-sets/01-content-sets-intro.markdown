@@ -41,7 +41,6 @@ To learn to harness the power of experience personalization for Content Sets,
 see
 [Content Set Personalization](/docs/7-2/user/-/knowledge_base/u/content-set-personalization).
 
-
 ## Converting Asset Publisher Configurations to Content Sets
 
 You may have already gone through a great deal of work to create a perfect, 

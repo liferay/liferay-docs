@@ -66,7 +66,7 @@ public class GuestbookEntryLocalServiceImpl
 	 * <code>com.liferay.docs.guestbook.service.GuestbookEntryLocalServiceUtil</code>.
 	 */
 
-	public GuestbookEntry addEntry(long userId, long guestbookId, String name,
+	public GuestbookEntry addGuestbookEntry(long userId, long guestbookId, String name,
 			String email, String message, ServiceContext serviceContext)
 		throws PortalException {
 
@@ -102,7 +102,7 @@ public class GuestbookEntryLocalServiceImpl
 		return entry;
 	}
 
-	public GuestbookEntry deleteEntry(GuestbookEntry entry)
+	public GuestbookEntry deleteGuestbookEntry(GuestbookEntry entry)
 		throws PortalException {
 
 		guestbookEntryPersistence.remove(entry);
@@ -110,41 +110,41 @@ public class GuestbookEntryLocalServiceImpl
 		return entry;
 	}
 
-	public void deleteEntry(long entryId) throws PortalException {
+	public void deleteGuestbookEntry(long entryId) throws PortalException {
 
 		GuestbookEntry entry =
 			guestbookEntryPersistence.findByPrimaryKey(entryId);
 
-		deleteEntry(entry);
+		deleteGuestbookEntry(entry);
 	}
 
-	public List<GuestbookEntry> getEntries(long groupId, long guestbookId) {
+	public List<GuestbookEntry> getGuestbookEntries(long groupId, long guestbookId) {
 		return guestbookEntryPersistence.findByG_G(groupId, guestbookId);
 	}
 
-	public List<GuestbookEntry> getEntries(long groupId, long guestbookId,
+	public List<GuestbookEntry> getGuestbookEntries(long groupId, long guestbookId,
 			int start, int end) throws SystemException {
 
 		return guestbookEntryPersistence.findByG_G(groupId, guestbookId, start,
 				end);
 	}
 
-	public List<GuestbookEntry> getEntries(long groupId, long guestbookId,
+	public List<GuestbookEntry> getGuestbookEntries(long groupId, long guestbookId,
 			int start, int end, OrderByComparator<GuestbookEntry> obc) {
 
 		return guestbookEntryPersistence.findByG_G(groupId, guestbookId, start,
 				end, obc);
 	}
 
-	public GuestbookEntry getEntry(long entryId) throws PortalException {
+	public GuestbookEntry getGuestbookEntry(long entryId) throws PortalException {
 		return guestbookEntryPersistence.findByPrimaryKey(entryId);
 	}
 
-	public int getEntriesCount(long groupId, long guestbookId) {
+	public int getGuestbookEntriesCount(long groupId, long guestbookId) {
 		return guestbookEntryPersistence.countByG_G(groupId, guestbookId);
 	}
 
-	public GuestbookEntry updateEntry(long userId, long guestbookId,
+	public GuestbookEntry updateGuestbookEntry(long userId, long guestbookId,
 			long entryId, String name, String email, String message,
 			ServiceContext serviceContext)
 		throws PortalException, SystemException {
