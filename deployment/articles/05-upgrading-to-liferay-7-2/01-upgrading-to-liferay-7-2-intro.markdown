@@ -20,8 +20,10 @@ Here are the installation upgrade paths:
 | Liferay Portal 6.2+ &rarr; @product@ 7.2       |                            |
 | @product@ 7.0+ &rarr; @product@ 7.2            |                            |
 
-| **Note:** Liferay Portal 6.0+ *code* can be upgraded directly to @product@ 
-| 7.2.
+| **Note:** Themes and custom apps from Liferay Portal 6.0 through @product@ 
+| 7.1 can be upgraded directly to @product@ 7.2. See the
+| [code upgrade instructions](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver)
+| for details. 
 
 Here are the upgrade steps: 
 
