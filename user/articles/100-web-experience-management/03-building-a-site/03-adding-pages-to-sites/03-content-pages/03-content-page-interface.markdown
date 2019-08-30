@@ -110,7 +110,7 @@ Comments are disabled by default, but administrators can enable them from
 on an instance-by-instance basis, navigate to the same setting in 
 *Instance Settings* (instead of System Settings). 
 
-![Figure 12: Administrators can enable comments for content pages.](../../../../../images/enable-content-page-comments.png)
+![Figure 7: Administrators can enable comments for content pages.](../../../../../images/enable-content-page-comments.png)
 
 If comments are enabled, you can access them via the *Comments* icon 
 (![Comments](../../../../../images/icon-comments.png)). 
@@ -128,7 +128,7 @@ If you de-select a fragment or enter the comments UI without a fragment selected
 a list of the fragments on the page appears with the number of comments for 
 each. Selecting a fragment then shows its comments. 
 
-![Figure 13: When creating content pages, you and your team can comment on any fragments.](../../../../../images/content-page-comments.png)
+![Figure 8: When creating content pages, you and your team can comment on any fragments.](../../../../../images/content-page-comments.png)
 
 ### The Title Bar
 
@@ -138,9 +138,9 @@ covered in more detail in
 [Creating Pages](/docs/7-2/user/-/knowledge_base/u/creating-pages). 
 
 <<<<<<< HEAD:user/articles/100-web-experience-management/03-building-a-site/03-adding-pages-to-sites/03-content-pages/02-content-page-interface.markdown
-![Figure 14: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
+![Figure 9: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
 =======
-![Figure 7: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
+![Figure 10: The title bar has several tools built into it.](../../../../../images/content-page-edit-title-bar.png)
 >>>>>>> pr-4529:user/articles/100-web-experience-management/03-building-a-site/03-adding-pages-to-sites/03-content-pages/03-content-page-interface.markdown
 
 Great! Now you know how to use the content page interface!
