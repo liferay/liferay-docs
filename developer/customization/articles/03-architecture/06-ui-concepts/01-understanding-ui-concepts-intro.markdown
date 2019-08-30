@@ -6,7 +6,7 @@ header-id: understanding-ui-concepts
 
 [TOC levels=1-4]
 
-The page's UI is comprised of three key pieces: 
+The page's User Interface is comprised of three key pieces: 
 
 - **The Theme:** Defines the overall look and feel of the site, its pages, 
   navigation, header, footer, etc
@@ -15,7 +15,7 @@ The page's UI is comprised of three key pieces:
   their own UI
 - **The Content:** Web Content Articles, Knowledge Base articles, Blogs, Assets, 
   page fragments, or other content created with @product@'s Content Management 
-  System (CMS) that form the core content of the page
+  System (CMS) that forms the core content of the page
 
 See [Understanding the Page Layout](/docs/7-2/frameworks/-/knowledge_base/f/understanding-the-page-layout) 
 for more information on how the page is composed. You can of course use your own 
@@ -29,11 +29,11 @@ Themes create the look and feel for the site and are primarily built with
 [FreeMarker](https://freemarker.apache.org/) templates, [SASS](https://sass-lang.com/), 
 and JavaScript. 
 
-FreeMarker templates are a combination of standard HTML markup and FreeMarker 
-syntax. This lets you use variables and [macros](https://freemarker.apache.org/docs/ref_directive_macro.html) 
-in your themes, including [@product@'s default set](https://portal.liferay.dev/docs/7-2/reference/-/knowledge_base/r/product-freemarker-macros) 
-which gives you access to common java objects, Java [taglibs](https://portal.liferay.dev/docs/7-2/reference/-/knowledge_base/r/freemarker-taglib-macros), 
-theme resources, and even applications that you can include in your theme---you 
+FreeMarker templates combine standard HTML markup and FreeMarker 
+syntax, so you can use variables and [macros](https://freemarker.apache.org/docs/ref_directive_macro.html) 
+in your themes. [@product@'s default set](https://portal.liferay.dev/docs/7-2/reference/-/knowledge_base/r/product-freemarker-macros) 
+gives you access to common Java objects, Java [taglibs](https://portal.liferay.dev/docs/7-2/reference/-/knowledge_base/r/freemarker-taglib-macros), 
+theme resources, and even applications that you can include in your theme. You 
 can extend this further by [injecting your own Java objects](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme) 
 into the FreeMarker template's context. You can also [create theme settings](/docs/7-2/frameworks/-/knowledge_base/f/making-configurable-theme-settings) 
 to give an administrator control from within the @product@ instance to disable, 
