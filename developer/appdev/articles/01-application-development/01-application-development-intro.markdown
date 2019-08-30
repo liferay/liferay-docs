@@ -104,7 +104,7 @@ You define your object model in a single `xml` file:
 </service-builder>
 ```
 
-Service Builder, generates your object model, database SOAP, and JSON web
+Service Builder generates your object model, database, SOAP, and JSON web
 services automatically. Java classes are ready for you to implement your
 business logic around generated CRUD operations. The web services are mapped to
 your business logic. If you want a REST interface, you can create one. 
