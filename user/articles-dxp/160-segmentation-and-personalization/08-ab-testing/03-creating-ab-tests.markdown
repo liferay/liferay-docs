@@ -5,11 +5,11 @@
 To begin leveraging A/B Testing, you must first create an A/B test. You cannot
 create a test on an Experience that already has an active test running.
 
-To create an AB test,
+To create an A/B test,
 
 1.  Navigate to the Content Page you want to test.
 
-2.  Click the AB Testing (![AB Testing](../../../images-dxp/icon-ab-testing.png))
+2.  Click the A/B Testing (![AB Testing](../../../images-dxp/icon-ab-testing.png))
     button from the Control Menu.
 
 3.  Choose the Experience for which you want to test. A test can be performed on
@@ -28,38 +28,38 @@ To create an AB test,
     - *Scroll Depth*: the average depth users scrolled down on the page.
     - *Time On Page*: the average duration users spent on the page.
 
-    ![Figure 1: Fill out the form to create your AB test.](../../../images-dxp/create-ab-test.png)
+    ![Figure 1: Fill out the form to create your A/B test.](../../../images-dxp/create-ab-test.png)
 
 7.  Click *Save*.
 
-You now have an AB test! Notice that the test's status in in *Draft*. This means
+You now have an A/B test! Notice that the test's status is *Draft*. This means
 it's not yet visible to visitors.
 
-| **Note:** You can only create an AB test for one page/experience at a time.
+| **Note:** You can only create an A/B test for one page/experience at a time.
 
 | **Note:** The *Control* entity represents the currently published Content
 | Page.
 
-![Figure 2: You now have an AB test, but there are additional configurations you can apply.](../../../images-dxp/new-ab-test.png)
+![Figure 2: You now have an A/B test, but there are additional configurations you can apply.](../../../images-dxp/new-ab-test.png)
 
-Now it's time to create your test variant(s). A test variant is a customization
-of the Experience you want to optimize. An AB test must contain at least one
-variant before it can run.
+Now it's time to create your test Variant(s). A test Variant is a customization
+of the Experience you want to optimize. An A/B test must contain at least one
+Variant before it can run.
 
-To create a variant,
+To create a Variant,
 
 1.  In the A/B Test menu, click *Create Variant*.
 
-2.  Give the variant a name and click *Save*.
+2.  Give the Variant a name and click *Save*.
 
-3.  Select the new variant's Edit button
+3.  Select the new Variant's Edit button
     ![Edit](../../../images-dxp/icon-edit.png). The current Control page's
-    content/formatting is copied and displayed as the baseline for the variant.
+    content/formatting is copied and displayed as the baseline for the Variant.
 
-4.  Edit the variant as desired. Then click *Save Variant*.
+4.  Edit the Variant as desired. Then click *Save Variant*.
 
-You now have a variant of the control page. You can create as many variants as
+You now have a Variant of the Control Page. You can create as many Variants as
 you want.
 
-Once you're finished creating variants for your AB test, you're ready to run the
-AB test. You'll learn how to do this next.
+Once you're finished creating Variants for your A/B test, you're ready to run
+the A/B test. You'll learn how to do this next.

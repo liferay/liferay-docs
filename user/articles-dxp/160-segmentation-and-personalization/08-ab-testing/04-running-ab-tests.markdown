@@ -1,6 +1,61 @@
-# Managing A/B Tests
+# Running A/B Tests
 
 [TOC levels=1-4]
+
+Once you've created and configured your A/B test, you'll want to run it to begin
+gathering data on your Control page and Variants. To run an A/B test,
+
+1.  Click the *Review and Run Test* button from the A/B Test menu.
+
+2.  Configure how your test should run. There are two configurations:
+
+    *Traffic Split*: the percentage of visitors that are randomly split between
+    the Variants when visiting the Page. Once a visitor is randomly assigned a
+    Variant, they will always view it until the test is finished.
+
+    *Confidence Level Required*: the accuracy of the test results (i.e., when
+    the winning Variant truly outperforms the other Variants). Typically you
+    want to have the highest confidence level possible, but this impacts test
+    duration. The higher the required confidence level, the longer it takes to
+    declare a winning Variant. Choose the percentage based on your expectations.
+
+    ![Figure 1: Configure the final parameters of your A/B test before running it.](../../../images-dxp/run-ab-test.png)
+
+3.  Select *Run*.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- There needs to be sufficient traffic on the page (ideally 1000 views/day).
+  Having low traffic on the page will extend the duration of the test run.
+
+- The duration of a test run is estimated based on page traffic. To change the
+    test duration, the marketing analyst can change the confidence level.
+
+
+
+
+
+## Managing
 
 - Segments cannot be edited or deleted when it is being used in an experience
 - An Experience that is being used in an AB test cannot be edited. 
