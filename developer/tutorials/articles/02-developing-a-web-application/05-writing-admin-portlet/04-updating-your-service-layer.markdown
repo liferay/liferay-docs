@@ -62,17 +62,17 @@ Follow these steps to add the required guestbook service methods:
 2.  Next, add the following method for deleting a guestbook: 
 
     ```java
-    public Guestbook deleteGuestbook(long guestbookId,
+	public Guestbook deleteGuestbook(long guestbookId,
                     ServiceContext serviceContext) throws PortalException,
                     SystemException {
 
             Guestbook guestbook = getGuestbook(guestbookId);
 
-            List<Entry> entries = entryLocalService.getEntries(
+            List<GuestbookEntry> entries = _guestbookEntryLocalService.getGuestbookEntries(
                             serviceContext.getScopeGroupId(), guestbookId);
 
-            for (Entry entry : entries) {
-                    entryLocalService.deleteEntry(entry.getEntryId());
+            for (GuestbookEntry entry : entries) {
+                    _guestbookEntryLocalService.deleteGuestbookEntry(entry.getEntryId());
             }
 
             guestbook = deleteGuestbook(guestbook);
@@ -87,11 +87,21 @@ Follow these steps to add the required guestbook service methods:
     service method makes a service call to delete a guestbook's entries before
     deleting that guestbook. This way, guestbook entries are never orphaned. 
 
-3.  Use [CTRL]+[SHIFT]+O to update your imports, choosing
+3.  Add a reference to the `GuestbookEntry` local service, so it can be injected
+    and used by the `deleteGuestbook` method: 
+
+    ```java
+	@Reference
+	private GuestbookEntryLocalService _guestbookEntryLocalService;
+    ```
+
+    By convention, Liferay adds these to the bottom of the class. 
+
+4.  Use [CTRL]+[SHIFT]+O to update your imports, choosing
     `com.liferay.portal.kernel.exception.SystemException`, and then save
     `GuestbookLocalServiceImpl.java`.
 
-4.  In the Gradle Tasks pane on the right side in Liferay @ide@, run Service 
+5.  In the Gradle Tasks pane on the right side in Liferay @ide@, run Service 
     Builder by opening the `guestbook-service` module and double-clicking 
     `buildService`. 
 
