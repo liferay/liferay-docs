@@ -2,74 +2,64 @@
 
 [TOC levels=1-4]
 
-- The option to create an AB test will only be available when viewing a Content
-  Page, since only Content pages, not widget pages, can be mapped to a segment.
+To begin leveraging A/B Testing, you must first create an A/B test. You cannot
+create a test on an Experience that already has an active test running.
 
+To create an AB test,
 
-- There needs to be sufficient traffic on the page (ideally 1000 views/day).
-  Having low traffic on the page will extend the duration of the test run.
+1.  Navigate to the Content Page you want to test.
 
-The marketer makes necessary changes, previews the changes and may select to
-proceed in ways including, but not limited to:
+2.  Click the AB Testing (![AB Testing](../../../images-dxp/icon-ab-testing.png))
+    button from the Control Menu.
 
-- Start/Run Test: The system then starts the test and should start capturing
-  user activity on the page.
-- Schedule; The marketing analyst can choose to schedule a time and date when
-  the test should start.
-- Save as Draft; The system saves the test as draft but does not start the test.
-- Cancel; The system exits the AB Test creation and does not save
-user input. No changes will be made to the page/experience.
+3.  Choose the Experience for which you want to test. A test can be performed on
+    the Default Experience as well as a personalized Experience mapped to a
+    Segment.
 
-- A test can be performed on the Default Experience as well as an experience
-  mapped to a segment
+4.  Click *Create Test*.
 
-- Page visitors that fit the targeted segment will randomly be split among
-  control and page variants.
+5.  Assign the test a name and description (optional).
 
-- The duration of a test run is estimated based on page traffic. To change the
-  test duration, the marketing analyst can change the confidence level.
+6.  Assign the goal you want the test to track. There are four to choose from:
 
-A user cannot create a test on an experience when there is an active test
-running for the same experience.
+    - *Bounce Rate*: the percentage of users who visit the page and then navigate
+      away from the site without visiting another page.
+    - *Click*: the average number of clicks initiated on the page's assets.
+    - *Scroll Depth*: the average depth users scrolled down on the page.
+    - *Time On Page*: the average duration users spent on the page.
 
-Assets like Documents, Blogs, etc can be used as variables in a test since the
-metrics tracked will be independent of the asset’s content. Editing the assets
-should not affect the AB Test.
+    ![Figure 1: Fill out the form to create your AB test.](../../../images-dxp/create-ab-test.png)
 
-Page visitors should always see the same experience every time he visits a page;
-ie, when an AB Test is running and a page visitor first navigates to a page and
-sees the control page, he should always see the control page every time he
-navigates to it, not control page on first visit, variant on 2nd, control on
-3rd, etc.
+7.  Click *Save*.
 
-## Process for creating a test for Page/Experience
+You now have an AB test! Notice that the test's status in in *Draft*. This means
+it's not yet visible to visitors.
 
+| **Note:** You can only create an AB test for one page/experience at a time.
 
+| **Note:** The *Control* entity represents the currently published Content
+| Page.
 
-## Creating a Variant to test against Control
+![Figure 2: You now have an AB test, but there are additional configurations you can apply.](../../../images-dxp/new-ab-test.png)
 
+Now it's time to create your test variant(s). A test variant is a customization
+of the Experience you want to optimize. An AB test must contain at least one
+variant before it can run.
 
+To create a variant,
 
-## Creating Goals (Bounce Rate, Click, Scroll Depth, Time on Page)
+1.  In the A/B Test menu, click *Create Variant*.
 
+2.  Give the variant a name and click *Save*.
 
+3.  Select the new variant's Edit button
+    ![Edit](../../../images-dxp/icon-edit.png). The current Control page's
+    content/formatting is copied and displayed as the baseline for the variant.
 
+4.  Edit the variant as desired. Then click *Save Variant*.
 
+You now have a variant of the control page. You can create as many variants as
+you want.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Once you're finished creating variants for your AB test, you're ready to run the
+AB test. You'll learn how to do this next.
