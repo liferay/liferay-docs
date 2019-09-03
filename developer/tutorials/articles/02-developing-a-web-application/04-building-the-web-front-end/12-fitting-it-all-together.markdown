@@ -83,4 +83,3 @@ important features: security, front-end validation, and an interface for
 administrators to create multiple guestbooks per portlet. In the next section, 
 you'll begin adding these features. 
 
-Watch for the next section soon! 
