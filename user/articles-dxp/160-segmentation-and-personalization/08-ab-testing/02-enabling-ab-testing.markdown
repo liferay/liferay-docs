@@ -20,4 +20,19 @@ learn more about how to assign permissions for AB Testing next.
 
 ## Setting A/B Testing Permissions
 
-<!--Permissions information -->
+To use all the features of A/B Testing, you must have *Update* permissions for
+the Content Page.
+
+To assign *Update* permissions for a Content Page,
+
+1.  Navigate to Site Administration &rarr; *Site Builder* &rarr; *Pages*.
+
+2.  Select the Actions button (![Actions](../../../images-dxp/icon-actions.png))
+    next to the Content Page and click *Permissions*.
+
+3.  Enable the *Update* permission for the role(s) you want to grant A/B Testing
+    access for and click *Save*.
+
+For more information, visit the articles on
+[Page Permissions](/docs/7-2/user/-/knowledge_base/u/changing-page-permissions)
+and [Managing Roles](/docs/7-2/user/-/knowledge_base/u/managing-roles).
