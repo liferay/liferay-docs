@@ -14,7 +14,9 @@ To create an A/B test,
 
 3.  Choose the Experience for which you want to test. A test can be performed on
     the Default Experience as well as a personalized Experience mapped to a
-    Segment.
+    Segment. When an Experience is being used in an AB test, it cannot be
+    edited. Deleting a Page/Experience being used in an A/B test also deletes
+    the test for that Page.
 
 4.  Click *Create Test*.
 
@@ -22,9 +24,10 @@ To create an A/B test,
 
 6.  Assign the goal you want the test to track. There are four to choose from:
 
-    - *Bounce Rate*: the percentage of users who visit the page and then navigate
-      away from the site without visiting another page.
-    - *Click*: the average number of clicks initiated on the page's assets.
+    - *Bounce Rate*: the percentage of users who don't exhibit any activities on
+      the page (click, scroll, etc.) and then navigate away from the site
+      without visiting another page.
+    - *Click*: the percentage of users who clicked on the page (per session).
     - *Scroll Depth*: the average depth users scrolled down on the page.
     - *Time On Page*: the average duration users spent on the page.
 
@@ -41,6 +44,11 @@ it's not yet visible to visitors.
 | Page.
 
 ![Figure 2: You now have an A/B test, but there are additional configurations you can apply.](../../../images-dxp/new-ab-test.png)
+
+You can always edit or delete the new A/B test by clicking the *Actions* button
+(![Actions](../../../images-dxp/icon-actions.png)) in the top right of the A/B
+test menu. Deleted tests are not recoverable (i.e., not sent to the Recycle
+Bin). These options are not available for an active test.
 
 Now it's time to create your test Variant(s). A test Variant is a customization
 of the Experience you want to optimize. An A/B test must contain at least one
@@ -61,5 +69,27 @@ To create a Variant,
 You now have a Variant of the Control Page. You can create as many Variants as
 you want.
 
-Once you're finished creating Variants for your A/B test, you're ready to run
-the A/B test. You'll learn how to do this next.
+If you selected the Click goal, you must select the clickable element you want
+to target on the Control and Variant pages. If you selected a different goal,
+you can skip the steps below.
+
+To configure the Click goal target,
+
+1.  Click *Set Target* under the Click Goal heading of your A/B Test. Any
+    clickable element on the page is highlighted.
+
+    | **Note:** Only links and buttons with an ID attribute can be selected as a
+    | target for the Click goal.
+
+2.  Select the element you want to set as the click target for your Control and
+    Variant pages.
+
+    ![Figure 3: Set the click target to be tracked.](../../../images-dxp/set-click-target.png)
+
+Your Click goal is now set! You can edit the target at any time before starting
+the test.
+
+![Figure 4: Once the click target is set, you can run the A/B test.](../../../images-dxp/click-goal-set.png)
+
+Once you're finished creating Variants and configuring goals for your A/B test,
+you're ready to run the A/B test. You'll learn how to do this next.

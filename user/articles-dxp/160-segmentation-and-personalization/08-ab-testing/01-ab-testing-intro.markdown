@@ -2,17 +2,16 @@
 
 [TOC levels=1-4]
 
-| **Note:** A/B Testing is available for Liferay Portal GA2+ and Liferay DXP
-| SP1+.
+| **Note:** A/B Testing is available for Liferay DXP 7.2 SP1+.
 
 One of the most important objectives for any team is providing the right
 experience for their audience. To help shape your idea of the customers' needs,
 you should periodically test your site's effectiveness by displaying a different
 UX and messaging scheme. This lets you form a hypothesis about your audience and
-test it to confirm or disprove it. Also, you should be cautious about how
-much your process changes impact customers' current workflow on your site. You
-should provide a solution that easily fits into their existing workflow while
-adding as little overhead as possible.
+test it to confirm or disprove it. When doing this, you should be cautious about
+how much your process changes impact customers' current workflow on your site.
+You should provide a solution that easily fits into their existing workflow
+while adding as little overhead as possible.
 
 This can be done using *A/B Testing*. This lets you maintain a page's current UX
 and messaging, but provide alternative page variants for a select group of
