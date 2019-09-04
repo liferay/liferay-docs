@@ -62,14 +62,18 @@ over time.
 
 ## Completion Velocity
 
-A line chart shows you the completion rate for the workflow process.
+A line chart shows you the completion rate for the workflow process. The default
+display shows the number of completed workflow instances per day, for the last
+30 days.
 
 ![Figure 3: View the completion rate of items in a workflow process over time.](../../images/workflow-reports-completion-velocity.png)
 
 The overall completion rate for the time period is displayed in the top right
 corner of the chart (as _inst/timeUnit_), while the trend-line is presented in
-the chart body. Both are updated when you select a new time period, and the time
-unit is selectable, depending on the time period you're measuring:
+the chart body. The overall metric and the chart body updated when you select a
+new time period, and the time unit changes depending on the total time period
+you're measuring. For some of the longer durations, the time unit is
+configurable:
 
 Today
 : Calculate _Inst/Hour_ from _00:00_, or _12:00 AM_, of the current day until the
