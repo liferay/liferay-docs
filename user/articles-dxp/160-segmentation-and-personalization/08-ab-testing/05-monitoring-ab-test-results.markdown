@@ -2,17 +2,19 @@
 
 [TOC levels=1-4]
 
-**DRAFT NOTES**
+The information from your A/B test created in @product@ is automatically
+synchronized with
+[Analytics Cloud](https://help.liferay.com/hc/en-us/articles/360006608732). The
+test results used to calculate the winning Variant based on user
+interaction data is viewable there. You can also view your A/B testing history,
+meaningful statistics, helpful graphs, etc. from Analytics Cloud.
 
-- DXP will only show test status and which variant won the test. DXP AB Testing
-  will not show statistical results. Analytics Cloud will display detailed
-  report of the test run, including statistical significance. 
+To navigate to your test's the Analytics Cloud dashboard from @product@, click
+the *View Data in Analytics Cloud* button in the A/B Test sidebar panel while
+it's running.
 
-- DXP will only show active and recently completed tests; AB tests in DXP will
-  be auto-removed after some time.
-
-- A history of tests will be available on Analytics Cloud.
-
-- How to view test results and winner of test from DXP?
-
-Link to AC docs for more detailed statistical analysis
+@product@ only displays your test's status (draft, running, etc.) and the
+winning Variant once the test finishes. For more information on what you can
+view/manage from Analytics Cloud in relation to your A/B test, see the
+[A/B Testing Analytics](link)
+article.
