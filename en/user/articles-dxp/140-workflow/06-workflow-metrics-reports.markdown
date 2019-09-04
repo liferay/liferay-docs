@@ -69,10 +69,10 @@ display shows the number of completed workflow instances per day, for the last
 ![Figure 3: View the completion rate of items in a workflow process over time.](../../images/workflow-reports-completion-velocity.png)
 
 The overall completion rate for the time period is displayed in the top right
-corner of the chart (as _inst/timeUnit_), while the trend-line is presented in
-the chart body. The overall metric and the chart body updated when you select a
-new time period, and the time unit changes depending on the total time period
-you're measuring. For some of the longer durations, the time unit is
+corner of the chart (as _Inst/timeUnit_), while the trend-line is presented in
+the chart body. The overall performance metric and the chart body are updated
+when you select a new time period; the time unit changes depending on the total
+time period you're measuring. For some of the longer durations, the time unit is
 configurable:
 
 Today
@@ -84,24 +84,24 @@ Yesterday
 previous day.
 
 Last 7 Days
-: Calculate _Inst/Day_. The current day counts as 1 day, so this is 6 days ago
-to the current day.
+: Calculate _Inst/Day_. The current day counts as one day, so this is from six
+days ago to the current day.
 
 Last 30 Days
 : Calculate the _Inst/Week_ or the _Inst/Day_. The current day counts as 1 day,
-so this is 29 days ago to the current day.
+so this is from 29 days ago to the current day.
 
 Last 90 Days
 : Calculate the _Inst/Month_, _Inst/Week_, or _Inst/Day_. The current day counts
-as 1 day, so this is 89 days ago to the current day.
+as 1 day, so this is from 89 days ago to the current day.
 
 Last 180 Days
 : Calculate the _Inst/Month_ or _Inst/Week_. The current day counts as 1 day, so
-this is 179 days ago to the current day.
+this is from 179 days ago to the current day.
 
 Last Year
 : Calculate the _Inst/Month_ or _Inst/Week_. The current day counts as 1 day, so
-this is 364 days ago to the current day.
+this is from 364 days ago to the current day.
 
 ## Items View
 
