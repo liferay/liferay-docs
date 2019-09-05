@@ -11,7 +11,7 @@ header-id: updating-your-service-layer
 </div>
 
 Earlier, you wrote an `addGuestbook` service method in
-`GuestbookLocalServiceImpl`, and only used it to add a default Guestbook. To
+`GuestbookLocalServiceImpl` and only used it to add a default guestbook. To
 have full functionality over guestbooks, you must also add methods for updating
 and deleting guestbooks, as well as for returning the number of guestbooks in
 a Site. 
@@ -104,6 +104,12 @@ Follow these steps to add the required guestbook service methods:
 5.  In the Gradle Tasks pane on the right side in Liferay @ide@, run Service 
     Builder by opening the `guestbook-service` module and double-clicking 
     `buildService`. 
+
+| **Note:** If you prefer, you can use [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) 
+| to run your Gradle tasks. If you have Blade CLI installed, go to the
+| `guestbook-service` folder on your CLI and enter the command `blade gw
+| buildService`. This runs Service Builder to build your services outside of
+| Eclipse. 
 
 Now that you've finished updating the service layer, it's time to work on the
 Guestbook Admin portlet itself. 

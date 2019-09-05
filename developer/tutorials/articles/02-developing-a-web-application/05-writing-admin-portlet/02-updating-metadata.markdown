@@ -16,12 +16,15 @@ metadata that tells @product@'s OSGi container how to manage their life cycles.
 
 Follow these steps:
 
-1.  Add the following portlet key to the `GuestbookPortletKeys` class:
+1.  Add the following portlet key to the `GuestbookPortletKeys` class (it's in
+    the `com.liferay.docs.guestbook.constants` package):
 
     ```java
     public static final String GUESTBOOK_ADMIN =
       "com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet";
     ```
+
+    Save the file. 
 
 2.  Open the `GuestbookAdminPortlet` class and add the `@Component` annotation 
     immediately above the class declaration:
@@ -57,7 +60,9 @@ title via the `GUESTBOOK_ADMIN` portlet key that you just created.
 
 Pay special attention to the following metadata property:
 
-    com.liferay.portlet.display-category=category.hidden
+```properties
+com.liferay.portlet.display-category=category.hidden
+```
 
 This is the same property you used before with the Guestbook portlet. You placed
 that portlet in the Social category. The value `category.hidden` specifies a 
@@ -87,7 +92,7 @@ Next, you can configure the Panel app class. Follow these steps:
     the Site Administration area. The value of the `panel.category.key` property 
     is `PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT`, which means Guestbook 
     Admin is in *Site Builder* &rarr; *Content & Data*. The key is provided by 
-    [the `PanelCategoryKeys` class](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/application-list/application-list-api/src/main/java/com/liferay/application/list/constants/PanelCategoryKeys.java). 
+    [the `PanelCategoryKeys` class](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/application-list/application-list-api/src/main/java/com/liferay/application/list/constants/PanelCategoryKeys.java). 
     The `panel.app.order` value determines the rank for the Guestbook Admin 
     portlet in the list. 
 
@@ -118,5 +123,5 @@ Next, you can configure the Panel app class. Follow these steps:
     `javax.portlet.Portlet`. 
 
 Now that the configuration is out of the way, you're free to implement the 
-app's functionality: adding, editing, and deleting guestbooks. That's the next 
+app's functionality: adding, editing, and deleting Guestbooks. That's the next 
 step. 

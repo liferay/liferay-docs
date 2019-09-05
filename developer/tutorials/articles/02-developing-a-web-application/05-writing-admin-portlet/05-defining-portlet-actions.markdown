@@ -54,8 +54,6 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
     
 	@Reference
 	private GuestbookLocalService _guestbookLocalService;
-
-    }
     ```
  
     Since `addGuestbook` is a portlet action method, it takes `ActionRequest` 
@@ -66,8 +64,10 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
     the Add Guestbook form and not the default view. That's why you add this 
     line in the `catch` block: 
 
-        response.setRenderParameter("mvcPath",
-                "/guestbook_admin/edit_guestbook.jsp");
+    ```java
+    response.setRenderParameter("mvcPath",
+            "/guestbook_admin/edit_guestbook.jsp");
+    ```
 
     Later, you'll use this for field validation and to show error messages to 
     the user. Note that `/guestbook_admin/edit_guestbook.jsp` doesn't 
@@ -106,8 +106,10 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
     call, the Guestbook Admin portlet displays the Edit Guestbook form again so 
     that the user can edit the form and resubmit:
 
-        response.setRenderParameter("mvcPath",
-                "/guestbook_admin/edit_guestbook.jsp");
+    ```java
+    response.setRenderParameter("mvcPath",
+            "/guestbook_admin/edit_guestbook.jsp");
+    ```
 
     Note that the Edit Guestbook form uses the same JSP as the Add Guestbook
     form to avoid duplication of code. 

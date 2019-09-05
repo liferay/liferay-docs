@@ -58,10 +58,12 @@ Follow these steps to create the panel entry for the Guestbook Admin portlet:
     To do this, open `guestbook-web`'s `build.gradle` file and add this 
     dependency: 
 
-        compileOnly group: "com.liferay", name: "com.liferay.application.list.api"
+    ```groovy
+    compileOnly group: "com.liferay", name: "com.liferay.application.list.api"
+    ```
 
-2.  Right-click `guestbook-web` and select *Gradle* &rarr; *Refresh Gradle 
-    Project*. 
+2.  After saving the file, right-click `guestbook-web` and select *Gradle*
+    &rarr; *Refresh Gradle Project*. 
 
 3.  Right-click `src/main/java` in the `guestbook-web` project and select *New* 
     &rarr; *Package*. Name the package 

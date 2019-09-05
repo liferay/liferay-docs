@@ -114,39 +114,39 @@ list of possible actions for each guestbook.
 Create a new file called `guestbook_actions.jsp` in your project's 
 `/guestbook_admin` folder. Paste in this code: 
 
-    ```markup
-    <%@include file="../init.jsp"%>
+```markup
+<%@include file="../init.jsp"%>
 
-    <%
-        String mvcPath = ParamUtil.getString(request, "mvcPath");
+<%
+    String mvcPath = ParamUtil.getString(request, "mvcPath");
 
-        ResultRow row = (ResultRow) request
-                        .getAttribute("SEARCH_CONTAINER_RESULT_ROW");
+    ResultRow row = (ResultRow) request
+                    .getAttribute("SEARCH_CONTAINER_RESULT_ROW");
 
-        Guestbook guestbook = (Guestbook) row.getObject();
-    %>
+    Guestbook guestbook = (Guestbook) row.getObject();
+%>
 
-    <liferay-ui:icon-menu>
+<liferay-ui:icon-menu>
 
-        <portlet:renderURL var="editURL">
+    <portlet:renderURL var="editURL">
+        <portlet:param name="guestbookId"
+            value="<%=String.valueOf(guestbook.getGuestbookId()) %>" />
+        <portlet:param name="mvcPath"
+            value="/guestbook_admin/edit_guestbook.jsp" />
+    </portlet:renderURL>
+
+    <liferay-ui:icon image="edit" message="Edit"
+            url="<%=editURL.toString() %>" />
+
+    <portlet:actionURL name="deleteGuestbook" var="deleteURL">
             <portlet:param name="guestbookId"
-                value="<%=String.valueOf(guestbook.getGuestbookId()) %>" />
-            <portlet:param name="mvcPath"
-                value="/guestbook_admin/edit_guestbook.jsp" />
-        </portlet:renderURL>
+                value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
+    </portlet:actionURL>
 
-        <liferay-ui:icon image="edit" message="Edit"
-                url="<%=editURL.toString() %>" />
+    <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
 
-        <portlet:actionURL name="deleteGuestbook" var="deleteURL">
-                <portlet:param name="guestbookId"
-                    value="<%= String.valueOf(guestbook.getGuestbookId()) %>" />
-        </portlet:actionURL>
-
-        <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
-
-    </liferay-ui:icon-menu>
-    ```
+</liferay-ui:icon-menu>
+```
 
 This JSP comprises the pop-up actions menu that shows the actions users can
 perform on a guestbook: editing it or deleting it. First, `init.jsp` is included
@@ -284,6 +284,9 @@ It should now match the figure below:
 
 Save all your files and wait for redeploy. Test out the Guestbook Admin portlet!
 Try adding, editing, and deleting guestbooks. 
+
+| **Note:** If you get "Guestbook is unavailable" errors, stop your server, exit
+| Eclipse, restart Eclipse, start your server, and test again. 
 
 Now all the Guestbook application's primary functions work. There are still many
 missing features, however. For example, if there's ever an error, users never
