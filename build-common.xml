@@ -14,12 +14,12 @@
 
 	<property environment="env" />
 
-	<property file="../../build.${USERNAME}.properties" />
-	<property file="../../build.${user.name}.properties" />
-	<property file="../../build.${env.COMPUTERNAME}.properties" />
-	<property file="../../build.${env.HOST}.properties" />
-	<property file="../../build.${env.HOSTNAME}.properties" />
-	<property file="../../build.properties" />
+	<property file="${project.dir}/build.${USERNAME}.properties" />
+	<property file="${project.dir}/build.${user.name}.properties" />
+	<property file="${project.dir}/build.${env.COMPUTERNAME}.properties" />
+	<property file="${project.dir}/build.${env.HOST}.properties" />
+	<property file="${project.dir}/build.${env.HOSTNAME}.properties" />
+	<property file="${project.dir}/build.properties" />
 
 	<property name="build.dir" value="./build"/>
 	<property name="dist.dir" value="./dist"/>
