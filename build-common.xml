@@ -14,12 +14,12 @@
 
 	<property environment="env" />
 
-	<property file="../../build.${USERNAME}.properties" />
-	<property file="../../build.${user.name}.properties" />
-	<property file="../../build.${env.COMPUTERNAME}.properties" />
-	<property file="../../build.${env.HOST}.properties" />
-	<property file="../../build.${env.HOSTNAME}.properties" />
-	<property file="../../build.properties" />
+	<property file="${project.dir}/build.${USERNAME}.properties" />
+	<property file="${project.dir}/build.${user.name}.properties" />
+	<property file="${project.dir}/build.${env.COMPUTERNAME}.properties" />
+	<property file="${project.dir}/build.${env.HOST}.properties" />
+	<property file="${project.dir}/build.${env.HOSTNAME}.properties" />
+	<property file="${project.dir}/build.properties" />
 
 	<property name="build.dir" value="./build"/>
 	<property name="dist.dir" value="./dist"/>
@@ -387,6 +387,7 @@
 		</zip>
 
 		<delete dir="${temp.dir}"/>
+		<delete file="${metadata.file}"/>
 	</target>
 	
 	<target name="dist-ce-temp" description="Processes the article tokens and copies the CE articles and images to temp/ for zipping up.">
@@ -455,6 +456,7 @@
 		</zip>
 
 		<delete dir="${temp.dir}"/>
+		<delete file="${metadata.file}"/>
 	</target>
 
 	<target name="dist-dxp-temp" description="Zips up the folder's CE and DXP articles and images for importing.">
