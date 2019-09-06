@@ -106,5 +106,17 @@ Publisher will only show content based on their interests.
 
 ## Modifying a Page's SEO Configuration to Recommend Content
 
+You can also assign tags to a page's SEO configuration, which would then be
+assigned to a user as interests when they visited the page. Here's how to do
+this:
 
+1.  Navigate to Site Administration &rarr; *Site Builder* &rarr; *Pages*.
 
+2.  Click the *Actions* button (![Actions](../../images-dxp/icon-actions.png))
+    &rarr; *Configure* for a page you want to add tags to.
+
+3.  Select the *SEO* &rarr; *Categorization* and add relevant tags to the page.
+    Then click *Save*.
+
+Awesome! Now your page as metatags that are assigned to users as interests when
+they visit it.
