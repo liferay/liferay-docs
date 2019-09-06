@@ -6,6 +6,19 @@ header-id: search-tuning-synonym-sets
 
 [TOC levels=1-4]
 
+| **Known Issues:** There are several [known
+| issues](https://issues.liferay.com/browse/LPS-99658) for Synonym Sets. These are
+| some of the biggest:
+| 
+| [LPS-100272](https://issues.liferay.com/browse/LPS-100272): 
+| Reindexing permanently deletes all Synonym Sets.
+| 
+| [LPS-98063](https://issues.liferay.com/browse/LPS-98063): 
+| Synonyms do not work with Documents and Media Assets.
+| 
+| [LPS-98148](https://issues.liferay.com/browse/LPS-98148): Synonyms do not work
+| with Knowledge Base Assets.
+
 Starting with @product-ver@ Service Pack 1, new search tuning features are
 available for administrative Users: Synonym Sets is one of them.
 
@@ -42,10 +55,9 @@ will take effect.
 
 To create a synonym set,
 
-1. Navigate to Control Panel &rarr; Configuration &rarr; Search Tuning.
+1. Navigate to Control Panel &rarr; Search Tuning &rarr; Synonyms.
 
-2.  In the Synonym Sets tab, click the Add button
-    (![Add](../../images/icon-add.png)).
+2.  Click the Add button (![Add](../../images/icon-add.png)).
 
 3.  Enter the list of synonyms in the set. The input of a synonym is
     accomplished either by clicking _Enter_ or by entering a comma.
