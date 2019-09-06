@@ -7,7 +7,7 @@ header-id: defining-portlet-actions
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Writing the Guestbook Admin App</p><p>Step 4 of 5</p>
+    <p id="stepTitle">Writing the Guestbook Admin App</p><p>Step 4 of 6</p>
 </div>
 
 The Guestbook Admin portlet now needs action methods for adding, updating, and
@@ -145,5 +145,7 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
 4.  Hit [CTRL]+[SHIFT]+O to organize imports. Import the logging classes from
     `java.util`. Save the file. 
 
-You now have your service methods and portlet action methods in place. Your 
-last task is to implement the Guestbook Admin portlet's user interface. 
+You now have your service methods and portlet action methods in place. Before you 
+implement the Guestbook Admin portlet's user interface, you should update the
+Guestbook portlet so it can show users all the Guestbooks your administrators
+add. 

@@ -7,7 +7,7 @@ header-id: creating-a-user-interface
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Writing the Guestbook Admin App</p><p>Step 5 of 5</p>
+    <p id="stepTitle">Writing the Guestbook Admin App</p><p>Step 6 of 6</p>
 </div>
 
 It's time to create the Guestbook Admin portlet's user interface. The portlet's 
@@ -285,8 +285,8 @@ It should now match the figure below:
 Save all your files and wait for redeploy. Test out the Guestbook Admin portlet!
 Try adding, editing, and deleting guestbooks. 
 
-| **Note:** If you get "Guestbook is unavailable" errors, stop your server, exit
-| Eclipse, restart Eclipse, start your server, and test again. 
+| **Note:** If you get "Guestbook is unavailable" errors, remove the modules
+| from the server, redeploy them, and test again. 
 
 Now all the Guestbook application's primary functions work. There are still many
 missing features, however. For example, if there's ever an error, users never
