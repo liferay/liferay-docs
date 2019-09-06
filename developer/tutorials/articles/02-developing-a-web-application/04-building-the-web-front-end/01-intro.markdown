@@ -17,6 +17,9 @@ You'll create two portlets: the Guestbook portlet for users to use to add
 entries and in a later step, a Guestbook Admin portlet for administrators to add
 Guestbooks. 
 
+Starting with this step, [source code is provided](https://github.com/liferay/liferay-docs/tree/master/developer/tutorials/code/guestbook/04-web-front-end)
+in case you get stuck.
+
 Ready to begin? 
 
 <a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/creating-the-web-project">Let's Go!<span class="icon-circle-arrow-right"></span></a>
