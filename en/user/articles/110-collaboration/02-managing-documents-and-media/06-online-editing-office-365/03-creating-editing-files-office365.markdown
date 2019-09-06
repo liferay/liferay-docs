@@ -8,12 +8,14 @@ header-id: creating-and-editing-files-with-office365
 
 You can use Office 365&trade; to create and edit text documents, spreadsheets, 
 or presentations for storage in the Documents and Media library. When you finish 
-your  Office 365&trade; editing session, you must check in the document to save 
-the  changes in the Documents and Media Library. You can 
+your Office 365&trade; editing session, you must check in the document to save 
+the changes in the Documents and Media Library. 
 
+Here, you'll learn how to do the following:
+
+-   [Authenticate with OneDrive&trade;](#authentication)
 -   [Create Files](#creating-files)
 -   [Edit Files](#editing-files)
--   [Manage Multiple Editing Sessions](#multiple-editing-sessions)
 
 ## Authentication
 
@@ -88,7 +90,7 @@ Follow these steps to edit a Documents and Media file in Office 365&trade;:
     the file, transfers its content to a new Office 365&trade; file, and 
     redirects you to that file Office 365&trade;. 
 
-    ![Figure 4: Select *Edit in Office 365* from the file's Actions menu.](../../../../images/office365-edit.png)
-
 3.  Edit the file in Office 365&trade;. The editing process is exactly the same 
     as described above for creating files. 
+
+    ![Figure 4: Select *Edit in Office 365* from the file's Actions menu.](../../../../images/office365-edit.png)
