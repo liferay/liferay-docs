@@ -14,12 +14,12 @@
 
 	<property environment="env" />
 
-	<property file="../../build.${USERNAME}.properties" />
-	<property file="../../build.${user.name}.properties" />
-	<property file="../../build.${env.COMPUTERNAME}.properties" />
-	<property file="../../build.${env.HOST}.properties" />
-	<property file="../../build.${env.HOSTNAME}.properties" />
-	<property file="../../build.properties" />
+	<property file="${project.dir}/build.${USERNAME}.properties" />
+	<property file="${project.dir}/build.${user.name}.properties" />
+	<property file="${project.dir}/build.${env.COMPUTERNAME}.properties" />
+	<property file="${project.dir}/build.${env.HOST}.properties" />
+	<property file="${project.dir}/build.${env.HOSTNAME}.properties" />
+	<property file="${project.dir}/build.properties" />
 
 	<property name="build.dir" value="./build"/>
 	<property name="dist.dir" value="./dist"/>
@@ -289,7 +289,7 @@
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
 		<copy todir="${temp.dir}">
-			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
 				<include name="articles-dxp/**/*.markdown"/>
 			</fileset>
@@ -356,7 +356,7 @@
 		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
 		<property name="base.filepath" value="${doc.dir}" />
 
-		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${base.filepath}/${metadata.filename}"/>
+		<property name="metadata.file" value="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
 	</target>
@@ -380,7 +380,7 @@
 	</target>
 
 	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, add-toc, number-headers, number-images" description="Processes the CE articles and images and zips them up for importing.">
-		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
@@ -395,7 +395,7 @@
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
 		<copy todir="${temp.dir}">
-			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
 			</fileset>
 			<filterchain>
@@ -412,14 +412,14 @@
 		</copy>
 		<mkdir dir="${temp.dir}/images"/>
 		<copy todir="${temp.dir}">
-			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="images/**"/>
 			</fileset>
 		</copy>
 	</target>
 
 	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, add-toc-dxp, number-headers-dxp, number-images-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
-		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
@@ -434,7 +434,7 @@
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
 		<copy todir="${temp.dir}">
-			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
 				<include name="articles-dxp/**/*.markdown"/>
 			</fileset>
@@ -453,7 +453,7 @@
 		<mkdir dir="${temp.dir}/images"/>
 		<!-- Cannot use filtering for images (due to corruption), so must copy separately -->
 		<copy todir="${temp.dir}">
-			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="images/**"/>
 				<include name="images-dxp/**"/>
 			</fileset>
@@ -481,7 +481,7 @@
 
 	<target name="dist-temp"  depends="prepare-dist, number-headers" description="Prepares the temp files and zips them up for importing.">
 		<property file="${project.dir}/release-site.properties" />
-		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
@@ -524,8 +524,8 @@
 		<property name="base.filepath" value="${doc.dir}" />
 
 		<echo message="... creating build directory"/>
-		<mkdir dir="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}"/>
-		<touch file="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}/${article}.html" mkdirs="true"/>
+		<mkdir dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}/${build.dir}"/>
+		<touch file="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}/${build.dir}/${article}.html" mkdirs="true"/>
 		<mkdir dir="${build.dir}/images"/>
 		<copy todir="${build.dir}/images" overwrite="true">
 			<fileset dir="./images"/>
