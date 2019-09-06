@@ -2,7 +2,7 @@
 header-id: extending-categories-administration
 ---
 
-# Extending  Categories Administration
+# Extending Categories Administration
 
 [TOC levels=1-4]
 
@@ -12,7 +12,7 @@ Screen Navigation Entry and Category, you'll add one to Categories
 Administration.
 
 1.  Create a new Java class in the `asset-categories-admin-web` module named 
-    `CategoryCustomScreenNavigationEntry` that extends 
+    `CategoryCustomScreenNavigationEntry` that implements 
     `ScreenNavigationCategory` and `ScreenNavigationEntry`.
 
 2.  Add the following Component annotation above the class declaration:
