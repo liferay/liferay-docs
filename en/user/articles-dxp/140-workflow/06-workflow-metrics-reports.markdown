@@ -101,7 +101,7 @@ this is from 179 days ago to the current day.
 
 Last Year
 : Calculate the _Inst/Month_ or _Inst/Week_. The current day counts as 1 day, so
-this is from 364 days ago to the current day.
+this is from 364/365 days ago to the current day.
 
 ## Items View
 
