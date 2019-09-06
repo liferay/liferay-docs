@@ -91,6 +91,18 @@ below:
     characterize the content. These are the metatags that will be referenced as
     interests when a user views the content. Then click *Publish*.
 
+11. Add an Asset Publisher widget to a Page. Navigate to its *Options*
+    (![Mapping](../../images-dxp/icon-app-options.png)) &rarr; *Configuration*
+    menu and select the *Content Set* asset selection.
+
+12. Select the Content Set you want to display. Then click *Save*.
+
+In a realistic scenario, the Content Set would have many assets with
+differing metatags. That way, content similar to a user's interests is
+displayed over other content.
+
+Great! Now when users have accumulated interests based on viewership, the Asset
+Publisher will only show content based on their interests.
 
 ## Modifying a Page's SEO Configuration to Recommend Content
 
