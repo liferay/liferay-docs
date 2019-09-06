@@ -84,8 +84,8 @@ Yesterday
 previous day.
 
 Last 7 Days
-: Calculate _Inst/Day_. The current day counts as one day, so this is from six
-days ago to the current day.
+: Calculate _Inst/Day_. The current day counts as 1 day, so this is from 6 days
+ago to the current day.
 
 Last 30 Days
 : Calculate the _Inst/Week_ or the _Inst/Day_. The current day counts as 1 day,
