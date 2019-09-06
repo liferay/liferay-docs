@@ -372,6 +372,7 @@
 		</zip>
 
 		<delete dir="${temp.dir}"/>
+		<delete file="${metadata.file}"/>
 	</target>
 
 	<target name="convert-headers" description="Converts legacy header IDs to new format. Run this before running the number-headers task for the first time.">
@@ -423,6 +424,7 @@
 		</zip>
 
 		<delete dir="${temp.dir}"/>
+		<delete file="${metadata.file}"/>
 	</target>
 
 	<target name="dist-dxp-temp" description="Zips up the folder's CE and DXP articles and images for importing.">
