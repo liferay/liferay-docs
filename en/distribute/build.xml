@@ -2,7 +2,7 @@
 
 <project name="Distribute" basedir=".">
 
-	<import file="../build-common.xml" />
+	<import file="../build.xml" />
 
 	<property name="purpose.dir" value="distribute"/>
 

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<project name="Language Folder - English" basedir=".">
+	<property name="language.dir" value="en" />
+
+	<import file="../build-common.xml" />
+
+</project>
