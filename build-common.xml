@@ -387,6 +387,7 @@
 		</zip>
 
 		<delete dir="${temp.dir}"/>
+		<delete file="${metadata.file}"/>
 	</target>
 	
 	<target name="dist-ce-temp" description="Processes the article tokens and copies the CE articles and images to temp/ for zipping up.">
@@ -425,6 +426,7 @@
 		</zip>
 
 		<delete dir="${temp.dir}"/>
+		<delete file="${metadata.file}"/>
 	</target>
 
 	<target name="dist-dxp-temp" description="Zips up the folder's CE and DXP articles and images for importing.">
