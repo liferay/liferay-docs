@@ -1,8 +1,8 @@
 ---
-header-id: creating-data-record-collections-with-http
+header-id: managing-data-record-collections-with-the-rest-api
 ---
 
-# Creating Data Record Collections with HTTP
+# Managing Data Record Collections with the REST API
 
 [TOC levels=1-4]
 

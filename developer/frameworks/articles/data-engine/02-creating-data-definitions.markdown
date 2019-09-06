@@ -1,13 +1,14 @@
 ---
-header-id: creating-data-definitions-with-rest-calls
+header-id: managing-data-definitions-with-the-rest-api
 ---
 
-# Creating Data Definitions with REST Calls
+# Managing Data Definitions with the REST API
 
 [TOC levels=1-4]
 
-These example calls use cURL, a cross-platform tool for making HTTP calls. Feel
-free to use any REST client you know.
+These example calls execute CRUD operations on Data Definitions using cURL, a
+cross-platform tool for making HTTP calls. Feel free to use any REST client you
+know.
 
 ### Adding Data Definitions
 
