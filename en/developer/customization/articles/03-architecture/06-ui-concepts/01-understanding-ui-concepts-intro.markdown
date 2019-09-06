@@ -1,4 +1,10 @@
+---	
+header-id: understanding-ui-concepts	
+---
+
 # Understanding UI Concepts
+
+[TOC levels=1-4]
 
 The page's User Interface is comprised of three key areas: The Theme, which 
 defines the overall look and feel for the page; the applications (sometimes 
