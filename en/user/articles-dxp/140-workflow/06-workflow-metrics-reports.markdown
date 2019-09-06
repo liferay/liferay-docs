@@ -77,7 +77,7 @@ configurable:
 
 Today
 : Calculate _Inst/Hour_ from _00:00_, or _12:00 AM_, of the current day until the
-current time (rounded to the nearest whole hour). 
+current time (rounded to the nearest whole hour).
 
 Yesterday
 : Calculate _Inst/Hour_  From _00:00-23:59_, or _12:00 AM to 11:59 PM_, of the
@@ -112,7 +112,7 @@ you'll see a more detailed table including the following columns:
 
 **ID**
 : This is the workflow item's numeric identifier to the system. Importantly, you
-can click this to enter the Item Detail view. 
+can click this to enter the Item Detail view.
 
 **Item Subject**
 : This shows a human readable summary of the item, to help administrators
