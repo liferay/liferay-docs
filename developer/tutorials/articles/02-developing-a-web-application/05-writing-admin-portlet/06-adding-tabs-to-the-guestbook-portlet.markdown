@@ -15,7 +15,7 @@ portlet's UI to display multiple Guestbooks. As administrators add Guestbooks
 using the Guestbook Admin portlet, users must be able to choose which Guestbook
 they want to sign. They'll do this using a series of tabs across the top: 
 
-![Figure 1: Users can click a tab to choose which Guestbook to sign.](../../images/guestbook-tabs.png)
+![Figure 1: Users can click a tab to choose which Guestbook to sign.](../../../images/guestbook-tabs.png)
 
 This is surprisingly easy to do using Liferay's Alloy UI tag library: 
 
