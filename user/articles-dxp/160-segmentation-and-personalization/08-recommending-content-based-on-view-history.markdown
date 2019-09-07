@@ -104,7 +104,7 @@ displayed over other content.
 Great! Now when users have accumulated interests based on viewership, the Asset
 Publisher will only show content based on their interests.
 
-## Modifying a Page's SEO Configuration to Recommend Content
+## Modifying a Page's SEO Configuration
 
 You can also assign tags to a page's SEO configuration, which would then be
 assigned to a user as interests when they visit the page. Here's how to do this:
