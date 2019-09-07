@@ -2,6 +2,8 @@
 
 [TOC levels=1-4]
 
+| **Note:** A/B Testing is available for Liferay DXP 7.2 SP1+.
+
 When visiting a site, users inevitably click on content that they're interested
 in. For example, if someone visits a sporting goods store's site and clicks on
 several hunting promotional ads, you can deduce that they're interested in
@@ -20,7 +22,7 @@ Recommendation*.
 This is done by adding metatags to content and monitoring the users who visit
 that content. When a user views a specific content type, its metatags are
 attached to that user as *interests*. When the user visits other pages, content
-that matches their interests are viewed to them. The monitoring process is
+that matches their interests is displayed to them. The monitoring process is
 facilitated by
 [Analytics Cloud](https://help.liferay.com/hc/en-us/articles/360006608732-Generating-New-Business-Using-Analytics),
 so you must have your DXP instance synced with it. If you haven't done this
@@ -36,7 +38,7 @@ left menu &rarr; *Individuals* &rarr; *Interests*.
 You can learn more about Analytics Cloud's individual analytics
 [here](https://help.liferay.com/hc/en-us/articles/360006946171-Profiling-Individuals).
 
-There are two ways to attach metatags to your content:
+There are two ways to set metatags so they're assigned as user interests:
 
 - Adding keywords to Content Sets and displaying them via Display Page
   Templates.
@@ -56,9 +58,7 @@ below:
 2.  Select the *Add* button (![Add](../../images-dxp/icon-add.png)) and click
     *Dynamic Selection*. Assign a name and click *Save*.
 
-3.  Select *Web Content Article* for the Asset Entry Type.
-
-4.  Under the Content Recommendation tab, enable Content Recommendation. Then
+3.  Under the Content Recommendation tab, enable Content Recommendation. Then
     save the Content Set.
 
     ![Figure 2: Enable Content Recommendation for your Content Set..](../../images-dxp/enable-content-recommendation.png)
@@ -67,35 +67,35 @@ below:
     [Creating Content Sets](/docs/7-2/user/-/knowledge_base/u/creating-content-sets)
     article.
 
-5.  Go to Site Administration &rarr; *Site Builder* &rarr; *Pages* &rarr;
+4.  Go to Site Administration &rarr; *Site Builder* &rarr; *Pages* &rarr;
     *Display Page Templates*. Select the *Add* button
     (![Add](../../images-dxp/icon-add.png)), give it a name, and click *Save*.
 
-6.  In the right menu, select *Mapping* (![Mapping](../../images-dxp/icon-mapping.png)),
+5.  In the right menu, select *Mapping* (![Mapping](../../images-dxp/icon-mapping.png)),
     choose the *Web Content Article* content type and choose *Basic Web Content*
     for the subtype. Then click *Save*.
 
-7.  Add a Fragment to the Display Page and map its field to *Basic Web Content*.
+6.  Add a Fragment to the Display Page and map its field to *Basic Web Content*.
     For example, click *Section Builder* &rarr; *Basic Components* and drag the
     *Paragraph* Fragment to the page. Then click the *Map* button and select
     *Basic Web Content* for its Source and Field.
 
-8.  Publish the Display Page Template.
+7.  Publish the Display Page Template.
 
-9.  [Begin creating a Basic Web Content](/docs/7-2/user/-/knowledge_base/u/creating-web-content).
+8.  [Begin creating a Basic Web Content](/docs/7-2/user/-/knowledge_base/u/creating-web-content).
     Before publishing the content, navigate to the *Display Page Template*
     section and select *Specific Display Page Template* from the dropdown. Then
     select the Display Page Template your created previously.
 
-10. Go to the *Metadata* section in the right menu. Assign tags that
-    characterize the content. These are the metatags that will be referenced as
-    interests when a user views the content. Then click *Publish*.
+9. Go to the *Metadata* section in the right menu. Assign tags that
+   characterize the content. These are the metatags that will be referenced as
+   interests when a user views the content. Then click *Publish*.
 
-11. Add an Asset Publisher widget to a Page. Navigate to its *Options*
+10. Add an Asset Publisher widget to a Page. Navigate to its *Options*
     (![Mapping](../../images-dxp/icon-app-options.png)) &rarr; *Configuration*
     menu and select the *Content Set* asset selection.
 
-12. Select the Content Set you want to display. Then click *Save*.
+11. Select the Content Set you want to display. Then click *Save*.
 
 In a realistic scenario, the Content Set would have many assets with
 differing metatags. That way, content similar to a user's interests is
@@ -107,8 +107,7 @@ Publisher will only show content based on their interests.
 ## Modifying a Page's SEO Configuration to Recommend Content
 
 You can also assign tags to a page's SEO configuration, which would then be
-assigned to a user as interests when they visited the page. Here's how to do
-this:
+assigned to a user as interests when they visit the page. Here's how to do this:
 
 1.  Navigate to Site Administration &rarr; *Site Builder* &rarr; *Pages*.
 
@@ -118,5 +117,6 @@ this:
 3.  Select the *SEO* &rarr; *Categorization* and add relevant tags to the page.
     Then click *Save*.
 
-Awesome! Now your page as metatags that are assigned to users as interests when
-they visit it.
+Awesome! Now your page has metatags that are assigned to users as interests when
+they visit it. These interests are assessed when recommending content, as was
+demonstrated in the previous section.
