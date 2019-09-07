@@ -358,7 +358,7 @@
 
 		<property name="metadata.file" value="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
-		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
+		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${language.dir}/${purpose.dir}/${base.filepath}</concat>
 	</target>
 
 	<target name="convert-headers" description="Converts legacy header IDs to new format. Run this before running the number-headers task for the first time.">
