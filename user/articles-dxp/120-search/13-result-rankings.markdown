@@ -1,17 +1,29 @@
 # Customizing Search Result Rankings
 
+THIS IS COPIED FROM SYNONYMS
+| **Known Issues:** There are several [known
+| issues](https://issues.liferay.com/browse/LPS-99658) for Synonym Sets. These are
+| some of the biggest:
+| 
+| [LPS-100272](https://issues.liferay.com/browse/LPS-100272): 
+| Reindexing permanently deletes all Synonym Sets.
+| 
+| [LPS-98063](https://issues.liferay.com/browse/LPS-98063): 
+| Synonyms do not work with Documents and Media Assets.
+| 
+| [LPS-98148](https://issues.liferay.com/browse/LPS-98148): Synonyms do not work
+| with Knowledge Base Assets.
 **Availability/Compatibility:**
 
 Starting with @product-ver@ Service Pack 1, new search tuning features are
-available for administrative Users: Result Rankings is one of them.
+available for administrative Users: Custom Result Rankings is one of them.
 
 Search Tuning features like Result Rankings are only supported when using
 Elasticsearch as the search engine.
 
 **Introduce and Describe:**
-Result Rankings a brute force for intervening into the relevance scoring of the
-search engine, by doing these things:
-
+Result Rankings provides a brute force method for intervening into the relevance
+scoring of the search engine, by doing these things:
 
 1.  Designate that certain results should appear at the top of the results if
     they are matched with a certain keyword. This is the idea of _pinning_
@@ -19,12 +31,13 @@ search engine, by doing these things:
 
 2.  By contrast, hide results that shouldn't appear in certain searches at all. 
 
-3.  Add results that aren't returned by a certain search.
+3.  Add results that aren't normally returned by searching a certain keyword.
 
 4.  Configure a search page to see the results from the Result Rankings
     customization and the un-manipulated results. LPS-96212
 
-Pin, hide, and add search results with Result Rankings.
+Result Rankings lets you pin, hide, and add search results for a given set of
+keywords.
 
 **Use Case:**
 
@@ -46,7 +59,7 @@ waiver Web Content Article. In addition, a community member wrote a blog
 favorably reviewing the Lunar Resort, and you want that content added to
 searches for activities at the resort. 
 
-![Figure x: The Lunar Results wants to tweak these results: pin the Activities page to the top, and hide the legal content entirely.](../../images/search-result-rankings-todo.png) 
+![Figure x: The Lunar Resort wants to tweak these results: pin the Activities page to the top, and hide the legal content entirely.](../../images/search-result-rankings-todo.png) 
 
 **How To:**
 
@@ -66,8 +79,8 @@ results, choose to pin them or hide them as you please.
     of just one word; and don't worry, you can add more later) in the _Search
     Term_ field. 
 
-    To limit the rankings intervention to just one index's results,
-    enter the index name in the Index Name field.
+    To limit the rankings intervention to just one index's results, enter the
+    index name in the Index Name field.
 
     Click _Customize Results_.
 
