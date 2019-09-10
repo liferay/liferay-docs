@@ -1,7 +1,9 @@
-package com.liferay.docs.guestbook.portlet.portlet;
+package com.liferay.docs.guestbook.portlet;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -13,9 +15,9 @@ import javax.portlet.RenderResponse;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
 import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.model.GuestbookEntry;
-import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
 import com.liferay.docs.guestbook.service.GuestbookEntryLocalService;
 import com.liferay.docs.guestbook.service.GuestbookLocalService;
 import com.liferay.portal.kernel.exception.PortalException;
@@ -78,18 +80,39 @@ public class GuestbookPortlet extends MVCPortlet {
 				_guestbookEntryLocalService.addGuestbookEntry(serviceContext.getUserId(), guestbookId, userName, email, message,
 						serviceContext);
 
-				SessionMessages.add(request, "entryAdded");
-
 				response.setRenderParameter("guestbookId", Long.toString(guestbookId));
 
 			} catch (Exception e) {
-				SessionErrors.add(request, e.getClass().getName());
+
+				System.out.println(e);
 
 				PortalUtil.copyRequestParameters(request, response);
 
 				response.setRenderParameter("mvcPath", "/guestbook/edit_entry.jsp");
 			}
 		}
+
+	}
+
+	public void deleteEntry(ActionRequest request, ActionResponse response) throws PortalException {
+			long entryId = ParamUtil.getLong(request, "entryId");
+			long guestbookId = ParamUtil.getLong(request, "guestbookId");
+
+			ServiceContext serviceContext = ServiceContextFactory.getInstance(
+				GuestbookEntry.class.getName(), request);
+
+			try {
+
+				response.setRenderParameter(
+					"guestbookId", Long.toString(guestbookId));
+
+				_guestbookEntryLocalService.deleteGuestbookEntry(entryId);
+			}
+
+			catch (Exception e) {
+				Logger.getLogger(GuestbookPortlet.class.getName()).log(
+					Level.SEVERE, null, e);
+			}
 	}
 
 	@Override

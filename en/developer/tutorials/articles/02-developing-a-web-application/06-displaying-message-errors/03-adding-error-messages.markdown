@@ -15,17 +15,19 @@ To display feedback to users properly, you must edit your portlet classes to use
 messages that the view layer shows to the user through a tag. 
 
 You'll add these messages to code that runs when the user triggers a system 
-function that can succeed or fail, such as creating, editing, or deleting an
-entry or guestbook. This generally happens in action methods. You must update 
-these methods to handle failure and success states in `GuestbookPortlet.java` 
-and `GuestbookAdminPortlet.java`. Start by updating `addEntry` and `deleteEntry` 
+function that can succeed or fail, such as creating, editing, or deleting a
+Guestbook or Guestbook entry. This happens in action methods. You must update
+these methods to handle failure and success states in `GuestbookPortlet.java`
+and `GuestbookAdminPortlet.java`. Start by updating `addEntry` and `deleteEntry`
 in `GuestbookPortlet.java`: 
 
 1.  Find the `addEntry` method in `GuestbookPortlet.java`. In the first
     `try...catch` block's `try` section, and add the success message just 
     before the closing `}`: 
-    
-        SessionMessages.add(request, "entryAdded");
+
+    ```java
+    SessionMessages.add(request, "entryAdded");
+    ```
 
     This uses Liferay's `SessionMessages` API to add a success message whenever
     a Guestbook is successfully added. It looks up the message you placed in
@@ -33,12 +35,16 @@ in `GuestbookPortlet.java`:
     `entry-added` (it automatically converts the key from camel case). 
 
 2.  Below that, in the `catch` block, find the following code:
-    
-        System.out.println(e);
+
+    ```java
+    System.out.println(e);
+    ```
 
 3.  Beneath it, paste this line:
-    
-		SessionErrors.add(request, e.getClass().getName());
+
+    ```java
+    SessionErrors.add(request, e.getClass().getName());
+    ```
 
     Now you not only log the message to the console, you also use the 
     `SessionErrors` object to show the message to the user. 
@@ -47,12 +53,16 @@ Next, do the same for the `deleteEntry` method:
 
 1.  After the logic to delete the entry, add a success message:
 
-        SessionMessages.add(request, "entryDeleted");
+    ```java
+    SessionMessages.add(request, "entryDeleted");
+    ```
 
-2.  Find the same `Logger...` block of code in the `deleteEntry` method and
-    after it, paste this line: 
+2.  Find the `Logger...` block of code in the `deleteEntry` method and after it,
+    paste this line: 
 
-		SessionErrors.add(request, e.getClass().getName());
+    ```java
+    SessionErrors.add(request, e.getClass().getName());
+    ```
 
 3.  Hit [CTRL]+[SHIFT]+O to import
     `com.liferay.portal.kernel.servlet.SessionErrors` and
@@ -67,16 +77,20 @@ Well done! You've added the messages to `GuestbookPortlet`. Now you must update
     `try...catch` in `addGuestbook`, `updateGuestbook`, and `deleteGuestbook`, 
     respectively: 
 
-         SessionMessages.add(request, "guestbookAdded");
+     ```java
+     SessionMessages.add(request, "guestbookAdded");
 
-         SessionMessages.add(request, "guestbookUpdated");
+     SessionMessages.add(request, "guestbookUpdated");
 
-         SessionMessages.add(request, "guestbookDeleted");
+     SessionMessages.add(request, "guestbookDeleted");
+     ```
 
 3.  In the `catch` section of those same methods, find `Logger.getlogger...` and 
     paste the `SessionErrors` block beneath it: 
 
-		SessionErrors.add(request, pe.getClass().getName());
+    ```java
+    SessionErrors.add(request, pe.getClass().getName());
+    ```
 
 4.  Hit [CTRL]+[SHIFT]+O to import `SessionErrors` and `SessionMessages`. Save 
     the file. 

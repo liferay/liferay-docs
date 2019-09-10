@@ -13,12 +13,14 @@ header-id: adding-messages-to-jsps
 Any messages the user should see are now stored in either `SessionMessages` or
 `SessionErrors`. Next, you'll make these messages appear in your JSPs. 
 
-1.  In the `guestbook-web` module, open `guestbookwebportlet/view.jsp`. Add the 
+1.  In the `guestbook-web` module, open `guestbook/view.jsp`. Add the 
     following block of success messages to the top of the file, just below the 
     `init.jsp` include statement:
-    
-        <liferay-ui:success key="entryAdded" message="entry-added" />
-        <liferay-ui:success key="entryDeleted" message="entry-deleted" />
+
+    ```markup
+    <liferay-ui:success key="entryAdded" message="entry-added" />
+    <liferay-ui:success key="entryDeleted" message="entry-deleted" />
+    ```
 
     This tag accesses what's stored in `SessionMessages`. It has two attributes. 
     The first is the `SessionMessages` key that you provided in the 
@@ -27,12 +29,14 @@ Any messages the user should see are now stored in either `SessionMessages` or
     specified a hard-coded message here, but it's far better to provide a 
     localized key. 
 
-2.  Now open `guestbookadminportlet/view.jsp`. Add the following block of 
+2.  Now open `guestbook_admin/view.jsp`. Add the following block of 
     success messages in the same spot below the include: 
 
-        <liferay-ui:success key="guestbookAdded" message="guestbook-added" />
-        <liferay-ui:success key="guestbookUpdated" message="guestbook-updated" />
-        <liferay-ui:success key="guestbookDeleted" message="guestbook-deleted" />
+    ```markup
+    <liferay-ui:success key="guestbookAdded" message="guestbook-added" />
+    <liferay-ui:success key="guestbookUpdated" message="guestbook-updated" />
+    <liferay-ui:success key="guestbookDeleted" message="guestbook-deleted" />
+    ```
 
 ![Figure 1: Now the message displays the value you specified in `Language.properties`.](../../../images/message-complete.png)
 

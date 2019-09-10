@@ -1,4 +1,4 @@
-package com.liferay.docs.guestbook.portlet.portlet;
+package com.liferay.docs.guestbook.portlet;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,8 +10,8 @@ import javax.portlet.Portlet;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
 import com.liferay.docs.guestbook.model.Guestbook;
-import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
 import com.liferay.docs.guestbook.service.GuestbookLocalService;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;

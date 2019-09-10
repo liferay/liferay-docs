@@ -6,7 +6,7 @@ import org.osgi.service.component.annotations.Reference;
 import com.liferay.application.list.BasePanelApp;
 import com.liferay.application.list.PanelApp;
 import com.liferay.application.list.constants.PanelCategoryKeys;
-import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
+import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
 import com.liferay.portal.kernel.model.Portlet;
 
 @Component(
