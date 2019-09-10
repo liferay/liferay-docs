@@ -1,4 +1,10 @@
+---
+header-id: customizing-search-result-rankings
+---
+
 # Customizing Search Result Rankings
+
+[TOC levels=1-4]
 
 | **Known Issues:** There are several known  issues for Result Rankings. See
 | [LPS-99540](https://issues.liferay.com/browse/LPS-99540) for the complete list.
@@ -47,7 +53,7 @@ keywords.
 | content added to searches for activities at the resort. This is a prime use case
 | for Result Rankings. 
 
-![Figure x: The Lunar Resort wants to tweak these results: pin the Activities page to the top, and hide the legal content entirely.](../../images/search-result-rankings-todo.png) 
+![Figure 1: The Lunar Resort wants to tweak these results: pin the Activities page to the top, and hide the legal content entirely.](../../images/search-result-rankings-todo.png) 
 
 ## Creating and Managing Result Rankings
 
@@ -90,7 +96,7 @@ apply the customized rankings to additional search terms, add them as _Aliases_.
 2.  To submit the search term as an alias, click Enter or a comma in the Aliases
     filed. You can Add multiple aliases here. 
 
-    ![Figure x: Apply your custom rankings to matched results of additional search terms.](../../images/search-result-rankings-aliases.png)
+    ![Figure 2: Apply your custom rankings to matched results of additional search terms.](../../images/search-result-rankings-aliases.png)
 
 Note that results not manipulated manually here will be returned as usual when
 the alias term is queried for in the Search Bar. 
@@ -109,7 +115,7 @@ disappears. Repeat the action as many times as necessary.
 If you're done customizing the results, click _Save_ and it's applied
 immediately.
 
-![Figure x: Pin results to the top of the Search Results list.](../../images/search-result-rankings-pinned-result.png)
+![Figure 3: Pin results to the top of the Search Results list.](../../images/search-result-rankings-pinned-result.png)
 
 ### Adding Results
 
@@ -117,7 +123,7 @@ To add a result that was not returned by searching for the first keyword or
 phrase, click the _Add Result_ button and search for whichever asset it is that
 you'd like to pin. 
 
-![Figure x: Add results that aren't normally returned.](../../images/search-result-rankings-add-result.png)
+![Figure 4: Add results that aren't normally returned.](../../images/search-result-rankings-add-result.png)
 
 Click _Save_ if you're done customizing results.
 
@@ -125,7 +131,7 @@ Click _Save_ if you're done customizing results.
 
 To re-order results, click the drag handle icon, drag the result, and drop it in the preferred location in the list. 
 
-![Figure x: Re-order the rankings if you want to emphasize or de-emphasize
+![Figure 5: Re-order the rankings if you want to emphasize or de-emphasize
 certain results.](../../images/search-result-rankings-reorder.png)
 
 Once finished customizing result rankings, click _Save_.
