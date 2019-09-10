@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project name="Marketplace Developer's Guide" basedir=".">
+	<property name="project.dir" value="../../../../liferay-docs" />
+
+	<import file="../build.xml" />
+
+	<property name="doc.dir" value="publish"/>
+
+</project>
