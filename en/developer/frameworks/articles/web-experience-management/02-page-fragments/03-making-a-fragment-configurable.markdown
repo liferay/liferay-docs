@@ -60,6 +60,10 @@ configurable,
     | **Note:** The `label` property is optional. If it's left out, your
     | configuration option will not have a title.
 
+    | **Note:** If your configuration is invalid, the editor will not save the
+    | code. Be sure to always have a valid JSON configuration before previewing
+    | or saving it.
+
     The configuration values selected by the user are made available to the
     Fragment developer through the FreeMarker context. A configuration value can
     be referenced using the notation `${configuration.<fieldName>}`. For the
