@@ -1,11 +1,7 @@
 # Customizing Search Result Rankings
 
-| **Known Issues:** There are several [known
-| issues](https://issues.liferay.com/browse/LPS-99540) for Result Rankings. These
-| are some of the biggest:
-| 
-| LPS-XXXXX: Don't use quotes in your alias definitions.
-<!-- Might not be an issue really, just a warning we need to make -->
+| **Known Issues:** There are several known  issues for Result Rankings. See
+| [LPS-99540](https://issues.liferay.com/browse/LPS-99540) for the complete list.
 
 Starting with @product-ver@ Service Pack 1, new search tuning features are
 available for administrative Users: Custom Result Rankings is one of them.
@@ -40,26 +36,27 @@ keywords.
 | at the top of the search results. This is the go-to Activities page in the Lunar
 | Resort where guests can go to find all of the resort's adventurous offerings,
 | including lunar rover races, ATV rentals, and information about golfing
-| packages. This is a prime use case for Result Rankings. By contrast, the Lunar
-| Resort does not want the legal liability waiver form to appear during a search
-| for fun activities: that's a bridge to be crossed once guests are already
-| signing up for the activity. It shouldn't pollute a search for fun activities,
-| even though it contains many of the keywords Users would search for. Result
-| Rankings lets you, the portal administrator, _pin_ the Activities Content Page
-| to the top of the results and _hide_ the liability waiver Web Content Article.
-| In addition, a community member wrote a blog favorably reviewing the Lunar
-| Resort, and you want that content added to searches for activities at the
-| resort. 
+| packages. By contrast, the Lunar  Resort does not want the legal liability
+| waiver form to appear during a search for fun activities: that's a bridge to be
+| crossed once guests are already signing up for the activity. It shouldn't
+| pollute a search for fun activities, even though it contains many of the
+| keywords Users would search for. Result Rankings lets you, the portal
+| administrator, _pin_ the Activities Content Page to the top of the results and
+| _hide_ the liability waiver Web Content Article.  In addition, a community
+| member wrote a blog favorably reviewing the Lunar Resort, and you want that
+| content added to searches for activities at the resort. This is a prime use case
+| for Result Rankings. 
 
 ![Figure x: The Lunar Resort wants to tweak these results: pin the Activities page to the top, and hide the legal content entirely.](../../images/search-result-rankings-todo.png) 
 
 ## Creating and Managing Result Rankings
 
-To manipulate result rankings, create a new _Alias_ containing the keywords you
-want to intercept. A search is performed, and the matching results are shown
-(you can also do a separate search if you want to grab results that haven't even
-been returned during a natural search for the alias keywords). Once you have the
-results, choose to pin them or hide them as you please.
+To manipulate result rankings, create a new _Alias_ containing the
+keywords/search terms you want to intercept. A search is performed, and the
+matching results are shown (you can also do a separate search if you want to
+grab results that haven't even been returned during a natural search for the
+alias keywords). Once you have the results, choose to pin, hide, re-order, or
+add results as you please.
 
 To create a new Result Rankings Alias:
 
@@ -84,15 +81,16 @@ whether to add one or more Aliases.
 
 The Customize Rankings screen is ready to use, but any intervention will only
 apply to the search query you initially entered in the New Ranking screen. To
-apply the customized rankings to additional search queries, add them as
-_Aliases_. 
+apply the customized rankings to additional search terms, add them as _Aliases_. 
 
-1.  In the Aliases field, enter the keyword or phrase to add as an Alias.
+1.  In the Aliases field, enter the search term to add as an Alias.
 
-2.  To submit the keyword or phrase as an alias, click Enter or a comma in the
-    Aliases filed. You can Add multiple aliases here. 
+    **Warning:** Do not use quotes in your alias terms.
 
-    ![Figure x: ](../../images/search-result-rankings-aliases.png)
+2.  To submit the search term as an alias, click Enter or a comma in the Aliases
+    filed. You can Add multiple aliases here. 
+
+    ![Figure x: Apply your custom rankings to matched results of additional search terms.](../../images/search-result-rankings-aliases.png)
 
 Note that results not manipulated manually here will be returned as usual when
 the alias term is queried for in the Search Bar. 
@@ -111,7 +109,7 @@ disappears. Repeat the action as many times as necessary.
 If you're done customizing the results, click _Save_ and it's applied
 immediately.
 
-![Figure x: ](../../images/search-result-rankings-pinned-result.png)
+![Figure x: Pin results to the top of the Search Results list.](../../images/search-result-rankings-pinned-result.png)
 
 ### Adding Results
 
@@ -119,16 +117,16 @@ To add a result that was not returned by searching for the first keyword or
 phrase, click the _Add Result_ button and search for whichever asset it is that
 you'd like to pin. 
 
-![Figure x: ](../../images/search-result-rankings-add-result.png)
+![Figure x: Add results that aren't normally returned.](../../images/search-result-rankings-add-result.png)
 
 Click _Save_ if you're done customizing results.
-
 
 ### Re-Ordering Results
 
 To re-order results, click the drag handle icon, drag the result, and drop it in the preferred location in the list. 
 
-![Figure x: ](../../images/search-result-rankings-reorder.png)
+![Figure x: Re-order the rankings if you want to emphasize or de-emphasize
+certain results.](../../images/search-result-rankings-reorder.png)
 
 Once finished customizing result rankings, click _Save_.
 
@@ -138,8 +136,8 @@ Because configuration of Result rankings happens at the virtual instance scope,
 there are scoping and permissions behaviors to be aware of.
 
 Scope is disregarded for pinned results: Pinned results existing in Site A will
-always appear in searches from Site B, even if the Search . <!-- The View in
-context URL brings the User to Site A?-->
+always appear in searches from Site B, even if the Search Bar Scope is set to
+_This Site_. <!-- The View in context URL brings the User to Site A?-->
 
 Search from Result Rankings is global: When searching for results in Result
 Rankings admin, relevant results from all sites are returned.
@@ -150,22 +148,16 @@ User.
 
 ## Result Rankings Aliases versus Synonyms
 
-[Synonyms](/docs/7-2/user/-/knowledge_base/u/synonyms) expand the search to
-include additional (synonymous) keywords, so more results will be returned if
-there are matches to the synonyms.
+Since both are new features without precedent in @product@, there can be
+confusion over Result Rankings Aliases and Synonyms.
+[Synonyms](/docs/7-2/user/-/knowledge_base/u/synonyms) 
+expand the search to include results matched by additional (synonymous)
+keywords, so more results will be returned if there are matches to the synonyms.
 
 Result Rankings Aliases are just keywords that will also have the particular
-ranking interventions applied to them. They won't cause an expansion of the
-original query's results list.
-
-Quoted aliases are not searchable (i.e. if you have an alias named "example" and
-you search for it, you will actually perform a search for the exact match)
-
-Actions that can be taken
-
-Pin one or multiple results (and unpin it)
-Hide a result (and unhide it)
-Reorder results
-Unpublish a ranking
-Ranked versus unranked
-
+ranking interventions applied to them. Only the searched keyword will be matched
+to results, and then on top of that, the pins, hides, re-ordering, and
+additional results will take effect. Of course, if you add a Synonym Set that
+includes an identical set of search terms as the Result Ranking you configure,
+then the features can be used together. All the synonymous terms will return the
+same result set, with the customized rankings applied on top.
