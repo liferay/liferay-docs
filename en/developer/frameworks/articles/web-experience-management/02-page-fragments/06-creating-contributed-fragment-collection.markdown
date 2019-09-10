@@ -66,7 +66,7 @@ contributed collection:
     }
     ```
 
-5.  Below that use the `@Reference` annotation to define your modules symbolic
+6.  Below that use the `@Reference` annotation to define your modules symbolic
     name:
 
     ```java
@@ -75,7 +75,7 @@ contributed collection:
     )
     ```
 
-6.  Organize your imports and save.
+7.  Organize your imports and save.
 
 ## Create the Resources
 
