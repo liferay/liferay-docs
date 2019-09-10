@@ -67,6 +67,8 @@ search engine's point of view, this makes your pages rank higher since any
 references to variations of a specific URL are considered references to the same
 page.
 
+You can also configure the page to use a custom *canonical URL*. 
+
 ## Look and Feel
 
 *Look and Feel* lets you set a page-specific theme. You can inherit what you
