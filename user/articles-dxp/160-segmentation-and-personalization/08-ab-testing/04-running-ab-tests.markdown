@@ -29,18 +29,14 @@ gathering data on your Control page and Variants. To run an A/B test,
 
 Your A/B test is now running!
 
-While an A/B test is running, you have three buttons available to help manage
-the test:
+While an A/B test is running, you have two buttons available to help manage the
+test:
 
 *View Data in Analytics Cloud*: redirects you to your A/B Testing dashboard
 hosted on Analytics Cloud. Here you can view your test's traffic, reports,
 statistics, etc. related to your test. See the
 [Monitoring A/B Test Results](/docs/7-2/user/-/knowledge_base/u/monitoring-ab-test-results)
 article for more information.
-
-*Pause Test*: pauses the test and the compilation of the Page's data.
-
-<!-- TODO: look into this more when product is finished. -Cody -->
 
 *Terminate Test*: terminates the test. To delete a test, you must terminate it
 first.

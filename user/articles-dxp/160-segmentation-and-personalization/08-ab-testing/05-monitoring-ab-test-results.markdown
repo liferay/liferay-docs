@@ -9,9 +9,9 @@ test results used to calculate the winning Variant based on user
 interaction data is viewable there. You can also view your A/B testing history,
 meaningful statistics, helpful graphs, etc. from Analytics Cloud.
 
-To navigate to your test's the Analytics Cloud dashboard from @product@, click
-the *View Data in Analytics Cloud* button in the A/B Test sidebar panel while
-it's running.
+To navigate to your test's Analytics Cloud dashboard from @product@, click the
+*View Data in Analytics Cloud* button in the A/B Test sidebar panel while it's
+running.
 
 @product@ only displays your test's status (draft, running, etc.) and the
 winning Variant once the test finishes. For more information on what you can

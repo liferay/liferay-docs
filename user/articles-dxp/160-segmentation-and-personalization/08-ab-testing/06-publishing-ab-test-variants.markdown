@@ -5,11 +5,22 @@
 Once the A/B test has concluded and Analytics Cloud has computed the test
 results, the status for the test displays as *Winner Declared* (if a winning
 Variant was found) or *No Winner* in @product@'s A/B Test sidebar panel. You're
-also alerted to the result via a notification which you can view from the User
+also alerted to the result via a notification, which you can view from the User
 Menu.
+
+![Figure 1: If you're satisfied with the A/B test's results, publish the winning Variant.](../../../images-dxp/ab-testing-winner.png)
 
 | **Note:** When the required confidence level is not met during the set time
 | duration, there is no winning Variant.
 
-You can turn off these notifications in the notification configuration for A/B
-Test.
+Click the *Publish Winner as Experience* button to publish your winning Variant
+Experience. Once you publish a Variant, the A/B test's status is *Completed* and
+the test is finished.
+
+![Figure 2: Once you've published a Variant, the A/B test is complete.](../../../images-dxp/ab-test-complete.png)
+
+In cases where you'd like to publish an alternative Variant that was not
+declared a winner, select the Variant from the A/B Test panel and click
+*Publish*.
+
+To be continued...
