@@ -23,6 +23,8 @@ links as editable and provide for "rich" text with formatting. Liferay
 portlets can also be embedded in Fragments as widgets, making pages with
 Fragments more dynamic than regular web content.
 
+Now you'll step through some Page Fragment basics.
+
 ## Developing Page Fragments
 
 There are two types of Page Fragments: *Sections* and *Components*. A Section
@@ -36,6 +38,30 @@ Collections without using any external tools, but you can also use your
 preferred web development tools. For an explanation of Fragment creation using
 Liferay's built in tools, see 
 [Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments). 
+
+## Making a Fragment Configurable
+
+| **Note:** Defining configurations for Page Fragments is available in Liferay
+| DXP 7.2 SP1+ and Liferay Portal GA2+.
+
+Page Fragments are also configurable; defining configuration options for your
+fragment eliminates the need to maintain multiple other fragments similar in
+style. For example, if you'd like to provide a dark background banner and a
+light background banner, you can create one banner with a configuration option
+for background type.
+
+The following field types are supported for Fragment configurations:
+
+- `checkbox`
+- `colorPalette`
+- `itemSelector`
+- `select`
+- `text`
+
+This is available for all Fragment types (e.g., Fragment Renderer, etc.).
+
+For more information on making your fragment configurable, see
+[this section](/docs/7-2/frameworks/-/knowledge_base/f/making-a-fragment-configurable).
 
 ### Fragments CLI
 
