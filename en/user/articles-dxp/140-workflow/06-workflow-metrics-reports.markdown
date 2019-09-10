@@ -75,33 +75,33 @@ when you select a new time period; the time unit changes depending on the total
 time period you're measuring. For some of the longer durations, the time unit is
 configurable:
 
-Today
+**Today**
 : Calculate _Inst/Hour_ from _00:00_, or _12:00 AM_, of the current day until the
 current time (rounded to the nearest whole hour).
 
-Yesterday
+**Yesterday**
 : Calculate _Inst/Hour_  From _00:00-23:59_, or _12:00 AM to 11:59 PM_, of the
 previous day.
 
-Last 7 Days
+**Last 7 Days**
 : Calculate _Inst/Day_. The current day counts as 1 day, so this is from 6 days
 ago to the current day.
 
-Last 30 Days
+**Last 30 Days**
 : Calculate the _Inst/Week_ or the _Inst/Day_. The current day counts as 1 day,
 so this is from 29 days ago to the current day.
 
-Last 90 Days
+**Last 90 Days**
 : Calculate the _Inst/Month_, _Inst/Week_, or _Inst/Day_. The current day counts
 as 1 day, so this is from 89 days ago to the current day.
 
-Last 180 Days
+**Last 180 Days**
 : Calculate the _Inst/Month_ or _Inst/Week_. The current day counts as 1 day, so
 this is from 179 days ago to the current day.
 
-Last Year
+**Last Year**
 : Calculate the _Inst/Month_ or _Inst/Week_. The current day counts as 1 day, so
-this is from 364/365 days ago to the current day.
+this is from 364 days (365 for a leap year) ago to the current day.
 
 ## Items View
 
