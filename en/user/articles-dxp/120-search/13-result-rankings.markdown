@@ -1,8 +1,8 @@
 ---
-header-id: customizing-search-result-rankings
+header-id: search-tuning-customizing-search-results
 ---
 
-# Customizing Search Result Rankings
+# Search Tuning: Customizing Search Results
 
 [TOC levels=1-4]
 
