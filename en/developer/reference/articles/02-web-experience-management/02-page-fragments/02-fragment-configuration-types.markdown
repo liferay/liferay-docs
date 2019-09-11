@@ -141,6 +141,9 @@ for cases where you must manually input a text option:
                     "label": "Button Text",
                     "description": "button-text",
                     "type": "text",
+                    "typeOptions": {
+                        "placeholder": "Placeholder"
+                    },
                     "dataType": "string",
                     "defaultValue": "Go Somewhere"
                 }
