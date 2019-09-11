@@ -11,7 +11,7 @@ on a web page. You start with a "blank slate." You then have three tools
 at your disposal to accomplish your vision:
 
 **HTML**: The markup of the fragment. Fragments use standard HTML with 
-special tags to add dynamic behavior.
+special tags to add dynamic behavior. 
 
 **CSS**: Styles and positions the fragment's markup. 
 
@@ -19,8 +19,15 @@ special tags to add dynamic behavior.
 
 The HTML, CSS, and JavaScript are all completely standard, but can be 
 enhanced with Liferay-specific features. You can specify text, images, and 
-links as editable and provide for "rich" text with formatting. Liferay
-portlets can also be embedded in Fragments as widgets, making pages with
+links as editable and provide for "rich" text with formatting.
+
+You can also access the FreeMarker templates engine from your HTML using the
+[alternative (square bracket) syntax](https://freemarker.apache.org/docs/dgui_misc_alternativesyntax.html).
+You can learn more about available FreeMarker objects in the
+[Frontend Reference](/docs/7-2/reference/-/knowledge_base/r/front-end-reference)
+section.
+
+Liferay portlets can also be embedded in Fragments as widgets, making pages with
 Fragments more dynamic than regular web content.
 
 Now you'll step through some Page Fragment basics.
