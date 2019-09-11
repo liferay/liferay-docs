@@ -27,6 +27,7 @@ In short, these assets contain text fields supporting localized search:
 | Form Record | `content` | 1 | No |
 | Web Content Article | `title`, `content`, `description` |  1 | No |
 | Asset Category | `title`, `description` |  1 | No |
+| Asset Tag | `title`, 
 | Wiki Page | `title`, `content` |  2 | Yes |
 | Blogs Entry | `content`, `title` |  2 | Yes |
 | Message Boards Message | `title`, `content` | 2 | Yes |
