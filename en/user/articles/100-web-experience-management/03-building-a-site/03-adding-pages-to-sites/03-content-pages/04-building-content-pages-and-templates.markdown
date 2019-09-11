@@ -83,7 +83,7 @@ finish it up, change the background color for the section to black.
 
 1.  Click on the bottom Section and some additional icons will appear.
 
-    ![Figure 6: You can change the background color, image, or edit spacing and padding for a section.](../../../../../images/content-page-section-editor.png)
+    ![Figure 6: You can change the background color, image, or edit spacing and padding for a section. You can also remove it.](../../../../../images/content-page-section-editor.png)
 
 2.   Click on *Background Color* ![Background Color](../../../../../images/icon-color.png), and select Black.
 
