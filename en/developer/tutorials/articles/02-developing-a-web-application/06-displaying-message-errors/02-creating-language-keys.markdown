@@ -15,7 +15,7 @@ keys files that hold multiple language translations. Here, you'll learn how to
 provide a *default* set of English language keys for your application. For more
 information on language keys and providing automatically translated language
 keys, 
-[see this tutorial](/docs/7-2/frameworks/-/knowledge_base/f/automatically-generating-translations).
+[see Generating Translations](/docs/7-2/frameworks/-/knowledge_base/f/automatically-generating-translations).
 
 Language keys are stored in the `Language.properties` file included in your 
 `guestbook-web` module. `Language.properties` is the default, but you can create 

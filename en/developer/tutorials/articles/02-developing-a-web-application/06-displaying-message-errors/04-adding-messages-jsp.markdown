@@ -46,3 +46,5 @@ application.
 Your application is shaping up, but it is missing another important feature:
 permissions. Next, you'll add permission checking for your guestbooks and
 entries. 
+
+Look for the next part soon! 
