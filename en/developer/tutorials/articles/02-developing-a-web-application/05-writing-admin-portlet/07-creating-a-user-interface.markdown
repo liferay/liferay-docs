@@ -293,4 +293,3 @@ missing features, however. For example, if there's ever an error, users never
 see it: all the code written so far just prints messages in the logs. Next,
 you'll learn how to display those errors to the user. 
 
-Stay tuned; the next part is coming soon! 

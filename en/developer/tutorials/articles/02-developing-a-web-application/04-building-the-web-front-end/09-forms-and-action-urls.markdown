@@ -78,5 +78,5 @@ produces an error.
 
 ![Figure 1: This is the Guestbook application's form for adding entries.](../../../images/first-guestbook-portlet-edit-entry.png)
 
-Implementing the portlet action (what happens when the user clicks *Save*) is
-your next task. 
+Implementing portlet actions (what happens when the user clicks *Save* or
+*Delete*) is your next task. 
