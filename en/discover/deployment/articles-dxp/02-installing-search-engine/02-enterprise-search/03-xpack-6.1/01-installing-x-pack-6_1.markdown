@@ -50,7 +50,7 @@ Here are the X-Pack installation steps:
     See more about the permissions X-Pack needs
     [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html). 
 
-2.  Make sure Elasticsearch allows automatic index creation by verifying this 
+2.  Make sure Elasticsearch does not allow automatic index creation by verifying this 
     property in your `elasticsearch.yml` file:
 
         action.auto_create_index: false
