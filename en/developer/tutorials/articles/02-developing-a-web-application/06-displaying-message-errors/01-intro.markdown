@@ -21,6 +21,9 @@ That's exactly what you'll do next, in three steps:
 2.  Add the error messages to your action methods.
 3.  Report those error messages in your JSPs.
 
+If you get stuck, [source code](https://github.com/liferay/liferay-docs/tree/master/developer/tutorials/code/guestbook/06-messages)
+for this step is provided. 
+
 Ready to get started? 
 
 <a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/creating-language-keys">Let's Go!<span class="icon-circle-arrow-right"></span></a>
