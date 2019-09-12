@@ -88,7 +88,7 @@ architecture of
     See more about the permissions X-Pack needs
     [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html). 
 
-2.  Make sure Elasticsearch allows the automatic creation of indexes. If
+2.  Make sure Elasticsearch does not allow the automatic creation of indexes. If
     you're unsure, check `elasticsearch.yml` for this property:
 
         action.auto_create_index: false
