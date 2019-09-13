@@ -100,8 +100,8 @@ configurable,
 Although this example highlights accessing configuration values in HTML via the
 FreeMarker context, you can also access these values via JavaScript. JavaScript
 configuration objects are named the same as their FreeMarker counterparts. It's
-recommended to make the JavaScript configuration object available by passing it
-as a second parameter in the JavaScript function. For example,
+recommended to make the JavaScript configuration object available by declaring
+it as a second parameter in the JavaScript function. For example,
 
 ```js
 function(fragmentElement, configuration) {
@@ -113,8 +113,8 @@ The configuration object would be built like this:
 
 ```js
 var configuration = {
-    field1 = value1,
-    field2 = value2
+    field1: value1,
+    field2: value2
 }
 ```
 
