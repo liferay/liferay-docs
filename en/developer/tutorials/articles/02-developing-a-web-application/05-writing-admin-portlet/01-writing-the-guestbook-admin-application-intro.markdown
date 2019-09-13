@@ -21,7 +21,7 @@ In short, this is a simple application with a simple interface:
 
 ![Figure 1: The Guestbook Admin portlet lets administrators manage Guestbooks.](../../../images/admin-app-start.png)
 
-If you get stuck, [source code](https://github.com/liferay/liferay-docs/tree/master/developer/tutorials/code/guestbook/05-admin-portlet)
+If you get stuck, [source code](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/guestbook/05-admin-portlet)
 for this step is provided. 
 
 Are you ready to begin? 
