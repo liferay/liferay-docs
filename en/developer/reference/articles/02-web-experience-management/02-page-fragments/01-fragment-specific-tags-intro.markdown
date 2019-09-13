@@ -84,16 +84,11 @@ There is also a specific syntax for creating editable link elements:
 Marketers can edit the link text, target URL, and basic link styling---primary
 button, secondary button, link.
 
-For more information on various aspects of editing and managing Content Pages,
-see the
-[Creating Content Pages](/docs/7-2/user/-/knowledge_base/u/creating-content-pages)
-section.
-
 ![Figure 2: You have several options for defining a link's appearance and behavior.](../../../images/fragment-link-editor.png)
 
-You can also map your editable link to content. You can set the *Content* for
-the link (web content article, document, or blog) and choose its applicable
-*Field* to display (e.g., title, author name, tags, etc.).
+For more information on editable links, see the
+[Editable Links](/docs/7-2/user/-/knowledge_base/u/content-page-elements#editable-links)
+section.
 
 ## Including Widgets Within A Fragment 
 
