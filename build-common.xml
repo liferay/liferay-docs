@@ -422,7 +422,7 @@
 		<property file="${project.dir}/release-site.properties" />
 		<distdiff
 			docdir="${doc.dir}"
-			doclocation="${purpose.dir}/${doc.dir}"
+			doclocation="${language.dir}/${purpose.dir}/${doc.dir}"
 			distdir="${dist.dir}"
 			zipname="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}"
 			dxpparam="false"
