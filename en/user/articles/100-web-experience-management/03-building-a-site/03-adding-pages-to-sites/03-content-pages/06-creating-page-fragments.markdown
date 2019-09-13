@@ -19,17 +19,26 @@ In this article, you'll learn about the Page Fragments interface.
 To navigate to the Page Fragments interface,
 
 1.  Go to Site Administration. Make sure the Site where you want to work is 
-    selected.
+    selected. If you prefer creating a Fragment that's available for all Sites,
+    navigate to the *Global* Site and create your Fragment there. Global
+    Fragments are inherited by child Sites, so they can only be edited from the
+    Global Site. Any resources the Global Fragment references (e.g., image) from
+    the Global Site is copied to a Site that leverages the Fragment.
+
+    | **Note:** Creating Global Fragments is available in Liferay DXP 7.2
+    | SP1+ and Liferay Portal 7.2 GA2+.
 
 2.  Select *Site Builder* &rarr; *Page Fragments*
 
-![Figure 1: Here is the Page Fragments page with no Fragments or Collections created.](../../../../../images/empty-fragments-page.png)
+![Figure 1: Here is the Page Fragments page with no custom Fragments or Collections created.](../../../../../images/empty-fragments-page.png)
+
+
 
 Fragments are organized in *Collections*. The main Page Fragments page shows
-available Collections, provides the option to Import and Export, and enables you
-to create Collections. You can also manage the organization and display of
-Fragments and Collections you have created. To create a Fragment, you must first
-create a Collection.
+available Collections (out-of-the-box Fragment Collections to start), provides
+the option to Import and Export, and enables you to create Collections. You can
+also manage the organization and display of Fragments and Collections you have
+created. To create a Fragment, you must first create a Collection.
 
 1.  Click *New* &rarr; *Collection* to add a Collection.
 
