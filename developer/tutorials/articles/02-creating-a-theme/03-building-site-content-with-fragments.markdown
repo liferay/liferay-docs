@@ -9,27 +9,24 @@ Let's recap what you've completed so far:
 
 If you deploy the theme as is you may notice that the pages are a bit bare at 
 the moment. You've configured the key aspects of the theme, but the majority of 
-the sites content, the portion that lies between the Header and the Footer, will 
-be created with [Fragments](). 
+the Lunar Resort's content, the portion that lies between the Header and the 
+Footer, is provided with [Fragments](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments). 
 Fragments are independent chunks of code containing JavaScript, CSS, and HTML. 
-Although you can manually define your content in theme templates, that can 
-clutter up your templates pretty quick and can result in large files. The other 
-issue of manually writing code is the inherent repetition of writing the same or 
-similar pieces of code that are required for multiple elements, and then 
-modifying it for each page. Fragments are the perfect solution to this common 
-problem. You can create a fragment once, make aspects of it editable, and then 
-reuse it across multiple content pages and just edit the portions that need 
-changed for each page. Fragments are somewhat out of the scope of these 
-tutorials, so this section only briefly covers them to demonstrate their 
+Although you can manually define your content in theme templates, developing 
+content in page fragments instead keeps your theme template files small and 
+uncluttered. And often, if you're manually coding the content, you'll find 
+yourself repeating or reusing the similar blocks of code over and over. 
+Fragments are the perfect solution to this common problem. You can create a 
+fragment once, make aspects of it editable, and then reuse it across multiple 
+content pages, with just minor edits. Fragments are somewhat out of the scope of 
+these articles, so this section only briefly covers them to demonstrate their 
 workflow as it pertains to the look and feel of the page. 
 
-As an example, you'll create a hero image fragment that will be used on every 
-page except for the home page. In this case, the hero image has two key 
-requirements:
+As an example, you'll create a hero image fragment that is used on every page 
+except for the home page. In this case, the hero image has two key requirements:
 
-- The image must be configurable and of course responsive
-- There must be a configurable page title text element that the 
-  Administrator can update for each page
+- The image must be editable and of course responsive
+- It must contain editable text that identifies the page
   
 Follow these steps to create the fragment:
 
@@ -49,7 +46,7 @@ Follow these steps to create the fragment:
     Name and Save. You're presented with 4 panes: an HTML editor, a CSS editor, 
     a JavaScript editor, and a preview.
     
-    ![Figure: 1 The Fragments editor provides three specialized editor windows and a preview pane.]()
+    ![Figure: 1 The Fragments editor provides three specialized editor windows and a preview pane.](../../../frameworks/images/fragment-resources.png)
     
 4.  Copy the text below into the HTML pane, between the existing fragment 
     `<div>` tags. Note the `<lfr-editable>` tag used below. This lets a Site 

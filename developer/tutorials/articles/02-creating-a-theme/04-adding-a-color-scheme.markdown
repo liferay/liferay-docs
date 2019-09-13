@@ -57,7 +57,7 @@ Follow these steps:
     `/src/css/color_schemes/eclipse.scss` and add this import and styles to it 
     to use the new colors you defined:
 
-    ```css
+    ```sass
     @import '../colors';
     
     body.eclipse {
@@ -74,6 +74,15 @@ Follow these steps:
         }
         
         li.nav-item {
+          
+          ul.child-menu {
+            background-color: $lunar-resort-eclipse-red;
+          }
+            
+          &:hover ul.child-menu {
+            background-color: $lunar-resort-eclipse-red;
+          }
+          
           &.selected {
             & a.nav-link {
               color: $lunar-resort-eclipse-red;
@@ -95,15 +104,18 @@ Follow these steps:
 5.  Import the eclipse color scheme's CSS file into `_custom.scss` so it's 
     loaded with the rest of the custom styles:
 
-    ```css
+    ```sass
     @import "color_schemes/eclipse";
     ```
 
-6.  Create a `/src/images/eclipse/` folder, and add [a thumbnail preview](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-thumbnail-preview-for-your-theme) 
-    for it. Note that the folder name matches the color scheme's CSS class name.
+6.  You must create thumbnails for each color scheme, just like you did the 
+    theme. To save time, copy the `color_schemes/` folder from the 
+    `lunar-resort-build/assets/images/` folder to the theme's `/src/images/` 
+    folder. Note that the folder names match the color scheme CSS class names 
+    defined in `liferay-look-and-feel.xml`.
 
-7.  Now that the color scheme is created, you need to update the page fragments 
-    to use the eclipse color scheme class, so they have the same look as the 
+7.  Now that the color scheme is created, you must update the page fragments 
+    to use the eclipse color scheme class so they have the same look as the 
     color scheme when it's applied to the page. The fragments don't have access 
     to the SASS color variables, so you must use the hexadecimal color codes. 
     You won't update all the fragments in this section, but a couple examples 
@@ -136,12 +148,19 @@ Follow these steps:
     `lunar-resort-build/assets/fragments/` folder to import the remaining pages 
     and updated fragments. 
 
-8.  Deploy the theme and open the Control Menu and navigate to *Site Builder* 
-    &rarr; *Pages* and click the cog next to *Public Pages*. Select the Eclipse 
-    color scheme under the *LOOK AND FEEL* tab and save to apply the changes. 
-    The theme should look like the figure below:
+8.  Deploy the theme and open the Control Menu, navigate to *Site Builder* 
+    &rarr; *Pages*, and click the Gear icon next to *Public Pages*. Select the 
+    Eclipse color scheme under the *LOOK AND FEEL* tab and save to apply the 
+    changes. 
+    
+    ![Figure 1: Color schemes are a good way to subtly change the look and feel of your site.](../../images/theme-tutorial-color-schemes.png)
 
-    ![Figure: 1 Color schemes are a good way to subtly change the look and feel of your site.]()
+    
+    
+    The theme should look like the figure below with the Eclipse color scheme 
+    applied:
+
+    ![Figure 2: The finished color scheme gives the Lunar Resort site a fiery glow.](../../images/theme-tutorial-eclipse-color-scheme.png)
 
 Great! You've seen how you can quickly change the look and feel of the Lunar 
 Resort with just a simple color scheme. <!--Next, you'll learn how to store common 

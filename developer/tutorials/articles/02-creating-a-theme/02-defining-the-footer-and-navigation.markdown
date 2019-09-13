@@ -1,17 +1,17 @@
 # Defining the Lunar Resort's Footer and Footer Navigation
 
-You've configured the Header and its navigation. Now you need to configure the 
-Footer. The Footer will be pretty standard and we'll include navigation that 
-you'll provide by embedding a navigation portlet. 
+You've configured the Header and its navigation, but at the moment the Footer is 
+a bit bare bones. In this section, you'll configure the Footer and include 
+navigation with an embedded navigation portlet. 
 
 Follow these steps;
 
-1.  To keep the Portal Normal template uncluttered, you'll create a separate 
-    template to hold the Footer's markup. Create a new file called `footer.ftl` 
-    in the theme's `src/templates/` folder.
+1.  To keep the Portal Normal template uncluttered, create a separate template 
+    to hold the Footer's markup. Create a new file called `footer.ftl` in the 
+    theme's `/src/templates/` folder.
     
-2.  Remove the Footer markup (shown below) from `portal_normal.ftl` and copy it 
-    into `footer.ftl`:
+2.  Copy the Footer markup (shown below) from `portal_normal.ftl` into 
+    `footer.ftl`:
     
     ```markup
     <footer id="footer" role="contentinfo">
@@ -21,9 +21,20 @@ Follow these steps;
   	</footer>
     ```
     
+    And update the `<p>` element to include these classes:
+    
+    ```markup
+    <footer id="footer" role="contentinfo">
+  		<p class="powered-by text-center text-white py-3 mb-0">
+  			<@liferay.language key="powered-by" /> <a href="http://www.liferay.com" rel="external">Liferay</a>
+  		</p>
+  	</footer>
+    ```     
+    
 3.  The Administrator just sent an email. She doesn't want to display the Footer 
-    on every page, so she would like the option to hide it. To do that, you will 
-    create a [theme setting]() to optionally show the Footer. Open your theme's 
+    on every page, so she would like the option to hide it. To do that, create a 
+    [theme setting](/docs/7-2/frameworks/-/knowledge_base/f/making-configurable-theme-settings) 
+    to optionally show the Footer. Open your theme's 
     `/src/WEB-INF/liferay-look-and-feel.xml` file and add this snippet just 
     below the `<template-extension>ftl</template-extension>` entry. This renders 
     a togglable *Show Footer* option in the *Look and Feel* section for the 
@@ -35,7 +46,7 @@ Follow these steps;
     </settings>
     ```
 
-4.  Now you need to define a FreeMarker variable to store the value of the 
+4.  Now you must define a FreeMarker variable to store the value of the 
     `show-footer` theme setting so you can check for it in `portal_normal.ftl`. 
     Open `init_custom.ftl` and add the variable declaration below to set the 
     `show_footer` variable to the value (true or false) of the `show-footer` 
@@ -47,9 +58,8 @@ Follow these steps;
     />
     ```
 
-5.  Open `portal_normal.ftl` and add this snippet just above the closing 
-    `</div>` for the `#wrapper` `<div>` to only render the Footer if the 
-        `show-footer` setting is true:
+5.  Open `portal_normal.ftl` and replace the Footer markup with the code snippet 
+    below:
     
     ```markup
     <#if show_footer>
@@ -61,12 +71,12 @@ Follow these steps;
     above the `powered-by` paragraph to embed the navigation portlet. This 
     configuration stores the portlet preferences in a `preferencesMap` variable. 
     The `displayDepth` of `1` specifies that the portlet must only render the 
-    top-level parent navigation and `portletSetupPortletDecoratorId` sets the 
-    portlet decorator to `barebone` so no wrapper is displayed for the 
-    navigation portlet in the Footer.
+    top-level parent navigation, and `portletSetupPortletDecoratorId` sets the 
+    portlet decorator to `barebone`, which removes the portlet's wrapper and 
+    only renders the portlet's content:
 
     ```markup
-    <nav id="navbar-footer">
+    <nav id="navbarFooter">
     	<div class="text-center mx-auto">
     		<div class="nav text-uppercase" role="menubar">
     			<#assign preferencesMap = {"displayDepth": "1", "portletSetupPortletDecoratorId": "barebone"} />
@@ -80,49 +90,50 @@ Follow these steps;
     </nav>
     ```
 
-7.  Now you need some social media links for visitors so they can keep tabs on 
-    the latest and greatest news from the Moon. Replace the snippet you just 
-    added with the one below. This uses [FontAwesome icons](https://fontawesome.com/v3.2.1/icons/) 
-    (v3.2.1 included with @product@). It also adds a wrapper to prepare for the 
-    next step.
+7.  The visitors need some social media links so they can keep tabs on the 
+    latest and greatest news from the Lunar Resort. Replace the snippet you just 
+    added with the one below. This uses [Clay icons](https://clayui.com/docs/components/icons.html) 
+    and adds a wrapper to prepare for the next step.
     
     ```markup
-    <div id="navbar-contact-wrapper" class="row mx-0">
-      <nav id="navbar-footer" class="col-12 col-md-6 pt-5">
-        <div id="social-media-wrapper" class="col-12 col-md-4 text-center mx-auto mb-4">
+    <div id="navbarContactWrapper" class="row mx-0">
+      <nav id="navbarFooter" class="col-12 col-md-6 pt-5">
+        <div id="socialMediaWrapper" class="col-12 col-md-4 text-center mx-auto mb-4">
           <h2 class="nav-heading">
               Follow Us
           </h2>
-          <div id="social-media-links">
-            <ul class="nav flex-row mx-auto">
-                <li class="mx-2">
-                    <div id="facebook"><a class="icon-facebook icon-3x text-white"
-                    href="http://www.facebook.com/pages/Liferay/45119213107" 
-                    target="_blank"><span class="hide">Facebook</span></a></div>
-                </li>
-                <li class="mx-2">
-                    <div id="twitter"><a class="icon-twitter icon-3x text-white" 
-                    href="http://www.twitter.com/liferay" 
-                    target="_blank"><span class="hide">Twitter</span></a></div>
-                </li>
-                <li class="mx-2">
-                    <div id="linked-in"><a class="icon-linkedin icon-3x text-white"
-                    href="http://www.linkedin.com/company/83609" 
-                    target="_blank"><span class="hide">LinkedIn</span></a></div>
-                </li>
-                <li class="mx-2">
-                    <div id="youtube"><a class="icon-youtube icon-3x text-white"
-                    href="http://www.youtube.com/user/liferayinc" 
-                    target="_blank"><span class="hide">YouTube</span></a></div>
-                </li>
-                <li class="mx-2">
-                    <div id="google-plus">
-                    <a class="icon-google-plus icon-3x text-white"
-                    href="https://plus.google.com/+liferay/posts" 
-                    target="_blank"><span class="hide">Google</span></a></div>
-                </li>
-            </ul>
-          </div>
+            <div id="socialMediaLinks">
+              <ul class="nav flex-row mx-auto">
+                  <li class="mx-2">
+                      <div id="facebook"><a class="text-white"
+                      href="http://www.facebook.com/pages/Liferay/45119213107" 
+                      target="_blank"><span class="hide">Facebook</span>
+                      <@clay["icon"] symbol="social-facebook" />
+                      </a></div>
+                  </li>
+                  <li class="mx-2">
+                      <div id="twitter"><a class="text-white" 
+                      href="http://www.twitter.com/liferay" 
+                      target="_blank"><span class="hide">Twitter</span>
+                      <@clay["icon"] symbol="twitter" />
+                      </a></div>
+                  </li>
+                  <li class="mx-2">
+                      <div id="linked-in"><a class="text-white"
+                      href="http://www.linkedin.com/company/83609" 
+                      target="_blank"><span class="hide">LinkedIn</span>
+                      <@clay["icon"] symbol="social-linkedin" />
+                      </a></div>
+                  </li>
+                  <li class="mx-2">
+                      <div id="youtube"><a class="text-white"
+                      href="http://www.youtube.com/user/liferayinc" 
+                      target="_blank"><span class="hide">YouTube</span>
+                      <@clay["icon"] symbol="video" />
+                      </a></div>
+                  </li>
+              </ul>
+            </div>
         </div>
         <div class="text-center mx-auto">
           <div class="nav text-uppercase" role="menubar">
@@ -139,12 +150,14 @@ Follow these steps;
     ```
 
 7.  Add this snippet below the closing `</nav>` tag to add the Lunar Resort's 
-    contact information:
+    contact information, and copy the `lunar-resort-logo-vertical.png` asset 
+    from the `lunar-resort-build/assets/images/` folder to the `/src/images/` 
+    folder so you can use it in the Footer:
 
     ```markup
     <div class="contact-info-container text-center pt-5 pb-2 col-12 col-md-4 mx-auto mb-4">
       <img alt="lunar-resort-logo" height="90" class="mb-2" src="${images_folder}/lunar-resort-logo-vertical.png" />
-      <div id="contact-text-wrapper" class="row mx-0">
+      <div id="contactTextWrapper" class="row mx-0">
         <p class="col-12 col-md-6">
           123 Mare Nectaris Lane<br>
           Mare Nectaris, Moon Colony 10010<br>
@@ -185,8 +198,12 @@ Follow these steps;
         }
       }
       
-      #social-media-wrapper ul {
-        width: 248px;
+      #socialMediaWrapper ul {
+        width: 192px;
+        
+        li a {
+          font-size: 2rem;
+        }
       }
       
       p.powered-by a, .contact-info-container a {
@@ -195,3 +212,7 @@ Follow these steps;
 
     }
     ```
+    
+The updated Footer and navigation should look like the figure below:
+    
+![Figure 1: The updated Footer provides everything visitors need to follow and contact the Lunar Resort.](../../images/theme-tutorial-updated-footer.png)
