@@ -21,7 +21,7 @@ That's exactly what you'll do next, in three steps:
 2.  Add the error messages to your action methods.
 3.  Report those error messages in your JSPs.
 
-If you get stuck, [source code](https://github.com/liferay/liferay-docs/tree/master/developer/tutorials/code/guestbook/06-messages)
+If you get stuck, [source code](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/guestbook/06-messages/com-liferay-docs-guestbook)
 for this step is provided. 
 
 Ready to get started? 
