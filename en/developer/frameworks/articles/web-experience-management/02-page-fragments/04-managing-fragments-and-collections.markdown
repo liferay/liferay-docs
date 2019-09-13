@@ -49,8 +49,8 @@ next.
 
 ## Propagating Fragment Changes
 
-| **Note:** Propagating Fragment changes is available in Liferay DXP 7.2 Fix
-| Pack 1+ and Liferay Portal GA2+.
+| **Note:** Propagating Fragment changes is available in Liferay DXP 7.2 SP1+
+| and Liferay Portal GA2+.
 
 By default, when a Fragment developer makes a change to an existing fragment,
 the change is not automatically propagated to the pages that were using it. This

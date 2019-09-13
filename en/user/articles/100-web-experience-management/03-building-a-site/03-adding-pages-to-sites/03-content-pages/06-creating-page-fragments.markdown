@@ -32,8 +32,6 @@ To navigate to the Page Fragments interface,
 
 ![Figure 1: Here is the Page Fragments page with no custom Fragments or Collections created.](../../../../../images/empty-fragments-page.png)
 
-
-
 Fragments are organized in *Collections*. The main Page Fragments page shows
 available Collections (out-of-the-box Fragment Collections to start), provides
 the option to Import and Export, and enables you to create Collections. You can

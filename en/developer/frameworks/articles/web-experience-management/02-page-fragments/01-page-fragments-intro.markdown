@@ -40,10 +40,13 @@ that is added to a Section.
 
 Fragments are created inside of Collections. Collections provide an easy way to 
 manage and share groups of related Fragments. Users navigate Collections when 
-selecting Fragments to add to a page. You can create and manage Fragments and
-Collections without using any external tools, but you can also use your
-preferred web development tools. For an explanation of Fragment creation using
-Liferay's built in tools, see 
+selecting Fragments to add to a page. You can view all the out-of-the-box
+Fragments (and their code) from the Page Fragments admin page, for useful
+examples.
+
+You can create and manage Fragments and Collections without using any external
+tools, but you can also use your preferred web development tools. For an
+explanation of Fragment creation using Liferay's built in tools, see 
 [Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments). 
 
 ## Making a Fragment Configurable
