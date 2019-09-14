@@ -26,7 +26,12 @@ To navigate to the Page Fragments interface,
     the Global Site is copied to a Site that leverages the Fragment.
 
     | **Note:** Creating Global Fragments is available in Liferay DXP 7.2
-    | SP1+ and Liferay Portal 7.2 GA2+.
+    | SP1+ and Liferay Portal 7.2 GA2+. To expose this feature in the initial
+    | releases of those versions, however, you must create a `.config` file.
+    | Create the
+    | `com.liferay.fragment.web.internal.configuration.FragmentGlobalPanelAppConfiguration.config`
+    | file and add the `enabled=B"true"` property. Then copy it to your
+    | @product@ instance's `osgi/configs` folder.
 
 2.  Select *Site Builder* &rarr; *Page Fragments*
 
