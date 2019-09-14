@@ -23,8 +23,6 @@ import org.htmlparser.tags.LinkTag;
 import org.htmlparser.util.NodeList;
 import org.htmlparser.util.ParserException;
 
-import com.liferay.portal.kernel.util.Validator;
-
 /**
  * @author Cody Hoag
  */
@@ -1020,7 +1018,7 @@ public class CheckLinksTask extends Task {
 	 */
 	private static List<File> includeDxpOverrides(List<File> articles, List<File> dxpArticles) {
 
-		if (Validator.isNotNull(dxpArticles)) {
+		if (dxpArticles != null) {
 
 			List<String> currentArticlePathStrings = new ArrayList<String>();
 			List<String> currentDxpArticlePathStrings = new ArrayList<String>();
@@ -1258,7 +1256,7 @@ public class CheckLinksTask extends Task {
 			else if (!docFoldersMatch) {
 				// invalid URL
 			}
-			else if (Validator.isNull(secondaryHeader)) {
+			else if (secondaryHeader == null) {
 				if (headers.get(0).contains(primaryHeader)) {
 					validURL = true;
 				}
