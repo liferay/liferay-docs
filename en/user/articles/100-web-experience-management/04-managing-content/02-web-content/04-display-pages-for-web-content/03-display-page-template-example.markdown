@@ -59,7 +59,16 @@ replaced with whatever content you add to it.
 | Structure to a Display Page Template. For the Basic Web Content type, this includes
 | structure-defined fields like Summary, Title, and Content, as well as metadata
 | fields like Publish Date, Categories, and Tags. In a user-defined structure, all
-| user selected fields display here as well.
+| user selected fields display here as well. Custom fields are also available
+| do display if they apply to the content type selected.
+
+For more information on the right panel and the Fragment options available to
+you, see the
+[Content Page Elements](/docs/7-2/user/-/knowledge_base/u/content-page-elements)
+and
+[Content Page Interface](/docs/7-2/user/-/knowledge_base/u/content-page-management-interface)
+articles. Content Pages and Display Page Templates share the same Page builder
+tools.
 
 ## Publishing with Display Page Templates
 

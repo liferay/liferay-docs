@@ -52,8 +52,10 @@ this by selecting the element's *Map* button
 | **Note:** Many mapping improvements were released in Liferay DXP 7.2 SP1+ and
 | Liferay Portal 7.2 GA2+. For example, mapping editables to text/URL fields of
 | existing content and mapping Fragment background images to image fields of
-| existing content. To ensure you leverage the latest editable element mapping
-| features, upgrade to these versions.
+| existing content. You can also map
+| [custom fields](/docs/7-2/user/-/knowledge_base/u/custom-fields). To ensure
+| you leverage the latest editable element mapping features, upgrade to these
+| versions.
 
 For more information on developing these elements, see the
 [Fragment Specific Tags](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags)

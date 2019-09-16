@@ -79,6 +79,11 @@ open the Edit User form and scroll down to find your custom field.
 
 ![Figure 2: The Custom Fields panel is found at the bottom of the Edit User form.](../../images/custom-fields-panel.png)
 
+You can also leverage your custom field in Content Pages and Display Page
+Templates. See the
+[Editable Elements](/docs/7-2/user/-/knowledge_base/u/content-page-elements#editable-elements)
+article for more information.
+
 ## Editing a Custom Field
 
 You can't change the key or field type of a custom field, but you can delete it
