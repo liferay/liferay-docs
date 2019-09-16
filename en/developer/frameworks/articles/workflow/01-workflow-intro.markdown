@@ -15,7 +15,7 @@ use the workflow capabilities in subsequent articles.
 A workflow process is a set of steps that an Asset must proceed through before
 it's marked with the workflow status _Approved_. The steps are defined in an XML file
 called a
-[workflow definition](/7-2/reference/-/knowledge_base/reference/crafting-xml-workflow-definitions).
+[workflow definition](/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions).
 Each Asset is configured to run through a specific workflow definition via the
 [Control Panel](/7-2/user/-/knowledge_base/user/workflow).
 
