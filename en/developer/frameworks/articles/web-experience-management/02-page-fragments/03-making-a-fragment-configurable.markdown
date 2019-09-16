@@ -99,23 +99,23 @@ configurable,
 
 Although this example highlights accessing configuration values in HTML via the
 FreeMarker context, you can also access these values via JavaScript. JavaScript
-configuration objects are named the same as their FreeMarker counterparts. It's
-recommended to make the JavaScript configuration object available by declaring
-it as a second parameter in the JavaScript function. For example,
+configuration objects are named the same as their FreeMarker counterparts. 
 
-```js
-function(fragmentElement, configuration) {
-    // Fragment JS code
-}
-```
-
-The configuration object would be built like this:
+For example, a configuration object could be built like this:
 
 ```js
 var configuration = {
     field1: value1,
     field2: value2
 }
+```
+
+Another example of setting the configuration object and using it is shown below:
+
+```js
+const configurationValue = configuration.field1
+
+console.log(configurationValue);
 ```
 
 For more examples of Fragment configuration, visit the
