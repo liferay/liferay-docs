@@ -175,32 +175,35 @@ table td {
         <td class="fourth-column">
             <strong>7.1.x</strong>
         </td>
+        <td class="fifth-column">
+            <strong>7.2.x</strong>
+        </td>
     </thead>
     <tbody>
         <tr>
             <td class="first-column"> Operating Systems </td>
-            <td class="second-column" colspan="3">Ubuntu 11x and Windows 10 x64</td>
+            <td class="second-column" colspan="4">Ubuntu 11x and Windows 10 x64</td>
         </tr>
         <tr>
             <td class="first-column"> Database </td>
             <td class="second-column">MySQL 5.5.x</td>
             <td class="third-column">MySQL 5.6.x</td>
-            <td class="fourth-column">MySQL 5.7.x</td>
+            <td class="fourth-column" colspan="2">MySQL 5.7.x</td>
         </tr>
         <tr>
             <td class="first-column"> Application Server * </td>
             <td class="second-column">Tomcat 7</td>
             <td class="third-column">Tomcat 8</td>
-            <td class="fourth-column">Tomcat 9</td> 
+            <td class="fourth-column" colspan="2">Tomcat 9</td> 
         </tr>
         <tr>
             <td class="first-column"> JDK </td>
             <td class="second-column">Oracle JDK 6, 7</td>
-            <td class="third-column" colspan="2">Oracle JDK 8</td>
+            <td class="third-column" colspan="3">Oracle JDK 8</td>
         </tr>
         <tr>
             <td class="first-column"> Browser </td>
-            <td class="second-column" colspan="3">Chrome</td>
+            <td class="second-column" colspan="4">Chrome</td>
         </tr>
     </tbody>
 </table>
