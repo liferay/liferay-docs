@@ -6,35 +6,13 @@ header-id: search-tuning-synonym-sets
 
 [TOC levels=1-4]
 
-| **Known Issues:** There are several [known
-| issues](https://issues.liferay.com/browse/LPS-99658) for Synonym Sets. These are
-| some of the biggest:
-| 
-| [LPS-100272](https://issues.liferay.com/browse/LPS-100272): 
-| Reindexing permanently deletes all Synonym Sets.
-| 
-| [LPS-98063](https://issues.liferay.com/browse/LPS-98063): 
-| Synonyms do not work with Documents and Media Assets.
-| 
-| [LPS-98148](https://issues.liferay.com/browse/LPS-98148): Synonyms do not work
-| with Knowledge Base Assets.
-
 Starting with @product-ver@ Service Pack 1, new search tuning features are
 available for administrative Users: Synonym Sets is one of them.
-
-Search Tuning features like Synonym Sets are only supported when using
-Elasticsearch as the search engine.
 
 Synonym Sets are mappings that you (the admin) create, so that if a User
 searches for a certain keyword, the synonyms in your mapping are also searched.
 Matches to synonymous keywords are scored equally to matches with the exact
 keyword by the search engine.
-
-Read the [multi-language search documentation](LINK TO UPDATED DOCS) to see
-which native @product@ assets/fields are supported for synonym searches. What
-does localized search have to do with synonyms? All asset types that index their
-data into localized fields will be analyzed with a synonyms-aware analyzer, and
-able to be found during a synonym search.
 
 | **Lunar Resort Use Case:** Multiple content creators at the Lunar Resort write
 | blogs about a variety of topics. Consistent terminology is a problem for some
@@ -43,6 +21,45 @@ able to be found during a synonym search.
 | portal administrator, you must ensure that the search experience is such that
 | searching for any of those keywords returns all relevant results. Synonym Sets
 | are a key ally in this pursuit.
+
+## Requirements
+
+Search Tuning features like Synonym Sets are only supported when using
+Elasticsearch as the search engine.
+
+## Limitations in @product-ver@ Service Pack 1
+
+* Synonyms works on English (`en_*`) and Spanish (`es_*`) localized index fields only out-of-the-box. It means that Synonyms works Liferay assets that support localization. Read the [multi-language search documentation](LINK TO UPDATED DOCS) to see which native @product@ assets/fields are supported for synonym searches.
+* The `=>` [format](https://www.elastic.co/guide/en/elasticsearch/guide/current/synonym-formats.html) is not supported through the Synonyms Set UI.
+
+## Known Issues in @product-ver@ Service Pack 1
+
+There are several [known
+| issues](https://issues.liferay.com/browse/LPS-99658) for Synonym Sets. These are
+| some of the most important ones:
+| 
+| [LPS-100272](https://issues.liferay.com/browse/LPS-100272): 
+| Reindexing permanently deletes all Synonym Sets. Please refer to the ticket for a way to backup & preserve (restore) Synonym Sets across reindex operations. 
+| 
+| [LPS-98126](https://issues.liferay.com/browse/LPS-98126)
+| Users can create duplicate Synonym Set entries and update other Synonym Sets unintentionally.
+| 
+
+<!--
+| [LPS-98063](https://issues.liferay.com/browse/LPS-98063): 
+| Synonyms do not work with Documents and Media Assets. Note: 
+| 
+| [LPS-98148](https://issues.liferay.com/browse/LPS-98148): Synonyms do not work
+| with Knowledge Base Assets.
+-->
+
+<!--
+Read the [multi-language search documentation](LINK TO UPDATED DOCS) to see
+which native @product@ assets/fields are supported for synonym searches. What
+does localized search have to do with synonyms? All asset types that index their
+data into localized fields will be analyzed with a synonyms-aware analyzer, and
+able to be found during a synonym search.
+-->
 
 ## Creating and Managing Synonym Sets
 
@@ -96,3 +113,6 @@ assets/fields are supported. All asset types that index their data into
 localized fields will be analyzed with a synonyms-aware analyzer, and able to be
 found during a synonym search.
 
+# Related Resources
+* https://www.elastic.co/guide/en/elasticsearch/guide/current/synonyms.html
+* https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analysis-synonym-graph-tokenfilter.html
