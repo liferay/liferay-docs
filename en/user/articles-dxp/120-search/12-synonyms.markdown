@@ -29,7 +29,7 @@ Elasticsearch as the search engine.
 
 ## Limitations in @product-ver@ Service Pack 1
 
-* Synonyms works on English (`en_*`) and Spanish (`es_*`) localized index fields only out-of-the-box. It means that Synonyms works Liferay assets that support localization. Read the [multi-language search documentation](LINK TO UPDATED DOCS) to see which native @product@ assets/fields are supported for synonym searches.
+* Synonyms works on English and Spanish locales only and thus on certain Liferay assets that support localization out-of-the-box. Technically it means that it operates on (`en_*`) and (`es_*`) localized index fields. Read the [multi-language search documentation](LINK TO UPDATED DOCS) to see which native @product@ assets/fields are supported for synonym searches.
 * The `=>` [format](https://www.elastic.co/guide/en/elasticsearch/guide/current/synonym-formats.html) is not supported through the Synonyms Set UI.
 
 ## Known Issues in @product-ver@ Service Pack 1
