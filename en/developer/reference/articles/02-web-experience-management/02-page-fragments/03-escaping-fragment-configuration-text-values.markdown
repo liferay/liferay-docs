@@ -13,8 +13,10 @@ authors are protected from XSS attacks.
 ### Escaping Values in HTML/FreeMarker
 
 You must take special care when adding a text value in your Fragment's HTML. For
-example, if a user includes text like `<script>alert('hello')</script>`, it will
-run when the page is rendered.
+example, if a user includes malicious code within `<script>` tags, it will
+run when the page is rendered. This could look something like
+`<script>alert('hello')</script>`, but with something malicious instead of a
+friendly greeting.
 
 To solve this problem, a utility is available in the FreeMarker context via the
 `htmlUtil` class.
