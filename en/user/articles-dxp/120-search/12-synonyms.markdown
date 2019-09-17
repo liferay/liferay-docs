@@ -102,7 +102,7 @@ returned in the Search Results widget.
 
 ## Which Fields are Supported with Synonym Sets?
 
-To leverage synonym sets, a field being searched must use an analyzer that can
+~To leverage synonym sets, a field being searched must use an analyzer that can
 recognize your synonyms. The search infrastructure's backend has been adapted to
 do this for most fields that are commonly involved in full text search. However,
 if the indexing code for an asset doesn't index it's data into the right fields,
@@ -111,8 +111,17 @@ which fields will work with the synonyms feature? Read the [multi-language
 search documentation](LINK TO UPDATED DOCS) to see which native @product@
 assets/fields are supported. All asset types that index their data into
 localized fields will be analyzed with a synonyms-aware analyzer, and able to be
-found during a synonym search.
+found during a synonym search.~
+
+**TODO**: Rewrite: synonyms works with `en*` and `es*` localized fields only out-of-the-box.
+
+## Elasticsearch Index Settings and Mappings for Synonyms Sets
+
+Liferay's Elasticsearch 6 connector of @product-ver@ GA1 ships with the a [default analyzer pipeline](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/index-settings.json) for English and Spanish locales required for synonyms. These analyzers are applied at search time to the matching localized fields as it's defined in the [default mappings](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json) within Liferay's Elasticsearch 6 connector (see [here](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json#L156) and [here](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json#L170)).
+
 
 # Related Resources
 * https://www.elastic.co/guide/en/elasticsearch/guide/current/synonyms.html
+* https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analyzer-anatomy.html
 * https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analysis-synonym-graph-tokenfilter.html
+* http://lucene.apache.org/core/7_7_0/analyzers-common/org/apache/lucene/analysis/en/EnglishPossessiveFilter.html
