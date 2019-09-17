@@ -28,10 +28,13 @@ To create an A/B test,
       the page (click, scroll, etc.) and then navigate away from the site
       without visiting another page.
     - *Click*: the percentage of users who clicked on the page (per session).
+
+<!--
     - *Scroll Depth*: the average depth users scrolled down on the page.
     - *Time On Page*: the average duration users spent on the page.
+-->
 
-    ![Figure 1: Fill out the form to create your A/B test.](../../../images-dxp/create-ab-test.png)
+![Figure 1: Fill out the form to create your A/B test.](../../../images-dxp/create-ab-test.png)
 
 7.  Click *Save*.
 
