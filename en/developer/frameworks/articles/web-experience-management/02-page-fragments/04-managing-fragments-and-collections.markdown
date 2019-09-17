@@ -47,7 +47,7 @@ To access the fragment management menu,
 Did you know you can enable automatic propagation for Fragments? You'll do this
 next.
 
-## Propagating Fragment Changes
+## Propagating Fragment Changes Automatically
 
 | **Note:** Propagating Fragment changes is available in Liferay DXP 7.2 SP1+
 | and Liferay Portal GA2+.
