@@ -7,7 +7,7 @@ header-id: registering-your-permissions-in-the-database
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Implementing Permissions</p><p>Step 2 of 4</p>
+    <p id="stepTitle">Implementing Permissions</p><p>Step 2 of 5</p>
 </div>
 
 The last step introduced the concept of *resources*. Resources are data stored 

@@ -7,7 +7,7 @@ header-id: defining-permissions
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Implementing Permissions</p><p>Step 1 of 4</p>
+    <p id="stepTitle">Implementing Permissions</p><p>Step 1 of 5</p>
 </div>
 
 @product@'s permissions framework is configured declaratively, like Service 

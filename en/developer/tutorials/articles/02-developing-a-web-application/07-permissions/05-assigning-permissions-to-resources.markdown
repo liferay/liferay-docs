@@ -7,13 +7,13 @@ header-id: assigning-permissions-to-resources
 [TOC levels=1-4]
 
 <div class="learn-path-step row">
-    <p id="stepTitle">Implementing Permissions</p><p>Step 3 of 4</p>
+    <p id="stepTitle">Implementing Permissions</p><p>Step 4 of 5</p>
 </div>
 
-You've now defined your permissions and registered them in the container and in
-the database so permissions can be checked. Now you'll create a UI for users to
-assign permissions along with helper classes to make it easy to check
-permissions in the next step. 
+You've now defined your permissions and registered them in both the container
+and the database so permissions can be checked. Now you'll create a UI for users
+to assign permissions along with helper classes to make it easy to check
+permissions in the final step. 
 
 Here's how it works. You have a permission, such as `ADD_ENTRY`, and a resource,
 such as a `Guestbook`. For a user to add an entry to a guestbook, you must check
@@ -30,36 +30,38 @@ make it easier to check permissions:
 
 3.  Replace this class's contents with the following code: 
 
-        package com.liferay.docs.guestbook.web.internal.security.permission.resource;
+    ```java
+    package com.liferay.docs.guestbook.web.internal.security.permission.resource;
 
-        import org.osgi.service.component.annotations.Component;
-        import org.osgi.service.component.annotations.Reference;
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Reference;
 
-        import com.liferay.docs.guestbook.constants.GuestbookConstants;
-        import com.liferay.portal.kernel.security.permission.PermissionChecker;
-        import com.liferay.portal.kernel.security.permission.resource.PortletResourcePermission;
+    import com.liferay.docs.guestbook.constants.GuestbookConstants;
+    import com.liferay.portal.kernel.security.permission.PermissionChecker;
+    import com.liferay.portal.kernel.security.permission.resource.PortletResourcePermission;
 
-        @Component(immediate=true)
-        public class GuestbookPermission {
+    @Component(immediate=true)
+    public class GuestbookPermission {
 
-            public static boolean contains(PermissionChecker permissionChecker, long groupId, String actionId) {
-                
-                return _portletResourcePermission.contains(permissionChecker, groupId, actionId);
-                
-            }
+        public static boolean contains(PermissionChecker permissionChecker, long groupId, String actionId) {
             
-            @Reference(
-                    target="(resource.name=" + GuestbookConstants.RESOURCE_NAME + ")", 
-                    unbind="-"
-                    )
-            protected void setPortletResourcePermission(PortletResourcePermission portletResourcePermission) {
-                
-                _portletResourcePermission = portletResourcePermission;
-            }
+            return _portletResourcePermission.contains(permissionChecker, groupId, actionId);
             
-            private static PortletResourcePermission _portletResourcePermission;
-
         }
+        
+        @Reference(
+                target="(resource.name=" + GuestbookConstants.RESOURCE_NAME + ")", 
+                unbind="-"
+                )
+        protected void setPortletResourcePermission(PortletResourcePermission portletResourcePermission) {
+            
+            _portletResourcePermission = portletResourcePermission;
+        }
+        
+        private static PortletResourcePermission _portletResourcePermission;
+
+    }
+    ```
 
 This class is a component defining one static method (so you don't have to
 instantiate the class) that encapsulates the model you're checking permissions
@@ -76,93 +78,98 @@ Next, you'll create helpers for your two entities:
 
 2.  Replace this class's contents with the following code: 
 
-            package com.liferay.docs.guestbook.web.internal.security.permission.resource;
+    ```java
+    package com.liferay.docs.guestbook.web.internal.security.permission.resource;
 
-            import org.osgi.service.component.annotations.Component;
-            import org.osgi.service.component.annotations.Reference;
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Reference;
 
-            import com.liferay.docs.guestbook.model.Guestbook;
-            import com.liferay.portal.kernel.exception.PortalException;
-            import com.liferay.portal.kernel.security.permission.PermissionChecker;
-            import com.liferay.portal.kernel.security.permission.resource.ModelResourcePermission;
+    import com.liferay.docs.guestbook.model.Guestbook;
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.security.permission.PermissionChecker;
+    import com.liferay.portal.kernel.security.permission.resource.ModelResourcePermission;
 
-            @Component(immediate = true)
-            public class GuestbookModelPermission {
-                
-                public static boolean contains(
-                        PermissionChecker permissionChecker, Guestbook guestbook, String actionId) throws PortalException {
-                    
-                    return _guestbookModelResourcePermission.contains(permissionChecker, guestbook, actionId);
-                }
-                
-                public static boolean contains(
-                        PermissionChecker permissionChecker, long guestbookId, String actionId) throws PortalException {
-                    
-                    return _guestbookModelResourcePermission.contains(permissionChecker, guestbookId, actionId);
-                }
-                
-                @Reference(
-                        target = "(model.class.name=com.liferay.docs.guestbook.model.Guestbook)", 
-                        unbind = "-")
-                protected void setEntryModelPermission(ModelResourcePermission<Guestbook> modelResourcePermission) {
-                    
-                    _guestbookModelResourcePermission = modelResourcePermission;
-                }
-                
-                private static ModelResourcePermission<Guestbook>_guestbookModelResourcePermission;
+    @Component(immediate = true)
+    public class GuestbookModelPermission {
+        
+        public static boolean contains(
+                PermissionChecker permissionChecker, Guestbook guestbook, String actionId) throws PortalException {
+            
+            return _guestbookModelResourcePermission.contains(permissionChecker, guestbook, actionId);
+        }
+        
+        public static boolean contains(
+                PermissionChecker permissionChecker, long guestbookId, String actionId) throws PortalException {
+            
+            return _guestbookModelResourcePermission.contains(permissionChecker, guestbookId, actionId);
+        }
+        
+        @Reference(
+                target = "(model.class.name=com.liferay.docs.guestbook.model.Guestbook)", 
+                unbind = "-")
+        protected void setEntryModelPermission(ModelResourcePermission<Guestbook> modelResourcePermission) {
+            
+            _guestbookModelResourcePermission = modelResourcePermission;
+        }
+        
+        private static ModelResourcePermission<Guestbook>_guestbookModelResourcePermission;
 
-            }
+    }
+    ```
 
 As you can see, this class is similar to `GuestbookPermission`. The difference
 is that `GuestbookModelPermission` is for the model/resource permission, so you
 supply the entity or its primary key (`guestbookId`). 
 
 Your final class is almost identical to `GuestbookModelPermission`, but it's for
-the `Entry` entity. Follow these steps to create it: 
+the `GuestbookEntry` entity. Follow these steps to create it: 
 
 1.  Create a class in the same package called `GuestbookEntryPermission.java`. 
 
 2.  Replace this class's contents with the following code: 
 
-        package com.liferay.docs.guestbook.web.internal.security.permission.resource;
+    ```java
+    package com.liferay.docs.guestbook.web.internal.security.permission.resource;
 
-        import org.osgi.service.component.annotations.Component;
-        import org.osgi.service.component.annotations.Reference;
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Reference;
 
-        import com.liferay.docs.guestbook.model.Entry;
-        import com.liferay.portal.kernel.exception.PortalException;
-        import com.liferay.portal.kernel.security.permission.PermissionChecker;
-        import com.liferay.portal.kernel.security.permission.resource.ModelResourcePermission;
+    import com.liferay.docs.guestbook.model.GuestbookEntry;
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.security.permission.PermissionChecker;
+    import com.liferay.portal.kernel.security.permission.resource.ModelResourcePermission;
 
-        @Component(immediate = true)
-        public class GuestbookEntryPermission {
+    @Component(immediate = true)
+    public class GuestbookEntryPermission {
+        
+        public static boolean contains(
+                PermissionChecker permissionChecker, GuestbookEntry entry, String actionId) throws PortalException {
             
-            public static boolean contains(
-                    PermissionChecker permissionChecker, Entry entry, String actionId) throws PortalException {
-                
-                return _guestbookEntryModelResourcePermission.contains(permissionChecker, entry, actionId);
-            }
-            
-            public static boolean contains(
-                    PermissionChecker permissionChecker, long entryId, String actionId) throws PortalException {
-                
-                return _guestbookEntryModelResourcePermission.contains(permissionChecker, entryId, actionId);
-            }
-            
-            @Reference(
-                    target = "(model.class.name=com.liferay.docs.guestbook.model.Entry)", 
-                    unbind = "-")
-            protected void setEntryModelPermission(ModelResourcePermission<Entry> modelResourcePermission) {
-                
-                _guestbookEntryModelResourcePermission = modelResourcePermission;
-            }
-            
-            private static ModelResourcePermission<Entry>_guestbookEntryModelResourcePermission;
-
+            return _guestbookEntryModelResourcePermission.contains(permissionChecker, entry, actionId);
         }
+        
+        public static boolean contains(
+                PermissionChecker permissionChecker, long entryId, String actionId) throws PortalException {
+            
+            return _guestbookEntryModelResourcePermission.contains(permissionChecker, entryId, actionId);
+        }
+        
+        @Reference(
+                target = "(model.class.name=com.liferay.docs.guestbook.model.GuestbookEntry)", 
+                unbind = "-")
+        protected void setEntryModelPermission(ModelResourcePermission<GuestbookEntry> modelResourcePermission) {
+            
+            _guestbookEntryModelResourcePermission = modelResourcePermission;
+        }
+        
+        private static ModelResourcePermission<GuestbookEntry>_guestbookEntryModelResourcePermission;
+
+    }
+    ```
 
 This class is almost identical to `GuestbookModelPermission`. The only
-difference is that `GuestbookEntryPermission` is for the `Entry` entity. 
+difference is that `GuestbookEntryPermission` is for the `GuestbookEntry`
+entity. 
 
 Now you can expose the permissions UI to your users so they can assign
 permissions: 
@@ -170,29 +177,33 @@ permissions:
 1.  Go to the `init.jsp` in your `guestbook-web` project. Add the following
     imports to the file:
 
-        <%@ page import="com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookModelPermission" %>
-        <%@ page import="com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookPermission" %>
-        <%@ page import="com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookEntryPermission" %>
-        <%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
-        <%@ page import="com.liferay.portal.kernel.security.permission.ActionKeys" %>
+    ```markup
+    <%@ page import="com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookModelPermission" %>
+    <%@ page import="com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookPermission" %>
+    <%@ page import="com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookEntryPermission" %>
+    <%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
+    <%@ page import="com.liferay.portal.kernel.security.permission.ActionKeys" %>
+    ```
 
     The first three are the permissions helper classes you just created.
 
-2.  Open `guestbook_actions.jsp`. Add this code just after the
-    `<liferay-ui:icon-delete>` tag: 
+2.  Open `guestbook_actions.jsp` from the `guestbook_admin` folder. Add this
+    code just after the `<liferay-ui:icon-delete>` tag: 
 
-            <c:if
-            test="<%=GuestbookModelPermission.contains(permissionChecker, guestbook.getGuestbookId(), ActionKeys.PERMISSIONS) %>">
+    ```markup
+    <c:if
+    test="<%=GuestbookModelPermission.contains(permissionChecker, guestbook.getGuestbookId(), ActionKeys.PERMISSIONS) %>">
 
-                <liferay-security:permissionsURL
-                    modelResource="<%= Guestbook.class.getName() %>"
-                    modelResourceDescription="<%= guestbook.getName() %>"
-                    resourcePrimKey="<%= String.valueOf(guestbook.getGuestbookId()) %>"
-                    var="permissionsURL" />
-            
-                <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
+        <liferay-security:permissionsURL
+            modelResource="<%= Guestbook.class.getName() %>"
+            modelResourceDescription="<%= guestbook.getName() %>"
+            resourcePrimKey="<%= String.valueOf(guestbook.getGuestbookId()) %>"
+            var="permissionsURL" />
+    
+        <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
 
-            </c:if>
+    </c:if>
+    ```
 
 3.  Save the file. 
 

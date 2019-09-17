@@ -4,6 +4,10 @@ header-id: registering-permissions-with-container
 
 # Registering Permissions with the Container
 
+<div class="learn-path-step row">
+    <p id="stepTitle">Implementing Permissions</p><p>Step 3 of 5</p>
+</div>
+
 A running service checks permissions, but since the Guestbook portlet,
 Guestbooks, and Guestbook Entries are new to the system, it must be taught about
 them. You do this by creating permissions registrar classes. These follow what
