@@ -127,7 +127,9 @@ the providers so users can recognize them.
 4. Once *Enabled* checkbox has been checked, the service provider's metadata
    becomes available:
 
-        [host]:[port]/c/portal/saml/metadata
+    ```bash
+    [host]:[port]/c/portal/saml/metadata
+    ```
 
 ## Setting Up @product@ as a SAML Service Provider in a Clustered Environment
 
@@ -139,7 +141,7 @@ same keystore manager.
 If using the Filesystem Keystore Manager (the default):
 
 1.  Configure each node of your 
-    [@product@ cluster](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering) 
+    [@product@ cluster](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering) 
     as a SAML service provider as above. 
 
 2.  Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from
