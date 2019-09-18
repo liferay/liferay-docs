@@ -1,3 +1,7 @@
+---
+header-id: recommending-content-based-on-user-behavior
+---
+
 # Recommending Content Based on User Behavior
 
 [TOC levels=1-4]
