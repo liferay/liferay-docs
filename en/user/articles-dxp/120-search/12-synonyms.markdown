@@ -22,44 +22,37 @@ keyword by the search engine.
 | searching for any of those keywords returns all relevant results. Synonym Sets
 | are a key ally in this pursuit.
 
-## Requirements
+## Requirements and Limitations
 
 Search Tuning features like Synonym Sets are only supported when using
 Elasticsearch as the search engine.
 
-## Limitations in @product-ver@ Service Pack 1
+As of the initial release (@product-ver@ SP-1), Synonym Sets work with fields
+indexed in two locales: English and Spanish. Thus, the assets supporting
+localization out-of-the-box work with Synonym Sets. Technically, this means that
+synonym searches operate on fields indexed with the `en_*` and `es_*` suffixes.
+Read the 
+[multi-language search documentation](https://portal.liferay.dev/docs/7-2/user/-/knowledge_base/u/searching-for-localized-content) 
+to learn which native @product@ assets/fields support localization in the search
+index. All asset types that index their data into English and Spanish will be
+analyzed with a synonyms-aware analyzer, and able to be found during a synonym
+search.
 
-* Synonyms works on English and Spanish locales only and thus on certain Liferay assets that support localization out-of-the-box. Technically it means that it operates on (`en_*`) and (`es_*`) localized index fields. Read the [multi-language search documentation](LINK TO UPDATED DOCS) to see which native @product@ assets/fields are supported for synonym searches.
-* The `=>` [format](https://www.elastic.co/guide/en/elasticsearch/guide/current/synonym-formats.html) is not supported through the Synonyms Set UI.
+The `=>`
+[format](https://www.elastic.co/guide/en/elasticsearch/guide/current/synonym-formats.html)
+supported in Elasticsearch is not supported through the Synonyms Set UI.
 
-## Known Issues in @product-ver@ Service Pack 1
+## Known Issues
 
-There are several [known
-| issues](https://issues.liferay.com/browse/LPS-99658) for Synonym Sets. These are
-| some of the most important ones:
-| 
-| [LPS-100272](https://issues.liferay.com/browse/LPS-100272): 
-| Reindexing permanently deletes all Synonym Sets. Please refer to the ticket for a way to backup & preserve (restore) Synonym Sets across reindex operations. 
-| 
-| [LPS-98126](https://issues.liferay.com/browse/LPS-98126)
-| Users can create duplicate Synonym Set entries and update other Synonym Sets unintentionally.
-| 
+There are several [known issues](https://issues.liferay.com/browse/LPS-99658)
+for Synonym Sets. These are some of the most important ones:
 
-<!--
-| [LPS-98063](https://issues.liferay.com/browse/LPS-98063): 
-| Synonyms do not work with Documents and Media Assets. Note: 
-| 
-| [LPS-98148](https://issues.liferay.com/browse/LPS-98148): Synonyms do not work
-| with Knowledge Base Assets.
--->
+[LPS-100272](https://issues.liferay.com/browse/LPS-100272): 
+Reindexing permanently deletes all Synonym Sets. Please refer to the ticket for
+a way to backup and preserve (restore) Synonym Sets across reindex operations. 
 
-<!--
-Read the [multi-language search documentation](LINK TO UPDATED DOCS) to see
-which native @product@ assets/fields are supported for synonym searches. What
-does localized search have to do with synonyms? All asset types that index their
-data into localized fields will be analyzed with a synonyms-aware analyzer, and
-able to be found during a synonym search.
--->
+[LPS-98126](https://issues.liferay.com/browse/LPS-98126)
+Users can create duplicate Synonym Set entries and update other Synonym Sets unintentionally.
 
 ## Creating and Managing Synonym Sets
 
@@ -100,25 +93,14 @@ returned in the Search Results widget.
 
 ![Figure 3: The Blogs Entry does not contain the word "rover" but it can be matched because of a synonym set mapping "cart" as its synonym. The synonym is even highlighted.](../../images/search-synonomous-result.png)
 
-## Which Fields are Supported with Synonym Sets?
 
-~To leverage synonym sets, a field being searched must use an analyzer that can
-recognize your synonyms. The search infrastructure's backend has been adapted to
-do this for most fields that are commonly involved in full text search. However,
-if the indexing code for an asset doesn't index it's data into the right fields,
-it won't work with synonyms. So how can you identify what content types and
-which fields will work with the synonyms feature? Read the [multi-language
-search documentation](LINK TO UPDATED DOCS) to see which native @product@
-assets/fields are supported. All asset types that index their data into
-localized fields will be analyzed with a synonyms-aware analyzer, and able to be
-found during a synonym search.~
 
-**TODO**: Rewrite: synonyms works with `en*` and `es*` localized fields only out-of-the-box.
 
+<!-- I'm not sure of the purpose of including this
 ## Elasticsearch Index Settings and Mappings for Synonyms Sets
 
 Liferay's Elasticsearch 6 connector of @product-ver@ GA1 ships with the a [default analyzer pipeline](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/index-settings.json) for English and Spanish locales required for synonyms. These analyzers are applied at search time to the matching localized fields as it's defined in the [default mappings](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json) within Liferay's Elasticsearch 6 connector (see [here](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json#L156) and [here](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json#L170)).
-
+-->
 
 # Related Resources
 * https://www.elastic.co/guide/en/elasticsearch/guide/current/synonyms.html
