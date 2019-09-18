@@ -20,10 +20,14 @@ enable it, you must complete these steps:
     link to. You must also create the credentials the Google project needs to 
     communicate with your @product@ instance. 
 
-3.  Configure your @product@ instance to communicate with your Google project. 
+3.  Configure your portal to communicate with your Google project. 
 
 This article shows you how to complete these steps and finishes with an example 
 of linking to a Google file from the Document Library. 
+
+| **Note:** You can also use Google Docs&trade; for online file creation and 
+| editing. This is doesn't require a plugin and is covered in a 
+| [separate section of the documentation](/docs/7-2/user/-/knowledge_base/u/online-file-creation-and-editing-with-google-docs). 
 
 | **Important:** The Liferay Plugin for Google Drive&trade; is a Labs 
 | application available for Liferay CE Portal and Liferay DXP. Labs apps are 
@@ -78,23 +82,43 @@ Your new OAuth client ID and public API access key now appear on your Google
 project's Credentials screen. Keep this screen open to reference these values as 
 you specify them in @product@. 
 
-## Configure @product@'s Google Apps Settings
+## Configure Your Portal
 
-Configure your @product@ instance with the client ID and API key that you 
-created in the previous step: 
+Now that you have a Google project set up for use with @product@, you must 
+connect your installation to that project. You can do this at two scopes: 
 
-1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *Instance 
-    Settings*. 
+1.  Globally, for all instances in your @product@ installation. 
+2.  At the instance scope, for one or more instances in your @product@ 
+    installation. 
 
-2.  Click the *Miscellaneous* tab and expand the *Google Apps* section. 
+You can override the global configuration for one or more instances by 
+configuring those instances separately. Similarly, you can configure only the 
+instances you want to connect to your Google project and leave the global 
+configuration empty. 
 
-3.  For *Google Apps API Key*, enter the Google API key that you created in the 
-    previous section. 
+Follow these steps to configure your @product@ installation to connect to your 
+Google project: 
 
-4.  For *Google Client ID*, enter the Google OAuth client ID that you created in 
-    the previous section. 
+1.  Note that the configuration options are the same in the global and 
+    instance-level configurations. 
 
-5.  *Save* your changes. 
+    To access the global configuration, go to *Control Panel* &rarr; 
+    *Configuration* &rarr; *System Settings* &rarr; *Documents and Media*. 
+
+    To access the instance-level configuration, go to *Control Panel* &rarr; 
+    *Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
+
+2.  Under *VIRTUAL INSTANCE SCOPE*, select *Google Drive*. 
+
+3.  Enter your Google project's OAuth 2 client ID and client secret into the 
+    *Client ID* and *Client Secret* fields. 
+
+4.  In the field *Picker API Key*, enter the API key you created in the previous 
+    section. 
+
+5.  Click *Save*. 
+
+![Figure 1: Enter your Google project's OAuth 2 client ID, OAuth 2 client secret, and Picker API key.](../../../../images/google-drive-system-settings.png)
 
 ## Creating Linked Files
 
