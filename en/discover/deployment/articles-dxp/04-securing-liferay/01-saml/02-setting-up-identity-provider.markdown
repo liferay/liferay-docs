@@ -37,7 +37,7 @@ the two options: *Filesystem Keystore Manager* or *Document Library Keystore
 Manager*.
 
 If you use Document Library storage, you can use any number of 
-[back-end file stores](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration).
+[back-end file stores](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration).
 These are protected not only by the system where the key is stored, but
 also by @product@'s permissions system.
 
@@ -46,8 +46,8 @@ also by @product@'s permissions system.
 1.  To access the SAML Admin interface, click on *Control Panel* &rarr;
     *Configuration* and then on *SAML Admin*.
 
-2.  To begin configuring @product@ to use SAML, select a SAML role for @product@ and
-    choose an entity ID.
+2.  To begin configuring @product@ to use SAML, select a SAML role for @product@
+    and choose an entity ID.
 
     [Figure 1: Select a SAML role for Liferay and enter an entity ID.](../../images-dxp/saml-initial-config.png)
 
