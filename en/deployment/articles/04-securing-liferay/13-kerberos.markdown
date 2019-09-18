@@ -108,49 +108,54 @@ Windows&trade; clients.
     keytab file. For example, if you're using the Apache HTTP server, the
     configuration might look like this: 
 
-        LoadModule headers_module /usr/lib/apache2/modules/mod_headers.so
-        LoadModule rewrite_module /usr/lib/apache2/modules/mod_rewrite.so
-        LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
-        LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so
-        LoadModule proxy_ajp_module /usr/lib/apache2/modules/mod_proxy_ajp.so
-        LoadModule auth_kerb_module /usr/lib/apache2/modules/mod_auth_kerb.so
+    ```apache
+    LoadModule headers_module /usr/lib/apache2/modules/mod_headers.so
+    LoadModule rewrite_module /usr/lib/apache2/modules/mod_rewrite.so
+    LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
+    LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so
+    LoadModule proxy_ajp_module /usr/lib/apache2/modules/mod_proxy_ajp.so
+    LoadModule auth_kerb_module /usr/lib/apache2/modules/mod_auth_kerb.so
 
-        <VirtualHost *:10080>
-            <Proxy *>
-                Order deny,allow
-                Allow from all
-            </Proxy>
-            ProxyRequests     Off
-            ProxyPreserveHost On
-            ProxyPass / ajp://localhost:8009/
-            ProxyPassReverse / ajp://localhost:8009/
-            ServerName mywebserver.intdomain.local
-            <Location />
-                        Order allow,deny
-                        Allow from all
-                        AuthType Kerberos
-                        KrbServiceName HTTP/mywebserver.intdomain.local@INTDOMAIN.LOCAL
-                        AuthName "Domain login"
-                        KrbAuthRealms INTDOMAIN.LOCAL
-                        Krb5KeyTab /etc/apache2/kerberos.keytab
-                        require valid-user
-                        KrbMethodNegotiate  On
-                        KrbMethodK5Passwd   Off
-                        #KrbLocalUserMapping On
+    <VirtualHost *:10080>
+        <Proxy *>
+            Order deny,allow
+            Allow from all
+        </Proxy>
+        ProxyRequests     Off
+        ProxyPreserveHost On
+        ProxyPass / ajp://localhost:8009/
+        ProxyPassReverse / ajp://localhost:8009/
+        ServerName mywebserver.intdomain.local
+        <Location />
+                    Order allow,deny
+                    Allow from all
+                    AuthType Kerberos
+                    KrbServiceName HTTP/mywebserver.intdomain.local@INTDOMAIN.LOCAL
+                    AuthName "Domain login"
+                    KrbAuthRealms INTDOMAIN.LOCAL
+                    Krb5KeyTab /etc/apache2/kerberos.keytab
+                    require valid-user
+                    KrbMethodNegotiate  On
+                    KrbMethodK5Passwd   Off
+                    #KrbLocalUserMapping On
 
-                        # Below directives put logon name of authenticated user into http header X-User-Global-ID
-                        RequestHeader unset X-User-Global-ID
-                        RewriteEngine On
-                        RewriteCond   %{LA-U:REMOTE_USER} (.+)
-                        RewriteRule   /.* - [E=RU:%1,L,NS]
-                        RequestHeader set X-User-Global-ID %{RU}e
+                    # Below directives put logon name of authenticated user into http header X-User-Global-ID
+                    RequestHeader unset X-User-Global-ID
+                    RewriteEngine On
+                    RewriteCond   %{LA-U:REMOTE_USER} (.+)
+                    RewriteRule   /.* - [E=RU:%1,L,NS]
+                    RequestHeader set X-User-Global-ID %{RU}e
 
-                        # Remove domain suffix to get the simple logon name
-                        #RequestHeader edit X-User-Global-ID "@INTLAND.LOCAL$" ""
+                    # Remove domain suffix to get the simple logon name
+                    # RequestHeader edit X-User-Global-ID "@INTDOMAIN.LOCAL$" ""
 
-            </Location>
-        </VirtualHost>
-        Listen 10080
+        </Location>
+    </VirtualHost>
+    Listen 10080
+    ```
+The last line is commented out based on user preference. If you want the domain
+removed from the user name when saved in @product@, uncomment it. Otherwise,
+leave it commented out to store the domain with the user name. 
 
 ### Connecting @product@ to Active Directory over LDAP
 
