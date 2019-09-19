@@ -16,7 +16,7 @@ various build tools. You can view these samples by visiting the
 
 The following Service Builder samples are documented:
 
-- [Service Builder application Demonstrating Actionable Dynamic Query](/docs/7-0/reference/-/knowledge_base/r/service-builder-application-demonstrating-actionable-dynamic-query)
+- [Service Builder application demonstrating Actionable Dynamic Query](/docs/7-0/reference/-/knowledge_base/r/service-builder-application-demonstrating-actionable-dynamic-query)
 - [Service Builder application with JDBC connection](/docs/7-0/reference/-/knowledge_base/r/service-builder-application-using-external-database-via-jdbc)
 - [Service Builder application with JNDI connection](/docs/7-0/reference/-/knowledge_base/r/service-builder-application-using-external-database-via-jndi)
 
