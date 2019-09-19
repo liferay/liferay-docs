@@ -18,7 +18,9 @@ permissions in the final step.
 Here's how it works. You have a permission, such as `ADD_ENTRY`, and a resource,
 such as a `Guestbook`. For a user to add an entry to a guestbook, you must check
 if that user has the `ADD_ENTRY` permission for that guestbook. Helper classes
-make it easier to check permissions: 
+make it easier to check permissions. 
+
+## Creating a Guestbook Portlet Permission Helper 
 
 1.  Right-click the `guestbook-web` module and select *New* &rarr;
     *Package*. To follow Liferay's practice, name the package
@@ -71,6 +73,8 @@ permission exists or not.
 
 There's only one method: a `check` method that throws an exception if the user
 doesn't have permission. 
+
+## Creating Model Permission Helpers
 
 Next, you'll create helpers for your two entities: 
 
@@ -187,7 +191,9 @@ permissions:
 
     The first three are the permissions helper classes you just created.
 
-2.  Open `guestbook_actions.jsp` from the `guestbook_admin` folder. Add this
+2.  Save the file. 
+
+3.  Open `guestbook_actions.jsp` from the `guestbook_admin` folder. Add this
     code just after the `<liferay-ui:icon-delete>` tag: 
 
     ```markup
@@ -205,7 +211,7 @@ permissions:
     </c:if>
     ```
 
-3.  Save the file. 
+4.  Save the file. 
 
 You just added an action button that displays Liferay's permissions UI for
 Guestbooks. On top of that, you used the permissions helper you just created to
