@@ -21,12 +21,12 @@ Recall that you want to restrict access to three areas in your application:
 - The Add Guestbook button
 - The Add Entry button
 
-First, you'll create the guestbook tabs and check permissions for them: 
+First, you'll check permissions for the guestbook tabs: 
 
 1.  Open `/guestbook/view.jsp` and find the scriptlet that gets the 
     `guestbookId` from the request. Below this are the `<aui-nav>` tags that
     generate the tabs. Remove those tags and all the code between them. In its
-    place, add the following code, which is the same thing, with the addition of
+    place, add the following code, which is the same thing with the addition of
     permission checks: 
 
     ```markup
@@ -98,6 +98,8 @@ First, you'll create the guestbook tabs and check permissions for them:
     You've now implemented your permission check for the Add Entry button by 
     using JSTL tags. 
 
+4.  Save the file. 
+
 Next, you'll add permission checking to `entry_actions.jsp` to determine what
 options appear for logged in users who can see the actions menu in the portlet.
 Just like before, you'll wrap each `renderURL` in an `if` statement that checks
@@ -160,6 +162,8 @@ the permissions against available actions. To do this, follow these steps:
 
         </liferay-ui:icon-menu>
         ```
+
+3.  Save the file. 
 
 This code updates each button with a permissions check. If the current user
 can't perform the given action, the action doesn't appear. 
