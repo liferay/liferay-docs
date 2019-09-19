@@ -6,14 +6,8 @@ header-id: search-tuning-customizing-search-results
 
 [TOC levels=1-4]
 
-| **Known Issues:** There are several known  issues for Result Rankings. See
-| [LPS-99540](https://issues.liferay.com/browse/LPS-99540) for the complete list.
-
 Starting with @product-ver@ Service Pack 1, new search tuning features are
 available for administrative Users: Custom Result Rankings is one of them.
-
-Search Tuning features like Result Rankings are only supported when using
-Elasticsearch as the search engine.
 
 Result Rankings provides a brute force method for intervening into the relevance
 scoring of the search engine, by doing these things:
@@ -54,6 +48,21 @@ keywords.
 | for Result Rankings. 
 
 ![Figure 1: The Lunar Resort wants to tweak these results: pin the Activities page to the top, and hide the legal content entirely.](../../images/search-result-rankings-todo.png) 
+
+## Availability
+
+Search Tuning features like Result Rankings are only supported when using
+Elasticsearch as the search engine.
+
+Results Rankings was added in @product-ver@ Service Pack 1.
+
+## Limitations and Known Issues
+
+Currently, an existing Result Ranking cannot be renamed. Renaming requires
+recreating the ranking under a different name.
+
+The complete list of known issues for Result Rankings are documented in ticket
+[LPS-99540](https://issues.liferay.com/browse/LPS-99540).
 
 ## Creating and Managing Result Rankings
 
