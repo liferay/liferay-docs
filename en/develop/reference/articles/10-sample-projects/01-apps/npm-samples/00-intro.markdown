@@ -25,13 +25,13 @@ preferred build tool:
 
 The following npm samples are documented:
 
-- [Angular npm Portlet](angular-npm-portlet)
-- [Angular npm Deduplication Portlet](angular-npm-deduplication-portlet)
-- [Billboard.js npm Portlet](billboard-js-npm-portlet)
-- [jQuery npm Portlet](jquery-npm-portlet)
-- [Metal.js npm Portlet](metal-js-npm-portlet)
-- [React npm Portlet](react-npm-portlet)
-- [Simple npm Portlet](simple-npm-portlet)
-- [Vue.js npm Portlet](vue-js-npm-portlet)
+- [Angular npm Portlet](/docs/7-1/reference/-/knowledge_base/r/angular-npm-portlet)
+- [Angular npm Deduplication Portlet](/docs/7-1/reference/-/knowledge_base/r/angular-npm-deduplication-sample)
+- [Billboard.js npm Portlet](/docs/7-1/reference/-/knowledge_base/r/billboard-js-npm-portlet)
+- [jQuery npm Portlet](/docs/7-1/reference/-/knowledge_base/r/jquery-npm-portlet)
+- [Metal.js npm Portlet](/docs/7-1/reference/-/knowledge_base/r/metal-js-npm-portlet)
+- [React npm Portlet](/docs/7-1/reference/-/knowledge_base/r/react-npm-portlet)
+- [Simple npm Portlet](/docs/7-1/reference/-/knowledge_base/r/simple-npm-portlet)
+- [Vue.js npm Portlet](/docs/7-1/reference/-/knowledge_base/r/vue-js-npm-portlet)
 
 Visit a particular sample page to learn more!
