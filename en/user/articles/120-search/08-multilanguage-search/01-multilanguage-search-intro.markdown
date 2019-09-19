@@ -31,12 +31,16 @@ In short, these assets contain text fields supporting localized search:
 | Dynamic Data List Record | `content` | 1 |
 | Form Record | `content` | 1 |
 | Web Content Article | `title`, `content`, `description` |  1 |
-| Asset Category | `title`, `description` |  1 |
-| Asset Tag | `assetTagNames` | 1 |
+| Asset Category<sup>*</sup> | `title`, `description` |  1 |
+| Asset Tag<sup>*</sup> | `assetTagNames` | 1 |
 | Wiki Page | `title`, `content` |  2 |
 | Blogs Entry | `content`, `title` |  2 |
 | Message Boards Message | `title`, `content` | 2 |
 <!-- | App Builder | `name` | 2 | New with 7.3  -->
+
+<sup>*</sup> Asset tags and categories don't have dedicated documents in the
+index. Instead, their indexed fields are added to the tagged or categorized
+asset's document.
 
 There are three localized search approaches represented in the table:
 
