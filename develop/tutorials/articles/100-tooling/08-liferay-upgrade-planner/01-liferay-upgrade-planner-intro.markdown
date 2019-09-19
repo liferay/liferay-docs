@@ -21,7 +21,7 @@ following documentation:
 - [Code Upgrade](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
 
 The Upgrade Planner is provided in
-[Liferay Dev Studio](/docs/7-0/reference/-/knowledge_base/r/liferay-ide) 
+[Liferay Dev Studio](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide) 
 (versions 3.6+). Here's what the Upgrade Planner does: 
 
 <!-- Standalone app is planned, but not available yet. -->
