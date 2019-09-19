@@ -246,5 +246,7 @@ Finally, create the registrar for the portlet permissions:
     }
     ```
 
+3.  Type Ctrl-Shift-O to add the imports. Save the file. 
+
 You've now completed step two: the R in DRAC: registering permissions. Next,
 you'll enable users to associate permissions with resources. 

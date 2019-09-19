@@ -108,6 +108,7 @@ application.
        ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
     ```
 
+4.  Hit Ctrl-Shift-O to add imports and save the file. 
 
 That's all it takes to add permissions resources to the database. Future
 entities added to the database are fully permissions-enabled. Note, however,
