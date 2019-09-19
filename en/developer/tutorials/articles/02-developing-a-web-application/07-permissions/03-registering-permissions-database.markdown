@@ -25,7 +25,9 @@ running permissions system in the OSGi container.
 managing resources. This API is injected into your implementation classes
 automatically. To manage the resources, you need only call the API in the
 service's add and delete methods. Follow these steps to do this in your
-application: 
+application. 
+
+## Registering Guestbook Resources
 
 1.  In your `guestbook-service` module, open `GuestbookLocalServiceImpl.java` 
     from the `com.liferay.docs.guestbook.service.impl` package. 
@@ -75,7 +77,9 @@ application:
 
 5.  Hit [CTRL]+[SHIFT]+O to organize the imports and save the file. 
 
-6.  Now you'll add resources for the `GuestbookEntry` entity. Open 
+## Registering Guestbook Entry Resources
+
+1.  Now you'll add resources for the `GuestbookEntry` entity. Open 
     `GuestbookEntryLocalServiceImpl.java` from the same package. For
     `addGuestbookEntry`, add a line of code that adds resources for this entity,
     just before the return statement: 
@@ -85,15 +89,7 @@ application:
         GuestbookEntry.class.getName(), entryId, false, true, true);
     ```
 
-7.  For `deleteGuestbookEntry`, add this code just before the `return` statement:
-
-    ```java
-    resourceLocalService.deleteResource(
-       entry.getCompanyId(), GuestbookEntry.class.getName(),
-       ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
-    ```
-
-8.  Finally, find `updateEntry` and add its resource action, also just before 
+2.  Find `updateEntry` and add its resource action, also just before 
     the `return` statement: 
 
     ```java
@@ -102,6 +98,16 @@ application:
           GuestbookEntry.class.getName(), entryId, 
           serviceContext.getModelPermissions());
     ```
+
+3.  For `deleteGuestbookEntry`, add this code just before the `return` statement
+    and just after the call to `guestbookEntryPersistence`: 
+
+    ```java
+    resourceLocalService.deleteResource(
+       entry.getCompanyId(), GuestbookEntry.class.getName(),
+       ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
+    ```
+
 
 That's all it takes to add permissions resources to the database. Future
 entities added to the database are fully permissions-enabled. Note, however,
