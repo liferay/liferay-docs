@@ -22,23 +22,20 @@ works out-of-the-box.
 
 In short, these assets contain text fields supporting localized search:
 
-| Asset | Fields | Localized Search Approach | Newly Supported in 7.2 SP1? |
-|-------|--------|---------------------------|-----------------------------|
-| Content Page | `title` | 2 | No |
-| Documents and Media Document | `content` | 3 | No |
-| Calendar | `name`, `description` | 1 | No |
-| Calendar Booking | `title`, `description` | 1 | No |
-| Dynamic Data List Record | `content` | 1 | No |
-| Form Record | `content` | 1 | No |
-| Web Content Article | `title`, `content`, `description` |  1 | No |
-| Asset Category | `title`, `description` |  1 | No |
-| Asset Tag | `assetTagNames` | 1 | No |
-| Wiki Page | `title`, `content` |  2 | Yes |
-| Blogs Entry | `content`, `title` |  2 | Yes |
-| Message Boards Message | `title`, `content` | 2 | Yes |
-<!-- not searchable | Web Content Folder | `title`, `description` |  1 | No | -->
-<!-- not searchable | Dynamic Data List | `name`, `description` | 1 | No | -->
-<!-- not searchable/deprecated | Bookmarks Entry | TBD | 2 | Yes |-->
+| Asset | Fields | Localized Search Approach |
+|-------|--------|---------------------------|
+| Content Page | `title` | 2 |
+| Documents and Media Document | `content` | 3 |
+| Calendar | `name`, `description` | 1 |
+| Calendar Booking | `title`, `description` | 1 |
+| Dynamic Data List Record | `content` | 1 |
+| Form Record | `content` | 1 |
+| Web Content Article | `title`, `content`, `description` |  1 |
+| Asset Category | `title`, `description` |  1 |
+| Asset Tag | `assetTagNames` | 1 |
+| Wiki Page | `title`, `content` |  2 |
+| Blogs Entry | `content`, `title` |  2 |
+| Message Boards Message | `title`, `content` | 2 |
 <!-- | App Builder | `name` | 2 | New with 7.3  -->
 
 There are three localized search approaches represented in the table:
