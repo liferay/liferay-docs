@@ -26,7 +26,7 @@ This article shows you how to complete these steps and finishes with an example
 of linking to a Google file from the Document Library. 
 
 | **Note:** You can also use Google Docs&trade; for online file creation and 
-| editing. This is doesn't require a plugin and is covered in a 
+| editing. This doesn't require a plugin and is covered in a 
 | [separate section of the documentation](/docs/7-2/user/-/knowledge_base/u/online-file-creation-and-editing-with-google-docs). 
 
 | **Important:** The Liferay Plugin for Google Drive&trade; is a Labs 
@@ -128,7 +128,10 @@ Photos&trade;. Follow these steps to do so:
 
 1.  In your Document Library, click the *Add* button 
     (![Add](../../../../images/icon-add.png)) 
-    and select *Google Docs*. The *New Google Docs* screen appears. 
+    and select *Google Drive Shortcut*. The *New Google Drive Shortcut* screen 
+    appears. 
+
+    ![Figure 2: Select *New Google Drive Shortcut* from the *Add* menu in your Document Library.](../../../../images/dm-new-google-drive-shortcut.png)
 
 2.  Click the *Select File* button to open Google's file picker. 
 
@@ -137,7 +140,7 @@ Photos&trade;. Follow these steps to do so:
 
 4.  Click *Publish*. 
 
-![Figure 1: You can select files from Google Drive&trade; or your photos.](../../../../images/dm-google-select-a-file.png)
+![Figure 3: You can select files from Google Drive&trade; or your photos.](../../../../images/dm-google-select-a-file.png)
 
 A new file entry appears for the Google document you linked to. You can view the
 file entry as you would any file entry. The Google document's contents show in 
