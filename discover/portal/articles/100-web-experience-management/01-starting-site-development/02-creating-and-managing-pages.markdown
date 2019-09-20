@@ -69,8 +69,11 @@ Some examples of that are in Liferay's plugin repositories.
 Once you've selected the *Add Page* or *Add Child Page* button, you're directed
 to an *Add New Page* interface that lets you configure the page to your liking.
 If you later decide you don't like the order of your pages, you can drag and
-drop them in the list to put them in whatever order you want. Go ahead and add
-another top level page and name it *Community*.
+drop them in the list to put them in whatever order you want. The friendly URLs
+generated for a new page are not hierarchical. This means that a top-level page
+and a nested page would have a similar URL structure.
+
+Go ahead and add another top level page and name it *Community*.
 
 ![Figure 3: You can add a page to your site by giving it a name, page template, and page type.](../../../images/web-content-add-page.png)
 
