@@ -20,7 +20,7 @@ release.
 
 Command | Description
 ------- | -------------
-`convert` | Converts a Plugins SDK plugin project to a Gradle Workspace project. See the [Running the Migration Command](/docs/7-1/reference/-/knowledge_base/reference/migrating-traditional-plugins-to-workspace-web-applications#running-the-migration-command) command for details.
+`convert` | Converts a Plugins SDK plugin project to a Gradle Workspace project. See the [Running the Migration Command](/docs/7-1/reference/-/knowledge_base/r/migrating-traditional-plugins-to-workspace-web-applications#running-the-migration-command) command for details.
 `create` | Creates a new Liferay project from available templates. See the [Creating a Project section for Blade CLI](/docs/7-2/reference/-/knowledge_base/r/creating-a-project#blade-cli) for more information.
 `deploy` | Builds and deploys projects to @product@. See the [Deploying a Project section for Blade CLI](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project#blade-cli) for more information.
 `extension install` | Installs an extension into Blade CLI.
