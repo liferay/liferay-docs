@@ -6,17 +6,7 @@ header-id: installing-liferay-maven-artifacts
 
 To create Liferay modules using Maven, you'll need the archives required by
 Liferay (e.g., JAR and WAR files). This isn't a problem--Liferay provides
-them as Maven artifacts. 
-
-You can get the Liferay artifacts in two ways: 
-
-- Install them from a remote repository. 
-- Download a Liferay-provided utility for putting artifacts in local
-  repositories. 
-
-First, you'll consider the installation process using remote repositories.
-
-## Installing Artifacts from a Remote Repository
+them as Maven artifacts. You can retrieve them from a remote repository. 
 
 There are two repositories that contain Liferay artifacts: Central Repository
 and Liferay Repository. The Central Repository is the default repository used to
@@ -103,39 +93,6 @@ Liferay Repository credentials when publishing your artifacts.
 
 The Liferay Maven repository offers a good alternative for those who want the
 most up-to-date Maven artifacts produced by Liferay. 
-
-If you can't use either of these options, you can still install Liferay Maven
-artifacts from a local repository.
-
-## Installing Artifacts from a Local Repository
-
-Liferay offers a utility available from Liferay's Customer Portal that lets you
-download all of Liferay's artifacts and install them to a Maven repository of
-your choice.
-
-1.  Navigate to the [Digital Enterprise](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
-    download page in Liferay's Customer Portal and select *Maven* from the
-    drop-down list to download the latest version of @product@ Maven.
-
-    ![Figure 1: Select *Maven* from the drop-down list to download the @product@ Maven artifact Zip file.](../../../images-dxp/maven-select-download.png)
-
-2.  Unzip the file and navigate to it in your command prompt. Then run the Ant
-    command without a target.
-    
-        ant
-    
-    You can verify Liferay's artifacts are being installed by reading the output
-    messages in your command prompt. The artifacts are downloaded from Liferay's
-    Nexus repository.
-
-    By default, all of Liferay's Maven artifacts are installed in your
-    `[USER_HOME]/.m2` repository. You can change where the artifacts are
-    installed by creating a `build.[USER_NAME}.properties` file in the Liferay
-    Portal Maven folder and setting the `local.repository.path` property to the
-    folder you want your artifacts to reside in.
-
-Now you have all of Liferay's Maven artifacts locally and can delegate them to
-any repository or folder you choose.
 
 Congratulations! You've downloaded the Liferay artifacts and installed them to
 your chosen repository.
