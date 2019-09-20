@@ -28,8 +28,8 @@ Here's an example of setting Portal's data source to a MySQL database by adding
 override properties in a `[Liferay Home]/portal-ext.properties` file:
 
 ```properties
-jdbc.default.driverClassName=com.mysql.jdbc.Driver
-jdbc.default.url=jdbc:mysql://localhost/myportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
+jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&serverTimezone=GMT&useFastDateParsing=false&useUnicode=true
 jdbc.default.username=jbloggs
 jdbc.default.password=pass123
 ```

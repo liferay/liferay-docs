@@ -26,7 +26,7 @@ jdbc.default.password=
 
 ```properties
 jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
-jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&serverTimezone=GMT&useFastDateParsing=false&useUnicode=true
 jdbc.default.username=
 jdbc.default.password=
 ```
