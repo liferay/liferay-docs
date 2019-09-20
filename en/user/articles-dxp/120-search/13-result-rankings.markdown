@@ -56,13 +56,19 @@ Elasticsearch as the search engine.
 
 Results Rankings was added in @product-ver@ Service Pack 1.
 
-## Limitations and Known Issues
+## Requirements and Limitations
+
+Search Tuning features like Result Rankings are only supported when using
+Elasticsearch as the search engine.
+
+The Result Ranking entries are currently shared across all Virtual Instances so it is not possible to customize your search results differently. Because of this multi-tenant @product@ integration with Elasticsearch (connecting multiple, indepedent @procuct@ deployments to the same Elasticsearch cluster) is not supported either currently when Result Rankings is also used. [LPS-101291](https://issues.liferay.com/browse/LPS-101291)
 
 Currently, an existing Result Ranking cannot be renamed. Renaming requires
-recreating the ranking under a different name.
+recreating the ranking under a different name. ([LPS-96357](https://issues.liferay.com/browse/LPS-96357))
 
-The complete list of known issues for Result Rankings are documented in ticket
-[LPS-99540](https://issues.liferay.com/browse/LPS-99540).
+## Known Issues
+
+There are several known  issues and planned improvements for Result Rankings. See [LPS-99540](https://issues.liferay.com/browse/LPS-99540) for the complete list.
 
 ## Creating and Managing Result Rankings
 
