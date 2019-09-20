@@ -43,7 +43,7 @@ From *Pages* you can do several things:
 Adding a child page creates child pages in the hierarchy below the page you've 
 selected. You can nest pages as deep as you like. The friendly URLs generated
 for a new page are not hierarchical. This means that a top-level page and a
-nested page would have a similar URL structure.
+nested page have a similar URL structure.
 
 Once you've clicked the `+` icon to add a page, you're asked to select the type
 of page you are creating. There are two top options followed by other page 
