@@ -1,4 +1,8 @@
-# Tomcatに@product@をインストールする方法[](id=installing-product-on-tomcat)
+---
+header-id: installing-product-on-tomcat
+---
+
+# Tomcatに@product@をインストールする方法
 
 @product-ver@Tomcat 9にバンドルされているLiferay DXP 7.1は、[カスタマーポータル](https://web.liferay.com/group/customer/dxp/downloads/7-1)（DXP）または[Liferay Downloads](https://www.liferay.com/downloads)（ポータルCE）で入手できます。
 Tomcatバンドルには、クリーンなTomcat 9アプリケーションサーバーに@product@ をインストールするために必要なJAR、スクリプト、および設定ファイルが含まれています。
@@ -20,7 +24,7 @@ Tomcatバンドルには、クリーンなTomcat 9アプリケーションサー
 
 [*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)は、Tomcatサーバーのフォルダを含むフォルダです。Liferay DXPがTomcat上にインストールされ、デプロイされると、Liferay Homeには、Tomcatサーバーフォルダー`data`、`deploy`、 `license`、`osgi`フォルダーが作成されます。`$TOMCAT_HOME`はTomcatサーバーフォルダーのことを指しています。このフォルダーは、`tomcat-[version]`または、 `apache-tomcat-[version]`という名前になっています。
 
-## Liferay DXP の依存ファイルをインストールする[](id=installing-liferay-dependencies)
+## Liferay DXP の依存ファイルをインストールする
 
 @product@は@product@ Tomcatバンドルに含まれる多くのJARに依存します。バンドル内のJARの中には必須ではないファイルもありますが、有用なJARもあります。Liferay DXP Tomcat バンドルを使用していない場合は、必要なJARをサードパーティからダウンロードできます。
 
@@ -219,7 +223,7 @@ Tomcatバンドルには、クリーンなTomcat 9アプリケーションサー
 
 6. Tomcatの`bin`フォルダ内のスクリプトは実行可能です。
 
-### データベースの設定[](id=database-configuration)
+### データベースの設定
 
 データベース設定を処理する上で一番簡単な方法は @product@にデータソースを管理させることです。 @product@の
 [基本設定](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
@@ -291,7 +295,7 @@ Tomcatとのメールセッションを管理したい場合は、次の手順�
 
 Tomcatが管理するためのメールセッションを作成し、それを使用するように@product@を設定しました。
 
-## @product@をデプロイする [](id=deploying-liferay)
+## @product@をデプロイする
 
 これで、@product@ DXP WARファイルを使用して@product@をデプロイする準備が整いました。
 

@@ -1,4 +1,8 @@
-# Elasticsearchのインストール[](id=installing-elasticsearch)
+---
+header-id: installing-elasticsearch
+---
+
+# Elasticsearchのインストール
 
 @product@ はコンテンツのインデックスの構築に Elasticsearchを使用します。デフォルトでは、Liferay DXP はElasticsearchをEmbedded として使用していますが、本番環境の運用ではサポートしていません。 テスト環境、開発環境での使用は問題ありませんが、本番環境に移行する際には、Liferayとは別の仮想/物理サーバー上にElasticsearchを設定する必要があります。 インフラ設計において拡張性など様々な利点があります。Elasticsearch用に物理/仮想サーバーを専有で割り当てられる場合は、検索エンジンのサーバリソースを Liferay DXPから独立させることで、パフォーマンスの向上に寄与します。予算上の制約がある場合は、 Liferayとは別JVMを利用することでパフォーマンスを向上できます。
 
@@ -45,7 +49,7 @@ $$$
 インストールが完了したら[Configuring Elasticsearch](discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0)を参考にElasticsearch設定を行ってください。サーチエンジンのインストールの詳細は[こちら](discover/deployment/-/knowledge_base/7-1/installing-a-search-engine)を参照してください。
 
 
-### ステップ１: ELASTICSEARCHの使用バージョンを探す[](id=step-one-find-the-right-version-of-elasticsearch)
+### ステップ１: ELASTICSEARCHの使用バージョンを探す
 
 @product@を起動していない場合は、起動します。
 
@@ -80,7 +84,7 @@ JSONドキュメントは下記のようなJSONレスポンスが表示されま
 
 必要な Elasticsearchが分かったら、[Elastic](https://www.elastic.co)のウェブサイトに行って該当するバージョンをダウンロードします。
 
-### ステップ２: ELASTICSEARCHのインストール[](id=step-two-install-elasticsearch)
+### ステップ２: ELASTICSEARCHのインストール
 
 ここの設定によって、Elasticsearchの起動場所が決定されます。 @product@を同じサーバー上で起動させるか、独立したサーバーで起動させるかは、利用可能なリソースとインストールのサイズが重要になります。いずれの方法でも個別に調整可能な検索システムを構築できます。
 
@@ -101,7 +105,7 @@ JSONドキュメントは下記のようなJSONレスポンスが表示されま
 
 *[[plugin-name]]*にElasticsearch プラグイン名を入力します。
 
-### ステップ４: ELASTICSEARCHクラスタの名前指定[](id=step-three-name-your-elastic-cluster)
+### ステップ４: ELASTICSEARCHクラスタの名前指定
 
 Elasticsearch内の*クラスタ*は、シャードのクラスタ名で認識されるノード（サーバー）の集合体です。これらのノードがデータ及びワークロードを分散します。ここでは１ノードクラスターでの設定を説明していますが、複数ノードのクラスター構築に関しては[Elastic](https://www.elastic.co/guide/index.html)の書類を参照ください。
 
@@ -126,7 +130,7 @@ Elasticが起動したら、ステータスメッセージに下記のような�
 
 @product@サーバーがネットワーク内でElasticを検知できるようにこのアドレスは必ず記録をしておきます。
 
-### ステップ５: @product@を Elasticクラスターに接続[](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
+### ステップ５: @product@を Elasticクラスターに接続
 
 次のステップはLiferay DXPの設定です。Liferay DXPを起動し、ログインをし、* [Control Panel]*→ *[Configuration]* → *[System Settings]* →*[Search]*とページを辿り、*Elasticsearch*を検索バーで探し、設定のリストから*Elasticsearch 6*をクリックします。設定をします。下記のオプションを変更します。
 
@@ -138,7 +142,7 @@ Elasticが起動したら、ステータスメッセージに下記のような�
 
 完了したら、*保存*をクリックします。
 
-### ステップ６: @product@ の再起動、インデックスの再構築[](id=step-five-restart-liferay-and-reindex)
+### ステップ６: @product@ の再起動、インデックスの再構築
 
 @product@を一度停止して、再起動します。再起動できたら、管理ユーザーとしてログインして、*[Control Panel]* → *[Configuration]* → *[Search]* へ行き、*[Reindex all search indexes(インデックスの再構築)]*の *Execute*をクリックします。その後、Elasticseachログにメッセージが表示されるはずです。
 

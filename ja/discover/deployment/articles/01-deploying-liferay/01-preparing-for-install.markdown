@@ -1,4 +1,8 @@
-# インストールの準備[](id=preparing-for-install)
+---
+header-id: preparing-for-install
+---
+
+# インストールの準備
 
 @product@ のインストールは簡単です。ただし始める前に、下記を検討する必要があります。
 
@@ -12,7 +16,7 @@
 次に、これらの問いに応じて、@product@のインストールの基本的な手順を見ていきます。
 
 
-## @product@の取得[](id=obtaining-product)
+## @product@の取得
 
 [liferay.com](https://www.liferay.com)から、どなたでもLiferay DXPをダウンロードできます。
 [Product] &rarr; *[Downloads]*から、@product@のオープンソース版またはエンタープライズ版の試用版を、いくつかの異なる形式でダウンロードできます。これには、アプリケーションサーバーにLiferay DXPをインストールする便利なバンドル、`.war `ファイルが含まれます。
@@ -30,7 +34,7 @@ you need @product@ Security turned on. Second, prepare your database. Third, ins
 @product@を入手したら、インストールの計画を立てることができます。まず、データベースを準備します。次に、@product@をインストールしてください。第三に、ネットワークを設定します。
 第四に、検索を設定します。@product@ は、バンドルを使用してインストールすることも、既存のアプリケーションサーバーに手動でインストールすることもできます。次に、@product@のインストールに必要な手順を説明します。
 
-## @product@ のインストール手順[](id=liferay-installation-steps)
+## @product@ のインストール手順
 
 @product@のインストールを始める前に、以下の基本的なインストール手順を確認してください。
 
@@ -113,7 +117,7 @@ enterprise-level document repositories. すべてのリポジトリは、Liferay
 
 データベースとドキュメントリポジトリの準備ができたら、サーバー上に@product@をインストールすることができます。
 
-## 手順 2: メール資格情報を収集する[](id=step-2-gather-your-mail-credentials)
+## 手順 2: メール資格情報を収集する
 
 @product@は、メールサーバーを使用してEメール通知を送信します。そのため、インストールの一環として、@product@がご利用のメールサーバーに接続するのに使用する資格情報を有する必要があります。
 特に、以下の情報を有する必要があります。
@@ -128,14 +132,14 @@ enterprise-level document repositories. すべてのリポジトリは、Liferay
 
 この情報を収集したら、次の手順に進む準備は完了です。
 
-## 手順 3: インストールする[](id=step-3-install)
+## 手順 3: インストールする
 
 次の手順は、 @product@をインストールすることです。アプリケーションサーバーとバンドルになっている [@product@をインストールする](/discover/deployment/-/knowledge_base/7-1/installing-liferay)か、[既存のアプリケーションサーバー上に@product@を手動でインストールする](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)かの2つの方法のいずれかでこれを行うことができます。
 各@product@のインストーラの[Liferay Homeにはいくつかのファルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)が含まれています。
 
 @product@をインストールする、最も簡単な方法なのはバンドルを利用することです。すぐに本番運用できる@product@ インスタンスにとても簡単に変えることができます。
 
-## 手順 4: ネットワーク環境設定方法[](id=step-4-network)
+## 手順 4: ネットワーク環境設定方法
 
 @product@は、IPv4および IPv6アドレスをサポートしているので、どちらかを[選択します](/discover/deployment/-/knowledge_base/7-0/choosing-ipv4-or-ipv6)。
 デフォルトでは、Liferay DXPはIPv4アドレスを使用します。IPv6を使用する場合は、@product@を設定する必要があります。2つのシンプルな手順があります。
@@ -149,7 +153,7 @@ enterprise-level document repositories. すべてのリポジトリは、Liferay
 
 @product@ は、デフォルトではElasticsearchの組み込み版がある状態で出荷されます。この環境設定はデモ目的では使用可能ですが、本番運用には推奨致しません。@product@をインストールした後、@product@を独立したElasticsearchサーバーまたはクラスタに接続するように環境設定を行う必要があります。インストールのサイズに応じて、このElasticsearchの独立したインスタンスは@product@があるのと同じマシン上か、別のマシン上に存在させることができますがパフォーマンスのため、[別のマシン上にインストールする](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)ことをお勧めします。
 
-## 手順 6: Liferay Marketplaceおよびポータルセキュリティ[](id=step-6-liferay-marketplace-and-portal-security)
+## 手順 6: Liferay Marketplaceおよびポータルセキュリティ
 
  Liferay Marketplaceを利用するためにはMarketplaceプラグインをインストールする必要があります。Marketplaceプラグインによって、オンライン上のLiferay Marketplaceにアクセスするだけに留まらない数多くの機能が有効となります。Marketplaceプラグインによって有効となる主要な機能には以下のようなものがあります。
 

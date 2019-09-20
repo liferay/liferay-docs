@@ -1,4 +1,8 @@
-# Installing @product@ Manually [](id=installing-liferay-manually)
+---
+header-id: installing-liferay-manually
+---
+
+# Installing @product@ Manually
 
 The easiest way to install @product@ is to
 [use a bundle](/discover/deployment/-/knowledge_base/7-1/installing-liferay).
@@ -15,7 +19,7 @@ topics are covered:
 
 Start with data sources.
 
-## Using Data Sources [](id=using-data-sources)
+## Using Data Sources
 
 @product@ provides two ways to configure your data source:
 
@@ -46,7 +50,7 @@ a JNDI data source.
 
 Since mail sessions are configured similarly to data sources, they're next.
 
-## Using Mail Sessions [](id=using-mail-sessions)
+## Using Mail Sessions
 
 @product@ uses SMTP to send mail. As with databases, you have two ways to
 configure your mail server:
@@ -77,7 +81,7 @@ The installation articles for each application server also include instructions
 for configuring your application server to manage the database connection and
 mail server.
 
-## Manual Configuration [](id=manual-configuration)
+## Manual Configuration
 
 To have your application server manage your database connection or mail server
 (or both), you must manually create this configuration. Create a text file
@@ -123,7 +127,7 @@ in the `portal-ext.properties` file:
 
 When you're finished, save the file.
 
-## Logging [](id=logging)
+## Logging
 
 @product@を展開した後、`PhaseOptimizer`を含む以下のような過剰な警告とログメッセージが表示される場合があります。これらは良性なので無視することができます。このようなログメッセージを回避するために、必ずアプリケーションサーバーのログレベルまたはログフィルターを調整してください。
 

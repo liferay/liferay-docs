@@ -1,4 +1,8 @@
-# Setting Up Marketplace [](id=setting-up-marketplace-and-portal-security)
+---
+header-id: setting-up-marketplace-and-portal-security
+---
+
+# Setting Up Marketplace
 
 [Liferay Marketplace](https://www.liferay.com/marketplace)
 is more than just a store for Liferay applications. Under the hood, it provides
@@ -12,7 +16,7 @@ Here are some scenarios to work around to ensure Marketplace works successfully:
 
 The firewall scenario is discussed first.
 
-## Server is Firewalled without Access to the Internet [](id=server-is-firewalled-without-access-to-the-internet)
+## Server is Firewalled without Access to the Internet
 
 Your server might be behind a firewall that prevents access to the Internet. Or
 your security policy might not allow direct download and installation from the
@@ -29,7 +33,7 @@ file into the `deploy` folder in
 
 Next you'll learn how to work around database access restrictions.
 
-## Limited Database Access [](id=limited-database-access)
+## Limited Database Access
 
 Some production environments do not have the necessary database permissions for
 @product@, apps, modules, and plugins to maintain their tables. In these cases:

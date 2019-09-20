@@ -1,4 +1,8 @@
-# @product@のインストール[](id=installing-liferay)
+---
+header-id: installing-liferay
+---
+
+# @product@のインストール
 
 Now that you've performed the steps needed to [prepare for your
 installation](/discover/deployment/-/knowledge_base/7-1/preparing-for-install),
@@ -12,7 +16,7 @@ Now you're ready. You've created a blank database for @product@ and have
 gathered the credentials you need for your mail server. The next step is to
 install @product@.
 
-## Liferay Home [](id=liferay-home)
+## Liferay Home
 
 @product@ bundles contain the same folder structure regardless of application
 server. The top-level folder is named for the @product@ release. This folder is
@@ -74,7 +78,7 @@ is running @product@. In this case, the `liferay` folder becomes Liferay Home.
 For example, if the operating system user's name is jbloggs, the Liferay Home
 folder is `/home/jbloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
-## Extracting a @product@ Bundle [](id=extracting-a-liferay-bundle)
+## Extracting a @product@ Bundle
 
 Getting a @product@ bundle up and running involves uncompressing the archive,
 possibly copying a JDBC driver, and then starting the application server. Let's
@@ -93,7 +97,7 @@ finished with the installation (and before you've started @product@ for the
 first time), come back to this spot, because you must hook it up to your
 database.
 
-## Connecting @product@ to Your Database [](id=connecting-product-to-your-database)
+## Connecting @product@ to Your Database
 
 You can connect to your database with JNDI on your app server or the data source
 shipped with @product@ (recommended). Refer to the article on your app server
@@ -115,7 +119,7 @@ credentials for your database, and save the file.
 
 You're ready to start @product@.
 
-## Running @product@ for the First Time [](id=running-product-for-the-first-time)
+## Running @product@ for the First Time
 
 Next, start your app server, or start the @product@ app in your app server.
 @product@ writes log files to folder `[Liferay Home]/logs`.
@@ -126,7 +130,7 @@ the Basic Configuration page. If for some reason your browser doesn't load the
 Basic Configuration page, launch it and navigate to your app server's address
 and port (for example, http://localhost:8080).
 
-## Using @product@'s Setup Wizard [](id=using-liferays-setup-wizard)
+## Using @product@'s Setup Wizard
 
 The Setup Wizard runs when you start @product@ for the first time. The title of
 the setup wizard page is Basic Configuration. This page provides a convenient
@@ -179,7 +183,7 @@ $$$
 After you've entered the information requested by the Basic Configuration page,
 the home page appears. You should set up your mail configuration next.
 
-## Configuring Mail [](id=configuring-mail)
+## Configuring Mail
 
 Log in as the administrative user you created in the setup wizard. Click the
 menu icon and then go to Control Panel &rarr; Server Administration &rarr; Mail,

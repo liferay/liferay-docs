@@ -1,4 +1,8 @@
-# Installing @product@ on Wildfly [](id=installing-product-on-wildfly)
+---
+header-id: installing-product-on-wildfly
+---
+
+# Installing @product@ on Wildfly
 
 @product-ver@ bundled with Wildfly 11 is available on the
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
@@ -28,7 +32,7 @@ deploying @product@, the Liferay Home folder contains the Wildfly server folder
 as well as `data`, `deploy`, `logs`, and `osgi` folders. `$WILDFLY_HOME` refers
 to your Wildfly server folder. It is usually named `wildfly-[version]`.
 
-## Liferay DXP の依存ファイルをインストールする[](id=installing-dependencies)
+## Liferay DXP の依存ファイルをインストールする
 
 @product@ depends on many JARs that are included in the @product@ Wildfly
 bundle. Some of the bundle's JARs are not strictly required but can still be
@@ -137,7 +141,7 @@ runtime.
 
 Great! You have your `.jar` files ready.
 
-## Running @product@ on Wildfly in Standalone Mode vs. Domain Mode [](id=running-product-on-wildfly-in-standalone-mode-vs-domain-mode)
+## Running @product@ on Wildfly in Standalone Mode vs. Domain Mode
 
 Wildfly can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
@@ -169,7 +173,7 @@ for information on setting up a @product@ cluster.
 
 $$$
 
-## Configuring Wildfly [](id=configuring-wildfly)
+## Configuring Wildfly
 
 Configuring Wildfly to run @product@ includes these things:
 
@@ -330,7 +334,7 @@ the `JAVA_OPTS` in the `standalone.conf.bat` file.
 The prescribed script modifications are now complete for your @product@
 installation on Wildfly. Next you'll configure your database.
 
-### データベースの設定[](id=database-configuration)
+### データベースの設定
 
 The easiest way to handle database configuration is to let @product@ manage your
 data source. The
@@ -429,7 +433,7 @@ If you want to manage your mail session with Wildfly, follow these steps:
 
 You've got mail! Next, you'll deploy @product@ to your Wildfly app server.
 
-## @product@をデプロイする [](id=deploying-product)
+## @product@をデプロイする
 
 これで、@product@ DXP WARファイルを使用して@product@をデプロイする準備が整いました。
 
