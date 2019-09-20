@@ -12,9 +12,9 @@ Liferay provides a bundled version included in its Project SDK. In this
 tutorial, you'll learn the different methods available for installing Dev
 Studio:
 
-- [install the Dev Studio bundle from scratch](#install-the-liferay-ide-bundle)
-- [install Dev Studio into an existing Eclipse instance using an update URL](#install-liferay-ide-into-eclipse)
-- [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-liferay-ide-into-eclipse-from-a-zip-file)
+- [install the Dev Studio bundle from scratch](#install-the-dev-studio-bundle)
+- [install Dev Studio into an existing Eclipse instance using an update URL](#install-dev-studio-into-eclipse)
+- [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-dev-studio-into-eclipse-from-a-zip-file)
 
 **Important:** If you're installing Dev Studio into an existing Eclipse
 environment, you must be on Eclipse Photon or newer. For instructions on

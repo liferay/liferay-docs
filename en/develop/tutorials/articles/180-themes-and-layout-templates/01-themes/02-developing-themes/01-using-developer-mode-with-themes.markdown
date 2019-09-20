@@ -37,7 +37,7 @@ properties as needed. These configurations are covered in this tutorial.
 
 First, you can explore how it's done in @ide@. 
 
-## Setting Developer Mode for Your Server in @ide@
+## Setting Developer Mode for Your Server in Dev Studio
 
 To enable Developer Mode for your server in @ide@, follow these steps: 
  
