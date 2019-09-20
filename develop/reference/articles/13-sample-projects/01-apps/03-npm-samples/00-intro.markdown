@@ -25,14 +25,14 @@ build tool:
 
 The following npm samples are documented:
 
-- [Angular npm Portlet](angular-npm-portlet)
-- [Billboard.js npm Portlet](billboard-js-npm-portlet)
-- [Isomorphic npm Portlet](isomorphic-npm-portlet)
-- [jQuery npm Portlet](jquery-npm-portlet)
-- [Metal.js npm Portlet](metal-js-npm-portlet)
-- [React npm Portlet](react-npm-portlet)
-- [Simple npm Portlet](simple-npm-portlet)
-- [Vue.js npm Portlet](vue-js-npm-portlet)
+- [Angular npm Portlet](/docs/7-0/reference/-/knowledge_base/r/angular-npm-portlet)
+- [Billboard.js npm Portlet](/docs/7-0/reference/-/knowledge_base/r/billboard-js-npm-portlet)
+- [Isomorphic npm Portlet](/docs/7-0/reference/-/knowledge_base/r/isomorphic-npm-portlet)
+- [jQuery npm Portlet](/docs/7-0/reference/-/knowledge_base/r/jquery-npm-portlet)
+- [Metal.js npm Portlet](/docs/7-0/reference/-/knowledge_base/r/metal-js-npm-portlet)
+- [React npm Portlet](/docs/7-0/reference/-/knowledge_base/r/react-npm-portlet)
+- [Simple npm Portlet](/docs/7-0/reference/-/knowledge_base/r/simple-npm-portlet)
+- [Vue.js npm Portlet](/docs/7-0/reference/-/knowledge_base/r/vue-js-npm-portlet)
 
 | **Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a
 | portlet. To resolve this, use
