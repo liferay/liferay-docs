@@ -1,4 +1,8 @@
-# Simple File System Storeの使用[](id=using-the-simple-file-system-store)
+---
+header-id: using-the-simple-file-system-store
+---
+
+# Simple File System Storeの使用
 
 シンプルファイルストレージの実装はデフォルトのストアです。ファイルを保存するためにローカルフォルダを使用します。ファイルシステムをクラスタ化された設定に使用できますが、指定したフォルダはすべてのノードで共有され、同時要求とファイルロックを処理する必要があります。このため、ストレージエリアネットワークまたはクラスタ化されたファイルシステムを使用する必要があります。
 

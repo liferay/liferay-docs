@@ -1,4 +1,8 @@
-# SAML Identity Providerとして@product@を設定する[](id=setting-up-liferay-as-a-saml-identity-provider)
+---
+header-id: setting-up-liferay-as-a-saml-identity-provider
+---
+
+# SAML Identity Providerとして@product@を設定する
 
 Identity Providerは、ユーザーが他のWebサイトにアクセスするためのシングルサインオンを提供する、信頼できるプロバイダです。Service Providerは、アプリケーションをホストするウェブサイトで、適切な資格情報を持つ識別されたユーザーにのみアクセスを許可します。
 SAMLは[OASIS Security Services Technical Committee]（https://www.oasis-open.org/ committees/security/）によって管理されています。
@@ -99,7 +103,7 @@ SAMLのAdminインターフェースにアクセスするには、*[Control Pane
 5. 証明書とプライベートキーの情報を保存したら、Generalタブの一番上にある*Enabled*のボックスをチェックして*[Save]*をクリックします。
 これで@product@をSAML Identity Providerとして設定できました。
 
-## Identity Provider設定の変更 [](id=changing-the-identity-provider-settings)
+## Identity Provider設定の変更
 
 @product@のSAML Identity Provider設定を設定するには、SAML Admin Control Panelエントリーの*Identity Provider*に移動します。
 
@@ -130,7 +134,7 @@ Requestは送信側のService Providerによって署名されなければなり
 
 セッションの最大経過時間が無制限であっても、ユーザーのアイドル時間がセッションタイムアウトプロパティで設定された制限に達すると、SSOセッションは期限切れになります。
 
-## チェックポイント[](id=checkpoint)
+## チェックポイント
 
 Service Provider（SP）を追加する前に、次の作業が完了していることを確認してください：
 
@@ -173,7 +177,6 @@ URLを使用するか、ブラウザで*Save* をクリックして実際の`XML
 
 
 ## SAMLService Providerの追加
-[](id=adding-a-saml-service-provider)
 
 @product@のSAML Identity Providerとしての設定は、1つ以上のSAMLService Providerに接続できる場合にのみ役立ちます。SAML Admin Control PanelエントリのService
 Provider Connectionsタブに移動し、*Add Service Provider*のボタンをクリックしてSAML Service Providerを追加します。
@@ -247,7 +250,7 @@ Provider Connectionsタブに移動し、*Add Service Provider*のボタンを�
 **Keep Alive URL:**ユーザーが@product@ IdPを介して複数の@product@ SPインスタンスにログインしている場合、ブラウザウィンドウを開いている限り、セッションをアクティブに保つことができます。これはSPが@product@の場合にのみ設定してください。
 URLは`https://[SP host name]/c/portal/saml/keep_alive`です。
 
-### チェックポイント[](id=checkpoint-0)
+### チェックポイント
 
 @product@ベースのIdPを最初のSPに接続するときに設定が正しいことを確認してください。SPは1つのIdPにのみ接続するため、最初のIdPが機能しない場合、残りのIDPも機能しません。
 

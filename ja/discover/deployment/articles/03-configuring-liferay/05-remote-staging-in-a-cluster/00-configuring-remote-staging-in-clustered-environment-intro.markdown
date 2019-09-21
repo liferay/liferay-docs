@@ -1,4 +1,8 @@
-# クラスタ環境でのリモートステージングの設定[](id=configuring-remote-staging-in-a-clustered-environment)
+---
+header-id: configuring-remote-staging-in-a-clustered-environment
+---
+
+# クラスタ環境でのリモートステージングの設定
 
 [クラスタ環境](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)として@product@を実行していて 、リモートステージングを使用したい場合は、適切な設定をする必要があります。このチュートリアルでは、クラスタ環境のシナリオ例でリモートステージングを設定する方法を説明します。例の環境では、以下が備わっていると仮定します。
 

@@ -1,4 +1,8 @@
-# アップグレードツールの実行[](id=running-the-upgrade)
+---
+header-id: running-the-upgrade
+---
+
+# アップグレードツールの実行
 
 アップグレードツールは、コアおよびインストールされているモジュールをアップグレードするに当たって、最も簡単な方法を提供します。ファイルまたはツールのコマンドラインインターフェイスから、アップグレードを設定できます。アップグレードツールを使用すると、コアとすべてのモジュールをまとめて、または個別にアップグレードできます。
 
@@ -16,7 +20,7 @@
 
 まず最初に、ツールの使用方法を説明します。
 
-## アップグレードツールの使用法[](id=upgrade-tool-usage)
+## アップグレードツールの使用法
 
 `db_upgrade.sh`スクリプト（Windows上では`db_upgrade.bat`）がアップグレードツールを起動します。これは、`[Liferay Home]/tools/portal-tools-db-upgrade-client`フォルダ内にあります。
 
@@ -74,7 +78,7 @@ $$$
 
 [アップグレードを開始](#running-and-managing-the-core-upgrade)する前に、コア以外のモジュールのアップグレードを実行する方法を決定しておいてください。
 
-## コア以外のモジュールアップグレードの設定[](id=configuring-module-upgrades)
+## コア以外のモジュールアップグレードの設定
 
 アップグレードツールを設定することで、インストールされているすべてのモジュールを自動的にアップグレードしたり、手動でモジュールのアップグレードを実行するために（コアアップグレードの完了後に）Gogoシェルを開くようにしたりできます。
 
@@ -84,7 +88,7 @@ $$$
 
 コア以外のモジュールをアップグレードする方法は以上です。次に、コアアップグレードの設定オプションについて説明します。
 
-## コアアップグレードの設定[](id=configuring-the-core-upgrade)
+## コアアップグレードの設定
 
 コアアップグレードでは設定が必要です。実行時にコマンドラインインターフェースを介して設定したり、`[Liferay
 Home]/tools/portal-tools-db-upgrade-client/`にある以下のファイルで事前に設定することができます。
@@ -95,7 +99,7 @@ Home]/tools/portal-tools-db-upgrade-client/`にある以下のファイルで事
 
 次に、各ファイルのプロパティについて説明します。
 
-### app-server.propertiesの設定[](id=configuring-app-server-properties)
+### app-server.propertiesの設定
 
 以下の情報を指定して、@product-ver@がインストールされているアプリケーションサーバーを設定します。
 
@@ -134,7 +138,7 @@ Home]/tools/portal-tools-db-upgrade-client/`にある以下のファイルで事
     portal.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
     server.detector.server.id=tomcat
 
-### portal-upgrade-database.propertiesの設定[](id=configuring-portal-upgrade-database-properties)
+### portal-upgrade-database.propertiesの設定
 
 アップグレードするデータベースを設定するために、以下の情報を指定します。
 これらのプロパティ は、`portal-ext.properties`ファイルで使用する[JDBCポータルのプロパティ](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#JDBC)と完全に対応しています。
@@ -147,7 +151,7 @@ Home]/tools/portal-tools-db-upgrade-client/`にある以下のファイルで事
 
 **jdbc.default.password** *（必須）*
 
-### portal-upgrade-ext.propertiesの設定[](id=configuring-portal-upgrade-ext-properties)
+### portal-upgrade-ext.propertiesの設定
 
 アップグレードそのものを設定するには、以下の情報を指定します。
 
@@ -155,7 +159,7 @@ Home]/tools/portal-tools-db-upgrade-client/`にある以下のファイルで事
 
 **hibernate.jdbc.batch_size：**パフォーマンスを向上させるために使用されるJDBCバッチサイズです。デフォルトでは、*250*に設定されています。*（オプション）*
 
-### アップグレードの設定例[](id=example-upgrade-configuration)
+### アップグレードの設定例
 
 下記はアップグレードツールのコマンドラインインターフェイスとの対話の例です。
 
@@ -203,7 +207,7 @@ Home]/tools/portal-tools-db-upgrade-client/`にある以下のファイルで事
    
 次に、コアアップグレードを開始する手順について説明します。
 
-## コアアップグレードの実行と管理[](id=running-and-managing-the-core-upgrade)
+## コアアップグレードの実行と管理
 
 [アップグレードツールの使用法](#upgrade-tool-usage)の説明に従って、アップグレードツールを起動します 。
 コアアップグレードのステージは次のとおりです。

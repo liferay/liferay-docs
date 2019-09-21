@@ -1,4 +1,8 @@
-# 認証ベリファイア[](id=authentication-verifiers)
+---
+header-id: authentication-verifiers
+---
+
+# 認証ベリファイア
 
 認証検証レイヤーは、@product@のAPIのリモート呼び出しを認証するための一元的かつ拡張可能な方法です。
 
@@ -14,7 +18,7 @@
 
 注：認証検証レイヤーの焦点は、認証情報の確認であり、資格情報の提供ではありません。認証検証レイヤーは、トークンの発行や、資格情報、あるいはサインインポートレットの表示を担当しません。代わりに、レイヤーは既存の認証情報と認証されたセッションを検証するため、認証エンドポイントを補完します。ただし、下位互換性を確保するために、デフォルトの実装ではユーザー名とパスワードの資格情報を提供する要求がサポートされています。したがって、認証検証レイヤーは認証と認可の境目に位置しています。
 
-## 認証検証プロセスの概要[](id=authentication-verification-process-overview)
+## 認証検証プロセスの概要
 
 このレイヤーと関連プロセスは、`javax.servlet.Filter`インタフェースを実装している`AuthVerifierFilter`クラスによって提供されます。
 
@@ -47,7 +51,7 @@
 - 基本認証ヘッダー
 - ポータルセッション
 
-## 基本認証ヘッダー[](id=basic-auth-header)
+## 基本認証ヘッダー
 
 この認証ベリファイアを使用すると、リモートクライアントは[HTTP基本認証](https://en.wikipedia.org/wiki/Basic_access_authentication)を使用して認証できます 。
 この設定は、この方法で認証する必要があるURLパスの指定により設定されます。
@@ -55,7 +59,7 @@
 
 デフォルトのURLは、Webサービス用の`/api/*,/xmlrpc*`です。`TunnelServlet`へのアクセスを防ぐため、マッピングでは`/api/liferay*` を除外しています。詳細については、トンネル認証ベリファイアを参照してください。
 
-## ダイジェスト認証ヘッダー[](id=digest-auth-header)
+## ダイジェスト認証ヘッダー
 
 この認証ベリファイアを使用すると、リモートクライアントは[HTTPダイジェスト認証](https://en.wikipedia.org/wiki/Digest_access_authentication)を使用して認証できます 。
 この設定は、この方法で認証する必要があるURLパスの指定により設定されます。
@@ -63,7 +67,7 @@
 
 この認証ベリファイアはデフォルトでは有効になっていません。
 
-## HTTPトンネルエクステンダー[](id=http-tunnel-extender)
+## HTTPトンネルエクステンダー
 
 Liferayはモジュール方式を採用しているため、この拡張モジュールはモジュールが`TunnelServlet`の一部になることを有効にするために書かれました。`TunnelServlet`と`TunnelingServletAuthVerifier`をモジュールサーブレットコンテキストにマッピングします。マニフェストに`Http-Tunnel`を持つモジュールはTunnel Servletを利用することができ、`/o/_module_/api/liferay/do`を介してAPIを公開することができます。
 
@@ -71,7 +75,7 @@ Liferayはモジュール方式を採用しているため、この拡張モジ�
 
 この方法は、リモートAPIをエクスポートするための推奨される方法ではないことに注意してください。
 
-## 画像リクエストの認証ベリファイア[](id=image-request-authentication-verifier)
+## 画像リクエストの認証ベリファイア
 
 LibreOfficeやOpenOfficeに接続している場合、プロセスは@product@からイメージをダウンロードしてドキュメントをイメージでレンダリングする必要があります。これを行うために 、画像に安全にアクセスするための[JWTトークン](https://jwt.io)が作成されます。
 
@@ -79,19 +83,19 @@ LibreOfficeやOpenOfficeに接続している場合、プロセスは@product@�
 
 この認証ベリファイアはデフォルトでは有効になっていません。
 
-## ポータルセッションの認証ベリファイア [](id=portal-sessions-auth-verifiers)
+## ポータルセッションの認証ベリファイア 
 
 ブラウザ内のJavaScriptが既存のポータルセッションを使用して、Liferay JSON Webサービスにアクセスできるようにします。
 
 デフォルト設定では、URLが含まれるフィールドは、旧バージョンのJSONリモートサービスレイヤーである`/api/json*,/api/jsonws*,/c/portal/json_service*`へのアクセスを保護します。
 
-## リクエストパラメータの認証ベリファイア [](id=request-parameter-auth-verifiers)
+## リクエストパラメータの認証ベリファイア
 
 `RequestParameterAutoLogin`との後方互換性のために、HTTPリクエストパラメータの`parameterAutoLoginLogin`および`parameterAutoLoginPassword`内の認証情報を使用して、ポータルエンドポイントを認証およびアクセスできます。
 
 この認証ベリファイアはデフォルトでは有効になっていません。
 
-## トンネル認証ベリファイア[](id=tunnel-authentication-verifiers)
+## トンネル認証ベリファイア
 
 `TunnelServlet`は、ポータルリモートサービスへのアクセスを提供するために`/api/liferay/do` にマッピングされた旧バージョンのリモートAPIエンドポイントです。トンネル認証ベリファイアは、信頼できるリモートクライアントに、ユーザーに代わって提供された任意のユーザーIDを使用した認証アクセスを許可します。
 
@@ -101,6 +105,6 @@ LibreOfficeやOpenOfficeに接続している場合、プロセスは@product@�
 
 デフォルト設定はデフォルトで有効になっていますが、アクセスはローカルホストのみに制限されています。この設定は、トンネリングを許可するクライアントIPアドレスを設定することでできます。詳細については、[プロパティドキュメンテーション](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)および[リモートステージング](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging)を参照してください 。
 
-## 関連トピック[](id=related-topics)
+## 関連トピック
 
 [サービスアクセスポリシー](/discover/deployment/-/knowledge_base/7-1/)

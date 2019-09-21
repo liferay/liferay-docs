@@ -1,4 +1,8 @@
-# Cluster Linkを有効にする[](id=enabling-cluster-link)
+---
+header-id: enabling-cluster-link
+---
+
+# Cluster Linkを有効にする
 
 Cluster Linkを有効にすると、分散キャッシュが自動的に有効になります。キャッシュは、同時に実行されている複数の@product@ノードに分散されます。Cluster Linkは[Ehcache](http://www.ehcache.org)の複製を行います。Ehcacheのグローバル設定は[`portal.properties`ファイル](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Ehcache)にあります。
 
@@ -29,7 +33,7 @@ Cluster Linkは [JGroups](http://www.jgroups.org)に依存し、APIに通信す�
 
 Cluster Linkはノード間で1対多タイプの通信を提供をする拡張アルゴリズムが含まれています。JGroupsUDP マルチキャストではCluster Linkがデフォルトで実装されていますが、ユニキャストとTCPも利用可能です。
 
-## UDPによるマルチキャスト[](id=multicast-over-udp)
+## UDPによるマルチキャスト
 
 Cluster Linkを有効にすると、@product@のデフォルトのクラスタリング設定が有効になります。この設定はUDPを介したIPマルチキャストを定義します。@product@はこれを行うのに２つのグループの[JGroupsチャンネル](http://www.jgroups.org/manual/index.html#_channel)を使用します。一つはコントロールグループ、二つ目はトランスポートグループです。
 チャンネルプロパティーをカスタマイズしたい場合は、`portal-ext.properties`内で設定します。
@@ -54,7 +58,7 @@ JGroupはバインドアドレスを自動で設定します。マニュアル�
 
 お使いのネットワークによって、マルチキャストTCPの使用が妨げられる可能性がありますので、下記の設定を使い、クラスターが通信できるようにします。これらの方法は全てJGroups から提供されていますのでご注意ください。
 
-### チェックポイント[](id=checkpoint):
+### チェックポイント
 
 1. `localhost`使用せずにIPアドレスをバインドする場合は、これらのプロパティを使用して正しいIPアドレスが宣言されていることを確認してください。
 
@@ -63,7 +67,7 @@ JGroupはバインドアドレスを自動で設定します。マニュアル�
    
 3. 負荷テストを実施して、必要に応じて設定を最適化します。
 
-## TCPを利用したUNICAST[](id=unicast-over-tcp)
+## TCPを利用したUNICAST
 
 ネットワーク設定、もしくはノード間の物理距離といった理由から、UDP マルチキャストクラスタ構成を使用できない場合は、TCP ユニキャストが利用できます。ファイアーウォールでノードが分離されている構成や、ノードが地理的に異なる場所に配置されているケースなど特に、TCPユニキャストが必要です。
 
@@ -105,7 +109,7 @@ JGroupはバインドアドレスを自動で設定します。マニュアル�
    
 TCPを使ったユニキャストの設定ができました。上記の手順で、他のノードも設定します。
 
-### JDBC Ping [](id=jdbc-ping)
+### JDBC Ping
 
 TCP Pingを使ってクラスタのメンバーを発見する以外の方法は、セントラルデータベースを全ノードからアクセス可能にし、各ノードを発見させることも可能です。クラスタメンバーは自分自身を書き込み、このデータベースから他のメンバーのアドレスを読み取ります。クラスタ内のノードはこのデータベースに各自アドレスを書き込み、他ノードのアドレスを読み込みます。この設定を有効にするには、`TCPPING`タグを、対応する`JDBCPING`タグに置き換えます:
 
@@ -133,12 +137,12 @@ S3 Pingを設定するには`TCPPING`タグを、対応する`S3_PING`タグに�
 上記のパラメータの値としてAmazonキーを指定します。 S3 Pingの詳細設定は、[JGroups](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols)資料を参照してください。
 
 
-### その他のPING[](id=other-pings)
+### その他のPING
 
 
 JGroups は、この他にもRackspace Ping、BPing、File Ping等クラスターの発見方法を提供しています。これらのディスカバリーの利用方法の詳細は[JGroups](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols)の資料を参照してください。
 
-## モジュールを使用したキャッシュ構成の変更[](id=modifying-the-cache-configuration-with-a-module)
+## モジュールを使用したキャッシュ構成の変更
 
 実運用でシステムが処理する必要があるトラフィックの種類の負荷を、最も再現する負荷テストを実施してください。たとえば掲示板上に多くのメッセージが作成されることが予想される場合、負荷テスト用のスクリプトはそれｃを反映するよう作成します。Webコンテンツを主に多く利用する場合は、同じく負荷テストスクリプトにそれが反映されている必要があります。
 

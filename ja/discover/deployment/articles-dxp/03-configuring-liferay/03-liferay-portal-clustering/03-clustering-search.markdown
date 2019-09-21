@@ -1,4 +1,8 @@
-# クラスタリング検索 [](id=clustering-search)
+---
+header-id: clustering-search
+---
+
+# クラスタリング検索
 
 検索エンジンは必ず@product@とは別のサーバーで起動してください。
 @product@は [Elasticsearch](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)と [Solr](/discover/deployment/-/knowledge_base/7-1/installing-solr)をサポートしています。

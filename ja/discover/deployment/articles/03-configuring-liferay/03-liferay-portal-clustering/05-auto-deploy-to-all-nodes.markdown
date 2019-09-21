@@ -1,4 +1,8 @@
-# 全ノードへの自動デプロイ[](id=auto-deploy-to-all-nodes)
+---
+header-id: auto-deploy-to-all-nodes
+---
+
+# 全ノードへの自動デプロイ
 
 クラスタ上にモジュールもしくはWARファイルをデプロイする場合は、クラスタ上全てのノードにデプロイする必要があります。Liferay DXPはアプリケーションを[OSGiバンドルとしてインストール](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)します。アプリケーションサーバーがWARファイルをインストール方法で（インストールのみの場合も）クラスタ全体にアプリケーションをデプロイすることはできません。代わりに、アプリケーションを各ノードの自動デプロイフォルダ（例：`[Liferay Home]/deploy`）に配置します。
 

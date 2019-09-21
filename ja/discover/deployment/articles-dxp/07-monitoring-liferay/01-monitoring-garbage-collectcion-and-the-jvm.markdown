@@ -1,8 +1,12 @@
-# ガベージコレクションとJVMの監視[](id=monitoring-garbage-collection-and-jvm)
+---
+header-id: monitoring-garbage-collection-and-jvm
+---
+
+# ガベージコレクションとJVMの監視
 
 [チューニングパラメータ](/discover/deployment/-/knowledge_base/7-1/tuning-guidelines)は、 JVM チューニングのいい出発点となりますが、ニーズに合わせ最適な設定であることを確認するためにGCのパフォーマンスを監視しなければなりません。Oracle JVMのパフォーマンスを監視するのに役立つツールがいくつかあります。
 
-## VisualVM [](id=visual-vm)
+## VisualVM
 
 VisualVMは、Oracle JVMのパフォーマンス情報を表示するための集中型コンソールを提供し、そのVisual GCプラグインはガーベージコレクターのアクティビティを表示します。
 
@@ -15,7 +19,7 @@ VisualVMは、Oracle JVMのパフォーマンス情報を表示するための�
 
 $$$
 
-## JMXコンソール[](id=jmx-console)
+## JMXコンソール
 
 
 このツールは、@product@の分散キャッシュパフォーマンス、アプリケーションサーバースレッドのパフォーマンス、JDBC接続プールの使用状況など、さまざまな統計情報を表示するのに役立ちます。
@@ -35,7 +39,7 @@ JMX接続を有効にするには、以下のJVM引数を追加します：
 
 ![図2: VisualVMはJava Management Extensionを使用しているJVMを監視します。](../../images-dxp/visual-vm-jmx.png)
 
-## ガーベージコレクターの冗長ログ[](id=garbage-collector-verbose-logging)
+## ガーベージコレクターの冗長ログ
 
 これらのJVM引数を追加して、JVMガーベージコレクターの冗長ログを有効にします。
 

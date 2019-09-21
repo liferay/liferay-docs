@@ -1,4 +1,8 @@
-# OpenID Connectを用いた認証[](id=authenticating-with-openid-connect)
+---
+header-id: authenticating-with-openid-connect
+---
+
+# OpenID Connectを用いた認証
 
 OpenID Connectは、[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)認可プロトコルの上に構築された軽量の認証レイヤーです。ユーザーが他のシステムにあるアカウントを使用して認証できるようにすることで、ローカルアカウントの保持を補完します。新しいアカウントにサインアップするのを避けたユーザーは、すでに持っているアカウントを使って、Webサイトにログインできます。OpenID Connectを使用することで、他のプロバイダーにユーザー認証を*委任*し、既存のアカウントを持つユーザーが自分のシステムに対して簡単に認証できるようになります。
 
@@ -10,7 +14,7 @@ $$$
 
 OpenID ConnectはOAuth 2.0上に構築されているため、トークンフローが似ています。OAuth 2.0は認可プロトコルにすぎないため、特定のAPIへのアクセスを許可する*アクセストークン*を送信します。OpenID Connectは、ユーザーが認証され許可を与えられている場合に、名前やEメールなどのユーザー情報を渡す*IDトークン*をこれに追加します。
 
-## OpenID Connectプロバイダーでクライアントを作成する[](id=creating-a-client-in-openid-connect-provider)
+## OpenID Connectプロバイダーでクライアントを作成する
 
 OpenID Connectを使用するには、まずプロバイダーにクライアントとして登録する必要があります。
 これはOAuth 2.0クライアントです。プロセスはプロバイダーによって異なります。
@@ -25,7 +29,7 @@ OpenID Connectを使用するには、まずプロバイダーにクライアン
 
 プロバイダーから情報を収集ます。次に、プロバイダーを作成する必要があります。
 
-## OpenID Connectプロバイダー接続の設定[](id=configuring-an-openid-connect-provider-connection)
+## OpenID Connectプロバイダー接続の設定
 
 *[コントロールパネル]* → *[設定]* → *[システム設定]* → *[セキュリティ]* → *[SSO]*へ行き、*[システムスコープ]*の内にある***[OpenID Connectプロバイダー]***を選択して、以下の手順に従います。
 
@@ -67,7 +71,7 @@ OpenID Connectを使用するには、まずプロバイダーにクライアン
 
 $$$
 
-## OpenID Connect認証を有効にする[](id=enabling-openid-connect-authentication)
+## OpenID Connect認証を有効にする
 
 1. *[コントロールパネル]* → *[設定]* → *[システム設定]* → *[セキュリティ]* → *[SSO]*へ行き、*[仮想インスタンススコープ]*にある***[OpenID Connect]***を選択します。
 
@@ -85,7 +89,7 @@ $$$
 
 これでユーザーがOpenID Connectでログインできるようになります。
 
-## OpenID Connectでログインする[](id=signing-in-with-openid-connect)
+## OpenID Connectでログインする
 
 サインインポートレットに、OpenID Connectでログインするための新しいリンクがあります。
 

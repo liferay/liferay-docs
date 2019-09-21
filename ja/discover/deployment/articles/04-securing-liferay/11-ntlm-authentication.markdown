@@ -1,4 +1,8 @@
-# NTLMシングルサインオン認証[](id=ntlm-single-sign-on-authentication)
+---
+header-id: ntlm-single-sign-on-authentication
+---
+
+# NTLMシングルサインオン認証
 
 NTLM (NT LAN Manager)は認証、整合性、ユーザー情報の機密性の保持を提供するMicrosoftプロトコルのスイートです。
 Microsoftは、最新版のWindowsサーバーにKerberosを採用していますが、ワークグループの認証に現在もNTLMが使用されています。 @product@ はNTLM v2認証もサポートしています。 NTLM v2はより安全性が高く、認証プロセスがNTLMv1より強化されています。
@@ -42,7 +46,7 @@ AD名とIPアドレスは` domainControllerName`と`domainController`設定に�
 システムデフォルトを特定のプロパティーポータル用に上書きするには[コントロールパネル] > [設定] > [インスタンス設定] > [認証] > [NTLM]をクリックします。
 
 
-## まとめ[](id=summary)
+## まとめ
 
 NTLM認証は、IT部署がクライアントのデバイスでどのソフトウェアが使用されているかコントロールするようなシナリオでは、NTLMの互換性は大きな利点です。Active Directoryベースのネットワーク／ドメインでは、NTLMが可能にするユーザーエクスペリエンス以上に優れているものは多くありません。
 

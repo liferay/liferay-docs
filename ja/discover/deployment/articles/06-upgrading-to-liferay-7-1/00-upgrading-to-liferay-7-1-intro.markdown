@@ -1,4 +1,8 @@
-# @product-ver@へのアップグレード[](id=upgrading-to-liferay-71)
+---
+header-id: upgrading-to-liferay-71
+---
+
+# @product-ver@へのアップグレード
 
 @product-ver@へのアップグレードには、主に2つの手順があります。まず、インストールのアップグレードをしてから、データベースのアップグレードをします。最新のリリースに直接アップグレードするには、Liferay Portal 6.1以上を搭載している必要があります。
 

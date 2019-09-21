@@ -1,4 +1,8 @@
-# パッチングツールの使用[](id=patching-tool)
+---
+header-id: patching-tool
+---
+
+# パッチングツールの使用
 
 パッチングツールは、@ product @パッチをインストール、削除、比較、および準備します。
 これは@ product @バンドルに事前インストールされており、@ product @に簡単にマニュアルインストールでき、アップデートするのも簡単です。パッチングツールの実行可能スクリプトにより、パッチ適用を促進します。
@@ -12,7 +16,7 @@
 - [Installing the Patching Tool](#installing-the-patching-tool)（マニュアルでのインストールのみ）
 - [Executables](#executables)
 
-## パッチングツールのインストール[](id=installing-the-patching-tool)
+## パッチングツールのインストール
 
 @ product @バンドルには、パッチングツールが事前インストールされていて（`[Liferay Home]/patching-tool`に）、デフォルト設定で事前設定されています。バンドルを使用している場合はこのセクションを飛ばしてください。
 
@@ -33,7 +37,7 @@
 パッチングツールをインストールしたら、@ product @インストールを使用するためにパッチングツールを設定する必要があります。（詳細：[configure it to use your @product@ installation](/discover/deployment/-/knowledge_base/7-1/configuring-the-patching-tool)）
 パッチングツールZIPファイルから抽出した`patching-tool`フォルダには、実行可能なスクリプトを含んだパッチングツールが含まれています。
 
-## 実行ファイル [](id=executables)
+## 実行ファイル
 
 パッチングツールとともに配布されているUnixシェルおよびWindowsバッチスクリプトは、パッチングツールを使いやすくしています。Unixシステムでは以下を実行し、
 

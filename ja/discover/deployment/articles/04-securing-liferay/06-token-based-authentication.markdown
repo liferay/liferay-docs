@@ -1,4 +1,8 @@
-# トークンを使用したシングルサインオン認証[](id=token-based-single-sign-on-authentication)
+---
+header-id: token-based-single-sign-on-authentication
+---
+
+# トークンを使用したシングルサインオン認証
 
 トークン方式SSO認証は@product@7.0から導入され、Shibboleth、 SiteMinderや以下の方法でトークンを伝播させる形式のSSO製品に対して標準化されています:
 
@@ -51,7 +55,7 @@
 
 *[保存]*をクリックしトークン方式SSOを有効にします。
 
-## 必須のSiteMinder設定方法[](id=required-siteminder-configuration)
+## 必須のSiteMinder設定方法
 
 SiteMinderをご使用の場合は、@product@はそのURLにチルダ文字を使用することがあります。デフォルトでは、SiteMinderはチルダ文字（およびその他）を不正な文字として扱い、そのいずれかを含むURLを処理するとHTTP 500エラーを返します。この問題を回避するには、 SiteMinder設定を以下のように変更します:
 
@@ -59,6 +63,6 @@ SiteMinderをご使用の場合は、@product@はそのURLにチルダ文字を�
 
 上記の設定は`~`が不正URL文字リストから除外されている以外はデフォルトと同じです。SiteMinderを再起動して、設定の更新を有効にします。詳細については、SiteMinderの[キュメンテーション](https://support.ca.com/cadocs/0/CA%20SiteMinder%20r6%200%20SP6-ENU/Bookshelf_Files/HTML/index.htm?toc.htm?258201.html)をご覧ください。
 
-# まとめ[](id=summary)
+# まとめ
 
 @product@のトークン方式のSSO認証メカニズムは、柔軟性が高く、有効な@product@ユーザーのスクリーン名や、Emailアドレスを提供できるSSOソリューションであれば、互換性があります。これにはShibboleth とSiteMinderが含まれます。

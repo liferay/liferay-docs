@@ -1,4 +1,8 @@
-# @product-ver@へのアップグレードの準備[](id=preparing-an-upgrade-to-liferay-7)
+---
+header-id: preparing-an-upgrade-to-liferay-7
+---
+
+# @product-ver@へのアップグレードの準備
 
 アップグレード前のデータクリーニングとデータの正規化のプロセスが完了したので、これで@product-ver@にアップグレードをするための環境が準備できました。準備の手順の概要は、以下のとおりです。
 
@@ -20,15 +24,15 @@
 
 このチュートリアルでは、上記の手順について詳しく説明します。
 
-## 手順1：マーケットプレイスアプリをアップグレードする[](id=step-1-upgrade-your-marketplace-apps)
+## 手順1：マーケットプレイスアプリをアップグレードする
 
 使用しているマーケットプレイスのアプリ（Kaleo、カレンダー、通知など）をそれぞれインストールのために最新バージョンにアップグレードします。アップグレードを実行する前に、これらのアプリに関する問題のトラブルシューティングしておいてください。
 
-## 手順2：すべての変更をステージングサイトから本番サイトへ公開する[](id=publish-all-changes-from-the-staged-site-to-the-live-site)
+## 手順2：すべての変更をステージングサイトから本番サイトへ公開する
 
 [ローカル/リモートステージングを有効](/discover/portal/-/knowledge_base/7-1/enabling-staging)にし、コンテンツやデータをステージングサイトに保存した場合、本番サイトに[公開](/discover/portal/-/knowledge_base/7-1/publishing-staged-content-efficiently)する必要があります。この手順を飛ばした場合、システムには最後の公開日以降に変更されたコンテンツがわからないため、アップグレード後に完全公開（または手動で変更を公開）する必要があります。
 
-## 手順3：重複したWebコンテンツの構造フィールド名を削除する[](id=remove-duplicate-web-content-structure-field-names)
+## 手順3：重複したWebコンテンツの構造フィールド名を削除する
 
 Webコンテンツ管理システムを広範囲に使用したことがある場合は、フィールド名が固有ではない構造があるかもしれません。 アップグレードする前に、[重複するフィールド名を見つけて削除する](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names)必要があり ます。以前にLiferay Portal 6.2にアップグレードしてこれをスキップしていた場合に、このエラーが発生します。
 
@@ -37,11 +41,11 @@ Webコンテンツ管理システムを広範囲に使用したことがある�
 
 この場合、Liferay 6.2の以前のバックアップにロールバックして、[重複するフィールド名を 見つけて削除します](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names)。
 
-## 手順4：@product@の完全なバックアップを同期する[](id=step-2-synchronize-a-complete-backup-product)
+## 手順4：@product@の完全なバックアップを同期する
 
 [@product@のデータベース、インストール先、およびドキュメントライブラリストアをバックアップします。](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
 
-## 手順5：ポータルのプロパティを更新する[](id=step-4-update-your-portal-properties)
+## 手順5：ポータルのプロパティを更新する
 
 要件に合わせてインストールをカスタマイズするために、ポータルプロパティが上書きされている可能性があります。そうであれば、@product-ver@と互換性を持つために、プロパティファイル（`portal-setup-wizard.properties`や`portal-ext.propertiesファイル`など）を更新する必要があります。これを行う際には、現在のバージョンから@product-ver@までのすべてのバージョンの@product@のプロパティの変更を考慮する必要があります。
 
@@ -79,7 +83,7 @@ Liferay Portal 6.2より前のバージョンから移行する場合は、以�
 モジュール化された機能のプロパティは変更されたため、[OSGi設定ファイル](/discover/portal/-/knowledge_base/7-1/system-settings#exporting-and-importing-configurations)に個別にデプロイする必要があり ます。 
 [7.1のポータルプロパティリファレンスドキュメント](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)に、プロパティの詳細と例があります。
 
-## 手順6：ドキュメントとメディアのファイルストアを設定する[](id=configuring-your-documents-and-media-file-store)
+## 手順6：ドキュメントとメディアのファイルストアを設定する
 
 次に、ドキュメントとメディアの設定を確認します。アップグレードプロセスを実行する前に、[ドキュメントライブラリーのドキュメンテーション](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)を見て、@product-ver@のすべてのオプションを確認しておいてください。
 ただし、変更された設定には重要な部分が2つあります。
@@ -99,7 +103,7 @@ Advanced File System Storeメソッドを使用してドキュメントライブ
 
 詳細については、[ドキュメントリポジトリ設定のドキュメンテーション](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)を参照してください。
 
-## 手順7：@product-ver@をインストールする[](id=install-the-new-version-of-product)
+## 手順7：@product-ver@をインストールする
 
 次に、[@product@をアプリケーションサーバーにインストールする](/discover/deployment/-/knowledge_base/7-1/deploying-product)か 、[選択したアプリケーションサーバーにバンドルされている@product@を使用します](/discover/deployment/-/knowledge_base/7-1/installing-liferay)。
 
@@ -117,7 +121,7 @@ $$$
 
 前の手順で更新したカスタムポータルプロパティファイル（`portal-ext.properties`など）とドキュメントとメディアのファイルストアを新しいインストールにコピーします。
 
-## 手順8：アップグレードプロセス中のインデックス作成を無効にする[](id=disable-indexing-during-the-upgrade-process)
+## 手順8：アップグレードプロセス中のインデックス作成を無効にする
 
 新しいインストールでアップグレードプロセスを開始する前に、インデクサーがコンテンツのインデックスを再作成しようとしたときに生じるアップグレードプロセスでのパフォーマンスの問題を防ぐために、インデックスの作成を無効にする必要があります。
 

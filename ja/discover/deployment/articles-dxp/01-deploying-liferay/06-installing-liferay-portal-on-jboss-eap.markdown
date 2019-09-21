@@ -1,4 +1,8 @@
-# JBoss EAPに@product@をインストールする [](id=installing-product-on-jboss-eap)
+---
+header-id:installing-product-on-jboss-eap
+---
+
+# JBoss EAPに@product@をインストールする
 
 JBoss EAP 7.1に@product@をインストールするには3つの手順があります
 :
@@ -21,7 +25,6 @@ JBoss EAP 7.1に@product@をインストールするには3つの手順があり
 [*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-liferay#liferay-home)のフォルダの中に、JBossサーバーフォルダが入っています。@product@をインストールおよびデプロイしたら、Liferayのホームフォルダの中にJBossサーバーのフォルダ、`data`、`deploy`、`logs`、および`osgi`フォルダが含まれています。`$JBOSS_HOME`はJBossサーバーのフォルダのことです。 このフォルダには通常`jboss-eap-[version]`という名前が付けられています。
 
 ## 依存関係のインストール
- [](id=installing-dependencies)
 
 @product@は、いくつかのLiferay固有の、およびサードパーティーのJARに依存しています。
 以下の説明に従って、必要なJARをダウンロードしてインストールしてください。
@@ -117,7 +120,7 @@ JBoss EAP 7.1に@product@をインストールするには3つの手順があり
 
  これで `.jar`ファイルの準備が整いました。 
 
-## Standalone ModeとDomain Modeで@product@をJBoss EAPで実行する [](id=running-product-on-jboss-eap-in-standalone-mode-vs-domain-mode)
+## Standalone ModeとDomain Modeで@product@をJBoss EAPで実行する
 
 JBoss EAPは、*standalone* modeまたは*domain* modeで起動できます。Domain modeでは、複数のアプリケーションサーバーインスタンスを単一のコントロールポイントから管理できます。このようなアプリケーションサーバーの集まりを*domain*と言います。
 Standalone modeとDomain modeの詳細については、[JBoss EAP Product Documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html/introduction_to_jboss_eap/overview_of_jboss_eap#operating_modes)のこのトピックに関するセクションを参照してください 。
@@ -133,7 +136,7 @@ Standalone modeとDomain modeの詳細については、[JBoss EAP Product Docum
 
 $$$
 
-## JBossの設定方法[](id=configuring-jboss)
+## JBossの設定方法
 
 @product@を実行するためにJBossを設定するには、以下のことをします：
 
@@ -299,7 +302,7 @@ JBossに@product@をインストールするためのスクリプトの変更は
 
 
 
-## データベースの設定方法 [](id=database-configuration)
+## データベースの設定方法
 
 データベース設定を処理する上で一番簡単な方法は @product@にデータソースを管理させることです。[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)のページでは、@product@の組み込みデータソースを設定できます。
 組み込みのデータソースを使用したい場合は、このセクションを飛ばしてください。
@@ -365,7 +368,7 @@ JBossにデータソースを管理させたい場合は、次の手順に従っ
    
 データソースを設定したので、次はメールの設定方法について説明します。
 
-## メール設定方法 [](id=mail-configuration)
+## メール設定方法
 
 データベースと同様、メール設定の処理も@product@に行わせるのが一番簡単な方法です。@product@の組み込みメールセッションを使用したい場合は、このセクションを飛ばしてControl Panelで[メールセッションを設定してください](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)。
 
@@ -398,7 +401,7 @@ JBoss上でメールセッションを管理したい場合は、次の手順に
    
 これでメールが届くようになります。次に、@product@をJBossアプリケーションサーバーにデプロイします。
 
-##  @product@をデプロイする[](id=deploying-product)
+##  @product@をデプロイする
 
 1. `$JBOSS_HOME/standalone/deployments/ROOT.war`のフォルダがすでにJBossインストールに存在する場合は、そのサブフォルダとファイルをすべて削除します。
 存在しない場合は、`$JBOSS_HOME/standalone/deployments/ROOT.war`という名前の新しいフォルダを作成します 。

@@ -1,10 +1,14 @@
-# @product-ver@ WARへのパッチのインストール[](id=installing-patches-on-the-liferay-de-war)
+---
+header-id: installing-patches-on-the-liferay-de-war
+---
+
+# @product-ver@ WARへのパッチのインストール
 
 サポートされているアプリケーションサーバーにWARファイルとして@ product @をマニュアルでインストールした場合は（参照：[installed @product@ manually](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)） 、WARファイルとサポートファイルにパッチを適用し、それらを再びデプロイする必要があります。ここではそれをどう行うか説明します。
 
 
 
-## 前提条件[](id=prerequisites)
+## 前提条件
 
 
 [Customer Portal:](https://web.liferay.com/group/customer/dxp/downloads/7-1)から必要なアーティファクトをダウンロードします 。
@@ -19,7 +23,7 @@
 
 - [最新のパッチングツール](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool)
 
-## @product@ WARとアーティファクトにパッチをインストールする[](id=how-to-install-a-fix-pack-on-the-liferay-war)
+## @product@ WARとアーティファクトにパッチをインストールする
 
 
 1. 任意のフォルダを作成してください。依存関係のアーティファクトとパッチングツールをそのフォルダに解凍します。フォルダの内容は次のようになるはずです：
@@ -85,7 +89,7 @@
    
  これでアーティファクトは正常にパッチされたため、サポートされているアプリケーションサーバーにデプロイする準備が整いました。
 
-## 関連トピック[](id=related-topics)
+## 関連トピック
 
 [Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration)
 

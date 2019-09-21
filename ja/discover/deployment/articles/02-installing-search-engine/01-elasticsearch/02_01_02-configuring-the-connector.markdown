@@ -1,4 +1,8 @@
-# Configuring the Liferay Elasticsearch Connector [](id=configuring-the-liferay-elasticsearch-connector)
+---
+header-id: configuring-the-liferay-elasticsearch-connector
+---
+
+# Configuring the Liferay Elasticsearch Connector
 
 For detailed Elasticsearch configuration information, refer to the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/settings.html).
@@ -44,7 +48,7 @@ navigate to Elasticsearch Home and enter
 Feel free to change the node name or the cluster name. Once you configure
 Elasticsearch to your liking, start it up.
 
-## Starting Elasticsearch [](id=starting-elasticsearch)
+## Starting Elasticsearch
 
 Start Elasticsearch by navigating to Elasticsearch Home and typing
 
@@ -63,7 +67,7 @@ To run as a daemon in the background, add the `-d` switch to either command:
 Once both Elasticsearch and @product@ are installed and running, introduce them
 to each other.
 
-## Configuring the Liferay Elasticsearch Connector [](id=configuring-the-liferay-elasticsearch-connector)
+## Configuring the Liferay Elasticsearch Connector
 
 The Elasticsearch connector provides integration between Elasticsearch and the
 portal. Before you configure the connector, make sure Elasticsearch is running.
@@ -81,7 +85,7 @@ familiar with System Settings, you can read about it
 can generate configuration files for deployment to other systems by configuring
 System Settings, and then exporting the `.config` file with your configuration.
 
-### Configuring the Adapter in the Control Panel [](id=configuring-the-adapter-in-the-control-panel)
+### Configuring the Adapter in the Control Panel
 
 To configure the Elasticsearch adapter from the System Settings application,
 
@@ -108,7 +112,7 @@ trigger a re-index. Navigate to *Control Panel* &rarr; *Configuration* &rarr;
 
 $$$
 
-### Configuring the Adapter with an OSGi `.config` File [](id=configuring-the-adapter-with-an-osgi-config-file)
+### Configuring the Adapter with an OSGi `.config` File
 
 When preparing a system for production deployment, you want to use a repeatable
 deployment process. Therefore, it's best to use the OSGi configuration file,
@@ -148,7 +152,7 @@ as well as the -->
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html)
 and go through that process once you have a working configuration.
 
-## Configuring a Remote Elasticsearch Host [](id=configuring-a-remote-elasticsearch-host)
+## Configuring a Remote Elasticsearch Host
 
 In production systems Elasticsearch and @product@ are installed on different
 servers. To make @product@ aware of the Elasticsearch cluster, set
@@ -182,7 +186,7 @@ nodes). See
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-network.html)
 for more information.
 
-## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
+## Clustering Elasticsearch in Remote Operation Mode
 
 Clustering Elasticsearch is easy. First, set `node.max_local_storage_nodes` to
 be something greater than `1`. When you run the Elasticsearch start script,
@@ -224,7 +228,7 @@ $$$
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
-## Elasticsearch Connector System Settings, By Operation Mode [](id=elasticsearch-connector-system-settings-by-operation-mode)
+## Elasticsearch Connector System Settings, By Operation Mode
 
 Some of the settings available for the Elasticsearch connector are applicable
 for only one operation mode (REMOTE or EMBEDDED). Refer to the table below:

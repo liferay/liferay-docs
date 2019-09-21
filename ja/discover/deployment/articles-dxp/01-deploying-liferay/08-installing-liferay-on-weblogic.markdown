@@ -1,4 +1,8 @@
-# WebLogic 12c R2への@product@のインストール [](id=installing-liferay-dxp-on-weblogic-12c-r2)
+---
+header-id: installing-liferay-dxp-on-weblogic-12c-r2
+---
+
+# WebLogic 12c R2への@product@のインストール
 
 @product@をWebLogic Adminサーバー上でインストールできますが、この方法は勧められていません。@product@を含むWebアプリケーションをWebLogic 管理サーバーにインストールすることをお勧めします。Web 管理サーバーにデプロイすると、@product@をより早く起動またはシャットダウンすることができ、クラスター設定への移行も容易になります。この記事では、@product@をWeb 管理サーバーにインストールする方法について説明します。
 
@@ -65,7 +69,7 @@
 
 
 
-## WebLogicのNode Managerの設定方法[](id=configuring-weblogics-node-manager)
+## WebLogicのNode Managerの設定方法
 
 WebLogicでは、管理されているサーバーを起動およびシャットダウンするためにはNode Managerが必要です。@product@をインストールする前に、WebLogicインストールに含まれているNode Managerを設定する必要があります。`domains/your_domain_name/nodemanager/nodemanager.properties`ファイルを介してこれを行います。このファイルを開き、`SecureListener`プロパティを`false`に設定します：
 
@@ -83,7 +87,7 @@ MacまたはLinux上でWebLogicを実行している場合は、`NativeVersionEn
 
 これにより、Node Managerはノンネイティブモードで起動するようになります。これは、WebLogicがネイティブのNode Managerライブラリーを提供しないプラットフォームで必要です。
 
-## WebLogicの設定方法[](id=configuring-weblogic)
+## WebLogicの設定方法
 
 次に、2つのWebLogic立ち上げ時スクリプト上でいくつかの変数を設定する必要があります。これらの変数とスクリプトは次のとおりです。 Windows を使用している場合は、`set`の代わりに`export`を使用してください。
 
@@ -136,7 +140,7 @@ MacまたはLinux上でWebLogicを実行している場合は、`NativeVersionEn
 
 
 
-## @product@プロパティを設定する[](id=setting-liferay-properties)
+## @product@プロパティを設定する
 
 
 @product@をインストールする前に、`portal-ext.properties`ファイルの`liferay.home`プロパティを介して[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)のフォルダのロケーションを設定する必要があります。このファイルを使用して、 必要になる可能性のある[他の@product@プロパティ](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)を上書きすることもできます 。
@@ -158,7 +162,7 @@ MacまたはLinux上でWebLogicを実行している場合は、`NativeVersionEn
 
 次に、@product@の依存関係をインストールします。
 
-## @product@依存関係のインストール[](id=installing-liferay-dependencies)
+## @product@依存関係のインストール
 
 次に@product@の依存関係をインストールする必要があります。以前に以下の依存関係を含む2つのZIPファイルをダウンロードしました。今度は、それらのコンテンツをインストールしてください：
 
@@ -216,7 +220,7 @@ Hypersonicはテスト目的として使用するには問題ありませんが 
 
 次に、データベースを設定します。
 
-## データベースの設定方法 [](id=database-configuration)
+## データベースの設定方法
 
 WebLogicに@product@のデータベースを管理させたい場合は、次の手順に従ってください。@product@に組み込まれているHypersonicデータベースを使用したい場合は、このセクションを飛ばしてください。
 
@@ -264,7 +268,7 @@ WebLogicに@product@のデータベースを管理させたい場合は、次の
 
 次に、メールセッションを設定します。
 
-## メール設定方法 [](id=mail-configuration)
+## メール設定方法
 
 WebLogicにメールセッションを管理させたい場合は、以下の手順を使用してください。
 Liferayの組み込みメールセッション（推奨）を使用したい場合は、このセクションを飛ばしてください。
@@ -302,7 +306,7 @@ Password]*、および*[JavaMail Properties]*のプロパティを記入して�
 
 変更内容は、管理サーバーとAdminサーバーを再起動すると有効になります。
 
-##  @product@をデプロイする[](id=deploying-liferay-dxp)
+##  @product@をデプロイする
 
 前述の通り、WebLogic Adminサーバーに@product@をデプロイすることができますが、WebLogic 管理サーバーにデプロイすることを勧めます。Adminサーバーを、アプリを実行する他のサーバーを管理するために使用するのがベストプラクティスです。
 

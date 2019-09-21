@@ -1,4 +1,8 @@
-# CMISストアの使用[](id=using-the-cmis-store)
+---
+header-id: using-the-cmis-store
+---
+
+# CMISストアの使用
 
 ドキュメントとメディアライブラリには、必要なだけのCMIS（Content Management Interoperability Services）リポジトリをマウントできますが、@product@リポジトリを定義してCMISリポジトリを指すこともできます。
 

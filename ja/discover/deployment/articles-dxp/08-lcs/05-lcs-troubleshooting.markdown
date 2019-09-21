@@ -1,4 +1,8 @@
-# LCS接続のトラブルシューティング[](id=troubleshooting-your-lcs-connection)
+---
+header-id: troubleshooting-your-lcs-connection
+---
+
+# LCS接続のトラブルシューティング
 
 LCSを使用して@product@をアクティベートした場合、サーバーは常にLCSへの接続を維持する必要があります。この接続が中断されると、サーバーは再接続を許可するために猶予期間に入ります。ただし、長時間の中断はサーバーの稼働時間に影響を与える可能性があります。
 
@@ -26,7 +30,7 @@ $$$
 
 $$$
 
-## LCS猶予期間[](id=lcs-grace-periods)
+## LCS猶予期間
 
 
 LCSには2つの猶予期間のタイプがあります：
@@ -48,7 +52,7 @@ LCSには2つの猶予期間のタイプがあります：
 
 $$$
 
-### 接続猶予期間[](id=connection-grace-period)
+### 接続猶予期間
 
 サーバーのLCS接続が中断された場合、サーバーは稼働し続け、再接続を可能にするために最大30日間続く猶予期間に入ります。
 この猶予期間中、@product@は管理者に警告メッセージを表示します。このメッセージが表示されたら、管理者はLiferayサポートに連絡して、以下のトラブルシューティングの手順を実行してください。再接続すると、LCSは自動的にサーバーのアクティベーションを復元します（サーバーを再起動する必要はありません）。何らかの理由で接続が復元できない場合は、Liferayサポートはサーバーをアクティベートするための代替方法を提供します。
@@ -66,14 +70,14 @@ LCSから切断されている間、LCSクライアントアプリケーショ�
 
 また、サーバーが切断された時にEメール通知が来るようにLCSで設定されていることを確認してください。これを行うには、サーバーが予期せず停止した時にEメールで通知が来るようにルールを作成しておく必要があります。これを行う手順は[LCSアカウントの管理](/discover/deployment/-/knowledge_base/7-1/managing-your-lcs-account)に説明されています。
 
-### サブスクリプション猶予期間[](id=subscription-grace-period)
+### サブスクリプション猶予期間
 
 サブスクリプションの有効期限が切れる少なくとも90日前に、Liferayから更新プロセスを開始するために連絡が来るはずです。有効期限が切れる30日前に、Liferayサポートは[LESA](https://web.liferay.com/group/customer/support/-/support/ticket)、 [LCSサイト](https://lcs.liferay.com)、そして[カスタマーポータル](https://www.liferay.com/group/customer)を通して警告メッセージを送ります 。
 有効期限が切れると、サーバーは追加の猶予期間に入ることがあります。この猶予期間が始まる前に、同じサポートチャンネルから連絡がくるはずです。この猶予期間中に更新が完了しない場合、サブスクリプションは無効になり、@product@インスタンスは30日間の猶予期間に入ります。更新が処理されるとすぐにインスタンスがアクティベートされ、エラーまたは警告メッセージが24時間以内に消えます。XMLアクティベーションキー（必要に応じてLiferay Supportから提供される）を使用すると、サブスクリプションの有効期限が切れた後でも@product@インスタンスを引き続き使用できます。
 
 ![図 2: サブスクリプションの使用期限が切れる前にLCSから通知がくる。](../../images-dxp/lcs-support-expiration.png)
 
-## トラブルシューティング[](id=troubleshooting)
+## トラブルシューティング
 
 LCSで問題が発生した場合は、Liferayサポートチームがお手伝いします。サポートが必要な場合は、[LESA](https://web.liferay.com/group/customer/support/-/support/ticket)チケットを開いてください 。Liferayサポートチームがお手伝いできる以下のシナリオのトラブルシューティングを開始できます。
 
@@ -86,7 +90,7 @@ LCSで問題が発生した場合は、Liferayサポートチームがお手伝�
 
 $$$
 
-### サーバーがLCSにアクセスできない[](id=server-cant-reach-lcs)
+### サーバーがLCSにアクセスできない
 
 サーバーがLCSにアクセスできない場合は、LCSに必要な公開サイトにアクセスできるかどうか確認してください。
 
@@ -97,7 +101,7 @@ $$$
        curl -vk -I "https://lcs-gateway.liferay.com"
        telnet lcs-gateway.liferay.com 443
    
-### サブスクリプションの問題[](id=subscription-issues)
+### サブスクリプションの問題
 
 サブスクリプションに関する問題については、まず[managing your subscription](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions)の記事を読んでください。
 サブスクリプションエラーには通常、次のいずれかの問題があります：
@@ -116,7 +120,7 @@ $$$
 
 $$$
 
-### 無効なトークン[](id=invalid-token)
+### 無効なトークン
 
 トークンが無効な場合は、まず[environment tokens](/discover/deployment/-/knowledge_base/7-1/understanding-environment-tokens)の記事を確認してください 。
 次の表に、無効なトークンの原因と解決策が説明されています。
@@ -129,7 +133,7 @@ $$$
  |
 | トークンが再生成される。 | 再生成したトークンを使用する。 |
 
-## ログレベルを上げる[](id=increasing-log-levels)
+## ログレベルを上げる
 
 Liferayサポートに連絡すると、サーバーのログレベルを上げてからログファイルを提供するように求められます。これらのログファイルは、[`Liferay Home]/logs`（[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) は通常、アプリケーションサーバーのフォルダの親フォルダです）にあります。このフォルダには2種類のログファイルがあります：
 
@@ -153,7 +157,7 @@ Liferayサポートに連絡すると、サーバーのログレベルを上げ�
 
 次のセクションでは両方のオプションについて説明します。
 
-### Control Panel[](id=control-panel)
+### Control Panel
 
 Control Panelからログレベルを上げるには、以下の手順に従ってください：
 
@@ -178,7 +182,7 @@ Administration*に移動します。
 
 5. Control Panelにいる間、*Configuration*>*Liferay Connected Services*に移動して、そこに表示されているもののスクリーンショットを撮ってください。。これはLiferayサポートに役立ちます。 
 
-### Log4j [](id=log4j)
+### Log4j
 
 Log4jを介してログレベルを上げるには、次の手順に従います：
 

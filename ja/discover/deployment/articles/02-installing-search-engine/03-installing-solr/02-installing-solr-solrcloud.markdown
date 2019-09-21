@@ -1,4 +1,8 @@
-# Sorlのインストール：高可用性クラスターでSolrCloudを使用する[](id=high-availability-with-solrcloud)
+---
+header-id: high-availability-with-solrcloud
+---
+
+# Sorlのインストール：高可用性クラスターでSolrCloudを使用する
 
 Solrサーバーにクラスタリングが必要な場合、SolrCloudを使用します。
 SolrCloudを本番環境で使用する場合は、[外部 ZooKeeper](https://cwiki.apache.org/confluence/display/solr/Setting+Up+an+External+ZooKeeper+Ensemble)アンサンブル構成をセットアップすることを推奨します。
@@ -81,7 +85,7 @@ SolrCloudモードで起動中のSolrを停止するには、下記の「*終了
 
     bin/solr stop -all
 
-## SolrCloudのSolrコネクタ設定[](id=configure-the-solr-adapter-for-solrcloud)
+## SolrCloudのSolrコネクタ設定
 
 残りの設定は、LiferayのSolrコネクタでClient Typeを*CLOUD*として指定するのみです。
 

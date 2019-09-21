@@ -1,4 +1,8 @@
-# OpenIDシングルサインオン(SSO)認証[](id=openid-single-sign-on-authentication)
+---
+header-id: openid-single-sign-on-authentication
+---
+
+# OpenIDシングルサインオン(SSO)認証
 
 OpenIDはシングルサインオンの標準として、多くのベンダーで使用されています。ユーザーはそれぞれ、信頼しているベンダーを利用して、ユーザー登録ができます。一度Open IDのベンダーで登録したIDはOpenIDをサポートしている全てのサイトで利用できます。 著名なOpen IDベンダーでは、Google、 Paypal、 Amazon、Microsoftなどです。ベンダーの詳細なリストは[OpenID](http://www.openid.net/)サイトを参照ください。
 
@@ -12,11 +16,11 @@ OpenIDを使用することでユーザーは、毎回ユーザー登録を必�
 
 @product@はOpenIDを受け付けられるので、ユーザーは自身のOpenIDで登録し、サインインできます。製品内部では具体的に[OpenID4Java](https://github.com/jbufu/openid4java)を使用してこの機能を実装しています。
 
-## ScopeシステムレベルのOpenID[](id=openid-at-the-system-scope)
+## ScopeシステムレベルのOpenID
 
 OpenIDは@product@では標準で有効になっていますが、システム、またはポータルインスタンスレベルで無効にすることもできます。システムレベルでOpenID SSOモジュールを設定するには、 [コントロールパネル]へ行き、[設定] > [システム設定] > [セキュリティ]  > [SSO] の順にクリックします。設定には一つしかありません。 ［有効にする］にチェックを入れて、システムレベル（ポータルインスタンス全て）でOpenIDを有効にし、チェックを外してシステムレベルで無効にします。
 
-## インスタンスレベルのOpenID[](id=openid-at-the-instance-scope)
+## インスタンスレベルのOpenID
 
 ポータルインスタンスレベルで OpenID SSOモジュールを設定するには、[コントロールパネル] > [設定] > [インスタンス設定] > [認証] > [OpenID]の順にクリックします。
 設定には一つしかありません。 

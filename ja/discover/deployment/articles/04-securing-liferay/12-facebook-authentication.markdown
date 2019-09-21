@@ -1,4 +1,8 @@
-# Facebook Connect シングルサインオン認証[](id=facebook-connect-single-sign-on-authentication)
+---
+header-id: facebook-connect-single-sign-on-authentication
+---
+
+# Facebook Connect シングルサインオン認証
 
 Facebook Connect SSO認証はFacebookのGraph APIとのインテグレーションを提供しており、
 Facebookプロフィール情報と@product@ユーザー(FacebookのIDまたはEmailアドレス）と照合します。ユーザーのFacebookのEmailアドレスが見つかると、Facebook Connect SSO認証モジュールは@product@の`User_ `テーブルから同じEmailアドレスを検索します。一致するアドレスが見つかった場合、Facebook側で必要な権限があればユーザーはサインオンできます。
@@ -12,7 +16,7 @@ Facebookプロフィール情報と@product@ユーザー(FacebookのIDまたはE
 
 @product@とFacebookを統合するには、[Facebookのウェブサイト](https://developers.facebook.com)で「アプリケーション」を作成してください。@product@はOAuth 2.0プロトコルを使って認証するため、これが必須です。Facebookは@product@がOAuthで使用するアプリケーションIDとシークレットを提供します。これを使用する利点の１つは、Facebookユーザーがいつでも@product@のアクセスを取り消せることです。
 
-## Facebook Connect SSO 認証を管理する[](id=managing-facebook-connect-sso-authentication)
+## Facebook Connect SSO 認証を管理する
 
 Facebook Connect SSO設定をシステムまたはインスタンスレベルで適用できます。
 Facebook Connect SSOモジュールをシステムレベルで設定するには、 Liferay DXPから、[コントロールパネル] > [設定] > [システム設定] > [ セキュリティ] > [ SSO]へ行き、[Facebook Concect]モジュールへ行きます。ここで入力した値は、ポータルインスタンスに対するデフォルト値となります。

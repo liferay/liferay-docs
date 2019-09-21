@@ -1,4 +1,8 @@
-# SAMLとは？[](id=what-is-saml)
+---
+header-id: what-is-saml
+---
+
+# SAMLとは？
 
 SAML（Security Assertion Markup Language）アダプタを使用すると、デプロイでSingle Sign On（SSO）とSingle Log Off（SLO）を実行できます。各@product@インスタンスは、Service Provider（SP）またはIdentity Provider（IdP）のいずれかとして機能します。この記事では、@product@のSSOソリューションの概念的な枠組みを説明します。
 
@@ -34,7 +38,6 @@ $$$
 $$$
 
 ## 重要なSAML URL
-[](id=important-saml-urls)
 
 参考までに、以下はいくつかの重要なSAML URLです。
 
@@ -49,7 +52,7 @@ SAMLを設定するときは、SAML証明書のインポートは不要です。
 @product@はSAMLメタデータXMLファイルから証明書を読み取ります。SalesforceなどのサードパーティーアプリケーションにLiferay SAML証明書を読み取らせる場合は、キーストアから@product@証明書をエクスポートできます。デフォルトのキーストアファイルは`[Liferay Home]/data/keystore.jks`です。エクスポートされた証明書は、Salesforceなどのサードパーティーアプリケーションによってインポートできます。
 
 
-## Single Sign On[](id=single-sign-on)
+## Single Sign On
 
 IdPとSP、両方ともSingle Sign Onプロセスを開始でき、SSOフローはそれぞれによって異なります。開始方法に関係なく、SSOはSPとIdPの間のHTTPS用に設定されているため、すべてのトランスポートレベルの通信は暗号化されています。SAMLのリクエストは、[SAML 2.0 specification](http://saml.xml.org/saml-specifications)で定義されているSAML WebブラウザSSOプロファイル上で、@product@で設定された証明書を使用して署名されます。
 
@@ -59,7 +62,7 @@ IdPが最初にSSOを開始したとします。
 
 
 
-### Identity Providerが開始したSSO[](id=identity-provider-initiated-sso)
+### Identity Providerが開始したSSO
 
 
 ユーザーがブラウザからIdPに直接リクエストを送信してSSOサイクルに入ることがあります。
@@ -67,7 +70,6 @@ IdPが最初にSSOを開始したとします。
 ![図1: Identity Providerが開始したSSO](../../../images-dxp/saml-idp-initiated-sso.png)
 
 #### IdPへのSSOリクエスト
-[](id=the-sso-request-to-the-idp)
 
 @product@がIdPの場合、IdPがSSO URLを開始しました
 
@@ -84,7 +86,7 @@ IdPが最初にSSOを開始したとします。
 
 IdPがユーザーが認証されていないと判断した場合、IdPはユーザーに適切なログイン画面を表示します。
 
-#### IdPからのSSOレスポンス[](id=the-sso-response-from-the-idp)
+#### IdPからのSSOレスポンス
 
 認証が成功すると、IdPはSAMLレスポンスを構築します。指定されたService Provider Connection(SPC)で設定された属性ステートメントも含まれています。（@product@のSAML adapter上での設定方法についてはこちら[next article](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider)を参照してください。)
 
@@ -103,7 +105,7 @@ IdPはHTTP-POSTまたはHTTPリダイレクトを使用してAssertation Consume
 
 $$$
 
-#### SPがSSOレスポンスを処理する[](id=the-sp-processes-the-sso-response)
+#### SPがSSOレスポンスを処理する
 
 SPはSAMLレスポンスを検証して処理します。@product@のSAMLソリューションでは、`SAMLResponse`メッセージに署名する必要があります。この署名プロセスはIdPの正しい識別を保証し、潜在的なSAMLレスポンスのなりすましを防ぎます。
 
@@ -114,24 +116,24 @@ SPはSAMLレスポンスを検証して処理します。@product@のSAMLソリ�
 
 SAMLレスポンスに`RelayState`が含まれている場合、ユーザーはそこにリダイレクトされます。そうでなければ、SPのホームページが提供されます。
 
-### Service Providerが開始したSSO[](id=service-provider-initiated-sso)
+### Service Providerが開始したSSO
 
 ![図2: Service Providerが開始したSSO](../../../images-dxp/saml-sp-initiated-sso.png)
 
-#### SPへのSSOリクエスト[](id=the-sso-request-to-the-sp)
+#### SPへのSSOリクエスト
 
 ユーザーのブラウザがSP上に保護されたリソースまたはログインURLをリクエストすると、SPによって開始されたSSOプロセスが起動されます。@product@がSAML SPの場合、SSOは`/c/portal/login`URLまたは認証を必要とする保護されたリソース（たとえば、ゲストとして表示できない文書）をリクエストすることによって開始されます。ユーザーが保護されたリソースをリクエストした場合、そのURLは`RelayState`パラメータに記録されます。ユーザーが`/c/portal/login`をリクエストした場合は、`redirect`パラメータを提供することで` RelayState`を設定することができます。
 それ以外の場合、[portal property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)
 `auth.forward.by.last.path`が`true`に設定されている、最後にアクセスしたパスは`RelayState`に設定されます。@product@ SP以外の場合は、SSOの開始に関するベンダーのドキュメンテーションを参照してください。
 
-#### IdPへの認証リクエスト[](id=the-authnrequest-to-the-idp)
+#### IdPへの認証リクエスト
 
 SPはIdPのSingle Sign OnサービスURLを検索して`AuthnRequest`を送信します。@product@がSPの場合、設定されたSAMLdentity
 Provider Connectionを検索し、SAML`AuthnRequest`を、SAMLメタデータXMLドキュメントで定義されているIdPのSingle Sign OnサービスURLに送信します。@product@は、HTTP-PostバインディングまたはHTTP-Redirectバインディングを使って`AuthnRequest`の送受信をサポートしています。HTTP-Postが推奨されています。
 
 ユーザーがアクティブなセッションを持っていない場合、またはSPから`ForceAuthnSP`がリクエストされた場合、ユーザーは自分の資格情報を提供して認証を受ける必要があります。@product@がIdPの場合、Login Portletで認証が行われます。@product@はユーザーに認証リクエストする前に、`AuthnRequest`をデコードおよび検証します。
 
-#### IdPからのSSOレスポンス[](id=the-sso-response-from-the-idp-0)
+#### IdPからのSSOレスポンス
 
 認証後、SAMLレスポンスが構築され、SPのAssertion Consumer Service URLに送信されて検証されます。
 
@@ -143,15 +145,15 @@ Provider Connectionで設定されているすべての属性は、属性ステ�
 
 ユーザーは、リクエストされたリソースまたは`RelayState`パラメーターに含まれているURL （例えば、ユーザーがSSOを開始する前にアクセスした最後のページ）にリダイレクトされます 。
 
-## Single Log Off[](id=single-log-off)
+## Single Log Off
 
 Single Log OffリクエストはユーザーのブラウザからIdPまたはSPに送信され、SLOフローはそれぞれの場合で異なります。まずIdPがSLOを開始したとします。
 
-### Identity Provider が開始したSLO[](id=identity-provider-initiated-slo)
+### Identity Provider が開始したSLO
 
 ![図３: Identity Providerが開始したSLO](../../../images-dxp/saml-idp-initiated-slo.png)
 
-#### IdPへのSLOリクエスト[](id=the-slo-request-to-the-idp)
+#### IdPへのSLOリクエスト
 
 IdPが開始したSLOリクエストは、ユーザーのブラウザによってIdPに直接送信されたSLOリクエストです。@product@がIdPとして機能する場合、IdPで開始されたSSO URLは次のようにURLパスを指定する必要があります：
 
@@ -167,7 +169,7 @@ IdPはSAML`LogoutRequest`をSPに送信します。
 
 - 他のIdPまたはSPについては、ベンダーのドキュメンテーションを参照してください。
 
-#### SPからのSLOレスポンス[](id=the-slo-response-from-the-sp)
+#### SPからのSLOレスポンス
 
 SPはIdPに`LogoutResponse`を配信します。@product@がSPとして設定されている場合、`LogoutResponse`はHTTP-Post、HTTP-Redirect、またはSOAPリクエストへの直接レスポンスのいずれかを使用して配信されます。HTTP-Postバインディングが優先されますが、ない場合はHTTP-Redirectが使用されます。SOAPは`LogoutRequest` へのレスポンスにのみSOAPバインティングの代わりに使用されます。
 
@@ -176,11 +178,11 @@ IdPはSAML`LogoutRequest`をHTTP-Post、HTTP-Redirect、またはSOAPバイン�
 
 次に2番目のSPは`LogoutResponse`をHTTP-Post、HTTP-Redirect、またはSOAPリクエストへの直接レスポンスを使用してIdPに配信します。ユーザーがログインしているすべてのSPに対してこのプロセスが繰り返されます。@product@がIdPの場合、@product@は最後のSPが配信した`LogoutResponse`またはタイムアウトした後にユーザーをログアウトさせます。
 
-### Service Providerが開始したSLO[](id=service-provider-initiated-slo)
+### Service Providerが開始したSLO
 
 ![図 4:Service Providerが開始したSLO](../../../images-dxp/saml-sp-initiated-slo.png)
 
-#### SPへのSLOリクエスト[](id=the-slo-request-to-the-sp)
+#### SPへのSLOリクエスト
 
 SPによって開始されたSLOでは、ユーザーのブラウザはログアウトリクエストを直接SPに送信します。@product@がSPとして設定されている場合、SLOは次のログアウトURLをリクエストすることによって開始されます。
 
@@ -196,7 +198,7 @@ SAML`LogoutRequest`はIdPのSingle Log OutサービスURLに送信されます�
 
 - @product@がIdPの場合、ユーザーが他のSPにログオンしていると、各SPログアウトの状態を示す単一のログアウト画面が現れ、ログアウトできないものも表示されます。（いくつかのSPはSLOをサポートしていないか、または現在停止中のものがある場合もあります） ログアウトするSPが他にない場合、SAMLセッションは終了し、IdPはそのセッションを破棄します。
 
-#### SPからのSLOレスポンス[](id=the-slo-response-from-the-sp-0)
+#### SPからのSLOレスポンス
 
 ユーザーが追加のSPにログインしている場合（開始SPだけでなく）、IdPはSAML `LogoutRequest`を各SPに送信します。@product@がIdPの場合は、 `LogoutResponse`はHTTP-Post、HTTP-Redirect、またはSOAPバインディングのいずれかを使用して送信されます。
 
@@ -210,7 +212,7 @@ SAML`LogoutRequest`はIdPのSingle Log OutサービスURLに送信されます�
 
 
 
-## 関連トピック[](id=related-topics)
+## 関連トピック
 
 - [Setting Up SAML as an Identity Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider)
 - [Setting Up SAML as a Service Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-service-provider)

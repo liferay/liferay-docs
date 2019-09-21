@@ -1,4 +1,8 @@
-# ローリング再始動[](id=using-rolling-restarts)
+---
+header-id: using-rolling-restarts
+---
+
+# ローリング再始動
 
 ローリング再起動のクラスターのメンテナンスプロセスでは、ノードがすべて更新されるまで、ノードを一度に1つずつシャットダウンして更新します（他のノードの実行中に）。これにより、クラスターを更新している間の稼働時間が最大化されます。ローリング再起動は、コンテナおよびイメージベースの環境で使用できます。
 
@@ -22,41 +26,41 @@ $$$
 
 ローリング再起動に適したメンテナンスシナリオを次に説明します。
 
-## 新しいモジュールとプラグイン[](id=new-plugins-and-modules)
+## 新しいモジュールとプラグイン
 
 新しいプラグインまたはモジュール（クラスター内にまだ存在していないもの）をローリング再起動に適格にするには、データを変更したり、既存のプラグインまたはモジュールとの互換性を損なうような方法でデータベース列を削除または名前変更しないでください。
 
-## 既存のモジュールとプラグインを更新する[](id=updating-existing-plugins-and-modules)
+## 既存のモジュールとプラグインを更新する
 
 新しいプラグインまたはモジュール（まだクラスタに存在しないもの）をローリング再起動の対象とするには、データを変更したり、既存のプラグインまたはモジュールとの互換性を損なうような方法でデータベースの列を削除、または名前変更をしないでください。
 
-## フィックスパックの適用（DXPのみ）[](id=applying-fix-packs-dxp-only)
+## フィックスパックの適用（DXPのみ
 
 カスタマーポータル は、元に戻せないため、ローリング再起動の対象にならない[フィックスパック](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay)を識別します。その他のフィックスパックは全て対象となります。
 
-## フィックスパックのリバート（DXPのみ）[](id=reverting-fix-packs-dxp-only)
+## フィックスパックのリバート（DXPのみ）
 
 リバートが可能なフィックスパックは、ローリング再起動で削除できます。
 
-## `portal-ext.properties`[](id=portal-properties-controlled-by-portal-ext-properties)によって制御されているポータルプロパティ
+## `portal-ext.properties`によって制御されているポータルプロパティ
 
 [ポータルプロパティ](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)ファイルの変更は、ローリング再起動で適用できます。
 
-## 設定管理ファイルによって制御されているシステム設定[](id=system-settings-controlled-by-configuration-admin-files)
+## 設定管理ファイルによって制御されているシステム設定
 
 [システム設定](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)ファイルは、ローリング再起動で適用できます。
 
-## アプリケーションサーバーまたはJVM設定の変更[](id=application-server-or-jvm-setting-modifications)
+## アプリケーションサーバーまたはJVM設定の変更
 
 アプリケーションサーバーとJVMの設定への変更は、ローリング再起動で行うことができます。
 
-## Javaのバージョン更新[](id=java-version-updates)
+## Javaのバージョン更新
 
 Javaのマイナーバージョンアップデートは、ローリング再起動で適用できます。メジャーバージョンアップデートは、ローリング再起動ではサポートされていないため、すべてのクラスタノードがシャットダウンされてから実行する必要があります。
 
 ローリング再起動が対象となる全てのアップデートは、先述のローリング再起動のステップを使用して適用できます。次に説明するように、他の更新は異なる方法で行う必要があります。
 
-## 関連トピック[](id=related-topics)
+## 関連トピック
 
 [@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
 

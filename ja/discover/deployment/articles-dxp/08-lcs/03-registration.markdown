@@ -1,4 +1,8 @@
-# Liferay DXPサーバーをLCSに登録する[](id=activating-your-liferay-dxp-server-with-lcs)
+---
+header-id: activating-your-liferay-dxp-server-with-lcs
+---
+
+# Liferay DXPサーバーをLCSに登録する
 
 +$$$
 
@@ -57,7 +61,6 @@ $$$
 $$$
 
 ## サーバーのLCS接続状態を確認する
- [](id=determining-your-servers-lcs-connection-status)
 
 @product@では、LCSクライアントアプリケーションでLCS接続状態を確認できます。
  *[Control Panel]*>*[Configuration]*>

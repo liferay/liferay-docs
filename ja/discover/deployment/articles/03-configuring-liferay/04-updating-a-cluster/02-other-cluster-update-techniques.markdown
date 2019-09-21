@@ -1,4 +1,8 @@
-# ブルーグリーンデプロイ[](id=other-cluster-update-techniques)
+---
+header-id: other-cluster-update-techniques
+---
+
+# ブルーグリーンデプロイ
 
 ブルーグリーンは、運用環境（*青い*環境）を複製 し、ソフトウェアとデータを変更してその複製（*緑色*の環境）を変更する配置手法です。グリーン環境のテストに成功したら、ユーザーをブルー環境からグリーン環境に切り替えます。ブルーグリーンでシステムの停止時間を削除できます。
 
@@ -20,7 +24,7 @@
 
 - [Implementing Blue-Green Deployments with AWS](https://www.thoughtworks.com/insights/blog/implementing-blue-green-deployments-aws)
 
-## 関連トピック[](id=related-topics)
+## 関連トピック
 
 [Rolling Restarts](/discover/deployment/-/knowledge_base/7-1/using-rolling-restarts)
 

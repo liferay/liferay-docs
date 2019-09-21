@@ -1,4 +1,8 @@
-# X-Packをインストールする（6.1）[](id=installing-x-pack-6-1)
+---
+header-id: installing-x-pack-6-1
+---
+
+# X-Packをインストールする（6.1）
 
 X-Packは、 Elasticsearchクラスターを保護および監視するための[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)です。Elasticsearchを使用する場合は、X-Packで保護する必要があります。X-Packのセキュリティ機能には、Elasticsearchクラスターのデータへのアクセスの認証、Elasticsearchの内部および外部通信の暗号化などがあります。
 

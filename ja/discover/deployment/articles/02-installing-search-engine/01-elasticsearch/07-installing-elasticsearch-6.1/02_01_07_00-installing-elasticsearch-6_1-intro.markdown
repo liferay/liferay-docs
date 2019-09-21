@@ -1,3 +1,7 @@
+---
+header-id: installing-elasticsearch-6-1
+---
+
 # [fuzzy]Elasticsearchのインストール
 
 +$$$
@@ -61,7 +65,7 @@ $$$
 Now you'll perform these steps, and when you're done, you'll have a
 production-ready instance of @product@ up and running.
 
-### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
+### Step One: Find the Right Version of Elasticsearch
 
 If @product@ isn't running, start it.
 
@@ -93,7 +97,7 @@ In this example, it's 6.1.3.
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version.
 
-### Step Two: Install Elasticsearch [](id=step-two-install-elasticsearch)
+### Step Two: Install Elasticsearch
 
 Most of this step entails deciding where you want to run Elasticsearch. Do you
 want to run it on the same machine as @product@, or do you want to run it on its
@@ -105,7 +109,7 @@ infrastructure.
 Once you have a copy of the right version of Elasticsearch, extract it to
 a folder on the machine where you want it running. That's it!.
 
-### Step Three: Install Elasticsearch Plugins [](id=step-three-install-elasticsearch-plugins)
+### Step Three: Install Elasticsearch Plugins
 
 Install the following required Elasticsearch plugins:
 
@@ -120,7 +124,7 @@ To install these plugins, navigate to Elasticsearch Home and enter
 
 Replace *[plugin-name]* with the Elasticsearch plugin's name.
 
-### Step Four: Name Your Elasticsearch Cluster [](id=step-three-name-your-elastic-cluster)
+### Step Four: Name Your Elasticsearch Cluster
 
 A *cluster* in Elasticsearch is a collection of nodes (servers) identified as a
 cluster by a shared cluster name. The nodes work together to share data and
@@ -155,7 +159,7 @@ Elasticsearch starts, and one of its status messages includes a transport addres
 Take note of this address; you'll need to give it to your @product@ server so it
 can find Elasticsearch on the network.
 
-### Step Five: Configure @product@ to Connect to your Elasticsearch Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
+### Step Five: Configure @product@ to Connect to your Elasticsearch Cluster
 
 Now that you're ready to configure @product@, start it if you haven't already,
 log in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System
@@ -176,7 +180,7 @@ will work.
 
 When finished, click *Save*. You're almost done.
 
-### Step Six: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
+### Step Six: Restart @product@ and Reindex
 
 Stop and restart @product@. When it's back up, log in as an administrative user
 and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and

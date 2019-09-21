@@ -1,4 +1,8 @@
-# パッチングツールの設定方法[](id=configuring-the-patching-tool)
+---
+header-id: configuring-the-patching-tool
+---
+
+# パッチングツールの設定方法
 
 
 パッチングツールは、@ product @パッチをインストールします。パッケージ済みの@ product @バンドルが付属しています。

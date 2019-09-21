@@ -1,8 +1,12 @@
-# LCS環境の管理[](id=managing-lcs-environments)
+---
+header-id: managing-lcs-environments
+---
+
+# LCS環境の管理
 
 環境はLCSプロジェクトの重要なコンポーネントです。LCSにサーバーを登録する時、環境内で登録します。環境はLCSでサーバーを管理および監視するためのいわゆるゲートウェイです。
 
-## 環境を作成する[](id=creating-environments)
+## 環境を作成する
 
 初めてLCSにログインする時、ウィザードがプロジェクトの最初の環境を作成するために必要な各ステップを案内します。詳細は[getting started article](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs)で説明されています。同じウィザードまたは簡単なフォームを使って追加の環境を作成することもできます。
 
@@ -17,7 +21,7 @@ $$$
 
 ![図 1: 新しい環境のフォームを使うと環境を作成することができる。](../../../images-dxp/lcs-new-environment.png)
 
-## 環境との連携[](id=working-with-environments)
+## 環境との連携
 
 ダッシュボードの左側にある環境をクリックすると、環境ビューに移動して、LCSプロジェクトの環境を管理できます。
 

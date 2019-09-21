@@ -1,4 +1,8 @@
-# 7.1で廃止予定のアプリケーション：対処方法[](id=deprecated-apps-in-7-1-what-to-do)
+---
+header-id: deprecated-apps-in-7-1-what-to-do
+---
+
+# 7.1で廃止予定のアプリケーション：対処方法
 
 ソフトウェア製品の開発中は、開発を中止したり、古くなった機能や人気のない機能を削除したりする必要がある場合があります。@product-ver@にも同じことが言えます。Liferayは@product-ver@のいくつかのアプリを非推奨にしました。ここでは、*非推奨*とはどういう意味かを注意することが重要です。
 
@@ -19,7 +23,7 @@ $$$
 
 この記事では、@product-ver@で廃止予定のアプリとその可用性を一覧で示しています。
 
-## コラボレーション [](id=collaboration)
+## コラボレーション 
 
 | アプリ | &nbsp;可用性 | &nbsp;注 |
 | --- | ------------------ | ----------- | 
@@ -45,7 +49,7 @@ $$$
 | Twitter | 削除されました |  |
 | User Statistics | Nexus |  |
 
-## Foundation [](id=foundation)
+## Foundation
 
 | アプリ | &nbsp;可用性 | &nbsp;注 |
 | --- | ------------------ | ----------- |
@@ -64,7 +68,7 @@ $$$
 | WSRP | 削除されました |  |
 | WYSIWYG | [Nexus](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.wysiwyg.web/) →削除されます。 | 7.0用にリリースされた最終バージョンです。 |
 
-## Web Experience [](id=web-experience)
+## Web Experience
 
 | アプリ | &nbsp;可用性 | &nbsp;注 |
 | --- | ------------------ | ----------- |
@@ -74,13 +78,13 @@ $$$
 | Webコンテンツ検索ポートレット | [Nexus](https://repository.liferay.com/nexus/service/local/repositories/liferay-public-releases/content/com/liferay/com.liferay.journal.content.search.web/2.0.0/com.liferay.journal.content.search.web-2.0.0.jar) | 新しい検索ウィジェットは、Webコンテンツ検索の独自機能をすべて置き換えるように設定できます。 |
 | Web Content List | 削除されました | Asset Publisherは、Webコンテンツリストの独自機能をすべて置き換えるように設定できます。 |
 
-## フォームとワークフロー[](id=forms-and-workflow)
+## フォームとワークフロー
 
 | アプリ | &nbsp;可用性 | &nbsp;注 |
 | --- | ------------------ | ----------- |
 | Web Form | Nexus → 削除されます。 | 7.0用にリリースされた最終バージョンです。 |
 
-## セキュリティー[](id=security)
+## セキュリティー
 
 | アプリ | &nbsp;可用性 | &nbsp;注 |
 | --- | ------------------ | ----------- |

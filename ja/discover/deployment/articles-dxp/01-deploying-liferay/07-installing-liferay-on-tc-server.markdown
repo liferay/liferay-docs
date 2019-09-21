@@ -1,4 +1,8 @@
-# tcサーバーに@product@をインストールする[](id=installing-liferay-on-tc-server)
+---
+header-id:installing-liferay-on-tc-server
+---
+
+# tcサーバーに@product@をインストールする
 
 tcサーバーに@product@をインストールするには、以下のファイルが必要です：
 
@@ -39,7 +43,7 @@ tcサーバーに@product@をインストールするには、以下のファイ
 
 $$$
 
-## tcサーバーを作成する[](id=creating-a-tc-server)
+## tcサーバーを作成する
 
 1. [ここ](https://network.pivotal.io/products/pivotal-tcserver)から入手できるtcサーバーをダウンロードし解凍してください。
 これは`[TCSERVER_INSTANCE_HOME]`と呼ばれています。
@@ -75,7 +79,7 @@ $$$
 
 
 
-## @product@依存関係のインストール[](id=installing-liferay-dependencies)
+## @product@依存関係のインストール
 
 @product@は、デフォルトではtc Serverに含まれていない他のJARに依存しています。@product@バンドルに含まれているJARの中には、必須ではないけど便利なものもあります。@product@バンドルがない場合は、以下に説明されているように、必要なJARをサードパーティーからダウンロードできます。
 
@@ -164,7 +168,7 @@ $$$
    - `test`
    - `war`
 
-## tcサーバーの設定方法[](id=configuring-tc-server)
+## tcサーバーの設定方法
 
 @product@がtcサーバー上でうまく動作するようにするための設定の編集がいくつかあります。
 これらの設定変更はすべて、tcサーバーランタイムインスタンスで行う必要があります。
@@ -228,7 +232,7 @@ $$$
        <param-value>1.8</param-value>
        </init-param>
    
-### データベースの設定方法 [](id=database-configuration)
+### データベースの設定方法
 
 データベース設定を処理する上で一番簡単な方法は @product@にデータソースを管理させることです。@product@の組み込みデータソースを使いたい場合は、このセクションは飛ばして大丈夫です。
 
@@ -276,7 +280,7 @@ tcサーバーにデータソースを管理させたい場合は、次の手順
    
 これでデータソースが設定されました。次にメールセッションを設定します。
 
-### メール設定方法 [](id=mail-configuration)
+### メール設定方法
 
 データベースと同様、メール設定の処理も@product@に行わせるのが一番簡単な方法です。@product@の組み込みメールセッションを使用したい場合は、このセクションを飛ばしてControl Panelで[メールセッションを設定してください](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)。
 
@@ -324,7 +328,7 @@ tcサーバーがメールセッションを管理できるよう設定し、@pr
 
 
 
-##  @product@をデプロイする[](id=deploying-liferay)
+##  @product@をデプロイする
 
 これで、@product@ WARファイルを使用して@product@をデプロイする準備が整いました。
 

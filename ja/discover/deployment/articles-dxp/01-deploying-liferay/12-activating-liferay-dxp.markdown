@@ -1,4 +1,8 @@
-# Liferay DXPをアクティベートする[](id=activating-liferay-dxp)
+---
+header-id: activating-liferay-dxp
+---
+
+# Liferay DXPをアクティベートする
 
 
 Liferay DXPインスタンスをアクティベートする方法は2つあります：

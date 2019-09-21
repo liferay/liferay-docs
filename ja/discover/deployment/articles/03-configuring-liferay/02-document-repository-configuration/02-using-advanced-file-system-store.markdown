@@ -1,4 +1,8 @@
-# Advanced File System Store の使用[](id=using-the-advanced-file-system-store)
+---
+header-id: using-the-advanced-file-system-store
+---
+
+# Advanced File System Store の使用
 
 Advanced File System Store は、Simple File System Store（デフォルトストア）と似ています。Simple File System Storeのように、ローカルファイルシステムにファイルを保存します。ローカルファイルシステムは、リモートファイルシステムマウントもあり得ます。下の図のように、ファイルを保存するためにわずかに異なるフォルダー構造を使用します。
 

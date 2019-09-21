@@ -1,4 +1,8 @@
-# Liferay Enterprise Searchのインストール [](id=installing-x-pack)
+---
+header-id: installing-x-pack
+---
+
+# Liferay Enterprise Searchのインストール
 
 X-Packは、 Elasticsearchクラスターを保護および監視するための[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-xpack.html)です。Elasticsearchを使用する場合は、X-Packで保護する必要があります。X-Packのセキュリティ機能には、Elasticsearchクラスターのデータへのアクセスの認証、Elasticsearchの内部および外部通信の暗号化などがあります。これらはほとんどのプロダクションシステムに必要なセキュリティ機能です。
 Liferay Enterprise Search Premiumのサブスクリプションを使用すると、@product@用の2つのX-Packコネクタ（監視とセキュリティ用）にアクセスできます。Liferay Enterprise Search Standardサブスクリプションを使用すると、モニタリング統合が可能になります。詳細はこちらまでお問い合わせください：[Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales)

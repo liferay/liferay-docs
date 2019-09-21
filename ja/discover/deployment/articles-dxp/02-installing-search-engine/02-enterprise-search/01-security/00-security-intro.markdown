@@ -1,11 +1,14 @@
+---
+header-id:installing-liferay-enterprise-search-security
+---
+
 # Liferay Enterprise Searchセキュリティのインストール
- [](id=installing-liferay-enterprise-search-security)
 
 X-Packをインストールしたら、組み込みのユーザーパスワードを設定してElasticsearchの保護を開始します。
 
 
 
-## X-Packセキュリティの有効化[](id=enabling-x-pack-security)
+## X-Packセキュリティの有効化
 
 まず、X-Packセキュリティを有効化します。以下の設定を`elasticsearch.yml`に追加します：
 
@@ -15,7 +18,7 @@ X-Packをインストールしたら、組み込みのユーザーパスワー�
 
 これでX-Packユーザーを設定できます。
 
-## X-Packユーザーの設定[](id=setting-up-x-pack-users)
+## X-Packユーザーの設定
 
 
 以下の組み込みX-Packユーザーは、X-PackセキュリティとX-Packモニタリングを使用するシステムにとって重要です：
@@ -46,7 +49,7 @@ Elasticsearchを保護しているので、`elastic`ユーザーのパスワー�
 
 各ノードでトランスポート層セキュリティを有効化します。
 
-## トランスポート層セキュリティの有効化[](id=enabling-transport-layer-security)
+## トランスポート層セキュリティの有効化
 
 TLSを有効にするための以下の手順では、パスワードが必要な時はいつも`liferay`をパスワードとして使用しています。
 インストール時には独自のパスワードを使用してください。
@@ -59,7 +62,7 @@ TLSを有効にするための以下の手順では、パスワードが必要�
 
 $$$
 
-### ノード証明書を生成する [](id=generate-node-certificates)
+### ノード証明書を生成する
 
 各ノードに対して[Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#node-certificates)。認証局を使用してノード証明書を取得することもできます。
 
@@ -88,7 +91,7 @@ $$$
 
 $$$
 
-### TLSを有効化する[](id=enable-tls)
+### TLSを有効化する
 
 `elasticsearch.yml`を使って各ノードのTLSを有効化します。（詳細：[Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#enable-ssl)）
 
@@ -120,7 +123,7 @@ $$$
    
 X-PackをインストールしてTLSを有効にしたら、@product@でX-Packセキュリティアダプターを設定します。
 
-## X-PackセキュリティにLiferayコネクタのインストールと設定を行う [](id=install-and-configure-the-liferay-connector-to-x-pack-security)
+## X-PackセキュリティにLiferayコネクタのインストールと設定を行う
 
 Liferay Enterprise Search Premiumを購読している場合は 、Liferay ConnectorをX-Packセキュリティ[[Elastic Stack 6.x]]に[download](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search)してください。LPKGファイルを`Liferay Home/deploy`フォルダにコピーしてインストールします。
 

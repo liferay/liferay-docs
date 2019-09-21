@@ -1,4 +1,8 @@
-# Backing Up Elasticsearch [](id=backing-up-elasticsearch)
+---
+header-id: backing-up-elasticsearch
+---
+
+# Backing Up Elasticsearch
 
 [Elasticsearch replicas](https://www.elastic.co/guide/en/elasticsearch/guide/master/replica-shards.html)
 protect against a node going down, but they won't help you with a catastrophic
@@ -17,7 +21,7 @@ For more detailed information, refer to the
 and in particular to the documentation on the
 [Snapshot/Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-snapshots.html).
 
-## Creating a Repository [](id=creating-a-repository)
+## Creating a Repository
 
 First [create a repository](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-snapshots.html#_repositories)
 to store your snapshots. Several repository types are supported:
@@ -54,7 +58,7 @@ If the repository is set up successfully, you should see this message:
 
 Once the repository exists, you can start creating snapshots.
 
-## Taking Snapshots of the Cluster [](id=snapshotting-the-cluster)
+## Taking Snapshots of the Cluster
 
 The easiest snapshot approach is to create a
 [snapshot of all the indexes in your cluster](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-snapshots.html#_snapshot).
@@ -136,7 +140,7 @@ a lot of data, this can cost time and resources. To cancel the ongoing creation
 of a snapshot, use the same `DELETE` command.  The snapshot process is
 terminated and the partial snapshot is deleted from the repository.
 
-## Restoring from a Snapshot [](id=restoring-from-a-snapshot)
+## Restoring from a Snapshot
 
 What good is a snapshot if you can't use it to
 [restore your search indexes](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-snapshots.html#_restore)

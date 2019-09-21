@@ -1,4 +1,8 @@
-# SAMLService Providerとして@product@を設定する[](id=setting-up-liferay-as-a-saml-service-provider)
+---
+header-id: setting-up-liferay-as-a-saml-service-provider
+---
+
+# SAMLService Providerとして@product@を設定する
 
 これらの手順の多くは、@product@をSAML Identity Providerとして設定する手順と似ています。単一の@product@インストールをSAML Identify Provider*または* SAML Service Providerとして設定できますが、両方を設定することはできないのでその点注意してください。SAML Identity Providerとして1つの@product@インストールをすでに設定している場合は、SAMLService Providerとは*別の* @product@インストールを使用して ください。
 
@@ -94,7 +98,7 @@ IdP接続は1つだけです。
 
 SAMLService Providerセッションは、アプリケーションサーバー上の通常のセッションに関連付けられています。アプリケーションサーバーでのセッションの有効期限が切れた場合、Service Providerーでのセッションは終了しますが、シングルログアウトは開始されません。
 
-## チェックポイント[](id=checkpoint-1)
+## チェックポイント
 
 1. SAMLキーストアが生成されている。
 
@@ -121,7 +125,7 @@ SAMLService Providerセッションは、アプリケーションサーバー上
 
        [host]:[port]/c/portal/saml/metadata
    
-## SAMLService Provider設定の変更 [](id=changing-the-saml-service-provider-settings)
+## SAMLService Provider設定の変更
 
 @product@のSAMLService Provider設定を設定する場合は、SAML管理ポートレットのService Providerタブに移動します。
 
@@ -163,7 +167,7 @@ $$$
 
 **SSL Required:** このボックスをチェックすると、HTTPS経由で送信されていないSAMLメッセージはすべて拒否されます。これはURLの生成方法には影響しません。
 
-## SAML Identity Provider接続設定の変更[](id=changing-the-saml-identity-provider-connection-settings)
+## SAML Identity Provider接続設定の変更
 
 @product@のSAML Identity Provider設定を設定する場合は、SAML管理ポートレットのIdentity Provider Connectionのタブに移動したください。
 
@@ -227,7 +231,6 @@ $$$
 
 
 ## クラスタ環境でのSAML Service Providerとしての@product@の設定
- [](id=setting-up-liferay-as-a-saml-service-provider-in-a-clustered-environment)
 
 Liferay SAML 2.0 Providerアプリをクラスタ環境の @product@のSSOソリューションとして使用する場合は、このセクションの手順に従ってください。先に進む前に、以下の前提条件が当てはまることを確認してください。
 

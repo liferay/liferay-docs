@@ -1,4 +1,8 @@
-# フィックスパックおよびサービスパックの維持[](id=keeping-up-with-fix-packs-and-service-packs)
+---
+header-id: keeping-up-with-fix-packs-and-service-packs
+---
+
+# フィックスパックおよびサービスパックの維持
 
 [Liferay's Help Center page](https://help.liferay.com/hc)の*Announcements* のセクションには、すべてのフィックスパックの更新、セキュリティの警告、製品のリリース、およびシステムの更新情報が一覧表示されています。フィックスパックおよびサービスパックのリリースのおおよその頻度は、ここ（[here](/discover/deployment/-/knowledge_base/7-1/patching-basics)）で説明されています。
 *Receive Notifications* のサイドバーを使用すると、製品、パッチ、およびシステムの改善に関する最新の更新情報を購読することができます。

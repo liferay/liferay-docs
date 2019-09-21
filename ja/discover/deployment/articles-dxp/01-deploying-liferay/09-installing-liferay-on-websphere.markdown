@@ -1,4 +1,8 @@
-# WebSphereへの@product@のインストール[](id=installing-liferay-dxp-on-websphere)
+---
+header-id:installing-liferay-dxp-on-websphere
+---
+
+# WebSphereへの@product@のインストール
 
 IBM &reg; WebSphere &regは、International Business Machines Corporationの商標であり、世界中の多くの国で登録されています。
 
@@ -39,7 +43,7 @@ $$$
 では早速WebSphereに@product@をインストールしましょう！
 
 
-## @product@のためのWebSphereの準備[](id=preparing-websphere-for-liferay-dxp)
+## @product@のためのWebSphereの準備
 
 
 アプリケーションサーバーバイナリがインストールされたら、 *[Profile
@@ -92,7 +96,7 @@ Management Tool]*を起動して@product@に適したプロファイルを作成
 
 ![図 2: プロファイルを作成する前の設定概要の例](../../images-dxp/websphere-02-profile.png)
 
-### WebSphere Application Serverの設定[](id=configuring-the-websphere-application-server)
+### WebSphere Application Serverの設定
 
 このバージョンのWebSphereでは、サーブレットフィルタはWebアプリケーションの起動時に初期化されるのではなく、初回アクセス時に初期化されます。しかし、これは特定のアプリを@product@にデプロイするときに問題を引き起こす可能性があります。アプリケーションの起動時（つまりデプロイ時）に初期化するようにサーブレットフィルタを設定するには、以下の`webcontainer`プロパティをWebSphereアプリケーションサーバーで設定します。
 
@@ -103,7 +107,7 @@ Management Tool]*を起動して@product@に適したプロファイルを作成
 
 
 
-### Liferay DXP用のJVMパラメータの設定[](id=setting-up-jvm-parameters-for-liferay-dxp)
+### Liferay DXP用のJVMパラメータの設定
 
 
 次に、@product@用に作成したWebSphereプロファイルに、@product@のJavaメモリー要件をサポートする引数を設定する必要があります。
@@ -130,7 +134,7 @@ $$$
 
 あるいは、管理者はWebSphere管理コンソールからUTF-8プロパティを設定することもできます。（下記参照。）
 
-### secureSessionCookieタグの削除[](id=removing-the-securesessioncookie-tag)
+### secureSessionCookieタグの削除
 
 
 同じプロファイル上で、問題を引き起こす可能性がある`secureSessionCookie`タグを@product@から削除する必要があります。なぜなら、これにより立ち上げ時にエラーが発生するかもしれないからです。 しかしこれは単なるデフォルト設定です；@product@がインストールされたら、使用状況に基づいて適切に調整する必要があります。
@@ -143,7 +147,7 @@ $$$
     WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901
     com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
 
-## @product@の依存関係をインストールする[](id=installing-liferay-dxps-dependencies)
+## @product@の依存関係をインストールする
 
 次に@product@の依存関係をインストールする必要があります。以前に以下の依存関係を含む2つのZIPファイルをダウンロードしました。今度は、それらのコンテンツをインストールしてください：
 
@@ -184,7 +188,7 @@ The
 8. `War`
 
 
-### @product@のportlet.jarが最初にロードされるようにする[](id=enforce-portlet)
+### @product@のportlet.jarが最初にロードされるようにする
 
 
 `portlet.jar`を正しいフォルダーに入れることに加えて、`config.ini`ファイルが最初にロードされるように設定する必要があります。`/IBM/WebSphere/AppServer/configuration/config.ini`に移動します。
@@ -203,7 +207,7 @@ The
 
 これらの依存関係をインストールして`config.ini`ファイルを設定したら、@product@用に作成したサーバープロファイルを起動します。起動したら、データベースを設定する準備が整いました。
 
-## データベースの設定方法 [](id=database-configuration)
+## データベースの設定方法
 
 WebSphereにデータベース接続を管理させたい場合は、以下の手順に従ってください。@product@のスタンダードデータベース設定を使用する予定であれば、この手順は必要ないので飛ばしてください。インストール後に@product@のセットアップウィザードでデータベース情報を設定します。
 
@@ -284,14 +288,14 @@ Properties]*をクリックします。*[Show Filter Function]*ボタンをク�
 
 データベースが設定できたら、メールセッションを設定できるようになります。
 
-## メール設定方法 [](id=mail-configuration)
+## メール設定方法
 
 WebSphereにメールセッションを管理させたい場合は、以下の手順に従ってください。
 @product@の組み込みメールセッションを使いたい場合は、このセクションを飛ばしてください。
 
 
 
-### WebSphere管理メールセッションの作成（オプショナル）[](id=creating-a-websphere-managed-mail-session-optional)
+### WebSphere管理メールセッションの作成（オプショナル）
 
 1. *[Resources] > [Mail] > [Mail Providers]*をクリックしてください。
 
@@ -316,12 +320,12 @@ restrict application access to local resources]*が選択されている場合�
 
 メールサーバーからSSL証明書を取得し、それをWebSphereのトラストストアに追加する必要があるかもしれません。これについての説明は、WebSphereの資料を参照してください。
 
-### WebSphere Mail Providerの確認[](id=verifying-websphere-mail-provider)
+### WebSphere Mail Providerの確認
 
 
 1)WARが展開されていて、2)サーバーが起動していて、3)ユーザーがシステム管理者としてサインインしていると、メールセッションが正しく設定されているかどうか確認するためのテストをいくつか行うことができます。簡単に確認できる方法の１つとして、新しいユーザーとその有効なメールあアカウントを作成するという方法があります。新しく作成されたユーザーにEメール通知が来るはずです。ログには、SMTPサーバーがリストされている正しいポート番号でピングされていることが表示されます。
 
-## HTTPセッション用のCookieを有効にする[](id=enable-cookies-http-sessions)
+## HTTPセッション用のCookieを有効にする
 
 WebSphereはデフォルトでCookieをHTTPSセッションに制限しています。代わりにHTTPを使用している場合は、これによってユーザーが@product@にサインインできなくなり、コンソールに次のエラーが表示されます：
 
@@ -372,7 +376,7 @@ WebSphereはデフォルトでCookieをHTTPSセッションに制限していま
 
 変更が保存されると、ローカライズされたコンテンツがある場合、@product@は特殊文字を解析できるようになります。
 
-## @product@をデプロイする[](id=deploy-liferay-dxp)
+## @product@をデプロイする
 
 
 これで、@product@をデプロイする準備が整いました。
@@ -417,7 +421,7 @@ Application]* がチェックされていることを確認して、もう一度
 
 
 
-## JSPをコンパイルするためのJDKバージョンの設定[](id=setting-the-jdk-version-for-compiling-jsps)
+## JSPをコンパイルするためのJDKバージョンの設定
 
 
 @product@では、JSPがJava 8バイトコード形式にコンパイルされている必要があります。WebSphereが確実にこれを実行するようにするには、@product@`.war`ファイルをデプロイした後にWebSphereをシャットダウンしてください。`WEB_INF` フォルダに移動し、以下の設定を`ibm-web-ext.xml` 、または（ほとんどの場合）、`ibm-web-ext.xmi`ファイルに追加してください：
@@ -434,7 +438,7 @@ Application]* がチェックされていることを確認して、もう一度
 
 これでWebSphereを再起動してください。
 
-## @product@を起動する[](id=start-liferay-dxp)
+## @product@を起動する
 
 
 1. @product@のセットアップウィザードを使用する予定の場合は、その次の手順に進んでださい。WebSphereのデータソースとメールセッションを使用したい場合は、Liferay Homeフォルダに`portal-ext.properties`というファイルを作成してください。そのファイルに次の設定を入れます：

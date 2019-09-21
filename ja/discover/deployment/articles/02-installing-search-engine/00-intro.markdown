@@ -1,4 +1,8 @@
-# Installing a Search Engine [](id=installing-a-search-engine)
+---
+header-id: installing-a-search-engine
+---
+
+# Installing a Search Engine
 
 A search engine is a critical component of your @product@ installation. If
 you're here, you probably know the basics already and want to configure a search
@@ -12,7 +16,7 @@ a standalone or remote Elasticsearch server or cluster
 
 [Solr](http://lucene.apache.org/solr) is also supported in @product@.
 
-## Choosing a Search Engine [](id=choosing-a-search-engine)
+## Choosing a Search Engine
 
 Elasticsearch and Solr are both supported, but there are some differences in how
 they work with @product@. In certain cases, you must choose Elasticsearch.

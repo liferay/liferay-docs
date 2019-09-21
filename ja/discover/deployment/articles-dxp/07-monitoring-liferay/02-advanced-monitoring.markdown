@@ -1,4 +1,8 @@
-# 高度なモニタリング：APMツール；Dynatrace [](id=advanced-monitoring-apm-tools-dynatrace-id)
+---
+header-id: advanced-monitoring-apm-tools-dynatrace-id
+---
+
+# 高度なモニタリング：APMツール；Dynatrace
 
 [Dynatrace](https://www.dynatrace.com)のような高度なパフォーマンス監視ツール は、@product@サーバーとインスタンスに関する詳細なパフォーマンス情報を提供します。DynatraceのWebベースのダッシュボードには、メモリ使用量、ガベージコレクション、CPUレベル、およびヒープダンプに関するリアルタイムのシステム情報が表示されます。各ダッシュボードはそれぞれの詳細レポートです。@product@ サーバーのパフォーマンス測定基準に関する個々のユーザーの最新情報まで表示できます。
 
@@ -24,7 +28,7 @@ Dynatraceのダッシュボードを@product@とともに使用するには、�
 
 最後に、Dynatraceのサポートを受けるためにDynatraceアカウントにサインアップしてください。
 
-## ダッシュボード [](id=dashboards)
+## ダッシュボード
 
 Dynatraceには、進行中のトランザクションとプロセスが表示されます。@product@スタック全体を分析できるため、各コンポーネントにダッシュボードがあります。
 
@@ -94,7 +98,7 @@ Dynatraceには、進行中のトランザクションとプロセスが表示�
 
 しかし、それだけではありません：@product@用に作成されたカスタムダッシュボードです。
 
-## Liferay DXP FastPack[](id=liferay-digital-enterprise-fastpack)
+## Liferay DXP FastPack
 
 
 Liferay用Dynatrace FastPackは、@product@環境用にカスタマイズされた事前構成済みのDynatraceプロファイルを提供します。これには、センサー、メジャーとビジネストランザクションを含むテンプレートシステムプロファイル、および@product@のダッシュボードが含まれています。UEMを使用している場合は、コンバージョンと訪問者のタグ付けも行われます。
@@ -132,7 +136,7 @@ FastPackは`.dtp`ファイルとして配布されています。FastPackをイ�
 
 7. Liferayプロファイルが唯一のアクティブプロファイルになるように、他のプロファイルを無効にします。
 
-## Dynatraceクライアント構成[](id=dynatrace-client-configuration)
+## Dynatraceクライアント構成
 
 
 Java JDK 1.8（またはそれと同等のもの）は、Dynatraceクライアントと@product@の両方を実行するための前提条件です。JVMで@product@を実行するために十分なCPUコアを割り当てるようにしてください。クライアントを設定した*後*に Fastpackプラグインをインストールしてください。
@@ -210,7 +214,7 @@ Java JDK 1.8（またはそれと同等のもの）は、Dynatraceクライア�
    
  これでDynatraceサーバーとコレクターをインストールが完了しました。
 
-### JVMエージェントの設定方法[](id=dynatrace-agent-configuration)
+### JVMエージェントの設定方法
 
 
 各@product@ サーバーにJVMエージェントをデプロイします。エージェントは既存のインフラストラクチャの上に置かれています（この例ではApache Tomcat）。
@@ -256,7 +260,7 @@ Java JDK 1.8（またはそれと同等のもの）は、Dynatraceクライア�
 
 Liferayエージェントが新しくインポートされたプロファイルへのデータ送信を開始します。
 
-## 性能試験[](id=performance-testing)
+## 性能試験
 
 
 システム管理者は、全体的な調整プロセスの一環として負荷テストを頻繁に実行する必要があります。Dynatraceクライアントは、システムのパフォーマンスを監視して分析するための優れたツールです。デモンストレーションの目的で、JMeterを使用して簡単な負荷テストを作成した結果、Dynatraceクライアントは以下の結果を取得しました。
@@ -277,7 +281,7 @@ Liferayエージェントが新しくインポートされたプロファイル�
 
 これらのダッシュボードは全てすぐに使用できるようになっており、@product@用に開発されたDynatrace FastPackをデプロイした後、さらに多くのダッシュボードを使用することができます。Dynatraceはたくさんの便利なパフォーマンス監視機能を提供しています。
 
-## 資料[](id=resources)
+## 資料
 
 [Dynatrace Community](https://community.compuwareapm.com)
 

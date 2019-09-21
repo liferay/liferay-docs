@@ -1,4 +1,8 @@
-# Solrのインストール[](id=installing-solr)
+---
+header-id: installing-solr
+---
+
+# Solrのインストール
 
 SolrはApache Luceneをベースにしたエンタープライズ検索プラットフォームです。信頼性、拡張性、耐障害性にすぐれた検索エンジンとして広く使われています。詳細は[こちら](http://lucene.apache.org/solr/)を参照してください。
 

@@ -1,4 +1,8 @@
-# X-Packをインストールする[](id=installing-x-pack-0)
+---
+header-id:installing-x-pack-0
+---
+
+# X-Packをインストールする
 
 X-Packのインストール手順は次のとおりです：
 

@@ -1,4 +1,8 @@
-# LCSを使う[](id=using-lcs)
+---
+header-id: using-lcs
+---
+
+# LCSを使う
 
 @product@サーバーがLCSに接続されると、LCSを使用してサーバーを設定および管理することができます。まだログインしていない場合は、ご自身のアカウントを使って[lcs.liferay.com](https://lcs.liferay.com)にログインしてください 。
 ここで、アップデートの適用、サーバーの表示、環境の管理などを行います。

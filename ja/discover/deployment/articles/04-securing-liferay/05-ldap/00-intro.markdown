@@ -1,8 +1,12 @@
-# LDAP設定方法[](id=ldap)
+---
+header-id: ldap
+---
+
+# LDAP設定方法
 
 @product@はLDAPをユーザーストアとしてサポートしています。[インスタンス設定]へ行き、[認証]ページにある [LDAP]タブで、Liferay DXPがLDAPディレクトリに接続できるように設定します。 それによりユーザーをLDAPからLiferay DXPにインポート、そしてLiferay DXPからLDAPにエクスポートできます。お客様の環境で、ユーザー情報をLDAPサーバーに保存している場合は、ユーザーおよび管理者にとっても、LDAPユーザー情報をLiferay DXPにインポートする方法が有益です。この記事では Liferay DXPをLDAPサーバーに接続する方法、インポート/エクスポート設定方法、その他LDAP関連の構成設定を説明します。
 
-## Liferay DXPのLDAP設定[](id=configuring-ldap-settings)
+## Liferay DXPのLDAP設定
 
 Liferay DXPのLDAP設定へアクセスするには、*[Control Panel] &rarr;
 [Configuration]* &rarr; *[Instance Settings]*へ行き、画面下へスクロールし、*[Authentication]*セクションのフォームを開きます。*LDAP*タブに行きます。このフォームを使って、Liferay DXPをLDAPディレクトリへ接続します。
@@ -58,7 +62,7 @@ Liferay DXPのLDAP設定へアクセスするには、*[Control Panel] &rarr;
 
 LDAPの設定が完了したら、*[保存]*ボタンをクリックします。
 
-### [システム設定]で利用可能なLDAP オプション[](id=ldap-options-available-in-system-settings)
+### [システム設定]で利用可能なLDAP オプション
 
 ほとんどのLDAP設定はインスタンス設定から行うことが可能ですが、[システム設定]のみで利用可能なパラメータがいくつかあります。
 

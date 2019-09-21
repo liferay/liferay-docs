@@ -1,4 +1,8 @@
-# Elasticsearch [](id=configuring-elasticsearch-for-liferay-0)
+---
+header-id: configuring-elasticsearch-for-liferay-0
+---
+
+# Elasticsearch
 
 Elasticsearch is an open source, highly scalable, full-text search and
 analytics engine.
@@ -32,7 +36,7 @@ installation (for example, `elasticsearch-6.5.1`).
 refers to the root folder of your @product@ installation. It contains the
 `osgi`, `deploy`, `data`, and `license` folders, among others.
 
-## Embedded vs. Remote Operation Mode [](id=embedded-vs-remote-operation-mode)
+## Embedded vs. Remote Operation Mode
 
 When you start @product@, this message is displayed in the log:
 
@@ -59,7 +63,7 @@ run Elasticsearch in embedded mode in production either. Instead, run
 Elasticsearch in *remote operation mode*, as a standalone server or cluster of
 server nodes.
 
-## Troubleshooting Elasticsearch [](id=troubleshooting-elasticsearch)
+## Troubleshooting Elasticsearch
 
 Sometimes things don't go as planned. If you've set up @product@ with
 Elasticsearch in remote mode, but @product@ can't connect to Elasticsearch, check

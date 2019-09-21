@@ -1,5 +1,8 @@
+---
+header-id: installing-liferay-enterprise-search-monitoring
+---
+
 # Liferay Enterprise Search Monitoringのインストール
- [](id=installing-liferay-enterprise-search-monitoring)
 
 X-Pack Monitoringを使ってElasticsearchを監視します。まず Elasticsearch上にX-Packをインストールし（詳細[install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack))、X-Packのセキュリティ機能を使用している場合は、セキュリティを設定します。上記のことが完了したら、X-Packで保護されているElasticsearchとKibana、および@product@が簡単かつ安全に通信できるように、以下のX-PackでKibana（監視サーバー）をインストール、および構成する手順に従ってください。この統合を行うには、(Premiumに含まれている）Liferay Enterprise Search Standardサブスクリプション契約が必要です。詳細はこちらまでお問い合わせください：[Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales)
 
@@ -34,7 +37,6 @@ X-Packのインストール手順については、[X-Pack security article](/di
 Elasticsearchでデータ収集を有効にすることから始めます。
 
 ## データ収集を有効にする
-[](id=enable-data-collection)
 
 Elasticsearchのモニタリングはデフォルトで有効になっていますが、データ収集は有効になっていません。
 以下を`elasticsearch.yml`に追加してデータ収集を有効にします。
@@ -47,7 +49,6 @@ Elasticsearchのモニタリングはデフォルトで有効になっていま�
 
 
 ## Kibanaをインストール
-[](id=install-kibana)
 
 必ず正しいバージョンのKibanaをインストールしてください。詳細については、[Liferay Enterprise Search compatibility matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/enterprise-search)を確認してください。
 
@@ -76,7 +77,6 @@ Elasticsearchのモニタリングはデフォルトで有効になっていま�
 ElasticsearchサーバーでX-Packのセキュリティ機能を使用している場合は、Kibanaを起動する前に追加の設定が必要です。
 
 ### 認証付きのKibanaを設定する
-[](id=configure-kibana-with-authentication)
 
 X-PackがElasticsearchクラスターにアクセスするために認証を必要とする場合は、次の手順に従うか[Elastic's documentation](https://www.elastic.co/guide/en/kibana/6.5/monitoring-xpack-kibana.html)を参照してください。
 
@@ -103,7 +103,6 @@ Home]/config/kibana.yml`に組み込み`kibana`ユーザーのパスワードを
    [役割](https://www.elastic.co/guide/en/x-pack/6.5/built-in-roles.html)またはスーパーユーザー（`elasticユーザ`のような）。
 
 ### 暗号化を使用したKibanaの設定
- [](id=configuring-kibana-with-encryption)
 
 X-PackがElasticsearchクラスターとの通信を暗号化する場合は、次の手順に従ってKibanaを設定してください。詳細については[Elastic's guide](https://www.elastic.co/guide/en/kibana/6.5/using-kibana-with-security.html#using-kibana-with-security)を参照してください。
 
@@ -124,7 +123,7 @@ X-PackがElasticsearchクラスターとの通信を暗号化する場合は、�
 
 この手順の後、`https://localhost:5601`でKibanaにアクセスし、Kibanaのユーザーでサインインすることができます。最後の手順は、Kibanaを@product@に接続することです。
 
-## Liferay ConnectorからX-Pack Monitoringへの設定方法 [](id=configuring-the-liferay-connector-to-x-pack-monitoring)
+## Liferay ConnectorからX-Pack Monitoringへの設定方法
 
 Liferay Enterprise Search（プレミアムまたはスタンダード）サブスクリプション契約をお持ちの場合は、Liferay Connector to X-Pack Monitoring[[Elastic Stack 6.x]]をダウンロードしてください。まずILPKGファイルを`Liferay Home/deploy`フォルダにコピーしてインストールします。
 
@@ -178,7 +177,7 @@ Liferay Enterprise Search（プレミアムまたはスタンダード）サブ�
    
 @product@とKibanaを再起動してください。
 
-## @product@での監視[](id=monitoring-in-product)
+## @product@での監視
 
 
 KibanaとX-Packが正常にインストールされて設定され、すべてのサーバーが稼働したら、X-Pack Monitoringポートレットをページに追加します。

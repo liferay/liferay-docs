@@ -1,4 +1,8 @@
-# パッチングツール基本設定方法[](id=patching-tool-basic-configuration)
+---
+header-id: patching-tool-basic-configuration
+---
+
+# パッチングツール基本設定方法
 
 パッチングツールの設定方法は2つあります：
 

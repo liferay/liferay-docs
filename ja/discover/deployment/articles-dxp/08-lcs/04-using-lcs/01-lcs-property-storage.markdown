@@ -1,4 +1,8 @@
-# LCSがLiferay DXPサーバーに保存していること [](id=what-lcs-stores-about-your-liferay-dxp-servers)
+---
+header-id: what-lcs-stores-about-your-liferay-dxp-servers
+---
+
+# LCSがLiferay DXPサーバーに保存していること
 
 ユーザーのプライバシーを保護するために、LCSはシステム固有のデータのみを保存します。LCSはユーザーのデータを収集または保存しません。
 

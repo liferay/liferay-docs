@@ -1,4 +1,8 @@
-# LCS事前設定[](id=lcs-preconfiguration)
+---
+header-id: lcs-preconfiguration
+---
+
+# LCS事前設定
 
 Liferay DXPサーバーのアクティベートをし、 Liferay Connected Services (LCS)を最大限活用するには、まず以下の方法でサーバーをLCSに登録する必要がありますが、その前に設定する項目がいくつかあります。この資料はそれらの手順を説明しています。
 
@@ -139,7 +143,7 @@ LCSクライアントアプリケーションが正常に動くには、下記�
 
 次に、@product@のパッチ適用ツールの設定方法を学びます。
 
-## パッチングツールの設定[](id=configuring-the-patching-tool)
+## パッチングツールの設定
 
 @product@のパッチングツールを使いLCSのアップデートをします。パッチングツールは、Liferay DXPのバンドルに事前インストールされています。バンドルを稼働していない場合は、パッチングツールの[ダウンロード](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool)および[インストール](/discover/deployment/-/knowledge_base/7-1/patching-tool)を個別にしてください。
 
@@ -185,7 +189,7 @@ Windowsをお使いの場合で、ユーザーにアドミニストレータ権�
 
     -Dpatching.tool.agent.properties=debug,nohalt
 
-## WebSphereの設定方法[](id=configuring-websphere)
+## WebSphereの設定方法
 
 BM &reg; WebSphere &reg;は、世界の多くの国で登録されたInternational Business Machines Corporationの商標です。
 
@@ -273,7 +277,7 @@ WebSphereアプリケーションサーバーを実行している場合は、LC
 
     digital.signature.algorithm.provider=IBMJCE
 
-## LCSクライアントアプリケーションのインストール[](id=installing-the-lcs-client-app)
+## LCSクライアントアプリケーションのインストール
 
 上記の事前設定で、LCS クライアントアプリケーションをインストールする準備が整いました。 次は、下記の手順でアプリケーションをインストールします。
 
@@ -287,7 +291,7 @@ WebSphereアプリケーションサーバーを実行している場合は、LC
 
 次のセクションはLCS クライアントアプリケーションのアップグレードについてです。このステップはLiferayがアプリケーションの最新版リリース時に毎回行います。
 
-## LCSクライアントアプリケーションのアップグレード[](id=upgrading-the-lcs-client-app)
+## LCSクライアントアプリケーションのアップグレード
 
 Liferay DXPインスタンスには、最新版のLCSクライアントアプリケーションが起動していることが必須です。
 どの手順でLCSの事前設定を行ったかによって、二通りアップデートの方法があります。

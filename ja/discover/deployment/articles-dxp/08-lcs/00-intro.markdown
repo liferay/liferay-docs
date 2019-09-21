@@ -1,4 +1,8 @@
-# Liferay Connected Servicesを使用したLiferay DXPの管理 [](id=managing-liferay-dxp-with-liferay-connected-services)
+---
+header-id: managing-liferay-dxp-with-liferay-connected-services
+---
+
+# Liferay Connected Servicesを使用したLiferay DXPの管理
 
 Liferay Connected Services（LCS）は、@product@インスタンスを管理および監視するためのツールとサービスのセットです。LCSは、フィックスパックのインストール、インスタンスのパフォーマンスのモニター、インスタンスの有効化、およびサブスクリプションの管理をサポートします。@product@が大豪邸だとしたら、LCSはその豪邸の執事のよ​​うなものです。さらに良いことに、LCSの機能は、インスタンスが単一の個別のサーバー上にあるか、クラスタ全体に分散されているかに関係なく機能します。一度に複数の大豪邸に仕える執事がいるようなものです！LCSの詳細については、 こちらの公式の製品ページを参照してください：[official product page](http://www.liferay.com/products/liferay-connected-services)
 

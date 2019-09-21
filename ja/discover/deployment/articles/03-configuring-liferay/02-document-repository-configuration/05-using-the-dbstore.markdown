@@ -1,4 +1,8 @@
-# DBStoreの使用[](id=using-the-dbstore)
+---
+header-id: using-the-dbstore
+---
+
+# DBStoreの使用
 
 DBStoreを使用すると、@product@データベースにドキュメントとメディアファイルを保存できます。DBStoreの最大ファイル（BLOBとして保存される）サイズは1ギガバイトです。それよりも大きいファイルを保存するには、Simple File System StoreまたはAdvanced File System Storeを使用します。
 

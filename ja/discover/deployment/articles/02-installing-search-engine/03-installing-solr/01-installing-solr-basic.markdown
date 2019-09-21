@@ -1,3 +1,7 @@
+---
+header-id: installing-solr-basic-installation
+---
+
 # Solrのインストール：基本インストール
 
 Liferay Connector to Solr 7をインストールするには、２つの方法があります：
@@ -32,7 +36,7 @@ Liferay Connector to Solr 7をインストールするには、２つの方法�
 
 Solr用に@product@を設定する前に、Solrをインストールして設定します。
 
-## Solr7のインストールと設定[](id=installing-and-configuring-solr-7)
+## Solr7のインストールと設定
 
 
 @product@にSolrをインストール、セットアップする手順は以下の通りです。
@@ -106,7 +110,7 @@ Solr用に@product@を設定する前に、Solrをインストールして設定
 Solrのインストールが完了したら、次はLiferay DXPのSolrコネクタをインストールして設定します。
 
 
-## Liferay Solrアダプタのインストールと設定[](id=installing-and-configuring-the-liferay-solr-adapter)
+## Liferay Solrアダプタのインストールと設定
 
 @product@にデフォルトで組み込まれているサーチエンジンはElasticsearchのため、Elasticsearch Connectorが既にインストールされ起動しています。Solrコネクタを設定する前に、Elasticsearch Connectorを停止する必要があります。
 
