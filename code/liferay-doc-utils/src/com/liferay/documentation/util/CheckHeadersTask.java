@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class CheckHeadersTask extends Task {
 
 		String docDir = _docdir;
 		String productType = _productType;
+		String langDir = _langDir;
 
 		List<String> dirTypes = new ArrayList<String>();
 		dirTypes.add("");
@@ -115,9 +117,17 @@ public class CheckHeadersTask extends Task {
 						if (counter == 2) {
 							headerSyntaxExists = true;
 
-							titleLine = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber());
-							titleLineError1 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() - 1);
-							titleLineError2 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() + 1);
+							// issue here for MalformedInputException when using UTF8 in Japanese
+							if (langDir.equals("ja")) {
+								titleLine = Files.readAllLines(Paths.get(filename), StandardCharsets.ISO_8859_1).get(in.getLineNumber());
+								titleLineError1 = Files.readAllLines(Paths.get(filename), StandardCharsets.ISO_8859_1).get(in.getLineNumber() - 1);
+								titleLineError2 = Files.readAllLines(Paths.get(filename), StandardCharsets.ISO_8859_1).get(in.getLineNumber() + 1);
+							}
+							else {
+								titleLine = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber());
+								titleLineError1 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() - 1);
+								titleLineError2 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() + 1);
+							}
 
 							break;
 						}
@@ -189,10 +199,15 @@ System.out.println("titleLine: " + titleLine);
 		_docdir = docdir;
 	}
 
+	public void setLangDir(String langDir) {
+		_langDir = langDir;
+	}
+
 	public void setProductType(String productType) {
 		_productType = productType;
 	}
 
 	private String _docdir;
+	private String _langDir;
 	private String _productType;
 }

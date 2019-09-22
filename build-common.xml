@@ -218,17 +218,17 @@
 	</target>
 
 	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
-		<checkheaders docdir="${doc.dir}" producttype="ce">
+		<checkheaders docdir="${doc.dir}" langdir="${language.dir}" producttype="ce">
 		</checkheaders>
 	</target>
 
 	<target name="check-headers-dist" description="Check the headers of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp">
-		<checkheaders docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		<checkheaders docdir="${doc.dir}/${temp.dir}" langdir="${language.dir}" producttype="dist">
 		</checkheaders>
 	</target>
 
 	<target name="check-headers-dxp" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
-		<checkheaders docdir="${doc.dir}" producttype="dxp">
+		<checkheaders docdir="${doc.dir}" langdir="${language.dir}" producttype="dxp">
 		</checkheaders>
 	</target>
 
@@ -260,18 +260,18 @@
 	</target>
 
 	<target name="check-images" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
-		<checkimgssite docdir="${doc.dir}" producttype="ce">
+		<checkimgssite docdir="${doc.dir}" producttype="ce" langdir="${language.dir}">
 		</checkimgssite>
 	</target>
 
 	<target name="check-images-dist" description="Verifies all images referenced in a project's Markdown articles.">
 		<mkdir dir="${temp.dir}/images"/>
-		<checkimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist" resolveimages="true">
+		<checkimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist" langdir="${language.dir}" resolveimages="true">
 		</checkimgssite>
 	</target>
 
 	<target name="check-images-dxp" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
-		<checkimgssite docdir="${doc.dir}" producttype="dxp">
+		<checkimgssite docdir="${doc.dir}" producttype="dxp" langdir="${language.dir}">
 		</checkimgssite>
 	</target>
 

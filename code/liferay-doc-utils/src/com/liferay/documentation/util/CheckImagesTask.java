@@ -48,6 +48,8 @@ public class CheckImagesTask extends Task {
 				" is empty");
 		}
 		
+		String langDir = _langDir;
+		
 		// Get articles
 		String productType = _productType;
 		List<String> dirTypes = new ArrayList<String>();
@@ -105,7 +107,7 @@ public class CheckImagesTask extends Task {
 			Map<File, List<String>> imagePathsMap = new HashMap<File, List<String>>();
 		
 			for (File article : articles) {
-				List<String> imagePaths = getImagePaths(article);
+				List<String> imagePaths = getImagePaths(article, langDir);
 			
 				imagePathsMap.put(article, imagePaths);
 			}
@@ -139,6 +141,10 @@ public class CheckImagesTask extends Task {
 
 	public void setDocdir(String docdir) {
 		_docdir = docdir;
+	}
+
+	public void setLangDir(String langDir) {
+		_langDir = langDir;
 	}
 	
 	public void setProductType(String productType) {
@@ -311,7 +317,7 @@ public class CheckImagesTask extends Task {
 	 * @return a list of the relative paths of the images referenced in a
 	 *         Markdown file (may be empty)
 	 */
-	private static List<String> getImagePaths(File article) {
+	private static List<String> getImagePaths(File article, String langDir) {
 		List<String> imagePaths = new ArrayList<String>();
 		
 		if (article.isDirectory()) {
@@ -324,7 +330,13 @@ public class CheckImagesTask extends Task {
 		
 		List<String> lines = null;
 		try {
-			lines = Files.readAllLines(Paths.get(article.getCanonicalPath()), StandardCharsets.UTF_8);
+			// issue here for MalformedInputException when using UTF8 in Japanese
+			if (langDir.equals("ja")) {
+				lines = Files.readAllLines(Paths.get(article.getCanonicalPath()), StandardCharsets.ISO_8859_1);
+			}
+			else {
+				lines = Files.readAllLines(Paths.get(article.getCanonicalPath()), StandardCharsets.UTF_8);
+			}
 		}
 		catch (IOException ioe) {
 			System.err.println(ioe.getLocalizedMessage());
@@ -435,6 +447,7 @@ public class CheckImagesTask extends Task {
 	}
 
 	private String _docdir;
+	private String _langDir;
 	private String _productType;
 	private boolean _resolveImages;
 }
