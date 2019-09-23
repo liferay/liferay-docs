@@ -85,6 +85,15 @@ locations, a new feature has been introduced to allow the content creator to
 view where specific pieces of web content are being used and reused across their
 channels.
 
+#### A/B Testing (DXP only)
+
+Content creators can use A/B testing to create and customize tests to evaluate
+which elements on Content Pages perform better and edit content accordingly.
+Liferay DXP's A/B tests leverage Bayesian statistics to identify the probable
+values of lift for a variant, allowing your business to make more informed
+decisions. Native integration with Liferay Analytics Cloud allows for data
+collected for the running test to determine a winning variant. 
+
 ### Personalization
 
 In @product-ver@, segmentation and personalization capabilities have
@@ -126,6 +135,15 @@ The new Experiences feature allows a user to create different variations
 of a page. All the tools available for creating a page in the layout editor are
 also available for making these page variations. Non-technical users can easily
 tailor the messaging, images and even widgets on a page.
+
+#### Content Recommendations (DXP only)
+
+Content recommendations leverages interest models generated in Liferay Analytics
+Cloud to recommend content on Liferay DXP. The option to do so is available
+through Content Sets and automatically filters content based on interest
+keywords. Liferay Analytics Cloud uses AI to cluster topics and model long-term
+interest for known and unknown visitors. Keywords are taken from the categories,
+tags, and keywords of content. 
 
 ### Bulk Management
 
@@ -174,6 +192,20 @@ streamlining and optimizing those processes and operations.
 Reduce the time it takes for IT to deliver custom applications for the
 business. Automate data collection through applications.
 
+#### Data Engine API
+
+Reduce the time it takes for IT to deliver custom applications for the business.
+Automate data collection through applications. 
+
+#### Workflow Metrics
+
+Workflow metrics helps users gain insight into how long certain workflow events
+take to complete. Users can set deadlines on a workflow process's events; these
+configurations are called Service Level Agreements (SLAs). Once defined, use
+Workflow Reports to measure compliance with the SLAs. The analytics and metrics
+generated can help you understand the throughput performance of your processes
+in a given timeframe, allowing users to better optimize their processes. 
+
 #### Workflow Reports
 
 Cut down the time it takes to serve your customers. New reports for workflow
@@ -182,9 +214,12 @@ increase revenue goals.
 
 #### Online Document Editing
 
-Improvements have been made to allow users to have a live application to
-do work within the Documents and Media application. Users can use the Google
-Docs online interface to create and edit documents stored in @product@. 
+Integration with Office 365 and Google Docs allows the creation and editing of
+documents stored in @product@. Users can manage documents, presentations, and
+spreadsheets with the power that the suite provides and store them in
+@product@'s document repository for future access. This feature takes advantage
+of the existing permissions system, versioning, and sharing capabilities already
+included with @product-ver@. 
 
 #### P2P Asset Sharing
 
