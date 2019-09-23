@@ -2,10 +2,10 @@
 
 [TOC levels=1-4]
 
-You can define text configuration options (among others) for a Fragment, letting
-Fragment developers declare any text value they want. With this freedom comes
-risk; malicious code could be inserted into the text field, wreaking havoc for
-other users of the Fragment.
+When you define text configuration and other options for a Fragment, Fragment
+developers can declare any text value they want. With this freedom comes risk;
+malicious code could be inserted into the text field, wreaking havoc for other
+users of the Fragment.
 
 In this article, you'll learn how to escape Fragment text values so Fragment
 authors are protected from XSS attacks.
@@ -13,10 +13,8 @@ authors are protected from XSS attacks.
 ### Escaping Values in HTML/FreeMarker
 
 You must take special care when adding a text value in your Fragment's HTML. For
-example, if a user includes malicious code within `<script>` tags, it will
-run when the page is rendered. This could look something like
-`<script>alert('hello')</script>`, but with something malicious instead of a
-friendly greeting.
+example, if a user includes malicious code within `<script>` tags, it runs when
+the page is rendered. 
 
 To solve this problem, a utility is available in the FreeMarker context via the
 `htmlUtil` class.

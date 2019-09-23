@@ -15,9 +15,8 @@ There are four configurable Fragment types available to implement:
 
 <!-- - `itemSelector` -->
 
-For more information on how to make a Fragment configurable, see the
-[Making a Fragment Configurable](/docs/7-2/frameworks/-/knowledge_base/f/making-a-fragment-configurable)
-article.
+For more information on how to make a Fragment configurable, see 
+[Making a Fragment Configurable](/docs/7-2/frameworks/-/knowledge_base/f/making-a-fragment-configurable).
 
 In this article, you'll explore JSON examples of each Fragment type.
 

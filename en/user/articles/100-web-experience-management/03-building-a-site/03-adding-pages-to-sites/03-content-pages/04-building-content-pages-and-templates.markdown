@@ -60,19 +60,19 @@ Now that the structure is defined, start editing the text and images.
 
 3.  Select one of the many space flight images that are surely filling up your
     Documents and Media library, upload a new one, or specify a URL.
-    
+
 ![Figure 4: Add some images, and the big picture comes together.](../../../../../images/content-page-creation-step-3.png)
 
-Anytime during Fragment creation, you have the option to remove, duplicate, or
-configure the Fragment.
+Anytime during Fragment creation, you can remove, duplicate, or configure the
+Fragment.
 
 ![Figure 5: Add some images, and the big picture comes together.](../../../../../images/content-page-fragment-options.png)
 
 Configuring a Fragment lets you modify the default options for a provided
-Fragment. This also lets you duplicate a Fragment and configure them
-differently, giving you the convenience to reuse base Fragments instead of
-developing new ones. When duplicating a Fragment, its configuration and editable
-elements are also copied.
+Fragment. This also lets you duplicate a Fragment and configure duplicates
+differently, so you can reuse base Fragments instead of developing new ones.
+When duplicating a Fragment, its configuration and editable elements are also
+copied.
 
 | **Note:** Fragment configuration and duplication are available in Liferay
 | DXP 7.2 SP1+ and Liferay Portal GA2+.

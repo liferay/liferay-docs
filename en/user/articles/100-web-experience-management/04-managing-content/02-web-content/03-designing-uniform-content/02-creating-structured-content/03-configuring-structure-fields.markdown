@@ -104,7 +104,7 @@ To edit a structure's default values:
 ![Figure 2: You can define values for your structure fields and the standard asset metadata fields.](../../../../../../images/structure-default-values.png)
 
 If you prefer to reset all your structure's default values, you can select the
-*Reset Values* button. This will reset all values for the structure's fields
+*Reset Values* button. This resets all values for the structure's fields
 and all properties shown in the right panel.
 
 | **Note:** The *Reset Values* button is available for Liferay Portal 7.2 GA2+

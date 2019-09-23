@@ -57,11 +57,10 @@ this by selecting the element's *Map* button
 | you leverage the latest editable element mapping features, upgrade to these
 | versions.
 
-For more information on developing these elements, see the
-[Fragment Specific Tags](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags)
-article.
+For more information on developing these elements, see 
+[Fragment Specific Tags](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags).
 
-Now you'll learn about each editable type next.
+Now you'll learn about each editable type.
 
 ### Editable Text
 
@@ -94,9 +93,8 @@ the Layout, select *Layout Background Image*, and define the image to display.
 | **Note:** Mapping a Layout background image is available in Liferay DXP 7.2
 | SP1+ and Liferay Portal 7.2 GA2+.
 
-For more information on developing editable images, see the
-[Making Images Editable](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags#making-images-editable)
-section.
+For more information on developing editable images, see 
+[Making Images Editable](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags#making-images-editable).
 
 You can also define a link for your image. You'll learn about this next.
 
@@ -141,8 +139,7 @@ Some of the content fields include
 - Author Name
 - Basic Web Content
 
-For more information on developing editable links, see the
-[Creating Editable Links](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags#creating-editable-links)
-section.
+For more information on developing editable links, see 
+[Creating Editable Links](/docs/7-2/reference/-/knowledge_base/r/fragment-specific-tags#creating-editable-links).
 
 Next you'll learn about the Content Page Editing Interface.

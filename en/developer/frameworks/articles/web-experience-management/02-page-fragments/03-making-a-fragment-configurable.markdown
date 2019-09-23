@@ -23,9 +23,9 @@ configurable,
 
     ![Figure 1: Switch from the Code tab to the Configuration tab to create your configuration logic.](../../../images/fragment-config-tab.png)
 
-4.  In the editor, add your custom JSON code. This code is added to your
-    fragment's `index.json` file. For example, the code below provides the
-    `select` option to choose *dark* or *light* for a Fragment's heading:
+4.  In the editor, add your JSON code. This code is added to your fragment's
+    `index.json` file. For example, the code below provides the `select` option
+    to choose *dark* or *light* for a Fragment's heading:
 
     ```json
     {
@@ -58,16 +58,16 @@ configurable,
     ```
 
     | **Note:** The `label` property is optional. If it's left out, your
-    | configuration option will not have a title.
+    | configuration option has no title.
 
-    | **Note:** If your configuration is invalid, the editor will not save the
+    | **Note:** If your configuration is invalid, you can't save the
     | code. Be sure to always have a valid JSON configuration before previewing
     | or saving it.
 
     The configuration values selected by the user are made available to the
     Fragment developer through the FreeMarker context. A configuration value can
-    be referenced using the notation `${configuration.<fieldName>}`. For the
-    example snippet above, `${configuration.headingAppliedStyle}` would return
+    be referenced using the notation `${configuration.[fieldName]}`. For the
+    example snippet above, `${configuration.headingAppliedStyle}` returns
     `dark` or `light` depending on the configuration value selected by the user.
 
 5.  You can refer to your Fragment's configuration values in its HTML file
@@ -82,7 +82,7 @@ configurable,
     [/#if]
     ```
 
-    Note, configuration values inserted into the FreeMarker context honor the
+    Configuration values inserted into the FreeMarker context honor the
     defined `datatype` value specified in the JSON file. Therefore, for this
     example, `configuration.headingAppliedStyle?is_string` is `true`.
 
@@ -95,7 +95,7 @@ configurable,
 | Fragments Toolkit. You can create/modify the Fragment's configuration JSON
 | file and then reimport the Fragment to your Liferay instance. For more
 | information, see
-| [this article](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments-desktop-tools).
+| [Page Fragment Desktop Tools](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments-desktop-tools).
 
 Although this example highlights accessing configuration values in HTML via the
 FreeMarker context, you can also access these values via JavaScript. JavaScript
@@ -118,8 +118,7 @@ const configurationValue = configuration.field1
 console.log(configurationValue);
 ```
 
-For more examples of Fragment configuration, visit the
-[Fragment Configuration Types](/docs/7-2/reference/-/knowledge_base/r/fragment-configuration-types)
-article.
+For more examples of Fragment configuration, see 
+[Fragment Configuration Types](/docs/7-2/reference/-/knowledge_base/r/fragment-configuration-types).
 
 Awesome! You now have a configurable Fragment!

@@ -67,9 +67,8 @@ for the Fragment and is the same as your editable image ID.
 Content mapping connects editable fields in your Fragment with fields from an 
 Asset type like Web Content or Blogs. For example, you can map an image field 
 to display a preview image for a Web Content Article. For more information on
-mapping fields, see the
-[Editable Elements](/docs/7-2/user/-/knowledge_base/u/content-page-elements#editable-elements)
-section.
+mapping fields, see 
+[Editable Elements](/docs/7-2/user/-/knowledge_base/u/content-page-elements#editable-elements).
 
 ## Creating Editable Links
 
@@ -86,9 +85,8 @@ button, secondary button, link.
 
 ![Figure 2: You have several options for defining a link's appearance and behavior.](../../../images/fragment-link-editor.png)
 
-For more information on editable links, see the
-[Editable Links](/docs/7-2/user/-/knowledge_base/u/content-page-elements#editable-links)
-section.
+For more information on editable links, see 
+[Editable Links](/docs/7-2/user/-/knowledge_base/u/content-page-elements#editable-links).
 
 ## Including Widgets Within A Fragment 
 

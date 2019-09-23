@@ -23,9 +23,8 @@ links as editable and provide for "rich" text with formatting.
 
 You can also access the FreeMarker templates engine from your HTML using the
 [alternative (square bracket) syntax](https://freemarker.apache.org/docs/dgui_misc_alternativesyntax.html).
-You can learn more about available FreeMarker objects in the
-[Frontend Reference](/docs/7-2/reference/-/knowledge_base/r/front-end-reference)
-section.
+Learn more about available FreeMarker objects in 
+[Front-end Reference](/docs/7-2/reference/-/knowledge_base/r/front-end-reference).
 
 Liferay portlets can also be embedded in Fragments as widgets, making pages with
 Fragments more dynamic than regular web content.
@@ -40,9 +39,8 @@ that is added to a Section.
 
 Fragments are created inside of Collections. Collections provide an easy way to 
 manage and share groups of related Fragments. Users navigate Collections when 
-selecting Fragments to add to a page. You can view all the out-of-the-box
-Fragments (and their code) from the Page Fragments admin page, for useful
-examples.
+selecting Fragments to add to a page. To see examples, the admin page shows all
+the out-of-the-box Fragments (and their code).
 
 You can create and manage Fragments and Collections without using any external
 tools, but you can also use your preferred web development tools. For an
@@ -54,11 +52,11 @@ explanation of Fragment creation using Liferay's built in tools, see
 | **Note:** Defining configurations for Page Fragments is available in Liferay
 | DXP 7.2 SP1+ and Liferay Portal GA2+.
 
-Page Fragments are also configurable; defining configuration options for your
-fragment eliminates the need to maintain multiple other fragments similar in
-style. For example, if you'd like to provide a dark background banner and a
-light background banner, you can create one banner with a configuration option
-for background type.
+Page Fragments are also configurable: defining configuration options for your
+fragment eliminates having to maintain multiple other fragments similar in
+style. For example, if you want a dark background banner and a light background
+banner, you can create one banner with a configuration option for background
+type.
 
 The following field types are supported for Fragment configurations:
 
@@ -70,8 +68,8 @@ The following field types are supported for Fragment configurations:
 
 This is available for all Fragment types (e.g., Fragment Renderer, etc.).
 
-For more information on making your fragment configurable, see
-[this section](/docs/7-2/frameworks/-/knowledge_base/f/making-a-fragment-configurable).
+For more information, see
+[Making a Fragment Configurable](/docs/7-2/frameworks/-/knowledge_base/f/making-a-fragment-configurable).
 
 ### Fragments CLI
 
