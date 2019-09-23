@@ -28,6 +28,8 @@ called it `addEntry`. To create a portlet action, you create a method in the
 portlet class with the same name. `MVCPortlet` calls that method when a user
 triggers its matching URL. 
 
+## Creating an Add Entry Action
+
 1.  Open `GuestbookPortlet`. 
 
 2.  Create a method with the following signature:
@@ -90,14 +92,12 @@ public void addEntry(ActionRequest request, ActionResponse response)
                 serviceContext.getUserId(), guestbookId, userName, email,
                 message, serviceContext);
 
-            SessionMessages.add(request, "entryAdded");
-
             response.setRenderParameter(
                 "guestbookId", Long.toString(guestbookId));
 
         }
         catch (Exception e) {
-            SessionErrors.add(request, e.getClass().getName());
+            System.out.println(e);
 
             PortalUtil.copyRequestParameters(request, response);
 
@@ -125,7 +125,37 @@ this one has been added. This is all done in `try...catch` statements. Note the
 setting of the `mvcPath` render parameter to direct processing to the proper JSP
 based on what happens. 
 
-But there's something missing, isn't there? This method expects a `guestbookId`
+## Creating a Delete Entry Action
+
+Next, create an action that deletes an entry: 
+
+```java
+public void deleteEntry(ActionRequest request, ActionResponse response) throws PortalException {
+        long entryId = ParamUtil.getLong(request, "entryId");
+        long guestbookId = ParamUtil.getLong(request, "guestbookId");
+
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(
+            GuestbookEntry.class.getName(), request);
+
+        try {
+
+            response.setRenderParameter(
+                "guestbookId", Long.toString(guestbookId));
+
+            _guestbookEntryLocalService.deleteGuestbookEntry(entryId);
+        }
+
+        catch (Exception e) {
+            Logger.getLogger(GuestbookPortlet.class.getName()).log(
+                Level.SEVERE, null, e);
+        }
+}
+```
+
+This action accepts an `entryId` from the request and calls the service to
+delete it. 
+
+But there's something missing, isn't there? These methods expect a `guestbookId`
 to be in the request, so the `GuestbookEntry` can be connected to its
 `Guestbook`. You'll create that next, as well as a mechanism for viewing
 guestbook entries. 
