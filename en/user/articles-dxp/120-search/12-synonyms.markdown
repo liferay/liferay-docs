@@ -10,9 +10,9 @@ Starting with @product-ver@ Service Pack 1, new search tuning features are
 available for administrative Users: Synonym Sets is one of them.
 
 Synonym Sets are mappings that you (the admin) create, so that if a User
-searches for a certain keyword, the synonyms in your mapping are also searched.
-Matches to synonymous keywords are scored equally to matches with the exact
-keyword by the search engine.
+searches for a certain keyword or phrase, the synonymous terms in your mapping
+are also searched. Matches to synonyms keywords are scored equally to matches
+with the exact keyword by the search engine.
 
 | **Lunar Resort Use Case:** Multiple content creators at the Lunar Resort write
 | blogs about a variety of topics. Consistent terminology is a problem for some
@@ -41,18 +41,6 @@ search.
 The `=>`
 [format](https://www.elastic.co/guide/en/elasticsearch/guide/current/synonym-formats.html)
 supported in Elasticsearch is not supported through the Synonyms Set UI.
-
-## Known Issues
-
-There are several [known issues](https://issues.liferay.com/browse/LPS-99658)
-for Synonym Sets. These are some of the most important ones:
-
-[LPS-100272](https://issues.liferay.com/browse/LPS-100272): 
-Reindexing permanently deletes all Synonym Sets. Please refer to the ticket for
-a way to backup and preserve (restore) Synonym Sets across reindex operations. 
-
-[LPS-98126](https://issues.liferay.com/browse/LPS-98126)
-Users can create duplicate Synonym Set entries and update other Synonym Sets unintentionally.
 
 ## Creating and Managing Synonym Sets
 
@@ -93,17 +81,15 @@ returned in the Search Results widget.
 
 ![Figure 3: The Blogs Entry does not contain the word "rover" but it can be matched because of a synonym set mapping "cart" as its synonym. The synonym is even highlighted.](../../images/search-synonomous-result.png)
 
+## Known Issues
 
+There are several [known issues](https://issues.liferay.com/browse/LPS-99658)
+for Synonym Sets. These are some of the most important ones:
 
+[LPS-100272](https://issues.liferay.com/browse/LPS-100272): 
+Reindexing permanently deletes all Synonym Sets. Please refer to the ticket for
+a way to backup and preserve (restore) Synonym Sets across reindex operations. 
 
-<!-- I'm not sure of the purpose of including this
-## Elasticsearch Index Settings and Mappings for Synonyms Sets
+[LPS-98126](https://issues.liferay.com/browse/LPS-98126)
+Users can create duplicate Synonym Set entries and update other Synonym Sets unintentionally.
 
-Liferay's Elasticsearch 6 connector of @product-ver@ GA1 ships with the a [default analyzer pipeline](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/index-settings.json) for English and Spanish locales required for synonyms. These analyzers are applied at search time to the matching localized fields as it's defined in the [default mappings](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json) within Liferay's Elasticsearch 6 connector (see [here](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json#L156) and [here](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search-elasticsearch6/portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json#L170)).
--->
-
-# Related Resources
-* https://www.elastic.co/guide/en/elasticsearch/guide/current/synonyms.html
-* https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analyzer-anatomy.html
-* https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analysis-synonym-graph-tokenfilter.html
-* http://lucene.apache.org/core/7_7_0/analyzers-common/org/apache/lucene/analysis/en/EnglishPossessiveFilter.html
