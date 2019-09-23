@@ -8,20 +8,18 @@ header-id: recommending-content-based-on-user-behavior
 
 | **Note:** A/B Testing is available for Liferay DXP 7.2 SP1+.
 
-When visiting a site, users inevitably click on content that they're interested
-in. For example, if someone visits a sporting goods store's site and clicks on
-several hunting promotional ads, you can deduce that they're interested in
-hunting products and can promote this type of content to them when they visit
-the site again.
+A site's content generates clicks from users. For example, if someone visits
+a sporting goods store's site and clicks on several hunting promotional ads, you
+can deduce an interest in hunting products and can promote this type
+of content when this user visits the site again.
 
 Accomplishing this with
-[Segment based personalization](/docs/7-2/user/-/knowledge_base/u/creating-user-segments)
+[Segment-based personalization](/docs/7-2/user/-/knowledge_base/u/creating-user-segments)
 is possible, but that method is really targeted for vertical specific messaging
-or content with a preconceived target audience. You may have to create hundreds
-of Segments to target all combinations of customer use cases. Instead, you need
-an infrastructure that tracks user viewership and displays the appropriate
-content based on their behavior. You can accomplish this with *Content
-Recommendation*.
+or content with a preconceived audience. You may have to create hundreds of
+Segments to target all combinations of customer use cases. Instead, you need an
+infrastructure that tracks user views and displays the appropriate content based
+on behavior. You can accomplish this with *Content Recommendation*.
 
 This is done by adding tags to content/Pages and monitoring the users who visit
 them. When a user views a specific content type or Page, its tags are attached
@@ -53,7 +51,7 @@ You'll step through these processes next.
 
 To track user behavior and accumulate their interests, you must add tags to the
 content and Pages they visit. First, you'll add tags to web content and
-configure it so it's viewable using a Display Page Template.
+configure it to be viewable using a Display Page Template.
 
 1.  Go to Site Administration &rarr; *Site Builder* &rarr; *Pages* &rarr;
     *Display Page Templates*. Select the *Add* button
@@ -71,21 +69,21 @@ configure it so it's viewable using a Display Page Template.
 
 4.  Publish the Display Page Template.
 
-5.  [Begin creating a Basic Web Content](/docs/7-2/user/-/knowledge_base/u/creating-web-content).
+5.  [Begin creating Basic Web Content](/docs/7-2/user/-/knowledge_base/u/creating-web-content).
     Before publishing the content, navigate to the *Display Page Template*
-    section and select *Specific Display Page Template* from the dropdown. Then
+    section and select *Specific Display Page Template* from the selector. Then
     select the Display Page Template your created previously.
 
 6.  Go to the *Metadata* section in the right menu. Assign tags that
-    characterize the content. These are the tags that will be referenced as
+    characterize the content. These are the tags that are referenced as
     interests when a user views the content. Then click *Publish*.
 
-Now your web content is mapped to a Display Page, which will allow the assigned
+Now your web content is mapped to a Display Page, which allows the assigned
 tags to be tracked as interests when the web content is clicked. You can alter
 this process based on the asset types you want to recommend.
 
 You can also assign tags to a Page's SEO configuration, which would then be
-assigned to a user as interests when they visit the Page. Here's how to do this:
+assigned to users as interests when they visit the Page. Here's how to do this:
 
 1.  Navigate to Site Administration &rarr; *Site Builder* &rarr; *Pages*.
 
@@ -101,9 +99,8 @@ content, which you'll learn how to leverage next.
 
 ## Displaying Content Based on User Behavior
 
-Now that your Site's users' are having their interests tracked using tags,
-you'll want to set up an Asset Publisher to display the content based on their
-behavior.
+Now that your Site's users' have their interests tracked using tags, you'll want
+to set up an Asset Publisher to display the content based on their behavior.
 
 1.  Navigate to the Site Administration &rarr; *Content & Data* &rarr; *Content
     Sets*.
@@ -114,21 +111,19 @@ behavior.
 3.  Under the Content Recommendation tab, enable Content Recommendation. Then
     save the Content Set.
 
-    ![Figure 2: Enable Content Recommendation for your Content Set..](../../images-dxp/enable-content-recommendation.png)
+    ![Figure 2: Enable Content Recommendation for your Content Set.](../../images-dxp/enable-content-recommendation.png)
 
-    For more information on Content Sets, visit the
-    [Creating Content Sets](/docs/7-2/user/-/knowledge_base/u/creating-content-sets)
-    article.
+    For more information on Content Sets, see
+    [Creating Content Sets](/docs/7-2/user/-/knowledge_base/u/creating-content-sets).
 
 4.  Add an Asset Publisher widget to a Page. Navigate to its *Options*
     (![Options](../../images-dxp/icon-app-options.png)) &rarr; *Configuration*
     menu and select the *Content Set* asset selection.
-    
+
 5.  Select the Content Set you want to display. Then click *Save*.
 
-In a realistic scenario, the Content Set would have many assets with differing
-tags. That way, content similar to a user's interests is displayed over other
-content.
+In a realistic scenario, Content Sets have many assets with differing tags. That
+way, content similar to a user's interests is displayed over other content.
 
-Great! Now when users have accumulated interests based on viewership, the Asset
-Publisher will only show content based on their interests.
+Great! Now when users have accumulated interests based on views, the Asset
+Publisher only shows content based on their interests.
