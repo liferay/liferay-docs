@@ -96,13 +96,9 @@ search box) and click the Actions icon
 
    ![Figure 2: Set configurations for the Elasticsearch connector, like settings the Operation Mode to *Remote*.](../../../../images/cfg-elasticsearch-sys-settings2.png)
 
-+$$$
-
-**Note:** If you switch operation modes (`EMBEDDED` &rarr; `REMOTE`), you must
-trigger a re-index. Navigate to *Control Panel* &rarr; *Configuration* &rarr;
-*Search*, and click *Execute* next to *Reindex all search indexes.*
-
-$$$
+| **Note:** If you switch operation modes (`EMBEDDED` &rarr; `REMOTE`), you must
+| trigger a re-index. Navigate to *Control Panel* &rarr; *Configuration* &rarr;
+| *Search*, and click *Execute* next to *Reindex all search indexes.*
 
 ### Configuring the Adapter with an OSGi `.config` File
 
@@ -161,14 +157,10 @@ Elasticsearch nodes in this property as you want. This tells @product@ the IP
 address or host name where search requests should be sent. If using System
 Settings, set the value in the *Transport Addresses* property.
 
-+$$$
-
-**Note:** In an Elasticsearch cluster you can list the transport addresses for
-multiple Elasticsearch nodes as a comma-separated list in the
-`transportAddresses` property. If you set only one transport address, @product@
-loses contact with Elasticsearch if that node goes down.
-
-$$$
+| **Note:** In an Elasticsearch cluster you can list the transport addresses for
+| multiple Elasticsearch nodes as a comma-separated list in the
+| `transportAddresses` property. If you set only one transport address, @product@
+| loses contact with Elasticsearch if that node goes down.
 
 On the Elasticsearch side, set the `network.host` property in your
 `elaticsearch.yml` file. This property simultaneously sets both the *bind host*
@@ -194,28 +186,24 @@ Elasticsearch's default configuration works for a cluster of up to ten nodes,
 since the default number of shards is `5` and the default number of replica
 shards is `1`.
 
-+$$$
-
-**Note:** Elasticsearch uses the
-[Zen Discovery Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-discovery-zen.html)
-by default, which provides unicast discovery. Additionally, nodes in the cluster
-communicate using the
-[Transport Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-transport.html),
-through TCP. See the Elasticsearch documentation for the available properties
-(to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
-Adapter's settings for the adapter's available settings.
-<!--reference article](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
-
-At a minimum, provide the list of hosts (as `host:port`) to act as gossip
-routers during unicast discovery in the `elasticsearch.yml`:
-
-    discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
-
-For example,
-
-    discovery.zen.ping.unicast.hosts: ["10.10.10.5", "10.10.10,.5:9305"]
-
-$$$
+| **Note:** Elasticsearch uses the
+| [Zen Discovery Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-discovery-zen.html)
+| by default, which provides unicast discovery. Additionally, nodes in the cluster
+| communicate using the
+| [Transport Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-transport.html),
+| through TCP. See the Elasticsearch documentation for the available properties
+| (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
+| Adapter's settings for the adapter's available settings.
+| <!--reference article](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
+| 
+| At a minimum, provide the list of hosts (as `host:port`) to act as gossip
+| routers during unicast discovery in the `elasticsearch.yml`:
+| 
+|     discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
+| 
+| For example,
+| 
+|     discovery.zen.ping.unicast.hosts: ["10.10.10.5", "10.10.10,.5:9305"]
 
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).

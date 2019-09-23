@@ -12,23 +12,15 @@ VisualVMは、Oracle JVMのパフォーマンス情報を表示するための�
 
 ![図1: VisualVMのVisual GCプラグインではリアルタイムにガーベージコレクターを表示します。](../../images-dxp/visual-vm-gc.png)
 
-+$$$
-
-**注： **OracleのJDKにはVisualVMバンドルがあります。（`$JAVA_HOME/bin/jvisualvm`）
-ただし、常に最新のVisualVMを[official website](https://visualvm.github.io/)からダウンロードして使用してください。
-
-$$$
+| **注： **OracleのJDKにはVisualVMバンドルがあります。（`$JAVA_HOME/bin/jvisualvm`）
+| ただし、常に最新のVisualVMを[official website](https://visualvm.github.io/)からダウンロードして使用してください。
 
 ## JMXコンソール
 
 
 このツールは、@product@の分散キャッシュパフォーマンス、アプリケーションサーバースレッドのパフォーマンス、JDBC接続プールの使用状況など、さまざまな統計情報を表示するのに役立ちます。
 
-+$$$
-
-**注：**JMXコンソールはTomcatを監視するために推奨されているツールです。
-
-$$$
+| **注：**JMXコンソールはTomcatを監視するために推奨されているツールです。
 
 JMX接続を有効にするには、以下のJVM引数を追加します：
 

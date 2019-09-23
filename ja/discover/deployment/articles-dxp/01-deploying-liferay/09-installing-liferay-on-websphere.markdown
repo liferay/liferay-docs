@@ -8,13 +8,9 @@ IBM &reg; WebSphere &regは、International Business Machines Corporationの商�
 
 
 
-+$$$
-
-**アドバイス:**：このインストールおよび設定プロセスを通して、WebSphereから *[Save]*をクリックしてマスターコンフィグレーションに変更を適用するように求められます。変更を保存するために断続的に[Save]をクリックしてください。
-
-
-
-$$$
+| **アドバイス:**：このインストールおよび設定プロセスを通して、WebSphereから *[Save]*をクリックしてマスターコンフィグレーションに変更を適用するように求められます。変更を保存するために断続的に[Save]をクリックしてください。
+| 
+| 
 
 @product@を正しく機能させるには、WebSphere 8.5.5フィックスパック11以降またはWebSphere 9（フィックスパック7が最新）をインストールする必要があります。フィックスパックについての詳しい情報は[here](http://www-01.ibm.com/support/docview.wss?uid=swg24043005)を参照してください。
 
@@ -120,13 +116,9 @@ Management Tool]*を起動して@product@に適したプロファイルを作成
 
     <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ... maximumHeapSize="2048">
 
-+$$$
-
-**注：**ここで使用されているJVMパラメータは、本番システムの初期デプロイ用に意図されたデフォルトのものです。管理者は、特定の環境に最も適した値に設定をし直してください。
-
-これらは必要に応じて調整しなければいけません。
-
-$$$
+| **注：**ここで使用されているJVMパラメータは、本番システムの初期デプロイ用に意図されたデフォルトのものです。管理者は、特定の環境に最も適した値に設定をし直してください。
+| 
+| これらは必要に応じて調整しなければいけません。
 
 管理者はUTF-8プロパティを`server.xml`ファイルで設定できます。この設定を行わないと、特殊文字が正しく解析されません。`jvmEntries`タグ内に以下を追加してください：
 
@@ -211,11 +203,7 @@ The
 
 WebSphereにデータベース接続を管理させたい場合は、以下の手順に従ってください。@product@のスタンダードデータベース設定を使用する予定であれば、この手順は必要ないので飛ばしてください。インストール後に@product@のセットアップウィザードでデータベース情報を設定します。
 
-+$$$
-
-**注：** @product@の組み込みデータベースは、テスト目的に使用する場合問題ありませんが、本番@product@インスタンスのためには使用**しない**でください。
-
-$$$
+| **注：** @product@の組み込みデータベースは、テスト目的に使用する場合問題ありませんが、本番@product@インスタンスのためには使用**しない**でください。
 
 ![図 3: WebSphere JDBC プロバイダ](../../images-dxp/websphere-jdbc-providers.png)
 
@@ -454,17 +442,13 @@ Applications]*に移動し、@product@アプリケーションを選択してか
 
  これで@product@をWebSphereにインストールできました！
 
-+$$$
-
-@product@をデプロイした後、`PhaseOptimizer`を含む以下のような警告とログメッセージが表示される場合があります。これらの警告は無視してください。
-必要ないログメッセージが頻繁に表示されないように、必ずアプリケーションサーバーのログレベルまたはログフィルターを調整してください。
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| @product@をデプロイした後、`PhaseOptimizer`を含む以下のような警告とログメッセージが表示される場合があります。これらの警告は無視してください。
+| 必要ないログメッセージが頻繁に表示されないように、必ずアプリケーションサーバーのログレベルまたはログフィルターを調整してください。
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]

@@ -98,12 +98,8 @@ SolrCloudモードで起動中のSolrを停止するには、下記の「*終了
 ![図1：Solr 7のSystem Settingsエントリから、_Client Type_を_Cloud_に設定します
 
 
-<!-- +$$$
-UNCOMMENT WHEN WRITTEN
-**Note:** For a complete list of settings available in the Solr connector, see the
-Solr Settings reference
-article(/discover/reference/-/knowledge_base/7-1/solr-settings).
-
-$$$ -->
+<!-- | **Note:** For a complete list of settings available in the Solr connector, see the
+<!-- | Solr Settings reference
+<!-- | article(/discover/reference/-/knowledge_base/7-1/solr-settings).
 
 これで@product@にSolrを設定する準備が整いました。DXPのデフォルトのサーチエンジンはElasticsearchであるため、Solrの使用が必須な場合やSolrを熟知してるという場合以外は、検索エンジンとしてElasticsearchの使用をご検討ください。

@@ -6,11 +6,7 @@ header-id: authenticating-with-openid-connect
 
 OpenID Connectは、[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)認可プロトコルの上に構築された軽量の認証レイヤーです。ユーザーが他のシステムにあるアカウントを使用して認証できるようにすることで、ローカルアカウントの保持を補完します。新しいアカウントにサインアップするのを避けたユーザーは、すでに持っているアカウントを使って、Webサイトにログインできます。OpenID Connectを使用することで、他のプロバイダーにユーザー認証を*委任*し、既存のアカウントを持つユーザーが自分のシステムに対して簡単に認証できるようになります。
 
-+$$$
-
-**注：**インストールに複数のプロバイダーを追加できますが、@product@がOpenID Connectプロバイダーになることはまだできません。
-
-$$$
+| **注：**インストールに複数のプロバイダーを追加できますが、@product@がOpenID Connectプロバイダーになることはまだできません。
 
 OpenID ConnectはOAuth 2.0上に構築されているため、トークンフローが似ています。OAuth 2.0は認可プロトコルにすぎないため、特定のAPIへのアクセスを許可する*アクセストークン*を送信します。OpenID Connectは、ユーザーが認証され許可を与えられている場合に、名前やEメールなどのユーザー情報を渡す*IDトークン*をこれに追加します。
 
@@ -61,15 +57,11 @@ OpenID Connectを使用するには、まずプロバイダーにクライアン
 
 フォームに入力して、*[保存]*をクリックすると、OpenID Connect認証を有効にする準備ができます。
 
-+$$$
-
-システム設定の設定ファイル：
-
-    com.liferay.portal.security.sso.openid.connect.internal.configuration.OpenIdConnectProviderConfiguration-[name].config
-
-`[name]`の部分は説明的かつ一意の名前を使います。例えば、`provider1`などです。
-
-$$$
+| システム設定の設定ファイル：
+| 
+|     com.liferay.portal.security.sso.openid.connect.internal.configuration.OpenIdConnectProviderConfiguration-[name].config
+| 
+| `[name]`の部分は説明的かつ一意の名前を使います。例えば、`provider1`などです。
 
 ## OpenID Connect認証を有効にする
 
@@ -79,13 +71,9 @@ $$$
 
 **注：***[コントロールパネル]* → *[設定]* → *[インスタンス設定]* → *[OpenID Connect]*タブで、指定した仮想インスタンスのOpenID Connect認証を有効にすることもできます。
 
-+$$$
-
-システム設定の設定ファイル：
-
-    com.liferay.openid.connect.configuration.OpenIdConnectConfiguration.config
-
-$$$
+| システム設定の設定ファイル：
+| 
+|     com.liferay.openid.connect.configuration.OpenIdConnectConfiguration.config
 
 これでユーザーがOpenID Connectでログインできるようになります。
 

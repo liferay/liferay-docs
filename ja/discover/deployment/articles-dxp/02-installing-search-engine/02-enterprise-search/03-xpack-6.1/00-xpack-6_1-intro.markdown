@@ -34,8 +34,4 @@ X-Packを使用して、Elasticsearchでインデックス付けされたデー�
 これらのステップを完了すると、Elasticsearchインストールは@product@と自由に通信できるようになります。
 
 
-+$$$
-
-[Elastic's documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html)はX-Packアーキテクチャー、追加の設定オプションと特徴について説明します。
-
-$$$
+| [Elastic's documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html)はX-Packアーキテクチャー、追加の設定オプションと特徴について説明します。

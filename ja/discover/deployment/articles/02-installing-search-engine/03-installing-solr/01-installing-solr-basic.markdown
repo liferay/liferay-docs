@@ -141,25 +141,21 @@ Elasticsearchコネクタを停止するには以下を入力します。
 
 この例では、`[bundle ID]`は`476`です。
 
-+$$$
-
-**Liferay DXP**：DXPをご利用中の場合、Elasticsearch、Shield、およびMarvelプラグインを[ブラックリスト](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components)に登録する必要があります。
-
-1. 以下を作成します。
-
-
-       com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
-
-   作成したファイルに、以下の内容を追記します。
-
-
-       blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
-
-   X-Pack LPKGファイルがインストールされている場合は、これらもブラックリストに登録します。
-
-2. 作成したファイルを`Liferay Home/osgi/configs`へ配置します。
-
-$$$
+| **Liferay DXP**：DXPをご利用中の場合、Elasticsearch、Shield、およびMarvelプラグインを[ブラックリスト](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components)に登録する必要があります。
+| 
+| 1. 以下を作成します。
+| 
+| 
+|        com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
+| 
+|    作成したファイルに、以下の内容を追記します。
+| 
+| 
+|        blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
+| 
+|    X-Pack LPKGファイルがインストールされている場合は、これらもブラックリストに登録します。
+| 
+| 2. 作成したファイルを`Liferay Home/osgi/configs`へ配置します。
 
 Solrコネクタのインストールと設定：
 

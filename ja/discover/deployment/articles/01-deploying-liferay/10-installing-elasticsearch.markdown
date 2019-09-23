@@ -28,21 +28,17 @@ Liferay DXPへのElasticsearchインストールは、以下の６つのステ�
 
 6. @product@を再起動して、インデックスを作成します。
 
-+$$$
-
-**注**:作業を続ける前に、[JAVA_HOME`環境変数の設定を必ず行ってください。
-
-複数のJDKがインストールされている場合は、ElasticsearchとLiferay DXPが同じバージョンを使用している事を確認してください。この設定は`[Elasticsearch Home]/bin/elasticsearch.in.sh`から行います。
-
-    JAVA_HOME=/path/to/java
-
-サポートされているJDKディストリビューションとバージョンは、
-[Elasticsearch互換性マトリクス](https://www.elastic.co/support/matrix#matrix_jvm)
-および
-[@product@互換性マトリクス](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85)を参照してください。
-to learn more about supported JDK distributions and versions.
-
-$$$
+| **注**:作業を続ける前に、[JAVA_HOME`環境変数の設定を必ず行ってください。
+| 
+| 複数のJDKがインストールされている場合は、ElasticsearchとLiferay DXPが同じバージョンを使用している事を確認してください。この設定は`[Elasticsearch Home]/bin/elasticsearch.in.sh`から行います。
+| 
+|     JAVA_HOME=/path/to/java
+| 
+| サポートされているJDKディストリビューションとバージョンは、
+| [Elasticsearch互換性マトリクス](https://www.elastic.co/support/matrix#matrix_jvm)
+| および
+| [@product@互換性マトリクス](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85)を参照してください。
+| to learn more about supported JDK distributions and versions.
 
 以下の手順で設定後、本番環境用の@product@ インスタンスが作成されます。
 

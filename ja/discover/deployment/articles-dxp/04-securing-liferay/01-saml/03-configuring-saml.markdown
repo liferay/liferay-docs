@@ -8,14 +8,10 @@ header-id: configuring-saml
 
 
 
-+$$$
-
-**注意：** OSGi`.config`ファイルまたは@product@のSystem Settings Control
-Panel アプリをSAMLプロバイダー（IdPまたはSP）を設定するために使用しないでください。System Settings UIは自動生成され、上級管理者向けです。管理者が無効な設定を作成できるように、SAML Admin UIが実行するフィールドの検証を強化は実行されません。
-
-
-
-$$$
+| **注意：** OSGi`.config`ファイルまたは@product@のSystem Settings Control
+| Panel アプリをSAMLプロバイダー（IdPまたはSP）を設定するために使用しないでください。System Settings UIは自動生成され、上級管理者向けです。管理者が無効な設定を作成できるように、SAML Admin UIが実行するフィールドの検証を強化は実行されません。
+| 
+| 
 
 これはOSGi Configuration Adminで管理できるポータルインスタンススコープの設定です。影響を受けるプロパティは`SAMLProviderConfiguration`メタタイプ内ものです。
 

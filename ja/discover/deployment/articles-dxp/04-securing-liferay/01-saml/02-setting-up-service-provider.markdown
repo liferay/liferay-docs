@@ -7,11 +7,7 @@ header-id: setting-up-liferay-as-a-saml-service-provider
 これらの手順の多くは、@product@をSAML Identity Providerとして設定する手順と似ています。単一の@product@インストールをSAML Identify Provider*または* SAML Service Providerとして設定できますが、両方を設定することはできないのでその点注意してください。SAML Identity Providerとして1つの@product@インストールをすでに設定している場合は、SAMLService Providerとは*別の* @product@インストールを使用して ください。
 
 
-+$$$
-
-**注：** SPを@product@としてサードパーティIdPを使用している場合は、IdPから来る全てのメッセージは署名されていなければなりません。そうでない場合は、エラーメッセージが表示され、IdPと@product@間の通信が失敗します。
-
-$$$
+| **注：** SPを@product@としてサードパーティIdPを使用している場合は、IdPから来る全てのメッセージは署名されていなければなりません。そうでない場合は、エラーメッセージが表示され、IdPと@product@間の通信が失敗します。
 
 1. Liferay SAML 2.0 Providerアプリをインストールします。
 アプリが正常にデプロイされたことを確認するには、コントロールパネルのConfigurationセクションで*SAML Admin*エントリーを探します。
@@ -141,15 +137,11 @@ Service Providerタブには、次のオプションがあります:
 
 
 
-+$$$
-
-**注：** SAMLレスポンス自体が署名されていれば、個々のアサーションに署名する必要はありません。。トランスポートレベルで暗号化されるよう、SPとIdPは常に`https`上で通信する必要があります。 
-
-中間者攻撃が可能であると思われる場合は、SAMLレスポンスは署名できます。アサーションに署名する唯一の理由は、SAMLレスポンスが署名されていない場合です。この場合、アサーションは署名されるだけでなく暗号化されるべきです。
-
-
-
-$$$
+| **注：** SAMLレスポンス自体が署名されていれば、個々のアサーションに署名する必要はありません。。トランスポートレベルで暗号化されるよう、SPとIdPは常に`https`上で通信する必要があります。
+| 
+| 中間者攻撃が可能であると思われる場合は、SAMLレスポンスは署名できます。アサーションに署名する唯一の理由は、SAMLレスポンスが署名されていない場合です。この場合、アサーションは署名されるだけでなく暗号化されるべきです。
+| 
+| 
 
 **Clock Skew:** Clock skewは、メッセージの有効期限とアサーションを検証するためにService Providerが使用するミリ秒単位の許容誤差です。これは、Identity Provider とService Providerのクロック間の時間差を軽減するために使用できます。これは通常、アサーションが非常に早く期限切れになるようにされているときにだけ問題になります。 
 
@@ -214,20 +206,16 @@ IdPが@product@の場合にのみ設定してください。URLは`https://[IdP 
 
 
 
-+$$$
-
-**制限事項：** Liferay SAMLアプリは単一の仮想環境ホストでのみ使用できます。@product@のSAMLメタデータでは、1つのバインディングだけ以下の形式で追加できるということです。
-
-    <md:EntityDescriptor>
-    ...
-    <md:SPSSODescriptor>
-    ...
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
-    ...
-    </md:SPSSODescriptor>
-    </md:EntityDescriptor>
-| md：EntityDescriptor | ... | md：SPSSODescriptor | ... | <MD：AssertionConsumerServiceバインディング= "URN：オアシス：名：TC：SAML：2.0：バインディング：HTTP-POST" LOCATION =」https://portal.domain.com/c/portal/saml/acs "インデックス=" 1 "isDefault =" true "/> | ... | </ md：SPSSODescriptor> | </ md：EntityDescriptor><segment 0428 ¶><segment 0429>
-$$$
+| **制限事項：** Liferay SAMLアプリは単一の仮想環境ホストでのみ使用できます。@product@のSAMLメタデータでは、1つのバインディングだけ以下の形式で追加できるということです。
+| 
+|     <md:EntityDescriptor>
+|     ...
+|     <md:SPSSODescriptor>
+|     ...
+|     <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
+|     ...
+|     </md:SPSSODescriptor>
+|     </md:EntityDescriptor>
 
 
 ## クラスタ環境でのSAML Service Providerとしての@product@の設定

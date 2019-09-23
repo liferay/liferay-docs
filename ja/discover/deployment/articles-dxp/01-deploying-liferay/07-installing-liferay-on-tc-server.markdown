@@ -34,14 +34,10 @@ tcサーバーに@product@をインストールするには、以下のファイ
 
 - アプリケーションサーバーに@product@ WARファイルをデプロイする
 
-+$$$
-
-**注:**このインストールに関する説明書では
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
-という用語が使われています。*Liferay Home* とはtcサーバーと@product@特有のフォルダが含まれているフォルダのことです。`data`、`deploy`、
-`licenses`、および `osgi` フォルダのことです。
-
-$$$
+| **注:**このインストールに関する説明書では
+| [*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+| という用語が使われています。*Liferay Home* とはtcサーバーと@product@特有のフォルダが含まれているフォルダのことです。`data`、`deploy`、
+| `licenses`、および `osgi` フォルダのことです。
 
 ## tcサーバーを作成する
 
@@ -83,12 +79,8 @@ $$$
 
 @product@は、デフォルトではtc Serverに含まれていない他のJARに依存しています。@product@バンドルに含まれているJARの中には、必須ではないけど便利なものもあります。@product@バンドルがない場合は、以下に説明されているように、必要なJARをサードパーティーからダウンロードできます。
 
-+$$$
-
-**注：**@product@をソースコードからビルドした時、あるいは[@product@ バンドルをダウンロードした](https://web.liferay.com/group/customer/dxp/downloads/7-1)時、必須かつ便利なJARsが事前インストールされます。
-@product@バンドルに同梱されているすべてのJARを早く取得したい場合は、以下のソースを使うことで早く習得できるかもしれません：
-
-$$$
+| **注：**@product@をソースコードからビルドした時、あるいは[@product@ バンドルをダウンロードした](https://web.liferay.com/group/customer/dxp/downloads/7-1)時、必須かつ便利なJARsが事前インストールされます。
+| @product@バンドルに同梱されているすべてのJARを早く取得したい場合は、以下のソースを使うことで早く習得できるかもしれません：
 
 1. JARsを依存関係のZIPから`[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib`フォルダーに抽出します。JARは以下のとおりです:
 
@@ -352,17 +344,13 @@ tcサーバーがメールセッションを管理できるよう設定し、@pr
 
 
 
-+$$$
-
-@product@をデプロイした後、`PhaseOptimizer`を含む以下のような警告とログメッセージが表示される場合があります。これらの警告は無視してください。
-必要ないログメッセージが頻繁に表示されないように、必ずアプリケーションサーバーのログレベルまたはログフィルターを調整してください。
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| @product@をデプロイした後、`PhaseOptimizer`を含む以下のような警告とログメッセージが表示される場合があります。これらの警告は無視してください。
+| 必要ないログメッセージが頻繁に表示されないように、必ずアプリケーションサーバーのログレベルまたはログフィルターを調整してください。
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]

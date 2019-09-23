@@ -167,18 +167,14 @@ use the `portal-ext.properties` file you created earlier. All the
 possible properties that can be placed in this file are documented in
 [our reference documentation](http://docs.liferay.com/portal/7.0/propertiesdoc).
 
-+$$$
-
-**Tip:** The wizard is an extremely helpful tool, especially if you're setting
-up @product@ for the first time. If you're a veteran and you already have
-your various properties set up, you can disable the setup wizard. If you disable
-the setup wizard, you must configure everything manually from the
-`portal-ext.properties` file. To disable the setup wizard, enter
-`setup.wizard.enabled=false` in your `portal-ext.properties` file. Note that
-property values in `portal-setup-wizard.properties` (the file created in Liferay
-Home by the setup wizard) override property values in `portal-ext.properties`.
-
-$$$
+| **Tip:** The wizard is an extremely helpful tool, especially if you're setting
+| up @product@ for the first time. If you're a veteran and you already have
+| your various properties set up, you can disable the setup wizard. If you disable
+| the setup wizard, you must configure everything manually from the
+| `portal-ext.properties` file. To disable the setup wizard, enter
+| `setup.wizard.enabled=false` in your `portal-ext.properties` file. Note that
+| property values in `portal-setup-wizard.properties` (the file created in Liferay
+| Home by the setup wizard) override property values in `portal-ext.properties`.
 
 After you've entered the information requested by the Basic Configuration page,
 the home page appears. You should set up your mail configuration next.

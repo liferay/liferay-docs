@@ -76,20 +76,16 @@ include in the snapshot:
     curl -XPUT localhost:9200/_snapshot/test_backup/snapshot_2
     { "indices": "liferay-0,liferay-20116" }
 
-+$$$
-
-**Note:** For a list of all the Elasticsearch indexes, use this command:
-
-    curl -X GET "localhost:9200/_cat/indices?v"
-
-This shows the index metrics:
-
-    health status index         uuid                   pri rep docs.count docs.deleted store.size pri.store.size
-    green  open   liferay-20099 obqiNE1_SDqfuz7rincrGQ   1   0        195            0    303.1kb        303.1kb
-    green  open   liferay-47206 3YEjtye1S9OVT0i0EZcXcw   1   0          7            0     69.7kb         69.7kb
-    green  open   liferay-0     shBWwpkXRxuAmGEaE475ug   1   0        147            1    390.9kb        390.9kb
-
-$$$
+| **Note:** For a list of all the Elasticsearch indexes, use this command:
+| 
+|     curl -X GET "localhost:9200/_cat/indices?v"
+| 
+| This shows the index metrics:
+| 
+|     health status index         uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+|     green  open   liferay-20099 obqiNE1_SDqfuz7rincrGQ   1   0        195            0    303.1kb        303.1kb
+|     green  open   liferay-47206 3YEjtye1S9OVT0i0EZcXcw   1   0          7            0     69.7kb         69.7kb
+|     green  open   liferay-0     shBWwpkXRxuAmGEaE475ug   1   0        147            1    390.9kb        390.9kb
 
 It's important to note that Elasticsearch uses a *smart snapshots* approach. To
 understand what that means, consider a single index. The first snapshot includes

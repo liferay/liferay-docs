@@ -21,21 +21,13 @@ SAML（Security Assertion Markup Language）アダプタを使用すると、デ
 
    - Service ProviderがSLOを開始した
 
-+$$$
-
-**注：**単一の@product@インスタンスはSSOセットアップのSPまたはIdPの *どちらか* です；両方ということはありません。しかし、別々のインスタンスを両方の目的に合わせて使用することもできます。（たとえば、1つのインスタンスがSPで、もう1つのインスタンスがIdP）
-
-
-
-$$$
+| **注：**単一の@product@インスタンスはSSOセットアップのSPまたはIdPの *どちらか* です；両方ということはありません。しかし、別々のインスタンスを両方の目的に合わせて使用することもできます。（たとえば、1つのインスタンスがSPで、もう1つのインスタンスがIdP）
+| 
+| 
 
 以下はSAMLのしくみの背景です。設定をすぐに始めたい場合は、[Setting Up SAML as an Identity Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider)、または[Setting Up SAML as a Service Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-service-provider)の記事を参照し、[SAML adapter](https://web.liferay.com/marketplace/-/mp/application/15188711)の使い方について読んでください
 
-+$$$
-
-** 注：**3.1.0バージョン以前のLiferay SAMLアダプターから移行する場合、プロパティは自動的に設定に移行されます。設定の詳細については[Configuring SAML](/discover/deployment/-/knowledge_base/7-1/configuring-saml)の記事を参照してください。
-
-$$$
+| ** 注：**3.1.0バージョン以前のLiferay SAMLアダプターから移行する場合、プロパティは自動的に設定に移行されます。設定の詳細については[Configuring SAML](/discover/deployment/-/knowledge_base/7-1/configuring-saml)の記事を参照してください。
 
 ## 重要なSAML URL
 
@@ -98,12 +90,8 @@ IdPはHTTP-POSTまたはHTTPリダイレクトを使用してAssertation Consume
 
     RelayState
 
-+$$$
-
-** 注：** SAMLレスポンス（HTTP-Postなど）を送信する方法とAssertion Consumer ServiceのURLは通常、SPによって提供されるメタデータXMLのSAMLの一部としてインポートされます。@product@では、SPのメタデータをSAMLアダプタのーのService Provider Connectionsタブ|にインポートします。
-
-
-$$$
+| ** 注：** SAMLレスポンス（HTTP-Postなど）を送信する方法とAssertion Consumer ServiceのURLは通常、SPによって提供されるメタデータXMLのSAMLの一部としてインポートされます。@product@では、SPのメタデータをSAMLアダプタのーのService Provider Connectionsタブ|にインポートします。
+| 
 
 #### SPがSSOレスポンスを処理する
 

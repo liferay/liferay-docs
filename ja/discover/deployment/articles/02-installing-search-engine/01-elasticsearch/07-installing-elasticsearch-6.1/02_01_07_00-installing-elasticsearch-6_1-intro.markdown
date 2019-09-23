@@ -4,15 +4,11 @@ header-id: installing-elasticsearch-6-1
 
 # [fuzzy]Elasticsearchのインストール
 
-+$$$
-
-**Note:** Elasticsearch 6.1.x is a supported search engine for @product-ver@,
-but it's not the newest supported version. If you're installing Elasticsearch
-for the first time, considering following the instructions for installing
-Elasticsearch 6.5.x instead, located in the
-[root of the deployment guide](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
-
-$$$
+| **Note:** Elasticsearch 6.1.x is a supported search engine for @product-ver@,
+| but it's not the newest supported version. If you're installing Elasticsearch
+| for the first time, considering following the instructions for installing
+| Elasticsearch 6.5.x instead, located in the
+| [root of the deployment guide](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
 
 
 @product@ uses Elasticsearch to index its content. By default, it's installed as
@@ -43,24 +39,20 @@ it to run.
 
 6. Restart @product@ and reindex your search indexes.
 
-+$$$
-
-**Note:** Before continuing, make sure you have set the
-[`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
-
-If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
-using the same version and distribution (e.g., Oracle Open JDK 1.8.0_201). You can
-specify this in `[Elasticsearch Home]/bin/elasticsearch.in.sh`:
-
-    JAVA_HOME=/path/to/java
-
-Consult the
-[Elasticsearch compatibility matrix](https://www.elastic.co/support/matrix#matrix_jvm)
-and the
-[@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85)
-to learn more about supported JDK distributions and versions.
-
-$$$
+| **Note:** Before continuing, make sure you have set the
+| [`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
+| 
+| If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
+| using the same version and distribution (e.g., Oracle Open JDK 1.8.0_201). You can
+| specify this in `[Elasticsearch Home]/bin/elasticsearch.in.sh`:
+| 
+|     JAVA_HOME=/path/to/java
+| 
+| Consult the
+| [Elasticsearch compatibility matrix](https://www.elastic.co/support/matrix#matrix_jvm)
+| and the
+| [@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85)
+| to learn more about supported JDK distributions and versions.
 
 Now you'll perform these steps, and when you're done, you'll have a
 production-ready instance of @product@ up and running.

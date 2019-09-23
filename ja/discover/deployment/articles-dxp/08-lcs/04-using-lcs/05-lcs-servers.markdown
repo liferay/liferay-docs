@@ -32,11 +32,7 @@ header-id: managing-lcs-servers
 
 **サーバーの設定：**サーバーの名前、場所、説明を表示または変更します。LCSからサーバーを登録解除することもできます。
 
-+$$$
-
-**注：**LCSは、TomcatまたはWebLogicで稼働しているサーバーのスナップショットメトリクスのみをサポートしています。他のアプリケーションサーバーでは、LCSはアプリケーションサーバーのサーバーメトリクスをサポートしません、と示すコンソールメッセージが表示されることがあります。LCSの`TaskSchedulerServiceImpl`と `ScheduleTasksCommand`のための`NullPointerException`も表示されるかもしれません。
-
-$$$
+| **注：**LCSは、TomcatまたはWebLogicで稼働しているサーバーのスナップショットメトリクスのみをサポートしています。他のアプリケーションサーバーでは、LCSはアプリケーションサーバーのサーバーメトリクスをサポートしません、と示すコンソールメッセージが表示されることがあります。LCSの`TaskSchedulerServiceImpl`と `ScheduleTasksCommand`のための`NullPointerException`も表示されるかもしれません。
 
 ## ページ解析
 

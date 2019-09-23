@@ -162,16 +162,12 @@ may not be using them.
 
 The command line interface is recommended for domain mode deployments.
 
-+$$$
-
-**Note:** This does not prevent @product@ from running in a clustered
-environment on multiple Wildfly servers. You can set up a cluster of @product@
-instances running on Wildfly servers running in standalone mode. Please refer to
-the chapter of this guide on
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
-for information on setting up a @product@ cluster.
-
-$$$
+| **Note:** This does not prevent @product@ from running in a clustered
+| environment on multiple Wildfly servers. You can set up a cluster of @product@
+| instances running on Wildfly servers running in standalone mode. Please refer to
+| the chapter of this guide on
+| [@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
+| for information on setting up a @product@ cluster.
 
 ## Configuring Wildfly
 
@@ -298,28 +294,24 @@ statement:
 
        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true  -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
 
-+$$$
-
-**Note:** If you plan on using the IBM JDK with your Wildfly server, you must
-complete some additional steps. First, navigate to the
-`$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
-following dependency within the `<dependencies>` element:
-
-    <module name="ibm.jdk" />
-
-Then navigate to the
-`$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
-insert the following path names inside the `<paths>...</paths>` element:
-
-    <path name="com/sun/crypto" />
-    <path name="com/sun/crypto/provider" />
-    <path name="com/sun/org/apache/xml/internal/resolver" />
-    <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-
-The added paths resolve issues with deployment exceptions and image uploading
-problems.
-
-$$$
+| **Note:** If you plan on using the IBM JDK with your Wildfly server, you must
+| complete some additional steps. First, navigate to the
+| `$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
+| following dependency within the `<dependencies>` element:
+| 
+|     <module name="ibm.jdk" />
+| 
+| Then navigate to the
+| `$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
+| insert the following path names inside the `<paths>...</paths>` element:
+| 
+|     <path name="com/sun/crypto" />
+|     <path name="com/sun/crypto/provider" />
+|     <path name="com/sun/org/apache/xml/internal/resolver" />
+|     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
+| 
+| The added paths resolve issues with deployment exceptions and image uploading
+| problems.
 
 チェックポイント:
 
@@ -362,13 +354,9 @@ If you want Wildfly to manage your data source, follow these steps:
    Be sure to replace the database name (i.e., `lportal`), user name, and
 password with the appropriate values.
 
-   +$$$
-
-   **Note:** If you must change your datasource `jndi-name` to something
-different, you must also edit the `datasource` element in the
-`<default-bindings>` tag.
-
-   $$$
+   | **Note:** If you must change your datasource `jndi-name` to something
+   | different, you must also edit the `datasource` element in the
+   | `<default-bindings>` tag.
 
 2. Add your driver to the `standalone.xml` file's `<drivers>` element also
 found within the `<datasources>` element:
@@ -454,16 +442,12 @@ and running `standalone.bat` or `standalone.sh`.
 
 Congratulations; you've deployed @product@ on Wildfly!
 
-+$$$
-
-@product@を展開した後、`PhaseOptimizer`を含む以下のような過剰な警告とログメッセージが表示される場合があります。これらは良性なので無視することができます。このようなログメッセージを回避するために、必ずアプリケーションサーバーのログレベルまたはログフィルターを調整してください。
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| @product@を展開した後、`PhaseOptimizer`を含む以下のような過剰な警告とログメッセージが表示される場合があります。これらは良性なので無視することができます。このようなログメッセージを回避するために、必ずアプリケーションサーバーのログレベルまたはログフィルターを調整してください。
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]

@@ -129,12 +129,8 @@ Standalone modeとDomain modeの詳細については、[JBoss EAP Product Docum
 
 コマンドラインインターフェースは、domain modeのデプロイにお勧めします。
 
-+$$$
-
-**注：**これは@product@が複数のJBossサーバー上のクラスタ環境で実行されるのを妨げるものではありません。JBoss EAPサーバー上で実行している@product@インスタンスのクラスターを、Standalone modeで実行できるように設定できます。@product@クラスターの設定については、[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)のセクションを参照してください 。
-
-
-$$$
+| **注：**これは@product@が複数のJBossサーバー上のクラスタ環境で実行されるのを妨げるものではありません。JBoss EAPサーバー上で実行している@product@インスタンスのクラスターを、Standalone modeで実行できるように設定できます。@product@クラスターの設定については、[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)のセクションを参照してください 。
+| 
 
 ## JBossの設定方法
 
@@ -270,25 +266,21 @@ $$$
 
        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
    
-+$$$
-
-**注：** JBossサーバーでIBM JDKを使用する予定の場合は、いくつか追加の手順を実行する必要があります。
-まず、`$JBOSS_HOME/modules/com/liferay/portal/main/module.xml`ファイルに移動して 、`<dependencies>`要素内に次の依存関係を挿入します。
-
-
-    <module name="ibm.jdk" />
-
-次に`$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml`ファイルに移動して 、`<paths>...</paths>`要素内に次のパス名を挿入します：
-
-    <path name="com/sun/crypto" />
-    <path name="com/sun/crypto/provider" />
-    <path name="com/sun/image/codec/jpeg" />
-    <path name="com/sun/org/apache/xml/internal/resolver" />
-    <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-
-追加されたパスは、ポータルデプロイの例外およびイメージアップロードに関する問題を解決します。
-
-$$$
+| **注：** JBossサーバーでIBM JDKを使用する予定の場合は、いくつか追加の手順を実行する必要があります。
+| まず、`$JBOSS_HOME/modules/com/liferay/portal/main/module.xml`ファイルに移動して 、`<dependencies>`要素内に次の依存関係を挿入します。
+| 
+| 
+|     <module name="ibm.jdk" />
+| 
+| 次に`$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml`ファイルに移動して 、`<paths>...</paths>`要素内に次のパス名を挿入します：
+| 
+|     <path name="com/sun/crypto" />
+|     <path name="com/sun/crypto/provider" />
+|     <path name="com/sun/image/codec/jpeg" />
+|     <path name="com/sun/org/apache/xml/internal/resolver" />
+|     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
+| 
+| 追加されたパスは、ポータルデプロイの例外およびイメージアップロードに関する問題を解決します。
 
 **確認事項:**
 
@@ -330,11 +322,7 @@ JBossにデータソースを管理させたい場合は、次の手順に従っ
 
 
 
-   +$$$
-
-   **注：**データソース`jndi-name`を別のものに変更する必要がある場合は、`datasource`の要素も`<default-bindings>`タグ内で編集する必要があります。
-
-   $$$
+   | **注：**データソース`jndi-name`を別のものに変更する必要がある場合は、`datasource`の要素も`<default-bindings>`タグ内で編集する必要があります。
 
 2. `<datasources>`要素内にある`standalone.xml`ファイルの`<drivers>`要素にドライバを追加します。
 
@@ -424,17 +412,13 @@ JBoss上でメールセッションを管理したい場合は、次の手順に
 これでJBossに@product@をデプロイできました！
 
 
-+$$$
-
-@product@をデプロイした後、`PhaseOptimizer`を含む以下のような警告とログメッセージが表示される場合があります。これらの警告は無視してください。
-必要ないログメッセージが頻繁に表示されないように、必ずアプリケーションサーバーのログレベルまたはログフィルターを調整してください。
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| @product@をデプロイした後、`PhaseOptimizer`を含む以下のような警告とログメッセージが表示される場合があります。これらの警告は無視してください。
+| 必要ないログメッセージが頻繁に表示されないように、必ずアプリケーションサーバーのログレベルまたはログフィルターを調整してください。
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]

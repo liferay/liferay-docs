@@ -24,18 +24,14 @@ Let's begin!
 
        tunneling.servlet.shared.secret.hex=true
    
-   +$$$
-
-   **注：**以下の鍵長は、使用可能な暗号化アルゴリズムによってサポートされています。
-
-   - *AES：*128、192、および256ビット鍵
-   - *Blowfish：* 32〜448ビット鍵
-   - *DESede（Triple DES）：*56、112、または168ビット鍵（Liferayは最小鍵長に人為的な制限を設けており、56ビット鍵長はサポートしていません）
-   たとえば、[OpenSSL](https://www.openssl.org/)を使用して128ビットのAES鍵を生成することができます。
-
-       openssl enc -aes-128-cbc -k abc123 -P -md sha1
-   
-   $$$
+   | **注：**以下の鍵長は、使用可能な暗号化アルゴリズムによってサポートされています。
+   | 
+   | - *AES：*128、192、および256ビット鍵
+   | - *Blowfish：* 32〜448ビット鍵
+   | - *DESede（Triple DES）：*56、112、または168ビット鍵（Liferayは最小鍵長に人為的な制限を設けており、56ビット鍵長はサポートしていません）
+   | たとえば、[OpenSSL](https://www.openssl.org/)を使用して128ビットのAES鍵を生成することができます。
+   | 
+   |     openssl enc -aes-128-cbc -k abc123 -P -md sha1
 
 2. アプリケーションサーバーとステージングサーバーの設定されたIP間の接続を許可する必要があります。リモートLiferayサーバーの`portal-ext.properties`ファイルを開き 、以下のプロパティを追加します。
 

@@ -6,12 +6,8 @@ header-id: advanced-monitoring-apm-tools-dynatrace-id
 
 [Dynatrace](https://www.dynatrace.com)のような高度なパフォーマンス監視ツール は、@product@サーバーとインスタンスに関する詳細なパフォーマンス情報を提供します。DynatraceのWebベースのダッシュボードには、メモリ使用量、ガベージコレクション、CPUレベル、およびヒープダンプに関するリアルタイムのシステム情報が表示されます。各ダッシュボードはそれぞれの詳細レポートです。@product@ サーバーのパフォーマンス測定基準に関する個々のユーザーの最新情報まで表示できます。
 
-+$$$
-
-|** 注： **Dynatraceは現在[*Dynatrace SaaS*](https://www.dynatrace.com/support/dynatrace/)も提供しています。| 
-デフォルトの設定からたくさんの興味深いデータを検出できます。 Dynatrace SaaS製品では、[Liferay FastPack](#liferay-digital-enterprise-fastpack)ほどの深いダッシュボードは提供していませんが、Dynatrace SaasのUIはとても直感的です。インストールされているDynatrace アプリと比べたDynatrace Saasの大きな利点は、インストール、メンテナンス、またはアップグレードの必要がないところです。
-
-$$$
+| |** 注： **Dynatraceは現在[*Dynatrace SaaS*](https://www.dynatrace.com/support/dynatrace/)も提供しています。|
+| デフォルトの設定からたくさんの興味深いデータを検出できます。 Dynatrace SaaS製品では、[Liferay FastPack](#liferay-digital-enterprise-fastpack)ほどの深いダッシュボードは提供していませんが、Dynatrace SaasのUIはとても直感的です。インストールされているDynatrace アプリと比べたDynatrace Saasの大きな利点は、インストール、メンテナンス、またはアップグレードの必要がないところです。
 
 Dynatraceのダッシュボードを@product@とともに使用するには、以下のものが必要です：
 

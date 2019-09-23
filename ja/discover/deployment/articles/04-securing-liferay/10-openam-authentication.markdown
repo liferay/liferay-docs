@@ -6,11 +6,7 @@ header-id: opensso-single-sign-on-authentication
 
 OpenAMは、SunのSystem Access Manager製品のコードベースに基づくオープンソースのシングルサインオンソリューションです。@product@はOpenAMと統合されているため、OpenAMを介して、異なるユーザー情報を保持するリポジトリに対して、複数の認証スキーマが利用可能です。
 
-+$$$
-
-**注**: OpenAMは@product-ver@では推奨されておらず、将来のバージョンでは削除される可能性があります。
-
-$$$
+| **注**: OpenAMは@product-ver@では推奨されておらず、将来のバージョンでは削除される可能性があります。
 
 OpenAMはアプリケーション間のcookie共有に依存していることに注意してください。したがって、OpenAMが機能するためには、**SSOを必要とするすべてのアプリケーションが同じWebドメインに属している必要があります**。一部のWebコンテナ（Apache Tomcat ???など）が特殊文字を含むCookieを解析する方法が原因でHTTPOnly Cookieを有効にしている場合も、次のプロパティを追加する必要があります。
 
@@ -21,12 +17,8 @@ com.iplanet.am.cookie.encode=true
 @product@と同じサーバーにOpenAMをインストールする場合は、ここからダウンロード可能なOpenAM`.war`を展開する必要があります。
 それ以外の場合は、[OpenAM 13サイト](https://backstage.forgerock.com/docs/openam/13/install-guide/)の指示に従ってOpenAMをインストールしてください。
 
-+$$$
-
-**注**: OpenAM 12およびそれ以前は@product@で動作しますが、サービス終了期間間近です。
-このため、本番用にはOpenAM 13のみを推奨します。
-
-$$$
+| **注**: OpenAM 12およびそれ以前は@product@で動作しますが、サービス終了期間間近です。
+| このため、本番用にはOpenAM 13のみを推奨します。
 
 インストールが完了したら、@product@の管理ユーザーを最初に作成してください。ユーザーはスクリーン名で前後にマッピングされます。デフォルトでは、Liferay DXPの管理ユーザーのスクリーンネームは*test*に設定されているため、このアカウントをOpenAMで使用するには、ユーザー名を*test*、Emailアドレスを*test@liferay.com*で登録します。このユーザーの設定が完了したら、このユーザー情報を使い、OpenAMにログインします。
 
