@@ -47,17 +47,17 @@ bootstraps the application and
 
 There are frameworks for these things and more:
 
-- Application configuration
-- Application security
-- Application upgrades
-- File management
-- Forms
-- Localization
-- Search
-- Segmentation and Personalization
-- Social media integration
-- Web Fragments
-- Workflow
+- [Adaptive Media](/docs/7-2/frameworks/-/knowledge_base/f/adaptive-media)
+- [Application Configuration](/docs/7-2/frameworks/-/knowledge_base/f/configurable-applications)
+- [Application Security](/docs/7-2/frameworks/-/knowledge_base/f/application-security)
+- [Asset Framework](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework)
+- [File Management](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api)
+- [Localization](/docs/7-2/frameworks/-/knowledge_base/f/localization)
+- [Search](/docs/7-2/frameworks/-/knowledge_base/f/search)
+- [Segmentation and ersonalization](/docs/7-2/frameworks/-/knowledge_base/f/segmentation-personalization)
+- [Upgrade Processes](/docs/7-2/frameworks/-/knowledge_base/f/upgrade-processes)
+- [Web Fragments](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments)
+- [Workflow](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework)
 
 The Core provides the component runtime environment for the frameworks,
 services, and UI. Here are some component examples:
