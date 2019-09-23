@@ -52,7 +52,7 @@ There are three localized search approaches represented in the table:
     locale appended. This behavior did not change in SP1.
 
 There are also assets with text fields and no localization support, meaning that
-they always index the plain field, without a local appended (e.g., `title` is
+they always index the plain field, without a locale appended (e.g., `title` is
 not localized, but `title_en_EN` is localized). That means they'll always be
 analyzed by the default language analyzer, and do not support localized search
 in any capacity.
@@ -114,7 +114,6 @@ Not all assets support localized search, however. Refer to the table at the
 beginning of this article for which assets and fields are localized for search.
 
 
-I SUGGEST WE GET RID OF BELOW CONTENT--IT WILL BE TOO HARD TO KEEP THIS ACCURATE
 ## Assets Supporting Localized Search
 
 Whether an asset supports localized search depends on how the asset was indexed
