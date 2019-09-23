@@ -58,6 +58,8 @@ public class CheckLatestCommitTask extends Task {
 		String absDir = dir.getAbsolutePath();
 		File commitFile = new File(absDir + "/last-publication-commit.txt");
 
+		String docLanguage = docLocation.substring(0, docLocation.indexOf("/"));
+
 		try {
 		String headCommit = getHeadCommit();
 
@@ -76,7 +78,7 @@ public class CheckLatestCommitTask extends Task {
 		String lastPublishedCommit = FileUtils.readFileToString(commitFile);
 
 		if (!headCommit.equals(lastPublishedCommit)) {
-			List<String> modifiedFiles = getModifiedFiles(lastPublishedCommit, docLocation, docDir, distDir, dxp);
+			List<String> modifiedFiles = getModifiedFiles(lastPublishedCommit, docLanguage, docLocation, docDir, distDir, dxp);
 
 			// build out Zip with these new modified file paths
 
@@ -85,7 +87,10 @@ public class CheckLatestCommitTask extends Task {
 
 			// Separate modified/new MD files and images
 			for (String file : modifiedFiles) {
-				if (file.endsWith(".png") || file.endsWith(".jpg") || file.endsWith(".gif")) {
+				if (!file.contains("images") && !file.contains("articles")) {
+					continue;
+				}
+				else if (file.endsWith(".png") || file.endsWith(".jpg") || file.endsWith(".gif")) {
 					modifiedImages.add(file);
 				}
 				else if (file.endsWith(".markdown") || file.endsWith(".md")) {
@@ -380,7 +385,7 @@ public class CheckLatestCommitTask extends Task {
 	 * @return the files that were modified since the last published Git commit
 	 * @throws IOException if an IO exception occurred
 	 */
-	private static List<String> getModifiedFiles(String commit, String docLocation, String docDir, String distDir, boolean dxp)
+	private static List<String> getModifiedFiles(String commit, String docLanguage, String docLocation, String docDir, String distDir, boolean dxp)
 			throws IOException {
 
 		Repository repo = openGitRepository();
@@ -405,8 +410,8 @@ public class CheckLatestCommitTask extends Task {
 		//HashMap<String, String> renamedFiles = new HashMap<String, String> ();
 
 		// Be sure to convert single nested folders (e.g., user) so they're searchable
-		if (docLocation.equals("./" + docDir)) {
-			docLocation = docDir;
+		if (docLocation.equals(docLanguage + "/./" + docDir)) {
+			docLocation = docLanguage + "/" + docDir;
 		}
 
 		for (DiffEntry entry : entries) {
