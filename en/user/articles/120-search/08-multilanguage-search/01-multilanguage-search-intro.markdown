@@ -16,10 +16,6 @@ in the end user's experience. Not all assets are indexed in a way that supports
 searching in a language other than the default language. Even assets that are
 translatable might not support searching for the content in that language.
 
-Development surrounding the new (as of Liferay DXP Service Pack 1) search
-_synonyms_ feature precipitated improvements in how localized search
-works out-of-the-box. 
-
 In short, these assets contain text fields supporting localized search:
 
 | Asset | Fields | Localized Search Approach |
