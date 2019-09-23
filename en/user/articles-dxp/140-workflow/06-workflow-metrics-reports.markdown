@@ -107,8 +107,8 @@ this is from 364 days (365 for a leap year) ago to the current day.
 
 Hover over the status you're interested in, from either the _Pending_ or the
 _Completed_ tabs (on SP1, these tabs were renamed to _Dashboard_ and
-_Completion_. Click into the All Items screen from the overview report and
-you'll see a more detailed table including the following columns:
+_Completion_). Click into the All Items screen from the overview report and
+a more detailed table appears, including the following columns:
 
 **ID**
 : This is the workflow item's numeric identifier to the system. Importantly, you
