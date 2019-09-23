@@ -58,17 +58,22 @@ Results Rankings was added in @product-ver@ Service Pack 1.
 
 ## Requirements and Limitations
 
-Search Tuning features like Result Rankings are only supported when using
-Elasticsearch as the search engine.
+Result Ranking entries are currently configurable at the Virtual Instance scope,
+so it is not possible to customize your search results per site. In addition,
+Result Rankings created in a Virtual Instance are not scoped only to that
+Virtual Instance, but will be shared across all @product@ Virtual Instances in
+the deployment, and even across separate deployments sharing an Elasticsearch
+cluster (in a multi-tenant scenario). Therefore, Result rankings shouldn't be
+used when connecting multiple @product@ deployments to the same Elasticsearch
+cluster unless you intend for the same Result rankings to apply to every
+@product@ deployment. See 
+[LPS-101291](https://issues.liferay.com/browse/LPS-101291)
+for more information.
 
-The Result Ranking entries are currently shared across all Virtual Instances so it is not possible to customize your search results differently. Because of this multi-tenant @product@ integration with Elasticsearch (connecting multiple, indepedent @procuct@ deployments to the same Elasticsearch cluster) is not supported either currently when Result Rankings is also used. [LPS-101291](https://issues.liferay.com/browse/LPS-101291)
-
-Currently, an existing Result Ranking cannot be renamed. Renaming requires
-recreating the ranking under a different name. ([LPS-96357](https://issues.liferay.com/browse/LPS-96357))
-
-## Known Issues
-
-There are several known  issues and planned improvements for Result Rankings. See [LPS-99540](https://issues.liferay.com/browse/LPS-99540) for the complete list.
+An existing Result Ranking cannot be renamed. Renaming requires recreating the
+ranking under a different name. See
+[LPS-96357](https://issues.liferay.com/browse/LPS-96357)
+for more information.
 
 ## Creating and Managing Result Rankings
 
@@ -182,3 +187,8 @@ additional results will take effect. Of course, if you add a Synonym Set that
 includes an identical set of search terms as the Result Ranking you configure,
 then the features can be used together. All the synonymous terms will return the
 same result set, with the customized rankings applied on top.
+
+## Known Issues
+
+There are several known  issues and planned improvements for Result Rankings. See [LPS-99540](https://issues.liferay.com/browse/LPS-99540) for the complete list.
+
