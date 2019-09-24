@@ -25,38 +25,40 @@ create two classes in the new search package:
 
 Create `GuestbookModelDocumentContributor` and populate it with this:
 
-    @Component(
-            immediate = true,
-            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
-            service = ModelDocumentContributor.class
-    )
-    public class GuestbookModelDocumentContributor
-        implements ModelDocumentContributor<Guestbook> {
+```java
+@Component(
+        immediate = true,
+        property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+        service = ModelDocumentContributor.class
+)
+public class GuestbookModelDocumentContributor
+    implements ModelDocumentContributor<Guestbook> {
 
-        @Override
-        public void contribute(Document document, Guestbook guestbook) {
-            try {
-                document.addDate(Field.MODIFIED_DATE, guestbook.getModifiedDate());
+    @Override
+    public void contribute(Document document, Guestbook guestbook) {
+        try {
+            document.addDate(Field.MODIFIED_DATE, guestbook.getModifiedDate());
 
-                Locale defaultLocale = PortalUtil.getSiteDefaultLocale(
-        guestbook.getGroupId());
+            Locale defaultLocale = PortalUtil.getSiteDefaultLocale(
+    guestbook.getGroupId());
 
-                String localizedTitle = LocalizationUtil.getLocalizedName(
-        Field.TITLE, defaultLocale.toString());
+            String localizedTitle = LocalizationUtil.getLocalizedName(
+    Field.TITLE, defaultLocale.toString());
 
-                document.addText(localizedTitle, guestbook.getName());
-            } catch (PortalException pe) {
-                if (_log.isWarnEnabled()) {
-                    _log.warn(
-        "Unable to index guestbook " + guestbook.getGuestbookId(), pe);
-                }
+            document.addText(localizedTitle, guestbook.getName());
+        } catch (PortalException pe) {
+            if (_log.isWarnEnabled()) {
+                _log.warn(
+    "Unable to index guestbook " + guestbook.getGuestbookId(), pe);
             }
         }
-
-        private static final Log _log = LogFactoryUtil.getLog(
-        GuestbookModelDocumentContributor.class);
-
     }
+
+    private static final Log _log = LogFactoryUtil.getLog(
+    GuestbookModelDocumentContributor.class);
+
+}
+```
 
 Because @product@ supports localization, you should too. The above code gets 
 the default locale from the Site by passing the `Guestbook`'s group ID to 
@@ -66,59 +68,65 @@ field (e.g., `title_en_US`), so the field gets passed to the search engine
 and goes through the right analysis and
 [tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
 
+Don't forget to Ctrl-Shift-O and organize imports. Specify the 
+`com.liferay.portal.kernel.search.Field` class and the
+`com.liferay.portal.kernel.search.Document` class. 
+
 ## Implementing `ModelIndexerWriterContributor`
 
 Create `GuestbookModelIndexerWriterContributor` and populate it with this:
 
-    @Component(
-            immediate = true,
-            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
-            service = ModelIndexerWriterContributor.class
-    )
-    public class GuestbookModelIndexerWriterContributor
-        implements ModelIndexerWriterContributor<Guestbook> {
+```java
+@Component(
+        immediate = true,
+        property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+        service = ModelIndexerWriterContributor.class
+)
+public class GuestbookModelIndexerWriterContributor
+    implements ModelIndexerWriterContributor<Guestbook> {
 
-        @Override
-        public void customize(
-            BatchIndexingActionable batchIndexingActionable,
-            ModelIndexerWriterDocumentHelper modelIndexerWriterDocumentHelper) {
+    @Override
+    public void customize(
+        BatchIndexingActionable batchIndexingActionable,
+        ModelIndexerWriterDocumentHelper modelIndexerWriterDocumentHelper) {
 
-            batchIndexingActionable.setPerformActionMethod((Guestbook guestbook) -> {
-                Document document = modelIndexerWriterDocumentHelper.getDocument(
-        guestbook);
+        batchIndexingActionable.setPerformActionMethod((Guestbook guestbook) -> {
+            Document document = modelIndexerWriterDocumentHelper.getDocument(
+    guestbook);
 
-                batchIndexingActionable.addDocuments(document);
-            });
-        }
-
-        @Override
-        public BatchIndexingActionable getBatchIndexingActionable() {
-            return dynamicQueryBatchIndexingActionableFactory.getBatchIndexingActionable(
-        guestbookLocalService.getIndexableActionableDynamicQuery());
-        }
-
-        @Override
-        public long getCompanyId(Guestbook guestbook) {
-            return guestbook.getCompanyId();
-        }
-
-    	@Override
-        public void modelIndexed(Guestbook guestbook) {
-            entryBatchReindexer.reindex(
-        guestbook.getGuestbookId(), guestbook.getCompanyId());
-        }
-
-        @Reference
-        protected DynamicQueryBatchIndexingActionableFactory
-        dynamicQueryBatchIndexingActionableFactory;
-
-    	@Reference
-        protected EntryBatchReindexer entryBatchReindexer;
-    
-        @Reference
-        protected GuestbookLocalService guestbookLocalService;
-
+            batchIndexingActionable.addDocuments(document);
+        });
     }
+
+    @Override
+    public BatchIndexingActionable getBatchIndexingActionable() {
+        return dynamicQueryBatchIndexingActionableFactory.getBatchIndexingActionable(
+    guestbookLocalService.getIndexableActionableDynamicQuery());
+    }
+
+    @Override
+    public long getCompanyId(Guestbook guestbook) {
+        return guestbook.getCompanyId();
+    }
+
+    @Override
+    public void modelIndexed(Guestbook guestbook) {
+        guestbookEntryBatchReindexer.reindex(
+    guestbook.getGuestbookId(), guestbook.getCompanyId());
+    }
+
+    @Reference
+    protected DynamicQueryBatchIndexingActionableFactory
+    dynamicQueryBatchIndexingActionableFactory;
+
+    @Reference
+    protected GuestbookEntryBatchReindexer guestbookEntryBatchReindexer;
+
+    @Reference
+    protected GuestbookLocalService guestbookLocalService;
+
+}
+```
 
 First look at the `customize` method. Configure the batch indexing behavior for
 the entity's documents by calling `BatchIndexingActionable` methods. This code
@@ -127,10 +135,12 @@ Guestbooks in the virtual instance (identified by the Company ID). Service
 Builder generated this query method for you when you built the services. Each
 Guestbook's document is then retrieved and added to a collection.
 
-When you write the indexing classes for Entries, you'll add the Guestbook title
-to the Entry document. Thus, you must provide a way to update the indexed Entry
-documents if a Guestbook title is changed.  The `modelIndexed` method calls
-a `reindex` method from an interface that will be created later for Entries. 
+When you write the indexing classes for Guestbook entries, you'll add the
+Guestbook title to the `GuestbookEntry` document. Thus, you must provide a way to update
+the indexed `GuestbookEntry` documents if a Guestbook title is changed.  The
+`modelIndexed` method calls a `reindex` method from an interface that will be
+created later for `GuestbookEntry`s. For now, ignore the error in the
+`modelIndexed` method. 
 
 Once the re-indexing behavior is in place, you can move on to controlling how
 Guestbook documents are queried from the search engine.
