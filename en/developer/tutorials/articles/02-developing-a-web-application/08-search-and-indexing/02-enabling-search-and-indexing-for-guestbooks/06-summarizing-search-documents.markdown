@@ -20,34 +20,36 @@ data so users can browse through search resmlts to find the entity they want.
 
 Create a `GuestbookModelSummaryContributor`:
 
-    @Component(
-            immediate = true,
-            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
-            service = ModelSummaryContributor.class
-    )
-    public class GuestbookModelSummaryContributor
-        implements ModelSummaryContributor {
+```java
+@Component(
+        immediate = true,
+        property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+        service = ModelSummaryContributor.class
+)
+public class GuestbookModelSummaryContributor
+    implements ModelSummaryContributor {
 
-        @Override
-        public Summary getSummary(
-            Document document, Locale locale, String snippet) {
+    @Override
+    public Summary getSummary(
+        Document document, Locale locale, String snippet) {
 
-            Summary summary = createSummary(document);
+        Summary summary = createSummary(document);
 
-            summary.setMaxContentLength(200);
+        summary.setMaxContentLength(200);
 
-            return summary;
-        }
-
-        private Summary createSummary(Document document) {
-            String prefix = Field.SNIPPET + StringPool.UNDERLINE;
-
-            String title = document.get(prefix + Field.TITLE, Field.TITLE);
-
-            return new Summary(title, StringPool.BLANK);
-        }
-
+        return summary;
     }
+
+    private Summary createSummary(Document document) {
+        String prefix = Field.SNIPPET + StringPool.UNDERLINE;
+
+        String title = document.get(prefix + Field.TITLE, Field.TITLE);
+
+        return new Summary(title, StringPool.BLANK);
+    }
+
+}
+```
 
 First override `getSummary` and set the maximum summary length on the summary
 returned. The value `200` is a Liferay standard. Control the summary creation in
@@ -65,10 +67,18 @@ Guestbook titles are likely short, so only the highlighting behavior is useful
 for the title field of Guestbooks. For longer fields (like some `content`
 fields), the clipping behavior is more useful. Additional highlighting behavior
 can be configured via the `index.search.highlight.*` properties in
-[portal.properties](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Lucene%20Search).
+[portal.properties](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Lucene%20Search).
 
 Create summaries by combining key parts of the entity's data so users can browse
 through search results to find the entity they want.
+
+Don't forget to Ctrl-Shift-O and import these classes: 
+
+- `com.liferay.portal.kernel.search.Field` 
+- `com.liferay.petra.string.StringPool`
+- `com.liferay.portal.kernel.search.Summary`
+- `com.liferay.portal.kernel.search.Document`
+
 
 Once all the search and indexing logic is in place, update the service layer so
 `add`, `update`, and `delete` service calls trigger the new logic.
