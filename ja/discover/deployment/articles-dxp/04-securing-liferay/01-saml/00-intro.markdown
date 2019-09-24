@@ -27,9 +27,9 @@ SAML（Security Assertion Markup Language）アダプタを使用すると、デ
 | 
 | 
 
-以下はSAMLのしくみの背景です。設定をすぐに始めたい場合は、[Setting Up SAML as an Identity Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider)、または[Setting Up SAML as a Service Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-service-provider)の記事を参照し、[SAML adapter](https://web.liferay.com/marketplace/-/mp/application/15188711)の使い方について読んでください
+以下はSAMLのしくみの背景です。設定をすぐに始めたい場合は、[Setting Up SAML as an Identity Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider-ja)、または[Setting Up SAML as a Service Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-service-provider-ja)の記事を参照し、[SAML adapter](https://web.liferay.com/marketplace/-/mp/application/15188711)の使い方について読んでください
 
-| ** 注：**3.1.0バージョン以前のLiferay SAMLアダプターから移行する場合、プロパティは自動的に設定に移行されます。設定の詳細については[Configuring SAML](/discover/deployment/-/knowledge_base/7-1/configuring-saml)の記事を参照してください。
+| ** 注：**3.1.0バージョン以前のLiferay SAMLアダプターから移行する場合、プロパティは自動的に設定に移行されます。設定の詳細については[Configuring SAML](/discover/deployment/-/knowledge_base/7-1/configuring-saml-ja)の記事を参照してください。
 
 ## 重要なSAML URL
 
@@ -82,7 +82,7 @@ IdPがユーザーが認証されていないと判断した場合、IdPはユ�
 
 #### IdPからのSSOレスポンス
 
-認証が成功すると、IdPはSAMLレスポンスを構築します。指定されたService Provider Connection(SPC)で設定された属性ステートメントも含まれています。（@product@のSAML adapter上での設定方法についてはこちら[next article](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider)を参照してください。)
+認証が成功すると、IdPはSAMLレスポンスを構築します。指定されたService Provider Connection(SPC)で設定された属性ステートメントも含まれています。（@product@のSAML adapter上での設定方法についてはこちら[next article](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider-ja)を参照してください。)
 
 IdPはHTTP-POSTまたはHTTPリダイレクトを使用してAssertation Consumer Service URLにレスポンスを送信します。HTTP-POSTが推奨されているのは、URLがブラウザで処理するには長すぎるというリスクを軽減するためです。HTTP-POSTを使用すると、リクエストには2つのパラメータが含まれています。
 
@@ -182,7 +182,7 @@ SPによって開始されたSLOでは、ユーザーのブラウザはログア
 
 SAML`LogoutRequest`はIdPのSingle Log OutサービスURLに送信されます。
 
-- @product@がSPとして機能する場合、`LogoutRequest`はSAMLプロバイダーのIdP Connectionタブで設定されたIdP（IdP接続を設定するためには次の記事を参照してください：[next article](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider)）およびSAMLメタデータで定義されたSLOサービスURLに送信されます。リクエストはHTTP-POSTまたはHTTPリダイレクトバインディングを使用して送信されます。
+- @product@がSPとして機能する場合、`LogoutRequest`はSAMLプロバイダーのIdP Connectionタブで設定されたIdP（IdP接続を設定するためには次の記事を参照してください：[next article](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider-ja)）およびSAMLメタデータで定義されたSLOサービスURLに送信されます。リクエストはHTTP-POSTまたはHTTPリダイレクトバインディングを使用して送信されます。
 
 
 
@@ -204,6 +204,6 @@ SAML`LogoutRequest`はIdPのSingle Log OutサービスURLに送信されます�
 
 ## 関連トピック
 
-- [Setting Up SAML as an Identity Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider)
-- [Setting Up SAML as a Service Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-service-provider)
-- [Token-Based SSO Authentication](/discover/deployment/-/knowledge_base/7-1/token-based-single-sign-on-authentication)
+- [Setting Up SAML as an Identity Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-identity-provider-ja)
+- [Setting Up SAML as a Service Provider](/discover/deployment/-/knowledge_base/7-1/setting-up-liferay-as-a-saml-service-provider-ja)
+- [Token-Based SSO Authentication](/discover/deployment/-/knowledge_base/7-1/token-based-single-sign-on-authentication-ja)

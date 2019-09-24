@@ -7,7 +7,7 @@ header-id: clustering-search-ja
 [TOC levels=1-4]
 
 検索エンジンは必ず@product@とは別のサーバーで起動してください。
-@product@は [Elasticsearch](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)と [Solr](/discover/deployment/-/knowledge_base/7-1/installing-solr)をサポートしています。
+@product@は [Elasticsearch](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch-ja)と [Solr](/discover/deployment/-/knowledge_base/7-1/installing-solr-ja)をサポートしています。
 両方ともクラスタ環境で使用することが可能です。
 
 Elasticsearchをクラスター化する方法の詳細については、[Elasticsearch's distributed cluster setup](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html)を参照してください 。
