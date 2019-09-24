@@ -13,7 +13,7 @@ header-id: handling-indexing-in-the-guestbook-service-layer
 Whenever a Guestbook database entity is added, updated, or deleted, the search
 index must be updated accordingly. The @product@ annotation `@Indexable`
 combines with the `IndexableType` to mark your service methods so documents can
-be updated or deleted. Annotate `addGuestbook`, `updateGuestbook`,
+be updated or deleted. Next, you'll annotate `addGuestbook`, `updateGuestbook`,
 and `deleteGuestbook` service methods. 
 
 1.  Open `GuestbookLocalServiceImpl` in the `guestbook-service` module's 
@@ -21,11 +21,13 @@ and `deleteGuestbook` service methods.
     annotation above the method signature for the `addGuestbook` and 
     `updateGuestbook` methods:
 
-        @Indexable(type = IndexableType.REINDEX)
-        public Guestbook addGuestbook(...)
+    ```java
+    @Indexable(type = IndexableType.REINDEX)
+    public Guestbook addGuestbook(...)
 
-        @Indexable(type = IndexableType.REINDEX)
-        public Guestbook updateGuestbook(...)
+    @Indexable(type = IndexableType.REINDEX)
+    public Guestbook updateGuestbook(...)
+    ```
 
     The `@Indexable` annotation indicates that an index update is required
     following the method execution. The indexing classes control the type of
@@ -35,16 +37,20 @@ and `deleteGuestbook` service methods.
 2.  Add the following annotation above the method signature for the 
     `deleteGuestbook` method: 
 
-        @Indexable(type = IndexableType.DELETE)
-        public Guestbook deleteGuestbook(...)
+    ```java
+    @Indexable(type = IndexableType.DELETE)
+    public Guestbook deleteGuestbook(...)
+    ```
 
     When a Guestbook is deleted from the database, its document shouldn't
     remain in the search index. This ensures that it is deleted.
 
 3.  Add the necessary imports:
 
-        import com.liferay.portal.kernel.search.Indexable;
-        import com.liferay.portal.kernel.search.IndexableType;
+    ```java
+    import com.liferay.portal.kernel.search.Indexable;
+    import com.liferay.portal.kernel.search.IndexableType;
+    ```
 
     Save the file. 
 
