@@ -24,39 +24,45 @@ Implement two interfaces:
 
 Create `GuestbookKeywordQueryContributor`: 
 
-    @Component(
-            immediate = true,
-            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
-            service = KeywordQueryContributor.class
-    )
-    public class GuestbookKeywordQueryContributor
-        implements KeywordQueryContributor {
+```java
+@Component(
+        immediate = true,
+        property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+        service = KeywordQueryContributor.class
+)
+public class GuestbookKeywordQueryContributor
+    implements KeywordQueryContributor {
 
-        @Override
-        public void contribute(
-            String keywords, BooleanQuery booleanQuery,
-            KeywordQueryContributorHelper keywordQueryContributorHelper) {
+    @Override
+    public void contribute(
+        String keywords, BooleanQuery booleanQuery,
+        KeywordQueryContributorHelper keywordQueryContributorHelper) {
 
-            SearchContext searchContext =
-        keywordQueryContributorHelper.getSearchContext();
+        SearchContext searchContext =
+    keywordQueryContributorHelper.getSearchContext();
 
-            queryHelper.addSearchLocalizedTerm(
-        booleanQuery, searchContext, Field.TITLE, false);
-        }
-
-        @Reference
-        protected QueryHelper queryHelper;
-
+        queryHelper.addSearchLocalizedTerm(
+    booleanQuery, searchContext, Field.TITLE, false);
     }
 
+    @Reference
+    protected QueryHelper queryHelper;
+
+}
+```
+
 This class adds Guestbook fields to the search query constructed by the Search
-application in @product@. Later, when you asset enable Guestbooks, this code
-will allow indexed Guestbooks to be searched from the Search application when
+application in @product@. Later, when you asset-enable Guestbooks, this code
+allows indexed Guestbooks to be searched from the Search application when
 a keyword is entered into the search bar. Use the query helper to add search
 terms to the query that allow Guestbooks to be found. Here it's important to
 note that adding the localized search term is important. Since the localized
 Guestbook title was indexed, you must retrieve the localized value from the
 search engine.
+
+Don't forget to add imports with Ctrl-Shift-O. Choose
+`com.liferay.portal.kernel.search.BooleanQuery` and
+`com.liferay.portal.kernel.search.Field`. 
 
 Once the query code is in place, define how returned Guestbook documents are
 summarized. 
