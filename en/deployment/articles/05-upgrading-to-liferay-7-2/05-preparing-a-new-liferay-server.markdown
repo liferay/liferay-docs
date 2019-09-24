@@ -60,10 +60,10 @@ If you're coming from a version prior to Liferay Portal 6.2, start with these
 property-related updates:
 
 -   If you're on Liferay Portal 6.1,
-    [adapt your properties to the new defaults that Liferay Portal 6.2 introduced](/docs/6-2/deploy/-/knowledge_base/deploy/upgrading-liferay#review-the-liferay-6). 
+    [adapt your properties to the new defaults that Liferay Portal 6.2 introduced](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay#review-the-liferay-6). 
 
 -   If you're on Liferay 6.0.12, 
-    [migrate the Image Gallery](/docs/6-2/deploy/-/knowledge_base/deploy/upgrading-liferay#migrate-your-image-gallery-images).
+    [migrate the Image Gallery](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay#migrate-your-image-gallery-images).
 
 -   If you have a sharded environment,
     [configure your upgrade to generate a non-sharded environment](/docs/7-2/deploy/-/knowledge_base/d/upgrading-a-sharded-environment).
