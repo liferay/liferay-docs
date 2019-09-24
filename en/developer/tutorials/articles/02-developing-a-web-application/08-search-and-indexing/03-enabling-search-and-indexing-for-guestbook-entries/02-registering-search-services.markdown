@@ -14,45 +14,47 @@ The search registrar for Entries is very similar to the one created for
 Guestbooks. You'll even put it in the same package
 (`com.liferay.docs.guestbook.search`). 
 
-Create the `EntrySearchRegistrar`:
+Create the `GuestbookEntrySearchRegistrar`:
 
 1.  In `com.liferay.docs.guestbook.search`, create a new class called
     `EntrySearchRegistrar` and populate it with two methods, `activate` and
     `deactivate`.
 
-        @Component(immediate = true)
-        public class EntrySearchRegistrar {
+    ```java
+    @Component(immediate = true)
+    public class GuestbookEntrySearchRegistrar {
 
-            @Activate
-            protected void activate(BundleContext bundleContext) {
+        @Activate
+        protected void activate(BundleContext bundleContext) {
 
-                _serviceRegistration = modelSearchRegistrarHelper.register(
-                    Entry.class, bundleContext, modelSearchDefinition -> {
-                        modelSearchDefinition.setDefaultSelectedFieldNames(
-                            Field.COMPANY_ID, Field.ENTRY_CLASS_NAME,
-                            Field.ENTRY_CLASS_PK, Field.UID, 
-                            Field.SCOPE_GROUP_ID, Field.GROUP_ID);
+            _serviceRegistration = modelSearchRegistrarHelper.register(
+                GuestbookEntry.class, bundleContext, modelSearchDefinition -> {
+                    modelSearchDefinition.setDefaultSelectedFieldNames(
+                        Field.COMPANY_ID, Field.ENTRY_CLASS_NAME,
+                        Field.ENTRY_CLASS_PK, Field.UID, 
+                        Field.SCOPE_GROUP_ID, Field.GROUP_ID);
 
-                        modelSearchDefinition.setDefaultSelectedLocalizedFieldNames(
-                            Field.TITLE, Field.CONTENT);
+                    modelSearchDefinition.setDefaultSelectedLocalizedFieldNames(
+                        Field.TITLE, Field.CONTENT);
 
-                        modelSearchDefinition.setModelIndexWriteContributor(
-                            modelIndexWriterContributor);
-                        modelSearchDefinition.setModelSummaryContributor(
-                            modelSummaryContributor);
-                        modelSearchDefinition.setSelectAllLocales(true);
+                    modelSearchDefinition.setModelIndexWriteContributor(
+                        modelIndexWriterContributor);
+                    modelSearchDefinition.setModelSummaryContributor(
+                        modelSummaryContributor);
+                    modelSearchDefinition.setSelectAllLocales(true);
 
-                    });
-            }
+                });
+        }
 
-            @Deactivate
-            protected void deactivate() {
-                _serviceRegistration.unregister();
-            }
+        @Deactivate
+        protected void deactivate() {
+            _serviceRegistration.unregister();
+        }
+    ```
 
 
 As you did with Guestbooks, set the default selected field names used to
-retrieve results documents from the search engine. For Entries, call
+retrieve results documents from the search engine. For entries, call
 `setDefaultSelectedLocalizedFieldNames` for the title and content fields. This
 ensures that the localized version of the field is searched and returned. The
 only other difference with Entries is the call to
@@ -63,22 +65,28 @@ set to `true`, only a single locale is searched.
 
 2.  Specify the service references for the class:
 
-            @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.Entry)")
-            protected ModelIndexerWriterContributor<Entry> modelIndexWriterContributor;
+    ```java
+        @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.GuestbookEntry)")
+        protected ModelIndexerWriterContributor<GuestbookEntry> modelIndexWriterContributor;
 
-            @Reference
-            protected ModelSearchRegistrarHelper modelSearchRegistrarHelper;
+        @Reference
+        protected ModelSearchRegistrarHelper modelSearchRegistrarHelper;
 
-            @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.Entry)")
-            protected ModelSummaryContributor modelSummaryContributor;
+        @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.GuestbookEntry)")
+        protected ModelSummaryContributor modelSummaryContributor;
 
-            private ServiceRegistration<?> _serviceRegistration;
+        private ServiceRegistration<?> _serviceRegistration;
 
-        }
+    }
+    ```
 
-    Target the `Entry` model while looking up a reference to the contributor
-    classes. Later, when you create these contributor classes, you'll specify
-    the model name again to complete the circle.
+    Target the `GuestbookEntry` model while looking up a reference to the
+    contributor classes. Later, when you create these contributor classes,
+    you'll specify the model name again to complete the circle.
 
-The Entry search and indexing class registration is completed. Next write the
-search and indexing logic.
+3.  Use Ctrl-Shift-O to add imports: 
+
+    - `com.liferay.portal.kernel.search.Field`
+
+The entry search and indexing class registration is completed. Next, you'll
+write the search and indexing logic.
