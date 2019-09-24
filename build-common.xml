@@ -27,6 +27,10 @@
 	<property name="temp.dir" value="temp"/>
 	<property name="temp.dir2" value="prepare-temp"/>
 
+	<condition property="encoding" value="UTF-8" else="ISO-8859-1">
+		<equals arg1="${language.dir}" arg2="en" />
+	</condition>
+
 	<!-- taskdefs -->
 
 	<taskdef name="addtoc" classname="com.liferay.documentation.util.AddTOCTask">
@@ -412,7 +416,7 @@
 	</target>
 
 	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, add-toc, number-headers, number-images" description="Processes the CE articles and images and zips them up for importing.">
-		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
+		<zip encoding="${encoding}" destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
@@ -426,7 +430,7 @@
 		<property file="${project.dir}/release-site.properties" />
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
-		<copy todir="${temp.dir}">
+		<copy encoding="${encoding}" todir="${temp.dir}">
 			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
 			</fileset>
@@ -451,7 +455,7 @@
 	</target>
 
 	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, add-toc-dxp, number-headers-dxp, number-images-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
-		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
+		<zip encoding="${encoding}" destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
@@ -465,7 +469,7 @@
 		<property file="${project.dir}/release-site.properties" />
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
-		<copy todir="${temp.dir}">
+		<copy encoding="${encoding}" todir="${temp.dir}">
 			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
 				<include name="articles-dxp/**/*.markdown"/>
