@@ -21,10 +21,12 @@ Here's how to create a Service Builder project.
     project after the application. 
 
 2.  [Create a project](/docs/7-2/reference/-/knowledge_base/r/creating-a-project) 
-    using [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) 
-    and the `service-builder` project template, passing your project name as
-    a parameter. For example, here are Gradle and Maven commands for creating
-    a Service Builder project called `bookmarks`. 
+    using
+    [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) 
+    and the
+    [`service-builder` project template](/docs/7-2/reference/-/knowledge_base/r/using-the-service-builder-template),
+    passing your project name as a parameter. For example, here are Gradle and
+    Maven commands for creating a Service Builder project called `guestbook`. 
 
     Gradle: 
 
@@ -45,6 +47,11 @@ Here's how to create a Service Builder project.
     -DapiPath=com.liferay.api.path \
     -DliferayVersion=7.2
     ```
+
+| **Note:** Creating a Service Builder project that uses the Spring dependency 
+| injector instead of the Declarative Services dependency injector requires 
+| specifying the `--dependency-injector spring` option with Blade CLI or
+| `-DdependencyInjector=spring` option with Maven. 
 
 A message like this one reports project creation success:
 
