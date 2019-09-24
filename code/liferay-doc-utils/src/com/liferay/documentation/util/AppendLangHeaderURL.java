@@ -64,14 +64,7 @@ public class AppendLangHeaderURL extends Task {
 						
 						String lineBeg = line.substring(0, endIndex);
 						String lineEnd = line.substring(endIndex, line.length());
-//						if (endIndex + 1 == line.length()) {
-//							line2 = line.substring(endIndex + 1, line.length());
-//						}
-//						else {
-//							line2 = line.substring(endIndex + 1, line.length());
-//						}
-						//System.out.println("line: " + line);
-						//System.out.println("line2: " + line2);
+
 						line = lineBeg + "-ja" + lineEnd;
 						
 						
@@ -105,6 +98,5 @@ public class AppendLangHeaderURL extends Task {
 			}
 
 			private String _docdir;
-			private String lang = "ja";
 	
 }
