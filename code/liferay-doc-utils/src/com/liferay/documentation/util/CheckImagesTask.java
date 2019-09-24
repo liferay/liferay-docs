@@ -60,7 +60,7 @@ public class CheckImagesTask extends Task {
 		}
 		if (productType.equals("dist")) {
 			try {
-				replaceImagePaths(docDir);
+				replaceImagePaths(docDir, langDir);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -404,7 +404,7 @@ public class CheckImagesTask extends Task {
 		return imagePaths;
 	}
 
-	private void replaceImagePaths(File docDir) throws IOException {
+	private void replaceImagePaths(File docDir, String langDir) throws IOException {
 		File articleDir = new File(docDir.getAbsolutePath() + "/articles");
 		File[] articleDirFiles = articleDir.listFiles();
 		List<File> articles = new ArrayList<File>();
@@ -434,14 +434,25 @@ public class CheckImagesTask extends Task {
 		for (File article : articles) {
 			String articlePath = article.getAbsolutePath();
 			File markdownfile = new File(articlePath);
+			String source;
 
-			String source = FileUtils.readFileToString(markdownfile);
+			if (langDir.equals("ja")) {
+				source = FileUtils.readFileToString(markdownfile, "ISO_8859_1");
+			}
+			else {
+				source = FileUtils.readFileToString(markdownfile);
+			}
 			
 			String find = "../images-dxp/";
 			String replace = "../images/";
 			String imagePath = source.replaceAll(find, replace);
 			
-			FileUtils.writeStringToFile(markdownfile, imagePath);
+			if (langDir.equals("ja")) {
+				FileUtils.writeStringToFile(markdownfile, imagePath, "ISO_8859_1");
+			}
+			else {
+				FileUtils.writeStringToFile(markdownfile, imagePath);
+			}
 		}
 
 	}
