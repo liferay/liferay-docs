@@ -93,3 +93,9 @@ a way to backup and preserve (restore) Synonym Sets across reindex operations.
 [LPS-98126](https://issues.liferay.com/browse/LPS-98126)
 Users can create duplicate Synonym Set entries and update other Synonym Sets unintentionally.
 
+## Related Resources
+
+* <https://www.elastic.co/guide/en/elasticsearch/guide/current/synonyms.html>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analyzer-anatomy.html>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analysis-synonym-graph-tokenfilter.html>
+* <http://lucene.apache.org/core/7_7_0/analyzers-common/org/apache/lucene/analysis/en/EnglishPossessiveFilter.html>
