@@ -22,12 +22,10 @@ scoring of the search engine, by doing these things:
 
 4.  Re-order results with a drag-and-drop interface.
 
-<!-- Not sure if we need to show this 5.  Configure a search page to see the results from the Result Rankings
-    customization and the un-manipulated results. LPS-96212
--->
-
 Result Rankings lets you pin, hide, and add search results for a given set of
-keywords.
+keywords. These rankings apply only to searches using the newer search widgets
+(Search Bar, Search Results, etc.). The rankings you customize will not apply to
+the legacy Search portlet results or to the individual application search bars.
 
 | **Use Case:** At the Lunar Resort website, interested site visitors often search
 | for specific activities, entering keywords like "rover races", "atv rentals",
@@ -58,15 +56,14 @@ Results Rankings was added in @product-ver@ Service Pack 1.
 
 ## Requirements and Limitations
 
-Result Ranking entries are currently configurable at the Virtual Instance scope,
-so it is not possible to customize your search results per site. In addition,
-Result Rankings created in a Virtual Instance are not scoped only to that
-Virtual Instance, but will be shared across all @product@ Virtual Instances in
-the deployment, and even across separate deployments sharing an Elasticsearch
-cluster (in a multi-tenant scenario). Therefore, Result rankings shouldn't be
-used when connecting multiple @product@ deployments to the same Elasticsearch
-cluster unless you intend for the same Result rankings to apply to every
-@product@ deployment. See 
+Result Ranking entries are configured in a Virtual Instance, but are not applied
+only to that Virtual Instance. Instead, custom rankings made in one virtual
+Instance are shared across all @product@ Virtual Instances in the deployment,
+and even across separate deployments sharing an Elasticsearch cluster (in a
+multi-tenant scenario).  Therefore, Result rankings shouldn't be used when
+connecting multiple @product@ deployments to the same Elasticsearch cluster
+unless you intend for the same Result rankings to apply to every @product@
+deployment. See 
 [LPS-101291](https://issues.liferay.com/browse/LPS-101291)
 for more information.
 
