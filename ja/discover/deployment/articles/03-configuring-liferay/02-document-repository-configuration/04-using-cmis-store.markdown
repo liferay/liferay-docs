@@ -24,7 +24,7 @@ CMISストアを使用するには、次の手順に従います。
 
 クラスタ内でCMISストアを使用するには、次の手順に従います。
 
-1. `portal-ext.properties`を各ノードの[`[Liferay Home]`フォルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)にコピーします。
+1. `portal-ext.properties`を各ノードの[`[Liferay Home]`フォルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)にコピーします。
 
 2. *CMISストア*画面から[`.config`ファイル](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)に設定をエクスポートします。
 

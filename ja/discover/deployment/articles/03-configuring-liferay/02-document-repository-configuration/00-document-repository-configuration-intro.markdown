@@ -11,7 +11,7 @@ header-id: document-repository-configuration-ja
 
 デフォルトストアはSimple File Storeと呼ばれます。ドキュメントとメディアファイルをファイルシステム（ローカルまたはマウント済み）に保存します。ストアのデフォルトのルートフォルダは`[Liferay Home]/data/document_library`です。[システム設定](/discover/portal/-/knowledge_base/7-1/system-settings)内から別のルートディレクトリを指定できます。
 システム設定にアクセスするには、*メニュー*（![メニュー](../../../images/icon-menu.png)）を開き、*[コントロールパネル] &rarr; [設定] &rarr; [システム設定]*に移動します。システム設定から*[プラットフォーム]*に移動し、*[ファイルストレ―ジ]*（![フォルダ](../../../images/icon-folder.png)）を検索してクリックします。
-ストアの*ルートディレクトリ*値には、[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)への相対パスまたは絶対パスを指定します。次に*[保存]*ボタンをクリックします。ドキュメントライブラリストアはすぐに新しいフォルダに切り替わります。
+ストアの*ルートディレクトリ*値には、[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)への相対パスまたは絶対パスを指定します。次に*[保存]*ボタンをクリックします。ドキュメントライブラリストアはすぐに新しいフォルダに切り替わります。
 
 ![図1：システム設定のファイルストレージのページでは、ドキュメントリポジトリの保存場所を設定できます。](../../../images/file-storage.png)
 

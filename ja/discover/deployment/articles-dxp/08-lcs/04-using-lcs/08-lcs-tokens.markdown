@@ -8,7 +8,7 @@ header-id: understanding-environment-tokens-ja
 
 サーバーを環境に登録するには、その環境のトークンファイルを使用する必要があります。LCS管理者と環境管理者はこのファイルを作成し配布することができます。これには、LCSクライアントアプリがサーバーを環境に登録するために必要なすべての情報が含まれています。サーバーは起動時にトークンを使用してLCSに接続します。アクティベーションにLCSを使用する場合、サーバーは接続時に環境のサブスクリプションからアクティベーションキーを自動的に使います。これにより、インタラクションなしで、立ち上げ時にサーバーを自動的にアクティベートすることができます。
 
-| **注：**ご使用の環境トークンの使用方法と管理方法については、[registering your server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)を参照してください。
+| **注：**ご使用の環境トークンの使用方法と管理方法については、[registering your server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs-ja)を参照してください。
 
 環境トークンを使用する際に注意しなければならないことがいくつかあります：
 
@@ -22,7 +22,7 @@ header-id: understanding-environment-tokens-ja
 
 
 
-- 最小限の情報（サーバー名、場所など）を使用してサーバーをLCSに登録します。この情報は[LCSのサーバービュー](/discover/deployment/-/knowledge_base/7-1/managing-lcs-servers)からいつでも変更できます。
+- 最小限の情報（サーバー名、場所など）を使用してサーバーをLCSに登録します。この情報は[LCSのサーバービュー](/discover/deployment/-/knowledge_base/7-1/managing-lcs-servers-ja)からいつでも変更できます。
 
 
 

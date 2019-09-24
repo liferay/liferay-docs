@@ -18,7 +18,7 @@ AmazonのSimple Storage Service（S3）は、ドキュメントとメディア�
    
 2. `system-ext.properties`ファイルを@product@インストールのクラスパスにあるフォルダに置いてください（例：`/WEB-INF/classes/`）。
 
-3. [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダの`portal-ext.properties`ファイルに、以下のプロパティを設定します。
+3. [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)フォルダの`portal-ext.properties`ファイルに、以下のプロパティを設定します。
 
        dl.store.impl=com.liferay.portal.store.s3.S3Store
    
@@ -36,7 +36,7 @@ AmazonのSimple Storage Service（S3）は、ドキュメントとメディア�
 
 2. `.config`ファイルを各ノードの`[Liferay Home]/osgi/configs`フォルダにコピーします。
 
-3. `portal-ext.properties`を各ノードの[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダにコピーします。
+3. `portal-ext.properties`を各ノードの[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)フォルダにコピーします。
 
 4. `system-ext.properties`（使用している場合は）を各ノードのアプリケーションサーバークラスパス内にあるフォルダにコピーします。
 

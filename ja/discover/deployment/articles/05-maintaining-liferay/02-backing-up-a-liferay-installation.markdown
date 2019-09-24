@@ -22,7 +22,7 @@ header-id: backing-up-a-liferay-installation-ja
 
 ## @product@のファイルシステムのバックアップ
 
-[Liferay Homeフォルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)には、`portal-setup-wizard.properties`や`portal-ext.properties`など、@product@のプロパティ設定ファイルが保存されています。これらのファイルは必ずバックアップを取ってください。実際には、アプリケーションサーバー全体とLiferay Homeフォルダの内容をバックアップするのが最善です。
+[Liferay Homeフォルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)には、`portal-setup-wizard.properties`や`portal-ext.properties`など、@product@のプロパティ設定ファイルが保存されています。これらのファイルは必ずバックアップを取ってください。実際には、アプリケーションサーバー全体とLiferay Homeフォルダの内容をバックアップするのが最善です。
 
 @product@は、設定ファイル、検索インデックス、およびキャッシュ情報をLiferay Homeの`/data`フォルダに格納します。ファイルシステムストアまたはAdvanced File System storeを使用している場合は、ドキュメントとメディアリポジトリもデフォルトでここに保存されます。`/data`フォルダのバックアップを取っておくことは、常に重要です。
 
@@ -38,7 +38,7 @@ Liferay Homeの`/logs`フォルダには、@product@のログファイルが含�
 
 @product@のデータベースは、ポータルにあるすべての情報の中央リポジトリです。バックアップが最も重要な部分です。データベースのバックアップは、ライブバックアップ（データベースで許可されている場合）か、データベースをファイルにエクスポート（ダンプ）してからエクスポートされたファイルをバックアップすることでできます。たとえば、MySQLにはデータベース全体とデータを大きなSQLファイルにエクスポートできる`mysqldump`ユーティリティが付属しています。このファイルはバックアップすることができます。データベースを復元する際に、このファイルをデータベースにインポートして、データベースをエクスポートした時点の状態を再び作成することができます。
 
-@product@のドキュメントとメディアライブラリのファイルをJackrabbit JSR-170リポジトリデータベースに保存している場合は、バックアップする必要があります。検索インデックスをデータベースに配置した場合（お勧めしません 。Cluster LinkまたはSolrの使用方法については、[@product@クラスタリング](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)の記事を参照、そのデータベースもバックアップする必要があります。
+@product@のドキュメントとメディアライブラリのファイルをJackrabbit JSR-170リポジトリデータベースに保存している場合は、バックアップする必要があります。検索インデックスをデータベースに配置した場合（お勧めしません 。Cluster LinkまたはSolrの使用方法については、[@product@クラスタリング](/discover/deployment/-/knowledge_base/7-1/liferay-clustering-ja)の記事を参照、そのデータベースもバックアップする必要があります。
 
 データベースを復元した後にコンテンツのインデックスを再び作成したくない場合は、検索インデックスをバックアップしてください。これは、インデックスが保存されているElasticまたはSolr環境が別にある場合に最も簡単な方法です。クラスタ化された設定で、インデックスを複製している場合は、各インデックスレプリカをバックアップする必要があります。
 

@@ -6,7 +6,7 @@ header-id: installing-patches-on-the-liferay-de-war-ja
 
 [TOC levels=1-4]
 
-サポートされているアプリケーションサーバーにWARファイルとして@ product @をマニュアルでインストールした場合は（参照：[installed @product@ manually](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)） 、WARファイルとサポートファイルにパッチを適用し、それらを再びデプロイする必要があります。ここではそれをどう行うか説明します。
+サポートされているアプリケーションサーバーにWARファイルとして@ product @をマニュアルでインストールした場合は（参照：[installed @product@ manually](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually-ja)） 、WARファイルとサポートファイルにパッチを適用し、それらを再びデプロイする必要があります。ここではそれをどう行うか説明します。
 
 
 
@@ -48,7 +48,7 @@ header-id: installing-patches-on-the-liferay-de-war-ja
        global.lib.path=../../patching-home/liferay-dxp-dependencies-[version]
        liferay.home=../../patching-home
    
-   別のOSGiフォルダー構造を使用している場合は、それを[Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration)の文書で説明されているとおりに指定できます。
+   別のOSGiフォルダー構造を使用している場合は、それを[Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration-ja)の文書で説明されているとおりに指定できます。
 
        module.framework.core.path=/osgi-home/osgi/core
        module.framework.marketplace.path=/osgi-home/osgi/marketplace
@@ -93,6 +93,6 @@ header-id: installing-patches-on-the-liferay-de-war-ja
 
 ## 関連トピック
 
-[Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration)
+[Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration-ja)
 
-[Deploying @product@](/discover/deployment/-/knowledge_base/7-1/deploying-product)
+[Deploying @product@](/discover/deployment/-/knowledge_base/7-1/deploying-product-ja)

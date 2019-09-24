@@ -19,7 +19,7 @@ header-id: post-upgrade-tasks-ja
 
     indexReadOnly="false"
 
-その後、@product@の検索インデックスのインデックスを再作成する必要があります。ただし、むやみに行わないでください。デフォルトでは、@product@にはElasticsearchの組み込み設定が付属しています。この設定はデモ目的には最適ですが、本番環境ではサポートされていません。本番環境で実行するには、必ず[スタンドアロンのElasticsearchインスタンスをインストールして設定](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)してください 。
+その後、@product@の検索インデックスのインデックスを再作成する必要があります。ただし、むやみに行わないでください。デフォルトでは、@product@にはElasticsearchの組み込み設定が付属しています。この設定はデモ目的には最適ですが、本番環境ではサポートされていません。本番環境で実行するには、必ず[スタンドアロンのElasticsearchインスタンスをインストールして設定](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch-ja)してください 。
 
 ## Webコンテンツの表示権限を有効にする
 

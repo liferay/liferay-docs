@@ -127,11 +127,11 @@ LCSクライアントアプリケーションが正常に動くには、下記�
 
 ## パッチングツールの設定
 
-@product@のパッチングツールを使いLCSのアップデートをします。パッチングツールは、Liferay DXPのバンドルに事前インストールされています。バンドルを稼働していない場合は、パッチングツールの[ダウンロード](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool)および[インストール](/discover/deployment/-/knowledge_base/7-1/patching-tool)を個別にしてください。
+@product@のパッチングツールを使いLCSのアップデートをします。パッチングツールは、Liferay DXPのバンドルに事前インストールされています。バンドルを稼働していない場合は、パッチングツールの[ダウンロード](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool)および[インストール](/discover/deployment/-/knowledge_base/7-1/patching-tool-ja)を個別にしてください。
 
 パッチングツールのインストール後、LCSがパッチングツールを使用できるように、設定する項目があります。下記コマンドはLinux、Unix、Macで使用可能です。Windowsをお使いの場合は、`.sh`をコマンドから削除してください。
 
-1. コマンドラインの`patching-tool`ディレクトリに行きます。大抵の場合、[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダにあります。Liferay Homeは、たいていアプリケーションサーバのフォルダの親フォルダです。
+1. コマンドラインの`patching-tool`ディレクトリに行きます。大抵の場合、[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)フォルダにあります。Liferay Homeは、たいていアプリケーションサーバのフォルダの親フォルダです。
 
 2. @product@インストールをパッチングツールに検知させるため下記コマンドを起動します。
 
@@ -263,13 +263,13 @@ WebSphereアプリケーションサーバーを実行している場合は、LC
 
 上記の事前設定で、LCS クライアントアプリケーションをインストールする準備が整いました。 次は、下記の手順でアプリケーションをインストールします。
 
-1. Liferay DXPバンドルの[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダ(アプリケーションパッチングツールのルートフォルダ内)の下記ファイルを削除します。
+1. Liferay DXPバンドルの[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)フォルダ(アプリケーションパッチングツールのルートフォルダ内)の下記ファイルを削除します。
 
        osgi/marketplace/Liferay Connected Services Client.lpkg
    
 2. `osgi/marketplace`に新しく作成した`Liferay Connected Services Client.lpkg`を配置します。
 
- Liferay DXPインスタンスを[LCSに登録する準備](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)が整いました。
+ Liferay DXPインスタンスを[LCSに登録する準備](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs-ja)が整いました。
 
 次のセクションはLCS クライアントアプリケーションのアップグレードについてです。このステップはLiferayがアプリケーションの最新版リリース時に毎回行います。
 

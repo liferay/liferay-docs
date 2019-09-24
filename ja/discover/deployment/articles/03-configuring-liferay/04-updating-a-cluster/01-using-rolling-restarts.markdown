@@ -34,7 +34,7 @@ header-id: using-rolling-restarts-ja
 
 ## フィックスパックの適用（DXPのみ
 
-カスタマーポータル は、元に戻せないため、ローリング再起動の対象にならない[フィックスパック](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay)を識別します。その他のフィックスパックは全て対象となります。
+カスタマーポータル は、元に戻せないため、ローリング再起動の対象にならない[フィックスパック](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay-ja)を識別します。その他のフィックスパックは全て対象となります。
 
 ## フィックスパックのリバート（DXPのみ）
 
@@ -60,8 +60,8 @@ Javaのマイナーバージョンアップデートは、ローリング再起�
 
 ## 関連トピック
 
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
+[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering-ja)
 
-[Maintaining @product@](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay)
+[Maintaining @product@](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay-ja)
 
 [Implementing Data Upgrades](/develop/tutorials/-/knowledge_base/7-1/data-upgrades)

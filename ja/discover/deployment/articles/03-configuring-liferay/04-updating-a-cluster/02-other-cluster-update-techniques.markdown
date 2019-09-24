@@ -28,10 +28,10 @@ header-id: other-cluster-update-techniques-ja
 
 ## 関連トピック
 
-[Rolling Restarts](/discover/deployment/-/knowledge_base/7-1/using-rolling-restarts)
+[Rolling Restarts](/discover/deployment/-/knowledge_base/7-1/using-rolling-restarts-ja)
 
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
+[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering-ja)
 
-[Maintaining @product@](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay)
+[Maintaining @product@](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay-ja)
 
 [Implementing Data Upgrades](/develop/tutorials/-/knowledge_base/7-1/data-upgrades)

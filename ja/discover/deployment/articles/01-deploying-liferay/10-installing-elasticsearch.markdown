@@ -9,7 +9,7 @@ header-id: installing-elasticsearch-ja
 @product@ はコンテンツのインデックスの構築に Elasticsearchを使用します。デフォルトでは、Liferay DXP はElasticsearchをEmbedded として使用していますが、本番環境の運用ではサポートしていません。 テスト環境、開発環境での使用は問題ありませんが、本番環境に移行する際には、Liferayとは別の仮想/物理サーバー上にElasticsearchを設定する必要があります。 インフラ設計において拡張性など様々な利点があります。Elasticsearch用に物理/仮想サーバーを専有で割り当てられる場合は、検索エンジンのサーバリソースを Liferay DXPから独立させることで、パフォーマンスの向上に寄与します。予算上の制約がある場合は、 Liferayとは別JVMを利用することでパフォーマンスを向上できます。
 
 Elasticsearchをインストールする前に、デプロイメントを正常に行う設定について記載のある
-[Preparing to Install Elasticsearch](/discover/deployment/-/knowledge_base/7-1/preparing-to-install-elasticsearch)
+[Preparing to Install Elasticsearch](/discover/deployment/-/knowledge_base/7-1/preparing-to-install-elasticsearch-ja)
 を参照してください。
 
 Liferay DXPへのElasticsearchインストールは、以下の６つのステップで完了します。

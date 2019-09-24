@@ -6,7 +6,7 @@ header-id: configure-documents-and-media-the-same-for-all-nodes-ja
 
 [TOC levels=1-4]
 
-クラスタ環境では、[ドキュメントとメディアの設定](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)は全ノードに渡って同じ設定にしてください。
+クラスタ環境では、[ドキュメントとメディアの設定](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration-ja)は全ノードに渡って同じ設定にしてください。
 
 
 `File System`もしくは`Advanced File System`を使用している場合は、ファイルシステムは、全てのノードからアクセス可能であり（ネットワーク共用など）、必ず同時アクセスとファイルロックをサポートしている必要があるので注意してください。

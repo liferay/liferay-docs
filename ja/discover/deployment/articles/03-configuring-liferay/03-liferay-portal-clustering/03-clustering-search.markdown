@@ -7,7 +7,7 @@ header-id: clustering-search-ja
 [TOC levels=1-4]
 
 検索エンジンは、必ず@product@とは別のサーバーで起動してください。
-@product@は [Elasticsearch ](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)をサポートしており、
+@product@は [Elasticsearch ](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch-ja)をサポートしており、
 
 <!--Uncomment when Solr adapters is available. 
 or 

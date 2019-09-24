@@ -7,7 +7,7 @@ header-id: installing-liferay-ja
 [TOC levels=1-4]
 
 Now that you've performed the steps needed to [prepare for your
-installation](/discover/deployment/-/knowledge_base/7-1/preparing-for-install),
+installation](/discover/deployment/-/knowledge_base/7-1/preparing-for-install-ja),
 you're ready to install @product@! Since bundles are the easiest way to complete
 an installation, all the installation steps below assume you're installing a
 @product@ bundle. If you plan to install @product@ manually, please refer to the
@@ -105,7 +105,7 @@ You can connect to your database with JNDI on your app server or the data source
 shipped with @product@ (recommended). Refer to the article on your app server
 for instructions on using JNDI. For the internal data source, you can configure
 it by specifying the configuration in a `portal-ext.properties` file or the
-[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard):
+[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#using-liferays-setup-wizard):
 
 1. Create a `portal-ext.properties` file in your Liferay Home folder.
 

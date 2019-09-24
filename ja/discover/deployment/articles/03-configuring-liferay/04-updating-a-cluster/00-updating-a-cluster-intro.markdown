@@ -6,10 +6,10 @@ header-id: updating-a-cluster-ja
 
 [TOC levels=1-4]
 
-[クラスター](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)を維持することは重要です。これには、新規および更新されたプラグインとモジュールのデプロイ、[フィックスパック](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay)の適用 、設定の変更などが含まれています。変更を適用するときは、サーバーの稼働時間を最大化し、リスクを最小化することが優先されます。@product@は、標準的なクラスターメンテナンス技術の使用をサポートしています。
+[クラスター](/discover/deployment/-/knowledge_base/7-1/liferay-clustering-ja)を維持することは重要です。これには、新規および更新されたプラグインとモジュールのデプロイ、[フィックスパック](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay)の適用 、設定の変更などが含まれています。変更を適用するときは、サーバーの稼働時間を最大化し、リスクを最小化することが優先されます。@product@は、標準的なクラスターメンテナンス技術の使用をサポートしています。
 
-- [ローリング再起動](/discover/deployment/-/knowledge_base/7-1/using-rolling-restarts)：ノードは一度に1つずつ、シャットダウンと更新が行われます。
-- [ブルーグリーンデプロイ](/discover/deployment/-/knowledge_base/7-1/other-cluster-update-techniques)：ブルーグリーンは、現在の環境（*青い*環境）の複製、複製（*緑*の環境）の更新、およびユーザーを更新された環境（緑）に切り替えることが含まれています。
+- [ローリング再起動](/discover/deployment/-/knowledge_base/7-1/using-rolling-restarts-ja)：ノードは一度に1つずつ、シャットダウンと更新が行われます。
+- [ブルーグリーンデプロイ](/discover/deployment/-/knowledge_base/7-1/other-cluster-update-techniques-ja)：ブルーグリーンは、現在の環境（*青い*環境）の複製、複製（*緑*の環境）の更新、およびユーザーを更新された環境（緑）に切り替えることが含まれています。
 
 方法を以下で比較します。
 

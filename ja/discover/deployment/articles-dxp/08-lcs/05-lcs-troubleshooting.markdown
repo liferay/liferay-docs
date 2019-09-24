@@ -40,7 +40,7 @@ LCSには2つの猶予期間のタイプがあります：
 
 
 
-| **注：**これらの猶予期間は、以前からLCSに接続されていて、アクティベートされているサーバーにのみ適用されます。サーバーが初めてLCSに接続しようとした時にサブスクリプションチェックまたは接続に失敗した場合、サーバーに猶予期間が与えられません。したがって、新しいサーバーをLCSに接続する前にアクティブなサブスクリプションが有効であることを確認することが重要です。これを行うには、LCSの[サブスクリプションタブ](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions)を確認してください。
+| **注：**これらの猶予期間は、以前からLCSに接続されていて、アクティベートされているサーバーにのみ適用されます。サーバーが初めてLCSに接続しようとした時にサブスクリプションチェックまたは接続に失敗した場合、サーバーに猶予期間が与えられません。したがって、新しいサーバーをLCSに接続する前にアクティブなサブスクリプションが有効であることを確認することが重要です。これを行うには、LCSの[サブスクリプションタブ](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions-ja)を確認してください。
 
 ### 接続猶予期間
 
@@ -51,14 +51,14 @@ LCSには2つの猶予期間のタイプがあります：
 
 LCSから切断されている間、LCSクライアントアプリケーションは継続的に再接続を試みます。再接続が失敗し続ける場合は、サーバーが`lcs.liferay.com`と`lcs-gateway.liferay.com`にアクセスできるようにしておいてください。LCSクライアントアプリケーションが再接続の試行を停止した場合、ログには何も記録されません。この場合、アプリケーションを再デプロイすることで強制的に再接続できます。そうするには以下の手順に従ってください：
 
-1. サーバーの[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダー（通常はアプリケーションサーバーのフォルダーの親フォルダー）から、このファイルを削除します：
+1. サーバーの[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)フォルダー（通常はアプリケーションサーバーのフォルダーの親フォルダー）から、このファイルを削除します：
 
        osgi/marketplace/Liferay Connected Services Client.lpkg
    
 2. `Liferay Connected Services Client.lpkg`を`Liferay Home]/deploy`に移動させます。
-[プロキシを介してLCSに接続し](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration#preconfiguring-lcs-to-connect-through-a-proxy)、これをLCSクライアントアプリケーション内で構成した場合、デプロイしたアプリケーションもまた、そうするように設定されていることを確認してください。
+[プロキシを介してLCSに接続し](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration-ja#preconfiguring-lcs-to-connect-through-a-proxy)、これをLCSクライアントアプリケーション内で構成した場合、デプロイしたアプリケーションもまた、そうするように設定されていることを確認してください。
 
-また、サーバーが切断された時にEメール通知が来るようにLCSで設定されていることを確認してください。これを行うには、サーバーが予期せず停止した時にEメールで通知が来るようにルールを作成しておく必要があります。これを行う手順は[LCSアカウントの管理](/discover/deployment/-/knowledge_base/7-1/managing-your-lcs-account)に説明されています。
+また、サーバーが切断された時にEメール通知が来るようにLCSで設定されていることを確認してください。これを行うには、サーバーが予期せず停止した時にEメールで通知が来るようにルールを作成しておく必要があります。これを行う手順は[LCSアカウントの管理](/discover/deployment/-/knowledge_base/7-1/managing-your-lcs-account-ja)に説明されています。
 
 ### サブスクリプション猶予期間
 
@@ -73,7 +73,7 @@ LCSで問題が発生した場合は、Liferayサポートチームがお手伝�
 
 
 
-| **注：**特定の問題をトラブルシューティングしたりLiferayサポートに連絡する前に、LCSの[事前設定](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration)と[登録](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)を正しく行なったかどうか確認してください。
+| **注：**特定の問題をトラブルシューティングしたりLiferayサポートに連絡する前に、LCSの[事前設定](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration-ja)と[登録](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)を正しく行なったかどうか確認してください。
 | 
 
 ### サーバーがLCSにアクセスできない
@@ -89,7 +89,7 @@ LCSで問題が発生した場合は、Liferayサポートチームがお手伝�
    
 ### サブスクリプションの問題
 
-サブスクリプションに関する問題については、まず[managing your subscription](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions)の記事を読んでください。
+サブスクリプションに関する問題については、まず[managing your subscription](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions-ja)の記事を読んでください。
 サブスクリプションエラーには通常、次のいずれかの問題があります：
 
 
@@ -97,14 +97,14 @@ LCSで問題が発生した場合は、Liferayサポートチームがお手伝�
 - サーバーはLCSにアクセスできるけど、サブスクリプションを見つけることができない場合。
 - サーバーはLCSにアクセスできてサブスクリプションを見つけることができるけど、サーバーをアクティベートすると、サブスクリプションのアクティベーションキーまたはコアの数を超える場合。
 
-どちらの場合も、サブスクリプションが利用可能であることと、アクティベーションキーまたはコアの数を超えていないことを確認する必要があります。[the documentation on managing subscriptions](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions)で説明されているように、この情報はLCSサイトのサブスクリプションページにあります。
-サーバーをアクティベートしようとしている環境に、使用したいサブスクリプションが割り当てられていない場合は、新しい環境を作成し、それに正しいサブスクリプションを割り当てる必要があります。一度割り当てると、環境のサブスクリプションを変更することはできません。新規環境の作成および新規サーバーのアクティベーションについては、[the initial registration steps](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)に従ってください。
+どちらの場合も、サブスクリプションが利用可能であることと、アクティベーションキーまたはコアの数を超えていないことを確認する必要があります。[the documentation on managing subscriptions](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions-ja)で説明されているように、この情報はLCSサイトのサブスクリプションページにあります。
+サーバーをアクティベートしようとしている環境に、使用したいサブスクリプションが割り当てられていない場合は、新しい環境を作成し、それに正しいサブスクリプションを割り当てる必要があります。一度割り当てると、環境のサブスクリプションを変更することはできません。新規環境の作成および新規サーバーのアクティベーションについては、[the initial registration steps](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs-ja)に従ってください。
 
 | **注：**サーバーをシャットダウンするときには、LCSサイトがサーバーを受信したことを確認する必要があります。そうでないと、LCSは再利用のためのサーバーのアクティベーションキーを解放しない可能性があります。また、追加のサーバーをアクティベートしようとすると、サブスクリプションのアクティベーションキーの数を超える可能性があります。これは、ローリングデプロイやコンテナ使用時に起こる可能性があります。詳しい情報は[KB article on properly unregistering subscriptions](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875)を参照してください。
 
 ### 無効なトークン
 
-トークンが無効な場合は、まず[environment tokens](/discover/deployment/-/knowledge_base/7-1/understanding-environment-tokens)の記事を確認してください 。
+トークンが無効な場合は、まず[environment tokens](/discover/deployment/-/knowledge_base/7-1/understanding-environment-tokens-ja)の記事を確認してください 。
 次の表に、無効なトークンの原因と解決策が説明されています。
 
 | &nbsp;原因 | &nbsp;解決策 |
@@ -117,7 +117,7 @@ LCSで問題が発生した場合は、Liferayサポートチームがお手伝�
 
 ## ログレベルを上げる
 
-Liferayサポートに連絡すると、サーバーのログレベルを上げてからログファイルを提供するように求められます。これらのログファイルは、[`Liferay Home]/logs`（[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) は通常、アプリケーションサーバーのフォルダの親フォルダです）にあります。このフォルダには2種類のログファイルがあります：
+Liferayサポートに連絡すると、サーバーのログレベルを上げてからログファイルを提供するように求められます。これらのログファイルは、[`Liferay Home]/logs`（[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home) は通常、アプリケーションサーバーのフォルダの親フォルダです）にあります。このフォルダには2種類のログファイルがあります：
 
 1. **Liferayログファイル：**`liferay.[date].log`と`liferay.[date].xml`のファイルは、@product@インストールのログです。同じ日付のLOGファイルとXMLファイルには同じ情報が含まれています。 -- 唯一の違いはファイル形式です。
 
@@ -170,8 +170,8 @@ Log4jを介してログレベルを上げるには、次の手順に従います
 
 
 
-1. [LCS preconfiguration article](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration)に従って、最新のLCSクライアントをダウンロードしてください。
-アプリは`Liferay Connected Services Client.lpkg`としてダウンロードします。最新のクライアントをダウンロードしたくない場合は、すでにサーバーにインストールされているものを使用することができます。それは`[Liferay Home]/osgi/marketplace`にインストールされています。（このセクションの残りの手順を実行する前に必ずサーバーをシャットダウンしてください）。[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)のフォルダは通常、アプリケーションサーバーのフォルダの親フォルダです。
+1. [LCS preconfiguration article](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration-ja)に従って、最新のLCSクライアントをダウンロードしてください。
+アプリは`Liferay Connected Services Client.lpkg`としてダウンロードします。最新のクライアントをダウンロードしたくない場合は、すでにサーバーにインストールされているものを使用することができます。それは`[Liferay Home]/osgi/marketplace`にインストールされています。（このセクションの残りの手順を実行する前に必ずサーバーをシャットダウンしてください）。[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)のフォルダは通常、アプリケーションサーバーのフォルダの親フォルダです。
 
 
 
@@ -212,7 +212,7 @@ Log4jを介してログレベルを上げるには、次の手順に従います
 
 
 
-6. インストールの[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダで、既存のLCSクライアントアプリケーションを削除してください：
+6. インストールの[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)フォルダで、既存のLCSクライアントアプリケーションを削除してください：
 
        osgi/marketplace/Liferay Connected Services Client.lpkg
    

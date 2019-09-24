@@ -23,10 +23,10 @@ Liferay Connected Services（LCS）は、@product@インスタンスを管理お
 
 
 
-- [まず初めに](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs)
-- [LCSの事前設定](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration)
-- [@product@ ServerをLCSに登録する](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)
-- [LCSを使う](/discover/deployment/-/knowledge_base/7-1/using-lcs)
-- [LCS接続のトラブルシューティング](/discover/deployment/-/knowledge_base/7-1/troubleshooting-your-lcs-connection)
+- [まず初めに](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs-ja)
+- [LCSの事前設定](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration-ja)
+- [@product@ ServerをLCSに登録する](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs-ja)
+- [LCSを使う](/discover/deployment/-/knowledge_base/7-1/using-lcs-ja)
+- [LCS接続のトラブルシューティング](/discover/deployment/-/knowledge_base/7-1/troubleshooting-your-lcs-connection-ja)
 
 では、@product@でLCSを使用するために必要な設定手順から始めましょう。

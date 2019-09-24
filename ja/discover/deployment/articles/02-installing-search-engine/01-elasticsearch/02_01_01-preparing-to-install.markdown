@@ -6,7 +6,7 @@ header-id: preparing-to-install-elasticsearch-ja
 
 [TOC levels=1-4]
 
-@product-ver@ にデフォルトで[組み込まれているElasticsearch](/discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0#embedded-vs-remote-operation-mode)は、同一のJVMで動作するように設定されています。この環境でライフレイデジタルエンタープライズ7.0付属の検索エンジンを使用できますが、開発環境のみサポートしており、本番環境ではサポートされません。リモートElasticsearchクラスターのインストールは[インストールガイド](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)を参照してください。
+@product-ver@ にデフォルトで[組み込まれているElasticsearch](/discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0-ja#embedded-vs-remote-operation-mode)は、同一のJVMで動作するように設定されています。この環境でライフレイデジタルエンタープライズ7.0付属の検索エンジンを使用できますが、開発環境のみサポートしており、本番環境ではサポートされません。リモートElasticsearchクラスターのインストールは[インストールガイド](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)を参照してください。
 
 本番環境においては、Elasticsearchは別のJVMで使用する場合に限りサポートします。こうしたことから、2つのアプリケーションは、本番環境では常に分けておく必要があります。 
 

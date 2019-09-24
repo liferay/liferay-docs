@@ -13,7 +13,7 @@ header-id: patching-tool-basic-configuration-ja
 
 
 
-2. 設定ファイルを編集してマニュアルで設定する方法（詳細はこちら：[Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration)）。
+2. 設定ファイルを編集してマニュアルで設定する方法（詳細はこちら：[Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration-ja)）。
 
 
 
@@ -25,7 +25,7 @@ header-id: patching-tool-basic-configuration-ja
 
     patching-tool auto-discovery /opt/liferay-dxp
 
-@ product @の場所を間違えて指定した、または親フォルダにない場合は、パッチングツールは[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)を見つけることができず 、次のようなエラーを報告します：
+@ product @の場所を間違えて指定した、または親フォルダにない場合は、パッチングツールは[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)を見つけることができず 、次のようなエラーを報告します：
 
     The .liferay-home has not been detected in the given directory tree.
     

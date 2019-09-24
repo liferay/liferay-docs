@@ -15,7 +15,7 @@ LiferayのGogoシェルコマンドを使用すると、個々のモジュール
 - [アップグレードステータスを確認する](#checking-the-upgrade-status)
 - [アップグレードを確認する](#executing-verify-processes)
 
-| **注**：Gogoシェルコマンドを使用してコアをアップグレードする前に、[コアアップグレードを設定する](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade#configuring-the-core-upgrade)必要があります。
+| **注**：Gogoシェルコマンドを使用してコアをアップグレードする前に、[コアアップグレードを設定する](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-ja#configuring-the-core-upgrade)必要があります。
 
 まず最初に、コマンドの使用法について説明します。
 

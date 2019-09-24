@@ -6,7 +6,7 @@ header-id: managing-liferay-dxp-subscriptions-ja
 
 [TOC levels=1-4]
 
-LCSでは、@product@サブスクリプションを使用して表示できます。[環境を作成する](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments#creating-environments)ときに、そのサブスクリプションタイプを割り当て、LCSがその環境に接続するサーバーをアクティべートするかどうかを選択したと思います。アクティベーションにLCSを使用する場合、その環境にサーバーを登録すると、その環境のサブスクリプションタイプからアクティベーションキーが消費されます。プロジェクトで利用可能なアクティベーションキーを表示して、それらがどのように使用されているかを確認することもできます。
+LCSでは、@product@サブスクリプションを使用して表示できます。[環境を作成する](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments-ja#creating-environments)ときに、そのサブスクリプションタイプを割り当て、LCSがその環境に接続するサーバーをアクティべートするかどうかを選択したと思います。アクティベーションにLCSを使用する場合、その環境にサーバーを登録すると、その環境のサブスクリプションタイプからアクティベーションキーが消費されます。プロジェクトで利用可能なアクティベーションキーを表示して、それらがどのように使用されているかを確認することもできます。
 
 サブスクリプション契約によっては、LCSでは*エラスティックサブスクリプション*を介してサーバーを登録することもできます。エラスティックサブスクリプションでは、無制限の数のサーバーを登録することができます。これは、ロードに応じてサーバーが自動的に作成および破棄されるオートスケーリング環境では非常に大事です。エラスティックサブスクリプションを使用するには、作成時に環境をエラスティックとして設定する必要があります。また、LCSは、環境のサブスクリプションタイプで許容される数を超えるサーバーに対してのみエラスティックサブスクリプションを使用します。つまり、LCSはエラスティックサブスクリプションの前に環境の通常のサブスクリプションを使用します。
 
@@ -70,7 +70,7 @@ LCSでは、@product@サブスクリプションを使用して表示できま�
 
 
 
-| **注：**環境にエラスティックサーバーを登録するには、その環境は作成時にエラスティックであるように設定する必要があります。詳しくは[documentation on creating environments](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments#creating-environments)を参照してください。
+| **注：**環境にエラスティックサーバーを登録するには、その環境は作成時にエラスティックであるように設定する必要があります。詳しくは[documentation on creating environments](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments-ja#creating-environments)を参照してください。
 
 ![図 2:  *エラスティックサブスクリプション* タブはプロジェクトのエラスティックサーバーの詳細を表示します。](../../../images-dxp/lcs-elastic-subscriptions.png) 
 

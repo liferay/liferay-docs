@@ -10,7 +10,7 @@ header-id: pre-upgrade-speed-up-the-process-ja
 
 本番環境をアップグレードする前にいくつかの手順を実行することで、このプロセスを短縮できます。手順の概要は以下のとおりです。
 
-1. [最新の完全バックアップ](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)を、本番環境から本番以外の環境にコピーします。 この環境では、残りの手順で説明しているように、データベースを分析してアップグレードをテストできます。
+1. [最新の完全バックアップ](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation-ja)を、本番環境から本番以外の環境にコピーします。 この環境では、残りの手順で説明しているように、データベースを分析してアップグレードをテストできます。
 2. [データベースを調べます。](#analyzing-your-database-step-2)
 3. [未使用のコンテンツを削除するには、LiferayのAPIを使用してください](#remove-unused-data-from-the-database-using-liferays-api-step-3)。
 4. [本番以外の環境でアップグレードプロセスを実行します。](#execute-the-upgrade-process-step-4)

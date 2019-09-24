@@ -22,7 +22,7 @@ header-id: locales-and-encoding-configuration-ja
 
 ![図1：インスタンス設定で、デフォルトの言語と利用可能な言語、およびタイムゾーンを変更できます。](../../../images/instance-locales.png)
 
-中央の左右の矢印を使用して、利用可能な言語とロケールを追加または削除できます。 [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダの`portal-ext.properties`ファイルで、これらをプロパティとして設定することもできます。`portal.properties`参照ドキュメントの[会社](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Company)のセクションはデフォルトのロケールを定義します。[言語とタイムゾーン](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)のセクションでは、利用可能なロケールと現在のロケールを定義します。
+中央の左右の矢印を使用して、利用可能な言語とロケールを追加または削除できます。 [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)フォルダの`portal-ext.properties`ファイルで、これらをプロパティとして設定することもできます。`portal.properties`参照ドキュメントの[会社](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Company)のセクションはデフォルトのロケールを定義します。[言語とタイムゾーン](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)のセクションでは、利用可能なロケールと現在のロケールを定義します。
 
     company.default.locale=en_GB
 
