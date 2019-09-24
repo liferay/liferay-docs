@@ -4,6 +4,8 @@ header-id: logging-into-liferay
 
 # @product@へのログイン
 
+[TOC levels=1-4]
+
 セキュリティシステムの主な機能の1つは、ページ、コンテンツ、およびWebアプリケーションに適切なユーザーだけがアクセスできるようにすることです。例えば、大学のポータルにログインしている学生が教授と同じリソースにアクセスできないようにします。そして、医療ポータルにログインしている患者が医者のリソースにアクセスできないようにします。一部のコンテンツ（少なくともログインページ）は、認証されていないユーザー（*ゲスト*ユーザーと呼ばれる）を含むすべてのユーザーが利用できるようにする必要があります。
 <!-- To learn more about how @product@ restricts access to portal resources to
 different users, please see the [Roles and Permissions]() documentation. (Not

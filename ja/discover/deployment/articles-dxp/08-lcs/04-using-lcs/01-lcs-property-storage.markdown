@@ -4,6 +4,8 @@ header-id: what-lcs-stores-about-your-liferay-dxp-servers
 
 # LCSがLiferay DXPサーバーに保存していること
 
+[TOC levels=1-4]
+
 ユーザーのプライバシーを保護するために、LCSはシステム固有のデータのみを保存します。LCSはユーザーのデータを収集または保存しません。
 
 

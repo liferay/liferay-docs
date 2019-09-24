@@ -4,6 +4,8 @@ header-id: updating-a-cluster
 
 # クラスターの更新
 
+[TOC levels=1-4]
+
 [クラスター](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)を維持することは重要です。これには、新規および更新されたプラグインとモジュールのデプロイ、[フィックスパック](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay)の適用 、設定の変更などが含まれています。変更を適用するときは、サーバーの稼働時間を最大化し、リスクを最小化することが優先されます。@product@は、標準的なクラスターメンテナンス技術の使用をサポートしています。
 
 - [ローリング再起動](/discover/deployment/-/knowledge_base/7-1/using-rolling-restarts)：ノードは一度に1つずつ、シャットダウンと更新が行われます。

@@ -4,6 +4,8 @@ header-id: activating-liferay-dxp
 
 # Liferay DXPをアクティベートする
 
+[TOC levels=1-4]
+
 
 Liferay DXPインスタンスをアクティベートする方法は2つあります：
 

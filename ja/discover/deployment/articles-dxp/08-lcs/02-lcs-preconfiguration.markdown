@@ -4,6 +4,8 @@ header-id: lcs-preconfiguration
 
 # LCS事前設定
 
+[TOC levels=1-4]
+
 Liferay DXPサーバーのアクティベートをし、 Liferay Connected Services (LCS)を最大限活用するには、まず以下の方法でサーバーをLCSに登録する必要がありますが、その前に設定する項目がいくつかあります。この資料はそれらの手順を説明しています。
 
 1. [LCSクライアントアプリケーションをダウンロード](#downloading-the-lcs-client-app)

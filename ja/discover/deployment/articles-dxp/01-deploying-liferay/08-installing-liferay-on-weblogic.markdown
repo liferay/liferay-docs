@@ -4,6 +4,8 @@ header-id: installing-liferay-dxp-on-weblogic-12c-r2
 
 # WebLogic 12c R2への@product@のインストール
 
+[TOC levels=1-4]
+
 @product@をWebLogic Adminサーバー上でインストールできますが、この方法は勧められていません。@product@を含むWebアプリケーションをWebLogic 管理サーバーにインストールすることをお勧めします。Web 管理サーバーにデプロイすると、@product@をより早く起動またはシャットダウンすることができ、クラスター設定への移行も容易になります。この記事では、@product@をWeb 管理サーバーにインストールする方法について説明します。
 
 

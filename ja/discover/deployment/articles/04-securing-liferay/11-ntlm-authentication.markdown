@@ -4,6 +4,8 @@ header-id: ntlm-single-sign-on-authentication
 
 # NTLMシングルサインオン認証
 
+[TOC levels=1-4]
+
 NTLM (NT LAN Manager)は認証、整合性、ユーザー情報の機密性の保持を提供するMicrosoftプロトコルのスイートです。
 Microsoftは、最新版のWindowsサーバーにKerberosを採用していますが、ワークグループの認証に現在もNTLMが使用されています。 @product@ はNTLM v2認証もサポートしています。 NTLM v2はより安全性が高く、認証プロセスがNTLMv1より強化されています。
 

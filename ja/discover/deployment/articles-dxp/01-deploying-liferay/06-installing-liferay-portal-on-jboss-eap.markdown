@@ -1,8 +1,10 @@
 ---
-header-id:installing-product-on-jboss-eap
+header-id: installing-product-on-jboss-eap
 ---
 
 # JBoss EAPに@product@をインストールする
+
+[TOC levels=1-4]
 
 JBoss EAP 7.1に@product@をインストールするには3つの手順があります
 :

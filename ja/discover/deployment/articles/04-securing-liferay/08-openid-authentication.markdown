@@ -4,6 +4,8 @@ header-id: openid-single-sign-on-authentication
 
 # OpenIDシングルサインオン(SSO)認証
 
+[TOC levels=1-4]
+
 OpenIDはシングルサインオンの標準として、多くのベンダーで使用されています。ユーザーはそれぞれ、信頼しているベンダーを利用して、ユーザー登録ができます。一度Open IDのベンダーで登録したIDはOpenIDをサポートしている全てのサイトで利用できます。 著名なOpen IDベンダーでは、Google、 Paypal、 Amazon、Microsoftなどです。ベンダーの詳細なリストは[OpenID](http://www.openid.net/)サイトを参照ください。
 
 | **注**:OpenIDは@product-ver@では推奨されておらず、将来のバージョンでは削除される可能性があります。

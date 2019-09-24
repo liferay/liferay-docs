@@ -4,6 +4,8 @@ header-id: authentication-verifiers
 
 # 認証ベリファイア
 
+[TOC levels=1-4]
+
 認証検証レイヤーは、@product@のAPIのリモート呼び出しを認証するための一元的かつ拡張可能な方法です。
 
 認証検証レイヤーの主な役割は、以下の通りです。

@@ -4,6 +4,8 @@ header-id: tuning-elasticsearch
 
 # Elasticsearchのチューニング
 
+[TOC levels=1-4]
+
 検索エンジンはキャッシュから多くの恩恵を受けています。JVMメモリー性質は、コンテンツやページ閲覧を提供を主に行うJVM（例えば@product@を起動するJVM）と大きく異なります。
 本番環境においては、検索エンジンと@product@は必ず別のJVMに配置するようにしてください。
 

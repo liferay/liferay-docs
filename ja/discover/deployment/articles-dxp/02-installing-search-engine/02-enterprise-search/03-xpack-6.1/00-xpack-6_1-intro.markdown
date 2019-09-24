@@ -4,6 +4,8 @@ header-id: installing-x-pack-6-1
 
 # X-Packをインストールする（6.1）
 
+[TOC levels=1-4]
+
 X-Packは、 Elasticsearchクラスターを保護および監視するための[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)です。Elasticsearchを使用する場合は、X-Packで保護する必要があります。X-Packのセキュリティ機能には、Elasticsearchクラスターのデータへのアクセスの認証、Elasticsearchの内部および外部通信の暗号化などがあります。
 
 ほとんどのプロダクションシステムはこれらの機能を必要とします。Liferay Enterprise Search Premiumのサブスクリプションを使用すると、@product@用に2つのX-Packコネクタ（監視とセキュリティ）にアクセスできます。Liferay Enterprise Search Standardサブスクリプションを使用すると、モニタリング統合が可能になります。詳細はこちらまでお問い合わせください：[Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales)

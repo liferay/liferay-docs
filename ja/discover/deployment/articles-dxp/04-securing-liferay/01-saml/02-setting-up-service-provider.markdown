@@ -4,6 +4,8 @@ header-id: setting-up-liferay-as-a-saml-service-provider
 
 # SAMLService Providerとして@product@を設定する
 
+[TOC levels=1-4]
+
 これらの手順の多くは、@product@をSAML Identity Providerとして設定する手順と似ています。単一の@product@インストールをSAML Identify Provider*または* SAML Service Providerとして設定できますが、両方を設定することはできないのでその点注意してください。SAML Identity Providerとして1つの@product@インストールをすでに設定している場合は、SAMLService Providerとは*別の* @product@インストールを使用して ください。
 
 

@@ -1,8 +1,10 @@
 ---
-header-id:installing-liferay-dxp-on-websphere
+header-id: installing-liferay-dxp-on-websphere
 ---
 
 # WebSphereへの@product@のインストール
+
+[TOC levels=1-4]
 
 IBM &reg; WebSphere &regは、International Business Machines Corporationの商標であり、世界中の多くの国で登録されています。
 

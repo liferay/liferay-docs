@@ -4,6 +4,8 @@ header-id: configure-documents-and-media-the-same-for-all-nodes
 
 # ドキュメントとメディアを全ノードで同じ設定にする
 
+[TOC levels=1-4]
+
 クラスタ環境では、[ドキュメントとメディアの設定](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)は全ノードに渡って同じ設定にしてください。
 
 

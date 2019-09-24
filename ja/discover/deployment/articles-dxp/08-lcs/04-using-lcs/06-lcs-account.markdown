@@ -4,6 +4,8 @@ header-id: managing-your-lcs-account
 
 # LCSアカウントを管理する
 
+[TOC levels=1-4]
+
 LCSアカウントを管理するには、ドックバーのユーザーメニューから*マイアカウント*を選択します。すると、4つのタブがあるUIが表示されます：
 
 

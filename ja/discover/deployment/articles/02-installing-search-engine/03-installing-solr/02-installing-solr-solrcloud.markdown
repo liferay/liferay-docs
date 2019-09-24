@@ -4,6 +4,8 @@ header-id: high-availability-with-solrcloud
 
 # Sorlのインストール：高可用性クラスターでSolrCloudを使用する
 
+[TOC levels=1-4]
+
 Solrサーバーにクラスタリングが必要な場合、SolrCloudを使用します。
 SolrCloudを本番環境で使用する場合は、[外部 ZooKeeper](https://cwiki.apache.org/confluence/display/solr/Setting+Up+an+External+ZooKeeper+Ensemble)アンサンブル構成をセットアップすることを推奨します。
 [ZooKeeper](http://zookeeper.apache.org/)はSolrCloudクラスターのような分散システムの管理をする集中型コーディネーションサービスです。

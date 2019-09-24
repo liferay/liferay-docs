@@ -4,6 +4,8 @@ header-id: backing-up-elasticsearch
 
 # Backing Up Elasticsearch
 
+[TOC levels=1-4]
+
 [Elasticsearch replicas](https://www.elastic.co/guide/en/elasticsearch/guide/master/replica-shards.html)
 protect against a node going down, but they won't help you with a catastrophic
 failure. Only good backup practices can help you then.

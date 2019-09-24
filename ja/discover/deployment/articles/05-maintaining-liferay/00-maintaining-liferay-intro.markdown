@@ -4,6 +4,8 @@ header-id: maintaining-liferay
 
 # @product@の維持
 
+[TOC levels=1-4]
+
 @product@をインストールしたら、円滑に動作させるためにしなければならないことがいくつかあります。ハードウェア障害に備えてインストールをバックアップすることによって、データを保護し、システムをすぐに正常な状態に戻すのに役立ちます。DXPをご利用の場合、システムに定期的にパッチをあてることで、実行中のインスタンスに最新のバグ修正が提供されます。
 
 | @product-ver@を新しいGAバージョンにアップグレードするには、[データアップグレード](/discover/deployment/-/knowledge_base/7-1/upgrading-to-liferay-71)が必要です。

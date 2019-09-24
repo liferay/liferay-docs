@@ -4,6 +4,8 @@ header-id: patching-tool-advanced-configuration
 
 # パッチングツールの高度な設定方法
 
+[TOC levels=1-4]
+
 デフォルトでは、パッチングツールの設定ファイル`default.properties`はツールのフォルダにあります。
 
 

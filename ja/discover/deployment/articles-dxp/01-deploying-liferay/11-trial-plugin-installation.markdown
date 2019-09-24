@@ -4,6 +4,8 @@ header-id: trial-plugin-installation
 
 # 試用版プラグインのインストール
 
+[TOC levels=1-4]
+
 
 試用版として@product@を使っているLiferayユーザーの場合、**プラグインは製品インストールのコントロールパネルの*[Apps]* > *[Store]*（例えばマーケットプレイス）セクションからアクセスできます**。
 

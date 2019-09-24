@@ -4,6 +4,8 @@ header-id: patching-tool-basic-configuration
 
 # パッチングツール基本設定方法
 
+[TOC levels=1-4]
+
 パッチングツールの設定方法は2つあります：
 
 

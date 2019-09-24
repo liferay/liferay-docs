@@ -4,6 +4,8 @@ header-id: what-is-saml
 
 # SAMLとは？
 
+[TOC levels=1-4]
+
 SAML（Security Assertion Markup Language）アダプタを使用すると、デプロイでSingle Sign On（SSO）とSingle Log Off（SLO）を実行できます。各@product@インスタンスは、Service Provider（SP）またはIdentity Provider（IdP）のいずれかとして機能します。この記事では、@product@のSSOソリューションの概念的な枠組みを説明します。
 
 

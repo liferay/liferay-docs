@@ -4,6 +4,8 @@ header-id: managing-lcs-environments
 
 # LCS環境の管理
 
+[TOC levels=1-4]
+
 環境はLCSプロジェクトの重要なコンポーネントです。LCSにサーバーを登録する時、環境内で登録します。環境はLCSでサーバーを管理および監視するためのいわゆるゲートウェイです。
 
 ## 環境を作成する

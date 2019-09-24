@@ -4,6 +4,8 @@ header-id: advanced-monitoring-apm-tools-dynatrace-id
 
 # 高度なモニタリング：APMツール；Dynatrace
 
+[TOC levels=1-4]
+
 [Dynatrace](https://www.dynatrace.com)のような高度なパフォーマンス監視ツール は、@product@サーバーとインスタンスに関する詳細なパフォーマンス情報を提供します。DynatraceのWebベースのダッシュボードには、メモリ使用量、ガベージコレクション、CPUレベル、およびヒープダンプに関するリアルタイムのシステム情報が表示されます。各ダッシュボードはそれぞれの詳細レポートです。@product@ サーバーのパフォーマンス測定基準に関する個々のユーザーの最新情報まで表示できます。
 
 | |** 注： **Dynatraceは現在[*Dynatrace SaaS*](https://www.dynatrace.com/support/dynatrace/)も提供しています。|

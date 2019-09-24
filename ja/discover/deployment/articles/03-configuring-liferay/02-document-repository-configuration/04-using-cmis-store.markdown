@@ -4,6 +4,8 @@ header-id: using-the-cmis-store
 
 # CMISストアの使用
 
+[TOC levels=1-4]
+
 ドキュメントとメディアライブラリには、必要なだけのCMIS（Content Management Interoperability Services）リポジトリをマウントできますが、@product@リポジトリを定義してCMISリポジトリを指すこともできます。
 
 CMISストアを使用するには、次の手順に従います。

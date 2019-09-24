@@ -4,6 +4,8 @@ header-id: point-all-nodes-to-the-same-database
 
 # 全てのノードが同じ@product@データベースを指すように設定する
 
+[TOC levels=1-4]
+
 全ノードにLiferay DXPデータベース（またはデータベースクラスター）を指すデータソースが必要です。よって、Liferay DXPはバンドルに付属されているHQSLデータベースは使用できません。またデータベースサーバーはLiferay DXPが起動しているサーバーとは別のシステム上に配置する必要があります。
 
 ## Read-Writer型データベースの構成

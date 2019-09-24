@@ -1,8 +1,10 @@
 ---
-header-id:installing-x-pack-0
+header-id: installing-x-pack-0
 ---
 
 # X-Packをインストールする
+
+[TOC levels=1-4]
 
 X-Packのインストール手順は次のとおりです：
 

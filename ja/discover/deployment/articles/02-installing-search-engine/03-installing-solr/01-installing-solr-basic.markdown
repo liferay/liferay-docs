@@ -4,6 +4,8 @@ header-id: installing-solr-basic-installation
 
 # Solrのインストール：基本インストール
 
+[TOC levels=1-4]
+
 Liferay Connector to Solr 7をインストールするには、２つの方法があります：
 
 1. [Liferay Marketplace](https://web.liferay.com/marketplace/)へ移動し、利用中のポータルに対応するアプリケーションをダウンロードします。

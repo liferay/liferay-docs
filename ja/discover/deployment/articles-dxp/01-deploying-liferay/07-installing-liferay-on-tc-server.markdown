@@ -1,8 +1,10 @@
 ---
-header-id:installing-liferay-on-tc-server
+header-id: installing-liferay-on-tc-server
 ---
 
 # tcサーバーに@product@をインストールする
+
+[TOC levels=1-4]
 
 tcサーバーに@product@をインストールするには、以下のファイルが必要です：
 

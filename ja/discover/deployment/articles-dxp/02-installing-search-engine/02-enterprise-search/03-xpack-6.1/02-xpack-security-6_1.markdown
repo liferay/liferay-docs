@@ -4,6 +4,8 @@ header-id: installing-x-pack-security-6-1
 
 # X-Pack Securityをインストールする（6.1）
 
+[TOC levels=1-4]
+
 X-Packをインストールしたら、組み込みのユーザーパスワードを設定してElasticsearchの保護を開始します。
 
 

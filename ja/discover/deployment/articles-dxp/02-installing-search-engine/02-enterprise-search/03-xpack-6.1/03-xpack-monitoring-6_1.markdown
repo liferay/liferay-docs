@@ -1,8 +1,10 @@
 ---
-header-id:
+header-id: installing-x-pack-monitoring-6-1
 ---
 
 # X-Pack Monitoring (6.1)のインストール
+
+[TOC levels=1-4]
 
 X-Pack Monitoringを使ってElasticsearchを監視します。まず Elasticsearch上にX-Packをインストールし（詳細[install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack))、X-Packのセキュリティ機能を使用している場合は、セキュリティを設定します。上記のことが完了したら、X-Packで保護されているElasticsearchとKibana、および@product@が簡単かつ安全に通信できるように、以下のX-PackでKibana（監視サーバー）をインストール、および構成する手順に従ってください。この統合を行うには、(Premiumに含まれている）Liferay Enterprise Search Standardサブスクリプション契約が必要です。詳細はこちらまでお問い合わせください：[Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales)
 

@@ -4,6 +4,8 @@ header-id: token-based-single-sign-on-authentication
 
 # トークンを使用したシングルサインオン認証
 
+[TOC levels=1-4]
+
 トークン方式SSO認証は@product@7.0から導入され、Shibboleth、 SiteMinderや以下の方法でトークンを伝播させる形式のSSO製品に対して標準化されています:
 
 - HTTP リクエストパラメータ

@@ -4,6 +4,8 @@ header-id: authenticating-with-openid-connect
 
 # OpenID Connectを用いた認証
 
+[TOC levels=1-4]
+
 OpenID Connectは、[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)認可プロトコルの上に構築された軽量の認証レイヤーです。ユーザーが他のシステムにあるアカウントを使用して認証できるようにすることで、ローカルアカウントの保持を補完します。新しいアカウントにサインアップするのを避けたユーザーは、すでに持っているアカウントを使って、Webサイトにログインできます。OpenID Connectを使用することで、他のプロバイダーにユーザー認証を*委任*し、既存のアカウントを持つユーザーが自分のシステムに対して簡単に認証できるようになります。
 
 | **注：**インストールに複数のプロバイダーを追加できますが、@product@がOpenID Connectプロバイダーになることはまだできません。

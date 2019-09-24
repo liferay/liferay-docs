@@ -4,6 +4,8 @@ header-id: setting-up-liferay-as-a-saml-identity-provider
 
 # SAML Identity Providerとして@product@を設定する
 
+[TOC levels=1-4]
+
 Identity Providerは、ユーザーが他のWebサイトにアクセスするためのシングルサインオンを提供する、信頼できるプロバイダです。Service Providerは、アプリケーションをホストするウェブサイトで、適切な資格情報を持つ識別されたユーザーにのみアクセスを許可します。
 SAMLは[OASIS Security Services Technical Committee]（https://www.oasis-open.org/ committees/security/）によって管理されています。
 Liferay Portal 6.1 EE以降のバージョンは、[Liferay SAML 2.0 Provider](https://web.liferay.com/marketplace/-/mp/application/15188711)アプリケーションを通じてLiferay SAML 2.0の統合をサポートしています。Liferayマーケットプレイスから提供されており、@product@をSAML 2.0 Identity ProviderまたはService Providerとして機能させることができます。 

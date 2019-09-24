@@ -4,6 +4,8 @@ header-id: activating-your-liferay-dxp-server-with-lcs
 
 # Liferay DXPサーバーをLCSに登録する
 
+[TOC levels=1-4]
+
 | **注:**Elasticサブスクリプションを有効化するにはLCSを使用する必要があります。そうでなければ、アクティベーションにLCSを使う必要はありません。代わりにLiferayサポートからXMLアクティベーションキーをリクエストすることができます。
 
 以下の手順に従って、@product@サーバーをLCSに登録してください:

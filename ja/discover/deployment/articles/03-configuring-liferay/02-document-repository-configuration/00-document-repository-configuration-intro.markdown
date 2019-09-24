@@ -4,6 +4,8 @@ header-id: document-repository-configuration
 
 # ドキュメントリポジトリの設定
 
+[TOC levels=1-4]
+
 ファイルストレージはいくつかの方法で設定できます。
 各オプションは、[`dl.store.impl=`プロパティ](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Document%20Library%20Service)を設定することで`portal-ext.properties`ファイルを介して設定することができる*ストア*です。
 

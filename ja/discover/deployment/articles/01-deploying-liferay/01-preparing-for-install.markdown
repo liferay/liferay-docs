@@ -4,6 +4,8 @@ header-id: preparing-for-install
 
 # インストールの準備
 
+[TOC levels=1-4]
+
 @product@ のインストールは簡単です。ただし始める前に、下記を検討する必要があります。
 
 - どのバージョンのLiferayをインストール予定かですか。

@@ -4,6 +4,8 @@ header-id: cas-central-authentication-service-single-sign-on-authentication
 
 # CAS (Central Authentication Service) シングルサインオン認証
 
+[TOC levels=1-4]
+
 
 CASはYale大学によって開発された認証システムです。オープンソースのシングルサインオンとして、広く使われています。また、@product@がSSO製品として初めてサポートした製品でもあります。Liferay DXPのCASモジュールは、CASクライアントも含んでいるので、個別にインストールする必要がありません。
 

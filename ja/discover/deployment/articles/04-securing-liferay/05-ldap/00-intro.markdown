@@ -4,6 +4,8 @@ header-id: ldap
 
 # LDAP設定方法
 
+[TOC levels=1-4]
+
 @product@はLDAPをユーザーストアとしてサポートしています。[インスタンス設定]へ行き、[認証]ページにある [LDAP]タブで、Liferay DXPがLDAPディレクトリに接続できるように設定します。 それによりユーザーをLDAPからLiferay DXPにインポート、そしてLiferay DXPからLDAPにエクスポートできます。お客様の環境で、ユーザー情報をLDAPサーバーに保存している場合は、ユーザーおよび管理者にとっても、LDAPユーザー情報をLiferay DXPにインポートする方法が有益です。この記事では Liferay DXPをLDAPサーバーに接続する方法、インポート/エクスポート設定方法、その他LDAP関連の構成設定を説明します。
 
 ## Liferay DXPのLDAP設定

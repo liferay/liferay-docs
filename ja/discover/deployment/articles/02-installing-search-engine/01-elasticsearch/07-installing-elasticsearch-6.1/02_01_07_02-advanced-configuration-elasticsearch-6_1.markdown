@@ -4,6 +4,8 @@ header-id: advanced-configuration-of-the-liferay-elasticsearch-connector-6-1
 
 # Advanced Configuration of the Liferay Elasticsearch Connector (6.1)
 
+[TOC levels=1-4]
+
 The default configurations for Liferay's Elasticsearch adapter module are set
 in a Java class called `ElasticsearchConfiguration`.
 

@@ -4,6 +4,8 @@ header-id: facebook-connect-single-sign-on-authentication
 
 # Facebook Connect シングルサインオン認証
 
+[TOC levels=1-4]
+
 Facebook Connect SSO認証はFacebookのGraph APIとのインテグレーションを提供しており、
 Facebookプロフィール情報と@product@ユーザー(FacebookのIDまたはEmailアドレス）と照合します。ユーザーのFacebookのEmailアドレスが見つかると、Facebook Connect SSO認証モジュールは@product@の`User_ `テーブルから同じEmailアドレスを検索します。一致するアドレスが見つかった場合、Facebook側で必要な権限があればユーザーはサインオンできます。
 

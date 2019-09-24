@@ -4,6 +4,8 @@ header-id: enabling-cluster-link
 
 # Cluster Linkを有効にする
 
+[TOC levels=1-4]
+
 Cluster Linkを有効にすると、分散キャッシュが自動的に有効になります。キャッシュは、同時に実行されている複数の@product@ノードに分散されます。Cluster Linkは[Ehcache](http://www.ehcache.org)の複製を行います。Ehcacheのグローバル設定は[`portal.properties`ファイル](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Ehcache)にあります。
 
 デフォルトでは、Liferayはノード間でキャッシュされたエンティティをコピーしません。たとえば、１つのノード上でエンティティが削除または変更された場合、Cluster Link は他のノードに*削除*メッセージを送信して、ローカルキャッシュ内のこのエンティティを無効にします。別のノードでそのエンティティを要求すると、キャッシュ*ミス*が発生します。その後、エンティティはデータベースから取得され、ローカルキャッシュに置かれます。あるノードのローカルキャッシュに追加されたエンティティは、他のノードのローカルキャッシュにはコピーされません。

@@ -4,6 +4,8 @@ header-id: working-with-patches
 
 # パッチを使った作業
 
+[TOC levels=1-4]
+
 以下のようなパッチ関連のことをする必要があるかもしれません：
 
 - [

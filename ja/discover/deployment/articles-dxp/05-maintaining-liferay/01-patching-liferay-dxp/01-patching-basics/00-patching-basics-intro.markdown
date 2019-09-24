@@ -4,6 +4,8 @@ header-id: patching-basics
 
 # パッチ適用の基本
 
+[TOC levels=1-4]
+
 Liferayは、以下の3つの異なるチャネルを通じて@product-ver@ fixを出荷します：
 
 

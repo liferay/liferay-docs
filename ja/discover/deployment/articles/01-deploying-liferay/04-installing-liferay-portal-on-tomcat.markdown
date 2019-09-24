@@ -4,6 +4,8 @@ header-id: installing-product-on-tomcat
 
 # Tomcatに@product@をインストールする方法
 
+[TOC levels=1-4]
+
 @product-ver@Tomcat 9にバンドルされているLiferay DXP 7.1は、[カスタマーポータル](https://web.liferay.com/group/customer/dxp/downloads/7-1)（DXP）または[Liferay Downloads](https://www.liferay.com/downloads)（ポータルCE）で入手できます。
 Tomcatバンドルには、クリーンなTomcat 9アプリケーションサーバーに@product@ をインストールするために必要なJAR、スクリプト、および設定ファイルが含まれています。
 @product@ Tomcatバンドルからこれらのファイルをコピーすると、Tomcatへの@product@のインストールが容易になります。

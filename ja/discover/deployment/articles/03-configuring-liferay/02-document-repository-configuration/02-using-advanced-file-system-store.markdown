@@ -4,6 +4,8 @@ header-id: using-the-advanced-file-system-store
 
 # Advanced File System Store の使用
 
+[TOC levels=1-4]
+
 Advanced File System Store は、Simple File System Store（デフォルトストア）と似ています。Simple File System Storeのように、ローカルファイルシステムにファイルを保存します。ローカルファイルシステムは、リモートファイルシステムマウントもあり得ます。下の図のように、ファイルを保存するためにわずかに異なるフォルダー構造を使用します。
 
 ![図1：Advanced File System Storeは、ファイルシステムストアよりもネストされたフォルダ構造を作成します。](../../../images/enterprise-adv-file-system-store.png)

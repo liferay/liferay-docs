@@ -4,6 +4,8 @@ header-id: clustering-search
 
 # クラスタリング検索
 
+[TOC levels=1-4]
+
 検索エンジンは必ず@product@とは別のサーバーで起動してください。
 @product@は [Elasticsearch](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)と [Solr](/discover/deployment/-/knowledge_base/7-1/installing-solr)をサポートしています。
 両方ともクラスタ環境で使用することが可能です。

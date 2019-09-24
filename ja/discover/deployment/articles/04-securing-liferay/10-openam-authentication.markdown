@@ -4,6 +4,8 @@ header-id: opensso-single-sign-on-authentication
 
 # OpenAMシングルサインオン認証
 
+[TOC levels=1-4]
+
 OpenAMは、SunのSystem Access Manager製品のコードベースに基づくオープンソースのシングルサインオンソリューションです。@product@はOpenAMと統合されているため、OpenAMを介して、異なるユーザー情報を保持するリポジトリに対して、複数の認証スキーマが利用可能です。
 
 | **注**: OpenAMは@product-ver@では推奨されておらず、将来のバージョンでは削除される可能性があります。

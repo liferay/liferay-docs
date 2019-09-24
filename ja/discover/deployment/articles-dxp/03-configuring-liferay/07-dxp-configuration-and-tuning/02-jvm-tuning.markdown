@@ -4,6 +4,8 @@ header-id: java-virtual-machine-tuning
 
 # Java仮想マシンのチューニング
 
+[TOC levels=1-4]
+
 Java仮想マシン（JVM）のチューニングは、主にガーベージコレクターとJavaメモリヒープの調整に焦点を当てています。基準アーキテクチャーはOracleの1.8 JVMを使用しています。サポートされている他のJVMのバージョンとインプリメンテーションを選択することもできます。
 その他の互換性のあるJVMについては[Liferay DXP 互換性マトリクス](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix)を参照してください 。
 

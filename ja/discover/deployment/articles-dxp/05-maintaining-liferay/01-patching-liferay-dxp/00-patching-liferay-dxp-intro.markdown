@@ -4,6 +4,8 @@ header-id: patching-liferay
 
 # @ product @へのパッチ適用
 
+[TOC levels=1-4]
+
 私たちは常に、何も問題のない、完璧な状態ですべての@ product @をリリースできるよう努力していますが、現実は目標としていたほど完璧なリリースができないこともあります。しかし、それに対する解決策も用意してあります。すべての@ product @バンドルには、フィックスパックとホットフィックスという、2種類のパッチのインストールを処理するパッチングツールが含まれています。
 
 | **重要：**定期的に必ず@product@のインストールとデータベースをバックアップするようにしてください。（特にパッチを適用する前に）（パックアップに関する詳細はこちら：[back up your @product@ installation and database](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)）パッチングツールはコード変更をインストールし、そしてこれらのいくつかは（必要ならば）立ち上げ時に自動的にデータを変更します。

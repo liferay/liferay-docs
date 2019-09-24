@@ -4,6 +4,8 @@ header-id: liferay-clustering
 
 # @product@のクラスタリング
 
+[TOC levels=1-4]
+
 @product@は、最小規模から最大規模のWebサイトまであらゆるサイズのウェブサイトに対応しています。デフォルト設定では、単一サーバー環境に設定されています。サイトのアクセス数が多く単一サーバーで十分に対応できない場合は、Liferay DXPを適切な規模に調整することが可能です。
 
 ![図1: @product@は大きなインストールに対応できるように設計されています。](../../../images/clustering-enterprise-configuration.png)

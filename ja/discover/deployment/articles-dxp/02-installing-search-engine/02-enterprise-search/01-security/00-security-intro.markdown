@@ -1,8 +1,10 @@
 ---
-header-id:installing-liferay-enterprise-search-security
+header-id: installing-liferay-enterprise-search-security
 ---
 
 # Liferay Enterprise Searchセキュリティのインストール
+
+[TOC levels=1-4]
 
 X-Packをインストールしたら、組み込みのユーザーパスワードを設定してElasticsearchの保護を開始します。
 

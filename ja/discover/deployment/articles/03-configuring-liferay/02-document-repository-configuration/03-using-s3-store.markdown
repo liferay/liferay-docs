@@ -4,6 +4,8 @@ header-id: using-amazon-simple-storage-service
 
 # Amazon Simple Storage Serviceの使用
 
+[TOC levels=1-4]
+
 AmazonのSimple Storage Service（S3）は、ドキュメントとメディアに使用できるクラウドベースのストレージソリューションです。必要なのはアカウントだけで、ドキュメントをすべてのノードからクラウドにシームレスに保存できます。
 
 サービスにサインアップするとき、Amazonからアカウントにリンクする固有のキーが割り当てられます。Amazonのインターフェースでは、リージョン別に最適化されたデータの「バケット」が作成できます。
