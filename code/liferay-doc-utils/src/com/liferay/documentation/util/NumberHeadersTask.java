@@ -103,7 +103,6 @@ public class NumberHeadersTask extends Task {
 						out = Files.newBufferedWriter(Paths.get(outFileTmp), StandardCharsets.ISO_8859_1);
 					}
 					else {
-						System.out.println("Test");
 						in = new LineNumberReader(new FileReader(inFile));
 						out = new BufferedWriter(new FileWriter(outFileTmp));
 					}
