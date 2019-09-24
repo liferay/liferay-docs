@@ -148,8 +148,47 @@ Ehcache's cache registry, and registers a new Ehcache into Ehcache's cache
 registry. If the name is new, the Liferay cache manager just registers a new
 Ehcache.
 
-Cache names are arbitrary except for EntityCache and FinderCache, as described
-in their respective articles in this section.
+Cache names are arbitrary except for EntityCache and FinderCache.  
+
+### EntityCache Names 
+
+EntityCache uses this naming convention:
+
+`PREFIX. + ENTITY_IMPL_CLASS_NAME`
+
+where the `PREFIX` is always this:
+
+```
+com.liferay.portal.kernel.dao.orm.EntityCache.
+```
+
+For example, the cache name for the `com.liferay.portal.kernel.model.User`
+entity starts with the `PREFIX` and ends with the implementation class name
+`com.liferay.portal.model.impl.UserImpl`:
+
+```
+com.liferay.portal.kernel.dao.orm.EntityCache.com.liferay.portal.model.impl.UserImpl
+```
+
+### FinderCache Names 
+
+FindeCache uses this naming convention:
+
+`PREFIX. + ENTITY_IMPL_CLASS_NAME + [".LIST1"|".LIST2"]`
+
+where the `PREFIX` is always this:
+
+```
+com.liferay.portal.kernel.dao.orm.FinderCache.
+```
+
+Here are the FinderCache types and their name patterns.
+
+| Type | Pattern | Example |
+| ---- | ------- | ------- |
+| Entity instances matching query parameters.  | `PREFIX. + ENTITY_IMPL_CLASS_NAME` | `com.liferay.portal.kernel.dao.orm.FinderCache.com.liferay.portal.model.impl.ClassNameImpl` |
+| Paginated lists of entity instances matching query parameters.  | `PREFIX + ENTITY_IMPL_CLASS_NAME + ".List1"` | `com.liferay.portal.kernel.dao.orm.FinderCache.com.liferay.portal.model.impl.ClassNameImpl.List1` |
+| Non-paginated lists of entity instances matching query parameters.  | `PREFIX + ENTITY_IMPL_CLASS_NAME + ".List2"` | `com.liferay.portal.kernel.dao.orm.FinderCache.com.liferay.portal.model.impl.ClassNameImpl.List2` |
 
 Now that you have a basic understanding of cache in Liferay, continue with
 creating your own cache or overriding existing cache configurations. 
