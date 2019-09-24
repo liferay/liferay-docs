@@ -18,7 +18,8 @@ public class NumberImagesTask extends Task {
 	@Override
 	public void execute() throws BuildException {
 		
-String productType = _productType;
+		String langDir = _langDir;
+		String productType = _productType;
 
 		List<String> dirTypes = new ArrayList<String>();
 		dirTypes.add("");
@@ -72,8 +73,8 @@ String productType = _productType;
 				String articlePath = article.getAbsolutePath();
 
 				try {
-					resetImages(articlePath);
-					numberImages(articlePath);
+					resetImages(articlePath, langDir);
+					numberImages(articlePath, langDir);
 				}
 				catch (IOException ie) {
 					throw new BuildException(ie.getLocalizedMessage());
@@ -86,15 +87,25 @@ String productType = _productType;
 		_docDir = docDir;
 	}
 
+	public void setLangDir(String langDir) {
+		_langDir = langDir;
+	}
+	
 	public void setProductType(String productType) {
 		_productType = productType;
 	}
 
-	private void numberImages(String markdownFilePath) throws IOException {
+	private void numberImages(String markdownFilePath, String langDir) throws IOException {
 		File markdownfile = new File(markdownFilePath);
+		String source;
 
-		String source = FileUtils.readFileToString(markdownfile);
-		String find = "\\!\\[Figure [x|X]:";
+		if (langDir.equals("ja")) {
+			source = FileUtils.readFileToString(markdownfile, "ISO_8859_1");
+		}
+		else {
+			source = FileUtils.readFileToString(markdownfile);
+		}
+			String find = "\\!\\[Figure [x|X]:";
 		int fignum = 1;
 		String replace = "\\!\\[Figure " + fignum + ":";
 
@@ -128,16 +139,27 @@ String productType = _productType;
 		//
 		// Saves the updated file, replaces the original
 		//
-		FileUtils.writeStringToFile(markdownfile, output);
+		if (langDir.equals("ja")) {
+			FileUtils.writeStringToFile(markdownfile, output, "ISO_8859_1");
+		}
+		else {
+			FileUtils.writeStringToFile(markdownfile, output);
+		}
 	}
 
-	private void resetImages(String markdownFilePath) throws IOException {
+	private void resetImages(String markdownFilePath, String langDir) throws IOException {
 		// Linux example: "/home/$USER/workspace/01-example-chapter.markdown"
 		// Windows example: "E:\liferay-docs\discover\portal\articles\01-what-is-liferay\00-what-is-liferay-intro.markdown"
 		File markdownfile = new File(markdownFilePath); // example: "/home/$USER/workspace/01-example-chapter.markdown"
-
-		String source = FileUtils.readFileToString(markdownfile);
-
+		String source;
+		
+		if (langDir.equals("ja")) {
+			source = FileUtils.readFileToString(markdownfile, "ISO_8859_1");
+		}
+		else {
+			source = FileUtils.readFileToString(markdownfile);
+		}
+			
 		String find = "\\!\\[Figure " + "[0-9]:";
 		String replace = "\\!\\[Figure " + "x:";
 
@@ -154,7 +176,12 @@ String productType = _productType;
 		//
 		// Saves the updated file, replaces the original
 		//
-		FileUtils.writeStringToFile(markdownfile, output);
+		if (langDir.equals("ja")) {
+			FileUtils.writeStringToFile(markdownfile, output, "ISO_8859_1");
+		}
+		else {
+			FileUtils.writeStringToFile(markdownfile, output);
+		}
 
 		/* This code is for saving the output to a new file so the original is not overwritten; useful for debugging
 
@@ -166,5 +193,6 @@ String productType = _productType;
 	}
 
 	private String _docDir;
+	private String _langDir;
 	private String _productType;
 }

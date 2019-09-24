@@ -40,6 +40,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="appendlang" classname="com.liferay.documentation.util.AppendLangHeader">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="checkarticleimgssite" classname="com.liferay.documentation.util.CheckArticleImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -176,6 +187,11 @@
 	<target name="add-article-to-temp" depends="process-article-to-temp, check-images-dist" description="Processes the article (-Darticle=...) and its parent article structure, adding the target article and all related parent articles and images to temp/">
 	</target>
 
+	<target name="append-lang" description="">
+		<appendlang docdir="${doc.dir}">
+		</appendlang>
+	</target>
+
 	<target name="article-to-html" depends="prepare, check-article-images" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
@@ -190,17 +206,17 @@
 	</target>
 
 	<target name="add-toc" description="Adds the Table of Contents syntax for each CE Markdown article.">
-		<addtoc docdir="${doc.dir}" producttype="ce">
+		<addtoc docdir="${doc.dir}" langdir="${language.dir}" producttype="ce">
 		</addtoc>
 	</target>
 
 	<target name="add-toc-dist" description="Adds the Table of Contents syntax for each Markdown article when generating Zip.">
-		<addtoc docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		<addtoc docdir="${doc.dir}/${temp.dir}" langdir="${language.dir}" producttype="dist">
 		</addtoc>
 	</target>
 
 	<target name="add-toc-dxp" description="Adds the Table of Contents syntax for each DXP Markdown article.">
-		<addtoc docdir="${doc.dir}" producttype="dxp">
+		<addtoc docdir="${doc.dir}" langdir="${language.dir}" producttype="dxp">
 		</addtoc>
 	</target>
 
@@ -372,7 +388,7 @@
 	</target>
 
 	<target name="convert-sidebars" description="Converts legacy sidebars to new format.">
-		<convertsidebars docdir="${doc.dir}">
+		<convertsidebars docdir="${doc.dir}" langdir="${language.dir}">
 		</convertsidebars>
 	</target>
 
@@ -489,32 +505,32 @@
 	</target>
 
 	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
-		<numberheaders docdir="${doc.dir}" producttype="ce">
+		<numberheaders docdir="${doc.dir}" langdir="${language.dir}" producttype="ce">
 		</numberheaders>
 	</target>
 
 	<target name="number-headers-dist" description="Numbers the headers of Markdown articles.">
-		<numberheaders docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		<numberheaders docdir="${doc.dir}/${temp.dir}" langdir="${language.dir}" producttype="dist">
 		</numberheaders>
 	</target>
 
 	<target name="number-headers-dxp" description="Numbers the headers of Markdown articles.">
-		<numberheaders docdir="${doc.dir}" producttype="dxp">
+		<numberheaders docdir="${doc.dir}" langdir="${language.dir}" producttype="dxp">
 		</numberheaders>
 	</target>
 
 	<target name="number-images" description="numbers the images in a markdown chapter file">
-		<numberimgssite docdir="${doc.dir}" producttype="ce">
+		<numberimgssite docdir="${doc.dir}" langdir="${language.dir}" producttype="ce">
 		</numberimgssite>
 	</target>
 
 	<target name="number-images-dist" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
-		<numberimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		<numberimgssite docdir="${doc.dir}/${temp.dir}" langdir="${language.dir}" producttype="dist">
 		</numberimgssite>
 	</target>
 
 	<target name="number-images-dxp" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
-		<numberimgssite docdir="${doc.dir}" producttype="dxp">
+		<numberimgssite docdir="${doc.dir}" langdir="${language.dir}" producttype="dxp">
 		</numberimgssite>
 	</target>
 

@@ -1,12 +1,19 @@
 package com.liferay.documentation.util;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.LineNumberReader;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -24,6 +31,7 @@ public class NumberHeadersTask extends Task {
 	public void execute() throws BuildException {
 
 		String docDir = _docdir;
+		String langDir = _langDir;
 		String productType = _productType;
 
 		boolean dxpBuild = false;
@@ -84,11 +92,21 @@ public class NumberHeadersTask extends Task {
 				}
 
 				try {
-					LineNumberReader in =
-							new LineNumberReader(new FileReader(inFile));
-					BufferedWriter out =
-							new BufferedWriter(new FileWriter(outFileTmp));
+					LineNumberReader in;
+					BufferedWriter out;
 
+					if (langDir.equals("ja")) {
+						Reader reader = new InputStreamReader(new FileInputStream(inFile), "ISO_8859_1");
+						BufferedReader br = new BufferedReader(reader);
+						in = new LineNumberReader(br);
+
+						out = Files.newBufferedWriter(Paths.get(outFileTmp), StandardCharsets.ISO_8859_1);
+					}
+					else {
+						System.out.println("Test");
+						in = new LineNumberReader(new FileReader(inFile));
+						out = new BufferedWriter(new FileWriter(outFileTmp));
+					}
 					String line;
 					int titleHeaderLineNum = -2;
 					boolean headerValidated = false;
@@ -103,7 +121,7 @@ public class NumberHeadersTask extends Task {
 							line = line.trim();
 							
 							// search for header ID; if header DNE, generate header
-							String headerIdLine = getHeaderIdLine(inFile);
+							String headerIdLine = getHeaderIdLine(inFile, langDir);
 								
 							if (headerIdLine == null) {
 								String headerId = generateNewHeader(filename, line, in.getLineNumber());
@@ -162,7 +180,7 @@ public class NumberHeadersTask extends Task {
 						"/articles/", "/articles-dxp/");
 				
 				try {
-					checkOverrideHeaders(duplicateFile, duplicateFileDxp);
+					checkOverrideHeaders(duplicateFile, duplicateFileDxp, langDir);
 					if (foundDuplicateIds) {
 						throw new BuildException("FAILURE - Duplicate header IDs exist");
 					}
@@ -203,7 +221,7 @@ public class NumberHeadersTask extends Task {
 		return finalHeaderId;
 	}
 	
-	private static void checkOverrideHeaders(String duplicateFile, String duplicateFile2) 
+	private static void checkOverrideHeaders(String duplicateFile, String duplicateFile2, String langDir) 
 			throws IOException {
 		
 		File inFile = new File(duplicateFile);
@@ -215,17 +233,33 @@ public class NumberHeadersTask extends Task {
 		File outFileTmpFile = new File(outFileTmp);
 		File outFileTmpFile2 = new File(outFileTmp2);
 		
-		LineNumberReader in =
-				new LineNumberReader(new FileReader(inFile));
-		BufferedWriter out =
-				new BufferedWriter(new FileWriter(outFileTmp));
-		LineNumberReader in2 =
-				new LineNumberReader(new FileReader(inFile2));
-		BufferedWriter out2 =
-				new BufferedWriter(new FileWriter(outFileTmp2));
+		LineNumberReader in;
+		BufferedWriter out;
+		LineNumberReader in2;
+		BufferedWriter out2;
 		
-		String headerIdLineCe = getHeaderIdLine(inFile);
-		String headerIdLineDxp = getHeaderIdLine(inFile2);
+		if (langDir.equals("ja")) {
+			Reader reader = new InputStreamReader(new FileInputStream(inFile), "ISO_8859_1");
+			BufferedReader br = new BufferedReader(reader);
+			in = new LineNumberReader(br);
+
+			out = Files.newBufferedWriter(Paths.get(outFileTmp), StandardCharsets.ISO_8859_1);
+	
+			Reader reader2 = new InputStreamReader(new FileInputStream(inFile2), "ISO_8859_1");
+			BufferedReader br2 = new BufferedReader(reader2);
+			in2 = new LineNumberReader(br2);
+
+			out2 = Files.newBufferedWriter(Paths.get(outFileTmp2), StandardCharsets.ISO_8859_1);
+		}
+		else {
+			in = new LineNumberReader(new FileReader(inFile));
+			out = new BufferedWriter(new FileWriter(outFileTmp));
+			in2 = new LineNumberReader(new FileReader(inFile2));
+			out2 = new BufferedWriter(new FileWriter(outFileTmp2));
+		}
+
+		String headerIdLineCe = getHeaderIdLine(inFile, langDir);
+		String headerIdLineDxp = getHeaderIdLine(inFile2, langDir);
 
 		boolean equalHeaders = false;
 		
@@ -508,11 +542,19 @@ public class NumberHeadersTask extends Task {
 		return id;
 	}
 
-	private static String getHeaderIdLine(File file) throws IOException {
+	private static String getHeaderIdLine(File file, String langDir) throws IOException {
 
 		String headerIdLine;
+		LineNumberReader in;
 
-		LineNumberReader in = new LineNumberReader(new FileReader(file));
+		if (langDir.equals("ja")) {
+			Reader reader = new InputStreamReader(new FileInputStream(file), "ISO_8859_1");
+			BufferedReader br = new BufferedReader(reader);
+			in = new LineNumberReader(br);
+		}
+		else {
+			in = new LineNumberReader(new FileReader(file));
+		}
 
 		while ((headerIdLine = in.readLine()) != null) {
 			if (headerIdLine.startsWith(headerIdPrefix)) {
@@ -607,10 +649,15 @@ public class NumberHeadersTask extends Task {
 		_docdir = docdir;
 	}
 
+	public void setLangDir(String langDir) {
+		_langDir = langDir;
+	}
+	
 	public void setProductType(String productType) {
 		_productType = productType;
 	}
 
 	private String _docdir;
+	private String _langDir;
 	private String _productType;
 }
