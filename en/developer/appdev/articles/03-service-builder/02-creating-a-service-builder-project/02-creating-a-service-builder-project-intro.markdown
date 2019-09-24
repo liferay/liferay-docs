@@ -49,7 +49,9 @@ Here's how to create a Service Builder project.
     ```
 
 | **Note:** Creating a Service Builder project that uses the Spring dependency 
-| injector instead of the Declarative Services dependency injector requires 
+| injector instead of the
+| [Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)
+| dependency injector requires 
 | specifying the `--dependency-injector spring` option with Blade CLI or
 | `-DdependencyInjector=spring` option with Maven. 
 

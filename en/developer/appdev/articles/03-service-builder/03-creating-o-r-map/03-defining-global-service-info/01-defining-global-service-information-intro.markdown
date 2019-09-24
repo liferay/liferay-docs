@@ -16,9 +16,11 @@ A service's global information applies to all its entities. It contains the
 
 ## Dependency Injector
 
-The default dependency injector is OSGi Declarative Services. This makes Service
-Builder work consistently the way other modules do. Prior versions of Liferay
-used Spring. The only difference is how you inject the services when you 
+The default dependency injector is
+[OSGi Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services).
+This makes Service Builder work consistently the way other modules do. Prior
+versions of Liferay used Spring. The only difference is how you inject the
+services when you 
 [go to use them later](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services). 
 
 Declarative Services Dependency Injector: 
