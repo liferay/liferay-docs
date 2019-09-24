@@ -1,5 +1,5 @@
 ---
-header-id: elasticsearch-connector-settings-reference
+header-id: elasticsearch-connector-settings-reference-ja
 ---
 
 # Elasticsearch Connector Settings: Reference

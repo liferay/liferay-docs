@@ -1,5 +1,5 @@
 ---
-header-id: installing-product-on-jboss-eap
+header-id: installing-product-on-jboss-eap-ja
 ---
 
 # JBoss EAPに@product@をインストールする

@@ -1,5 +1,5 @@
 ---
-header-id: installing-liferay-enterprise-search-monitoring
+header-id: installing-liferay-enterprise-search-monitoring-ja
 ---
 
 # Liferay Enterprise Search Monitoringのインストール

@@ -1,5 +1,5 @@
 ---
-header-id: java-virtual-machine-tuning
+header-id: java-virtual-machine-tuning-ja
 ---
 
 # Java仮想マシンのチューニング

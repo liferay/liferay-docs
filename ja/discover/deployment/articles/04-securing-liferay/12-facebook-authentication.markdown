@@ -1,5 +1,5 @@
 ---
-header-id: facebook-connect-single-sign-on-authentication
+header-id: facebook-connect-single-sign-on-authentication-ja
 ---
 
 # Facebook Connect シングルサインオン認証

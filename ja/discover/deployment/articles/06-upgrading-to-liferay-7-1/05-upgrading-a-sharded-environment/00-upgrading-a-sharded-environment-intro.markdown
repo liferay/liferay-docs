@@ -1,5 +1,5 @@
 ---
-header-id: upgrading-sharded-environment
+header-id: upgrading-sharded-environment-ja
 ---
 
 # シャード環境のアップグレード

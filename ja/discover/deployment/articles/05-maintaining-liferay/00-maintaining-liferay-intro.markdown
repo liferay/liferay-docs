@@ -1,5 +1,5 @@
 ---
-header-id: maintaining-liferay
+header-id: maintaining-liferay-ja
 ---
 
 # @product@の維持

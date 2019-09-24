@@ -1,5 +1,5 @@
 ---
-header-id: openid-single-sign-on-authentication
+header-id: openid-single-sign-on-authentication-ja
 ---
 
 # OpenIDシングルサインオン(SSO)認証

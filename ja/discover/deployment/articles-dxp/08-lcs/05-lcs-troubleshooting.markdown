@@ -1,5 +1,5 @@
 ---
-header-id: troubleshooting-your-lcs-connection
+header-id: troubleshooting-your-lcs-connection-ja
 ---
 
 # LCS接続のトラブルシューティング

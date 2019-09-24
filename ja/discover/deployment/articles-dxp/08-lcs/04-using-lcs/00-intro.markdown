@@ -1,5 +1,5 @@
 ---
-header-id: using-lcs
+header-id: using-lcs-ja
 ---
 
 # LCSを使う

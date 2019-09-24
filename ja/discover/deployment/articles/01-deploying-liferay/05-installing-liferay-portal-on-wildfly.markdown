@@ -1,5 +1,5 @@
 ---
-header-id: installing-product-on-wildfly
+header-id: installing-product-on-wildfly-ja
 ---
 
 # Installing @product@ on Wildfly

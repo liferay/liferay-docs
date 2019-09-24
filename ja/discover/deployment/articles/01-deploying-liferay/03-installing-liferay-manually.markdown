@@ -1,5 +1,5 @@
 ---
-header-id: installing-liferay-manually
+header-id: installing-liferay-manually-ja
 ---
 
 # Installing @product@ Manually

@@ -1,5 +1,5 @@
 ---
-header-id: liferay-clustering
+header-id: liferay-clustering-ja
 ---
 
 # @product@のクラスタリング

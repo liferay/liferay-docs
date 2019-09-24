@@ -1,5 +1,5 @@
 ---
-header-id: patching-tool-basic-configuration
+header-id: patching-tool-basic-configuration-ja
 ---
 
 # パッチングツール基本設定方法

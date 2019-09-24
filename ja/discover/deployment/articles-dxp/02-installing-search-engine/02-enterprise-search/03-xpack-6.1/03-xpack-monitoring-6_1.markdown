@@ -1,5 +1,5 @@
 ---
-header-id: installing-x-pack-monitoring-6-1
+header-id: installing-x-pack-monitoring-6-1-ja
 ---
 
 # X-Pack Monitoring (6.1)のインストール

@@ -1,5 +1,5 @@
 ---
-header-id: preparing-an-upgrade-to-liferay-7
+header-id: preparing-an-upgrade-to-liferay-7-ja
 ---
 
 # @product-ver@へのアップグレードの準備

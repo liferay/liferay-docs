@@ -1,5 +1,5 @@
 ---
-header-id: installing-liferay-on-tc-server
+header-id: installing-liferay-on-tc-server-ja
 ---
 
 # tcサーバーに@product@をインストールする

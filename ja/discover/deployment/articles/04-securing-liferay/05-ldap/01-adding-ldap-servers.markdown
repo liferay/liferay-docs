@@ -1,5 +1,5 @@
 ---
-header-id: adding-ldap-servers
+header-id: adding-ldap-servers-ja
 ---
 
 # LDAPサーバーの追加

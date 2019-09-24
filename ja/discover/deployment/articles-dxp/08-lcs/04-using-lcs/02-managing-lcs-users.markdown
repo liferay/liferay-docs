@@ -1,5 +1,5 @@
 ---
-header-id: managing-lcs-users-in-your-project
+header-id: managing-lcs-users-in-your-project-ja
 ---
 
 # プロジェクト内のLCSユーザーを管理する

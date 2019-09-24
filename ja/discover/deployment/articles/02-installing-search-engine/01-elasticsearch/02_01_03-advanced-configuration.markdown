@@ -1,5 +1,5 @@
 ---
-header-id: advanced-configuration-of-the-liferay-elasticsearch-adapter
+header-id: advanced-configuration-of-the-liferay-elasticsearch-adapter-ja
 ---
 
 # Advanced Configuration of the Liferay Elasticsearch Connector

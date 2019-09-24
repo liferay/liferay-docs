@@ -1,5 +1,5 @@
 ---
-header-id: setting-up-liferay-as-a-saml-identity-provider
+header-id: setting-up-liferay-as-a-saml-identity-provider-ja
 ---
 
 # SAML Identity Providerとして@product@を設定する

@@ -1,5 +1,5 @@
 ---
-header-id: ldap
+header-id: ldap-ja
 ---
 
 # LDAP設定方法

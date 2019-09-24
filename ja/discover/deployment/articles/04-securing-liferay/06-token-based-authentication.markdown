@@ -1,5 +1,5 @@
 ---
-header-id: token-based-single-sign-on-authentication
+header-id: token-based-single-sign-on-authentication-ja
 ---
 
 # トークンを使用したシングルサインオン認証

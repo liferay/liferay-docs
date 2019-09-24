@@ -1,5 +1,5 @@
 ---
-header-id: activating-liferay-dxp
+header-id: activating-liferay-dxp-ja
 ---
 
 # Liferay DXPをアクティベートする

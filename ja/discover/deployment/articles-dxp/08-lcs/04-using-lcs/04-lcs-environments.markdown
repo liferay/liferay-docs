@@ -1,5 +1,5 @@
 ---
-header-id: managing-lcs-environments
+header-id: managing-lcs-environments-ja
 ---
 
 # LCS環境の管理

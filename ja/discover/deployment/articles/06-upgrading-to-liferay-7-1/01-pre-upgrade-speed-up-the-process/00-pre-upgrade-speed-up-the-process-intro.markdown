@@ -1,5 +1,5 @@
 ---
-header-id: pre-upgrade-speed-up-the-process
+header-id: pre-upgrade-speed-up-the-process-ja
 ---
 
 # アップグレード前に - プロセスのスピードアップのために

@@ -1,5 +1,5 @@
 ---
-header-id: content-delivery-network
+header-id: content-delivery-network-ja
 ---
 
 # コンテンツ配信ネットワーク

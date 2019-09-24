@@ -1,5 +1,5 @@
 ---
-header-id: upgrading-to-liferay-71
+header-id: upgrading-to-liferay-71-ja
 ---
 
 # @product-ver@へのアップグレード

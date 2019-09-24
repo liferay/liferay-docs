@@ -1,5 +1,5 @@
 ---
-header-id: configuring-the-patching-tool
+header-id: configuring-the-patching-tool-ja
 ---
 
 # パッチングツールの設定方法

@@ -1,5 +1,5 @@
 ---
-header-id: installing-liferay
+header-id: installing-liferay-ja
 ---
 
 # @product@のインストール

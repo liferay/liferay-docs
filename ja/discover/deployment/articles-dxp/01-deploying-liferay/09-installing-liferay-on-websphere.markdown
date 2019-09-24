@@ -1,5 +1,5 @@
 ---
-header-id: installing-liferay-dxp-on-websphere
+header-id: installing-liferay-dxp-on-websphere-ja
 ---
 
 # WebSphereへの@product@のインストール

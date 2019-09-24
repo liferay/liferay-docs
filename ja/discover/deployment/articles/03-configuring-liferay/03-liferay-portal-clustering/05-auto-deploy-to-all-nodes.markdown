@@ -1,5 +1,5 @@
 ---
-header-id: auto-deploy-to-all-nodes
+header-id: auto-deploy-to-all-nodes-ja
 ---
 
 # 全ノードへの自動デプロイ

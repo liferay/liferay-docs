@@ -1,5 +1,5 @@
 ---
-header-id: setting-up-liferay-as-a-saml-service-provider
+header-id: setting-up-liferay-as-a-saml-service-provider-ja
 ---
 
 # SAMLService Providerとして@product@を設定する

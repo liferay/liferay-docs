@@ -1,5 +1,5 @@
 ---
-header-id: installing-liferay-enterprise-search-security
+header-id: installing-liferay-enterprise-search-security-ja
 ---
 
 # Liferay Enterprise Searchセキュリティのインストール

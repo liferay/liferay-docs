@@ -1,5 +1,5 @@
 ---
-header-id: gogo-shell-commands-for-module-upgrades
+header-id: gogo-shell-commands-for-module-upgrades-ja
 ---
 
 # モジュールアップグレード用のGogoシェルコマンド

@@ -1,5 +1,5 @@
 ---
-header-id: using-the-simple-file-system-store
+header-id: using-the-simple-file-system-store-ja
 ---
 
 # Simple File System Storeの使用

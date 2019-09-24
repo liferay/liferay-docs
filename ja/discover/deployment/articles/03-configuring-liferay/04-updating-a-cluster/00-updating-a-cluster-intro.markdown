@@ -1,5 +1,5 @@
 ---
-header-id: updating-a-cluster
+header-id: updating-a-cluster-ja
 ---
 
 # クラスターの更新

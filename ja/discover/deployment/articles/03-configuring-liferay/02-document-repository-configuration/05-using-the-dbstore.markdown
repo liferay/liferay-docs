@@ -1,5 +1,5 @@
 ---
-header-id: using-the-dbstore
+header-id: using-the-dbstore-ja
 ---
 
 # DBStoreの使用

@@ -1,5 +1,5 @@
 ---
-header-id: oauth2-scopes
+header-id: oauth2-scopes-ja
 ---
 
 # OAuth2のスコープ

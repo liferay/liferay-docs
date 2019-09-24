@@ -1,5 +1,5 @@
 ---
-header-id: point-all-nodes-to-the-same-database
+header-id: point-all-nodes-to-the-same-database-ja
 ---
 
 # 全てのノードが同じ@product@データベースを指すように設定する

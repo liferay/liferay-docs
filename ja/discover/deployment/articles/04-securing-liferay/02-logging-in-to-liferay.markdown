@@ -1,5 +1,5 @@
 ---
-header-id: logging-into-liferay
+header-id: logging-into-liferay-ja
 ---
 
 # @product@へのログイン

@@ -1,5 +1,5 @@
 ---
-header-id: other-cluster-update-techniques
+header-id: other-cluster-update-techniques-ja
 ---
 
 # ブルーグリーンデプロイ

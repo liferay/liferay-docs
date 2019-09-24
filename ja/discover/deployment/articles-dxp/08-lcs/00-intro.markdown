@@ -1,5 +1,5 @@
 ---
-header-id: managing-liferay-dxp-with-liferay-connected-services
+header-id: managing-liferay-dxp-with-liferay-connected-services-ja
 ---
 
 # Liferay Connected Servicesを使用したLiferay DXPの管理

@@ -1,5 +1,5 @@
 ---
-header-id: installing-x-pack
+header-id: installing-x-pack-ja
 ---
 
 # Liferay Enterprise Searchのインストール

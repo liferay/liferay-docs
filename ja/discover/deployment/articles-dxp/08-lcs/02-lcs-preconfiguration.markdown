@@ -1,5 +1,5 @@
 ---
-header-id: lcs-preconfiguration
+header-id: lcs-preconfiguration-ja
 ---
 
 # LCS事前設定

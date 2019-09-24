@@ -1,5 +1,5 @@
 ---
-header-id: configure-documents-and-media-the-same-for-all-nodes
+header-id: configure-documents-and-media-the-same-for-all-nodes-ja
 ---
 
 # ドキュメントとメディアを全ノードで同じ設定にする

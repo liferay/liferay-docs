@@ -1,5 +1,5 @@
 ---
-header-id: securing-product
+header-id: securing-product-ja
 ---
 
 # @product@の保護

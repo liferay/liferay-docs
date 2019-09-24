@@ -1,5 +1,5 @@
 ---
-header-id: working-with-patches
+header-id: working-with-patches-ja
 ---
 
 # パッチを使った作業

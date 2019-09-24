@@ -1,5 +1,5 @@
 ---
-header-id: configuring-elasticsearch-for-liferay-0
+header-id: configuring-elasticsearch-for-liferay-0-ja
 ---
 
 # Elasticsearch

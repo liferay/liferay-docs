@@ -1,5 +1,5 @@
 ---
-header-id: installing-x-pack-0
+header-id: installing-x-pack-0-ja
 ---
 
 # X-Packをインストールする

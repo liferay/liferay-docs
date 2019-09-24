@@ -1,5 +1,5 @@
 ---
-header-id: authorizing-account-access-with-oauth2
+header-id: authorizing-account-access-with-oauth2-ja
 ---
 
 # OAuth2によるアカウントアクセスの認可

@@ -1,5 +1,5 @@
 ---
-header-id: keeping-up-with-fix-packs-and-service-packs
+header-id: keeping-up-with-fix-packs-and-service-packs-ja
 ---
 
 # フィックスパックおよびサービスパックの維持

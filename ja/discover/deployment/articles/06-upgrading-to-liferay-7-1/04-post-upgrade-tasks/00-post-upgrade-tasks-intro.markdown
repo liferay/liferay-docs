@@ -1,5 +1,5 @@
 ---
-header-id: post-upgrade-tasks
+header-id: post-upgrade-tasks-ja
 ---
 
 # アップグレード後の作業

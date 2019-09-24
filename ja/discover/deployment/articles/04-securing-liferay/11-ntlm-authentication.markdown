@@ -1,5 +1,5 @@
 ---
-header-id: ntlm-single-sign-on-authentication
+header-id: ntlm-single-sign-on-authentication-ja
 ---
 
 # NTLMシングルサインオン認証
