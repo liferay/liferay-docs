@@ -6,49 +6,49 @@ header-id: enabling-search-and-indexing-for-entries
 
 [TOC levels=1-4]
 
-In this section, you'll create the classes that control these aspects of the
-search functionality:
+Now you'll create the classes that control these aspects of the search
+functionality:
 
 - Registration:
 
-    - `EntrySearchRegistrar` registers the search service for the Entry
-        entity.
+    - `GuestbookEntrySearchRegistrar` registers the search service for the
+    `GuestbookEntry` entity.
 
 - Indexing:
 
-    - `EntryModelDocumentContributor` controls which Entry fields are
+    - `GuestbookEntryModelDocumentContributor` controls which `GuestbookEntry` fields are
       indexed in the search engine.
 
-    - `EntryModelIndexerWriterContributor` configures the re-indexing and
-      batch re-indexing behavior for Entries.
+    - `GuestbookEntryModelIndexerWriterContributor` configures the re-indexing and
+      batch re-indexing behavior for `GuestbookEntry`s.
 
-    - `EntryBatchReindexer`, an interface, and its `EntryBatchReindexerImpl`, 
-	  for re-indexing Entries when their Guestbook is updated.
+    - `GuestbookEntryBatchReindexer`, an interface, and its `GuestbookEntryBatchReindexerImpl`, 
+	  for re-indexing `GuestbookEntries `when their Guestbook is updated.
 
 - Querying:
 
-    - `EntryKeywordQueryContributor` contributes clauses to the ongoing
+    - `GuestbookEntryKeywordQueryContributor` contributes clauses to the ongoing
       search query.
 
-    - `EntryModelPreFilterContributor` controls how search results are filtered
+    - `GuestbookEntryModelPreFilterContributor` controls how search results are filtered
       before they're returned from the search engine.
 
 - Generating Result Summaries:
 
-    - `EntryModelSummaryContributor` constructs the result summary for
-      Entries, including specifying which fields to use.
+    - `GuestbookEntryModelSummaryContributor` constructs the result summary for
+      `GuestbookEntry`s, including specifying which fields to use.
 
 After creating the search classes, modify the service layer to update the search
-index when an Entry is persisted:
+index when a `GuestbookEntry `is persisted:
 
-- Update `EntryLocalServiceImpl`'s `addEntry`, `updateEntry`, and
-  `deleteEntry` methods to update the index so it matches the databse.
+- Update `GuestbookEntryLocalServiceImpl`'s `addEntry`, `updateEntry`, and
+  `deleteEntry` methods to update the index so it matches the database.
 
 | **Note:** In prior versions of @product@, search and indexing was accomplished
-| with one `*Indexer` class that extended `BaseIndexer`. This Learning Path
-| demonstrates a new pattern that relies on [composition instead of
-| inheritance](https://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition).
+| with one `*Indexer` class that extended `BaseIndexer`. This tutorial
+| demonstrates a new pattern that relies on 
+| [composition instead of inheritance](https://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition).
 | If you desire to use the old approach, feel free to extend `BaseIndexer`. It's
 | still supported.
 
-<a class="go-link btn btn-primary" href="/docs/7-1/tutorials/-/knowledge_base/t/registering-entries-with-the-search-framework">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/registering-entries-with-the-search-framework">Let's Go!<span class="icon-circle-arrow-right"></span></a>
