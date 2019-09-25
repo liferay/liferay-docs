@@ -17,7 +17,7 @@ be updated or deleted. Next, you'll annotate `addGuestbook`, `updateGuestbook`,
 and `deleteGuestbook` service methods. 
 
 1.  Open `GuestbookLocalServiceImpl` in the `guestbook-service` module's 
-    `com.liferay.docs.guestbook.service.impl` package, and add the following 
+    `com.liferay.docs.guestbook.service.impl` package and add the following 
     annotation above the method signature for the `addGuestbook` and 
     `updateGuestbook` methods:
 
@@ -45,7 +45,7 @@ and `deleteGuestbook` service methods.
     When a Guestbook is deleted from the database, its document shouldn't
     remain in the search index. This ensures that it is deleted.
 
-3.  Add the necessary imports:
+3.  Use Ctrl-Shift-O to add the necessary imports:
 
     ```java
     import com.liferay.portal.kernel.search.Indexable;
