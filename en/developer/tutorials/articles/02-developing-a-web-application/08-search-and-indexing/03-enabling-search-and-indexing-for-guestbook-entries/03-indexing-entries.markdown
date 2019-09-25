@@ -90,7 +90,7 @@ the field gets passed to the search engine and goes through the right analysis
 and
 [tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
 
-Add the following imports and save the file: 
+Use Ctrl-Shift-O to add the following imports and save the file: 
 
 - `com.liferay.portal.kernel.search.Document`
 - `com.liferay.portal.kernel.search.Field`
@@ -154,14 +154,15 @@ Use Ctrl-Shift-O to add an import for
 Create a new interface, `GuestbookEntryBatchReindexer`, with one method called
 `reindex`:
 
+```java
+package com.liferay.docs.guestbook.search;
 
-    package com.liferay.docs.guestbook.search;
+public interface GuestbookEntryBatchReindexer {
 
-    public interface GuestbookEntryBatchReindexer {
+    public void reindex(long guestbookId, long companyId);
 
-        public void reindex(long guestbookId, long companyId);
-
-    }
+}
+```
 
 Then create the implementation class, `GuestbookEntryBatchReindexerImpl`:
 
@@ -212,5 +213,5 @@ Use Ctrl-Shift-O to add the following imports, and save the file:
 
 You should notice that errors in the project go away at this point. 
 
-Once the re-indexing behavior is in place, move on to the code for controlling
-how `GuestbookEntry` documents are queried from the search engine.
+Once the re-indexing behavior is in place, you can move on to the code for
+controlling how `GuestbookEntry` documents are queried from the search engine.
