@@ -168,9 +168,7 @@ projects. If you're using the Central Repository to install Liferay Maven
 artifacts, you won't need to do anything more than update the artifacts in
 your POMs. If, however, you're working behind a proxy or don't have Internet
 access, you must update your company-shared or local repository with the latest
-@product-ver@ Maven artifacts. See the
-[Installing Local Liferay Maven Artifacts](/docs/7-2/reference/-/knowledge_base/r/installing-local-liferay-maven-artifacts)
-article for instructions.
+@product-ver@ Maven artifacts.
 
 With these updates, you can easily upgrade your Liferay Maven build so you can
 begin developing projects for @product-ver@.
