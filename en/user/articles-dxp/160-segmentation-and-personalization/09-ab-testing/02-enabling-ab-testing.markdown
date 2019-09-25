@@ -1,3 +1,7 @@
+---
+header-id: enabling-a-b-testing
+---
+
 # Enabling A/B Testing
 
 [TOC levels=1-4]

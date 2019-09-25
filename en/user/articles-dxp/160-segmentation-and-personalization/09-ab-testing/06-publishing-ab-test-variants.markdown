@@ -1,3 +1,7 @@
+---
+header-id: publishing-a-b-test-variants
+---
+
 # Publishing A/B Test Variants
 
 [TOC levels=1-4]

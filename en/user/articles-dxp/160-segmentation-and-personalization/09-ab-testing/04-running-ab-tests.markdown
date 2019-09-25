@@ -1,3 +1,7 @@
+---
+header-id: running-a-b-tests
+---
+
 # Running A/B Tests
 
 [TOC levels=1-4]
@@ -39,7 +43,7 @@ first.
 *View Data in Analytics Cloud*: redirects you to your A/B Testing dashboard
 hosted on Analytics Cloud. Here you can view your test's traffic, reports,
 statistics, etc. related to your test. See the
-[Monitoring A/B Test Results](/docs/7-2/user/-/knowledge_base/u/monitoring-ab-test-results)
+[Monitoring A/B Test Results](/docs/7-2/user/-/knowledge_base/u/monitoring-a-b-test-results)
 article for more information.
 
 Awesome! You now have a running A/B test accumulating data based on user
