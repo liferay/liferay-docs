@@ -47,6 +47,8 @@ This is due to a resource permission.
 
 ![Figure 1: Portlet permissions and resource permissions cover different parts of the application.](../../../images/permission-types.png)
 
+## Defining Model Permissions
+
 First, create the permissions file in the `guestbook-service` project: 
 
 1.  In the `/src/main/resources/META-INF` folder, create a subfolder called `resource-actions`.
@@ -194,6 +196,8 @@ define resource and model permissions in the module where your model is defined:
 
 This property defines the name and location of your permissions definition file. 
 
+## Defining Portlet Permissions
+
 You now have permissions defined at the model level, but you must also define
 portlet permissions. These are managed in the `guestbook-web` module, which
 contains the portlet class. Follow these steps to add the portlet permissions in
@@ -225,26 +229,28 @@ the `guestbook-web` module:
 
 5.  Insert this block of code inside the `resource-action-mapping` tags:
 
-        <portlet-resource>
-            <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
-            <permissions>
-                <supports>
-                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                    <action-key>VIEW</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>VIEW</action-key>
-                </site-member-defaults>
-                <guest-defaults>
-                    <action-key>VIEW</action-key>
-                </guest-defaults>
-                <guest-unsupported>
-                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                </guest-unsupported>
-            </permissions>
-        </portlet-resource>
+    ```xml
+    <portlet-resource>
+        <portlet-name>com_liferay_docs_guestbook_portlet_GuestbookAdminPortlet</portlet-name>
+        <permissions>
+            <supports>
+                <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+                <action-key>CONFIGURATION</action-key>
+                <action-key>VIEW</action-key>
+            </supports>
+            <site-member-defaults>
+                <action-key>VIEW</action-key>
+            </site-member-defaults>
+            <guest-defaults>
+                <action-key>VIEW</action-key>
+            </guest-defaults>
+            <guest-unsupported>
+                <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+                <action-key>CONFIGURATION</action-key>
+            </guest-unsupported>
+        </permissions>
+    </portlet-resource>
+    ```
 
     This defines the default permissions for the Guestbook Admin portlet. It 
     supports the actions `ACCESS_IN_CONTROL_PANEL`, `CONFIGURATION`, and `VIEW`. 
