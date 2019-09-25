@@ -17,7 +17,7 @@ Guestbooks. You'll even put it in the same package
 Create the `GuestbookEntrySearchRegistrar`:
 
 1.  In `com.liferay.docs.guestbook.search`, create a new class called
-    `EntrySearchRegistrar` and populate it with two methods, `activate` and
+    `GuestbookEntrySearchRegistrar` and populate it with two methods, `activate` and
     `deactivate`.
 
     ```java
