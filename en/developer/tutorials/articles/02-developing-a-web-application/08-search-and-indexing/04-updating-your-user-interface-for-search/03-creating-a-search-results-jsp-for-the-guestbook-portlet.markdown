@@ -111,7 +111,7 @@ Follow these steps to create the search results JSP:
     indexer's class or class name:
 
     ```java
-    Indexer indexer = IndexerRegistryUtil.getIndexer(GuestbookEntry.class);
+    Indexer<GuestbookEntry> indexer = IndexerRegistryUtil.getIndexer(GuestbookEntry.class);
     ```
 
 7.  In the same scriptlet, use the indexer and the search context to run a 
@@ -277,6 +277,11 @@ Good work! The Guestbook portlet now supports search! Now your users can find
 those Guestbook Entries they were looking for. 
 
 ![Figure 2: The Guestbook Application now supports searching for indexed Guestbook Entries.](../../../../images/guestbook-portlet-search-conclusion.png)
+
+As before, remove the `hypersonic` folder from the `data` folder of your Liferay
+bundle, and remove the modules from your server in @ide@. Start your server and
+redeploy all three modules, add some Guestbook entries, and try searching for
+them. 
 
 Once indexing is in place, the asset framework can be added to the Guestbook
 application. It provides functionality that's shared across different types of
