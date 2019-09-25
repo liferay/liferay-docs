@@ -1,8 +1,8 @@
 ---
-header-id: querying-for-entry-documents
+header-id: querying-for-guestbook-entry-documents
 ---
 
-# Querying for Entry Documents
+# Querying for Guestbook Entry Documents
 
 [TOC levels=1-4]
 
@@ -10,51 +10,59 @@ header-id: querying-for-entry-documents
     <p id="stepTitle">Enabling Search and Indexing for Entries</p><p>Step 3 of 5</p>
 </div>
 
-The code is in place for indexing Entries to the search engine. Next code the
-behavior necessary for querying the indexed documents.
+The code is in place for indexing Guestbook entries to the search engine. Next
+code the behavior necessary for querying the indexed documents.
 
 Implement two classes:
 
-1.  `EntryKeywordQueryContributor` contributes clauses to the ongoing search
+1.  `GuestbookEntryKeywordQueryContributor` contributes clauses to the ongoing search
     query.
 
-2.  `EntryModelPreFilterContributor` controls how search results are filtered
+2.  `GuestbookEntryModelPreFilterContributor` controls how search results are filtered
     before they're returned from the search engine.
 
 ## Implementing `KeywordQueryContributor`
 
-Create `EntryKeywordQueryContributor` and populate it with this:
+Create `GuestbookEntryKeywordQueryContributor` and populate it with this:
 
-    @Component(
-            immediate = true,
-            property = "indexer.class.name=com.liferay.docs.guestbook.model.Entry",
-            service = KeywordQueryContributor.class
-    )
-    public class EntryKeywordQueryContributor implements KeywordQueryContributor {
+```java
+@Component(
+        immediate = true,
+        property = "indexer.class.name=com.liferay.docs.guestbook.model.GuestbookEntry",
+        service = KeywordQueryContributor.class
+)
+public class GuestbookEntryKeywordQueryContributor implements KeywordQueryContributor {
 
-        @Override
-        public void contribute(
-            String keywords, BooleanQuery booleanQuery,
-            KeywordQueryContributorHelper keywordQueryContributorHelper) {
+    @Override
+    public void contribute(
+        String keywords, BooleanQuery booleanQuery,
+        KeywordQueryContributorHelper keywordQueryContributorHelper) {
 
-            SearchContext searchContext =
-        keywordQueryContributorHelper.getSearchContext();
+        SearchContext searchContext =
+    keywordQueryContributorHelper.getSearchContext();
 
-            queryHelper.addSearchLocalizedTerm(
-        booleanQuery, searchContext, Field.TITLE, false);
-            queryHelper.addSearchLocalizedTerm(
-        booleanQuery, searchContext, Field.CONTENT, false);
-            queryHelper.addSearchLocalizedTerm(
-        booleanQuery, searchContext, "entryEmail", false);
-        }
-
-        @Reference
-        protected QueryHelper queryHelper;
-
+        queryHelper.addSearchLocalizedTerm(
+    booleanQuery, searchContext, Field.TITLE, false);
+        queryHelper.addSearchLocalizedTerm(
+    booleanQuery, searchContext, Field.CONTENT, false);
+        queryHelper.addSearchLocalizedTerm(
+    booleanQuery, searchContext, "entryEmail", false);
     }
 
-Adding the localized search terms is important. For all localized Entry fields
-in the index, retrieve the localized value from the search engine.
+    @Reference
+    protected QueryHelper queryHelper;
 
-Now that the query code is in place, you can define how returned Entry documents
-are summarized. 
+}
+```
+
+Adding the localized search terms is important. For all localized
+`GuestbookEntry` fields in the index, retrieve the localized value from the
+search engine.
+
+Use Ctrl-Shift-O to add these imports, and then save the file: 
+
+- `com.liferay.portal.kernel.search.BooleanQuery`
+- `com.liferay.portal.kernel.search.Field`
+
+Now that the query code is in place, you can define how returned
+`GuestbookEntry` documents are summarized. 

@@ -210,5 +210,7 @@ Use Ctrl-Shift-O to add the following imports, and save the file:
 - `com.liferay.portal.kernel.search.Document`
 - `com.liferay.portal.kernel.dao.orm.Property`
 
+You should notice that errors in the project go away at this point. 
+
 Once the re-indexing behavior is in place, move on to the code for controlling
 how `GuestbookEntry` documents are queried from the search engine.
