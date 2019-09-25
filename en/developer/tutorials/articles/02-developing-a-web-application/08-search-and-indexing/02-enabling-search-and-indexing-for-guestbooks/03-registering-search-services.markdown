@@ -99,15 +99,15 @@ Create the `GuestbookSearchRegistrar`:
     the model name again to complete the circle.
 
 3.  Add the imports by Organizing Imports (Ctrl-Shift-O). Choose the
-    `com.liferay.portal.search.Field` class. 
+    `com.liferay.portal.kernel.search.Field` class. 
 
 4. Export the `com.liferay.docs.guestbook.search` package in the 
-    `guestbook-service` module's `bnd.bnd` file. The export section should look
-    like this: 
+   `guestbook-service` module's `bnd.bnd` file. The export section should look
+   like this: 
 
     ```
     Export-Package: com.liferay.docs.guestbook.search
     ```
 
-The Guestbook search and indexing class registration is completed. Next write
-the search and indexing logic.
+The Guestbook search and indexing class registration is completed. Next, you'll
+write the search and indexing logic.
