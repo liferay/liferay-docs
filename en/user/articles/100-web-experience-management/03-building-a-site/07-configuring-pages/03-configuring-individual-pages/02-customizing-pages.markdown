@@ -69,7 +69,9 @@ page.
 
 You can also configure the page to use a custom canonical URL. To do so, set the 
 *Use Custom Canonical URL* toggle to *YES*, then enter your desired canonical 
-URL in the field that appears. 
+URL in the field that appears. You can define a custom canonical URL for each 
+language. If there's no value for a specific language, the canonical URL for 
+that language is controlled by the global/instance-level setting. 
 
 ![Figure 2: Enter the custom canonical URL that you want to use for the page.](../../../../../images/canonical-url-page.png)
 
