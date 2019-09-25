@@ -12,17 +12,20 @@ To create an A/B test,
 2.  Click the A/B Testing (![AB Testing](../../../images-dxp/icon-ab-testing.png))
     button from the Control Menu.
 
-3.  Choose the Experience for which you want to test. A test can be performed on
-    the Default Experience as well as a personalized Experience mapped to a
-    Segment. When an Experience is being used in an AB test, it cannot be
-    edited. Deleting a Page/Experience being used in an A/B test also deletes
-    the test for that Page.
+3.  Choose the Experience for which you want to test. This option is only
+    available when you have a custom experience (an experience other than the
+    default).
+
+    A test can be performed on the Default Experience as well as a personalized
+    Experience mapped to a Segment. When an Experience is being used in an A/B
+    test, it cannot be edited. Deleting a Page/Experience being used in an A/B
+    test also deletes the test for that Page.
 
 4.  Click *Create Test*.
 
 5.  Assign the test a name and description (optional).
 
-6.  Assign the goal you want the test to track. There are four to choose from:
+6.  Assign the goal you want the test to track. There are two to choose from:
 
     - *Bounce Rate*: the percentage of users who don't exhibit any activities on
       the page (click, scroll, etc.) and then navigate away from the site
@@ -51,7 +54,9 @@ it's not yet visible to visitors.
 You can always edit or delete the new A/B test by clicking the *Actions* button
 (![Actions](../../../images-dxp/icon-actions.png)) in the top right of the A/B
 test menu. Deleted tests are not recoverable (i.e., not sent to the Recycle
-Bin). These options are not available for an active test.
+Bin). These options are not available for an active test. You can also, at any
+time, view your A/B Testing history by selecting the *History* tab. This
+displays all completed and terminated A/B tests.
 
 Now it's time to create your test Variant(s). A test Variant is a customization
 of the Experience you want to optimize. An A/B test must contain at least one
