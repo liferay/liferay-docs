@@ -79,6 +79,7 @@ Don't forget to Ctrl-Shift-O and import these classes:
 - `com.liferay.portal.kernel.search.Summary`
 - `com.liferay.portal.kernel.search.Document`
 
+Save your file. 
 
 Once all the search and indexing logic is in place, update the service layer so
 `add`, `update`, and `delete` service calls trigger the new logic.
