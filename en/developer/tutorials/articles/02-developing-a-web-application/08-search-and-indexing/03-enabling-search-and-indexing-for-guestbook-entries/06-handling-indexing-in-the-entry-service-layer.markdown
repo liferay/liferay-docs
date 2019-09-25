@@ -10,47 +10,55 @@ header-id: handling-indexing-in-the-entry-service-layer
     <p id="stepTitle">Enabling Search and Indexing for Entries</p><p>Step 5 of 5</p>
 </div>
 
-Whenever an Entry is added, updated, or deleted, the corresponding document
-should also be updated or deleted. A minor update to each of the `addEntry`,
-`updateEntry`, and `deleteEntry` service methods for Entries is all it takes. 
+Whenever a Guestbook entry is added, updated, or deleted, the corresponding
+document should also be updated or deleted. A minor update to each of the
+`addEntry`, `updateEntry`, and `deleteEntry` service methods for Entries is all
+it takes. 
 
 Follow these steps to update the methods: 
 
-1.  Open `EntryLocalServiceImpl` in the `guestbook-service` module's 
-    `com.liferay.docs.guestbook.service.impl` package, and add the annotation 
-    `@Indexable(type = IndexableType.REINDEX)` above the signature for the 
-    `addEntry` and `updateEntry` methods:
+1.  Open `GuestbookEntryLocalServiceImpl` in the `guestbook-service` module's
+    `com.liferay.docs.guestbook.service.impl` package, and add the annotation
+    `@Indexable(type = IndexableType.REINDEX)` above the signature for the
+    `addGuestbookEntry` and `updateGuestbookEntry` methods:
 
-        @Indexable(type = IndexableType.REINDEX)
-        public Entry addEntry(...)
+    ```java
+    @Indexable(type = IndexableType.REINDEX)
+    public GuestbookEntry addGuestbookEntry(...)
 
-        @Indexable(type = IndexableType.REINDEX)
-        public Entry updateEntry(...)
+    @Indexable(type = IndexableType.REINDEX)
+    public GuestbookEntry updateGuestbookEntry(...)
+    ```
 
     The `@Indexable` annotation indicates that an index update is required
     following method execution. The indexing classes control exactly how the
     indexing happens. Setting the `@Indexable` annotation's type to
     `IndexableType.REINDEX` updates the indexed document that corresponds to the
-    updated Entry. 
+    updated `GuestbookEntry`. 
 
 2.  Add the `@Indexable(type = IndexableType.DELETE)` annotation above the 
     signature for the `deleteEntry` method. The indexable type 
-    `IndexableType.DELETE` ensures that the Entry is deleted from the index: 
+    `IndexableType.DELETE` ensures that the `GuestbookEntry` is deleted from the
+    index: 
 
-        @Indexable(type = IndexableType.DELETE)
-        public Entry deleteEntry(...)
+    ```java
+    @Indexable(type = IndexableType.DELETE)
+    public GuestbookEntry deleteGuestbookEntry(...)
+    ```
 
-3.  Add the required imports:
+3.  Use Ctrl-Shift-O to add the required imports:
 
-        import com.liferay.portal.kernel.search.Indexable;
-        import com.liferay.portal.kernel.search.IndexableType;
+    ```java
+    import com.liferay.portal.kernel.search.Indexable;
+    import com.liferay.portal.kernel.search.IndexableType;
+    ```
 
     Save the file. 
 
 4.  In the Gradle Tasks pane on the right-hand side of Liferay @ide@, 
     double-click `buildService` in `guestbook-service` &rarr; `build`. This 
     re-runs Service Builder to incorporate your changes to 
-    `EntryLocalServiceImpl`. 
+    `GuestbookEntryLocalServiceImpl`. 
 
-Guestbooks and their Entries now have search and indexing support in the
+Guestbooks and their entries now have search and indexing support in the
 back-end. Next, you'll enable search in the Guestbook portlet's front-end. 
