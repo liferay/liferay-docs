@@ -68,9 +68,10 @@ field (e.g., `title_en_US`), so the field gets passed to the search engine
 and goes through the right analysis and
 [tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
 
-Don't forget to Ctrl-Shift-O and organize imports. Specify the 
-`com.liferay.portal.kernel.search.Field` class and the
-`com.liferay.portal.kernel.search.Document` class. 
+Use Ctrl-Shift-O to add these imports, and then save the file: 
+
+- `com.liferay.portal.kernel.search.Field` 
+- `com.liferay.portal.kernel.search.Document` 
 
 ## Implementing `ModelIndexerWriterContributor`
 
@@ -141,6 +142,10 @@ the indexed `GuestbookEntry` documents if a Guestbook title is changed.  The
 `modelIndexed` method calls a `reindex` method from an interface that will be
 created later for `GuestbookEntry`s. For now, ignore the error in the
 `modelIndexed` method. 
+
+Use Ctrl-Shift-O to add this import, and save the file: 
+
+- `com.liferay.portal.kernel.search.Document`
 
 Once the re-indexing behavior is in place, you can move on to controlling how
 Guestbook documents are queried from the search engine.
