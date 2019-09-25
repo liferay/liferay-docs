@@ -43,7 +43,7 @@ You'll complete this process next.
 
 7.  Add a *Card* to the left column of the layout.
 
-8.  Add a *Card Basic* to the right side, and then an *Image* below that inside 
+8.  Add a *Paragraph* to the right side, and then an *Image* below that inside 
     the same column.
 
 ![Figure 2: You have lots of flexibility when arranging Fragments on a page.](../../../../../images/content-page-creation-step-1.png)
