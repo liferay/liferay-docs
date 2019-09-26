@@ -40,8 +40,17 @@ To navigate to the Page Fragments interface,
 Fragments are organized in *Collections*. The main Page Fragments page shows
 available Collections (out-of-the-box Fragment Collections to start), allows
 Import and Export, and enables you to create Collections. You can also manage
-the organization and display of Fragments and Collections you have created. To
-create a Fragment, you must first create a Collection.
+the organization and display of Fragments and Collections you have created.
+
+| **Note:** You cannot edit a default Fragment. If you'd like to provide an
+| edited version of a default Fragment, you can copy it to your custom
+| Collection and edit it there. To do this, navigate to the default Fragment
+| Collection and click the Fragment's *Actions*
+| (![Actions](../../../../../images/icon-actions.png)) &rarr; *Copy To* button.
+| Then select the Collection to copy the default Fragment to. Copying default
+| Fragments is available in Liferay DXP 7.2 SP1+ and Liferay Portal 7.2 GA2+.
+
+To create a Fragment, you must first create a Collection.
 
 1.  Click *New* &rarr; *Collection* to add a Collection.
 
