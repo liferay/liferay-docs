@@ -7,7 +7,7 @@ header-id: running-a-b-tests
 [TOC levels=1-4]
 
 Once you've created and configured your A/B test, you'll want to run it to begin
-gathering data on your Control page and Variants. To run an A/B test,
+gathering data on your Control Page and Variants. To run an A/B test,
 
 1.  Click the *Review and Run Test* button from the A/B Test menu.
 
@@ -25,7 +25,7 @@ gathering data on your Control page and Variants. To run an A/B test,
 
     The *Estimated Time to Declare Winner* field is also displayed. This is the
     estimated duration the test will run. This is calculated based on the
-    selected traffic split, confidence level and projected page traffic. Your
+    selected traffic split, confidence level, and projected page traffic. Your
     page's past traffic history is provided by Analytics Cloud.
 
     ![Figure 1: Configure the final parameters of your A/B test before running it.](../../../images-dxp/run-ab-test.png)

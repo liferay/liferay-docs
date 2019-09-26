@@ -17,7 +17,7 @@ To create an A/B test,
     button from the Control Menu.
 
 3.  Choose the Experience for which you want to test. This option is only
-    available when you have a custom experience (an experience other than the
+    available when you have a custom Experience (an Experience other than the
     default).
 
     A test can be performed on the Default Experience as well as a personalized
@@ -31,14 +31,16 @@ To create an A/B test,
 
 6.  Assign the goal you want the test to track. There are two to choose from:
 
-    - *Bounce Rate*: the percentage of users who don't exhibit any activities on
-      the page (click, scroll, etc.) and then navigate away from the site
-      without visiting another page.
-    - *Click*: the percentage of users who clicked on the page (per session).
+    *Bounce Rate*: the percentage of users who don't exhibit any activities on
+    the page (click, scroll, etc.) and then navigate away from the site
+    without visiting another page.
+
+    *Click*: the percentage of users who clicked on the page (per session).
 
 <!--
-    - *Scroll Depth*: the average depth users scrolled down on the page.
-    - *Time On Page*: the average duration users spent on the page.
+    *Scroll Depth*: the average depth users scrolled down on the page.
+
+    *Time On Page*: the average duration users spent on the page.
 -->
 
 ![Figure 1: Fill out the form to create your A/B test.](../../../images-dxp/create-ab-test.png)
@@ -57,7 +59,7 @@ it's not yet visible to visitors.
 
 You can always edit or delete the new A/B test by clicking the *Actions* button
 (![Actions](../../../images-dxp/icon-actions.png)) in the top right of the A/B
-test menu. Deleted tests are not recoverable (i.e., not sent to the Recycle
+Test menu. Deleted tests are not recoverable (i.e., not sent to the Recycle
 Bin). These options are not available for an active test. You can also, at any
 time, view your A/B Testing history by selecting the *History* tab. This
 displays all completed and terminated A/B tests.
