@@ -49,8 +49,12 @@ the legacy Search portlet results or to the individual application search bars.
 
 ## Availability
 
-Search Tuning features like Result Rankings are only supported when using
-Elasticsearch as the search engine.
+Search tuning features like Result Rankings are only supported when using
+Elasticsearch as the search engine. If you're using Solr, make sure you disable
+the 
+[search tuning features](/docs/7-2/deploy/-/knowledge_base/d/installing-solr#blacklisting-elasticsearch-only-features)
+(Synonym Sets and Result Rankings) when you upgrade your installation to
+@product@ Service Pack 1 (Fix Pack 2).
 
 Results Rankings was added in @product-ver@ Service Pack 1.
 
