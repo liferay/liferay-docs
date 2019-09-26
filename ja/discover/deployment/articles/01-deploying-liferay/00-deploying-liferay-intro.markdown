@@ -1,5 +1,5 @@
 ---
-header-id: deploying-product-ja
+header-id: deploying-product
 ---
 
 # @product@をデプロイする

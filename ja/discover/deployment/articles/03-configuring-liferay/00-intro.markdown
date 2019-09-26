@@ -1,5 +1,5 @@
 ---
-header-id: configuring-liferay-ja
+header-id: configuring-liferay
 ---
 
 # @product@の設定方法

@@ -1,5 +1,5 @@
 ---
-header-id: advanced-monitoring-apm-tools-dynatrace-id-ja
+header-id: advanced-monitoring-apm-tools-dynatrace-id
 ---
 
 # 高度なモニタリング：APMツール；Dynatrace

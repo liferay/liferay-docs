@@ -1,5 +1,5 @@
 ---
-header-id: configuring-remote-staging-in-a-clustered-environment-ja
+header-id: configuring-remote-staging-in-a-clustered-environment
 ---
 
 # クラスタ環境でのリモートステージングの設定

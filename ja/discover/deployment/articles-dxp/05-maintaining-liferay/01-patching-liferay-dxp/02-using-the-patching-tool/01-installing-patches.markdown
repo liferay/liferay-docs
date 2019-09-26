@@ -1,5 +1,5 @@
 ---
-header-id: installing-patches-ja
+header-id: installing-patches
 ---
 
 # パッチのインストール

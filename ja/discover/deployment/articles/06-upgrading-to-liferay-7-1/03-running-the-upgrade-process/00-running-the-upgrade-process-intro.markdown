@@ -1,5 +1,5 @@
 ---
-header-id: running-the-upgrade-process-ja
+header-id: running-the-upgrade-process
 ---
 
 # アップグレードプロセスの実行

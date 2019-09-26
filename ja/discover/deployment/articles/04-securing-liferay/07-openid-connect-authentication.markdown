@@ -1,5 +1,5 @@
 ---
-header-id: authenticating-with-openid-connect-ja
+header-id: authenticating-with-openid-connect
 ---
 
 # OpenID Connectを用いた認証

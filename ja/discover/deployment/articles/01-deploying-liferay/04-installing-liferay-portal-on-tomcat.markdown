@@ -1,5 +1,5 @@
 ---
-header-id: installing-product-on-tomcat-ja
+header-id: installing-product-on-tomcat
 ---
 
 # Tomcatに@product@をインストールする方法

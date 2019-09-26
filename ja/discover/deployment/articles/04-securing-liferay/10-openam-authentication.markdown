@@ -1,5 +1,5 @@
 ---
-header-id: opensso-single-sign-on-authentication-ja
+header-id: opensso-single-sign-on-authentication
 ---
 
 # OpenAMシングルサインオン認証

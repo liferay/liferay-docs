@@ -1,5 +1,5 @@
 ---
-header-id: cas-central-authentication-service-single-sign-on-authentication-ja
+header-id: cas-central-authentication-service-single-sign-on-authentication
 ---
 
 # CAS (Central Authentication Service) シングルサインオン認証

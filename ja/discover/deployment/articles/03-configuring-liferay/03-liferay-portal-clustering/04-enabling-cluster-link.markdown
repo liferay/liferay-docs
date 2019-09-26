@@ -1,5 +1,5 @@
 ---
-header-id: enabling-cluster-link-ja
+header-id: enabling-cluster-link
 ---
 
 # Cluster Linkを有効にする

@@ -1,5 +1,5 @@
 ---
-header-id: preparing-to-install-elasticsearch-ja
+header-id: preparing-to-install-elasticsearch
 ---
 
 # Elasticsearchのインストール準備

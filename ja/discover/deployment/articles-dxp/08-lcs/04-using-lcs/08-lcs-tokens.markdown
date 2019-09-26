@@ -1,5 +1,5 @@
 ---
-header-id: understanding-environment-tokens-ja
+header-id: understanding-environment-tokens
 ---
 
 # 環境トークンについて

@@ -1,5 +1,5 @@
 ---
-header-id: patching-liferay-ja
+header-id: patching-liferay
 ---
 
 # @ product @へのパッチ適用

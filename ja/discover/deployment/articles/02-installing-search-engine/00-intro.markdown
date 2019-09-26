@@ -1,5 +1,5 @@
 ---
-header-id: installing-a-search-engine-ja
+header-id: installing-a-search-engine
 ---
 
 # Installing a Search Engine

@@ -1,5 +1,5 @@
 ---
-header-id: installing-patches-on-the-liferay-de-war-ja
+header-id: installing-patches-on-the-liferay-de-war
 ---
 
 # @product-ver@ WARへのパッチのインストール

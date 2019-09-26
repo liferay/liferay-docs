@@ -1,5 +1,5 @@
 ---
-header-id: oauth-2-0-ja
+header-id: oauth-2-0
 ---
 
 # OAuth 2.0

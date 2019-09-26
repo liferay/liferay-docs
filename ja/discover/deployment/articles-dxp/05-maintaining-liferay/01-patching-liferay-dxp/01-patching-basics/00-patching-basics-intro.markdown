@@ -1,5 +1,5 @@
 ---
-header-id: patching-basics-ja
+header-id: patching-basics
 ---
 
 # パッチ適用の基本

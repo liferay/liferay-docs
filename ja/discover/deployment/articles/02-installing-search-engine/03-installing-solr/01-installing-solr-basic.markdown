@@ -1,5 +1,5 @@
 ---
-header-id: installing-solr-basic-installation-ja
+header-id: installing-solr-basic-installation
 ---
 
 # Solrのインストール：基本インストール

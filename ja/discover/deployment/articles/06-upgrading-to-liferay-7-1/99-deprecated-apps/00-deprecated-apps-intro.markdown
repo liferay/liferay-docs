@@ -1,5 +1,5 @@
 ---
-header-id: deprecated-apps-in-7-1-what-to-do-ja
+header-id: deprecated-apps-in-7-1-what-to-do
 ---
 
 # 7.1で廃止予定のアプリケーション：対処方法

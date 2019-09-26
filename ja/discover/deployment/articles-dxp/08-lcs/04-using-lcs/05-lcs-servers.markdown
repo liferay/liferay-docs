@@ -1,5 +1,5 @@
 ---
-header-id: managing-lcs-servers-ja
+header-id: managing-lcs-servers
 ---
 
 # LCSサーバの管理

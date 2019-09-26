@@ -1,5 +1,5 @@
 ---
-header-id: clustering-search-ja
+header-id: clustering-search
 ---
 
 # クラスタリング検索

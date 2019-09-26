@@ -1,5 +1,5 @@
 ---
-header-id: using-rolling-restarts-ja
+header-id: using-rolling-restarts
 ---
 
 # ローリング再始動

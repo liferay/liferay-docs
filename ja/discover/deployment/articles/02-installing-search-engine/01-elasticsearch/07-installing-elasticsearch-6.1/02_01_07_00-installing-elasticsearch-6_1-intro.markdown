@@ -1,5 +1,5 @@
 ---
-header-id: installing-elasticsearch-6-1-ja
+header-id: installing-elasticsearch-6-1
 ---
 
 # [fuzzy]Elasticsearchのインストール

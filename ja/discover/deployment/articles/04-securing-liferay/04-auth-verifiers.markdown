@@ -1,5 +1,5 @@
 ---
-header-id: authentication-verifiers-ja
+header-id: authentication-verifiers
 ---
 
 # 認証ベリファイア

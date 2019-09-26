@@ -1,5 +1,5 @@
 ---
-header-id: tuning-guidelines-ja
+header-id: tuning-guidelines
 ---
 
 # チューニングガイドライン

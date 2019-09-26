@@ -1,5 +1,5 @@
 ---
-header-id: backing-up-a-liferay-installation-ja
+header-id: backing-up-a-liferay-installation
 ---
 
 # @product@インストールのバックアップ

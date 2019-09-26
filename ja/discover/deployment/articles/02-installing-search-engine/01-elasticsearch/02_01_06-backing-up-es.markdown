@@ -1,5 +1,5 @@
 ---
-header-id: backing-up-elasticsearch-ja
+header-id: backing-up-elasticsearch
 ---
 
 # Backing Up Elasticsearch

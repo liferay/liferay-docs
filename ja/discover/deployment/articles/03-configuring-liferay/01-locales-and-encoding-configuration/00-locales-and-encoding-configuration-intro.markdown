@@ -1,5 +1,5 @@
 ---
-header-id: locales-and-encoding-configuration-ja
+header-id: locales-and-encoding-configuration
 ---
 
 # ロケールとエンコーディング設定

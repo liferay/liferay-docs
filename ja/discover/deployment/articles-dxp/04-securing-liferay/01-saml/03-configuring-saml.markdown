@@ -1,5 +1,5 @@
 ---
-header-id: configuring-saml-ja
+header-id: configuring-saml
 ---
 
 # SAMLの設定方法

@@ -1,5 +1,5 @@
 ---
-header-id: installing-x-pack-6-1-ja
+header-id: installing-x-pack-6-1
 ---
 
 # X-Packをインストールする（6.1）

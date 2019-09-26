@@ -1,5 +1,5 @@
 ---
-header-id: using-the-cmis-store-ja
+header-id: using-the-cmis-store
 ---
 
 # CMISストアの使用

@@ -1,5 +1,5 @@
 ---
-header-id: high-availability-with-solrcloud-ja
+header-id: high-availability-with-solrcloud
 ---
 
 # Sorlのインストール：高可用性クラスターでSolrCloudを使用する

@@ -1,5 +1,5 @@
 ---
-header-id: getting-started-with-lcs-ja
+header-id: getting-started-with-lcs
 ---
 
 # まず初めに

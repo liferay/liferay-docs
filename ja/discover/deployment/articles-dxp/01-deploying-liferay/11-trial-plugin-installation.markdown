@@ -1,5 +1,5 @@
 ---
-header-id: trial-plugin-installation-ja
+header-id: trial-plugin-installation
 ---
 
 # 試用版プラグインのインストール

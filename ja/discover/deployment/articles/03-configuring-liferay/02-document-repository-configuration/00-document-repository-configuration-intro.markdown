@@ -1,5 +1,5 @@
 ---
-header-id: document-repository-configuration-ja
+header-id: document-repository-configuration
 ---
 
 # ドキュメントリポジトリの設定

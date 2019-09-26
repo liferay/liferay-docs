@@ -1,5 +1,5 @@
 ---
-header-id: monitoring-product-ja
+header-id: monitoring-product
 ---
 
 # @product@の監視

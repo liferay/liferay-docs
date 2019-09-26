@@ -1,5 +1,5 @@
 ---
-header-id: patching-tool-advanced-configuration-ja
+header-id: patching-tool-advanced-configuration
 ---
 
 # パッチングツールの高度な設定方法

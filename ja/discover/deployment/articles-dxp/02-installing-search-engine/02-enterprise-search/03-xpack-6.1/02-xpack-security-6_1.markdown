@@ -1,5 +1,5 @@
 ---
-header-id: installing-x-pack-security-6-1-ja
+header-id: installing-x-pack-security-6-1
 ---
 
 # X-Pack Securityをインストールする（6.1）

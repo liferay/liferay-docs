@@ -1,5 +1,5 @@
 ---
-header-id: installing-elasticsearch-ja
+header-id: installing-elasticsearch
 ---
 
 # Elasticsearchのインストール

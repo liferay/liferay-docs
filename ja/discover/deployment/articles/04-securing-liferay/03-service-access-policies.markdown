@@ -1,5 +1,5 @@
 ---
-header-id: service-access-policies-ja
+header-id: service-access-policies
 ---
 
 # サービスアクセスポリシー

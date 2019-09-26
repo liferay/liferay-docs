@@ -1,5 +1,5 @@
 ---
-header-id: using-the-advanced-file-system-store-ja
+header-id: using-the-advanced-file-system-store
 ---
 
 # Advanced File System Store の使用

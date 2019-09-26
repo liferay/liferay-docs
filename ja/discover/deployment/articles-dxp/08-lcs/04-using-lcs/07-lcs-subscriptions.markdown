@@ -1,5 +1,5 @@
 ---
-header-id: managing-liferay-dxp-subscriptions-ja
+header-id: managing-liferay-dxp-subscriptions
 ---
 
 # Liferay DXPサブスクリプションの管理

@@ -1,5 +1,5 @@
 ---
-header-id: what-lcs-stores-about-your-liferay-dxp-servers-ja
+header-id: what-lcs-stores-about-your-liferay-dxp-servers
 ---
 
 # LCSがLiferay DXPサーバーに保存していること

@@ -1,5 +1,5 @@
 ---
-header-id: running-the-upgrade-ja
+header-id: running-the-upgrade
 ---
 
 # アップグレードツールの実行

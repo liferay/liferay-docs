@@ -1,5 +1,5 @@
 ---
-header-id: preparing-for-install-ja
+header-id: preparing-for-install
 ---
 
 # インストールの準備

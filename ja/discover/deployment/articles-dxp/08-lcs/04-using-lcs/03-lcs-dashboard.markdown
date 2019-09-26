@@ -1,5 +1,5 @@
 ---
-header-id: using-the-dashboard-ja
+header-id: using-the-dashboard
 ---
 
 # ダッシュボードを使う

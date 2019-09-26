@@ -1,5 +1,5 @@
 ---
-header-id: what-is-saml-ja
+header-id: what-is-saml
 ---
 
 # SAMLとは？

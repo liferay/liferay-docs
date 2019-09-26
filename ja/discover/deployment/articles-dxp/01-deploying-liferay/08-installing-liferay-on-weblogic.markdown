@@ -1,5 +1,5 @@
 ---
-header-id: installing-liferay-dxp-on-weblogic-12c-r2-ja
+header-id: installing-liferay-dxp-on-weblogic-12c-r2
 ---
 
 # WebLogic 12c R2への@product@のインストール

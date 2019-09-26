@@ -1,5 +1,5 @@
 ---
-header-id: using-amazon-simple-storage-service-ja
+header-id: using-amazon-simple-storage-service
 ---
 
 # Amazon Simple Storage Serviceの使用

@@ -1,5 +1,5 @@
 ---
-header-id: monitoring-garbage-collection-and-jvm-ja
+header-id: monitoring-garbage-collection-and-jvm
 ---
 
 # ガベージコレクションとJVMの監視

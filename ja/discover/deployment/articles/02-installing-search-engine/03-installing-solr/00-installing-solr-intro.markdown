@@ -1,5 +1,5 @@
 ---
-header-id: installing-solr-ja
+header-id: installing-solr
 ---
 
 # Solrのインストール

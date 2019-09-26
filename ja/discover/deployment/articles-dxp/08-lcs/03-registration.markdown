@@ -1,5 +1,5 @@
 ---
-header-id: activating-your-liferay-dxp-server-with-lcs-ja
+header-id: activating-your-liferay-dxp-server-with-lcs
 ---
 
 # Liferay DXPサーバーをLCSに登録する

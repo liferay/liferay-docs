@@ -1,5 +1,5 @@
 ---
-header-id: patching-tool-ja
+header-id: patching-tool
 ---
 
 # パッチングツールの使用

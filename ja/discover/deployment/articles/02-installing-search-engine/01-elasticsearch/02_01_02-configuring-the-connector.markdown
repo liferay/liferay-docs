@@ -1,5 +1,5 @@
 ---
-header-id: configuring-the-liferay-elasticsearch-connector-ja
+header-id: configuring-the-liferay-elasticsearch-connector
 ---
 
 # Configuring the Liferay Elasticsearch Connector

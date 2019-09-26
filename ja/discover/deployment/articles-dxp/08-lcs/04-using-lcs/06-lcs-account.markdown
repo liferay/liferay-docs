@@ -1,5 +1,5 @@
 ---
-header-id: managing-your-lcs-account-ja
+header-id: managing-your-lcs-account
 ---
 
 # LCSアカウントを管理する

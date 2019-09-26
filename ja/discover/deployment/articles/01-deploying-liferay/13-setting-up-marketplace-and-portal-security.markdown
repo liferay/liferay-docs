@@ -1,5 +1,5 @@
 ---
-header-id: setting-up-marketplace-and-portal-security-ja
+header-id: setting-up-marketplace-and-portal-security
 ---
 
 # Setting Up Marketplace
