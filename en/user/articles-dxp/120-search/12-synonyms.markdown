@@ -24,8 +24,12 @@ with the exact keyword by the search engine.
 
 ## Requirements and Limitations
 
-Search Tuning features like Synonym Sets are only supported when using
-Elasticsearch as the search engine.
+Search tuning features like Synonym Sets are only supported when using
+Elasticsearch as the search engine. If you're using Solr, make sure you disable
+the 
+[search tuning features](/docs/7-2/deploy/-/knowledge_base/d/installing-solr#blacklisting-elasticsearch-only-features)
+(Synonym Sets and Result Rankings) when you upgrade your installation to
+@product@ Service Pack 1 (Fix Pack 2).
 
 As of the initial release (@product-ver@ SP-1), Synonym Sets work with fields
 indexed in two locales: English and Spanish. Thus, the assets supporting
