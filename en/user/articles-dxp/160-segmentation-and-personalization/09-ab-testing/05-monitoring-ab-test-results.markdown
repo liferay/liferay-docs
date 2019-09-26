@@ -9,9 +9,9 @@ header-id: monitoring-a-b-test-results
 The information from your A/B test created in @product@ is automatically
 synchronized with
 [Analytics Cloud](https://help.liferay.com/hc/en-us/articles/360006608732). The
-test results used to calculate the winning Variant based on user
-interaction data is viewable there. You can also view your A/B testing history,
-meaningful statistics, helpful graphs, etc. from Analytics Cloud.
+test results used to calculate the winning Variant based on user interaction
+data is viewable there. You can also view your A/B testing history, meaningful
+statistics, helpful graphs, etc. from Analytics Cloud.
 
 To navigate to your test's Analytics Cloud dashboard from @product@, click the
 *View Data in Analytics Cloud* button in the A/B Test sidebar panel while it's

@@ -23,9 +23,9 @@ visitors. Then the current page and page variant(s) are tested based on
 algorithms to determine which pages perform better for a given goal (e.g.,
 bounce rate, clicks, etc.).
 
-For example, consider a Marketing team for a dog food company provides a Content
-Page advertising their newest dog treat. The page has been published for a few
-weeks, but they think a redesign could help promote the new product better. With
+For example, consider a Marketing team for a bank provides a Content Page
+advertising their new credit card. The page has been published for a few weeks,
+but they think a redesign could help promote the new credit card better. With
 A/B Testing, they can create a new page variant and display both pages at random
 to visitors. Then they can analyze the clickthrough rate for the two pages and
 find which page is more effective. If the page variant is more effective than

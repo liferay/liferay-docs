@@ -25,7 +25,8 @@ the test is finished.
 
 In cases where you'd like to publish an alternative Variant that was not
 declared a winner, select the Variant from the A/B Test panel and click
-*Publish*.
+*Publish*. You can select *Discard Test* to ignore the A/B test recommendations
+and keep the currently published Control Page.
 
 Your Control Variant is now overwritten with the new Variant and available to
 all users who visit the Page.

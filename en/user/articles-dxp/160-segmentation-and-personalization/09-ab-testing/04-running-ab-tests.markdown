@@ -23,10 +23,10 @@ gathering data on your Control page and Variants. To run an A/B test,
     duration. The higher the required confidence level, the longer it takes to
     declare a winning Variant. Choose the percentage based on your expectations.
 
-    *Estimated Time to Declare Winner*: the estimated duration the test will
-    run. This is calculated based on the selected traffic split, confidence
-    level and projected page traffic. Your page's past traffic history is
-    provided by Analytics Cloud.
+    The *Estimated Time to Declare Winner* field is also displayed. This is the
+    estimated duration the test will run. This is calculated based on the
+    selected traffic split, confidence level and projected page traffic. Your
+    page's past traffic history is provided by Analytics Cloud.
 
     ![Figure 1: Configure the final parameters of your A/B test before running it.](../../../images-dxp/run-ab-test.png)
 

@@ -14,7 +14,7 @@ Before creating an A/B test, you must ensure some conditions are met:
   [add a Data Source](https://help.liferay.com/hc/en-us/articles/360006653472-Adding-a-Liferay-DXP-Data-Source).
 
 - Your page must be a Content Page, since only Content Pages (not Widget Pages)
-  can be mapped to a Segment.
+  support Experiences for different Segments.
 
 - The Content Page you intend to test must be published.
 
