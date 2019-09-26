@@ -55,11 +55,12 @@ and the
 Follow these steps to create the panel entry for the Guestbook Admin portlet: 
 
 1.  Add the dependency you need to extend @product@'s panel categories and apps. 
-    To do this, open `guestbook-web`'s `build.gradle` file and add this 
-    dependency: 
+    To do this, open `guestbook-web`'s `build.gradle` file and add these 
+    dependencies: 
 
     ```groovy
     compileOnly group: "com.liferay", name: "com.liferay.application.list.api"
+	compileOnly group: "com.liferay", name: "com.liferay.petra.string"
     ```
 
 2.  After saving the file, right-click `guestbook-web` and select *Gradle*
