@@ -28,7 +28,7 @@ To create a Maven based workspace, run this instead:
     blade init -b maven [WORKSPACE_NAME]
 
 | **Note:** Workspace automatically sets the default @product@ version to develop
-| against when it's first initialized. The default version is set to `7.1`. This
+| against when it's first initialized. The default version is set to `7.2`. This
 | is applied to create projects using appropriately versioned project templates.
 | If you wish to develop projects for a different @product@ version, you can pass
 | the version in the Blade init command. For example,
