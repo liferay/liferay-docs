@@ -39,7 +39,7 @@ header-id: what-lcs-stores-about-your-liferay-dxp-servers
 - メモリ使用量
 
 
-LCSが保存するその他のデータは、環境トークンで有効にしたサービスによって異なります。これに関する詳細については、[Registering Servers with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs-ja)を参照してください 。
+LCSが保存するその他のデータは、環境トークンで有効にしたサービスによって異なります。これに関する詳細については、[Registering Servers with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)を参照してください 。
 次のサービスを有効にすると、LCSはそれぞれにリストされたデータを収集して保存します。
 
 - **ポータル分析:**
@@ -80,4 +80,4 @@ LCSは以下の機密ではないプロパティ以外は、末尾に`.password`
     portal.jaas.strict.password
     login.create.account.allow.custom.password
 
-LCSでは、選択した特定のプロパティを分析できないようにすることもできます。これに関する詳細は、[Registering Your Liferay DXP Server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs-ja)を参照してください 。
+LCSでは、選択した特定のプロパティを分析できないようにすることもできます。これに関する詳細は、[Registering Your Liferay DXP Server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)を参照してください 。

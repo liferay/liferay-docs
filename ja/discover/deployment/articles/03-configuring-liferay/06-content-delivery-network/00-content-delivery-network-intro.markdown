@@ -42,7 +42,7 @@ CDNを使用すると（下記参照）、ポータルリソースとプラグ�
 
 2. コントロールパネルの使用
 
-プロパティファイルでCDNを設定するには、[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)フォルダに`portal-ext.properties`ファイルを作成し、適切な[Content Delivery Network](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network)プロパティを設定します。
+プロパティファイルでCDNを設定するには、[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダに`portal-ext.properties`ファイルを作成し、適切な[Content Delivery Network](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network)プロパティを設定します。
 
 CDNホストを設定すると、@product@は古いホストを新しいCDNホストに置き換える静的アセットへのURLを生成するので、自動的にキャッシュされ、後にCDNによって提供されます。
 

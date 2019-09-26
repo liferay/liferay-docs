@@ -14,7 +14,7 @@ engine for your @product@ deployment.
 Elasticsearch is well-supported and almost certainly meets any search and
 indexing need you have. For deployment settings, learn to configure
 a standalone or remote Elasticsearch server or cluster
-[here](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch-ja).
+[here](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
 
 [Solr](http://lucene.apache.org/solr) is also supported in @product@.
 

@@ -124,8 +124,8 @@ enterprise-level document repositories. すべてのリポジトリは、Liferay
 
 ## 手順 3: インストールする
 
-次の手順は、 @product@をインストールすることです。アプリケーションサーバーとバンドルになっている [@product@をインストールする](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja)か、[既存のアプリケーションサーバー上に@product@を手動でインストールする](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)かの2つの方法のいずれかでこれを行うことができます。
-各@product@のインストーラの[Liferay Homeにはいくつかのファルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)が含まれています。
+次の手順は、 @product@をインストールすることです。アプリケーションサーバーとバンドルになっている [@product@をインストールする](/discover/deployment/-/knowledge_base/7-1/installing-liferay)か、[既存のアプリケーションサーバー上に@product@を手動でインストールする](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)かの2つの方法のいずれかでこれを行うことができます。
+各@product@のインストーラの[Liferay Homeにはいくつかのファルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)が含まれています。
 
 @product@をインストールする、最も簡単な方法なのはバンドルを利用することです。すぐに本番運用できる@product@ インスタンスにとても簡単に変えることができます。
 
@@ -136,12 +136,12 @@ enterprise-level document repositories. すべてのリポジトリは、Liferay
 
 1. アプリケーションサーバーの環境設定で、`-Djava.net.preferIPv4Stack=false`を設定してください。
 
-2. ポータルのポータルの[ Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home) フォルダに内に`portal-ext.properties`ファイルを (既存のファイルがない場合は) 作成し、対象となる許可したいホスト (例: _0:0:0:0:0:0:0:1_) に, `tunnel.servlet.hosts.allowed`プロパティを設定してください。
+2. ポータルのポータルの[ Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) フォルダに内に`portal-ext.properties`ファイルを (既存のファイルがない場合は) 作成し、対象となる許可したいホスト (例: _0:0:0:0:0:0:0:1_) に, `tunnel.servlet.hosts.allowed`プロパティを設定してください。
 
 ## 手順 5: Elasticsearchの環境設定を行う
 
 
-@product@ は、デフォルトではElasticsearchの組み込み版がある状態で出荷されます。この環境設定はデモ目的では使用可能ですが、本番運用には推奨致しません。@product@をインストールした後、@product@を独立したElasticsearchサーバーまたはクラスタに接続するように環境設定を行う必要があります。インストールのサイズに応じて、このElasticsearchの独立したインスタンスは@product@があるのと同じマシン上か、別のマシン上に存在させることができますがパフォーマンスのため、[別のマシン上にインストールする](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch-ja)ことをお勧めします。
+@product@ は、デフォルトではElasticsearchの組み込み版がある状態で出荷されます。この環境設定はデモ目的では使用可能ですが、本番運用には推奨致しません。@product@をインストールした後、@product@を独立したElasticsearchサーバーまたはクラスタに接続するように環境設定を行う必要があります。インストールのサイズに応じて、このElasticsearchの独立したインスタンスは@product@があるのと同じマシン上か、別のマシン上に存在させることができますがパフォーマンスのため、[別のマシン上にインストールする](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)ことをお勧めします。
 
 ## 手順 6: Liferay Marketplaceおよびポータルセキュリティ
 
@@ -161,4 +161,4 @@ enterprise-level document repositories. すべてのリポジトリは、Liferay
 ポータルインストールプロセスは、Marketplaceプラグインを自動的に実装および登録します。
 これが、可能ではない環境内に@product@ をインストールする場合、複数ある回避策のいずれかを実行する必要があります。
 
-これで、@product@をインストールすることができます。バンドルを使用して@product@をインストールする場合は、次のセクションに進みます。@product@を手動でインストールする場合は、選択したアプリケーションサーバーのセクションに進んでください。@product@を手動またはバンドル経由でインストールするばあいは、[@product@のSetup Wizardの使用](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja##using-liferays-setup-wizard)、 [メールの設定（英語）](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)、[Elasticsearchのインストール（英語）](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)に進んでください。
+これで、@product@をインストールすることができます。バンドルを使用して@product@をインストールする場合は、次のセクションに進みます。@product@を手動でインストールする場合は、選択したアプリケーションサーバーのセクションに進んでください。@product@を手動またはバンドル経由でインストールするばあいは、[@product@のSetup Wizardの使用](/discover/deployment/-/knowledge_base/7-1/installing-liferay##using-liferays-setup-wizard)、 [メールの設定（英語）](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)、[Elasticsearchのインストール（英語）](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)に進んでください。

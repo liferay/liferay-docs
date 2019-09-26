@@ -12,7 +12,7 @@ Liferay Portal 6.2のシャードインストールの場合は、次の手順�
 
 ## デフォルトのシャードのアップグレード
 
-アップグレードプロセスでは、コントロールテーブルをデフォルトのシャードから他のシャードへコピーする必要があるため、デフォルトのシャードの`[Liferay Home] /tools/portal-tools-db-upgrade-client/portal-upgrade-database.properties]`ファイルにすべてのシャードの[[JDBCプロパティー]](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-ja#configuring-portal-upgrade-database-properties)を設定します。 
+アップグレードプロセスでは、コントロールテーブルをデフォルトのシャードから他のシャードへコピーする必要があるため、デフォルトのシャードの`[Liferay Home] /tools/portal-tools-db-upgrade-client/portal-upgrade-database.properties]`ファイルにすべてのシャードの[[JDBCプロパティー]](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade#configuring-portal-upgrade-database-properties)を設定します。 
 
     jdbc.default.driverClassName=com.mysql.jdbc.Driver
     jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true

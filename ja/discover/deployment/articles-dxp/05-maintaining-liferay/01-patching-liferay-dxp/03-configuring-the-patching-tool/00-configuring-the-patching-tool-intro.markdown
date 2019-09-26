@@ -24,7 +24,7 @@ header-id: configuring-the-patching-tool
 
 
 @ product @をマニュアルでインストールした場合は、パッチングツールも手動でインストールする必要があります。[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1/patching-tool)からダウンロードしてください。
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)フォルダに解凍するのが最も簡単な方法です。
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダに解凍するのが最も簡単な方法です。
 
 
 

@@ -37,7 +37,7 @@ LCSプロジェクトには最初は環境が含まれていません。その�
    - クラスタ環境に接続するすべてのサーバーでportalプロパティー`cluster.link.enabled`を`true`に設定する必要があります。
    ![図5: クラスタ環境であるかどうか選択し、 *Next*をクリックする。](../../images-dxp/lcs-onboarding-04.png)
 
-5. 環境でエラスティックサブスクリプションを許可するかどうかを選択します。エラスティックサブスクリプションでは、無制限の数のサーバーを登録できます。これは、要求に応じてサーバーが自動的に作成および破棄されるオートスケーリングの状況において重要です。エラスティック環境は、事業継続計画など、他の目的で一時的に追加のサーバーをオンラインにするのにも役立ちます。詳細については、[the documentation on elastic subscriptions](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions-ja#elastic-subscriptions)を参照してください 。
+5. 環境でエラスティックサブスクリプションを許可するかどうかを選択します。エラスティックサブスクリプションでは、無制限の数のサーバーを登録できます。これは、要求に応じてサーバーが自動的に作成および破棄されるオートスケーリングの状況において重要です。エラスティック環境は、事業継続計画など、他の目的で一時的に追加のサーバーをオンラインにするのにも役立ちます。詳細については、[the documentation on elastic subscriptions](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions#elastic-subscriptions)を参照してください 。
 環境を作成した後にこの選択を変更することができないので注意してください。
 
    ![図6: エラスティック環境であるかどうか選択し、*Next*をクリックする。](../../images-dxp/lcs-onboarding-05.png)
@@ -56,7 +56,7 @@ LCSプロジェクトには最初は環境が含まれていません。その�
 
    - **Fix Pack Management:** これを有効にすると、LCSを使用して@product@のフィックスパックを確認してインストールすることができます。これにより、LCSはインストール済みのフィックスパックを判別することもできます。
 
-   - **Portal Properties Analysis:** これを有効にすると、LCSは現在のポータルプロパティ設定を、環境に接続するすべてのサーバーのデフォルト値と比較します。LCSは[security sensitive properties](/discover/deployment/-/knowledge_base/7-1/what-lcs-stores-about-your-liferay-dxp-servers-ja)にはアクセスしません 。
+   - **Portal Properties Analysis:** これを有効にすると、LCSは現在のポータルプロパティ設定を、環境に接続するすべてのサーバーのデフォルト値と比較します。LCSは[security sensitive properties](/discover/deployment/-/knowledge_base/7-1/what-lcs-stores-about-your-liferay-dxp-servers)にはアクセスしません 。
  *Blacklisted Properties* をクリックすると、分析からブラックリストに登録されているその他のプロパティを表示および変更できます。
    ![図7: 環境に接続するサーバーに使用したいLCSサービスを有効または無効にし、*Next*をクリックする。](../../images-dxp/lcs-onboarding-06.png)
 
@@ -64,4 +64,4 @@ LCSプロジェクトには最初は環境が含まれていません。その�
 
    ![図8: このフォームには前のステップで選択した各項目が含まれています。必要に応じこのフォームを変更し、それが終わったら *Create Environment*をクリックします。](../../images-dxp/lcs-onboarding-07.png)
 
-環境を作成すると、ウィザードにLCSクライアントアプリケーションのダウンロード、環境のトークンファイルのダウンロード、およびLCSのプロジェクトのダッシュボードへの移動を可能にする画面が表示されます。ただし、新しい環境にサーバーを登録する前に 、そのサーバーの[preconfiguration steps](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration-ja)を完了する必要があります。
+環境を作成すると、ウィザードにLCSクライアントアプリケーションのダウンロード、環境のトークンファイルのダウンロード、およびLCSのプロジェクトのダッシュボードへの移動を可能にする画面が表示されます。ただし、新しい環境にサーバーを登録する前に 、そのサーバーの[preconfiguration steps](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration)を完了する必要があります。

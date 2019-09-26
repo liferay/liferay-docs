@@ -24,7 +24,7 @@ Tomcatバンドルには、クリーンなTomcat 9アプリケーションサー
 - [@product@用にアプリケーションサーバーを設定する](#tomcat-configuration)
 - [Liferay DXP WARファイルをアプリケーションサーバーにデプロイする](#deploying-liferay)
 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)は、Tomcatサーバーのフォルダを含むフォルダです。Liferay DXPがTomcat上にインストールされ、デプロイされると、Liferay Homeには、Tomcatサーバーフォルダー`data`、`deploy`、 `license`、`osgi`フォルダーが作成されます。`$TOMCAT_HOME`はTomcatサーバーフォルダーのことを指しています。このフォルダーは、`tomcat-[version]`または、 `apache-tomcat-[version]`という名前になっています。
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)は、Tomcatサーバーのフォルダを含むフォルダです。Liferay DXPがTomcat上にインストールされ、デプロイされると、Liferay Homeには、Tomcatサーバーフォルダー`data`、`deploy`、 `license`、`osgi`フォルダーが作成されます。`$TOMCAT_HOME`はTomcatサーバーフォルダーのことを指しています。このフォルダーは、`tomcat-[version]`または、 `apache-tomcat-[version]`という名前になっています。
 
 ## Liferay DXP の依存ファイルをインストールする
 
@@ -228,7 +228,7 @@ Tomcatバンドルには、クリーンなTomcat 9アプリケーションサー
 ### データベースの設定
 
 データベース設定を処理する上で一番簡単な方法は @product@にデータソースを管理させることです。 @product@の
-[基本設定](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#using-liferays-setup-wizard)
+[基本設定](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
 ページは@product@にビルトインされたデータソースの設定ができます。@product@に備わっているデータソースを使用する場合は、このセクションは必要ではありません。
 
 Tomcatでデータソースを管理する場合は、次の手順で行います:
@@ -263,7 +263,7 @@ Tomcatが管理するデータソースを作成し、それを使用するよ�
 
 ### メール設定
 
-データベースと同様、メール設定の処理もLiferay DXPに行わせるのが一番簡単な方法です。Liferay DXPの内蔵メールセッションを使用したい場合は、このセクションを飛ばしてコントロールパネルで[メールセッションを設定](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#configuring-mail)してください。
+データベースと同様、メール設定の処理もLiferay DXPに行わせるのが一番簡単な方法です。Liferay DXPの内蔵メールセッションを使用したい場合は、このセクションを飛ばしてコントロールパネルで[メールセッションを設定](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)してください。
 
 Tomcatとのメールセッションを管理したい場合は、次の手順に従ってください。
 

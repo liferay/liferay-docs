@@ -45,7 +45,7 @@ Webコンテンツ管理システムを広範囲に使用したことがある�
 
 ## 手順4：@product@の完全なバックアップを同期する
 
-[@product@のデータベース、インストール先、およびドキュメントライブラリストアをバックアップします。](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation-ja)
+[@product@のデータベース、インストール先、およびドキュメントライブラリストアをバックアップします。](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
 
 ## 手順5：ポータルのプロパティを更新する
 
@@ -87,7 +87,7 @@ Liferay Portal 6.2より前のバージョンから移行する場合は、以�
 
 ## 手順6：ドキュメントとメディアのファイルストアを設定する
 
-次に、ドキュメントとメディアの設定を確認します。アップグレードプロセスを実行する前に、[ドキュメントライブラリーのドキュメンテーション](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration-ja)を見て、@product-ver@のすべてのオプションを確認しておいてください。
+次に、ドキュメントとメディアの設定を確認します。アップグレードプロセスを実行する前に、[ドキュメントライブラリーのドキュメンテーション](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)を見て、@product-ver@のすべてのオプションを確認しておいてください。
 ただし、変更された設定には重要な部分が2つあります。
 
 - ファイルストアの場所は、ポータルプロパティファイルでは指定されなくなりました。（例：`portal-ext.properties`）。
@@ -103,11 +103,11 @@ Advanced File System Storeメソッドを使用してドキュメントライブ
 
 設定ファイル名は、設定を実装するクラスの名前と一致していなければなりません。
 
-詳細については、[ドキュメントリポジトリ設定のドキュメンテーション](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration-ja)を参照してください。
+詳細については、[ドキュメントリポジトリ設定のドキュメンテーション](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)を参照してください。
 
 ## 手順7：@product-ver@をインストールする
 
-次に、[@product@をアプリケーションサーバーにインストールする](/discover/deployment/-/knowledge_base/7-1/deploying-product-ja)か 、[選択したアプリケーションサーバーにバンドルされている@product@を使用します](/discover/deployment/-/knowledge_base/7-1/installing-liferay)。
+次に、[@product@をアプリケーションサーバーにインストールする](/discover/deployment/-/knowledge_base/7-1/deploying-product)か 、[選択したアプリケーションサーバーにバンドルされている@product@を使用します](/discover/deployment/-/knowledge_base/7-1/installing-liferay)。
 
 それから 、最新のフィックスパックをインストールします。
 

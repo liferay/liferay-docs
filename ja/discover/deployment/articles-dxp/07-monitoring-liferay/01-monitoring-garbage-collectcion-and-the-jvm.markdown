@@ -6,7 +6,7 @@ header-id: monitoring-garbage-collection-and-jvm
 
 [TOC levels=1-4]
 
-[チューニングパラメータ](/discover/deployment/-/knowledge_base/7-1/tuning-guidelines-ja)は、 JVM チューニングのいい出発点となりますが、ニーズに合わせ最適な設定であることを確認するためにGCのパフォーマンスを監視しなければなりません。Oracle JVMのパフォーマンスを監視するのに役立つツールがいくつかあります。
+[チューニングパラメータ](/discover/deployment/-/knowledge_base/7-1/tuning-guidelines)は、 JVM チューニングのいい出発点となりますが、ニーズに合わせ最適な設定であることを確認するためにGCのパフォーマンスを監視しなければなりません。Oracle JVMのパフォーマンスを監視するのに役立つツールがいくつかあります。
 
 ## VisualVM
 
