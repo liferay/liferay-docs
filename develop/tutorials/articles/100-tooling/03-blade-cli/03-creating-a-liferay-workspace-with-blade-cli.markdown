@@ -22,7 +22,7 @@ folder where you want your workspace and run the following command:
     blade init -v 7.0 [WORKSPACE_NAME]
 
 | **Note:** Workspace automatically sets the default @product@ version to develop
-| against when it's first initialized. The default version is set to `7.1`. When
+| against when it's first initialized. The default version is set to `7.2`. When
 | adding the `-v 7.0` param to Blade's init command, the version is set for `7.0`
 | @product@ development. This is applied to create projects using appropriately
 | versioned project templates.
