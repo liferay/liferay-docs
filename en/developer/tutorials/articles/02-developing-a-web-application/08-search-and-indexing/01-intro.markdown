@@ -36,6 +36,9 @@ step, you'll asset-enable Guestbooks and Guestbook entries so the Asset
 Publisher can display them. Enabling search is a prerequisite for this, because
 the Asset Publisher uses the index to find assets. 
 
+If you get stuck, [source code](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/guestbook/08-search/com-liferay-docs-guestbook)
+for this step is provided. 
+
 But assets are for later. Right now it's time to index those Guestbooks. Ready? 
 
 ![Figure 1: Add a search bar so users can search for Guestbook Entries. If a message or name matches the search query, the Entry is displayed in the search results.](../../../images/guestbook-portlet-search.png)
