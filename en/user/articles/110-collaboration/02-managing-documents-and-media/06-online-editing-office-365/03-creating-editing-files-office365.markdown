@@ -1,8 +1,8 @@
 ---
-header-id: creating-and-editing-files-with-office365
+header-id: creating-and-editing-documents-and-media-files-with-office-365
 ---
 
-# Creating and Editing Files with Office 365™
+# Creating and Editing Documents and Media Files with Office 365™
 
 [TOC levels=1-4]
 
@@ -26,7 +26,7 @@ can unlink your account at any time by navigating to User Menu &rarr;
 *Account Settings* &rarr; *General* &rarr; *Apps*, and clicking *Revoke* next to 
 OneDrive&trade;. 
 
-![Figure 1: You can unlink your Office 365 account from the portal.](../../../../images/office365-unlink.png)
+![Figure 1: You can unlink your account from the portal.](../../../../images/office365-unlink.png)
 
 ## Creating Files
 
@@ -40,39 +40,39 @@ Follow these steps to create a new Documents and Media file via Office
 
 2.  Click the *Add* icon 
     (![Add](../../../../images/icon-add.png)) 
-    and select the type of Office 365 document to add to the Document Library: 
+    and select the type of Office 365&trade; document to add to the Document 
+    Library: 
 
     -   Word&trade;
     -   Excel&trade;
     -   PowerPoint&trade;
     
-    When you select one of these options, @product@ shows a new *modal* where a title 
-    for the new document can be chosen. 
+    When you select one of these options, a new window opens for you to enter 
+    the document's name. 
 
-    ![Figure 2: Select the type of Office 365 document you want to create.](../../../../images/office365-new.png)
+    ![Figure 2: Select the type of document you want to create.](../../../../images/office365-new.png)
 
-3.  Input the name of the file ion he *Title* field and click *Save* button.
+3.  Enter the document's name in the *Title* field, and click *Save*. When you 
+    click *Save*, @product@ creates a temporary Documents and Media file and 
+    links it to the new Office 365&trade; file. Your browser then opens a new 
+    window with that Office 365&trade; file so you can create its content. 
 
-    ![Figure 3: input the title of Office 365 document you want to create](../../../../images/office365-creation-modal.png)
-
-    When you click in the *Save* button @product@ creates a temporary 
-    Documents and Media file and links it to a new Office 365 file. Your browser 
-    then opens a new window with that Office 365 file so you can create its 
-    content. 
+    ![Figure 3: Give the document a name.](../../../../images/office365-creation-modal.png)
 
 4.  Use the Office 365&trade; editor to create your document's content. 
 
 5.  Save your changes to @product@, or discard them: 
 
-    **Check in:** Saves the Office 365 file to Documents and Media, then deletes 
-    the file from Office 365. The saved file's format depends on the document 
-    type you selected in step two above. 
+    **Check in:** Saves the Office 365&trade; file to Documents and Media, then 
+    deletes the file from Office 365&trade;. The saved file's format depends on 
+    the document type you selected in step two above. 
 
     -   Word: Microsoft Word&trade; (`.docx`)
     -   PowerPoint: Microsoft PowerPoint&trade; (`.pptx`)
     -   Excel: Microsoft Excel&trade; (`.xlsx`)
 
-    **Cancel Checkout:** Deletes the Office 365 file, discarding any changes. 
+    **Cancel Checkout:** Deletes the Office 365&trade; file, discarding any 
+    changes. 
 
 ## Editing Files
 

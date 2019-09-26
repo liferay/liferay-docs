@@ -1,8 +1,8 @@
 ---
-header-id: online-file-creation-and-editing-with-office-365
+header-id: integration-with-microsoft-office-365
 ---
 
-# Online File Creation and Editing with Microsoft Office 365™
+# Integration with Microsoft Office 365™
 
 [TOC levels=1-4]
 
@@ -16,10 +16,10 @@ edit Documents and Media files online in Word&trade;, Excel&trade;, and
 PowerPoint&trade;. 
 
 Note that when you use Office 365&trade; to create or edit a Documents and Media 
-file, that file isn't permanently stored in Office 365&trade;. Office 365 
-&trade; is only used for its editing UI. Your edits are then saved to the 
-Documents and Media Library. 
+file, that file isn't permanently stored in Office 365&trade;. Office 365&trade; 
+is only used for its editing UI. Your edits are then saved to the Documents and 
+Media Library. 
 
-![Figure 1: You can create new Office 365 documents in Documents and Media.](../../../../images/office365-new.png)
+![Figure 1: You can create new Office 365&trade; documents in Documents and Media.](../../../../images/office365-new.png)
 
-![Figure 2: You can also use Office 365's document editor to edit existing Documents and Media files.](../../../../images/office365-edit.png)
+![Figure 2: You can also edit existing Documents and Media files in Office 365&trade;.](../../../../images/office365-edit.png)
