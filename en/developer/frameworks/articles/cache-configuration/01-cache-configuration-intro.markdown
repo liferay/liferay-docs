@@ -6,21 +6,24 @@ header-id: cache-configuration
 
 [TOC levels=1-4]
 
-Caching makes specified objects and object references readily available in
-memory. It costs memory but improves performance. You can experiment with cache
-to determine what's good for your system. If your site serves lots of Web
-Content articles, for example, you may want to cache them.   
+Caching makes specified data readily available in memory. It costs memory but
+improves performance. You can experiment with cache to determine what's good for
+your system. If your site serves lots of web content articles, for example, you
+may want to cache them. 
 
-There are two cache levels.
+Liferay's cache configuration framework uses Ehcache. It's an independent
+framework used by @product@'s data access and template engine components. It
+manages two pools: 
 
-**Level 1:** caching per session
+**Multi-VM:** Cache is replicated among cluster nodes. EntityCache and 
+FinderCache (described later) belong in this pool because they must synchronize 
+with data on all nodes.
 
-**Level 2:** caching across multiple sessions
+**Single-VM:** Cache is managed uniquely per VM and isn't replicated among
+nodes. SingleVM cache is for objects and references that you don't need/want
+replicated among nodes. 
 
-Liferay uses Hibernate for Level 1 cache but uses Ehcache for Level 2 cache.
-Liferay's Level 2 Ehcache is configurable; the Level 1 Hibernate cache is not.
-This section covers these topics on configuring Liferay's Level 2 cache using
-Ehcache: 
+Here are ways you can configure the Ehcache: 
 
 -   Caching Service Entities
 -   Caching Entity Finder Results
@@ -46,18 +49,6 @@ configured.
 **FinderCache:** Holds parameterized service entity search results. An entity's
 `fetchByValue`, `findByValue`, `countByValue`, `findAll`, and `countAll` methods
 use the FinderCache if it's configured. 
-
-## Cache Pools
-
-@product@ manages two Level 2 cache pools:
-
-**Multi-VM:** Cache is replicated among cluster nodes. EntityCache and
-FinderCache belong in this pool because they must synchronize with data on all
-nodes.
-
-**Single-VM:** Cache is managed uniquely per VM and isn't replicated among
-nodes. SingleVM cache is for objects and references that you don't need/want
-replicated among nodes.
 
 ## Discovering and Viewing Cache Configurations
 
