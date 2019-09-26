@@ -233,6 +233,61 @@ to avoid EMFILE errors (especially on Windows). The default value is `128`.
 `process-serially:` **Note**: removed since v 2.7.0. Replaced with 
 `max-parallel-files`. 
 
+`rules:` defines rules to apply to the projects source files with the loader. 
+Rules must have a `use` array property, which defines the loader to use, which 
+may be specified by just a package name or an object with `loader` and 
+`options` properties if applicable, and one or more of the properties below: 
+
+- `test`: defines a regular expression to filter files in the `sources` folders 
+  to determine whether to apply rules to them. The project-relative path of each 
+  eligible file is compared against the regular expression and files that match 
+  are processed by the loaders.
+- `exclude`: refines the `test` expression by specifying files to exclude.
+- `include`: refines the `test` expression by specifying files to include.
+
+An example configuration is shown below:
+
+```json
+{
+  "rules": [
+    {
+      "test": "\\.js$",
+      "exclude": "node_modules",
+      "use": [
+        {
+          "loader": "babel-loader",
+          "options": {
+            "presets": ["env", "react"]
+          }
+        }
+      ]
+    },
+    {
+      "test": "\\.css$",
+      "use": ["style-loader"]
+    },
+    {
+      "test": "\\.json$",
+      "use": ["json-loader"]
+    }
+  ]
+}
+```
+
+`sources:` defines the folders in the project that contain the source files to 
+apply rules to. Folders can be nested (e.g. `/src/main/resources/`) and must be 
+written using POSIX path separators 
+(i.e. use `/` instead of `\` on Win32 systems). Note that rules are 
+automatically applied to package dependency files of the project. 
+
+An example configuration is shown below:
+
+```json
+{
+  "sources": ["src", "assets"]
+}
+```
+
 ### OSGi Bundle Creation Options
 
 Since version 2.2.0, the liferay-npm-bundler can create widget OSGi bundles for 

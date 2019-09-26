@@ -13,7 +13,7 @@ header-id: understanding-how-liferay-amd-loader-configuration-is-exported
 
 With [de-duplication](/docs/7-2/reference/-/knowledge_base/r/how-the-liferay-npm-bundler-publishes-npm-packages#package-de-duplication) 
 in place, JavaScript modules are made available to Liferay AMD Loader through 
-the configuration returned by the `/o/js_loaded_modules` URL.
+the configuration returned by the `/o/js_loader_modules` URL.
 
 The OSGi bundle shown below is used for reference in this article:
 

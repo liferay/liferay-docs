@@ -38,23 +38,10 @@ The liferay-npm-bundler uses the process below to create the OSGi bundle:
 
 2.  Traverse the project's dependency tree to determine its dependencies.
 
-3.  For each npm package dependency:
+3.  For the project:
 
-    a. Copy the npm package to the output folder and prefix the bundle's name 
-    to it. Note that the bundler stores packages in a plain 
-    *bundle-name$package*@*version* format, rather than the standard 
-    node_modules tree format. To determine what is copied, the bundler invokes a 
-    plugin to filter the package file list. 
-
-    b. Pre-process the npm package with any configured plugins.
-
-    c. Run 
-       [Babel](https://babeljs.io/) with configured plugins for each `.js` file 
-       inside the npm package.
-
-    d. Post-process the npm package with any configured plugins.
-
-4.  For the project:
+    a. Run source files inside the source directories configured in 
+       `.npmbundlerrc` through the rules.
 
     a. Pre-process the project's package with any configured plugins.
 
@@ -64,11 +51,34 @@ The liferay-npm-bundler uses the process below to create the OSGi bundle:
 
     d. Post-process the project package with any configured plugins.
 
+4.  For each npm package dependency:
+
+    a. Copy the npm package to the output folder and prefix the bundle's name 
+    to it. Note that the bundler stores packages in a plain 
+    *bundle-name$package*@*version* format, rather than the standard 
+    node_modules tree format. To determine what is copied, the bundler invokes a 
+    plugin to filter the package file list. 
+
+    b. Run rules on the package files.
+
+    c. Pre-process the npm package with any configured plugins.
+
+    d. Run 
+       [Babel](https://babeljs.io/) with configured plugins for each `.js` file 
+       inside the npm package.
+
+    e. Post-process the npm package with any configured plugins.
+
 The only difference between the pre-process and post-process steps are when they 
 are run (before or after Babel is run, respectively). During this workflow, 
 liferay-npm-bundler calls all the configured plugins so they can perform 
 transformations on the npm packages (for instance, modifying their `package.json` 
 files, or deleting or moving files). 
+
+| **Note:** that the pre, post, and Babel phases were designed for the old mode 
+| of operation (See the [Migrating Your Project to Use the New Mode](/docs/7-2/frameworks/-/knowledge_base/f/migrating-your-project-to-use-the-new-mode) 
+| for more information) and they will gradually be replaced with rules for the 
+| new mode.
 
 In this reference section, you'll learn more about the liferay-npm-bundler's 
 configuration, default presets, format, and more. 
