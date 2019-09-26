@@ -45,17 +45,24 @@ Follow these steps to create a new Documents and Media file via Office
     -   Word&trade;
     -   Excel&trade;
     -   PowerPoint&trade;
+    
+    When you select one of these options, @product@ shows a new *modal* where a title 
+    for the new document can be chosen. 
 
-    When you select one of these options, @product@ creates a temporary 
+    ![Figure 2: Select the type of Office 365 document you want to create.](../../../../images/office365-new.png)
+
+3.  Input the name of the file ion he *Title* field and click *Save* button.
+
+    ![Figure 3: input the title of Office 365 document you want to create](../../../../images/office365-creation-modal.png)
+
+    When you click in the *Save* button @product@ creates a temporary 
     Documents and Media file and links it to a new Office 365 file. Your browser 
     then opens a new window with that Office 365 file so you can create its 
     content. 
 
-    ![Figure 2: Select the type of Office 365 document you want to create.](../../../../images/office365-new.png)
+4.  Use the Office 365&trade; editor to create your document's content. 
 
-3.  Use the Office 365&trade; editor to create your document's content. 
-
-4.  Save your changes to @product@, or discard them: 
+5.  Save your changes to @product@, or discard them: 
 
     **Check in:** Saves the Office 365 file to Documents and Media, then deletes 
     the file from Office 365. The saved file's format depends on the document 
