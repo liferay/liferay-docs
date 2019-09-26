@@ -16,6 +16,47 @@ in the end user's experience. Not all assets are indexed in a way that supports
 searching in a language other than the default language. Even assets that are
 translatable might not support searching for the content in that language.
 
+In short, these assets contain text fields supporting localized search:
+
+| Asset | Fields | Localized Search Approach |
+|-------|--------|---------------------------|
+| Content Page | `title` | 2 |
+| Documents and Media Document | `content` | 3 |
+| Calendar | `name`, `description` | 1 |
+| Calendar Booking | `title`, `description` | 1 |
+| Dynamic Data List Record | `content` | 1 |
+| Form Record | `content` | 1 |
+| Web Content Article | `title`, `content`, `description` |  1 |
+| Asset Category<sup>*</sup> | `title`, `description` |  1 |
+| Asset Tag<sup>*</sup> | `assetTagNames` | 1 |
+| Wiki Page | `title`, `content` |  2 |
+| Blogs Entry | `content`, `title` |  2 |
+| Message Boards Message | `title`, `content` | 2 |
+<!-- | App Builder | `name` | 2 | New with 7.3  -->
+
+<sup>*</sup> Asset tags and categories don't have dedicated documents in the
+index. Instead, their indexed fields are added to the tagged or categorized
+asset's document.
+
+There are three localized search approaches represented in the table:
+
+1.  Fully Localized: The asset itself is localizable (in other words,
+    translatable), and its translated fields are indexed into their respected
+    locales. This behavior did not change in SP1.
+
+2.  Fully Localized for Search: Even though the asset itself is not
+    localizable/translatable, its fields are indexed into _all_ the supported
+    locales in the site. This is a new approach, starting in SP1.
+
+3.  Site-Localized for search: The asset's fields are indexed with the site's
+    locale appended. This behavior did not change in SP1.
+
+There are also assets with text fields and no localization support, meaning that
+they always index the plain field, without a locale appended (e.g., `title` is
+not localized, but `title_en_EN` is localized). That means they'll always be
+analyzed by the default language analyzer, and do not support localized search
+in any capacity.
+
 ## What is Localized Search?
 
 In localized search, fields are indexed with locale information appended (for
@@ -24,8 +65,9 @@ example, `en_US` for English, making a localized title field indexed as
 [language analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analysis-lang-analyzer.html) 
 in the search engine so that the 
 [analysis](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/analysis.html) 
-process is performed properly. There are two common approaches: fully localized
-search and site-localized search.
+process is performed properly. Each localization approach is covered below.
+
+## Fully Localized
 
 Fully localized search works like this:
 
@@ -39,6 +81,23 @@ Fully localized search works like this:
 3.  At search time, properly indexed and analyzed content is returned according
     to search engine's relevance algorithms.
 
+This is the ideal approach for assets that support translation of some or all
+fields outside of the search context.
+
+## Fully Localized for Search
+
+Assets fully localized for search work like this:
+
+1.  The asset's fields are not localizable in the user interface or database.
+
+2.  For at least one text field being indexed, the asset has indexed localized
+    fields for every locale available in the site.
+
+3.  At search time the result document is returned regardless of the search
+    locale, because the content is available in all locales of the site.
+
+## Site-Localized Search
+
 Site-localized search works like this:
 
 1.  The asset's indexed fields are appended with the locale of the site (set in
@@ -51,7 +110,9 @@ Site-localized search works like this:
 2.  At search time, if content exists matching the language of the site, it's
     properly returned according to the search engine's algorithms.
 
-Not all assets support localized search, however.
+Not all assets support localized search, however. Refer to the table at the
+beginning of this article for which assets and fields are localized for search.
+
 
 ## Assets Supporting Localized Search
 

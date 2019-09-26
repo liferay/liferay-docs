@@ -24,13 +24,8 @@ development. Read on for details about these topics.
 ## Installing Liferay Maven Artifacts
 
 To create Liferay projects using Maven, you'll need its dependencies. This isn't
-a problem---Liferay provides them as Maven artifacts. 
-
-There are two ways to retrieve Liferay artifacts: 
-
-- Install them from a remote repository. 
-- Download a Liferay-provided utility for putting artifacts in local
-  repositories. 
+a problem---Liferay provides them as Maven artifacts. You can retrieve them from
+a remote repository.
 
 There are two remote repositories that contain Liferay artifacts: Central
 Repository and Liferay Repository. The Central Repository is the default
@@ -59,9 +54,7 @@ up-to-date Maven artifacts produced by Liferay.
 | enabled when publishing artifacts to Maven Central. You must comment out the
 | Liferay Repository credentials when publishing your artifacts.
 
-If you can't access remote repositories (e.g., restrictions due to a corporate
-firewall), you can still install Liferay Maven artifacts from a local
-repository (as a ZIP file).
+Next, you'll learn about managing your Maven artifacts.
 
 ## Managing Maven Artifacts in a Repository
 
