@@ -24,10 +24,10 @@ IBM &reg; WebSphere &regは、International Business Machines Corporationの商�
 
 
 
-- [Preparing for Instal](/discover/deployment/-/knowledge_base/7-1/preparing-for-install-ja)
-- [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja)
+- [Preparing for Instal](/discover/deployment/-/knowledge_base/7-1/preparing-for-install)
+- [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-liferay)
 
-[Liferay Home*の*フォルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)は@product@のオペレーションにとって大切です。Liferay Homeでは、@product@が実行するために必要な特定のファイルとフォルダを作成します。WebSphereでは、Liferay Homeは一般的に`[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`です。
+[Liferay Home*の*フォルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)は@product@のオペレーションにとって大切です。Liferay Homeでは、@product@が実行するために必要な特定のファイルとフォルダを作成します。WebSphereでは、Liferay Homeは一般的に`[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`です。
 
 まずはじめに、[liferay.com](https://web.liferay.com/group/customer/dxp/downloads/7-1)のカスタマーポータルから@product@のWARファイルと依存関係をダウンロードしてください。
 以下のファイルが必要です：

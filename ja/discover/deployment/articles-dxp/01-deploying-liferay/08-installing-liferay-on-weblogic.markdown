@@ -18,9 +18,9 @@ header-id: installing-liferay-dxp-on-weblogic-12c-r2
 
 
 
-- [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja)
-- [Preparing for Instal](/discover/deployment/-/knowledge_base/7-1/preparing-for-install-ja)
-- [マニュアルで@product@をインストールする](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually-ja)
+- [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-liferay)
+- [Preparing for Instal](/discover/deployment/-/knowledge_base/7-1/preparing-for-install)
+- [マニュアルで@product@をインストールする](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)
 
 最後に、[カスタマーポータル](https://web.liferay.com/group/customer/dxp/downloads/7-1)から@product@のWARファイルと依存関係をダウンロードしてください 。
 以下のファイルが必要です：
@@ -145,7 +145,7 @@ MacまたはLinux上でWebLogicを実行している場合は、`NativeVersionEn
 ## @product@プロパティを設定する
 
 
-@product@をインストールする前に、`portal-ext.properties`ファイルの`liferay.home`プロパティを介して[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home-ja)のフォルダのロケーションを設定する必要があります。このファイルを使用して、 必要になる可能性のある[他の@product@プロパティ](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)を上書きすることもできます 。
+@product@をインストールする前に、`portal-ext.properties`ファイルの`liferay.home`プロパティを介して[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)のフォルダのロケーションを設定する必要があります。このファイルを使用して、 必要になる可能性のある[他の@product@プロパティ](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)を上書きすることもできます 。
 
 まず、どのフォルダをLiferay Homeとして使用するかを決めます。WebLogicでは、ドメインのフォルダは通常Liferay Homeですが、マシン上の好きなフォルダを選択することができます。次に`portal-ext.properties`ファイルを作成して`liferay.home`プロパティを追加します：
 

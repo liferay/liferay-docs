@@ -37,7 +37,7 @@ tcサーバーに@product@をインストールするには、以下のファイ
 - アプリケーションサーバーに@product@ WARファイルをデプロイする
 
 | **注:**このインストールに関する説明書では
-| [*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#liferay-home)
+| [*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 | という用語が使われています。*Liferay Home* とはtcサーバーと@product@特有のフォルダが含まれているフォルダのことです。`data`、`deploy`、
 | `licenses`、および `osgi` フォルダのことです。
 
@@ -276,7 +276,7 @@ tcサーバーにデータソースを管理させたい場合は、次の手順
 
 ### メール設定方法
 
-データベースと同様、メール設定の処理も@product@に行わせるのが一番簡単な方法です。@product@の組み込みメールセッションを使用したい場合は、このセクションを飛ばしてControl Panelで[メールセッションを設定してください](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#configuring-mail)。
+データベースと同様、メール設定の処理も@product@に行わせるのが一番簡単な方法です。@product@の組み込みメールセッションを使用したい場合は、このセクションを飛ばしてControl Panelで[メールセッションを設定してください](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)。
 
 
 

@@ -131,7 +131,7 @@ Standalone modeとDomain modeの詳細については、[JBoss EAP Product Docum
 
 コマンドラインインターフェースは、domain modeのデプロイにお勧めします。
 
-| **注：**これは@product@が複数のJBossサーバー上のクラスタ環境で実行されるのを妨げるものではありません。JBoss EAPサーバー上で実行している@product@インスタンスのクラスターを、Standalone modeで実行できるように設定できます。@product@クラスターの設定については、[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering-ja)のセクションを参照してください 。
+| **注：**これは@product@が複数のJBossサーバー上のクラスタ環境で実行されるのを妨げるものではありません。JBoss EAPサーバー上で実行している@product@インスタンスのクラスターを、Standalone modeで実行できるように設定できます。@product@クラスターの設定については、[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)のセクションを参照してください 。
 | 
 
 ## JBossの設定方法
@@ -298,7 +298,7 @@ JBossに@product@をインストールするためのスクリプトの変更は
 
 ## データベースの設定方法
 
-データベース設定を処理する上で一番簡単な方法は @product@にデータソースを管理させることです。[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#using-liferays-setup-wizard-ja)のページでは、@product@の組み込みデータソースを設定できます。
+データベース設定を処理する上で一番簡単な方法は @product@にデータソースを管理させることです。[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)のページでは、@product@の組み込みデータソースを設定できます。
 組み込みのデータソースを使用したい場合は、このセクションを飛ばしてください。
 
 
@@ -360,7 +360,7 @@ JBossにデータソースを管理させたい場合は、次の手順に従っ
 
 ## メール設定方法
 
-データベースと同様、メール設定の処理も@product@に行わせるのが一番簡単な方法です。@product@の組み込みメールセッションを使用したい場合は、このセクションを飛ばしてControl Panelで[メールセッションを設定してください](/discover/deployment/-/knowledge_base/7-1/installing-liferay-ja#configuring-mail-ja)。
+データベースと同様、メール設定の処理も@product@に行わせるのが一番簡単な方法です。@product@の組み込みメールセッションを使用したい場合は、このセクションを飛ばしてControl Panelで[メールセッションを設定してください](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)。
 
 
 
