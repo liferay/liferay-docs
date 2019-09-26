@@ -1,35 +1,46 @@
 ---
-header-id: providing-the-user-personal-menu
+header-id: customizing-the-user-personal-bar-and-menu
 ---
 
-# Customizing the User Personal Bar
+# Customizing the User Personal Bar and Menu
 
 [TOC levels=1-4]
 
-The User Personal Bar displays options unique to the current user. By default,
-this portlet displays an avatar button that opens the Personal Menu. In a custom 
-theme, the User Personal Bar could appear anywhere in the interface. 
+The User Personal Bar is a portlet, but it's also an important concept in
+@product@. In a fresh bundle using the default theme, it's the section of screen
+occupied by the User's avatar and the dropdown Personal Menu.
 
 ![Figure 1: By default, the User Personal Bar contains the signed-in user's avatar, which opens the Personal Menu when selected.](../../../images/user-personal-bar.png)
 
-The User Personal Bar can be seen as a placeholder in every Liferay theme. By
-default, Liferay provides one sample *User Personal Bar* portlet that fills that
-placeholder, but the portlet Liferay provides can be replaced by a 
-[custom portlet](/docs/7-2/customization/-/knowledge_base/c/using-a-custom-portlet-as-the-user-personal-bar). 
+The User Personal Bar holds only the Personal Menu by default, but it can also
+contain any other pieces of functionality you need to have aggregated in one
+convenient place for the User (even additional portlets). The User Personal Bar
+is included by default in every Liferay theme, but you can replace it with a 
+[custom portlet](/docs/7-2/customization/-/knowledge_base/c/using-a-custom-portlet-in-place-of-the-user-personal-bar)
+or customize it by adding entries to the existing portlet's menu.
+
+This section covers these topics:
+
+- Replacing the default User Personal Bar portlet with a custom portlet.
+- Customizing the default User Personal Bar.
 
 ## Displaying the Personal Menu
 
-Starting with @product-ver@, the Personal Menu is attached to the User Personal
-Bar rather than the Product Menu. To display the Personal Menu, embed the User
-Personal Bar into your theme by adding the following snippet into your
-`portal_normal.ftl`:
+Starting with @product-ver@, the Personal Menu is no longer included in the
+Product Menu, but is instead included in the User Personal Bar. To display the
+existing User Personal Bar in your own theme, embed the portlet into your theme
+by adding the following snippet into `portal_normal.ftl`:
 
 ```markup
 <@liferay.user_personal_bar />
 ```
 
-If you use a custom portlet as your user personal bar, you must also render the
-Personal Menu. Include the following taglib in your portlet's jsp:
+You'll use the same snippet even if you're replacing the default User Personal
+Bar portlet with your own.
+
+If you use a custom portlet to provide the User Personal Bar, but wish to
+include the default Personal Menu, make sure to render it by using this tag in
+your portlet's JSP:
 
 ```jsp
 <liferay-product-navigation:personal-menu
@@ -50,12 +61,8 @@ Personal Menu. Include the following taglib in your portlet's jsp:
 | Personal Bars appearing on the page, you should only use one of these 
 | mechanisms to display the User Personal Bar.
 
-Unlike the Product Menu, the Personal Menu can be customized without
-creating panel categories and panel apps. See 
+Unlike the Product Menu, the Personal Menu can be customized without creating
+panel categories and panel apps. See 
 [Customizing the Personal Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-personal-menu)
 for details.
 
-This section covers these topics:
-
-- Using a Custom Portlet as the User Personal Bar
-- Customizing the Personal Menu
