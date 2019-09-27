@@ -20,6 +20,8 @@ file, that file isn't permanently stored in Office 365&trade;. Office 365&trade;
 is only used for its editing UI. Your edits are then saved to the Documents and 
 Media Library. 
 
+Here you can learn how to use it. 
+
 ![Figure 1: You can create new Office 365&trade; documents in Documents and Media.](../../../../images/office365-new.png)
 
 ![Figure 2: You can also edit existing Documents and Media files in Office 365&trade;.](../../../../images/office365-edit.png)
