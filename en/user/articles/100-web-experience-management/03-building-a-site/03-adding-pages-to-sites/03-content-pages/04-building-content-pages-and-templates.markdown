@@ -60,8 +60,22 @@ Now that the structure is defined, start editing the text and images.
 
 3.  Select one of the many space flight images that are surely filling up your
     Documents and Media library, upload a new one, or specify a URL.
-    
+
 ![Figure 4: Add some images, and the big picture comes together.](../../../../../images/content-page-creation-step-3.png)
+
+Anytime during Fragment creation, you can remove, duplicate, or configure the
+Fragment.
+
+![Figure 5: Add some images, and the big picture comes together.](../../../../../images/content-page-fragment-options.png)
+
+Configuring a Fragment lets you modify the default options for a provided
+Fragment. This also lets you duplicate a Fragment and configure duplicates
+differently, so you can reuse base Fragments instead of developing new ones.
+When duplicating a Fragment, its configuration and editable elements are also
+copied.
+
+| **Note:** Fragment configuration and duplication are available in Liferay
+| DXP 7.2 SP1+ and Liferay Portal GA2+.
 
 This is looking good so far, but the one difference between the design mockup 
 and the final result is that the background was black for the original. To 
@@ -69,7 +83,7 @@ finish it up, change the background color for the section to black.
 
 1.  Click on the bottom Section and some additional icons will appear.
 
-    ![Figure 5: You can change the background color, image, or edit spacing and padding for a section.](../../../../../images/content-page-section-editor.png)
+    ![Figure 6: You can change the background color, image, or edit spacing and padding for a section. You can also remove it.](../../../../../images/content-page-section-editor.png)
 
 2.   Click on *Background Color* ![Background Color](../../../../../images/icon-color.png), and select Black.
 
@@ -78,4 +92,4 @@ finish it up, change the background color for the section to black.
 In just a few minutes, you used the power of Content Pages and Fragments to go 
 from nothing to perfectly recreating a page design. To take it to the next 
 level, head over to the
-[Segmentation and Personalization guide](docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization).
+[Segmentation and Personalization guide](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization).
