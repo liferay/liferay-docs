@@ -14,8 +14,8 @@ gathering data on your Control Page and Variants. To run an A/B test,
 2.  Configure how your test should run. There are two configurations:
 
     *Traffic Split*: the percentage of visitors that are randomly split between
-    the Variants when visiting the Page. Once a visitor is randomly assigned a
-    Variant, they will always view it until the test is finished.
+    the Variants when visiting the Page. A visitor randomly assigned a Variant
+    always sees the same Variant until the test is finished.
 
     *Confidence Level Required*: the accuracy of the test results (i.e., when
     the winning Variant truly outperforms the other Variants). Typically you
@@ -24,7 +24,7 @@ gathering data on your Control Page and Variants. To run an A/B test,
     declare a winning Variant. Choose the percentage based on your expectations.
 
     The *Estimated Time to Declare Winner* field is also displayed. This is the
-    estimated duration the test will run. This is calculated based on the
+    estimated duration the test runs. This is calculated based on the
     selected traffic split, confidence level, and projected page traffic. Your
     page's past traffic history is provided by Analytics Cloud.
 
