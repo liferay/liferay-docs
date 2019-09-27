@@ -14,13 +14,13 @@ searches for a certain keyword or phrase, the synonymous terms in your mapping
 are also searched. Matches to synonyms keywords are scored equally to matches
 with the exact keyword by the search engine.
 
-| **Lunar Resort Use Case:** Multiple content creators at the Lunar Resort write
-| blogs about a variety of topics. Consistent terminology is a problem for some
-| concepts. One writer might use the term "rover" for the vehicle that travels
-| across the moonscape, while another uses "lunar cart" or "moon atv". As the
-| portal administrator, you must ensure that the search experience is such that
-| searching for any of those keywords returns all relevant results. Synonym Sets
-| are a key ally in this pursuit.
+**Lunar Resort Use Case:** Multiple content creators at the Lunar Resort write
+blogs about a variety of topics. Consistent terminology is a problem for some
+concepts. One writer might use the term "rover" for the vehicle that travels
+across the moonscape, while another uses "lunar cart" or "moon ATV". As the
+portal administrator, you must ensure that the search experience is such that
+searching for any of those keywords returns all relevant results. Synonym Sets
+are a key ally in this pursuit.
 
 ## Requirements and Limitations
 
@@ -36,10 +36,10 @@ indexed in two locales: English and Spanish. Thus, the assets supporting
 localization out-of-the-box work with Synonym Sets. Technically, this means that
 synonym searches operate on fields indexed with the `en_*` and `es_*` suffixes.
 Read the 
-[multi-language search documentation](https://portal.liferay.dev/docs/7-2/user/-/knowledge_base/u/searching-for-localized-content) 
+[multi-language search documentation](/docs/7-2/user/-/knowledge_base/u/searching-for-localized-content) 
 to learn which native @product@ assets/fields support localization in the search
-index. All asset types that index their data into English and Spanish will be
-analyzed with a synonyms-aware analyzer, and able to be found during a synonym
+index. All asset types that index their data into English and Spanish are
+analyzed with a synonyms-aware analyzer and can be found during a synonym
 search.
 
 The `=>`
@@ -48,10 +48,10 @@ supported in Elasticsearch is not supported through the Synonyms Set UI.
 
 ## Creating and Managing Synonym Sets
 
-Create a synonym set by adding as many synonymous keywords to a set as you'd
-like. Once the synonym set is saved, any searches in the same company scope
+Create a synonym set by adding as many synonymous keywords to a set as you
+want. Once the synonym set is saved, any searches in the same company scope
 (that's any site from the Virtual Instance where the synonyms were configured)
-will take effect.
+take effect.
 
 ![Figure 1: Add as many synonymous keywords to a set as you'd like.](../../images/search-synonym-set.png)
 
@@ -62,13 +62,13 @@ To create a synonym set,
 2.  Click the Add button (![Add](../../images/icon-add.png)).
 
 3.  Enter the list of synonyms in the set. The input of a synonym is
-    accomplished either by clicking _Enter_ or by entering a comma.
+    accomplished by clicking _Enter_ or by entering a comma.
 
 4.  When the list is finished, click _Publish_.
 
-The available synonym sets are listed, and can be managed in bulk or
-individually. The management options are to update a synonym set, or delete one
-or more synonym sets.
+The available synonym sets appear and can be managed in bulk or individually.
+The management options are to update a synonym set or delete one or more
+synonym sets.
 
 ![Figure 2: Synonym sets can be managed in bulk.](../../images/search-synonym-sets.png) 
 
