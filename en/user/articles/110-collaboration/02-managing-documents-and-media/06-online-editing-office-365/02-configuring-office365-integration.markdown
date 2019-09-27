@@ -46,7 +46,7 @@ application:
 
 2.  Under *VIRTUAL INSTANCE SCOPE*, select *OneDrive*. 
 
-3.  Enter your applications's OAuth 2 client ID and client secret in the 
+3.  Enter your application's OAuth 2 client ID and client secret in the 
     *Client ID* and *Client Secret* fields, respectively. 
 
 4.  Enter your tenant ID in the *Tenant* field. To find your tenant ID, see 
