@@ -23,10 +23,10 @@ finished.
 
 ![Figure 2: Once you've published a Variant, the A/B test is complete.](../../../images-dxp/ab-test-complete.png)
 
-In cases where you'd like to publish an alternative Variant that was not
-declared a winner, select the Variant from the A/B Test panel and click
-*Publish*. You can select *Discard Test* to ignore the A/B test recommendations
-and keep the currently published Control Page.
+If you want to publish a Variant that was not declared a winner, select the
+Variant from the A/B Test panel and click *Publish*. You can select *Discard
+Test* to ignore the A/B test recommendations and keep the currently published
+Control Page.
 
 The most productive Variant is now available to all users who visit the Page.
 
