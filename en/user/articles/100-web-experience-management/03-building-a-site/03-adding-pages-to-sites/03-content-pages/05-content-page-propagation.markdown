@@ -15,7 +15,7 @@ page to selectively propagate changes.
 
 2.  Select the Collection containing the changed fragment.
 
-3.  Open the *Actions* menu (![Actions](../../../images/icon-actions.png)) for
+3.  Open the *Actions* menu (![Actions](../../../../../images/icon-actions.png)) for
     the Fragment and select *View Usages*.
 
 The *Usages and Propagation* page shows a list of every Page, Page Template, 
