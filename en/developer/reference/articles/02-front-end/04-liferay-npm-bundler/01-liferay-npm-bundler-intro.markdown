@@ -40,10 +40,10 @@ The liferay-npm-bundler uses the process below to create the OSGi bundle:
 
 3.  For the project:
 
-    a. Run source files inside the source directories configured in 
-       `.npmbundlerrc` through the rules.
+    a. Run the source files, specified in the `.npmbundlerrc` configuration, 
+       through the rules.
 
-    a. Pre-process the project's package with any configured plugins.
+    b. Pre-process the project's package with any configured plugins.
 
     c. Run 
        [Babel](https://babeljs.io/) with configured plugins for each `.js` file

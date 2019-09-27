@@ -71,56 +71,56 @@ Here's an example of a `.npmbundlerrc` configuration:
         "imports": {
             "npm-angular5-provider": {
                 "@angular/common": "^5.0.0",
-        		"@angular/core": "^5.0.0"
+            "@angular/core": "^5.0.0"
             }
         }
     },
     "/": {
-		"plugins": ["resolve-linked-dependencies"],
-		".babelrc": {
-			"presets": ["liferay-standard"]
-		},
-		"post-plugins": [
+    "plugins": ["resolve-linked-dependencies"],
+    ".babelrc": {
+      "presets": ["liferay-standard"]
+    },
+    "post-plugins": [
             "namespace-packages",
             "inject-imports-dependencies"
         ]
-  	},
-  	"*": {
-  		"copy-plugins": ["exclude-imports"],
-  		"plugins": ["replace-browser-modules"],
-  		".babelrc": {
-  			"presets": ["liferay-standard"]
-  		},
-  		"post-plugins": [
-  			"namespace-packages",
-  			"inject-imports-dependencies",
-  			"inject-peer-dependencies"
-  		]
-  	},
+    },
+    "*": {
+      "copy-plugins": ["exclude-imports"],
+      "plugins": ["replace-browser-modules"],
+      ".babelrc": {
+        "presets": ["liferay-standard"]
+      },
+      "post-plugins": [
+        "namespace-packages",
+        "inject-imports-dependencies",
+        "inject-peer-dependencies"
+      ]
+    },
     "packages": {
         "a-package-name": [
         "copy-plugins": ["exclude-imports"],
-    		"plugins": ["replace-browser-modules"],
-    		".babelrc": {
-    			"presets": ["liferay-standard"]
-    		},
-    		"post-plugins": [
-    			"namespace-packages",
-    			"inject-imports-dependencies",
-    			"inject-peer-dependencies"
-    		]
+        "plugins": ["replace-browser-modules"],
+        ".babelrc": {
+          "presets": ["liferay-standard"]
+        },
+        "post-plugins": [
+          "namespace-packages",
+          "inject-imports-dependencies",
+          "inject-peer-dependencies"
+        ]
         ],
         "other-package-name@1.0.10": [
           "copy-plugins": ["exclude-imports"],
-      		"plugins": ["replace-browser-modules"],
-      		".babelrc": {
-      			"presets": ["liferay-standard"]
-      		},
-      		"post-plugins": [
-      			"namespace-packages",
-      			"inject-imports-dependencies",
-      			"inject-peer-dependencies"
-      		]
+          "plugins": ["replace-browser-modules"],
+          ".babelrc": {
+            "presets": ["liferay-standard"]
+          },
+          "post-plugins": [
+            "namespace-packages",
+            "inject-imports-dependencies",
+            "inject-peer-dependencies"
+          ]
         ]
     }
 }
