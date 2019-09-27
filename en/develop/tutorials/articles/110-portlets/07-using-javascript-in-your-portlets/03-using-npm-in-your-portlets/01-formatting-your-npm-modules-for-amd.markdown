@@ -10,7 +10,16 @@ For @product@ to recognize your npm modules, they must be formatted for the
 Liferay AMD Loader. Luckily, the liferay-npm-bundler handles this for you, you 
 just have to provide the proper configuration and add it to your build script. 
 This tutorial shows how to use the liferay-npm-bundler to set up npm-based 
-portlet projects. The example structure below is referenced throughout this 
+portlet projects. 
+
+| **Note:** the example and steps covered in this tutorial use the old mode of 
+| the liferay-npm-bundler that includes additional build steps in the `build` 
+| script before the bundler runs. The new mode of the bundler, like webpack, 
+| uses loaders and a set of rules. See 
+| [Migrating Your Project to Use the New Mode](/docs/7-1/tutorials/-/knowledge_base/t/migrating-your-project-to-use-the-new-mode) 
+| to learn how to migrate your project to use the new mode.
+
+The example structure below is referenced throughout this 
 tutorial. You can download it 
 [here](https://github.com/izaera/liferay-npm-bundler-2-example) 
 if you want to follow along:
