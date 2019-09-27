@@ -37,6 +37,6 @@ To assign *Update* permissions for a Content Page,
 3.  Enable the *Update* permission for the Role(s) you want to grant A/B Testing
     access for and click *Save*.
 
-For more information, visit the articles on
+For more information, see
 [Page Permissions](/docs/7-2/user/-/knowledge_base/u/changing-page-permissions)
 and [Managing Roles](/docs/7-2/user/-/knowledge_base/u/managing-roles).
