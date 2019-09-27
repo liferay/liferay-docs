@@ -8,18 +8,29 @@ header-id: liferay-forms
 
 The [Liferay Forms](/docs/7-2/user/-/knowledge_base/u/forms) application is
 a full-featured form building tool for collecting data. There's lots of built-in
-functionality, and for the pieces you're missing, there's lots of extensibility.
+functionality. For the pieces you're missing, there are extension points.
 
-This section of tutorials shows developers how to
+This section of articles shows developers how to
 
 1.  Store form entry data in an alternative format. The default storage type is
     JSON.
 
 2.  [Coming Soon] Create new form field types.
 
-This list will continue to grow as new tutorials on customizing and extending
-Liferay Forms are written.
+## Liferay Forms Extension Points
 
-## Customizations and Extension Points
+Here's a compilation of the Liferay Forms application's extension points that
+are ready for your customization:
 
-Here's a compilation of the Liferay Forms application's extension points:
+- Create a Form Storage Adapter by implementing a 
+    [`StorageAdapter`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/storage/StorageAdapter.java) 
+    or by extending the Abstract implementation,
+    [`BaseStorageAdapter`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/storage/BaseStorageAdapter.java).
+- Create a Form Field Type by implementing a
+    [`DDMFormFieldType`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/form/field/type/DDMFormFieldType.java),
+    [`DDMFormFieldRenderer`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/form/field/type/DDMFormFieldRenderer.java),
+    [`DDMFormFieldTypeSettings`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/form/field/type/DDMFormFieldTypeSettings.java),
+    and a
+    [`DDMFormFieldTemplateContextContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/form/field/type/DDMFormFieldTemplateContextContributor.java).
+- Create custom validation rules for form fields by implementing a
+    [DDMFormFieldValueValidator](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/form/field/type/DDMFormFieldValueValidator.java).
