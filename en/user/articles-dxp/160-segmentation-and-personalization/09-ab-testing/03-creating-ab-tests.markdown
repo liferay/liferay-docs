@@ -16,9 +16,8 @@ To create an A/B test,
 2.  Click the A/B Testing (![AB Testing](../../../images-dxp/icon-ab-testing.png))
     button from the Control Menu.
 
-3.  Choose the Experience for which you want to test. This option is only
-    available when you have a custom Experience (an Experience other than the
-    default).
+3.  Choose the Experience you want to test. This option is only available when
+    you have a custom Experience (an Experience other than the default).
 
     A test can be performed on the Default Experience as well as a personalized
     Experience mapped to a Segment. When an Experience is being used in an A/B
@@ -29,7 +28,7 @@ To create an A/B test,
 
 5.  Assign the test a name and description (optional).
 
-6.  Assign the goal you want the test to track. There are two to choose from:
+6.  Assign the goal you want the test to track. There are two:
 
     *Bounce Rate*: the percentage of users who don't exhibit any activities on
     the page (click, scroll, etc.) and then navigate away from the site
