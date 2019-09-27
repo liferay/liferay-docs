@@ -11,7 +11,7 @@ or presentations for storage in the Documents and Media library. When you finish
 your Office 365&trade; editing session, you must check in the document to save 
 the changes in the Documents and Media Library. 
 
-Here, you'll learn how to do the following:
+Here, you'll learn how to do these things:
 
 -   [Authenticate with OneDrive&trade;](#authentication)
 -   [Create Files](#creating-files)
@@ -35,7 +35,7 @@ Follow these steps to create a new Documents and Media file via Office
 
 1.  Open the *Menu* 
     (![Product Menu](../../../../images/icon-menu.png)), 
-    click your site's name, and navigate to *Content & Data* &rarr; 
+    click your Site's name, and navigate to *Content & Data* &rarr; 
     *Documents and Media*. 
 
 2.  Click the *Add* icon 
@@ -46,7 +46,7 @@ Follow these steps to create a new Documents and Media file via Office
     -   Word&trade;
     -   Excel&trade;
     -   PowerPoint&trade;
-    
+
     When you select one of these options, a new window opens for you to enter 
     the document's name. 
 
@@ -61,7 +61,7 @@ Follow these steps to create a new Documents and Media file via Office
 
 4.  Use the Office 365&trade; editor to create your document's content. 
 
-5.  Save your changes to @product@, or discard them: 
+5.  Save or discard your changes to @product@: 
 
     **Check in:** Saves the Office 365&trade; file to Documents and Media, then 
     deletes the file from Office 365&trade;. The saved file's format depends on 
