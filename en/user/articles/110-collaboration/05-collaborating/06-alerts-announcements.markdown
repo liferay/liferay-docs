@@ -133,6 +133,7 @@ Announcements Role:
 
     -   In *Control Panel* &rarr; *General Permissions*, select *Add General 
         Announcements*. 
+    -   In *Control Panel* &rarr; *General Permissions* &rarr; *Announcements and Alerts*, select all the resource permissions.
     -   In *Site Administration* &rarr; *Applications* &rarr; *Announcements*, 
         select all the resource permissions.
 
