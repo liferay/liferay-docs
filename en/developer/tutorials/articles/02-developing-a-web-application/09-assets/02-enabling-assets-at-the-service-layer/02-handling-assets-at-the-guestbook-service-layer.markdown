@@ -18,8 +18,12 @@ libraries that the asset link service needs to function.
 
 2.  Add the following two lines in the `dependencies` section:
 
-        compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
-        compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+    ```groovy
+    compileOnly group: "javax.portlet", name: "portlet-api"
+    compileOnly group: "javax.servlet", name: "javax.servlet-api"
+    ```
+
+3.  Save your `build.gradle` file, which refreshes your project. 
 
 Now you'll update the guestbook service layer to use assets. You must update the
 `add`, `update`, and `delete` methods of your project's `GuestbookLocalServiceImpl`:
@@ -28,18 +32,20 @@ Now you'll update the guestbook service layer to use assets. You must update the
     `addGuestbook` method. Add the call to add the asset entries below the call 
     that adds resources: 
 
-          AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
-                              groupId, guestbook.getCreateDate(),
-                              guestbook.getModifiedDate(), Guestbook.class.getName(),
-                              guestbookId, guestbook.getUuid(), 0,
-                              serviceContext.getAssetCategoryIds(),
-                              serviceContext.getAssetTagNames(), true, true, null, null, null, null,
-                              ContentTypes.TEXT_HTML, guestbook.getName(), null, null, null,
-                              null, 0, 0, null);
+    ```java
+    AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
+                      groupId, guestbook.getCreateDate(),
+                      guestbook.getModifiedDate(), Guestbook.class.getName(),
+                      guestbookId, guestbook.getUuid(), 0,
+                      serviceContext.getAssetCategoryIds(),
+                      serviceContext.getAssetTagNames(), true, true, null, null, null, null,
+                      ContentTypes.TEXT_HTML, guestbook.getName(), null, null, null,
+                      null, 0, 0, null);
 
-          assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
-                              serviceContext.getAssetLinkEntryIds(),
-                              AssetLinkConstants.TYPE_RELATED);
+    assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+                      serviceContext.getAssetLinkEntryIds(),
+                      AssetLinkConstants.TYPE_RELATED);
+    ```
 
     Calling `assetEntryLocalService.updateEntry` adds a new row (corresponding
     to the guestbook that's being added) to the `AssetEntry` table in
@@ -47,7 +53,7 @@ Now you'll update the guestbook service layer to use assets. You must update the
     both adds and updates asset entries because it checks to see whether the
     asset entry already exists in the database and then takes the appropriate 
     action. If you check the 
-    [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html) 
+    [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html) 
     for `AssetEntryLocalServiceUtil.updateEntry`, you'll see that this method is
     overloaded. Now, why did you use a version of this method with such a long
     method signature? Because there's only one version of `updateEntry` that
@@ -64,18 +70,20 @@ Now you'll update the guestbook service layer to use assets. You must update the
 2.  Next, add the asset calls to `GuestbookLocalServiceImpl`'s `updateGuestbook`
     method, directly after the resource call:
 
-          AssetEntry assetEntry = assetEntryLocalService.updateEntry(guestbook.getUserId(),
-                              guestbook.getGroupId(), guestbook.getCreateDate(),
-                              guestbook.getModifiedDate(), Guestbook.class.getName(),
-                              guestbookId, guestbook.getUuid(), 0,
-                              serviceContext.getAssetCategoryIds(),
-                              serviceContext.getAssetTagNames(), true, true, guestbook.getCreateDate(), 
-                              null, null, null, ContentTypes.TEXT_HTML, guestbook.getName(), null, null, 
-                              null, null, 0, 0, serviceContext.getAssetPriority());
+    ```java
+    AssetEntry assetEntry = assetEntryLocalService.updateEntry(guestbook.getUserId(),
+                      guestbook.getGroupId(), guestbook.getCreateDate(),
+                      guestbook.getModifiedDate(), Guestbook.class.getName(),
+                      guestbookId, guestbook.getUuid(), 0,
+                      serviceContext.getAssetCategoryIds(),
+                      serviceContext.getAssetTagNames(), true, true, guestbook.getCreateDate(), 
+                      null, null, null, ContentTypes.TEXT_HTML, guestbook.getName(), null, null, 
+                      null, null, 0, 0, serviceContext.getAssetPriority());
 
-          assetLinkLocalService.updateLinks(serviceContext.getUserId(),
-                              assetEntry.getEntryId(), serviceContext.getAssetLinkEntryIds(),
-                              AssetLinkConstants.TYPE_RELATED);
+    assetLinkLocalService.updateLinks(serviceContext.getUserId(),
+                      assetEntry.getEntryId(), serviceContext.getAssetLinkEntryIds(),
+                      AssetLinkConstants.TYPE_RELATED);
+    ```
 
     Here, `assetEntryLocalService.updateEntry` updates an existing asset entry 
     and `assetLinkLocalService.updateLinks` adds or updates that entry's asset 
@@ -84,12 +92,14 @@ Now you'll update the guestbook service layer to use assets. You must update the
 3.  Next, add the asset calls to the `deleteGuestbook` method, directly after 
     the resource calls:
 
-          AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
-                              Guestbook.class.getName(), guestbookId);
+    ```java
+    AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
+                      Guestbook.class.getName(), guestbookId);
 
-          assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
+    assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
 
-          assetEntryLocalService.deleteEntry(assetEntry);
+    assetEntryLocalService.deleteEntry(assetEntry);
+    ```
 
     Here, you use the guestbook's class name and ID to retrieve the 
     corresponding asset entry. Then you delete that asset entry's asset links 
