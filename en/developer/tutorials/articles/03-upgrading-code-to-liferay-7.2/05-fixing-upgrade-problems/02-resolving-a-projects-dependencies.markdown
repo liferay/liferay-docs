@@ -81,7 +81,7 @@ app modules are therefore much easier to understand. Next, you'll track down the
 modules that now hold the classes referenced by your plugin. 
 
 The reference article 
-[Classes Moved from `portal-service.jar`](/docs/reference/7-1/-/knowledge_base/r/classes-moved-from-portal-service-jar) 
+[Classes Moved from `portal-service.jar`](/docs/7-1/reference/-/knowledge_base/r/classes-moved-from-portal-service-jar) 
 contains a table that maps each class moved from `portal-service.jar` to its new 
 module. The table includes each class's new package and symbolic name 
 (artifact ID). You'll use this information to configure your plugin's 
