@@ -14,15 +14,17 @@ workflow, covering the following topics:
 - [Theme Customizations and Extensions](#theme-customizations-and-extensions)
 - [Portlet Customizations and Extensions](#portlet-customizations-and-extensions)
 
-## Theme Templates
+## Theme Templates and Utilities
 
-There are several default FreeMarker templates, and each handle a key piece of
-page functionality: 
+There are several default FreeMarker templates that handle a key piece of
+the page layout (page) functionality. Some provide helpful utilities for you to 
+use in your themes as well:
 
 - `portal_normal.ftl`: Similar to a static site's `index.html`, this file is hub
   for all theme templates and provides the overall markup for the page.
 - `init.ftl`: Contains common FreeMarker variables that can be used in your
-  theme templates. Useful for reference if you need access to theme objects.
+  theme templates. Useful for reference if you need access to theme objects. For 
+  convenience, these are listed in the [FreeMarker Variable Reference Guide](/docs/7-2/reference/-/knowledge_base/r/freemarker-variable-reference-guide).
   **DO NOT override this file**.
 - `init_custom.ftl`: Used to override FreeMarker variables in `init.ftl` and to
   define new variables, such as 
@@ -63,32 +65,21 @@ page functionality:
 
 ![Figure 2: Each theme template provides a portion of the page's markup and functionality.](../../../images/portal-layout-theme-templates.png)
 
-### Theme Template Utilities
-
-There are several FreeMarker variables and macros you can use to include
-portlets, use taglibs, access theme objects, and more. Examples of these appear
-in `portal_normal.ftl`. These utilities are included in the files listed below:
-
-- [`Init.ftl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates/init.ftl):
-  Provides access to common theme variables. For convenience, these are listed 
-  in the [FreeMarker Variable Reference Guide](/docs/7-2/reference/-/knowledge_base/r/freemarker-variable-reference-guide).
 - [`FTL_Liferay.ftl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl): 
-  Provides 
-  [macros](/docs/7-2/reference/-/knowledge_base/r/product-freemarker-macros) 
-  for commonly used portlets and theme resources. 
+    Provides [macros](/docs/7-2/reference/-/knowledge_base/r/product-freemarker-macros) 
+    for commonly used portlets and theme resources. 
+
 - `taglib-mappings.properties`: Maps the portal taglibs to FreeMarker macros.
   Taglibs can quickly create common UI components. This properties file is 
   provided separately for each app taglib. For convenience, these FreeMarker
-  macros appear in the 
-  [FreeMarker Taglib Mappings reference guide](/docs/7-2/reference/-/knowledge_base/r/freemarker-taglib-macros). See
-  the 
-  [Taglib reference](/docs/7-2/reference/-/knowledge_base/r/front-end-taglibs) for
-  more information on using each taglib in your theme templates.
+  macros appear in the [FreeMarker Taglib Mappings reference guide](/docs/7-2/reference/-/knowledge_base/r/freemarker-taglib-macros). 
+  See the [Taglib reference](/docs/7-2/reference/-/knowledge_base/r/front-end-taglibs) 
+  for more information on using each taglib in your theme templates. 
 
 ## CSS Frameworks and Extensions
 
-As noted above, you can take full advantage of Sass mixins, nesting, partials,
-and variables in your CSS.
+Themes are integrated with [SASS](https://sass-lang.com/), so you can take full 
+advantage of Sass mixins, nesting, partials, and variables in your CSS. 
 
 Also important to note is 
 [Clay CSS](https://clayui.com/), 

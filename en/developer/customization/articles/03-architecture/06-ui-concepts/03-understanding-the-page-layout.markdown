@@ -9,7 +9,8 @@ header-id: understanding-the-page-layout
 Understanding the layout's structure is crucial to targeting the correct markup 
 for styling, organizing your content, and creating your site. Your page layout 
 is unique to the requirements and design for your site. The Unstyled theme's 
-default page layout is organized into three key sections:
+default page layout is organized into three key sections in its 
+`portal_normal.ftl` template:
 
 - **Header:** Contains the navigation, site logo and title (if shown), and
   sign-in link when the user isn't logged in.
@@ -98,11 +99,8 @@ for absolutely positioned elements, such as a fixed navbar. If the user is
 logged in and can view the Control Menu, the fixed navbar must have a top margin 
 equal to the Control Menu's height. 
 
-<!--Uncomment once these articles are ported to 7.2
-See the 
-Product Navigation tutorials section
+See the [Product Navigation articles](/docs/7-2/customization/-/knowledge_base/c/product-navigation) 
 for more information on customizing these menus. 
--->
 
 ## Related Topics
 

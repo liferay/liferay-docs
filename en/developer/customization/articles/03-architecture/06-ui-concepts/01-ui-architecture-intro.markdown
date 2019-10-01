@@ -67,10 +67,80 @@ to get you up and running in no time.
 
 ![Figure 6: Liferay makes it easy to develop and try out attractive site themes.](../../../images/architecture-ui-themes.png)
 
-## Product Menu
+Creating a theme involves these generalized steps:
 
-The product menu makes apps and widgets available to administrative users. The 
-[menus and navigation are customizable](/docs/7-2/frameworks/-/knowledge_base/f/screen-navigation-framework) 
+1.  Generate a new theme with the [Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator).
+
+2.  Configure the Look and Feel XML file with any additional [theme settings](/docs/7-2/frameworks/-/knowledge_base/f/making-configurable-theme-settings)
+    or [color schemes](/docs/7-2/frameworks/-/knowledge_base/f/creating-color-schemes-for-your-theme)
+    your theme requires:
+
+    ```xml
+    <look-and-feel>
+      <theme id="my-theme" name="My Theme">
+        <settings>
+          <setting key="show-footer" />
+        </settings>
+        <color-scheme id="01" name="Default">
+          <css-class>default</css-class>
+        </color-scheme>
+        <color-scheme id="02" name="Red">
+          <css-class>red</css-class>
+        </color-scheme>
+        <portlet-decorator id="barebone">
+          <portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
+        </portlet-decorator>
+      </theme>
+    </look-and-feel>
+    ```
+
+3.  Update or define variables, such as the `show-footer` theme setting, in the
+    Init Custom FreeMarker template:
+
+    ```markup
+    <#assign header_css_class = "navbar navbar-expand-md navbar-dark flex-column flex-md-row bd-navbar" />
+    <#assign logo_css_class = logo_css_class + " navbar-brand" />
+
+
+    <#assign
+    	show_footer = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-footer"))
+    />
+    ```
+
+4.  Modify the Portal Normal (the index) FreeMarker template to include any
+    other templates and use any variables that you need to include theme objects
+    or display UI under certain conditions. For example, the `show_footer`
+    variable shown below only displays the Footer when true:
+
+    ```markup
+    <html class="${root_css_class}">
+    <head></head>
+      <body class="${body_class}">
+        <header class="${header_css_class}">
+          <a class="${logo_css_class} href="${site_url}"><img src="${site_logo}"/></a>
+          <#include "${full_templates_path}/navigation.ftl" />
+        </header>
+        <section>
+          ${portlets}
+        </section>
+        <#if show_footer>
+          <#include "${full_templates_path}/footer.ftl" />
+        </#if>
+      </body>
+    </html>
+    ```
+
+5.  Add any styling through `_custom.scss` and JavaScript through `main.js`.
+    Then build and deploy your theme to your app server and apply it to your
+    site page(s).
+
+See the [Themes section](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) 
+for more information on developing themes. 
+
+## Product Navigation Sidebars and Panels
+
+The product navigation sidebars and panels make apps and widgets available to 
+administrative users. The [menus and navigation are customizable](/docs/7-2/frameworks/-/knowledge_base/f/screen-navigation-framework) 
 too. 
 
 ![Figure 5: Liferay facilitates integrating custom administrative functionality through navigation menus and administrative applications.](../../../images/architecture-ui-menus-and-panel-app.png)
