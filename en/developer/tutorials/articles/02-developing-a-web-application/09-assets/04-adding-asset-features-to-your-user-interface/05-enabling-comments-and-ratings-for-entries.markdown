@@ -17,145 +17,166 @@ users can rate and comment on assets. Follow these steps to enable comments and
 ratings on guestbook entries: 
 
 1.  Create a new file called `view_entry.jsp` in your `guestbook-web` module 
-    project's `/guestbookwebportlet` folder. 
+    project's `/guestbook` folder. 
 
 2.  Add a Java scriptlet to the file you just created. In this scriptlet, use an 
     `entryId` request attribute to get an entry object. For security reasons, 
     convert this object to an escaped model as discussed in the earlier step 
-    [Creating JSPs for Displaying Custom Assets in the Asset Publisher](/docs/7.1/tutorials/-/knowledge_base/t/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher):
+    [Creating JSPs for Displaying Custom Assets in the Asset Publisher](/docs/7.2/tutorials/-/knowledge_base/t/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher):
 
-        <%@ include file="../init.jsp"%>
+    ```markup
+    <%@ include file="../init.jsp"%>
 
-        <%
-          long entryId = ParamUtil.getLong(renderRequest, "entryId");
+    <%
+      long entryId = ParamUtil.getLong(renderRequest, "entryId");
 
-          long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+      long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
 
-          Entry entry = null;
+      GuestbookEntry entry = null;
 
-          if (entryId > 0) {
-            entry = EntryLocalServiceUtil.getEntry(entryId);
+      entry = GuestbookEntryLocalServiceUtil.getGuestbookEntry(entryId);
 
-            entryId = entry.getEntryId();
-          }
+      entryId = entry.getEntryId();
 
-          entry = EntryLocalServiceUtil.getEntry(entryId);
-          entry = entry.toEscapedModel();
+      entry = entry.toEscapedModel();
 
-          AssetEntry assetEntry = 
-          AssetEntryLocalServiceUtil.getEntry(Entry.class.getName(), 
-          entry.getEntryId());
+      AssetEntry assetEntry = 
+      AssetEntryLocalServiceUtil.getEntry(GuestbookEntry.class.getName(), 
+      entry.getEntryId());
+    ```
 
 3.  Next, update the breadcrumb entry with the current entry's name: 
 
-        String currentURL = PortalUtil.getCurrentURL(request);
-        PortalUtil.addPortletBreadcrumbEntry(request, entry.getMessage(),
-        currentURL);
+    ```markup
+    String currentURL = PortalUtil.getCurrentURL(request);
+    PortalUtil.addPortletBreadcrumbEntry(request, entry.getMessage(),
+    currentURL);
+    ```
 
-4.  At the end of the scriptlet, add the names of the current entry's existing 
+4.  End the scriptlet by adding the names of the current entry's existing 
     asset tags as keywords to the portal page. These tag names appear in a 
     `<meta content="[tag names here]" lang="en-US" name="keywords" />` element 
     in your portal page's `<head>` section. These keywords can help search 
     engines find and index your page: 
 
-          PortalUtil.setPageSubtitle(entry.getMessage(), request);
-          PortalUtil.setPageDescription(entry.getMessage(), request);
+    ```markup
+        PortalUtil.setPageSubtitle(entry.getMessage(), request);
+        PortalUtil.setPageDescription(entry.getMessage(), request);
 
-          List<AssetTag> assetTags = 
-          AssetTagLocalServiceUtil.getTags(Entry.class.getName(), 
-          entry.getEntryId());
-          PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"), 
-          request);
-        %>
+        List<AssetTag> assetTags = 
+        AssetTagLocalServiceUtil.getTags(GuestbookEntry.class.getName(), 
+        entry.getEntryId());
+        PortalUtil.setPageKeywords(ListUtil.toString(assetTags, "name"), 
+        request);
+    %>
+    ```
 
 5.  After the scriptlet, specify the URLs for the page and back link: 
 
-        <liferay-portlet:renderURL varImpl="viewEntryURL">
-          <portlet:param name="mvcPath"
-            value="/guestbookwebportlet/view_entry.jsp" />
-          <portlet:param name="entryId" value="<%=String.valueOf(entryId)%>" />
-        </liferay-portlet:renderURL>
+    ```markup
+    <liferay-portlet:renderURL varImpl="viewEntryURL">
+      <portlet:param name="mvcPath"
+        value="/guestbook/view_entry.jsp" />
+      <portlet:param name="entryId" value="<%=String.valueOf(entryId)%>" />
+    </liferay-portlet:renderURL>
 
-        <liferay-portlet:renderURL varImpl="viewURL">
-          <portlet:param name="mvcPath"
-            value="/guestbookwebportlet/view.jsp" />
-        </liferay-portlet:renderURL>
+    <liferay-portlet:renderURL varImpl="viewURL">
+      <portlet:param name="mvcPath"
+        value="/guestbook/view.jsp" />
+    </liferay-portlet:renderURL>
 
-        <liferay-ui:header backURL="<%=viewURL.toString()%>"
-          title="<%=entry.getName()%>" 
-        />
+    <liferay-ui:header backURL="<%=viewURL.toString()%>"
+      title="<%=entry.getName()%>" 
+    />
+    ```
 
-6.  Next, define the page's main content. Display the guestbook's name, and the 
+6.  Next, define the page's main content. Display the guestbook's name and the 
     entry's name and message with the `<dl>`, `<dt>`, and `<dd>` tags: 
 
-        <dl>
-          <dt>Guestbook</dt>
-          <dd><%=GuestbookLocalServiceUtil.getGuestbook(entry.getGuestbookId()).getName()%></dd>
-          <dt>Name</dt>
-          <dd><%=entry.getName()%></dd>
-          <dt>Message</dt>
-          <dd><%=entry.getMessage()%></dd>
-        </dl>
+    ```markup
+    <dl>
+      <dt>Guestbook</dt>
+      <dd><%=GuestbookLocalServiceUtil.getGuestbook(entry.getGuestbookId()).getName()%></dd>
+      <dt>Name</dt>
+      <dd><%=entry.getName()%></dd>
+      <dt>Message</dt>
+      <dd><%=entry.getMessage()%></dd>
+    </dl>
+    ```
 
     This is the same way you defined the page's main content in 
-    `/guestbookwebportlet/full_content.jsp`. 
+    `/asset/full_content.jsp`. 
 
 7.  Next, use a `<liferay-ui:panel-container>` tag to create a panel container. 
     Inside this tag, use a `<liferay-ui:panel>` tag to create a panel to display
     the comments and ratings components: 
 
-        <liferay-ui:panel-container extended="<%=false%>"
-          id="guestbookCollaborationPanelContainer" persistState="<%=true%>">
-          <liferay-ui:panel collapsible="<%=true%>" extended="<%=true%>"
-            id="guestbookCollaborationPanel" persistState="<%=true%>"
-            title="Collaboration">
+    ```markup
+    <liferay-ui:panel-container extended="<%=false%>"
+      id="guestbookCollaborationPanelContainer" persistState="<%=true%>">
+      <liferay-ui:panel collapsible="<%=true%>" extended="<%=true%>"
+        id="guestbookCollaborationPanel" persistState="<%=true%>"
+        title="Collaboration">
+    ```
 
 8.  Add the ratings component with the `<liferay-ui:ratings>` tag:
 
-        <liferay-ui:ratings className="<%=Entry.class.getName()%>"
-          classPK="<%=entry.getEntryId()%>" type="stars" />
+    ```markup
+    <liferay-ui:ratings className="<%=Entry.class.getName()%>"
+      classPK="<%=entry.getEntryId()%>" type="stars" />
 
-        <br />
+    <br />
+    ```
 
-9.  Next you need to add a scriptlet to retrieve the comments discussion object:
+9.  Next, add a scriptlet to retrieve the comments discussion object:
 
-        <% Discussion discussion = 
+    ```markup
+    <% 
+        Discussion discussion = 
         CommentManagerUtil.getDiscussion(user.getUserId(), 
-        scopeGroupId, Entry.class.getName(), 
+        scopeGroupId, GuestbookEntry.class.getName(), 
         entry.getEntryId(), new ServiceContextFunction(request));
-        %>
+    %>
+    ```
 
 10.  Below that add the tag for tracking the number of comments:
 
-        <c:if test="<%= discussion != null %>">
-          <h2>
-            <strong><liferay-ui:message arguments="<%= discussion.getDiscussionCommentsCount() %>" key='<%= (discussion.getDiscussionCommentsCount() == 1) ? "x-comment" : "x-comments" %>' /></strong>
+    ```markup
+    <c:if test="<%= discussion != null %>">
+      <h2>
+        <strong><liferay-ui:message arguments="<%= discussion.getDiscussionCommentsCount() %>" key='<%= (discussion.getDiscussionCommentsCount() == 1) ? "x-comment" : "x-comments" %>' /></strong>
+    ```
 
 11. Create the `liferay-comment:discussion` tag, which creates the comments
     form, *Reply* button, and retrieves the discussion content. It also
     handles the form action of posting the comment without requiring
     you to create a portlet action URL.
-          
-          <liferay-comment:discussion
-            className="<%= Entry.class.getName() %>"
-            classPK="<%= entry.getEntryId() %>"
-            discussion="<%= discussion %>"
-            formName="fm2"
-            ratingsEnabled="true"
-            redirect="<%= currentURL %>"
-            userId="<%= entry.getUserId() %>"
-            />
-            
-          </liferay-ui:panel>
-        </liferay-ui:panel-container>
+
+    ```markup
+      <liferay-comment:discussion
+        className="<%= GuestbookEntry.class.getName() %>"
+        classPK="<%= entry.getEntryId() %>"
+        discussion="<%= discussion %>"
+        formName="fm2"
+        ratingsEnabled="true"
+        redirect="<%= currentURL %>"
+        userId="<%= entry.getUserId() %>"
+        />
+    </c:if>
+
+  </liferay-ui:panel>
+</liferay-ui:panel-container>
+    ```
 
 12. To restrict comments and ratings access to logged-in users, wrap the whole 
     panel container in a `<c:if>` tag that tests the expression 
     `themeDisplay.isSignedIn()`:
-    
-        <c:if test="<%= themeDisplay.isSignedIn() %>">
-            ... your panel container ...
-        </c:if>
+
+    ```markup
+    <c:if test="<%= themeDisplay.isSignedIn() %>">
+        ... your panel container ...
+    </c:if>
+    ```
 
     Make sure you add the closing `</c:if>` tag after the closing 
     `</liferay-ui:panel-container>` tag.
@@ -173,21 +194,25 @@ Next, you'll update the guestbook actions to use the new view.
 ## Updating the Entry Actions JSP
 
 Your `view_entry.jsp` page is currently orphaned. Fix this by adding the *View*
-option to the Actions Menu. Open the `/guestbookwebportlet/entry_actions.jsp`
+option to the Actions Menu. Open the `/guestbook/entry_actions.jsp`
 and find the following line:
 
-    <liferay-ui:icon-menu>
+```markup
+<liferay-ui:icon-menu>
+```
 
 Add the following lines below it:
 
-    <portlet:renderURL var="viewEntryURL">
-      <portlet:param name="entryId"
-        value="<%= String.valueOf(entry.getEntryId()) %>" />
-      <portlet:param name="mvcPath"
-        value="/guestbookwebportlet/view_entry.jsp" />
-    </portlet:renderURL>
+```markup
+<portlet:renderURL var="viewEntryURL">
+  <portlet:param name="entryId"
+    value="<%= String.valueOf(entry.getEntryId()) %>" />
+  <portlet:param name="mvcPath"
+    value="/guestbook/view_entry.jsp" />
+</portlet:renderURL>
 
-    <liferay-ui:icon message="View" url="<%= viewEntryURL.toString() %>" />
+<liferay-ui:icon message="View" url="<%= viewEntryURL.toString() %>" />
+```
 
 Here, you create a URL that points to `view_entry.jsp`. Test this link by
 selecting the *View* option in a guestbook entry's Actions Menu. Then test your
