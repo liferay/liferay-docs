@@ -144,7 +144,7 @@ public class GuestbookEntryAssetRenderer extends BaseJSPAssetRenderer<GuestbookE
         PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
                 getControlPanelPlid(liferayPortletRequest), GuestbookPortletKeys.GUESTBOOK,
                 PortletRequest.RENDER_PHASE);
-        portletURL.setParameter("mvcRenderCommandName", "/guestbook/edit_entry");
+        portletURL.setParameter("mvcPath", "/guestbook/edit_entry.jsp");
         portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
         portletURL.setParameter("showback", Boolean.FALSE.toString());
 
@@ -168,7 +168,7 @@ public class GuestbookEntryAssetRenderer extends BaseJSPAssetRenderer<GuestbookE
                         GuestbookPortletKeys.GUESTBOOK, plid, PortletRequest.RENDER_PHASE);
             }
 
-            portletURL.setParameter("mvcRenderCommandName", "/guestbook/view");
+            portletURL.setParameter("mvcPath", "/guestbook/view_entry.jsp");
             portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
 
             String currentUrl = PortalUtil.getCurrentURL(liferayPortletRequest);
