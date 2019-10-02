@@ -20,19 +20,24 @@ categories when adding or updating a guestbook.
 
 Follow these steps: 
 
-1.  In the `guestbook-web` module's `/guestbookadminportlet/edit_guestbook.jsp`, 
+1.  In the `guestbook-web` module's `/guestbook_admin/edit_guestbook.jsp`, 
     add the tags `<liferay-ui:asset-categories-error />` and 
     `<liferay-ui:asset-tags-error/>` to the `aui:form` below the closing 
     `</aui:button-row>` tag: 
 
-        <liferay-ui:asset-categories-error />
-        <liferay-ui:asset-tags-error />
+    ```markup
+    <liferay-asset:asset-categories-error />
+    <liferay-asset:asset-tags-error />
+    ```
 
     These tags display error messages if an error occurs with the tags or 
     categories submitted in the form. 
 
-2.  Below the error tags, add a `<liferay-ui:panel>` tag with the following
-    attributes: 
+2.  Below the error tags, add a `<liferay-ui:panel>` tag surrounded by
+    a `<c:if>` statement: 
+
+    ```markup
+    <c:if test="<%= guestbook != null %>">
 
         <liferay-ui:panel defaultState="closed" extended="<%= false %>"
           id="guestbookCategorizationPanel" persistState="<%= true %>"
@@ -40,7 +45,12 @@ Follow these steps:
 
         </liferay-ui:panel>
 
-    The `<liferay-ui:panel>` tag generates a collapsible section. 
+    </c:if>
+    ```
+
+    The `<liferay-ui:panel>` tag generates a collapsible section. The tags
+    you'll add in the next step don't work if `guestbook` is `null`, so you only
+    display the panel if the current Guestbook is being edited. 
 
 3.  Add input fields for tags and categories inside the panel section you just 
     created. Specify the `assetCategories` and `assetTags` types for the 
@@ -49,25 +59,29 @@ Follow these steps:
     tag. The tags generate the appropriate selectors for tags and categories and
     displays those that have already been added to the guestbook: 
 
-        <aui:fieldset>
-        	<liferay-asset:asset-categories-selector className="<%= Guestbook.class.getName() %>" classPK="<%= guestbook %>" />
-        	<liferay-asset:asset-tags-selector className="<%= Guestbook.class.getName() %>" classPK="<%= guestbook %>" />
-        </aui:fieldset>
+    ```markup
+	<aui:fieldset>
+        <liferay-asset:asset-categories-selector className="<%= Guestbook.class.getName() %>" classPK="<%= guestbook.getGuestbookId() %>" />
+		<liferay-asset:asset-tags-selector className="<%= Guestbook.class.getName() %>" classPK="<%= guestbook.getGuestbookId() %>" />
+	</aui:fieldset>
+    ```
 
 4.  Add a second `<liferay-ui:panel>` tag under the existing one. In this new 
     tag, add an `<aui:fieldset>` tag containing a `<liferay-ui:asset-links>` 
     tag. To display the correct asset links (the selected guestbook's related 
     assets), set the `className` and `classPK` attributes: 
 
-        <liferay-ui:panel defaultState="closed" extended="<%= false %>"
-          id="guestbookAssetLinksPanel" persistState="<%= true %>"
-          title="related-assets">
-          <aui:fieldset>
-            <liferay-ui:input-asset-links
-              className="<%= Guestbook.class.getName() %>"
-              classPK="<%= guestbookId %>" />
-          </aui:fieldset>
-        </liferay-ui:panel>
+    ```markup
+    <liferay-ui:panel defaultState="closed" extended="<%= false %>"
+      id="guestbookAssetLinksPanel" persistState="<%= true %>"
+      title="related-assets">
+      <aui:fieldset>
+        <liferay-ui:input-asset-links
+          className="<%= Guestbook.class.getName() %>"
+          classPK="<%= guestbookId %>" />
+      </aui:fieldset>
+    </liferay-ui:panel>
+    ```
 
 Test the updated `edit_guestbook.jsp` page by navigating to the Guestbook Admin 
 portlet in the Control Panel and clicking *Add Guestbook*. You'll see a field 
