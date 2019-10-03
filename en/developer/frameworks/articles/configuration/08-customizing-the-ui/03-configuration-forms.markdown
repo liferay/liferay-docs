@@ -6,43 +6,26 @@ header-id: using-ddm-form-annotations-in-configuration-forms
 
 [TOC levels=1-4]
 
-## Background Information
+The auto-generated configuration form you get by just creating a 
+[configuration interface](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-configuration-interface)
+can be too simplistic for some configurations. To enhance it, use the Dynamic
+Data Mapping (DDM) Form Annotations.
 
-The goal of this article is to describe how a third party developer would
-Create a configuration form using the Dynamic Data Mapping Form Annotations.
+To use DDM Annotations in configuration forms, 
 
-Here are some reasons a third party developer would want to do this: This allows
-you to create a more advanced form, as all of the form building functionality
-exposed via the DDM annotations is at your disposal.
+1.  Configure the module dependencies.
 
-Here's a conceptual example of how this documentation might be used:
-[Your example here > MANDATORY]
-
-## How to do It
-
-This is the overview of steps you need, in order to develop this outside of
-liferay-portal:
-
-1.  [Create an OSGi module](/docs/7-2/reference/-/knowledge_base/r/creating-a-project).
-
-2.  Configure the dependencies.
-
-3.  Write the 
-    [configuration interface](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-configuration-interface) 
-    as usual. This step is covered elsewhere, so the real code example here
-    starts with the next step.
-
-4.  Write a `ConfigurationForm` class, including just the fields that you want
+2.  Write a `ConfigurationForm` class, including just the fields that you want
     to leverage the enhanced forms capability. This will look similar to the
     configuration interface, but with field annotations from the Liferay
     [Dynamic Data Mapping API](https://github.com/liferay/liferay-portal/tree/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/annotations) 
-    rather than the bndtools metatype specification.
+    rather than the bndtools metatype specification. The fields here must match
+    fields defined in the configuration interface.
 
-5.  Implement a [`ConfigurationDDMFormDeclaration`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/configuration-admin/configuration-admin-api/src/main/java/com/liferay/configuration/admin/definition/ConfigurationDDMFormDeclaration.java) 
+3.  Implement a [`ConfigurationDDMFormDeclaration`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/configuration-admin/configuration-admin-api/src/main/java/com/liferay/configuration/admin/definition/ConfigurationDDMFormDeclaration.java) 
     to mark your configuration as having a `ConfigurationForm`.
 
-To get started by creating a module, see 
-[this documentation](/docs/7-2/reference/-/knowledge_base/r/creating-a-project).
+This article assumes you already have an auto-generated configuration UI.
 
 Note that the example code here splits up the Configuration interface and the
 Configuration Form interface. If you'd rather mash these together into one
@@ -52,15 +35,7 @@ configuration fields and/or a complex form to create, or if you're taking an
 existing configuration and extending it to use the DDM Form annotations, you can
 consider separating the classes, as shown here.
 
-### Dependencies and Build Script
-
-USUALLY NECESSARY
-
-[what you'd put into a `build.gradle` goes here. Please be conscious that these must be applicable for developers outside of the portal core]
-
-This could be one line if you're just documenting an extension point. For
-example, if you're writing an article on the SLA Calendar extension point for
-Liferay DXP 7.2.10-GA1:
+### Step 1: Declare the Dependencies
 
 In the `build.gradle` file, add `compileOnly` dependencies on the
 `dynamic-data-mapping-api` and `configuration-admin-api` module artifacts:
@@ -70,7 +45,7 @@ compileOnly group: "com.liferay", name: "com.liferay.dynamic.data.mapping.api", 
 compileOnly group: "com.liferay", name: "com.liferay.configuration.admin.api", version: "2.0.2"
 ```
 
-### Writing the Configuration Form
+### Step 2: Write the Configuration Form
 
 This step requires annotating the class with `@DDMForm` to set up the form, and
 annotating each method with `@DDMFormField`. Here we'll actually begin by
@@ -163,10 +138,14 @@ public interface MyFooConfigurationForm {
 
 ![Figure 1: The DDM annotations are used to lay out this configuration form.](../../../images/configuration-ddm-form.png)
 
-### Writing the Form Declaration
+None of this will work unless you make sure the configuration framework knows
+about your slick form.
+
+### Step 3: Write the Form Declaration
 
 Create a new implementation of `ConfigurationDDMFormDeclaration` to register
 your new configuration form class:
+
 ```java
 package com.liferay.docs.my.foo.configuration.definition;
 
@@ -190,6 +169,9 @@ public class MyFooConfigurationDDMFormDeclaration
 }
 ```
 
+The `configurationPid` must match the fully qualified class name of the
+configuration interface.
+
 Now your configuration class is backed by the form-building power of Liferay's
 native [Forms application](/docs/7-2/user/-/knowledge_base/u/forms).
 
@@ -205,23 +187,3 @@ of the configuration classes for the User Images configuration (Control Panel
 
 [`UserFileUploadsConfigurationDDMFormDeclaration.java`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/users-admin/users-admin-web/src/main/java/com/liferay/users/admin/web/internal/configuration/definition/UserFileUploadsConfigurationDDMFormDeclaration.java)
 
-## Additional Details
-
-Note: we don't have docs for the Forms DDM annotations (I know because I write
-for the Forms team too). However, I don't think we need to cover all the
-details, but we should cover any details that might apply to this use of the DDM
-annotations. Are there more things to consider, opr useful information on how
-this works?
-
-NOT ALWAYS MANDATORY
-
-[Most code examples won't cover every option, method, etc. available to third party developers. Tell them what else they can do with the feature or API, and explain how]
-
-
-[Are the APIs and other classes discussed here useful in some other cool process? Is there something cool third party devs can do? Let's tell them about it!]
-
-## Best practices, pitfalls to be avoided
-
-NOT ALWAYS MANDATORY
-
-[What to do and what not to do with this framework, extension point, etc.]
