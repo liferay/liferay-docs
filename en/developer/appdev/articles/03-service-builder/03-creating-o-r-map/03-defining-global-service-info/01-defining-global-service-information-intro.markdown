@@ -23,7 +23,7 @@ used Spring. The only difference is how you inject the services when you
 
 Declarative Services Dependency Injector: 
 
-```xml[[]]
+```xml
 <?xml version="1.0"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
 
