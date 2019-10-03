@@ -142,7 +142,7 @@ Here are the code upgrade steps:
 
     2.  [Upgrade Core JSP Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-core-jsp-hooks)
 
-    3.  [Upgrade Portlet JSP Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-app-jsp-hooks)
+    3.  [Upgrade Portlet JSP Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-app-jsp-hook-plugins)
 
     4.  [Upgrade Service Wrapper Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-service-wrappers)
 
