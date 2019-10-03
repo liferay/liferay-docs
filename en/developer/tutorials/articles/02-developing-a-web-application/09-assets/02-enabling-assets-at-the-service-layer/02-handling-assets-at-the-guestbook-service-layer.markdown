@@ -1,8 +1,8 @@
 ---
-header-id: handling-assets-at-the-guestbook-service-layer
+header-id: handling-assets-for-the-guestbook-service
 ---
 
-# Handling Assets at the Guestbook Service Layer
+# Handling Assets for the Guestbook Service
 
 [TOC levels=1-4]
 
