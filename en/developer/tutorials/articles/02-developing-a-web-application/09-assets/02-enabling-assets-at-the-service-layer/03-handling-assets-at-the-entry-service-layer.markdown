@@ -1,8 +1,8 @@
 ---
-header-id: handling-assets-at-the-entry-service-layer
+header-id: handling-assets-for-the-guestbookentry-service
 ---
 
-# Handling Assets for Entry Service Layer
+# Handling Assets for the GuestbookEntry Service
 
 [TOC levels=1-4]
 
@@ -71,7 +71,7 @@ entities.
 
     ```properties
     model.resource.com.liferay.docs.guestbook.model.Guestbook=Guestbook
-    model.resource.com.liferay.docs.guestbook.model.Entry=Guestbook Entry
+    model.resource.com.liferay.docs.guestbook.model.GuestbookEntry=Guestbook Entry
     ```
 
 Excellent! You've asset-enabled your guestbook and guestbook entry entities at
