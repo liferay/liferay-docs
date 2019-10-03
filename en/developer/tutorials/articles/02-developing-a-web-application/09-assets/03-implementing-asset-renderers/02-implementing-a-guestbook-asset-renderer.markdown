@@ -43,6 +43,8 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
                 _guestbook = guestbook;
                 _guestbookModelResourcePermission = modelResourcePermission;
     }
+
+    // Add the other methods here
     
     private Guestbook _guestbook;
     private final ModelResourcePermission<Guestbook> _guestbookModelResourcePermission;   
@@ -52,7 +54,8 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 3.  The `BaseJSPAssetRenderer` abstract class that you're extending contains 
     dummy implementations of the `hasEditPermission` and `hasViewPermission`
     methods that you must override with actual permission checks using the
-    permissions resources that you created earlier:
+    permissions resources that you created earlier. Add these methods below the
+    comment labeled `Add the other methods here`:
 
     ```java
     @Override
@@ -178,7 +181,7 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
         PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
             getControlPanelPlid(liferayPortletRequest), GuestbookPortletKeys.GUESTBOOK,
             PortletRequest.RENDER_PHASE);
-        portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
+        portletURL.setParameter("mvcPath", "/guestbook/edit_guestbook.jsp");
         portletURL.setParameter("guestbookId", String.valueOf(_guestbook.getGuestbookId()));
         portletURL.setParameter("showback", Boolean.FALSE.toString());
 
@@ -205,7 +208,7 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
                 GuestbookPortletKeys.GUESTBOOK, plid, PortletRequest.RENDER_PHASE);
           }
 
-          portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/view");
+          portletURL.setParameter("mvcPath", "/guestbook/view.jsp");
           portletURL.setParameter("guestbookId", String.valueOf(_guestbook.getGuestbookId()));
 
           String currentUrl = PortalUtil.getCurrentURL(liferayPortletRequest);
@@ -242,10 +245,10 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
 10.  Organize imports (Ctrl-Shift-O) and save the file. Choose these imports: 
 
-    - `com.liferay.petra.string.StringUtil`
     - `java.util.logging.Logger` 
-    - `java.util.logging.Level` 
     - `com.liferay.portal.kernel.exception.SystemException` 
+    - `java.util.logging.Level` 
+    - `com.liferay.petra.string.StringUtil`
  
 Next you can create the `AssetRendererFactory` class. 
 
@@ -272,7 +275,9 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
         setPortletId(GuestbookPortletKeys.GUESTBOOK); setSearchable(true);
         setSelectable(true); 
       }         
-        
+     
+      // Add the other methods here
+
       private ServletContext _servletContext;
       private GuestbookLocalService _guestbookLocalService;
       private static final boolean _LINKABLE = true;
@@ -288,7 +293,8 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
     a portlet ID, and a `true` boolean (`_LINKABLE`). The boolean denotes
     implemented methods that provide URLs in the generated `AssetRenderer`. 
 
-    Insert the methods below above the `ServletContext` variable declaration.
+    Insert the methods below where you see the comment `Add the other methods
+    here`. 
 
 2.  Implement the `getAssetRenderer` method, which constructs new 
     `GuestbookAssetRenderer` instances for particular guestbooks. It uses the 
@@ -359,7 +365,7 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
 
           portletURL = liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(themeDisplay),
               GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
-          portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
+          portletURL.setParameter("mvcPath", "/guestbook/edit_guestbook.jsp");
           portletURL.setParameter("showback", Boolean.FALSE.toString());
 
           } catch (PortalException e) {
