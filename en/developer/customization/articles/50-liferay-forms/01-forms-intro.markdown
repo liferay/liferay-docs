@@ -28,7 +28,6 @@ are ready for your customization:
     [`BaseStorageAdapter`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/storage/BaseStorageAdapter.java).
 - Create a Form Field Type by implementing a
     [`DDMFormFieldType`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/form/field/type/DDMFormFieldType.java),
-    [`DDMFormFieldRenderer`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/form/field/type/DDMFormFieldRenderer.java),
     [`DDMFormFieldTypeSettings`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/form/field/type/DDMFormFieldTypeSettings.java),
     and a
     [`DDMFormFieldTemplateContextContributor`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/form/field/type/DDMFormFieldTemplateContextContributor.java).
