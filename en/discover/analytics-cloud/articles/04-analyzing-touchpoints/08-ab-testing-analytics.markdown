@@ -32,134 +32,120 @@ documentation for more information on an A/B test's setup.
 Once your A/B test is running, Analytics Cloud offers several reports to keep
 you up-to-date on your A/B test's progress:
 
-- *Summary*
-- *Variant Report*
-- *Test Sessions*
+- [Summary](#summary)
+- [Variant Report](#variant-report)
+- [Test Sessions](#test-sessions)
 
 You'll learn about these next.
 
 ## Summary
 
-The Summary Panel gives you an overview of your test. It provides you
-information such as % of completion, how many days it has been running, and the
-total visitor sessions who has seen your test.
+The Summary panel gives you an overview of your test. It provides you with
+information like
 
-Finally it also gives you a quick glance on what your test metric is, and what
-your current best performing variant is.
+- percent completion
+- running time (in days)
+- total visitor sessions
 
-![Figure x: ](../../images/ab-test-summary.png)
+It also gives you a quick glance at your test metric and the best current
+performing Variant.
+
+![Figure 3: The Summary panel gives you a quick way to assess the status of your A/B test.](../../images/ab-test-summary.png)
 
 ## Variant Report
 
-The Variant Panel provides your with detail breakdown of each variant and how
-well each performs.
+The Variant Report panel provides a detailed breakdown of each Variant and how
+well they're performing.
 
-![Figure x: ](../../images/ab-test-variant-report.png)
+![Figure 4: Variants are tracked using multiple metrics.](../../images/ab-test-variant-report.png)
 
-Below are the metrics we report for each variant:
+Below are the metrics reported for each variant:
 
-- Median:
+**Median:** the middle number in the set of sample values. This estimates a
+typical user's behavior.
 
-    Definition: The median is the "number in the middle" of the sample. The
-    purpose of this is to get a sense of what a typical user reports.
+**Confidence Interval:** the range of values expected to contain the true mean
+of the population. For example, a 95% confidence interval is a range of values
+that the system is 95% sure contains the true mean. This gives the range of
+possible values that seem plausible for the measured goal.
 
-    Why it is helpful: This is what most people use when comparing 2 metrics.
+**Improvement:** the relative improvement from the control group. This metric
+may also be known as *Lift*. For example, assume the Control Page has a 15%
+retention rate. The improvement calculation would be `((16 - 15) / 15) = ~6.67%`
+improvement.
 
-- Confidence Interval:
+The lets you know the impact of a change. If there is only a small improvement,
+it may not be worth implementing that change.
 
-    Definition: This is the range of values in which we’re expecting the actual
-    <value of interest (think of better way of phrasing this)> to contain. 
+**Probability to Win:** predicts the likelihood that the Variant will beat out
+all other participating Variants. This lets you see how multiple metrics compare
+to each other. For example, consider a horse racing event; each horse has a
+generated chance to win that is posted before a race (i.e., odds of winning),
+which is calculated by simulating them racing each other thousands of times.
+This same method is used for your Variants to calculate their probability of
+winning the A/B test.
 
-    Why it is useful: A user would like to know a range of possible values that
-    seem plausible for what we’re measuring. We are able to connect a likelihood
-    to a possible range.
+**Unique Visitors:** the number of visitors who are contributing to the
+Variant. A visitor randomly assigned a Variant always sees the same Variant
+until the test is finished.
 
-- Improvement:
-
-    Definition: This metric may also be known as lift. It gives the relative
-    improvement from the control group.
-
-    Example: Let's pretend the control page has a 15% retention rate. The
-    variant reports an 16% retention rate. The improvement is ((16 - 15) / 15) =
-    ~6.67% improvement.
-
-    Why it is Helpful: Knowing the typical impact of a change is valuable. If
-    there is only a small improvement, it may not be worthwhile implementing
-    that change. This metric gives a sense of the impact in comparison to the
-    baseline.
-
-- Probability to win:
-
-    Definition: This predicts the likelihood that for the given metric, it would
-    be the winner out of all the other variants. Imagine that all the variants
-    are racehorses, and we're racing each one of them against each other,
-    thousands of times. This returns the odds for each racehorse winning.
-
-   Why it is helpful: This metric is especially helpful if you want to see how
-   multiple metrics stack against each other.
-
-- Unique visitors:
-
-    Definition: This is the number of visitors who are contributing to the
-    variant. We try our best to make sure that the user is unique, by tracking
-    their usage via cookies and login; however a single user might be using 2
-    different browsers, in which we would count that "unique user" twice.
-
-    Why it is useful: Besides giving a sense of how much traffic is hitting that
-    page, it also can be helpful in determining if there is an issue with how
-    the AB test is configured. Perhaps there is too much traffic going to only 1
-    variant. (This could be because of a misconfiguration of segments.)
+Besides knowing how much traffic is hitting a page, this metric also helps
+determine if there is an issue with how the A/B test is configured. For example,
+there could be too much traffic going to one Variant (typically caused by a
+Segment misconfiguration).
 
 ## Test Sessions
 
-Sessions Panel provides statistics on how many sessions are seeing your test
-impressions per day over time. This helps you validate that your audiences are
-being directed to your A/B test impressions. It also helps you see how your test
-is affecting the traffic to your page compared to before.
+The Test Sessions panel provides statistics on how many sessions are viewing
+your test impressions per day over time. This helps you validate that your
+audiences are being directed to your A/B test impressions. It also portrays how
+your test is affecting the traffic to your page compared to before.
 
-![Figure x: ](../../images/ab-test-sessions.png)
+![Figure 5: This graph gives you an accurate depiction of your page traffic.](../../images/ab-test-sessions.png)
+
+Next, you'll learn about an A/B test's statuses.
 
 ## Test Status
 
+An A/B test is always characterized with a status after it starts. These include
+
+- *Test is Running*
+- *Winner Declared*
+- *No Clear Winner*
+
+You'll explore each status next.
+
 ### Test is Running
 
-This means that your test is still running and we still need more sample size
-before we could declare a winner. Liferay Analytic Cloud does provide you a way
-to see which variant is your current best, but this does not mean we have
-achieved the desired confidence level.
+This means that your test is still running and needs a larger sample size before
+declaring a winner. Analytics Cloud provides a way to see which Variant is your
+current best; however, the desired confidence level has not been met.
 
-![Figure x: ](../../images/ab-test-current-best.png)
+![Figure 6: The leading Variant is clearly labeled as being the current best.](../../images/ab-test-current-best.png)
 
-During this status, you can always terminate the running A/B test by selecting
-*Terminate* from the Summary bar.
+When a test is running, you can always terminate it by selecting *Terminate*
+from the Summary bar.
 
-![Figure 3: Terminating an A/B test allows you to delete the test, if desired.](../../images/ab-test-terminate.png)
+![Figure 7: Terminating an A/B test allows you to delete the test, if desired.](../../images/ab-test-terminate.png)
 
 ### Winner Declared
 
-Once your A/B test finishes, it is possible to have two status, "Winner Declared" or "No Clear Winner".
+Once your A/B test successfully finishes, a Variant is declared a winner. At
+this state, you can perform the following actions:
 
-#### Winner Declared
+- publish the winning Variant as your default experience. 
+- complete the test without publishing any Variants.
 
-The summary panel will inform you that a variant is declared as a winner. At
-this state, you can perform the following actions. 
+![Figure 8: Click *Publish Winner* to publish the winning Variant.](../../images/ab-test-winner-declared.png)
 
-- With just a click, you can publish the winning variant as your default experience for your audience in the future. 
+### No Clear Winner
 
-- You can just complete the test without publishing any variant
+Sometimes, Analytics Cloud cannot determine a winner because no Variant has
+outperformed significantly over the Control Page. In this case, you can complete
+the test without publishing anything. The control will resume being the default
+experience.
 
-![Figure x: Click *Publish Winner* to publish the winning Variant.](../../images/ab-test-winner-declared.png)
-
-#### No Clear Winner
-
-Sometimes, Analytics Cloud cannot determine a winner because no variant has
-outperformed significantly over the control. In this case, you will be able to
-perform the either:
-
-- Complete the test without publishing anything. The control will resume being
-  the default experience
-
-![Figure x: ](../../images/ab-test-no-winner.png)
+![Figure 9: When the required confidence level is not met during the time duration, there is no winning Variant.](../../images/ab-test-no-winner.png)
 
 By viewing the generated analytics for your A/B tests, you're constantly
 informed on how they're progressing. With the provided data, you can confidently
