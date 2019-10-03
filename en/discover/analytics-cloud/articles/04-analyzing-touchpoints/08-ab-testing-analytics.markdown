@@ -1,3 +1,7 @@
+---
+header-id: a-b-testing-analytics
+---
+
 # A/B Testing Analytics
 
 A/B Testing evaluates the effectiveness of Content Pages by testing multiple
@@ -32,9 +36,9 @@ documentation for more information on an A/B test's setup.
 Once your A/B test is running, Analytics Cloud offers several reports to keep
 you up-to-date on your A/B test's progress:
 
-- [Summary](#summary)
-- [Variant Report](#variant-report)
-- [Test Sessions](#test-sessions)
+- *Summary*
+- *Variant Report*
+- *Test Sessions*
 
 You'll learn about these next.
 
