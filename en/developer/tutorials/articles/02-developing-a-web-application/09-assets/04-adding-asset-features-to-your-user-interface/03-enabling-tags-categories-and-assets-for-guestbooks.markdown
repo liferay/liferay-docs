@@ -21,8 +21,8 @@ categories when adding or updating a guestbook.
 Follow these steps: 
 
 1.  In the `guestbook-web` module's `/guestbook_admin/edit_guestbook.jsp`, 
-    add the tags `<liferay-ui:asset-categories-error />` and 
-    `<liferay-ui:asset-tags-error/>` to the `aui:form` below the closing 
+    add the tags `<liferay-asset:asset-categories-error />` and 
+    `<liferay-asset:asset-tags-error/>` to the `aui:form` below the closing 
     `</aui:button-row>` tag: 
 
     ```markup
@@ -76,7 +76,7 @@ Follow these steps:
       id="guestbookAssetLinksPanel" persistState="<%= true %>"
       title="related-assets">
       <aui:fieldset>
-        <liferay-ui:input-asset-links
+        <liferay-asset:input-asset-links
           className="<%= Guestbook.class.getName() %>"
           classPK="<%= guestbookId %>" />
       </aui:fieldset>
@@ -84,8 +84,9 @@ Follow these steps:
     ```
 
 Test the updated `edit_guestbook.jsp` page by navigating to the Guestbook Admin 
-portlet in the Control Panel and clicking *Add Guestbook*. You'll see a field 
-for adding tags and a selector for selecting related assets.
+portlet in the Control Panel and clicking *Add Guestbook*. After adding the
+Guestbook, edit it. You'll see a field for adding tags and a selector for
+selecting related assets.
 
 ![Figure 1: Once you've updated your Guestbook Admin portlet's `edit_guestbook.jsp` page, you'll see forms for adding tags and selecting related assets.](../../../../images/guestbook-tags-related-assets.png)
 
