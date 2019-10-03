@@ -35,11 +35,11 @@ layers:
     entries. You also use the `AssetLink` service to support related assets.
     *Asset links* are @product@'s back-end term for related assets. 
 
-2.  You must add finders---two for `Guestbook`s and two for `Entity`s---so your
-    assets show in Asset Publisher, because it searches for entities by `status`
-    (i.e., is it Workflow-approved?) and by `groupId` (i.e., is it in this
-    Site?). Add these below the existing finders for the `Guestbook` and
-    `GuestbookEntry` entities: 
+2.  You must add finders---two for `Guestbook`s and two for
+    `GuestbookEntry`s---so your assets show in Asset Publisher, because it
+    searches for entities by `status` (i.e., is it Workflow-approved?) and by
+    `groupId` (i.e., is it in this Site?). Add these below the existing finders
+    for the `Guestbook` and `GuestbookEntry` entities: 
 
     ```xml
     <finder name="Status" return-type="Collection">
