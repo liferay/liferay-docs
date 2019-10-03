@@ -82,7 +82,8 @@ Follow these steps:
     </dl>
     ```
 
-This JSP shows a combination of fields from the Guestbook and the selected Entry. 
+This JSP shows a combination of fields from the Guestbook and the selected
+Guestbook Entry. 
 
 After deploying your changes, test your new JSPs by clicking a guestbook's or
 guestbook entry's title in the Asset Publisher. The Asset Publisher renders
