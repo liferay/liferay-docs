@@ -185,8 +185,44 @@ The REST service's response data is filtered by the input parameter.
 enabled. You can add multiple Outputs. Outputs can be filtered by inputs (see
 above) but can also be displayed without configuring input filtering. Specify
 the Label, Path, and Type (Text, Number, or List). The Path field is specified
-in [JsonPath syntax](https://github.com/json-path/JsonPath/blob/master/README.md). 
-Using the `restcountries.eu` service, specify the `name` field as an Output by
-entering enter `$..name` in the Path field.
+in
+[JsonPath syntax](https://github.com/json-path/JsonPath/blob/master/README.md), so it
+must always start with a `$`. The type of data returned by the Path must match
+the type you choose in the Type field. Using the `restcountries.eu` service,
+specify the `name` field as an Output by entering enter `$..name` in the Path
+field.
+
+If you have a more complex JsonPath expression to construct (for example, you
+need the names of all countries with a population over 100
+million---`$..[?(@.population>100000000)].name` with the `restcountries.eu`
+service), consider using an online JsonPath evaluator, like
+[this one](http://jsonpath.herokuapp.com/) or
+[this one](https://jsonpath.com/).
+
+| **Hint:** To display one value to the user, but persist another in the database,
+| enter both into the Paths field, separated by a semicolon:
+| 
+|      `$..name;$..numericCode`
+| 
+| If this is used with the `restcountries.eu` data provider, the name of the
+| country is displayed to the User, while the numeric country code is stored in
+| the database.
 
 ![Figure 3: Set up Data Providers to display data retrieved from a REST service.](../../images/forms-data-provider-configuration.png)
+
+## Troubleshooting Data Provider Errors
+
+To uncover errors arising from Data Provider failures, 
+[configure log levels](/docs/7-1/user/-/knowledge_base/u/server-administration) 
+for these services:
+
+**Category:**
+`com.liferay.dynamic.data.mapping.data.provider.internal.DDMDataProviderInvokerImpl`
+*Level:* WARN 
+
+**Category:**
+`com.liferay.dynamic.data.mapping.form.field.type.internal.DDMFormFieldOptionsFactoryImpl`
+*Level:* DEBUG
+
+With Data Providers, the world's (RESTful) data is at your disposal to use with
+the Forms application
