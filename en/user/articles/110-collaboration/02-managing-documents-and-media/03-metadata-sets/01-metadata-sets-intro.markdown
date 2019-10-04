@@ -16,7 +16,7 @@ number of document types.
 ## Managing Metadata Sets
 
 To see the available metadata sets, open the *Menu* 
-(![Product Menu](../../../images/icon-menu.png)), expand your site's menu, and
+(![Product Menu](../../../../images/icon-menu.png)), expand your site's menu, and
 navigate to *Content & Data* &rarr; *Documents and Media*. Then click the 
 *Metadata Sets* tab. Any existing sets appear in a table. 
 
@@ -34,7 +34,7 @@ descending order, respectively. You can also use the Search bar to search for
 a set. 
 
 In the table, each metadata set has an Actions button 
-(![Actions Menu](../../../images/icon-actions.png)) for performing the following
+(![Actions Menu](../../../../images/icon-actions.png)) for performing the following
 actions on that set: 
 
 **Edit**: Edit the set. Alternatively, click the set's name in the table.
@@ -45,18 +45,18 @@ actions on that set:
 
 **Delete**: Delete the set. 
 
-![Figure 1: The Metadata Sets management window lets you view existing sets and create new ones for applying to document types.](../../../images/dm-metadata-sets-list.png)
+![Figure 1: The Metadata Sets management window lets you view existing sets and create new ones for applying to document types.](../../../../images/dm-metadata-sets-list.png)
 
 ## Creating Metadata Sets
 
 Follow these steps to create a metadata set: 
 
-1.  From the *Menu* (![Product Menu](../../../images/icon-menu.png)), click your
+1.  From the *Menu* (![Product Menu](../../../../images/icon-menu.png)), click your
     Site's name and navigate to *Content & Data* &rarr; *Documents and Media*. 
     Then click the *Metadata Sets* tab. 
 
 2.  Click the *Add* button 
-    (![Add](../../../images/icon-add.png)). The New Metadata Set form appears. 
+    (![Add](../../../../images/icon-add.png)). The New Metadata Set form appears. 
 
 3.  Give your metadata set a name. 
 
@@ -75,7 +75,7 @@ Follow these steps to create a metadata set:
     appears on the canvas as it does for users. By dragging a field onto a field 
     that's already on the canvas, you can nest the new field in the existing 
     field. When you mouse over a field on the canvas, the field action icons 
-    (![Icons](../../../images/icon-dm-metadata-actions.png)) 
+    (![Icons](../../../../images/icon-dm-metadata-actions.png)) 
     appear. Clicking the *+* icon creates a duplicate of the current field and 
     adds it below the current field. Clicking the trash can deletes the field. 
 
@@ -110,7 +110,7 @@ Follow these steps to create a metadata set:
         multiple lines of text or separate paragraphs. 
     -   **Web Content:** Select web content.
 
-    ![Figure 2: Add your metadata set's fields to the canvas.](../../../images/dm-metadata-set-fields.png)
+    ![Figure 2: Add your metadata set's fields to the canvas.](../../../../images/dm-metadata-set-fields.png)
 
 6.  Edit your fields to reflect their intended metadata. For example, a text 
     field's default label is *Text*. If you want to use the text field as a 
@@ -133,4 +133,4 @@ Follow these steps to create a metadata set:
 
 7.  Click *Save* when you're done specifying your new metadata set.
 
-    ![Figure 3: Edit your metadata set's fields to match the metadata that you want each field to hold.](../../../images/dm-metadata-set-settings.png)
+    ![Figure 3: Edit your metadata set's fields to match the metadata that you want each field to hold.](../../../../images/dm-metadata-set-settings.png)

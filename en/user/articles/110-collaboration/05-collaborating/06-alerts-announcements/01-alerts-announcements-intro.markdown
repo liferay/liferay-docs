@@ -17,7 +17,7 @@ on different pages. However, you can use either widget to display any
 information you wish. Besides the red tag, they function the same. You can also
 scope your alerts and announcements to specific groups of users. 
 
-![Figure 1: The Alerts widget provides administrators with an easy way to communicate important information to appropriate groups of users.](../../../images/alerts-widget.png)
+![Figure 1: The Alerts widget provides administrators with an easy way to communicate important information to appropriate groups of users.](../../../../images/alerts-widget.png)
 
 These widgets have two tabs: 
 
@@ -26,7 +26,7 @@ These widgets have two tabs:
 **Read:** Alerts/announcements that have expired, or that you've read. 
 
 Click an alert/announcement's *Actions* button 
-(![Actions](../../../images/icon-actions.png)) to edit or delete it. 
+(![Actions](../../../../images/icon-actions.png)) to edit or delete it. 
 
 ## Creating Alerts and Announcements
 
@@ -36,14 +36,14 @@ There are two places where you can create alerts and announcements:
     &rarr; *Configuration* &rarr; *Announcements and Alerts*. Announcements and 
     alerts are in separate tabs in this app. To begin creating an announcement 
     or alert, select the appropriate tab and then click the *Add* button 
-    (![Add](../../../images/icon-add.png)). 
+    (![Add](../../../../images/icon-add.png)). 
     This app gives administrators a central location to create announcements and 
     alerts that are then displayed on Site pages by the Announcements and Alerts 
     widgets. 
 
 2.  The Announcements and Alerts widgets, after adding them to a Site page from 
     the *Add* 
-    (![Add](../../../images/icon-add-app.png)) 
+    (![Add](../../../../images/icon-add-app.png)) 
     &rarr; *Widgets* &rarr; *News* menu. To begin creating an announcement or 
     alert, click the widget's *Add Alert* or *Add Announcement* button. 
 
@@ -55,7 +55,7 @@ it is the same. Follow these steps to complete the form:
     explanation of the editor, see the 
     [Blogs documentation](/docs/7-2/user/-/knowledge_base/u/using-the-blog-entry-editor). 
 
-    ![Figure 2: Enter your alert or announcement's title and content.](../../../images/alerts-new-alert.png)
+    ![Figure 2: Enter your alert or announcement's title and content.](../../../../images/alerts-new-alert.png)
 
 2.  Open the *Configuration* section of the form and set the following options, 
     if desired: 
@@ -91,7 +91,7 @@ it is the same. Follow these steps to complete the form:
     an alert/announcement expires, the widget displays it in the Read tab. 
     Clicking the Expiration Date field opens the date-picker. 
 
-    ![Figure 3: Configure your new alert or announcement.](../../../images/alerts-new-alert-config.png)
+    ![Figure 3: Configure your new alert or announcement.](../../../../images/alerts-new-alert-config.png)
 
 3.  Click *Save* when you're done. Your alert/announcement then appears in the 
     widget. 
@@ -113,7 +113,7 @@ Users can configure how they'd like to receive announcements.
 
 4.  Click *Save* when you're finished. 
 
-    ![Figure 4: Each user can choose how they receive alerts and announcements.](../../../images/alerts-delivery.png)
+    ![Figure 4: Each user can choose how they receive alerts and announcements.](../../../../images/alerts-delivery.png)
 
 ## Alert and Announcement Roles
 
@@ -125,7 +125,7 @@ Announcements Role:
 1.  Navigate to *Control Panel* &rarr; *Users* &rarr; *Roles*. 
 
 2.  With the *Regular Roles* tab selected, click the *Add* button 
-    (![Add](../../../images/icon-add.png)). This opens the *New Role* form. 
+    (![Add](../../../../images/icon-add.png)). This opens the *New Role* form. 
 
 3.  Name your Role *Announcements*, give it a description, and click *Save*. 
 
