@@ -1,3 +1,7 @@
+---
+header-id: escaping-fragment-configuration-text-values
+---
+
 # Escaping Fragment Configuration Text Values
 
 [TOC levels=1-4]
