@@ -20,7 +20,7 @@ scoring of the search engine, by doing these things:
 
 3.  Add results that aren't normally returned by searching a certain keyword.
 
-4.  Re-order results with a drag-and-drop interface.
+4.  Re-order pinned results with a drag-and-drop interface.
 
 Result Rankings let you pin, hide, and add search results for a given set of
 keywords. These rankings apply only to searches using the newer search widgets
@@ -95,8 +95,9 @@ To create a new Result Rankings Alias:
     Click _Customize Results_.
 
 A search query is executed. The results are displayed and the tools for pinning,
-hiding, re-ordering, and adding results are made available. First, consider
-whether to add one or more Aliases.
+hiding, and adding results are made available. Re-ordering becomes possible
+after at least one result is pinned. First, consider whether to add one or more
+Aliases.
 
 ### Adding Aliases
 
@@ -142,12 +143,13 @@ pin.
 
 Click _Save_ if you're done customizing results.
 
-### Re-Ordering Results
+### Re-Ordering Pinned Results
 
-To re-order results, click the handle icon, drag the result, and drop it in the
-preferred location in the list. 
+To re-order pinned results (results that are not pinned cannot be re-ordered),
+click the handle icon, drag the result, and drop it in the preferred location in
+the list. 
 
-![Figure 5: Re-order the rankings if you want to emphasize or de-emphasize certain results.](../../images/search-result-rankings-reorder.png)
+![Figure 5: Re-order the pinned rankings if you want to emphasize or de-emphasize certain results.](../../images/search-result-rankings-reorder.png)
 
 Once finished customizing result rankings, click _Save_.
 
