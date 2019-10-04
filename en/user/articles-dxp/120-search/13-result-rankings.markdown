@@ -20,30 +20,29 @@ scoring of the search engine, by doing these things:
 
 3.  Add results that aren't normally returned by searching a certain keyword.
 
-4.  Re-order results with a drag-and-drop interface.
+4.  Re-order pinned results with a drag-and-drop interface.
 
 Result Rankings let you pin, hide, and add search results for a given set of
 keywords. These rankings apply only to searches using the newer search widgets
 (Search Bar, Search Results, etc.). The rankings you customize do not apply to
 the legacy Search portlet results or to the individual application search bars.
 
-| **Use Case:** At the Lunar Resort website, visitors often search
-| for activities, entering keywords like "rover races", "atv rentals",
-| and "lunar golf". For all of these, the Lunar Resort always wants a certain 
-| [Content Page](/docs/7-2/user/-/knowledge_base/u/creating-content-pages) to appear
-| at the top of the search results. This is the Activities page in the Lunar
-| Resort where guests can find all of the resort's adventurous offerings,
-| including lunar rover races, ATV rentals, and information about golfing
-| packages. By contrast, the Lunar  Resort does not want the legal liability
-| waiver form to appear during a search for fun activities: that's a bridge to be
-| crossed when guests sign up for the activity. It shouldn't
-| pollute a search for fun activities, even though it contains many of the
-| keywords Users would search for. Result Rankings lets you _pin_ the Activities
-| Content Page to the top of the results and _hide_ the liability waiver Web
-| Content Article.  In addition, a community
-| member wrote a blog favorably reviewing the Lunar Resort, and you want that
-| content added to searches for activities at the resort. This is a prime use case
-| for Result Rankings. 
+| **Use Case:** At the Lunar Resort website, visitors often search for activities,
+| entering keywords like "rover races", "atv rentals", and "lunar golf". For all
+| of these, the Lunar Resort always wants a certain [Content
+| Page](/docs/7-2/user/-/knowledge_base/u/creating-content-pages) to appear  at
+| the top of the search results. This is the Activities page in the Lunar Resort
+| where guests can find all of the resort's adventurous offerings, including lunar
+| rover races, ATV rentals, and information about golfing packages. By contrast,
+| the Lunar  Resort does not want the legal liability waiver form to appear during
+| a search for fun activities: that's a bridge to be crossed when guests sign up
+| for the activity. It shouldn't pollute a search for fun activities, even though
+| it contains many of the keywords Users would search for. Result Rankings lets
+| you _pin_ the Activities Content Page to the top of the results and _hide_ the
+| liability waiver Web Content Article.  In addition, a community member wrote a
+| blog favorably reviewing the Lunar Resort, and you want that content added to
+| searches for activities at the resort. This is a prime use case for Result
+| Rankings. 
 
 ![Figure 1: The Lunar Resort wants to tweak these results: pin the Activities page to the top, and hide the legal content entirely.](../../images/search-result-rankings-todo.png) 
 
@@ -93,14 +92,12 @@ To create a new Result Rankings Alias:
     want to intercept (it can be a phrase, instead of just one word; and don't
     worry, you can add more later) in the _Search Query_ field. 
 
-    To limit the rankings intervention to just one index's results, enter the
-    index name in the Index Name field.
-
     Click _Customize Results_.
 
 A search query is executed. The results are displayed and the tools for pinning,
-hiding, re-ordering, and adding results are made available. First, consider
-whether to add one or more Aliases.
+hiding, and adding results are made available. Re-ordering becomes possible
+after at least one result is pinned. First, consider whether to add one or more
+Aliases.
 
 ### Adding Aliases
 
@@ -146,12 +143,13 @@ pin.
 
 Click _Save_ if you're done customizing results.
 
-### Re-Ordering Results
+### Re-Ordering Pinned Results
 
-To re-order results, click the handle icon, drag the result, and drop it in the
-preferred location in the list. 
+To re-order pinned results (results that are not pinned cannot be re-ordered),
+click the handle icon, drag the result, and drop it in the preferred location in
+the list. 
 
-![Figure 5: Re-order the rankings if you want to emphasize or de-emphasize certain results.](../../images/search-result-rankings-reorder.png)
+![Figure 5: Re-order the pinned rankings if you want to emphasize or de-emphasize certain results.](../../images/search-result-rankings-reorder.png)
 
 Once finished customizing result rankings, click _Save_.
 
