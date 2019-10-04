@@ -5,7 +5,7 @@ header-id: a-b-testing-analytics
 # A/B Testing Analytics
 
 A/B Testing evaluates the effectiveness of Content Pages by testing multiple
-versions/layouts of the Page at once. This is done by creating Page Variants off
+versions/layouts of the Page at once. This is done by creating Page Variants of
 the original Page, testing the Page with a goal (e.g., clicks), and publishing
 the most effective Variant. You can learn more about creating an A/B test and
 configuring it for a Content Page in Liferay DXP's
@@ -83,15 +83,14 @@ it may not be worth implementing that change.
 
 **Probability to Win:** predicts the likelihood that the Variant will beat out
 all other participating Variants. This lets you see how multiple metrics compare
-to each other. For example, consider a horse racing event; each horse has a
+to each other. For example, consider a horse racing event: each horse has a
 generated chance to win that is posted before a race (i.e., odds of winning),
-which is calculated by simulating them racing each other thousands of times.
-This same method is used for your Variants to calculate their probability of
-winning the A/B test.
+calculated by simulating the race thousands of times. This same method is used
+for your Variants to calculate their probability of winning the A/B test.
 
-**Unique Visitors:** the number of visitors who are contributing to the
-Variant. A visitor randomly assigned a Variant always sees the same Variant
-until the test is finished.
+**Unique Visitors:** the number of visitors contributing to the Variant.
+A visitor randomly assigned a Variant always sees the same Variant until the
+test is finished.
 
 Besides knowing how much traffic is hitting a page, this metric also helps
 determine if there is an issue with how the A/B test is configured. For example,
@@ -100,10 +99,10 @@ Segment misconfiguration).
 
 ## Test Sessions
 
-The Test Sessions panel provides statistics on how many sessions are viewing
-your test impressions per day over time. This helps you validate that your
-audiences are being directed to your A/B test impressions. It also portrays how
-your test is affecting the traffic to your page compared to before.
+The Test Sessions panel provides statistics showing how many sessions view your
+test impressions per day over time. This helps you validate that your audiences
+are being directed to your A/B test impressions. It also portrays how your test
+affects the traffic to your page compared to before.
 
 ![Figure 5: This graph gives you an accurate depiction of your page traffic.](../../images/ab-test-sessions.png)
 
@@ -122,13 +121,13 @@ You'll explore each status next.
 ### Test is Running
 
 This means that your test is still running and needs a larger sample size before
-declaring a winner. Analytics Cloud provides a way to see which Variant is your
-current best; however, the desired confidence level has not been met.
+declaring a winner. You can still see which Variant is your current best;
+however, the desired confidence level has not been met.
 
 ![Figure 6: The leading Variant is clearly labeled as being the current best.](../../images/ab-test-current-best.png)
 
-When a test is running, you can always terminate it by selecting *Terminate*
-from the Summary bar.
+When a test is running, you can terminate it by selecting *Terminate* from the
+Summary bar.
 
 ![Figure 7: Terminating an A/B test allows you to delete the test, if desired.](../../images/ab-test-terminate.png)
 
@@ -146,8 +145,7 @@ this state, you can perform the following actions:
 
 Sometimes, Analytics Cloud cannot determine a winner because no Variant has
 outperformed significantly over the Control Page. In this case, you can complete
-the test without publishing anything. The control will resume being the default
-experience.
+the test without publishing anything. The control stays the default experience.
 
 ![Figure 9: When the required confidence level is not met during the time duration, there is no winning Variant.](../../images/ab-test-no-winner.png)
 
