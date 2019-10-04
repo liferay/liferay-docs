@@ -1,11 +1,18 @@
 package com.liferay.documentation.util;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.LineNumberReader;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +26,7 @@ public class AddTOCTask extends Task {
 	public void execute() throws BuildException {
 
 		String docDir = _docdir;
+		String langDir = _langDir;
 		String productType = _productType;
 
 		List<String> dirTypes = new ArrayList<String>();
@@ -35,7 +43,7 @@ public class AddTOCTask extends Task {
 
 			try {
 				fileListNoTOC = getFilesWithNoTOC(fileList);
-				addTOCs(fileListNoTOC);
+				addTOCs(fileListNoTOC, langDir);
 			} catch (IOException e) {
 				throw new BuildException(e.getLocalizedMessage());
 			}
@@ -43,7 +51,8 @@ public class AddTOCTask extends Task {
 		}
 	}
 
-	private static void addTOCs(List<String> fileListNoTOC) throws IOException {
+	private static void addTOCs(List<String> fileListNoTOC, String langDir)
+			throws IOException {
 
 		for (int i = 0; i < fileListNoTOC.size(); i++) {
 			String filenameNoTOC = fileListNoTOC.get(i);
@@ -53,11 +62,20 @@ public class AddTOCTask extends Task {
 
 			System.out.println("Adding TOC syntax for " + filenameNoTOC);
 
-			LineNumberReader in =
-					new LineNumberReader(new FileReader(inFile));
+			LineNumberReader in;
+			BufferedWriter out;
 
-			BufferedWriter out =
-					new BufferedWriter(new FileWriter(outFileTmp));
+			if (langDir.equals("ja")) {
+				Reader reader = new InputStreamReader(new FileInputStream(inFile), "ISO_8859_1");
+				BufferedReader br = new BufferedReader(reader);
+				in = new LineNumberReader(br);
+
+				out = Files.newBufferedWriter(Paths.get(outFileTmp), StandardCharsets.ISO_8859_1);
+			}
+			else {
+				in = new LineNumberReader(new FileReader(inFile));
+				out = new BufferedWriter(new FileWriter(outFileTmp));
+			}
 
 			String line;
 			boolean tocAdded = false;
@@ -141,6 +159,10 @@ public class AddTOCTask extends Task {
 		_docdir = docdir;
 	}
 
+	public void setLangDir(String langDir) {
+		_langDir = langDir;
+	}
+	
 	public void setProductType(String productType) {
 		_productType = productType;
 	}
@@ -148,5 +170,6 @@ public class AddTOCTask extends Task {
 	private static String tocSyntax = "[TOC levels=1-4]";
 
 	private String _docdir;
+	private String _langDir;
 	private String _productType;
 }

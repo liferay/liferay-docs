@@ -27,9 +27,35 @@
 	<property name="temp.dir" value="temp"/>
 	<property name="temp.dir2" value="prepare-temp"/>
 
+	<condition property="encoding" value="UTF-8" else="ISO-8859-1">
+		<equals arg1="${language.dir}" arg2="en" />
+	</condition>
+
 	<!-- taskdefs -->
 
 	<taskdef name="addtoc" classname="com.liferay.documentation.util.AddTOCTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="appendlang" classname="com.liferay.documentation.util.AppendLangHeader">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+	
+	<taskdef name="appendlangurl" classname="com.liferay.documentation.util.AppendLangHeaderURL">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -176,6 +202,16 @@
 	<target name="add-article-to-temp" depends="process-article-to-temp, check-images-dist" description="Processes the article (-Darticle=...) and its parent article structure, adding the target article and all related parent articles and images to temp/">
 	</target>
 
+	<target name="append-lang" description="">
+		<appendlang docdir="${doc.dir}">
+		</appendlang>
+	</target>
+
+	<target name="append-lang-url" description="">
+		<appendlangurl docdir="${doc.dir}">
+		</appendlangurl>
+	</target>
+
 	<target name="article-to-html" depends="prepare, check-article-images" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
@@ -190,17 +226,17 @@
 	</target>
 
 	<target name="add-toc" description="Adds the Table of Contents syntax for each CE Markdown article.">
-		<addtoc docdir="${doc.dir}" producttype="ce">
+		<addtoc docdir="${doc.dir}" langdir="${language.dir}" producttype="ce">
 		</addtoc>
 	</target>
 
 	<target name="add-toc-dist" description="Adds the Table of Contents syntax for each Markdown article when generating Zip.">
-		<addtoc docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		<addtoc docdir="${doc.dir}/${temp.dir}" langdir="${language.dir}" producttype="dist">
 		</addtoc>
 	</target>
 
 	<target name="add-toc-dxp" description="Adds the Table of Contents syntax for each DXP Markdown article.">
-		<addtoc docdir="${doc.dir}" producttype="dxp">
+		<addtoc docdir="${doc.dir}" langdir="${language.dir}" producttype="dxp">
 		</addtoc>
 	</target>
 
@@ -218,17 +254,17 @@
 	</target>
 
 	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
-		<checkheaders docdir="${doc.dir}" producttype="ce">
+		<checkheaders docdir="${doc.dir}" langdir="${language.dir}" producttype="ce">
 		</checkheaders>
 	</target>
 
 	<target name="check-headers-dist" description="Check the headers of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp">
-		<checkheaders docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		<checkheaders docdir="${doc.dir}/${temp.dir}" langdir="${language.dir}" producttype="dist">
 		</checkheaders>
 	</target>
 
 	<target name="check-headers-dxp" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
-		<checkheaders docdir="${doc.dir}" producttype="dxp">
+		<checkheaders docdir="${doc.dir}" langdir="${language.dir}" producttype="dxp">
 		</checkheaders>
 	</target>
 
@@ -260,18 +296,18 @@
 	</target>
 
 	<target name="check-images" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
-		<checkimgssite docdir="${doc.dir}" producttype="ce">
+		<checkimgssite docdir="${doc.dir}" producttype="ce" langdir="${language.dir}">
 		</checkimgssite>
 	</target>
 
 	<target name="check-images-dist" description="Verifies all images referenced in a project's Markdown articles.">
 		<mkdir dir="${temp.dir}/images"/>
-		<checkimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist" resolveimages="true">
+		<checkimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist" langdir="${language.dir}" resolveimages="true">
 		</checkimgssite>
 	</target>
 
 	<target name="check-images-dxp" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
-		<checkimgssite docdir="${doc.dir}" producttype="dxp">
+		<checkimgssite docdir="${doc.dir}" producttype="dxp" langdir="${language.dir}">
 		</checkimgssite>
 	</target>
 
@@ -372,7 +408,7 @@
 	</target>
 
 	<target name="convert-sidebars" description="Converts legacy sidebars to new format.">
-		<convertsidebars docdir="${doc.dir}">
+		<convertsidebars docdir="${doc.dir}" langdir="${language.dir}">
 		</convertsidebars>
 	</target>
 
@@ -380,7 +416,7 @@
 	</target>
 
 	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, add-toc, number-headers, number-images" description="Processes the CE articles and images and zips them up for importing.">
-		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
+		<zip encoding="${encoding}" destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
@@ -394,7 +430,7 @@
 		<property file="${project.dir}/release-site.properties" />
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
-		<copy todir="${temp.dir}">
+		<copy encoding="${encoding}" todir="${temp.dir}">
 			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
 			</fileset>
@@ -419,7 +455,7 @@
 	</target>
 
 	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, add-toc-dxp, number-headers-dxp, number-images-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
-		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
+		<zip encoding="${encoding}" destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}-${language.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
@@ -433,7 +469,7 @@
 		<property file="${project.dir}/release-site.properties" />
 		<property name="base.filepath" value="${doc.dir}" />
 		<mkdir dir="${temp.dir}"/>
-		<copy todir="${temp.dir}">
+		<copy encoding="${encoding}" todir="${temp.dir}">
 			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
 				<include name="articles-dxp/**/*.markdown"/>
@@ -489,32 +525,32 @@
 	</target>
 
 	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
-		<numberheaders docdir="${doc.dir}" producttype="ce">
+		<numberheaders docdir="${doc.dir}" langdir="${language.dir}" producttype="ce">
 		</numberheaders>
 	</target>
 
 	<target name="number-headers-dist" description="Numbers the headers of Markdown articles.">
-		<numberheaders docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		<numberheaders docdir="${doc.dir}/${temp.dir}" langdir="${language.dir}" producttype="dist">
 		</numberheaders>
 	</target>
 
 	<target name="number-headers-dxp" description="Numbers the headers of Markdown articles.">
-		<numberheaders docdir="${doc.dir}" producttype="dxp">
+		<numberheaders docdir="${doc.dir}" langdir="${language.dir}" producttype="dxp">
 		</numberheaders>
 	</target>
 
 	<target name="number-images" description="numbers the images in a markdown chapter file">
-		<numberimgssite docdir="${doc.dir}" producttype="ce">
+		<numberimgssite docdir="${doc.dir}" langdir="${language.dir}" producttype="ce">
 		</numberimgssite>
 	</target>
 
 	<target name="number-images-dist" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
-		<numberimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		<numberimgssite docdir="${doc.dir}/${temp.dir}" langdir="${language.dir}" producttype="dist">
 		</numberimgssite>
 	</target>
 
 	<target name="number-images-dxp" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
-		<numberimgssite docdir="${doc.dir}" producttype="dxp">
+		<numberimgssite docdir="${doc.dir}" langdir="${language.dir}" producttype="dxp">
 		</numberimgssite>
 	</target>
 
