@@ -30,6 +30,10 @@ implement tags, categories, and related assets for guestbooks and guestbook
 entries. You'll implement comments and ratings in guestbook entries. You'll also
 learn how asset-enabled guestbooks and guestbook entries integrate with
 core portlets like the Asset Publisher, Tags Navigation, Tag Cloud, and
-Categories Navigation portlets. Ready to start? 
+Categories Navigation portlets. 
+
+As always, [source code](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/guestbook/09-assets/com-liferay-docs-guestbook) is provided in case you get stuck.
+
+Ready to start? 
 
 <a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/enabling-assets-at-the-service-layer">Let's Go!<span class="icon-circle-arrow-right"></span></a>
