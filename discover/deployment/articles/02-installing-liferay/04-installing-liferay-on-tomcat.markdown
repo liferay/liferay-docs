@@ -87,7 +87,6 @@ Checkpoint:
 
     - `activation.jar` 
     - `ccpp.jar` 
-    - `com.liferay.osgi.service.tracker.collections.jar` 
     - `com.liferay.registry.api.jar` 
     - `hsql.jar` 
     - `jms.jar`
