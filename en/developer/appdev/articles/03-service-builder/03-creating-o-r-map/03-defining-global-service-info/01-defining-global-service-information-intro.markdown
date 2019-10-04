@@ -46,10 +46,10 @@ Spring Dependency Injector:
 | **Important:** When a project is created using the
 | [Service Builder template](/docs/7-2/reference/-/knowledge_base/r/using-the-service-builder-template), 
 | the Declarative Services dependency injector and its dependencies are 
-| configured for the project by default. Configuring a project to use the Spring
-| dependency injector and its dependencies requires creating the project using 
+| configured for the project by default. To use the Spring
+| dependency injector instead, create the project using 
 | the Service Builder template and the `--dependency-injector spring` option 
-| with Blade CLI or `-DdependencyInjector=spring` option with Maven. 
+| (Blade CLI) or `-DdependencyInjector=spring` (Maven). 
 
 ## Package Path
 

@@ -48,12 +48,12 @@ Here's how to create a Service Builder project.
     -DliferayVersion=7.2
     ```
 
-| **Note:** Creating a Service Builder project that uses the Spring dependency 
-| injector instead of the
+| **Note:** To use the Spring dependency 
+| injector instead of the 
 | [Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services)
-| dependency injector requires 
-| specifying the `--dependency-injector spring` option with Blade CLI or
-| `-DdependencyInjector=spring` option with Maven. 
+| dependency injector, 
+| use the `--dependency-injector spring` option (Blade CLI) or
+| `-DdependencyInjector=spring` (Maven). 
 
 A message like this one reports project creation success:
 
