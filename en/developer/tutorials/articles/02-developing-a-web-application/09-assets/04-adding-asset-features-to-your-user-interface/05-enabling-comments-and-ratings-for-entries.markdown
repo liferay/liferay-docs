@@ -123,7 +123,7 @@ ratings on guestbook entries:
 8.  Add the ratings component with the `<liferay-ui:ratings>` tag:
 
     ```markup
-    <liferay-ui:ratings className="<%=Entry.class.getName()%>"
+    <liferay-ui:ratings className="<%=GuestbookEntry.class.getName()%>"
       classPK="<%=entry.getEntryId()%>" type="stars" />
 
     <br />
@@ -227,3 +227,5 @@ enabled comments and ratings for guestbook entry entities! Great job!
 
 Your next task is to generate web services. This makes it possible to write 
 other clients (such as mobile applications) for the Guestbook application. 
+
+Look for web services soon! 
