@@ -23,11 +23,20 @@ Read
 [here](/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine#choosing-a-search-engine)
 for more information.
 
-Liferay DXP 7.2, Fix Pack 1 and later, supports Solr 7.5.x through the Liferay
-Connector to Solr 7 application.
+Liferay DXP 7.2, Fix Pack 1, supports Solr 7.5.x through the Liferay
+Connector to Solr 7 application, version 2.0.0.
+
+Liferay DXP 7.2, Service Pack 1/Fix Pack 2 and later, supports Solr 7.5.x
+through the Liferay Connector to Solr 7 application, version 2.0.1.
 
 Liferay Portal CE 7.2, GA2 and later (not available at time of writing), support
 Solr 7.5.x through the Liferay CE Connector to Solr 7 application.
+
+| **Upgrading to Service Pack 1 or Fix Pack 2 (or later) requires installation of
+| a new Solr connector:** If you were running version 2.0.0 of the Liferay
+| Connector to Solr 7 application, and you want to install Service Pack 1/Fix Pack
+| 1 (or later), you must install version 2.0.1 of the Liferay Connector to Solr 7
+| application.
 
 ## Blacklisting Elasticsearch-Only Features
 
