@@ -138,19 +138,28 @@ tutorial for a description of the contents of these packages.
 
 Service Builder uses the service namespace in naming the database tables it
 generates for the service. For example, *Event* could serve as the namespace for
-an Event Listing portlet service. Service Builder uses the namespace in the
-following SQL scripts it generates in your `src/main/resources/META-INF/sql` folder:
+an Event Listing portlet service.
+
+```xml
+<namespace>Event</namespace>
+```
+
+Service Builder uses the namespace in the following SQL scripts it generates in
+your `src/main/resources/META-INF/sql` folder:
 
 - `indexes.sql`
 - `sequences.sql`
 - `tables.sql`
 
 | **Note:** The folder location for holding your generated SQL scripts is
-| configurable. For example, if you're using Gradle, you can define the `sqlDir`
-| attribute in the app's `build.gradle` file. Likewise, those using Ant can
-| configure an argument in their `build.xml` similar to the following:
+| configurable. For example, if you're using Ant can configure an argument in 
+| your `build.xml` similar to this:
 | 
 |     <arg value="service.sql.dir=${basedir}/../sql"/>
+|
+| If you're using Gradle, you can define the `sqlDir` setting in the
+| project's `build.gradle` file or Maven `pom.xml` file, the same way the 
+| `databaseNameMaxLength` setting is applied in the examples below. 
 
 @product@ uses these scripts to create database tables for all the entities
 defined in the `service.xml` file. Service Builder prepends the namespace
@@ -161,8 +170,35 @@ Separate plugins should use separate namespaces and should not use a namespace
 already used by Liferay (such as `Users` or `Groups`). Check the table names in
 Liferay's database if you're wondering which namespaces are already in use.
 
-| **Warning:** Use caution when assigning the namespace value. Some databases have
-| strong restrictions on database table name lengths.
+**Warning:** Use caution when assigning namespace values. Some databases have
+strong restrictions on database table and column name lengths. The Service 
+Builder 
+[Gradle](/docs/7-1/reference/-/knowledge_base/r/service-builder-gradle-plugin#task-properties)
+and 
+[Maven](/docs/7-1/reference/-/knowledge_base/r/service-builder-with-maven#available-parameters)
+plugin parameter `databaseNameMaxLength` sets the maximum length you can use for
+your table and column names. Here are paraphrased examples of setting
+`databaseNameMaxLength` in build files:
+
+**Gradle `build.gradle`**
+
+```groovy
+buildService {
+    ...
+    databaseNameMaxLength = 64
+    ...
+}
+```
+
+**Maven `pom.xml`**
+
+```xml 
+<configuration>
+    ...
+    <databaseNameMaxLength>64</databaseNameMaxLength>
+    ...
+</configuration>
+```
 
 As the last piece of global information, enter your name as the service's
 *author* in your `service.xml` file. Service Builder adds `@author` annotations
