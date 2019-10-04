@@ -19,12 +19,12 @@ libraries by designating folders to hold particular document types exclusively.
 ## Managing Document Types
 
 To see the available document types, open the *Menu* 
-(![Product Menu](../../../images/icon-menu.png)), 
+(![Product Menu](../../../../images/icon-menu.png)), 
 expand your site's menu, and navigate to *Content & Data* &rarr; 
 *Documents and Media*. Then click the *Document Types* tab. A searchable table 
 lists any existing document types. The following actions are available for each 
 document type via its Actions button 
-(![Actions](../../../images/icon-actions.png)): 
+(![Actions](../../../../images/icon-actions.png)): 
 
 **Edit**: Edit the document type. 
 
@@ -33,23 +33,23 @@ document type via its Actions button
 **Delete**: Delete the document type. Note that document types don't support the 
 Recycle Bin. Once you delete a document type, it's gone forever. 
 
-![Figure 1: The Document Types management window lets you view existing document types and create new ones.](../../../images/dm-doc-types-list.png)
+![Figure 1: The Document Types management window lets you view existing document types and create new ones.](../../../../images/dm-doc-types-list.png)
 
 ## Creating Document Types
 
 Follow these steps to create a document type: 
 
-1.  From the *Menu* (![Product Menu](../../../images/icon-menu.png)), expand 
+1.  From the *Menu* (![Product Menu](../../../../images/icon-menu.png)), expand 
     your site's menu and navigate to *Content & Data* &rarr; 
     *Documents and Media*. Then click the *Document Types* tab. 
 
 2.  Click the *Add* button 
-    (![Add](../../../images/icon-add.png)). The *New Document Type* form 
+    (![Add](../../../../images/icon-add.png)). The *New Document Type* form 
     appears. 
 
 3.  Give your document type a name and a description. 
 
-    ![Figure 2: Create your new document type.](../../../images/dm-doc-types-new.png)
+    ![Figure 2: Create your new document type.](../../../../images/dm-doc-types-new.png)
 
 4.  Define the metadata to use with your document type. You do this via these 
     sections in the form: 

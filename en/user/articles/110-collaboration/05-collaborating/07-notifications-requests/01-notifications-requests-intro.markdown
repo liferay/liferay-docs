@@ -15,7 +15,7 @@ To access notifications and requests, click your user menu and select
 where all your notifications appear. Click the *Requests List* tab to view and 
 manage your requests. 
 
-![Figure 1: The *Notifications List* section displays all your notifications in a paginated list.](../../../images/mentions-notification-list.png)
+![Figure 1: The *Notifications List* section displays all your notifications in a paginated list.](../../../../images/mentions-notification-list.png)
 
 ## Managing Notifications
 
@@ -41,7 +41,7 @@ notifications by ascending order, click the up/down arrow icon in the management
 bar. Clicking the button again reverses the sort. 
 
 Each notification's *Actions* menu 
-(![Actions](../../../images/icon-actions.png)) lets you mark the notification as 
+(![Actions](../../../../images/icon-actions.png)) lets you mark the notification as 
 read/unread, or delete the notification. 
 
 ### Managing Multiple Notifications
@@ -53,15 +53,15 @@ the current page. The Management Bar shows three actions for selected
 notifications: 
 
 -   Mark as Read 
-    (![Open Envelope](../../../images/icon-envelope-open.png))
+    (![Open Envelope](../../../../images/icon-envelope-open.png))
 -   Mark as Unread 
-    (![Closed Envelope](../../../images/icon-envelope-closed.png))
+    (![Closed Envelope](../../../../images/icon-envelope-closed.png))
 -   Delete 
-    (![Delete Button](../../../images/icon-delete.png))
+    (![Delete Button](../../../../images/icon-delete.png))
 
 ## Managing Requests
 
 When you get a request, it appears in the *Requests List* tab. In each request's 
 *Actions* menu 
-(![Actions](../../../images/icon-actions.png)), you can click *Confirm* to 
+(![Actions](../../../../images/icon-actions.png)), you can click *Confirm* to 
 accept, *Ignore* to decline, or *Delete* to remove the request. 

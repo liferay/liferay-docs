@@ -59,7 +59,7 @@ structure like this:
 
 `versionNumber`: The document's version number. 
 
-![Figure 1: The Simple File System Store creates a folder structure based on primary keys in @product@'s database.](../../../images/enterprise-file-system-store.png)
+![Figure 1: The Simple File System Store creates a folder structure based on primary keys in @product@'s database.](../../../../images/enterprise-file-system-store.png)
 
 | **Note:** Be careful not to confuse a document's numeric file entry name from 
 | its document ID. Each has an independent counter. The numeric file entry name 
@@ -77,7 +77,7 @@ stored in a particular folder by programmatically creating a structure that can
 expand to millions of files. It alphabetically nests the files in folders. This 
 also improves performance, as there are fewer files stored per folder. 
 
-![Figure 2: The Advanced File System Store creates a more nested folder structure than the Simple File System Store.](../../../images/enterprise-adv-file-system-store.png)
+![Figure 2: The Advanced File System Store creates a more nested folder structure than the Simple File System Store.](../../../../images/enterprise-adv-file-system-store.png)
 
 The same rules apply to the Advanced File System Store as apply to the Simple 
 File System Store. To cluster it, you must point the store to a network mounted 
