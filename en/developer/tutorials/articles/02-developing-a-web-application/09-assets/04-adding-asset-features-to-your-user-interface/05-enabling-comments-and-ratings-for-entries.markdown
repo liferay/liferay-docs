@@ -17,11 +17,12 @@ users can rate and comment on assets. Follow these steps to enable comments and
 ratings on guestbook entries: 
 
 1.  Create a new file called `view_entry.jsp` in your `guestbook-web` module 
-    project's `/guestbook` folder. 
+    project's `src/main/resources/META-INF/resources/guestbook` folder. 
 
 2.  Add a Java scriptlet to the file you just created. In this scriptlet, use an 
-    `entryId` request attribute to get an entry object. For security reasons, 
-    convert this object to an escaped model as discussed in the earlier step 
+    `entryId` request attribute to get a `GuestbookEntry` object. For security
+    reasons, convert this object to an escaped model as discussed in the earlier
+    step 
     [Creating JSPs for Displaying Custom Assets in the Asset Publisher](/docs/7.2/tutorials/-/knowledge_base/t/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher):
 
     ```markup
