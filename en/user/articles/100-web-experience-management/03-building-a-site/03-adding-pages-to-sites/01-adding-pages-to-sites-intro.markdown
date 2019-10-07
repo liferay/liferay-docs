@@ -36,8 +36,8 @@ Why would someone prefer Widget Pages? Usually Widget Pages are preferred
 because they were the only page type available in earlier versions of @product@,
 so they're more familiar than Content Pages.
 
-There are still a few things that Widget Pages provide that are not possible
-with Content Pages:
+In addition, there are still a few things that Widget Pages provide that are not
+possible with Content Pages:
 
 - *Developing an advanced custom layout*: Content Pages let page authors create
   their own page layout. As a result, developers can't create their own custom
