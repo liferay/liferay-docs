@@ -225,7 +225,7 @@ enabled comments and ratings for guestbook entry entities! Great job!
 
 ![Figure 1: Now you can see comments, rating, and the full range of asset features.](../../../../images/asset-publisher-full-content-finished.png)
 
-Your next task is to generate web services. This makes it possible to write 
-other clients (such as mobile applications) for the Guestbook application. 
+Your next task is to add Workflow, so you can approve or deny guestbook entries,
+thereby preventing people from spamming your guestbook. 
 
-Look for web services soon! 
+Look for workflow soon! 
