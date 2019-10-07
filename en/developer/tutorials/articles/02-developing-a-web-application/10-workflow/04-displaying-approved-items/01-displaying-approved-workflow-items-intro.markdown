@@ -22,4 +22,4 @@ guestbooks and approved entries.
 
 Start by updating the Guestbook Admin UI.
 
-<a class="go-link btn btn-primary" href="/docs/7-0/tutorials/-/knowledge_base/t/displaying-guestbook-status">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/displaying-guestbook-status">Let's Go!<span class="icon-circle-arrow-right"></span></a>
