@@ -41,5 +41,6 @@ Liferay.Util.fetch(url, {
 });
 ```
 
-| **NOTE:** global access through `Liferay.Util` is only meant for use in legacy 
-| JSP code.
+| **NOTE:** global access through `Liferay.Util` is only meant for use in JSP 
+| code. In ES6, you must use the `fetch` module, as shown in the JavaScript 
+| example above.
