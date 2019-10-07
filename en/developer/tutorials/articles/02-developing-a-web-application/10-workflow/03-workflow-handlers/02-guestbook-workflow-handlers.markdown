@@ -10,77 +10,96 @@ header-id: creating-a-workflow-handler-for-guestbooks
     <p>Handling Workflow<br>Step 1 of 2</p>
 </div>
 
-Each workflow enabled entity needs a `WorkflowHandler`. Create a new package in
-the `guestboook-service` module called `com.liferay.docs.guestbook.workflow`,
-then create the `GuestbokWorkflowHandler` class in it. Extend
-`BaseWorkflowHandler` and pass in `Guestbook` as the type parameter:
+Each workflow enabled entity needs a `WorkflowHandler`. 
 
+1.  Create a new package in the `guestboook-service` module called
+    `com.liferay.docs.guestbook.workflow`, then create the
+    `GuestbokWorkflowHandler` class in it. Extend `BaseWorkflowHandler` and pass
+    in `Guestbook` as the type parameter:
+
+    ```java
     public class GuestbookWorkflowHandler extends BaseWorkflowHandler<Guestbook> {
+    ```
 
-Make it a Component class:
+2.  Make it a Component class:
 
+    ```java
     @Component(immediate = true, service = WorkflowHandler.class)
+    ```
 
-There are three abstract methods to implement: `getClassName`, `getType`, and
-`updateStatus`.
+3.  There are three abstract methods to implement: `getClassName`, `getType`,
+    and `updateStatus`. First add `getClassName`: 
 
-        @Override
-        public String getClassName() {
-            return Guestbook.class.getName();
-        }
+    ```java
+    @Override
+    public String getClassName() {
+        return Guestbook.class.getName();
+    }
+    ```
 
-`getClassName` returns the guestbook entity's fully qualified class name
-(`com.liferay.docs.guestbook.model.Guestbook`).
+    `getClassName` returns the guestbook entity's fully qualified class name
+    (`com.liferay.docs.guestbook.model.Guestbook`).
 
-        @Override
-        public String getType(Locale locale) {
-            return _resourceActions.getModelResource(locale, getClassName());
-        }
+4.  Next, add `getType`: 
 
-`getType` returns the model resource name
-(`model.resource.com.liferay.docs.guestbook.model.Guestbook`). The meat of the
-workflow handler is in the `updateStatus` method: 
+    ```java
+    @Override
+    public String getType(Locale locale) {
+        return _resourceActions.getModelResource(locale, getClassName());
+    }
+    ```
 
-        @Override
-        public Guestbook updateStatus(
-                int status, Map<String, Serializable> workflowContext)
-            throws PortalException {
+    `getType` returns the model resource name
+    (`model.resource.com.liferay.docs.guestbook.model.Guestbook`). 
 
-            long userId = GetterUtil.getLong(
-                (String)workflowContext.get(WorkflowConstants.CONTEXT_USER_ID));
-            long resourcePrimKey = GetterUtil.getLong(
-                (String)workflowContext.get(
-                    WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
+5.  Finally, add the meat of the workflow handler, which is in the
+    `updateStatus` method: 
 
-            ServiceContext serviceContext = (ServiceContext)workflowContext.get(
-                "serviceContext");
+    ```java
+    @Override
+    public Guestbook updateStatus(
+            int status, Map<String, Serializable> workflowContext)
+        throws PortalException {
 
-            return _guestbookLocalService.updateStatus(
-                userId, resourcePrimKey, status, serviceContext);
-        }
+        long userId = GetterUtil.getLong(
+            (String)workflowContext.get(WorkflowConstants.CONTEXT_USER_ID));
+        long resourcePrimKey = GetterUtil.getLong(
+            (String)workflowContext.get(
+                WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
 
-When you crafted the service layer's `updateStatus` method (see the last section
-for more details), you specified parameters that must be passed to the method.
-Here you're making sure that those parameters are available to pass to the
-service call. Get the `userId` and `resourcePrimKey` from `GetterUtil`. Its
-`getLong` method takes a `String`, which you can get from the `workflowContext`
-`Map` using `WorkflowConstants` for the context user ID and the context
-entry class PK.
+        ServiceContext serviceContext = (ServiceContext)workflowContext.get(
+            "serviceContext");
 
-Make sure you inject the `ResourceActions` service into a private variable at
-the end of the class, using the `@Reference` annotation:
+        return _guestbookLocalService.updateStatus(
+            userId, resourcePrimKey, status, serviceContext);
+    }
+    ```
 
-        @Reference(unbind = "-")
-        protected void setResourceActions(ResourceActions resourceActions) {
+    When you crafted the service layer's `updateStatus` method (see the last section
+    for more details), you specified parameters that must be passed to the method.
+    Here you're making sure that those parameters are available to pass to the
+    service call. Get the `userId` and `resourcePrimKey` from `GetterUtil`. Its
+    `getLong` method takes a `String`, which you can get from the `workflowContext`
+    `Map` using `WorkflowConstants` for the context user ID and the context
+    entry class PK.
 
-            _resourceActions = resourceActions;
-        }
+6.  Make sure you inject the `ResourceActions` service into a private variable
+    at the end of the class, using the `@Reference` annotation:
 
-        private ResourceActions _resourceActions;
+    ```java
+    @Reference(unbind = "-")
+    protected void setResourceActions(ResourceActions resourceActions) {
 
-Inject a `GuestbookLocalService` into a private variable using the `@Reference`
-annotation.
+        _resourceActions = resourceActions;
+    }
 
+    private ResourceActions _resourceActions;
+    ```
+
+7.  Inject a `GuestbookLocalService` into a private variable using the
+    `@Reference` annotation.
+
+    ```java
         @Reference(unbind = "-")
         protected void setGuestbookLocalService(
             GuestbookLocalService guestbookLocalService) {
@@ -91,10 +110,11 @@ annotation.
         private GuestbookLocalService _guestbookLocalService;
 
     }
+    ```
 
-Organize imports (*[CTRL]+[SHIFT]+O*) and save your work.
+8.  Organize imports (*[CTRL]+[SHIFT]+O*) and save your work. 
 
-Now the Guestbook Application updates the database with the necessary status
+Now the Guestbook application updates the database with the necessary status
 information, interacting with Liferay's workflow classes to make sure each
 entity is properly handled by @product@. At this point you can enable workflow
 for the Guestbook inside @product@ and see how it works. Navigate to *Control
