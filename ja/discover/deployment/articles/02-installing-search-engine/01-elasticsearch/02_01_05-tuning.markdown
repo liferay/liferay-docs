@@ -1,0 +1,43 @@
+---
+header-id: tuning-elasticsearch
+---
+
+# Elasticsearchのチューニング
+
+[TOC levels=1-4]
+
+検索エンジンはキャッシュから多くの恩恵を受けています。JVMメモリー性質は、コンテンツやページ閲覧を提供を主に行うJVM（例えば@product@を起動するJVM）と大きく異なります。
+本番環境においては、検索エンジンと@product@は必ず別のJVMに配置するようにしてください。
+
+
+下記では、Elasticsearchの構成概要について説明しています。。デプロイメント前に、[Elasticsearchが提供している本番環境でのデプロイメント](https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html)に関する資料を確認しておくことを推奨します。
+
+この資料では以下の設定について説明しています。
+
+- JVM
+- ファイルシステム
+
+- スケーリング
+
+## JVM
+
+JVMベンダーとElasticsearchサーバーのバージョンが@product@ サーバーと必ず一致している必要があります。
+一般的に、Elasticsearchに、使用可能なシステムメモリの45％（最大31GBまで）を割り当てる必要があります。`ES_HEAP_SIZE`環境変数を使用してヒープサイズの設定します。
+
+## ファイルシステム
+
+少なくとも、OSを64,000ファイルディスクリプタ（デフォルトのLinux値は1024）に設定する必要があります。ElasticsearchはNioFSとMMapFSも使用します。したがって、メモリマップされたファイルに使用できる十分な仮想メモリがあるか確認してください。これらの値を設定する方法については、システム管理者に相談してください。
+
+## Elasticsearch クラスターのチューニングとスケーリング
+
+Elasticsearchクラスターの適切なスケーリングとチューニングは、主に、保持するインデックスの種類とそれらの使用目的によって異なります。@product@は柔軟な開発プラットフォームであるため、2つのアプリケーションがまったく同じ方法でデータの索引付けと検索を行うことはありません。Liferay DXPインデックスの使用パターンを予測し、最適に調整され調整されたクラスターを設計するには、 [Elasticsearch公式ガイド](https://www.elastic.co/guide/en/elasticsearch/guide/master/distributed-cluster.html)を読んで、[索引集約型アプリケーション](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-indexing-speed.html)と[検索集約型アプリケーション](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-search-speed.html)の違いを一度理解することをお勧めします。
+Liferay DXPインデックスの使用パターンを予測し、最適に調整され調整されたクラスターを設計するには、
+
+適切な数のシャードとレプリカを決定したら、以下の設定を使用して、Liferay Connector to Elasticsearchモジュールでそれらを構成します。
+
+- `indexNumberOfReplicas`は Elasticsearchの`number_of_replicas`プロパティに対応します。
+
+- `indexNumberOfShards`は Elasticsearchの`number_of_shards`プロパティに対応します。
+
+
+Tune, scale, and prosper.

@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<project name="Develop" basedir=".">
-
-	<import file="../build-common.xml" />
-
-	<property name="purpose.dir" value="develop"/>
-
-</project>
