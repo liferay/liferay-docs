@@ -53,14 +53,13 @@ Follow these steps to create an `*EmbedProvider`:
 4.  Optionally set the `type` property to the content's type. If creating a 
     provider for a content type other than video, you can create a new type 
     constant and 
-    [add a new button](/docs/7-2/frameworks/-/knowledge_base/f/creating-new-buttons-for-alloyeditor) 
-    for the content type. If you do create your own button, we recommend that 
-    you use the existing 
-    [embed video button's JSX files](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-editor/frontend-editor-api/src/main/java/com/liferay/frontend/editor/api/embed) 
+    add a new button for the content type. If you do create your own button, we 
+    recommend that you use the existing 
+    [embed video button's JSX files](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-editor/frontend-editor-api/src/main/java/com/liferay/frontend/editor/embed) 
     as an example to write your own files. By default, the provider is 
     categorized as `UNKNOWN`. The example configuration below specifies the 
     `VIDEO` type, using a constant provided by the 
-    [`EditorEmbedProviderTypeConstants` class](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-editor/frontend-editor-api/src/main/java/com/liferay/frontend/editor/api/embed/EditorEmbedProviderTypeConstants.java):
+    [`EditorEmbedProviderTypeConstants` class](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-editor/frontend-editor-api/src/main/java/com/liferay/frontend/editor/embed/EditorEmbedProviderTypeConstants.java):
 
     ```java
     @Component(
@@ -71,7 +70,7 @@ Follow these steps to create an `*EmbedProvider`:
     ```
 
 5.  Implement the 
-    [`EditorEmbedProvider` interface](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-editor/frontend-editor-api/src/main/java/com/liferay/frontend/editor/api/embed/EditorEmbedProvider.java). 
+    [`EditorEmbedProvider` interface](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-editor/frontend-editor-api/src/main/java/com/liferay/frontend/editor/embed/EditorEmbedProvider.java). 
     An example configuration is shown below:
 
     ```java
