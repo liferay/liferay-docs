@@ -13,20 +13,26 @@ have experience with Java development in @product@, you may have worked with
 some of these before. The `Liferay` global object is automatically available at 
 runtime, so no additional dependencies are required. 
 
+| **Note:** Since Liferay DXP SP1 and Liferay Portal CE 7.2 GA2, the 
+| `Liferay.PortletURL` utilities are deprecated and have been replaced with 
+| `Liferay.Util.PortletURL` utilities. We recommend that you use the updated 
+| versions to ensure future compatibility. The examples below use the updated 
+| utilities.
+
 This covers how to use the `Liferay` global JavaScript object to manipulate 
 URLs. A complete list of the available methods and properties appears in the 
 tables shown below. Example configurations are shown below the tables. 
 
 ## Portlet URL Methods and Properties
 
-`Liferay.PortletURL` Methods:
+`Liferay.Util.PortletURL` Methods:
 
 | Method | Parameters | Returns |
 | --- | --- | --- |
-| `createURL` | `basePortletURL`, `params` | new `PortletURL(null, params, basePortletURL);` |
-| `createActionURL` |  | new `PortletURL(PortletURL.ACTION_PHASE`); |
-| `createRenderURL` |  | new `PortletURL(PortletURL.RENDER_PHASE`); |
-| `createResourceURL` |  | new `PortletURL(PortletURL.RESOURCE_PHASE`); |
+| `createURL` | `basePortletURL`, `parameters` | new `PortletURL(null, params, basePortletURL);` |
+| `createActionURL` | `basePortletURL`, `parameters` | new `PortletURL(PortletURL.ACTION_PHASE`); |
+| `createRenderURL` | `basePortletURL`, `parameters` | new `PortletURL(PortletURL.RENDER_PHASE`); |
+| `createResourceURL` | `basePortletURL`, `parameters` | new `PortletURL(PortletURL.RESOURCE_PHASE`); |
 
 `Liferay.PortletURL` Properties:
 
@@ -57,17 +63,40 @@ use to manipulate the URL further:
 | `toString` | Returns the URL as a String |  | The portlet URL as a String |
 | `_isReservedParam` | Returns whether the parameter is reserved | `paramName` | `true` if the parameter is reserved |
 
-## Liferay PortletURL
+## Liferay Util PortletURL
 
-The `Liferay.PortletURL` object provides methods for creating portlet API URLs
-(`actionURL`, `renderURL`, and `resourceURL`), through JavaScript. Below is an
-example configuration:
+The `Liferay.Util.PortletURL` object provides methods for creating portlet API 
+URLs (`actionURL`, `renderURL`, and `resourceURL`), through JavaScript. Below is 
+an example configuration for a JSP:
+
+```markup
+//basePortletURL = 'https://localhost:8080/group/control_panel/manage?p_p_id=com_liferay_roles_admin_web_portlet_RolesAdminPortlet'
+
+var actionURL = Liferay.Util.PortletURL.createActionURL(
+  basePortletURL,
+  {
+    'javax.portlet.action': 'addUser',
+    foo: 'bar'
+  }  
+);
+
+console.log(actionURL.toString());
+// https://localhost:8080/group/control_panel/manage?p_p_id=com_liferay_roles_admin_web_portlet_RolesAdminPortlet&javax.portlet.action=addUser&com_liferay_roles_admin_web_portlet_RolesAdminPortlet_foo=bar&p_p_lifecycle=1
+```
+
+ES6 Example:
+
+```JavaScript
+import {createActionURL} from 'frontend-js-web';
+
+let actionURL = createActionURL(...);//same as above
+```
 
 ```javascript
-var portletURL = Liferay.PortletURL.createURL(themeDisplay.getURLControlPanel());
+var portletURL = Liferay.Util.PortletURL.createURL(themeDisplay.getURLControlPanel());
 
 portletURL.setDoAsGroupId('true');
-portletURL.setLifecycle(Liferay.PortletURL.ACTION_PHASE);
+portletURL.setLifecycle(Liferay.Util.PortletURL.ACTION_PHASE);
 portletURL.setParameter('cmd', 'add_temp');
 portletURL.setParameter('javax.portlet.action', '/document_library/upload_file_entry');
 portletURL.setParameter('p_auth', Liferay.authToken);
