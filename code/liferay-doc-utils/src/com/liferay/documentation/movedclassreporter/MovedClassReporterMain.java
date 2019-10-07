@@ -211,9 +211,11 @@ public class MovedClassReporterMain {
 
 		System.out.println("movedClasses: " + movedClasses.size());
 		sortByClassName(movedClasses);
+		removeJavaSuffix(movedClasses);
 
 		System.out.println("removedClasses: " + removedClasses.size());
 		sortByPackageName(removedClasses);
+		removeJavaSuffix(removedClasses);
 
 		String oldDirName = oldDir.getName();
 		String newDirName = newDir.getName();
@@ -331,12 +333,12 @@ public class MovedClassReporterMain {
 		for (FormerPortalServiceClass movedClass : formerPortalServiceClasses) {
 			String name = movedClass.getName();
 			int x = name.indexOf(".java");
-			name = name.substring(0, x);
-			movedClass.setName(name);
+			if (x != -1) {
+				name = name.substring(0, x);
+				movedClass.setName(name);
+			}
 		}
 	}
-
-
 
 	private static String getPackage(File serviceClass) throws Exception {
 		String pkgStr = "package";
