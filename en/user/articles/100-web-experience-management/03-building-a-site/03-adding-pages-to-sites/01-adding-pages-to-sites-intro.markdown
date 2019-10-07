@@ -24,8 +24,8 @@ the traditional page type that is more rigid. There may still be some use cases
 where it's preferred.
 
 You should always opt for Content Pages, unless there's a concrete reason
-otherwise. Content Pages are being actively developed and offer many key
-features of Widget Pages plus more. Some key features of Content Pages include
+otherwise. Content Pages offer many key features of Widget Pages plus more. Some
+key features of Content Pages include
 [personalized Experiences](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization)
 and
 [A/B Testing](/docs/7-2/user/-/knowledge_base/u/a-b-testing). Furthermore,
@@ -36,12 +36,15 @@ Why would someone prefer Widget Pages? Usually Widget Pages are preferred
 because they were the only page type available in earlier versions of @product@,
 so they're more familiar than Content Pages.
 
-In addition, there are several other things that Widget Pages provide that are
-not possible with Content Pages:
+There are still a few things that Widget Pages provide that are not possible
+with Content Pages:
 
 - *Developing an advanced custom layout*: Content Pages let page authors create
   their own page layout. As a result, developers can't create their own custom
-  layouts with FreeMarker like Widget Pages allowed for.
+  layouts with FreeMarker like Widget Pages allowed for. Therefore, Content
+  Pages let you create a layout visually, which is a more user-friendly
+  approach; however, the programmatic approach of Widget Pages allows for more
+  advanced capabilities.
 
 - *User-Customizable columns*: This was a rarely used feature of Widget Pages
   that is not provided in Content Pages. If your page requires a
@@ -52,7 +55,7 @@ not possible with Content Pages:
   create variations of a page that are used in personalization and A/B Testing.
 
 - *Widget permissions*: You can configure widget permissions on a Widget Page.
-  This is not possible for Content Pages.
+  This is not yet possible for Content Pages; it's planned for a future release.
 
 - *Widget Look & Feel*: Widget Pages let you access the
   [Look and Feel](/docs/7-2/user/-/knowledge_base/u/look-and-feel-configuration)
