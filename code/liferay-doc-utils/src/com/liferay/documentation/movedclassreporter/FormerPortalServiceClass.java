@@ -2,9 +2,14 @@ package com.liferay.documentation.movedclassreporter;
 
 public class FormerPortalServiceClass {
 
-	public FormerPortalServiceClass(String name, String packageOld) {
-		this.name = name;
-		this.packageOld = packageOld;
+	public FormerPortalServiceClass(BasicClassInfo basicClassInfo) {
+		this.basicClassInfo = basicClassInfo;
+		this.name = basicClassInfo.getName();
+		this.packageOld = basicClassInfo.getPkg();
+	}
+
+	public BasicClassInfo getBasicClassInfo() {
+		return this.basicClassInfo;
 	}
 
 	public String getPackageNew() {
@@ -34,6 +39,7 @@ public class FormerPortalServiceClass {
 		return packageOld;
 	}
 
+	BasicClassInfo basicClassInfo;
 	private String name;
 	private String packageOld;
 	private String packageNew;

@@ -2,20 +2,12 @@ package com.liferay.documentation.movedclassreporter;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import freemarker.cache.ClassTemplateLoader;
-import freemarker.template.Configuration;
-import freemarker.template.Template;
-import freemarker.template.TemplateException;
 
 
 public class MovedClassReporterMain {
@@ -75,13 +67,13 @@ public class MovedClassReporterMain {
 			String pkg = "";
 			try {
 				pkg = getPackage(file);
-				BasicClassInfo info = new BasicClassInfo(file.getName(), pkg);
+				BasicClassInfo info = new BasicClassInfo(file, pkg);
 				serviceBasicClassInfos.add(info);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-
+		
 		// Add to a new list of BasicClassInfo objects all service classes not in kernel
 		List<FormerPortalServiceClass> classesNotInKernel = new ArrayList<FormerPortalServiceClass>();
 
@@ -98,7 +90,7 @@ public class MovedClassReporterMain {
 
 			if (!matched) {
 				FormerPortalServiceClass formerClass =
-					new FormerPortalServiceClass(serviceInfo.getName(), serviceInfo.getPkg());
+					new FormerPortalServiceClass(serviceInfo);
 				classesNotInKernel.add(formerClass);
 			}
 		}
@@ -119,73 +111,109 @@ public class MovedClassReporterMain {
 
 		System.out.println("moduleFiles: " + moduleFiles.size());
 
+		// Create list of module class BasicClassInfo objects
+		List<BasicClassInfo> moduleBasicClassInfos = new ArrayList<BasicClassInfo>();
+		for (File file : moduleFiles) {
+			String pkg = "";
+			try {
+				pkg = getPackage(file);
+				BasicClassInfo info = new BasicClassInfo(file, pkg);
+				moduleBasicClassInfos.add(info);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
 		// Find the module class info for each moved class and store in FormerPortalServiceClass objects
 
 		List<FormerPortalServiceClass> movedClasses = new ArrayList<FormerPortalServiceClass>();
 		List<FormerPortalServiceClass> removedClasses = new ArrayList<FormerPortalServiceClass>();
 
+		final int portletPkgLen = "com.liferay.portlet.".length();
+
 		for (FormerPortalServiceClass classNotInKernel : classesNotInKernel) {
-			String className = classNotInKernel.getName();
+			final String className = classNotInKernel.getName();
+			final String oldPackageName = classNotInKernel.getPackageOld();
 
-			boolean foundMatch = false;
-			for (File moduleFile : moduleFiles) {
-				if (className.equals(moduleFile.getName())) {
-					foundMatch = true;
+			// Construct expected new prefix
+			String newPrefix = "";
+			if (oldPackageName.startsWith("com.liferay.portlet.dynamicdatalists")) {
+				newPrefix = "com.liferay.dynamic.data.lists";
+			} 
+			else if (oldPackageName.startsWith("com.liferay.portlet.dynamicdatamapping")) {
+				newPrefix = "com.liferay.dynamic.data.mapping";
+			} 
+			else if (oldPackageName.startsWith("com.liferay.portlet.")) {
+				// construct new prefix using portlet type
+				String newPrefixEnd = "";
+				int end = oldPackageName.indexOf(".", portletPkgLen);
+				if (end != -1) {
+					newPrefixEnd = oldPackageName.substring(portletPkgLen, end);
+				} else {
+					newPrefixEnd = oldPackageName.substring(portletPkgLen);
+				}
+				newPrefix = "com.liferay." + newPrefixEnd;
+			} 
 
-					try {
-						String pkg = MovedClassReporterMain.getPackage(moduleFile);
-						classNotInKernel.setPackageNew(pkg);
+			// If expecting a new prefix, match it
+			boolean matched = false;
+			List<BasicClassInfo> matchingClassInfos = new ArrayList<BasicClassInfo>();
+			for (BasicClassInfo moduleClassInfo : moduleBasicClassInfos) {
+				
+				if (moduleClassInfo.getName().equals(className)) {
+					matchingClassInfos.add(moduleClassInfo);
+					if (!newPrefix.isEmpty()) {
+						if (moduleClassInfo.getPkg().startsWith(newPrefix)) {
+							matched = true;
 
-						File currentDir = moduleFile.getParentFile();
-						while (currentDir != null) {
-							if (currentDir.getName().equals("src")) {
-								File moduleDir = currentDir.getParentFile();
+							classNotInKernel.setPackageNew(moduleClassInfo.getPkg());
+							classNotInKernel.setModule(getModule(moduleClassInfo));
 
-								FilenameFilter filter = new FilenameFilter() {
-									@Override
-									public boolean accept(File dir, String name) {
-										if (name.equals("bnd.bnd")) {
-											return true;
-										}
-										return false;
-									}
-								};
-								File[] bndFiles = moduleDir.listFiles(filter);
-								if ((bndFiles != null) && bndFiles.length > 0) {
-									File bndFile = bndFiles[0];
-
-									processModuleInfo(bndFile, classNotInKernel);
-								}
-								else {
-									System.out.println("Couldn't find a parent folder with a bnd.bnd file.");
-								}
-								
-								break;
-							}
-							currentDir = currentDir.getParentFile();
+							movedClasses.add(classNotInKernel);
+							break;
 						}
-
-						movedClasses.add(classNotInKernel);
-					} catch (Exception e) {
-						e.printStackTrace();
 					}
-
-					break;
 				}
 			}
 
-			if (!foundMatch) {
-				removedClasses.add(classNotInKernel);
+			if (!matched) {
+				if (matchingClassInfos.isEmpty()) {
+					removedClasses.add(classNotInKernel);
+				}
+				else if (matchingClassInfos.size() == 1) {
+					// Match it with the only other class with the same name
+					matched = true;
+
+					BasicClassInfo moduleClassInfo = matchingClassInfos.get(0);
+					classNotInKernel.setPackageNew(moduleClassInfo.getPkg());
+					classNotInKernel.setModule(getModule(moduleClassInfo));
+					movedClasses.add(classNotInKernel);
+				}
+				else {
+					// Find the best match
+					for (BasicClassInfo moduleClassInfo : matchingClassInfos) {
+						if (moduleClassInfo.getPkgEnd().equals(classNotInKernel.getBasicClassInfo().getPkgEnd())) {
+							// It's a match since it has the same ending package name
+							matched = true;
+
+							classNotInKernel.setPackageNew(moduleClassInfo.getPkg());
+							classNotInKernel.setModule(getModule(moduleClassInfo));
+							movedClasses.add(classNotInKernel);
+						}
+					}
+
+					if (!matched) {
+						removedClasses.add(classNotInKernel);
+					}
+				}
 			}
 		}
 
 		System.out.println("movedClasses: " + movedClasses.size());
 		sortByClassName(movedClasses);
-		removeJavaSuffix(movedClasses);
 
 		System.out.println("removedClasses: " + removedClasses.size());
 		sortByPackageName(removedClasses);
-		removeJavaSuffix(removedClasses);
 
 		String oldDirName = oldDir.getName();
 		String newDirName = newDir.getName();
@@ -200,6 +228,66 @@ public class MovedClassReporterMain {
 			System.out.println("Reported removed classes to file: " + removedClassesOutputFile.getPath());
 
 		}
+	}
+
+	private static String getModule(BasicClassInfo classInfo) {
+		String bundleName = "";
+		File moduleFile = classInfo.getFile();
+		File currentDir = moduleFile.getParentFile();
+		while (currentDir != null) {
+			if (currentDir.getName().equals("src")) {
+				File moduleDir = currentDir.getParentFile();
+
+				FilenameFilter filter = new FilenameFilter() {
+					@Override
+					public boolean accept(File dir, String name) {
+						if (name.equals("bnd.bnd")) {
+							return true;
+						}
+						return false;
+					}
+				};
+				File[] bndFiles = moduleDir.listFiles(filter);
+				if ((bndFiles != null) && bndFiles.length > 0) {
+					File bndFile = bndFiles[0];
+
+					
+					try {
+
+						LineNumberReader in =
+								new LineNumberReader(new FileReader(bndFile));
+						String line;
+						while ((line = in.readLine()) != null) {
+							if (line.startsWith("Bundle-SymbolicName:")) {
+								String[] tokens = line.split(" ");
+								if (tokens.length > 1) {
+									bundleName = tokens[1].trim();
+								}
+							}
+
+							if (!bundleName.isEmpty()) {
+								break;
+							}
+						}
+						in.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+
+					if (bundleName.isEmpty()) {
+						System.out.println("ERROR: Could not fill bundle info for " + bndFile.getPath());
+					}
+				}
+				else {
+					System.out.println("Couldn't find a parent folder with a bnd.bnd file.");
+				}
+				
+				break;
+			}
+			currentDir = currentDir.getParentFile();
+		}
+		
+		return bundleName;
 	}
 
 	private static void sortByClassName(
@@ -248,37 +336,7 @@ public class MovedClassReporterMain {
 		}
 	}
 
-	private static void processModuleInfo(File bndFile, FormerPortalServiceClass formerClass) {
-		String bundleName = "";
-		try {
 
-			LineNumberReader in =
-					new LineNumberReader(new FileReader(bndFile));
-			String line;
-			while ((line = in.readLine()) != null) {
-				if (line.startsWith("Bundle-SymbolicName:")) {
-					String[] tokens = line.split(" ");
-					if (tokens.length > 1) {
-						bundleName = tokens[1].trim();
-					}
-				}
-
-				if (!bundleName.isEmpty()) {
-					break;
-				}
-			}
-			in.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		if (!bundleName.isEmpty()) {
-			formerClass.setModule(bundleName);
-		}
-		else {
-			System.out.println("ERROR: Could not fill bundle info for " + bndFile.getPath());
-		}
-	}
 
 	private static String getPackage(File serviceClass) throws Exception {
 		String pkgStr = "package";
@@ -363,4 +421,3 @@ public class MovedClassReporterMain {
 	public static final String SRC_MAIN_JAVA = "src/main/java";
 
 }
-
