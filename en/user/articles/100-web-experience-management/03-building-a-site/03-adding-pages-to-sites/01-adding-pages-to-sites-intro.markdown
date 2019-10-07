@@ -28,9 +28,9 @@ otherwise. Content Pages offer many key features of Widget Pages plus more. Some
 key features of Content Pages include
 [personalized Experiences](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization)
 and
-[A/B Testing](/docs/7-2/user/-/knowledge_base/u/a-b-testing). Furthermore,
-Content Pages are easier to use and are more powerful for non-technical users
-compared to Widget Pages.
+[A/B Testing](https://help.liferay.com/hc/en-us/articles/360034856751-A-B-Testing)
+Furthermore, Content Pages are easier to use and are more powerful for
+non-technical users compared to Widget Pages.
 
 Why would someone prefer Widget Pages? Usually Widget Pages are preferred
 because they were the only page type available in earlier versions of @product@,
