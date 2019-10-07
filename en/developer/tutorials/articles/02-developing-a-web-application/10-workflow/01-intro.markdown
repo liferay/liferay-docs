@@ -22,10 +22,10 @@ filter entities by status to display only reviewed entities.
 | **Note:** The exact review process is defined separately from the code that
 | enables workflow. An XML file provides the definition of a workflow in
 | @product@. If you're a Liferay Digital Enterprise subscriber, you have access to
-| the Kaleo Workflow Designer, which offers a convenient drag-and-drop user
+| the Workflow Designer, which offers a convenient drag-and-drop user
 | interface for designing workflow definition files. You can read more about this
 | in Liferay DXP's
-| [documentation](https://customer.liferay.com/documentation/7.0/admin/-/official_documentation/portal/kaleo-designer).
+| [documentation](https://help.liferay.com/hc/en-us/articles/360028821892-Workflow-Designer).
 | @product@ comes with a workflow definition called the *Single Approver*
 | definition, but you can write your own workflow definitions according to your
 | organization's requirements.
@@ -33,11 +33,11 @@ filter entities by status to display only reviewed entities.
 | A few additional definitions are included in @product@'s source code, which you
 | can use to see how workflow definitions are defined. To discover how to access
 | these files, see
-| [here](/docs/7-0/user/-/knowledge_base/u/enabling-workflow).
+| [here](/docs/7-2/user/-/knowledge_base/u/enabling-workflow).
 
 This section instructs the reader in workflow-enabling the Guestbook App's
-`Guestbook` and `Entry` entities to ensure that only approved content is
-published after review.
+`Guestbook` and `GuestbookEntry` entities to ensure that only approved content
+is published after review.
 
 ![Figure 1: Enable workflow in your assets, just like @product@'s own assets.](../../../images/workflow-config.png)
 
@@ -56,4 +56,4 @@ There are five steps to enabling workflow:
 The first three steps happen in the service layer, so that's a good place to
 start.
 
-<a class="go-link btn btn-primary" href="/docs/7-0/tutorials/-/knowledge_base/t/supporting-workflow-at-the-service-layer">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/supporting-workflow-at-the-service-layer">Let's Go!<span class="icon-circle-arrow-right"></span></a>
