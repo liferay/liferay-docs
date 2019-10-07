@@ -29,7 +29,7 @@ caption {
 <table style="width:100%">
 
   <caption>
-    <b>Classes Moved from portal-service to com.liferay.portal.kernel</b>
+    <b>Classes Moved from portal-service to modules</b>
 	<p>
       This information was generated based on comparing classes in
       <em>liferay-portal-src-6.2-ce-ga6</em> to classes in <em>liferay-ce-portal-src-7.1.0-ga1</em>.
@@ -216,14 +216,6 @@ caption {
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
     <td>com.liferay.journal.api</td>
-  </tr>
-  <tr>
-    <td>AssertUtils</td>
-    <td>
-	  <em>Old:</em> com.liferay.portal.kernel.test<br>
-	  <em>New:</em> com.liferay.journal.test.util
-	</td>
-    <td>com.liferay.journal.test</td>
   </tr>
   <tr>
     <td>AssetPublisherUtil</td>
@@ -2277,9 +2269,9 @@ caption {
     <td>EntryModifiedDateComparator</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.bookmarks.util.comparator<br>
-	  <em>New:</em> com.liferay.blogs.util.comparator
+	  <em>New:</em> com.liferay.bookmarks.util.comparator
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay.bookmarks.api</td>
   </tr>
   <tr>
     <td>EntryNameComparator</td>
@@ -2381,9 +2373,9 @@ caption {
     <td>FieldConstants</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
-	  <em>New:</em> com.liferay.document.library.internal.lar.xstream
+	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.document.library.service</td>
+    <td>com.liferay.dynamic.data.mapping.api</td>
   </tr>
   <tr>
     <td>FieldRenderer</td>
@@ -2405,9 +2397,9 @@ caption {
     <td>Fields</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
-	  <em>New:</em> com.liferay.apio.architect.impl.internal.response.control
+	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.apio.architect.impl</td>
+    <td>com.liferay.dynamic.data.mapping.api</td>
   </tr>
   <tr>
     <td>FinalizeAction</td>
@@ -2661,9 +2653,9 @@ caption {
     <td>JournalArticleWrapper</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
-	  <em>New:</em> com.liferay.web.page.element.apio.internal.model
+	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.web.page.element.apio.impl</td>
+    <td>com.liferay.journal.api</td>
   </tr>
   <tr>
     <td>JournalContent</td>
@@ -4378,14 +4370,6 @@ caption {
     <td>com.liferay.portal.security.ldap.api</td>
   </tr>
   <tr>
-    <td>NoSuchActionException</td>
-    <td>
-	  <em>Old:</em> com.liferay.portlet.mobiledevicerules<br>
-	  <em>New:</em> com.liferay.mobile.device.rules.exception
-	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
-  </tr>
-  <tr>
     <td>NoSuchArticleException</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.journal<br>
@@ -4428,18 +4412,10 @@ caption {
   <tr>
     <td>NoSuchContentException</td>
     <td>
-	  <em>Old:</em> com.liferay.portlet.documentlibrary<br>
-	  <em>New:</em> com.liferay.document.library.content.exception
-	</td>
-    <td>com.liferay.document.library.content.api</td>
-  </tr>
-  <tr>
-    <td>NoSuchContentException</td>
-    <td>
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
-	  <em>New:</em> com.liferay.document.library.content.exception
+	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay.dynamic.data.mapping.api</td>
   </tr>
   <tr>
     <td>NoSuchContentSearchException</td>
@@ -4456,14 +4432,6 @@ caption {
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
     <td>com.liferay.message.boards.api</td>
-  </tr>
-  <tr>
-    <td>NoSuchEventException</td>
-    <td>
-	  <em>Old:</em> com.liferay.portlet.calendar<br>
-	  <em>New:</em> com.liferay.document.library.sync.exception
-	</td>
-    <td>com.liferay.document.library.sync.api</td>
   </tr>
   <tr>
     <td>NoSuchFeedException</td>
@@ -4490,20 +4458,12 @@ caption {
     <td>com.liferay.message.boards.api</td>
   </tr>
   <tr>
-    <td>NoSuchMessageException</td>
-    <td>
-	  <em>Old:</em> com.liferay.portlet.messageboards<br>
-	  <em>New:</em> com.liferay.mail.reader.exception
-	</td>
-    <td>com.liferay.mail.reader.api</td>
-  </tr>
-  <tr>
     <td>NoSuchNodeException</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
-	  <em>New:</em> com.liferay.portal.workflow.kaleo.exception
+	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.portal.workflow.kaleo.api</td>
+    <td>com.liferay.wiki.api</td>
   </tr>
   <tr>
     <td>NoSuchPageException</td>
@@ -4586,14 +4546,6 @@ caption {
     <td>com.liferay.blogs.api</td>
   </tr>
   <tr>
-    <td>NoSuchStatsUserException</td>
-    <td>
-	  <em>Old:</em> com.liferay.portlet.messageboards<br>
-	  <em>New:</em> com.liferay.blogs.exception
-	</td>
-    <td>com.liferay.blogs.api</td>
-  </tr>
-  <tr>
     <td>NoSuchStorageLinkException</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
@@ -4613,14 +4565,6 @@ caption {
     <td>NoSuchTemplateException</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
-	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
-	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
-  </tr>
-  <tr>
-    <td>NoSuchTemplateException</td>
-    <td>
-	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
     <td>com.liferay.dynamic.data.mapping.api</td>
@@ -5037,9 +4981,25 @@ caption {
     <td>PortletDisplayTemplateUtil</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.portletdisplaytemplate.util<br>
-	  <em>New:</em> com.liferay.dynamic.data.mapping.taglib.internal.util
+	  <em>New:</em> com.liferay.roles.admin.web.internal.util
 	</td>
-    <td>com.liferay.dynamic.data.mapping.taglib</td>
+    <td>com.liferay.roles.admin.web</td>
+  </tr>
+  <tr>
+    <td>PortletDisplayTemplateUtil</td>
+    <td>
+	  <em>Old:</em> com.liferay.portlet.portletdisplaytemplate.util<br>
+	  <em>New:</em> com.liferay.roles.admin.web.internal.util
+	</td>
+    <td>com.liferay.roles.admin.web</td>
+  </tr>
+  <tr>
+    <td>PortletDisplayTemplateUtil</td>
+    <td>
+	  <em>Old:</em> com.liferay.portlet.portletdisplaytemplate.util<br>
+	  <em>New:</em> com.liferay.roles.admin.web.internal.util
+	</td>
+    <td>com.liferay.roles.admin.web</td>
   </tr>
   <tr>
     <td>QueryIndexingHitsProcessor</td>
