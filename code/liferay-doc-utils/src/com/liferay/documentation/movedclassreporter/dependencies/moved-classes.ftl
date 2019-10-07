@@ -22,7 +22,7 @@ caption {
 <table style="width:100%">
 
   <caption>
-    <b>Classes Moved from portal-service to com.liferay.portal.kernel</b>
+    <b>Classes Moved from portal-service to modules</b>
 	<p>
       This information was generated based on comparing classes in
       <em>${oldSrc}</em> to classes in <em>${newSrc}</em>.
