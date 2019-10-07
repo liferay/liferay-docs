@@ -26,9 +26,9 @@ there's no way to get guestbooks by their status.
 Likewise, unapproved entries must not be displayed, but the view layer currently
 gets all entries:
 
-        <liferay-ui:search-container total="<%=EntryLocalServiceUtil.getEntriesCount()%>">
+        <liferay-ui:search-container total="<%=GuestbookEntryLocalServiceUtil.getGuestbookEntriesCount()%>">
         <liferay-ui:search-container-results
-            results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId.longValue(),
+            results="<%=GuestbookEntryLocalServiceUtil.getGuestbookEntries(scopeGroupId.longValue(),
                             guestbookId, searchContainer.getStart(),
                             searchContainer.getEnd())%>" />
 
@@ -37,7 +37,7 @@ The solution is to implement for guestbooks and entries a getter that takes the
 
 Open the `guestbook-service` module's `service.xml` file. 
 
-1. For the entry entity, remove the following finder:
+1. For the `GuestbookEntry` entity, remove the following finder:
     
         <finder name="G_S" return-type="Collection">
           <finder-column name="groupId" />
@@ -46,53 +46,64 @@ Open the `guestbook-service` module's `service.xml` file.
 
 2. Add this finder in its place:
 
-        <finder name="G_G_S" return-type="Collection">
-          <finder-column name="groupId" />
-          <finder-column name="guestbookId" />
-          <finder-column name="status" />
-        </finder>
+   ```xml
+   <finder name="G_G_S" return-type="Collection">
+      <finder-column name="groupId" />
+      <finder-column name="guestbookId" />
+      <finder-column name="status" />
+   </finder>
+   ```
 
 Run service builder (double-click `guestbook-service/build/buildService` in the
-Gradle Tasks pane of IDE). Service Builder generates finder methods in the
+Gradle Tasks pane). Service Builder generates finder methods in the
 persistence layer that take the specified fields (for example, `status`) as
 parameters.
+
+## Calling the Persistence Layer
 
 Don't call the persistence layer directly in the application code. Instead
 expose the new persistence methods in the service layer. 
 
-Open `GuesbookLocalServiceImpl` and add this getter:
+1.  Open `GuestbookLocalServiceImpl`, add this getter, and save the file:
 
+    ```java
 	public List<Guestbook> getGuestbooks(long groupId, int status)
 		throws SystemException {
 		
 		return guestbookPersistence.findByG_S(
 			groupId, WorkflowConstants.STATUS_APPROVED);
 	}
+    ```
 
-This getter gets only approved guestbooks. That's why you hard code the workflow
-constant `STATUS_APPROVED` into the status parameter when calling the
-persistence method. Now open `EntryLocalServiceImpl` and add these two getters:
+    This getter gets only approved guestbooks. That's why you hard code the workflow
+    constant `STATUS_APPROVED` into the status parameter when calling the
+    persistence method. 
 
-	public List<Entry> getEntries(
+2.  Now open `GuestbookEntryLocalServiceImpl`, add these two getters, and save
+    the file:
+
+    ```java
+	public List<GuestbookEntry> getGuestbookEntries(
 		long groupId, long guestbookId, int status, int start, int end)
 		throws SystemException {
 
-		return entryPersistence.findByG_G_S(
+		return guestbookEntryPersistence.findByG_G_S(
 			groupId, guestbookId, WorkflowConstants.STATUS_APPROVED);
 	}
 
-	public int getEntriesCount(
+	public int getGuestbookEntriesCount(
 		long groupId, long guestbookId, int status)
 		throws SystemException {
 
-		return entryPersistence.countByG_G_S(
+		return guestbookEntryPersistence.countByG_G_S(
 			groupId, guestbookId, WorkflowConstants.STATUS_APPROVED);
 	}
+    ```
 
-You'll replace the existing methods with these `getEntries` and
-`getEntriesCount` methods in the view layer, ensuring that only approved entries
-are displayed. 
+You'll replace the existing methods with these `getGuestbookEntries` and
+`getGuestbookEntriesCount` methods in the view layer, ensuring that only
+approved entries are displayed. 
 
-The work here relates to the UI updates you'll make later. Next, implement
-workflow handlers so that you can call the `updateStatus` service method when
-the entity returns from the workflow framework.
+The work here relates to the UI updates you'll make later. Next, you must
+implement workflow handlers so that you can call the `updateStatus` service
+method when the entity returns from the workflow framework.
