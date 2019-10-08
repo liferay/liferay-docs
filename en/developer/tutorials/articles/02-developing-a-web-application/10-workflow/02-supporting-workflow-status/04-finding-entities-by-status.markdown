@@ -75,9 +75,9 @@ expose the new persistence methods in the service layer.
 	}
     ```
 
-    This getter gets only approved guestbooks. That's why you hard code the workflow
-    constant `STATUS_APPROVED` into the status parameter when calling the
-    persistence method. 
+    This getter gets only approved guestbooks. That's why you hard code the
+    workflow constant `STATUS_APPROVED` into the status parameter when calling
+    the persistence method. 
 
 2.  Now open `GuestbookEntryLocalServiceImpl`, add these two getters, and save
     the file:
@@ -100,9 +100,11 @@ expose the new persistence methods in the service layer.
 	}
     ```
 
-You'll replace the existing methods with these `getGuestbookEntries` and
-`getGuestbookEntriesCount` methods in the view layer, ensuring that only
-approved entries are displayed. 
+    You'll replace the existing methods with these `getGuestbookEntries` and
+    `getGuestbookEntriesCount` methods in the view layer, ensuring that only
+    approved entries are displayed. 
+
+3.  Save the file, run Service Builder, and refresh the Gradle project. 
 
 The work here relates to the UI updates you'll make later. Next, you must
 implement workflow handlers so that you can call the `updateStatus` service
