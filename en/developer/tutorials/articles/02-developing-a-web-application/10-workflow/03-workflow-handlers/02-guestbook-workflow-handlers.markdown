@@ -14,7 +14,7 @@ Each workflow enabled entity needs a `WorkflowHandler`.
 
 1.  Create a new package in the `guestboook-service` module called
     `com.liferay.docs.guestbook.workflow`, then create the
-    `GuestbokWorkflowHandler` class in it. Extend `BaseWorkflowHandler` and pass
+    `GuestbookWorkflowHandler` class in it. Extend `BaseWorkflowHandler` and pass
     in `Guestbook` as the type parameter:
 
     ```java
@@ -118,12 +118,13 @@ Now the Guestbook application updates the database with the necessary status
 information, interacting with Liferay's workflow classes to make sure each
 entity is properly handled by @product@. At this point you can enable workflow
 for the Guestbook inside @product@ and see how it works. Navigate to *Control
-Panel &rarr; Workflow Configuration*. The Guestbook entity appears among
-@product@'s native entities. Enable the Single Approver Workflow for Guestbooks;
-then go to the Guestbook Admin portlet and add a new Guestbook. A notification
-appears next to your user name in the product menu. You receive a notification
-from the workflow that a task is ready for review. Click it, and you're taken to
-the My Workflow Tasks portlet, where you can complete the review task.
+Panel &rarr; Workflow* &rarr; *Process Builder* &rarr; *Configuration*. The
+Guestbook entity appears among @product@'s native entities. Enable the Single
+Approver Workflow for Guestbooks; then go to the Guestbook Admin portlet and add
+a new Guestbook. A notification appears next to your user name in the product
+menu. You receive a notification from the workflow that a task is ready for
+review. Click it, and you're taken to the My Workflow Tasks portlet, where you
+can complete the review task.
 
 ![Figure 1: Click the workflow notification in the Notifications portlet to review the guestbook submitted to the workflow.](../../../../images/workflow-notification.png)
 
