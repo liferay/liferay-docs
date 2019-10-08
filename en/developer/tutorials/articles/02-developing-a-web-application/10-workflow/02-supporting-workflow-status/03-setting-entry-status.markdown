@@ -83,7 +83,7 @@ the same as it did for guestbooks.
     <reference entity="WorkflowInstanceLink" package-path="com.liferay.portal" />
     ```
 
-5.  Add the following method call to the `deleteEntry` method in
+5.  Add the following method call to the `deleteGuestbookEntry` method in
     `GuestbookEntryLocalServiceImpl`, right before the `return` statement:
 
     ```java
@@ -92,8 +92,8 @@ the same as it did for guestbooks.
         GuestbookEntry.class.getName(), entry.getEntryId());
     ```
 
-6.  Organize imports (*[CTRL]+[SHIFT]+O*), save your work, and run Service
-    Builder.
+6.  Organize imports (*[CTRL]+[SHIFT]+O*), save your work, run Service
+    Builder, and refresh the Gradle project.
 
 Now both entities support the status of the entity and can handle it as it
 enters the workflow framework and as it returns from the workflow framework.
