@@ -55,7 +55,7 @@ Applications are categorized in the UI for users to add to pages as widgets.
 Administrative applications are developed as portlets and made available in the 
 product menu. 
 
-![Figure 4: Widget pages offer users functionality. Widgets are organized into the page template's rows and columns. On this page, users select tags in the Tags Navigation and Tag Cloud widgets to display images in an Asset Publisher widget.](../../../images/architecture-ui-widgets.png)
+![Figure 1: Widget pages offer users functionality. Widgets are organized into the page template's rows and columns. On this page, users select tags in the Tags Navigation and Tag Cloud widgets to display images in an Asset Publisher widget.](../../../images/architecture-ui-widgets.png)
 
 ## Themes
 
@@ -65,74 +65,63 @@ CSS, JS, HTML, and content. You can develop themes with whatever tools you
 prefer, but @product@ offers Bootstrap-based components and [theme tooling](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes) 
 to get you up and running in no time. 
 
-![Figure 6: Liferay makes it easy to develop and try out attractive site themes.](../../../images/architecture-ui-themes.png)
+![Figure 2: Liferay makes it easy to develop and try out attractive site themes.](../../../images/architecture-ui-themes.png)
 
-Creating a theme involves these generalized steps:
+To create a theme for @product@, generate a new theme with the [Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator). The generated theme, by default, extends the [Styled base theme](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-styled), 
+which provides everything you need to get your theme up and running (base 
+styles, CSS, JS, and [theme templates](/docs/7-2/customization/-/knowledge_base/c/theme-components#theme-templates-and-utilities) 
+for @product@). Note that these files are generated when the theme is built (on 
+deployment or through the [build task](https://portal.liferay.dev/docs/7-2/frameworks/-/knowledge_base/f/building-your-themes-files)).
 
-1.  Generate a new theme with the [Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator).
+The `portal_normal.ftl` theme template, included by default in the deployed WAR 
+and `build` folder, acts as the hub for all other theme templates, similar to 
+`index.html`. It provides the base markup that creates the framework for every 
+page that the theme is applied to. Copy `portal_normal.ftl` over to your theme, 
+and include your other templates and any markup that you want to apply to the 
+pages that use the theme. An example `portal_normal.ftl` is shown below:
 
-2.  Configure the Look and Feel XML file with any additional [theme settings](/docs/7-2/frameworks/-/knowledge_base/f/making-configurable-theme-settings)
-    or [color schemes](/docs/7-2/frameworks/-/knowledge_base/f/creating-color-schemes-for-your-theme)
-    your theme requires:
+```markup
+<html class="${root_css_class}">
+<head></head>
+  <body class="${body_class}">
+    <header class="${header_css_class}">
+      <a class="${logo_css_class} href="${site_url}"><img src="${site_logo}"/></a>
+      <#include "${full_templates_path}/navigation.ftl" />
+    </header>
+    <section>
+      ${portlets}
+    </section>
+      <#include "${full_templates_path}/footer.ftl" />
+  </body>
+</html>
+```
 
-    ```xml
-    <look-and-feel>
-      <theme id="my-theme" name="My Theme">
-        <settings>
-          <setting key="show-footer" />
-        </settings>
-        <color-scheme id="01" name="Default">
-          <css-class>default</css-class>
-        </color-scheme>
-        <color-scheme id="02" name="Red">
-          <css-class>red</css-class>
-        </color-scheme>
-        <portlet-decorator id="barebone">
-          <portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
-        </portlet-decorator>
-      </theme>
-    </look-and-feel>
-    ```
+Add custom styling through `_custom.scss` (included in the theme by default). 
+@product@ supports [Bootstrap](https://getbootstrap.com/), as well as [SASS](https://sass-lang.com/), 
+so you can use Bootstrap utilities in your markup and SASS nesting, variables, 
+etc. in your CSS files. The snippet below provides styles for the logo on the 
+[portal.liferay.dev site](https://portal.liferay.dev/):
 
-3.  Update or define variables, such as the `show-footer` theme setting, in the
-    Init Custom FreeMarker template:
+```sass
+.logo {
+  margin-left: 15px;
 
-    ```markup
-    <#assign header_css_class = "navbar navbar-expand-md navbar-dark flex-column flex-md-row bd-navbar" />
-    <#assign logo_css_class = logo_css_class + " navbar-brand" />
+  img {
+    height: auto;
+  }
 
+  @include media-breakpoint-down(md) {
+    text-align: center;
+    width: 100%;
+  }
+}
+```
 
-    <#assign
-    	show_footer = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-footer"))
-    />
-    ```
+![Figure 3: You can provide custom styling through the theme's `_custom.scss` file.](../../../images/architecture-ui-portal-dev-logo.png)
 
-4.  Modify the Portal Normal (the index) FreeMarker template to include any
-    other templates and use any variables that you need to include theme objects
-    or display UI under certain conditions. For example, the `show_footer`
-    variable shown below only displays the Footer when true:
-
-    ```markup
-    <html class="${root_css_class}">
-    <head></head>
-      <body class="${body_class}">
-        <header class="${header_css_class}">
-          <a class="${logo_css_class} href="${site_url}"><img src="${site_logo}"/></a>
-          <#include "${full_templates_path}/navigation.ftl" />
-        </header>
-        <section>
-          ${portlets}
-        </section>
-        <#if show_footer>
-          <#include "${full_templates_path}/footer.ftl" />
-        </#if>
-      </body>
-    </html>
-    ```
-
-5.  Add any styling through `_custom.scss` and JavaScript through `main.js`.
-    Then build and deploy your theme to your app server and apply it to your
-    site page(s).
+If you have any custom JavaScript, copy `main.js` over from the `build` folder 
+to your theme. Then deploy your theme to your app server and apply it to your 
+site page(s).
 
 See the [Themes section](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) 
 for more information on developing themes. 
@@ -143,7 +132,7 @@ The product navigation sidebars and panels make apps and widgets available to
 administrative users. The [menus and navigation are customizable](/docs/7-2/frameworks/-/knowledge_base/f/screen-navigation-framework) 
 too. 
 
-![Figure 5: Liferay facilitates integrating custom administrative functionality through navigation menus and administrative applications.](../../../images/architecture-ui-menus-and-panel-app.png)
+![Figure 4: Liferay facilitates integrating custom administrative functionality through navigation menus and administrative applications.](../../../images/architecture-ui-menus-and-panel-app.png)
 
 As you can see, @product@'s architecture has a highly flexible and customizable 
 UI. Now that you have a high-level understanding of the UI, you can read the 
