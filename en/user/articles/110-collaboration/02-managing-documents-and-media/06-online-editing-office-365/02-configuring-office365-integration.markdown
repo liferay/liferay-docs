@@ -18,6 +18,17 @@ First, configure your application with Microsoft identity platform&trade;. To do
 so, follow the steps described in 
 [Microsoft's documentation](https://docs.microsoft.com/en-gb/graph/auth-register-app-v2). 
 
+To construct a URL for the *Redirect URI* param, follow the pattern: 
+
+    https://[hostname]/o/document_library/onedrive/oauth2
+    
+The minimum permission set needed to use Office 365™ Integration are:
+
+- Files.Read.All
+- Files.ReadWrite.All
+
+You can find more info about permissions [here](https://docs.microsoft.com/graph/permissions-reference).
+
 ## Configuring @product@
 
 Now you must connect your @product@ installation with your Microsoft identity 
