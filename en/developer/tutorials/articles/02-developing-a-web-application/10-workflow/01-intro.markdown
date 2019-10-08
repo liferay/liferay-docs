@@ -35,7 +35,7 @@ filter entities by status to display only reviewed entities.
 | these files, see
 | [here](/docs/7-2/user/-/knowledge_base/u/enabling-workflow).
 
-This section instructs the reader in workflow-enabling the Guestbook App's
+This tutorial instructs the reader in workflow-enabling the Guestbook App's
 `Guestbook` and `GuestbookEntry` entities to ensure that only approved content
 is published after review.
 
