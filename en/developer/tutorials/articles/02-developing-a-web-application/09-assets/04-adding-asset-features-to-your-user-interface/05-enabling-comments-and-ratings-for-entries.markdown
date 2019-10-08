@@ -228,4 +228,3 @@ enabled comments and ratings for guestbook entry entities! Great job!
 Your next task is to add Workflow, so you can approve or deny guestbook entries,
 thereby preventing people from spamming your guestbook. 
 
-Look for workflow soon! 
