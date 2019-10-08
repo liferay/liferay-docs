@@ -44,7 +44,7 @@ it.
 holistic profiles that combine customer's profile data with their page and asset
 interactions for deep insight into their interests. 
 
-**Pages:** Combine path analytics and traditional page analytics to understand
+**Sites:** Combine path analytics and traditional page analytics to understand
 how customers interact with your content. Measure individual web page
 performance to improve digital experiences. 
 
