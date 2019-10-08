@@ -107,7 +107,7 @@ Exert control over how the status fields are updated in the database.
     deleting, you must clean up the workflow system's database tables to avoid
     leaving orphaned entries when the backing entity is deleted. Before making
     the method call, open `service.xml` and add the following tag below the
-    existing `<reference>` tags:
+    existing `<reference>` tags in the `Guestbook` entity:
 
     ```xml
     <reference entity="WorkflowInstanceLink" package-path="com.liferay.portal" />
@@ -122,12 +122,15 @@ Exert control over how the status fields are updated in the database.
         Guestbook.class.getName(), guestbook.getGuestbookId());
     ```
 
-Organize imports (*[CTRL]+[SHIFT]+O*) and save your work. Then run the
-`buildService` Gradle task. It injects the `WorkflowInstanceLinkLocalService`
-service into a protected variable in `GuesbookLocalServiceBaseImpl`. Since
-`GuestbookLocalServiceImpl` extends the base class, you can use it directly.
-Run *Refresh Gradle Project*. Now the guestbook entity's service layer populates
-the status fields in the database, sends the entity into the workflow framework,
-and cleans up when it's deleted. You'll do the same thing for guestbook entries
-next.
+5.  Organize imports (*[CTRL]+[SHIFT]+O*) and save your work. Then run the
+    `buildService` Gradle task. It injects the
+    `WorkflowInstanceLinkLocalService` service into a protected variable in
+    `GuesbookLocalServiceBaseImpl`. Since `GuestbookLocalServiceImpl` extends
+    the base class, you can use it directly.
+
+6.  Run *Refresh Gradle Project*. 
+
+Now the guestbook entity's service layer populates the status fields in the
+database, sends the entity into the workflow framework, and cleans up when it's
+deleted. You'll do the same thing for guestbook entries next.
 
