@@ -43,7 +43,7 @@ below:
 
 Below is an example configuration:
 
-```JavaScript
+```javascript  
 Liferay.Browser.isChrome(); //returns true in Chrome
 ```
 
@@ -59,7 +59,7 @@ Parameters:
 
 The default configuration contains these options:
 
-```JavaScript
+```javascript  
 const DEFAULT_OPTIONS = {
   newLine: NEW_LINE, //'\r\n'
   tagIndent: TAG_INDENT //'\t'
@@ -68,7 +68,7 @@ const DEFAULT_OPTIONS = {
 
 Below is an example configuration for a JSP that overwrites the default options:
 
-```JavaScript
+```javascript  
 var options = {newLine: '\n', tagIndent: ' '};
 
 var input = `<?xml xlmns:a="http://www.w3.org/TR/html4/" version="1.0" encoding="UTF-8"?>
@@ -106,7 +106,7 @@ Parameters:
 
 The default configuration contains these options:
 
-```JavaScript
+```javascript  
 const DEFAULT_OPTIONS = {
   addSpaceBeforeSuffix: false,
   decimalSeparator: '.',
@@ -119,7 +119,7 @@ const DEFAULT_OPTIONS = {
 
 Below is an example configuration that overwrites some of the default options:
 
-```JavaScript
+```javascript  
 var formattedSize = Liferay.Util.formatStorage(1048576, {
   addSpaceBeforeSuffix: true,
   decimalSeparator: ',',
@@ -146,7 +146,7 @@ Parameters:
 
 Below is an example configuration for a JSP:
 
-```JavaScript
+```markup
 Liferay.Util.Session.set('state', 'open');
 
 Liferay.Util.Session.get('state').then(function(value) {
@@ -156,7 +156,7 @@ Liferay.Util.Session.get('state').then(function(value) {
 
 Here is an example configuration that uses ES6:
 
-```JavaScript
+```javascript  
 import {getSessionValue, setSessionValue} from 'frontend-js-web';
 
 setSessionValue('state', 'open');
