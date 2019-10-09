@@ -7,34 +7,47 @@ header-id: ui-architecture
 [TOC levels=1-4]
 
 [@product@'s UI](/docs/7-2/user/-/knowledge_base/u/the-liferay-distinction) 
-is a portal for adding sites, pages, widgets, and content. The portal helps 
-people do work, [collaborate](/docs/7-2/user/-/knowledge_base/u/collaboration), 
-and [share and enjoy content](/docs/7-2/user/-/knowledge_base/u/web-experience-management). 
+is a portal for adding sites, pages, widgets, and content. It helps 
+people do work,
+[collaborate](/docs/7-2/user/-/knowledge_base/u/collaboration), 
+and
+[share content](/docs/7-2/user/-/knowledge_base/u/web-experience-management). 
 
 The UI comprises the following parts:
 
 -   Content: Images, videos, and text. 
--   [Applications](/docs/7-2/appdev/-/knowledge_base/a/application-development) 
-    (widgets and portlets) expose functionality to accomplish tasks. 
--   [Themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) 
-    provide the overall look and feel (HTML, CSS, and JS) for the site. Widgets, 
-    content, and pages can have their own individual look and feel as well. 
--   Product menu for administering sites. 
+
+-   [Applications](/docs/7-2/appdev/-/knowledge_base/a/application-development): 
+    Widgets and portlets that expose functionality for accomplishing tasks. 
+
+-   [Themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction): 
+    Plugins that use CSS, FreeMarker templates, HTML, and JavaScript to provide
+    a site's overall look and feel.
+
+-   Product navigation sidebars and panels: Use these for administering sites. 
 
 ## Content
 
-You can add all kinds of content to site pages. The Web Experience Management 
-suite helps you create, maintain, and organize content. The Documents and Media 
-application stores your images, videos, and documents for you to use throughout 
-your site. And apps such as Blogs and Message Boards publish user text and 
-images too. @product@ has many useful built-in applications for publishing 
-content, and you can add custom applications too. 
+@product@'s built-in applications help you publish images, video, forms, markup text, and more to site pages.
+[Documents and Media](/docs/7-2/user/-/knowledge_base/u/managing-documents-and-media)
+stores images, videos, and documents to use throughout your site. The
+[Web Experience Management](/docs/7-2/user/-/knowledge_base/u/web-experience-management)
+suite helps you create, maintain, and organize content.
+[Liferay Forms](/docs/7-2/user/-/knowledge_base/u/forms)
+gives you robust form building capability.
+[Message Boards](/docs/7-2/user/-/knowledge_base/u/creating-forums-with-message-boards)
+facilitate lively discussions and 
+[Blogs](/docs/7-2/user/-/knowledge_base/u/publishing-blogs)
+let users express themselves with markup text and images. These are just a few
+of the built-in applications for adding site content. 
 
 ## Applications
 
-Users get things done using @product@ applications. They're 
-[developed the same way](/7-2/appdev/-/knowledge_base/a/web-front-ends) as other 
-web applications, except @product@ installs them as [portlets](/docs/7-2/frameworks/-/knowledge_base/f/portlets). 
+@product@ applications provide content and help users accomplish tasks. They're 
+[developed the same way](/7-2/appdev/-/knowledge_base/a/web-front-ends)
+as other web applications, except @product@ installs them as
+[portlets](/docs/7-2/frameworks/-/knowledge_base/f/portlets)---applications 
+that run on a portion of a page. 
 
 @product@ supports developing JavaScript-based applications using popular 
 front-end frameworks:
@@ -43,7 +56,7 @@ front-end frameworks:
 -   [React](/docs/7-2/appdev/-/knowledge_base/a/developing-a-react-application)
 -   [Vue](/docs/7-2/appdev/-/knowledge_base/a/developing-a-vue-application)
 
-Java-based portlet applications use the latest portlet standards and frameworks, 
+Java-based portlet applications use the latest portlet standards and frameworks,
 including ones familiar to experienced Liferay portlet developers:
 
 -   [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet)
@@ -51,108 +64,46 @@ including ones familiar to experienced Liferay portlet developers:
 -   [PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring)
 -   [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
 
-Applications are categorized in the UI for users to add to pages as widgets. 
-Administrative applications are developed as portlets and made available in the 
-product menu. 
+In the UI, applications are referred to as Widgets and categorized for users to
+add to pages. Administrative applications are developed as portlets and made
+available in the product menu panels. 
 
-![Figure 4: Widget pages offer users functionality. Widgets are organized into the page template's rows and columns. On this page, users select tags in the Tags Navigation and Tag Cloud widgets to display images in an Asset Publisher widget.](../../../images/architecture-ui-widgets.png)
+![Figure 4: Widget pages offer users functionality. Widgets are organized into a page template's rows and columns. This template has two columns: a smaller left column and larger right column. On this page, users select tags in the Tag Cloud widget and the matching tagged images show the Asset Publisher widget.](../../../images/architecture-ui-widgets.png)
 
 ## Themes
 
-A [theme](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) styles a 
-site with a unique look and feel. It's developed as a WAR project that includes 
-CSS, JS, HTML, and content. You can develop themes with whatever tools you 
-prefer, but @product@ offers Bootstrap-based components and [theme tooling](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes) 
-to get you up and running in no time. 
+A
+[theme](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction)
+styles a site with a unique look and feel. It's developed as a WAR project that
+includes CSS, JavaScript, HTML, and content. You can develop themes with
+whatever tools you prefer, but @product@ offers Bootstrap-based components and
+[theme tooling](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes) 
+to create and deploy themes in no time. 
 
-![Figure 6: Liferay makes it easy to develop and try out attractive site themes.](../../../images/architecture-ui-themes.png)
+![Figure 6: You can select an attractive theme and apply it to your site.](../../../images/architecture-ui-themes.png)
 
-Creating a theme involves these generalized steps:
+TODO - demonstrate how easy it is to create a theme. 
 
-1.  Generate a new theme with the [Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator).
-
-2.  Configure the Look and Feel XML file with any additional [theme settings](/docs/7-2/frameworks/-/knowledge_base/f/making-configurable-theme-settings)
-    or [color schemes](/docs/7-2/frameworks/-/knowledge_base/f/creating-color-schemes-for-your-theme)
-    your theme requires:
-
-    ```xml
-    <look-and-feel>
-      <theme id="my-theme" name="My Theme">
-        <settings>
-          <setting key="show-footer" />
-        </settings>
-        <color-scheme id="01" name="Default">
-          <css-class>default</css-class>
-        </color-scheme>
-        <color-scheme id="02" name="Red">
-          <css-class>red</css-class>
-        </color-scheme>
-        <portlet-decorator id="barebone">
-          <portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
-        </portlet-decorator>
-      </theme>
-    </look-and-feel>
-    ```
-
-3.  Update or define variables, such as the `show-footer` theme setting, in the
-    Init Custom FreeMarker template:
-
-    ```markup
-    <#assign header_css_class = "navbar navbar-expand-md navbar-dark flex-column flex-md-row bd-navbar" />
-    <#assign logo_css_class = logo_css_class + " navbar-brand" />
-
-
-    <#assign
-    	show_footer = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-footer"))
-    />
-    ```
-
-4.  Modify the Portal Normal (the index) FreeMarker template to include any
-    other templates and use any variables that you need to include theme objects
-    or display UI under certain conditions. For example, the `show_footer`
-    variable shown below only displays the Footer when true:
-
-    ```markup
-    <html class="${root_css_class}">
-    <head></head>
-      <body class="${body_class}">
-        <header class="${header_css_class}">
-          <a class="${logo_css_class} href="${site_url}"><img src="${site_logo}"/></a>
-          <#include "${full_templates_path}/navigation.ftl" />
-        </header>
-        <section>
-          ${portlets}
-        </section>
-        <#if show_footer>
-          <#include "${full_templates_path}/footer.ftl" />
-        </#if>
-      </body>
-    </html>
-    ```
-
-5.  Add any styling through `_custom.scss` and JavaScript through `main.js`.
-    Then build and deploy your theme to your app server and apply it to your
-    site page(s).
-
-See the [Themes section](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) 
-for more information on developing themes. 
+Your theme is available to
+[apply](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes)
+to your site. It's just that easy! 
 
 ## Product Navigation Sidebars and Panels
 
-The product navigation sidebars and panels make apps and widgets available to 
-administrative users. The [menus and navigation are customizable](/docs/7-2/frameworks/-/knowledge_base/f/screen-navigation-framework) 
-too. 
+The product navigation sidebars and panels enable administrators to build sites,
+add pages, apply themes, and configure the portal. It's also where you can
+provide administrative functionality for your custom applications. The
+navigation sidebars and panels are customizable. 
 
 ![Figure 5: Liferay facilitates integrating custom administrative functionality through navigation menus and administrative applications.](../../../images/architecture-ui-menus-and-panel-app.png)
 
-As you can see, @product@'s architecture has a highly flexible and customizable 
-UI. Now that you have a high-level understanding of the UI, you can read the 
-articles below to learn more:
+As you can see, @product@'s UI is highly flexible and customizable. Now that you
+understand it at a high-level, read these articles to learn more: 
 
 - [Theme Components](/docs/7-2/customization/-/knowledge_base/c/theme-components): 
-  An explanation of the available mechanisms and extensions for customizing 
-  and theming pages, content, and applications. 
-  
+  Explains available mechanisms and extensions for customizing and theming
+  pages, content, and applications. 
+
 - [Understanding the Page Layout](/docs/7-2/customization/-/knowledge_base/c/understanding-the-page-layout): 
-  An overview of how the page's UI is organized and the tools you have available 
-  for populating and developing each section. 
+  Describes how the page's UI is organized and introduces tools for populating
+  and developing each section. 
