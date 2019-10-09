@@ -82,11 +82,67 @@ to create and deploy themes in no time.
 
 ![Figure 6: You can select an attractive theme and apply it to your site.](../../../images/architecture-ui-themes.png)
 
-TODO - demonstrate how easy it is to create a theme. 
+To create a theme for @product@, generate a new theme with the [Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator). The generated theme, by default, extends the [Styled base theme](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-styled), 
+which provides everything you need to get your theme up and running (base 
+styles, CSS, JS, and [theme templates](/docs/7-2/customization/-/knowledge_base/c/theme-components#theme-templates-and-utilities) 
+for @product@). Note that these files are generated when the theme is built (on 
+deployment or through the [build task](https://portal.liferay.dev/docs/7-2/frameworks/-/knowledge_base/f/building-your-themes-files)).
 
+The `portal_normal.ftl` theme template, included by default in the deployed WAR 
+and `build` folder, acts as the hub for all other theme templates, similar to 
+`index.html`. It provides the base markup that creates the framework for every 
+page that the theme is applied to. Copy `portal_normal.ftl` over to your theme, 
+and include your other templates and any markup that you want to apply to the 
+pages that use the theme. An example `portal_normal.ftl` is shown below:
+
+```markup
+<html class="${root_css_class}">
+<head></head>
+  <body class="${body_class}">
+    <header class="${header_css_class}">
+      <a class="${logo_css_class} href="${site_url}"><img src="${site_logo}"/></a>
+      <#include "${full_templates_path}/navigation.ftl" />
+    </header>
+    <section>
+      ${portlets}
+    </section>
+      <#include "${full_templates_path}/footer.ftl" />
+  </body>
+</html>
+```
+
+Add custom styling through `_custom.scss` (included in the theme by default). 
+@product@ supports [Bootstrap](https://getbootstrap.com/), as well as [SASS](https://sass-lang.com/), 
+so you can use Bootstrap utilities in your markup and SASS nesting, variables, 
+etc. in your CSS files. The snippet below provides styles for the logo on the 
+[portal.liferay.dev site](https://portal.liferay.dev/):
+
+```sass
+.logo {
+  margin-left: 15px;
+
+  img {
+    height: auto;
+  }
+
+  @include media-breakpoint-down(md) {
+    text-align: center;
+    width: 100%;
+  }
+}
+```
+
+![Figure 3: You can provide custom styling through the theme's `_custom.scss` file.](../../../images/architecture-ui-portal-dev-logo.png)
+
+If you have any custom JavaScript, copy `main.js` over from the `build` folder 
+to your theme. Then deploy your theme to your app server and apply it to your 
+site page(s). 
 Your theme is available to
 [apply](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes)
 to your site. It's just that easy! 
+
+See the [Themes section](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) 
+for more information on developing themes.
 
 ## Product Navigation Sidebars and Panels
 
@@ -95,7 +151,7 @@ add pages, apply themes, and configure the portal. It's also where you can
 provide administrative functionality for your custom applications. The
 navigation sidebars and panels are customizable. 
 
-![Figure 5: Liferay facilitates integrating custom administrative functionality through navigation menus and administrative applications.](../../../images/architecture-ui-menus-and-panel-app.png)
+![Figure 4: Liferay facilitates integrating custom administrative functionality through navigation menus and administrative applications.](../../../images/architecture-ui-menus-and-panel-app.png)
 
 As you can see, @product@'s UI is highly flexible and customizable. Now that you
 understand it at a high-level, read these articles to learn more: 
