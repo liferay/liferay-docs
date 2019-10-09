@@ -10,10 +10,9 @@ There are four configurable Fragment types available to implement:
 
 - `checkbox`
 - `colorPalette`
+- `itemSelector`
 - `select`
 - `text`
-
-<!-- - `itemSelector` -->
 
 For more information on how to make a Fragment configurable, see 
 [Making a Fragment Configurable](/docs/7-2/frameworks/-/knowledge_base/f/making-a-fragment-configurable).
@@ -88,6 +87,52 @@ If you were to choose the color white, the `h3` tag heading would have the class
 
 ![Figure 2: The `colorPalette` configuration is useful when a color selection is necessary.](../../../images/fragment-config-colorpalette.png)
 
+## Item Selector Configuration
+
+The following JSON configuration creates a selector you can implement for cases
+where you must select an entity residing in your @product@ instance.
+
+```json
+{
+    "fieldSets": [
+        {
+            "fields": [
+                {
+                    "dataType": "object",
+                    "defaultValue": {
+                        "className": "com.liferay.journal.model.JournalArticle",
+                        "classNameId": "126820",
+                        "classPK": "126821"
+                    },
+                    "label": "Web Content",
+                    "name": "itemSelector1",
+                    "type": "itemSelector",
+                    "typeOptions": {
+                        "className": "com.liferay.journal.model.JournalArticle",
+                        "enableSelectTemplate": true
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+The only *required* properties for this case are
+
+```json
+"name": "itemSelector1",
+"type": "itemSelector",
+"typeOptions": {
+    "className": "com.liferay.journal.model.JournalArticle"
+}
+```
+
+This example provides options to select existing web content articles to display
+in your Fragment.
+
+![Figure 3: The `itemSelector` configuration is useful when an option choice to display existing content is necessary.](../../../images/itemselector-fragment-config.png)
+
 ## Select Configuration
 
 The following JSON configuration creates a selector you can implement for cases
@@ -123,7 +168,7 @@ where you must select a predefined option:
 Configuration values inserted into the FreeMarker context honor the defined
 `datatype` value specified in the JSON file.
 
-![Figure 3: The `select` configuration is useful when an option choice is necessary.](../../../images/fragment-config-select.png)
+![Figure 4: The `select` configuration is useful when an option choice is necessary.](../../../images/fragment-config-select.png)
 
 ## Text Configuration
 
@@ -156,4 +201,4 @@ for cases where you must manually input a text option:
 Configuration values inserted into the FreeMarker context honor the defined
 `datatype` value specified in the JSON file.
 
-![Figure 4: The `text` configuration is useful when an input text option is necessary.](../../../images/fragment-config-text.png)
+![Figure 5: The `text` configuration is useful when an input text option is necessary.](../../../images/fragment-config-text.png)
