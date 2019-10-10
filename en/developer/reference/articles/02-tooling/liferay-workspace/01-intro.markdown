@@ -61,7 +61,9 @@ folder structure any way you'd like. The top-level files/folder of a Liferay
   folder, see the [Testing Projects](#testing-projects) section.
 - `ext` (generated): holds the Ext OSGi modules and Ext plugins.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
-- `modules`: holds your custom modules.
+- `modules`: holds your custom modules. This can also hold frontend portlets
+  created with the
+  [Liferay JS Toolkit](/docs/7-2/reference/-/knowledge_base/r/js-generator).
 - `themes`: holds Node.js-style themes that use the Liferay JS Theme Toolkit, 
   which are built using the Liferay Theme Generator.
 - `wars`: holds traditional WAR-style web application projects and theme
@@ -112,7 +114,10 @@ You'll learn about each lifecycle option next.
 
 Workspace provides a slew of
 [project templates](/docs/7-2/reference/-/knowledge_base/r/project-templates)
-that you can use to create many different types of Liferay projects.
+that you can use to create many different types of Liferay projects. Workspace
+also provides development support for frontend portlets generated with the 
+[Liferay JS Toolkit](/docs/7-2/reference/-/knowledge_base/r/js-generator).
+They're stored in the `modules` folder by default.
 
 You can also configure where to generate certain projects (modules, themes,
 WARs, etc.). These settings are documented in the `gradle.properties` file. See
