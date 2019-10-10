@@ -4,20 +4,85 @@ header-id: finding-analytics-data
 
 # Finding Analytics Data
 
-Combining traditional Page Analytics with Path and Asset Analytics sets Liferay
-Analytics Cloud apart from other analytics tools.
+Combining traditional page analytics with site, path, and asset analytics sets 
+Liferay Analytics Cloud apart from other analytics tools. Analytics Cloud's 
+site-wide report feature provides a comprehensive report of your entire site. 
+This helps you understand how many unique visitors your site has over time, 
+which pages these visitors access, what their interests are, and more. 
 
-Traditional Page Analytics, such as Views, Visitors, and Bounce Rate, provide
-lots of information about how visitors interact with your site's pages. Liferay
-Analytics offers that functionality, but also provides a novel set of metrics
-for your site pages in the form of Path Analytics. In addition, several
-@product@ Assets have even more fine-grained metrics to drill deeper than the
-page level to determine how you can improve the performance of your site.
+Analytics cloud also provides analytics for individual pages. This includes 
+views, visitors, and bounce rate. Path analytics let you see how visitors arrive 
+at your pages. This includes information on which pages they visit prior to 
+yours, and their location and device type. In addition, several Liferay DXP 
+Assets have even more fine-grained metrics to drill deeper than the page level 
+to determine how you can improve your site's performance. 
 
-![Figure 1: Analytics Cloud provides important data for Pages and Assets.](../../images/pages-touchpoints-menu.png)
+Here, you'll learn how to find the site, page, and asset analytics. The rest of 
+the articles in this section explain their metrics in detail. 
 
-This tutorial shows where to find the analytics for Pages and Assets. The 
-remaining tutorials explain their metrics. 
+![Figure 1: Analytics Cloud provides important data for Sites and Assets.](../../images/pages-touchpoints-menu.png)
+
+## Site Report
+
+Liferay Analytics Cloud provides a single Site report for each connected data 
+source. For example, if you connect Analytics Cloud to one DXP instance and 
+configure analytics for two subsites, one Site report aggregating both subsites 
+is created. 
+
+Follow these steps to view the Site report: 
+
+1.  In the *Touchpoints* section of the menu, click *Sites*. 
+
+2.  Click the *Overview* tab (this tab is selected by default when you click 
+    *Sites*). The Overview tab contains the Site report.
+
+The Site report contains the following data: 
+
+-   [Site Metrics](#site-metrics)
+-   [Top Pages](#top-pages)
+-   [Acquisitions](#acquisitions)
+-   [Visitors by Day and Time](#visitors-by-day-and-time)
+-   [Search Terms](#search-terms)
+-   [Interests](#interests)
+-   [Sessions by Location](#sessions-by-location)
+-   [Session Technology](#session-technology)
+-   [Cohort Analysis](#cohort-analysis)
+
+### Site Metrics
+
+The Site Metrics panel presents a summary of how visitors interact with your 
+Site. This panel contains the following data: 
+
+-   **Visitors:** Total unique visitors. 
+-   **Sessions per Visitor:** An average of the number of sessions for each 
+    unique visitor. A single user can open multiple sessions. These sessions can 
+    occur on the same day or over days, weeks, or months. A session ends after 
+    30 minutes of inactivity, or at midnight. 
+-   **Session Duration:** The length of time an average session lasts. 
+-   **Bounce Rate:** The percentage of visitors who view your Site's first page, 
+    but do nothing else before the session ends. 
+-   **Engagement:** A proprietary metric that Analytics Cloud calculates to 
+    determine how engaged a visitor is with your Site. This is derived from 
+    session duration, pages visited, scroll depth, time on page, and more. 
+
+Clicking each metric changes the visualization in the panel to display the 
+selected metric. 
+
+### Top Pages
+
+### Acquisitions
+
+### Visitors by Day and Time
+
+### Search Terms
+
+### Interests
+
+### Sessions by Location
+
+### Session Technology
+
+### Cohort Analysis
 
 ## Viewing Page Data
 
