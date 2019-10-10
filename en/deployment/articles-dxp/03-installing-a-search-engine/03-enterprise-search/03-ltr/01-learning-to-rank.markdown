@@ -6,31 +6,32 @@ search behavior, though. While you'll never be perfect (sorry to break it to you
 you can get your search results more perfect by employing Machine Learning in
 your cause. 
 
-Learning to Rank is the name for applying machine learning to search results. It
-combines the expertise of data scientists with machine learning, to
-reverse-engineer a smarter scoring function that's applied to specific search
+Learning to Rank is a technique for harnessing machine learning to improve
+search result rankings. It combines the expertise of data scientists with
+machine learning, to produce a smarter scoring function that's applied to search
 queries.
 
-Liferay DXP 7.2 supports Learning to Rank through it's support of Elasticsearch
-7.3.
+@product-ver@, Service Pack 1/Fix Pack 2 and later, supports Learning to Rank
+through its support of Elasticsearch 7.3.
 
 ## Prerequisites 
 
 Prerequisites for using Learning to Rank to re-score Liferay queries sent to
 Elasticsearch:
 
-- Liferay DXP Version 7.2 (you must have the latest Elasticsearch Connector
-application: GIVE FULL NAME)
+- @product-ver@ Service Pack 1/Fix Pack 2 or later, with the latest
+    Elasticsearch Connector application installed: _Liferay Connector to
+    Elasticsearch 7.3_.
 
 - Elasticsearch 7.3, with your data indexed into it.
 
 - The [Elasticsearch LTR](https://github.com/o19s/elasticsearch-learning-to-rank) plugin installed into Elasticsearch.
 
-- A model trained to re-rank results from Elasticsearch, which will involve these
-components:
+- The LTR plugin must have a model uploaded that's trained to re-rank results
+    from Elasticsearch. The model includes these components:
 
     - The Learning to Rank algorithm you wish to use for creating a training
-        model.  This demonstration uses
+        model. This demonstration uses
         [RankLib](https://sourceforge.net/p/lemur/wiki/RankLib/).
     - A _judgment list_, containing a list of search results and all the
         _features_ to hand to the Learning to Rank algorithm. One will be
@@ -72,9 +73,9 @@ Here's where Learning to Rank intervenes and makes that process different:
     Results](LINK) in their new order.
 
 Though it's just a sub-bullet point in the ordered list above, much of the work
-in this paradigm is in creating the trained model. That's beyond the scope of
-Liferay's role, but we'll help you get all the pieces in place to orchestrate
-the magic of machine learning on your Liferay queries.
+in this paradigm is in creating and honing the trained model. That's beyond the
+scope of Liferay's role, but we'll help you get all the pieces in place to
+orchestrate the magic of machine learning on your Liferay queries.
 
 ## Configure Learning to Rank
 
@@ -113,16 +114,12 @@ Keep reworking those judgment lists!
 
 ### Step 3: Whatever you do to Liferay to configure each query to run the top 1000 results make the query re-scored and then run through the SLTR query to apply your model.
 
-Enable Learning to Rank from System Settings: Control Panel &rarr; Configuration
-&rarr; System Settings &rarr; Search &rarr; Learning to Rank.
+Enable Learning to Rank from the search page. There's a simple on/off
+configuration.
 
-For example, this is the JSON for a query that is rescored through the SLTR
-query, using a model called `test_6`.
+Questions from the writer:
 
-```json
-{"query": {"multi_match": {"query": "alien", "fields": ["title", "overview"]}}, "rescore": {"query": {"rescore_query": {"sltr": {"params": {"keywords": "alien"}, "model": "test_6"}}}}}
-```
-
-You won't need to write the whole query, but you'll need to update the Liferay
-search mappings to that this structure is provided when the keywords entered in
-the search bar are sent via the proper query.
+Is there anything done on the backend to make sure the necessary infrastructure
+is in place? For example, if there's no LTR plugin detected in Elasticsearch, we
+disable the LTR button? 
+Will it be disabled in Embedded mode?
