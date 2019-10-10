@@ -16,13 +16,13 @@ the instructions below to get started.
     you want to generate and install. For example,
 
     ```properties
-    liferay.workspace.bundle.url=https://releases-cdn.liferay.com/portal/7.2.0-b1/liferay-ce-portal-tomcat-7.2.0-b1-201903291136.7z
+    liferay.workspace.bundle.url=https://releases-cdn.liferay.com/portal/7.2.0-ga1/liferay-ce-portal-tomcat-7.2.0-ga1-20190531153709761.7z
     ```
 
     For DXP subscribers, it would look like this:
 
     ```properties
-    liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.1.10/liferay-dxp-tomcat-7.1.10-ga1-20180703090613030.zip
+    liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.2.10/liferay-dxp-tomcat-7.2.10-ga1-20190531140450482.7z
     ```
 
     | **Note:** The DXP download URL must be set to the bundle hosted on
