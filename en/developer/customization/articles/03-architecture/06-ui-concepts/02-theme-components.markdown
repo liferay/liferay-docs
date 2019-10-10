@@ -6,8 +6,8 @@ header-id: theme-components
 
 [TOC levels=1-4]
 
-This guide provides an overview of the theme development components and 
-workflow, covering the following topics:
+This guide provides an overview of the following theme development and
+customization topics:
 
 - [Theme Templates](#theme-templates)
 - [CSS Frameworks and Extensions](#css-frameworks-and-extensions)
@@ -16,15 +16,16 @@ workflow, covering the following topics:
 
 ## Theme Templates and Utilities
 
-There are several default FreeMarker templates that handle a key piece of
-the page layout (page) functionality. Some provide helpful utilities for you to 
-use in your themes as well:
+The default FreeMarker templates provide helpful utilities and handle key pieces
+of page layout (page) functionality: 
 
-- `portal_normal.ftl`: Similar to a static site's `index.html`, this file is hub
-  for all theme templates and provides the overall markup for the page.
-- `init.ftl`: Contains common FreeMarker variables that can be used in your
-  theme templates. Useful for reference if you need access to theme objects. For 
-  convenience, these are listed in the [FreeMarker Variable Reference Guide](/docs/7-2/reference/-/knowledge_base/r/freemarker-variable-reference-guide).
+- `portal_normal.ftl`: Similar to a static site's `index.html`, this file is 
+  the hub for all the theme templates and provides the overall markup for the
+  page.
+- `init.ftl`: Contains variables commonly used throughout the theme templates. 
+  Refer to it to look up theme objects. For convenience, the
+  [FreeMarker Variable Reference Guide](/docs/7-2/reference/-/knowledge_base/r/freemarker-variable-reference-guide)
+  lists the objects. 
   **DO NOT override this file**.
 - `init_custom.ftl`: Used to override FreeMarker variables in `init.ftl` and to
   define new variables, such as 
