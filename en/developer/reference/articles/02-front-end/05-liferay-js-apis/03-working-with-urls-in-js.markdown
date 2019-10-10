@@ -23,7 +23,7 @@ This covers how to use the `Liferay` global JavaScript object to manipulate
 URLs. A list of the available methods and properties appears in the tables shown 
 below. Example configurations are shown below the tables. 
 
-## Portlet URL Methods and Properties
+## Portlet URL Methods
 
 `Liferay.Util.PortletURL` Methods:
 
@@ -33,37 +33,6 @@ below. Example configurations are shown below the tables.
 | `createActionURL` | `basePortletURL`, `parameters` | A portlet URL as a [URL](https://url.spec.whatwg.org/#api) object |
 | `createRenderURL` | `basePortletURL`, `parameters` | A portlet URL as a [URL](https://url.spec.whatwg.org/#api) object |
 | `createResourceURL` | `basePortletURL`, `parameters` | A portlet URL as a [URL](https://url.spec.whatwg.org/#api) object |
-
-You have access to several util argument properties by default that you can pass 
-as parameters in the configuration object for the Portlet URL. These properties 
-are listed in the table below:
-
-| Parameters | Description |
-| --- | --- |
-| `doAsGroupId` | Sets the ID of the site, organization, or user group for the URL |
-| `doAsUserId` | Sets the ID of the user to impersonate |
-| `doAsUserLanguageId` | Sets the ID of the user to impersonate |
-| `p_auth` | Sets the URL's authorization token  |
-| `p_auth_secret` |  |
-| `p_f_id` |  |
-| `p_j_a_id` |  |
-| `p_l_id` | Sets the URL's portlet layout ID |
-| `p_l_reset` |  |
-| `p_p_auth` |  |
-| `p_p_cacheability` |  |
-| `p_p_i_id` |  |
-| `p_p_id` | Sets the URL's portlet ID |
-| `p_p_isolated` |  |
-| `p_p_lifecycle` |  |
-| `p_p_mode` | Sets the portlet mode, if the URL triggers a request |
-| `p_p_resource_id` |  |
-| `p_p_state` |  |
-| `p_p_state_rcv` |  |
-| `p_p_static` |  |
-| `p_p_url_type` |  |
-| `p_p_width` |  |
-| `p_t_lifecycle` |  |
-| `p_v_l_s_g_id` |  |
 
 ## Liferay Util PortletURL
 
@@ -102,9 +71,8 @@ var actionURL = createActionURL(
 );
 ```
 
-See the [Portlet URL Methods and Properties](#portlet-url-methods-and-properties) 
-section for more information about the methods and properties used in the 
-example above. 
+See the [Portlet URL Methods](#portlet-url-methods) section for more information 
+about the method used in the example above. 
 
 ## Liferay AuthToken
 
