@@ -68,33 +68,55 @@ In the UI, applications are referred to as Widgets and categorized for users to
 add to pages. Administrative applications are developed as portlets and made
 available in the product menu panels. 
 
-![Figure 4: Widget pages offer users functionality. Widgets are organized into a page template's rows and columns. This template has two columns: a smaller left column and larger right column. On this page, users select tags in the Tag Cloud widget and the matching tagged images show the Asset Publisher widget.](../../../images/architecture-ui-widgets.png)
+![Figure 1: Widget pages offer users functionality. Widgets are organized into a page template's rows and columns. This template has two columns: a smaller left column and larger right column. On this page, users select tags in the Tag Cloud widget and the matching tagged images show the Asset Publisher widget.](../../../images/architecture-ui-widgets.png)
 
 ## Themes
 
 A
 [theme](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction)
 styles a site with a unique look and feel. It's developed as a WAR project that
-includes CSS, JavaScript, HTML, and content. You can develop themes with
-whatever tools you prefer, but @product@ offers Bootstrap-based components and
+includes CSS, JavaScript, and markup content. You can develop themes using
+whatever tools you prefer, but @product@ offers
+[Bootstrap](https://getbootstrap.com/)-based
+components and
 [theme tooling](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes) 
 to create and deploy themes in no time. 
 
-![Figure 6: You can select an attractive theme and apply it to your site.](../../../images/architecture-ui-themes.png)
+![Figure 2: You can select an attractive theme and apply it to your site.](../../../images/architecture-ui-themes.png)
 
-To create a theme for @product@, generate a new theme with the [Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator). The generated theme, by default, extends the [Styled base theme](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-styled), 
-which provides everything you need to get your theme up and running (base 
-styles, CSS, JS, and [theme templates](/docs/7-2/customization/-/knowledge_base/c/theme-components#theme-templates-and-utilities) 
-for @product@). Note that these files are generated when the theme is built (on 
-deployment or through the [build task](https://portal.liferay.dev/docs/7-2/frameworks/-/knowledge_base/f/building-your-themes-files)).
+Here's a quick demonstration of developing a theme:
 
-The `portal_normal.ftl` theme template, included by default in the deployed WAR 
-and `build` folder, acts as the hub for all other theme templates, similar to 
-`index.html`. It provides the base markup that creates the framework for every 
-page that the theme is applied to. Copy `portal_normal.ftl` over to your theme, 
-and include your other templates and any markup that you want to apply to the 
-pages that use the theme. An example `portal_normal.ftl` is shown below:
+1.  Create a theme using the
+    [Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator).
+    The theme extends the base theme you specified to the Theme
+    Generator---Liferay's
+    [Styled theme](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-styled)
+    is the default. 
 
+2.  Run
+    [`gulp build`](https://portal.liferay.dev/docs/7-2/frameworks/-/knowledge_base/f/building-your-themes-files)
+    to generate the base theme files to the `build` folder subfolders: 
+
+    -   `templates`: FreeMarker templates specify site page markup. 
+        `portal_normal.ftl` is the central file; it includes templates that
+        define the page parts (e.g., header, navigation, footer). The
+        `init.ftl` file defines default variables available to the templates. 
+
+    -  `css`: SCCS files that provide styling. 
+    
+    -  `font`: Font Awesome and Glyhicons fonts. 
+
+    -  `js`: JavaScript files; `main.js` is the Styled theme's 
+        JavaScript. 
+
+    -  `images`: Image files. 
+
+3.  Override aspects of the base theme by copying relevant files from the 
+    `build` subfolders to folders of the same name in your `src` folder. The
+    [Theme Anatomy Guide](/docs/7-2/reference/-/knowledge_base/r/theme-reference-guide)
+    describes all the files. Here's an example of a customized
+    `portal_normal.ftl`: 
+    
 ```markup
 <html class="${root_css_class}">
 <head></head>
@@ -110,13 +132,18 @@ pages that use the theme. An example `portal_normal.ftl` is shown below:
   </body>
 </html>
 ```
-
-Add custom styling through `_custom.scss` (included in the theme by default). 
-@product@ supports [Bootstrap](https://getbootstrap.com/), as well as [SASS](https://sass-lang.com/), 
-so you can use Bootstrap utilities in your markup and SASS nesting, variables, 
-etc. in your CSS files. The snippet below provides styles for the logo on the 
-[portal.liferay.dev site](https://portal.liferay.dev/):
-
+    
+4.  Add custom styling using your theme's `_custom.scss` file (i.e.,
+    `src/css/_custom.scss`). 
+    @product@ supports
+    [Bootstrap](https://getbootstrap.com/),
+    as well as
+    [Sass](https://sass-lang.com/), 
+    so your can use Bootstrap utilities in your markup and Sass nesting,
+    variables, and more in your CSS files. This snippet from the
+    [portal.liferay.dev site](https://portal.liferay.dev/)
+    theme styles the logo: 
+    
 ```sass
 .logo {
   margin-left: 15px;
@@ -132,17 +159,20 @@ etc. in your CSS files. The snippet below provides styles for the logo on the
 }
 ```
 
-![Figure 3: You can provide custom styling through the theme's `_custom.scss` file.](../../../images/architecture-ui-portal-dev-logo.png)
+![Figure 3: You can provide custom styling using the theme's `_custom.sccs` file.](../../../images/architecture-ui-portal-dev-logo.png)
 
-If you have any custom JavaScript, copy `main.js` over from the `build` folder 
-to your theme. Then deploy your theme to your app server and apply it to your 
-site page(s). 
-Your theme is available to
+5.  Deploy your theme by executing `gulp deploy`. 
+
+The theme is available to
 [apply](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes)
 to your site. It's just that easy! 
 
-See the [Themes section](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) 
-for more information on developing themes.
+
+The
+[Theme Components](/docs/7-2/customization/-/knowledge_base/c/theme-components)
+article (next) and 
+[Themes section](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction)
+provide theme development details. 
 
 ## Product Navigation Sidebars and Panels
 
