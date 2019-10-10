@@ -139,7 +139,7 @@ Here's a quick demonstration of developing a theme:
     [Bootstrap](https://getbootstrap.com/),
     as well as
     [Sass](https://sass-lang.com/), 
-    so your can use Bootstrap utilities in your markup and Sass nesting,
+    so you can use Bootstrap utilities in your markup and Sass nesting,
     variables, and more in your CSS files. This snippet from the
     [portal.liferay.dev site](https://portal.liferay.dev/)
     theme styles the logo: 
