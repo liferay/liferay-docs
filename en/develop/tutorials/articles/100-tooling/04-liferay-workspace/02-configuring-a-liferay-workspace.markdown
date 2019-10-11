@@ -21,7 +21,9 @@ The top-level files/folder of a Liferay (Gradle) Workspace are outlined below:
   section.
 - `ext` (generated): holds the Ext OSGi modules and Ext plugins.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
-- `modules`: holds your custom modules.
+- `modules`: holds your custom modules. This can also hold frontend portlets
+  created with the
+  [Liferay JS Toolkit](/docs/7-1/reference/-/knowledge_base/r/js-generator)
 - `plugins-sdk` (generated): holds plugins to migrate from previous releases.
   These project types should eventually be migrated to the `wars` folder, if
   possible. This is targeted for @product@ 7.0 to provide a way to migrate from
