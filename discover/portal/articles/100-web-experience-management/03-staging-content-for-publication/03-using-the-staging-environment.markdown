@@ -162,9 +162,9 @@ transfer to live of the previews and thumbnails associated with the documents to
 be published. This can also speed up publication time.
 
 **Deletions** lets you delete portlet metadata before publishing and delete
-operations performed for content types. If the *Replicate Individual
-Deletetions* selector is enabled, operations performed for content in the
-staging environment are replicated to the target site.
+operations performed for content types. If the *Replicate Individual Deletions*
+selector is enabled, operations performed for content in the staging environment
+are replicated to the target site.
 
 **Permissions** allows you to include permissions for the pages and portlets
 when the changes are published.
