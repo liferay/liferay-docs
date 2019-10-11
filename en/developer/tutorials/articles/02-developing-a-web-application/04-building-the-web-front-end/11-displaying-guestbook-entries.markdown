@@ -15,6 +15,8 @@ them: retrieve them the database, loop through them, and present them on the
 page. To do this, you must override the default MVC Portlet `render` method so
 you can tell your portlet how to render itself. 
 
+## Rendering the Portlet
+
 1.  Add the following `render` method to `GuestbookPortlet`: 
 
     ```java
@@ -128,6 +130,10 @@ Container* to make this happen.
 
         <liferay-ui:search-container-column-text property="name" />
 
+        <liferay-ui:search-container-column-jsp
+            align="right" 
+            path="/guestbook/entry_actions.jsp" />
+
     </liferay-ui:search-container-row>
 
     <liferay-ui:search-iterator />
@@ -151,6 +157,7 @@ Container* to make this happen.
     <%@ page import="java.util.List" %>
     <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
     <%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
+    <%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
     <%@ page import="com.liferay.petra.string.StringPool" %>
     <%@ page import="com.liferay.portal.kernel.model.PersistedModel" %>
     <%@ page import="com.liferay.portal.kernel.dao.search.SearchEntry" %>
@@ -172,11 +179,67 @@ to be escaped.
 
 Save your work. 
 
+## Creating an Actions JSP
+
+Actions can be performed on your entities once they're stored. Users who enter
+Guestbook entries may wish to edit them or delete them. Now you'll provide that
+functionality. 
+
+1.  Right-click on the `src/main/resources/META-INF/resources/guestbook` folder
+    and select *New* &rarr; *File*. 
+
+2.  Name the file `entry_actions.jsp`. 
+
+3.  Paste the following code into the file: 
+
+    ```markup
+<%@include file="../init.jsp"%>
+
+    <%
+    String mvcPath = ParamUtil.getString(request, "mvcPath");
+
+    ResultRow row = (ResultRow)request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
+
+    GuestbookEntry entry = (GuestbookEntry)row.getObject(); 
+    %>
+
+    <liferay-ui:icon-menu>
+
+            <portlet:renderURL var="editURL">
+                <portlet:param name="entryId"
+                    value="<%= String.valueOf(entry.getEntryId()) %>" />
+                <portlet:param name="mvcPath" value="/guestbook/edit_entry.jsp" />
+            </portlet:renderURL>
+
+            <liferay-ui:icon image="edit" message="Edit"
+                url="<%=editURL.toString() %>" />
+
+            <portlet:actionURL name="deleteEntry" var="deleteURL">
+                <portlet:param name="entryId"
+                    value="<%= String.valueOf(entry.getEntryId()) %>" />
+                <portlet:param name="guestbookId"
+                    value="<%= String.valueOf(entry.getGuestbookId()) %>" />
+            </portlet:actionURL>
+
+            <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
+
+    </liferay-ui:icon-menu>
+    ```
+
+You may have noticed this JSP was included in the Search Container rows in your
+`view.jsp`. As the Search Container loops through Guestbook entries, this JSP
+generates an Actions button for each of them containing two functions: a call to
+your `addEntry` method (which both adds and edits) and a call to your
+`deleteEntry` method. Both calls supply the current `guestbookId` and `entryId`
+parameters so the Action method has everything it needs to call the service
+method that does the work. 
+
+Awesome! You've now completed the first iteration of your Guestbook application. 
+
 ![Figure 1: You have a form to enter information.](../../../images/guestbook-prototype-form.png)
 
 ![Figure 2: Submitted entries are displayed here.](../../../images/guestbook-prototype-container.png)
 
-Awesome! You've now completed the first iteration of your Guestbook application. 
 
 Next you'll review what's been done so far, and you'll deploy and test your
 application. 

@@ -2,7 +2,7 @@
 header-id: installing-remote-liferay-maven-artifacts
 ---
 
-# Installing Remote Liferay Maven Artifacts
+# Installing Liferay Maven Artifacts
 
 [TOC levels=1-4]
 

@@ -27,5 +27,19 @@ hotfixes.
 | tool](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver)
 | before server startup.
 
+| **Important:** Installing the latest service pack on top of @product@ 7.2 
+| GA1/FP1 requires running the
+| [data upgrade tool](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-product-data).
+| Examine the
+| [@product@ upgrade instructions](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver)
+| to determine preparations, testing, and post upgrade steps that are 
+| appropriate for you. 
+|
+| @product@ 7.2 FP2/SP1's data schema change adds version columns to several 
+| tables.
+| [Hibernate's optimistic locking system](https://docs.jboss.org/hibernate/orm/4.0/devguide/en-US/html/ch05.html#d0e2225)
+| uses the columns to preserve data integrity during concurrent data 
+| modifications. 
+
 | **Note:** [Patching a cluster](/docs/7-2/deploy/-/knowledge_base/d/updating-a-cluster)
 | requires additional considerations.
