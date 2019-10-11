@@ -69,9 +69,17 @@ Some examples of that are in Liferay's plugin repositories.
 Once you've selected the *Add Page* or *Add Child Page* button, you're directed
 to an *Add New Page* interface that lets you configure the page to your liking.
 If you later decide you don't like the order of your pages, you can drag and
-drop them in the list to put them in whatever order you want. The friendly URLs
-generated for a new page are not hierarchical. This means that a top-level page
-and a nested page would have a similar URL structure.
+drop them in the list to put them in whatever order you want.
+
+| **Note:** You're not forced to define the page hierarchy in a page's friendly
+| URL. Therefore, child page friendly URLs are not required to include their
+| parent page. For example, a parent page named Parent and its child page named
+| Child could have the URLs *SITE_URL/parent* and *SITE_URL/child*,
+| respectively. The default friendly URL given to a page is based only on the
+| page name and not the hierarchy. If you wish to modify a generated friendly
+| URL, you can do so by following the
+| [Site URL](/docs/7-0/user/-/knowledge_base/u/creating-sites#site-url)
+| configuration section.
 
 Go ahead and add another top level page and name it *Community*.
 
