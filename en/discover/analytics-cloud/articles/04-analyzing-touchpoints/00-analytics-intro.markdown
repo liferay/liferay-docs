@@ -17,8 +17,13 @@ yours, and their location and device type. In addition, several Liferay DXP
 Assets have even more fine-grained metrics to drill deeper than the page level 
 to determine how you can improve your site's performance. 
 
-Here, you'll learn how to find the site, page, and asset analytics. The rest of 
-the articles in this section explain their metrics in detail. 
+Here, you'll learn how to find the site, page, and asset analytics: 
+
+-   [Site Report](#site-report)
+-   [Viewing Page Data](#viewing-page-data)
+-   [Finding Asset Data](#finding-asset-data)
+
+The rest of the articles in this section explain these metrics in detail. 
 
 ![Figure 1: Analytics Cloud provides important data for Sites and Assets.](../../images/pages-touchpoints-menu.png)
 
@@ -81,6 +86,9 @@ The Top Pages panel lists the following:
     percentage of visitors for which the page is the last page in their session. 
 
 To view more detailed page analytics, click *View Pages* in the panel. 
+Alternatively, click the *Pages* tab at the top of the screen. Both take you to 
+the page analytics discussed in 
+[Viewing Page Data](#viewing-page-data). 
 
 ![Figure 3: The Top Pages panel lists your Site's most relevant pages.](../../images/top-pages.png)
 
@@ -115,7 +123,9 @@ visitors for that day and time.
 The Search Terms and Interests panels show your visitors' most common search 
 terms and the topics they're interested in, respectively. Search terms are 
 collected from the search query parameter in your Site's URL. Interest topics 
-are derived from the keyword metadata of the pages that visitors view. 
+are derived from the keyword metadata of the pages that visitors view. To view 
+the full list of interest topics, click *All interests* in the Interests panel. 
+Alternatively, click the *Interests* tab at the top of the screen. 
 
 ![Figure 6: The Search Terms and Interests panels show your Site's most common search terms and interest topics.](../../images/search-terms-interests.png)
 
@@ -154,11 +164,15 @@ for each following day.
 
 ## Viewing Page Data
 
-1.  Find the Touchpoints section of the menu.
+Follow these steps to view the list of Pages with summary data: 
 
-2.  Click *Pages* to view the list of Pages with summary data.
+1.  Find the Touchpoints section of the menu. 
 
-![Figure 2: The Page list contains useful summary data.](../../images/pages-list.png)
+2.  Click *Sites*. 
+
+3.  Click the *Pages* tab. 
+
+![Figure 10: The Page list contains useful summary data.](../../images/pages-list.png)
 
 Order Pages in ascending or descending order based on any one of these metrics. 
 Click the metric's heading in the table to perform the sort: 
@@ -184,7 +198,7 @@ To view detailed metrics for a single page, click that page in the table. See
 [Page Analytics](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/04-analyzing-touchpoints/01-page-analytics.markdown) 
 for more information. 
 
-![Figure 3: Most Page metrics are available in the Overview tab.](../../images/pages-overview.png)
+![Figure 11: Most Page metrics are available in the Overview tab.](../../images/pages-overview.png)
 
 ## Finding Asset Data
 
@@ -195,7 +209,7 @@ for more information.
 3.  Choose an Asset type: Blogs, Documents and Media, Forms, Web Content, or 
     Custom. 
 
-![Figure 4: The Assets appear in a table.](../../images/assets-list.png)
+![Figure 12: The Assets appear in a table.](../../images/assets-list.png)
 
 To order Assets in ascending or descending order based on any one of the Asset's 
 metrics, click the metric's heading in the table. The metrics differ between 
@@ -214,4 +228,4 @@ Click an Asset in the list to see more granular detail. Remember that there are
 separate lists for different Asset types. More details on each Asset type's 
 metrics are covered in the subsequent articles. 
 
-![Figure 5: Once you find an Asset, click it to see its metrics.](../../images/assets-overview.png)
+![Figure 13: Once you find an Asset, click it to see its metrics.](../../images/assets-overview.png)
