@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.liferay.docs.guestbook">
+	<author>Liferay</author>
+	<namespace>GB</namespace>
+	
+	<entity name="Guestbook" local-service="true" uuid="true" remote-service="true">
+		
+		<!-- Guestbook fields -->
+
+		<column name="guestbookId" primary="true" type="long" />
+		<column name="name" type="String" />
+		
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		
+		<!-- Audit fields -->
+
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Status fields -->
+
+		<column name="status" type="int" />
+		<column name="statusByUserId" type="long" />
+		<column name="statusByUserName" type="String" />
+		<column name="statusDate" type="Date" />
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+
+		<finder name="G_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference entity="WorkflowInstanceLink" package-path="com.liferay.portal" />
+
+	</entity>
+	
+    <entity name="GuestbookEntry" local-service="true" remote-service="true" uuid="true">
+
+		<!-- Guestbook Entry fields -->
+
+		<column name="entryId" primary="true" type="long" />
+		<column name="name" type="String" />
+		<column name="email" type="String" />
+		<column name="message" type="String" />
+		<column name="guestbookId" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Status fields -->
+	   
+		<column name="status" type="int" />
+		<column name="statusByUserId" type="long" />
+		<column name="statusByUserName" type="String" />
+		<column name="statusDate" type="Date" />
+
+		<order>
+			<order-column name="createDate" order-by="desc" />
+		</order>
+
+        <finder name="G_G" return-type="Collection">
+            <finder-column name="groupId" />
+            <finder-column name="guestbookId" />
+        </finder>
+
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+
+	   <finder name="G_G_S" return-type="Collection">
+		  <finder-column name="groupId" />
+		  <finder-column name="guestbookId" />
+		  <finder-column name="status" />
+	   </finder>
+
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference entity="WorkflowInstanceLink" package-path="com.liferay.portal" />
+
+    </entity>
+
+    <exceptions>
+        <exception>GuestbookEntryEmail</exception>
+        <exception>GuestbookEntryMessage</exception>
+        <exception>GuestbookEntryName</exception>
+        <exception>GuestbookName</exception>
+    </exceptions>
+</service-builder>

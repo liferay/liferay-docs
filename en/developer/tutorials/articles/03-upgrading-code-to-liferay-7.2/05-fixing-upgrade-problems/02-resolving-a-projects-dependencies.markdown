@@ -81,34 +81,14 @@ app modules are therefore much easier to understand. Next, you'll track down the
 modules that now hold the classes referenced by your plugin. 
 
 The reference article 
-[Classes Moved from `portal-service.jar`](/docs/reference/7-1/-/knowledge_base/r/classes-moved-from-portal-service-jar) 
+[Classes Moved from `portal-service.jar`](/docs/7-1/reference/-/knowledge_base/r/classes-moved-from-portal-service-jar) 
 contains a table that maps each class moved from `portal-service.jar` to its new 
-module. The table includes each class's new package and symbolic name 
-(artifact ID). You'll use this information to configure your plugin's 
-dependencies on these modules. 
+module in @product@ 7.1. The table includes each class's new package and
+symbolic name (artifact ID). You'll use this information to configure your
+plugin's dependencies on these modules. 
 
-Your plugin might reference classes that are in Liferay utility modules formerly
-known as `util-java`, `util-bridges`, `util-taglib`, or `util-slf4j`. 
-
-The following table shows each Liferay utility module's symbolic name.
-
-  **Liferay Utility** |  &nbsp;**Symbolic Name (Artifact ID)** |
-:---------------------- | :----------------------------------- |
- util-bridges           |  `com.liferay.util.bridges` |
- util-java              | `com.liferay.util.java` |
- util-slf4j             | `com.liferay.util.slf4j` |
- util-taglib            | `com.liferay.util.taglib` |
-
-You can use @product@'s
-[App Manager](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts#finding-liferay-app-and-independent-artifacts),
-[Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell),
-or
-[module JAR file manifests](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts#finding-core-artifact-attributes)
-to find versions of modules deployed on your @product@ instance. 
-
-For more information on resolving your project's dependencies, see the
-[Configuring Dependencies](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies)
-section.
+For more information on finding and resolving your project dependencies, see
+[Configuring Dependencies](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies). 
 
 ## Class Replaced or Removed
 

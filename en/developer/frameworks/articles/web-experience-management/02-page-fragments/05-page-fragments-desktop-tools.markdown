@@ -37,6 +37,9 @@ contents in the following format:
            }
            ```
 
+          Update the `*Path` properties in your `fragment.json` file if you
+          change the names of your `index.*` files.
+
         - `index.css`: the CSS source for the fragment.
 
         - `index.html`: the HTML source for the fragment.
@@ -114,7 +117,8 @@ toolkit imported into @product@ automatically.
 - To get collections and fragments from a running server, run `npm run export`.
 
 - To send the collections and fragments from your current project to a running
-  server, run `npm run import`.
+  server, run `npm run import`. If your Fragment's configuration JSON (if
+  available) is invalid, the import fails and provides an error message.
 
 - To have collections and fragments automatically imported into @product@ as
   they are created or modified, run `npm run import:watch`.
@@ -122,8 +126,8 @@ toolkit imported into @product@ automatically.
 - To preview how a fragment will look when it's imported, run `npm run preview`.
   This renders a fragment on a specified Liferay server without importing it.
   When changes are made to the fragment while it's previewed, changes are auto
-  reloaded to rapidly display updates. Note, this is available for @product-ver@
-  Fix Pack 1 or higher. You must install the
+  reloaded to rapidly display updates. Note, this is available for Liferay DXP
+  7.2 SP1+ and Liferay Portal 7.2 GA2+. You must install the
   [OAuth 2](https://web.liferay.com/marketplace/-/mp/application/109571986)
   plugin in your portal instance for this command to work properly.
 

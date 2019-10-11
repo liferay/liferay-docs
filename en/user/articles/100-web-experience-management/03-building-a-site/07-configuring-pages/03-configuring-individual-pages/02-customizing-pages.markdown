@@ -67,6 +67,35 @@ search engine's point of view, this makes your pages rank higher since any
 references to variations of a specific URL are considered references to the same
 page.
 
+You can also configure the page to use a custom canonical URL. To do so, set the 
+*Use Custom Canonical URL* toggle to *YES*, then enter your desired canonical 
+URL in the field that appears. You can define a custom canonical URL for each 
+language. If there's no value for a specific language, the canonical URL for 
+that language is controlled by the global/instance-level setting. 
+
+![Figure 2: Enter the custom canonical URL that you want to use for the page.](../../../../../images/canonical-url-page.png)
+
+You can also configure canonical URLs at the global and instance levels. 
+
+| **Note:** Any custom canonical URLs set for individual pages take precedent 
+| over the global and instance level settings. 
+
+**Global:** *Control Panel* &rarr; *Configuration* &rarr; *System Settings* 
+&rarr; *Pages* &rarr; *SEO*
+
+**Instance:** *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* 
+&rarr; *Pages* &rarr; *SEO*
+
+Navigate to the level (global/instance) on which you want to configure canonical 
+URLs, then choose one of the following in the *Canonical URL* menu: 
+
+**Use Default Language URL (default):** When a user visits a page in any 
+supported language, the default language's URL is used as the canonical URL. 
+
+**Use Localized URL:** The page's localized URL is used as the canonical URL. 
+
+![Figure 3: You can also configure canonical URLs at the global and instance levels.](../../../../../images/canonical-url-system.png)
+
 ## Look and Feel
 
 *Look and Feel* lets you set a page-specific theme. You can inherit what you

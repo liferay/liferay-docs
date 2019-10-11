@@ -41,9 +41,17 @@ From *Pages* you can do several things:
 ![Figure 2: Understanding the options on Site Pages.](../../../../../images/site-pages-breakdown.png)
 
 Adding a child page creates child pages in the hierarchy below the page you've 
-selected. You can nest pages as deep as you like. The friendly URLs generated
-for a new page are not hierarchical. This means that a top-level page and a
-nested page have a similar URL structure.
+selected. You can nest pages as deep as you like.
+
+| **Note:** You're not forced to define the page hierarchy in a page's friendly
+| URL. Therefore, child page friendly URLs are not required to include their
+| parent page. For example, a parent page named Parent and its child page named
+| Child could have the URLs *SITE_URL/parent* and *SITE_URL/child*,
+| respectively. The default friendly URL given to a page is based only on the
+| page name and not the hierarchy. If you wish to modify a generated friendly
+| URL, you can do so by following the
+| [Friendly URL](/docs/7-2/user/-/knowledge_base/u/individual-page-settings#name-and-friendly-url)
+| configuration section.
 
 Once you've clicked the `+` icon to add a page, you're asked to select the type
 of page you are creating. There are two top options followed by other page 
