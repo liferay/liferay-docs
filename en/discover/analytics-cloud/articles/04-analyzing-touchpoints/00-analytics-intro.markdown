@@ -34,7 +34,7 @@ Follow these steps to view the Site report:
 1.  In the *Touchpoints* section of the menu, click *Sites*. 
 
 2.  Click the *Overview* tab (this tab is selected by default when you click 
-    *Sites*). The Overview tab contains the Site report.
+    *Sites*). This tab contains the Site report.
 
 The Site report contains the following data: 
 
@@ -42,8 +42,7 @@ The Site report contains the following data:
 -   [Top Pages](#top-pages)
 -   [Acquisitions](#acquisitions)
 -   [Visitors by Day and Time](#visitors-by-day-and-time)
--   [Search Terms](#search-terms)
--   [Interests](#interests)
+-   [Search Terms and Interests](#search-terms-and-interests)
 -   [Sessions by Location](#sessions-by-location)
 -   [Session Technology](#session-technology)
 -   [Cohort Analysis](#cohort-analysis)
@@ -51,13 +50,12 @@ The Site report contains the following data:
 ### Site Metrics
 
 The Site Metrics panel presents a summary of how visitors interact with your 
-Site. This panel contains the following data: 
+Site. This panel contains the following metrics: 
 
 -   **Visitors:** Total unique visitors. 
 -   **Sessions per Visitor:** An average of the number of sessions for each 
-    unique visitor. A single user can open multiple sessions. These sessions can 
-    occur on the same day or over days, weeks, or months. A session ends after 
-    30 minutes of inactivity, or at midnight. 
+    unique visitor. A single user can open multiple sessions. A session ends 
+    after 30 minutes of inactivity, or at midnight. 
 -   **Session Duration:** The length of time an average session lasts. 
 -   **Bounce Rate:** The percentage of visitors who view your Site's first page, 
     but do nothing else before the session ends. 
@@ -68,21 +66,91 @@ Site. This panel contains the following data:
 Clicking each metric changes the visualization in the panel to display the 
 selected metric. 
 
+![Figure 2: The Site Metrics panel shows how visitors are using your site.](../../images/site-metrics.png)
+
 ### Top Pages
+
+The Top Pages panel lists the following: 
+
+-   **Visited Pages:** Your Site's most visited pages and the number of visitors 
+    for each. 
+-   **Entrance Pages:** The most common pages that visitors view first upon 
+    entering your Site, and the number of entrances for each. 
+-   **Exit Pages:** The most common pages that visitors view when leaving your 
+    Site, and the exit percentage for each. The exit percentage is the 
+    percentage of visitors for which the page is the last page in their session. 
+
+To view more detailed page analytics, click *View Pages* in the panel. 
+
+![Figure 3: The Top Pages panel lists your Site's most relevant pages.](../../images/top-pages.png)
 
 ### Acquisitions
 
+The Acquisitions panel shows how visitors arrive to your Site. It shows data for 
+the channels, source/medium, and referrers from which visitors arrive to your 
+Site. 
+
+This report works best if your marketing campaign utilizes UTM parameters. UTM 
+parameters allow Analytics Cloud to determine where visitors arrive from (e.g., 
+the specific referrer or ad campaign). 
+
+![Figure 4: The Acquisitions panel shows how visitors get to your Site.](../../images/acquisitions.png)
+
 ### Visitors by Day and Time
 
-### Search Terms
+The Visitors by Day and Time panel visualizes the days and times when visitors 
+come to your Site. This helps you understand when your Site is most active. You 
+can use this information, for example, to know when to release important 
+information or launch an advertising campaign. 
 
-### Interests
+The panel contains a grid with the days of the week on one axis, and the time of 
+day on the other axis. Darker cells in the grid indicate heavier Site traffic at 
+the corresponding day and time. Tooltips for each cell show the number of 
+visitors for that day and time. 
+
+![Figure 5: The Visitors by Day and Time panel shows your Site's traffic by day and time.](../../images/day-and-time.png)
+
+### Search Terms and Interests
+
+The Search Terms and Interests panels show your visitors' most common search 
+terms and the topics they're interested in, respectively. Search terms are 
+collected from the search query parameter in your Site's URL. Interest topics 
+are derived from the keyword metadata of the pages that visitors view. 
+
+![Figure 6: The Search Terms and Interests panels show your Site's most common search terms and interest topics.](../../images/search-terms-interests.png)
 
 ### Sessions by Location
 
+The Sessions by Location panel shows the countries from which visitors access 
+your Site. Countries with more visitors are shaded darker on the map. The 
+countries are also listed below the map along with the number and percentage of 
+visitors for each. 
+
+![Figure 7: The Sessions by Location panel shows where your Site's visitors are.](../../images/sessions-by-location.png)
+
 ### Session Technology
 
+The Session Technology panel shows the devices, operating systems, and browsers 
+that visitors access your Site with. Tooltips for each graph element display 
+more detailed data for that element. On the *Devices* tab, for example, mouse 
+over each bar on the bar graph to see the operating system data for that device. 
+
+![Figure 8: The Session Technology panel shows what visitors use to access your Site.](../../images/session-technology.png)
+
 ### Cohort Analysis
+
+The Cohort Analysis panel shows a 
+[cohort analysis](https://en.wikipedia.org/wiki/Cohort_analysis) 
+based on visitors from a specific acquisition date (the cohort) and whether they 
+return to your Site over a given time period. Use the selector menus at the top 
+left of the panel to select the visitor type (All, Anonymous, or Known) and time 
+period (Day, Week, or Month). 
+
+For example, if you select *All Visitors* and *Day*, the percentage of visitors 
+from a given acquisition date that return to your Site are listed in the chart 
+for each following day. 
+
+![Figure 9: The cohort analysis is based on visitors from a specific date and the percentage of those visitors that return over the time period that follows.](../../images/cohort-analysis.png)
 
 ## Viewing Page Data
 
