@@ -37,20 +37,26 @@ page, you can map them like this:
 
 ![Figure 3: Selecting the Asset type and Subtype.](../../../../../images/display-page-asset-type.png)
 
-4.  Click *Save*.
+3.  Click *Save*.
 
 <!--5.  Now check the box that says *Show Editable Areas*. This highlights
     areas that you can map.-->
 
-<!--6.  Click on an editable text area and then click *Map*. A dialog appears with
-    a list of fields that can be mapped to that area.-->
-
-5.  Navigate to the *Section Builder* &rarr; *Basic Components* tab in the right
+4.  Navigate to the *Section Builder* &rarr; *Basic Components* tab in the right
     menu.
 
-7.  Add a *Heading 1* and *Text* components to the appropriate areas.
+5.  Add a *Heading 1* and *Text* components to the appropriate areas.
 
-8.  Click *Publish* at the top of the page to save your work.
+6.  Click on an editable text area and then click the bolt (Map) icon that 
+    appears. A dialog appears with a list of fields that can be mapped to that 
+    area.
+
+7.  Select a field to map the editable fragment to. The mapped field highlights 
+    purple to indicate that it's mapped.
+
+![Figure 4: Mapping the editable fragments to structure fields.](../../../../../images/display-page-map-field.png)
+
+7.  Click *Publish* at the top of the page to save your work.
 
 You now have a Display Page Template with static graphics and a text area that's 
 replaced with whatever content you add to it.
@@ -87,14 +93,14 @@ Now create a short article to display with this display page template:
 
 6.  Click *Publish*.
 
-![Figure 4: Selecting the Asset type and Subtype.](../../../../../images/display-page-creating-content.png)
+![Figure 5: Selecting the Asset type and Subtype.](../../../../../images/display-page-creating-content.png)
 
 When published, you can view the content at its Friendly URL (you can find the
 Friendly URL while editing a Web Content article under *Friendly URL*) or when
 you click on the content in an Asset Publisher with *Asset Link Behavior* set to
 *View in Context*.
 
-![Figure 5: Selecting the Asset type and Subtype.](../../../../../images/display-page-in-context.png)
+![Figure 6: Selecting the Asset type and Subtype.](../../../../../images/display-page-in-context.png)
 
 You can go back and edit the display page template by navigating to *Site
 Administration* &rarr; *Site Builder* &rarr; *Pages* &rarr; *Display Page
