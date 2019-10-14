@@ -19,6 +19,7 @@ As of Liferay DXP 7.2, these products and capabilities have transitioned into
 maintenance mode:
 
 -   Liferay Connected Services
+-   Liferay Drools
 -   Liferay Mobile Experience (Liferay Screens, Liferay Mobile SDK, Liferay 
     Push)
 -   Liferay Reports
