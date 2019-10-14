@@ -22,7 +22,7 @@ Liferayは、すべてのパッチ（フィックスパックとホットフィ�
 
     patching-tool install
 
-変更されたすべてのOSGiバンドルが既存のバンドルを置き換えるようにするには、[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダーから`osgi/state`フォルダーを 削除してください。
+変更されたすべてのOSGiバンドルが既存のバンドルを置き換えるようにするには、[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)フォルダーから`osgi/state`フォルダーを 削除してください。
 
 | **注**：`osgi/state`フォルダーにはOSGiバンドルの状態情報が含まれています。ホットフィックスまたはフィックスパックでのOSGiバンドルの変更が内部的なものである場合、OSGiフレームワークからは見えません。よって、OSGiバンドルはインストールされたままで、その状態情報は変わりません。たとえば、ホットフィックスの場合、APIを使わないインプレースチェンジが含まれることがあります。フレームワークはそのような変更を検出できません。
 | フィックスパックの変更はフレームワークに対して透過的な場合があります。これらの理由から、フィックスパックおよびホットフィックスの適用後に`osgi/state`フォルダーを削除することをおすすめします。
@@ -81,6 +81,6 @@ Liferayは、すべてのパッチ（フィックスパックとホットフィ�
 
 ## クリーンアップ
 
-パッチ適用手順を実行した後（パッチをインストールまたは削除（[removed patches](/discover/deployment/-/knowledge_base/7-1/working-with-patches#uninstalling-patches)）したかにかかわらず ）、@ product @のデプロイ済みコードのキャッシュをクリーンアップすることが重要です。これをすることにより、サーバーを起動したときにインストールしたばかりのパッチを使用していることを確認できます。この手順はいたって簡単です。
+パッチ適用手順を実行した後（パッチをインストールまたは削除（[removed patches](/docs/7-1/deploy/-/knowledge_base/d/working-with-patches#uninstalling-patches)）したかにかかわらず ）、@ product @のデプロイ済みコードのキャッシュをクリーンアップすることが重要です。これをすることにより、サーバーを起動したときにインストールしたばかりのパッチを使用していることを確認できます。この手順はいたって簡単です。
 
 キャッシュされたコードを消去するには、`[Liferay Home]/work` フォルダの内容を削除します。これでサーバーを起動することができます。

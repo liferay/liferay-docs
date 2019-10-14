@@ -10,7 +10,7 @@ header-id: installing-elasticsearch-6-1
 | but it's not the newest supported version. If you're installing Elasticsearch
 | for the first time, considering following the instructions for installing
 | Elasticsearch 6.5.x instead, located in the
-| [root of the deployment guide](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
+| [root of the deployment guide](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch).
 
 
 @product@ uses Elasticsearch to index its content. By default, it's installed as

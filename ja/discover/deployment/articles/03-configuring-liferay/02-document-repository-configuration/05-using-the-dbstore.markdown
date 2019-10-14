@@ -10,7 +10,7 @@ DBStoreを使用すると、@product@データベースにドキュメントと�
 
 DBStoreの設定手順は次のとおりです。
 
-1. [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダの`portal-ext.properties`ファイルに、以下のプロパティを設定します。
+1. [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)フォルダの`portal-ext.properties`ファイルに、以下のプロパティを設定します。
 
        dl.store.impl=com.liferay.portal.store.db.DBStore
    

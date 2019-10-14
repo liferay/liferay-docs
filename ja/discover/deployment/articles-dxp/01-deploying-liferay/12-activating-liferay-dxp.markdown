@@ -15,7 +15,7 @@ Liferay DXPインスタンスをアクティベートする方法は2つあり�
 
 
 
-- Liferay Connected Services（LCS）によるオンラインアクティベーション。Liferay DXP 7.0は、Liferay DXPインスタンスをアクティベートする方法としてLCSを導入しました。LCSは、フィックスパックをインストールし、各インスタンスのパフォーマンスを監視し、管理者がLiferay DXPサブスクリプションを自動的に管理するのを助けることができます。LCSを試用してインスタンスをアクティベートする手順については、[LCS documentation](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-with-liferay-connected-services)を参照してください 。
+- Liferay Connected Services（LCS）によるオンラインアクティベーション。Liferay DXP 7.0は、Liferay DXPインスタンスをアクティベートする方法としてLCSを導入しました。LCSは、フィックスパックをインストールし、各インスタンスのパフォーマンスを監視し、管理者がLiferay DXPサブスクリプションを自動的に管理するのを助けることができます。LCSを試用してインスタンスをアクティベートする手順については、[LCS documentation](/docs/7-1/deploy/-/knowledge_base/d/managing-liferay-dxp-with-liferay-connected-services)を参照してください 。
 
 
 

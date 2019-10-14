@@ -17,7 +17,7 @@ header-id: patching-tool-advanced-configuration
     global.lib.path=../tomcat-9.0.6/lib/ext/
     liferay.home=../
 
-上記のプロパティ（詳しい説明は[below](#using-profiles-with-the-patching-tool)）は、[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)、パッチングモード（バイナリまたはソース）、WARファイルがアプリケーションサーバにデプロイされている場所へのパス、およびグローバルライブラリーパスの場所を定義します。このツールの自動検出機能は、OSGiモジュールフレームワークのパスをLiferay Homeに基づいています。ただし、OSGiモジュールフレームワークのパスをデフォルトフォルダ内の`[Liferay Home]/osgi`とは異なるパスに変更した場合は、次のプロパティをマニュアルで指定する必要があります。
+上記のプロパティ（詳しい説明は[below](#using-profiles-with-the-patching-tool)）は、[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)、パッチングモード（バイナリまたはソース）、WARファイルがアプリケーションサーバにデプロイされている場所へのパス、およびグローバルライブラリーパスの場所を定義します。このツールの自動検出機能は、OSGiモジュールフレームワークのパスをLiferay Homeに基づいています。ただし、OSGiモジュールフレームワークのパスをデフォルトフォルダ内の`[Liferay Home]/osgi`とは異なるパスに変更した場合は、次のプロパティをマニュアルで指定する必要があります。
 
     module.framework.core.path=path_to_modules_core_dir
     module.framework.marketplace.path=path_to_modules_marketplace_dir

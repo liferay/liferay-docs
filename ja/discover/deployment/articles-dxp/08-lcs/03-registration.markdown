@@ -10,7 +10,7 @@ header-id: activating-your-liferay-dxp-server-with-lcs
 
 以下の手順に従って、@product@サーバーをLCSに登録してください:
 
-1. まず、[LCSの事前設定手順](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration)が完了したことを確認してください 。
+1. まず、[LCSの事前設定手順](/docs/7-1/deploy/-/knowledge_base/d/lcs-preconfiguration)が完了したことを確認してください 。
 
 
 
@@ -19,11 +19,11 @@ header-id: activating-your-liferay-dxp-server-with-lcs
 
    ![図1: この図で赤く囲まれているメニューからLCSプロジェクトを選択する。](../../images-dxp/lcs-select-project.png)
 
-3. このサーバーを登録する環境を選択または作成します。アクティベーションにLCSを使用している場合、LCSに接続すると、サーバーは環境に割り当てられているサブスクリプションタイプからアクティベーションキーを使用します。サブスクリプションタイプは、環境の作成時にのみその環境に割り当てることができます。会社のプロジェクトに十分な権限がある場合は、*Add Environment*を選択することにより[新しい環境を作成できます。](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments#creating-environments)
+3. このサーバーを登録する環境を選択または作成します。アクティベーションにLCSを使用している場合、LCSに接続すると、サーバーは環境に割り当てられているサブスクリプションタイプからアクティベーションキーを使用します。サブスクリプションタイプは、環境の作成時にのみその環境に割り当てることができます。会社のプロジェクトに十分な権限がある場合は、*Add Environment*を選択することにより[新しい環境を作成できます。](/docs/7-1/deploy/-/knowledge_base/d/managing-lcs-environments#creating-environments)
 
    ![図2: サーバーをLCS環境に登録する必要がある。この図で赤く囲まれているものが環境を示す。](../../images-dxp/lcs-registration-select-environment.png)
 
-4. 環境の*Registration*タブを選択します。これは、環境内のサーバーを登録する、[環境のトークンファイル](/discover/deployment/-/knowledge_base/7-1/understanding-environment-tokens)を管理およびダウンロードする場所です 。
+4. 環境の*Registration*タブを選択します。これは、環境内のサーバーを登録する、[環境のトークンファイル](/docs/7-1/deploy/-/knowledge_base/d/understanding-environment-tokens)を管理およびダウンロードする場所です 。
 
 
 
@@ -32,7 +32,7 @@ header-id: activating-your-liferay-dxp-server-with-lcs
 
 
 
-   選択したサービスは、この環境に接続しているすべてのサーバーに対して有効になります。ポータルプロパティ分析が選択されている場合、LCSが特定のプロパティを分析しないようにすることができます。 *Show Blacklisted Properties*を選択したときに表示されるボックスにそれらを入力します。[LCSは、セキュリティに敏感なプロパティにはアクセスしない](/discover/deployment/-/knowledge_base/7-1/what-lcs-stores-about-your-liferay-dxp-servers)ので注意してください。
+   選択したサービスは、この環境に接続しているすべてのサーバーに対して有効になります。ポータルプロパティ分析が選択されている場合、LCSが特定のプロパティを分析しないようにすることができます。 *Show Blacklisted Properties*を選択したときに表示されるボックスにそれらを入力します。[LCSは、セキュリティに敏感なプロパティにはアクセスしない](/docs/7-1/deploy/-/knowledge_base/d/what-lcs-stores-about-your-liferay-dxp-servers)ので注意してください。
 
    ![図3:](../../images-dxp/lcs-registration.png)環境のRegistrationタブを使うと、 サーバーを環境に登録するために使用されるトークンファイルを管理できます。
 
@@ -44,11 +44,11 @@ header-id: activating-your-liferay-dxp-server-with-lcs
    - **LCSサービス選択の変更なし：**トークンをダウンロードしてください。
 
 
-6. トークンファイルをサーバーの`[Liferay Home]/data`フォルダに置いてください。[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)は通常、アプリケーションサーバーのフォルダの親フォルダです。サーバーが稼働している場合は、約1分でLCSに接続するはずです。サーバーが稼働していない場合は、起動時にLCSに接続します。
+6. トークンファイルをサーバーの`[Liferay Home]/data`フォルダに置いてください。[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)は通常、アプリケーションサーバーのフォルダの親フォルダです。サーバーが稼働している場合は、約1分でLCSに接続するはずです。サーバーが稼働していない場合は、起動時にLCSに接続します。
 
 
 
-7.  これで@product@ serverはLCSに登録されました。何らかの理由で登録されていない場合は、こちらの記事を参照してください：[LCS troubleshooting article](/discover/deployment/-/knowledge_base/7-1/troubleshooting-your-lcs-connection)
+7.  これで@product@ serverはLCSに登録されました。何らかの理由で登録されていない場合は、こちらの記事を参照してください：[LCS troubleshooting article](/docs/7-1/deploy/-/knowledge_base/d/troubleshooting-your-lcs-connection)
 
 
 

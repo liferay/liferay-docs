@@ -28,7 +28,7 @@ Installing @product@ manually takes three steps:
 - [@product@用にアプリケーションサーバーを設定する](#configuring-wildfly)
 - [Liferay DXP WARファイルをアプリケーションサーバーにデプロイする](#deploying-product)
 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[*Liferay Home*](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 is the folder containing your Wildfly server folder. After installing and
 deploying @product@, the Liferay Home folder contains the Wildfly server folder
 as well as `data`, `deploy`, `logs`, and `osgi` folders. `$WILDFLY_HOME` refers
@@ -168,7 +168,7 @@ The command line interface is recommended for domain mode deployments.
 | environment on multiple Wildfly servers. You can set up a cluster of @product@
 | instances running on Wildfly servers running in standalone mode. Please refer to
 | the chapter of this guide on
-| [@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
+| [@product@ Clustering](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)
 | for information on setting up a @product@ cluster.
 
 ## Configuring Wildfly
@@ -332,7 +332,7 @@ installation on Wildfly. Next you'll configure your database.
 
 The easiest way to handle database configuration is to let @product@ manage your
 data source. The
-[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
+[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. @product@に備わっているデータソースを使用する場合は、このセクションは必要ではありません。
 
 MySQL is used as the example below. If you're using a different database, modify
@@ -397,7 +397,7 @@ Now that you've configured your data source, the mail session is next.
 
 ### メール設定
 
-データベースと同様、メール設定の処理もLiferay DXPに行わせるのが一番簡単な方法です。Liferay DXPの内蔵メールセッションを使用したい場合は、このセクションを飛ばしてコントロールパネルで[メールセッションを設定](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)してください。
+データベースと同様、メール設定の処理もLiferay DXPに行わせるのが一番簡単な方法です。Liferay DXPの内蔵メールセッションを使用したい場合は、このセクションを飛ばしてコントロールパネルで[メールセッションを設定](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#configuring-mail)してください。
 
 If you want to manage your mail session with Wildfly, follow these steps:
 

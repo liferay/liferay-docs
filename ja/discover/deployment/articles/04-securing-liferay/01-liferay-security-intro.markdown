@@ -23,7 +23,7 @@ Liferayは、@product@が可能な限り安全であることを保証するた�
 - [SAMLプラグイン](https://www.liferay.com/marketplace/-/mp/application/15188711)
 - JAASとアプリケーションサーバーの統合
 
-注：LiferayのSSOソリューションはWebDAVと互換性がありませんが、Liferay Syncと一緒に使用することができます。 WebDAVとLiferay Syncの詳細については、[Publishing Files](/discover/portal/-/knowledge_base/7-1/publishing-files)の記事を参照してください 。
+注：LiferayのSSOソリューションはWebDAVと互換性がありませんが、Liferay Syncと一緒に使用することができます。 WebDAVとLiferay Syncの詳細については、[Publishing Files](/docs/7-1/user/-/knowledge_base/u/publishing-files)の記事を参照してください 。
 
 `AuthVerifier`レイヤーを使用して、リモートでアプリを認証および認可できます。
 
@@ -31,7 +31,7 @@ Liferayは、@product@が可能な限り安全であることを保証するた�
 - トークンベースのOAuthプラグイン
 - JavaScriptアプリケーション用のポータルセッションベースのソリューション
 
-ユーザー認証とリモートアプリケーション認証の両方が[拡張可能](/develop/tutorials/-/knowledge_base/7-1/authentication-pipelines)です。
+ユーザー認証とリモートアプリケーション認証の両方が[拡張可能](/docs/7-1/tutorials/-/knowledge_base/t/authentication-pipelines)です。
 開発者は、カスタムログインポートレットおよびプラグインを作成したり、デフォルトのログインポートレットである`auth.pipeline`を拡張したり、SSO用の`AutoLogin`の拡張機能を作成したり、カスタムの`AuthVerifier`実装を作成したりできます。
 
 ## 認可と権限のチェック
@@ -47,7 +47,7 @@ Liferayは、@product@が可能な限り安全であることを保証するた�
 
 ## 追加のセキュリティ機能
 
-ユーザーは、サイト、チーム、ユーザーグループ、または組織に割り当てることができます。カスタムロールを作成したり、ロールに権限を割り当てたり、ロールをユーザーに適用したりすることができます。ロールは、サイト、組織、またはグローバルなどの特定のコンテキストでのみ適用されるように範囲指定されています。詳細については、[ロールと権限](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)のドキュメンテーションを参照してください。
+ユーザーは、サイト、チーム、ユーザーグループ、または組織に割り当てることができます。カスタムロールを作成したり、ロールに権限を割り当てたり、ロールをユーザーに適用したりすることができます。ロールは、サイト、組織、またはグローバルなどの特定のコンテキストでのみ適用されるように範囲指定されています。詳細については、[ロールと権限](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions)のドキュメンテーションを参照してください。
 
 | 注：@product@は、CRLFをサニタイズするためにアプリケーションサーバーに依存しています。そのため、アプリケーションサーバーでこれが正しく設定されていることを確認する必要があります。そうしなければ、Veracodeなどの自動セキュリティ検証ソフトウェアからのレポートで誤検知が発生する可能性があります。Resinには1つ例外があり、この機能をサポートしていません。この場合、@product@はHTTPヘッダーをサニタイズします。
 

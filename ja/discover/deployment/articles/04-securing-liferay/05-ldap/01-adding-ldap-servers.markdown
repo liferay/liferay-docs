@@ -138,5 +138,5 @@ LDAPサーバーを@product@に接続する方法、およびユーザーのイ�
 
 ## 関連トピック
 
-[@product@セキュリティの概要](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security-overview)[@product@へのログイン](/discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay)
+[@product@セキュリティの概要](/docs/7-0/deploy/-/knowledge_base/d/liferay-portal-security-overview)[@product@へのログイン](/discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay)
 

@@ -32,7 +32,7 @@ X-Pack Monitoringを使ってElasticsearchを監視します。まず Elasticsea
 
 
 
-X-Packのインストール手順については、[X-Pack security article](/discover/deployment/-/knowledge_base-7-1/installing-x-pack-security)を参照してください。
+X-Packのインストール手順については、[X-Pack security article](/docs/いては/deploy/-/knowledge_base/d/[X-Pack security article](/discover/deployment/-/knowledge_base-7-1/installing-x-pack-security)を参照してください。
 
 
 
@@ -131,7 +131,7 @@ Liferay Enterprise Search（プレミアムまたはスタンダード）サブ�
 
 
 
-1. コネクタがインストールされ、KibanaとElasticsearchが安全に設定されたら、以下の名前の[configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files) を作成します。<segment 0155>
+1. コネクタがインストールされ、KibanaとElasticsearchが安全に設定されたら、以下の名前の[configuration file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files) を作成します。<segment 0155>
 
        com.liferay.portal.search.elasticsearch6.xpack.monitoring.web.internal.configuration.XPackMonitoringConfiguration.config
    
@@ -145,7 +145,7 @@ Liferay Enterprise Search（プレミアムまたはスタンダード）サブ�
 
 
 
-   または、[System Settings](/discover/portal/-/knowledge_base/7-1/system-settings)からモニタリングアダプタを設定します。
+   または、[System Settings](/docs/7-1/user/-/knowledge_base/u/system-settings)からモニタリングアダプタを設定します。
 *[Control Panel]*>*[Configuration]*>*[System Settings]*へ移動し、検索カテゴリーを使ってX-Pack Monitoringの項目を見つけてください。モニタリングコネクタのすべての設定オプションがそこに表示されます。
 
 

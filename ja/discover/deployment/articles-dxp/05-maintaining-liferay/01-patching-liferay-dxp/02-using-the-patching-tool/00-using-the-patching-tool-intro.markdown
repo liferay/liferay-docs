@@ -32,11 +32,11 @@ header-id: patching-tool
 
 
 
-2. パッチングツールを[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) フォルダ（推奨）、または別のフォルダに解凍します。
+2. パッチングツールを[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) フォルダ（推奨）、または別のフォルダに解凍します。
 
 
 
-パッチングツールをインストールしたら、@ product @インストールを使用するためにパッチングツールを設定する必要があります。（詳細：[configure it to use your @product@ installation](/discover/deployment/-/knowledge_base/7-1/configuring-the-patching-tool)）
+パッチングツールをインストールしたら、@ product @インストールを使用するためにパッチングツールを設定する必要があります。（詳細：[configure it to use your @product@ installation](/docs/7-1/deploy/-/knowledge_base/d/configuring-the-patching-tool)）
 パッチングツールZIPファイルから抽出した`patching-tool`フォルダには、実行可能なスクリプトを含んだパッチングツールが含まれています。
 
 ## 実行ファイル

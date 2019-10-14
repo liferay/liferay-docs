@@ -15,7 +15,7 @@ header-id: deprecated-apps-in-7-1-what-to-do
 
 1. @product@に残っている非推奨のアプリで、今後のリリースで削除される予定のもの。
 
-2. @product@から削除された非推奨のアプリで、まだ[Liferayマーケットプレイス](https://web.liferay.com/marketplace)または[Liferayの公開Nexusリポジトリ](https://repository.liferay.com)からダウンロードできるもの。アプリのインストール手順については、[アプリの管理](/discover/portal/-/knowledge_base/7-1/managing-apps)のドキュメントを参照してください。
+2. @product@から削除された非推奨のアプリで、まだ[Liferayマーケットプレイス](https://web.liferay.com/marketplace)または[Liferayの公開Nexusリポジトリ](https://repository.liferay.com)からダウンロードできるもの。アプリのインストール手順については、[アプリの管理](/docs/7-1/user/-/knowledge_base/u/managing-apps)のドキュメントを参照してください。
 
 3. @product@から削除された非推奨のアプリで、もうダウンロードできないもの。
 
@@ -57,9 +57,9 @@ header-id: deprecated-apps-in-7-1-what-to-do
 | Marvel Integration | 削除されました | X-Packに置き換えられました。 |
 | OpenID | リリース (バンドル) | OpenID Connectに置き換えられました。 |
 | OpenSocial Gadget | 削除されました |  |
-| Plugins SDK | [GitHub](https://github.com/liferay/liferay-plugins) | 7.0では推奨されていません。[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)に置き換えられました。 |
+| Plugins SDK | [GitHub](https://github.com/liferay/liferay-plugins) | 7.0では推奨されていません。[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)に置き換えられました。 |
 | Ruby Console | 削除されました |  |
-| Search Portlet | リリース (バンドル) | 今後のリリースで削除される予定です。[検索ウィジェット](/discover/portal/-/knowledge_base/7-1/whats-new-with-search)に置き換えられました。 |
+| Search Portlet | リリース (バンドル) | 今後のリリースで削除される予定です。[検索ウィジェット](/docs/7-1/user/-/knowledge_base/u/whats-new-with-search)に置き換えられました。 |
 | Shield Integration | 削除されました | X-Packに置き換えられました。 |
 | Template Engines | リリース (バンドル) | Freemarkerに置き換えられました。 |
 | vLDAPプラグイン（仮想LDAPサーバーEE） | 削除されました |  |
@@ -70,7 +70,7 @@ header-id: deprecated-apps-in-7-1-what-to-do
 
 | アプリ | &nbsp;可用性 | &nbsp;注 |
 | --- | ------------------ | ----------- |
-| RSS Publisher | リリース (バンドル) | このウィジェットの有効化と使用に関する[記事](/discover/portal/-/knowledge_base/7-1/the-rss-publisher-widget)を参照してください。 |
+| RSS Publisher | リリース (バンドル) | このウィジェットの有効化と使用に関する[記事](/docs/7-1/user/-/knowledge_base/u/the-rss-publisher-widget)を参照してください。 |
 | User Group Pages (Copy Mode) | リリース (バンドル) |  |
 | Webプロキシポートレット | [Nexus](https://repository.liferay.com/nexus/service/local/repositories/liferay-public-releases/content/com/liferay/com.liferay.web.proxy.web/2.0.0/com.liferay.web.proxy.web-2.0.0.jar) |  |
 | Webコンテンツ検索ポートレット | [Nexus](https://repository.liferay.com/nexus/service/local/repositories/liferay-public-releases/content/com/liferay/com.liferay.journal.content.search.web/2.0.0/com.liferay.journal.content.search.web-2.0.0.jar) | 新しい検索ウィジェットは、Webコンテンツ検索の独自機能をすべて置き換えるように設定できます。 |

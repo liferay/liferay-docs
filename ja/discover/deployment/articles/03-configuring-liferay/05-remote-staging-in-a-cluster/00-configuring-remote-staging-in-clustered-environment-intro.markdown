@@ -6,7 +6,7 @@ header-id: configuring-remote-staging-in-a-clustered-environment
 
 [TOC levels=1-4]
 
-[クラスタ環境](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)として@product@を実行していて 、リモートステージングを使用したい場合は、適切な設定をする必要があります。このチュートリアルでは、クラスタ環境のシナリオ例でリモートステージングを設定する方法を説明します。例の環境では、以下が備わっていると仮定します。
+[クラスタ環境](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)として@product@を実行していて 、リモートステージングを使用したい場合は、適切な設定をする必要があります。このチュートリアルでは、クラスタ環境のシナリオ例でリモートステージングを設定する方法を説明します。例の環境では、以下が備わっていると仮定します。
 
 - データベースインスタンス設定およびクラスタノードとは異なるファイルリポジトリを持つステージングインスタンス。
 - クラスターのノード間のトラフィックフロー管理を担当するバランサー。
@@ -51,7 +51,7 @@ Let's begin!
 5. ノードのアプリケーションサーバー用の*TunnelAuthVerifier*プロパティを設定します。
 これを行うには2つの方法があります。
 
-   - **` .configファイル`の使用（推奨）：**いずれかのノードの@product@インスタンスの`$LIFERAY_HOME/osgi/configs`フォルダーに、（必要に応じて）`com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`ファイルを作成し、 下記のプロパティを挿入します。`.config`ファイルを1つ作成すると、すべてのクラスタノードで同じように設定されます。`.config`ファイルの詳細については、[Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)の記事を参照してください。
+   - **` .configファイル`の使用（推奨）：**いずれかのノードの@product@インスタンスの`$LIFERAY_HOME/osgi/configs`フォルダーに、（必要に応じて）`com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`ファイルを作成し、 下記のプロパティを挿入します。`.config`ファイルを1つ作成すると、すべてのクラスタノードで同じように設定されます。`.config`ファイルの詳細については、[Understanding System Configuration Files](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)の記事を参照してください。
 
           enabled=true
           hostsAllowed=127.0.0.1,SERVER_IP,STAGING_IP

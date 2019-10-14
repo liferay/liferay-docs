@@ -24,7 +24,7 @@ JBoss EAP 7.1に@product@をインストールするには3つの手順があり
 
 - OSGi JARsのZIPファイル
 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-liferay#liferay-home)のフォルダの中に、JBossサーバーフォルダが入っています。@product@をインストールおよびデプロイしたら、Liferayのホームフォルダの中にJBossサーバーのフォルダ、`data`、`deploy`、`logs`、および`osgi`フォルダが含まれています。`$JBOSS_HOME`はJBossサーバーのフォルダのことです。 このフォルダには通常`jboss-eap-[version]`という名前が付けられています。
+[*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay#liferay-home)のフォルダの中に、JBossサーバーフォルダが入っています。@product@をインストールおよびデプロイしたら、Liferayのホームフォルダの中にJBossサーバーのフォルダ、`data`、`deploy`、`logs`、および`osgi`フォルダが含まれています。`$JBOSS_HOME`はJBossサーバーのフォルダのことです。 このフォルダには通常`jboss-eap-[version]`という名前が付けられています。
 
 ## 依存関係のインストール
 
@@ -131,7 +131,7 @@ Standalone modeとDomain modeの詳細については、[JBoss EAP Product Docum
 
 コマンドラインインターフェースは、domain modeのデプロイにお勧めします。
 
-| **注：**これは@product@が複数のJBossサーバー上のクラスタ環境で実行されるのを妨げるものではありません。JBoss EAPサーバー上で実行している@product@インスタンスのクラスターを、Standalone modeで実行できるように設定できます。@product@クラスターの設定については、[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)のセクションを参照してください 。
+| **注：**これは@product@が複数のJBossサーバー上のクラスタ環境で実行されるのを妨げるものではありません。JBoss EAPサーバー上で実行している@product@インスタンスのクラスターを、Standalone modeで実行できるように設定できます。@product@クラスターの設定については、[@product@ Clustering](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)のセクションを参照してください 。
 | 
 
 ## JBossの設定方法
@@ -298,7 +298,7 @@ JBossに@product@をインストールするためのスクリプトの変更は
 
 ## データベースの設定方法
 
-データベース設定を処理する上で一番簡単な方法は @product@にデータソースを管理させることです。[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)のページでは、@product@の組み込みデータソースを設定できます。
+データベース設定を処理する上で一番簡単な方法は @product@にデータソースを管理させることです。[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)のページでは、@product@の組み込みデータソースを設定できます。
 組み込みのデータソースを使用したい場合は、このセクションを飛ばしてください。
 
 
@@ -360,7 +360,7 @@ JBossにデータソースを管理させたい場合は、次の手順に従っ
 
 ## メール設定方法
 
-データベースと同様、メール設定の処理も@product@に行わせるのが一番簡単な方法です。@product@の組み込みメールセッションを使用したい場合は、このセクションを飛ばしてControl Panelで[メールセッションを設定してください](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)。
+データベースと同様、メール設定の処理も@product@に行わせるのが一番簡単な方法です。@product@の組み込みメールセッションを使用したい場合は、このセクションを飛ばしてControl Panelで[メールセッションを設定してください](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#configuring-mail)。
 
 
 

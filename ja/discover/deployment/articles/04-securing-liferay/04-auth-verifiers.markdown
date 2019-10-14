@@ -73,7 +73,7 @@ header-id: authentication-verifiers
 
 Liferayはモジュール方式を採用しているため、この拡張モジュールはモジュールが`TunnelServlet`の一部になることを有効にするために書かれました。`TunnelServlet`と`TunnelingServletAuthVerifier`をモジュールサーブレットコンテキストにマッピングします。マニフェストに`Http-Tunnel`を持つモジュールはTunnel Servletを利用することができ、`/o/_module_/api/liferay/do`を介してAPIを公開することができます。
 
-この設定は、トンネリングを許可するクライアントIPアドレスを設定することでできます。詳細については、[プロパティドキュメント](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)および[リモートステージング](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging)を参照してください 。
+この設定は、トンネリングを許可するクライアントIPアドレスを設定することでできます。詳細については、[プロパティドキュメント](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)および[リモートステージング](/docs/7-1/user/-/knowledge_base/u/enabling-remote-live-staging)を参照してください 。
 
 この方法は、リモートAPIをエクスポートするための推奨される方法ではないことに注意してください。
 
@@ -105,8 +105,8 @@ LibreOfficeやOpenOfficeに接続している場合、プロセスは@product@�
 
 信頼できるリモートクライアントは、ポータルプロパティの`tunneling.servlet.shared.secret`に格納されている共有秘密を使用して認証します。デフォルト値は空で、すべてのアクセスを禁止します。
 
-デフォルト設定はデフォルトで有効になっていますが、アクセスはローカルホストのみに制限されています。この設定は、トンネリングを許可するクライアントIPアドレスを設定することでできます。詳細については、[プロパティドキュメンテーション](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)および[リモートステージング](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging)を参照してください 。
+デフォルト設定はデフォルトで有効になっていますが、アクセスはローカルホストのみに制限されています。この設定は、トンネリングを許可するクライアントIPアドレスを設定することでできます。詳細については、[プロパティドキュメンテーション](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)および[リモートステージング](/docs/7-1/user/-/knowledge_base/u/enabling-remote-live-staging)を参照してください 。
 
 ## 関連トピック
 
-[サービスアクセスポリシー](/discover/deployment/-/knowledge_base/7-1/)
+[サービスアクセスポリシー](/docs/7-1/deploy/-/knowledge_base/d/)

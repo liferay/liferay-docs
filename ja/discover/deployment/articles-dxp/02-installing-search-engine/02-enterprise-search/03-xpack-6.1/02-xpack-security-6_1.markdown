@@ -108,7 +108,7 @@ Liferay Enterprise Search Premiumを購読している場合は 、Liferay Conne
 以上で準備完了です。
 
 X-Packアダプターを設定するには、*[Control Panel]* >*[Configuration]* > *[System Settings]*に行きます。*[Search]*カテゴリを見つけて、*X-Pack Security*エントリをクリックします。
-ここに直接プロパティ値を入力できますが、`Liferay Home/osgi/configs`にデプロイされている[configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)を使用するのが一般的です。 X-Packアダプターの場合は、以下のファイルを作成します：
+ここに直接プロパティ値を入力できますが、`Liferay Home/osgi/configs`にデプロイされている[configuration file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)を使用するのが一般的です。 X-Packアダプターの場合は、以下のファイルを作成します：
 
     com.liferay.portal.search.elasticsearch6.xpack.security.internal.configuration.XPackSecurityConfiguration.config
 
