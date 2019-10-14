@@ -90,8 +90,8 @@ The samples are available here:
 
 | Source Code   | Maven Central |
 | ------------- | ------------- |
-| [applicant-jsp-portlet](demo/applicant-jsp-portlet)  |  [com.liferay.portletmvc4spring.demo.applicant.jsp.portlet.war](https://search.maven.org/search?q=a:com.liferay.portletmvc4spring.demo.applicant.jsp.portlet) |
-| [applicant-thymeleaf-portlet](demo/applicant-thymeleaf-portlet)  |  [com.liferay.portletmvc4spring.demo.applicant.thymeleaf.portlet.war](https://search.maven.org/search?q=a:com.liferay.portletmvc4spring.demo.applicant.thymeleaf.portlet) | 
+| [applicant-jsp-portlet](https://github.com/liferay/portletmvc4spring/tree/master/demo/applicant-jsp-portlet)  |  [com.liferay.portletmvc4spring.demo.applicant.jsp.portlet.war](https://search.maven.org/search?q=a:com.liferay.portletmvc4spring.demo.applicant.jsp.portlet) |
+| [applicant-thymeleaf-portlet](https://github.com/liferay/portletmvc4spring/tree/master/demo/applicant-thymeleaf-portlet)  |  [com.liferay.portletmvc4spring.demo.applicant.thymeleaf.portlet.war](https://search.maven.org/search?q=a:com.liferay.portletmvc4spring.demo.applicant.thymeleaf.portlet) | 
 
 Now that you have a basic understanding of PortletMVC4Spring portlets and how
 they compare to Spring Web MVC applications, it's time to develop a
