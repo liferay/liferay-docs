@@ -14,49 +14,43 @@ Create a new Display Page Template:
 
 3.  Click the *Add* button (![Add](../../../../../images/icon-add.png)).
 
-4.  Name your Display Page *Lunar Resort Display Page Template* and click
-    *Save*.
+4.  Name your Display Page *Lunar Resort Display Page Template*, open the 
+    *Content Type* dropdown and select *Web Content Article* and 
+    *Basic Web Content* for the Subtype, and click *Save*.
 
-![Figure 1: The Display Page Template creation interface.](../../../../../images/create-display-page.png)
+![Figure 1: Selecting the Asset type and Subtype.](../../../../../images/display-page-asset-type.png)
+
+![Figure 2: The Display Page Template creation interface.](../../../../../images/create-display-page.png)
 
 To build the Display Page Template, you can add any number of Fragments---with
 and without editable content---to the page to build your design. Fragments with
 editable content can have their editable fields mapped to be filled by a Web
 Content article. You can also base it on a specific Web Content Structure.
 
-![Figure 2: Editing a Display Page Template with some Fragments added.](../../../../../images/display-page-with-fragments.png)
+![Figure 3: Editing a Display Page Template with some Fragments added.](../../../../../images/display-page-with-fragments.png)
 
 Notice that the example has an editable title and text body, with a static
 footer containing graphics and links. After you've added some fragments to the
 page, you can map them like this:
 
-1.  Click on the *Mapping* tab inside the *Fragments* section.
 
-2.  Open the *Content Type* dropdown and select *Web Content Article* and 
-    *Basic Web Content* for the Subtype.
-
-![Figure 3: Selecting the Asset type and Subtype.](../../../../../images/display-page-asset-type.png)
-
-3.  Click *Save*.
-
-<!--5.  Now check the box that says *Show Editable Areas*. This highlights
-    areas that you can map.-->
-
-4.  Navigate to the *Section Builder* &rarr; *Basic Components* tab in the right
+1.  Navigate to the *Section Builder* &rarr; *Basic Components* tab in the right
     menu.
 
-5.  Add a *Heading 1* and *Text* components to the appropriate areas.
+2.  Add a *Heading 1* and *Text* components to the appropriate areas.
 
-6.  Click on an editable text area and then click the bolt (Map) icon that 
-    appears. A dialog appears with a list of fields that can be mapped to that 
-    area.
+3.  Click on an editable text area and click the *Map* button (![Map](../../../../../images/icon-map.png)) 
+    in the dialog that appears.
 
-7.  Select a field to map the editable fragment to. The mapped field highlights 
+4.  Select a field to map the editable fragment to. The mapped field highlights 
     purple to indicate that it's mapped.
 
-![Figure 4: Mapping the editable fragments to structure fields.](../../../../../images/display-page-map-field.png)
+    ![Figure 4: Mapping the editable fragments to structure fields.](../../../../../images/display-page-map-field.png)
 
-7.  Click *Publish* at the top of the page to save your work.
+5.  Click *Publish* at the top of the page to save your work.
+
+<!--5.  Now check the box that says *Show Editable Areas*. This highlights
+areas that you can map.-->
 
 You now have a Display Page Template with static graphics and a text area that's 
 replaced with whatever content you add to it.
