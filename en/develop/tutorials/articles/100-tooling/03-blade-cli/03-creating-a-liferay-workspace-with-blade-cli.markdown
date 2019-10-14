@@ -21,23 +21,23 @@ Your workspace is the home for all your custom Liferay projects. Navigate to the
 folder where you want your workspace and run the following command to build a
 Gradle based workspace:
 
-    blade init [WORKSPACE_NAME]
+    blade init -v 7.1 [WORKSPACE_NAME]
 
 To create a Maven based workspace, run this instead:
 
-    blade init -b maven [WORKSPACE_NAME]
+    blade init -v 7.1 -b maven [WORKSPACE_NAME]
 
-| **Note:** Workspace automatically sets the default @product@ version to develop
-| against when it's first initialized. The default version is set to `7.2`. This
-| is applied to create projects using appropriately versioned project templates.
-| If you wish to develop projects for a different @product@ version, you can pass
-| the version in the Blade init command. For example,
-| 
-|     blade init -v 7.0 [WORKSPACE_NAME]
-| 
-| You can update the default version after it has been set by opening your
-| workspace's `.blade.properties` file and setting the
-| `liferay.version.default` property.
+| **Note:** The version you set when first initializing your workspace is
+| stored in the workspace's `.blade.properties` file with the
+| `liferay.version.default` property. This version is applied when creating
+| projects based on the corresponding project template versions.
+|
+| If you wish to develop projects for a different @product@ version, you can
+| pass a different version in the Blade init command. For example,
+|
+| ```bash
+| blade init -v 7.0 [WORKSPACE_NAME]
+| ```
 
 Initializing a workspace requires no downloading or access to the internet.
 

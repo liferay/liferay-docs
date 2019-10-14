@@ -51,7 +51,7 @@ You can learn how to add your button to the editor's toolbars in the
 [Adding Buttons to AlloyEditor's Toolbars tutorials](/docs/7-1/tutorials/-/knowledge_base/t/adding-buttons-to-alloyeditor-toolbars). 
 
 The 
-[`my-log-text-button` bundle](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/my-log-text-button) 
+[`my-log-text-button` bundle](https://github.com/liferay/liferay-docs/tree/7.1.x/en/develop/tutorials/code/osgi/modules/com.liferay.docs.my.button/my-log-text-button) 
 is used as an example throughout this tutorial. You can 
-[download the bundle's zip file](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/my-log-text-button.zip) 
+[download the bundle's zip file](https://github.com/liferay/liferay-docs/blob/7.1.x/en/develop/tutorials/code/osgi/modules/com.liferay.docs.my.button/my-log-text-button.zip) 
 for reference, or use it as a starting point for your project if you wish. 

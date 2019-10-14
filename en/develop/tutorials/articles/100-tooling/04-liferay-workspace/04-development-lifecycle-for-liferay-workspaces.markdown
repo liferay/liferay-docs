@@ -24,7 +24,10 @@ for a specific tool (e.g., Blade CLI or Liferay @ide@). Let's get started!
 
 The first step of Liferay Workspace's development phase is the project creation
 process. Workspace provides a slew of templates that you can use to create many
-different types of Liferay projects.
+different types of Liferay projects. Workspace also provides development support
+for frontend portlets generated with the 
+[Liferay JS Toolkit](/docs/7-1/reference/-/knowledge_base/r/js-generator).
+They're stored in the `modules` folder by default.
 
 You can configure where your workspace creates modules by editing the
 `liferay.workspace.modules.dir` property in the workspace's `gradle.properties`
