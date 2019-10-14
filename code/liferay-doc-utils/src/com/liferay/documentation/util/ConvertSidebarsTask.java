@@ -1,11 +1,18 @@
 package com.liferay.documentation.util;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.LineNumberReader;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -21,6 +28,7 @@ public class ConvertSidebarsTask extends Task {
 	public void execute() throws BuildException {
 
 		String docDir = _docdir;
+		String langDir = _langDir;
 
 		List<String> ceFileList = DocsUtil.getMarkdownFileList(docDir, "");
 		List<String> dxpFileList = DocsUtil.getMarkdownFileList(docDir, "-dxp");
@@ -36,8 +44,16 @@ public class ConvertSidebarsTask extends Task {
 			String outFileTmp = outFile + ".tmp";
 
 			try {
-				LineNumberReader in =
-						new LineNumberReader(new FileReader(inFile));
+				LineNumberReader in;
+
+				if (langDir.equals("ja")) {
+					Reader reader = new InputStreamReader(new FileInputStream(inFile), "ISO_8859_1");
+					BufferedReader br = new BufferedReader(reader);
+					in = new LineNumberReader(br);
+				}
+				else {
+					in = new LineNumberReader(new FileReader(inFile));
+				}
 
 				String line;
 				boolean sidebarsExist = false;
@@ -66,11 +82,20 @@ public class ConvertSidebarsTask extends Task {
 					boolean sidebar = false;
 					int j = 0;
 
-					LineNumberReader in2 =
-							new LineNumberReader(new FileReader(inFile));
+					LineNumberReader in2;
+					BufferedWriter out;
 
-					BufferedWriter out =
-							new BufferedWriter(new FileWriter(outFileTmp));
+					if (langDir.equals("ja")) {
+						Reader reader = new InputStreamReader(new FileInputStream(inFile), "ISO_8859_1");
+						BufferedReader br = new BufferedReader(reader);
+						in2 = new LineNumberReader(br);
+
+						out = Files.newBufferedWriter(Paths.get(outFileTmp), StandardCharsets.ISO_8859_1);
+					}
+					else {
+						in2 = new LineNumberReader(new FileReader(inFile));
+						out = new BufferedWriter(new FileWriter(outFileTmp));
+					}
 
 					while ((line = in2.readLine()) != null) {
 
@@ -169,8 +194,13 @@ public class ConvertSidebarsTask extends Task {
 		_docdir = docdir;
 	}
 
+	public void setLangDir(String langDir) {
+		_langDir = langDir;
+	}
+
 	private static String sidebarPrefix = "+$$$";
 	private static String sidebarSuffix = "$$$";
 	
 	private String _docdir;
+	private String _langDir;
 }
