@@ -97,7 +97,8 @@ the Web Content Display app,
     panel.
 
 2.  Select *Edit Web Content* to launch the editor. Select *Edit Template* to
-    launch the template editor for the web content article's template.
+    launch the template editor for the web content article's template if it has 
+    one.
 
 If you edit the article from Site Administration, you can also view the
 article's history and use the diff tool to compare versions.
