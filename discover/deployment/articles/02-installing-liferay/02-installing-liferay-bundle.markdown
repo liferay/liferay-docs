@@ -182,6 +182,8 @@ portal, you need to supply the following information:
 
 **Default Language:** choose the default locale of your portal.
 
+**Time Zone:** default time zone of your Liferay instance.
+
 For the administrator, you need to supply the following information:
 
 **First Name:** the first name of the default administrator user
@@ -189,6 +191,9 @@ For the administrator, you need to supply the following information:
 **Last Name:** the last name of the default administrator user
 
 **Email:** the email address of the default administrator user
+
+| **Note:** the domain of administrator user's email will be used as the default
+| domain name of the instance (company.default.web.id configuration property).
 
 ![Figure 1: Supply the information for your portal and your portal's default administrator user on the Basic Configuration page.](../../images/basic-configuration1.png)
 
