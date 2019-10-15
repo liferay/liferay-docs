@@ -28,9 +28,9 @@ Advanced File System Storeを使用するには、次の手順に従います。
 
 マルチノード環境でAdvanced File System Storeを使用するには、次の手順に従います。
 
-1. `portal-ext.properties`を各ノードの[`[Liferay Home]`フォルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)にコピーします。
+1. `portal-ext.properties`を各ノードの[`[Liferay Home]`フォルダ](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)にコピーします。
 
-2. *Advanced File System Store*画面から[`.config`ファイル](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)に設定をエクスポートします。
+2. *Advanced File System Store*画面から[`.config`ファイル](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)に設定をエクスポートします。
 
 3. `.config`ファイルを各ノードの`[Liferay Home]/osgi/configs`フォルダにコピーします。
 

@@ -7,7 +7,7 @@ header-id: installing-liferay
 [TOC levels=1-4]
 
 Now that you've performed the steps needed to [prepare for your
-installation](/discover/deployment/-/knowledge_base/7-1/preparing-for-install),
+installation](/docs/7-1/deploy/-/knowledge_base/d/preparing-for-install),
 you're ready to install @product@! Since bundles are the easiest way to complete
 an installation, all the installation steps below assume you're installing a
 @product@ bundle. If you plan to install @product@ manually, please refer to the
@@ -52,7 +52,7 @@ sets the auto-deploy location.
 especially when trying to diagnose a problem. `portal-impl.jar`'s
 `portal-impl/src/META-INF/portal-log4j.xml` file sets the location for
 the log files. To override the log file location, you must
-[use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files).
+[use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/docs/7-0/tutorials/-/knowledge_base/t/advanced-customization-with-ext-plugins#using-advanced-configuration-files).
    - `osgi`: All the JAR files and a few configuration files for @product@'s
 OSGi runtime belong in this folder.
 [Portal property `module.framework.base.dir`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Module%20Framework)
@@ -105,7 +105,7 @@ You can connect to your database with JNDI on your app server or the data source
 shipped with @product@ (recommended). Refer to the article on your app server
 for instructions on using JNDI. For the internal data source, you can configure
 it by specifying the configuration in a `portal-ext.properties` file or the
-[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard):
+[Setup Wizard](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard):
 
 1. Create a `portal-ext.properties` file in your Liferay Home folder.
 

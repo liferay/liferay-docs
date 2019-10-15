@@ -34,7 +34,7 @@ header-id: running-the-upgrade
 
     autoUpgrade="false"
 
-この設定は自動的なモジュールアップグレードを防ぎますが、コアアップグレードを終えた後にアップグレードツールが[アップグレード中のモジュール](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades)のためにGogoシェルを開いてしまう原因になります。
+この設定は自動的なモジュールアップグレードを防ぎますが、コアアップグレードを終えた後にアップグレードツールが[アップグレード中のモジュール](/docs/7-1/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades)のためにGogoシェルを開いてしまう原因になります。
 
 ツールのデフォルトのJavaパラメータは、次のとおりです。
 
@@ -65,8 +65,8 @@ header-id: running-the-upgrade
 | 
 | データベースアップグレードツール2.0.1（Liferay Portal CE 7.1 GA 2に含まれており、エンタープライズのお客様向けのヘルプセンターからダウンロード可能）以降、アップグレードプロセスは、接続が切断されてもサーバー上で続行されます。接続が切断された場合は、ログを使用してアップグレードステータスを再接続して監視します（デフォルトのログファイルは`upgrade.log`です）。@product-ver@以前のバージョンを使用していてアップグレードの実行が中断された場合は、ログファイルで実行が停止した場所を確認してください。
 | 
-| - Core 7.1以降のアップグレードプロセスまたはモジュールのアップグレードプロセス中に実行が停止した場合は、アップグレードツールを再起動して、その時点からのアップグレードを続行してください。Gogoシェルを使用して[モジュールのアップグレードステータスを確認](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)し、モジュールのアップグレードを続けることもできます。
-| - Core 7.0以前のアップグレードプロセス中に実行が停止した場合は、[バックアップからデータを復元](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)してアップグレードを再度開始する必要があります。
+| - Core 7.1以降のアップグレードプロセスまたはモジュールのアップグレードプロセス中に実行が停止した場合は、アップグレードツールを再起動して、その時点からのアップグレードを続行してください。Gogoシェルを使用して[モジュールのアップグレードステータスを確認](/docs/7-1/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)し、モジュールのアップグレードを続けることもできます。
+| - Core 7.0以前のアップグレードプロセス中に実行が停止した場合は、[バックアップからデータを復元](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)してアップグレードを再度開始する必要があります。
 
 | **警告**：ツールの展開されたコマンドがWindowsに対して大きくなりすぎないようにするには`[Liferay Home]/tools/portal-tools-db-upgrade-client`フォルダからアップグレードツールスクリプトを実行します。
 
@@ -78,7 +78,7 @@ header-id: running-the-upgrade
 
 アップグレードツールの`autoUpgrade`プロパティが`true`（デフォルト設定）に設定されている場合は、インストールされているすべてのモジュールのアップグレードプロセスも実行されます。
 
-`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`というファイルに`autoUpgrade="false"`を設定して、そのファイルを`[Liferay Home]/osgi/configs`フォルダにコピーすると、コアのアップグレード後にアップグレードツールによってGogoシェルが開きます。Gogoシェルでは、[モジュールのアップグレードを管理](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades)できます。
+`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`というファイルに`autoUpgrade="false"`を設定して、そのファイルを`[Liferay Home]/osgi/configs`フォルダにコピーすると、コアのアップグレード後にアップグレードツールによってGogoシェルが開きます。Gogoシェルでは、[モジュールのアップグレードを管理](/docs/7-1/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades)できます。
 
 コア以外のモジュールをアップグレードする方法は以上です。次に、コアアップグレードの設定オプションについて説明します。
 
@@ -149,7 +149,7 @@ Home]/tools/portal-tools-db-upgrade-client/`にある以下のファイルで事
 
 アップグレードそのものを設定するには、以下の情報を指定します。
 
-**liferay.home：**[Liferayのホームフォルダ](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)*（必須）*
+**liferay.home：**[Liferayのホームフォルダ](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)*（必須）*
 
 **hibernate.jdbc.batch_size：**パフォーマンスを向上させるために使用されるJDBCバッチサイズです。デフォルトでは、*250*に設定されています。*（オプション）*
 

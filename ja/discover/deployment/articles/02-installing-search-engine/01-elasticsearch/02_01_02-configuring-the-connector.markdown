@@ -79,7 +79,7 @@ There are two ways to configure the adapter:
 It's convenient to configure the Elasticsearch adapter from System Settings, but
 this is often only possible during development and testing. If you're not
 familiar with System Settings, you can read about it
-[here](/discover/portal/-/knowledge_base/7-1/system-settings). Remember that you
+[here](/docs/7-1/user/-/knowledge_base/u/system-settings). Remember that you
 can generate configuration files for deployment to other systems by configuring
 System Settings, and then exporting the `.config` file with your configuration.
 

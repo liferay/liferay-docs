@@ -117,5 +117,5 @@ Liferayのサービスアクセスポリシーモジュールは、ソースコ�
 
 ## 関連トピック
 
-[サービスアクセスポリシーの作成](/develop/tutorials/-/knowledge_base/7-0/service-access-policies)
+[サービスアクセスポリシーの作成](/docs/7-0/tutorials/-/knowledge_base/t/service-access-policies)
 

@@ -10,7 +10,7 @@ header-id: pre-upgrade-speed-up-the-process
 
 本番環境をアップグレードする前にいくつかの手順を実行することで、このプロセスを短縮できます。手順の概要は以下のとおりです。
 
-1. [最新の完全バックアップ](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)を、本番環境から本番以外の環境にコピーします。 この環境では、残りの手順で説明しているように、データベースを分析してアップグレードをテストできます。
+1. [最新の完全バックアップ](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)を、本番環境から本番以外の環境にコピーします。 この環境では、残りの手順で説明しているように、データベースを分析してアップグレードをテストできます。
 2. [データベースを調べます。](#analyzing-your-database-step-2)
 3. [未使用のコンテンツを削除するには、LiferayのAPIを使用してください](#remove-unused-data-from-the-database-using-liferays-api-step-3)。
 4. [本番以外の環境でアップグレードプロセスを実行します。](#execute-the-upgrade-process-step-4)
@@ -268,7 +268,7 @@ header-id: pre-upgrade-speed-up-the-process
 
 継続時間（ミリ秒）によって、最も時間がかかるプロセスを見つけやすくなります。長いアップグレードプロセスに関連する不要なオブジェクトを検索することを検討します。もう一度、LiferayのAPIを使ってそれらを削除し、変更をテストします。
 
-**注**：[アップグレードプロセスがどのように作成されるか](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)を学ぶことで、データをよりよく理解することができます。
+**注**：[アップグレードプロセスがどのように作成されるか](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app)を学ぶことで、データをよりよく理解することができます。
 
 ## 未使用のオブジェクトを本番環境から削除する（手順8）
 

@@ -246,7 +246,7 @@ Filesystem Keystore Managerを使用する場合（デフォルト）：
 
 
 
-1. 前のセクションの指示に従って、[@product@クラスタ](/discover/deployment/-/knowledge_base/7-0/liferay-clustering)の各ノードをSAMLService Providerとして設定します。
+1. 前のセクションの指示に従って、[@product@クラスタ](/docs/7-0/deploy/-/knowledge_base/d/liferay-clustering)の各ノードをSAMLService Providerとして設定します。
 
 
 

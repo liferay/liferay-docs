@@ -34,7 +34,7 @@ header-id: using-rolling-restarts
 
 ## フィックスパックの適用（DXPのみ
 
-カスタマーポータル は、元に戻せないため、ローリング再起動の対象にならない[フィックスパック](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay)を識別します。その他のフィックスパックは全て対象となります。
+カスタマーポータル は、元に戻せないため、ローリング再起動の対象にならない[フィックスパック](/docs/7-1/deploy/-/knowledge_base/d/maintaining-liferay)を識別します。その他のフィックスパックは全て対象となります。
 
 ## フィックスパックのリバート（DXPのみ）
 
@@ -46,7 +46,7 @@ header-id: using-rolling-restarts
 
 ## 設定管理ファイルによって制御されているシステム設定
 
-[システム設定](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)ファイルは、ローリング再起動で適用できます。
+[システム設定](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)ファイルは、ローリング再起動で適用できます。
 
 ## アプリケーションサーバーまたはJVM設定の変更
 
@@ -60,8 +60,8 @@ Javaのマイナーバージョンアップデートは、ローリング再起�
 
 ## 関連トピック
 
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
+[@product@ Clustering](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)
 
-[Maintaining @product@](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay)
+[Maintaining @product@](/docs/7-1/deploy/-/knowledge_base/d/maintaining-liferay)
 
-[Implementing Data Upgrades](/develop/tutorials/-/knowledge_base/7-1/data-upgrades)
+[Implementing Data Upgrades](/docs/7-1/tutorials/-/knowledge_base/t/data-upgrades)

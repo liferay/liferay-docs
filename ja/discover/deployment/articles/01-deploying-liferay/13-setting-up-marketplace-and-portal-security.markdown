@@ -28,10 +28,10 @@ Internet. In these cases, you have two options:
 [Marketplace plugin](https://www.liferay.com/marketplace/download).
 Then allow @product@ to auto deploy it by dropping the downloaded `.lpkg`
 file into the `deploy` folder in
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home).
+[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home).
 
 2. Alternately, once you have the downloaded `.lpkg` file, deploy it using the
-[App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps).
+[App Manager](/docs/7-1/user/-/knowledge_base/u/managing-and-configuring-apps).
 
 Next you'll learn how to work around database access restrictions.
 
@@ -48,7 +48,7 @@ Some production environments do not have the necessary database permissions for
 dropping tables from the @product@ database user.
 
 See the
-[database server and new database instructions](/discover/deployment/-/knowledge_base/7-1/preparing-for-install#step-1-choose-a-database-server-and-create-a-new-database)
+[database server and new database instructions](/docs/7-1/deploy/-/knowledge_base/d/preparing-for-install#step-1-choose-a-database-server-and-create-a-new-database)
 for more information. Note that many sophisticated
 @product@ apps---not just the Marketplace app---require new tables when
 deployed. If your environment restricts database access, you may need to repeat

@@ -15,14 +15,14 @@ LiferayのGogoシェルコマンドを使用すると、個々のモジュール
 - [アップグレードステータスを確認する](#checking-the-upgrade-status)
 - [アップグレードを確認する](#executing-verify-processes)
 
-| **注**：Gogoシェルコマンドを使用してコアをアップグレードする前に、[コアアップグレードを設定する](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade#configuring-the-core-upgrade)必要があります。
+| **注**：Gogoシェルコマンドを使用してコアをアップグレードする前に、[コアアップグレードを設定する](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade#configuring-the-core-upgrade)必要があります。
 
 まず最初に、コマンドの使用法について説明します。
 
 ## コマンドの使用法
 
 アップグレードツールを実行してGogoシェルを開いた場合は、すでに接続されています。
-それ以外の場合は、[Gogoシェルポートレット](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)を使用してコマンドを実行でき ます。
+それ以外の場合は、[Gogoシェルポートレット](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)を使用してコマンドを実行でき ます。
 
 `upgrade`名前空間で利用可能なコマンドは、次のとおりです。
 
@@ -54,7 +54,7 @@ LiferayのGogoシェルコマンドを使用すると、個々のモジュール
 
 **verify:list：**登録されているすべてのベリファイアを一覧表示します。
 
-[LiferayコマンドおよびGogoシェルで利用可能な標準コマンド](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)には、便利なものがたくさんあります。
+[LiferayコマンドおよびGogoシェルで利用可能な標準コマンド](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)には、便利なものがたくさんあります。
 以下のセクションでは、Liferayのアップグレードコマンドについて説明します。
 
 ## モジュールアップグレードプロセスの一覧表示

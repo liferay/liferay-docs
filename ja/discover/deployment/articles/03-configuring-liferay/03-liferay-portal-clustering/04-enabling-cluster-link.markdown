@@ -150,7 +150,7 @@ JGroups は、この他にもRackspace Ping、BPing、File Ping等クラスタ�
 
 負荷テストの結果、デフォルトの分散キャッシュ設定がサイトに最適化されていないと分かることもあります。この場合は、設定を自分で調整する必要があります。Liferay DXPのインストールを直接変更することも、各ノードにモジュールをインストールし、クラスタを停止せずに設定を変更することもできます。
 
-[プロジェクトを作成](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip)することによってこれをできるだけ簡単にしました。プロジェクトをダウンロードして、ワークスペースのし`modules`フォルダにある[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)に解凍します。キャッシュ設定を上書きするには、Ehcache設定ファイルを1つだけ変更する必要があります。これは、以下のフォルダ構造にあります。
+[プロジェクトを作成](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip)することによってこれをできるだけ簡単にしました。プロジェクトをダウンロードして、ワークスペースのし`modules`フォルダにある[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)に解凍します。キャッシュ設定を上書きするには、Ehcache設定ファイルを1つだけ変更する必要があります。これは、以下のフォルダ構造にあります。
 
 - `src`
    - `main`

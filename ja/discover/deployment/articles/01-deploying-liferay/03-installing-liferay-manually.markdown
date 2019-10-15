@@ -7,7 +7,7 @@ header-id: installing-liferay-manually
 [TOC levels=1-4]
 
 The easiest way to install @product@ is to
-[use a bundle](/discover/deployment/-/knowledge_base/7-1/installing-liferay).
+[use a bundle](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay).
 However, this is not always possible. Some organizations have an existing
 infrastructure into which @product@ must be installed. Other organizations have
 standardized on a particular application server. @product@ works well with many
@@ -31,11 +31,11 @@ Start with data sources.
 We recommend the built-in data source. @product@'s data source is configured
 by properties set in a properties file. By default, you can enter database
 connection information on the
-[Basic Configuration page](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
+[Basic Configuration page](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)
 that appears when @product@ starts for the first time. The Setup Wizard stores
 the information you entered in a configuration file called
 `portal-setup-wizard.properties` in your
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 folder. The built-in data source uses this information to connect to the
 database.
 

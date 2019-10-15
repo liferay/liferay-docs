@@ -22,7 +22,7 @@ header-id: locales-and-encoding-configuration
 
 ![図1：インスタンス設定で、デフォルトの言語と利用可能な言語、およびタイムゾーンを変更できます。](../../../images/instance-locales.png)
 
-中央の左右の矢印を使用して、利用可能な言語とロケールを追加または削除できます。 [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)フォルダの`portal-ext.properties`ファイルで、これらをプロパティとして設定することもできます。`portal.properties`参照ドキュメントの[会社](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Company)のセクションはデフォルトのロケールを定義します。[言語とタイムゾーン](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)のセクションでは、利用可能なロケールと現在のロケールを定義します。
+中央の左右の矢印を使用して、利用可能な言語とロケールを追加または削除できます。 [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)フォルダの`portal-ext.properties`ファイルで、これらをプロパティとして設定することもできます。`portal.properties`参照ドキュメントの[会社](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Company)のセクションはデフォルトのロケールを定義します。[言語とタイムゾーン](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)のセクションでは、利用可能なロケールと現在のロケールを定義します。
 
     company.default.locale=en_GB
 
@@ -55,7 +55,7 @@ JVMでタイムゾーンを設定すると、カレンダーイベントやWeb�
 
 ## 言語キーの変更
 
-開発者は、デフォルトで出荷されている[言語キーの変更](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys)によって、特定のコアUIメッセージ（たとえば、*要求は正常に完了しました*）を追加、または変更することができます。
+開発者は、デフォルトで出荷されている[言語キーの変更](/docs/7-1/tutorials/-/knowledge_base/t/overriding-language-keys)によって、特定のコアUIメッセージ（たとえば、*要求は正常に完了しました*）を追加、または変更することができます。
 
 ### 右から左へ
 
@@ -66,7 +66,7 @@ JVMでタイムゾーンを設定すると、カレンダーイベントやWeb�
     lang.line.begin=right
     lang.line.end=left
 
-デフォルトで右から左に表示するには、[これらのプロパティを全体的に上書き](/develop/tutorials/-/knowledge_base/7-1/overriding-global-language-keys)します。
+デフォルトで右から左に表示するには、[これらのプロパティを全体的に上書き](/docs/7-1/tutorials/-/knowledge_base/t/overriding-global-language-keys)します。
 
 ### ユーザー名のローカライズ
 
@@ -76,12 +76,12 @@ JVMでタイムゾーンを設定すると、カレンダーイベントやWeb�
     lang.user.name.prefix.values=Sr,Sra,Sta,Dr,Dra
     lang.user.name.required.field.names=last-name
 
-詳細については、[Liferay言語設定の使用](/develop/tutorials/-/knowledge_base/7-1/using-liferays-language-settings)を参照してください。
+詳細については、[Liferay言語設定の使用](/docs/7-1/tutorials/-/knowledge_base/t/using-liferays-language-settings)を参照してください。
 
 ## 関連トピック
 
-[Liferay言語設定の使用](/develop/tutorials/-/knowledge_base/7-1/using-liferays-language-settings)
+[Liferay言語設定の使用](/docs/7-1/tutorials/-/knowledge_base/t/using-liferays-language-settings)
 
-[グローバル言語キーの上書き](/develop/tutorials/-/knowledge_base/7-1/overriding-global-language-keys)
+[グローバル言語キーの上書き](/docs/7-1/tutorials/-/knowledge_base/t/overriding-global-language-keys)
 
-[モジュールの言語キーの上書き](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys)
+[モジュールの言語キーの上書き](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys)

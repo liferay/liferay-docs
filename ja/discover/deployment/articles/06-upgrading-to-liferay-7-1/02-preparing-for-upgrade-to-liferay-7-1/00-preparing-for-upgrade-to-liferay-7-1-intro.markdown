@@ -32,20 +32,20 @@ header-id: preparing-an-upgrade-to-liferay-7
 
 ## 手順2：すべての変更をステージングサイトから本番サイトへ公開する
 
-[ローカル/リモートステージングを有効](/discover/portal/-/knowledge_base/7-1/enabling-staging)にし、コンテンツやデータをステージングサイトに保存した場合、本番サイトに[公開](/discover/portal/-/knowledge_base/7-1/publishing-staged-content-efficiently)する必要があります。この手順を飛ばした場合、システムには最後の公開日以降に変更されたコンテンツがわからないため、アップグレード後に完全公開（または手動で変更を公開）する必要があります。
+[ローカル/リモートステージングを有効](/docs/7-1/user/-/knowledge_base/u/enabling-staging)にし、コンテンツやデータをステージングサイトに保存した場合、本番サイトに[公開](/discover/portal/-/knowledge_base/7-1/publishing-staged-content-efficiently)する必要があります。この手順を飛ばした場合、システムには最後の公開日以降に変更されたコンテンツがわからないため、アップグレード後に完全公開（または手動で変更を公開）する必要があります。
 
 ## 手順3：重複したWebコンテンツの構造フィールド名を削除する
 
-Webコンテンツ管理システムを広範囲に使用したことがある場合は、フィールド名が固有ではない構造があるかもしれません。 アップグレードする前に、[重複するフィールド名を見つけて削除する](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names)必要があり ます。以前にLiferay Portal 6.2にアップグレードしてこれをスキップしていた場合に、このエラーが発生します。
+Webコンテンツ管理システムを広範囲に使用したことがある場合は、フィールド名が固有ではない構造があるかもしれません。 アップグレードする前に、[重複するフィールド名を見つけて削除する](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay#find-and-remove-duplicate-field-names)必要があり ます。以前にLiferay Portal 6.2にアップグレードしてこれをスキップしていた場合に、このエラーが発生します。
 
     19:29:35,298 ERROR [main][VerifyProcessTrackerOSGiCommands:221] com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
     com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
 
-この場合、Liferay 6.2の以前のバックアップにロールバックして、[重複するフィールド名を 見つけて削除します](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names)。
+この場合、Liferay 6.2の以前のバックアップにロールバックして、[重複するフィールド名を 見つけて削除します](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay#find-and-remove-duplicate-field-names)。
 
 ## 手順4：@product@の完全なバックアップを同期する
 
-[@product@のデータベース、インストール先、およびドキュメントライブラリストアをバックアップします。](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
+[@product@のデータベース、インストール先、およびドキュメントライブラリストアをバックアップします。](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
 
 ## 手順5：ポータルのプロパティを更新する
 
@@ -53,11 +53,11 @@ Webコンテンツ管理システムを広範囲に使用したことがある�
 
 Liferay Portal 6.2より前のバージョンから移行する場合は、以下のプロパティに関連した更新から始めます。
 
-- Liferay Portal 6.1 を使用している場合は、[プロパティをLiferay Portal 6.2で導入された新しいデフォルトに適合させます](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#review-the-liferay-6)。
+- Liferay Portal 6.1 を使用している場合は、[プロパティをLiferay Portal 6.2で導入された新しいデフォルトに適合させます](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay#review-the-liferay-6)。
 
-- Liferay 6.0.12を使っている場合は 、[Image Galleryを移行します](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images)。
+- Liferay 6.0.12を使っている場合は 、[Image Galleryを移行します](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay#migrate-your-image-gallery-images)。
 
-- シャード環境がある場合は、[シャーディング用のアップグレードを設定します](/discover/deployment/-/knowledge_base/7-0/upgrading-sharded-environment)。
+- シャード環境がある場合は、[シャーディング用のアップグレードを設定します](/docs/7-0/deploy/-/knowledge_base/d/upgrading-sharded-environment)。
 
 新しいバージョンの@product@がリリースされた際に、多くの場合はデフォルト設定が変更されていますが、今回のリリースでも同じことが言えます。古いバージョンのデフォルトを使用する場合は、変更内容を確認してから、古いバージョンのデフォルトをそのまま使用するか、新しいバージョンのデフォルトを使用するかを決定してください。
 
@@ -82,12 +82,12 @@ Liferay Portal 6.2より前のバージョンから移行する場合は、以�
     dl.file.entry.thumbnail.max.height=128
     dl.file.entry.thumbnail.max.width=128
 
-モジュール化された機能のプロパティは変更されたため、[OSGi設定ファイル](/discover/portal/-/knowledge_base/7-1/system-settings#exporting-and-importing-configurations)に個別にデプロイする必要があり ます。 
+モジュール化された機能のプロパティは変更されたため、[OSGi設定ファイル](/docs/7-1/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)に個別にデプロイする必要があり ます。 
 [7.1のポータルプロパティリファレンスドキュメント](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)に、プロパティの詳細と例があります。
 
 ## 手順6：ドキュメントとメディアのファイルストアを設定する
 
-次に、ドキュメントとメディアの設定を確認します。アップグレードプロセスを実行する前に、[ドキュメントライブラリーのドキュメンテーション](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)を見て、@product-ver@のすべてのオプションを確認しておいてください。
+次に、ドキュメントとメディアの設定を確認します。アップグレードプロセスを実行する前に、[ドキュメントライブラリーのドキュメンテーション](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)を見て、@product-ver@のすべてのオプションを確認しておいてください。
 ただし、変更された設定には重要な部分が2つあります。
 
 - ファイルストアの場所は、ポータルプロパティファイルでは指定されなくなりました。（例：`portal-ext.properties`）。
@@ -103,11 +103,11 @@ Advanced File System Storeメソッドを使用してドキュメントライブ
 
 設定ファイル名は、設定を実装するクラスの名前と一致していなければなりません。
 
-詳細については、[ドキュメントリポジトリ設定のドキュメンテーション](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)を参照してください。
+詳細については、[ドキュメントリポジトリ設定のドキュメンテーション](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)を参照してください。
 
 ## 手順7：@product-ver@をインストールする
 
-次に、[@product@をアプリケーションサーバーにインストールする](/discover/deployment/-/knowledge_base/7-1/deploying-product)か 、[選択したアプリケーションサーバーにバンドルされている@product@を使用します](/discover/deployment/-/knowledge_base/7-1/installing-liferay)。
+次に、[@product@をアプリケーションサーバーにインストールする](/docs/7-1/deploy/-/knowledge_base/d/deploying-product)か 、[選択したアプリケーションサーバーにバンドルされている@product@を使用します](/discover/deployment/-/knowledge_base/7-1/installing-liferay)。
 
 それから 、最新のフィックスパックをインストールします。
 

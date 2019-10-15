@@ -143,7 +143,7 @@ Elasticsearchコネクタを停止するには以下を入力します。
 
 この例では、`[bundle ID]`は`476`です。
 
-| **Liferay DXP**：DXPをご利用中の場合、Elasticsearch、Shield、およびMarvelプラグインを[ブラックリスト](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components)に登録する必要があります。
+| **Liferay DXP**：DXPをご利用中の場合、Elasticsearch、Shield、およびMarvelプラグインを[ブラックリスト](/docs/7-1/user/-/knowledge_base/u/blacklisting-osgi-modules-and-components)に登録する必要があります。
 | 
 | 1. 以下を作成します。
 | 

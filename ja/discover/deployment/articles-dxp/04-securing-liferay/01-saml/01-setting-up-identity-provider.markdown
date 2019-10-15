@@ -25,7 +25,7 @@ keystore managerを使用します。
 
 
 
- Document Libraryストレージを使用する利点は、[back end file stores](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)をいくつでも使用できることです。
+ Document Libraryストレージを使用する利点は、[back end file stores](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration)をいくつでも使用できることです。
 これらはキーを保存しているシステム上だけでなく@product@のパーミッションシステムによっても保護されています。
 
 SAML Identity Providerとして機能するように@product@を設定する手順は次のとおりです。
