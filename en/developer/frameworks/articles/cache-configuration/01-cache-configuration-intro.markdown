@@ -42,7 +42,7 @@ are especially easy to cache, as
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 generates caching code for them in the service persistence layer. The code operates on these cache types:
 
-**EntityCache:** Holds service entity primary keys. An entity's  
+**EntityCache:** Holds service entity by primary keys. An entity's  
 `*PersistenceImpl.fetchByPrimaryKey` method can use EntityCache if it's
 configured. 
 
@@ -145,7 +145,7 @@ Cache names are arbitrary except for EntityCache and FinderCache.
 
 EntityCache uses this naming convention:
 
-`PREFIX. + ENTITY_IMPL_CLASS_NAME`
+`PREFIX + ENTITY_IMPL_CLASS_NAME`
 
 where the `PREFIX` is always this:
 
@@ -165,7 +165,7 @@ com.liferay.portal.kernel.dao.orm.EntityCache.com.liferay.portal.model.impl.User
 
 FindeCache uses this naming convention:
 
-`PREFIX. + ENTITY_IMPL_CLASS_NAME + [".LIST1"|".LIST2"]`
+`PREFIX + ENTITY_IMPL_CLASS_NAME + [".LIST1"|".LIST2"]`
 
 where the `PREFIX` is always this:
 
@@ -177,7 +177,7 @@ Here are the FinderCache types and their name patterns.
 
 | Type | Pattern | Example |
 | ---- | ------- | ------- |
-| Entity instances matching query parameters.  | `PREFIX. + ENTITY_IMPL_CLASS_NAME` | `com.liferay.portal.kernel.dao.orm.FinderCache.com.liferay.portal.model.impl.ClassNameImpl` |
+| Entity instances matching query parameters.  | `PREFIX + ENTITY_IMPL_CLASS_NAME` | `com.liferay.portal.kernel.dao.orm.FinderCache.com.liferay.portal.model.impl.ClassNameImpl` |
 | Paginated lists of entity instances matching query parameters.  | `PREFIX + ENTITY_IMPL_CLASS_NAME + ".List1"` | `com.liferay.portal.kernel.dao.orm.FinderCache.com.liferay.portal.model.impl.ClassNameImpl.List1` |
 | Non-paginated lists of entity instances matching query parameters.  | `PREFIX + ENTITY_IMPL_CLASS_NAME + ".List2"` | `com.liferay.portal.kernel.dao.orm.FinderCache.com.liferay.portal.model.impl.ClassNameImpl.List2` |
 
