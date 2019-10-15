@@ -20,12 +20,12 @@ v3.2.1 and Glyphicons 3) were moved to the compatibility layer's
 file as well. If your theme extends the [Styled base theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled), 
 this compatibility layer is included by default. 
 
-| **Note:** This compatibility layer is meant as a short-term solution to ensure
-| that your Bootstrap 3 and Lexicon CSS components aren't broken while you update
-| your theme to use
-| [Bootstrap 4](https://getbootstrap.com/docs/4.0/migration/)
-| and
-| [Clay CSS](https://ui-migration.liferay.com/docs/lexicon/add_menu.html).
+| **Note:** The compatibility layer is meant as a short-term solution to ensure 
+| that your Bootstrap 3 and Lexicon CSS components aren't broken while you 
+| update your theme to use [Bootstrap 4](https://getbootstrap.com/docs/4.3/migration/) 
+| and [Clay CSS](https://clayui.com/docs/css-framework/scss.html). It will be 
+| disabled in a future release. Migrate your theme to use Bootstrap 4 and Clay 
+| CSS as soon as you're able to. 
  
 Follow these guidelines to update your markup:
 

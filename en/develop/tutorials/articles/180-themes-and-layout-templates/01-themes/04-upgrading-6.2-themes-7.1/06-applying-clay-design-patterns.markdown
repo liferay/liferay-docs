@@ -18,6 +18,14 @@ let's you use
 [Lexicon CSS](https://lexiconcss.wedeploy.io/) 
 markup alongside 
 [Clay CSS](https://clayui.com/). 
+
+| **Note:** The compatibility layer is meant as a short-term solution to ensure 
+| that your Bootstrap 3 and Lexicon CSS components aren't broken while you 
+| update your theme to use [Bootstrap 4](https://getbootstrap.com/docs/4.3/migration/) 
+| and [Clay CSS](https://clayui.com/docs/css-framework/scss.html). It will be 
+| disabled in a future release. Migrate your theme to use Bootstrap 4 and Clay 
+| CSS as soon as you're able to. 
+
 This section demonstrates how to apply Clay to your HTML markup. For example, 
 this is the Liferay Portal 6.2 Lunar Resort's reservation form:
 
