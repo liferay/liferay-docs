@@ -12,8 +12,7 @@ Service Builder generates
 caching code automatically in
 [persistence classes](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder).
 The code maps entity primary keys to implementation objects to quicken entity
-retrieval. The code is bypassed by default. Configuring cache for the entity
-(EntityCache) enables the generated caching code. Here you'll configure cache
+retrieval. These caches use the default cache configuration by default. Sometimes the default configuration is not optimized enough, and you may want to tune the configuration. Here you'll configure cache
 for a service entity so you can access the service entity instances faster. 
 
 1.  Open your
