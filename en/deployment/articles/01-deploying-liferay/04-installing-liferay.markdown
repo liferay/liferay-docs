@@ -71,6 +71,8 @@ Supply this basic portal information:
 button. This immediately localizes your portal content, including the Basic
 Configuration page. 
 
+**Time Zone:** default time zone of your Liferay instance.
+
 ### Administrator User 
 
 For the administrator, supply the following information:
@@ -80,6 +82,9 @@ For the administrator, supply the following information:
 **Last Name:** the default administrator user's last name
 
 **Email:** the default administrator user's email address
+
+| **Note:** the domain of administrator user's email will be used as the default
+| domain name of the instance (company.default.web.id configuration property).
 
 ### Database 
 
