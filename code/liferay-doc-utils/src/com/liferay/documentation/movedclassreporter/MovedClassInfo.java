@@ -1,8 +1,7 @@
 package com.liferay.documentation.movedclassreporter;
 
-public class FormerPortalServiceClass {
-
-	public FormerPortalServiceClass(BasicClassInfo basicClassInfo) {
+public class MovedClassInfo {
+	public MovedClassInfo(BasicClassInfo basicClassInfo) {
 		this.basicClassInfo = basicClassInfo;
 		this.name = basicClassInfo.getName();
 		this.packageOld = basicClassInfo.getPkg();
@@ -10,6 +9,14 @@ public class FormerPortalServiceClass {
 
 	public BasicClassInfo getBasicClassInfo() {
 		return this.basicClassInfo;
+	}
+
+	public String getGroup( ) {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
 	}
 
 	public String getPackageNew() {
@@ -23,8 +30,17 @@ public class FormerPortalServiceClass {
 	public String getModule() {
 		return module;
 	}
+
 	public void setModule(String module) {
 		this.module = module;
+	}
+
+	public String getModuleVersion() {
+		return moduleVersion;
+	}
+
+	public void setModuleVersion(String moduleVersion) {
+		this.moduleVersion = moduleVersion;
 	}
 
 	public String getName() {
@@ -44,4 +60,7 @@ public class FormerPortalServiceClass {
 	private String packageOld;
 	private String packageNew;
 	private String module;
+	private String moduleVersion;
+	private String group;
+
 }

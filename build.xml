@@ -14,9 +14,8 @@
 		<path refid="lib.classpath" />
 	</path>
 
-    <target name="compare-portal-source" description="Reports classes moved from portal-service.jar to modules and classes removed from it by comparing a Liferay 6 source directory (-Dlr6Dir) to a Liferay 7+ source directory (-Dlr7Dir).">
+    <target name="compare-portal-source" description="Reports classes moved from portal-service.jar to modules by comparing a Liferay 6 source directory (-DoldLiferayDir) to a Liferay 7+ source directory (-DnewLiferayDir).">
 		<property name="movedClassesFile" value="${build.dir}/moved-classes.html"/>
-		<property name="removedClassesFile" value="${build.dir}/removed-classes.html"/>
 		<mkdir dir="${build.dir}"/>
 		<java
 			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
@@ -24,10 +23,9 @@
 			failonerror="true"
 			fork="true"
 		>
-			<arg value="${lr6Dir}"/>
-			<arg value="${lr7Dir}"/>
+			<arg value="${oldLiferayDir}"/>
+			<arg value="${newLiferayDir}"/>
 			<arg value="${movedClassesFile}"/>
-			<arg value="${removedClassesFile}"/>
 		</java>
 	</target>
 
