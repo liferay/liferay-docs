@@ -22,7 +22,7 @@ public class MovedClassReporterMain {
 
 	private static final String PORTAL_SERVICE_JAR = "portal-service.jar";
 
-	private static final String USAGE = "Usage: MovedClassReporter oldDir newDir movedClassesOutputFile";
+	private static final String USAGE = "Usage: MovedClassReporter oldLiferayDir newLiferayDir movedClassesOutputFile";
 
 	public static void main(String[] args) {
 		if (args == null || args.length < 3) {
@@ -35,11 +35,11 @@ public class MovedClassReporterMain {
 		File movedClassesOutputFile = new File(args[2]);
 
 		if (!oldDir.isDirectory()) {
-			System.out.println("oldDir is not a directory: " + args[0]);
+			System.out.println("oldLiferayDir is not a directory: " + args[0]);
 		}
 
 		if (!newDir.isDirectory()) {
-			System.out.println("newDir is not a directory: " + args[1]);
+			System.out.println("newLiferayDir is not a directory: " + args[1]);
 		}
 
 		// Create a list of all portal-kernel classes
@@ -71,7 +71,7 @@ public class MovedClassReporterMain {
 			oldJar = PORTAL_KERNEL_JAR;
 
 			if (!oldKernelSrcDir.exists()) {
-				System.out.println("No portal-service or portal-kernel source files in oldDir: " + oldDir.getPath());
+				System.out.println("No portal-service or portal-kernel source files in oldLiferayDir: " + oldDir.getPath());
 				System.out.println(USAGE);
 				return;
 			}
