@@ -6,11 +6,11 @@ header-id: classes-moved-from-portal-service-jar
 
 [TOC levels=1-4]
 
-To leverage the benefits of modularization in @product-ver@, many classes from
-former Liferay Portal 6 JAR file <em>portal-service.jar</em> have been moved
-into application and framework API modules. The table below provides details
-about these classes and the modules they've moved to. Package changes 
-and each module's symbolic name (artifact ID) are listed, to facilitate 
+To leverage the benefits of modularization, many classes from <em>portal-service.jar</em>
+have been moved into application and framework API modules. The table below
+provides details about these classes and the modules they've moved to. Package
+changes and each module's group, artifact ID, and version are listed, to
+facilitate 
 <a href="/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies">configuring dependencies</a>. 
 
 <style>
@@ -29,7 +29,7 @@ caption {
 <table style="width:100%">
 
   <caption>
-    <b>Classes Moved from portal-service to modules</b>
+    <b>Classes Moved from portal-service.jar to Modules</b>
 	<p>
       This information was generated based on comparing classes in
       <em>liferay-portal-src-6.2-ce-ga6</em> to classes in <em>liferay-ce-portal-src-7.2.0-ga1</em>.
@@ -38,7 +38,8 @@ caption {
   <tr>
     <th>Class</th>
     <th>Package</th>
-    <th>Module Symbolic Name (Artifact ID)</th>
+    <th>Group ID, Artifact ID,<br>
+        and Version</th>
   </tr>
 
   <tr>
@@ -47,7 +48,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.mobile.device.rulegroup.action<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.action
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>ActionHandlerManager</td>
@@ -55,7 +59,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.mobile.device.rulegroup<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.action
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>ActionHandlerManagerUtil</td>
@@ -63,7 +70,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.mobile.device.rulegroup<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.action
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>ActionTypeException</td>
@@ -71,7 +81,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.exception
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>AlternateKeywordQueryHitsProcessor</td>
@@ -79,7 +92,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.search<br>
 	  <em>New:</em> com.liferay.portal.search.internal.hits
 	</td>
-    <td>com.liferay.portal.search</td>
+    <td>com.liferay<br>
+        com.liferay.portal.search<br>
+        6.0.14
+    </td>
   </tr>
   <tr>
     <td>ArticleContentException</td>
@@ -87,7 +103,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleContentSizeException</td>
@@ -95,7 +114,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleCreateDateComparator</td>
@@ -103,7 +125,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.util.comparator<br>
 	  <em>New:</em> com.liferay.journal.util.comparator
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleDisplayDateComparator</td>
@@ -111,7 +136,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.util.comparator<br>
 	  <em>New:</em> com.liferay.journal.util.comparator
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleDisplayDateException</td>
@@ -119,7 +147,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleExpirationDateException</td>
@@ -127,7 +158,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleIDComparator</td>
@@ -135,7 +169,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.util.comparator<br>
 	  <em>New:</em> com.liferay.journal.util.comparator
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleIdException</td>
@@ -143,7 +180,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleModifiedDateComparator</td>
@@ -151,7 +191,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.util.comparator<br>
 	  <em>New:</em> com.liferay.journal.util.comparator
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleReviewDateComparator</td>
@@ -159,7 +202,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.util.comparator<br>
 	  <em>New:</em> com.liferay.journal.util.comparator
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleReviewDateException</td>
@@ -167,7 +213,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleSmallImageNameException</td>
@@ -175,7 +224,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleSmallImageSizeException</td>
@@ -183,7 +235,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleTitleComparator</td>
@@ -191,7 +246,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.util.comparator<br>
 	  <em>New:</em> com.liferay.journal.util.comparator
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleTitleException</td>
@@ -199,7 +257,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleVersionComparator</td>
@@ -207,7 +268,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.util.comparator<br>
 	  <em>New:</em> com.liferay.journal.util.comparator
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>ArticleVersionException</td>
@@ -215,7 +279,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>AuditMessageProcessor</td>
@@ -223,7 +290,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.audit<br>
 	  <em>New:</em> com.liferay.portal.security.audit
 	</td>
-    <td>com.liferay.portal.security.audit.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.audit.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>AutoDeleteFileInputStream</td>
@@ -231,7 +301,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.io<br>
 	  <em>New:</em> com.liferay.petra.io
 	</td>
-    <td>com.liferay.petra.io</td>
+    <td>com.liferay<br>
+        com.liferay.petra.io<br>
+        3.0.2
+    </td>
   </tr>
   <tr>
     <td>AverageStatistics</td>
@@ -239,7 +312,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.monitoring.statistics<br>
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
-    <td>com.liferay.portal.monitoring</td>
+    <td>com.liferay<br>
+        com.liferay.portal.monitoring<br>
+        7.0.7
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskLocalService</td>
@@ -247,7 +323,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service<br>
 	  <em>New:</em> com.liferay.portal.background.task.service
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskLocalServiceUtil</td>
@@ -255,7 +334,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service<br>
 	  <em>New:</em> com.liferay.portal.background.task.service
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskLocalServiceWrapper</td>
@@ -263,7 +345,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service<br>
 	  <em>New:</em> com.liferay.portal.background.task.service
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskModel</td>
@@ -271,7 +356,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.model<br>
 	  <em>New:</em> com.liferay.portal.background.task.model
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskPersistence</td>
@@ -279,7 +367,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service.persistence<br>
 	  <em>New:</em> com.liferay.portal.background.task.service.persistence
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskService</td>
@@ -287,7 +378,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service<br>
 	  <em>New:</em> com.liferay.portal.background.task.service
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskServiceUtil</td>
@@ -295,7 +389,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service<br>
 	  <em>New:</em> com.liferay.portal.background.task.service
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskServiceWrapper</td>
@@ -303,7 +400,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service<br>
 	  <em>New:</em> com.liferay.portal.background.task.service
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskSoap</td>
@@ -311,7 +411,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.model<br>
 	  <em>New:</em> com.liferay.portal.background.task.model
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskUtil</td>
@@ -319,7 +422,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service.persistence<br>
 	  <em>New:</em> com.liferay.portal.background.task.service.persistence
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BackgroundTaskWrapper</td>
@@ -327,7 +433,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.model<br>
 	  <em>New:</em> com.liferay.portal.background.task.model
 	</td>
-    <td>com.liferay.portal.background.task.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.background.task.api<br>
+        4.1.3
+    </td>
   </tr>
   <tr>
     <td>BannedUserException</td>
@@ -335,7 +444,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>BaseCmisRepository</td>
@@ -343,7 +455,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>BaseCmisSearchQueryBuilder</td>
@@ -351,7 +466,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>BaseDDLExporter</td>
@@ -359,7 +477,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.internal.exporter
 	</td>
-    <td>com.liferay.dynamic.data.lists.service</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.service<br>
+        3.0.12
+    </td>
   </tr>
   <tr>
     <td>BaseDDMDisplay</td>
@@ -367,7 +488,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>BaseFieldRenderer</td>
@@ -375,7 +499,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>BaseScriptingExecutor</td>
@@ -383,7 +510,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.scripting<br>
 	  <em>New:</em> com.liferay.portal.scripting
 	</td>
-    <td>com.liferay.portal.scripting.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.scripting.api<br>
+        3.0.3
+    </td>
   </tr>
   <tr>
     <td>BaseStatistics</td>
@@ -391,7 +521,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.monitoring.statistics<br>
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
-    <td>com.liferay.portal.monitoring</td>
+    <td>com.liferay<br>
+        com.liferay.portal.monitoring<br>
+        7.0.7
+    </td>
   </tr>
   <tr>
     <td>BaseStorageAdapter</td>
@@ -399,7 +532,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>BlockingPortalCache</td>
@@ -407,7 +543,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache<br>
 	  <em>New:</em> com.liferay.portal.cache
 	</td>
-    <td>com.liferay.portal.cache.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.api<br>
+        2.0.1
+    </td>
   </tr>
   <tr>
     <td>BlogsEntry</td>
@@ -415,7 +554,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.model<br>
 	  <em>New:</em> com.liferay.blogs.model
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryFinder</td>
@@ -423,7 +565,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service.persistence<br>
 	  <em>New:</em> com.liferay.blogs.service.persistence
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryLocalService</td>
@@ -431,7 +576,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service<br>
 	  <em>New:</em> com.liferay.blogs.service
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryLocalServiceUtil</td>
@@ -439,7 +587,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service<br>
 	  <em>New:</em> com.liferay.blogs.service
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryLocalServiceWrapper</td>
@@ -447,7 +598,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service<br>
 	  <em>New:</em> com.liferay.blogs.service
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryModel</td>
@@ -455,7 +609,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.model<br>
 	  <em>New:</em> com.liferay.blogs.model
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryPersistence</td>
@@ -463,7 +620,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service.persistence<br>
 	  <em>New:</em> com.liferay.blogs.service.persistence
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryService</td>
@@ -471,7 +631,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service<br>
 	  <em>New:</em> com.liferay.blogs.service
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryServiceUtil</td>
@@ -479,7 +642,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service<br>
 	  <em>New:</em> com.liferay.blogs.service
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryServiceWrapper</td>
@@ -487,7 +653,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service<br>
 	  <em>New:</em> com.liferay.blogs.service
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntrySoap</td>
@@ -495,7 +664,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.model<br>
 	  <em>New:</em> com.liferay.blogs.model
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryUtil</td>
@@ -503,7 +675,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service.persistence<br>
 	  <em>New:</em> com.liferay.blogs.service.persistence
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsEntryWrapper</td>
@@ -511,7 +686,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.model<br>
 	  <em>New:</em> com.liferay.blogs.model
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUser</td>
@@ -519,7 +697,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.model<br>
 	  <em>New:</em> com.liferay.blogs.model
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUserFinder</td>
@@ -527,7 +708,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service.persistence<br>
 	  <em>New:</em> com.liferay.blogs.service.persistence
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUserLocalService</td>
@@ -535,7 +719,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service<br>
 	  <em>New:</em> com.liferay.blogs.service
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUserLocalServiceUtil</td>
@@ -543,7 +730,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service<br>
 	  <em>New:</em> com.liferay.blogs.service
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUserLocalServiceWrapper</td>
@@ -551,7 +741,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service<br>
 	  <em>New:</em> com.liferay.blogs.service
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUserModel</td>
@@ -559,7 +752,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.model<br>
 	  <em>New:</em> com.liferay.blogs.model
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUserPersistence</td>
@@ -567,7 +763,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service.persistence<br>
 	  <em>New:</em> com.liferay.blogs.service.persistence
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUserSoap</td>
@@ -575,7 +774,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.model<br>
 	  <em>New:</em> com.liferay.blogs.model
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUserUtil</td>
@@ -583,7 +785,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.service.persistence<br>
 	  <em>New:</em> com.liferay.blogs.service.persistence
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BlogsStatsUserWrapper</td>
@@ -591,7 +796,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.model<br>
 	  <em>New:</em> com.liferay.blogs.model
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntry</td>
@@ -599,7 +807,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.model<br>
 	  <em>New:</em> com.liferay.bookmarks.model
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryFinder</td>
@@ -607,7 +818,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service.persistence<br>
 	  <em>New:</em> com.liferay.bookmarks.service.persistence
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryLocalService</td>
@@ -615,7 +829,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryLocalServiceUtil</td>
@@ -623,7 +840,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryLocalServiceWrapper</td>
@@ -631,7 +851,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryModel</td>
@@ -639,7 +862,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.model<br>
 	  <em>New:</em> com.liferay.bookmarks.model
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryPersistence</td>
@@ -647,7 +873,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service.persistence<br>
 	  <em>New:</em> com.liferay.bookmarks.service.persistence
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryService</td>
@@ -655,7 +884,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryServiceUtil</td>
@@ -663,7 +895,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryServiceWrapper</td>
@@ -671,7 +906,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntrySoap</td>
@@ -679,7 +917,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.model<br>
 	  <em>New:</em> com.liferay.bookmarks.model
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryUtil</td>
@@ -687,7 +928,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service.persistence<br>
 	  <em>New:</em> com.liferay.bookmarks.service.persistence
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksEntryWrapper</td>
@@ -695,7 +939,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.model<br>
 	  <em>New:</em> com.liferay.bookmarks.model
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolder</td>
@@ -703,7 +950,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.model<br>
 	  <em>New:</em> com.liferay.bookmarks.model
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderConstants</td>
@@ -711,7 +961,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.model<br>
 	  <em>New:</em> com.liferay.bookmarks.model
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderFinder</td>
@@ -719,7 +972,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service.persistence<br>
 	  <em>New:</em> com.liferay.bookmarks.service.persistence
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderLocalService</td>
@@ -727,7 +983,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderLocalServiceUtil</td>
@@ -735,7 +994,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderLocalServiceWrapper</td>
@@ -743,7 +1005,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderModel</td>
@@ -751,7 +1016,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.model<br>
 	  <em>New:</em> com.liferay.bookmarks.model
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderPersistence</td>
@@ -759,7 +1027,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service.persistence<br>
 	  <em>New:</em> com.liferay.bookmarks.service.persistence
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderService</td>
@@ -767,7 +1038,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderServiceUtil</td>
@@ -775,7 +1049,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderServiceWrapper</td>
@@ -783,7 +1060,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service<br>
 	  <em>New:</em> com.liferay.bookmarks.service
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderSoap</td>
@@ -791,7 +1071,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.model<br>
 	  <em>New:</em> com.liferay.bookmarks.model
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderUtil</td>
@@ -799,7 +1082,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.service.persistence<br>
 	  <em>New:</em> com.liferay.bookmarks.service.persistence
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>BookmarksFolderWrapper</td>
@@ -807,7 +1093,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.model<br>
 	  <em>New:</em> com.liferay.bookmarks.model
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>ByteArrayReportResultContainer</td>
@@ -815,7 +1104,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>CMISBetweenExpression</td>
@@ -823,7 +1115,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISConjunction</td>
@@ -831,7 +1126,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISContainsExpression</td>
@@ -839,7 +1137,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISContainsNotExpression</td>
@@ -847,7 +1148,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISContainsValueExpression</td>
@@ -855,7 +1159,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISCriterion</td>
@@ -863,7 +1170,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISDisjunction</td>
@@ -871,7 +1181,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISFullTextConjunction</td>
@@ -879,7 +1192,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISInFolderExpression</td>
@@ -887,7 +1203,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISInTreeExpression</td>
@@ -895,7 +1214,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISJunction</td>
@@ -903,7 +1225,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISNotExpression</td>
@@ -911,7 +1236,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISParameterValueUtil</td>
@@ -919,7 +1247,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISRepositoryHandler</td>
@@ -927,7 +1258,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISRepositoryUtil</td>
@@ -935,7 +1269,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.internal
 	</td>
-    <td>com.liferay.document.library.repository.cmis.impl</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.impl<br>
+        4.0.8
+    </td>
   </tr>
   <tr>
     <td>CMISSearchQueryBuilder</td>
@@ -943,7 +1280,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISSimpleExpression</td>
@@ -951,7 +1291,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CMISSimpleExpressionOperator</td>
@@ -959,7 +1302,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.repository.cmis.api<br>
+        3.0.7
+    </td>
   </tr>
   <tr>
     <td>CharPool</td>
@@ -967,7 +1313,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.util<br>
 	  <em>New:</em> com.liferay.petra.string
 	</td>
-    <td>com.liferay.petra.string</td>
+    <td>com.liferay<br>
+        com.liferay.petra.string<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>CharsetDecoderUtil</td>
@@ -975,7 +1324,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.nio.charset<br>
 	  <em>New:</em> com.liferay.petra.nio
 	</td>
-    <td>com.liferay.petra.nio</td>
+    <td>com.liferay<br>
+        com.liferay.petra.nio<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>CharsetEncoderUtil</td>
@@ -983,7 +1335,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.nio.charset<br>
 	  <em>New:</em> com.liferay.petra.nio
 	</td>
-    <td>com.liferay.petra.nio</td>
+    <td>com.liferay<br>
+        com.liferay.petra.nio<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>ClassLoaderPool</td>
@@ -991,7 +1346,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.util<br>
 	  <em>New:</em> com.liferay.petra.lang
 	</td>
-    <td>com.liferay.petra.lang</td>
+    <td>com.liferay<br>
+        com.liferay.petra.lang<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>ClassPathUtil</td>
@@ -999,7 +1357,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.process<br>
 	  <em>New:</em> com.liferay.petra.process
 	</td>
-    <td>com.liferay.petra.process</td>
+    <td>com.liferay<br>
+        com.liferay.petra.process<br>
+        3.0.4
+    </td>
   </tr>
   <tr>
     <td>ClassResolverUtil</td>
@@ -1007,7 +1368,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.util<br>
 	  <em>New:</em> com.liferay.petra.lang
 	</td>
-    <td>com.liferay.petra.lang</td>
+    <td>com.liferay<br>
+        com.liferay.petra.lang<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>CollatedSpellCheckHitsProcessor</td>
@@ -1015,7 +1379,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.search<br>
 	  <em>New:</em> com.liferay.portal.search.internal.hits
 	</td>
-    <td>com.liferay.portal.search</td>
+    <td>com.liferay<br>
+        com.liferay.portal.search<br>
+        6.0.14
+    </td>
   </tr>
   <tr>
     <td>CompoundSessionIdServletRequest</td>
@@ -1023,7 +1390,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.servlet.filters.compoundsessionid<br>
 	  <em>New:</em> com.liferay.portal.compound.session.id.internal
 	</td>
-    <td>com.liferay.portal.compound.session.id</td>
+    <td>com.liferay<br>
+        com.liferay.portal.compound.session.id<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>Condition</td>
@@ -1031,7 +1401,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage.query<br>
 	  <em>New:</em> com.liferay.adaptive.media.image.media.query
 	</td>
-    <td>com.liferay.adaptive.media.image.api</td>
+    <td>com.liferay<br>
+        com.liferay.adaptive.media.image.api<br>
+        3.0.3
+    </td>
   </tr>
   <tr>
     <td>ConsumerOutputProcessor</td>
@@ -1039,7 +1412,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.process<br>
 	  <em>New:</em> com.liferay.petra.process
 	</td>
-    <td>com.liferay.petra.process</td>
+    <td>com.liferay<br>
+        com.liferay.petra.process<br>
+        3.0.4
+    </td>
   </tr>
   <tr>
     <td>ContactConverterKeys</td>
@@ -1047,7 +1423,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>ContentException</td>
@@ -1055,7 +1434,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>ContentNameException</td>
@@ -1063,7 +1445,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>ContextClassloaderReportDesignRetriever</td>
@@ -1071,7 +1456,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>CountStatistics</td>
@@ -1079,7 +1467,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.monitoring.statistics<br>
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
-    <td>com.liferay.portal.monitoring</td>
+    <td>com.liferay<br>
+        com.liferay.portal.monitoring<br>
+        7.0.7
+    </td>
   </tr>
   <tr>
     <td>DDL</td>
@@ -1087,7 +1478,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.util
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLExporter</td>
@@ -1095,7 +1489,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.exporter
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLExporterFactory</td>
@@ -1103,7 +1500,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.exporter
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecord</td>
@@ -1111,7 +1511,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordConstants</td>
@@ -1119,7 +1522,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordFinder</td>
@@ -1127,7 +1533,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordLocalService</td>
@@ -1135,7 +1544,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordLocalServiceUtil</td>
@@ -1143,7 +1555,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordLocalServiceWrapper</td>
@@ -1151,7 +1566,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordModel</td>
@@ -1159,7 +1577,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordPersistence</td>
@@ -1167,7 +1588,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordService</td>
@@ -1175,7 +1599,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordServiceUtil</td>
@@ -1183,7 +1610,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordServiceWrapper</td>
@@ -1191,7 +1621,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSet</td>
@@ -1199,7 +1632,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetConstants</td>
@@ -1207,7 +1643,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetFinder</td>
@@ -1215,7 +1654,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetLocalService</td>
@@ -1223,7 +1665,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetLocalServiceUtil</td>
@@ -1231,7 +1676,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetLocalServiceWrapper</td>
@@ -1239,7 +1687,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetModel</td>
@@ -1247,7 +1698,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetPersistence</td>
@@ -1255,7 +1709,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetService</td>
@@ -1263,7 +1720,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetServiceUtil</td>
@@ -1271,7 +1731,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetServiceWrapper</td>
@@ -1279,7 +1742,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetSoap</td>
@@ -1287,7 +1753,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetUtil</td>
@@ -1295,7 +1764,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSetWrapper</td>
@@ -1303,7 +1775,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordSoap</td>
@@ -1311,7 +1786,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordUtil</td>
@@ -1319,7 +1797,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordVersion</td>
@@ -1327,7 +1808,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordVersionModel</td>
@@ -1335,7 +1819,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordVersionPersistence</td>
@@ -1343,7 +1830,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordVersionSoap</td>
@@ -1351,7 +1841,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordVersionUtil</td>
@@ -1359,7 +1852,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordVersionVersionComparator</td>
@@ -1367,7 +1863,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.util.comparator<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.util.comparator
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordVersionWrapper</td>
@@ -1375,7 +1874,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDLRecordWrapper</td>
@@ -1383,7 +1885,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.model
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>DDM</td>
@@ -1391,7 +1896,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMContent</td>
@@ -1399,7 +1907,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMContentLocalService</td>
@@ -1407,7 +1918,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMContentLocalServiceUtil</td>
@@ -1415,7 +1929,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMContentLocalServiceWrapper</td>
@@ -1423,7 +1940,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMContentModel</td>
@@ -1431,7 +1951,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMContentPersistence</td>
@@ -1439,7 +1962,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMContentSoap</td>
@@ -1447,7 +1973,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMContentUtil</td>
@@ -1455,7 +1984,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMContentWrapper</td>
@@ -1463,7 +1995,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMDisplay</td>
@@ -1471,7 +2006,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMDisplayRegistry</td>
@@ -1479,7 +2017,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMIndexer</td>
@@ -1487,7 +2028,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMIndexerUtil</td>
@@ -1495,7 +2039,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util<br>
 	  <em>New:</em> com.liferay.asset.list.internal.dynamic.data.mapping.util
 	</td>
-    <td>com.liferay.asset.list.service</td>
+    <td>com.liferay<br>
+        com.liferay.asset.list.service<br>
+        1.0.11
+    </td>
   </tr>
   <tr>
     <td>DDMStorageLink</td>
@@ -1503,7 +2050,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStorageLinkLocalService</td>
@@ -1511,7 +2061,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStorageLinkLocalServiceUtil</td>
@@ -1519,7 +2072,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStorageLinkLocalServiceWrapper</td>
@@ -1527,7 +2083,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStorageLinkModel</td>
@@ -1535,7 +2094,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStorageLinkPersistence</td>
@@ -1543,7 +2105,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStorageLinkSoap</td>
@@ -1551,7 +2116,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStorageLinkUtil</td>
@@ -1559,7 +2127,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStorageLinkWrapper</td>
@@ -1567,7 +2138,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureConstants</td>
@@ -1575,7 +2149,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureFinder</td>
@@ -1583,7 +2160,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLinkLocalService</td>
@@ -1591,7 +2171,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLinkLocalServiceUtil</td>
@@ -1599,7 +2182,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLinkLocalServiceWrapper</td>
@@ -1607,7 +2193,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLinkModel</td>
@@ -1615,7 +2204,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLinkPersistence</td>
@@ -1623,7 +2215,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLinkSoap</td>
@@ -1631,7 +2226,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLinkUtil</td>
@@ -1639,7 +2237,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLinkWrapper</td>
@@ -1647,7 +2248,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLocalService</td>
@@ -1655,7 +2259,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLocalServiceUtil</td>
@@ -1663,7 +2270,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureLocalServiceWrapper</td>
@@ -1671,7 +2281,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureModel</td>
@@ -1679,7 +2292,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructurePersistence</td>
@@ -1687,7 +2303,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureService</td>
@@ -1695,7 +2314,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureServiceUtil</td>
@@ -1703,7 +2325,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureServiceWrapper</td>
@@ -1711,7 +2336,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureSoap</td>
@@ -1719,7 +2347,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureUtil</td>
@@ -1727,7 +2358,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMStructureWrapper</td>
@@ -1735,7 +2369,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateConstants</td>
@@ -1743,7 +2380,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateFinder</td>
@@ -1751,7 +2391,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateHelper</td>
@@ -1759,7 +2402,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateLocalService</td>
@@ -1767,7 +2413,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateLocalServiceUtil</td>
@@ -1775,7 +2424,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateLocalServiceWrapper</td>
@@ -1783,7 +2435,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateModel</td>
@@ -1791,7 +2446,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplatePersistence</td>
@@ -1799,7 +2457,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateService</td>
@@ -1807,7 +2468,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateServiceUtil</td>
@@ -1815,7 +2479,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateServiceWrapper</td>
@@ -1823,7 +2490,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateSoap</td>
@@ -1831,7 +2501,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateUtil</td>
@@ -1839,7 +2512,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.service.persistence<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.service.persistence
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMTemplateWrapper</td>
@@ -1847,7 +2523,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.model<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.model
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMUtil</td>
@@ -1855,7 +2534,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DDMXML</td>
@@ -1863,7 +2545,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>DLContent</td>
@@ -1871,7 +2556,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.content.model
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentDataBlobModel</td>
@@ -1879,7 +2567,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.content.model
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentLocalService</td>
@@ -1887,7 +2578,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service<br>
 	  <em>New:</em> com.liferay.document.library.content.service
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentLocalServiceUtil</td>
@@ -1895,7 +2589,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service<br>
 	  <em>New:</em> com.liferay.document.library.content.service
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentLocalServiceWrapper</td>
@@ -1903,7 +2600,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service<br>
 	  <em>New:</em> com.liferay.document.library.content.service
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentModel</td>
@@ -1911,7 +2611,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.content.model
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentPersistence</td>
@@ -1919,7 +2622,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service.persistence<br>
 	  <em>New:</em> com.liferay.document.library.content.service.persistence
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentSoap</td>
@@ -1927,7 +2633,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.content.model
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentUtil</td>
@@ -1935,7 +2644,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service.persistence<br>
 	  <em>New:</em> com.liferay.document.library.content.service.persistence
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentVersionComparator</td>
@@ -1943,7 +2655,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.util.comparator<br>
 	  <em>New:</em> com.liferay.document.library.content.service.util.comparator
 	</td>
-    <td>com.liferay.document.library.content.service</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.service<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLContentWrapper</td>
@@ -1951,7 +2666,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.content.model
 	</td>
-    <td>com.liferay.document.library.content.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.content.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRank</td>
@@ -1959,7 +2677,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.model
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRankFinder</td>
@@ -1967,7 +2688,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service.persistence<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.service.persistence
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRankLocalService</td>
@@ -1975,7 +2699,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.service
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRankLocalServiceUtil</td>
@@ -1983,7 +2710,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.service
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRankLocalServiceWrapper</td>
@@ -1991,7 +2721,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.service
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRankModel</td>
@@ -1999,7 +2732,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.model
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRankPersistence</td>
@@ -2007,7 +2743,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service.persistence<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.service.persistence
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRankSoap</td>
@@ -2015,7 +2754,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.model
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRankUtil</td>
@@ -2023,7 +2765,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service.persistence<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.service.persistence
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLFileRankWrapper</td>
@@ -2031,7 +2776,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.model
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncConstants</td>
@@ -2039,7 +2787,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.sync.constants
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncEvent</td>
@@ -2047,7 +2798,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.sync.model
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncEventLocalService</td>
@@ -2055,7 +2809,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service<br>
 	  <em>New:</em> com.liferay.document.library.sync.service
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncEventLocalServiceUtil</td>
@@ -2063,7 +2820,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service<br>
 	  <em>New:</em> com.liferay.document.library.sync.service
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncEventLocalServiceWrapper</td>
@@ -2071,7 +2831,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service<br>
 	  <em>New:</em> com.liferay.document.library.sync.service
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncEventModel</td>
@@ -2079,7 +2842,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.sync.model
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncEventPersistence</td>
@@ -2087,7 +2853,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service.persistence<br>
 	  <em>New:</em> com.liferay.document.library.sync.service.persistence
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncEventSoap</td>
@@ -2095,7 +2864,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.sync.model
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncEventUtil</td>
@@ -2103,7 +2875,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.service.persistence<br>
 	  <em>New:</em> com.liferay.document.library.sync.service.persistence
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>DLSyncEventWrapper</td>
@@ -2111,7 +2886,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.model<br>
 	  <em>New:</em> com.liferay.document.library.sync.model
 	</td>
-    <td>com.liferay.document.library.sync.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.sync.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>Database</td>
@@ -2119,7 +2897,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.util<br>
 	  <em>New:</em> com.liferay.portal.tools.db.upgrade.client
 	</td>
-    <td>com.liferay.portal.tools.db.upgrade.client</td>
+    <td>com.liferay<br>
+        com.liferay.portal.tools.db.upgrade.client<br>
+        3.0.0
+    </td>
   </tr>
   <tr>
     <td>DefaultAttributesTransformer</td>
@@ -2127,7 +2908,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.internal
 	</td>
-    <td>com.liferay.portal.security.ldap.impl</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.impl<br>
+        2.0.5
+    </td>
   </tr>
   <tr>
     <td>DefaultMessageBus</td>
@@ -2135,7 +2919,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>DefaultSingleDestinationMessageSender</td>
@@ -2143,7 +2930,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging.sender<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal.sender
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>DefaultSingleDestinationSynchronousMessageSender</td>
@@ -2151,7 +2941,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging.sender<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal.sender
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>DefaultSynchronousMessageSender</td>
@@ -2159,7 +2952,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging.sender<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal.sender
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>DeleteFileFinalizeAction</td>
@@ -2167,7 +2963,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.memory<br>
 	  <em>New:</em> com.liferay.petra.memory
 	</td>
-    <td>com.liferay.petra.memory</td>
+    <td>com.liferay<br>
+        com.liferay.petra.memory<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>DestinationStatisticsManager</td>
@@ -2175,7 +2974,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging.jmx<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal.jmx
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>DestinationStatisticsManagerMBean</td>
@@ -2183,7 +2985,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging.jmx<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal.jmx
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>DirectSynchronousMessageSender</td>
@@ -2191,7 +2996,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging.sender<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal.sender
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>Dummy</td>
@@ -2199,7 +3007,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.model<br>
 	  <em>New:</em> com.liferay.exportimport.test.util.model
 	</td>
-    <td>com.liferay.exportimport.test.util</td>
+    <td>com.liferay<br>
+        com.liferay.exportimport.test.util<br>
+        2.0.6
+    </td>
   </tr>
   <tr>
     <td>DummyContext</td>
@@ -2207,7 +3018,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.dummy
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>DummyDirContext</td>
@@ -2215,7 +3029,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.dummy
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>DummyFinalizeAction</td>
@@ -2223,7 +3040,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.memory<br>
 	  <em>New:</em> com.liferay.petra.memory
 	</td>
-    <td>com.liferay.petra.memory</td>
+    <td>com.liferay<br>
+        com.liferay.petra.memory<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>DuplicateArticleIdException</td>
@@ -2231,7 +3051,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>DuplicateFeedIdException</td>
@@ -2239,7 +3062,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>DuplicateLDAPServerNameException</td>
@@ -2247,7 +3073,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>DuplicateNodeNameException</td>
@@ -2255,7 +3084,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>DuplicatePageException</td>
@@ -2263,7 +3095,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>DuplicateRuleGroupInstanceException</td>
@@ -2271,7 +3106,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.exception
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>DuplicateVoteException</td>
@@ -2279,7 +3117,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls<br>
 	  <em>New:</em> com.liferay.polls.exception
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>EntryDisplayDateComparator</td>
@@ -2287,7 +3128,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.util.comparator<br>
 	  <em>New:</em> com.liferay.blogs.util.comparator
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>EntryModifiedDateComparator</td>
@@ -2295,7 +3139,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.util.comparator<br>
 	  <em>New:</em> com.liferay.bookmarks.util.comparator
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>EntryNameComparator</td>
@@ -2303,7 +3150,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.util.comparator<br>
 	  <em>New:</em> com.liferay.bookmarks.util.comparator
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>EntryPriorityComparator</td>
@@ -2311,7 +3161,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.util.comparator<br>
 	  <em>New:</em> com.liferay.bookmarks.util.comparator
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>EntrySmallImageNameException</td>
@@ -2319,7 +3172,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs<br>
 	  <em>New:</em> com.liferay.blogs.exception
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>EntryURLComparator</td>
@@ -2327,7 +3183,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.util.comparator<br>
 	  <em>New:</em> com.liferay.bookmarks.util.comparator
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>EntryVisitsComparator</td>
@@ -2335,7 +3194,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.bookmarks.util.comparator<br>
 	  <em>New:</em> com.liferay.bookmarks.util.comparator
 	</td>
-    <td>com.liferay.bookmarks.api</td>
+    <td>com.liferay<br>
+        com.liferay.bookmarks.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>EqualityWeakReference</td>
@@ -2343,7 +3205,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.memory<br>
 	  <em>New:</em> com.liferay.petra.memory
 	</td>
-    <td>com.liferay.petra.memory</td>
+    <td>com.liferay<br>
+        com.liferay.petra.memory<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>Fact</td>
@@ -2351,7 +3216,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.rules<br>
 	  <em>New:</em> com.liferay.portal.rules.engine
 	</td>
-    <td>com.liferay.portal.rules.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.rules.engine.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>FeedContentFieldException</td>
@@ -2359,7 +3227,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>FeedIdException</td>
@@ -2367,7 +3238,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>FeedNameException</td>
@@ -2375,7 +3249,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>FeedTargetLayoutFriendlyUrlException</td>
@@ -2383,7 +3260,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>FeedTargetPortletIdException</td>
@@ -2391,7 +3271,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>FieldConstants</td>
@@ -2399,7 +3282,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>FieldRenderer</td>
@@ -2407,7 +3293,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>FieldRendererFactory</td>
@@ -2415,7 +3304,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>Fields</td>
@@ -2423,7 +3315,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>FileRankCreateDateComparator</td>
@@ -2431,7 +3326,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary.util.comparator<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.util.comparator
 	</td>
-    <td>com.liferay.document.library.file.rank.service</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.service<br>
+        2.0.6
+    </td>
   </tr>
   <tr>
     <td>FinalizeAction</td>
@@ -2439,7 +3337,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.memory<br>
 	  <em>New:</em> com.liferay.petra.memory
 	</td>
-    <td>com.liferay.petra.memory</td>
+    <td>com.liferay<br>
+        com.liferay.petra.memory<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>FinalizeManager</td>
@@ -2447,7 +3348,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.memory<br>
 	  <em>New:</em> com.liferay.petra.memory
 	</td>
-    <td>com.liferay.petra.memory</td>
+    <td>com.liferay<br>
+        com.liferay.petra.memory<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>FlagsEntryService</td>
@@ -2455,7 +3359,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.flags.service<br>
 	  <em>New:</em> com.liferay.flags.service
 	</td>
-    <td>com.liferay.flags.api</td>
+    <td>com.liferay<br>
+        com.liferay.flags.api<br>
+        4.0.6
+    </td>
   </tr>
   <tr>
     <td>FlagsEntryServiceUtil</td>
@@ -2463,7 +3370,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.flags.service<br>
 	  <em>New:</em> com.liferay.flags.service
 	</td>
-    <td>com.liferay.flags.api</td>
+    <td>com.liferay<br>
+        com.liferay.flags.api<br>
+        4.0.6
+    </td>
   </tr>
   <tr>
     <td>FlagsEntryServiceWrapper</td>
@@ -2471,7 +3381,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.flags.service<br>
 	  <em>New:</em> com.liferay.flags.service
 	</td>
-    <td>com.liferay.flags.api</td>
+    <td>com.liferay<br>
+        com.liferay.flags.api<br>
+        4.0.6
+    </td>
   </tr>
   <tr>
     <td>FlagsRequest</td>
@@ -2479,7 +3392,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.flags.messaging<br>
 	  <em>New:</em> com.liferay.flags.internal.messaging
 	</td>
-    <td>com.liferay.flags.service</td>
+    <td>com.liferay<br>
+        com.liferay.flags.service<br>
+        4.0.2
+    </td>
   </tr>
   <tr>
     <td>GroupConverterKeys</td>
@@ -2487,7 +3403,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>ImportFilesException</td>
@@ -2495,7 +3414,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>JournalArticle</td>
@@ -2503,7 +3425,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleConstants</td>
@@ -2511,7 +3436,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleDisplay</td>
@@ -2519,7 +3447,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleFinder</td>
@@ -2527,7 +3458,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleLocalService</td>
@@ -2535,7 +3469,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleLocalServiceUtil</td>
@@ -2543,7 +3480,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleLocalServiceWrapper</td>
@@ -2551,7 +3491,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleModel</td>
@@ -2559,7 +3502,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticlePersistence</td>
@@ -2567,7 +3513,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleResource</td>
@@ -2575,7 +3524,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleResourceLocalService</td>
@@ -2583,7 +3535,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleResourceLocalServiceUtil</td>
@@ -2591,7 +3546,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleResourceLocalServiceWrapper</td>
@@ -2599,7 +3557,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleResourceModel</td>
@@ -2607,7 +3568,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleResourcePersistence</td>
@@ -2615,7 +3579,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleResourceSoap</td>
@@ -2623,7 +3590,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleResourceUtil</td>
@@ -2631,7 +3601,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleResourceWrapper</td>
@@ -2639,7 +3612,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleService</td>
@@ -2647,7 +3623,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleServiceUtil</td>
@@ -2655,7 +3634,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleServiceWrapper</td>
@@ -2663,7 +3645,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleSoap</td>
@@ -2671,7 +3656,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleUtil</td>
@@ -2679,7 +3667,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalArticleWrapper</td>
@@ -2687,7 +3678,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContent</td>
@@ -2695,7 +3689,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journalcontent.util<br>
 	  <em>New:</em> com.liferay.journal.util
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContentSearch</td>
@@ -2703,7 +3700,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContentSearchLocalService</td>
@@ -2711,7 +3711,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContentSearchLocalServiceUtil</td>
@@ -2719,7 +3722,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContentSearchLocalServiceWrapper</td>
@@ -2727,7 +3733,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContentSearchModel</td>
@@ -2735,7 +3744,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContentSearchPersistence</td>
@@ -2743,7 +3755,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContentSearchSoap</td>
@@ -2751,7 +3766,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContentSearchUtil</td>
@@ -2759,7 +3777,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalContentSearchWrapper</td>
@@ -2767,7 +3788,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalConverter</td>
@@ -2775,7 +3799,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.util<br>
 	  <em>New:</em> com.liferay.journal.util
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeed</td>
@@ -2783,7 +3810,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedConstants</td>
@@ -2791,7 +3821,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedFinder</td>
@@ -2799,7 +3832,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedLocalService</td>
@@ -2807,7 +3843,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedLocalServiceUtil</td>
@@ -2815,7 +3854,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedLocalServiceWrapper</td>
@@ -2823,7 +3865,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedModel</td>
@@ -2831,7 +3876,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedPersistence</td>
@@ -2839,7 +3887,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedService</td>
@@ -2847,7 +3898,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedServiceUtil</td>
@@ -2855,7 +3909,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedServiceWrapper</td>
@@ -2863,7 +3920,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedSoap</td>
@@ -2871,7 +3931,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedUtil</td>
@@ -2879,7 +3942,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFeedWrapper</td>
@@ -2887,7 +3953,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolder</td>
@@ -2895,7 +3964,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderFinder</td>
@@ -2903,7 +3975,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderLocalService</td>
@@ -2911,7 +3986,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderLocalServiceUtil</td>
@@ -2919,7 +3997,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderLocalServiceWrapper</td>
@@ -2927,7 +4008,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderModel</td>
@@ -2935,7 +4019,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderPersistence</td>
@@ -2943,7 +4030,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderService</td>
@@ -2951,7 +4041,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderServiceUtil</td>
@@ -2959,7 +4052,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderServiceWrapper</td>
@@ -2967,7 +4063,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service<br>
 	  <em>New:</em> com.liferay.journal.service
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderSoap</td>
@@ -2975,7 +4074,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderUtil</td>
@@ -2983,7 +4085,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.service.persistence<br>
 	  <em>New:</em> com.liferay.journal.service.persistence
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalFolderWrapper</td>
@@ -2991,7 +4096,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalSearchConstants</td>
@@ -2999,7 +4107,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>JournalStructureConstants</td>
@@ -3007,7 +4118,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal.model<br>
 	  <em>New:</em> com.liferay.journal.model
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>LDAPFilterException</td>
@@ -3015,7 +4129,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.validator
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>LDAPGroup</td>
@@ -3023,7 +4140,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>LDAPServerNameException</td>
@@ -3031,7 +4151,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>LDAPToPortalConverter</td>
@@ -3039,7 +4162,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>LDAPUser</td>
@@ -3047,7 +4173,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>LDAPUtil</td>
@@ -3055,7 +4184,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.util
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>LockLocalService</td>
@@ -3063,7 +4195,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service<br>
 	  <em>New:</em> com.liferay.portal.lock.service
 	</td>
-    <td>com.liferay.portal.lock.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.lock.api<br>
+        4.1.1
+    </td>
   </tr>
   <tr>
     <td>LockLocalServiceUtil</td>
@@ -3071,7 +4206,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service<br>
 	  <em>New:</em> com.liferay.portal.lock.service
 	</td>
-    <td>com.liferay.portal.lock.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.lock.api<br>
+        4.1.1
+    </td>
   </tr>
   <tr>
     <td>LockLocalServiceWrapper</td>
@@ -3079,7 +4217,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service<br>
 	  <em>New:</em> com.liferay.portal.lock.service
 	</td>
-    <td>com.liferay.portal.lock.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.lock.api<br>
+        4.1.1
+    </td>
   </tr>
   <tr>
     <td>LockModel</td>
@@ -3087,7 +4228,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.model<br>
 	  <em>New:</em> com.liferay.portal.lock.model
 	</td>
-    <td>com.liferay.portal.lock.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.lock.api<br>
+        4.1.1
+    </td>
   </tr>
   <tr>
     <td>LockPersistence</td>
@@ -3095,7 +4239,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service.persistence<br>
 	  <em>New:</em> com.liferay.portal.lock.service.persistence
 	</td>
-    <td>com.liferay.portal.lock.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.lock.api<br>
+        4.1.1
+    </td>
   </tr>
   <tr>
     <td>LockSoap</td>
@@ -3103,7 +4250,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.model<br>
 	  <em>New:</em> com.liferay.portal.lock.model
 	</td>
-    <td>com.liferay.portal.lock.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.lock.api<br>
+        4.1.1
+    </td>
   </tr>
   <tr>
     <td>LockUtil</td>
@@ -3111,7 +4261,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.service.persistence<br>
 	  <em>New:</em> com.liferay.portal.lock.service.persistence
 	</td>
-    <td>com.liferay.portal.lock.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.lock.api<br>
+        4.1.1
+    </td>
   </tr>
   <tr>
     <td>LockWrapper</td>
@@ -3119,7 +4272,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.model<br>
 	  <em>New:</em> com.liferay.portal.lock.model
 	</td>
-    <td>com.liferay.portal.lock.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.lock.api<br>
+        4.1.1
+    </td>
   </tr>
   <tr>
     <td>LockedThreadException</td>
@@ -3127,7 +4283,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>LoggingOutputProcessor</td>
@@ -3135,7 +4294,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.process<br>
 	  <em>New:</em> com.liferay.petra.process
 	</td>
-    <td>com.liferay.petra.process</td>
+    <td>com.liferay<br>
+        com.liferay.petra.process<br>
+        3.0.4
+    </td>
   </tr>
   <tr>
     <td>MBBan</td>
@@ -3143,7 +4305,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanLocalService</td>
@@ -3151,7 +4316,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanLocalServiceUtil</td>
@@ -3159,7 +4327,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanLocalServiceWrapper</td>
@@ -3167,7 +4338,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanModel</td>
@@ -3175,7 +4349,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanPersistence</td>
@@ -3183,7 +4360,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanService</td>
@@ -3191,7 +4371,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanServiceUtil</td>
@@ -3199,7 +4382,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanServiceWrapper</td>
@@ -3207,7 +4393,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanSoap</td>
@@ -3215,7 +4404,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanUtil</td>
@@ -3223,7 +4415,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBBanWrapper</td>
@@ -3231,7 +4426,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategory</td>
@@ -3239,7 +4437,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryConstants</td>
@@ -3247,7 +4448,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.constants
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryDisplay</td>
@@ -3255,7 +4459,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.web.internal.display
 	</td>
-    <td>com.liferay.message.boards.web</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.web<br>
+        3.0.17
+    </td>
   </tr>
   <tr>
     <td>MBCategoryFinder</td>
@@ -3263,7 +4470,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryLocalService</td>
@@ -3271,7 +4481,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryLocalServiceUtil</td>
@@ -3279,7 +4492,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryLocalServiceWrapper</td>
@@ -3287,7 +4503,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryModel</td>
@@ -3295,7 +4514,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryPersistence</td>
@@ -3303,7 +4525,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryService</td>
@@ -3311,7 +4536,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryServiceUtil</td>
@@ -3319,7 +4547,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryServiceWrapper</td>
@@ -3327,7 +4558,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategorySoap</td>
@@ -3335,7 +4569,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryUtil</td>
@@ -3343,7 +4580,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBCategoryWrapper</td>
@@ -3351,7 +4591,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBDiscussion</td>
@@ -3359,7 +4602,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBDiscussionLocalService</td>
@@ -3367,7 +4613,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBDiscussionLocalServiceUtil</td>
@@ -3375,7 +4624,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBDiscussionLocalServiceWrapper</td>
@@ -3383,7 +4635,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBDiscussionModel</td>
@@ -3391,7 +4646,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBDiscussionPersistence</td>
@@ -3399,7 +4657,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBDiscussionSoap</td>
@@ -3407,7 +4668,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBDiscussionUtil</td>
@@ -3415,7 +4679,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBDiscussionWrapper</td>
@@ -3423,7 +4690,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMailingList</td>
@@ -3431,7 +4701,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMailingListLocalService</td>
@@ -3439,7 +4712,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMailingListLocalServiceUtil</td>
@@ -3447,7 +4723,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMailingListLocalServiceWrapper</td>
@@ -3455,7 +4734,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMailingListModel</td>
@@ -3463,7 +4745,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMailingListPersistence</td>
@@ -3471,7 +4756,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMailingListSoap</td>
@@ -3479,7 +4767,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMailingListUtil</td>
@@ -3487,7 +4778,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMailingListWrapper</td>
@@ -3495,7 +4789,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessage</td>
@@ -3503,7 +4800,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageConstants</td>
@@ -3511,7 +4811,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.constants
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageDisplay</td>
@@ -3519,7 +4822,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageFinder</td>
@@ -3527,7 +4833,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageLocalService</td>
@@ -3535,7 +4844,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageLocalServiceUtil</td>
@@ -3543,7 +4855,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageLocalServiceWrapper</td>
@@ -3551,7 +4866,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageModel</td>
@@ -3559,7 +4877,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessagePersistence</td>
@@ -3567,7 +4888,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageService</td>
@@ -3575,7 +4899,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageServiceUtil</td>
@@ -3583,7 +4910,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageServiceWrapper</td>
@@ -3591,7 +4921,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageSoap</td>
@@ -3599,7 +4932,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageUtil</td>
@@ -3607,7 +4943,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBMessageWrapper</td>
@@ -3615,7 +4954,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBStatsUser</td>
@@ -3623,7 +4965,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBStatsUserLocalService</td>
@@ -3631,7 +4976,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBStatsUserLocalServiceUtil</td>
@@ -3639,7 +4987,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBStatsUserLocalServiceWrapper</td>
@@ -3647,7 +4998,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBStatsUserModel</td>
@@ -3655,7 +5009,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBStatsUserPersistence</td>
@@ -3663,7 +5020,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBStatsUserSoap</td>
@@ -3671,7 +5031,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBStatsUserUtil</td>
@@ -3679,7 +5042,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBStatsUserWrapper</td>
@@ -3687,7 +5053,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThread</td>
@@ -3695,7 +5064,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadConstants</td>
@@ -3703,7 +5075,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.constants
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFinder</td>
@@ -3711,7 +5086,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFlag</td>
@@ -3719,7 +5097,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFlagLocalService</td>
@@ -3727,7 +5108,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFlagLocalServiceUtil</td>
@@ -3735,7 +5119,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFlagLocalServiceWrapper</td>
@@ -3743,7 +5130,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFlagModel</td>
@@ -3751,7 +5141,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFlagPersistence</td>
@@ -3759,7 +5152,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFlagSoap</td>
@@ -3767,7 +5163,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFlagUtil</td>
@@ -3775,7 +5174,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadFlagWrapper</td>
@@ -3783,7 +5185,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadLocalService</td>
@@ -3791,7 +5196,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadLocalServiceUtil</td>
@@ -3799,7 +5207,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadLocalServiceWrapper</td>
@@ -3807,7 +5218,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadModel</td>
@@ -3815,7 +5229,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadPersistence</td>
@@ -3823,7 +5240,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadService</td>
@@ -3831,7 +5251,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadServiceUtil</td>
@@ -3839,7 +5262,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadServiceWrapper</td>
@@ -3847,7 +5273,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service<br>
 	  <em>New:</em> com.liferay.message.boards.service
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadSoap</td>
@@ -3855,7 +5284,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadUtil</td>
@@ -3863,7 +5295,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.service.persistence<br>
 	  <em>New:</em> com.liferay.message.boards.service.persistence
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBThreadWrapper</td>
@@ -3871,7 +5306,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBTreeWalker</td>
@@ -3879,7 +5317,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.model<br>
 	  <em>New:</em> com.liferay.message.boards.model
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MBeanRegistry</td>
@@ -3887,7 +5328,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.jmx<br>
 	  <em>New:</em> com.liferay.portal.jmx
 	</td>
-    <td>com.liferay.portal.jmx.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.jmx.api<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>MDRAction</td>
@@ -3895,7 +5339,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionLocalService</td>
@@ -3903,7 +5350,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionLocalServiceUtil</td>
@@ -3911,7 +5361,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionLocalServiceWrapper</td>
@@ -3919,7 +5372,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionModel</td>
@@ -3927,7 +5383,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionPersistence</td>
@@ -3935,7 +5394,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.persistence<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service.persistence
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionService</td>
@@ -3943,7 +5405,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionServiceUtil</td>
@@ -3951,7 +5416,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionServiceWrapper</td>
@@ -3959,7 +5427,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionSoap</td>
@@ -3967,7 +5438,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionUtil</td>
@@ -3975,7 +5449,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.persistence<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service.persistence
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRActionWrapper</td>
@@ -3983,7 +5460,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRPermission</td>
@@ -3991,7 +5471,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.permission<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.web.internal.security.permission.resource
 	</td>
-    <td>com.liferay.mobile.device.rules.web</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.web<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>MDRRule</td>
@@ -3999,7 +5482,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroup</td>
@@ -4007,7 +5493,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupFinder</td>
@@ -4015,7 +5504,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.persistence<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service.persistence
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceLocalService</td>
@@ -4023,7 +5515,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceLocalServiceUtil</td>
@@ -4031,7 +5526,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceLocalServiceWrapper</td>
@@ -4039,7 +5537,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceModel</td>
@@ -4047,7 +5548,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstancePermission</td>
@@ -4055,7 +5559,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.permission<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.web.internal.security.permission.resource
 	</td>
-    <td>com.liferay.mobile.device.rules.web</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.web<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstancePersistence</td>
@@ -4063,7 +5570,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.persistence<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service.persistence
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceService</td>
@@ -4071,7 +5581,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceServiceUtil</td>
@@ -4079,7 +5592,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceServiceWrapper</td>
@@ -4087,7 +5603,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceSoap</td>
@@ -4095,7 +5614,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceUtil</td>
@@ -4103,7 +5625,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.persistence<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service.persistence
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupInstanceWrapper</td>
@@ -4111,7 +5636,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupLocalService</td>
@@ -4119,7 +5647,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupLocalServiceUtil</td>
@@ -4127,7 +5658,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupLocalServiceWrapper</td>
@@ -4135,7 +5669,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupModel</td>
@@ -4143,7 +5680,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupPermission</td>
@@ -4151,7 +5691,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.permission<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.web.internal.security.permission.resource
 	</td>
-    <td>com.liferay.mobile.device.rules.web</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.web<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupPersistence</td>
@@ -4159,7 +5702,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.persistence<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service.persistence
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupService</td>
@@ -4167,7 +5713,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupServiceUtil</td>
@@ -4175,7 +5724,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupServiceWrapper</td>
@@ -4183,7 +5735,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupSoap</td>
@@ -4191,7 +5746,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupUtil</td>
@@ -4199,7 +5757,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.persistence<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service.persistence
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleGroupWrapper</td>
@@ -4207,7 +5768,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleLocalService</td>
@@ -4215,7 +5779,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleLocalServiceUtil</td>
@@ -4223,7 +5790,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleLocalServiceWrapper</td>
@@ -4231,7 +5801,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleModel</td>
@@ -4239,7 +5812,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRulePersistence</td>
@@ -4247,7 +5823,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.persistence<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service.persistence
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleService</td>
@@ -4255,7 +5834,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleServiceUtil</td>
@@ -4263,7 +5845,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleServiceWrapper</td>
@@ -4271,7 +5856,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleSoap</td>
@@ -4279,7 +5867,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleUtil</td>
@@ -4287,7 +5878,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.service.persistence<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.service.persistence
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MDRRuleWrapper</td>
@@ -4295,7 +5889,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.model<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.model
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>MailingListEmailAddressException</td>
@@ -4303,7 +5900,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MailingListInServerNameException</td>
@@ -4311,7 +5911,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MailingListInUserNameException</td>
@@ -4319,7 +5922,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MailingListOutEmailAddressException</td>
@@ -4327,7 +5933,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MailingListOutServerNameException</td>
@@ -4335,7 +5944,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MailingListOutUserNameException</td>
@@ -4343,7 +5955,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MemoryReportDesignRetriever</td>
@@ -4351,7 +5966,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>MessageBodyException</td>
@@ -4359,7 +5977,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MessageBusManager</td>
@@ -4367,7 +5988,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging.jmx<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal.jmx
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>MessageBusManagerMBean</td>
@@ -4375,7 +5999,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging.jmx<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal.jmx
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>MessageCreateDateComparator</td>
@@ -4383,7 +6010,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.util.comparator<br>
 	  <em>New:</em> com.liferay.message.boards.util.comparator
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MessageSubjectException</td>
@@ -4391,7 +6021,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>MessageThreadComparator</td>
@@ -4399,7 +6032,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.util.comparator<br>
 	  <em>New:</em> com.liferay.message.boards.util.comparator
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>Modifications</td>
@@ -4407,7 +6043,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>NoSuchArticleException</td>
@@ -4415,7 +6054,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>NoSuchArticleImageException</td>
@@ -4423,7 +6065,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>NoSuchArticleResourceException</td>
@@ -4431,7 +6076,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>NoSuchBanException</td>
@@ -4439,7 +6087,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>NoSuchChoiceException</td>
@@ -4447,7 +6098,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls<br>
 	  <em>New:</em> com.liferay.polls.exception
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>NoSuchContentException</td>
@@ -4455,7 +6109,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>NoSuchContentSearchException</td>
@@ -4463,7 +6120,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>NoSuchDiscussionException</td>
@@ -4471,7 +6131,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>NoSuchFeedException</td>
@@ -4479,7 +6142,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.journal.api</td>
+    <td>com.liferay<br>
+        com.liferay.journal.api<br>
+        4.2.1
+    </td>
   </tr>
   <tr>
     <td>NoSuchFileRankException</td>
@@ -4487,7 +6153,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.documentlibrary<br>
 	  <em>New:</em> com.liferay.document.library.file.rank.exception
 	</td>
-    <td>com.liferay.document.library.file.rank.api</td>
+    <td>com.liferay<br>
+        com.liferay.document.library.file.rank.api<br>
+        2.0.3
+    </td>
   </tr>
   <tr>
     <td>NoSuchMailingListException</td>
@@ -4495,7 +6164,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>NoSuchNodeException</td>
@@ -4503,7 +6175,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>NoSuchPageException</td>
@@ -4511,7 +6186,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>NoSuchPageResourceException</td>
@@ -4519,7 +6197,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>NoSuchQuestionException</td>
@@ -4527,7 +6208,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls<br>
 	  <em>New:</em> com.liferay.polls.exception
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>NoSuchRecordException</td>
@@ -4535,7 +6219,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.exception
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>NoSuchRecordSetException</td>
@@ -4543,7 +6230,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.exception
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>NoSuchRecordVersionException</td>
@@ -4551,7 +6241,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.exception
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>NoSuchRuleException</td>
@@ -4559,7 +6252,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.exception
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>NoSuchRuleGroupException</td>
@@ -4567,7 +6263,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.exception
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>NoSuchRuleGroupInstanceException</td>
@@ -4575,7 +6274,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.exception
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>NoSuchStatsUserException</td>
@@ -4583,7 +6285,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs<br>
 	  <em>New:</em> com.liferay.blogs.exception
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>NoSuchStorageLinkException</td>
@@ -4591,7 +6296,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>NoSuchStructureLinkException</td>
@@ -4599,7 +6307,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>NoSuchTemplateException</td>
@@ -4607,7 +6318,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>NoSuchThreadException</td>
@@ -4615,7 +6329,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>NoSuchThreadFlagException</td>
@@ -4623,7 +6340,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>NoSuchVoteException</td>
@@ -4631,7 +6351,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls<br>
 	  <em>New:</em> com.liferay.polls.exception
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>NodeNameException</td>
@@ -4639,7 +6362,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>OutputProcessor</td>
@@ -4647,7 +6373,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.process<br>
 	  <em>New:</em> com.liferay.petra.process
 	</td>
-    <td>com.liferay.petra.process</td>
+    <td>com.liferay<br>
+        com.liferay.petra.process<br>
+        3.0.4
+    </td>
   </tr>
   <tr>
     <td>PageContentException</td>
@@ -4655,7 +6384,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>PageCreateDateComparator</td>
@@ -4663,7 +6395,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.util.comparator<br>
 	  <em>New:</em> com.liferay.wiki.util.comparator
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>PageTitleComparator</td>
@@ -4671,7 +6406,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.util.comparator<br>
 	  <em>New:</em> com.liferay.wiki.util.comparator
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>PageTitleException</td>
@@ -4679,7 +6417,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>PageVersionComparator</td>
@@ -4687,7 +6428,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.util.comparator<br>
 	  <em>New:</em> com.liferay.wiki.util.comparator
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>PageVersionException</td>
@@ -4695,7 +6439,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>PollsChoice</td>
@@ -4703,7 +6450,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceLocalService</td>
@@ -4711,7 +6461,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceLocalServiceUtil</td>
@@ -4719,7 +6472,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceLocalServiceWrapper</td>
@@ -4727,7 +6483,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceModel</td>
@@ -4735,7 +6494,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoicePersistence</td>
@@ -4743,7 +6505,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service.persistence<br>
 	  <em>New:</em> com.liferay.polls.service.persistence
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceService</td>
@@ -4751,7 +6516,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceServiceUtil</td>
@@ -4759,7 +6527,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceServiceWrapper</td>
@@ -4767,7 +6538,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceSoap</td>
@@ -4775,7 +6549,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceUtil</td>
@@ -4783,7 +6560,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service.persistence<br>
 	  <em>New:</em> com.liferay.polls.service.persistence
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsChoiceWrapper</td>
@@ -4791,7 +6571,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestion</td>
@@ -4799,7 +6582,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionLocalService</td>
@@ -4807,7 +6593,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionLocalServiceUtil</td>
@@ -4815,7 +6604,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionLocalServiceWrapper</td>
@@ -4823,7 +6615,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionModel</td>
@@ -4831,7 +6626,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionPersistence</td>
@@ -4839,7 +6637,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service.persistence<br>
 	  <em>New:</em> com.liferay.polls.service.persistence
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionService</td>
@@ -4847,7 +6648,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionServiceUtil</td>
@@ -4855,7 +6659,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionServiceWrapper</td>
@@ -4863,7 +6670,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionSoap</td>
@@ -4871,7 +6681,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionUtil</td>
@@ -4879,7 +6692,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service.persistence<br>
 	  <em>New:</em> com.liferay.polls.service.persistence
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsQuestionWrapper</td>
@@ -4887,7 +6703,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVote</td>
@@ -4895,7 +6714,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteLocalService</td>
@@ -4903,7 +6725,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteLocalServiceUtil</td>
@@ -4911,7 +6736,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteLocalServiceWrapper</td>
@@ -4919,7 +6747,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteModel</td>
@@ -4927,7 +6758,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVotePersistence</td>
@@ -4935,7 +6769,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service.persistence<br>
 	  <em>New:</em> com.liferay.polls.service.persistence
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteService</td>
@@ -4943,7 +6780,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteServiceUtil</td>
@@ -4951,7 +6791,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteServiceWrapper</td>
@@ -4959,7 +6802,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service<br>
 	  <em>New:</em> com.liferay.polls.service
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteSoap</td>
@@ -4967,7 +6813,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteUtil</td>
@@ -4975,7 +6824,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.service.persistence<br>
 	  <em>New:</em> com.liferay.polls.service.persistence
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PollsVoteWrapper</td>
@@ -4983,7 +6835,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls.model<br>
 	  <em>New:</em> com.liferay.polls.model
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>PoolAction</td>
@@ -4991,7 +6846,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.memory<br>
 	  <em>New:</em> com.liferay.petra.memory
 	</td>
-    <td>com.liferay.petra.memory</td>
+    <td>com.liferay<br>
+        com.liferay.petra.memory<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>PortalCacheClusterChannel</td>
@@ -4999,7 +6857,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache.cluster<br>
 	  <em>New:</em> com.liferay.portal.cache.multiple.internal.cluster.link
 	</td>
-    <td>com.liferay.portal.cache.multiple</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.multiple<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortalCacheClusterChannelFactory</td>
@@ -5007,7 +6868,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache.cluster<br>
 	  <em>New:</em> com.liferay.portal.cache.multiple.internal.cluster.link
 	</td>
-    <td>com.liferay.portal.cache.multiple</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.multiple<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortalCacheClusterChannelSelector</td>
@@ -5015,7 +6879,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache.cluster<br>
 	  <em>New:</em> com.liferay.portal.cache.multiple.internal.cluster.link
 	</td>
-    <td>com.liferay.portal.cache.multiple</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.multiple<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortalCacheClusterEvent</td>
@@ -5023,7 +6890,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache.cluster<br>
 	  <em>New:</em> com.liferay.portal.cache.multiple.internal
 	</td>
-    <td>com.liferay.portal.cache.multiple</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.multiple<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortalCacheClusterEventCoalesceComparator</td>
@@ -5031,7 +6901,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache.cluster<br>
 	  <em>New:</em> com.liferay.portal.cache.multiple.internal
 	</td>
-    <td>com.liferay.portal.cache.multiple</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.multiple<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortalCacheClusterEventType</td>
@@ -5039,7 +6912,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache.cluster<br>
 	  <em>New:</em> com.liferay.portal.cache.multiple.internal
 	</td>
-    <td>com.liferay.portal.cache.multiple</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.multiple<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortalCacheClusterException</td>
@@ -5047,7 +6923,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache.cluster<br>
 	  <em>New:</em> com.liferay.portal.cache.multiple.internal
 	</td>
-    <td>com.liferay.portal.cache.multiple</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.multiple<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortalCacheClusterLink</td>
@@ -5055,7 +6934,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache.cluster<br>
 	  <em>New:</em> com.liferay.portal.cache.multiple.internal.cluster.link
 	</td>
-    <td>com.liferay.portal.cache.multiple</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.multiple<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortalExecutorFactory</td>
@@ -5063,7 +6945,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.executor<br>
 	  <em>New:</em> com.liferay.portal.executor.internal
 	</td>
-    <td>com.liferay.portal.executor</td>
+    <td>com.liferay<br>
+        com.liferay.portal.executor<br>
+        4.0.2
+    </td>
   </tr>
   <tr>
     <td>PortalToLDAPConverter</td>
@@ -5071,7 +6956,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap.exportimport
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>PortletDisplayTemplate</td>
@@ -5079,7 +6967,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.portletdisplaytemplate.util<br>
 	  <em>New:</em> com.liferay.portlet.display.template
 	</td>
-    <td>com.liferay.portlet.display.template.api</td>
+    <td>com.liferay<br>
+        com.liferay.portlet.display.template.api<br>
+        2.0.2
+    </td>
   </tr>
   <tr>
     <td>PortletDisplayTemplateConstants</td>
@@ -5087,7 +6978,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.portletdisplaytemplate.util<br>
 	  <em>New:</em> com.liferay.portlet.display.template.constants
 	</td>
-    <td>com.liferay.portlet.display.template.api</td>
+    <td>com.liferay<br>
+        com.liferay.portlet.display.template.api<br>
+        2.0.2
+    </td>
   </tr>
   <tr>
     <td>PortletDisplayTemplateUtil</td>
@@ -5095,7 +6989,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.portletdisplaytemplate.util<br>
 	  <em>New:</em> com.liferay.roles.admin.web.internal.util
 	</td>
-    <td>com.liferay.roles.admin.web</td>
+    <td>com.liferay<br>
+        com.liferay.roles.admin.web<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortletDisplayTemplateUtil</td>
@@ -5103,7 +7000,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.portletdisplaytemplate.util<br>
 	  <em>New:</em> com.liferay.roles.admin.web.internal.util
 	</td>
-    <td>com.liferay.roles.admin.web</td>
+    <td>com.liferay<br>
+        com.liferay.roles.admin.web<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>PortletDisplayTemplateUtil</td>
@@ -5111,7 +7011,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.portletdisplaytemplate.util<br>
 	  <em>New:</em> com.liferay.roles.admin.web.internal.util
 	</td>
-    <td>com.liferay.roles.admin.web</td>
+    <td>com.liferay<br>
+        com.liferay.roles.admin.web<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>ProcessUtil</td>
@@ -5119,7 +7022,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.process<br>
 	  <em>New:</em> com.liferay.petra.process
 	</td>
-    <td>com.liferay.petra.process</td>
+    <td>com.liferay<br>
+        com.liferay.petra.process<br>
+        3.0.4
+    </td>
   </tr>
   <tr>
     <td>QueryIndexingHitsProcessor</td>
@@ -5127,7 +7033,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.search<br>
 	  <em>New:</em> com.liferay.portal.search.internal.hits
 	</td>
-    <td>com.liferay.portal.search</td>
+    <td>com.liferay<br>
+        com.liferay.portal.search<br>
+        6.0.14
+    </td>
   </tr>
   <tr>
     <td>QuerySuggestionHitsProcessor</td>
@@ -5135,7 +7044,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.search<br>
 	  <em>New:</em> com.liferay.portal.search.internal.hits
 	</td>
-    <td>com.liferay.portal.search</td>
+    <td>com.liferay<br>
+        com.liferay.portal.search<br>
+        6.0.14
+    </td>
   </tr>
   <tr>
     <td>QueryType</td>
@@ -5143,7 +7055,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.rules<br>
 	  <em>New:</em> com.liferay.portal.rules.engine
 	</td>
-    <td>com.liferay.portal.rules.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.rules.engine.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>QuestionChoiceException</td>
@@ -5151,7 +7066,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls<br>
 	  <em>New:</em> com.liferay.polls.exception
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>QuestionDescriptionException</td>
@@ -5159,7 +7077,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls<br>
 	  <em>New:</em> com.liferay.polls.exception
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>QuestionExpirationDateException</td>
@@ -5167,7 +7088,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls<br>
 	  <em>New:</em> com.liferay.polls.exception
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>QuestionExpiredException</td>
@@ -5175,7 +7099,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls<br>
 	  <em>New:</em> com.liferay.polls.exception
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>QuestionTitleException</td>
@@ -5183,7 +7110,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.polls<br>
 	  <em>New:</em> com.liferay.polls.exception
 	</td>
-    <td>com.liferay.polls.api</td>
+    <td>com.liferay<br>
+        com.liferay.polls.api<br>
+        6.0.3
+    </td>
   </tr>
   <tr>
     <td>RecordSetDDMStructureIdException</td>
@@ -5191,7 +7121,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.exception
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>RecordSetDuplicateRecordSetKeyException</td>
@@ -5199,7 +7132,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.exception
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>RecordSetNameException</td>
@@ -5207,7 +7143,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatalists<br>
 	  <em>New:</em> com.liferay.dynamic.data.lists.exception
 	</td>
-    <td>com.liferay.dynamic.data.lists.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.lists.api<br>
+        4.0.5
+    </td>
   </tr>
   <tr>
     <td>RegistryAwareMBeanServer</td>
@@ -5215,7 +7154,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.jmx<br>
 	  <em>New:</em> com.liferay.portal.jmx.internal
 	</td>
-    <td>com.liferay.portal.jmx</td>
+    <td>com.liferay<br>
+        com.liferay.portal.jmx<br>
+        6.0.2
+    </td>
   </tr>
   <tr>
     <td>ReportCompilerRequestMessageListener</td>
@@ -5223,7 +7165,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting.messaging<br>
 	  <em>New:</em> com.liferay.portal.reports.engine.messaging
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportDataSourceType</td>
@@ -5231,7 +7176,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportDesignRetriever</td>
@@ -5239,7 +7187,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportEngine</td>
@@ -5247,7 +7198,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportExportException</td>
@@ -5255,7 +7209,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportFormat</td>
@@ -5263,7 +7220,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportFormatExporter</td>
@@ -5271,7 +7231,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportFormatExporterRegistry</td>
@@ -5279,7 +7242,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportGenerationException</td>
@@ -5287,7 +7253,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportRequest</td>
@@ -5295,7 +7264,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportRequestContext</td>
@@ -5303,7 +7275,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportRequestMessageListener</td>
@@ -5311,7 +7286,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting.messaging<br>
 	  <em>New:</em> com.liferay.portal.reports.engine.messaging
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>ReportResultContainer</td>
@@ -5319,7 +7297,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting<br>
 	  <em>New:</em> com.liferay.portal.reports.engine
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>RequestStatistics</td>
@@ -5327,7 +7308,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.monitoring.statistics<br>
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
-    <td>com.liferay.portal.monitoring</td>
+    <td>com.liferay<br>
+        com.liferay.portal.monitoring<br>
+        7.0.7
+    </td>
   </tr>
   <tr>
     <td>RequiredMessageException</td>
@@ -5335,7 +7319,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>RequiredNodeException</td>
@@ -5343,7 +7330,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>RequiredTemplateException</td>
@@ -5351,7 +7341,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>RequiredTemplateException</td>
@@ -5359,7 +7352,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>RuleGroupInstancePriorityComparator</td>
@@ -5367,7 +7363,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.mobiledevicerules.util<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.util.comparator
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>RuleGroupProcessor</td>
@@ -5375,7 +7374,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.mobile.device.rulegroup<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.rule
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>RuleGroupProcessorUtil</td>
@@ -5383,7 +7385,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.mobile.device.rulegroup<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.rule
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>RuleHandler</td>
@@ -5391,7 +7396,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.mobile.device.rulegroup.rule<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.rule
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>RulesEngine</td>
@@ -5399,7 +7407,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.rules<br>
 	  <em>New:</em> com.liferay.portal.rules.engine
 	</td>
-    <td>com.liferay.portal.rules.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.rules.engine.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>RulesEngineException</td>
@@ -5407,7 +7418,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.rules<br>
 	  <em>New:</em> com.liferay.portal.rules.engine
 	</td>
-    <td>com.liferay.portal.rules.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.rules.engine.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>RulesEngineUtil</td>
@@ -5415,7 +7429,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.rules<br>
 	  <em>New:</em> com.liferay.portal.rules.engine
 	</td>
-    <td>com.liferay.portal.rules.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.rules.engine.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>RulesLanguage</td>
@@ -5423,7 +7440,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.rules<br>
 	  <em>New:</em> com.liferay.portal.rules.engine
 	</td>
-    <td>com.liferay.portal.rules.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.rules.engine.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>RulesResourceRetriever</td>
@@ -5431,7 +7451,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.rules<br>
 	  <em>New:</em> com.liferay.portal.rules.engine
 	</td>
-    <td>com.liferay.portal.rules.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.rules.engine.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>ServletContextReportDesignRetriever</td>
@@ -5439,7 +7462,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.bi.reporting.servlet<br>
 	  <em>New:</em> com.liferay.portal.reports.engine.servlet
 	</td>
-    <td>com.liferay.portal.reports.engine.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.reports.engine.api<br>
+        5.0.1
+    </td>
   </tr>
   <tr>
     <td>SoftReferencePool</td>
@@ -5447,7 +7473,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.memory<br>
 	  <em>New:</em> com.liferay.petra.memory
 	</td>
-    <td>com.liferay.petra.memory</td>
+    <td>com.liferay<br>
+        com.liferay.petra.memory<br>
+        3.0.1
+    </td>
   </tr>
   <tr>
     <td>SortFactoryImpl</td>
@@ -5455,7 +7484,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.search<br>
 	  <em>New:</em> com.liferay.portal.search.internal
 	</td>
-    <td>com.liferay.portal.search</td>
+    <td>com.liferay<br>
+        com.liferay.portal.search<br>
+        6.0.14
+    </td>
   </tr>
   <tr>
     <td>SplitThreadException</td>
@@ -5463,7 +7495,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards<br>
 	  <em>New:</em> com.liferay.message.boards.exception
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>Statistics</td>
@@ -5471,7 +7506,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.monitoring.statistics<br>
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
-    <td>com.liferay.portal.monitoring</td>
+    <td>com.liferay<br>
+        com.liferay.portal.monitoring<br>
+        7.0.7
+    </td>
   </tr>
   <tr>
     <td>StatsUserLastPostDateComparator</td>
@@ -5479,7 +7517,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.blogs.util.comparator<br>
 	  <em>New:</em> com.liferay.blogs.util.comparator
 	</td>
-    <td>com.liferay.blogs.api</td>
+    <td>com.liferay<br>
+        com.liferay.blogs.api<br>
+        5.0.5
+    </td>
   </tr>
   <tr>
     <td>StorageAdapter</td>
@@ -5487,7 +7528,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>StorageEngine</td>
@@ -5495,7 +7539,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>StorageException</td>
@@ -5503,7 +7550,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>StorageFieldNameException</td>
@@ -5511,7 +7561,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>StringQueryImpl</td>
@@ -5519,7 +7572,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.search<br>
 	  <em>New:</em> com.liferay.portal.search.internal.query
 	</td>
-    <td>com.liferay.portal.search</td>
+    <td>com.liferay<br>
+        com.liferay.portal.search<br>
+        6.0.14
+    </td>
   </tr>
   <tr>
     <td>StructureDuplicateStructureKeyException</td>
@@ -5527,7 +7583,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>StructureFieldException</td>
@@ -5535,7 +7594,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>StructureIdComparator</td>
@@ -5543,7 +7605,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util.comparator<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util.comparator
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>StructureModifiedDateComparator</td>
@@ -5551,7 +7616,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util.comparator<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util.comparator
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>StructureStructureKeyComparator</td>
@@ -5559,7 +7627,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util.comparator<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util.comparator
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>SummaryStatistics</td>
@@ -5567,7 +7638,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.monitoring.statistics<br>
 	  <em>New:</em> com.liferay.portal.monitoring.internal.statistics
 	</td>
-    <td>com.liferay.portal.monitoring</td>
+    <td>com.liferay<br>
+        com.liferay.portal.monitoring<br>
+        7.0.7
+    </td>
   </tr>
   <tr>
     <td>SynchronousMessageListener</td>
@@ -5575,7 +7649,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.messaging.sender<br>
 	  <em>New:</em> com.liferay.portal.messaging.internal.sender
 	</td>
-    <td>com.liferay.portal.messaging</td>
+    <td>com.liferay<br>
+        com.liferay.portal.messaging<br>
+        6.0.5
+    </td>
   </tr>
   <tr>
     <td>TemplateDuplicateTemplateKeyException</td>
@@ -5583,7 +7660,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>TemplateIdComparator</td>
@@ -5591,7 +7671,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util.comparator<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util.comparator
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>TemplateModifiedDateComparator</td>
@@ -5599,7 +7682,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.util.comparator<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.util.comparator
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>TemplateNameException</td>
@@ -5607,7 +7693,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>TemplateNameException</td>
@@ -5615,7 +7704,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>TemplateScriptException</td>
@@ -5623,7 +7715,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>TemplateSmallImageNameException</td>
@@ -5631,7 +7726,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>TemplateSmallImageNameException</td>
@@ -5639,7 +7737,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>TemplateSmallImageSizeException</td>
@@ -5647,7 +7748,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>TemplateSmallImageSizeException</td>
@@ -5655,7 +7759,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.journal<br>
 	  <em>New:</em> com.liferay.dynamic.data.mapping.exception
 	</td>
-    <td>com.liferay.dynamic.data.mapping.api</td>
+    <td>com.liferay<br>
+        com.liferay.dynamic.data.mapping.api<br>
+        5.2.1
+    </td>
   </tr>
   <tr>
     <td>ThreadLastPostDateComparator</td>
@@ -5663,7 +7770,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.messageboards.util.comparator<br>
 	  <em>New:</em> com.liferay.message.boards.util.comparator
 	</td>
-    <td>com.liferay.message.boards.api</td>
+    <td>com.liferay<br>
+        com.liferay.message.boards.api<br>
+        5.1.4
+    </td>
   </tr>
   <tr>
     <td>UniformPortalCacheClusterChannelSelector</td>
@@ -5671,7 +7781,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.cache.cluster<br>
 	  <em>New:</em> com.liferay.portal.cache.multiple.internal.cluster.link
 	</td>
-    <td>com.liferay.portal.cache.multiple</td>
+    <td>com.liferay<br>
+        com.liferay.portal.cache.multiple<br>
+        3.0.6
+    </td>
   </tr>
   <tr>
     <td>UnknownRuleHandlerException</td>
@@ -5679,7 +7792,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.mobile.device.rulegroup.rule<br>
 	  <em>New:</em> com.liferay.mobile.device.rules.rule
 	</td>
-    <td>com.liferay.mobile.device.rules.api</td>
+    <td>com.liferay<br>
+        com.liferay.mobile.device.rules.api<br>
+        4.0.4
+    </td>
   </tr>
   <tr>
     <td>UserConverterKeys</td>
@@ -5687,7 +7803,10 @@ caption {
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
 	  <em>New:</em> com.liferay.portal.security.ldap
 	</td>
-    <td>com.liferay.portal.security.ldap.api</td>
+    <td>com.liferay<br>
+        com.liferay.portal.security.ldap.api<br>
+        2.0.8
+    </td>
   </tr>
   <tr>
     <td>WikiFormatException</td>
@@ -5695,7 +7814,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki<br>
 	  <em>New:</em> com.liferay.wiki.exception
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNode</td>
@@ -5703,7 +7825,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeLocalService</td>
@@ -5711,7 +7836,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeLocalServiceUtil</td>
@@ -5719,7 +7847,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeLocalServiceWrapper</td>
@@ -5727,7 +7858,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeModel</td>
@@ -5735,7 +7869,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodePersistence</td>
@@ -5743,7 +7880,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service.persistence<br>
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeService</td>
@@ -5751,7 +7891,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeServiceUtil</td>
@@ -5759,7 +7902,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeServiceWrapper</td>
@@ -5767,7 +7913,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeSoap</td>
@@ -5775,7 +7924,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeUtil</td>
@@ -5783,7 +7935,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service.persistence<br>
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiNodeWrapper</td>
@@ -5791,7 +7946,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPage</td>
@@ -5799,7 +7957,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageConstants</td>
@@ -5807,7 +7968,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageDisplay</td>
@@ -5815,7 +7979,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageFinder</td>
@@ -5823,7 +7990,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service.persistence<br>
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageLocalService</td>
@@ -5831,7 +8001,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageLocalServiceUtil</td>
@@ -5839,7 +8012,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageLocalServiceWrapper</td>
@@ -5847,7 +8023,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageModel</td>
@@ -5855,7 +8034,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPagePersistence</td>
@@ -5863,7 +8045,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service.persistence<br>
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageResource</td>
@@ -5871,7 +8056,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageResourceLocalService</td>
@@ -5879,7 +8067,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageResourceLocalServiceUtil</td>
@@ -5887,7 +8078,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageResourceLocalServiceWrapper</td>
@@ -5895,7 +8089,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageResourceModel</td>
@@ -5903,7 +8100,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageResourcePersistence</td>
@@ -5911,7 +8111,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service.persistence<br>
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageResourceSoap</td>
@@ -5919,7 +8122,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageResourceUtil</td>
@@ -5927,7 +8133,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service.persistence<br>
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageResourceWrapper</td>
@@ -5935,7 +8144,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageService</td>
@@ -5943,7 +8155,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageServiceUtil</td>
@@ -5951,7 +8166,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageServiceWrapper</td>
@@ -5959,7 +8177,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service<br>
 	  <em>New:</em> com.liferay.wiki.service
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageSoap</td>
@@ -5967,7 +8188,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageUtil</td>
@@ -5975,7 +8199,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.service.persistence<br>
 	  <em>New:</em> com.liferay.wiki.service.persistence
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
   <tr>
     <td>WikiPageWrapper</td>
@@ -5983,7 +8210,10 @@ caption {
 	  <em>Old:</em> com.liferay.portlet.wiki.model<br>
 	  <em>New:</em> com.liferay.wiki.model
 	</td>
-    <td>com.liferay.wiki.api</td>
+    <td>com.liferay<br>
+        com.liferay.wiki.api<br>
+        4.0.7
+    </td>
   </tr>
 
 </table>
