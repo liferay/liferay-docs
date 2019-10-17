@@ -24,9 +24,8 @@ properly.
 
 Installing Elasticsearch takes six steps: 
 
-1. Find the version of Elasticsearch that's embedded in the version of @product@
-   you have, and then download that version from [Elastic's](https://www.elastic.co) 
-   website. 
+1. Download a supported version of Elasticsearch. See
+   [Elastic's](https://www.elastic.co) website. 
 
 2. Install Elasticsearch by extracting its archive to the system where you want
    it to run. 
@@ -39,33 +38,24 @@ Installing Elasticsearch takes six steps:
 
 6. Restart @product@ and reindex your search and spell check indexes.
 
-Before continuing, make sure you have set the 
-[`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
+| **Prerequisites:** Before continuing, make sure you have set the [`JAVA_HOME`
+| environment
+| variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
+| 
+| If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
+| using the same version and distribution (e.g., Oracle Open JDK 1.8.0_201). You
+| can specify this in `[Elasticsearch Home]/bin/elasticsearch.in.sh`:
+| `JAVA_HOME=/path/to/java`.
 
-If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
-using the same version and distribution (e.g., Oracle Open JDK 1.8.0_201). You
-can specify this in `[Elasticsearch Home]/bin/elasticsearch.in.sh`:
+Once you perform these steps, you'll have a basic, production-ready instance of
+@product@ and Elasticsearch up and running. But that's just the beginning of
+your server/connector configuration:
 
-    JAVA_HOME=/path/to/java
+- Read about [Configuring Elasticsearch](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector) for @product@ in more detail.
+- Learn how to [Secure Elasticsearch](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-security).
+- [Liferay Enterprise Search] Learn how to configure [Monitoring](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-monitoring).
 
-<!-- UNCOMMENT WHEN WE HAVE A COMPAT MATRIX 
-Consult the 
-[Elasticsearch compatibility matrix](https://www.elastic.co/support/matrix#matrix_jvm) 
-and the 
-[@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85) 
-to learn more about supported JDK distributions and versions.
--->
-
-Once you perform these steps, you'll have a production-ready instance of
-@product@ up and running.
-
-After you're done following the installation guide, refer to the 
-[Configuring Elasticsearch](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector)
-article for more details on configuring @product@ for Elasticsearch. For more
-information on installing a search engine, see
-[here](/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine).
-
-### Step One: Find the Right Version of Elasticsearch 
+### Step One: Download a Supported Version of Elasticsearch
 
 If @product@ isn't running, start it. 
 
@@ -95,11 +85,17 @@ A JSON document is returned that looks similar to this:
 }
 ```
 
-The version of Elasticsearch that's running is the value of the `"number"` field.
-In this example, it's 6.5.0. 
+The version of Elasticsearch that's running is the value of the `number` field.
+In this example, it's 6.5.0. You can install the embedded version, but it might
+not be the most up-to-date version of Elasticsearch that's supported with
+@product@. Consult the
+[Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?)
+for definitive information on what's supported. 
 
 | **Note:** Although the embedded server uses Elasticsearch 6.5, Elasticsearch
-| 6.8.x has been tested with @product@-ver, and is fully supported.
+| 6.8.x has been tested with @product@-ver GA1, and is fully supported. If you've
+| upgraded to @product-ver@ Service Pack 1/Fix Pack 2, up to Elasticsearch 7.3.x
+| is supported.
 
 Shut down the @product@ server. In a local, single-machine testing environment,
 if you continue without shutting down, the Elasticsearch server you're about to
@@ -164,14 +160,6 @@ Of course, this isn't a very imaginative name; you may choose to name your
 cluster `finders_keepers` or something else you can remember more easily. Save
 the file. 
 
-Disable X-Pack Security in `elasticsearch.yml` unless
-you have an Liferay Enterprise Search Premium subscription, which gives you
-access to Liferay's X-Pack Security connector:
-
-```yml
-xpack.security.enabled: false
-```
-
 Now you can start Elasticsearch. Run the executable for your operating system
 from the `[Elasticsearch Home]/bin` folder: 
 
@@ -211,11 +199,14 @@ When finished, click *Save*. You're almost done.
 
 ### Step Six: Restart @product@ and Reindex 
 
-Stop and restart @product@. When it's back up, log in as an administrative user
-and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and click
-the *Execute* button for *Reindex all search indexes* and then *Reindex all
-spell check indexes*. When you do that, you should see some messages scroll up
-in the Elasticsearch log. 
+If you're doing a local test installation, you probably only changed the
+Operation Mode in the connector configuration, so there's no need to restart;
+skip to re-indexing. If you've made more configuration changes in the
+connector's configuration, stop and restart @product@. When it's back up, log in
+as an administrative user and click on *Control Panel* &rarr; *Configuration*
+&rarr; *Search* and click the *Execute* button for *Reindex all search indexes*
+and then *Reindex all spell check indexes*. When you do that, you'll see some
+messages scroll up in the Elasticsearch log. 
 
 When restarting @product@, `update_mappings` messages will appear in the
 Elasticsearch logs:
@@ -264,5 +255,5 @@ installation of the remote Elasticsearch server, it said _Elasticsearch
 
 ![Figure 1: To see information about the currently connected search engine, go to _Control Panel &rarr; Configuration &rarr; Search_.](../../../images/search-admin-engineinfo-remote.png)
 
-For additional details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/getting-started-install.html).
+For additional details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/getting-started-install.html).
 

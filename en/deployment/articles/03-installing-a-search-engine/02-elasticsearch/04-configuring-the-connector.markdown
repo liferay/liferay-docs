@@ -88,8 +88,8 @@ There are two ways to configure the connector:
 
 2. [Manually create an OSGi configuration file.](#configuring-the-connector-with-an-osgi-config-file) 
 
-It's convenient to configure the Elasticsearch connector from System Settings, but
-this is often only possible during development and testing. If you're not
+It's convenient to configure the Elasticsearch connector from System Settings,
+but this is often only possible during development and testing. If you're not
 familiar with System Settings, read about it
 [here](/docs/7-2/user/-/knowledge_base/u/system-settings).
 Remember that you can generate configuration files for deployment to other
@@ -113,7 +113,7 @@ To configure the Elasticsearch connector from the System Settings application,
 
 4.  Make any edits to the configuration and click *Save*.
 
-    Figure 2: Set configurations for the Elasticsearch connector, like settings the Operation Mode to *Remote*.](../../../images/cfg-elasticsearch-sys-settings2.png)
+    Figure 2: Configure the Elasticsearch connector's settings. Make sure you set the Operation Mode to *Remote*.](../../../images/cfg-elasticsearch-sys-settings2.png)
 
 | **Note:** If you switch operation modes (`EMBEDDED` &rarr; `REMOTE`), you must
 | trigger a re-index. Navigate to *Control Panel* &rarr; *Configuration* &rarr;
@@ -130,7 +130,7 @@ file:
 
 1. Create the following file:
     
-        [Liferay_Home]/osgi/configs/com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.config
+        [Liferay_Home]/osgi/configs/com.liferay.portal.search.elasticsearch7.configuration.ElasticsearchConfiguration.config
 
 2. Add configurations to the file, in the format `propertyName="Value"`. For
    example,
@@ -180,7 +180,7 @@ On the Elasticsearch side, set the `network.host` property in your
 (the host where Elasticsearch listens for requests) and the *publish host*
 (the host name or IP address Elasticsearch uses to communicate with other
 nodes). See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-network.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-network.html)
 for more information.
 
 ## Clustering Elasticsearch in Remote Operation Mode 
@@ -189,7 +189,7 @@ To cluster Elasticsearch, first set `node.max_local_storage_nodes` to
 be something greater than `1`. When you run the Elasticsearch start script,
 a new local storage node is added to the cluster. If you want four nodes running
 locally, for example, run `./bin/elasticsearch` four times. See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-node.html#max-local-storage-nodes)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-node.html#max-local-storage-nodes)
 for more information.
 
 Configure the number of shards and replicas in the Elasticsearch 6 connector,
@@ -199,27 +199,29 @@ Elasticsearch's default configuration works for a cluster of up to ten nodes,
 since the default number of shards is `5` and the default number of replica
 shards is `1`.
 
-| **Note:** Elasticsearch uses the [Zen Discovery
-| Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-discovery-zen.html)
-| by default, which provides unicast discovery. Additionally, nodes in the cluster
-| communicate using the [Transport
-| Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-transport.html),
+| **Note:** Elasticsearch
+| [discovery](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-discovery-hosts-providers.html)
+| happens via [seed hosts
+| providers](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-discovery-hosts-providers.html#built-in-hosts-providers).
+| The cluster formation module includes two modes for providing seed hosts out of
+| the box: a provider based on node settings and one based on an external file.
+| Nodes that have joined the cluster communicate using the [Transport
+| Module](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-transport.html),
 | through TCP. See the Elasticsearch documentation for the available properties
 | (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 | connector's settings for the connector's available settings.
 | 
-| At a minimum, provide the list of hosts (as `host:port`)  to act as gossip
-| routers during unicast discovery in the `elasticsearch.yml`:
+| At a minimum, seed the unicast discovery process by setting the list of hosts
+| (as `host:port`) that are master-eligible for the cluster. Use the
+| `discovery.seed_hosts` property in the `elasticsearch.yml` file for this in the
+| format
 | 
-|     discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
+| `["node1.ip.address","node2.ip.address"]`
 | 
-| For example,
+| For example, 
 | 
-|     discovery.zen.ping.unicast.hosts: ["10.10.10.5", "10.10.10,.5:9305"]
-| 
-| For more information on configuring an Elasticsearch cluster, see the
-| documentation on 
-| [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
+| `discovery.seed_hosts: ["10.10.10.5", "10.10.10,.5:9305"]`
+
 
 ## Elasticsearch Connector System Settings, By Operation Mode 
 

@@ -6,7 +6,7 @@ header-id: advanced-configuration-of-the-liferay-elasticsearch-connector
 
 [TOC levels=1-4]
 
-The default configurations for Liferay's Elasticsearch connector module are set
+The default configuration for Liferay's Elasticsearch connector module are set
 in a Java class called `ElasticsearchConfiguration`.
 
 While the Elasticsearch connector has a lot of configuration options out of the
@@ -31,7 +31,7 @@ The `additionalConfigurations` configuration defines extra settings (in YAML)
 for the embedded Elasticsearch. This is only useful for testing environments
 using the embedded Elasticsearch server. Any node settings normally set in
 `elasticsearch.yml` can be declared here. See the
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/index.html) 
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/index.html) 
 for a description of all possible node settings.
 
 ### Adding Index Configurations
@@ -40,10 +40,10 @@ The `additionalIndexConfigurations` configuration defines extra settings (in
 JSON or YAML) that are applied to the @product@ index when it's created. For
 example, you can create custom analyzers and filters using this setting. For a
 complete list of available settings, see the 
-[Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/index-modules.html).
+[Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/index-modules.html).
 
 Here's an example that shows how to configure 
-[analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro)
+[analysis](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/index-modules-analysis.html)
 that can be applied to a field or a dynamic template (see
 [below](#overriding-type-mappings) for an example application to a dynamic
 template).
@@ -75,9 +75,9 @@ template).
 `additionalTypeMappings` defines extra mappings for the `LiferayDocumentType`
 type definition. These are applied when the index is created. Add the mappings
 in using JSON syntax. For more information see
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/mapping.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/mapping.html)
 and
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/indices-put-mapping.html).
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/indices-put-mapping.html).
 Use `additionalTypeMappings` for new field (`properties`) mappings and new
 dynamic templates, but don't try to override existing mappings. If any of the
 mappings set here overlap with existing mappings, index creation fails. Use
@@ -85,7 +85,7 @@ mappings set here overlap with existing mappings, index creation fails. Use
 
 As with dynamic templates, you can add sub-field mappings to @product@'s type
 mapping. These are referred to as
-[properties](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/properties.html)
+[properties](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/properties.html)
 in Elasticsearch.
 
 ```json
@@ -103,7 +103,7 @@ in Elasticsearch.
 ```
 
 See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/mapping-types.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/mapping-types.html)
 for more details on Elasticsearch's field datatypes.
 
 The above example shows how a `fooName` field might be added to @product@'s type
@@ -162,7 +162,7 @@ Now modify whatever mappings you'd like. The changes take effect once you save
 the changes and trigger a re-index from Server Administration. 
 
 Here's a partial example, showing a 
-[dynamic template](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/dynamic-templates.html)
+[dynamic template](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/dynamic-templates.html)
 that uses the analysis configuration from `additionalIndexConfigurations` to
 analyze all string fields that end with `_ja`. You'd include this with all the
 other default mappings, replacing the provided `template_ja` with this custom
