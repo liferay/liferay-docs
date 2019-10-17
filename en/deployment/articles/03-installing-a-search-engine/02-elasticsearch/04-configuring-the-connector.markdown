@@ -199,28 +199,27 @@ Elasticsearch's default configuration works for a cluster of up to ten nodes,
 since the default number of shards is `5` and the default number of replica
 shards is `1`.
 
-| **Note:** Elasticsearch
-| [discovery](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-discovery-hosts-providers.html)
-| happens via [seed hosts
-| providers](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-discovery-hosts-providers.html#built-in-hosts-providers).
-| The cluster formation module includes two modes for providing seed hosts out of
-| the box: a provider based on node settings and one based on an external file.
-| Nodes that have joined the cluster communicate using the [Transport
-| Module](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-transport.html),
+| **Note:** Elasticsearch uses the [Zen Discovery
+| Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-discovery-zen.html)
+| by default, which provides unicast discovery. Additionally, nodes in the cluster
+| communicate using the [Transport
+| Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-transport.html),
 | through TCP. See the Elasticsearch documentation for the available properties
 | (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 | connector's settings for the connector's available settings.
 | 
-| At a minimum, seed the unicast discovery process by setting the list of hosts
-| (as `host:port`) that are master-eligible for the cluster. Use the
-| `discovery.seed_hosts` property in the `elasticsearch.yml` file for this in the
-| format
+| At a minimum, provide the list of hosts (as `host:port`)  to act as gossip
+| routers during unicast discovery in the `elasticsearch.yml`:
 | 
-| `["node1.ip.address","node2.ip.address"]`
+|     discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
 | 
-| For example, 
+| For example,
 | 
-| `discovery.seed_hosts: ["10.10.10.5", "10.10.10,.5:9305"]`
+|     discovery.zen.ping.unicast.hosts: ["10.10.10.5", "10.10.10,.5:9305"]
+| 
+| For more information on configuring an Elasticsearch cluster, see the
+| documentation on 
+| [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
 
 ## Elasticsearch Connector System Settings, By Operation Mode 
