@@ -14,7 +14,10 @@ Analytics Cloud does the following for pages:
 -   Registers and tracks pages for analysis the first time the Analytics Cloud 
     client detects a Page interaction.
 -   Queries pages on a schedule for up-to-date data.
--   Reports on pages with the metrics described here.
+-   Reports on pages with the metrics described here. 
+
+For instructions on accessing the page analytics discussed here, see 
+[Viewing Page Data](https://github.com/liferay/liferay-docs/blob/7.1.x/en/discover/analytics-cloud/articles/04-analyzing-touchpoints/00-analytics-intro.markdown#viewing-page-data). 
 
 ## Data Time Periods
 
