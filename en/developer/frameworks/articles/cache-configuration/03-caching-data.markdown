@@ -16,11 +16,9 @@ utility. Storing and retrieving cached data objects is as easy as using a hash
 map: you associate a key with every value. The following steps demonstrate
 implementing data caching. 
 
-| **Note:** If you want to cache Service Builder Service Entities or Entity 
-| Finder results, see the articles
-| [Caching Service Entities](/docs/7-2/frameworks/-/knowledge_base/f/caching-service-entities)
-| and
-| [Caching Entity Finder Results](caching-entity-finder-results).
+| **Note:** If you want to modify cache for Service Builder Service Entities or 
+| Entity Finder results, see
+| [Overriding Cache](/docs/7-2/frameworks/-/knowledge_base/f/overriding-cache).
 
 
 ## Step 1: Determine Cache Pool Requirements 
@@ -238,53 +236,7 @@ Configuring the cache and deploying your project is next.
 
 ## Step 5: Configure the Cache 
 
-Ehcache configuration XML is the same in a module JAR as a portlet WAR, but the
-file name and path conventions differ. 
-
-### Module Cache Configuration 
-
-In a module, cache is configured in one of the following files. 
-
--   Multi VM: `src/main/resources/META-INF/module-multi-vm.xml`
-
--   Single VM: `src/main/resources/META-INF/module-single-vm.xml`
-
-### Portlet WAR Cache Configuration 
-
-Ehcache configuration in a portlet WAR has these requirements. 
-
-1.  The Ehcache configuration XML file must be in the application context (e.g.,
-    any path under `WEB-INF/src`).
-
-2.  The `portlet.properties` file must specify the cache file location. Either 
-    of the two properties is used and is assigned the cache file path, relative
-    to the application context root (e.g., `WEB-INF/src`). 
-
-```properties 
-ehcache.single.vm.config.location=path/to/single/vm/config/file
-ehcache.multi.vm.config.location=path/to/multi/vm/config/file 
-```
-
-For example, here's the
-[`test-cache-configuration-portlet`](https://github.com/liferay/liferay-plugins/blob/7.0.x/portlets/test-cache-configuration-portlet)
-portlet WAR's structure:
-
--   `docroot/WEB-INF/src/`
-    -   `ehcache/`
-        -   [`liferay-single-vm-ext.xml`](https://github.com/liferay/liferay-plugins/blob/7.0.x/portlets/test-cache-configuration-portlet/docroot/WEB-INF/src/ehcache/liferay-single-vm-ext.xml)
-        -   [`liferay-multi-vm-clustered-ext.xml`](https://github.com/liferay/liferay-plugins/blob/7.0.x/portlets/test-cache-configuration-portlet/docroot/WEB-INF/src/ehcache/liferay-multi-vm-clustered-ext.xml)
-    -   `portlet.properties`
-
-The `portlet.properties` file specifies these properties:
-
-```properties 
-ehcache.single.vm.config.location=ehcache/liferay-single-vm-ext.xml
-ehcache.multi.vm.config.location=ehcache/liferay-multi-vm-clustered-ext.xml
-```
-
 It's time to specify your Ehcache configuration. 
-
-### Ehcache XML Configuration
 
 1.  Depending on the VM pool you're using, start your XML file in one of the
     following ways. 
@@ -361,8 +313,4 @@ Congratulations! Your data cache is in effect.
 
 ## Related Topics 
 
-[Overriding Cache at Runtime](/docs/7-2/frameworks/-/knowledge_base/f/overriding-cache-at-runtime)
-
-[Caching Service Entities](/docs/7-2/frameworks/-/knowledge_base/f/caching-service-entities)
-
-[Caching Entity Finder Results](caching-entity-finder-results)
+[Overriding Cache](/docs/7-2/frameworks/-/knowledge_base/f/overriding-cache)
