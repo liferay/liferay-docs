@@ -71,7 +71,7 @@ Supply this basic portal information:
 button. This immediately localizes your portal content, including the Basic
 Configuration page. 
 
-**Time Zone:** default time zone of your Liferay instance.
+**Time Zone:** select your @product@ instance's default time zone. 
 
 ### Administrator User 
 
@@ -83,8 +83,9 @@ For the administrator, supply the following information:
 
 **Email:** the default administrator user's email address
 
-| **Note:** the domain of administrator user's email will be used as the default
-| domain name of the instance (company.default.web.id configuration property).
+| **Note:** the administrator user's email domain is used as the @product@ 
+| instance's default domain (i.e., the
+| [`company.default.web.id`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Company) [portal property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)).
 
 ### Database 
 
