@@ -234,7 +234,7 @@ continues using the cached data. Use similar logic for the data you are caching.
 
 Configuring the cache and deploying your project is next. 
 
-## Step 5: Configure the Cache 
+## Step 4: Configure the Cache 
 
 It's time to specify your Ehcache configuration. 
 
