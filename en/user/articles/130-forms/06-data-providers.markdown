@@ -15,13 +15,12 @@ someone else (hopefully a trustworthy expert) to keep the data updated.
 
 When setting up a data provider, you're accessing a 
 [REST web service](https://en.wikipedia.org/wiki/Representational_state_transfer). 
-Use the 
-JSON web services registered in @product@,
-or any other REST web service you can access. To find a list of the ready-to-use
-registered JSON web services in @product@, navigate to
-[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) (assuming
-you're running a local server). Browse the available Liferay services. Many
-times, the services useful to you in the Forms application get a list of
+Use the JSON web services registered in @product@, or any other REST web service
+you can access. To find a list of the registered JSON web services in @product@,
+navigate to
+[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws)
+(assuming you're running a local server). Browse the available Liferay services.
+Many times, the services useful to you in the Forms application get a list of
 something. Find the `get-countries` JSON web service (there are two---use either
 one) and click on it, then click *Invoke*. The *Result* tab shows a list of
 countries using JSON syntax, like this:
@@ -47,6 +46,14 @@ for any registered JSON web service using this same procedure.
 Note the field you want Users to select. With this service, it's most likely
 `nameCurrentValue`, because it contains the full, properly capitalized name of
 the country.
+
+| *Enabling Access to Data on the Local Network:* By default, you cannot configure
+| data providers to use URLs on the local network. This is a good default for
+| security in a production environment, but makes testing more difficult. To
+| enable local network access from data providers, got to Control Panel &rarr;
+| Configuration &rarr; System Settings &rarr; Data Providers (under Content &
+| Data), and enable _Access Local Network_. You'll need to configure this if you
+| want to follow the basic example in the next section.
 
 ## Adding a Basic Data Provider
 
@@ -183,8 +190,44 @@ The REST service's response data is filtered by the input parameter.
 enabled. You can add multiple Outputs. Outputs can be filtered by inputs (see
 above) but can also be displayed without configuring input filtering. Specify
 the Label, Path, and Type (Text, Number, or List). The Path field is specified
-in [JsonPath syntax](https://github.com/json-path/JsonPath/blob/master/README.md). 
-Using the `restcountries.eu` service, specify the `name` field as an Output by
-entering enter `$..name` in the Path field.
+in
+[JsonPath syntax](https://github.com/json-path/JsonPath/blob/master/README.md), so it
+must always start with a `$`. The type of data returned by the Path must match
+the type you choose in the Type field. Using the `restcountries.eu` service,
+specify the `name` field as an Output by entering enter `$..name` in the Path
+field.
+
+If you have a more complex JsonPath expression to construct (for example, you
+need the names of all countries with a population over 100
+million---`$..[?(@.population>100000000)].name` with the `restcountries.eu`
+service), consider using an online JsonPath evaluator, like
+[this one](http://jsonpath.herokuapp.com/) or
+[this one](https://jsonpath.com/).
+
+| **Hint:** To display one value to the user, but persist another in the database,
+| enter both into the Paths field, separated by a semicolon:
+| 
+|      `$..name;$..numericCode`
+| 
+| If this is used with the `restcountries.eu` data provider, the name of the
+| country is displayed to the User, while the numeric country code is stored in
+| the database.
 
 ![Figure 3: Set up Data Providers to display data retrieved from a REST service.](../../images/forms-data-provider-configuration.png)
+
+## Troubleshooting Data Provider Errors
+
+To uncover errors arising from Data Provider failures, 
+[configure log levels](/docs/7-2/user/-/knowledge_base/u/server-administration) 
+for these services:
+
+**Category:**
+`com.liferay.dynamic.data.mapping.data.provider.internal.DDMDataProviderInvokerImpl`
+*Level:* WARN 
+
+**Category:**
+`com.liferay.dynamic.data.mapping.form.field.type.internal.DDMFormFieldOptionsFactoryImpl`
+*Level:* DEBUG
+
+With Data Providers, the world's (RESTful) data is at your disposal to use with
+the Forms application.

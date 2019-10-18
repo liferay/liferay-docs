@@ -28,3 +28,4 @@ use in your app. The full list of language flags is shown below:
 
 - [Clay Badges](/docs/7-2/reference/-/knowledge_base/r/clay-badges)
 - [Clay Stickers](/docs/7-2/reference/-/knowledge_base/r/clay-stickers)
+- [Using Clay Icons in a Theme](/docs/7-2/frameworks/-/knowledge_base/f/using-clay-icons-in-a-theme)

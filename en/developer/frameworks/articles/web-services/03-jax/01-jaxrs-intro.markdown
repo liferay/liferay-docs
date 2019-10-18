@@ -109,6 +109,19 @@ to provide a way to grant access to your service:
 The form now reappears with two additional generated fields: Client ID and
 Client Secret. You'll use these to authenticate to your web service. 
 
+To make your service accessible, 
+
+1.  Click the *Scopes* tab. 
+
+2.  You'll see an entry for your deployed `Greetings.Rest` service. Expand it by
+    clicking the arrow. 
+
+3.  Check the box labeled *read data on your behalf*. 
+
+4.  Click *Save*. 
+
+![Figure x: Enable the scope to grant access to the service.](../../images/jax-rs-oauth2-scope.png)
+
 For simplicity, the examples below use [Curl](https://curl.haxx.se) to
 authenticate. You need the two pieces of information generated for your
 application: the Client ID and the Client Secret. For example, say those fields

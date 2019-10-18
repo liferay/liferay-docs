@@ -288,4 +288,3 @@ application. It provides functionality that's shared across different types of
 content like blog posts, message board posts, wiki articles, and more. This is
 the heart of integration with @product@'s development platform. 
 
-The lessons on Assets are coming soon! 
