@@ -105,7 +105,7 @@ shutting down @product@ is to use a different cluster name (i.e., not
 `LiferayElasticsearchCluster`) and HTTP port (i.e., not `9200`) in the remote
 Elasticsearch server.
 
-Now that you know the version of Elasticsearch you need, go to
+When you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
 
 ### Step Two: Install Elasticsearch 

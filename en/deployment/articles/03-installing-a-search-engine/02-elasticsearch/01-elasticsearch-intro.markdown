@@ -17,10 +17,9 @@ through the process of configuring Elasticsearch in remote mode.
 
 | **Note:** Although Elasticsearch 6.5 is shipped as the embedded Elasticsearch
 | server version, Elasticsearch 7.3 is the most recent supported Elasticsearch
-| version for @product-ver@, and some newer features depend on it: Learning to
-| Rank, and Similar Results, for example. Installing Elasticsearch 7.3 requires
-| that you are running Service Pack 1/Fix Pack 2 or later. Elasticsearch 6.8.x is
-| also supported.
+| version for @product-ver@. Installing Elasticsearch 7.3 requires that you are
+| running Service Pack 1/Fix Pack 2 or later. Elasticsearch 6.8.x is also
+| supported.
 
 If you'd rather use Solr, it's also supported. See the documentation on
 [Installing Solr](/docs/7-2/deploy/-/knowledge_base/d/installing-solr) 
@@ -32,10 +31,6 @@ the
 Included there are basic instructions for installing and configuring
 Elasticsearch in a single server environment. Additional articles include more
 details and information on configuring and tuning Elasticsearch. 
-
-If you've come here looking for information on search engines in general, or
-the low level search infrastructure of @product@, refer instead to the
-developer tutorial Introduction to Liferay Search (not yet written).
 
 These terms are useful to understand as you read this guide:
 
