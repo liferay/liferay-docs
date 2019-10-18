@@ -145,6 +145,8 @@ portal, you need to supply the following information:
 
 **Default Language:** choose the default locale of your portal.
 
+**Time Zone:** select your @product@ instance's default time zone. 
+
 For the administrator, you need to supply the following information:
 
 **First Name:** the first name of the default administrator user
@@ -152,6 +154,11 @@ For the administrator, you need to supply the following information:
 **Last Name:** the last name of the default administrator user
 
 **Email:** the email address of the default administrator user
+
+| **Note:** the administrator user's email domain is used as the @product@ 
+| instance's default domain (i.e., the
+| [`company.default.web.id`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Company)
+| portal property).
 
 ![Figure 1: Supply the information for your portal and your portal's default administrator user on the Basic Configuration page.](../../images/basic-configuration1.png)
 
