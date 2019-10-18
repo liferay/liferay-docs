@@ -6,8 +6,8 @@ header-id: using-the-bootstrap-3-lexicon-css-compatibility-layer
 
 [TOC levels=1-4]
 
-By default, @product@ includes Bootstrap 4 out-of-the-box. Bootstrap 4 has been 
-completely rewritten and therefore includes some 
+By default, @product-ver@ includes Bootstrap 4 out-of-the-box. Bootstrap 4 has 
+been completely rewritten and therefore includes some 
 [notable changes](https://getbootstrap.com/docs/4.3/migration/) 
 and 
 [compatibility updates](https://getbootstrap.com/docs/4.3/getting-started/introduction/) 
@@ -18,10 +18,12 @@ alongside the new Bootstrap 4 and Clay CSS. If your theme extends the
 [Styled base theme](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-styled), 
 this compatibility layer is included by default. 
 
-| **Note:** This compatibility layer is meant as a short-term solution to ensure 
+| **Note:** The compatibility layer is meant as a short-term solution to ensure 
 | that your Bootstrap 3 and Lexicon CSS components aren't broken while you 
 | update your theme to use [Bootstrap 4](https://getbootstrap.com/docs/4.3/migration/) 
-| and [Clay CSS](https://clayui.com/docs/css-framework/scss.html).
+| and [Clay CSS](https://clayui.com/docs/css-framework/scss.html). It will be 
+| disabled in a future release. Migrate your theme to use Bootstrap 4 and Clay 
+| CSS as soon as you're able to. 
  
 Follow these guidelines to update your markup:
 
