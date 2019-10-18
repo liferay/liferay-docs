@@ -124,7 +124,3 @@ Portlet com_liferay_code_samples_portal_modules_applications_portlets_render_fil
 ```
 
 You may also check the [code samples](/learn/code-samples) related with this tutorials.
-
-
-
-
