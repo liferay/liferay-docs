@@ -26,20 +26,17 @@ highlighted tool.
     blade init -v 7.2 [WORKSPACE_NAME]
     ```
 
-    | **Note**: Workspace automatically sets the default @product@ version to
-    | develop against when it's first initialized. The default version is set to
-    | 7.1. This is applied to create projects using appropriately versioned
-    | project templates. If you wish to develop projects for a different
-    | @product@ version, you can pass a different version in the Blade init
-    | command. For example,
-    | 
+    | **Note**: The version you set when first initializing your workspace is
+    | stored in the workspace's `.blade.properties` file with the
+    | `liferay.version.default` property. This version is applied when creating
+    | projects based on the corresponding project template versions.
+    |
+    | If you wish to develop projects for a different @product@ version, you can
+    | pass a different version in the Blade init command. For example,
+    |
     | ```bash
     | blade init -v 7.0 [WORKSPACE_NAME]
     | ```
-    | 
-    | You can update the default version after it has been set by opening your
-    | workspace's `.blade.properties` file and setting the
-    | `liferay.version.default` property.
 
 You can also create a Maven-based workspace with Blade CLI. See the
 [Maven](#maven) section for more information.
@@ -66,7 +63,7 @@ You can also create a Maven-based workspace with Blade CLI. See the
     or 7.0).
 
 6.  Select the specific target platform version corresponding to the GA release
-    you're developing for (e.g., 7.1.0 &rarr; 7.1 GA1). For more information on
+    you're developing for (e.g., 7.2.0 &rarr; 7.2 GA1). For more information on
     target platform benefits, see the
     [Managing the Target Platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform)
     articles.

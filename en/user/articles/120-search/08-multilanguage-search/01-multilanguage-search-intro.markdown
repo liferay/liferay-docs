@@ -42,14 +42,14 @@ There are three localized search approaches represented in the table:
 
 1.  Fully Localized: The asset itself is localizable (in other words,
     translatable), and its translated fields are indexed into their respected
-    locales. This behavior did not change in SP1.
+    locales.
 
 2.  Fully Localized for Search: Even though the asset itself is not
     localizable/translatable, its fields are indexed into _all_ the supported
-    locales in the site. This is a new approach, starting in SP1.
+    locales in the site. This is a new approach, starting with @product-ver@.
 
 3.  Site-Localized for search: The asset's fields are indexed with the site's
-    locale appended. This behavior did not change in SP1.
+    locale appended.
 
 There are also assets with text fields and no localization support, meaning that
 they always index the plain field, without a locale appended (e.g., `title` is

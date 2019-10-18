@@ -22,28 +22,24 @@ curl -i -X POST \
   -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
   -H 'Content-Type: application/json' \
   -d '{
-    "availableLanguageIds": ["en_US"],
     "dataDefinitionFields": [
         {
             "fieldType": "text",
             "name": "product"
         }
     ],
-    "defaultLangugageId": "en_US",
     "description": {
             "en_US": "Description"
     },
     "name": {
             "en_US": "Order"
-    }
+    },
+    "storageType":"json"
 }'
 ```
 
 Here you specify the endpoint for the data definitions API, passing in the
 `siteId`. Then you create a request body that includes
-
-`availableLanguageIds`
-: Enter the IDs of the available languages.
 
 `dataDefinitionFields`
 : The example above is simple, with just a `fieldType` and a `name` element for
@@ -54,7 +50,6 @@ one field. Here's the complete list of elements that each field can have:
 | `customProperties` | these depend on the field type (listed below) |
 | `defaultValue` | set a default value for a field |
 | `fieldType` | the field type |
-| `id` | set by the system |
 | `indexable` | set to `true` (default)  or `false` to control whether the fields are indexed in the search engine |
 | `label` | set a human readable label for each of the custom properties the fields has |
 | `localizable` | can be set to `true` (default) or `false` to control whether the locale of the User is appended when he or she adds a data record |
@@ -62,16 +57,9 @@ one field. Here's the complete list of elements that each field can have:
 | `nestedDataDefinitionFields` | set of data definition fields |
 | `repeatable` | set to `true` or `false` to control whether the field accepts multiple values per data record |
 | `tip` | provide help text for the field's properties |
-| `dataDefinitionKey` | set by the system |
-| `dataDefinitionRules` | set validation rules for the data definition |
-| `dateCreated` and `dateModified` | these are set by the system, so it's not necessary to do anything here |
-| `defaultLangugageId` | the ID of the default language |
-| `description` | use this optional element to describe the data definition |
-| `id` | set by the system |
-| `name` | name the data definition |
-| `siteId` | the ID of the site the data definition is scoped to |
-| `storageType` | the default is `string`, which is how the JSON is stored in the database |
-| `userId` | the ID of the User making the service call |
+
+`storageType`
+: This must be set to `"storageType":"json"` in the current version of the API.
 
 Each field has its own custom properties. Here is the complete list of fields
 and properties:
@@ -100,6 +88,15 @@ switcher.
 
 `predefinedValue`
 : provide a predefined value for the field.
+
+`readOnly`
+: mark the field as _Read IOnly_, so that data cannot be written to it.
+
+`required`
+: mark the field as required.
+
+`showLabel`
+: display the label of the field.
 
 Custom properties for the `date` field:
 
@@ -147,6 +144,15 @@ Custom properties for the `numeric` field:
 `predefinedValue`
 : provide a predefined value for the field.
 
+`readOnly`
+: mark the field as _Read IOnly_, so that data cannot be written to it.
+
+`required`
+: mark the field as required.
+
+`showLabel`
+: display the label of the field.
+
 `tooltip`
 : set a tooltip for the field.
 
@@ -166,6 +172,15 @@ inline or not.
 `predefinedValue`
 : provide a predefined value for the field.
 
+`readOnly`
+: mark the field as _Read IOnly_, so that data cannot be written to it.
+
+`required`
+: mark the field as required.
+
+`showLabel`
+: display the label of the field.
+
 Custom properties for the `select` field:
 
 `dataSourceType`
@@ -181,6 +196,15 @@ option as a value.
 
 `predefinedValue`
 : provide a predefined value for the field.
+
+`readOnly`
+: mark the field as _Read IOnly_, so that data cannot be written to it.
+
+`required`
+: mark the field as required.
+
+`showLabel`
+: display the label of the field.
 
 Custom properties for the `text` field:
 
@@ -200,6 +224,15 @@ input.
 
 `predefinedValue`
 : provide a predefined value for the field.
+
+`readOnly`
+: mark the field as _Read IOnly_, so that data cannot be written to it.
+
+`required`
+: mark the field as required.
+
+`showLabel`
+: display the label of the field.
 
 `tooltip`
 : set a tooltip for the field.

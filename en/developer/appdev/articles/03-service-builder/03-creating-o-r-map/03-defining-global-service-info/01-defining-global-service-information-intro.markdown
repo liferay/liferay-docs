@@ -16,9 +16,11 @@ A service's global information applies to all its entities. It contains the
 
 ## Dependency Injector
 
-The default dependency injector is OSGi Declarative Services. This makes Service
-Builder work consistently the way other modules do. Prior versions of Liferay
-used Spring. The only difference is how you inject the services when you 
+The default dependency injector is
+[OSGi Declarative Services](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services).
+This makes Service Builder work consistently the way other modules do. Prior
+versions of Liferay used Spring. The only difference is how you inject the
+services when you 
 [go to use them later](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services). 
 
 Declarative Services Dependency Injector: 
@@ -40,6 +42,14 @@ Spring Dependency Injector:
 <service-builder dependency-injector="spring"
 		 package-path="com.liferay.docs.guestbook">
 ```
+
+| **Important:** When a project is created using the
+| [Service Builder template](/docs/7-2/reference/-/knowledge_base/r/using-the-service-builder-template), 
+| the Declarative Services dependency injector and its dependencies are 
+| configured for the project by default. To use the Spring
+| dependency injector instead, create the project using 
+| the Service Builder template and the `--dependency-injector spring` option 
+| (Blade CLI) or `-DdependencyInjector=spring` (Maven). 
 
 ## Package Path
 
@@ -89,19 +99,23 @@ handle.
 
 Service Builder names the database tables using the service namespace. For
 example, *GB* could serve as the namespace for a Guestbook application
-service. Service Builder uses the namespace in the following SQL scripts it
+service.
+
+```xml
+<namespace>GB</namespace>
+```
+
+Service Builder uses the namespace in the following SQL scripts it
 generates in your `src/main/resources/sql` folder:
 
 - `indexes.sql`
 - `sequences.sql`
 - `tables.sql`
 
-| **Note:** The generated SQL script folder location is configurable. For example,
-| if you're using Gradle, you can define the `sqlDir` attribute in the app's
-| `build.gradle` file. Likewise, in Ant you can configure an argument in the
-| `build.xml` similar to this one:
-| 
-|     <arg value="service.sql.dir=${basedir}/../sql"/>
+| **Note:** The generated SQL script folder location is configurable. For 
+| example, if you're using Gradle, you can define the `sqlDir` setting in the
+| project's Gradle `build.gradle` file or Maven `pom.xml` file, the same way 
+| the `databaseNameMaxLength` setting is applied in the examples below. 
 
 Service Builder uses the SQL scripts to create database tables for all the
 entities the `service.xml` defines. The database table names have the namespace
@@ -113,11 +127,34 @@ a namespace already used by Liferay entities (such as `Users` or `Groups`).
 Check the table names in Liferay's database to see the namespaces already in
 use.
 
-| **Warning:** Use caution when assigning namespace values. Some databases have
-| strong restrictions on database table name lengths.
+**Warning:** Use caution when assigning namespace values. Some databases have
+strong restrictions on database table and column name lengths. The Service 
+Builder 
+[Gradle](/docs/7-2/reference/-/knowledge_base/r/service-builder-gradle-plugin#task-properties)
+and 
+[Maven](/docs/7-2/reference/-/knowledge_base/r/service-builder-plugin#available-parameters)
+plugin parameter `databaseNameMaxLength` sets the maximum length you can use for
+your table and column names. Here are paraphrased examples of setting
+`databaseNameMaxLength` in build files:
 
-```xml
-<namespace>GB</namespace>
+**Gradle `build.gradle`**
+
+```groovy
+buildService {
+    ...
+    databaseNameMaxLength = 64
+    ...
+}
+```
+
+**Maven `pom.xml`**
+
+```xml 
+<configuration>
+    ...
+    <databaseNameMaxLength>64</databaseNameMaxLength>
+    ...
+</configuration>
 ```
 
 ## Author
