@@ -14,11 +14,11 @@ managing structures.
 
 Permissions on structures can be set just like any other 
 [permission](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions).
-Most users should not be able to edit structures. Structures are coupled with
-templates, which require some web development knowledge to create. This is why
-only trusted developers should be able to create structures and templates.
-Users, of course, should be able to view structures. The *View* permission
-enables them to make use of the structures to create content.
+Most users should not be able to edit structures. Structures can be coupled with 
+templates or used on display pages, which require some web development knowledge 
+to create. This is why only trusted developers should be able to create 
+structures. Users, of course, should be able to view structures. The *View* 
+permission enables them to make use of the structures to create content.
 
 ![Figure 1: You're able to assign structure permissions via the *Actions* button.](../../../../../../images/web-content-structure-permissions.png)
 
@@ -45,5 +45,5 @@ If you'd like the see WebDAV in action, see
 | level 2, it's possible to avoid the restriction by using third-party WebDAV
 | clients (e.g., [Cyberduck](http://cyberduck.ch)).
 
-Now that you understand how structures work, you're ready to understand the
-other half of @product@'s web content management system: templates.
+Now that you understand how structures work, you're ready to understand another 
+key aspect of @product@'s web content management system: templates.
