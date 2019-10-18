@@ -16,7 +16,7 @@ To use DDM Annotations in configuration forms,
 1.  Configure the module dependencies.
 
 2.  Write a `ConfigurationForm` class, including just the fields that you want
-    to leverage the enhanced forms capability. This will look similar to the
+    to leverage the enhanced forms capability. This is similar to the
     configuration interface, but with field annotations from the Liferay
     [Dynamic Data Mapping API](https://github.com/liferay/liferay-portal/tree/7.2.0-ga1/modules/apps/dynamic-data-mapping/dynamic-data-mapping-api/src/main/java/com/liferay/dynamic/data/mapping/annotations) 
     rather than the bndtools metatype specification. The fields here must match
@@ -48,9 +48,8 @@ compileOnly group: "com.liferay", name: "com.liferay.configuration.admin.api", v
 ### Step 2: Write the Configuration Form
 
 This step requires annotating the class with `@DDMForm` to set up the form, and
-annotating each method with `@DDMFormField`. Here we'll actually begin by
-creating the class body, annotating each configuration field (interface method)
-with `@DDMFormField`:
+annotating each method with `@DDMFormField`. Begin by creating the class body,
+annotating each configuration field (interface method) with `@DDMFormField`:
 
 ```java
 public interface MyFooConfigurationForm {
@@ -138,8 +137,8 @@ public interface MyFooConfigurationForm {
 
 ![Figure 1: The DDM annotations are used to lay out this configuration form.](../../../images/configuration-ddm-form.png)
 
-None of this will work unless you make sure the configuration framework knows
-about your slick form.
+Next, you must make sure the configuration framework knows about your slick
+form.
 
 ### Step 3: Write the Form Declaration
 
