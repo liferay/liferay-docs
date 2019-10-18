@@ -33,7 +33,9 @@ hotfixes.
 | Examine the
 | [@product@ upgrade instructions](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver)
 | to determine preparations, testing, and post upgrade steps that are 
-| appropriate for you. 
+| appropriate for you. To eliminate system down time during upgrade, consider 
+| using the 
+| [Blue-green deployment technique](/docs/7-2/deploy/-/knowledge_base/d/other-cluster-update-techniques). 
 |
 | @product@ 7.2 FP2/SP1's data schema change adds version columns to several 
 | tables.
