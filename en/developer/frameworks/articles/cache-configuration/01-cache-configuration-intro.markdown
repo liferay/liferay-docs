@@ -9,49 +9,52 @@ header-id: cache-configuration
 Caching makes specified data readily available in memory. It costs memory but
 improves performance. You can experiment with cache to determine what's good for
 your system. If your site serves lots of web content articles, for example, you
-may want to cache them. 
+may want to increase the limit on how many you can cache. 
 
-Liferay's cache configuration framework uses Ehcache. It's an independent
-framework used by @product@'s data access and template engine components. It
-manages two pools: 
+Liferay's cache configuration framework uses
+[Ehcache](https://www.ehcache.org/).
+It's an independent framework used by @product@'s data access and template
+engine components. It manages two pools: 
 
 **Multi-VM:** Cache is replicated among cluster nodes. EntityCache and 
-FinderCache (described next) belong in this pool because they must synchronize 
+FinderCache (described next) are in this pool because they must synchronize
 with data on all nodes.
 
 **Single-VM:** Cache is managed uniquely per VM and isn't replicated among
-nodes. SingleVM cache is for objects and references that you don't need/want
+nodes. Single-VM cache is for objects and references that you don't need/want
 replicated among nodes. 
 
 Here are ways you can configure the Ehcache: 
 
--   Overriding Cache
--   Caching Data
+-   [Overriding Cache](/docs/7-2/frameworks/-/knowledge_base/f/overriding-cache):
+    Tuning existing cache. 
+-   [Caching Data](/docs/7-2/frameworks/-/knowledge_base/f/caching-data): 
+    Implementing cache for custom data. 
 
-To start, learn the Liferay cache configuration basics here.
+Start learning the Liferay cache configuration basics here.
 
 ## Cache Types
 
-You can cache any classes you like.
-[Service entities](/docs/7-2/appdev/-/knowledge_base/a/defining-service-entities)
+You can cache any classes you like. Conveniently, @product@ caches
+[service entities](/docs/7-2/appdev/-/knowledge_base/a/defining-service-entities)
 and
 [service entity finder results](/docs/7-2/appdev/-/knowledge_base/a/defining-service-entity-finder-methods)
-are cached automatically by default.
+automatically by default.
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
-generates caching code for them in the
+generates their caching code in the
 [service persistence layer](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder).
 The code operates on these cache types:
 
 **EntityCache:** Holds service entities by primary keys. The caching code maps 
-entity primary keys to implementation objects to quicken entity retrievals. An
-entity's `*PersistenceImpl.fetchByPrimaryKey` method uses EntityCache.
+entity primary keys to implementation objects. An entity's
+`*PersistenceImpl.fetchByPrimaryKey` method uses EntityCache.
 
 **FinderCache:** Holds parameterized service entity search results. The caching 
 code associates
 [service entity finder](/docs/7-2/appdev/-/knowledge_base/a/defining-service-entity-finder-methods)
-query parameter values with their results. There's code for caching entities,
-paginated entity lists, and non-paginated entity lists that match your finder
-parameters. An entity's `fetchByValue`, `findByValue`, `countByValue`,
+query parameter values with matching entity results. There's code for caching
+entities, paginated entity lists, and non-paginated entity lists that match your
+finder parameters. An entity's `fetchByValue`, `findByValue`, `countByValue`,
 `findAll`, and `countAll` methods use the FinderCache. 
 
 ## Cache Configuration
@@ -61,6 +64,7 @@ environments. Default EntityCache and FinderCache are specified
 programmatically, while Liferay's global cache configuration and custom cache
 configurations are specified via files. All configurations adhere to the
 [ehcache.xsd](http://www.ehcache.org/ehcache.xsd).
+
 Liferay's global cache configuration is processed first on startup. Cache
 configurations in modules and WARs are processed as they're deployed after the
 initial global cache configuration. 
@@ -115,7 +119,7 @@ Portlet WARs can configure cache too.
  
 ### Portlet WAR Cache Configuration 
 
-Ehcache configuration in a portlet WAR has these requirements. 
+Ehcache configuration in a portlet WAR has these requirements: 
 
 1.  The Ehcache configuration XML file must be in the application context (e.g.,
     any path under `WEB-INF/src`).
@@ -131,7 +135,7 @@ ehcache.multi.vm.config.location=path/to/multi/vm/config/file
 
 For example, here's the
 [`test-cache-configuration-portlet`](https://github.com/liferay/liferay-plugins/blob/7.0.x/portlets/test-cache-configuration-portlet)
-portlet WAR's structure:
+WAR's structure:
 
 -   `docroot/WEB-INF/src/`
     -   `ehcache/`
@@ -154,10 +158,10 @@ existing cache, the existing cache is overridden. If a module provides a cache
 configuration with a new name, a new cache is added.
 
 Here's what happens behind the scenes: Liferay's cache manager checks the
-configurations. If the name of a cache exists, the cache manager removes it from
-Ehcache's cache registry, and registers a new Ehcache into Ehcache's cache
-registry. If the name is new, the Liferay cache manager just registers a new
-Ehcache.
+configurations. If a cache with the name already exists, the cache manager
+removes it from Ehcache's cache registry, and registers a new Ehcache into
+Ehcache's cache registry. If the name is new, the Liferay cache manager just
+registers a new Ehcache.
 
 Cache names are arbitrary except for EntityCache and FinderCache.  
 
@@ -202,4 +206,4 @@ Here are the FinderCache types and their name patterns.
 | Non-paginated lists of entity instances matching query parameters.  | `PREFIX + ENTITY_IMPL_CLASS_NAME + ".List2"` | `com.liferay.portal.kernel.dao.orm.FinderCache.com.liferay.portal.model.impl.ClassNameImpl.List2` |
 
 Now that you have a basic understanding of cache in Liferay, continue with
-overriding existing cache configuration or caching custom data. 
+overriding an existing cache configuration or caching custom data. 

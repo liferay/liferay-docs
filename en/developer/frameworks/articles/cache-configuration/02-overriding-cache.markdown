@@ -6,11 +6,12 @@ header-id: overriding-cache
 
 [TOC levels=1-4]
 
-@product@ preconfigures cache service entities and service entity finder results
-and several other classes. You can tune them to meet your needs. For example, it
-may help to write cache overflow elements to disk, increase the maximum number
-of cached elements, or make other adjustments. Using a module and only one XML
-file, you override cache configurations at runtime. 
+@product@ preconfigures cache for service entities and service entity finder
+results and cache for several other classes. You can tune existing cache to meet
+your needs. For example, it may help to write cache overflow elements to disk,
+increase the maximum number of cached elements, or make other adjustments. Using
+a module and only one XML file, you can override cache configurations
+dynamically. 
 
 | **Warning:** Modifying an EhCache element flushes its cache. 
 
@@ -40,10 +41,9 @@ Here is how to override a cache configuration:
     -   `module-*-vm.xml` files in modules or Liferay LPKG files.
 
 2.  If you don't own the existing project that specifies the cache or you want 
-    to configure the cache separate from that project, create a module project.
-    Otherwise, you can edit the cache in the existing project. These
-    instructions demonstrate adding the cache configuration to a new module
-    project. 
+    to use a different project to configure the cache, create a module project.
+    Otherwise, edit the cache in the existing project. These instructions
+    demonstrate adding the cache configuration to a new module project. 
 
     | **Tip:** create new projects using the
     | [API project template](/docs/7-2/reference/-/knowledge_base/r/api-template)
@@ -86,6 +86,7 @@ Here is how to override a cache configuration:
     attribute to the name of the cache you're overriding.
 
 5.  Specify all existing `<cache/>` element attributes you want to preserve. 
+    Hint: view the attributes in an MBean browser, as mentioned earlier. 
 
 6.  Add or modify attributes to meet your needs. The `<cache/>` element 
     attributes are described in the

@@ -13,7 +13,7 @@ and
 classes use Liferay's 
 [`PortalCache`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/cache/PortalCache.html)
 utility. Storing and retrieving cached data objects is as easy as using a hash
-map: you associate a key with every value. The following steps demonstrate
+map: you associate a key with every cache value. The following steps demonstrate
 implementing data caching. 
 
 | **Note:** If you want to modify cache for Service Builder Service Entities or 
@@ -30,7 +30,7 @@ and some Ehcache features require using `Serializable` values.
     [in a single VM or across multiple VMs](/docs/7-2/frameworks/-/knowledge_base/f/cache-configuration)
     (e.g., in a clustered environment).
 
-2.  Determine if its necessary to serialize the data you're caching. 
+2.  Determine if it's necessary to serialize the data you're caching. 
 
     -   [`MultiVMPool`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/cache/MultiVMPool.html)
         requires both the cache key and cache value to be 
@@ -128,14 +128,14 @@ Note a cache key's characteristics:
 1.  A key instance's field values relate to the cached data and distinguish it 
     from other data instances.
 
-2.  A key follows best practices for `Serializable` classes. 
+2.  A key follows `Serializable` class best practices. 
 
     -   Overrides `Object`'s `equals` and `hashcode` methods. 
     -   Includes a private static final long `serialVersionUID` field. It is to
         be incremented when a new version of the class is incompatible with
         previous versions. 
 
-Now that you have a cache key class, you can use it to cache data values.  
+Your cache key class is ready for caching data values.  
 
 ## Step 3: Implement Cache Logic
 
@@ -148,7 +148,7 @@ but you can access them using
 too. These steps use fictitious key and value classes: `SomeKey` and `SomeValue`. 
     
 1.  Name your cache. Cache names are arbitrary, but they must be unique in the 
-    cache pool, and typically identify the data they are mapped to. 
+    cache pool, and typically identify the data type being cached. 
 
 ```java 
 protected static final String CACHE_NAME = SomeValue.class.getName();
@@ -208,7 +208,7 @@ public void deactivate() {
 }
 ```
 
-6.  In your logic that uses the cached data, implement your caching logic. 
+6.  In your code that uses the cached data, implement your caching logic. 
     Here's some example code:
 
 ```java 
@@ -284,8 +284,7 @@ Single VM file:
     For example, the Liferay Web Experience suite's `com.liferay.journal.service`
     module uses this
     [`module-multi-vm.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/journal/journal-service/src/main/resources/META-INF/module-multi-vm.xml)
-    file to configure cache for its cache named
-    `com.liferay.journal.util.JournalContent`. 
+    file to configure its cache named `com.liferay.journal.util.JournalContent`. 
 
 ```xml
 <ehcache
