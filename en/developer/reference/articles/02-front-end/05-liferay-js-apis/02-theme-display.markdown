@@ -63,7 +63,7 @@ of the available methods is displayed in the table below:
 | getUserName | string | Returns the user's name |
 | isAddSessionIdToURL | boolean | |
 | isFreeformLayout | boolean | |
-| isImpersonated | boolean | Returns `true` if the current user is being impersonated. Authorized administrative users can [impersonate](/docs/7-1/user/-/knowledge_base/u/adding-editing-and-deleting-users#editing-users) act as another user to test that user's account |
+| isImpersonated | boolean | Returns `true` if the current user is being impersonated. Authorized administrative users can [impersonate](/docs/7-2/user/-/knowledge_base/u/adding-editing-and-deleting-users#editing-users) act as another user to test that user's account |
 | isSignedIn | boolean | Returns `true` if the user is logged in to the portal |
 | isStateExclusive | boolean | |
 | isStateMaximized | boolean | |

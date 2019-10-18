@@ -13,70 +13,66 @@ have experience with Java development in @product@, you may have worked with
 some of these before. The `Liferay` global object is automatically available at 
 runtime, so no additional dependencies are required. 
 
+| **Note:** Since Liferay DXP SP1 and Liferay Portal CE 7.2 GA2, the 
+| `Liferay.PortletURL` utilities are deprecated and have been replaced with 
+| `Liferay.Util.PortletURL` utilities. We recommend that you use the updated 
+| versions to ensure future compatibility. The examples below use the updated 
+| utilities.
+
 This covers how to use the `Liferay` global JavaScript object to manipulate 
-URLs. A complete list of the available methods and properties appears in the 
-tables shown below. Example configurations are shown below the tables. 
+URLs. A list of the available methods and properties appears in the tables shown 
+below. Example configurations are shown below the tables. 
 
-## Portlet URL Methods and Properties
+## Portlet URL Methods
 
-`Liferay.PortletURL` Methods:
+`Liferay.Util.PortletURL` Methods:
 
 | Method | Parameters | Returns |
 | --- | --- | --- |
-| `createURL` | `basePortletURL`, `params` | new `PortletURL(null, params, basePortletURL);` |
-| `createActionURL` |  | new `PortletURL(PortletURL.ACTION_PHASE`); |
-| `createRenderURL` |  | new `PortletURL(PortletURL.RENDER_PHASE`); |
-| `createResourceURL` |  | new `PortletURL(PortletURL.RESOURCE_PHASE`); |
+| `createPortletURL` | `basePortletURL`, `parameters` | A portlet URL as a [URL](https://url.spec.whatwg.org/#api) object |
+| `createActionURL` | `basePortletURL`, `parameters` | A portlet URL as a [URL](https://url.spec.whatwg.org/#api) object |
+| `createRenderURL` | `basePortletURL`, `parameters` | A portlet URL as a [URL](https://url.spec.whatwg.org/#api) object |
+| `createResourceURL` | `basePortletURL`, `parameters` | A portlet URL as a [URL](https://url.spec.whatwg.org/#api) object |
 
-`Liferay.PortletURL` Properties:
+## Liferay Util PortletURL
 
-| Property | Value |
-| --- | --- |
-| `ACTION_PHASE` | "1" |
-| `RENDER_PHASE` | "0" |
-| `RESOURCE_PHASE` | "2" |
+`Liferay.Util.PortletURL` provides APIs for creating portlet URLs 
+(`actionURL`, `renderURL`, and `resourceURL`) with JavaScript in your JSPs. 
+Below is an example configuration for a JSP:
 
-Once the portlet URL is created, you have access to several methods that you can 
-use to manipulate the URL further:
+```markup
+var basePortletURL = 'https://localhost:8080/group/control_panel/manage?p_p_id=com_liferay_roles_admin_web_portlet_RolesAdminPortlet';
 
-| Method | Description | Parameters | Returns |
-| --- | --- | --- | --- |
-| `setDoAsGroupId` | Sets the ID of the site, organization, or user group for the URL | `doAsGroupId` | The updated Portlet URL Object |
-| `setDoAsUserId` | Sets the ID of the user to impersonate | `doAsUserId` | The updated Portlet URL Object |
-| `setEscapeXML` | Sets whether the URL should be XML escaped | `true` or `false` | The updated Portlet URL Object |
-| `setLifecycle` | Sets the portlet lifecycle of this URL's target portlet | `lifecycle` | The updated Portlet URL Object |
-| `setName` | sets the portlet URL's `javax.portlet.action` name | `name` | The updated Portlet URL Object |
-| `setParameter` | Creates an individual parameter or replaces an existing reserved parameter | key,value | The updated Portlet URL Object |
-| `setParameters` | Creates multiple parameters and/or replaces existing reserved parameters | {key:value,...} | The updated Portlet URL Object |
-| `setPlid` | Sets the portlet layout ID | `plid` | The updated Portlet URL Object |
-| `setPortletId` | Sets the ID of the target portlet | `portletId` | The updated Portlet URL Object |
-| `setPortletMode` | Sets the portlet mode, if the URL triggers a request | `portletMode` | The updated Portlet URL Object |
-| `setResourceId` | Sets the ID of the URL's target resource | `ResourceId` | The updated Portlet URL Object |
-| `setSecure` | Sets whether to make the URL secure (HTTPS). | `true` or `false` | The updated Portlet URL Object |
-| `setWindowState` | Sets the portlet's window state, if the URL triggers a request | `windowState` | The updated Portlet URL Object |
-| `toString` | Returns the URL as a String |  | The portlet URL as a String |
-| `_isReservedParam` | Returns whether the parameter is reserved | `paramName` | `true` if the parameter is reserved |
+var actionURL = Liferay.Util.PortletURL.createActionURL(
+  basePortletURL,
+  {
+    'javax.portlet.action': 'addUser',
+    foo: 'bar'
+  }  
+);
 
-## Liferay PortletURL
-
-The `Liferay.PortletURL` object provides methods for creating portlet API URLs
-(`actionURL`, `renderURL`, and `resourceURL`), through JavaScript. Below is an
-example configuration:
+console.log(actionURL.toString());
+// https://localhost:8080/group/control_panel/manage?p_p_id=com_liferay_roles_admin_web_portlet_RolesAdminPortlet&javax.portlet.action=addUser&com_liferay_roles_admin_web_portlet_RolesAdminPortlet_foo=bar&p_p_lifecycle=1
+```
+The same API is available as a module for use in your JavaScript files. The ES6 
+example below uses the `createActionURL` module:
 
 ```javascript
-var portletURL = Liferay.PortletURL.createURL(themeDisplay.getURLControlPanel());
+import {createActionURL} from 'frontend-js-web';
 
-portletURL.setDoAsGroupId('true');
-portletURL.setLifecycle(Liferay.PortletURL.ACTION_PHASE);
-portletURL.setParameter('cmd', 'add_temp');
-portletURL.setParameter('javax.portlet.action', '/document_library/upload_file_entry');
-portletURL.setParameter('p_auth', Liferay.authToken);
-portletURL.setPortletId(Liferay.PortletKeys.DOCUMENT_LIBRARY);
+var basePortletURL = 'https://localhost:8080/group/control_panel/manage?p_p_id=com_liferay_roles_admin_web_portlet_RolesAdminPortlet';
+
+var actionURL = createActionURL(
+  basePortletURL,
+  {
+    'p_p_id': Liferay.PortletKeys.DOCUMENT_LIBRARY,
+    foo: 'bar'
+  }  
+);
 ```
 
-See the [Portlet URL Methods and Properties](#portlet-url-methods-and-properties) 
-section for more information about the methods and properties used in the 
-example above. 
+See the [Portlet URL Methods](#portlet-url-methods) section for more information 
+about the method used in the example above. 
 
 ## Liferay AuthToken
 
@@ -86,7 +82,16 @@ services. To use the `authToken` in a URL, pass `Liferay.authToken` as the URL's
 `p_auth` parameter, as shown in the example below:
 
 ```javascript
-portletURL.setParameter('p_auth', Liferay.authToken);
+import {createActionURL} from 'frontend-js-web';
+
+var basePortletURL = 'https://localhost:8080/group/control_panel/manage?p_p_id=com_liferay_roles_admin_web_portlet_RolesAdminPortlet';
+
+var actionURL = createActionURL(
+  basePortletURL,
+  {
+    'p_auth': Liferay.authToken
+  }  
+);
 ```
 
 ## Liferay CurrentURL
