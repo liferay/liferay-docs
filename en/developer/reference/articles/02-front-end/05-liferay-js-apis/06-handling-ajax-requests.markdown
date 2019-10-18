@@ -1,9 +1,14 @@
+---
+header-id: handling-ajax-requests-with-fetch
+---
+
 # Handling AJAX Requests with `Liferay.Util.fetch`
 
 When you make Ajax requests (referred to as Service Resource actions/requests in 
-@product@), they must be safe and secure. Since Liferay DXP 7.2 SP1 and Liferay 
-CE Portal 7.2 GA2, @Product@ provides their own `Liferay.Util.fetch` utility, 
-based on the standard [`fetch`](https://fetch.spec.whatwg.org/) API, that you 
+@product@), they must protect against [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery)
+and include the proper credentials. Since Liferay DXP 7.2 SP1 and Liferay 
+CE Portal 7.2 GA2, @product@ provides a `Liferay.Util.fetch` utility 
+based on the standard [`fetch`](https://fetch.spec.whatwg.org/) API that you 
 can use to make AJAX requests. It includes these key features:
 
 - A thin wrapper on ES6 [`fetch`](https://fetch.spec.whatwg.org/) that shares 
