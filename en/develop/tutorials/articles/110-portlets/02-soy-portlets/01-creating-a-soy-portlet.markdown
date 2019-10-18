@@ -23,7 +23,7 @@ since a Soy portlet extends an MVC portlet:
     - `package.json`
     - `src/main/`
         - `java/path/to/portlet/`
-            - `MySoyPortlet.java`
+            - `MySoyPortletRegister.java`
             - `action/`
                 - `*MVCRenderCommand.java`
         - `resources/META-INF/resources/`
@@ -43,18 +43,24 @@ instructions in this section to manually configure the module.
 Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND 
 configuration is shown below:
 
-    Bundle-Name: Liferay Hello Soy Web
-    Bundle-SymbolicName: com.liferay.hello.soy.web
-    Bundle-Version: 1.0.3
-    Require-Capability:\
-    	soy;\
-    		filter:="(type=metal)"
-    Include-Resource: package.json
+  Bundle-Name: Liferay Hello Soy Web
+  Bundle-SymbolicName: com.liferay.hello.soy.web
+  Bundle-Version: 2.0.7
+  Provide-Capability:\
+  	soy;\
+  		type="hello-soy";\
+  		version:Version="1.0.10"
+  Require-Capability:\
+  	soy;\
+  		filter:="(type=metal)"
+  Web-ContextPath: /hello-soy-web
 
-Notice the addition of the `Require-Capability` property; This specifies that 
-the bundle requires modules that provide the capability `soy` with a `type` of 
-`metal` to work. Also note the `Include-Resource` property. **You must include** 
-your `package.json` file to load the Soy Portlet's JavaScript files. 
+The `Provide-Capability` header specifies that this bundle provides the soy 
+capability, so the template engine can track the bundle. The 
+`Require-Capability` header specifies that the bundle requires modules that 
+provide the capability `soy` with a `type` of `metal` to work. The 
+`Web-ContextPath` header specifies the relative path of the application so you 
+can reference resources.
 
 ### Specifying JavaScript Dependencies
 
@@ -65,12 +71,13 @@ latest).
 
     {
     	"dependencies": {
-    		"metal-component": "^2.4.5",
-    		"metal-soy": "^2.4.5"
+    		"metal-component": "^2.16.8",
+    		"metal-soy": "^2.16.8"
     	},
-    	"devDependencies": {
-    		"liferay-module-config-generator": "^1.2.1",
-    		"metal-cli": "^4.0.1"
+    	"scripts": {
+    		"build": "liferay-npm-scripts build",
+    		"checkFormat": "liferay-npm-scripts check",
+        "format": "liferay-npm-scripts fix"
     	},
     	"name": "my-portlet-name",
     	"version": "1.0.0"
@@ -87,10 +94,10 @@ Next you can specify your module's build dependencies.
 Add the dependencies shown below to your `build.gradle` file:
 
     dependencies {
-    	compileOnly group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy", version: "3.1.0"
+    	compileOnly group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy.api", version: "1.0.0"
     	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-    	compileOnly group: "com.liferay.portal", name: "com.liferay.util.java", version: "2.0.0"
-    	compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+    	compileOnly group: "com.liferay.portal", name: "com.liferay.util.java", version: "3.0.0"
+    	compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
     	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
     	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
     }
@@ -103,27 +110,24 @@ Add the dependencies shown below to your `build.gradle` file:
 Now that your module build is configured, you can learn how to create the Soy 
 portlet component.
 
-## Creating a Soy Portlet Component
+## Creating a Soy Portlet Register Component
 
-Create a Soy Portlet component that extends the `SoyPortlet` class. This    
-requires an implementation of the `javax.portlet.portlet` service to run. 
+Create a Soy Portlet component that extends the `SoyPortletRegister` class. This    
+requires an implementation of the `javax.portlet.Portlet` service to run. 
 Declare this using an `@Component` annotation in the portlet class:
 
     @Component(
         immediate = true,
-        service = Portlet.class
+        service = SoyPortletRegister.class
     )
-    public class MySoyPortlet extends SoyPortlet {
-        @Override
-        public void render(RenderRequest renderRequest, RenderResponse renderResponse) {
-            //do things here
-        }
+    public class MySoyPortletRegister extends SoyPortletRegister {
+      
     }
 
 @product@'s 
-[`SoyPortlet` class](https://github.com/liferay/com-liferay-portal-portlet-bridge/blob/7.0.x/portal-portlet-bridge-soy/src/main/java/com/liferay/portal/portlet/bridge/soy/SoyPortlet.java)
-extends its
-[`MVCPortlet` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html),
+[`SoyPortletRegister` class](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-portlet-bridge/portal-portlet-bridge-soy-api/src/main/java/com/liferay/portal/portlet/bridge/soy/SoyPortletRegister.java)
+is imported in the [`SoyPortlet` class](https://github.com/liferay/com-liferay-portal-portlet-bridge/blob/7.1.x/portal-portlet-bridge-soy/src/main/java/com/liferay/portal/portlet/bridge/soy/SoyPortlet.java) which 
+extends [`MVCPortlet` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html),
 which is an extension itself of `javax.portlet.Portlet`, so you've provided the
 right implementation.
 
@@ -134,27 +138,28 @@ below:
             immediate = true,
             property = {
               "com.liferay.portlet.add-default-resource=true",
-              "com.liferay.portlet.application-type=full-page-application",
-              "com.liferay.portlet.application-type=widget",
-              "com.liferay.portlet.display-category=category.sample",
-              "com.liferay.portlet.layout-cacheable=true",
-              "com.liferay.portlet.preferences-owned-by-group=true",
-              "com.liferay.portlet.private-request-attributes=false",
-              "com.liferay.portlet.private-session-attributes=false",
-              "com.liferay.portlet.render-weight=50",
-              "com.liferay.portlet.scopeable=true",
-              "com.liferay.portlet.use-default-template=true",
-              "javax.portlet.display-name=Hello Soy Portlet",
-              "javax.portlet.expiration-cache=0",
-              "javax.portlet.init-param.copy-request-parameters=true",
-              "javax.portlet.init-param.template-path=/",
-              "javax.portlet.init-param.view-template=View",
-              "javax.portlet.name=hello_soy_portlet",
-              "javax.portlet.resource-bundle=content.Language",
-              "javax.portlet.security-role-ref=guest,power-user,user",
-              "javax.portlet.supports.mime-type=text/html"
+          		"com.liferay.portlet.application-type=full-page-application",
+          		"com.liferay.portlet.application-type=widget",
+          		"com.liferay.portlet.display-category=category.sample",
+          		"com.liferay.portlet.layout-cacheable=true",
+          		"com.liferay.portlet.preferences-owned-by-group=true",
+          		"com.liferay.portlet.private-request-attributes=false",
+          		"com.liferay.portlet.private-session-attributes=false",
+          		"com.liferay.portlet.render-weight=50",
+          		"com.liferay.portlet.scopeable=true",
+          		"com.liferay.portlet.single-page-application=false",
+          		"com.liferay.portlet.use-default-template=true",
+          		"javax.portlet.display-name=Hello Soy Portlet",
+          		"javax.portlet.expiration-cache=0",
+          		"javax.portlet.init-param.copy-request-parameters=true",
+          		"javax.portlet.init-param.template-path=/META-INF/resources/",
+          		"javax.portlet.init-param.view-template=View",
+          		"javax.portlet.name=hello_soy_portlet",
+          		"javax.portlet.resource-bundle=content.Language",
+          		"javax.portlet.security-role-ref=guest,power-user,user",
+          		"javax.portlet.supports.mime-type=text/html"
             },
-            service = Portlet.class
+            service = SoyPortletRegister.class
     )
 
 Some of these properties may seem familiar to you, as they are the same ones 
