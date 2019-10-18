@@ -121,7 +121,7 @@ To make your service accessible,
 
 4.  Click *Save*. 
 
-![Figure x: Enable the scope to grant access to the service.](../../images/jax-rs-oauth2-scope.png)
+![Figure 1: Enable the scope to grant access to the service.](../../../images/jax-rs-oauth2-scope.png)
 
 For simplicity, the examples below use [Curl](https://curl.haxx.se) to
 authenticate. You need the two pieces of information generated for your
