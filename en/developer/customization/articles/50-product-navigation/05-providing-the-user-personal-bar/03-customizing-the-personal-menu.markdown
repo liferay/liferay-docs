@@ -7,7 +7,7 @@ header-id: customizing-the-personal-menu
 [TOC levels=1-4]
 
 The Personal Menu is a portlet in @product@, and is the only item occupying the
-User Personal Bar out of the box. Add entries to the Personal Menu by
+User Personal Bar out of the box. You can add entries to the Personal Menu by
 implementing the `PersonalMenuEntry`
 [interface](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/product-navigation/product-navigation-personal-menu-api/src/main/java/com/liferay/product/navigation/personal/menu/PersonalMenuEntry.java). 
 If you're adding a portlet entry to the Personal Menu, the process is
@@ -19,7 +19,7 @@ Follow these steps. `SignOutPersonalMenuEntry.java` is used as an example
 throughout these steps:
 
 1.  [Create an OSGi module](/docs/7-2/reference/-/knowledge_base/r/creating-a-project)
-    and place a new Java class into a package in it's `src` folder.
+    and place a new Java class into a package in its `src` folder.
 
 2.  In the `@Component` annotation, specify the two properties shown below to 
     place your new entry in the Personal Menu:
@@ -34,7 +34,7 @@ throughout these steps:
 
     ![Figure 1: The Personal Menu is organized into four sections.](../../../images/user-personal-menu-sections.png)
 
-    An example is shown below:
+    Here's an example:
 
     ```java
     @Component(
@@ -93,7 +93,7 @@ If you're adding a portlet to the Personal Menu, you can extend the
 `BasePersonalMenuEntry` class to save time. Follow these steps:
 
 1.  [Create an OSGi module](/docs/7-2/reference/-/knowledge_base/r/creating-a-project)
-    and place a new Java class into a package in it's `src` folder.
+    and place a new Java class into a package in its `src` folder.
 
 2.  In the `@Component` annotation, specify the two properties shown below to 
     place your new entry in the Personal Menu:
@@ -138,8 +138,7 @@ If you're adding a portlet to the Personal Menu, you can extend the
     portlet URL, state, and visibility based on the portlet ID. 
 
 Once you've completed your implementation and deployed your module, your new
-entry is displayed in the personal menu. Great! Now you know how to customize 
-the Personal Menu. 
+entry is displayed in the personal menu. 
 
 ## Related Topics
 
