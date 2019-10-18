@@ -6,27 +6,26 @@ header-id: customizing-the-navigation
 
 [TOC levels=1-4]
 
-There are two approaches to take when creating the navigation. You can use the 
-default navigation provided in `navigation.ftl` and customize the markup 
-template, or you can embed the navigation portlet in the theme and customize its 
-preferences. The navigation portlet's default widget template uses the same 
-markup, for the most part, as that used in `navigation.ftl`. In this section, 
-you'll take the former approach and customize the default configuration in 
-`navigation.ftl`. in the next section, you'll embed the navigation portlet in 
-the Footer and configure its preferences to only display the top level (parent) 
-navigation items. 
+Navigation items (pages) are defined and configured in @product@. The Navigation 
+template iterates through the existing navigation items (pages) and assigns the 
+template's markup for each of them. Page updates therefore require no updates to 
+the theme directly and can be made by a Site Administrator, thus reducing the 
+maintenance costs. 
 
-The Navigation template iterates through the existing navigation items (pages) 
-defined in @product@ and assigns the template's markup for each of them. This 
-makes adding new pages, or deleting existing ones, much easier, thereby cutting 
-down on the maintenance costs. 
+To customize the navigation, you can either use the default navigation provided 
+in `navigation.ftl` and customize the markup template, or you can embed the 
+navigation portlet in the theme and customize its preferences. Both approaches 
+use the same overall markup. This section takes the former approach and 
+customizes the default configuration in `navigation.ftl`. in the next section, 
+you'll embed the navigation portlet in the Footer and configure its preferences 
+to only display the top level (parent) navigation items. 
 
 Follow these steps to configure the Header's navigation:
 
-1.  Start by copying the default `navigation.ftl` file from the 
-    `/src/build/templates/` folder into the theme's `/src/templates/` folder. 
-    The `/build` folder was generated when you built the theme and again when 
-    you initially deployed the theme in the last section.
+1.  Copy the default `navigation.ftl` file from the `/src/build/templates/` 
+    folder into the theme's `/src/templates/` folder. The `build` folder was 
+    generated when you built the theme and again when you initially deployed the 
+    theme in the last section.
 
 2.  By default, the User Personal Bar is hidden from the theme. You can either 
     enable this via System Settings outside the scope of the theme, or you can 
@@ -44,12 +43,13 @@ Follow these steps to configure the Header's navigation:
     styling. 
 
 3.  Modify the default template to use Bootstrap's `navbar` format. Wrap the 
-    `<nav>...</nav>` element with a `<div>`. Add this `<div>` directly beneath 
-    the User Personal Bar markup you just added. Add the closing `</div>` tag 
-    after the closing `</nav>` tag to wrap the navigation:
+    `<nav>...</nav>` element with the `<div>` shown below:
     
     ```html
     <div class="collapse navbar-collapse" id="lunarNav">
+      <nav ... >
+      </nav>
+    </div>
     ```
 
 4.  Open the `portal_normal.ftl` template and find this conditional wrapper:
@@ -60,16 +60,23 @@ Follow these steps to configure the Header's navigation:
     </#if>
     ```
 
-    Add this navigation toggler markup directly above the `<#include.../>` tag, 
-    to toggle the mobile nav's visibility. This targets the `#lunarNav` wrapper 
-    that you added in the previous step.
+    Update the conditional to include the menu toggler for the mobile 
+    navigation. This targets the `#lunarNav` wrapper that you added in the 
+    previous step:
 
     ```html
-    <button aria-controls="navigation" aria-expanded="false" 
-    class="btn-monospaced ml-auto navbar-toggler" data-target="#lunarNav" 
-    data-toggle="collapse" type="button">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <#if has_navigation>
+			<button 
+        aria-controls="navigation" 
+        aria-expanded="false" 
+        class="btn-monospaced ml-auto navbar-toggler" 
+        data-target="#lunarNav" 
+        data-toggle="collapse" 
+        type="button">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<#include "${full_templates_path}/navigation.ftl" />
+		</#if>
     ```
 
 5.  Open `navigation.ftl` and add the `navbar-nav` and `mr-auto` classes to 
@@ -94,8 +101,8 @@ Follow these steps to configure the Header's navigation:
     ```
 
 7.  Replace the `nav_item.isSelected` conditional block with the one shown 
-    below. This keeps the `nav_item_css_class` up to date and prepares it for 
-    the next step:
+    below. This adds the `selected` class to the existing `nav_item_css_class` 
+    classes:
     
     ```markup
     <#if nav_item.isSelected()>
@@ -162,10 +169,8 @@ Follow these steps to configure the Header's navigation:
     ```
 
 10.  Add the `dropdown-menu` class to the `<ul class="child-menu" role="menu">` 
-     element.
-
-11.  Replace the `nav_child_css_class` variable declarations with the ones below 
-     to add the `nav-item` class to them:
+     element and replace the `nav_child_css_class` variable declarations with 
+     the ones below to add the `nav-item` class to them:
      
      ```markup
      <#assign
@@ -179,18 +184,19 @@ Follow these steps to configure the Header's navigation:
      </#if>
      ```
 
-12.  Add the `class="nav-link"` attribute to the `<a>` element nested inside the 
-     `<li>` element with the `nav_child_css_class` variable:
+11.  Find the `<a>` element with the 
+     `aria-labelledby="layout_${nav_child.getLayoutId()}"` attribute and add the 
+     `class="nav-link"` attribute to it:
 
     ```markup
     <a aria-labelledby="layout_${nav_child.getLayoutId()}" class="nav-link"...></a>
     ```
 
-13.  Add a call to action for the visitors to the Lunar Resort site so they can 
+12.  Add a call to action for the visitors to the Lunar Resort site so they can 
      book their flight. Add the book now button's code below the closing 
      `</nav>` element. This uses some utility classes for the basic look and 
      feel and ordering, as well as a custom `btn-orange` class that you'll 
-     reference later:
+     provide styling for later:
 
     ```html
     <a aria-controls="book-now" class="btn text-white btn-orange order-md-2">
@@ -198,12 +204,12 @@ Follow these steps to configure the Header's navigation:
     </a>
     ```
     
-14.  Now for some styling. The Lunar Resort has a straight forward color scheme 
-     made up of three colors: orange, white, and blue. Since these colors are 
-     used throughout the theme, you'll store them in SASS variables in a 
-     separate file. Create a new file called `_colors.scss` inside the theme's 
-     `/src/css/` folder and add these variables to it. Note that White is 
-     already defined as the global variable `$white` by the Atlas theme.
+13.  The Lunar Resort's color scheme is comprised of three colors: orange, 
+     white, and blue. Since these colors are used throughout the theme, you'll 
+     store them in SASS variables in a separate file. Create a new file called 
+     `_colors.scss` inside the theme's `/src/css/` folder and add these 
+     variables to it. Note that White is already defined as the global variable 
+     `$white` by the Atlas theme.
 
      ```scss
      $lunar-resort-orange: #dfa356;
@@ -211,7 +217,7 @@ Follow these steps to configure the Header's navigation:
      $lunar-resort-link-teal: #00ccFF;
      ```
 
-15.  Now that the main colors are defined, open `/src/css/_custom.scss` and add 
+14.  Now that the main colors are defined, open `/src/css/_custom.scss` and add 
      the code snippet below. This imports the `_colors.scss` file so you can use 
      the variables you just created. It adds some basic styling for the Header 
      and navigation, including a style to highlight the page that is currently 
@@ -284,16 +290,14 @@ Follow these steps to configure the Header's navigation:
      }
      ```
 
-16.  So far, you've modified the default navigation template for standard 
-     navigation. Now, you'll make some minor modifications to account for the 
-     the Control Menu which is displayed on top of everything when the user is 
-     signed in, causing the header to disappear. Fortunately, @product@ provides 
-     a few different classes that are added to the `body` of the page when each 
-     product navigation (which includes the Control Menu) is visible. The 
-     `has-control-menu` class is added to the body when the Control Menu is 
-     visible. Add a top margin to the Header that's equal to the height of the 
-     Control Menu. Open `_custom.scss` and add this code snippet just above the 
-     closing bracket for the `body`:
+15.  The Control Menu is displayed on top of everything when the user is signed 
+     in, which covers the Header. You must update the `navigation.ftl` template 
+     to account for the Control Menu. @product@ provides a unique class that is 
+     added to the `body` of the page when each product navigation (which 
+     includes the Control Menu) is visible. Use the `has-control-menu` class is 
+     added to the body when the Control Menu is visible. Open `_custom.scss` and 
+     add this code snippet just above the closing bracket for the `body` to add 
+     a top margin to the Header that's equal to the height of the Control Menu:
 
      ```scss
      &.has-control-menu {
@@ -303,7 +307,7 @@ Follow these steps to configure the Header's navigation:
      }
      ```
 
-17.  The Control Menu's height is slightly smaller on mobile devices, so you 
+16.  The Control Menu's height is slightly smaller on mobile devices, so you 
      must account for that responsiveness in your styling. Update the code 
      snippet you just added to match the one below:
      

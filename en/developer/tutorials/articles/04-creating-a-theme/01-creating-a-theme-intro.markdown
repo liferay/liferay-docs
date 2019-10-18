@@ -7,13 +7,12 @@ header-id: creating-a-theme
 [TOC levels=1-4]
 
 This tutorial takes you step-by-step through the process of creating a theme. 
-You'll create a theme for Liferay's Lunar Resort. You'll create a responsive 
-theme that demonstrates best practices, utilizing @product@'s theme tools, 
-extensions, and mechanisms. 
+You'll create a responsive theme for Liferay's Lunar Resort that demonstrates 
+best practices and uses @product@'s theme tools, extensions, and mechanisms. 
 
-This tutorial covers the topics below:
+This tutorial covers these topics:
 
-- Setting up the theme
+- Generating the theme and configuring it to extend the Atlas base theme 
 - Customizing the Header and logo
 - Customizing the Header navigation
 - Customizing the Footer and embedding footer navigation

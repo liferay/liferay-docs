@@ -165,5 +165,8 @@ fragments as well. Follow these steps:
     ![Figure 2: The finished color scheme gives the Lunar Resort site a fiery glow.](../../images/theme-tutorial-eclipse-color-scheme.png)
 
 Great! You've seen how you can quickly change the look and feel of the Lunar 
-Resort with just a simple color scheme. Now you know how to create a theme in 
-@product@! 
+Resort with just a simple color scheme. Now you know how to develop a theme to 
+customize the overall look and feel of your site! 
+
+See the [Themes section](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction) 
+for information on developing themes. 
