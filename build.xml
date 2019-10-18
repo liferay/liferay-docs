@@ -95,7 +95,7 @@
 		<delete dir="${properties.dir}"/>
 	</target>
 
-	<target name="compare-portal-source" description="Generates reports comparing a Liferay 6 source directory (-Dlr6Dir) to a Liferay 7+ source directory (-Dlr7Dir).">
+    <target name="compare-portal-source" description="Reports classes moved from portal-service.jar to modules and classes removed from it by comparing a Liferay 6 source directory (-Dlr6Dir) to a Liferay 7+ source directory (-Dlr7Dir).">
 		<property name="movedClassesFile" value="${build.dir}/moved-classes.html"/>
 		<property name="removedClassesFile" value="${build.dir}/removed-classes.html"/>
 		<mkdir dir="${build.dir}"/>

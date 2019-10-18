@@ -9,8 +9,8 @@ header-id: classes-moved-from-portal-service-jar
 To leverage the benefits of modularization in @product-ver@, many classes from
 former Liferay Portal 6 JAR file <em>portal-service.jar</em> have been moved
 into application and framework API modules. The table below provides details
-about these classes and the modules they've moved to. Package changes
-and each module's symbolic name (artifact ID) are listed, to facilitate
+about these classes and the modules they've moved to. Package changes 
+and each module's symbolic name (artifact ID) are listed, to facilitate 
 <a href="/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies">configuring dependencies</a>. 
 
 <style>
@@ -29,10 +29,10 @@ caption {
 <table style="width:100%">
 
   <caption>
-    <b>Classes Moved from portal-service to com.liferay.portal.kernel</b>
+    <b>Classes Moved from portal-service to modules</b>
 	<p>
       This information was generated based on comparing classes in
-      <em>liferay-portal-src-6.2-ce-ga6.zip</em> to classes in <em>liferay-ce-portal-src-7.0-ga3.zip</em>.
+      <em>liferay-portal-src-6.2-ce-ga6</em> to classes in <em>liferay-portal-src-7.0-ce-ga1</em>.
     </p>
   </caption>
   <tr>
@@ -218,14 +218,6 @@ caption {
     <td>com.liferay.journal.api</td>
   </tr>
   <tr>
-    <td>AssertUtils</td>
-    <td>
-	  <em>Old:</em> com.liferay.portal.kernel.test<br>
-	  <em>New:</em> com.liferay.portal.search.test.util
-	</td>
-    <td>com.liferay.portal.search.test</td>
-  </tr>
-  <tr>
     <td>AssetPublisherUtil</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.assetpublisher.util<br>
@@ -343,7 +335,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>BaseCmisSearchQueryBuilder</td>
@@ -351,7 +343,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>BaseDDLExporter</td>
@@ -383,7 +375,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.scripting<br>
 	  <em>New:</em> com.liferay.portal.scripting
 	</td>
-    <td>com.liferay.portal.scripting.api</td>
+    <td>com.liferay.portal.scripting</td>
   </tr>
   <tr>
     <td>BaseStatistics</td>
@@ -743,7 +735,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISConjunction</td>
@@ -751,7 +743,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISContainsExpression</td>
@@ -759,7 +751,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISContainsNotExpression</td>
@@ -767,7 +759,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISContainsValueExpression</td>
@@ -775,7 +767,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISCriterion</td>
@@ -783,7 +775,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISDisjunction</td>
@@ -791,7 +783,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISFullTextConjunction</td>
@@ -799,7 +791,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISInFolderExpression</td>
@@ -807,7 +799,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISInTreeExpression</td>
@@ -815,7 +807,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISJunction</td>
@@ -823,7 +815,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISNotExpression</td>
@@ -831,7 +823,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISParameterValueUtil</td>
@@ -839,7 +831,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISRepositoryHandler</td>
@@ -847,7 +839,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISRepositoryUtil</td>
@@ -863,7 +855,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISSimpleExpression</td>
@@ -871,7 +863,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CMISSimpleExpressionOperator</td>
@@ -879,7 +871,7 @@ caption {
 	  <em>Old:</em> com.liferay.portal.kernel.repository.cmis.search<br>
 	  <em>New:</em> com.liferay.document.library.repository.cmis.search
 	</td>
-    <td>com.liferay.document.library.repository.cmis.api</td>
+    <td>com.liferay.document.library.repository.cmis</td>
   </tr>
   <tr>
     <td>CartMinOrderException</td>
@@ -1826,14 +1818,6 @@ caption {
     <td>com.liferay.dynamic.data.mapping.api</td>
   </tr>
   <tr>
-    <td>Database</td>
-    <td>
-	  <em>Old:</em> com.liferay.portal.kernel.util<br>
-	  <em>New:</em> com.liferay.portal.tools.db.upgrade.client
-	</td>
-    <td>com.liferay.portal.tools.db.upgrade.client</td>
-  </tr>
-  <tr>
     <td>DefaultAttributesTransformer</td>
     <td>
 	  <em>Old:</em> com.liferay.portal.security.ldap<br>
@@ -2077,9 +2061,9 @@ caption {
     <td>FieldConstants</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.dynamicdatamapping.storage<br>
-	  <em>New:</em> com.liferay.document.library.lar.xstream
+	  <em>New:</em> com.liferay.dynamic.data.mapping.storage
 	</td>
-    <td>com.liferay.document.library.service</td>
+    <td>com.liferay.dynamic.data.mapping.api</td>
   </tr>
   <tr>
     <td>FieldRenderer</td>
@@ -2133,7 +2117,7 @@ caption {
     <td>FlagsRequest</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.flags.messaging<br>
-	  <em>New:</em> com.liferay.flags.internal.messaging
+	  <em>New:</em> com.liferay.flags.messaging
 	</td>
     <td>com.liferay.flags.service</td>
   </tr>
@@ -3402,20 +3386,12 @@ caption {
     <td>com.liferay.portal.security.ldap</td>
   </tr>
   <tr>
-    <td>NoSuchActionException</td>
-    <td>
-	  <em>Old:</em> com.liferay.portlet.mobiledevicerules<br>
-	  <em>New:</em> com.liferay.portal.workflow.kaleo.exception
-	</td>
-    <td>com.liferay.portal.workflow.kaleo.api</td>
-  </tr>
-  <tr>
     <td>NoSuchArticleException</td>
     <td>
 	  <em>Old:</em> com.liferay.portlet.journal<br>
-	  <em>New:</em> com.liferay.knowledge.base.exception
+	  <em>New:</em> com.liferay.journal.exception
 	</td>
-    <td>com.liferay.knowledge.base.api</td>
+    <td>com.liferay.journal.api</td>
   </tr>
   <tr>
     <td>NoSuchArticleImageException</td>
