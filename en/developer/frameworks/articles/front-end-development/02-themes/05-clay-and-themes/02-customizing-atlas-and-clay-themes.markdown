@@ -40,3 +40,4 @@ Great! Now you know how to customize the Atlas and Clay base themes.
 ## Related Topics
 
 - [Integrating Third Party Themes with Clay](/docs/7-2/frameworks/-/knowledge_base/f/integrating-third-party-themes-with-clay)
+- [Using Clay Icons in a Theme](/docs/7-2/frameworks/-/knowledge_base/f/using-clay-icons-in-a-theme)

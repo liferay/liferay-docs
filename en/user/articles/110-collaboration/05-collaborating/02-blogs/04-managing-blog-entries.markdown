@@ -17,8 +17,14 @@ expand the menu for your site and select *Content & Data* &rarr; *Blogs*. The
 You can use the Management Bar to manage your site's blog entries. If you've 
 added blog entries via your site's Blogs app, then you're already familiar with 
 the Management Bar's *Add* button 
-(![Add](../../../../images/icon-add.png)). The sections that follow describe the 
-rest of the Management Bar. 
+(![Add](../../../../images/icon-add.png)). 
+
+The sections that follow describe how to manage your blog entries. 
+
+-   [View Types](#view-types)
+-   [Finding and Arranging Blog Entries](#finding-and-arranging-blog-entries)
+-   [Selecting Blog Entries](#selecting-blog-entries)
+-   [Sharing Blog Entries](#sharing-blog-entries)
 
 ## View Types
 
@@ -75,3 +81,19 @@ the Recycle Bin. Unselect the checkbox to return the Management Bar to its
 normal view. 
 
 ![Figure 2: With multiple blog entries selected, the management bar changes to reflect the actions you can take on the selected entries.](../../../../images/blog-management-bar-selected.png)
+
+## Sharing Blog Entries
+
+You can also share blog entries from the Blogs app in Site Administration. 
+Sharing is enabled by default, as described in 
+[Configuring Sharing](/docs/7-2/user/-/knowledge_base/u/configuring-sharing). 
+Sharing blog entries works the same as 
+[sharing files](/docs/7-2/user/-/knowledge_base/u/sharing-files). 
+
+When sharing is enabled and you have sharing permission, you can share a blog 
+entry by clicking its *Actions* menu 
+(![Actions](../../../../images/icon-actions.png)) 
+and selecting *Share*. 
+
+![Figure 3: You can share a blog entry via its Actions menu.](../../../../images/blog-share.png)
+
