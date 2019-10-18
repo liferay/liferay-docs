@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 7.2.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_7_2_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>7.2.0+</version>
+	</compatibility>
+	<theme id="lunar-resort-theme7-2-new" name="Lunar Resort Theme 7-2-new">
+		<template-extension>ftl</template-extension>
+		<settings>
+			<setting configurable="true" key="show-footer" type="checkbox" value="true" />
+		</settings>
+		<color-scheme id="01" name="Default">
+				<default-cs>true</default-cs>
+				<css-class>default</css-class>
+				<color-scheme-images-path>
+						${images-path}/color_schemes/${css-class}
+				</color-scheme-images-path>
+		</color-scheme>
+		<color-scheme id="02" name="Eclipse">
+			<css-class>eclipse</css-class>
+		</color-scheme>
+		<portlet-decorator id="barebone" name="Barebone">
+			<portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="borderless" name="Borderless">
+			<portlet-decorator-css-class>portlet-borderless</portlet-decorator-css-class>
+		</portlet-decorator>
+		<portlet-decorator id="decorate" name="Decorate">
+			<default-portlet-decorator>true</default-portlet-decorator>
+			<portlet-decorator-css-class>portlet-decorate</portlet-decorator-css-class>
+		</portlet-decorator>
+	</theme>
+</look-and-feel>

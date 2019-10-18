@@ -1,0 +1,118 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+@import 'colors';
+@import "color_schemes/eclipse";
+
+body {
+  
+  a.btn-orange {
+    background-color: $lunar-resort-orange;
+    margin-right: 5px;
+    
+    &:hover {
+      border-color: $white;
+    }
+    
+    @include media-breakpoint-down(sm){
+      width: 100%;
+    }
+  }
+
+  header {
+    background-color: $lunar-resort-blue;
+    
+    .lunar-user a {
+        color: $lunar-resort-link-teal;
+    }
+
+    .user-avatar-link .lexicon-icon {
+      color: $lunar-resort-blue;
+    }
+    
+    li.nav-item {
+      
+      & a.nav-link span {
+        font-size: 1.5em;
+      }
+      
+      &:hover ul.child-menu {
+        background-color: $lunar-resort-blue;
+        display: block;
+        margin-top: -10px;
+      }
+      
+      &.selected {
+        background-color: $white;
+        height: 73px;
+        & a.nav-link {
+          color: $lunar-resort-blue;
+          font-weight: bold;
+          &:hover {
+            color: $lunar-resort-blue;
+            font-weight: normal;
+            padding-left: 9.619px;
+            padding-right: 9.619px;
+          }
+        }
+      }
+      
+      @include media-breakpoint-down(sm){
+        ul.child-menu {
+          display: block;
+        }
+      }
+      
+    }
+  }
+
+  #footer {
+    background-color: $lunar-resort-blue;
+    color: $white;
+    ul{
+      margin-left: auto;
+      margin-right: auto;
+
+      &.navbar-nav {
+        width: 410px;  
+        .nav-item.hover:after {
+          width: auto;
+        }
+        
+        a {
+          color: $white;
+          @include media-breakpoint-down(sm){
+            padding-left: 6px;
+            padding-right: 6px;
+          }
+        }
+      }
+    }
+    
+    #socialMediaWrapper ul {
+      width: 192px;
+      
+      li a {
+        font-size: 2rem;
+      }
+    }
+    
+    p.powered-by a, .contact-info-container a {
+        color: $lunar-resort-link-teal;
+    }
+
+  }
+  
+  &.has-control-menu {
+   header {
+     margin-top: 56px;  
+     @include media-breakpoint-down(sm){
+       margin-top: 48px;
+     }
+   }
+  }
+
+}
