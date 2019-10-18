@@ -48,7 +48,7 @@ if you need guidance.
      the `service` element should be `ViewPortletProvider.class`.
 
 4.  Update the class's declaration to extend the 
-    [BasePortletProvider](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
+    [`BasePortletProvider`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
     abstract class and implement `ViewPortletProvider`:
 
     ```java
