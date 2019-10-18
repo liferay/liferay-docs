@@ -64,19 +64,19 @@ Follow these steps to configure the Header's navigation:
     navigation. This targets the `#lunarNav` wrapper that you added in the 
     previous step:
 
-    ```html
+    ```markup
     <#if has_navigation>
-			<button 
+      <button 
         aria-controls="navigation" 
         aria-expanded="false" 
         class="btn-monospaced ml-auto navbar-toggler" 
         data-target="#lunarNav" 
         data-toggle="collapse" 
         type="button">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<#include "${full_templates_path}/navigation.ftl" />
-		</#if>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <#include "${full_templates_path}/navigation.ftl" />
+    </#if>
     ```
 
 5.  Open `navigation.ftl` and add the `navbar-nav` and `mr-auto` classes to 
@@ -92,12 +92,12 @@ Follow these steps to configure the Header's navigation:
     new `nav_item_caret` variable:
     
     ```markup
-    	<#assign
-    		nav_item_attr_has_popup = ""
-    		nav_item_css_class = "nav-item"
-    		nav_item_layout = nav_item.getLayout()
-        nav_item_caret = ""
-    	/>
+    <#assign
+      nav_item_attr_has_popup = ""
+      nav_item_css_class = "nav-item"
+      nav_item_layout = nav_item.getLayout()
+      nav_item_caret = ""
+    />
     ```
 
 7.  Replace the `nav_item.isSelected` conditional block with the one shown 
