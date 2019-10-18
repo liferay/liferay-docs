@@ -4,6 +4,8 @@ header-id: handling-ajax-requests-with-fetch
 
 # Handling AJAX Requests with `Liferay.Util.fetch`
 
+[TOC levels=1-4]
+
 When you make Ajax requests (referred to as Service Resource actions/requests in 
 @product@), they must protect against [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery)
 and include the proper credentials. Since Liferay DXP 7.2 SP1 and Liferay 
