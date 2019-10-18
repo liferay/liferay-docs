@@ -45,6 +45,13 @@ If your theme uses Bootstrap 3 and Lexicon CSS, you can still use Bootstrap
 @product@'s 
 [compatibility layer](/docs/7-1/tutorials/-/knowledge_base/t/using-the-bootstrap-3-lexicon-css-compatibility-layer). 
 
+| **Note:** The compatibility layer is meant as a short-term solution to ensure 
+| that your Bootstrap 3 and Lexicon CSS components aren't broken while you 
+| update your theme to use [Bootstrap 4](https://getbootstrap.com/docs/4.3/migration/) 
+| and [Clay CSS](https://clayui.com/docs/css-framework/scss.html). It will be 
+| disabled in a future release. Migrate your theme to use Bootstrap 4 and Clay 
+| CSS as soon as you're able to. 
+
 Follow the steps in the 
 [Running the 6.2 theme upgrade task](/docs/7-1/tutorials/-/knowledge_base/t/running-the-upgrade-task-for-6-2-themes) 
 tutorial to learn how to migrate your theme to use the Liferay JS Theme Toolkit, 
