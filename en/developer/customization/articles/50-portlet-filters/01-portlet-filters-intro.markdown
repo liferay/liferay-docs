@@ -1,98 +1,86 @@
 ---
-header-id: render-filter-portlet
+header-id: portlet-filters
 ---
 
-# Application - GenericPortlet + RenderFilter + DS 
+# Portlet Filters
 
 [TOC levels=1-4]
 
+Portlet filters allow you to intercept requests and responses at the start of
+each type of
+[portlet request processing phase](/docs/7-2/frameworks/-/knowledge_base/f/portlets). 
+Portlet filters are commonly used to do these things: 
 
-In this tutorial we are going to learn how to use a RenderFilter to modify the response data before the Portlet is actually rendered to the client.
+- Transform content
+- Add or modify request and response attributes
+- suspend a portlet phase to get user input
+- Audit portlet activity
 
-Portlet filters are similar to servlet filters in a web application. 
-Portlet filters allow to transform the content of portlet requests and responses transparently, or execute some code before, after or around any the different portlet request processing phases. 
+The 
+[`javax.portlet.filter`](http://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/filter/package-frame.html)
+package defines a portlet filter interface for each phase. Here are the main
+steps for developing a portlet filter: 
 
-Multiple filters can be linked to a portlet. A filter chain will be created to keep an ordered list of all of them. 
+1.  Implement the
+    [portlet filter interface](http://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/filter/package-frame.html)
+    for the phase it's intercepting. Here are common interface methods to
+    override. 
 
-The filters can also intercept and block the execution of the portlet phase (usually by throwing an exception or by not calling the next element in the filter chain)
+    `doFilter`: Here's where you take action. This method is invoked at the 
+    start of the portlet request processing phase. The request and response
+    parameters provide access to portlet content and attributes. The
+    `FilterChain` parameter can be used to invoke the next filter in the phase. 
 
-In this code example you will see how to create and link two different filters linked to the render phase of a portlet. In the example we will have a portlet which renders a list of persons, showing thier names and email addresses. But we don't want to expose their email addresses directly, so we will use a `RenderFilter` to hide some parts of the email.
+    `init`: Initialize the filter. The `FilterConfig` parameter can be used to 
+    prepare the filter. 
 
-We will also use a second filter to monitor and keep some stats on the number of times that the portlet has been called and the time it took to render.
+    `destroy`: Perform any filter cleanup. 
 
-## 1. Create the project
+2.  Target the desired portlet(s). 
 
-The first thing you need to do is create a new mvc portlet. You can do this using [blade CLI](https://portal.liferay.dev/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) tool:
+3.  Prioritize the filter among other filters in the phase using one of these 
+    ways: 
+    
+    -   OSGi Declarative Service Component portlet filters use a service ranking
+        property. High ranking filters execute before lower ones. 
+    -   `<filter-mapping>` element order in a portlet application's `portlet.xml` 
+        file. 
+    -   The `ordinal` element value of a filter class annotated with 
+        `@PortletLifecycleFilter`. Low ordinal value filters execute before
+        higher ones. 
 
-```
- $ blade create -v 7.1 [-b maven] -t mvc-portlet -p com.liferay.code.samples.portal.modules.applications.portlets.render_filter -c MembersListPortlet render-filter-portlet
- ```
+This article uses a sample portlet and filters to demonstrate applying multiple
+filters to a portlet's render phase. The filters are
+[OSGi Declarative Service (DS) Components](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services),
+but filters can also be applied to a portlet using a `portlet.xml` descriptor or
+a `@PortletLifecycleFilter` annotation. See the Portlet 3.0 Specification for
+details. The sample code is available
+[here](https://portal.liferay.dev/learn/code-samples/-/cs/list/7.2/java8/workspace-gradle/modules/applications/portlets/render-filter-portlet). 
 
- Alternatively you can [create the module using Liferay Dev Studio](https://portal.liferay.dev/docs/7-1/tutorials/-/knowledge_base/t/creating-modules-with-liferay-ide) or [create the project with IntelliJ IDEA](https://portal.liferay.dev/docs/7-1/tutorials/-/knowledge_base/t/creating-projects-with-intellij-idea)
+## Sample Portlet
 
- ## 2. Review the dependencies
+The sample portlet `MembersListPortlet` is a
+[Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
+that lists people's names and email addresses when users click its *Load Users*
+button. The information is based on `Person` objects that the portlet class
+passes to the View template via a request attribute called
+`MembersListPortlet.MEMBERLIST_ATTRIBUTE`. 
 
- Check that the dependencies and configuration in `pom.xml` or `build.gradle` (depending on the build tool you are using) are pointing to right libraries and versions according to your liferay-portal version.
+```java
+public void loadUsers(ActionRequest actionRequest, ActionResponse actionResponse) {
 
- In this code example, a BOM with the following coordinates `com.liferay.portal:release.portal.bom:7.1.3` is configured to make sure the right versions of the dependencies are used.
-
-## 3. The OSGi bundle descriptor
-
-The `bnd.bnd` contains the information required to the OSGi container to deploy the project as a module. In the example, `bnd.bnd` imports the `common.bnd`descriptor containing the common properties and then adds any specific property depending on the build environment used.
-
-## 4. The portlet and view rendered.
-
-The `MembersListPortlet` is a simple MVC portlet that uses a `view.jsp` to render the list of Persons.
-
-The view also renders a button to load the list of users. When the button is clicked, the `UserListMVCActionCommand`is invoked to load a list of users.
-
-> _You can check the **Portlet using an ActionCommand** code sample to leanr how `MVCActionCommand` works_
-
-## 5. A RenderFilter to hide email adresses
-
-The `EncodingPersonEmailsRenderFilter` *implements* an `RenderFilter` and it's configured, through the `@Component.property` to be linked to the portlet defined in the previous step.
-
-This configuration means that Liferay will create an unique instance of the filter and will add it to the FilterChain associated with portlet identified by `"javax.portlet.name=" + MembersListPortletKeys.MEMBERSLIST_PORTLET_NAME`
-
-The `RenderFilter` interface forces to implement, among others, a `doFilter` method in which we can add whatever code we need to modify, transfor or intercept the request. The access to request an response objects is provided via parameters to the method.
-
-A reference to the `FilterChain` is also provided as an argument to the method. Whenever the we want to continue with the invocation of the next filter (or the portlet phase execution if the filter is the last on the chain) our code should invoke `chain.doFilter(request, response)`
-
-## 6. A Second Render filter to keep Render Stats
-
-There is a second filter in this example which is keeping some stats on the number of times that the portlet has been rendered and how much total time has been spent in render phase.
-
-The code for this second filter can be found on the `MembersListStatsRenderFilter`
-
-The goal of this second filter is to show how both filters are automatically picked and added to the FilterChain that will be executed around the Render of the portlet.
-
-## 7. Specifying the order in which the filters are applied
-For each portlet, a `FilterChain` is created and the filters that should be applied to the portlet.
-
-The `FilterChain` will keep the filters ordered by the  value configured in `"service.ranking:Integer=n"` property. The highest number means the higher precedence.
-
-> According to the Portlet 3.0 Specification the Filters in the filter chain are placed in the same order they are defined in the `portlet.xml` descriptor file. 
->
-> The equivalent of the order in which is defined in a file in the case of OSGi would be the the OSGi service ranking. 
-
- 
-## 8. Build and deploy.
-
-Once you have created the components described above, you can build the project and copy the .jar file inside the `osgi/modules` located within your root liferay installation.
-
-For example, using [blade CLI](https://portal.liferay.dev/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) tool:
-
-```
-$ blade gw deploy
+    actionRequest.setAttribute(MembersListPortlet.MEMBERLIST_ATTRIBUTE, createStaticUserList());
+}
 ```
 
-After you copy the .jar file to `osgi/modules` you should see that the module has started
+Two render filters are applied to the portlet:
 
-```
-[Refresh Thread: Equinox Container: d98f6888-c84c-42ee-8b4f-6c9cb1d13c5b][BundleStartStopLogger:39] STARTED com.liferay.code.samples.portal.modules.applications.portlets.render_filter_1.0.0 [1022]
-```
+1.  Render filter 1 hides parts of the user email addresses (e.g., for 
+    privacy) by modifying the request object.  
 
-Now, if you add the `MemberList` portlet to a page and hit the `Load Users` button you should see the list of members with their email addresses partially hidden, thanks to the action of the Filter.
+2.  Render filter 2 logs portlet render phase statistics. 
+
+Adding the `MemberList` portlet to a page and clicking the `Load Users` button renders each `Person`'s name and partially hidden email address, thanks to the filter `EncodingPersonEmailsRenderFilter`.
 
 ```
 Sievert Shayne
@@ -102,25 +90,174 @@ Sievert.Sha...@...mple.com
 Vida Jonas
 
 Vida.Jo...@...mple.com
-
-Nikola Septima
-
-Nikola.Sept...@...mple.com
-
-Ericka Merav
-
-Ericka.Me...@...mple.com
-
-Kennet Brandr
-
-Kennet.Bra...@...mple.com
+...
 ```
 
-You should also see the statistics (depending on the log level you have configured) on your logs:
+If you set the portlet's log level to `debug`, the it prints the render phase
+statistics. 
 
 ```
 Portlet com_liferay_code_samples_portal_modules_applications_portlets_render_filter_MembersListPortlet rendered in 7791 ms
 Portlet com_liferay_code_samples_portal_modules_applications_portlets_render_filter_MembersListPortlet rendered 2 times with an average 356135 ms render time
 ```
 
-You may also check the [code samples](/learn/code-samples) related with this tutorials.
+The first filter modifies portlet content via the request object. 
+
+## Render filter 1 hides parts of user email addresses
+
+`EncodingPersonEmailsRenderFilter` is a `RenderFilter` that hides parts of user
+email addresses by modifying a request attribute. Here is the class:
+
+```java
+@Component(
+        immediate = true,
+        property = {
+                "javax.portlet.name=" + MembersListPortlet.MEMBERSLIST_PORTLET_NAME,
+                "service.ranking:Integer=1" 
+        },
+        service = PortletFilter.class
+)
+public class EncodingPersonEmailsRenderFilter implements RenderFilter {
+
+    @Override
+    public void doFilter(RenderRequest request, RenderResponse response, FilterChain chain)
+            throws IOException, PortletException {
+
+        //This is executed before the portlet render
+        Optional.ofNullable((List<Person>)request.getAttribute(MembersListPortlet.MEMBERLIST_ATTRIBUTE))
+                .ifPresent(personList ->
+                        request.setAttribute(MembersListPortlet.MEMBERLIST_ATTRIBUTE, ofuscateEmails(personList)));
+
+        // Invoke the rest of the filters in the chain
+        //  (it also invokes the Portlet render method if this is the last filter in the chain
+        chain.doFilter(request, response);
+
+    }
+
+    private List<Person> ofuscateEmails(List<Person> list) {
+        return list.stream()
+                .map(this::ofuscatePersonEmail)
+                .collect(Collectors.toList());
+    }
+
+    private Person ofuscatePersonEmail(Person person) {
+        return new Person(person.getName(),
+                          person.getEmail().replaceFirst("(.+)(...)@(...)(.*)", "$1...@...$4"));
+
+    }
+
+    @Override
+    public void init(FilterConfig filterConfig) throws PortletException {
+
+    }
+
+    @Override
+    public void destroy() {
+
+    }
+}
+```
+
+The `@Component` annotation declares the filter to be an OSGi DS Component. Here
+are its elements and properties:
+
+-   `immediate = true` sets the component ready to start upon being installed. 
+-   `service = PortletFilter.class` defines the component to be a 
+    `PortletFilter` service. 
+-   `javax.portlet.name = + MembersListPortlet.MEMBERSLIST_PORTLET_NAME` 
+    links the filter to the target portlet. Note, multiple portlets can be
+    listed. 
+-   `service.ranking:Integer=1` sets the filter to execute after filters that 
+    are ranked higher than `1`. 
+ 
+`EncodingPersonEmailsRenderFilter` *implements* the
+[`RenderFilter`](http://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/filter/RenderFilter.html)
+interface, overriding the `doFilter`, `init`, and `destroy` methods. 
+
+`doFilter` modifies the attribute  `MembersListPortlet.MEMBERLIST_ATTRIBUTE`'s
+list of `Person`s by replacing parts of their email addresses with ellipses
+(`...`). It delegates the `ofuscatePersonEmail` method to do the modifications.
+Then `doFilter` invokes `chain.doFilter(request, response)` to execute the next
+`RenderFilter` or next portlet processing phase. 
+
+| **Note:** Filters can also intercept and block the execution of a portlet 
+| phase.  In the `doFilter` method, this is usually done by throwing an
+| exception or by not calling the next element in the filter chain. 
+
+## RenderFilter 2 Logs Statistics
+
+`MembersListStatsRenderFilter` is a `RenderFilter` that logs the number of times
+the portlet is rendered and the average render time. Here's the code:
+
+```java
+@Component(
+        immediate = true,
+        property = {
+                "javax.portlet.name=" + MembersListPortlet.MEMBERSLIST_PORTLET_NAME,
+                "service.ranking:Integer=100"
+        },
+        service = PortletFilter.class
+)
+public class MembersListStatsRenderFilter implements RenderFilter {
+
+    //Thread safe - accumulator that keeps the number of times the portlet has been rendered
+    private final LongAdder hits = new LongAdder();
+
+    //Thread safe accumulator that keeps total time spent rendering the portlet.
+    private final LongAdder accumulatedTimeMs = new LongAdder();
+
+    @Override
+    public void doFilter(RenderRequest request, RenderResponse response, FilterChain chain) throws IOException, PortletException {
+
+        long startTime = System.nanoTime();
+
+        chain.doFilter(request, response);
+
+        long renderTime = (System.nanoTime() - startTime) / 1000;
+        hits.increment();
+        accumulatedTimeMs.add(renderTime);
+
+        if (LOG.isDebugEnabled()) {
+            long totalHits = hits.longValue();
+            long averageRenderTimeNs = accumulatedTimeMs.longValue() / totalHits;
+            LOG.debug("Portlet " + MembersListPortlet.MEMBERSLIST_PORTLET_NAME + " rendered in " + renderTime + " ms");
+            LOG.debug("Portlet " + MembersListPortlet.MEMBERSLIST_PORTLET_NAME + " rendered " + hits.longValue()
+                    + " times with an average " + averageRenderTimeNs + " ms render time");
+        }
+    }
+
+    ...
+
+    private static final Log LOG = LogFactoryUtil.getLog(MembersListStatsRenderFilter.class);
+}
+```
+
+As with `EncodingPersonEmailsRenderFilter`, it's an OSGi DS Component that is a
+`PortletFilter` service, starts upon installation, applies to the
+`MembersListPortlet`, and has a service ranking. Since its ranking is `100`, it
+is executed before render filter `EncodingPersonEmailsRenderFilter`. 
+
+`MembersListStatsRenderFilter`'s `doFilter()` method does these things to audit
+the render phase:
+
+1.  Notes the render phase start time. 
+
+2.  Executes `chain.doFilter(request, response)` to invoke all of the other 
+    `RenderFilter`s in the `FilterChain`. 
+
+3.  Increments the number of times the portlet renders.
+
+4.  Calculates the average render time.
+
+5.  Logs the times rendered and average render time. 
+
+Now that you understand portlet filters, you can create your own filters to to
+intercept portlet processing phases. 
+
+## Related Topics 
+
+[Portlets](/docs/7-2/frameworks/-/knowledge_base/f/portlets)
+
+[JSP Overrides Using Portlet Filters](/docs/7-2/customization/-/knowledge_base/c/jsp-overrides-using-portlet-filters)
+
+[Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
