@@ -163,11 +163,7 @@ displays @product@'s Basic Configuration page. If for some reason your browser
 doesn't load the Basic Configuration page, launch your web browser and navigate
 to [http://localhost:8080](http://localhost:8080). 
 
----
-header-id: using-liferays-setup-wizard
----
-
-# Using @product@'s Setup Wizard
+## Using @product@'s Setup Wizard
 
 @product@'s Setup Wizard runs when you start @product@ for the first time. To make
 it easy to configure @product@, the first thing you see when browsing to your
