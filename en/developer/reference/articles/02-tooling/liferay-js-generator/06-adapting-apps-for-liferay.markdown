@@ -59,8 +59,8 @@ project:
     npm run deploy:liferay
     ```
 
-    ![Figure 3: Your adapted app runs in Liferay in no time.](../../../images/liferay-js-generator-adapt-deployed.png)
-
 Great! Now you know how to use the Liferay JS Generator to adapt your existing 
 apps to run on @product@. See the [React Guestbook App](https://github.com/liferay/liferay-docs/tree/master/en/developer/reference/code/adapted-react-app/) 
 for a working example of an adapted app. 
+
+![Figure 3: Your adapted app runs in Liferay in no time.](../../../images/liferay-js-generator-adapt-deployed.png)
