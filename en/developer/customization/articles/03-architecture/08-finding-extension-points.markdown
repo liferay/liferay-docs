@@ -17,12 +17,12 @@ There's a process you can follow that makes finding an extension point a breeze.
 
 1.  Locate the bundle (module) that provides the functionality you want to 
     change. 
-3.  Find the components available in the module. 
-4.  Discover the extension points for the components you want to customize. 
+2.  Find the components available in the module. 
+3.  Discover the extension points for the components you want to customize. 
 
-This article demonstrates finding an extension point. It steps 
-through a simple example that locates an extension point for importing LDAP 
-users. The example includes using @product@'s 
+This article demonstrates finding an extension point. It steps through a simple 
+example that locates an extension point for importing LDAP users. The example 
+includes using @product@'s 
 [Application Manager](/docs/7-2/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager) 
 and 
 [Felix Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell). 
@@ -32,39 +32,31 @@ and
 First think of words that describe the application behavior you want to change. 
 The right keywords can help you easily track down the desired module and its 
 component. Consider the example for importing LDAP users. Some candidate 
-keywords for finding the component are *import*, *user*, and *LDAP*. 
+keywords for finding the component are *import*, *user*, *security, *and *LDAP*. 
 
 The easiest way to discover the module responsible for a particular Liferay 
-feature is to use the Application Manager. The Application Manager lists app 
-suites and their included modules/components in an easy-to-use interface. It 
-even lists third party apps! You'll use your keywords to target the applicable 
-component. 
+feature is to use the Application Manager. The Application Manager lists apps 
+and their included modules/components in an easy-to-use interface. It even lists 
+third party apps! You'll use your keywords to target the applicable component. 
 
 1.  Open the App Manager by navigating to *Control Panel* &rarr; *Apps* &rarr; 
-    *App Manager*. The top level lists app suites, independent apps, and 
-    independent modules. 
+    *App Manager*. The top level lists independent apps and independent modules. 
 
-2.  Navigate the app suites, apps, and modules, or use Search to find components 
-    that might provide your desired extension point. Remember to check for your 
-    keywords in element names and descriptions. The keyword *LDAP* is found in 
-    the Liferay Foundation app suite's list of apps and features. Select the app 
-    suite. 
+2.  Navigate the apps and modules to find components that might provide your 
+    desired extension point. Remember to check for your keywords in element 
+    names. The keyword *security* is found in the Liferay CE Portal Security 
+    app. Select it.
 
-    ![Figure 1: The Liferay Foundation app suite contains the LDAP Authentication application.](../../images/ldap-keyword-app-manager.png)
+3.  The Security application has several modules to inspect. Select the 
+    *Liferay Portal Security LDAP Implementation* module. 
 
-3.  Select the *LDAP* application from the app listing.
+    ![Figure 1: The module name can be found using the App Manager.](../../images/ldapimplementation-module.png)
 
-4.  The LDAP application only has one module, but typically, applications have 
-    more than one module to inspect. Select the *Liferay Portal Security LDAP* 
-    module. 
-
-    ![Figure 2: The App Manager lists the module, package name, version, and status.](../../images/app-manager-breakdown.png)
-
-5.  Search through the components, applying your keywords as a guide. Copy the 
+4.  Search through the components, applying your keywords as a guide. Copy the 
     component name you think best fits the functionality you want to customize; 
     you'll inspect it later using the Gogo shell. 
 
-    ![Figure 3: The component name can be found using the App Manager.](../../images/usermodellistener-component.png)
+    ![Figure 2: The component name can be found using the App Manager.](../../images/usermodellistener-component.png)
 
     | **Note:** When using the Gogo shell later, understand that it can take 
     | several tries to find the component you're looking for; Liferay's naming 
@@ -99,14 +91,13 @@ in services the component references. They are extension points. For
 example, here's the reference for the service that imports LDAP users:
 
 ```bash
-...
-Reference: LdapUserImporter
-Interface Name: com.liferay.portal.security.ldap.exportimport.LDAPUserImporter
-Cardinality: 1..1
-Policy: static
-Policy option: reluctant
-Reference Scope: bundle
-...
+- _ldapUserImporter: 
+  com.liferay.portal.security.ldap.exportimport.LDAPUserImporter 
+  SATISFIED 
+  1..1 
+  dynamic+greedy
+    target=(*) scope=bundle (1 binding):
+    * Bound to [7764] from bundle 1754 (com.liferay.portal.security.ldap.impl:2.0.4)
 ```
 
 The `LDAPUserImporter` is the extension point for customizing the LDAP user 
@@ -114,7 +105,8 @@ import process! If none of the references satisfy what you're looking for,
 search other components from the App Manager. 
 
 If you plan on overriding the referenced service, you'll need to understand the 
-reference's policy and policy option. If the policy is `static` and the policy 
+reference's policy and policy option. In the example, the policy is `dynamic` 
+and the policy option is `greedy`. If the policy is `static` and the policy 
 option is `reluctant`, binding a new higher ranking service in place of a bound 
 service requires reactivating the component or changing the target. For 
 information on the other policies and policy options, visit the 

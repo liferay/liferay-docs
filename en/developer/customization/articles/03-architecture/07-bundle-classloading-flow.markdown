@@ -11,7 +11,7 @@ to know where it looks and in what order. @product@'s classloading flow for OSGi
 bundles follows the OSGi Core specification. It's straightforward, but complex. 
 The figure below illustrates the flow and this article walks you through it. 
 
-![Figure 1.0: This flow chart illustrates classloading in a bundle.](../../images/bundle-classloading-flow-chart.png)
+![Figure 1: This flow chart illustrates classloading in a bundle.](../../images/bundle-classloading-flow-chart.png)
 
 Here is the algorithm for classloading in a bundle: 
 
