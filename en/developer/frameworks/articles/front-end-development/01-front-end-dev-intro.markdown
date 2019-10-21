@@ -89,7 +89,7 @@ Below are some of the available front-end extensions:
 - [Dynamic Includes](/docs/7-2/customization/-/knowledge_base/c/dynamic-includes)
 
 See 
-[Theme Components](/docs/7-2/frameworks/-/knowledge_base/f/theme-components) 
+[Theme Components](/docs/7-2/customization/-/knowledge_base/c/theme-components) 
 and 
-[Understanding the Page Layout](/docs/7-2/frameworks/-/knowledge_base/f/understanding-the-page-layout) 
+[Understanding the Page Layout](/docs/7-2/customization/-/knowledge_base/c/understanding-the-page-layout) 
 for more information. 

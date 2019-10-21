@@ -147,6 +147,6 @@ You can customize portlets with these mechanisms and extensions:
 
 ## Related Topics
 
-- [Understanding the Page Layout](/docs/7-2/frameworks/-/knowledge_base/f/understanding-the-page-layout)
+- [Understanding the Page Layout](/docs/7-2/customization/-/knowledge_base/c/understanding-the-page-layout)
 - [Installing the Theme Generator and Creating a Theme](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme)
 - [Developing Themes](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes)
