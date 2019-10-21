@@ -142,7 +142,7 @@ has tons of web components like Search Container (a sortable data table),
 panels, buttons, and more. Liferay's [Asset Framework](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework)
 can publish data from your application in context wherever users need it---as
 a notification, a related asset, as tagged or categorized data, or as relevant
-data based on a [user segment](docs/7-2/user/-/knowledge_base/u/creating-user-segments). Need to provide file upload/download? Use the 
+data based on a [user segment](/docs/7-2/user/-/knowledge_base/u/creating-user-segments). Need to provide file upload/download? Use the 
 [Documents API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). Need a robust permissions system? Use [Liferay permissions](/docs/7-2/frameworks/-/knowledge_base/f/defining-application-permissions).
 Want users to submit comments? Use Liferay's [comments](/docs/7-2/frameworks/-/knowledge_base/f/adding-comments-to-your-app).
 Need to process data outside the request/response? Use the Message Bus. 

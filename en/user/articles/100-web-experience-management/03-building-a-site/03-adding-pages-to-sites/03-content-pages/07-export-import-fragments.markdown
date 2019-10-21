@@ -50,6 +50,8 @@ To export individual Fragments,
 Note that if you export a single Fragment or a group of Fragments without
 a collection, they must be imported into an existing Collection. 
 
+You can also export Global Collections and single Fragments from your Site.
+
 Now it's time to import your Fragments to where you need them. 
 
 ## Importing

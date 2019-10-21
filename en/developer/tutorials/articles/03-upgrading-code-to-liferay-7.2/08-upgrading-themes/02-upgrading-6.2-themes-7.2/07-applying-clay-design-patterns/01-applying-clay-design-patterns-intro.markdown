@@ -13,8 +13,16 @@ application UIs. Clay's CSS, HTML, and JavaScript components enable developers
 to build fully-realized UIs quickly and effectively. @product@'s 
 [compatibility layer](/docs/7-2/tutorials/-/knowledge_base/t/using-the-bootstrap-3-lexicon-css-compatibility-layer) 
 let's you use [Lexicon CSS](https://lexiconcss.wedeploy.io/) markup alongside 
-[Clay CSS](https://clayui.com/). This section demonstrates how to apply Clay to 
-the Lunar Resort's form. 
+[Clay CSS](https://clayui.com/). 
+
+| **Note:** The compatibility layer is meant as a short-term solution to ensure 
+| that your Bootstrap 3 and Lexicon CSS components aren't broken while you 
+| update your theme to use [Bootstrap 4](https://getbootstrap.com/docs/4.3/migration/) 
+| and [Clay CSS](https://clayui.com/docs/css-framework/scss.html). It will be 
+| disabled in a future release. Migrate your theme to use Bootstrap 4 and Clay 
+| CSS as soon as you're able to. 
+
+This section demonstrates how to apply Clay to the Lunar Resort's form. 
 
 Follow these steps:
 

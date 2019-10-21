@@ -14,11 +14,11 @@ Font Awesome imports and core imports have changed. Follow these steps to update
 the theme:
 
 1.  Originally in Liferay Portal CE 7.0 and Liferay DXP, Font Awesome icons were 
-		imported in `_aui_variables.scss` (now renamed `_clay_variables.scss`). Font 
-		Awesome icons were later moved to their own file (`font-awesome.scss`) to 
-		avoid the IE9 CSS selector limitation. If a 7.0 theme was made prior to this 
-		move and `_aui_variables.scss` was modified, the Font Awesome imports shown 
-		below must be removed from `_clay_variables.scss`:
+    imported in `_aui_variables.scss` (now renamed `_clay_variables.scss`). Font 
+    Awesome icons are now included as a package dependency if you answer yes (y) 
+    to include Font Awesome during the upgrade task. If a 7.0 theme was made 
+    prior to this move and `_aui_variables.scss` was modified, the Font Awesome 
+    imports shown below must be removed from `_clay_variables.scss`:
 
     ```scss
     // Icon paths

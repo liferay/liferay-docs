@@ -118,5 +118,5 @@ placeholder, but the portlet Liferay provides can be replaced by other portlets.
 | ```
 
 For more information, read the
-[Providing the User Personal Menu](/docs/7-2/customization/-/knowledge_base/c/providing-the-user-personal-menu)
+[Customizing the User Personal Bar and Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-user-personal-bar-and-menu)
 article.

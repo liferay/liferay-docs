@@ -32,6 +32,11 @@ theme, skip to step 3.
     @import "clay/atlas-variables";
     ```
 
+    | **Note:** Bourbon mixins are deprecated as of @product-ver@ and will be 
+    | removed in the next major release. We recommend you use Clay mixins 
+    | instead. To use Clay mixins, follow the instructions in 
+    | [Using Clay Mixins in Your Theme](/docs/7-2/frameworks/-/knowledge_base/f/using-clay-mixins-in-your-theme)
+
 3.  Add a file named `_clay_variables.scss`. Place your Atlas, Bootstrap, and 
     Clay Base variable modifications in this file.
 
@@ -40,3 +45,4 @@ Great! Now you know how to customize the Atlas and Clay base themes.
 ## Related Topics
 
 - [Integrating Third Party Themes with Clay](/docs/7-2/frameworks/-/knowledge_base/f/integrating-third-party-themes-with-clay)
+- [Using Clay Mixins in Your Theme](/docs/7-2/frameworks/-/knowledge_base/f/using-clay-mixins-in-your-theme)

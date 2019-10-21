@@ -21,19 +21,22 @@ in from your writers manually set to light blue, you must spend time
 reformatting them before they are published.
 
 Structures enforce a format for your content so your writers know exactly what
-a complete article needs. Using structures, you can provide a form for your
-users which spells out exactly what is required and can be formatted
-automatically using a template.
+a complete article or mapped display page needs. Using structures, you can 
+provide a form for your users which spells out exactly what is required and can 
+be formatted automatically using a template or a [display page](/docs/7-2/user/-/knowledge_base/u/display-pages-for-web-content).
 
 You create a structure by adding form controls such as text fields, text boxes,
 HTML text areas, check boxes, select boxes and multi-selection lists. You can
 add specialized application fields such as an Image Uploader or Documents and
 Media right onto the structure. Positioning elements is accomplished by
 drag-and-drop, making it easy for you to prototype different orders for your
-input fields. Additionally, elements can be grouped together into blocks which
-can then be repeatable. Template writers can then write a template which loops
-through these blocks and presents your content in innovative ways, such as in
-sliding navigation bars, content that scrolls with the user, and more.
+input fields. Additionally, elements can be grouped together into blocks which 
+can then be repeatable. Display Page creators can then map these fields to 
+[editable page fragments](/docs/7-2/user/-/knowledge_base/u/content-page-elements#editable-elements) 
+to use custom styles and formatting. Alternatively, template writers can write a 
+template which loops through these blocks and presents your content in 
+innovative ways, such as in sliding navigation bars, content that scrolls with 
+the user, and more.
 
 Next you'll learn how you can create and edit structures through the Manage
 Structures interface.

@@ -11,9 +11,9 @@ them relate to how the fields are displayed or how users interact with them, but
 probably the most important field configuration is the **Name**. When you create
 a new field, it has a random name generated that looks like `TextField4882`. In
 most cases, you should change this to something that is more memorable and more
-descriptive. When it comes time to create the template, you don't want to be
-trying to remember if `TextField4882` was the field for entering an applicant's
-name or annual salary.
+descriptive. If you create a matching template, you don't want to have to 
+remember if `TextField4882` was the field for entering an applicant's name or 
+annual salary.
 
 Practice this now.
 
@@ -41,8 +41,8 @@ human-readable text that the user sees.
 users must enter a value for it in order to submit content using this structure.
 
 **Name:** The name of the field internally, automatically generated. Since this
-is the variable name that you can read the data from in a template, you should
-enter a descriptive name.
+is the variable name that you can read the data from in a template or display 
+page, you should enter a descriptive name.
 
 **Predefined Value:** When a user creates a new web content article based on a
 structure that has predefined values for various fields, the predefined values
@@ -102,6 +102,13 @@ To edit a structure's default values:
     for setting or editing a large number of defaults at once.
 
 ![Figure 2: You can define values for your structure fields and the standard asset metadata fields.](../../../../../../images/structure-default-values.png)
+
+If you prefer to reset all your structure's default values, you can select the
+*Reset Values* button. This resets all values for the structure's fields
+and all properties shown in the right panel.
+
+| **Note:** The *Reset Values* button is available for Liferay Portal 7.2 GA2+
+| and Liferay DXP 7.2 SP1+.
 
 Every new web content you create with this structure is preloaded with the
 data you inserted. Next, you'll learn about assigning permissions.

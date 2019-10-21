@@ -139,10 +139,10 @@ different geographical locations.
 2.  Now you must determine the discovery protocol the nodes should use to
     find each other. You have four choices: 
 
-        - TCPPing
-        - JDBCPing
-        - S3_Ping
-        - Rackspace_Ping
+    - TCPPing
+    - JDBCPing
+    - S3_Ping
+    - Rackspace_Ping
 
     If you aren't sure which one to choose, use `TCPPing`. This is used in the
     rest of these steps; the others are covered below. 
@@ -152,24 +152,40 @@ different geographical locations.
     [Liferay's Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.cluster.multiple).
     In this JAR's `lib` folder is a file called `jgroups-[version].Final.jar`.
     Open it and find `tcp.xml`. Extract this file to a location accessible to
-    @product@. Use this file on all your nodes.
+    @product@.
+    
+4.  Make a copy of the `tcp.xml` in the same location and rename both files, 
+    designating one for the control channel and the other for the transport
+    channel. For example,
 
-4.  If you're vertically clustering (i.e., you have multiple servers running on
-    the same physical or virtual system), you must change the port on which
-    discovery communicates for all nodes other than the first one, to avoid TCP
-    port collision. To do this, modify the TCP tag's `bind_port` parameter: 
+    -   `tcp-control.xml`
 
-        <TCP bind_port="[some unused port]"
-            ... 
-        />
+    -   `tcp-transport.xml`
 
-    Since the default port is `7800`, provide some other unused port. 
+    Copy these two files to all your nodes. 
 
-5.  Add to the same tag the parameter `singleton_name="liferay_cluster"`. This
-    merges the transport and control channels to reduce the number of thread
-    pools. See 
-    [JGroups documentation](www.jgroups.org/manual4/index.html#user-advanced) 
-    for further information. 
+5.  If you're vertically clustering (i.e., you have multiple servers running on
+    the same physical or virtual system), every channel must use a unique unused
+    bind port for discovery communication. In each `tcp-*.xml` file, assign the
+    TCP tag's `bind_port` attribute to a unique, unused port.  
+
+    ```xml
+    <TCP bind_port="[some unused port]"
+        ... 
+    />
+    ```
+
+    For example, your first two nodes might assign these bind ports:
+
+    **Node 1**
+
+    -   `tcp-control.xml` bind port: `7800`
+    -   `tcp-transport.xml` bind port: `7801`
+
+    **Node 2**
+
+    -   `tcp-control.xml` bind port: `7802`
+    -   `tcp-transport.xml` bind port: `7803`
 
     Usually, no further JGroups configuration is required. However, in a very
     specific case, if *(and only if)* cluster nodes are deployed across
@@ -182,13 +198,17 @@ different geographical locations.
     [JGroups documentation](http://www.jgroups.org/manual4/index.html#_transport_protocols)
     for more information. 
 
-6.  Save the file. Modify the [cluster link channel portal 
-    properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link)
+    | **Note:** The `singleton_name` TCP attribute was deprecated in JGroups 
+    | v4.0.0 and has therefore been removed since Liferay DXP 7.2 SP1 and 
+    | Liferay Portal CE GA2 which use JGroups v 4.1.1-Final. 
+
+6.  Modify the
+    [cluster link channel portal properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link)
     in that node's `portal-ext.properties` file to point to it: 
 
     ```properties
-    cluster.link.channel.properties.control=[CONFIG_FILE_PATH]/tcp.xml
-    cluster.link.channel.properties.transport.0=[CONFIG_FILE_PATH]/tcp.xml
+    cluster.link.channel.properties.control=[CONFIG_FILE_PATH]/tcp-control.xml
+    cluster.link.channel.properties.transport.0=[CONFIG_FILE_PATH]/tcp-transport.xml
     ```
 
 You're now set up for Unicast over TCP clustering! Repeat this process for each
@@ -202,11 +222,13 @@ members write their own and read the other members' addresses from this
 database. To enable this configuration, replace the `TCPPING` tag with the
 corresponding `JDBCPING` tag: 
 
-    <JDBC_PING
-        connection_url="jdbc:mysql://[DATABASE_IP]/[DATABASE_NAME]?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false"
-        connection_username="[DATABASE_USER]"
-        connection_password="[DATABASE_PASSWORD]"
-        connection_driver="com.mysql.jdbc.Driver"/>
+```xml
+<JDBC_PING
+    connection_url="jdbc:mysql://[DATABASE_IP]/[DATABASE_NAME]?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false"
+    connection_username="[DATABASE_USER]"
+    connection_password="[DATABASE_PASSWORD]"
+    connection_driver="com.mysql.jdbc.Driver"/>
+```
 
 The above example uses MySQL as the database. For further information about
 JDBC Ping, please see the 
@@ -222,10 +244,12 @@ is deleted.
 To configure S3 Ping, replace the `TCPPING` tag with the corresponding `S3_PING`
 tag: 
 
-    <S3_PING 
-        secret_access_key="[SECRETKEY]" 
-        access_key="[ACCESSKEY]"
-        location="ControlBucket"/>
+```xml
+<S3_PING 
+    secret_access_key="[SECRETKEY]" 
+    access_key="[ACCESSKEY]"
+    location="ControlBucket"/>
+```
 
 Supply your Amazon keys as values for the parameters above. For further
 information about S3 Ping, please see the 
@@ -272,14 +296,16 @@ a vibrant community, a large portion of your traffic may be directed at the
 message boards portlet, as mentioned above. To cache the threads on the message
 boards, configure a block with the `MBMessageImpl` class:
 
-    <cache
-        eternal="false"
-        maxElementsInMemory="10000"
-        name="com.liferay.portlet.messageboards.model.impl.MBMessageImpl"
-        overflowToDisk="false"
-        timeToIdleSeconds="600"
-    >
-    </cache>
+```xml
+<cache
+    eternal="false"
+    maxElementsInMemory="10000"
+    name="com.liferay.portlet.messageboards.model.impl.MBMessageImpl"
+    overflowToDisk="false"
+    timeToIdleSeconds="600"
+>
+</cache>
+```
 
 You can preserve the default settings while customizing them with your own
 by extracting Liferay's cluster configuration file and putting it into
