@@ -15,7 +15,7 @@ and
 
 The UI comprises the following parts:
 
--   Content: Images, videos, and text. 
+-   Content: images, videos, and text. 
 
 -   [Applications](/docs/7-2/appdev/-/knowledge_base/a/application-development): 
     Widgets and portlets that expose functionality for accomplishing tasks. 
@@ -28,7 +28,8 @@ The UI comprises the following parts:
 
 ## Content
 
-@product@'s built-in applications help you publish images, video, forms, markup text, and more to site pages.
+@product@'s built-in applications help you publish images, video, forms, markup
+text, and more to site pages. 
 [Documents and Media](/docs/7-2/user/-/knowledge_base/u/managing-documents-and-media)
 stores images, videos, and documents to use throughout your site. The
 [Web Experience Management](/docs/7-2/user/-/knowledge_base/u/web-experience-management)
@@ -45,9 +46,8 @@ of the built-in applications for adding site content.
 
 @product@ applications provide content and help users accomplish tasks. They're 
 [developed the same way](/7-2/appdev/-/knowledge_base/a/web-front-ends)
-as other web applications, except @product@ installs them as
-[portlets](/docs/7-2/frameworks/-/knowledge_base/f/portlets)---applications 
-that run on a portion of a page. 
+as other web applications, and @product@ can combine multiple applications on
+one page. 
 
 @product@ supports developing JavaScript-based applications using popular 
 front-end frameworks:
@@ -65,8 +65,8 @@ including ones familiar to experienced Liferay portlet developers:
 -   [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
 
 In the UI, applications are referred to as Widgets and categorized for users to
-add to pages. Administrative applications are developed as portlets and made
-available in the product menu panels. 
+add to pages. Administrative applications are available in the product menu
+panels. 
 
 ![Figure 1: Widget pages offer users functionality. Widgets are organized into a page template's rows and columns. This template has two columns: a smaller left column and larger right column. On this page, users select tags in the Tag Cloud widget and the matching tagged images show the Asset Publisher widget.](../../../images/architecture-ui-widgets.png)
 
@@ -103,8 +103,8 @@ Here's a quick demonstration of developing a theme:
         `init.ftl` file defines default variables available to the templates. 
 
     -  `css`: SCCS files that provide styling. 
-    
-    -  `font`: Font Awesome and Glyhicons fonts. 
+
+    -  `font`: Font Awesome and Glyphicons fonts. 
 
     -  `js`: JavaScript files; `main.js` is the Styled theme's 
         JavaScript. 
@@ -116,7 +116,7 @@ Here's a quick demonstration of developing a theme:
     [Theme Anatomy Guide](/docs/7-2/reference/-/knowledge_base/r/theme-reference-guide)
     describes all the files. Here's an example of a customized
     `portal_normal.ftl`: 
-    
+
 ```markup
 <html class="${root_css_class}">
 <head></head>
@@ -132,7 +132,7 @@ Here's a quick demonstration of developing a theme:
   </body>
 </html>
 ```
-    
+
 4.  Add custom styling using your theme's `_custom.scss` file (i.e.,
     `src/css/_custom.scss`). 
     @product@ supports
@@ -140,10 +140,8 @@ Here's a quick demonstration of developing a theme:
     as well as
     [Sass](https://sass-lang.com/), 
     so you can use Bootstrap utilities in your markup and Sass nesting,
-    variables, and more in your CSS files. This snippet from the
-    [portal.liferay.dev site](https://portal.liferay.dev/)
-    theme styles the logo: 
-    
+    variables, and more in your CSS files. This snippet styles the logo: 
+
 ```sass
 .logo {
   margin-left: 15px;
@@ -165,14 +163,14 @@ Here's a quick demonstration of developing a theme:
 
 The theme is available to
 [apply](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes)
-to your site. It's just that easy! 
+to your site. 
 
 
-The
+For details, 
 [Theme Components](/docs/7-2/customization/-/knowledge_base/c/theme-components)
-article (next) and 
+breaks down a theme's parts, and the
 [Themes section](/docs/7-2/frameworks/-/knowledge_base/f/themes-introduction)
-provide theme development details. 
+provides theme development details. 
 
 ## Product Navigation Sidebars and Panels
 
@@ -183,8 +181,8 @@ navigation sidebars and panels are customizable.
 
 ![Figure 4: Liferay facilitates integrating custom administrative functionality through navigation menus and administrative applications.](../../../images/architecture-ui-menus-and-panel-app.png)
 
-As you can see, @product@'s UI is highly flexible and customizable. Now that you
-understand it at a high-level, read these articles to learn more: 
+As you can see, @product@'s UI is highly flexible and customizable. Here's where
+to learn more: 
 
 - [Theme Components](/docs/7-2/customization/-/knowledge_base/c/theme-components): 
   Explains available mechanisms and extensions for customizing and theming
