@@ -1,12 +1,12 @@
 ---
-header-id: understanding-the-page-layout
+header-id: understanding-the-page-structure
 ---
 
-# Understanding the Page Layout
+# Understanding the Page Structure
 
 [TOC levels=1-4]
 
-Understanding the layout's structure is crucial to targeting the correct markup 
+Understanding the page's structure is crucial to targeting the correct markup 
 for styling, organizing your content, and creating your site. Your page layout 
 is unique to the requirements and design for your site. The Unstyled theme's 
 default page layout is organized into three key sections in its 
