@@ -42,7 +42,7 @@ of page layout (page) functionality:
   toggle for mobile viewports, as shown in the snippet below for the Classic
   theme:
 
-```html
+```markup
 <#if has_navigation && is_setup_complete>
   <button aria-controls="navigationCollapse" aria-expanded="false" 
   aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" 
@@ -103,7 +103,7 @@ The following extensions and mechanisms are available for themes:
   can configure via the Look and Feel menu. See the 
   [color scheme tutorial](/docs/7-2/frameworks/-/knowledge_base/f/creating-color-schemes-for-your-theme)
   for more information.
-- **Configurable Theme Settings:** Settings for Administrators to configure
+- **Configurable Theme Settings:** Administrators can configure
   theme aspects that change frequently, such as the visibility of
   certain elements, changing a daily quote, etc. See the 
   [Configurable Theme Settings tutorial](/docs/7-2/frameworks/-/knowledge_base/f/making-configurable-theme-settings)
