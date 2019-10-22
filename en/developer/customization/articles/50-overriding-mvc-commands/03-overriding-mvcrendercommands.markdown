@@ -214,8 +214,8 @@ Implement your `render` method this way:
     return MVCRenderConstants.MVC_PATH_VALUE_SKIP_DISPATCH;
     ```
 
-After deploying your module, the [portlets targeted by your custom 
-`MVCRenderCommand` component](/docs/7-2/customization/-/knowledge_base/c/adding-logic-to-mvc-commands##step-2-publish-as-a-component) 
+After deploying your module, the
+[portlets targeted by your custom `MVCRenderCommand` component](/docs/7-2/customization/-/knowledge_base/c/adding-logic-to-mvc-commands#step-2-publish-as-a-component) 
 render your new JSP. 
 
 ## Related Topics
