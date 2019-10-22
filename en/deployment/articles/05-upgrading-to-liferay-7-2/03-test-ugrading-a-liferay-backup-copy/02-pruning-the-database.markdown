@@ -178,5 +178,9 @@ Find and resolve any issues related to the objects you removed. You can always
 restart pruning a new copy of your production database if you can't resolve an
 issue. 
 
+| **Warning:** the upgrade to @product@ 7.2 moves Web Content images to the 
+| Document Library and then deletes their former table `JournalArticleImage`.
+| Make sure the images show in the upgraded Web Content articles. 
+
 Once you've successfully tested @product@ with its pruned database copy, you can
 upgrade the database to @product-ver@. 
