@@ -36,7 +36,7 @@ This affects all Screenlet Interactors.
 #### How should I update my code?
 
 You must rewrite your Interactors. See the tutorial 
-[Creating Android Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlets-Interactor-class) 
+[Creating Android Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-screenlets) 
 for the most recent instructions on creating an Interactor. 
 
 #### Why was this change made?
