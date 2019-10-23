@@ -33,18 +33,13 @@ is important to the operation of @product@. In Liferay Home, @product@ creates
 certain files and folders that it needs to run. On WebSphere, Liferay Home is 
 typically `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
 
-And lastly, download @product@'s WAR file and dependencies from the customer 
-portal on 
-[liferay.com](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
-You'll need the following files: 
+Before proceeding, you must
+[download](https://customer.liferay.com/downloads) 
+these *Additional Files*: 
 
-- `liferay-dxp-digital-enterprise-[version].war`: @product@ WAR file
-
-- `liferay-dxp-digital-enterprise-dependencies-[version].zip`: @product@
-  dependencies
-
-- `liferay-dxp-digital-enterprise-osgi-[version].zip`: @product@ OSGi
-  dependencies
+- @product@ WAR file
+- Dependencies ZIP file
+- OSGi Dependencies ZIP file
 
 Without any further ado, get ready to install @product@ in WebSphere! 
 

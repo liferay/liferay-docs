@@ -25,16 +25,13 @@ You should also read the following articles to familiarize yourself with
 - [Installing @product@](/docs/7-0/deploy/-/knowledge_base/d/installing-product)
 - [Installing @product@ Manually](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-manually)
 
-And lastly, download @product@'s WAR file and dependencies from the [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
-You'll need the following files:
+Before proceeding, you must
+[download](https://customer.liferay.com/downloads) 
+these *Additional Files*: 
 
-- `liferay-dxp-digital-enterprise-[version].war`: @product@ WAR file
-
-- `liferay-dxp-digital-enterprise-dependencies-[version].zip`: @product@ 
-  dependencies
-
-- `liferay-dxp-digital-enterprise-osgi-[version].zip`: @product@ OSGi 
-  dependencies
+- @product@ WAR file
+- Dependencies ZIP file
+- OSGi Dependencies ZIP file
 
 Without any further ado, get ready to install @product@ in WebLogic! 
 
