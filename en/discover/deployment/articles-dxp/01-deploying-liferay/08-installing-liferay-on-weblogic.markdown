@@ -24,21 +24,17 @@ You should also read the following articles to familiarize yourself with
 - [Preparing for Install](/docs/7-1/deploy/-/knowledge_base/d/preparing-for-install)
 - [Installing @product@ Manually](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-manually)
 
-Finally, download @product@'s WAR file and dependencies from the 
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1).
-You'll need these files:
+Before proceeding, you must
+[download](https://customer.liferay.com/downloads) 
+these *Additional Files*: 
 
-- `liferay-dxp-digital-enterprise-[version].war`: @product@ WAR file
-
-- `liferay-dxp-digital-enterprise-dependencies-[version].zip`: @product@ 
-  dependencies
-
-- `liferay-dxp-digital-enterprise-osgi-[version].zip`: @product@ OSGi 
-  dependencies
+- @product@ WAR file
+- Dependencies ZIP file
+- OSGi Dependencies ZIP file
 
 **Checkpoint**
 
-The following jars should be present within the `liferay-dxp-digital-enterprise-dependencies-[version].zip`:
+The following jars should be present within the Dependencies ZIP file:
 
 1. `com.liferay.petra.concurrent.jar`
 2. `com.liferay.petra.executor.jar`
@@ -54,7 +50,6 @@ The following jars should be present within the `liferay-dxp-digital-enterprise-
 12. `hsql.jar`
 13. `portal-kernel.jar`
 14. `portlet.jar`
-
 
 The following folders should be present within the `/liferay/osgi` folder: 
 
