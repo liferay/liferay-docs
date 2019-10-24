@@ -10,9 +10,10 @@ You must create the resources to import with your theme. You can create
 resources from scratch and/or bring in resources that you've already created. 
 You can leverage your HTML (basic web content), JSON (structures), or VM or FTL 
 (templates) files with the Resource Importer. All web content articles require 
-a structure and template. Note that some articles may share the same structure 
-and perhaps even the same template---this is the case for all basic web content 
-articles. Follow these steps to prepare your web content articles:
+a structure and optionally a template. Note that some articles may share the 
+same structure and perhaps even the same template---this is the case for all 
+basic web content articles. Follow these steps to prepare your web content 
+articles:
 
 1.  Select *Edit* from the article's options menu, click the *Options* icon 
     at the top right of the page and select *View Source*. Copy the article's 
@@ -100,9 +101,9 @@ articles. Follow these steps to prepare your web content articles:
     }
     ```
 
-3.  Download the structure's matching template. Open the Actions menu for the 
-    structure and select *Manage Templates* to view the templates that use it. 
-    Create a folder for the template under 
+3.  Download the structure's matching template if it has one. Open the Actions 
+    menu for the structure and select *Manage Templates* to view the templates 
+    that use it. Create a folder for the template under 
     `resources-importer/journal/templates/` and copy and paste its contents into 
     a new FTL file. The template defines how the data should be displayed. If 
     you're saving a basic web content article, you can copy the FreeMarker 

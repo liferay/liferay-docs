@@ -1,0 +1,47 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+@import '../colors';
+
+body.eclipse {
+  
+  a.btn-orange {
+    background-color: $lunar-resort-eclipse-yellow;
+  }
+
+  header {
+    background-color: $lunar-resort-eclipse-red;
+
+    .user-avatar-link .lexicon-icon {
+      color: $lunar-resort-eclipse-red;
+    }
+    
+    li.nav-item {
+      
+      ul.child-menu {
+        background-color: $lunar-resort-eclipse-red;
+      }
+      
+      &:hover ul.child-menu {
+        background-color: $lunar-resort-eclipse-red;
+      }
+      
+      &.selected {
+        & a.nav-link {
+          color: $lunar-resort-eclipse-red;
+          &:hover {
+            color: $lunar-resort-eclipse-red;
+          }
+        }
+      }
+    }
+  }
+
+  #footer {
+    background-color: $lunar-resort-eclipse-red;
+  }
+
+}

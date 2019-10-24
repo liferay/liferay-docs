@@ -22,7 +22,7 @@ Tools (middle portion), and User (right portion).
 | included in this tag, so specifying the above snippet embeds all three menus
 | into your theme. Embedding the User Personal Menu is slightly different. Visit
 | the
-| [Providing the User Personal Menu](/docs/7-2/customization/-/knowledge_base/c/providing-the-user-personal-menu)
+| [Customizing the User Personal Bar and Menu](/docs/7-2/customization/-/knowledge_base/c/customizing-the-user-personal-bar-and-menu)
 | article for more information.
 
 You can reference a sample Control Menu Entry by visiting the

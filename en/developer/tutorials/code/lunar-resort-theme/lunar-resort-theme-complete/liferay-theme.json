@@ -1,0 +1,11 @@
+{
+  "LiferayTheme": {
+    "deploymentStrategy": "LocalAppServer",
+    "appServerPath": "C:\\Users\\liferay\\opt\\Liferay\\bundles\\liferay-ce-portal-tomcat-7.2.0-ga1-20190531153709761\\liferay-ce-portal-7.2.0-ga1\\tomcat-9.0.17",
+    "deployPath": "C:\\Users\\liferay\\opt\\Liferay\\bundles\\liferay-ce-portal-tomcat-7.2.0-ga1-20190531153709761\\liferay-ce-portal-7.2.0-ga1\\deploy",
+    "url": "http://localhost:8080",
+    "appServerPathPlugin": "C:\\Users\\liferay\\opt\\Liferay\\bundles\\liferay-ce-portal-tomcat-7.2.0-ga1-20190531153709761\\liferay-ce-portal-7.2.0-ga1\\tomcat-9.0.17\\webapps\\lunar-resort-theme7-2-new-theme",
+    "deployed": true,
+    "pluginName": "lunar-resort-theme7-2-new-theme"
+  }
+}

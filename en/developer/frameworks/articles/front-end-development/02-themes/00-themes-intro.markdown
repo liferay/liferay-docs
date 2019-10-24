@@ -20,12 +20,12 @@ You'll learn these things:
 
 Themes use the standard components (CSS, JS, and HTML) along with FreeMarker
 templates for rendering. There are several 
-[default FreeMarker templates](/docs/7-2/frameworks/-/knowledge_base/f/theme-components#theme-templates)
+[default FreeMarker templates](/docs/7-2/customization/-/knowledge_base/c/theme-components#theme-templates)
 that each handle a key piece of functionality for the page. There are also 
-[theme template utilities](/docs/7-2/frameworks/-/knowledge_base/f/theme-components#theme-template-utilities)
+[theme template utilities](/docs/7-2/customization/-/knowledge_base/c/theme-components#theme-template-utilities)
 that let you use portlets, taglibs, theme objects, and more in your theme
 templates. 
-[CSS extensions and patterns](/docs/7-2/frameworks/-/knowledge_base/f/theme-components#css-frameworks-and-extensions)
+[CSS extensions and patterns](/docs/7-2/customization/-/knowledge_base/c/theme-components#css-frameworks-and-extensions)
 come out-of-the-box, and support SASS, and multiple JavaScript frameworks.
 Several mechanisms are available for customizing, developing, and extending
 themes. 
@@ -110,7 +110,7 @@ helpful Gulp tasks to streamline the process:
   for more information.
 
 See 
-[Theme Components](/docs/7-2/frameworks/-/knowledge_base/f/theme-components) 
+[Theme Components](/docs/7-2/customization/-/knowledge_base/c/theme-components) 
 and 
-[Understanding the Page Layout](/docs/7-2/frameworks/-/knowledge_base/f/understanding-the-page-layout) 
+[Understanding the Page Layout](/docs/7-2/customization/-/knowledge_base/c/understanding-the-page-layout) 
 to get a top-level overview of how themes work. 

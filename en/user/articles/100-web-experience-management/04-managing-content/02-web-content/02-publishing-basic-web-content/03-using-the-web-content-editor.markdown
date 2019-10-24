@@ -98,8 +98,8 @@ your web content.
 
 **Basic Information:** Provide a summary for the web content article.
 
-**Default Template:** Customize the web content article's template. To learn
-more about web content templates, see
+**Default Template:** Customize the web content article's template if it has 
+one. To learn more about web content templates, see 
 [Designing Uniform Content](/docs/7-2/user/-/knowledge_base/u/designing-uniform-content).
 
 **Display Page Template:** Select a display page template to enhance the styling
