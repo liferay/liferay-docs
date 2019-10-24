@@ -144,6 +144,26 @@ of a `*LocalServiceImpl` class, `*ServiceImpl` class, or `*Impl` class, you
 should run Service Builder again to regenerate the affected interfaces and the
 service JAR.
 
+| **Note:** When `spring` is the dependency injector (see *Dependency
+| Injector* in
+| [Defining Global Service Information](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information)),
+| the `-LocalServiceBaseImpl` classes Service Builder generates include
+| `-LocalService` and `-Persistence` member fields of all the `service.xml`'s 
+| entities. `-LocalServiceImpl` classes inherit these fields and are Spring 
+| beans. The Spring beans can reference each other. For example, Spring bean A 
+| can have a Spring bean B field and vice versa. Liferay's `spring` dependency
+| injector accommodates Spring bean circular references. The `ds` dependency
+| injector does not accommodate circular references. 
+|
+| When using `ds` as the dependency injector, `-LocalServiceImpl` classes are 
+| OSGi Declarative Services. Such services start only after all the other
+| services they reference have started. If declarative service A has a
+| declarative service B member field and vice versa, neither service can start.
+| For this reason, the `-LocalServiceBaseImpl` classes Service Builder generates
+| don't include `-LocalService` member fields of the `service.xml`'s other
+| entities. When using the `ds` dependency injector, you must make sure member
+| fields you add to service classes don't create circular dependencies. 
+
 Congratulations! You've generated your application's initial model, persistence,
 and service layers and you understand the generated code. 
 
