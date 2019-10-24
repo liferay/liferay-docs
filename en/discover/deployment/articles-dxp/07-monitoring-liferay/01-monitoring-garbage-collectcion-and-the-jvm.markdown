@@ -58,5 +58,16 @@ Specify the path to use:
 
     -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/heap/dump/path/
 
+Garbage collector log files can grow huge. Arguments like the ones below, rotate
+the logging to a new file upon the current log file reaching a maximum size: 
+
+```bash
+-XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 
+-XX:GCLogFileSize=50M
+```
+
+These arguments rotate the logs to as many as `10` log files, each with a `50M`
+size limit.
+
 Now you can monitor garbage collection in the JVM and tune it for top
 performance. 
