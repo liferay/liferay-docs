@@ -48,7 +48,7 @@ create the ADT.
 
 4. Click on *Configuration* &rarr; *Application Display Template*.
 
-5. Click the `+` button and select *Documents and Media Tempalte* to add yours 
+5. Click the `+` button and select *Documents and Media Template* to add yours 
     to the list.
 
 6. Name the template *Frontpage Carousel*.
