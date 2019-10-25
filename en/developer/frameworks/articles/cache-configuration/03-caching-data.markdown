@@ -40,7 +40,7 @@ and some Ehcache features require using `Serializable` values.
         typically requires only cache keys to be
         [`Serializable`](https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html). 
         Note that some Ehache features, such as `overflowToDisk`, require
-        `Serializable` values too.  
+        `Serializable` values too. 
 
 ## Step 2: Implement a Cache Key 
 
@@ -135,7 +135,7 @@ Note a cache key's characteristics:
         be incremented when a new version of the class is incompatible with
         previous versions. 
 
-Your cache key class is ready for caching data values.  
+Your cache key class is ready for caching data values. 
 
 ## Step 3: Implement Cache Logic
 
@@ -144,9 +144,9 @@ handle getting existing data from cache and putting new/updated data into the
 cache. @product@'s caching classes are easy to inject into a 
 [Declarative Services (DS) Component](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services),
 but you can access them using
-[ServiceTracker](/docs/7-2/frameworks/-/knowledge_base/f/using-a-service-tracker)s
+[`ServiceTracker`](/docs/7-2/frameworks/-/knowledge_base/f/using-a-service-tracker)s
 too. These steps use fictitious key and value classes: `SomeKey` and `SomeValue`. 
-    
+
 1.  Name your cache. Cache names are arbitrary, but they must be unique in the 
     cache pool, and typically identify the data type being cached. 
 
@@ -162,7 +162,7 @@ protected static final String CACHE_NAME = SomeValue.class.getName();
     component, apply the
     [`@Reference`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
     annotation to a pool field (see below). Otherwise, use a
-    [ServiceTracker](/docs/7-2/frameworks/-/knowledge_base/f/using-a-service-tracker)
+    [`ServiceTracker`](/docs/7-2/frameworks/-/knowledge_base/f/using-a-service-tracker)
     to access the pool. 
 
 ```java
