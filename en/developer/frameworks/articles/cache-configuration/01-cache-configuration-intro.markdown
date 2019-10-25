@@ -16,8 +16,8 @@ Liferay's cache configuration framework uses
 It's an independent framework used by @product@'s data access and template
 engine components. It manages two pools: 
 
-**Multi-VM:** Cache is replicated among cluster nodes. EntityCache and 
-FinderCache (described next) are in this pool because they must synchronize
+**Multi-VM:** Cache is replicated among cluster nodes. `EntityCache` and 
+`FinderCache` (described next) are in this pool because they must synchronize
 with data on all nodes.
 
 **Single-VM:** Cache is managed uniquely per VM and isn't replicated among
@@ -45,11 +45,11 @@ generates their caching code in the
 [service persistence layer](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder).
 The code operates on these cache types:
 
-**EntityCache:** Holds service entities by primary keys. The caching code maps 
+**`EntityCache`:** Holds service entities by primary keys. The caching code maps 
 entity primary keys to implementation objects. An entity's
-`*PersistenceImpl.fetchByPrimaryKey` method uses EntityCache.
+`*PersistenceImpl.fetchByPrimaryKey` method uses `EntityCache`.
 
-**FinderCache:** Holds parameterized service entity search results. The caching 
+**`FinderCache`:** Holds parameterized service entity search results. The caching 
 code associates
 [service entity finder](/docs/7-2/appdev/-/knowledge_base/a/defining-service-entity-finder-methods)
 query parameter values with matching entity results. There's code for caching
@@ -60,10 +60,10 @@ finder parameters. An entity's `fetchByValue`, `findByValue`, `countByValue`,
 ## Cache Configuration
 
 @product@ designates separate cache configurations for multi-VM and single-VM
-environments. Default EntityCache and FinderCache are specified
+environments. Default `EntityCache` and `FinderCache` are specified
 programmatically, while Liferay's global cache configuration and custom cache
 configurations are specified via files. All configurations adhere to the
-[ehcache.xsd](http://www.ehcache.org/ehcache.xsd).
+[Ehcache XSD](http://www.ehcache.org/ehcache.xsd).
 
 Liferay's global cache configuration is processed first on startup. Cache
 configurations in modules and WARs are processed as they're deployed after the
@@ -78,7 +78,7 @@ global cache configuration. The LPKG file's
 `com.liferay.portal.cache.ehcache.impl-[version].jar` holds the configuration
 files:
 
--   `liferay-multi-vm.xml`: Maps to the multi-VM pool.  
+-   `liferay-multi-vm.xml`: Maps to the multi-VM pool.
 -   `liferay-single-vm.xml`: Maps to the single-VM pool.
 
 ### Module Cache Configuration
@@ -159,15 +159,15 @@ configuration with a new name, a new cache is added.
 
 Here's what happens behind the scenes: Liferay's cache manager checks the
 configurations. If a cache with the name already exists, the cache manager
-removes it from Ehcache's cache registry, and registers a new Ehcache into
+removes it from Ehcache's cache registry and registers a new Ehcache into
 Ehcache's cache registry. If the name is new, the Liferay cache manager just
 registers a new Ehcache.
 
-Cache names are arbitrary except for EntityCache and FinderCache.  
+Cache names are arbitrary except for `EntityCache` and `FinderCache`. 
 
 ### EntityCache Names 
 
-EntityCache uses this naming convention:
+`EntityCache` uses this naming convention:
 
 `PREFIX + ENTITY_IMPL_CLASS_NAME`
 
@@ -187,7 +187,7 @@ com.liferay.portal.kernel.dao.orm.EntityCache.com.liferay.portal.model.impl.User
 
 ### FinderCache Names 
 
-FindeCache uses this naming convention:
+`FinderCache` uses this naming convention:
 
 `PREFIX + ENTITY_IMPL_CLASS_NAME + [".LIST1"|".LIST2"]`
 
@@ -197,7 +197,7 @@ where the `PREFIX` is always this:
 com.liferay.portal.kernel.dao.orm.FinderCache.
 ```
 
-Here are the FinderCache types and their name patterns.
+Here are the `FinderCache` types and their name patterns.
 
 | Type | Pattern | Example |
 | ---- | ------- | ------- |
