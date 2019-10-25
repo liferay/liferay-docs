@@ -194,7 +194,7 @@ you're running Windows, drop the `.sh` from each command that has it.
 
 1.  Navigate to the `patching-tool` directory on the command line. It's 
     typically located in the 
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
     folder. Liferay Home is usually the parent folder of the application 
     server's folder. 
 
@@ -339,7 +339,7 @@ Once you've addressed the above pre-configuration steps, you're ready to install
 the LCS client app. Follow these steps to install the app:
 
 1.  In your 
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
     folder (usually the parent folder of the application server's folder), 
     delete this file: 
 

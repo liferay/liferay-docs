@@ -73,7 +73,7 @@ attempting to reconnect, there will be no activity in the logs. In this case,
 you can force reconnection by redeploying the app. Follow these steps to do so: 
 
 1.  In your server's 
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
     folder (usually the parent folder of the application server's folder), 
     remove this file: 
 
@@ -184,7 +184,7 @@ The following table lists causes and solutions for invalid tokens.
 If you contact Liferay Support, you're asked to increase your server's log 
 levels and then provide your log files. You can find these log files in 
 `[Liferay Home]/logs` 
-([Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+([Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
 is usually the parent folder of the application server's folder). There are 2 
 types of log files in this folder: 
 
@@ -239,7 +239,7 @@ Follow these steps to increase the log levels via Log4j:
     your server: it's in `[Liferay Home]/osgi/marketplace` (just make sure to 
     shut down your server before following the rest of the steps in this 
     section). Recall that the 
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
     folder is usually the parent folder of the application server's folder. 
 
 2.  Expand the LPKG file, then expand the `lcs-portlet-[version].war` file 
@@ -280,7 +280,7 @@ Follow these steps to increase the log levels via Log4j:
 5.  Make sure your server is shut down. 
 
 6.  In your installation's 
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
     folder, delete the existing LCS client app: 
 
         osgi/marketplace/Liferay Connected Services Client.lpkg

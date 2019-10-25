@@ -63,7 +63,7 @@ Follow these steps to register your @product@ server with LCS:
 
 6.  Place the token file in your server's `[Liferay Home]/data` folder. Note 
     that 
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
+    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
     is usually the parent folder of the application server's folder. If your 
     server is running, it should connect to LCS in about one minute. If your 
     server isn't running, it connects to LCS on startup. 
