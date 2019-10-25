@@ -46,32 +46,34 @@ Guestbook portlet. Examine your project's
 `docroot/WEB-INF/src/META-INF/portlet-model-hints.xml` file. Service Builder
 created the `portlet-model-hints.xml` file with the following contents:
 
-    <?xml version="1.0"?>
+```xml
+<?xml version="1.0"?>
 
-    <model-hints>
-        <model name="com.liferay.docs.portlet.eventlisting.model.Guestbook">
-            <field name="guestbookId" type="long" />
-            <field name="companyId" type="long" />
-            <field name="groupId" type="long" />
-            <field name="userId" type="long" />
-            <field name="createDate" type="Date" />
-            <field name="modifiedDate" type="Date" />
-            <field name="name" type="String" />
-            <field name="comment" type="String" />
-        </model>
-        <model name="com.liferay.docs.portlet.eventlisting.model.GuestbookEntry">
-            <field name="guestbookEntryId" type="long" />
-            <field name="companyId" type="long" />
-            <field name="groupId" type="long" />
-            <field name="userId" type="long" />
-            <field name="createDate" type="Date" />
-            <field name="modifiedDate" type="Date" />
-            <field name="name" type="String" />
-            <field name="guestbookId" type="String" />
-            <field name="date" type="Date" />
-            <field name="comment" type="String" />
-        </model>
-    </model-hints>
+<model-hints>
+    <model name="com.liferay.docs.portlet.eventlisting.model.Guestbook">
+        <field name="guestbookId" type="long" />
+        <field name="companyId" type="long" />
+        <field name="groupId" type="long" />
+        <field name="userId" type="long" />
+        <field name="createDate" type="Date" />
+        <field name="modifiedDate" type="Date" />
+        <field name="name" type="String" />
+        <field name="comment" type="String" />
+    </model>
+    <model name="com.liferay.docs.portlet.eventlisting.model.GuestbookEntry">
+        <field name="guestbookEntryId" type="long" />
+        <field name="companyId" type="long" />
+        <field name="groupId" type="long" />
+        <field name="userId" type="long" />
+        <field name="createDate" type="Date" />
+        <field name="modifiedDate" type="Date" />
+        <field name="name" type="String" />
+        <field name="guestbookId" type="String" />
+        <field name="date" type="Date" />
+        <field name="comment" type="String" />
+    </model>
+</model-hints>
+```
 
 <!-- The above model elements should include the uuid String field? - Jim -->
 
@@ -91,9 +93,11 @@ String field with 50 pixels, we could nest a `hint` element named
 `display-width` and give it a value of `50` for 50 pixels. Here's an example of
 using the `display-width` hint in a `field` element: 
 
-    <field name="name" type="String">
-        <hint name="display-width">50</hint>
-    </field>
+```xml
+<field name="name" type="String">
+    <hint name="display-width">50</hint>
+</field>
+```
 
 In order to see the effect of a hint on a field, you must run Service Builder
 again and redeploy your portlet project. Changing the `display-width` doesn't
@@ -107,10 +111,12 @@ maximum number of characters that can be saved for the field), use the
 wanted the `name` field to persist up to 100 characters, you'd add a
 `max-length` hint to that field: 
 
-    <field name="name" type="String">
-        <hint name="display-width">50</hint>
-        <hint name="max-length">100</hint>
-    </field>
+```xml
+<field name="name" type="String">
+    <hint name="display-width">50</hint>
+    <hint name="max-length">100</hint>
+</field>
+```
 
 Remember to run Service Builder and redeploy your portlet project after updating
 the `portlet-model-hints.xml` file. 
@@ -120,25 +126,24 @@ portlet model hints available for use.
 
 **Model Hint Values and Descriptions**
 
-Name                | Value Type | Description | Default
-:-----------------: | :--------: | :---------- | :-----:
-`auto-escape`       | boolean | sets whether text values should be escaped via `HtmlUtil.escape` | true
-`autoSize`          | boolean | displays the field in a for scrollable text area | false
-`day-nullable`      | boolean | allows the day to be null in a date field | false
-`default-value`     | String  | sets the default value of the form field rendered using the aui taglib | (empty String)
-`display-height`    | integer | sets the display height of the form field rendered using the aui taglib | 15
-`display-width`     | integer | sets the display width of the form field rendered using the aui taglib | 350
-`editor`            | boolean | sets whether to provide an editor for the input | false
-`max-length`        | integer | sets the maximum column size for SQL file generation | 75
-`month-nullable`    | boolean | allows the month to be null in a date field | false
-`secret`            | boolean | sets whether hide the characters input by the user | false
-`show-time`         | boolean | sets whether to show include time along with the date | true
-`upper-case`        | boolean | converts all characters to upper case | false
-`year-nullable`     | boolean | allows the year to be null in a date field | false
-`year-range-delta`  | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5
-`year-range-future` | boolean | sets whether to include future dates | true
-`year-range-past`   | boolean | sets whether to include past dates | true
----
+| Name                | Value Type | Description | Default |
+| :-----------------: | :--------: | :---------- | :-----: |
+| `auto-escape`       | boolean | sets whether text values should be escaped via `HtmlUtil.escape` | true |
+| `autoSize`          | boolean | displays the field in a for scrollable text area | false |
+| `day-nullable`      | boolean | allows the day to be null in a date field | false |
+| `default-value`     | String  | sets the default value of the form field rendered using the aui taglib | (empty String) |
+| `display-height`    | integer | sets the display height of the form field rendered using the aui taglib | 15 |
+| `display-width`     | integer | sets the display width of the form field rendered using the aui taglib | 350 |
+| `editor`            | boolean | sets whether to provide an editor for the input | false |
+| `max-length`        | integer | sets the maximum column size for SQL file generation | 75 |
+| `month-nullable`    | boolean | allows the month to be null in a date field | false |
+| `secret`            | boolean | sets whether hide the characters input by the user | false |
+| `show-time`         | boolean | sets whether to show include time along with the date | true |
+| `upper-case`        | boolean | converts all characters to upper case | false |
+| `year-nullable`     | boolean | allows the year to be null in a date field | false |
+| `year-range-delta`  | integer | specifies the number of years to display from today's date in a date field rendered with the aui taglib | 5 |
+| `year-range-future` | boolean | sets whether to include future dates | true |
+| `year-range-past`   | boolean | sets whether to include past dates | true |
 
 <!--
 I wanted to get a complete list of model hints used in portal. I found the
@@ -159,32 +164,36 @@ You can use the `default-hints` element to define a list of hints to be applied
 to every field of a model. For example, adding the following element inside a
 model element applies a `display-width` of 300 to each field: 
 
-    <default-hints>
-        <hint name="display-width">300</hint>
-    </default-hints>
+```xml
+<default-hints>
+    <hint name="display-width">300</hint>
+</default-hints>
+```
 
 You can define `hint-collection` elements inside the `model-hints` root-level
 element to define a list of hints to be applied together. A hint collection
 must have a name. For example, Liferay's `portal-model-hints.xml` defines the
 following hint collections:
 
-    <hint-collection name="CLOB">
-        <hint name="max-length">2000000</hint>
-    </hint-collection>
-    <hint-collection name="URL">
-        <hint name="max-length">4000</hint>
-    </hint-collection>
-    <hint-collection name="TEXTAREA">
-        <hint name="display-height">105</hint>
-        <hint name="display-width">500</hint>
-        <hint name="max-length">4000</hint>
-    </hint-collection>
-    <hint-collection name="SEARCHABLE-DATE">
-        <hint name="month-nullable">true</hint>
-        <hint name="day-nullable">true</hint>
-        <hint name="year-nullable">true</hint>
-        <hint name="show-time">false</hint>
-    </hint-collection>
+```xml
+<hint-collection name="CLOB">
+    <hint name="max-length">2000000</hint>
+</hint-collection>
+<hint-collection name="URL">
+    <hint name="max-length">4000</hint>
+</hint-collection>
+<hint-collection name="TEXTAREA">
+    <hint name="display-height">105</hint>
+    <hint name="display-width">500</hint>
+    <hint name="max-length">4000</hint>
+</hint-collection>
+<hint-collection name="SEARCHABLE-DATE">
+    <hint name="month-nullable">true</hint>
+    <hint name="day-nullable">true</hint>
+    <hint name="year-nullable">true</hint>
+    <hint name="show-time">false</hint>
+</hint-collection>
+```
 
 You can apply a hint collection to a model field by referencing the hint
 collection's name. For example, if you define a `SEARCHABLE-DATE` collection
@@ -192,9 +201,11 @@ like the one above in your `model-hints` element, you can apply it to your
 Event model's date field by using a `hint-collection` element that references
 the collection by its name:
 
-    <field name="date" type="Date">
-        <hint-collection name="SEARCHABLE-DATE" />
-    </field>
+```xml
+<field name="date" type="Date">
+    <hint-collection name="SEARCHABLE-DATE" />
+</field>
+```
 
 As always, remember to run Service Builder and redeploy your project after
 updating your `portlet-model-hints.xml` file.
@@ -208,18 +219,22 @@ hint collection. Then you could reference the hint collection in each entity.
 To define a hint collection, add a `hint-collection` element inside the
 `model-hints` root element in the `portlet-model-hints.xml` file. For example:
 
-	<hint-collection name="COMMENT-TEXTAREA">
-		<hint name="display-height">105</hint>
-		<hint name="display-width">500</hint>
-		<hint name="max-length">4000</hint>
-	</hint-collection>
+```xml
+<hint-collection name="COMMENT-TEXTAREA">
+	<hint name="display-height">105</hint>
+	<hint name="display-width">500</hint>
+	<hint name="max-length">4000</hint>
+</hint-collection>
+```
 
 To reference a hint collection for a specific field, add the `hint-collection`
 element inside of the `field` element of the field:
 
-	<field name="comment" type="String">
-		<hint-collection name="COMMENT-TEXTAREA" />
-	</field>
+```xml
+<field name="comment" type="String">
+	<hint-collection name="COMMENT-TEXTAREA" />
+</field>
+```
 
 <!-- The following example is not working on Liferay 6.2 GA1 - JR
 The last hint is one that makes sure the user has no option to select a year
