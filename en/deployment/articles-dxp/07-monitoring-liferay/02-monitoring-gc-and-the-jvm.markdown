@@ -1,3 +1,7 @@
+---
+header-id: monitoring-garbage-collection-and-the-jvm
+---
+
 # Monitoring Garbage Collection and the JVM
 
 [TOC levels=1-4]
