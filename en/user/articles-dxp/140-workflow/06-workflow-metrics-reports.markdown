@@ -66,7 +66,7 @@ A line chart shows you the completion rate for the workflow process. The default
 display shows the number of completed workflow instances per day, for the last
 30 days.
 
-![Figure 3: View the completion rate of items in a workflow process over time.](../../images/workflow-reports-completion-velocity.png)
+![Figure 3: View the completion rate of items in a workflow process over time.](../../images-dxp/workflow-reports-completion-velocity.png)
 
 The overall completion rate for the time period is displayed in the top right
 corner of the chart (as _Inst/timeUnit_), while the trend-line is presented in
