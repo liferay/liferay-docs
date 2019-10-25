@@ -147,13 +147,11 @@ different geographical locations.
     If you aren't sure which one to choose, use `TCPPing`. This is used in the
     rest of these steps; the others are covered below. 
 
-3.  Download the latest `com.liferay.portal.cluster.multiple-[version].jar` 
-    files from
-    [Liferay's Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.cluster.multiple).
-    In this JAR's `lib` folder is a file called `jgroups-[version].Final.jar`.
-    Open it and find `tcp.xml`. Extract this file to a location accessible to
-    @product@.
-    
+3.  Extract the `tcp.xml` file from
+    `$LIFERAY.HOME/osgi/marketplace/Liferay Foundation - Liferay Portal -
+    Impl.lpkg/com​.​liferay​.​portal​.​cluster​.​multiple​-​[version].​jar/lib​/​jgroups​-​[version].​Final​.​jar/tcp.xml`
+    to a location accessible to @product@.
+
 4.  Make a copy of the `tcp.xml` in the same location and rename both files, 
     designating one for the control channel and the other for the transport
     channel. For example,
