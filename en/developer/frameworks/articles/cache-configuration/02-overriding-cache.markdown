@@ -6,14 +6,14 @@ header-id: overriding-cache
 
 [TOC levels=1-4]
 
-@product@ preconfigures cache for service entities and service entity finder
-results and cache for several other classes. You can tune existing cache to meet
+@product@ pre-configures cache for service entities, service entity finder
+results, and cache for several other classes. You can tune existing cache to meet
 your needs. For example, it may help to write cache overflow elements to disk,
 increase the maximum number of cached elements, or make other adjustments. Using
 a module and only one XML file, you can override cache configurations
 dynamically. 
 
-| **Warning:** Modifying an EhCache element flushes its cache. 
+| **Warning:** Modifying an Ehcache element flushes its cache. 
 
 Here is how to override a cache configuration: 
 
@@ -29,7 +29,7 @@ Here is how to override a cache configuration:
 
     | **Note:** See
     | [Cache Names and Registration](/docs/7-2/frameworks/-/knowledge_base/f/cache-configuration#cache-names-and-registration)
-    | to identify EntityCache and the different kinds of FinderCache instances 
+    | to identify `EntityCache` and the different kinds of `FinderCache` instances 
     | associated with service entities. 
 
     Some cache configurations can also be viewed statically in their deployment
