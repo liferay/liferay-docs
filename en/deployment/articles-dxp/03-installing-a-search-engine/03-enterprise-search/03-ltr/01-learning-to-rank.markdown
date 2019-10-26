@@ -123,12 +123,96 @@ If you're using X-Pack security in your Elasticsearch cluster, there
 ### Step 2: Training and Uploading a Model
 
 Model training is hard, even if you're already used to walking in high heeled
-shoes. Liferay can't really help you with this training. If you're using
-Learning to Rank you'll be needing the intervention of data scientists, who will
+shoes. Liferay can't really help you with model training. You require the intervention of data scientists, who will
 likely recommend certain tools and have experience with certain models. Use what
-works for you.
+works for you. In doing so, you'll almost certainly be compiling Judgment lists
+and feature sets that can be used by the training tool you select to generate a
+model that will produce good search results. This can be a long journey, but
+once you get to the end of it, you'll want to upload the model to the Learning
+to Rank plugin.
 
-However, some assistance can be provided in learning about which features are
+#### Upload the Model to the LTR Plugin
+
+You'll upload the model using a `POST` request, but first you need to make sure
+you have a `_ltr` index and a feature set uploaded to the LTR plugin. Use Kibana
+to make these tasks easier.
+
+1.  If you don't already have a `_ltr` index, create one:
+
+    ```http
+    PUT _ltr
+    ```
+
+2.  Add a feature set to the `_ltr` index. In this example the set is called
+    `liferay`:
+
+    ```json
+    POST _ltr/_featureset/liferay
+    {
+      "featureset": {
+        "name": "liferay",
+        "features": [
+          {
+            "name": "title",
+            "params": [
+              "keywords"
+            ],
+            "template": {
+              "match": {
+                "title_en_US": "{{keywords}}"
+              }
+            }
+          },
+          {
+            "name": "content",
+            "params": [
+              "keywords"
+            ],
+            "template": {
+              "match": {
+                "content_en_US": "{{keywords}}"
+              }
+            }
+          },
+          {
+            "name": "asset tags",
+            "params": [
+              "keywords"
+            ],
+            "template": {
+              "match": {
+                "assetTagNames": "{{keywords}}"
+              }
+            }
+          }
+        ]
+      }
+    }
+    ```
+3.  Add the trained model to the feature set: 
+
+    ```json
+    POST _ltr/_featureset/liferay/_createmodel
+    {
+      "model": {
+        "name": "linearregression",
+        "model": {
+          "type": "model/ranklib",
+          "definition": """
+    ## Linear Regression
+    ## Lambda = 1.0E-10
+    0:-0.717621803830712 1:-0.717621803830712 2:-2.235841905601106 3:19.546816765721594
+    """
+        }
+      }
+    }
+    ```
+
+This is a very high level set of instructions, because because there's not much
+to do in @product@. To learn in more detail about what's required, see the
+[LTR plugin's documentation](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html).
+
+Some assistance can be provided in learning about which features are
 available for model training. One 
 
 Discovering fields to use as features in the model
@@ -143,6 +227,9 @@ Enable Learning to Rank from Control Panel &rarr; Configuration &rarr; System
 Settings &rarr; Search &rarr; Learning to Rank. There's a simple on/off
 configuration, and a text field where you must enter the name of the trained
 model to apply to search queries.
+
+The model in the previous step was named `linearregression`, so that's what
+you'd use in the configuration's 
 
 That's all the configuration required in @product@, unless you want to disable
 Learning to Rank for a particular Search page, reverting back to the default
