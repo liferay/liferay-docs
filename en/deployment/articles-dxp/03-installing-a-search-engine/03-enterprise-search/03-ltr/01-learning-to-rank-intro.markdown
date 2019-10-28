@@ -14,7 +14,12 @@ machine learning, to produce a smarter scoring function that's applied to search
 queries.
 
 @product-ver@, Service Pack 1/Fix Pack 2 and later, supports Learning to Rank
-through its support of Elasticsearch versions 6.x and 7.3.
+through its support of Elasticsearch versions 6.x and 7.3. It requires a
+[Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932) 
+subscription.  It's important to understand that the
+[Elasticsearch Learning to Rank plugin](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html)
+is not produced by Elasticsearch, and there is not a re-built plugin for all of
+@product@'s Elasticsearch versions. 
 
 | **Result Rankings and Learning to Rank:** In @product-ver@,
 | Service Pack 1/Fix Pack 2, new search tuning features were added: [Synonym
@@ -29,10 +34,10 @@ queries sent to Elasticsearch:
 - @product-ver@ Service Pack 1/Fix Pack 2 or later, with the appropriate
     Elasticsearch Connector version installed.
 
-- [Liferay Enterprise
-    Search](https://help.liferay.com/hc/en-us/articles/360014400932) is required
-    for Learning to Rank. Once you have a subscription, [download LES and
-    install](/docs/7-2/user/-/knowledge_base/u/installing-apps-manually#installing-apps-manually)
+- [Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932)
+    is required
+    for Learning to Rank. Once you have a subscription, 
+    [download LES and install](/docs/7-2/user/-/knowledge_base/u/installing-apps-manually#installing-apps-manually)
     to your @product@ server.
 
 - A remote Elasticsearch server, with your data indexed into it.
