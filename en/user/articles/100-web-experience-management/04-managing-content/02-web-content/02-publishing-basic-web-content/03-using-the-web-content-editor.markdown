@@ -92,9 +92,14 @@ about localizing your content later.
 ## Web Content Options
 
 The right-side menu of the New Web Content form provides options for customizing
-your web content.
+your web content. It's organized into two tabs: *Properties* (basic 
+configuration properties) and *Usages* (Where the web content is used on the 
+site). Note that the *Usages* tab is only visible if you're editing existing web 
+content that's been added to a page. 
 
-![Figure 3: New web content can be customized in various ways using the menu located below the editor.](../../../../../images/wcm-menu.png)
+![Figure 3: New web content can be customized in various ways using the menu located to the right of the editor.](../../../../../images/wcm-menu.png)
+
+The available properties are listed below:
 
 **Basic Information:** Provide a summary for the web content article.
 
@@ -113,6 +118,10 @@ appropriate features. You'll work through an example of creating a display page
 in the
 [Display Pages for Web Content](/docs/7-2/user/-/knowledge_base/u/display-pages-for-web-content)
 tutorial.
+
+If a display page template is configured, you can preview what it will look like 
+with the *Preview* (![Preview Template](../../../../../images/icon-preview.png)) 
+button located next to the selected display page template.
 
 **Featured Image:** Set the image that is used for the web content article's
 previews. You can set this image from a URL or your computer. If you don't want
@@ -149,8 +158,8 @@ selecting any Role from the drop-down or in the list. You can customize
 permissions in more detail by selecting the *More Options* link below the drop 
 down button. 
 
-While you can set permissions here, they are ignored unless you activate Web
-Content Article permissions in your System Configuration: 
+If your permissions are ignored, you must activate the Web Content Article 
+permissions in your System Configuration. This is enabled by default: 
 
 1. Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*.
 

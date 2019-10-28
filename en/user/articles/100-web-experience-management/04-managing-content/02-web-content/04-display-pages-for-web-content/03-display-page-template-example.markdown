@@ -81,7 +81,7 @@ Now create a short article to display with this display page template:
 3.  Name it *Thoughts About Space* and fill in some short content.
 
 4.  Open the *Display Page Template* section and under the dropdown, select
-    *Specific Display Page Template*. Then click *Select*.
+    *Specific Display Page Template*. Then click *Select*. 
 
 5.  Select the *Lunar Resort Display Page Template* and click *Done*.
 
@@ -93,6 +93,10 @@ When published, you can view the content at its Friendly URL (you can find the
 Friendly URL while editing a Web Content article under *Friendly URL*) or when
 you click on the content in an Asset Publisher with *Asset Link Behavior* set to
 *View in Context*.
+
+When editing the article, you can preview what the display page template will 
+look like with the *Preview* (![Preview Template](../../../../../images/icon-preview.png)) 
+button located next to the selected display page template.
 
 ![Figure 6: Selecting the Asset type and Subtype.](../../../../../images/display-page-in-context.png)
 
