@@ -1,10 +1,6 @@
 # Using Learning to Rank with Liferay Queries
 
-Thanks Brian! I can start to envision the steps a customer will take (though this is obviously a guess):
-1.  Download the LTR module and deploy to Liferay DXP 7.2 SP1/FP2 or later
-2.  Install the LTR plugin onto Elasticsearch.
-3.  Use Kibana to add the desired feature set to the \_ltr index.
-4.  Also using Kibana, configure the trained model to the \_ltr index.
+[TOC levels=1-4]
 
 Search engines like Elasticsearch have well-tuned relevance algorithms, good for
 general search purposes. They can't always match your users' expected "perfect"
@@ -20,13 +16,10 @@ queries.
 @product-ver@, Service Pack 1/Fix Pack 2 and later, supports Learning to Rank
 through its support of Elasticsearch versions 6.x and 7.3.
 
-<!-- Not sure about this yet
-| **Result Rankings Cannot be Used with Learning to Rank:** In @product-ver@,
+| **Result Rankings and Learning to Rank:** In @product-ver@,
 | Service Pack 1/Fix Pack 2, new search tuning features were added: [Synonym
 | Sets](/docs/7-2/user/-/knowledge_base/u/synonym-sets) and [Result
-| Rankings](/docs/7-2/user/-/knowledge_base/u/result-rankings). Result Rankings
-| cannot be used with Learning to Rank.
--->
+| Rankings](/docs/7-2/user/-/knowledge_base/u/result-rankings).
 
 ## Prerequisites 
 
@@ -230,6 +223,9 @@ model to apply to search queries.
 
 The model in the previous step was named `linearregression`, so that's what
 you'd use in the configuration's 
+
+![Figure x: Enable Learning to Rank in @product @ from the System Settings entry.](../../../../images-dxp/search-learning-to-rank.png)
+
 
 That's all the configuration required in @product@, unless you want to disable
 Learning to Rank for a particular Search page, reverting back to the default
