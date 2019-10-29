@@ -185,7 +185,7 @@ Windows&trade; clients.
 3.  Be sure to test the connection, save, and enable the configuration. 
 
 4.  Finally, configure the token for single sign-on at Configuration &rarr;
-    System Settings &rarr; Security &rarr; SSO &rarr; Token Based SSO. Make sure
+    System Settings &rarr; Foundation &rarr; Token Based SSO. Make sure
     the User Token Name matches *exactly* the token you configured in your web
     server. Click the *Enabled* and *Import from LDAP* boxes and click *Save*. 
 
