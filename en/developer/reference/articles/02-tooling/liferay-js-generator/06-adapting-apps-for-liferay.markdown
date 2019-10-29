@@ -27,8 +27,16 @@ to a true Liferay JS Toolkit project instead.
 | [migrate your project](/docs/7-2/appdev/-/knowledge_base/a/web-front-ends) to 
 | a true Liferay JS Toolkit instead. 
 
-Follow these steps to use the Liferay JS Generator to adapt your existing 
-project:
+To adapt your project, it must have the structure shown below:
+
+- **Angular CLI projects:** Must use `app-root` as the application's Dom 
+  selector. 
+
+- **creact-react-app projects:** Must use `ReactDom.render()` call in your entry 
+  point with a `document.getElementById()` parameter.
+
+When your project meets the requirements, you can follow these steps to use the 
+Liferay JS Generator to adapt it:
 
 1.  Open the command line and navigate to your project's folder.
 
