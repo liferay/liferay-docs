@@ -18,14 +18,14 @@ through its support of Elasticsearch versions 6.x and 7.3.x. It requires a
 subscription. It's important to understand that the
 [Elasticsearch Learning to Rank plugin](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html)
 is not produced by Elasticsearch, and there is not a re-built plugin for all of
-@product@'s Elasticsearch versions. 
+@product@'s supported Elasticsearch versions. 
 
-## Disabling LTR on a Search Page
+## Disabling Learning to Rank on a Search Page
 
 Learning to Rank does not work with the
 [Sort widget](/docs/7-2/user/-/knowledge_base/u/sorting-search-results-with-the-sort-widget).
 
-If you need to use LTR in your @product@ instance, but you'd like to disable it
+If you need to use Learning to Rank in your @product@ instance, but you'd like to disable it
 on a particular Search page (perhaps to use the Sort widget), here's how to do
 so:
 
@@ -41,7 +41,7 @@ so:
 
     `com.liferay.portal.search.learning.to.rank`
 
-Now the LTR re-scoring process is skipped for queries entered into the page's
+Now the Learning to Rank re-scoring process is skipped for queries entered into the page's
 Search Bar, and results are sortable in the Sort widget and returned using the
 default relevance algorithm.
 
@@ -50,20 +50,22 @@ default relevance algorithm.
 There are some prerequisites for using Learning to Rank to re-score Liferay
 queries sent to Elasticsearch:
 
-- @product-ver@ Service Pack 1/Fix Pack 2 or later, with the appropriate
-    Elasticsearch Connector version installed.
+- If using Elasticsearch 7, @product-ver@ Service Pack 1/Fix Pack 2 or later is
+    required, with the appropriate Elasticsearch Connector version installed.
 
-- [Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932)
-    is required
-    for Learning to Rank. Once you have a subscription, 
+- If using Elasticsearch 6, @product-ver@ Fix Pack 3 or later is
+    required, with the appropriate Elasticsearch Connector version installed.
+
+- A [Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932) 
+    (LES) is required for Learning to Rank. Once you have a subscription, 
     [download LES and install](/docs/7-2/user/-/knowledge_base/u/installing-apps-manually#installing-apps-manually)
     to your @product@ server.
 
 - A remote Elasticsearch server, with your data indexed into it.
 
-- The corresponding version of the [Elasticsearch LTR](https://github.com/o19s/elasticsearch-learning-to-rank) plugin installed into Elasticsearch.
+- The corresponding version of the [Elasticsearch Learning to Rank](https://github.com/o19s/elasticsearch-learning-to-rank) plugin installed into Elasticsearch.
 
-- The LTR plugin must have a model uploaded that's trained to re-rank results
+- The Learning to Rank plugin must have a model uploaded that's trained to re-rank results
     from Elasticsearch. The model includes these components:
 
     - The Learning to Rank algorithm you wish to use for creating a training
@@ -83,7 +85,10 @@ queries sent to Elasticsearch:
     relevant features, your model will not be "smart" enough to provide improved
     results.
 
-How does it all work?
+To understand more about the compatibility requirements for LES, see its
+[compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651-Liferay-Enterprise-Search-Compatibility-Matrix?flash_digest=645af3a9a43c3f505b5dbe67c6f1015e573382a9).
+
+How does Learning to Rank work?
 
 ### Technical Overview
 
@@ -119,15 +124,15 @@ This set of instructions starts by assuming your have a remote Elasticsearch 7.3
 cluster communicating with @product-ver@.
 
 Helpful hint: Use Suggestions to discover the most common queries (this can be
-one way to decide which queries to create LTR models for).
+one way to decide which queries to create Learning to Rank models for).
 
-### Step 1: Install the LTR Plugin on Elasticsearch
+### Step 1: Install the Learning to Rank Plugin on Elasticsearch
 
 See 
 [the Elasticsearch documentation](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/#installing)
-to learn about installing the LTR plugin.
+to learn about installing the Learning to Rank plugin.
 
-You'll be running a command like this one, depending on the plugin verison
+You'll be running a command like this one, depending on the plugin version
 you're installing:
 
 ```sh
@@ -140,18 +145,21 @@ If you're using X-Pack security in your Elasticsearch cluster, there
 ### Step 2: Training and Uploading a Model
 
 Model training is hard, even if you're already used to walking in high heeled
-shoes. Liferay can't really help you with model training. You require the intervention of data scientists, who will
-likely recommend certain tools and have experience with certain models. Use what
-works for you. In doing so, you'll almost certainly be compiling Judgment lists
-and feature sets that can be used by the training tool you select to generate a
-model that will produce good search results. This can be a long journey, but
-once you get to the end of it, you'll want to upload the model to the Learning
-to Rank plugin.
+shoes. Liferay can't really help you with model training. You require the
+intervention of data scientists, who will likely recommend certain tools and
+have experience with certain models. Use what works for you. In doing so, you'll
+almost certainly be compiling
+[Judgment lists](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/core-concepts.html#judgments-expression-of-the-ideal-ordering)
+and
+[feature sets](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/building-features.html)
+that can be used by the training tool you select to generate a model that will
+produce good search results. This can be a long journey, but once you get to the
+end of it, you'll want to upload the model to the Learning to Rank plugin.
 
-#### Upload the Model to the LTR Plugin
+#### Upload the Model to the Learning to Rank Plugin
 
 You'll upload the model using a `POST` request, but first you need to make sure
-you have a `_ltr` index and a feature set uploaded to the LTR plugin. Use Kibana
+you have a `_ltr` index and a feature set uploaded to the Learning to Rank plugin. Use Kibana
 to make these tasks easier.
 
 1.  If you don't already have a `_ltr` index, create one:
@@ -227,14 +235,7 @@ to make these tasks easier.
 
 This is a very high level set of instructions, because because there's not much
 to do in @product@. To learn in more detail about what's required, see the
-[LTR plugin's documentation](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html).
-
-Some assistance can be provided in learning about which features are
-available for model training. One 
-
-Discovering fields to use as features in the model
-
-Selecting pre-built feature sets compatible with the Liferay Index? 
+[Learning to Rank plugin's documentation](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html).
 
 Keep reworking those judgment lists!
 
@@ -250,8 +251,6 @@ you'd use in the configuration's
 
 ![Figure x: Enable Learning to Rank in @product @ from the System Settings entry.](../../../../images-dxp/search-learning-to-rank.png)
 
-
-That's all the configuration required in @product@, unless you want to disable
-Learning to Rank for a particular Search page, reverting back to the default
-relevance algorithm for ranking your search results. In that case, place a Low
-Level Search Options widget on the Search page, and 
+That's all the configuration required to get the Elasticsearch Learning to Rank
+plugin ingesting a trained model, a feature set, and search queries from
+@product@.
