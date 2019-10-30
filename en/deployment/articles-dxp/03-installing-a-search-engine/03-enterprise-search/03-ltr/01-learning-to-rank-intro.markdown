@@ -3,10 +3,9 @@
 [TOC levels=1-4]
 
 Search engines like Elasticsearch have well-tuned relevance algorithms, good for
-general search purposes. They can't always match your users' expected "perfect"
-search behavior, though. While you'll never be perfect (sorry to break it to you),
-you can get your search results more perfect by employing Machine Learning in
-your cause. 
+general search purposes. Sometimes, this "generally good" relevance scoring just
+isn't good enough. Attain more perfect search results by employing Machine
+Learning in your cause. 
 
 Learning to Rank is a technique for harnessing machine learning to improve
 search result rankings. It combines the expertise of data scientists with
@@ -14,17 +13,37 @@ machine learning, to produce a smarter scoring function that's applied to search
 queries.
 
 @product-ver@, Service Pack 1/Fix Pack 2 and later, supports Learning to Rank
-through its support of Elasticsearch versions 6.x and 7.3. It requires a
+through its support of Elasticsearch versions 6.x and 7.3.x. It requires a
 [Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932) 
-subscription.  It's important to understand that the
+subscription. It's important to understand that the
 [Elasticsearch Learning to Rank plugin](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html)
 is not produced by Elasticsearch, and there is not a re-built plugin for all of
 @product@'s Elasticsearch versions. 
 
-| **Result Rankings and Learning to Rank:** In @product-ver@,
-| Service Pack 1/Fix Pack 2, new search tuning features were added: [Synonym
-| Sets](/docs/7-2/user/-/knowledge_base/u/synonym-sets) and [Result
-| Rankings](/docs/7-2/user/-/knowledge_base/u/result-rankings).
+## Disabling LTR on a Search Page
+
+Learning to Rank does not work with the
+[Sort widget](/docs/7-2/user/-/knowledge_base/u/sorting-search-results-with-the-sort-widget).
+
+If you need to use LTR in your @product@ instance, but you'd like to disable it
+on a particular Search page (perhaps to use the Sort widget), here's how to do
+so:
+
+1.  Add a
+    [Low Level Search Options](/docs/7-2/user/-/knowledge_base/u/low-level-search-options-searching-additional-or-alternate-indexes)
+    widget to the Search page.
+
+2.  Open the widget's Configuration screen by clicking 
+
+    _Configure additional low level search options in this page._
+
+3.  In the _Contributors to Exclude_ field, enter
+
+    `com.liferay.portal.search.learning.to.rank`
+
+Now the LTR re-scoring process is skipped for queries entered into the page's
+Search Bar, and results are sortable in the Sort widget and returned using the
+default relevance algorithm.
 
 ## Prerequisites 
 
