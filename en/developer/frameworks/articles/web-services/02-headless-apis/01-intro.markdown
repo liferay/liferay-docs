@@ -16,6 +16,14 @@ developing your apps.
 The articles in this section show you how to navigate and consume @product@'s 
 headless REST APIs. But first, you'll learn the design approach for these APIs. 
 
+## OpenAPI
+
+[OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md) is a specification, originally known as Swagger, for machine-readable files for describing and consuming REST APIs. OpenAPI is an open source project of the Linux Foundation.
+
+OpenAPI has become the more widely adopted standard for defining REST APIs and is supported by the mayor players in the API ecosystem (Google, Amazon, Microsoft...). As a spec is language-agnostic and many libraries implement it or provide code generation to help validate, consume or produce APIs.
+
+@product@ leverages existing knowledge of OpenAPI to define, create and consume REST APIs.
+
 ## API Vocabulary
 
 When defining an API, the developer must decide how to expose the representation
