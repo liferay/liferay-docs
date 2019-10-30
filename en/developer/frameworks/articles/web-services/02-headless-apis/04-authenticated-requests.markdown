@@ -156,39 +156,54 @@ curl -H "Authorization: Bearer d5571ff781dc555415c478872f0755c773fa159" http://l
 ```
 
 The response contains the resources that the authenticated user has 
-permission to access, just like the response from Basic authentication. 
+permission to access, just like the response from Basic authentication.
 
+## Using Cookie Authentication or doing a request from the portal
+
+You can call the REST APIs using the existing session from outside the @product@ by passing the session identifier (the cookie reference) and the Liferay Auth Token (a Cross-Site Request Forgery, CSRF, token).
+
+To do a unauthenticated request from outside the @product@ you will have to provide, as a header, the `Cookie` identifier. In CURL we would define it as:
+
+     -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D'
+     
+We also need to provide the CSRF token, either passing it as a query param called `p_p_auth` or adding the URL to the whitelist of CSRF allowed URLs (in System Settings, API Authentication, Portal Sessions) or disabling CSRF checks alltogeher with the check.csrf.token property (not recommended).
+
+A sample CURL request with the cookie and CSRF token would be:
+
+```bash
+curl -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D' http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/?p_p_auth=O4dCU1Mj
+```
+ 
+To do a unauthenticated request from inside the @product@, from javascript code or a java method the session identifier is not needed and you will only have to provide the CRSF token or add the API to the whitelist of CSRF allowed URLs.
+ 
 ## Making Unauthenticated Requests
 
 Unauthenticated requests are disabled by default in @product@'s headless REST 
-APIs. You can, however, enable them manually by following these steps: 
+APIs. You can, however, enable them manually by defining an exception in the Service Access Policy to allow unauthenticated requests.
 
-1.  Create the config file 
-    `com.liferay.headless.delivery.internal.jaxrs.application.HeadlessDeliveryApplication-default.config` 
-    and add this code to it: 
-
-    ```properties
-    oauth2.scopechecker.type="none"
-    auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
-    auth.verifier.auth.verifier.OAuth2RestAuthVerifier.urls.includes="*"
-    auth.verifier.guest.allowed="true"
-    ```
-
-    Note that the last property (`auth.verifier.guest.allowed`) lets guests 
-    access public content via the APIs. To turn this off, set the property to 
-    `false`. 
-
-2.  Deploy the config file to `[Liferay Home]/osgi/configs`. Note that 
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
-    is typically the application server's parent folder. 
-
-3.  Test the APIs by making a request to an OpenAPI profile URL: 
+1. Go to Control Panel - Configuration - Service Access Policy
+2. Add a new Service Access Policy
+3. Enable Enabled and Default
+4. Use com.liferay.headless.delivery.internal.resource.v1_0.OpenAPIResourceImpl for the Service Class and getOpenAPI for the Method Name (or the method/class you want to expose)
+5.  Test the APIs by making a request to an OpenAPI profile URL: 
 
     ```bash
     curl "http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml"
     ```
 
 You should get the OpenAPI profile for the API you sent the request to. 
+
+## Cross-Origin Resource Sharing (CORS)
+
+Cross-Origin Resource Sharing (CORS) is a mechanism embedded in all modern browsers that block access to a URL from a different domain. For example, CORS blocks fetch/ajax requests from a local javascript application (being executed in localhost:4000) that tries to access a Tomcat server (running in localhost:8080).
+
+A web application using APIs can only request endpoints that have the same origin/domain unless some special CORS headers are set, that explicitly allow querying from different domains. 
+
+So, for development purposes, it's quite common to enable CORS headers to allow scripts to call APIs served by a different server. Allowing it can be done either by disabling the security check in the browser, using an extension with that goal, modifying tomcat or your application server to allow a specific host or enabling it in the portal. 
+
+![Figure 1: Configure Cross-Origin Resource Sharing in Liferay](../../../images/cors.png)
+
+You can enable CORS in the portal from System Settings, Security Tools, Portal Cross-Origin Resource Sharing and adding the URL you want to expose.
 
 ## Related Topics
 
