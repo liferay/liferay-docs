@@ -6,15 +6,17 @@ header-id: developing-a-portlet-using-portletmvc4spring
 
 [TOC levels=1-4]
 
-PortletMVC4Spring brings the Spring Framework to portlet development. It
-supports template languages supported by Spring Web MVC such as JSP, Thymeleaf,
-Velocity, and more. The PortletMVC4Spring archetypes include JSP and Thymeleaf
-templates and demonstrate the Model View Controller (MVC) pattern. Your first
-step in developing a PortletMVC4Spring Portlet is to create a PortletMVC4Spring
-Portlet project and deploy your PortletMVC4Spring Portlet to @product@. 
+PortletMVC4Spring compliments the Spring Web framework and Spring MVC by
+providing annotations for mapping portlet requests to controller classes and
+methods.  Here you'll develop and deploy a portlet that uses PortletMVC4Spring,
+Spring, and JSPX or Thymeleaf templates. 
 
-1.  Create a PortletMVC4Spring project. Here are Maven commands for generating 
-    projects that use JSP (JSPX) and
+![Figure 1: The archetype's sample portlet prints a greeting (e.g., *Hello, Joe Bloggs*) on submitting the personal information.](../../../images/portletmvc4Spring-developing.png)
+
+Follow these steps to create and deploy your portlet: 
+
+1.  Create a PortletMVC4Spring project. Here are Maven commands for 
+    generating projects that use JSP (JSPX) and
     [Thymeleaf](https://www.thymeleaf.org)
     view templates: 
 
@@ -40,7 +42,10 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
     -DartifactId=com.mycompany.my.form.thymeleaf.portlet
     ```
 
-    Here's the resulting project structure: 
+    The commands generate a project that includes model and controller classes,
+    view templates, a resource bundle, a stylesheet, and more. The Spring
+    contexts and configuration files set the essentials for PortletMVC4Spring
+    development. Here's the resulting project structure: 
 
     -   `[com.mycompany.my.form.jsp.portlet]`/ &rarr; Arbitrary project name
         -   `src/`
@@ -76,253 +81,252 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
                             -   `portlet.xml` &rarr; Portlet configuration
                             -   `web.xml` &rarr; Web application configuration
             -   `test/java/` &rarr; Test source files
+        -   `build.gradle` &rarr; Gradle build file 
+        -   `pom.xml` &rarr; Maven POM
 
-2.  Modify your dependencies as desired. PortletMVC4Spring portlets must 
-    include the PortletMVC4Spring framework and PortletMVC4Spring security
-    artifacts: 
+2.  In your project's Gradle build file or Maven POM, add any additional 
+    dependencies to the ones already specified for PortletMVC4Spring
+    development. 
 
-    **Maven:**
+    At this point you can develop your model, view, or controller, in any order.
+    We'll start with the model. 
 
-    ```xml
-    <dependencies>
-        <dependency>
-            <groupId>com.liferay.portletmvc4spring</groupId>
-            <artifactId>com.liferay.portletmvc4spring.framework</artifactId>
-            <version>5.1.0</version>	
-        </dependency>
-        <dependency>
-            <groupId>com.liferay.portletmvc4spring</groupId>
-            <artifactId>com.liferay.portletmvc4spring.security</artifactId>
-            <version>5.1.0</version>	
-        </dependency>
-    <dependencies>
-    ```
+3.  Create your model. In a package for models (e.g.,
+    `java/[my-package-path]/dto`), create your model class(es). The project's
+    sample model class is `User`. 
+    
+    ```java 
+    public class User implements Serializable {
 
-    **Gradle:**
+    	private static final long serialVersionUID = 1234273427623725552L;
 
-    ```groovy
-    dependencies {
-        compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.framework', version: '5.1.0'
-        compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.security', version: '5.1.0'
+    	@NotBlank
+    	private String firstName;
+
+    	@NotBlank
+    	private String lastName;
+
+    	public String getFirstName() {
+    		return firstName;
+    	}
+
+    	public void setFirstName(String firstName) {
+    		this.firstName = firstName;
+    	}
+
+    	public String getLastName() {
+    		return lastName;
+    	}
+
+    	public void setLastName(String lastName) {
+    		this.lastName = lastName;
+    	}
     }
     ```
 
-3.  Create model classes. (default folder `java/[your-package-path]/dto/`)
+4.  Create your portlet view using the template type you selected for your 
+    project. If you're using a template type other than JSP or Thymeleaf,
+    specify a view resolver for it in your
+    `spring-context/portlet-application-context.xml` portlet application
+    context. (See
+    [PortletMVC4Spring Configuration Files](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring-configuration-files)
+    for details). 
 
-4.  Create view templates. (default folder `webapp/WEB-INF/views/`) 
-
-5.  Add CSS and image files to the `css/` and `images/` folders under
-    `webapp/resources/`. 
-
-6.  Add localized messages using resource bundles. (default location
-    `resources/content/`) 
-
-7.  Add controller classes, following these basic steps. 
-
-    | **Note:**
-    | *PortletMVC4Spring Annotation-based Controller Development* (coming soon)
-    | will provide more controller development details. 
-
-    1.  Add the
-        [`@Controller`](https://liferay.github.io/portletmvc4spring/apidocs/com/liferay/portletmvc4spring/mvc/Controller.html)
-        annotation to your controller class. 
-
-    2.  Add an
-        `org.springframework.web.bind.annotation.RequestMapping`
-        annotation (e.g. `@RequestMapping("VIEW")`) for the
-        [portlet mode](/docs/7-2/frameworks/-/knowledge_base/f/portlets)
-        that the controller handles requests for. Here are the portlet modes:
-
-        - `VIEW`
-        - `EDIT`
-        - `HELP`
-
-        The `VIEW` mode is the most common mode for handling requests. 
-
-    3.  Add request handling methods and use annotations to map them to the 
-        portlet phase they handle requests for. Here are the
-        [portlet phase mapping annotations](/docs/7-2/frameworks/-/knowledge_base/f/portlets):
-
-        - `@RenderMapping`
-        - `@ActionMapping`
-        - `@EventMapping`
-        - `@ResourceMapping`
-
-        Optionally, use conditional parameters. For example, this annotation and
-        condition maps to a render phase request that has the param
-        `javax.portlet.action=success`. 
- 
-        ```java
-        @RenderMapping(params = "javax.portlet.action=success")
-        ``` 
-
-8.  Modify your application context
-    `webapp/WEB-INF/spring-context/portlet-application-context.xml` as desired.
-
-    | **Note:** The generated `webapp/WEB-INF/web.xml` (described later) 
-    | specifies the application context location. 
-
-    The application context beans and directives apply to all the web
-    application's portlets. The generated application context's
-    `springSecurityPortletConfigurer` bean facilitates using Spring Security: 
-
+    The sample `user.jspx` template renders a form for submitting a user's personal information. 
+    
     ```xml
-	<bean id="springSecurityPortletConfigurer" 
-        class="com.liferay.portletmvc4spring.security.SpringSecurityPortletConfigurer" />
+    <?xml version="1.0" encoding="UTF-8"?>
+    <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+    		  xmlns:portlet="http://xmlns.jcp.org/portlet_3_0"
+    		  xmlns:spring="http://www.springframework.org/tags"
+    		  xmlns:form="http://www.springframework.org/tags/form"
+    		  version="2.1">
+    	<jsp:directive.page contentType="text/html" pageEncoding="UTF-8" />
+    	<portlet:defineObjects/>
+    	<link href="${contextPath}/resources/css/main.css" rel="stylesheet" type="text/css"/>
+    	<portlet:actionURL var="mainFormActionURL"/>
+    	<form:form id="${namespace}mainForm" action="${mainFormActionURL}" class="user-form" method="post" modelAttribute="user">
+    		<p class="caption">
+    			<spring:message code="personal-information" />
+    		</p>
+    		<fieldset>
+    			<div class="form-group">
+    				<form:label for="${namespace}firstName" path="firstName">
+    					<spring:message code="first-name" />
+    				</form:label>
+    				<form:input id="${namespace}firstName" cssClass="form-control" path="firstName"/>
+    				<form:errors path="firstName" cssClass="portlet-msg-error"/>
+    			</div>
+    			<div class="form-group">
+    				<form:label for="${namespace}lastName" path="lastName">
+    					<spring:message code="last-name" />
+    				</form:label>
+    				<form:input id="${namespace}lastName" cssClass="form-control" path="lastName"/>
+    				<form:errors path="lastName" cssClass="portlet-msg-error"/>
+    			</div>
+    		</fieldset>
+    		<hr />
+    		<spring:message code="submit" var="submit" />
+    		<input class="btn btn-primary" value="${submit}" type="submit"/>
+    	</form:form>
+    </jsp:root>
+    ``` 
+
+    To invoke actions in your Controller, associate action URLs with your
+    templates. The sample template associates the action URL variable
+    `mainFormActionURL` with its form element. 
+    
+    ```xml 
+    <portlet:actionURL var="mainFormActionURL"/>
+    <form:form id="${namespace}mainForm" action="${mainFormActionURL}" class="user-form" method="post" modelAttribute="user">
+        ...
     ```
 
-9.  Modify your portlet context
-    `webapp/WEB-INF/spring-context/portlet/portlet1-context.xml` as desired.
+    A `<form:form/>` element can target application models using its
+    `modelAttribute` attribute. The sample template targets the application's
+    `user` model. 
 
-    | **Note:** Each `<portlet>` in the `WEB-INF/portlet.xml` (described later) 
-    | can specify its own context. The generated portlet's context is
-    | `webapp/WEB-INF/spring-context/portlet/[portlet-name]-context.xml`. 
-
-    For example, this portlet context enables MVC annotations for its components
-    whose base package starts with `portlet1`:
+5.  Style your portlet by adding CSS to a stylesheet (e.g.,
+    `webapp/resources/css/main.css`), and linking your template to it. 
 
     ```xml 
-    <?xml version="1.0"?>
-
-    <beans
-    	xmlns="http://www.springframework.org/schema/beans"
-    	xmlns:context="http://www.springframework.org/schema/context"
-    	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    	xmlns:mvc="http://www.springframework.org/schema/mvc"
-    	xsi:schemaLocation="
-    		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-    		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-    		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    	<context:component-scan base-package="portlet1**"/>
-    	<mvc:annotation-driven/>
-    </beans>
+    <link href="${contextPath}/resources/css/main.css" rel="stylesheet" type="text/css"/>
     ```
 
-10. Modify your `webapp/WEB-INF/web.xml` as desired. It specifies 
-    [`ViewRendererServlet`](https://liferay.github.io/portletmvc4spring/apidocs/com/liferay/portletmvc4spring/ViewRendererServlet.html)
-    (required). `ViewRendererServlet` converts portlet requests into servlet
-    requests and enables the view to be rendered using the Spring Web MVC
-    infrastructure and the infrastructure's renderers for JSP, Thymeleaf,
-    Velocity, and more. Here's the `ViewRendererServlet` servlet element:
+6.  Define your portlet's messages in a properties file (e.g.,
+    `src/main/resources/content/[portlet].properties`). The sample `user.jspx`
+    file references some of these properties: 
 
-    ```xml
-    <servlet>
-        <servlet-name>ViewRendererServlet</servlet-name>
-        <servlet-class>com.liferay.portletmvc4spring.ViewRendererServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ViewRendererServlet</servlet-name>
-        <url-pattern>/WEB-INF/servlet/view</url-pattern>
-    </servlet-mapping>
+    ```properties 
+    first-name=First Name
+    greetings=Greetings, {0} {1}!
+    javax.portlet.display-name=com.mycompany.my.form.jsp.portlet
+    javax.portlet.keywords=com.mycompany.my.form.jsp.portlet
+    javax.portlet.short-title=com.mycompany.my.form.jsp.portlet
+    javax.portlet.title=com.mycompany.my.form.jsp.portlet
+    last-name=Last Name
+    personal-information=Personal Information
+    submit=Submit
+    todays-date-is=Today''s date is {0}
     ```
 
-11. Modify your `webapp/WEB-INF/portlet.xml` as desired. The portlet descriptor
-    `webapp/WEB-INF/portlet.xml` describes the portlet to the portlet container and follows the
-    [Portlet 3.0 deployment descriptor schema](https://docs.liferay.com/portlet-api/3.0/portlet-app_3_0.xsd). 
+7.  Create a controller class to handle portlet requests. Here's an example:
+
+    ```java 
+    @Controller
+    @RequestMapping("VIEW")
+    public class MyController {
+        ...
+    }
+    ```
 
     The
-    [`DispatcherPortlet`](https://liferay.github.io/portletmvc4spring/apidocs/com/liferay/portletmvc4spring/DispatcherPortlet.html)
-    `<portlet-class>` integrates Spring contexts and sends requests to
-    the portlet's controllers and handlers. 
-
-    The generated `portlet.xml`'s init param (shown below) specifies a
-    portlet context file `/WEB-INF/spring-context/portlet/portlet1-context.xml`.
-    If no `contextConfigLocation` init param is specified, the default portlet
-    context location is `/WEB-INF/[portlet-name]-portlet.xml`. 
-
-    ```xml
-    <init-param>
-        <name>contextConfigLocation</name>
-        <value>/WEB-INF/spring-context/portlet/portlet1-context.xml</value>
-    </init-param>
-    ```
-
-    The `<filter>` and `filter-mapping>` elements specify processors to invoke
-    before or after handling requests or responses. The generated `<filter>` and
-    `filter-mapping>` elements, for example, specify
-    [`SpringSecurityPortletFilter`](https://liferay.github.io/portletmvc4spring/apidocs/index.html),
-    which prevents Cross-Site Request Forgery (CSRF). 
-
-    ```xml
-	<filter>
-		<filter-name>SpringSecurityPortletFilter</filter-name>
-		<filter-class>com.liferay.portletmvc4spring.security.SpringSecurityPortletFilter</filter-class>
-		<lifecycle>ACTION_PHASE</lifecycle>
-		<lifecycle>RENDER_PHASE</lifecycle>
-		<lifecycle>RESOURCE_PHASE</lifecycle>
-	</filter>
-	<filter-mapping>
-		<filter-name>SpringSecurityPortletFilter</filter-name>
-		<portlet-name>portlet1</portlet-name>
-	</filter-mapping>
-    ```
-
-12. Modify your `webapp/WEB-INF/liferay-portlet.xml` as desired. It specifies 
-    additional information @product@ uses to enhance your portlet: supported
-    security roles, portlet icon, CSS and JavaScript locations, and more. The
-    [liferay-portlet-app DTD](@platform-ref@/7.2-latest/definitions/liferay-portlet-app_7_2_0.dtd.html)
-    defines the `liferay-portlet.xml` elements. 
-
-13. Modify your `webapp/WEB-INF/liferay-display.xml` as desired. It configures 
-    characteristics for displaying your portlet. For example, this
-    `liferay-display.xml` specifies the Widget category in the Add Widget menu: 
-
-    ```xml
-    <?xml version="1.0"?>
-    <!DOCTYPE display PUBLIC "-//Liferay//DTD Display 7.2.0//EN" "http://www.liferay.com/dtd/liferay-display_7_2_0.dtd">
-
-    <display>
-    <category name="category.sample">
-        <portlet id="portlet1" />
-    </category>
-    </display>
-    ```
-
-14. Modify your `webapp/WEB-INF/liferay-plugin-package.properties` as desired. 
-    It describes the portlet application's packaging and version information
-    and specifies any required OSGi metadata. For example, the generated
-    `liferay-plugin-package.properties` file uses this OSGi metadata header to
-    [import required Java packages](/docs/7-2/customization/-/knowledge_base/c/importing-packages):
-
-    ```properties
-    Import-Package: com.liferay.portal.webserver,\
-    com.liferay.portal.kernel.servlet.filters.invoker
-    ```
-
-    On deploying the WAR file, the
-    [WAB Generator](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
-    adds the specified OSGi metadata to the resulting web application bundle
-    (WAB) that's deployed to Liferay's runtime framework.
+    [`@Controller`](TODO)
+    annotation applies Spring's MVC controller component stereotype. The Spring
+    MVC framework scans controller classes for Spring MVC controller
+    annotations. 
 
     The
-    [liferay-plugin-package reference document](@platform-ref@/7.2-latest/propertiesdoc/liferay-plugin-package_7_2_0.properties.html)
-    describes the `liferay-plugin-package.properties` file. 
+    [`@RequestMapping("VIEW")`](TODO)
+    annotation marks the class's public methods as request handler methods for
+    the portlet's
+    [VIEW mode](TODO). 
 
-15. [Build and deploy your project](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project). 
+8.  In your controller, apply `@RenderMapping` annotations to methods for 
+    handling portlet render requests. Import the annotation
+    `com.liferay.portletmvc4spring.bind.annotation.RenderMapping` and make sure
+    the handler methods return strings that match the names of the templates for
+    rendering each request. 
 
-@product@ logs the deployment. 
+    Here are two render request handler methods:
 
-```
-2019-04-29 14:26:16.602 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:261] Processing com.mycompany.my.form.jsp.portlet-1.0-SNAPSHOT.war
-...
-2019-04-29 14:27:30.605 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.2.0-b3/osgi/war][BundleStartStopLogger:39] STARTED com.mycompany.my.form.jsp.portlet_1.0.0 [2155]
-...
-2019-04-29 14:27:46.727 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.2.0-b3/osgi/war][PortletHotDeployListener:288] 1 portlet for com.mycompany.my.form.jsp.portlet is available for use
-```
+    ```java
+    @RenderMapping
+	public String prepareView() {
+		return "user";
+	}
 
-The portlet is now available in the @product@ UI. Find your portlet by selecting
-the *Add* icon
+	@RenderMapping(params = "javax.portlet.action=success")
+	public String showGreeting(ModelMap modelMap) {
+
+		DateFormat dateFormat = new SimpleDateFormat("EEEE, MMMM d, yyyy G");
+
+		Calendar todayCalendar = Calendar.getInstance();
+
+		modelMap.put("todaysDate", dateFormat.format(todayCalendar.getTime()));
+
+		return "greeting";
+	}
+    ```
+
+    The `@RenderMapping` annotation causes the `prepareView` method to be
+    invoked if no other handler methods match the request. This method renders
+    the `user` template (i.e., `user.jspx`). 
+
+    The `@RenderMapping(params = "javax.portlet.action=success")` annotation
+    causes the `showGreeting` method to be invoked if the render request has the
+    parameter setting `javax.portlet.action=success`. The method renders the
+    `greeting` template (i.e., `greeting.jspx`). 
+
+6.  In your controller, apply `@ActionMapping` annotations to your portlet 
+    action request handling methods. Import the annotation
+    `com.liferay.portletmvc4spring.bind.annotation.ActionMapping`. 
+
+    The sample controller's action handler method below uses the `@ActionMapping`, marking it as the default action handler if no other action handlers match the request. Since this portlet only has one action handler, the `submitApplicant` methods handles all of the portlet's action requests. 
+
+    ```java 
+    @ActionMapping
+    public void submitApplicant(@ModelAttribute("user") User user, BindingResult bindingResult, ModelMap modelMap,
+                                Locale locale, ActionResponse actionResponse, SessionStatus sessionStatus) {
+
+        localValidatorFactoryBean.validate(user, bindingResult);
+
+        if (!bindingResult.hasErrors()) {
+
+            if (logger.isDebugEnabled()) {
+                logger.debug("firstName=" + user.getFirstName());
+                logger.debug("lastName=" + user.getLastName());
+            }
+
+            MutableRenderParameters mutableRenderParameters = actionResponse.getRenderParameters();
+
+            mutableRenderParameters.setValue("javax.portlet.action", "success");
+
+            sessionStatus.setComplete();
+        }
+    }
+    ```
+
+    The [`@ModelAttribute`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/ModelAttribute.html)
+    annotation in method parameter `@ModelAttribute("user") User user`
+    associates the view's `user` model (comprising a first name and last name) to the `User` object passed to this
+    method. 
+
+    Note, the `submitApplicant` method sets the `javax.portlet.action` render
+    parameter to `success`---the previous render handler method `showGreeting`
+    matches this request parameter. 
+
+7.  Configure any additional resources and beans in the project's 
+    descriptors and Spring context files respectively. (See
+    [PortletMVC4Spring Configuration Files](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring-configuration-files)
+    for details).
+
+8.  Build the project WAR using Gradle or Maven. 
+
+9.  Deploy the WAR by copying it to the `[Liferay-Home]/deploy` folder. 
+
+@product@ logs the deployment and the portlet is now available in the @product@
+UI. Find your portlet by selecting the *Add* icon
 (![Add](../../../images/icon-add-app.png))
 and navigating to *Widgets* and the category you specified to the Liferay Bundle
 Generator (*Sample* is the default category). 
 
-![Figure 1: The archetype's sample portlet prints a greeting (e.g., *Hello, Joe Bloggs*) on submitting the personal information.](../../../images/portletmvc4Spring-developing.png)
-
-Congratulations on creating and deploying a PortletMVC4Spring Portlet. 
+Congratulations! You created and deployed a PortletMVC4Spring Portlet. 
 
 ## Related Topics 
 
-[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
+[PortletMVC4Spring Annotations](/docs/7-2/reference/-/knowledge_base/r/portletmvc4spring-annotations)
+
+[PortletMVC4Spring Configuration Files](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring-configuration-files)
 
 [Migrating to PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/migrating-to-portletmvc4spring)
