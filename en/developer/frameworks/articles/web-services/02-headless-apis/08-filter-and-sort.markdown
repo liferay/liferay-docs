@@ -15,7 +15,7 @@ It's often useful to filter large collections for the exact data that you need.
 Not all collections, however, allow filtering. The ones that support it contain 
 the optional parameter `filter` in their OpenAPI profile. To filter a collection 
 based on the value of one or more fields, use the `filter` parameter following a 
-subset of the oData standard. 
+subset of the [oData standard](https://docs.oasis-open.org/odata/odata/v4.01/csprd06/part1-protocol/odata-v4.01-csprd06-part1-protocol.html#sec_BuiltinFilterOperations). 
 
 Filtering mainly applies to fields indexed as keywords in @product@'s search. To 
 find content by terms contained in fields indexed as text, you should instead 
@@ -69,6 +69,10 @@ prepended with a navigation path that identifies a collection.
 
 The `any` operator applies a boolean expression to each collection element and
 evaluates to `true` if the expression is true for any element. 
+
+### Operator combinations and OData syntax
+
+You can check more syntax examples and other operator combinations in the [OData standard reference](https://docs.oasis-open.org/odata/odata/v4.01/csprd06/part1-protocol/odata-v4.01-csprd06-part1-protocol.html#sec_BuiltinFilterOperations).
 
 ### Escaping in Queries
 
