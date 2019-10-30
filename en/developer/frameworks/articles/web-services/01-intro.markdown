@@ -18,7 +18,7 @@ to let developers access those apps and features from external apps and devices
 by exposing their APIs. Additionally, Liferay's development platform makes it
 easy to extend them and create new ones. 
 
-There are two different approaches for clients to connect to @product@'s web 
+There are three different approaches for clients to connect to @product@'s web 
 APIs: 
 
 **Headless REST APIs:** You can consume RESTful web services independent of 
@@ -27,8 +27,12 @@ APIs:
 specification. This is the modern, preferred way to work with web services in 
 @product@. 
 
+**GraphQL:** All the power of doing multiple queries in a unique request following [GraphQL specification](https://graphql.github.io/graphql-spec/June2018/).
+
 **Plain Web/REST Services:** This is the old way to build and consume web 
 services in @product@, but is still supported. 
+
+You can also create your own Headless REST and GraphQL APIs through the **REST builder**.
 
 <!--Uncomment once articles are available
 For example, you can use 
