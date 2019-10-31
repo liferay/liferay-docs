@@ -1,6 +1,6 @@
 # Configuring Learning to Rank
 
-This set of instructions starts by assuming you have a remote
+Before beginning, you must have a remote
 [Elasticsearch 7.4](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-elasticsearch-7) 
 cluster communicating with @product-ver@.
 
@@ -23,7 +23,7 @@ you're installing:
 ```
 
 If using X-Pack security in your Elasticsearch cluster, there 
-[may be additional steps you need to take.](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/x-pack.html)
+[may be additional steps.](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/x-pack.html)
 
 ## Step 2: Training and Uploading a Model
 
@@ -34,8 +34,8 @@ almost certainly be compiling
 [Judgment lists](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/core-concepts.html#judgments-expression-of-the-ideal-ordering)
 and
 [feature sets](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/building-features.html)
-that can be used by the training tool you select to generate a model that will
-produce good search results. This can be a long journey, but once you get to the
+that can be used by the training tool you select to generate a model that 
+produces good search results. This can be a long journey, but once you get to the
 end of it, you'll want to upload the model to the Learning to Rank plugin.
 
 ### Upload the Model to the Learning to Rank Plugin
@@ -46,7 +46,7 @@ plugin. Use Kibana (or even better, the
 [Monitoring widget](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-monitoring)),
 to make these tasks easier.
 
-1.  If you don't already have a `_ltr` index, create one:
+1.  If you don't already have an `_ltr` index, create one:
 
     ```http
     PUT _ltr
@@ -129,13 +129,13 @@ Keep reworking those judgment lists!
 
 Enable Learning to Rank from Control Panel &rarr; Configuration &rarr; System
 Settings &rarr; Search &rarr; Learning to Rank. There's a simple on/off
-configuration, and a text field where you must enter the name of the trained
+configuration and a text field where you must enter the name of the trained
 model to apply to search queries.
 
 The model in the previous step was named `linearregression`, so that's what
-you'd use in the configuration's 
+you'd enter. 
 
-![Figure x: Enable Learning to Rank in @product @ from the System Settings entry.](../../../../images-dxp/search-learning-to-rank.png)
+![Figure x: Enable Learning to Rank in @product@ from the System Settings entry.](../../../../images-dxp/search-learning-to-rank.png)
 
 That's all the configuration required to get the Elasticsearch Learning to Rank
 plugin ingesting a trained model, a feature set, and search queries from
