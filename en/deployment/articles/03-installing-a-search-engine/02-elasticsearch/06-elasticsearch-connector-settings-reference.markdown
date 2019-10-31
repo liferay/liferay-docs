@@ -68,7 +68,7 @@ for more information).
 : Set a String value for the range of ports to use when building the value for
 discovery.zen.ping.unicast.hosts. Multiple Elasticsearch nodes on a range of
 ports can act as gossip routers at the same computer (see
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-discovery-zen.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-discovery-hosts-providers.html)
 for more information).
 
 `networkHost=`

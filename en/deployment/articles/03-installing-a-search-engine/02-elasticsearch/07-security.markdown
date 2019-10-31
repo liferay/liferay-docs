@@ -29,7 +29,7 @@ X-Pack users are important:
 - `elastic`
 
 Set the passwords for all X-Pack's 
-[built-in users](https://www.elastic.co/guide/en/x-pack/7.4/setting-up-authentication.html#built-in-users).
+[built-in users](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/built-in-users.html).
 The `setup-passwords` command is the simplest method to set the built-in users'
 first-use passwords for the first time. To update a password subsequently, use
 Kibana's UI or the 
