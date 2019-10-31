@@ -117,18 +117,24 @@ already be exported if Liferay intended for it to be available.
 
 ## Case 4: The Missing Class Belongs to a Java Runtime Package
 
-In this case, the class belongs to Java's `rt.jar` but the package isn't
-specified in the OSGi Framework's boot delegation list. `rt.jar`'s `java.*`
-packages are the only ones available on the classpath automatically; other
-packages must be specified in the boot delegation list to get on the classpath.
+`rt.jar` (the JRE library) has non-public packages. If your module imports one
+of them, configure @product@'s system bundle to export the package to the module
+framework. 
 
-Here's how to add packages to the boot delegation list:
+1.  Add the current
+    [`module.framework.system.packages.extra` property setting](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+    to a
+    [`portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties). 
+    Your server's current setting is in the @product@ web application's
+    `/WEB-INF/lib/portal-impl.jar/portal.properties` file. 
 
-1.  In a `portal-ext.properties` file, override
-    [portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Module%20Framework).
-    Preserve the property's current list. 
+2.  In your `portal-ext.properties` file, append the required Java runtime 
+    package to the end of the  `module.framework.system.packages.extra`
+    property's package list. 
 
-2.  Add the missing package to the list. 
+3.  Restart your server. 
+
+Your module should resolve and install. 
 
 ## Related Topics
 
