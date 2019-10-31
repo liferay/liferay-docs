@@ -6,25 +6,24 @@ header-id: portlet-filters
 
 [TOC levels=1-4]
 
-Portlet filters allow you to intercept requests and responses at the start of
-each type of
+Portlet filters intercept requests and responses at the start of the
 [portlet request processing phase](/docs/7-2/frameworks/-/knowledge_base/f/portlets). 
-Portlet filters are commonly used to do these things: 
+Portlet filters are commonly used for these things: 
 
 - Transform content
 - Add or modify request and response attributes
-- suspend a portlet phase to get user input
+- Suspend a portlet phase to get user input
 - Audit portlet activity
 
 The 
 [`javax.portlet.filter`](http://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/filter/package-frame.html)
-package defines a portlet filter interface for each phase. Here are the main
-steps for developing a portlet filter: 
+package defines a portlet filter interface for each phase. Here are the steps
+for developing a portlet filter: 
 
 1.  Implement the
     [portlet filter interface](http://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/filter/package-frame.html)
     for the phase it's intercepting. Here are common interface methods to
-    override. 
+    override: 
 
     `doFilter`: Here's where you take action. This method is invoked at the 
     start of the portlet request processing phase. The request and response
@@ -38,9 +37,8 @@ steps for developing a portlet filter:
 
 2.  Target the desired portlet(s). 
 
-3.  Prioritize the filter among other filters in the phase using one of these 
-    ways: 
-    
+3.  Choose how to prioritize the filter among other filters in the phase: 
+
     -   OSGi Declarative Service Component portlet filters use a service ranking
         property. High ranking filters execute before lower ones. 
     -   `<filter-mapping>` element order in a portlet application's `portlet.xml` 
@@ -49,8 +47,8 @@ steps for developing a portlet filter:
         `@PortletLifecycleFilter`. Low ordinal value filters execute before
         higher ones. 
 
-This article uses a sample portlet and filters to demonstrate applying multiple
-filters to a portlet's render phase. The filters are
+Below is demonstrated applying multiple filters to a portlet's render phase. The
+filters are
 [OSGi Declarative Service (DS) Components](/docs/7-2/frameworks/-/knowledge_base/f/declarative-services),
 but filters can also be applied to a portlet using a `portlet.xml` descriptor or
 a `@PortletLifecycleFilter` annotation. See the Portlet 3.0 Specification for
@@ -61,7 +59,7 @@ details. The sample code is available
 
 The sample portlet `MembersListPortlet` is a
 [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
-that lists people's names and email addresses when users click its *Load Users*
+that lists names and email addresses when users click its *Load Users*
 button. The information is based on `Person` objects that the portlet class
 passes to the View template via a request attribute called
 `MembersListPortlet.MEMBERLIST_ATTRIBUTE`. 
@@ -76,11 +74,13 @@ public void loadUsers(ActionRequest actionRequest, ActionResponse actionResponse
 Two render filters are applied to the portlet:
 
 1.  Render filter 1 hides parts of the user email addresses (e.g., for 
-    privacy) by modifying the request object.  
+    privacy) by modifying the request object.
 
 2.  Render filter 2 logs portlet render phase statistics. 
 
-Adding the `MemberList` portlet to a page and clicking the `Load Users` button renders each `Person`'s name and partially hidden email address, thanks to the filter `EncodingPersonEmailsRenderFilter`.
+Adding the `MemberList` portlet to a page and clicking the `Load Users` button
+renders each `Person`'s name and partially hidden email address, thanks to the
+filter `EncodingPersonEmailsRenderFilter`.
 
 ```
 Sievert Shayne
@@ -93,7 +93,7 @@ Vida.Jo...@...mple.com
 ...
 ```
 
-If you set the portlet's log level to `debug`, the it prints the render phase
+If you set the portlet's log level to `debug`, it prints the render phase
 statistics. 
 
 ```
@@ -161,14 +161,17 @@ public class EncodingPersonEmailsRenderFilter implements RenderFilter {
 The `@Component` annotation declares the filter to be an OSGi DS Component. Here
 are its elements and properties:
 
--   `immediate = true` sets the component ready to start upon being installed. 
--   `service = PortletFilter.class` defines the component to be a 
-    `PortletFilter` service. 
--   `javax.portlet.name = + MembersListPortlet.MEMBERSLIST_PORTLET_NAME` 
-    links the filter to the target portlet. Note, multiple portlets can be
-    listed. 
--   `service.ranking:Integer=1` sets the filter to execute after filters that 
-    are ranked higher than `1`. 
+`immediate = true` sets the component ready to start upon being installed. 
+
+`service = PortletFilter.class` defines the component to be a 
+`PortletFilter` service. 
+
+`javax.portlet.name = + MembersListPortlet.MEMBERSLIST_PORTLET_NAME` 
+links the filter to the target portlet. Note, multiple portlets can be
+listed. 
+
+`service.ranking:Integer=1` sets the filter to execute after filters that 
+are ranked higher than `1`. 
  
 `EncodingPersonEmailsRenderFilter` *implements* the
 [`RenderFilter`](http://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/filter/RenderFilter.html)
@@ -237,8 +240,8 @@ As with `EncodingPersonEmailsRenderFilter`, it's an OSGi DS Component that is a
 `MembersListPortlet`, and has a service ranking. Since its ranking is `100`, it
 is executed before render filter `EncodingPersonEmailsRenderFilter`. 
 
-`MembersListStatsRenderFilter`'s `doFilter()` method does these things to audit
-the render phase:
+`MembersListStatsRenderFilter`'s `doFilter()` method audits the render phase in
+these ways:
 
 1.  Notes the render phase start time. 
 
@@ -251,8 +254,7 @@ the render phase:
 
 5.  Logs the times rendered and average render time. 
 
-Now that you understand portlet filters, you can create your own filters to to
-intercept portlet processing phases. 
+Consider creating your own filters to intercept portlet processing phases. 
 
 ## Related Topics 
 
