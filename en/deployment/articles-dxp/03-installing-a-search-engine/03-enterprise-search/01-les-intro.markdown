@@ -44,6 +44,9 @@ Here's an overview of using the LES applications with @product@:
 2.  You'll receive a license for X-Pack monitoring. Install it on your
     Elasticsearch servers.
 
+    **Note:** If using Elasticsearch 6, you'll also need a LES subscription for
+    X-Pack security.
+
 3.  Download and install the Liferay connectors you purchased. Access the
     connectors in the
     [Help Center Downloads page](https://customer.liferay.com/en/downloads),

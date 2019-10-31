@@ -173,7 +173,7 @@ the Elasticsearch, Shield, and Marvel plugins.
     file with these contents:
 
     ```properties
-    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.spi","com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl"]
+    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.spi","com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
     ```
 
     If the X-Pack LPKG files are installed, you must blacklist these too.

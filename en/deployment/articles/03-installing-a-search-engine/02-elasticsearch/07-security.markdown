@@ -10,6 +10,11 @@ The very first thing you must do to secure Elasticsearch is enable X-Pack
 Security. After that you can begin configuring authentication and Transport
 Layer Security.
 
+| **Elasticsearch 6.x:** If you're using Elasticsearch 6, you'll need a Liferay
+| Enterprise Search (LES) subscription to use X-Pack. Starting with the Liferay
+| Connector to Elasticsearch 7 (available on Liferay Marketplace), X-Pack security
+| is included by default. X-Pack monitoring still requires LES.
+
 ## Enabling X-Pack Security
 
 To enable security, add this setting in `elasticsearch.yml`:
@@ -156,6 +161,36 @@ on each node via its `elasticsearch.yml`.
 
 After X-Pack is installed and TLS is enabled, configure the X-Pack Security
 adapter in @product@.
+
+### Example Elasticsearch Security Configuration
+
+For ease of copying and pasting, here is the complete Elasticsearch
+configuration (`elasticsearch.yml`) used in this guide (with the Elasticsearch 6
+example commented out):
+
+```yaml
+# For Elasticsearch 7
+cluster.name: LiferayElasticsearchCluster
+xpack.security.enabled: true
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.crt
+xpack.security.transport.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.key
+xpack.security.transport.ssl.certificate_authorities: ["/path/to/ca.crt"]
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
+xpack.security.http.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
+xpack.security.http.ssl.certificate_authorities: ["/path/to/ca.crt"]
+
+# For Elasticsearch 6.5/6.8
+# cluster.name: LiferayElasticsearchCluster
+# xpack.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
+# xpack.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
+# xpack.ssl.certificate_authorities: ["/path/to/ca.crt"]
+# xpack.security.transport.ssl.enabled: true
+# xpack.security.transport.ssl.verification_mode: certificate
+# xpack.security.http.ssl.enabled: true
+```
 
 For both Elasticsearch 6 and Elasticsearch 7, the Liferay Connector settings
 are the same.

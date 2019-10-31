@@ -1,12 +1,12 @@
 ---
-header-id: upgrading-to-elasticsearch-7-3
+header-id: upgrading-to-elasticsearch-7
 ---
 
-# Upgrading to Elasticsearch 7.3
+# Upgrading to Elasticsearch 7
 
 [TOC levels=1-4]
 
-Elasticsearch 7.3.x is supported for @product-ver@. If you're upgrading
+Elasticsearch 7.4.x is supported for @product-ver@. If you're upgrading
 @product@ and still running Elasticsearch 6.1, it's time to upgrade your
 Elasticsearch servers too. If you're setting up a new system and not already
 running a remote Elasticsearch 6.1.x server, follow the 
@@ -14,9 +14,9 @@ running a remote Elasticsearch 6.1.x server, follow the
 Elasticsearch 6 and the 
 [configuration guide](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector)
 to configure the Elasticsearch adapter. Here, you'll learn to upgrade an
-existing Elasticsearch 6.1.x server (or cluster) to Elasticsearch 7.3.x: 
+existing Elasticsearch 6 server (or cluster) to Elasticsearch 7: 
 
-1.  [Install and configure Elasticsearch 7.3.x](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch).
+1.  [Install and configure Elasticsearch 7](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch).
 
 2.  Back up the application specific indexes for Workflow Metrics and Result
     Rankings.
@@ -67,7 +67,7 @@ To blacklist Elasticsearch 6,
 2.  Give it these contents:
 
     ```properties
-    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","com.liferay.portal.search.elasticsearch6.spi"]
+    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","com.liferay.portal.search.elasticsearch6.spi","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
     ```
 
 ## Re-index
@@ -78,17 +78,17 @@ and click *Execute* for the *Reindex all search indexes* entry.
 
 You must also re-index the spell check indexes.
 
-## Reverting to Elasticsearch 6.1 
+## Reverting to Elasticsearch 6
 
 Stuff happens. If that stuff involves an unrecoverable failure during the
-upgrade to Elasticsearch 7.3, roll back to Elasticsearch 6.1 and regroup.
+upgrade to Elasticsearch 7, roll back to Elasticsearch 6 and regroup.
 
-Since your 6.1 and 7.3 are currently two separate installations, this procedure
+Since your Elasticsearch 6 and 7 are currently two separate installations, this procedure
 is straightforward:
 
 1.  Stop the Liferay Connector to Elasticsearch 6.
 
-2.  Stop Elasticsearch 7.3 and make sure that the Elasticsearch 6.1
+2.  Stop Elasticsearch 7 and make sure that the Elasticsearch 6
     `elasticsearch.yml` and the connector app are configured to use the same
     port (9200 by default).
 

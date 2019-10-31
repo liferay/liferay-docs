@@ -55,6 +55,12 @@ your server/connector configuration:
 - Learn how to [Secure Elasticsearch](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-security).
 - [Liferay Enterprise Search] Learn how to configure [Monitoring](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-monitoring).
 
+For complete information on compatibility, check the
+[@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?)
+and the
+[Liferay Enterprise Search compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651)
+if you have a subscription.
+
 ### Step One: Download a Supported Version of Elasticsearch
 
 If @product@ isn't running, start it. 
@@ -94,8 +100,9 @@ for definitive information on what's supported.
 
 | **Note:** Although the embedded server uses Elasticsearch 6.5, Elasticsearch
 | 6.8.x has been tested with @product@-ver GA1, and is fully supported. If you've
-| upgraded to @product-ver@ Service Pack 1/Fix Pack 2, up to Elasticsearch 7.3.x
-| is supported.
+| upgraded to @product-ver@ Service Pack 1/Fix Pack 2, up to Elasticsearch 7.4.x
+| is supported through the Liferay Connector to Elasticsearch 7, which can be
+| downloaded form Liferay Marketplace.
 
 Shut down the @product@ server. In a local, single-machine testing environment,
 if you continue without shutting down, the Elasticsearch server you're about to
@@ -159,6 +166,10 @@ cluster.name: LiferayElasticsearchCluster
 Of course, this isn't a very imaginative name; you may choose to name your
 cluster `finders_keepers` or something else you can remember more easily. Save
 the file. 
+
+| **Elasticsearch 6.x:** On Elasticsearch 6.x, you must also disable X-Pack
+| Security unless you have a Liferay Enterprise Search subscription. Add this to
+| `elasticsearch.yml`: `xpack.security.enabled: false`.
 
 Now you can start Elasticsearch. Run the executable for your operating system
 from the `[Elasticsearch Home]/bin` folder: 

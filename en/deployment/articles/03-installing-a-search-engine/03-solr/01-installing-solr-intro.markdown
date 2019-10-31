@@ -65,7 +65,7 @@ that ship with @product@. If you're ready to blacklist those bundles now, use
 these contents in the blacklist configuration file:
 
 ```properties
-    blacklistBundleSymbolicNames=["com.liferay.portal.search.tuning.web.api","com.liferay.portal.search.tuning.web","com.liferay.portal.search.tuning.synonyms.web","com.liferay.portal.search.tuning.rankings.web","com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","com.liferay.portal.search.elasticsearch6.spi"]
+    blacklistBundleSymbolicNames=["com.liferay.portal.search.tuning.web.api","com.liferay.portal.search.tuning.web","com.liferay.portal.search.tuning.synonyms.web","com.liferay.portal.search.tuning.rankings.web","com.liferay.portal.search.elasticsearch6.spi","com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
 ```
 
 Community Edition users can exclude the X-Pack bundles, as they are DXP-only

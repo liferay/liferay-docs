@@ -136,7 +136,8 @@ server.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
 server.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
 ```
 
-On 6.5 and below, use
+Elasticsearch/Kibana 6.5 and below use a  different property for specifying the
+host URL. Replace the `elasticsearch.hosts` property with
 
 ```yaml
 elasticsearch.url: "http://localhost:9200"
@@ -239,3 +240,30 @@ servers are running, add the X-Pack Monitoring portlet to a page:
 
 See the Elastic documentation for information on 
 [monitoring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/es-monitoring.html).
+
+## Example Kibana Configuration
+
+Here are the `kibana.yml` properties demonstrated in this article, for
+convenient copy/pasting:
+
+```yaml
+# X-Pack Security enabled (Basic Auth)
+elasticsearch.username: "kibana"
+elasticsearch.password: "liferay"
+
+# When TLS is enabled in X-Pack Security
+xpack.security.encryptionKey: "xsomethingxatxleastx32xcharactersx"
+xpack.security.sessionTimeout: 600000
+# If on Elasticsearch 6.5 or below, replace the next property with:
+# elasticsearch.url: "http://localhost:9200"
+elasticsearch.hosts: [ "https://localhost:9200" ]
+elasticsearch.ssl.verificationMode: certificate
+elasticsearch.ssl.certificateAuthorities: [ "/path/to/ca.crt" ]
+server.ssl.enabled: true
+server.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
+server.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
+
+# To use Kibana inside the Monitoring widget
+server.rewriteBasePath: false
+server.basePath: "/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy"
+```
