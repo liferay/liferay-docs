@@ -1,4 +1,10 @@
+---
+header-id: configuring-learning-to-rank
+---
+
 # Configuring Learning to Rank
+
+[TOC levels=1-4]
 
 Before beginning, you must have a remote
 [Elasticsearch 7.4](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-elasticsearch-7) 
@@ -135,7 +141,7 @@ model to apply to search queries.
 The model in the previous step was named `linearregression`, so that's what
 you'd enter. 
 
-![Figure x: Enable Learning to Rank in @product@ from the System Settings entry.](../../../../images-dxp/search-learning-to-rank.png)
+![Figure 1: Enable Learning to Rank in @product@ from the System Settings entry.](../../../../images-dxp/search-learning-to-rank.png)
 
 That's all the configuration required to get the Elasticsearch Learning to Rank
 plugin ingesting a trained model, a feature set, and search queries from

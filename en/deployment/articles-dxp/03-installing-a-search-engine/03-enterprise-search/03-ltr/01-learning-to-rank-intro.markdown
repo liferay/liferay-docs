@@ -1,3 +1,7 @@
+---
+header-id: liferay-enterprise-search-learning-to-rank
+---
+
 # Liferay Enterprise Search: Learning to Rank
 
 [TOC levels=1-4]
