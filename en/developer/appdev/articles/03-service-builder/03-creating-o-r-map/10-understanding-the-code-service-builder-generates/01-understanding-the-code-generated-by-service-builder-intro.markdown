@@ -142,7 +142,10 @@ classes, Service Builder overwrites the changes the next time you run it.
 Whenever you add methods to, remove methods from, or change a method signature
 of a `*LocalServiceImpl` class, `*ServiceImpl` class, or `*Impl` class, you
 should run Service Builder again to regenerate the affected interfaces and the
-service JAR.
+service JAR. 
+
+| **Note:** Service Builder may generate code that requires adding
+| dependencies to your `*-service` module build file. 
 
 Congratulations! You've generated your application's initial model, persistence,
 and service layers and you understand the generated code. 
