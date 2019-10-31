@@ -18,7 +18,10 @@ existing Elasticsearch 6.1.x server (or cluster) to Elasticsearch 7.3.x:
 
 1.  [Install and configure Elasticsearch 7.3.x](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch).
 
-2. In @product@-ver@, the X-Pack module is now provided out of the box. If
+2.  Back up the application specific indexes for Workflow Metrics and Result
+    Rankings.
+
+3. In @product@-ver@, the X-Pack module is now provided out of the box. If
    you're not X-Pack security, make sure you disable it (it's disabled by
    default):
 
@@ -26,11 +29,11 @@ existing Elasticsearch 6.1.x server (or cluster) to Elasticsearch 7.3.x:
     xpack.security.enabled: false
     ```
 
-3.  Blacklist the bundled Liferay Connector to Elasticsearch 6.
+4.  Blacklist the bundled Liferay Connector to Elasticsearch 6. The [Installing Solr guide]()
 
-4.  Install and configure the Liferay Connector to Elasticsearch 7.
+5.  Install and configure the Liferay Connector to Elasticsearch 7.
 
-4.  Re-index all search  and spell check indexes.
+6.  Re-index all search  and spell check indexes.
 
 | **Before Proceeding,** back up your existing data before upgrading
 | Elasticsearch. If something goes wrong during or after the upgrade, roll back
@@ -39,6 +42,33 @@ existing Elasticsearch 6.1.x server (or cluster) to Elasticsearch 7.3.x:
 | information.
 
 Learn about configuring Elasticsearch [here](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector).
+
+## Backing up Application-Specific Indexes
+
+To preserve data stored in application-specific indexes, use a
+[rolling upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/rolling-upgrades.html)
+for each index you need to preserve across the upgrade.
+
+| **Synonym Sets:** If you follow the workaround for the bug
+| [LPS-100272](https://issues.liferay.com/browse/LPS-100272), your Synonym sets
+| are preserved across the upgrade, as they are stored in the index settings
+| directly, and not in their own index.
+
+## Blacklisting Elasticsearch 6
+
+To blacklist Elasticsearch 6,
+
+1.  Create a configuration file named
+
+    ```sh
+    com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
+    ```
+
+2.  Give it these contents:
+
+    ```properties
+    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","com.liferay.portal.search.elasticsearch6.spi"]
+    ```
 
 ## Re-index
 
