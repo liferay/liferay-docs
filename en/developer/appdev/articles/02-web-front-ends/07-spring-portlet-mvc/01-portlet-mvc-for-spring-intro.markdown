@@ -30,12 +30,6 @@ You'll learn these things about PortletMVC4Spring:
 -   **Annotation-based Controller Development:** Shows how to implement 
     controllers using plain old Java objects (POJOs) and annotations. 
 
--   **Request Dispatching with** `DispatcherPortlet`**:** Explains how this portlet 
-    sends requests to controllers and more. 
-
--   **Rendering Views with** `ViewRendererServlet`**:** Describes
-    PortletMVC4Spring's view rendering  process. 
-
 | **Background:** The PortletMVC4Spring project began as Spring Portlet MVC and 
 | was part of the
 | [Spring Framework](https://spring.io/projects/spring-framework).
