@@ -89,8 +89,8 @@ configuration options in more detail.
 
 **Cluster Sniffing (Additional Configurations):**
 : Elasticsearch clusters can have multiple node 
-[types](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-node.html#modules-node).
-[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/7.3/transport-client.html), 
+[types](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-node.html#modules-node).
+[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/7.4/transport-client.html), 
 enabled by default in the @product@ connector, looks for `data` nodes
 configured in the `transportAddresses` property. If none are available, the
 connector may throw a `NoNodeAvailableException` in the console log. If cluster

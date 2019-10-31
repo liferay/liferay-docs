@@ -180,7 +180,7 @@ On the Elasticsearch side, set the `network.host` property in your
 (the host where Elasticsearch listens for requests) and the *publish host*
 (the host name or IP address Elasticsearch uses to communicate with other
 nodes). See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-network.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-network.html)
 for more information.
 
 ## Clustering Elasticsearch in Remote Operation Mode 
@@ -189,7 +189,7 @@ To cluster Elasticsearch, first set `node.max_local_storage_nodes` to
 be something greater than `1`. When you run the Elasticsearch start script,
 a new local storage node is added to the cluster. If you want four nodes running
 locally, for example, run `./bin/elasticsearch` four times. See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-node.html#max-local-storage-nodes)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-node.html#max-local-storage-nodes)
 for more information.
 
 Configure the number of shards and replicas in the Elasticsearch 6 connector,

@@ -20,7 +20,7 @@ applications should always be kept separate in production environments.
 
 The following sections provide a synopsis of Elasticsearch configurations for 
 @product-ver@. Prior to deployment, we strongly recommend reading 
-[Elastic's documentation on production deployment](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/index.html). 
+[Elastic's documentation on production deployment](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/index.html). 
 
 ## Sizing Your Deployment 
 

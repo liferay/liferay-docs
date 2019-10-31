@@ -255,5 +255,5 @@ installation of the remote Elasticsearch server, it said _Elasticsearch
 
 ![Figure 1: To see information about the currently connected search engine, go to _Control Panel &rarr; Configuration &rarr; Search_.](../../../images/search-admin-engineinfo-remote.png)
 
-For additional details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/getting-started-install.html).
+For additional details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/getting-started-install.html).
 

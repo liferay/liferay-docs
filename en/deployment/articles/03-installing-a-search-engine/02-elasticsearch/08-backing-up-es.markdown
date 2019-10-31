@@ -21,11 +21,11 @@ Back up and restore your Elasticsearch cluster in three steps:
 For more detailed information, refer to the 
 [Elasticsearch administration guide](https://www.elastic.co/guide/en/elasticsearch/guide/master/administration.html),
 and in particular to the documentation on the 
-[Snapshot and Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-snapshots.html).
+[Snapshot and Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-snapshots.html).
 
 ## Creating a Repository
 
-First [create a repository](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-snapshots.html#_repositories)
+First [create a repository](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-snapshots.html#_repositories)
 to store your snapshots. Several repository types are supported:
 
 - Shared file system, such as a Network File System or NAS
@@ -35,7 +35,7 @@ to store your snapshots. Several repository types are supported:
 
 If using a shared file system repository type, first register the path to the
 shared file system in each node's `elasticsearch.yml` using 
-[the path.repo setting](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-snapshots.html#_shared_file_system_repository).
+[the path.repo setting](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-snapshots.html#_shared_file_system_repository).
 
 ```yaml
 path.repo: ["path/to/shared/file/system/"]
@@ -69,7 +69,7 @@ Once the repository exists, you can start creating snapshots.
 ## Taking Snapshots of the Cluster
 
 The easiest snapshot approach is to create a 
-[snapshot of all the indexes in your cluster](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-snapshots.html#_snapshot). 
+[snapshot of all the indexes in your cluster](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-snapshots.html#_snapshot). 
 For example,
 
 ```sh
@@ -161,7 +161,7 @@ terminated and the partial snapshot is deleted from the repository.
 ## Restoring from a Snapshot
 
 What good is a snapshot if you can't use it to 
-[restore your search indexes](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-snapshots.html#_restore) 
+[restore your search indexes](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-snapshots.html#_restore) 
 in case of catastrophic failure? Use the `_restore` API to restore all the
 snapshot's indexes:
 
@@ -199,4 +199,4 @@ Nobody likes catastrophic failure on a production system, but Elasticsearch's
 API for taking snapshots and restoring indexes can help you rest easy knowing
 that your search cluster can be restored if disaster strikes. For more details
 and options, read Elastic's documentation on the [Snapshot and Restore
-Module](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/modules-snapshots.html#modules-snapshots).
+Module](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-snapshots.html#modules-snapshots).
