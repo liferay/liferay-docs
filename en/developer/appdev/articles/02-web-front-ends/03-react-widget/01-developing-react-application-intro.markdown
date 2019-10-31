@@ -7,9 +7,12 @@ header-id: developing-a-react-application
 [TOC levels=1-4]
 
 Running an existing React app on @product@ makes the app available as a 
-widget for using on site pages. You must use the Liferay JS Generator and
-Liferay npm Bundler to merge your files into a portlet bundle, adapt your static
-resource paths, and deploy your bundle. 
+widget for using on site pages. You can [adapt your existing React app](/docs/7-2/reference/-/knowledge_base/r/adapting-existing-apps-to-run-on-product), 
+but this doesn't give you access to the bundler and its various loaders to 
+develop your project further in @product@. To have access to all of @product@'s 
+features, you must use the Liferay JS Generator and Liferay npm Bundler to merge 
+your files into a portlet bundle, update your static resource paths, and deploy 
+your bundle. 
 
 ![Figure 1: Apps like this Guestbook app are easy to migrate to @product@.](../../../images/appdev-react-app-migrated.png)
 

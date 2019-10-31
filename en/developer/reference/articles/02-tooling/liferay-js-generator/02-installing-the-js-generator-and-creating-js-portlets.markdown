@@ -48,7 +48,7 @@ Follow these steps to create your JavaScript widget:
     yo liferay-js
     ```
 
-    ![Figure 1: The liferay-bundle generator prompts you for widget options.](../../../images/liferay-js-generator-prompts.png)
+    ![Figure 1: The liferay-js generator prompts you for widget options.](../../../images/liferay-js-generator-prompts.png)
 
 5.  If you specified your app server information when your widget was 
     generated, you can deploy your widget by running the command below. You can 
