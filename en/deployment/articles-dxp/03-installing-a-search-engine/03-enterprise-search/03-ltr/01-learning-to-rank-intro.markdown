@@ -129,7 +129,7 @@ one way to decide which queries to create Learning to Rank models for).
 ### Step 1: Install the Learning to Rank Plugin on Elasticsearch
 
 See 
-[the Elasticsearch documentation](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/#installing)
+[the Elasticsearch Learning to Rank plugin documentation](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/#installing)
 to learn about installing the Learning to Rank plugin.
 
 You'll be running a command like this one, depending on the plugin version
