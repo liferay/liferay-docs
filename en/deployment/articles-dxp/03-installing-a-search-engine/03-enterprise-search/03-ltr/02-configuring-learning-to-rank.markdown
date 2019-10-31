@@ -1,6 +1,7 @@
 # Configuring Learning to Rank
 
-This set of instructions starts by assuming your have a remote Elasticsearch 7.4
+This set of instructions starts by assuming your have a remote
+[Elasticsearch 7.4](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-elasticsearch-7) 
 cluster communicating with @product-ver@.
 
 | **Helpful hint:** Use
@@ -40,7 +41,9 @@ end of it, you'll want to upload the model to the Learning to Rank plugin.
 ### Upload the Model to the Learning to Rank Plugin
 
 You'll upload the model using a `POST` request, but first you need to make sure
-you have a `_ltr` index and a feature set uploaded to the Learning to Rank plugin. Use Kibana
+you have a `_ltr` index and a feature set uploaded to the Learning to Rank
+plugin. Use Kibana (or even better, the
+[Monitoring widget](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-monitoring)),
 to make these tasks easier.
 
 1.  If you don't already have a `_ltr` index, create one:
@@ -95,6 +98,8 @@ to make these tasks easier.
       }
     }
     ```
+    Take note of the syntax used here, since it's required.
+
 3.  Add the trained model to the feature set: 
 
     ```json

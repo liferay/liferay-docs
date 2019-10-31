@@ -15,9 +15,9 @@ queries.
 @product-ver@, Service Pack 1/Fix Pack 2 and later, supports Learning to Rank
 through its support of Elasticsearch versions 6.x and 7.4.x. It requires a
 [Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932) 
-subscription. It's important to understand that the
+(LES) subscription. It's important to understand that the
 [Elasticsearch Learning to Rank plugin](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html)
-is not produced by Elasticsearch, and there is not a pre-built plugin for all of
+is not produced by Elastic, and there is not a pre-built plugin for all of
 @product@'s supported Elasticsearch versions. 
 
 ## Disabling Learning to Rank on a Search Page
@@ -95,7 +95,7 @@ How does Learning to Rank work?
 In a normal search, the User sends a query to the search engine via Liferay
 DXP's [Search Bar](/docs/7-2/user/-/knowledge_base/u/searching-for-assets#search-bar).
 The order of returned results is dictated by the search engine's
-[relevance scoring algorithm](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/query-filter-context.html#relevance-scores).
+[relevance scoring algorithm](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/index-modules-similarity.html#bm25).
 
 Here's where Learning to Rank intervenes and makes that process different:
 
