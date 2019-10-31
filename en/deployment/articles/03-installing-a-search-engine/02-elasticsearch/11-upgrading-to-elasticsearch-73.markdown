@@ -41,6 +41,12 @@ existing Elasticsearch 6 server (or cluster) to Elasticsearch 7:
 | [here](/docs/7-2/deploy/-/knowledge_base/d/backing-up-elasticsearch) for more
 | information.
 
+| **Known Issue:** See
+| [LPS-103938](https://issues.liferay.com/browse/LPS-103938). The Liferay
+| Connector to Elasticsearch 7 will throw an exception in the log when the LPKG
+| file is deployed. There are no known functional impacts. If unexpected errors
+| occur, re-start the @product@ server.
+
 Learn about configuring Elasticsearch [here](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector).
 
 ## Backing up Application-Specific Indexes
