@@ -1,4 +1,4 @@
-# Using Learning to Rank with Liferay Queries
+# Liferay Enterprise Search: Learning to Rank
 
 [TOC levels=1-4]
 
@@ -13,11 +13,11 @@ machine learning, to produce a smarter scoring function that's applied to search
 queries.
 
 @product-ver@, Service Pack 1/Fix Pack 2 and later, supports Learning to Rank
-through its support of Elasticsearch versions 6.x and 7.3.x. It requires a
+through its support of Elasticsearch versions 6.x and 7.4.x. It requires a
 [Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932) 
 subscription. It's important to understand that the
 [Elasticsearch Learning to Rank plugin](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html)
-is not produced by Elasticsearch, and there is not a re-built plugin for all of
+is not produced by Elasticsearch, and there is not a pre-built plugin for all of
 @product@'s supported Elasticsearch versions. 
 
 ## Disabling Learning to Rank on a Search Page
@@ -93,8 +93,9 @@ How does Learning to Rank work?
 ### Technical Overview
 
 In a normal search, the User sends a query to the search engine via Liferay
-DXP's [Search Bar](LINK). Results are returned according to the search engine's
-[relevance algorithm](LINK).
+DXP's [Search Bar](/docs/7-2/user/-/knowledge_base/u/searching-for-assets#search-bar).
+The order of returned results is dictated by the search engine's
+[relevance scoring algorithm](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/query-filter-context.html#relevance-scores).
 
 Here's where Learning to Rank intervenes and makes that process different:
 
@@ -103,7 +104,10 @@ Here's where Learning to Rank intervenes and makes that process different:
 2.  Liferay sends the query to Elasticsearch, and retrieves the first 1000
     results as usual, using the search engine's relevance algorithm. 
 
-3.  The top 1000 results are not returned as search hits, but are used by Elasticsearch for [re-scoring](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/search-request-body.html#request-body-search-rescore) via the [rescore query](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/searching-with-your-model.html#rescore-top-n-with-sltr).
+3.  The top 1000 results are not returned as search hits, but are used by Elasticsearch for
+[re-scoring](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/search-request-body.html#request-body-search-rescore)
+via the
+[rescore query](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/searching-with-your-model.html#rescore-top-n-with-sltr).
 
 4.  The re-scoring happens using:
 
@@ -111,146 +115,10 @@ Here's where Learning to Rank intervenes and makes that process different:
     - A trained model to execute on the query.
 
 5.  The model re-ranks the results and they're returned in Liferay's [Search
-    Results](LINK) in their new order.
+    Results](/docs/7-2/user/-/knowledge_base/u/search-results) in their new order.
 
 Though it's just a sub-bullet point in the ordered list above, much of the work
 in this paradigm is in creating and honing the trained model. That's beyond the
 scope of Liferay's role, but we'll help you get all the pieces in place to
 orchestrate the magic of machine learning on your Liferay queries.
 
-## Configure Learning to Rank
-
-This set of instructions starts by assuming your have a remote Elasticsearch 7.3
-cluster communicating with @product-ver@.
-
-Helpful hint: Use Suggestions to discover the most common queries (this can be
-one way to decide which queries to create Learning to Rank models for).
-
-### Step 1: Install the Learning to Rank Plugin on Elasticsearch
-
-See 
-[the Elasticsearch Learning to Rank plugin documentation](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/#installing)
-to learn about installing the Learning to Rank plugin.
-
-You'll be running a command like this one, depending on the plugin version
-you're installing:
-
-```sh
-./bin/elasticsearch-plugin install http://es-learn-to-rank.labs.o19s.com/ltr-1.1.0-es6.5.4.zip
-```
-
-If you're using X-Pack security in your Elasticsearch cluster, there 
-[may be additional steps you need to take.](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/x-pack.html)
-
-### Step 2: Training and Uploading a Model
-
-Model training is hard, even if you're already used to walking in high heeled
-shoes. Liferay can't really help you with model training. You require the
-intervention of data scientists, who will likely recommend certain tools and
-have experience with certain models. Use what works for you. In doing so, you'll
-almost certainly be compiling
-[Judgment lists](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/core-concepts.html#judgments-expression-of-the-ideal-ordering)
-and
-[feature sets](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/building-features.html)
-that can be used by the training tool you select to generate a model that will
-produce good search results. This can be a long journey, but once you get to the
-end of it, you'll want to upload the model to the Learning to Rank plugin.
-
-#### Upload the Model to the Learning to Rank Plugin
-
-You'll upload the model using a `POST` request, but first you need to make sure
-you have a `_ltr` index and a feature set uploaded to the Learning to Rank plugin. Use Kibana
-to make these tasks easier.
-
-1.  If you don't already have a `_ltr` index, create one:
-
-    ```http
-    PUT _ltr
-    ```
-
-2.  Add a feature set to the `_ltr` index. In this example the set is called
-    `liferay`:
-
-    ```json
-    POST _ltr/_featureset/liferay
-    {
-      "featureset": {
-        "name": "liferay",
-        "features": [
-          {
-            "name": "title",
-            "params": [
-              "keywords"
-            ],
-            "template": {
-              "match": {
-                "title_en_US": "{{keywords}}"
-              }
-            }
-          },
-          {
-            "name": "content",
-            "params": [
-              "keywords"
-            ],
-            "template": {
-              "match": {
-                "content_en_US": "{{keywords}}"
-              }
-            }
-          },
-          {
-            "name": "asset tags",
-            "params": [
-              "keywords"
-            ],
-            "template": {
-              "match": {
-                "assetTagNames": "{{keywords}}"
-              }
-            }
-          }
-        ]
-      }
-    }
-    ```
-3.  Add the trained model to the feature set: 
-
-    ```json
-    POST _ltr/_featureset/liferay/_createmodel
-    {
-      "model": {
-        "name": "linearregression",
-        "model": {
-          "type": "model/ranklib",
-          "definition": """
-    ## Linear Regression
-    ## Lambda = 1.0E-10
-    0:-0.717621803830712 1:-0.717621803830712 2:-2.235841905601106 3:19.546816765721594
-    """
-        }
-      }
-    }
-    ```
-
-This is a very high level set of instructions, because because there's not much
-to do in @product@. To learn in more detail about what's required, see the
-[Learning to Rank plugin's documentation](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html).
-
-Keep reworking those judgment lists!
-
-### Step 3: Enable Learning to Rank
-
-Enable Learning to Rank from Control Panel &rarr; Configuration &rarr; System
-Settings &rarr; Search &rarr; Learning to Rank. There's a simple on/off
-configuration, and a text field where you must enter the name of the trained
-model to apply to search queries.
-
-The model in the previous step was named `linearregression`, so that's what
-you'd use in the configuration's 
-
-![Figure x: Enable Learning to Rank in @product @ from the System Settings entry.](../../../../images-dxp/search-learning-to-rank.png)
-
-That's all the configuration required to get the Elasticsearch Learning to Rank
-plugin ingesting a trained model, a feature set, and search queries from
-@product@.
