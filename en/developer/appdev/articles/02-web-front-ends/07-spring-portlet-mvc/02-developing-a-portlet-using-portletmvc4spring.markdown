@@ -36,8 +36,8 @@ Follow these steps to create and deploy your portlet application:
     **Gradle:**
 
     ```groovy
-    compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.framework', version: '5.1.0-SNAPSHOT'
-    compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.security', version: '5.1.0-SNAPSHOT'
+    compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.framework', version: '5.1.0'
+    compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.security', version: '5.1.0'
     providedCompile group: 'javax.portlet', name: 'portlet-api', version: '3.0.0'
     ```
 
@@ -47,12 +47,12 @@ Follow these steps to create and deploy your portlet application:
     <dependency>
         <groupId>com.liferay.portletmvc4spring</groupId>
         <artifactId>com.liferay.portletmvc4spring.framework</artifactId>
-        <version>5.1.0-SNAPSHOT</version>
+        <version>5.1.0</version>
     </dependency>
     <dependency>
         <groupId>com.liferay.portletmvc4spring</groupId>
         <artifactId>com.liferay.portletmvc4spring.security</artifactId>
-        <version>5.1.0-SNAPSHOT</version>
+        <version>5.1.0</version>
     </dependency>
     <dependency>
         <groupId>javax.portlet</groupId>
