@@ -58,32 +58,16 @@ queries sent to Elasticsearch:
 
 - A [Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932) 
     (LES) is required for Learning to Rank. Once you have a subscription, 
-    [download LES and install](/docs/7-2/user/-/knowledge_base/u/installing-apps-manually#installing-apps-manually)
+    [download LES and install the LPKG files](/docs/7-2/user/-/knowledge_base/u/installing-apps-manually#installing-apps-manually)
     to your @product@ server.
 
 - A remote Elasticsearch server, with your data indexed into it.
 
 - The corresponding version of the [Elasticsearch Learning to Rank](https://github.com/o19s/elasticsearch-learning-to-rank) plugin installed into Elasticsearch.
 
-- The Learning to Rank plugin must have a model uploaded that's trained to re-rank results
-    from Elasticsearch. The model includes these components:
-
-    - The Learning to Rank algorithm you wish to use for creating a training
-        model. This demonstration uses
-        [RankLib](https://sourceforge.net/p/lemur/wiki/RankLib/).
-    - A _judgment list_, containing a list of search results and all the
-        _features_ to hand to the Learning to Rank algorithm. One will be
-        provided for this example.
-
-    [Judgment lists](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/core-concepts.html#judgments-expression-of-the-ideal-ordering)
-    are lists of graded search results.
-
-    [Features](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/core-concepts.html#features-the-raw-material-of-relevance) 
-    are the columns in a judgment list, if each result is a row in the list.
-    They're the variables that the algorithm uses to create a function that can
-    score results in a smarter way. If you don't give enough, or the correct,
-    relevant features, your model will not be "smart" enough to provide improved
-    results.
+- A 
+    [trained model](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/training-models.html)
+    uploaded into the Learning to Rank plugin. 
 
 To understand more about the compatibility requirements for LES, see its
 [compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651-Liferay-Enterprise-Search-Compatibility-Matrix?flash_digest=645af3a9a43c3f505b5dbe67c6f1015e573382a9).
@@ -105,20 +89,52 @@ Here's where Learning to Rank intervenes and makes that process different:
     results as usual, using the search engine's relevance algorithm. 
 
 3.  The top 1000 results are not returned as search hits, but are used by Elasticsearch for
-[re-scoring](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/search-request-body.html#request-body-search-rescore)
-via the
-[rescore query](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/searching-with-your-model.html#rescore-top-n-with-sltr).
+    [re-scoring](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/search-request-body.html#request-body-search-rescore)
+    via the
+    [rescore functionality](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/searching-with-your-model.html#rescore-top-n-with-sltr).
 
-4.  The re-scoring happens using:
+4.  The results are re-scored by the 
+    [SLTR query](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/searching-with-your-model.html),
+    which includes the keywords and the trained model to use for re-scoring.
 
-    - The [SLTR query](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/logging-features.html#sltr-query).
-    - A trained model to execute on the query.
-
-5.  The model re-ranks the results and they're returned in Liferay's [Search
-    Results](/docs/7-2/user/-/knowledge_base/u/search-results) in their new order.
+5.  Once the trained model re-ranks the results, they're returned in Liferay's
+    [Search Results](/docs/7-2/user/-/knowledge_base/u/search-results)
+    in their new order.
 
 Though it's just a sub-bullet point in the ordered list above, much of the work
 in this paradigm is in creating and honing the trained model. That's beyond the
 scope of Liferay's role, but we'll help you get all the pieces in place to
-orchestrate the magic of machine learning on your Liferay queries.
+orchestrate the magic of machine learning on your Liferay queries. Here's a
+brief overview of what constitutes _model training_.
 
+### Model Training
+
+A useful trained model is produced when a good judgment list and a good feature
+set are fed to a Learning to Rank algorithm (this is the machine learning part
+of the puzzle). Therefore, it's incumbent on you to assemble;
+
+- The Learning to Rank algorithm you wish to use for creating a training
+        model. This demonstration uses
+        [RankLib](https://sourceforge.net/p/lemur/wiki/RankLib/).
+
+- A _judgment list_, containing a graded list of search results. The algorithm
+    is designed to produce a model that will honor the ordering of the judgment
+    list.
+
+- A feature set, containing all the _features_ you're handing to the Learning to
+    Rank algorithm, which it uses in conjunction with the judgment list to
+    produce a reliable model. An example feature set for @product@ data is shown
+    in the next article.
+
+
+[Judgment lists](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/core-concepts.html#judgments-expression-of-the-ideal-ordering)
+are lists of graded search results.
+
+[Features](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/core-concepts.html#features-the-raw-material-of-relevance) 
+are the variables that the algorithm uses to create a function that can
+score results in a smarter way. If you don't give enough, or the correct,
+relevant features, your model will not be "smart" enough to provide improved
+results.
+
+In the next article you'll see the steps required to configure Learning to Rank
+with @product@.
