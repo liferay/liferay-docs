@@ -6,21 +6,20 @@ header-id: developing-a-portlet-using-portletmvc4spring
 
 [TOC levels=1-4]
 
-PortletMVC4Spring compliments the Spring Web framework and Spring MVC by
-providing annotations for mapping portlet requests to controller classes and
-methods.  Here you'll develop and deploy a portlet that uses PortletMVC4Spring,
-Spring, and JSPX or Thymeleaf templates. 
+PortletMVC4Spring compliments the Spring Web framework and MVC design pattern by
+providing annotations that map portlet requests to Controller classes and
+methods. Here you'll develop and deploy a portlet application that uses
+PortletMVC4Spring, Spring, and JSP/JSPX templates. 
 
-![Figure 1: The archetype's sample portlet prints a greeting (e.g., *Hello, Joe Bloggs*) on submitting the personal information.](../../../images/portletmvc4Spring-developing.png)
+![Figure 1: The archetype's sample portlet prints a greeting (e.g., *Hello, Joe Bloggs*) on submitting a first and last name.](../../../images/portletmvc4Spring-developing.png)
 
-Follow these steps to create and deploy your portlet: 
+Follow these steps to create and deploy your portlet application: 
 
-1.  Create a PortletMVC4Spring project. Here are Maven commands for 
-    generating projects that use JSP (JSPX) and
-    [Thymeleaf](https://www.thymeleaf.org)
-    view templates: 
-
-    **JSP Form**
+1.  Create a PortletMVC4Spring project. See
+    [PortletMVC4Spring Project Anatomy](/docs/7-2/reference/-/knowledge_base/r/portletmvc4spring-project-anatomy)
+    for the project structure and commands for generating PortletMVC4Spring
+    projects. Here's the Maven command for generating the JSP/JSPX project.
+    This article lists sample code from the generated project. 
 
     ```bash
     mvn archetype:generate \
@@ -31,69 +30,43 @@ Follow these steps to create and deploy your portlet:
     -DartifactId=com.mycompany.my.form.jsp.portlet
     ```
 
-    **Thymeleaf Form**
+2.  In your project's Gradle build file or Maven POM, add your app's
+    dependencies. Here are the PortletMVC4Spring development dependencies:
+    
+    **Gradle:**
 
-    ```bash
-    mvn archetype:generate \
-    -DarchetypeGroupId=com.liferay.portletmvc4spring.archetype \
-    -DarchetypeArtifactId=com.liferay.portletmvc4spring.archetype.form.thymeleaf.portlet \
-    -DarchetypeVersion=5.1.0 \
-    -DgroupId=com.mycompany \
-    -DartifactId=com.mycompany.my.form.thymeleaf.portlet
+    ```groovy
+    compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.framework', version: '5.1.0-SNAPSHOT'
+    compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.security', version: '5.1.0-SNAPSHOT'
+    providedCompile group: 'javax.portlet', name: 'portlet-api', version: '3.0.0'
     ```
 
-    The commands generate a project that includes model and controller classes,
-    view templates, a resource bundle, a stylesheet, and more. The Spring
-    contexts and configuration files set the essentials for PortletMVC4Spring
-    development. Here's the resulting project structure: 
+    **Maven:**
 
-    -   `[com.mycompany.my.form.jsp.portlet]`/ &rarr; Arbitrary project name
-        -   `src/`
-            -   `main/`
-                -   `java/[my-package-path]/`
-                    -   `controller/` &rarr; Sub-package for controller classes 
-                        (optional)
-                    -   `dto/` &rarr; Sub-package for model (data transfer 
-                        object) classes (optional)
-                    -    `resources/` &rarr; Resources to include in the class 
-                        path 
-                        -   `content/` &rarr; Resource bundles 
-                        -   `log4j.properties` &rarr; Log4J logging 
-                            configuration
-                    -   `webapp/` 
-                        -   `resources/`
-                            -   `css/` &rarr; Style sheets
-                            -   `images/` &rarr; Images 
-                        -   `WEB-INF/`
-                            -   `spring-context/` &rarr; Contexts
-                                -   `portlet/` &rarr; Portlet contexts 
-                                    -   `portlet1-context.xml` &rarr; Portlet 
-                                        context
-                                -   `portlet-application-context.xml` &rarr; 
-                                    Application context
-                            -   `views/` &rarr; View templates 
-                            -   `liferay-display.xml` &rarr; Portlet display 
-                                configuration 
-                            -   `liferay-plugin-package.properties` &rarr; 
-                                Packaging descriptor 
-                            -   `liferay-portlet.xml` &rarr; Liferay-specific 
-                                portlet configuration 
-                            -   `portlet.xml` &rarr; Portlet configuration
-                            -   `web.xml` &rarr; Web application configuration
-            -   `test/java/` &rarr; Test source files
-        -   `build.gradle` &rarr; Gradle build file 
-        -   `pom.xml` &rarr; Maven POM
+    ```xml
+    <dependency>
+        <groupId>com.liferay.portletmvc4spring</groupId>
+        <artifactId>com.liferay.portletmvc4spring.framework</artifactId>
+        <version>5.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+        <groupId>com.liferay.portletmvc4spring</groupId>
+        <artifactId>com.liferay.portletmvc4spring.security</artifactId>
+        <version>5.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.portlet</groupId>
+        <artifactId>portlet-api</artifactId>
+        <version>3.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+    ```
 
-2.  In your project's Gradle build file or Maven POM, add any additional 
-    dependencies to the ones already specified for PortletMVC4Spring
-    development. 
+    At this point you can develop your Model, View, or Controller components, in
+    any order. We'll start with the Model. 
 
-    At this point you can develop your model, view, or controller, in any order.
-    We'll start with the model. 
-
-3.  Create your model. In a package for models (e.g.,
-    `java/[my-package-path]/dto`), create your model class(es). The project's
-    sample model class is `User`. 
+3.  Create your Model class(es) in a package for models (e.g.,
+    `java/[my-package-path]/dto`). The sample Model class is `User`. 
     
     ```java 
     public class User implements Serializable {
@@ -124,15 +97,16 @@ Follow these steps to create and deploy your portlet:
     }
     ```
 
-4.  Create your portlet view using the template type you selected for your 
-    project. If you're using a template type other than JSP or Thymeleaf,
-    specify a view resolver for it in your
+4.  Create your View using a Spring Web-supported template type. If you didn't 
+    generate your project using the archetype mentioned at the start of this
+    article, specify a View resolver for template type in your
     `spring-context/portlet-application-context.xml` portlet application
     context. (See
-    [PortletMVC4Spring Configuration Files](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring-configuration-files)
+    [PortletMVC4Spring Configuration Files](/docs/7-2/reference/-/knowledge_base/r/portletmvc4spring-configuration-files)
     for details). 
 
-    The sample `user.jspx` template renders a form for submitting a user's personal information. 
+    The sample `user.jspx` template renders a form for submitting a user's first
+    and last name. 
     
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -182,12 +156,11 @@ Follow these steps to create and deploy your portlet:
         ...
     ```
 
-    A `<form:form/>` element can target application models using its
-    `modelAttribute` attribute. The sample template targets the application's
-    `user` model. 
+    A `<form:form/>` element's `modelAttribute` attribute targets an application
+    Model. The sample template targets the application's `user` Model. 
 
 5.  Style your portlet by adding CSS to a stylesheet (e.g.,
-    `webapp/resources/css/main.css`), and linking your template to it. 
+    `webapp/resources/css/main.css`) and linking your template to it. 
 
     ```xml 
     <link href="${contextPath}/resources/css/main.css" rel="stylesheet" type="text/css"/>
@@ -195,7 +168,7 @@ Follow these steps to create and deploy your portlet:
 
 6.  Define your portlet's messages in a properties file (e.g.,
     `src/main/resources/content/[portlet].properties`). The sample `user.jspx`
-    file references some of these properties: 
+    template references some of these properties: 
 
     ```properties 
     first-name=First Name
@@ -210,7 +183,7 @@ Follow these steps to create and deploy your portlet:
     todays-date-is=Today''s date is {0}
     ```
 
-7.  Create a controller class to handle portlet requests. Here's an example:
+7.  Create a Controller class to handle portlet requests. Here's an example:
 
     ```java 
     @Controller
@@ -221,24 +194,21 @@ Follow these steps to create and deploy your portlet:
     ```
 
     The
-    [`@Controller`](TODO)
-    annotation applies Spring's MVC controller component stereotype. The Spring
-    MVC framework scans controller classes for Spring MVC controller
-    annotations. 
+    [`@Controller`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/stereotype/Controller.html)
+    annotation applies the Spring Controller component stereotype. The Spring
+    Framework scans Controller classes for Controller annotations. 
 
     The
-    [`@RequestMapping("VIEW")`](TODO)
+    [`@RequestMapping("VIEW")`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html)
     annotation marks the class's public methods as request handler methods for
     the portlet's
-    [VIEW mode](TODO). 
+    [VIEW mode](/docs/7-2/frameworks/-/knowledge_base/f/portlets). 
 
-8.  In your controller, apply `@RenderMapping` annotations to methods for 
+8.  In your Controller, apply `@RenderMapping` annotations to methods for 
     handling portlet render requests. Import the annotation
     `com.liferay.portletmvc4spring.bind.annotation.RenderMapping` and make sure
-    the handler methods return strings that match the names of the templates for
-    rendering each request. 
-
-    Here are two render request handler methods:
+    each handler method returns a string that matches the name of a template to
+    render. Here are the sample's render request handler methods:
 
     ```java
     @RenderMapping
@@ -259,20 +229,23 @@ Follow these steps to create and deploy your portlet:
 	}
     ```
 
-    The `@RenderMapping` annotation causes the `prepareView` method to be
-    invoked if no other handler methods match the request. This method renders
+    The `@RenderMapping` annotation causes the `prepareView` method above to be
+    invoked if no other handler methods match the request. `prepareView` renders
     the `user` template (i.e., `user.jspx`). 
 
     The `@RenderMapping(params = "javax.portlet.action=success")` annotation
     causes the `showGreeting` method to be invoked if the render request has the
-    parameter setting `javax.portlet.action=success`. The method renders the
+    parameter setting `javax.portlet.action=success`. `showGreeting` renders the
     `greeting` template (i.e., `greeting.jspx`). 
 
-6.  In your controller, apply `@ActionMapping` annotations to your portlet 
+6.  In your Controller, apply `@ActionMapping` annotations to your portlet 
     action request handling methods. Import the annotation
     `com.liferay.portletmvc4spring.bind.annotation.ActionMapping`. 
 
-    The sample controller's action handler method below uses the `@ActionMapping`, marking it as the default action handler if no other action handlers match the request. Since this portlet only has one action handler, the `submitApplicant` methods handles all of the portlet's action requests. 
+    The sample Controller's action handler method below is annotated with
+    `@ActionMapping`, making it the default action handler if no other action
+    handlers match the request. Since this portlet only has one action handler,
+    the `submitApplicant` method handles all of the portlet's action requests. 
 
     ```java 
     @ActionMapping
@@ -299,8 +272,8 @@ Follow these steps to create and deploy your portlet:
 
     The [`@ModelAttribute`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/ModelAttribute.html)
     annotation in method parameter `@ModelAttribute("user") User user`
-    associates the view's `user` model (comprising a first name and last name) to the `User` object passed to this
-    method. 
+    associates the View's `user` Model (comprising a first name and last name)
+    to the `User` object passed to this method. 
 
     Note, the `submitApplicant` method sets the `javax.portlet.action` render
     parameter to `success`---the previous render handler method `showGreeting`
@@ -308,12 +281,12 @@ Follow these steps to create and deploy your portlet:
 
 7.  Configure any additional resources and beans in the project's 
     descriptors and Spring context files respectively. (See
-    [PortletMVC4Spring Configuration Files](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring-configuration-files)
+    [PortletMVC4Spring Configuration Files](/docs/7-2/reference/-/knowledge_base/r/portletmvc4spring-configuration-files)
     for details).
 
 8.  Build the project WAR using Gradle or Maven. 
 
-9.  Deploy the WAR by copying it to the `[Liferay-Home]/deploy` folder. 
+9.  Deploy the WAR by copying it to your `[Liferay-Home]/deploy` folder. 
 
 @product@ logs the deployment and the portlet is now available in the @product@
 UI. Find your portlet by selecting the *Add* icon
@@ -325,8 +298,10 @@ Congratulations! You created and deployed a PortletMVC4Spring Portlet.
 
 ## Related Topics 
 
+[PortletMVC4Spring Project Anatomy](/docs/7-2/reference/-/knowledge_base/r/portletmvc4spring-project-anatomy)
+
 [PortletMVC4Spring Annotations](/docs/7-2/reference/-/knowledge_base/r/portletmvc4spring-annotations)
 
-[PortletMVC4Spring Configuration Files](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring-configuration-files)
+[PortletMVC4Spring Configuration Files](/docs/7-2/reference/-/knowledge_base/r/portletmvc4spring-configuration-files)
 
 [Migrating to PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/migrating-to-portletmvc4spring)

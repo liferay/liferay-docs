@@ -6,11 +6,8 @@ header-id: portletmvc4spring-configuration-files
 
 [TOC levels=1-4]
 
-A Portlet MVC4Spring application is a special kind of web application comprising
-one or more
-[Portlets](/docs/7-2/frameworks/-/knowledge_base/f/portlets).
-A portlet application's `WEB-INF` folder has these descriptors, Spring contexts,
-and properties: 
+A PortletMVC4Spring application has these descriptors, Spring contexts, and
+properties files in its `WEB-INF` folder: 
 
 -   `web.xml` &rarr; Web application descriptor
 -   `portlet.xml` &rarr; Portlet application descriptor
@@ -22,8 +19,7 @@ and properties:
 -   `spring-context/portlet/[portlet]-context.xml` &rarr; Portlet context
 -   `liferay-plugin-package.properties` &rarr; Packaging descriptor 
 
-The files describe the portlet application to the appropriate containers. Let's
-examine each file and highlight portlet-specific content. 
+Examples of each file are provided and portlet-specific content is highlighted. 
 
 ## web.xml
 
