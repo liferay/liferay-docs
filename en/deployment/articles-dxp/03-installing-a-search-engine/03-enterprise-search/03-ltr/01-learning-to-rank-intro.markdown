@@ -4,13 +4,12 @@
 
 Search engines like Elasticsearch have well-tuned relevance algorithms, good for
 general search purposes. Sometimes, this "generally good" relevance scoring just
-isn't good enough. Attain more perfect search results by employing machine
-learning. 
+isn't good enough. You can attain more perfect search results by employing
+machine learning. 
 
-Learning to Rank is a technique for harnessing machine learning to improve
-search result rankings. It combines the expertise of data scientists with
-machine learning to produce a smarter scoring function that's applied to search
-queries.
+Learning to Rank harnesses machine learning to improve search result rankings.
+It combines the expertise of data scientists with machine learning to produce
+a smarter scoring function that's applied to search queries.
 
 @product-ver@, Service Pack 1/Fix Pack 2 and later, supports Learning to Rank
 through its support of Elasticsearch versions 6.x and 7.4.x. It requires a
@@ -25,9 +24,8 @@ is not produced by Elastic, and there is not a pre-built plugin for all of
 Learning to Rank does not work with the
 [Sort widget](/docs/7-2/user/-/knowledge_base/u/sorting-search-results-with-the-sort-widget).
 
-If you need to use Learning to Rank in your @product@ instance, but you'd like to disable it
-on a particular Search page (perhaps to use the Sort widget), here's how to do
-so:
+If you must use Learning to Rank in your @product@ instance, but want to disable
+it on a particular Search page (perhaps to use the Sort widget), you can:
 
 1.  Add a
     [Low Level Search Options](/docs/7-2/user/-/knowledge_base/u/low-level-search-options-searching-additional-or-alternate-indexes)
@@ -51,15 +49,15 @@ There are some prerequisites for using Learning to Rank to re-score Liferay
 queries sent to Elasticsearch:
 
 - If using Elasticsearch 7, @product-ver@ Service Pack 1/Fix Pack 2 or later is
-    required, with the appropriate Elasticsearch Connector version installed.
+  required, with the appropriate Elasticsearch Connector version installed.
 
 - If using Elasticsearch 6, @product-ver@ Fix Pack 3 or later is
-    required, with the appropriate Elasticsearch Connector version installed.
+  required, with the appropriate Elasticsearch Connector version installed.
 
 - A [Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932) 
-    (LES) is required for Learning to Rank. Once you have a subscription, 
-    [download LES and install the LPKG files](/docs/7-2/user/-/knowledge_base/u/installing-apps-manually#installing-apps-manually)
-    to your @product@ server.
+  (LES) is required for Learning to Rank. Once you have a subscription, 
+  [download LES and install the LPKG files](/docs/7-2/user/-/knowledge_base/u/installing-apps-manually#installing-apps-manually)
+  to your @product@ server.
 
 - A remote Elasticsearch server, with your data indexed into it.
 
@@ -111,20 +109,20 @@ brief overview of what constitutes _model training_.
 
 A useful trained model is produced when a good judgment list and a good feature
 set are fed to a Learning to Rank algorithm (this is the machine learning part
-of the puzzle). Therefore, it's incumbent on you to assemble;
+of the puzzle). Therefore, it's incumbent on you to assemble
 
 - The Learning to Rank algorithm you wish to use for creating a training
-        model. This demonstration uses
-        [RankLib](https://sourceforge.net/p/lemur/wiki/RankLib/).
+  model. This demonstration uses
+  [RankLib](https://sourceforge.net/p/lemur/wiki/RankLib/).
 
 - A _judgment list_, containing a graded list of search results. The algorithm
-    is designed to produce a model that will honor the ordering of the judgment
-    list.
+  is designed to produce a model that honors the ordering of the judgment
+  list.
 
 - A feature set, containing all the _features_ you're handing to the Learning to
-    Rank algorithm, which it uses in conjunction with the judgment list to
-    produce a reliable model. An example feature set for @product@ data is shown
-    in the next article.
+  Rank algorithm, which it uses in conjunction with the judgment list to
+  produce a reliable model. An example feature set for @product@ data is shown
+  in the next article.
 
 
 [Judgment lists](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/core-concepts.html#judgments-expression-of-the-ideal-ordering)
