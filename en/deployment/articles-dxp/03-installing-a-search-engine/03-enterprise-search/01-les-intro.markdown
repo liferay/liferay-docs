@@ -19,7 +19,7 @@ includes
     compatibility matrix]()
 
 X-Pack is an 
-[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/7.3/setup-xpack.html)
+[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/setup-xpack.html)
 for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,
 you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
