@@ -1,6 +1,6 @@
 # Configuring Learning to Rank
 
-This set of instructions starts by assuming your have a remote
+This set of instructions starts by assuming you have a remote
 [Elasticsearch 7.4](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-elasticsearch-7) 
 cluster communicating with @product-ver@.
 
@@ -22,15 +22,15 @@ you're installing:
 ./bin/elasticsearch-plugin install http://es-learn-to-rank.labs.o19s.com/ltr-1.1.0-es6.5.4.zip
 ```
 
-If you're using X-Pack security in your Elasticsearch cluster, there 
+If using X-Pack security in your Elasticsearch cluster, there 
 [may be additional steps you need to take.](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/x-pack.html)
 
 ## Step 2: Training and Uploading a Model
 
-Detailed instructions on training models is outside the scope of this guide. You
-require the intervention of data scientists, who will likely recommend certain
-tools and have experience with certain models. Use what works for you. In doing
-so, you'll almost certainly be compiling
+Detailed instructions on training models is outside the scope of this guide.
+This requires the intervention of data scientists, who can recommend
+appropriate tools and models. Use what works for you. In doing so, you'll
+almost certainly be compiling
 [Judgment lists](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/core-concepts.html#judgments-expression-of-the-ideal-ordering)
 and
 [feature sets](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/building-features.html)

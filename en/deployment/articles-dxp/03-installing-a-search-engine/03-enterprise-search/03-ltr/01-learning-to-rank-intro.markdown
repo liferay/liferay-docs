@@ -4,18 +4,18 @@
 
 Search engines like Elasticsearch have well-tuned relevance algorithms, good for
 general search purposes. Sometimes, this "generally good" relevance scoring just
-isn't good enough. Attain more perfect search results by employing Machine
-Learning in your cause. 
+isn't good enough. Attain more perfect search results by employing machine
+learning. 
 
 Learning to Rank is a technique for harnessing machine learning to improve
 search result rankings. It combines the expertise of data scientists with
-machine learning, to produce a smarter scoring function that's applied to search
+machine learning to produce a smarter scoring function that's applied to search
 queries.
 
 @product-ver@, Service Pack 1/Fix Pack 2 and later, supports Learning to Rank
 through its support of Elasticsearch versions 6.x and 7.4.x. It requires a
-[Liferay Enterprise Search](https://help.liferay.com/hc/en-us/articles/360014400932) 
-(LES) subscription. It's important to understand that the
+[LES](https://help.liferay.com/hc/en-us/articles/360014400932) 
+subscription. It's important to understand that the
 [Elasticsearch Learning to Rank plugin](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/index.html)
 is not produced by Elastic, and there is not a pre-built plugin for all of
 @product@'s supported Elasticsearch versions. 
@@ -41,9 +41,9 @@ so:
 
     `com.liferay.portal.search.learning.to.rank`
 
-Now the Learning to Rank re-scoring process is skipped for queries entered into the page's
-Search Bar, and results are sortable in the Sort widget and returned using the
-default relevance algorithm.
+Now the Learning to Rank re-scoring process is skipped for queries entered into
+the page's Search Bar, and results are sortable in the Sort widget and returned
+using the default relevance algorithm.
 
 ## Prerequisites 
 
