@@ -11,14 +11,16 @@ header-id: installing-product-on-wildfly
 (DXP) or [Liferay Downloads](https://www.liferay.com/downloads) (Portal CE).
 @product-ver@ supports deployment to Wildfly 10 and Wildfly 11. Even if you want
 to manually install @product@ on an existing Wildfly application server, it can
-be helpful to download a @product@ Wildfly bundle to make gathering the 
-dependencies easier. Before proceeding, also download these files for
-[DXP](https://web.liferay.com/group/customer/dxp/downloads/7-1)
-and [Portal CE](https://www.liferay.com/downloads):
+be helpful to download a @product@ Wildfly bundle to make gathering the
+dependencies easier. Before proceeding, also download these *Additional Files*
+for
+[DXP](https://customer.liferay.com/downloads)
+or
+[Portal CE](https://www.liferay.com/downloads-community):
 
 - @product@ WAR file
 - Dependencies ZIP file
-- OSGi JARs ZIP file
+- OSGi Dependencies ZIP file
 
 Installing @product@ manually takes three steps:
 

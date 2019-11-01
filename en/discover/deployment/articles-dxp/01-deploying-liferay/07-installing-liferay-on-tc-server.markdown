@@ -6,13 +6,14 @@ header-id: installing-liferay-on-tc-server
 
 [TOC levels=1-4]
 
-Installing @product@ on tc server requires the following files: 
+Installing @product@ on tc server requires
+[downloading](https://customer.liferay.com/downloads) 
+these *Additional Files*: 
 
-- A @product@ WAR file
+- @product@ WAR file
+- Dependencies ZIP file
+- OSGi Dependencies ZIP file
 
-- Dependencies .zip file
-
-- OSGi JARs .zip file
 
 Here are the basic steps for installing @product@ on tc Server: 
 
