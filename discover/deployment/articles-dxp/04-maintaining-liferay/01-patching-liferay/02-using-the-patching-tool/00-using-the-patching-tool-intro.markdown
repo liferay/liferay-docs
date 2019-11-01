@@ -42,8 +42,9 @@ is to shut down the application server that's running @product@ before you insta
 a patch. 
 
 Liferay distributes patches as `.zip` files, whether they are hotfixes or fix
-packs. When you receive one, either via a LESA ticket (hotfix) or through
-downloading a fix pack from the
+packs. When you receive one, either via a
+[Help Center](https://help.liferay.com/hc)
+ticket (hotfix) or through downloading a fix pack from the
 [Customer Portal](https://web.liferay.com/group/customer), 
 place it in the Patching Tool's `patches` folder (e.g., `[Liferay
 Home]/patching-tool/patches`) without unzipping it. Once you've done that, it's
@@ -127,7 +128,7 @@ If a new version of a fix pack is released, you can use the Patching Tool to
 install it. The Patching Tool uninstalls the old fix pack and installs the new
 version in its place. 
 
-### Including '*support-info*' in LESA Tickets
+### Including '*support-info*' in Help Center Tickets
 
 To enable Liferay to reproduce subscriber issues, it is critical that the patch
 level in a given environment be made available to Liferay. 
@@ -137,7 +138,9 @@ To generate the patch level for your environment, use the following command:
     patching-tool support-info
  
 A text file called `patching-tool-support-info-actual-timestamp.txt` is created
-in the patching-tool folder. Please upload this file to the LESA ticket.
+in the patching-tool folder. Please upload this file to the
+[Help Center](https://help.liferay.com/hc)
+ticket.
 
 
 ### Fix Pack Dependencies

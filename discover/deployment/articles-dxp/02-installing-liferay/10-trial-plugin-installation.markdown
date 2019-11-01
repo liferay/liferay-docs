@@ -45,7 +45,8 @@ options to update or install certain plugins. To install a plugin, click the
 also includes access to the @product@-specific plugins from the Liferay
 [Marketplace website](https://www.liferay.com/marketplace) on Liferay.COM
 (LRDC). Trial users do not have access to our customer Knowledge Base and
-LESA (our support ticketing system).
+[Help Center](https://help.liferay.com/hc)
+(our support ticketing system).
 
 | Note: We are currently working on providing access to @product@ Plugins on the
 | Marketplace website for @product@ Trial customers, which would also include
