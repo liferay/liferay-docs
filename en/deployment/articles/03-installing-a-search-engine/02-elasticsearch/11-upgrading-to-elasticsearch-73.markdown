@@ -43,7 +43,7 @@ existing Elasticsearch 6 server (or cluster) to Elasticsearch 7:
 
 | **Known Issue:** See
 | [LPS-103938](https://issues.liferay.com/browse/LPS-103938). The Liferay
-| Connector to Elasticsearch 7 will throw an exception in the log when the LPKG
+| Connector to Elasticsearch 7 throws an exception in the log when the LPKG
 | file is deployed. There are no known functional impacts. If unexpected errors
 | occur, re-start the @product@ server.
 
@@ -89,8 +89,8 @@ You must also re-index the spell check indexes.
 Stuff happens. If that stuff involves an unrecoverable failure during the
 upgrade to Elasticsearch 7, roll back to Elasticsearch 6 and regroup.
 
-Since your Elasticsearch 6 and 7 are currently two separate installations, this procedure
-is straightforward:
+Since your Elasticsearch 6 and 7 are currently two separate installations, this
+procedure takes only a few steps:
 
 1.  Stop the Liferay Connector to Elasticsearch 6.
 

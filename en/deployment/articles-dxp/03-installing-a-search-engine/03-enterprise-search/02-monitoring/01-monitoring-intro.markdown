@@ -14,7 +14,7 @@ A Liferay Enterprise Search (LES) subscription is necessary for this
 integration.  Contact 
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
-| **The Same Monitoring Connector is Used for Elasticsearch 6 and 7**: When first
+| **The same monitoring connector is used for Elasticsearch 6 and 7**: When first
 | created, the Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x] was
 | intended to be used only with Elasticsearch 6. However, testing revealed that
 | the same connector works with Elasticsearch 7, so a new connector is not

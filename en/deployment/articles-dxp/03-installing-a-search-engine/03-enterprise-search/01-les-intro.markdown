@@ -14,9 +14,10 @@ includes
 - Connector to use X-Pack Monitoring
 - Learning to Rank
 
-* A LES subscription is not necessary if using Elasticsearch 7 via the _Liferay Connector to
+\* A LES subscription is not necessary if using Elasticsearch 7 via the _Liferay Connector to
     Elasticsearch 7_. X-Pack's security features are bundled. See the [LES
-    compatibility matrix]()
+    compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651-Liferay-Enterprise-Search-Compatibility-Matrix)
+    for more information.
 
 X-Pack is an 
 [Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/setup-xpack.html)
