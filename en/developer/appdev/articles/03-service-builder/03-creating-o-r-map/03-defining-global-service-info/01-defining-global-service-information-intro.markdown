@@ -54,10 +54,10 @@ Spring Dependency Injector:
 | **Note:** Prior to @product@ 7.2, Spring was the sole dependency injector. The
 | services were Spring beans. Liferay's Spring bean framework accommodates 
 | Spring beans referencing each other: for example, Spring bean A has a Spring
-| bean B field and vice versa. When Spring is the dependency, the base services
-| Service Builder generates include local service and persistence fields of all
-| the `service.xml`'s entities--this causes circular references. Since OSGi 
-| Declarative Services doesn't accommodate circular references, Service Builder 
+| bean B field and vice versa. When Spring is the dependency injector, the base
+| services Service Builder generates include local service and persistence fields
+| of all the `service.xml`'s entities. This causes circular references. Since OSGi
+| Declarative Services doesn't accommodate circular references, Service Builder
 | does not create these fields in the base classes when DS is the dependency
 | injector. For more details, see 
 | [Understanding the Code](understanding-the-code-generated-by-service-builder).
