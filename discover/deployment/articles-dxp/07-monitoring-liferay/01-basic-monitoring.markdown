@@ -51,3 +51,14 @@ You will need these logs to tune the JVM properly.
 encounters out of memory scenarios, you should consider adding this:
 
     -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/dumps
+
+Garbage collector log files can grow huge. Arguments like the ones below rotate
+the logging to a new file when the log file reaches a maximum size: 
+
+```bash
+-XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 
+-XX:GCLogFileSize=50M
+```
+
+These arguments rotate the logs to as many as `10` log files, each with a `50M`
+size limit. 
