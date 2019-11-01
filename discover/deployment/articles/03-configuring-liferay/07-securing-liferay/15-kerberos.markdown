@@ -71,11 +71,15 @@ Windows&trade; clients.
 
 2.  Generate a Kerberos keytab file using `ktpass`: 
 
-        ktpass -princ HTTP/[web server host name]@[domain] -mapuser [user name]@[domain] -crypto ALL -ptype KRB5_NT_PRINCIPAL -pass [password] -out c:\kerberos.keytab
+    ```bash
+    ktpass -princ HTTP/[web server host name]@[domain] -mapuser [user name]@[domain] -crypto ALL -ptype KRB5_NT_PRINCIPAL -pass [password] -out c:\kerberos.keytab
+    ```
 
 	For example: 
 
-		ktpass -princ HTTP/mywebserver.intdomain.local@INTDOMAIN.LOCAL -mapuser Marta@INTDOMAIN.LOCAL -crypto ALL -ptype KRB5_NT_PRINCIPAL -pass password-for-Marta -out c:\kerberos.keytab
+    ```bash
+    ktpass -princ HTTP/mywebserver.intdomain.local@INTDOMAIN.LOCAL -mapuser Marta@INTDOMAIN.LOCAL -crypto ALL -ptype KRB5_NT_PRINCIPAL -pass password-for-Marta -out c:\kerberos.keytab
+    ```
 
 3.  Ensure that the AD domain controller and the web server can see each other
     on the network via DNS configuration or `hosts` file. 
@@ -87,19 +91,21 @@ Windows&trade; clients.
     Directory. The example domain for the user configured in step two above
     would look like this: 
 
-        [libdefaults]
-        	default_realm = INTDOMAIN.LOCAL
+    ```
+    [libdefaults]
+        default_realm = INTDOMAIN.LOCAL
 
-        [domain_realm]
-            mywebserver.intdomain.local = INTDOMAIN.LOCAL
-            intdomain.local = INTDOMAIN.LOCAL
-            .intdomain.local = INTDOMAIN.LOCAL
+    [domain_realm]
+        mywebserver.intdomain.local = INTDOMAIN.LOCAL
+        intdomain.local = INTDOMAIN.LOCAL
+        .intdomain.local = INTDOMAIN.LOCAL
 
-        [realms]
-        INTDOMAIN.LOCAL = {
-            admin_server = winserver.intdomain.local
-            kdc = winserver.intdomain.local
-        }
+    [realms]
+    INTDOMAIN.LOCAL = {
+        admin_server = winserver.intdomain.local
+        kdc = winserver.intdomain.local
+    }
+    ```
 
 2.  Copy the keytab file you generated on your AD server to your web server. 
 
@@ -108,49 +114,51 @@ Windows&trade; clients.
     keytab file. For example, if you're using the Apache HTTP server, the
     configuration might look like this: 
 
-        LoadModule headers_module /usr/lib/apache2/modules/mod_headers.so
-        LoadModule rewrite_module /usr/lib/apache2/modules/mod_rewrite.so
-        LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
-        LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so
-        LoadModule proxy_ajp_module /usr/lib/apache2/modules/mod_proxy_ajp.so
-        LoadModule auth_kerb_module /usr/lib/apache2/modules/mod_auth_kerb.so
+    ```apache
+    LoadModule headers_module /usr/lib/apache2/modules/mod_headers.so
+    LoadModule rewrite_module /usr/lib/apache2/modules/mod_rewrite.so
+    LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
+    LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so
+    LoadModule proxy_ajp_module /usr/lib/apache2/modules/mod_proxy_ajp.so
+    LoadModule auth_kerb_module /usr/lib/apache2/modules/mod_auth_kerb.so
 
-        <VirtualHost *:10080>
-            <Proxy *>
-                Order deny,allow
-                Allow from all
-            </Proxy>
-            ProxyRequests     Off
-            ProxyPreserveHost On
-            ProxyPass / ajp://localhost:8009/
-            ProxyPassReverse / ajp://localhost:8009/
-            ServerName mywebserver.intdomain.local
-            <Location />
-                        Order allow,deny
-                        Allow from all
-                        AuthType Kerberos
-                        KrbServiceName HTTP/mywebserver.intdomain.local@INTDOMAIN.LOCAL
-                        AuthName "Domain login"
-                        KrbAuthRealms INTDOMAIN.LOCAL
-                        Krb5KeyTab /etc/apache2/kerberos.keytab
-                        require valid-user
-                        KrbMethodNegotiate  On
-                        KrbMethodK5Passwd   Off
-                        #KrbLocalUserMapping On
+    <VirtualHost *:10080>
+        <Proxy *>
+            Order deny,allow
+            Allow from all
+        </Proxy>
+        ProxyRequests     Off
+        ProxyPreserveHost On
+        ProxyPass / ajp://localhost:8009/
+        ProxyPassReverse / ajp://localhost:8009/
+        ServerName mywebserver.intdomain.local
+        <Location />
+                    Order allow,deny
+                    Allow from all
+                    AuthType Kerberos
+                    KrbServiceName HTTP/mywebserver.intdomain.local@INTDOMAIN.LOCAL
+                    AuthName "Domain login"
+                    KrbAuthRealms INTDOMAIN.LOCAL
+                    Krb5KeyTab /etc/apache2/kerberos.keytab
+                    require valid-user
+                    KrbMethodNegotiate  On
+                    KrbMethodK5Passwd   Off
+                    #KrbLocalUserMapping On
 
-                        # Below directives put logon name of authenticated user into http header X-User-Global-ID
-                        RequestHeader unset X-User-Global-ID
-                        RewriteEngine On
-                        RewriteCond   %{LA-U:REMOTE_USER} (.+)
-                        RewriteRule   /.* - [E=RU:%1,L,NS]
-                        RequestHeader set X-User-Global-ID %{RU}e
+                    # Below directives put logon name of authenticated user into http header X-User-Global-ID
+                    RequestHeader unset X-User-Global-ID
+                    RewriteEngine On
+                    RewriteCond   %{LA-U:REMOTE_USER} (.+)
+                    RewriteRule   /.* - [E=RU:%1,L,NS]
+                    RequestHeader set X-User-Global-ID %{RU}e
 
-                        # Remove domain suffix to get the simple logon name
-                        #RequestHeader edit X-User-Global-ID "@INTLAND.LOCAL$" ""
+                    # Remove domain suffix to get the simple logon name
+                    #RequestHeader edit X-User-Global-ID "@INTLAND.LOCAL$" ""
 
-            </Location>
-        </VirtualHost>
-        Listen 10080
+        </Location>
+    </VirtualHost>
+    Listen 10080
+    ```
 
 ### Connecting @product@ to Active Directory over LDAP
 
