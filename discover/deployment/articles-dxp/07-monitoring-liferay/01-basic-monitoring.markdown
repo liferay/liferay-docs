@@ -52,8 +52,8 @@ encounters out of memory scenarios, you should consider adding this:
 
     -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/dumps
 
-Garbage collector log files can grow huge. Arguments like the ones below, rotate
-the logging to a new file upon the current log file reaching a maximum size: 
+Garbage collector log files can grow huge. Arguments like the ones below rotate
+the logging to a new file when the log file reaches a maximum size: 
 
 ```bash
 -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 
