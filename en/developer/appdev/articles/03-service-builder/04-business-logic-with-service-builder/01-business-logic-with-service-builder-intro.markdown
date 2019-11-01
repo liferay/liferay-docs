@@ -32,7 +32,7 @@ Creating services takes these steps:
 
 3.  Implementing the `update` and `delete` Methods.
 
-4.  Implementing Finder and Counter Methods
+4.  Implementing `get` and `get*Count` Methods
 
 5.  Implementing Other Business Logic
 
