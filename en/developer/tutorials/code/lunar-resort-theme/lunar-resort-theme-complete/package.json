@@ -1,0 +1,23 @@
+{
+	"devDependencies": {
+		"gulp": "3.9.1",
+		"liferay-theme-tasks": "^9.3.0",
+		"compass-mixins": "0.12.10",
+		"liferay-frontend-common-css": "1.0.4",
+		"liferay-frontend-theme-styled": "4.0.7",
+		"liferay-frontend-theme-unstyled": "4.0.4"
+	},
+	"keywords": [
+		"liferay-theme"
+	],
+	"liferayTheme": {
+		"baseTheme": "styled",
+		"fontAwesome": false,
+		"screenshot": "",
+		"templateLanguage": "ftl",
+		"version": "7.2"
+	},
+	"main": "package.json",
+	"name": "lunar-resort-theme7-2-new-theme",
+	"version": "1.0.0"
+}
