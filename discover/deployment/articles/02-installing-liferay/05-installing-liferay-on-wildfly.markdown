@@ -2,18 +2,28 @@
 header-id: installing-liferay-on-wildfly-10
 ---
 
-# Installing @product@ on Wildfly 10
+# Installing @product@ on Wildfly
 
 [TOC levels=1-4]
 
-Liferay Digital Enterprise 7.0 bundled with Wildfly 10 is available on 
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
-Even if you want to manually install @product@ on an existing Wildfly 10
-application server, it can be helpful to download a @product@ Wildfly bundle. The
-bundle contains many required dependencies and configuration files. Before
-proceeding, you should also 
-[download the latest @product@ WAR file](https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
-as well as the dependencies ZIP file and OSGi JARs ZIP file.
+@product-ver@ bundled with Wildfly is available on the
+[Help Center](https://customer.liferay.com/downloads)
+(DXP) or the
+[Community Downloads page](https://www.liferay.com/downloads-community)
+(Portal CE). The Wildfly bundle contains JARs, scripts, and configuration files
+required for deploying @product-ver@. Copying these files from the @product@
+Wildfly bundle facilitates installing @product@ on an existing Wildfly
+application server. 
+
+Whether you copy bundle files (recommended) or download and create the files,
+you must download these *Additional Files* for
+[DXP](https://customer.liferay.com/downloads)
+or
+[Portal CE](https://www.liferay.com/downloads-community):
+
+- @product@ WAR file
+- Dependencies ZIP file
+- OSGi Dependencies ZIP file
 
 Installing @product@ manually requires these basic steps:
 
