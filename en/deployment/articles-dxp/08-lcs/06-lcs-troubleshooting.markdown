@@ -96,7 +96,7 @@ explains how to do this.
 At least 90 days before the subscription expires, Liferay will reach out to 
 begin the renewal process. 30 days before expiration, Liferay Support sends 
 warning messages through 
-[LESA](https://web.liferay.com/group/customer/support/-/support/ticket), 
+the Help Center, 
 [the LCS site](https://lcs.liferay.com), 
 and 
 [the Customer Portal](https://www.liferay.com/group/customer). 
@@ -115,8 +115,8 @@ messages disappear within 24 hours. Note that by using XML activation keys
 
 If you encounter issues with LCS, the Liferay Support team is here to help. If 
 you need support, open a 
-[LESA](https://web.liferay.com/group/customer/support/-/support/ticket) 
-ticket. You can begin troubleshooting the following scenarios, which the Liferay 
+[Help Center](https://help.liferay.com/hc)
+ticket. You can begin troubleshooting the following scenarios, which the Liferay
 Support team can also assist you with. 
 
 | **Note:** Before troubleshooting specific issues or contacting Liferay 

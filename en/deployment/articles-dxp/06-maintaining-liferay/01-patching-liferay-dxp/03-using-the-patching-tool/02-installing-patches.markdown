@@ -13,7 +13,9 @@ ones reside in memory. For these reasons, it is best to shut down @product@
 before installing patches. 
 
 Liferay distributes all patches (fix packs and hotfixes) as ZIP files. When you
-download a patch, either from a LESA ticket (hotfix) or from the
+download a patch, either from a
+[Help Center](https://help.liferay.com/hc)
+ticket (hotfix) or from the
 [Customer Portal](https://customer.liferay.com/downloads)
 (fix pack), place it in the Patching Tool's `patches` folder (e.g., `[Liferay
 Home]/patching-tool/patches`) without unzipping it. To list your installed
