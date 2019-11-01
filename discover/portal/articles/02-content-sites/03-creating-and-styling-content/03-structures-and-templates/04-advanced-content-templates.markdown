@@ -87,7 +87,7 @@ template:
      **above** the `bookNow` function: 
 
         <div class="popup" onclick="bookNow()">
-          <button>${buttontext.getData()}</button>
+          <button id="bookBtn">${buttontext.getData()}</button>
           <span class="popuptext" id="myPopup">You have successfully booked your trip!    <br />  See you on the moon!</span>
         </div>
 
@@ -109,7 +109,7 @@ template:
             background-image: url("${bgimage.getData()}");
         }
 
-        button {
+        .popup button#bookBtn {
             position: relative;
             top: 110px;
             padding: 20px 20px;
