@@ -26,10 +26,10 @@ Liferay Portal.
 ## Building Liferay Portal from source
 
 The first step to contributing to Liferay Portal is to clone the
-`liferay-portal` repo from Github and build the platform from source code.
+`liferay-portal` repo from GitHub and build the platform from source code.
 
-Please follow the instruction on
-[Building Liferay Portal from source code](https://portal.liferay.dev/participate/fix-a-bug/building-liferay-source). 
+Please follow the instructions for
+[building Liferay Portal from source code](https://portal.liferay.dev/participate/fix-a-bug/building-liferay-source). 
 
 To better understand the code structure, please also read
 [How the source is organized](https://portal.liferay.dev/participate/fix-a-bug/how-the-source-is-organized).
