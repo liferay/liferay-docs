@@ -30,12 +30,6 @@ You'll learn these things about PortletMVC4Spring:
 -   **Annotation-based Controller Development:** Shows how to implement 
     controllers using plain old Java objects (POJOs) and annotations. 
 
--   **Request Dispatching with** `DispatcherPortlet`**:** Explains how this portlet 
-    sends requests to controllers and more. 
-
--   **Rendering Views with** `ViewRendererServlet`**:** Describes
-    PortletMVC4Spring's view rendering  process. 
-
 | **Background:** The PortletMVC4Spring project began as Spring Portlet MVC and 
 | was part of the
 | [Spring Framework](https://spring.io/projects/spring-framework).
@@ -62,8 +56,8 @@ persistent state and the activities that generate content. The Portlet 2.0
 Specification added two more phases: The event phase and the resource phase,
 both of which are supported by annotation-driven dispatching. 
 
-PortletMVC4Spring provides annotations that supports requests from the render,
-action, event, and resource serving portlet phases, Spring Web MVC provides only
+PortletMVC4Spring provides annotations that support requests from the render,
+action, event, and resource serving portlet phases; Spring Web MVC provides only
 a `@RequestMapping` annotation. Where a Spring Web MVC controller might have
 a single handler method annotated with `@RequestMapping`, an equivalent
 PortletMVC4Spring controller might have multiple handler methods, each using
