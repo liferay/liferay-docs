@@ -8,7 +8,7 @@ header-id: implementing-methods-to-get-and-count-entities
 
 Service Builder generates `findBy*` methods and `countBy*` methods in your
 [`*Persistence` classes](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder)
-based on your  `service.xml` file's
+based on your `service.xml` file's
 [finders](/docs/7-2/appdev/-/knowledge_base/a/defining-service-entity-finder-methods).
 You can leverage finder methods in your local services to get and count
 entities.
@@ -18,9 +18,9 @@ entities.
 -   [Counters](#counter-methods): `get*Count` methods return the number of 
     instances matching criteria
 
-| **Note:** @product@ uses READ database transactions for service methods that 
-| start with `get` or one of several other prefixes. Don't update data from 
-| these methods. For details, see *Service Method Prefixes and Database 
+| **Note:** @product@ uses read-only database transactions for service methods 
+| that start with `get` or one of several other prefixes. Don't update data 
+| from within methods. For details, see *Service Method Prefixes and Database
 | Transactions* later in this article. 
 
 Start with getting entities that match criteria. 
@@ -55,7 +55,7 @@ Here's how to get entities based on criteria:
 
 3.  Determine the
     [`*Persistence` class](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder)
-    `findBy*` method you want to call.  Depending on your `finder` element
+    `findBy*` method you want to call. Depending on your `finder` element
     columns, Service Builder might overload the method to include these
     parameters:
  
@@ -129,8 +129,10 @@ entity counts.
 
 ## Service Method Prefixes and Database Transactions
 
-There are two kinds of database transaction precipitated by your Service Builder
-project's service methods: READ-WRITE and plain old READ. Specific service method name prefixes determine the transaction type applied to the method. Service methods prefixed with any of these words precipitate a database READ: 
+@product@ uses read-only database transactions in some methods. Specific service
+method name prefixes determine whether read-only database transactions are used.
+Service methods prefixed with any of these words precipitate read-only
+transactions: 
 
 - `dynamicQuery`
 - `fetch`
@@ -141,19 +143,21 @@ project's service methods: READ-WRITE and plain old READ. Specific service metho
 - `reindex`
 - `search`
 
-Otherwise, a READ-WRITE transaction is made. Methods that persist data (i.e.,
-add, update, or delete data) must execute in READ-WRITE transactions. Therefore,
-DO NOT use the words above to prefix names of data persistence methods. 
+Otherwise, the transactions executed are not read only. Methods that persist
+data (i.e., add, update, or delete data) must not use read-only transactions.
+Therefore, DO NOT use the words above to prefix names of data persistence
+methods. 
 
-Similarly, in methods recognized for READ transactions (methods whose names are
-prefixed with the words above), DO NOT call services that persist data. For
+Similarly, in methods identified for read-only transactions (methods whose names
+are prefixed with the words above), DO NOT call services that persist data. For
 example, don't name your service method `getOrAddMyEntity` if it first attempts
 to retrieve the entity from the database, and if no entity is returned, then it
 calls an `addMyEntity` method. This fails because the `get` prefix forces a
-READ transaction on the `get*` method. If you name the method `addOrGetMyEntity`
-instead, a READ-WRITE transaction is invoked to find the entity from the
-database, and if no entity is found, the nested `addMyEntity` method operates in
-a READ-WRITE transaction to write the new entity to the database. 
+read-only transaction on the `get*` method. If you name the method
+`addOrGetMyEntity` instead, a regular transaction (not read-only) is invoked to
+find the entity from the database, and if no entity is found, the nested
+`addMyEntity` method operates in a regular transaction to write the new entity
+to the database. 
 
 ## Related Topics
 
