@@ -16,13 +16,14 @@ Copying these files from a @product@ Tomcat bundle facilitates installing
 @product@ on Tomcat.
 
 Whether you copy bundle files (recommended) or download and create the files,
-you must download these files for
-[DXP](https://web.liferay.com/group/customer/dxp/downloads/7-1) or
-[Portal CE](https://www.liferay.com/downloads):
+you must download these *Additional Files* for
+[DXP](https://customer.liferay.com/downloads)
+or
+[Portal CE](https://www.liferay.com/downloads-community):
 
 - @product@ WAR file
 - Dependencies ZIP file
-- OSGi JARs ZIP file
+- OSGi Dependencies ZIP file
 
 Here are the basic steps for installing @product@ on Tomcat:
 
