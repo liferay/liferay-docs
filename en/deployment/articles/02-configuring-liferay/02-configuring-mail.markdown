@@ -131,4 +131,43 @@ You can manage a mail session for @product@ on your application server. Here's h
             mail.session.jndi.name=mail/MailSession
         ```
 
+Lastly, configure your instance's email senders. 
+
+## Configuring default email senders
+
+Email senders are the default name and email address @product@ uses to send administrative emails and announcement emails. 
+
+Default email senders are configured in the
+[`portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties).  
+
+-    Admin email configuration:
+
+    ```properties
+    admin.email.from.name=Joe Bloggs
+    admin.email.from.address=test@domain.invalid
+    ```
+
+-   Announcements email configuration:
+
+    ```properties
+    announcements.email.to.name=
+    announcements.email.to.address=noreply@domain.invalid
+    ```
+
+1.  Replace the names and email addresses above with your values. 
+
+| **Note:** Following emails are blacklisted by default and cannot be used 
+| in any @product@ installation:
+| 
+| - `noreply@liferay.com`
+| - `test@liferay.com`
+| - `noreply@domain.invalid`
+| - `test@domain.invalid`
+|
+| If you use them, @product@ logs a `WARN` trace:
+|
+| `Email xxx will be ignored because it is included in mail.send.blacklist`
+
+2.  Restart your server. 
+
 Congratulations on configuring mail for @product@. 
