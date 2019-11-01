@@ -68,29 +68,28 @@ and Organizations*.
 1.  Fill out the Add User form and click *Save*. At a minimum, provide a Screen
 Name, First Name, Last Name, and Email Address for the User.
 
-    You're on the Details page of the Add User form at this point. To the right,
-there's a navigation pane where you can continue configuring the user you're
-adding by clicking either Organizations or Personal Site.
+    Below the form, you can continue configuring the user by clicking either 
+    Organizations or Personal Site Template.
 
 Once you save the form, the User is added to the portal.
 
 ![Figure 2: At a minimum, enter a screen name, email address, and first name to create a new user account.](../../images/your-request-completed-successfully.png)
 
 After you submit the form, the page reloads with a success message. An expanded
-form appears for editing the user's account (see all the new categories in the
-navigation pane to the right of the form?). This allows you to fill out a lot
-more information about the user. You don't have to fill anything else out right
-now. Just note that when the user account was created, a password was
-automatically generated. If Liferay was correctly installed and a mail server
-was set up (see
+form appears for editing the user's account (see all the new categories listed 
+below the form?). This lets you fill out a lot more information about the user. 
+You don't have to fill anything else out right now. Just note that when the user 
+account was created, a password was automatically generated. If Liferay was 
+correctly installed and a mail server was set up (see
 [here](/docs/6-2/user/-/knowledge_base/u/server-administration#mail)), an
 email message with the user's new password was sent to the user's email address.
 This, of course, requires that Liferay can properly communicate with your SMTP
 mail server.
 
-If you have not set up a mail server, you can click the Password link to access
-the Password section of the Add User form to manually set a password for your
-new user. Enter the new password twice.
+If you haven't yet set up a mail server, use this page to change the default
+password for your user account to something you can remember. Clicking on the
+*Password* section heading below the form opens the Password section of the Add 
+User form. Enter the new password twice and click *Save*. 
 
 ![Figure 3: Enter the password twice to manually set the password for a user. If the Password Policy you're using is configured to allow it, select whether to require the user to reset their password the first time they sign in to the portal.](../../images/usrmgmt-require-password-reset.png)
 
@@ -98,17 +97,13 @@ new user. Enter the new password twice.
 | Password form? The default password policy is set so that even you, the
 | administrator, cannot deselect it. As the administrator, however, you do have
 | the ability to modify the default password policy so that this box becomes
-| usable. Navigate to Password Policies in the Control Panel, click on the Default
-| Password Policy, and deselect the *Change Required* checkbox. Now you can decide
+| usable. Navigate to Password Policies in the Control Panel, open the Actions
+| menu for the Default Password Policy, open the *Password Changes* section, and 
+| toggle the *Change Required* checkbox to *NO* and save. Now you can decide 
 | whether each user you add will need to reset their password.
 | 
 | See the article on Password Policies for more information on editing the default
 | policy or creating your own.
-
-If you haven't yet set up a mail server, use this page to change the default
-password for your user account to something you can remember. Clicking on the
-*Password* link in the navigation pane on the right opens the Password section
-of the Add User form. Enter the new password twice and click *Save*. 
 
 ### Adding an Administrative User
 
@@ -118,27 +113,23 @@ famous Liferay Administrators, *Test Test* or her cousin, *Joe Bloggs*? Since
 you're the administrator of the Lunar Resort portal, you want to set up your own
 administrator account for the portal. Use the steps above to add a user with
 your information, then give your user account the same administrative rights as
-the default administrator's account, click the *Roles* link in the right
-navigation pane. This page of the form shows the roles to which your account is
-currently assigned. You should have one role: Power User. 
+the default administrator's account, click the *Roles* link below the form. This 
+section shows the roles to which your account is currently assigned. At the 
+moment, no roles are listed.
 
-| **Note:** By default, all users are assigned the Power User role. The Power User
-| role doesn't grant any special permissions. It can safely be ignored.
-| Alternatively, it can be used to extend the User role. If there are certain
-| custom permissions that you'd like all of your portal users to have, you can
-| grant these custom permissions to the Power User role. You can also customize
-| the default roles a new user receives via *Default User Associations*. This is
-| covered in the article on Portal Settings.
+| **Note:** You can also customize the default roles a new user receives via 
+| *Default User Associations*. This is covered in the article on Portal 
+| Settings.
 
-Assign the Administrator role to our user account. On the form for
-editing a user, after having clicked on *Roles* at the right side of the screen,
-click the *Select* link under Regular Roles. A dialog box pops up with a list of
-all the regular (portal-scoped) roles in the portal. Select the Administrator
-role from the list. The dialog box disappears and the role is added to the list
-of roles associated with your account. Don't forget to click the *Save* button
-which is at the bottom of the blue bar of links on the right side of the screen.
-You are now a portal administrator. Log out of the portal and then log back in
-with your own user account. 
+Assign the Administrator role to your user account. On the form for editing a 
+user, after having clicked on the *Roles* section below the form, click the 
+*Select* button above Inherited Regular Roles. A dialog box pops up with a list 
+of all the regular (portal-scoped) roles in the portal. Select the Administrator 
+role from the list. The dialog box disappears and the role is added to the list 
+of roles associated with your account. Don't forget to click the *Save* button 
+which is at the bottom of the page, below all the sections. You are now a portal 
+administrator. Log out of the portal and then log back in with your own user 
+account. 
 
 | In production, you should always delete or disable the default administrator
 | account to secure your portal.
@@ -152,8 +143,7 @@ own user's account in the list of users, along with any others. If you want to
 change something about a particular user, you can click the *Actions* button
 (the vertical ellipsis icon) next to that user.
 
-<!-- Add screenshot here, this is definitely a lexicon element (the ellipsis actions
-button) -->
+![Figure 4: Open the Actions menu next to a listed user to update its configuration.](../../images/usrmgmt-user-actions.png)
 
 - Choosing *Edit* takes you back to the Edit User page where you can modify any aspect
 of the user account including the screen name, email address, first name, last
@@ -164,7 +154,7 @@ user.
 
 - Choosing *Manage Pages* allows you to configure the personal pages of a user.
 
-    <!--Screenshot here and in between all these bullets, maybe? -->
+![Figure 5: You can manage a user's personal pages through the user's Actions menu.](../../images/usrmgmt-user-actions-manage-pages.png)
 
 - Choosing *Impersonate User* opens another browser window which allows you to browse
 the site as if you were the user. This allows you to test your user management
@@ -172,13 +162,13 @@ on a user to make sure you're achieving the desired behavior, without having to
 repeatedly log out of your administrator account and into the user's account.
 
 - Choosing *Deactivate* deactivates the user's account. The user will still be in
-your databse,along with all the rest of your users, but their account will be
+your database, along with all the rest of your users, but their account will be
 deactivated, so that they cannot sign in to the portal. If you have any
 deactivated users, you'll have the option to view active portal users or
 inactive portal users. If all the users are active, this filtering option will
 not appear.
 
-    ![Figure 4: You can choose whether to view active or inactive (deactivated) portal users in the users list found at *Product Menu* &rarr; *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.](../../images/usrmgmt-active.png)
+![Figure 6: You can choose whether to view active or inactive (deactivated) portal users in the users list found at *Product Menu* &rarr; *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.](../../images/usrmgmt-active.png)
 
 Note that most users can't perform most of the above actions. In fact, most
 users won't have access to the Control Panel at all. You can perform all of the
@@ -189,13 +179,13 @@ above functions because you have administrative access.
 Users in @product@ have avatars. Administrative users can upload images in the
 Edit User form. 
 
-![Figure 5: Upload images for user avatars in the Edit User form.](../../images/users-ray-avatar.png)
+![Figure 7: Upload images for user avatars in the Edit User form.](../../images/users-ray-avatar.png)
 
 If no image is explicitly uploaded for a user's avatar, a default image is
 assigned, using the initials of the user (First Name then Last Name) over a
 random color.
 
-![Figure 6: If Johannes Bach was a user in your @product@ instance, his default avatar might look like this.](../../images/users-default-user-image.png)
+![Figure 8: If Johannes Bach was a user in your @product@ instance, his default avatar might look like this.](../../images/users-default-user-image.png)
 
 For many locales, the default approach for generating user images is perfectly
 suitable. For some locales, though, the default user image is misleading or
