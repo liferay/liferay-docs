@@ -63,11 +63,11 @@ Follow these steps to create and deploy your portlet application:
     ```
 
     At this point you can develop your Model, View, or Controller components, in
-    any order. We'll start with the Model. 
+    any order. 
 
 3.  Create your Model class(es) in a package for models (e.g.,
     `java/[my-package-path]/dto`). The sample Model class is `User`. 
-    
+
     ```java 
     public class User implements Serializable {
 
@@ -98,8 +98,8 @@ Follow these steps to create and deploy your portlet application:
     ```
 
 4.  Create your View using a Spring Web-supported template type. If you didn't 
-    generate your project using the archetype mentioned at the start of this
-    article, specify a View resolver for template type in your
+    generate your project using the archetype mentioned above, specify a View
+    resolver for template type in your
     `spring-context/portlet-application-context.xml` portlet application
     context. (See
     [PortletMVC4Spring Configuration Files](/docs/7-2/reference/-/knowledge_base/r/portletmvc4spring-configuration-files)
