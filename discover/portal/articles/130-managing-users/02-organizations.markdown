@@ -6,9 +6,6 @@ header-id: adding-and-managing-organizations
 
 [TOC levels=1-4]
 
-<!-- Contains 6.2 links for now. Needs more links, and needs screen shots, when
-applicable. -->
-
 For some enterprises, particularly those that are organized in a hierarchical
 structure, using organizations as a user management tool can make a lot of
 sense, and can make the delegation of user management responsibilities much
@@ -33,8 +30,7 @@ your company's departments (Human Resources, for example) could be an
 organization in Liferay. Often times, organizations have their own site.
 
 Many simple portal designs don't use organizations at all; they only use sites
-(see the sections on [Web content Management](/docs/6-2/user/-/knowledge_base/u/web-content-management) and
-[Advanced Web Content Management](/docs/6-2/user/-/knowledge_base/u/advanced-web-content-management)
+(see the sections on [Creating Sites](/docs/7-0/user/-/knowledge_base/u/creating-sites) 
 for more information on sites). The main purpose of organizations is to allow
 for distributed user management. Using organizations, portal administrators can
 delegate some user management responsibilities to organization administrators.
@@ -110,8 +106,7 @@ organizations. Members of child organizations are implicit members of their
 parent organizations. This means, for example, that members of child
 organizations can access the private pages of their parent organizations. This
 behavior can be customized in your portal's `portal-ext.properties`
-configuration file. There's an `Organizations` [section of the
-portal.properties](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Organizations)
+configuration file. There's an `Organizations` [section of the portal.properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Organizations)
 file where the properties specific to organizations are listed. 
 
 Since organizations are designed for distributed user administration,
@@ -132,8 +127,9 @@ within their organization. Only portal administrators can add existing users to
 an organization.
 
 Organization Administrators can't access the Control Panel by default, but they
-don't need to. In their personal site, organization administrators can click on
-the *My Organizations* link to gain access to any organizations they manage.
+don't need to. Under their *My Account* menu, in the Control Menu, organization 
+administrators can click on the *My Organizations* link to gain access to any 
+organizations they manage.
 
 ![Figure 1: The My Organizations application lets Organization Administrators manage their organizations in their personal site.](../../images/organizations-my-organizations.png)
 
@@ -158,7 +154,7 @@ requirements for permissions within an organization, you can create custom
 organization-scoped roles to assemble the permissions you wish to grant to
 particular users. Alternatively, you could consider attaching a site to your
 organization and using site teams to assemble the sets of permissions (see
-below). See the [Roles and Permissions article](/docs/6-2/user/-/knowledge_base/u/roles-and-permissions) for more detail.
+below). See the [Roles and Permissions article](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions) for more detail.
 
 Does your organization need to have its own site? Many organizations don't, but
 since some do, Liferay allows sites to be attached to organizations. If an
@@ -180,26 +176,40 @@ manage organizations.
 Now add an organization to the portal (perhaps start by adding the *Physical
 Plant Department* organization to the Lunar Resort): 
 
-1.  Click the *Users and Organizations* link in the Control
-Panel. 
-2.  Click the *Add* button and choose *Regular Organization*. 
-    To attach a site when you create an organization, click on *Organization
-    Site* at the right and check the *Create Site* box. If you don't know right now
-    if your organization needs a site, that's fine. You can always add one later. 
-<!-- Add a screenshot showing the Add Org UI -->
-    - Enter a Name for the organization.
-    - Select an organization in the system to be the direct parent of the
-organization you are creating. Click the *Remove* button to remove the currently
-configured parent.
-    - Click *Save* when finished filling out the Add Orgnanization form.
+1.  Open the Control Menu and navigate to *Control Panel* &rarr; 
+		*Users* &rarr; *Users and Organizations*.
+2.  Select the *Organizations* tab and click the *Add* button to add a new 
+		organization. To attach a site when you create an organization, click on the 
+		*Organization Site* section heading at the bottom and check the 
+		*Create Site* box. If you don't know right now if your organization needs a 
+		site, that's fine. You can always add one later. 
+		
+		![Figure 2: Use the Add Organization form to create a new Organization for the Lunar Resort.](../../images/organizations-add-organization.png)
+
+		- Enter a Name for the organization.
+		- Select an organization in the system to be the direct parent of the
+			organization you are creating. Click the *Remove* button to remove the 
+			currently configured parent.
+		- Click *Save* when finished filling out the Add Organization form.
 
 As when creating a new user, once you submit the form a success message appears
 and you have access to a new form which lets you enter additional information
-about the organization. Organizations can have multiple email addresses, postal
-addresses, web sites, and phone numbers associated with them.  The Services link
-can be used to indicate the operating hours of the organization, if any.
+about the organization. The form is organized under three tabs: 
 
-<!-- Figure that shows a screenshot of the additional info for the org. -->
+- *Organization Information:* contains the basic information that you 
+	provided when you created the Organization, along with a few additional 
+	settings for an avatar image and Categorization.
+
+- *Identification:* specifies the contact information for the organization. 
+	Organizations can have multiple email addresses, postal addresses, web sites, 
+	and phone numbers associated with them. The Services section form can be used 
+	to indicate the operating hours of the organization, if any.
+
+- *Miscellaneous:* contains comments about the organization, reminder 
+	queries for the users of the organization, and any custom fields for the 
+	organization.
+
+![Figure 3: Once the Add Organization form is submitted you can provide additional information about the organization.](../../images/organizations-add-organization-more.png)
 
 | **Tip:** After creating an organization, you should assign the desired user to
 | the Organization Owner Role. The Organization Owner can do everything that an
@@ -216,11 +226,13 @@ can be used to indicate the operating hours of the organization, if any.
 ## Editing Organizations
 
 To edit an organization go to the Users and Organizations section of the Control
-Panel. You should see any active portal users and organizations listed.  Click
-the *Actions* button (as usual, the vertical ellipsis icon) next to an
-organization. This shows a list of actions you can perform on this organization.
+Panel and click the *Organizations* tab. You should see any active portal 
+organizations listed.  Click the *Actions* button (the vertical ellipsis icon) 
+next to an organization. This shows a list of actions you can perform on this 
+organization.
 
-<!-- Screenshot of Actions Button menu options -->
+![Figure 4: Open the Actions menu next to an organization to update its configuration.](../../images/organizations-edit-organization.png)
+
 - *Edit* lets you specify details about the organization, including addresses,
 phone numbers, email addresses and websites.
 
@@ -241,7 +253,7 @@ to this organization as members.
 - *Add User* adds a new user in the portal and assigns the user as a member of
 this organization.
 
-- *Add Regular Organization* lets you add a child organization to this
+- *Add Organization* lets you add a child organization to this
 organization. This is how you create hierarchies of organizations with
 parent-child relationships.
 
@@ -270,7 +282,7 @@ reasons an enterprise wants to configure organization types:
     example, MLB would not allow Division organization types to be
     sub-organizations of Team organizations.
 
-![Figure 2: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
+![Figure 5: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
 
 Check out the portal properties that configure the default *Organization* type
 on [docs.liferay.com](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Organizations).
@@ -303,7 +315,7 @@ Once you configure additional organization types in `portal-ext.properties`,
 restart the server and you'll see your new type(s) in the Organizations section
 of the Control Panel.
 
-![Figure 3: Add the Country select list field to the Add Organization form with the `organizations.country[my-org-type].enabled` property.](../../images/organization-country-selection.png)
+![Figure 6: Add the Country select list field to the Add Organization form with the `organizations.country[my-org-type].enabled` property.](../../images/organization-country-selection.png)
 
 Users can join or be assigned to sites when they share a common interest. Users
 can be assigned to organizations when they fit into a hierarchical structure.

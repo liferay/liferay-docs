@@ -23,14 +23,12 @@ hierarchical boundaries. For example, consider The Lunar Resort. It's
 hierarchically divided into the Physical Plant Department, the Recreation
 Department, and the Sales Department. The Lunar Resort's department-driven
 structure is modeled using
-[organizations](/docs/6-2/user/-/knowledge_base/u/the-users-section-of-the-control-panel).
+[organizations](/docs/7-0/user/-/knowledge_base/u/adding-and-managing-organizations).
 If there are functions needed in The Lunar Resort public or private sites that
 can't be divided up according to the existing organizational hierarchy, you
 might need user groups. For example, it might make sense to create a user groups
 that includes the Human Resources representatives of each department. User
 Groups are most often used to achieve one of the following goals:
-
-<!-- Provide links above to 7-0 docs on organizations, when available-->
 
 - Collect permissions. With User Groups, you can assign roles and permissions to
   a group of users that don't share an Organization. For example, in a
@@ -84,7 +82,8 @@ all its users to The Lunar Resort public site. First create the user group:
 1.  Navigate to the Control Panel by opening the Product Menu (click
 ![Menu](../../images/icon-menu.png)) and clicking *Control Panel*.
 
-2.  Click on the *Users Groups* link and then click on the *Add* button.
+2.  Click on the *User Groups* link under the *Users* menu and then click on the 
+    *Add* button.
 
     *Name* is the only required field, but you should enter a
     description as well.
@@ -111,7 +110,7 @@ List Creators group.
 2.  Click the *Add Users* button to see a list of users that can
 be assigned to the group.
 
-    ![Figure 4: When assigning members to a user group, click on the *Available* tab to see a list of users able to be added to the user group.](../../images/user-groups-add-users.png)
+    ![Figure 4: Add users from the list of available users.](../../images/user-groups-add-users.png)
 
 3.  From this list, select one or more users and click *Add*.
 
@@ -137,7 +136,7 @@ Associate the user group with a site:
 1.  From the Product Menu, select the site you want to work in (The Lunar
 Resort) and open the site administration drop-down.
 
-2.  Click *Users* &rarr; *Site Memberships*.
+2.  Click *Members* &rarr; *Site Memberships*.
 
     ![Figure 6: Manage site memberships from the Product Menu.](../../images/user-groups-site-memberships.png)
 
@@ -163,7 +162,7 @@ the user group site is a public site, accessible to anyone with the URL
 user's Dashboard pages, then the site is a private site. A mixed approach can
 also be used, where both private and public pages are added for the user group
 site. If a user belongs to multiple user groups, all the pages from those user
-group sites are made part of hiss personal site. 
+group sites are made part of his personal site. 
 
 <!--Link above when docs are created-->
 
@@ -187,13 +186,12 @@ to create a site template for use in the user group site and deploy the
 applications to the site pages.
 
 To create a new site template, navigate to *Sites* &rarr; *Site Templates*. Add
-a site template called Event Coordination and save it. Rename the default Home
-page to Event Coordination. Now there's a site template, but the page is
-currently empty. Go to the Event Coordination page, and add a Message Boards and
-a Calendar application. Read the [documentation on site templates](/docs/6-2/user/-/knowledge_base/u/using-site-templates)
+a site template called Event Coordination and save it. Click the 
+*Event Coordination* template link and rename the default Home page to Event 
+Coordination. Now there's a site template, but the page is currently empty. Go 
+to the Event Coordination page, and add a Message Boards and a Calendar 
+application. Read the [documentation on site templates](/docs/7-0/user/-/knowledge_base/u/building-sites-from-templates)
 if you need further explanation.
-
-<!--Get the 7-0 link when ready-->
 
 Once you have a site template set up, use it to create the user group site.
 
@@ -224,9 +222,11 @@ regular sites. This allows users to add and configure applications
 in the specified area of the page.
 
 You can create a user group's site manually, instead of basing it on a site
-template. To create a user group's site manually, use the *Actions* menu
-mentioned above and choose *Manage Pages*. Add a new public or private page by
-selecting My Profile or My Dashboard, then click the *Add Page* button. Once the
+template. To create a user group's site manually, use the *Actions* menu for the 
+user group, as mentioned above, and choose *Manage Pages*. Add a new public or 
+private page by selecting the Actions menu next to My Profile or My Dashboard 
+under Site Administration for the Control Panel, then click the 
+*Add Private Page* or *Add Public Page* link. Once the
 user group has at least one public or private page in place, you can go back to
 the *Actions* menu and click on the *Go to the Profile Pages* or *Go to
 the Dashboard Pages* link to open the user group's site in a new browser
@@ -252,8 +252,8 @@ their personal site.
 
 Since the inheritance of user group site pages is now dynamic, even if there are
 hundreds of thousands of users, even millions, there won't be an exponential
-impact in performance. Previous versions of Liferay required user group pages be
-copied to each user's personal site. If you really liked the old days, or if
+impact in performance. Previous versions of Liferay required user group pages to 
+be copied to each user's personal site. If you really liked the old days, or if
 you're upgrading from an older version of Liferay and need to keep the old
 behavior, enable it by adding the following line to your portal-ext.properties
 file:
@@ -275,12 +275,6 @@ the user group's site template after users have already been added to the group,
 those changes only take effect if the *Enable propagation of changes from the
 site template* box for the user group was checked.
 
-Note that Prior to Liferay Portal 6.1, pages from different user groups could be
-combined on users' personal sites by using a naming convention. Liferay Portal 6.1
-simplifies the way user groups' sites work by disallowing page combination. Set
-the property *user.groups.copy.layouts.to.user.personal.site=true* to preserve
-the page combination functionality.
-
 Just like user groups simplify site membership, they can also be used to assign
 a role to all the users of a user group at once. Where you do it depends on the
 scope of the role. 
@@ -291,14 +285,12 @@ The List Creators user group needs the ability to manage Dynamic Data List
 Display portlets on The Lunar Resort's Activities Sign-Up public page. This will
 require the creation of a new Site Role called List Creator, and assignment of
 any necessary permissions so the List Creators can do their job. You can refer
-to the [article on Roles](/docs/6-2/user/-/knowledge_base/u/roles-and-permissions) for a more detailed discussion. After creating
+to the [article on Roles](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions) for a more detailed discussion. After creating
 the new role, all that's left to do is assign the role to the user group.
 
-<!--Link to 7-0 docs when ready-->
-
-To create a new role, go to the Roles section of the Control Panel and click
-*Add* &rarr; *Site Role*. Call it *List Creator*, give it a description, and
-save it. From the list of roles, open the Actions menu for your new role, and
+To create a new role, go to the Roles section of the Control Panel and click the 
+*Site Roles* tab. Click *Add* &rarr; *Site Role*. Call it *List Creator*, give 
+it a description, and save it. From the list of roles, open the Actions menu for your new role, and
 select *Define Permissions*. Select *Site Administration* &rarr; *Applications*
 &rarr; *Dynamic Data Lists Display*. Select just the *Configuration* and *View*
 permissions and click *Save.* Go back to the list of roles by clicking *Roles*
@@ -320,7 +312,7 @@ Creators user group and select *Assign Site Roles*.
 
     ![Figure 11: From a user group's Actions menu, select *Manage Pages* to create a user group site manually.](../../images/user-groups-site-role.png)
 
-3.  Choose the *List Creator* role from the list and click *Add*.
+3.  Choose the *List Creator* role from the list and click *Done*.
 
 Now members of the List Creators user group are site members of The Lunar Resort
 site, and anyone in the user group has the List Creator role in the site. If you
@@ -329,18 +321,17 @@ want to continue configuring the List Creators user group, read the articles on
 In those articles you'll learn to create a data definition that the List
 Creators can use to build new Activities Sign-Up lists and templates with.
 
-<!-- Link above not published yet-->
-
 If you want to know more about User Groups, and how to edit them, keep reading
 here.
 
 ## Editing User Groups
 
-To edit the basic properties a user group, just click on its name or description
-(both are hyperlinks). Alternatively, click the *Edit* link from the Actions
-menu of the user group. Also in the *Actions* menu, you'll see the full list
-of actions that can be performed on a user group. When editing a user group, you
-can view its site, if it exists, by clicking the *Open Pages* link under Public
+To edit the basic properties a user group, click the *Edit* link from the 
+Actions menu of the user group. Alternatively, click on its name or description
+(both are hyperlinks), and then open the *Actions* menu in the top right and 
+select *Edit*.  Also in the *Actions* menu, you'll see the full list of actions 
+that can be performed on a user group. When editing a user group, you can view 
+its site, if it exists, by clicking the *Open Pages* link under Public
 Pages or Private Pages (read above for details on user group sites).
 
 As with the other resources in the portal, you can click the Actions button
@@ -385,6 +376,6 @@ User groups are useful for managing site membership and roles, and for assigning
 a specific task to a  specific group of users. Or, if you like tongue twisters,
 this article covered *the usual uses that use useful user groups*. Let us know
 if there's any functionality we missed, or if there's something that's not clear
-from this article, by clicking the *Do you have any suggestions?* link, or the
-*Feedback* link. Good jokes (okay, any jokes) can also be submitted. 
+from this article, by leaving a comment in the *Do you have any suggestions?* 
+field. Good jokes (okay, any jokes) can also be submitted. 
 

@@ -76,13 +76,6 @@ permissions to edit the role.
 
 **Define Permissions:** defines the permissions the role contains. 
 
-<!-- **Assign Members:** lets you search and select users in the portal to be
-assigned to this role. These users will inherit any permissions that have been
-assigned to this role.
-
-**View Users:** allows you to view the users who have been assigned to this
-role.-->
-
 **Delete:** permanently removes a role from the portal.
 
 Once you have a role you want to configure, the first step is often to define
@@ -200,7 +193,7 @@ flexibility as possible to build the site you have designed.
 ## Permission for Delegating Social Activities Configuration
 
 There's a permission that allows site administrators to delegate responsibility
-for configuring social activities to other users. To dd this permission to a
+for configuring social activities to other users. To add this permission to a
 role, click *Actions* next to the desired role and select *Define Permissions*.
 Find the *Site Administration* &rarr; *Configuration* &rarr; *Social Activity*
 permissions category. Flag all of the permissions and then click *Save*:
