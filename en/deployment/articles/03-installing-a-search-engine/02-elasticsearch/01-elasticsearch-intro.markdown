@@ -16,15 +16,14 @@ through the process of configuring Elasticsearch in remote mode.
 ![Figure 1: To see information about the currently connected search engine, go to _Control Panel_ &rarr; _Configuration_ &rarr; _Search_.](../../../images/search-admin-engineinfo.png)
 
 | **Note:** Although Elasticsearch 6.5 is shipped as the embedded Elasticsearch
-| server version, consider installing Elasticsearch  6.8.x, as 6.5.x will reach
-| end of life status in May of 2020, according to 
-| [Elastic's EOL policy](https://www.elastic.co/support/eol).
+| server version, Elasticsearch 7.3 is the most recent supported Elasticsearch
+| version for @product-ver@. Installing Elasticsearch 7.3 requires that you are
+| running Service Pack 1/Fix Pack 2 or later. Elasticsearch 6.8.x is also
+| supported.
 
-<!-- Uncomment this when we release the Solr adapter
 If you'd rather use Solr, it's also supported. See the documentation on
-Installing Solr(/docs/7-2/deploy/-/knowledge_base/d/installing-solr) 
+[Installing Solr](/docs/7-2/deploy/-/knowledge_base/d/installing-solr) 
 if you're interested.
--->
 
 To get up and running quickly with Elasticsearch as a remote server, refer to
 the 
@@ -33,14 +32,10 @@ Included there are basic instructions for installing and configuring
 Elasticsearch in a single server environment. Additional articles include more
 details and information on configuring and tuning Elasticsearch. 
 
-If you've come here looking for information on search engines in general, or
-the low level search infrastructure of @product@, refer instead to the
-developer tutorial Introduction to Liferay Search (not yet written).
-
 These terms are useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
-   installation (for example, `elasticsearch-6.8.2`). 
+   installation (for example, `elasticsearch-7.4.1`). 
 
 -  [*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
    refers to the root folder of your @product@ installation. It contains the
@@ -94,8 +89,8 @@ configuration options in more detail.
 
 **Cluster Sniffing (Additional Configurations):**
 : Elasticsearch clusters can have multiple node 
-[types](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-node.html#modules-node).
-[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.8/transport-client.html), 
+[types](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-node.html#modules-node).
+[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/7.4/transport-client.html), 
 enabled by default in the @product@ connector, looks for `data` nodes
 configured in the `transportAddresses` property. If none are available, the
 connector may throw a `NoNodeAvailableException` in the console log. If cluster
@@ -104,4 +99,4 @@ least one `data` node's transport address to be "sniffable" at all times to
 avoid this error.
 
 To disable cluster sniffing, add `clientTransportSniff=false` to the `.config`
-file or uncheck the Client Transport Sniff property in System Settings.
+file or un-check the Client Transport Sniff property in System Settings.
