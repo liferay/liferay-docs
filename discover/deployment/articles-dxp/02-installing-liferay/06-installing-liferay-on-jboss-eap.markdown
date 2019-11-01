@@ -13,10 +13,13 @@ Installing @product@ manually requires these basic steps:
 - Installing the @product@ WAR file to your application server
 
 In this article, you'll step through these basic steps and install @product@ on
-your existing JBoss EAP 6.4 application server. Before proceeding, you should
-also download the latest dependencies ZIP file and OSGi JARs ZIP file from
-[the available releases page](https://web.liferay.com/downloads/liferay-portal/available-releases)
-as well as the @product@ WAR file.
+your existing JBoss EAP 6.4 application server. Before proceeding, you must
+[download](https://customer.liferay.com/downloads) 
+these *Additional Files*: 
+
+- @product@ WAR file
+- Dependencies ZIP file
+- OSGi Dependencies ZIP file
 
 **Liferay Home** is one folder above JBoss's install location.
 [*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)

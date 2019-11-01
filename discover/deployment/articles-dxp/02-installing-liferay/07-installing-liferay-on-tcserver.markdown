@@ -8,14 +8,13 @@ header-id: installing-liferay-on-tc-server
 
 @product@ is supported on tc Server. Please see the 
 [Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
-for the supported version. 
+for the supported version. Before proceeding, you must
+[download](https://customer.liferay.com/downloads) 
+these *Additional Files*: 
 
--  A @product@ WAR file
-
--  A compressed file with The OSGi JARs that contain much of @product@'s functionality
-
--  A compressed file with the necessary @product@ dependencies and additional
-   libraries you need for your installation
+- @product@ WAR file
+- Dependencies ZIP file
+- OSGi Dependencies ZIP file
 
 Once you have those pieces of the puzzle, you just need to assemble them.
 
