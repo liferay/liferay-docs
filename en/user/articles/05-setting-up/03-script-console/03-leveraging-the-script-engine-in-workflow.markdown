@@ -71,7 +71,7 @@ assignment.
 : If the script is inside a task node, get a `List` of its assignees.
 
 `kaleoTimerInstanceToken` ([`KaleoTimerInstanceToken`](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-workflow/portal-workflow-kaleo-api/src/main/java/com/liferay/portal/workflow/kaleo/model/KaleoTimerInstanceToken.java))
-: If a [task timer](/docs/7-2/reference/-/knowledge_base/r/workflow-task-nodes/#task-timers)
+: If a [task timer](/docs/7-2/reference/-/knowledge_base/r/workflow-task-nodes#task-timers)
 exists, use the `kaleoTimerInstanceToken` to get its ID, by calling
 `kaleoTimerInstanceToken.getKaleoTimerInstanceTokenId()`.
 

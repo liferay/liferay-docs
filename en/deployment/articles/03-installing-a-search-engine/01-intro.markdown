@@ -35,11 +35,11 @@ Elasticsearch.
 ### End User Feature Limitations of Liferay's Solr Integration
 
 - [Liferay Commerce](https://help.liferay.com/hc/en-us/articles/360017869952)
-- [Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics-the-service-level-agreement) 
+- [Workflow Metrics](https://help.liferay.com/hc/en-us/articles/360029042071-Workflow-Metrics-The-Service-Level-Agreement-SLA-) 
 - [Custom Filter search widget](/docs/7-2/user/-/knowledge_base/u/filtering-search-results-with-the-custom-filter-widget)
 - [The Low Level Search Options widget](/docs/7-2/user/-/knowledge_base/u/low-level-search-options-searching-additional-or-alternate-indexes)
-- [Search Tuning: Customizing Search Results](/docs/7-2/deploy/-/knowledge_base/d/search-tuning-customizing-search-results) 
-- [Search Tuning: Synonyms](/docs/7-2/user/-/knowledge_base/u/search-tuning-synonym-sets) 
+- [Search Tuning: Customizing Search Results](https://help.liferay.com/hc/en-us/articles/360034473872-Search-Tuning-Customizing-Search-Results) 
+- [Search Tuning: Synonyms](https://help.liferay.com/hc/en-us/articles/360034473852-Search-Tuning-Synonym-Sets) 
 
 ### Developer Feature Limitations of Liferay's Solr Integration
 

@@ -173,7 +173,7 @@ User.
 
 Since both are new features without precedent in @product@, there can be
 confusion over Result Rankings Aliases and Synonyms.
-[Synonyms](/docs/7-2/user/-/knowledge_base/u/synonyms) 
+[Synonyms](/docs/7-2/user/-/knowledge_base/u/search-tuning-synonym-sets) 
 expand the search to include results matched by additional (synonymous)
 keywords, so more results are returned if there are matches to the synonyms.
 

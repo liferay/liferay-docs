@@ -28,4 +28,4 @@ settings are covered in their respective articles, listed below for reference:
   - [Instance Configuration](/docs/7-2/user/-/knowledge_base/u/instance-configuration-instance-settings)
   - [User Authentication](/docs/7-2/user/-/knowledge_base/u/user-authentication-instance-settings)
   - [Users](/docs/7-2/user/-/knowledge_base/u/users-instance-settings)
-  - [Analytics, Infrastructure, Localization, and Third Party](/docs/7-2/user/-/knowledge_base/u/infrastructure-localization-and-integrations-instance-settings)
+  - [More Platform Settings](/docs/7-2/user/-/knowledge_base/u/more-platform-section-instance-settings)
