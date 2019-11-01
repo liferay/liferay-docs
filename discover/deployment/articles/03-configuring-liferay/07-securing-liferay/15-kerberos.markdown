@@ -43,7 +43,7 @@ Kerberos authentication.
 From the prerequisites, you may be able to guess that there are several moving
 parts to how SSO works with Kerberos. 
 
-![Figure 1: Kerberos authentication requires a web server in front of your @product@ server.](../../images/kerberos.png)
+![Figure 1: Kerberos authentication requires a web server in front of your @product@ server.](../../../images/kerberos.png)
 
 First, a properly configured web browser sends a negotiate request using
 encrypted Windows user data. To configure this, the browser must recognize the
