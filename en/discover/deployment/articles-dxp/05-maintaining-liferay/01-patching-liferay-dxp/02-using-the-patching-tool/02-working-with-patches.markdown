@@ -27,7 +27,9 @@ command:
 
 The support information is written to file
 `patching-tool-support-info-actual-timestamp.txt` in your `patching-tool`
-folder. Please upload this file to the LESA ticket.
+folder. Please upload this file to the
+[Help Center](https://help.liferay.com/hc)
+ticket.
 
 ## Uninstalling Patches
 
