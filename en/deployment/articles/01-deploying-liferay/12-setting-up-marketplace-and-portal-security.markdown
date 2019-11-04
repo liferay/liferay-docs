@@ -9,14 +9,14 @@ header-id: setting-up-marketplace-and-portal-security
 [Liferay Marketplace](https://www.liferay.com/marketplace) is more than just a
 store for Liferay applications. Under the hood, it provides both the store and
 @product@'s application deployment features. For this reason, you must ensure
-that Marketplace can run and configure itself. 
+that Marketplace can run and configure itself.
 
 Here are some scenarios to work around to ensure Marketplace works successfully:
 
 -   Server is Firewalled without Access to the Internet
 -   Limited Database Access
 
-The firewall scenario is discussed first. 
+The firewall scenario is discussed first.
 
 ## Server is Firewalled without Access to the Internet
 
@@ -30,9 +30,9 @@ Internet. In these cases, you have two options:
     Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home).
 
 2.  Alternately, once you have the downloaded `.lpkg` file, deploy it using the
-    [App Manager](/docs/7-2/user/-/knowledge_base/u/managing-and-configuring-apps). 
+    [App Manager](/docs/7-2/user/-/knowledge_base/u/managing-and-configuring-apps).
 
-Next you'll learn how to work around database access restrictions. 
+Next you'll learn how to work around database access restrictions.
 
 ## Limited Database Access
 
@@ -46,11 +46,11 @@ Some production environments do not have the necessary database permissions for
 3.  Once the database is created, remove the permissions for creating tables and
     dropping tables from the @product@ database user.
 
-See the [database preparationg
+See the [database preparation
 instructions](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#limiting-database-access)
 for more information. Note that many sophisticated @product@ apps---not just the
 Marketplace app---require new tables when deployed. If your environment
 restricts database access, you may need to repeat the above steps whenever you
-deploy a new app. 
+deploy a new app.
 
-You've prepared @product@ for installing Marketplace and additional apps. 
+You've prepared @product@ for installing Marketplace and additional apps.
