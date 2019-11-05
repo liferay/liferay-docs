@@ -54,7 +54,7 @@ You can authenticate and authorize apps remotely using the `AuthVerifier` layer:
 - Portal session based solution for JavaScript applications
 
 Both user authentication and remote application authentication are
-[extensible](/docs/7-1/frameworks/-/knowledge_base/frameworks/authentication-pipelines).
+[extensible](/docs/7-2/frameworks/-/knowledge_base/f/authentication-pipelines).
 Developers can create custom Login portlets and plugins, extend the default
 Login portlet `auth.pipeline`, create `AutoLogin` extensions for SSO, or create
 custom `AuthVerifier` implementations.
@@ -119,8 +119,4 @@ Also, customers are advised to deploy security patches as described on the
 [customer portal](https://www.liferay.com/group/customer/products/portal/security-vulnerability).
 
 For community and CE deployments, the stay secure by always using the latest
-community version, which contains all previous security patches. Until a new
-version is released, the Community Security Team issues patches for the latest
-CE version via the
-[community security team](https://portal.liferay.dev/people/community-security-team)
-page.
+community version, which contains all previous security patches. 
