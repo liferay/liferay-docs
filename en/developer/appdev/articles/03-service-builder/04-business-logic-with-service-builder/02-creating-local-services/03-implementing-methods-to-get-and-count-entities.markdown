@@ -18,11 +18,6 @@ entities.
 -   [Counters](#counter-methods): `get*Count` methods return the number of 
     instances matching criteria
 
-| **Note:** @product@ uses read-only database transactions for service methods 
-| that start with `get` or one of several other prefixes. Don't update data 
-| from within methods. For details, see *Service Method Prefixes and Database
-| Transactions* later in this article. 
-
 Start with getting entities that match criteria. 
 
 ## Getter Methods
