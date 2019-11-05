@@ -137,6 +137,6 @@ query {
  
 ## GraphQL Clients
 
-In the examples above we have showcases the GraphQL request as cURL operations but you can use any GraphQL clients available. We have made heavy use of [Apollo](https://www.apollographql.com/docs/), the official React client and the [Vue integration](https://github.com/vuejs/vue-apollo) without any issues.
+In the examples above we have showcased the GraphQL request as cURL operations but you can use any GraphQL clients available. We have made heavy use of [Apollo](https://www.apollographql.com/docs/), the official React client and the [Vue integration](https://github.com/vuejs/vue-apollo) without any issues.
  
 ## Related Topics
