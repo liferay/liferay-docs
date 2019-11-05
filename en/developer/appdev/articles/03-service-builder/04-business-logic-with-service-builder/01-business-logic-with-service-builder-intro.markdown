@@ -66,40 +66,4 @@ now, make sure to
 [run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 again to generate the service interfaces. 
 
-## Service Method Prefixes and Database Transactions
-
-There are two kinds of database transaction precipitated by your Service Builder
-project's service methods: READ-WRITE and plain old READ.  Methods making
-persistence changes must be recognized as READ-WRITE methods, and the method
-name prefix is used to ascertain this need. If a service [method is
-prefixed](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-service-builder/src/main/java/com/liferay/portal/tools/service/builder/ServiceBuilderArgs.java)
-with any of these words, it's going to precipitate a database READ:
-
-- `dynamicQuery`
-- `fetch`
-- `get`
-- `has`
-- `is`
-- `load`
-- `reindex`
-- `search`
-
-Otherwise, a READ-WRITE transaction is made. Therefore, avoid naming your
-persistence methods (for adding, updating, and deleting, for example) with any
-of these prefixes.
-
-## Nested Service Calls and Transactions
-
-Because of the distinction between READ and READ-WRITE transactions, you must be
-careful to avoid making service calls that you expect to persist data within a
-method that executes a READ transaction. For example, you might be tempted to write
-a method in `MyEntityLocalServiceImpl` called `getOrAddMyEntity`, with the goal of first
-trying to retrieve the entity from the database, and if there are none returned,
-then call the `addMyEntity` method. This doesn't work, because the `get` prefix
-forces this to use only a READ transaction. If you were to instead use the
-method name `addOrGetMyEntity`, a READ-WRITE transaction would be invoked, and
-your logic would successfully read from the database, and if no entities were
-already found, the `addMyEntity` method would work as expected, since the
-transaction is of the appropriate type. 
-
 Now you're ready to implement your business logic. 
