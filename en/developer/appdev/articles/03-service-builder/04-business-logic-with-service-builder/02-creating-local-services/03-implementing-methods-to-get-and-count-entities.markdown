@@ -127,11 +127,9 @@ public int getGuestbookEntriesCount(long groupId, long guestbookId) {
 Now your local service can get entities matching your criteria and return quick
 entity counts. 
 
-## Service Method Prefixes and AOP Transactions
+## Service Method Prefixes and Transactional Aspects
 
-Liferay's AOP framework applies database transactions to service methods based
-on the method name prefix. Service methods prefixed with any of these words
-precipitate read-only transactions: 
+Service Builder applies transactions to services by adding `@Transactional` annotations to the `*LocalService` and `*Service` interfaces. By default, Service Builder applies read-only transactions (e.g., `@Transactional (readOnly = true ...)`) to service methods prefixed with any of these words: 
 
 - `dynamicQuery`
 - `fetch`
@@ -142,14 +140,24 @@ precipitate read-only transactions:
 - `reindex`
 - `search`
 
-Otherwise, regular transactions (transactions that are not read only) are
-applied. 
+@product@ optimizes performance of methods that operate in read-only
+transactions. Transactions that are not read only use regular database
+transactions. 
 
-**Important:** In methods that precipitate read-only transactions (e.g., methods
-with the name prefixes above), service method invocations to persist data (add,
-update, or delete data) must be done through the service object.
+| **Note:** A method implementation can override its interface's 
+| `@Transactional` annotation attributes. For example, read-only transaction
+| behavior that's applied to a `get*` service method can be overridden by 
+| applying `@Transactional (readOnly = false ...)` to the method 
+| implementation. 
 
-`[someServiceObject].addSomething();` 
+**Important:** In methods that operate in read-only transactions, invoking any 
+service method that persists data (adds, updates, or deletes data) must be done
+via the `*Service` object. This assures that the method's transactional behavior
+is applied. 
+
+```java
+someService.addSomething();
+``` 
 
 For example, this `*LocalServiceImpl`'s getter method adds (*persists*) a
 `ClassName` object if no object with that value exists. 
@@ -173,12 +181,11 @@ public ClassName getClassName(String value) {
 }
 ```
 
-The `addClassName` method is invoked through the `*Service` object (i.e.,
-executing `classNameLocalService.addClassName(value);`). Using the `*Service`
-object precipitates a regular transaction for persisting data. If `addClassName`
-was invoked without using the service object (e.g., if `addClassName` was local
-and invoked without using the `classNameLocalService` object), the data would
-not persist. 
+Using the service object `classNameLocalService` to invoke its  `addClassName`
+method applies the service method's transaction (the regular transaction
+specified for the method in the `*Service` interface). If the `addClassName`
+method was invoked WITHOUT using the service object, the `ClassName` object
+would not persist because the method's regular transaction would not be applied.
 
 ## Related Topics
 
