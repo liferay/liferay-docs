@@ -18,8 +18,8 @@ through the process of configuring Elasticsearch in remote mode.
 | **Note:** Although Elasticsearch 6.5 is shipped as the embedded Elasticsearch
 | server version, Elasticsearch 7.3 is the most recent supported Elasticsearch
 | version for @product-ver@. Installing Elasticsearch 7.3 requires that you are
-| running Service Pack 1/Fix Pack 2 or later. Elasticsearch 6.8.x is also
-| supported.
+| running Service Pack 1/Fix Pack 2 or later (GA2 or later for CE users).
+| Elasticsearch 6.8.x is also supported.
 
 If you'd rather use Solr, it's also supported. See the documentation on
 [Installing Solr](/docs/7-2/deploy/-/knowledge_base/d/installing-solr) 
