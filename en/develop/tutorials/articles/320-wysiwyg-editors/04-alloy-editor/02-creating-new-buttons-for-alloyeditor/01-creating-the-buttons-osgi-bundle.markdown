@@ -59,8 +59,8 @@ Follow these steps to create your OSGi bundle for your new button:
           "version": "1.0.0"
         }
 
-6.  Add following preset to your module's `.babelc` file to transpile your JSX 
-    file:
+6.  Add the following preset to your module's `.babelrc` file to transpile your 
+    JSX file:
 
         {
           "presets": [
