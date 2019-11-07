@@ -27,3 +27,5 @@ use in your app. The full list of language flags is shown below:
 [Clay Badges](/docs/7-1/tutorials/-/knowledge_base/t/clay-badges)
 
 [Clay Stickers](/docs/7-1/tutorials/-/knowledge_base/t/clay-stickers)
+
+[Clay Icon Component](https://v2.clayui.com/docs/components/icons.html)
