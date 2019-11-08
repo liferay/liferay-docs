@@ -124,11 +124,11 @@ entity counts.
 
 ## Service Method Prefixes and Transactional Aspects
 
-Service Builder applies transactions to services. It does this by adding
-`@Transactional` annotations to the `*LocalService` and `*Service` interfaces
-and their methods. By default, Service Builder applies read-only transactions
-(e.g., `@Transactional (readOnly = true ...)`) to service methods prefixed with
-any of these words: 
+Service Builder applies transactions to services by adding `@Transactional`
+annotations to the `*LocalService` and `*Service` interfaces and their methods.
+By default, Service Builder applies read-only transactions (e.g.,
+`@Transactional (readOnly = true ...)`) to service methods prefixed with any of
+these words: 
 
 - `dynamicQuery`
 - `fetch`
@@ -139,7 +139,7 @@ any of these words:
 - `reindex`
 - `search`
 
-Seeing that these methods operate in read-only transactions, @product@ optimizes
+Since these methods operate in read-only transactions, @product@ optimizes
 their performance. Transactional service methods that don't have the read-only
 setting operate in regular transactions. 
 
@@ -150,7 +150,8 @@ setting operate in regular transactions.
 
 **Important:** In methods that operate in read-only transactions, invoking a 
 service method that persists data (adds, updates, or deletes data) must be done
-via the service object. Using the service object assures that the defined transactional behavior is applied. 
+via the service object. Using the service object ensures that the defined
+transactional behavior is applied. 
 
 ```java
 someService.addSomething();
