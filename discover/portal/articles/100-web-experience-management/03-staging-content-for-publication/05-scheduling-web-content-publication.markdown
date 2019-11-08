@@ -25,16 +25,42 @@ several other configurable settings.
 
 **Never Review:** Sets the content to never be reviewed.
 
-As you can see, the scheduling feature in @product@ gives you great control
-in managing when, and for how long, your web content is displayed on your web
-site. Additionally, you have the ability to determine when your content should
-be reviewed for accuracy and/or relevance. This makes it possible to manage your
-growing inventory of content.
+As an example, you'll step through the process of scheduling a web content
+article.
+
+1.  Navigate to the Product Menu &rarr; *Content* &rarr; *Web Content*.
+
+2.  Create a new web content article by selecting the *Add Web Content* button
+    (![Add](../../../images/icon-add.png)) &rarr; *Basic Web Content*.
+
+3.  Add content for your web content article.
+
+4.  Select the *Schedule* dropdown menu on the web content form. Configure the
+    publication schedule.
+
+5.  Click *Publish*. Your web content article is now created and abides by
+    the scheduling parameters you've set.
+
+When you set a Display Date for an existing article it does not affect previous 
+versions of the article. If a previous version is published, it remains the 
+same until the new version is scheduled to display. However, the expiration 
+date affects all versions of the article. Once an article has expired, no 
+version of that article appears.
+
+| **Tip:** If you want only the latest version of articles to expire, and not
+| every past version, go to *Control Panel* &rarr; *Configuration* &rarr; *System
+| Settings* &rarr; *Web Content* and uncheck 
+| *Expire All Article Versions Enabled*. This makes the previously approved 
+| version of an article appear if the latest version expires.
+
+The scheduling feature gives you great control in managing when, and for how
+long, your web content is displayed on your Site. Additionally, you can
+determine when your content should be reviewed for accuracy and/or relevance.
+This makes it possible to manage your growing inventory of content.
 
 You can enable staging on an individual site basis, depending on your needs.
-This makes it easy to put strict controls in place for your public web site,
-while opening things up for individual sites that don't need such strict
-controls. @product@'s staging environment is extremely easy to use and makes
-maintaining a content-rich web site a snap. Another management feature used to
-control publishing of content is the web content schedular. Similar to staging,
-the schedular provides more control of your publishing process.
+This lets you put strict controls in place for your public web site, while 
+opening things up for individual sites that don't need such strict controls. 
+Another management feature used to control publishing of content is the web 
+content scheduler. Similar to staging, the scheduler provides more control of 
+your publishing process.
