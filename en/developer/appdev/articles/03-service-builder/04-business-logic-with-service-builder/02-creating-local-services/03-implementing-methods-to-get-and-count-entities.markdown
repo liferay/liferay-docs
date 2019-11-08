@@ -8,7 +8,7 @@ header-id: implementing-methods-to-get-and-count-entities
 
 Service Builder generates `findBy*` methods and `countBy*` methods in your
 [`*Persistence` classes](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder)
-based on your  `service.xml` file's
+based on your `service.xml` file's
 [finders](/docs/7-2/appdev/-/knowledge_base/a/defining-service-entity-finder-methods).
 You can leverage finder methods in your local services to get and count
 entities.
@@ -50,7 +50,7 @@ Here's how to get entities based on criteria:
 
 3.  Determine the
     [`*Persistence` class](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder)
-    `findBy*` method you want to call.  Depending on your `finder` element
+    `findBy*` method you want to call. Depending on your `finder` element
     columns, Service Builder might overload the method to include these
     parameters:
  
@@ -121,6 +121,69 @@ public int getGuestbookEntriesCount(long groupId, long guestbookId) {
 
 Now your local service can get entities matching your criteria and return quick
 entity counts. 
+
+## Service Method Prefixes and Transactional Aspects
+
+Service Builder applies transactions to services by adding `@Transactional`
+annotations to the `*LocalService` and `*Service` interfaces and their methods.
+By default, Service Builder applies read-only transactions (e.g.,
+`@Transactional (readOnly = true ...)`) to service methods prefixed with any of
+these words: 
+
+- `dynamicQuery`
+- `fetch`
+- `get`
+- `has`
+- `is`
+- `load`
+- `reindex`
+- `search`
+
+Since these methods operate in read-only transactions, @product@ optimizes
+their performance. Transactional service methods that don't have the read-only
+setting operate in regular transactions. 
+
+| **Note:** A method implementation can override its interface's 
+| `@Transactional` annotation attributes. For example, applying
+| `@Transactional (readOnly = false ...)` to a method implementation makes
+| it operate in a transaction that is not read only. 
+
+**Important:** In methods that operate in read-only transactions, invoking a 
+service method that persists data (adds, updates, or deletes data) must be done
+via the service object. Using the service object ensures that the defined
+transactional behavior is applied. 
+
+```java
+someService.addSomething();
+``` 
+
+For example, this `*LocalServiceImpl`'s getter method adds (*persists*) a
+`ClassName` object if no object with that value exists. 
+
+```java 
+public ClassName getClassName(String value) {
+    if (Validator.isNull(value)) {
+        return _nullClassName;
+    }
+
+    ClassName className = _classNames.get(value);
+
+    if (className == null) {
+        try {
+            className = classNameLocalService.addClassName(value);
+            ...
+        }
+        ...
+    }
+    ...
+}
+```
+
+Using the service object `classNameLocalService` to invoke its  `addClassName`
+method applies the service method's transaction (the regular transaction
+specified for the method in the `*Service` interface). If the `addClassName`
+method was invoked WITHOUT using the service object, the `ClassName` object
+would not persist because the method's regular transaction would not be applied.
 
 ## Related Topics
 
