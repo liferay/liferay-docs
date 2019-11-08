@@ -183,7 +183,7 @@ for instructions on creating a new environment and activating a new server.
 | the subscription's number of activation keys. There's a higher likelihood of
 | this happening in rolling deployments and/or when using containers. For more
 | information, see the
-| [KB article on properly unregistering subscriptions](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875).
+| [KB article on properly unregistering subscriptions](https://help.liferay.com/hc/en-us/articles/360018261011).
 
 ### Invalid Token
 
