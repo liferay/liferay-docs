@@ -83,7 +83,5 @@ patterns that match URLs to the web services you want to access.
 need. Define policies for any of the [CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#CORS) 
 here. 
 
-<!-- Uncomment once article is available 
-JAX-RS developers can use the `@CORS` annotation to set policies for their
-deployed applications. 
--->
+[JAX-RS](/docs/7-2/frameworks/-/knowledge_base/f/jax-rs) developers can use the
+`@CORS` annotation to set policies for their deployed applications. 
