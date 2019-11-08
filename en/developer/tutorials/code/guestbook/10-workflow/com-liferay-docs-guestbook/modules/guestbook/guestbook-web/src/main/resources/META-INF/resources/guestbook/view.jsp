@@ -68,7 +68,7 @@ long guestbookId = Long.valueOf((Long) renderRequest
 
 <aui:button-row cssClass="guestbook-buttons">
 
-    <c:if test='<%= GuestbookPermission.contains(permissionChecker, scopeGroupId, "ADD_ENTRY") %>'>
+    <c:if test='<%= GuestbookModelPermission.contains(permissionChecker, guestbookId, "ADD_ENTRY") %>'>
 		<portlet:renderURL var="addEntryURL">
 			<portlet:param name="mvcPath" value="/guestbook/edit_entry.jsp" />
 			<portlet:param name="guestbookId"
