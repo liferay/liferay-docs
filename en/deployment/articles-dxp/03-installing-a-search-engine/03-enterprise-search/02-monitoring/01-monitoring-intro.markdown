@@ -32,7 +32,7 @@ To install X-Pack monitoring,
 
 5.  Configure the connector to communicate with Elasticsearch.
 
-This document assumes you're enabling security *and* monitoring for
+This document assumes you're enabling security (with authentication and encrypted communication) *and* monitoring for
 Elasticsearch 7, but differences in the process for Elasticsearch 6 are noted
 where necessary.
 
@@ -71,7 +71,7 @@ for details.
     elasticsearch.url: "http://localhost:9200"
     ```
 
-    If SSL is enabled on Elasticsearch, this is an `https` URL.
+    If TLS/SSL is enabled on Elasticsearch, this is an `https` URL, otherwise use `http`.
 
 3.  If not using X-Pack security, start Kibana by opening a command prompt to 
     Kibana Home and entering this command:
@@ -171,7 +171,7 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
 
     The values depend on your Kibana configuration. For example, use a secure
     URL such as `kibanaURL="https://localhost:5601"` if you're using X-Pack
-    Security features.
+    Security TLS/SSL features.
 
     Alternatively, configure the monitoring adapter from
     [System Settings](/docs/7-2/user/-/knowledge_base/u/system-settings).
@@ -201,7 +201,7 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
     [http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring](http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring)
 
 5.  Because you're using the Monitoring portlet in @product@ as a proxy to
-    Kibana's UI, if you are using X-Pack Security, you must configure the
+    Kibana's UI, if you are using X-Pack Security with TLS/SSL, you must configure the
     application server's startup JVM parameters to recognize a valid
     *truststore* and *password*.
 
