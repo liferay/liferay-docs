@@ -73,7 +73,13 @@ To blacklist Elasticsearch 6,
 2.  Give it these contents:
 
     ```properties
-    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","com.liferay.portal.search.elasticsearch6.spi","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
+    blacklistBundleSymbolicNames=[ \
+        "com.liferay.portal.search.elasticsearch6.api", \
+        "com.liferay.portal.search.elasticsearch6.impl", \
+        "com.liferay.portal.search.elasticsearch6.spi", \
+        "com.liferay.portal.search.elasticsearch6.xpack.security.impl", \
+        "Liferay Connector to X-Pack Security [Elastic Stack 6.x] - Impl" \
+    ]
     ```
 
 ## Re-index
