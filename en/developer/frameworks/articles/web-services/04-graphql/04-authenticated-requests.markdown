@@ -8,11 +8,13 @@ header-id: making-authenticated-requests
 
 To make an authenticated request, you must authenticate as a specific user. 
 
-There are two authentication mechanisms available when invoking web APIs: 
+There are three authentication mechanisms available when invoking web APIs: 
 
 **Basic Authentication:** Sends the user credentials as an encoded user name and password pair. This is the simplest authentication protocol (available since HTTP/1.0). 
 
-**OAuth 2.0:** In @product-ver@, you can use OAuth 2.0 for authentication. See the [OAuth 2.0 documentation](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0) for more information. 
+**OAuth 2.0:** In @product-ver@, you can use OAuth 2.0 for authorization. See the [OAuth 2.0 documentation](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0) for more information. 
+
+**Cookie/Session authentication:** From inside the portal you can do direct requests to the APIs or sending the session token.
 
 First, you'll learn how to send requests with basic authentication. 
 
@@ -35,7 +37,7 @@ base64 <<< test@liferay.com:Liferay
 ```
 
 | **Warning:** Encoding a string as shown here does not encrypt the resulting 
-| string. Such an encoded string can easily be decoded by executing 
+| string. Such encoded string can easily be decoded by executing 
 | `base64 <<< the-encoded-string`, which returns the original string. 
 | 
 | Anyone listening to your request could therefore decode the `Authorization` 
@@ -51,9 +53,9 @@ curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5Cg==" http://local
 
 The response contains data instead of the 403 error that an unauthenticated request receives. For more information on the response's structure, see Working with Collections of Data(...). 
 
-## OAuth 2.0 Authentication
+## OAuth 2.0 Authorization
 
-@product-ver@ supports authorization via OAuth 2.0, which is a token-based authentication mechanism. For more details, see [@product@'s OAuth 2.0 documentation](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0). 
+@product-ver@ supports authorization via OAuth 2.0, which is a token-based authorization mechanism. For more details, see [@product@'s OAuth 2.0 documentation](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0). 
 The following sections show you how to use OAuth 2.0 to authenticate web API requests. 
 
 ### Obtaining the OAuth 2.0 Token
@@ -81,7 +83,7 @@ For example:
 curl -H "Authorization: Bearer d5571ff781dc555415c478872f0755c773fa159" http://localhost:8080/o/graphql
 ```
 
-The response contains the resources that the authenticated user has permission to access, just like the response from Basic authentication. 
+The response contains the resources that the authenticated user has permission to access, just like the response from Basic authentication. The request could be prevented depending on the scopes defined, if you are doing a GraphQL query (POST request) and there is scope disabling all request except `GET` you will get a 403. 
 
 ## Using Cookie Authentication or doing a request from the portal
 
@@ -99,7 +101,7 @@ A sample cURL request with the cookie and CSRF token would be:
 curl -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D' http://localhost:8080/o/graphql?p_p_auth=O4dCU1Mj
 ```
  
-To do an unauthenticated request from inside the @product@, from javascript code or a java method the session identifier is not needed and you will only have to provide the CRSF token or add the API to the whitelist of CSRF allowed URLs.
+To do an unauthenticated request from inside the @product@, from javascript code or a java method, the session identifier is not needed and you will only have to provide the CRSF token or add the API to the whitelist of CSRF allowed URLs.
 
 ## Making Unauthenticated Requests
 

@@ -12,7 +12,7 @@ Several APIs (generally all collection APIs) need the `siteId` parameter to be a
 
 In all the APIs available from 7.2 GA2 onwards, the `siteKey` is also accepted as a valid parameter. The `siteKey` is the external name of the site (for example `Guest`). 
 
-In all REST APIs is allowed in all the places that expect a `siteId`, in GraphQL APIs there are 2 different parameters: `siteId` and `siteKey`. 
+In the REST APIs you can use ‘siteKey’ in all the places that expect a `siteId`, in GraphQL APIs there are 2 different parameters: `siteId` and `siteKey`. 
 
 Using the `siteKey` is recommended over `siteId` in all situations because it's more recognizable, doesn't expose an internal parameter and doesn't change in import/export processes, just to mention a few reasons.
 

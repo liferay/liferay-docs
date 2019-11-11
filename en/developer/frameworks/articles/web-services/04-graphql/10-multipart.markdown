@@ -14,7 +14,7 @@ The GraphQL specification doesn't support natively multipart uploads but there i
 
 Liferay's implementation follows that extension and allows uploading files with cURL/Altair/multipart requests.
 
-Due to a bug, we have to enable multipart file uploading in a Liferay servlet, adding this to the web.xml of the server:
+Multipart support in GraphQL is disabled by default, to enable we add the configuration to upload multipart files in a Liferay servlet, adding this to the web.xml of the server:
 
 ```xml
 <servlet>
@@ -48,7 +48,7 @@ mutation($file: [Upload]) {
 
 We've defined the variable `file` because we are only uploading one. If we wanted to define several, the variable should be called $files and each file should have a numeric sequence, like: files.0, files.1, files.2...
 
-All multipart APIs allow sending a JSON file with the metadata of the file (title, description...). That parameter should be the second file uploaded, with content similar to:
+All multipart APIs allow sending a JSON file with the metadata of the file (title, description...). That parameter should be the second file uploaded (we have to define the files with the file.0, file.1 syntax), with content similar to:
 
     document={\"title\": \"Alternative name\"}"
 

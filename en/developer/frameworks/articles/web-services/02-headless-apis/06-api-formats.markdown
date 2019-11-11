@@ -243,7 +243,7 @@ used as the content's language. However, there is one exception. Some entities
 require the first POST to be in the Site's default language. In such 
 cases, a POST request for a different language results in an error. 
 
-After creating a new resource, PUT requests in a different language add that 
+After creating a new resource, PUT requests in a different language adds that 
 translation. PATCH requests return an error (you are expected to update, 
 not create, in a PATCH request). 
 

@@ -6,7 +6,7 @@ header-id: filtrable-properties
 
 [TOC levels=1-4]
 
-Several APIs allow filtering and sorting by several properties. This is a noncomprehensive list of the properties that can be used to restrict or sort:
+Several APIs allow filtering and sorting by several properties. This is a noncomprehensive list of the properties that can be used to filter or sort:
 
 ## Headless Delivery API
 

@@ -2,11 +2,11 @@
 header-id: mutations
 ---
 
-GraphQL spec differenciates between retrieve operations (`query`) and create/update/delete operations, that are defines as `mutations`. 
+GraphQL spec differenciates between retrieve operations (`query`) and create/update/delete operations, that are defined as `mutations`. 
 
 ![Figure 1: GraphQL Mutations definition](../../../images/graphql-mutation.png)
 
-To launch a mutation you just have to do a `POST` request as you did with `query` operations, either with cURL, a REST client or a GraphQL Client like Apollo. The only difference is that create/update `mutations` require an Input type, a JSON object to create or update the content.
+To perform a mutation you just have to do a `POST` request as you did with `query` operations, either with cURL, a REST client or a GraphQL Client like Apollo. The only difference is that create/update `mutations` require an Input type, a JSON object to create or update the content.
 
 A create `mutation` to insert a new blog posting would be like this:
 

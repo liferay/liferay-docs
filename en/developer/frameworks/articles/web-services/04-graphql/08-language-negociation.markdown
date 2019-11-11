@@ -104,6 +104,6 @@ curl "http://localhost:8080/o/graphql"  -H 'Accept-Language: es-ES'  -u 'test@li
 
 By default, when sending a mutation request, the `Accept-Language` header is used as the content's language. However, there is one exception. Some entities require the first request to be in the Site's default language. In such cases, the first request for a different language results in an error. 
 
-After creating a new resource, a new request in a different language add that translation.
+After creating a new resource, a new request in a different language adds that translation.
 
 ## Related Topics

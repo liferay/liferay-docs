@@ -115,13 +115,13 @@ curl -X "POST" "http://localhost:8080/o/graphql" \
 
 To filter for a `ContentField` value (dynamic values created by the end user), you must use the paths that are scoped to an individual `ContentStructure`. 
 
-To do so, find the ID of the `ContentStructure` and use it in place of `{contentStructureId}` in this path: 
+To do so, find the ID of the `ContentStructure` and use it in place of `{contentStructureId}` in this query: 
 
     "contentStructureStructuredContents"
 
 ## Search
 
-It's often useful to search large collections with keywords. Use search when you want results from any field, rather than specific ones. To perform a search, use the optional parameter `search` followed by the search terms. For example, this request searches for all the `BlogEntry` fields containing OAuth: 
+It's often useful to search large collections with keywords. Use search when you want results from any field, rather than specific ones. To perform a search, use the optional parameter `search` followed by the search terms. For example, this request searches for all the `BlogEntry` fields containing Title: 
 
 ```bash
 curl -X "POST" "http://localhost:8080/o/graphql" \

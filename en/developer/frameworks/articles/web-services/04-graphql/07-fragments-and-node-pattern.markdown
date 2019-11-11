@@ -37,7 +37,7 @@ This query returns a set of objects, each of a different type.
 
 ## Node pattern
 
-There is a special query that leverages the power of inline fragments, `graphQLNode`. This query accepts a dataType and an id and returns any kind of entity that can be retrieved in an endpoint with the path `http://localhost:8080/o/_ANY_API_SUITE_/v1.0/{dataType}/{id}`. Inline fragments allow us to specify the fields we want to return in this special case:
+There is a special query that leverages the power of inline fragments, `graphQLNode`. This query accepts a dataType and an id and returns any kind of entity that has a query of the type `{dataType}` and receives an `id` as a parameter. Inline fragments allow us to specify the fields we want to return in this special case:
 
 ```
 query{
