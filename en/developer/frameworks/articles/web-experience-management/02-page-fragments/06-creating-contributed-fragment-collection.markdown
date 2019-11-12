@@ -85,11 +85,14 @@ module:
 1.  In your module's `resources/` folder, create the folder structure
     `/com/liferay/fragment/collection/contributor/demo/dependencies`.
 
+    | **Note:** The class package name and resources package name must match 
+    | (e.g. `[my.class.package.structure].dependencies`).
+
 2.  Copy the Fragments you want to distribute into the folder. You can learn 
     how to create a Fragment in the
     [Creating Fragments section](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments).
 
-3.  Create a file named `collections.json` in the same folder with this format:
+3.  Create a file named `collection.json` in the same folder with this format:
 
     ```json
     {
@@ -103,8 +106,29 @@ module:
     }
     ```
 
-    If a fragment is not listed in `collections.json`, it will not be available
+    If a fragment is not listed in `collection.json`, it will not be available
     in the Contributed Collection, even if the files are included in the module.
+
+Next, you'll configure the module's metadata so the fragments are imported.
+
+## Configuring the Metadata
+
+Follow these steps:
+
+1.  Open your bundle's `bnd.bnd` file and add the `Web-ContextPath` header to 
+    point to your bundle's folder so the fragment resources are loaded properly:
+
+    ```properties
+    Web-ContextPath: /my-fragment-collection-contributor
+    ```
+
+2.  Add the `-dsannotations-options` instruction and set it to use the `inherit` 
+    option. This specifies to use DS annotations found in the class hierarchy of 
+    the component class:
+
+    ```properties
+    -dsannotations-options: inherit
+    ```
 
 Next, you'll dive into providing thumbnail images and language
 keys/translations.
