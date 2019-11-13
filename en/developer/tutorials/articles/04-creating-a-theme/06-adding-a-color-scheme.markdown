@@ -115,7 +115,8 @@ fragments as well. Follow these steps:
 
 6.  You must create thumbnails for each color scheme, just like you did the 
     theme. To save time, copy the 
-    `lunar-resort-build/assets/images/color_schemes/` folder to the theme's 
+    [`lunar-resort-build/assets/images/color_schemes/`](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/lunar-resort-theme/lunar-resort-build/assets/images/color_schemes) 
+    folder to the theme's 
     `/src/images/` folder. Note that the color scheme folder names match the 
     color scheme CSS class names defined in `liferay-look-and-feel.xml`.
 
@@ -128,9 +129,10 @@ fragments as well. Follow these steps:
     *Site Builder* &rarr; *Page Fragments*, click the Actions menu next to 
     COLLECTIONS, and select the *Import* option. Import the 
     `collections-lunar-resort-color-scheme.zip` asset from the 
-    `lunar-resort-build/assets/` folder. Note that each fragment style that 
-    requires a color change is duplicated and prefixed with `body.eclipse`. A 
-    couple example configurations are shown below:
+    [`lunar-resort-build/assets/`](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/lunar-resort-theme/lunar-resort-build/assets) 
+    folder. Note that each fragment style that requires a color change is 
+    duplicated and prefixed with `body.eclipse`. A couple example configurations 
+    are shown below:
     
     ```css
     .fragment_35201 h3.text-center {

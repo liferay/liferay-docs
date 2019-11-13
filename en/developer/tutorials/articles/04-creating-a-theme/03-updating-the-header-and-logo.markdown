@@ -97,9 +97,9 @@ Follow these steps:
 7.  Before you upload the theme to see what it looks like so far, you must 
     [create a theme thumbnail](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-thumbnail-preview-for-your-theme) 
     so you can identify it. To save time, copy the `thumbnail.png` asset from 
-    the `lunar-resort-build/assets/images/` folder to a new `/src/images/` 
-    folder. Note that its dimensions are 480px by 270px. These dimensions are 
-    required to display the theme thumbnail properly.
+    the [`lunar-resort-build/assets/images/`](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/lunar-resort-theme/lunar-resort-build/assets/images) 
+    folder to a new `/src/images/` folder. Note that its dimensions are 480px by 
+    270px. These dimensions are required to display the theme thumbnail properly.
 
 8.  The theme isn't complete yet, but you'll deploy what you have so you can 
     replace the default logo with the Lunar Resort logo. Enable [Developer Mode](/docs/7-2/frameworks/-/knowledge_base/f/using-developer-mode-with-themes) 
@@ -114,7 +114,7 @@ Follow these steps:
 9.  Before you configure the pages, you must import the Lunar Resort's pages. 
     Open the Control Menu and navigate to *Publishing* &rarr; *Import*. Click 
     the Plus button to create a new import process. Click *Select File* and 
-    import the `lunar_resort_pages.lar` from the `lunar-resort-build/assets/` 
+    import the `lunar_resort_pages.lar` from the [`lunar-resort-build/assets/`](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/lunar-resort-theme/lunar-resort-build/assets) 
     folder. Keep the default settings and click *Import*.
 
 10.  Open the Control Menu and navigate to *Site Builder* &rarr; *Pages*. Click 
@@ -122,8 +122,8 @@ Follow these steps:
      the *Look and Feel* tab, scroll down and click the *Change Current Theme* 
      button and select the Lunar Resort Theme. Scroll to the Logo heading, click 
      the *Change* button, upload the `lunar-resort-logo.png` asset from the 
-     `lunar-resort-build/assets/images/` folder, and click the *Save* button to 
-     apply the theme and logo.
+     [`lunar-resort-build/assets/images/`](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/lunar-resort-theme/lunar-resort-build/assets/images) 
+     folder, and click the *Save* button to apply the theme and logo.
     
 Great! You've customized the Lunar Resort's Header and applied a custom logo. 
 Next, you'll configure and customize the theme's navigation. 
