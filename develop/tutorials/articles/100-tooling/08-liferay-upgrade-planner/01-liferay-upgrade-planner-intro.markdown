@@ -14,12 +14,6 @@ version. We recommend leveraging this tool for any of the following upgrades:
 - @product@ 7.0 &rarr; @product@ 7.1 or 7.2
 - @product@ 7.1 &rarr; @product@ 7.2
 
-For step-by-step instructions for following the two upgrade paths, see the
-following documentation:
-
-- [Data Upgrade](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver)
-- [Code Upgrade](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
-
 The Upgrade Planner is provided in
 [Liferay Dev Studio](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide) 
 (versions 3.6+). Here's what the Upgrade Planner does: 
@@ -82,7 +76,12 @@ Upgrade Plan window. Each step can have several options:
 ![Figure 2: You can preview the Upgrade Planner's automated updates before you perform them.](../../../images/preview-upgrade-planner-changes.png)
 
 Great! You now have a good understanding of the Liferay Upgrade Planner's UI and
-how to get started. Visit the
-[Data Upgrade](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver) and
-[Code Upgrade](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
-sections for more information on those upgrade processes.
+how to get started. 
+
+| **Note:** The Upgrade Planner upgrades data and code to @product@ versions 
+| that include @product-ver@ and the latest DXP version. It links to the latest 
+| @product@ upgrade documentation. @product-ver@ upgrade documentation is 
+| available here: 
+| 
+| - [Data Upgrade](/docs/7-0/deploy/-/knowledge_base/d/upgrading-to-liferay-7) 
+| - [Code Upgrade](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
