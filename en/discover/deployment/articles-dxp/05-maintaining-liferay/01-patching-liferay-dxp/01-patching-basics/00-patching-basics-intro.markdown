@@ -21,6 +21,10 @@ fixes address regressions or obvious bugs and don't require you to make
 additional changes. Each fix pack contains all previous fix packs since the last
 service pack. 
 
+[Security Fix Packs](https://help.liferay.com/hc/en-us/articles/360035038331) 
+are a special fix pack type for deploying critical security fixes quickly
+without changing fix pack levels. 
+
 Fixes that don't fit these requirements are considered for service packs or hot
 fixes. 
 
