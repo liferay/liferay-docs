@@ -100,7 +100,8 @@ certificates.
 [Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/configuring-tls.html#enable-ssl) 
 on each node via its `elasticsearch.yml`.
 
-1.  Enable transport layer TLS with these settings in `elasticsearch.yml` for internode-communication:
+1.  Enable transport layer TLS with these settings in `elasticsearch.yml` for
+    inter-node communication:
 
     ```yaml
     xpack.security.transport.ssl.enabled: true
@@ -132,11 +133,6 @@ on each node via its `elasticsearch.yml`.
     xpack.security.http.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
     xpack.security.http.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
     xpack.security.http.ssl.verification_mode: certificate
-    ```
-5.  Enable X-Pack Security:
-
-    ```yaml
-    xpack.security.enabled: true
     ```
 
 ### Elasticsearch 6 TLS
@@ -184,15 +180,15 @@ xpack.security.enabled: true
 ## TLS/SSL settings for Transport layer
 xpack.security.transport.ssl.enabled: true
 xpack.security.transport.ssl.verification_mode: certificate 
-xpack.security.transport.ssl.key: /path/to/localhost.key
-xpack.security.transport.ssl.certificate: /path/to/localhost.crt
+xpack.security.transport.ssl.key: /path/to/[Elastisearch_Home]/config/localhost.key
+xpack.security.transport.ssl.certificate: /path/to/[Elastisearch_Home]/config/localhost.crt
 xpack.security.transport.ssl.certificate_authorities : ["/path/to/ca.crt"]
 
 # TLS/SSL settings for HTTP layer
 xpack.security.http.ssl.enabled: true
 xpack.security.http.ssl.verification_mode: certificate 
-xpack.security.http.ssl.key: /path/to/localhost.key
-xpack.security.http.ssl.certificate: /path/to/localhost.crt
+xpack.security.http.ssl.key: /path/to/[Elastisearch_Home]/config/localhost.key
+xpack.security.http.ssl.certificate: /path/to/[Elastisearch_Home]/config/localhost.crt
 xpack.security.http.ssl.certificate_authorities : ["/path/to/ca.crt"]
 
 # Comment out when Kibana and Liferay's X-Pack Monitoring are also configured
@@ -210,8 +206,8 @@ xpack.security.http.ssl.certificate_authorities : ["/path/to/ca.crt"]
 #
 ## General TLS/SSL settings for both Transport and HTTP levels
 #xpack.ssl.verification_mode: certificate 
-#xpack.ssl.key: /path/to/localhost.key
-#xpack.ssl.certificate: /path/to/localhost.crt
+#xpack.ssl.key: /path/to/[Elastisearch_Home]/config/localhost.key
+#xpack.ssl.certificate: /path/to/[Elastisearch_Home]/config/localhost.crt
 #xpack.ssl.certificate_authorities : ["/path/to/ca.crt"]
 #
 # Comment out when Kibana and Liferay's X-Pack Monitoring are also configured
