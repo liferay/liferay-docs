@@ -20,6 +20,10 @@ include fixes for both the core and the application suites that ship with the
 product. Each fix pack contains all previous fix packs since the last
 service pack. 
 
+[Security Fix Packs](https://help.liferay.com/hc/en-us/articles/360035038331) 
+are a special fix pack type for deploying critical security fixes quickly
+without changing fix pack levels. 
+
 ## Hotfixes
 
 A hotfix is provided to customers when they contact Liferay about an emergency
