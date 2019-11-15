@@ -8,7 +8,12 @@ header-id: upgrading-to-liferay-71
 
 Upgrading to @product-ver@ consists of two main steps: upgrading your
 installation and then upgrading the database. To upgrade to the latest release
-directly, you must be coming from Liferay Portal 6.1 or higher.
+directly, you must be coming from Liferay Portal 6.1 or higher. 
+
+| **Note:** The
+| [Liferay Upgrade Planner](/docs/7-1/tutorials/-/knowledge_base/t/liferay-upgrade-planner)
+| provides an automated way to adapt your installation's data and legacy 
+| plugins. 
 
 If you're on Liferay Portal 6.0 or below, you should upgrade to Liferay Portal
 6.2 before approaching an upgrade to the @product-ver@ platform. Please see the
