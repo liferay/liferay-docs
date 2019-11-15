@@ -7,8 +7,9 @@ header-id: configuring-learning-to-rank
 [TOC levels=1-4]
 
 Before beginning, you must have a remote
-[Elasticsearch 7.4](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-elasticsearch-7) 
-cluster communicating with @product-ver@.
+[Elasticsearch 6 or 7](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-elasticsearch-7) 
+cluster communicating with @product-ver@. See the
+[compatibility matrix for more information](https://help.liferay.com/hc/en-us/articles/360016511651-Liferay-Enterprise-Search-Compatibility-Matrix)
 
 | **Helpful hint:** Use
 | [Suggestions](/docs/7-2/user/-/knowledge_base/u/searching-for-assets#search-suggestions)
