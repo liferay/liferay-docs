@@ -52,7 +52,6 @@ Configuration &rarr; Workflow Configuration:
 - Comments
 - Message Boards Message
 - Page Revision
-- User
 - Wiki Page
 
 What's the difference? As with most scoped activities, the higher level setting
