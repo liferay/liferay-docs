@@ -327,7 +327,9 @@
 		<copy todir="${temp.dir}">
 			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
+				<include name="articles/**/*.md"/>
 				<include name="articles-dxp/**/*.markdown"/>
+				<include name="articles-dxp/**/*.md"/>
 			</fileset>
 		</copy>
 		<move todir="${temp.dir}/articles" failonerror="false">
@@ -417,6 +419,7 @@
 		<copy encoding="${encoding}" todir="${temp.dir}">
 			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
+				<include name="articles/**/*.md"/>
 			</fileset>
 			<filterchain>
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
@@ -456,7 +459,9 @@
 		<copy encoding="${encoding}" todir="${temp.dir}">
 			<fileset dir="${project.dir}/${language.dir}/${purpose.dir}/${base.filepath}">
 				<include name="articles/**/*.markdown"/>
+				<include name="articles/**/*.md"/>
 				<include name="articles-dxp/**/*.markdown"/>
+				<include name="articles-dxp/**/*.md"/>
 			</fileset>
 			<filterchain>
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">

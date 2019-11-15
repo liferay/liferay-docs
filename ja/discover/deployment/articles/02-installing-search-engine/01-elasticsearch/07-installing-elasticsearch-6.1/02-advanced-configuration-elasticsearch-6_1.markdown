@@ -1,7 +1,10 @@
 ---
 header-id: advanced-configuration-of-the-liferay-elasticsearch-connector-6-1
 ---
-#Liferay Elasticsearch(6.1)コネクタの高度な設定 
+
+# Liferay Elasticsearch(6.1)コネクタの高度な設定 
+
+[TOC levels=1-4]
 
 LiferayのElasticsearchアダプタモジュールのデフォルト設定は、`ElasticsearchConfiguration`というJavaクラスに設定されています。
 

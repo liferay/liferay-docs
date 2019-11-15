@@ -2,8 +2,9 @@
 header-id: configuring-the-liferay-elasticsearch-connector-6-1
 ---
 
-
 # Liferay Elasticsearch Connector (6.1)の設定
+
+[TOC levels=1-4]
 
 Elasticsearchの設定情報の詳細については、[Elasticsearchのドキュメンテーション](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/settings.html)を参照してください 。
 

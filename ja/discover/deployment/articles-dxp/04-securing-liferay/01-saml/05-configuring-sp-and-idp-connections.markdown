@@ -2,7 +2,7 @@
 header-id: changing-the-settings-for-service-provider-and-identity-provider-connection
 ---
 
-# SAMLService Provider設定の変更 
+# SAMLService Provider設定の変更
 
 [TOC levels=1-4]
 
