@@ -20,8 +20,9 @@ To use Clay icons in your theme, follow these steps:
     <@clay["icon"] symbol="icon-name" />
     ```
     
-    The full list of icons can be found on [ClayUI's site](https://clayui.com/docs/components/icons.html). 
-    Here is an example configuration for a Facebook social media icon:
+    The full list of icons can be found on [ClayUI's site](https://clayui.com/docs/components/icon.html) 
+    (CSS/Markup tab). Here is an example configuration for a Facebook social 
+    media icon:
 
     ```markup
         <a class="text-white"

@@ -123,8 +123,8 @@ Follow these steps:
 
 5.  Add this snippet below the closing `</nav>` tag to add the Lunar Resort's 
     contact information. Also, copy the `lunar-resort-logo-vertical.png` asset 
-    from the `lunar-resort-build/assets/images/` folder to the `/src/images/` 
-    folder so you can use it in the Footer:
+    from the [`lunar-resort-build/assets/images/`](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/lunar-resort-theme/lunar-resort-build/assets/images) 
+    folder to the `/src/images/` folder so you can use it in the Footer:
 
     ```markup
     <div class="contact-info-container text-center pt-5 pb-2 col-12 col-md-4 mx-auto mb-4">
@@ -226,7 +226,7 @@ Follow these steps:
      completed fragments. Open the Control Menu and navigate to *Site Builder* 
      &rarr; *Page Fragments*, and select the *Import* option from the New 
      dropdown menu. Import the `collections-lunar-resort.zip` asset from the 
-     `lunar-resort-build/assets/` folder.
+     [`lunar-resort-build/assets/`](https://github.com/liferay/liferay-docs/tree/master/en/developer/tutorials/code/lunar-resort-theme/lunar-resort-build/assets) folder.
     
 11.  Re-deploy the updated theme with the command below:
 
