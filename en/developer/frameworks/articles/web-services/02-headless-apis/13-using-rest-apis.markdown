@@ -6,9 +6,13 @@ header-id: using-rest-apis
 
 [TOC levels=1-4]
 
-@product@'s headless REST APIs are independent of clients and can be used with any REST client you prefer. The only usual requirements are setting up the `Authentication` header (either OAuth, Cookie, Basic...) and the `Content-Type` header if you are creating content.
+@product@'s headless REST APIs can be used with any REST client you prefer. The
+only usual requirements are setting up the `Authentication` header (either
+OAuth, Cookie, Basic...) and the `Content-Type` header if you are creating
+content.
 
-Our recommendation for javascript applications is using `fetch` directly, like this:
+Our recommendation for JavaScript applications is to use `fetch` directly, like
+this:
 
 ```javascript
 fetch(`http://localhost:8080/o/headless-delivery/v1.0/sites/${SITE_ID}/structured-contents/'`, 
@@ -49,7 +53,7 @@ fetch(`http://localhost:8080/o/headless-delivery/v1.0/sites/${SITE_ID}/structure
 )
 ```
 
-There are several examples of javascript applications using the Headless REST APIs:
+Here are two examples of JavaScript applications using the Headless REST APIs:
 
 * [Alexa skill using Headless REST APIs with node-fetch](https://github.com/dgomezg/liferay-frontend-samples/tree/master/riuvo-alexa-skill).
 * [Example API from scratch using REST Builder](https://liferay.dev/blogs/-/blogs/creating-headless-apis-part-1).
