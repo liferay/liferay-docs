@@ -8,7 +8,7 @@ header-id: making-authenticated-requests
 
 To make an authenticated request, you must authenticate as a specific user. 
 
-There are two authentication mechanisms available when invoking web APIs: 
+There are three authentication mechanisms available when invoking web APIs: 
 
 **Basic Authentication:** Sends the user credentials as an encoded user name 
 and password pair. This is the simplest authentication protocol (available since 
@@ -18,6 +18,9 @@ HTTP/1.0).
 the 
 [OAuth 2.0 documentation](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0) 
 for more information. 
+
+**Cookie/Session authentication:** From inside the portal you can make direct
+requests to the APIs by sending the session token.
 
 First, you'll learn how send requests with basic authentication. 
 
@@ -45,7 +48,7 @@ base64 <<< test@liferay.com:Liferay
 ```
 
 | **Warning:** Encoding a string as shown here does not encrypt the resulting 
-| string. Such an encoded string can easily be decoded by executing 
+| string. An encoded string can easily be decoded by executing 
 | `base64 <<< the-encoded-string`, which returns the original string. 
 | 
 | Anyone listening to your request could therefore decode the `Authorization` 
@@ -115,10 +118,10 @@ request receives. For more information on the response's structure, see
 }
 ```
 
-## OAuth 2.0 Authentication
+## OAuth 2.0 Authorization
 
 @product-ver@ supports authorization via OAuth 2.0, which is a token-based 
-authentication mechanism. For more details, see 
+authorization mechanism. For more details, see 
 [@product@'s OAuth 2.0 documentation](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0). 
 The following sections show you how to use OAuth 2.0 to authenticate web API 
 requests. 
@@ -156,39 +159,78 @@ curl -H "Authorization: Bearer d5571ff781dc555415c478872f0755c773fa159" http://l
 ```
 
 The response contains the resources that the authenticated user has 
-permission to access, just like the response from Basic authentication. 
+permission to access, just like the response from Basic authentication.
 
+## Using Cookie Authentication or Making Requests from the UI
+
+You can call the REST APIs using the existing session from outside @product@
+by passing the session identifier (the cookie reference) and the Liferay Auth
+Token (a Cross-Site Request Forgery---CSRF---token).
+
+To do a request from outside @product@ you must provide the `Cookie` identifier
+in the header. In CURL, pass the `-H` parameter: 
+
+     -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D'
+
+You must also provide the CSRF token by passing it in the `p_p_auth` query
+parameter or adding the URL to the whitelist of CSRF-allowed URLs in
+*System Settings* &rarr; *API Authentication* &rarr; *Portal Sessions*. You can
+disable CSRF checks altogether by setting `check.csrf.token` to `false` in
+`portal-ext.properties`, but this is not recommended. 
+
+Here's a sample CURL request with the cookie and CSRF token:
+
+```bash
+curl -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D' http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/?p_p_auth=O4dCU1Mj
+```
+ 
+To do a cookie request from inside @product@, from JavaScript code or a Java
+method, the session identifier is not needed and you must only provide
+the CRSF token or add the API to the whitelist of CSRF allowed URLs.
+ 
 ## Making Unauthenticated Requests
 
-Unauthenticated requests are disabled by default in @product@'s headless REST 
-APIs. You can, however, enable them manually by following these steps: 
+Unauthenticated requests are disabled by default in @product@'s headless REST
+APIs. You can, however, enable them manually by defining an exception in the
+Service Access Policy to allow unauthenticated requests.
 
-1.  Create the config file 
-    `com.liferay.headless.delivery.internal.jaxrs.application.HeadlessDeliveryApplication-default.config` 
-    and add this code to it: 
+1. Go to Control Panel &rarr; Configuration &rarr; Service Access Policy.
 
-    ```properties
-    oauth2.scopechecker.type="none"
-    auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
-    auth.verifier.auth.verifier.OAuth2RestAuthVerifier.urls.includes="*"
-    auth.verifier.guest.allowed="true"
-    ```
+2. Add a new Service Access Policy.
 
-    Note that the last property (`auth.verifier.guest.allowed`) lets guests 
-    access public content via the APIs. To turn this off, set the property to 
-    `false`. 
+3. Enable both *Enabled* and *Default* options.
 
-2.  Deploy the config file to `[Liferay Home]/osgi/configs`. Note that 
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) 
-    is typically the application server's parent folder. 
+4. Use `com.liferay.headless.delivery.internal.resource.v1_0.OpenAPIResourceImpl`
+   for the Service Class and `getOpenAPI` for the Method Name (or the method/class
+   you want to expose).
 
-3.  Test the APIs by making a request to an OpenAPI profile URL: 
+5.  Test the APIs by making a request to an OpenAPI profile URL: 
 
-    ```bash
-    curl "http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml"
-    ```
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml"
+```
 
 You should get the OpenAPI profile for the API you sent the request to. 
+
+## Cross-Origin Resource Sharing (CORS)
+
+Modern web browsers block access to content from domains other than the one
+currently being visited. For example, browsers block fetch/ajax requests from
+a local JavaScript application (being executed in localhost:4000) that tries to
+access a Tomcat server (running in localhost:8080). 
+
+Cross Origin Resource Sharing allows the configuration of safe resource sharing
+between sites. A web application using APIs can only request endpoints that have
+the same origin/domain unless some special CORS headers are set that explicitly
+allow querying from different domains. 
+
+For development purposes, it's common to enable CORS headers to allow
+scripts to call APIs served by a different server. 
+
+![Figure 1: Configure Cross-Origin Resource Sharing in Liferay](../../../images/cors.png)
+
+Follow these instructions to configure [Cross-Origin Resource Sharing (CORS)](/docs/7-2/deploy/-/knowledge_base/d/configuring-cors) 
+in @product@.
 
 ## Related Topics
 
