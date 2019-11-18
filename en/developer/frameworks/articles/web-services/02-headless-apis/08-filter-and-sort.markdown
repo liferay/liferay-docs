@@ -72,7 +72,8 @@ evaluates to `true` if the expression is true for any element.
 
 ### Operator combinations and OData syntax
 
-You can check more syntax examples and other operator combinations in the [OData standard reference](https://docs.oasis-open.org/odata/odata/v4.01/csprd06/part1-protocol/odata-v4.01-csprd06-part1-protocol.html#sec_BuiltinFilterOperations).
+Syntax examples and other operator combinations are covered in the 
+[OData standard reference](https://docs.oasis-open.org/odata/odata/v4.01/csprd06/part1-protocol/odata-v4.01-csprd06-part1-protocol.html#sec_BuiltinFilterOperations).
 
 ### Escaping in Queries
 
