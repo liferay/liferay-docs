@@ -104,30 +104,23 @@ included automatically when an associated page is exported, but if not you
 can export the template collection separately so the page can be imported 
 to the new environment. To export page templates, 
 
-1.  Go to *Site Management* &rarr; *Build* &rarr; *Pages*.
+1.  Go to *Site Management* &rarr; *Publishing* &rarr; *Export*.
 
-2.  Select the *Page Templates* tab.
+2.  At the top right of the page, click the *Add button*
+    (![Add](../../../../../../images/icon-add.png)) to create a new custom 
+    export process.
 
-3.  At the top right of the page, click *Options* 
-    (![Options](../../../../../../images/icon-options.png)) &rarr; 
-    *Export/Import*.
+3.  On the *New Custom Export* page, under the Content section, listed under 
+    Pages, you can click the *Change* link to choose which Collections and 
+    templates are being exported.
 
-4.  On the *Export/Import* page you can choose to export configuration data and
-    change which Collections and templates are being exported.
-
-5.  When you're done configuring the export, click *Export* and save the 
+4.  When you're done configuring the export, click *Export* and save the 
     exported LAR file.
 
-6.  On the target environment, go to *Site Management* &rarr; *Build* &rarr; 
-    *Pages* and select *Page Templates*.
+5.  On the target environment, go to *Site Management* &rarr; *Publishing* &rarr; 
+    *Import* and click the *Add button* (![Add](../../../../../../images/icon-add.png)).
 
-7.  At the top right of the page, click *Options* 
-    (![Options](../../../../../../images/icon-options.png)) &rarr; 
-    *Export/Import*.
-
-8.  Select the *Import* tab.
-
-9.  Upload the LAR with your template data. If the LAR contains 
+6.  Upload the LAR with your template data. If the LAR contains 
     additional content you don't want to import, you can deselect it.
 
 Once the template has been imported, the page can be imported normally to your
