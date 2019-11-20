@@ -2,6 +2,8 @@
 header-id: mutations
 ---
 
+# Mutations
+
 The GraphQL spec differentiates between retrieve operations (`query`) and
 create/update/delete operations (`mutations`). 
 
