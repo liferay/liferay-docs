@@ -2,11 +2,14 @@
 header-id: language-negotiation
 ---
 
-## Language Negotiation
+# Language Negotiation
 
-The same mechanism used in the headless REST APIs is used for requesting content in another language in GraphQL. 
+The same mechanism for requesting content in another language in the
+headless REST APIs is used in GraphQL. 
 
-APIs that are available in different languages return the options in a block called `availableLanguages`. For example, this block in the following response lists U.S. English (`en-US`) and Spain/Castilian Spanish (`es-ES`): 
+APIs available in different languages return the options in a block called
+`availableLanguages`. For example, this block lists U.S. English (`en-US`) and
+Spain/Castilian Spanish (`es-ES`): 
 
 ```json
 {
@@ -51,7 +54,8 @@ APIs that are available in different languages return the options in a block cal
 }
 ```
 
-To request the content in another language, specify your desired locale in the request's `Accept-Language` header: 
+To request the content in another language, specify your desired locale in the
+request's `Accept-Language` header: 
 
 ```bash
 curl "http://localhost:8080/o/graphql"  -H 'Accept-Language: es-ES'  -u 'test@liferay.com:test' ...
@@ -100,10 +104,13 @@ curl "http://localhost:8080/o/graphql"  -H 'Accept-Language: es-ES'  -u 'test@li
     }
 ```
 
-### Creating Content with Different Languages
+## Creating Content with Different Languages
 
-By default, when sending a mutation request, the `Accept-Language` header is used as the content's language. However, there is one exception. Some entities require the first request to be in the Site's default language. In such cases, the first request for a different language results in an error. 
+By default, when sending a mutation request, the `Accept-Language` header is
+used as the content's language. There is one exception, however. Some entities
+require the first request to be in the Site's default language. In such cases,
+the first request for a different language results in an error. 
 
-After creating a new resource, a new request in a different language adds that translation.
+After creating a new resource, a new request in a different language adds that
+translation.
 
-## Related Topics
