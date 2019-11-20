@@ -15,18 +15,31 @@ is included with @product@ and generates automatic previews for certain file
 types (mostly PDFs). You can install two additional tools to generate previews
 for other file types: 
 
+-   [**OpenOffice:**](https://www.openoffice.org/) or [**LibreOffice:**](https://www.libreoffice.org/)
+    Convert and generate previews for many types of documents. 
+
 -   [**ImageMagick:**](https://www.imagemagick.org/script/index.php) 
     Generate higher-quality image previews for many types of images. 
 
 -   [**Xuggler:**](http://www.xuggle.com/xuggler/) 
     Convert and generate previews for audio and video files. 
 
-Once you've installed these tools, you can use the Server Administration app's 
-External Services tab to configure @product@ to use them. Make sure to choose 
-the correct versions of these tools for your operating system. We recommend that 
-you install the latest stable versions, as older versions may not run properly 
-with @product@. ImageMagick must be installed manually, but you can install 
-Xuggler from the Control Panel. 
+As of Liferay 7.1, OpenOffice/LibreOffice is configured via OSGi Configuration
+Admin instead of via portal properties. Thus, to adjust the these settings, you
+have to go to *Control Panel* &arr; *Configuration*&arr; *System Settings*
+&arr; *Connectors* &rarr; *OpenOffice Integration*. You can also adjust these
+settings via a
+`com.liferay.document.library.document.conversion.internal.configuration.OpenOfficeConfiguration.config`
+file in your `[Liferay Home]/osgi/configs` folder. See the
+[Breaking Changes](https://portal.liferay.dev/docs/7-1/reference/-/knowledge_base/r/breaking-changes#moved-openoffice-properties-to-osgi-configuration)
+document for details.
+
+Once you've installed ImageMagick and Xuggler, you can use the Server
+Administration app's External Services tab to configure @product@ to use them.
+Make sure to choose the correct versions of these tools for your operating
+system. We recommend that you install the latest stable versions, as older
+versions may not run properly with @product@. ImageMagick must be installed
+manually, but you can install Xuggler from the Control Panel. 
 
 | **Tip:** If you're running @product@ on a Linux server and experience a problem
 | enabling Xuggler, check your server's glibc version. For Xuggler to work, you
