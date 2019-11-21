@@ -14,7 +14,7 @@ users. When sending this request, use the credentials of an administrative user
 who has permission to view other portal users: 
 
 ```bash
-curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts"  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts"  -u 'test@example.com:test'
 ```
 
 The response (below) has two main parts: 
@@ -40,7 +40,7 @@ This response is in JSON, which is the default response format for web APIs in
       "dashboardURL": "/user/test",
       "dateCreated": "2019-04-17T20:37:19Z",
       "dateModified": "2019-04-22T09:56:35Z",
-      "emailAddress": "test@liferay.com",
+      "emailAddress": "test@example.com",
       "familyName": "Test",
       "givenName": "Test",
       "id": 20130,

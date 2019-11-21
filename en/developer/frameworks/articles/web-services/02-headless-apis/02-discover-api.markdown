@@ -40,7 +40,7 @@ send requests to a @product@ instance running locally on port `8080`.
 
 Run this `curl` command to access the home URL: 
 
-    curl http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml -u test@liferay.com:test
+    curl http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml -u test@example.com:test
 
 You should get a response like this: 
 
