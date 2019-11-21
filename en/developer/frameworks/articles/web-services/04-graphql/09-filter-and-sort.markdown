@@ -6,14 +6,20 @@ header-id: filter-sort-and-search
 
 [TOC levels=1-4]
 
-You can use @product@'s headless GraphQL APIs to search for content you're interested in. You can also sort and filter content. Here, you'll learn how. 
+You can use @product@'s headless GraphQL APIs to search for the content you
+want. You can also sort and filter content. 
 
 ## Filter
 
-It's often useful to filter large collections for the exact data that you need. Not all collections, however, allow filtering. The ones that support it contain the optional parameter `filter`. To filter a collection 
-based on the value of one or more fields, use the `filter` parameter following a subset of the oData standard. 
+It's often useful to filter large collections for the exact data that you need.
+Not all collections, however, allow filtering. The ones that support it contain
+the optional parameter `filter`. To filter a collection based on the value of
+one or more fields, use the `filter` parameter following a subset of the
+[OData](https://www.odata.org) standard. 
 
-Filtering mainly applies to fields indexed as keywords in @product@'s search. To find content by terms contained in fields indexed as text, you should instead use [search](#search). 
+Filtering mainly applies to fields indexed as keywords in @product@'s search. To
+find content by terms contained in fields indexed as text, you should instead
+use [search](#search). 
 
 ### Comparison Operators
 
@@ -37,7 +43,7 @@ Filtering mainly applies to fields indexed as keywords in @product@'s search. To
 | `or`         | Logical or   | `price le 3.5 or price gt 200`   |
 | `not`        | Logical not  | `not (price le 3.5)`             |
 
-Note that the `not` operator needs a space character after it. 
+Note that the `not` operator requires a trailing space. 
 
 ### Grouping Operators
 
@@ -60,13 +66,18 @@ prepended with a navigation path that identifies a collection.
 | --------------- | ----------- | ------------------------------------------ |
 | `any`           | Any         | `keywords/any(k:contains(k,'substring1'))` |
 
-The `any` operator applies a boolean expression to each collection element and evaluates to `true` if the expression is true for any element. 
+The `any` operator applies a boolean expression to each collection element and
+evaluates to `true` if the expression is true for any element. 
 
 ### Escaping in Queries
 
-You can escape a single quote in a value by escaping it with a backslash. For example, to filter for a blog posting whose headline is `New Headless APIs`, send this filter string to the filter parameter.
+You can escape a single quote in a value by escaping it with a backslash. For
+example, to filter for a blog posting whose headline is `New Headless APIs`,
+send this filter string to the filter parameter.
 
-    filter: \\"headline eq \'Title\'\\"
+```
+filter: \\"headline eq \'Title\'\\"
+```
 
 Here's an example of the full request: 
 
@@ -80,6 +91,8 @@ curl -X "POST" "http://localhost:8080/o/graphql" \
 }'
 
 ```
+
+And here's a possible response:
 
 ```json
 {
@@ -113,15 +126,22 @@ curl -X "POST" "http://localhost:8080/o/graphql" \
 
 ### Filtering in Structured Content Fields (ContentField)
 
-To filter for a `ContentField` value (dynamic values created by the end user), you must use the paths that are scoped to an individual `ContentStructure`. 
+To filter for a `ContentField` value (dynamic values created by the end user),
+you must use the paths that are scoped to an individual `ContentStructure`. 
 
-To do so, find the ID of the `ContentStructure` and use it in place of `{contentStructureId}` in this query: 
+Find the ID of the `ContentStructure` and use it in place of
+`{contentStructureId}` in this query: 
 
-    "contentStructureStructuredContents"
+```
+"contentStructureStructuredContents"
+```
 
 ## Search
 
-It's often useful to search large collections with keywords. Use search when you want results from any field, rather than specific ones. To perform a search, use the optional parameter `search` followed by the search terms. For example, this request searches for all the `BlogEntry` fields containing Title: 
+You can search large collections with keywords. Use search when you want results
+from any field, rather than specific ones. To perform a search, use the optional
+parameter `search` followed by the search terms. For example, this request
+searches for all the `BlogEntry` fields containing Title: 
 
 ```bash
 curl -X "POST" "http://localhost:8080/o/graphql" \
@@ -164,22 +184,38 @@ curl -X "POST" "http://localhost:8080/o/graphql" \
 
 ## Sorting
 
-Sorting collection results is another common task. Note, however, that not all collections allow sorting. The ones that support it contain the optional parameter `{lb}?sort{rb}` in their GraphQL definition.
+Collection results can be sorted. Note, however, that not all collections allow
+sorting. The ones that support it contain the optional parameter `{lb}?sort{rb}`
+in their GraphQL definition.
 
-To get sorted collection results, append `sort:\"<param-name>\"` to the request URL. For example, appending `sort:\"title\"` to the request URL sorts the results by title. 
+To get sorted collection results, append `sort:\"<param-name>\"` to the request
+URL. For example, appending `sort:\"title\"` to the request URL sorts the
+results by title. 
 
-The default sort order is ascending (0-1, A-Z). To perform a descending sort, append `:desc` to the parameter name. For example, to perform a descending sort by title, append `sort:\"title:desc\"` to the request URL. 
+The default sort order is ascending (0-1, A-Z). To perform a descending sort,
+append `:desc` to the parameter name. For example, to perform a descending sort
+by title, append `sort:\"title:desc\"` to the request URL. 
 
-To sort by more than one parameter, separate the parameter names by commas and put them in order of priority. For example, to sort first by title and then by creation date, append `sort:\"title,dateCreated\"` to the request URL. 
+To sort by more than one parameter, separate the parameter names by commas and
+put them in order of priority. For example, to sort first by title and then by
+creation date, append `sort:\"title,dateCreated\"` to the request URL. 
 
-To specify a descending sort for only one parameter, you must explicitly specify ascending sort order (`:asc`) for the other parameters. For example: 
+To specify a descending sort for only one parameter, you must explicitly specify
+ascending sort order (`:asc`) for the other parameters: 
 
-    sort:\"headline:desc,dateCreated:asc\"
+```
+sort:\"headline:desc,dateCreated:asc\"
+```
 
 ## Flatten
 
-Some collections (as defined in their GraphQL specification) allow the query parameter `flatten`, which returns all resources and disregards folders or other hierarchical classifications. This parameter's default value is `false`, so a document query to the root folder returns only the documents in that folder. 
+The `flatten` query parameter returns all resources and disregards folders or other
+hierarchical classifications. Collection GraphQL specifications define if
+`flatten` is available. Its default value is `false`, so a document query to the
+root folder returns only the documents in that folder. 
 
-With `flatten` set to `true`, the same query also returns documents in any subfolders, regardless of how deeply those folders are nested. In other words, setting `flatten` set to `true` and querying for documents in a Site's root folder returns all the documents in the Site. 
+With `flatten` set to `true`, the same query returns documents in any
+subfolders, regardless of how deeply those folders are nested. Setting `flatten`
+set to `true` and querying for documents in a Site's root folder returns all the
+documents in the Site. 
 
-## Related Topics
