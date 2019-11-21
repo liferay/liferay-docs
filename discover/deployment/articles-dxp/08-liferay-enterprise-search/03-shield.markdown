@@ -182,7 +182,7 @@ Follow these steps to configure the Shield adapter using System Settings:
    next to *Reindex all search indexes.*
 
 For a complete list of the Shield adapter's available configuration options, see
-[here](/reference/-/official_documentation/reference/shield-adapter-settings).
+[here](/docs/7-0/deploy/-/knowledge_base/d/shield-adapter-settings).
 
 ## Encrypting Elasticsearch Connections
 
@@ -263,7 +263,7 @@ for the details.
 
 Now Shield is fully configured, with both authentication and encryption
 protecting your Elasticsearch cluster. Next, you can learn how to 
-[install and configure Marvel](/docs/6-2/deploy/-/knowledge_base/d/monitoring-elasticsearch-with-marvel),
+[install and configure Marvel](/docs/7-0/deploy/-/knowledge_base/d/monitoring-elasticsearch-with-marvel),
 Elasticsearch's monitoring plugin, to visualize the health and performance of
 your Elasticsearch cluster.
 
