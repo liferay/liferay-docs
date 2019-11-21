@@ -20,10 +20,9 @@ entry is submitted.
     name, or anything else informative to the recipient.
 
     **From Address:** The sender's email address. You can use something like 
-    `noreply@liferay-forms.com`, so that recipients don't try to reply. 
+    `noreply@example.com`, so that recipients don't try to reply. 
 
-    **To Address:** The recipient's email address (e.g., 
-    `test@liferay.com`). 
+    **To Address:** The recipient's email address (e.g., `test@example.com`).
 
     **Subject:** The email's subject. An informative subject line tells the
     recipient what happened. For example, An application for employment was
