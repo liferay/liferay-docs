@@ -6,15 +6,21 @@ header-id: multipart-requests
 
 [TOC levels=1-4]
 
-Several mutations accept a binary file via a multipart request. For example, the definition for posting a file to a `DocumentFolder` specifies a multipart request, `Upload` type in GraphQL:
+Several mutations accept a binary file via a multipart request. For example, the
+definition for posting a file to a `DocumentFolder` specifies a multipart
+request, `Upload` type in GraphQL:
 
-![Figure 1: Create Document](../../../images/graphql-mutation-upload.png)
+![Figure 1: Create Document accepts a `multipartBody`.](../../../images/graphql-mutation-upload.png)
 
-The GraphQL specification doesn't support natively multipart uploads but there is an [extension](https://github.com/jaydenseric/graphql-multipart-request-spec) contributed by the community that covers that use case. 
+The GraphQL specification doesn't support natively multipart uploads, but an 
+[extension](https://github.com/jaydenseric/graphql-multipart-request-spec)
+contributed by the community covers that use case. 
 
-Liferay's implementation follows that extension and allows uploading files with cURL/Altair/multipart requests.
+Liferay's implementation includes that extension and allows uploading files.
 
-Multipart support in GraphQL is disabled by default, to enable we add the configuration to upload multipart files in a Liferay servlet, adding this to the web.xml of the server:
+Multipart support in GraphQL is disabled by default. To enable it, add the
+configuration to upload multipart files in the Liferay application's `web.xml`
+file:
 
 ```xml
 <servlet>
@@ -33,9 +39,10 @@ Multipart support in GraphQL is disabled by default, to enable we add the config
 </servlet>
 ```
 
-Altair configuration to upload files is simple, using the selector to upload one or multiple files and define a variable in the query.
+To test, use the Altair configuration to upload files. Use the selector to
+upload one or multiple files and define a variable in the query.
 
-![Figure 1: Create Document](../../../images/graphql-mutation-upload-altair.png)
+![Figure 1: Creating a Document in Altair is easy with the selector.](../../../images/graphql-mutation-upload-altair.png)
 
 ```
 mutation($file: [Upload]) {
@@ -46,11 +53,19 @@ mutation($file: [Upload]) {
 }
 ```
 
-We've defined the variable `file` because we are only uploading one. If we wanted to define several, the variable should be called $files and each file should have a numeric sequence, like: files.0, files.1, files.2...
+The variable above is `file` because there's only one. If you wanted to upload
+several files, name the variable `$files` and each file should have
+a numeric sequence: `files.0`, `files.1`, `files.2`, etc.
 
-All multipart APIs allow sending a JSON file with the metadata of the file (title, description...). That parameter should be the second file uploaded (we have to define the files with the file.0, file.1 syntax), with content similar to:
+All multipart APIs allow sending a JSON file containing the file's metadata
+(title, description, etc.). That parameter should be the second file uploaded
+(defined using the `file.0`, `file.1` syntax). 
 
-    document={\"title\": \"Alternative name\"}"
+For example, 
+
+```
+document={\"title\": \"Alternative name\"}"
+```
 
 And here's the response: 
 
@@ -65,7 +80,7 @@ And here's the response:
 }
 ```
 
-The cURL request is slightly different (Altair is filling the variables for us):
+The cURL request is slightly different (Altair fills out the variables):
 
 ```bash
 curl 'http://localhost:8080/o/graphql' -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
@@ -74,4 +89,3 @@ curl 'http://localhost:8080/o/graphql' -H 'Authorization: Basic dGVzdEBsaWZlcmF5
 -F 0=@"99-rest-generator.markdown"
 ```
 
-## Related Topics
