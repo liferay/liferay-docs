@@ -35,8 +35,8 @@ the "Definition of Terms" heading to help build your email template.
 The Email Sender entry specifies the virtual instance's administrative Name and 
 Address for email notifications, declared as the `[$FROM_NAME$]` and 
 `[$FROM_ADDRESS$]` variables respectively in the email templates. By default, 
-these are `Test Test` and `test@liferay.com`. This name and email address appear 
-in the *From* field in all email messages sent by the virtual instance. 
+they are got from [`admin.email.from.name` and `admin.email.from.address`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Admin%20Portlet) [portal property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)).
+This name and email address appear in the *From* field in all email messages sent by the virtual instance. 
 
 ![Figure 1: Customize the email template for the email messages sent to new Users.](../../../../images/instance-settings-account-created.png)
 
