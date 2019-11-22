@@ -86,7 +86,7 @@ append this filter string to the request URL:
 Here's an example of the full request: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?filter=headline%20eq%20%27New%20Headless%20APIs%27"  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?filter=headline%20eq%20%27New%20Headless%20APIs%27"  -u 'test@example.com:test'
 ```
 
 ```json
@@ -137,7 +137,7 @@ the optional parameter `search` followed by the search terms. For example, this
 request searches for all the `BlogEntry` fields containing OAuth: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?search=OAuth"  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?search=OAuth"  -u 'test@example.com:test'
 ```
 
 ```json

@@ -7,7 +7,7 @@ header-id: script-examples
 [TOC levels=1-4]
 
 Here are some examples to help you use Liferay's script console. Note: Most of
-these originated from a [Liferay blog post](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
+these originated from a [Liferay blog post](https://liferay.dev/blogs/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
 
 The following scripts are Groovy scripts but they can be adapted to other
 languages.
@@ -57,10 +57,11 @@ agree to the terms of use again before they can sign in.
     userCount = UserLocalServiceUtil.getUsersCount()
     users = UserLocalServiceUtil.getUsers(0, userCount)
 
+    long currentUserId = Long.parseLong(userInfo.get("liferay.user.id"))
+
     for (user in users){
 
-        if(!user.isDefaultUser() && 
-            !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
+        if(!user.isDefaultUser() && (user.getUserId() != currentUserId)) {
 
                 user.setAgreedToTermsOfUse(false)
                 UserLocalServiceUtil.updateUser(user)
@@ -72,8 +73,7 @@ agree to the terms of use again before they can sign in.
 
     This sets each user's `agreedToTermsOfUse` attribute to `false`. It skips
     the default user as well as the default admin user that's currently signed
-    in and running the script. If you're signed in as someone other than
-    `test@liferay.com`, update the script with your email address.
+    in and running the script.
 
 3.  Click *Execute*.
  

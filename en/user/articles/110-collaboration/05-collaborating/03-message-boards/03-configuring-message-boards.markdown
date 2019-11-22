@@ -59,10 +59,10 @@ Use these tabs to configure how the Message Boards app handles email
 notifications:
 
 **Email From**: The name and email address that sends email notifications. 
-The default administrator account's name and email address (e.g., 
-*Test Test* and *test@liferay.com*) are used by default. These were set in 
-the Basic Configuration Wizard when installing @product@. Make sure to 
-update this email address to a valid one that can be dedicated to 
+The default administrator account's name and email address. Default values, 
+are from the [`admin.email.from.name` and `admin.email.from.address`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Admin%20Portlet) [portal properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)).
+These were set in the Basic Configuration Wizard when installing @product@.
+Make sure to update this email address to a valid one that can be dedicated to 
 notifications. 
 
 **HTML Format:** Support HTML in these emails. 

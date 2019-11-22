@@ -140,7 +140,7 @@ Liferay.Service(
     '/user/get-user-by-email-address`,
     {
         companyId: 20101,
-        emailAddress: 'test@liferay.com`
+        emailAddress: 'test@example.com`
     },
     function(obj) {
         console.log(obj);
@@ -148,7 +148,7 @@ Liferay.Service(
 );
 ```
 
-If you run this code, the *test@liferay.com* user (JSON object) is logged to the
+If you run this code, the *test@example.com* user (JSON object) is logged to the
 JavaScript console.
 
 The `Liferay.Service(...)` function takes three arguments:

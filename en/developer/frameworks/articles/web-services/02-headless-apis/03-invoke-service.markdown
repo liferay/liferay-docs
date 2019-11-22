@@ -62,7 +62,7 @@ request gets the site's blog postings by providing the site ID (`20124`) in the
 URL: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/" -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/" -u 'test@example.com:test'
 ```
 
 If you send such a request to a site that contains some blog entries, the 
