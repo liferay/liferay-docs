@@ -6,9 +6,8 @@ header-id: how-to-install
 
 [TOC levels=1-4]
 
-To use REST builder the recommended way is using the [Gradle plugin](https://portal.liferay.dev/docs/7-2/reference/-/knowledge_base/r/rest-builder-gradle-plugin).
-
-To do that we just have to add this gradle configuration to our project:
+Use the [Gradle plugin](https://portal.liferay.dev/docs/7-2/reference/-/knowledge_base/r/rest-builder-gradle-plugin) 
+to install REST builder by adding this gradle configuration to your project: 
 
 ```groovy
 buildscript {
@@ -26,9 +25,15 @@ buildscript {
 apply plugin: "com.liferay.portal.tools.rest.builder"
 ```
 
-To use it we just have to run `gradlew buildREST`. Note that your Gradle wrapper may not be in your app’s project directory, so you may need to use .. to locate it (e.g., ../../../gradlew buildREST`).
+To use it, run `gradlew buildREST`. Note that your Gradle wrapper may not be in
+your app’s project directory, so you may need to use [Blade](/docs/7-2/reference/-/knowledge_base/r/blade-cli) 
+to locate it: 
 
-If we want to use a specific version of REST builder we can specify it explicitly like this:
+```bash
+blade gw buildREST
+```
+
+If you want to use a specific version of REST builder, you can specify it explicitly:
 
 ```groovy
 dependencies {
