@@ -35,7 +35,7 @@ Fragments within it.
 
 To export individual Fragments,
 
-1.  Click on the Collection that you want to export.
+1.  Click on the Collection that you want to export the fragment from.
 
 2.  To export all Fragments in the Collection without exporting any Collection
     data, click *Actions*
