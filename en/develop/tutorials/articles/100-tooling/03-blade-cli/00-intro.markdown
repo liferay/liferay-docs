@@ -31,6 +31,9 @@ The following sub-commands are callable in the Blade CLI environment:
 - *sh*: Connects to @product@, executes succeeding Gogo command, and returns
   output.
 - *update*: Updates Blade CLI to latest version.
+- *upgradeProps:*  Analyzes your old `portal-ext.properties` and your newly
+  installed 7.x server to show you properties moved to OSGi configuration files
+  or removed from the product. 
 - *version*: Displays version information about Blade CLI.
 
 <!-- TODO: New options `outputs` and `upgradeProps`. Should these be added to
