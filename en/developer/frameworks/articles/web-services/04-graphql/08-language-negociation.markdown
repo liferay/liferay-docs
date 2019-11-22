@@ -4,6 +4,8 @@ header-id: language-negotiation
 
 # Language Negotiation
 
+[TOC levels=1-4]
+
 The same mechanism for requesting content in another language in the
 headless REST APIs is used in GraphQL. 
 

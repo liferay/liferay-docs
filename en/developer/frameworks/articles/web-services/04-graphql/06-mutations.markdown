@@ -4,6 +4,8 @@ header-id: mutations
 
 # Mutations
 
+[TOC levels=1-4]
+
 The GraphQL spec differentiates between retrieve operations (`query`) and
 create/update/delete operations (`mutations`). 
 

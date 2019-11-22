@@ -1,5 +1,5 @@
 ---
-header-id: working-with-collections-of-data
+header-id: rest-working-with-collections-of-data
 ---
 
 # Working with Collections of Data

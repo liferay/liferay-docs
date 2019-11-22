@@ -1,8 +1,8 @@
 ---
-header-id: get-started-invoke-a-service
+header-id: how-to-invoke-a-service
 ---
 
-# Get Started: Invoke a Service
+# How To Invoke a Service
 
 [TOC levels=1-4]
 

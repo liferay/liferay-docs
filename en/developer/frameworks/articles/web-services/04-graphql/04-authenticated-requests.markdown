@@ -1,5 +1,5 @@
 ---
-header-id: making-authenticated-requests
+header-id: authenticated-requests
 ---
 
 # Making Authenticated Requests

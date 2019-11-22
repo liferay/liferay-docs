@@ -6,7 +6,7 @@ header-id: making-authenticated-requests
 
 [TOC levels=1-4]
 
-To make an authenticated request, you must authenticate as a specific user. 
+To make an authenticated request, you must authenticate as a specific User. 
 
 There are three authentication mechanisms available when invoking web APIs: 
 

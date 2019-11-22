@@ -4,6 +4,8 @@ header-id: fragments-and-node-pattern
 
 # Fragments and Node Patterns
 
+[TOC levels=1-4]
+
 @product@'s GraphQL APIs also supports [GraphQL
 fragments](https://graphql.org/learn/queries/#fragments), reusable sets of
 fields that are needed in different requests. A special type of fragments are

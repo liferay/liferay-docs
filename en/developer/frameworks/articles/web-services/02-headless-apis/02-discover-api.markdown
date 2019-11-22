@@ -1,8 +1,8 @@
 ---
-header-id: get-started-discover-the-api
+header-id: get-started-find-the-api
 ---
 
-# Get Started: Discover the API
+# Get Started: Find the API
 
 [TOC levels=1-4]
 

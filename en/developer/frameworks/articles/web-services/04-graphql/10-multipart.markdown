@@ -42,7 +42,7 @@ file:
 To test, use the Altair configuration to upload files. Use the selector to
 upload one or multiple files and define a variable in the query.
 
-![Figure 1: Creating a Document in Altair is easy with the selector.](../../../images/graphql-mutation-upload-altair.png)
+![Figure 2: Creating a Document in Altair is easy with the selector.](../../../images/graphql-mutation-upload-altair.png)
 
 ```
 mutation($file: [Upload]) {
