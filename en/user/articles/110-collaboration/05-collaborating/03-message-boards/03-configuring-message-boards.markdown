@@ -60,7 +60,7 @@ notifications:
 
 **Email From**: The name and email address that sends email notifications. 
 The default administrator account's name and email address. Default values, 
-are from [`admin.email.from.name` and `admin.email.from.address`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Admin%20Portlet) the [portal properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)).
+are from the [`admin.email.from.name` and `admin.email.from.address`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Admin%20Portlet) [portal properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)).
 These were set in the Basic Configuration Wizard when installing @product@.
 Make sure to update this email address to a valid one that can be dedicated to 
 notifications. 
