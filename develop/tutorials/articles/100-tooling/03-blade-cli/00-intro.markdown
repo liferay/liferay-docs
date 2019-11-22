@@ -28,6 +28,9 @@ sub-commands are callable in the Blade CLI environment:
 - *server*: Starts or stops server defined by your Liferay project.
 - *sh*: Connects to Liferay and executes Gogo command and returns output.
 - *update*: Updates Blade CLI to latest version.
+- *upgradeProps:*  Analyzes your old `portal-ext.properties` and your newly
+  installed 7.x server to show you properties moved to OSGi configuration files
+  or removed from the product. 
 - *version*: Displays version information about Blade CLI.
 
 In this set of tutorials, you'll learn how to use these commands to create and
