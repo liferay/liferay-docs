@@ -49,22 +49,22 @@ To extract the definitions for yourself,
 
 The XML structure of a workflow definition is defined in an XSD file:
 
-    liferay-worklow-definition-7_1_0.xsd
+    liferay-worklow-definition-7_2_0.xsd
 
 Declare the schema at the top of the workflow definition file:
 
 ```xml
 <?xml version="1.0"?>
 <workflow-definition
-    xmlns="urn:liferay.com:liferay-workflow_7.1.0"
+    xmlns="urn:liferay.com:liferay-workflow_7.2.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="urn:liferay.com:liferay-workflow_7.1.0
-        http://www.liferay.com/dtd/liferay-workflow-definition_7_1_0.xsd">
+    xsi:schemaLocation="urn:liferay.com:liferay-workflow_7.2.0
+        http://www.liferay.com/dtd/liferay-workflow-definition_7_2_0.xsd">
 ```
 
 To read 464 lines of beautifully formatted XML that defines how to write more
 XML (it's practically poetic), check out the XSD
-[here](https://www.liferay.com/dtd/liferay-workflow-definition_7_1_0.xsd).
+[here](https://www.liferay.com/dtd/liferay-workflow-definition_7_2_0.xsd).
 Otherwise, move on to entering the definition's metadata.
 
 ## Metadata
