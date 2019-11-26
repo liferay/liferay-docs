@@ -483,7 +483,7 @@ Currency Converter app in FreeMarker and Velocity:
 
 **FreeMarker:**
 
-    <@liferay_portlet_ext["runtime"] portletName="com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet" />
+    <@example_portlet_ext["runtime"] portletName="com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet" />
 
 **Velocity:**
 
@@ -520,7 +520,7 @@ in FreeMarker. There is no need to instantiate these taglibs within your
 FreeMarker template; they're already provided for you automatically. You can
 access these taglibs by indicating the TLD's file name with underscores. For
 instance, the above FreeMarker example accessed a tag in the
-`liferay-portlet-ext.tld` file by specifying `@liferay_portlet_ext`. This is not
+`liferay-portlet-ext.tld` file by specifying `@example_portlet_ext`. This is not
 available for Velocity users, since Velocity is deprecated for @product@ 7.0.
 
 <!-- There is more information about how users can make their custom taglibs

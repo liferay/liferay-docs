@@ -403,7 +403,7 @@ virtual instance related email (e.g., events.liferay.com). If you don't want to
 use the subdomain approach, you can unset this value to tell Liferay to use the
 *Email From* address, specified in the Message Board's configuration, to receive
 message board notification email replies. For example, the *Email From* address
-could be set to *replies\@liferay.com*. 
+could be set to *replies\@example.com*. 
 
 If you don't want to use a mail server subdomain, add the following line to your
 `portal-ext.properties` file: 

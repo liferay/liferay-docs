@@ -214,7 +214,7 @@ with this configuration:
 
 		<appender name="auditFile" class="org.apache.log4j.rolling.RollingFileAppender">
 			 <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
-				 <param name="FileNamePattern" value="@liferay.home@/logs/audit.%d{yyyy-MM-dd}.log" />
+				 <param name="FileNamePattern" value="@example.home@/logs/audit.%d{yyyy-MM-dd}.log" />
 			 </rollingPolicy>
 			 <layout class="org.apache.log4j.EnhancedPatternLayout">
 				 <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%t][%c{1}:%L] %m%n" />

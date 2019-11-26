@@ -273,8 +273,8 @@ Follow these steps to increase the log levels via Log4j:
         <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
                 <appender class="org.apache.log4j.rolling.RollingFileAppender" name="RollingFileAppender">
                         <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
-                                <param name="ActiveFileName" value="@liferay.home@/logs/lcs-portlet.log" />
-                                <param name="FileNamePattern" value="@liferay.home@/logs/lcs-portlet.%d{yyyy-MM-dd}.log.zip" />
+                                <param name="ActiveFileName" value="@example.home@/logs/lcs-portlet.log" />
+                                <param name="FileNamePattern" value="@example.home@/logs/lcs-portlet.%d{yyyy-MM-dd}.log.zip" />
                         </rollingPolicy>
 
                         <layout class="org.apache.log4j.EnhancedPatternLayout">
