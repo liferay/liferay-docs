@@ -24,7 +24,7 @@ functionality.
 First, enter `classified information` into a new text file and save it on your
 desktop as `secret.txt`. Then use your browser to sign into @product@
 and create a new user with the user name *secretagent* and the email address
-*secretagent\@liferay.com*. Give this user a password and then create a new
+*secretagent\@example.com*. Give this user a password and then create a new
 private Site called *Secret Site*. Create a page on the Site and add the
 Documents and Media app to it. Then add the secretagent user to the Secret Site
 and grant the *Site Administrator* Role to the user. Log in as secretagent and
