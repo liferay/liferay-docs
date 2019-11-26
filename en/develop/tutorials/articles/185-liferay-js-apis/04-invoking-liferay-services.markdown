@@ -48,7 +48,7 @@ Below is an example configuration of the `Liferay.Service` method:
             '/user/get-user-by-email-address',
             {
                     companyId: Liferay.ThemeDisplay.getCompanyId(),
-                    emailAddress: 'test@liferay.com'
+                    emailAddress: 'test@example.com'
             },
             function(obj) {
                     console.log(obj);
@@ -65,7 +65,7 @@ and `emailAddress`. The response data resembles the following JSON object:
             "contactId": "20157",
             "createDate": 1471990639779,
             "defaultUser": false,
-            "emailAddress": "test@liferay.com",
+            "emailAddress": "test@example.com",
             "emailAddressVerified": true,
             "facebookId": "0",
             "failedLoginAttempts": 0,
@@ -113,7 +113,7 @@ Below is an example configuration for a batch request:
             {
                     '/user/get-user-by-email-address': {
                             companyId: Liferay.ThemeDisplay.getCompanyId(),
-                            emailAddress: 'test@liferay.com'
+                            emailAddress: 'test@example.com'
                     }
             },
             function(obj) {
@@ -129,7 +129,7 @@ service objects. Here's an example:
                     {
                             '/user/get-user-by-email-address': {
                                     companyId: Liferay.ThemeDisplay.getCompanyId(),
-                                    emailAddress: 'test@liferay.com'
+                                    emailAddress: 'test@example.com'
                             }
                     },
                     {
@@ -190,7 +190,7 @@ Here is what the response data would look like for the request above:
             "contactId": "20157",
             "createDate": 1471990639779,
             "defaultUser": false,
-            "emailAddress": "test@liferay.com",
+            "emailAddress": "test@example.com",
             "emailAddressVerified": true,
             "facebookId": "0",
             "failedLoginAttempts": 0,
@@ -214,7 +214,7 @@ Here is what the response data would look like for the request above:
                     "birthday": 0,
                     [...]
                     "createDate": 1471990639779,
-                    "emailAddress": "test@liferay.com",
+                    "emailAddress": "test@example.com",
                     "employeeNumber": "",
                     "employeeStatusId": "",
                     "facebookSn": "",
@@ -258,7 +258,7 @@ Below is the filtered response:
 
     {
             "firstName": "Test",
-            "emailAddress": "test@liferay.com"
+            "emailAddress": "test@example.com"
     }
 
 Next you can learn how to populate the inner parameters of the request. 

@@ -27,11 +27,11 @@ Basic authentication requires that you send an HTTP `Authorization` header
 containing the encoded user name and password. You must first get that encoded 
 value. To do so, you can use `openssl` or a `Base64` encoder. Either way, you 
 must encode the `user:password` string. Here's an example of the `openssl` 
-command for encoding the `user:password` string for a user `test@liferay.com` 
+command for encoding the `user:password` string for a user `test@example.com` 
 with the password `Liferay`: 
 
 ```bash
-openssl base64 <<< test@liferay.com:Liferay
+openssl base64 <<< test@example.com:Liferay
 ```
 
 This returns the encoded value: 
@@ -41,7 +41,7 @@ This returns the encoded value:
 If you don't have `openssl` installed, try the `base64` command: 
 
 ```bash
-base64 <<< test@liferay.com:Liferay
+base64 <<< test@example.com:Liferay
 ```
 
 | **Warning:** Encoding a string as shown here does not encrypt the resulting 

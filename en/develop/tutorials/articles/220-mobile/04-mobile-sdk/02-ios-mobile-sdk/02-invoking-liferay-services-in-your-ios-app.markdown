@@ -43,7 +43,7 @@ session are shown here:
     #import "LRSession.h"
 
     LRSession *session = [[LRSession alloc] initWithServer:@"http://localhost:8080" 
-        authentication:[[LRBasicAuthentication alloc] initWithUsername:@"test@liferay.com" password:@"test"]];
+        authentication:[[LRBasicAuthentication alloc] initWithUsername:@"test@example.com" password:@"test"]];
 
 The `LRSession` object is created with initializers specifying the Liferay 
 instance to connect to and the credentials of the user to authenticate. The 
@@ -94,7 +94,7 @@ You can persist credentials with `LRCredentialStorage`. It safely saves the
 username and password in the keychain:
 
     [LRCredentialStorage storeCredentialForServer:@"http://localhost:8080" 
-        username:@"test@liferay.com" password:@"test"];
+        username:@"test@example.com" password:@"test"];
 
 After credentials are stored, you can retrieve them with:
 

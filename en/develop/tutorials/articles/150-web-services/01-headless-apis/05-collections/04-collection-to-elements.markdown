@@ -16,7 +16,7 @@ steps to do so:
     to the `user-accounts` collection: 
 
     ```bash
-    curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts"  -u 'test@liferay.com:test'
+    curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts"  -u 'test@example.com:test'
     ```
 
     Recall from 
@@ -38,7 +38,7 @@ steps to do so:
                   "dashboardURL": "/user/test",
                   "dateCreated": "2019-04-17T20:37:19Z",
                   "dateModified": "2019-04-22T09:56:35Z",
-                  "emailAddress": "test@liferay.com",
+                  "emailAddress": "test@example.com",
                   "familyName": "Test",
                   "givenName": "Test",
                   "id": 20130,
@@ -114,7 +114,7 @@ steps to do so:
     information for the user with the ID `59347` (Javier Gamarra): 
 
     ```bash
-    curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts/59347"  -u 'test@liferay.com:test'
+    curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts/59347"  -u 'test@example.com:test'
     ```
 
 ## Related Topics

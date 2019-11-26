@@ -22,7 +22,7 @@ As an example, consider some example SOAP web service clients for Liferay's
 
 3. Add your Liferay instance's administrative user to the new user group. For
    demonstration purposes, you'll use an administrative user whose email 
-   address is `test@liferay.com`.
+   address is `test@example.com`.
 
 You'll use these SOAP related classes:
 

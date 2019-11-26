@@ -100,7 +100,7 @@ to do that.
 ## Creating an Authenticator
 
 This example is an `Authenticator` that only allows users whose email addresses 
-end with *@liferay.com* or *@example.com*. You can implement this using one 
+end with *@example.com* or *@example.com*. You can implement this using one 
 module that does everything. If you think other modules might use the
 functionality that validates the email addresses, you should create two modules:
 one to implement the `Authenticator` and one to validate email addresses. This
@@ -277,10 +277,10 @@ This module contains only one class. It implements the Validator interface:
         }
 
         private Set<String> _validEmailDomains = 
-            new HashSet<String>(Arrays.asList(new String[] {"@liferay.com", "@example.com"}));
+            new HashSet<String>(Arrays.asList(new String[] {"@example.com", "@example2.com"}));
     }
 
-This code checks to make sure that the email address is from the *@liferay.com* 
+This code checks to make sure that the email address is from the *@example.com* 
 or *@example.com* domains. The only other interesting part of this module is the 
 Gradle build script, because it defines a compile-only dependency between the 
 two projects. This is divided into two files: a `settings.gradle` and a 

@@ -16,7 +16,7 @@ For example, this request doesn't use sparse fieldsets and therefore returns all
 the fields of a blog posting: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/59301"  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/59301"  -u 'test@example.com:test'
 ```
 
 ```json
@@ -46,7 +46,7 @@ To get only the headline, creation date, and creator, append the `fields`
 parameter to the URL with the fields `headline`, `dateCreated`, and `creator`: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/59301?fields=headline,dateCreated,creator"  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/59301?fields=headline,dateCreated,creator"  -u 'test@example.com:test'
 ```
 
 ```json
@@ -67,7 +67,7 @@ In the response, the `creator` attribute is a nested JSON object. To return only
 the creator's name, specify that nested field via dot notation (`creator.name`): 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/59301?fields=headline,dateCreated,creator.name"  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/blog-postings/59301?fields=headline,dateCreated,creator.name"  -u 'test@example.com:test'
 ```
 
 ```json
@@ -85,7 +85,7 @@ specified attributes for every collection item. For example, this request gets
 the headlines for all the blog postings in the Site with the ID `20124`: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?fields=headline"  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?fields=headline"  -u 'test@example.com:test'
 ```
 
 ```json

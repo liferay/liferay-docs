@@ -62,7 +62,7 @@ web service:
 
 1.  Collect your credentials. Here's an example: 
 
-    - Email: `test@liferay.com` 
+    - Email: `test@example.com` 
     - User ID: `20127`
     - Authorization Token: `htXjvt5d`
 
@@ -111,7 +111,7 @@ As before, the double quotes in the URL are URL-encoded. Also, the
 Finally, here's one more Liferay JSON web service invoker example that
 demonstrates how to pass an object containing an array as a parameter:
 
-    http://localhost:8080/api/jsonws/invoke?cmd={%22/user/add-user%22:{%22companyId%22:20127,%22autoPassword%22:false,%22password1%22:%22test%22,%22password2%22:%22test%22,%22autoScreenName%22:false,%22screenName%22:%22joe.bloggs%22,%22emailAddress%22:%22joe.bloggs@liferay.com%22,%22facebookId%22:0,%22openId%22:%22%22,%22locale%22:%22en_US%22,%22firstName%22:%22Joe%22,%22middleName%22:%22T%22,%22lastName%22:%22Bloggs%22,%22prefixId%22:0,%22suffixId%22:0,%22male%22:true,%22birthdayMonth%22:1,%22birthdayDay%22:1,%22birthdayYear%22:1970,%22jobTitle%22:%22Tester%22,%22groupIds%22:null,%22organizationIds%22:null,%22roleIds%22:null,%22userGroupIds%22:null,%22sendEmail%22:false,%22serviceContext%22:{%22assetTagNames%22:[%22test%22]}}}&p_auth=htXjvt5d
+    http://localhost:8080/api/jsonws/invoke?cmd={%22/user/add-user%22:{%22companyId%22:20127,%22autoPassword%22:false,%22password1%22:%22test%22,%22password2%22:%22test%22,%22autoScreenName%22:false,%22screenName%22:%22joe.bloggs%22,%22emailAddress%22:%22joe.bloggs@example.com%22,%22facebookId%22:0,%22openId%22:%22%22,%22locale%22:%22en_US%22,%22firstName%22:%22Joe%22,%22middleName%22:%22T%22,%22lastName%22:%22Bloggs%22,%22prefixId%22:0,%22suffixId%22:0,%22male%22:true,%22birthdayMonth%22:1,%22birthdayDay%22:1,%22birthdayYear%22:1970,%22jobTitle%22:%22Tester%22,%22groupIds%22:null,%22organizationIds%22:null,%22roleIds%22:null,%22userGroupIds%22:null,%22sendEmail%22:false,%22serviceContext%22:{%22assetTagNames%22:[%22test%22]}}}&p_auth=htXjvt5d
 
 This URL uses the following JSON map:
 
@@ -123,7 +123,7 @@ This URL uses the following JSON map:
             "password2": "test",
             "autoScreenName": false,
             "screenName": "joe.bloggs",
-            "emailAddress": "joe.bloggs@liferay.com",
+            "emailAddress": "joe.bloggs@example.com",
             "facebookId": 0,
             "openId": "",
             "locale": "en_US",
