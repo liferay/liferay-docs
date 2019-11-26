@@ -357,7 +357,7 @@ Fill out the Data Providers form, passing in the following values:
 -  URL: http://localhost:8080/api/jsonws/country/get-countries
 -  Displayed JSON Attribute: *nameCurrentValue*
 -  Stored JSON Attribute: *name*
--  User Name: test@liferay.com (or whatever your admin user name is)
+-  User Name: test@example.com (or whatever your admin user name is)
 -  Password: *test* (or whatever your admin password is)
 
 You're probably wondering what the *URL*, *Displayed JSON Attribute*, and
@@ -473,10 +473,10 @@ email notification for each entry*, and fill out the fields:
 
 -  From Name: The name of the sender. This could be the site name, the form,
    name, or anything else that will be informative to the recipient.
--  From Address: You can use something like *noreply@liferay-forms.com*, so that
+-  From Address: You can use something like *noreply@example.com*, so that
    recipients of the notification don't try to reply.
 -  To Address: This should be the email address of the notification recipient
-   (for example, *test@liferay.com*). 
+   (for example, *test@example.com*). 
 -  Subject: An informative subject line tells the recipient what happened.
    *An application for employment was submitted in The Lunar Resort* might be
 appropriate for the form developed in this article.
