@@ -136,14 +136,14 @@ object, it helps to see a simple JSON web service example in JavaScript:
         '/user/get-user-by-email-address`,
         {
             companyId: Liferay.ThemeDisplay.getCompanyId(),
-            emailAddress: 'test@liferay.com`
+            emailAddress: 'test@example.com`
         },
         function(obj) {
             console.log(obj);
         }
     );
 
-If you run this code, the *test@liferay.com* user (JSON object) is logged to the
+If you run this code, the *test@example.com* user (JSON object) is logged to the
 JavaScript console.
 
 The `Liferay.Service(...)` function takes three arguments:
@@ -189,7 +189,7 @@ invocation:
             password2: 'test',
             autoScreenName: false,
             screenName: 'joe.bloggs',
-            emailAddress: 'joe.bloggs@liferay.com',
+            emailAddress: 'joe.bloggs@example.com',
             facebookId: 0,
             openId: '',
             locale: 'en_US',
