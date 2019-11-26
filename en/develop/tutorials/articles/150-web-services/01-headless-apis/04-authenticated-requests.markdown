@@ -36,7 +36,7 @@ openssl base64 <<< test@example.com:Liferay
 
 This returns the encoded value: 
 
-    dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5Cg==
+    dGVzdEBleGFtcGxlLmNvbTpMaWZlcmF5Cg==
 
 If you don't have `openssl` installed, try the `base64` command: 
 
@@ -57,7 +57,7 @@ Use the encoded value for the HTTP Authorization header when sending the
 request: 
 
 ```bash
-curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5Cg==" http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/
+curl -H "Authorization: Basic dGVzdEBleGFtcGxlLmNvbTpMaWZlcmF5Cg==" http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/
 ```
 
 The response contains data instead of the 403 error that an unauthenticated 
