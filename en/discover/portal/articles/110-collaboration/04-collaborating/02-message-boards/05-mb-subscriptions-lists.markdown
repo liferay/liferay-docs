@@ -53,7 +53,7 @@ use this approach, unset this value in a `portal-ext.properties` file:
 Doing so tells Message Boards to use the *Email From* address specified in the 
 Message Board's configuration to receive message board notification email 
 replies. For example, the *Email From* address could be set to 
-*replies\@liferay.com*. 
+*replies\@example.com*. 
 
 If you're not using a mail subdomain, Message Boards parses the message headers 
 of emails from the *Email From* address to determine the message board category 

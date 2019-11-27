@@ -59,7 +59,7 @@ the folder with the ID `38549`:
     curl -X "POST" "http://localhost:8080/o/headless-delivery/v1.0/document-folders/38549/documents" \
          -H 'Accept: application/json' \
          -H 'Content-Type: multipart/form-data; boundary=PART' \
-         -u 'test@liferay.com:test' \
+         -u 'test@example.com:test' \
          -F "file=" \
          -F "document={\"title\": \"podcast\"}"
 

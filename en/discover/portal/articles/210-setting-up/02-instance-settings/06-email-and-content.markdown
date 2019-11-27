@@ -26,9 +26,10 @@ organization.
 ## Email Notifications
 
 The Sender tab sets the virtual instance's administrative name and email
-address.  By default, these are `Test Test` and `test@liferay.com`. This name
-and email address appear in the *From* field in all email messages sent by the
-virtual instance.
+address. By default, they are from the
+[`admin.email.from.name` and `admin.email.from.address`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Admin%20Portlet)
+portal properties. This name and email address appear in the *From* field in all
+email messages sent by the virtual instance.
 
 ![Figure 1: Customize the email template for the email messages sent to new Users.](../../../images/instance-settings-account-created.png)
 

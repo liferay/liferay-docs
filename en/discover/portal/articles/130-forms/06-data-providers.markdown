@@ -70,7 +70,7 @@ To add a *Countries of the World* Data Provider for use in your Forms,
 
     URL: `http://localhost:8080/api/jsonws/country/get-countries/`
 
-    User Name: `test@liferay.com`
+    User Name: `test@example.com`
 
     Password:`test`
 

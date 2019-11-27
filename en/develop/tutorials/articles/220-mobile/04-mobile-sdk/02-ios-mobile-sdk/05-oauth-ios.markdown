@@ -216,7 +216,7 @@ Owner Password grant type:
             let clientId = "12345"
             let clientSecret = "12345"
 
-            _ = try? LROAuth2SignIn.signIn(withUsername: "test@liferay.com", password: password,
+            _ = try? LROAuth2SignIn.signIn(withUsername: "test@example.com", password: password,
                         session: session, clientId: clientId, clientSecret: clientSecret, scopes: [], 
                         callback: oauth2Callback)
         }

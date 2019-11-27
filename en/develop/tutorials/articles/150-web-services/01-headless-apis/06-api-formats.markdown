@@ -29,7 +29,7 @@ with the default JSON. For example, here's such a request for a list of folders
 from the Site with the ID `20124`: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/document-folders" -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/document-folders" -u 'test@example.com:test'
 ```
 
 ```json
@@ -64,7 +64,7 @@ content type's format (JSON, in this case):
 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/document-folders" -u 'test@liferay.com:test' --head
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/document-folders" -u 'test@example.com:test' --head
 ```
 
     HTTP/1.1 200 
@@ -86,7 +86,7 @@ To get the response in XML instead, specify `application/xml` in the request's
 JSON, but is structured differently: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/documents/59203"  -H 'Accept: application/xml'  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/documents/59203"  -H 'Accept: application/xml'  -u 'test@example.com:test'
 ```
 
 ```xml
@@ -120,7 +120,7 @@ Requesting the headers, you can see that the response is in XML
 (`application/xml`): 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/documents/59203"  -H 'Accept: application/xml'  -u 'test@liferay.com:test' --head
+curl "http://localhost:8080/o/headless-delivery/v1.0/documents/59203"  -H 'Accept: application/xml'  -u 'test@example.com:test' --head
 ```
 
     HTTP/1.1 200 
@@ -190,7 +190,7 @@ To request the content in another language, specify your desired locale in the
 request's `Accept-Language` header: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/structured-contents/59325"  -H 'Accept-Language: es-ES'  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/structured-contents/59325"  -H 'Accept-Language: es-ES'  -u 'test@example.com:test'
 ```
 
 ```json

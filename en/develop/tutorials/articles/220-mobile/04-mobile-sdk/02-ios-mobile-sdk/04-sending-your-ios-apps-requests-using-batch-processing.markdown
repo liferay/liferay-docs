@@ -35,7 +35,7 @@ synchronously in batch:
     #import "LRBatchSession.h"
 
     LRBatchSession *batch = [[LRBatchSession alloc] 
-        initWithServer:@"http://localhost:8080" username:@"test@liferay.com" password:@"test"];
+        initWithServer:@"http://localhost:8080" username:@"test@example.com" password:@"test"];
     LRBlogsEntryService_v62 *service = [[LRBlogsEntryService_v62 alloc] initWithSession:batch];
     NSError *error;
 

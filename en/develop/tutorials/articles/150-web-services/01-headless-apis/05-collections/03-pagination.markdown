@@ -17,7 +17,7 @@ information on them. To do this, send an
 to the UserAccount URL: 
 
 ```bash
-curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts"  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts"  -u 'test@example.com:test'
 ```
 
 The response contains the first 30 users and IDs for navigating the rest of the 
@@ -50,7 +50,7 @@ specific page. This example gets the second page (`?page=2`) of documents that
 exist on the site with the ID `20124`: 
 
 ```bash
-curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/documents?page=2"  -u 'test@liferay.com:test'
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/documents?page=2"  -u 'test@example.com:test'
 ```
 
 Similarly, you can customize the number of elements per page via the optional 
