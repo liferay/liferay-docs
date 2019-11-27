@@ -304,7 +304,8 @@ selected portlet takes up the entire page.
 **Embedded:** display content from another website inside of your portal.
 An administrator can set a URL from in the page management interface and that
 page will appear in the context and within the navigation of your Liferay
-portal.
+portal. To embed an external website, you must provide the protocol in the URL 
+(e.g. `https://www.liferay.com/`).
 
 **Link to URL:** are just redirects to any URL specified by an administrator.
 You can use URL pages to create links to pages belonging to other sites of your
