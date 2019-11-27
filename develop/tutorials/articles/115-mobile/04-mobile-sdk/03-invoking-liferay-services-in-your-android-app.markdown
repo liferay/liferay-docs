@@ -42,7 +42,7 @@ session are shown here:
     import com.liferay.mobile.android.service.SessionImpl;
     ...
     Session session = new SessionImpl("http://10.0.2.2:8080", 
-        new BasicAuthentication("test@liferay.com", "test"));
+        new BasicAuthentication("test@example.com", "test"));
 
 The arguments to `SessionImpl` are used to create the session. The first 
 parameter is the URL of the Liferay instance you're connecting to. If you're 

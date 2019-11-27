@@ -122,10 +122,10 @@ the mail message to use when someone posts a new message board thread or updates
 a thread. 
 
 **Email From:** This tab allows you to configure the name and email address from
-which message board email notifications are sent. The default name and email
-address are those of the default administrator account (e.g., `Test Test` and
-the email address is `test@liferay.com`) you configured in the Basic
-Configuration Wizard. Make sure to update this email address to a valid one that
+which message board email notifications are sent. Default values, are from the
+[`admin.email.from.name` and `admin.email.from.address`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Admin%20Portlet)
+portal properties. These were set in the Basic Configuration Wizard when
+installing @product@. Make sure to update this email address to a valid one that
 can be dedicated to notifications. You can determine whether to support HTML in
 your email messages. Lastly, you can expand the *Definition of Terms* section to
 see variables available to use in your emails. 
@@ -403,7 +403,7 @@ virtual instance related email (e.g., events.liferay.com). If you don't want to
 use the subdomain approach, you can unset this value to tell Liferay to use the
 *Email From* address, specified in the Message Board's configuration, to receive
 message board notification email replies. For example, the *Email From* address
-could be set to *replies\@liferay.com*. 
+could be set to *replies\@example.com*. 
 
 If you don't want to use a mail server subdomain, add the following line to your
 `portal-ext.properties` file: 

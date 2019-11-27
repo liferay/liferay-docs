@@ -57,14 +57,14 @@ First, examine the following JSON web service invocation, written in JavaScript:
         '/user/get-user-by-email-address',
         {
             companyId: Liferay.ThemeDisplay.getCompanyId(),
-            emailAddress: 'test@liferay.com`
+            emailAddress: 'test@example.com`
         },
         function(obj) {
             console.log(obj);
         }
     );
 
-If you run this code, the test@liferay.com user (JSON object) is logged to the
+If you run this code, the test@example.com user (JSON object) is logged to the
 JavaScript console.
 
 The `Liferay.Service(...)` function takes three arguments:
@@ -90,7 +90,7 @@ user!
             password2: 'test',
             autoScreenName: false,
             screenName: 'joe.bloggs',
-            emailAddress: 'joe.bloggs@liferay.com',
+            emailAddress: 'joe.bloggs@example.com',
             facebookId: 0,
             openId: '',
             locale: 'en_US',
@@ -236,7 +236,7 @@ the specified email address:
 
     http://localhost:8080/api/jsonws/user/get-user-by-email-address/company-id/20154/email-address/test%40liferay.com?p_auth=[value]
 
-This web service invocation returns the test@liferay.com user. After invoking a 
+This web service invocation returns the test@example.com user. After invoking a 
 service via Liferay's JSONWS API page, the URL provided when you click on the 
 *URL Example* tab omits the `p_auth` URL query parameter. It's assumed that
 you'll add this parameter yourself. Remember that you must be logged in as a 
@@ -250,7 +250,7 @@ path parameters or URL query parameters. In the preceding example, the company
 ID and email address are supplied as URL path parameters. Here's an equivalent 
 example using URL query parameters:
 
-    http://localhost:8080/api/jsonws/user/get-user-by-email-address?companyId=20154&emailAddress=test@liferay.com&p_auth=[value]
+    http://localhost:8080/api/jsonws/user/get-user-by-email-address?companyId=20154&emailAddress=test@example.com&p_auth=[value]
 
 Next, you'll consider an example that requires many more parameters!
 
@@ -264,7 +264,7 @@ the specified attributes:
 And here's the same example using URL query parameters instead of URL path
 parameters:
 
-    http://localhost:8080/api/jsonws/user/add-user?companyId=20154&autoPassword=false&password1=test&password2=test&autoScreenName=false&screenName=joe.bloggs&emailAddress=joe.bloggs@liferay.com&facebookId=0&-openId&locale=en_US&firstName=Joe&middleName=T&lastName=Bloggs&prefixId=0&suffixId=0&male=true&birthdayMonth=1&birthdayDay=1&birthdayYear=1970&jobTitle=Tester&-groupIds&-organizationIds&-roleIds&-userGroupIds&sendEmail=false&p_auth=[value]
+    http://localhost:8080/api/jsonws/user/add-user?companyId=20154&autoPassword=false&password1=test&password2=test&autoScreenName=false&screenName=joe.bloggs&emailAddress=joe.bloggs@example.com&facebookId=0&-openId&locale=en_US&firstName=Joe&middleName=T&lastName=Bloggs&prefixId=0&suffixId=0&male=true&birthdayMonth=1&birthdayDay=1&birthdayYear=1970&jobTitle=Tester&-groupIds&-organizationIds&-roleIds&-userGroupIds&sendEmail=false&p_auth=[value]
 
 ## Get User JSON Web Service Invocation via cURL
 
@@ -272,9 +272,9 @@ Here's an example JSON web service invocation via the cURL tool that returns the
 user with the specified email address:
 
     curl http://localhost:8080/api/jsonws/user/get-user-by-email-address \
-      -u test@liferay.com:test \
+      -u test@example.com:test \
       -d companyId=20154 \
-      -d emailAddress='test@liferay.com'
+      -d emailAddress='test@example.com'
 
 Note that cURL is a command line tool. You can execute this command from a 
 terminal or command prompt. 
@@ -285,14 +285,14 @@ Here's an example JSON web service invocation via the cURL tool that adds the
 user with the specified attributes:
 
     curl http://localhost:8080/api/jsonws/user/add-user \
-      -u test@liferay.com:test \
+      -u test@example.com:test \
       -d companyId=20154 \
       -d autoPassword=false \
       -d password1='test' \
       -d password2='test' \
       -d autoScreenName=false \
       -d screenName='joe.bloggs' \
-      -d emailAddress='joe.bloggs@liferay.com' \
+      -d emailAddress='joe.bloggs@example.com' \
       -d facebookId=0 \
       -d openId='0' \
       -d locale=en_US \

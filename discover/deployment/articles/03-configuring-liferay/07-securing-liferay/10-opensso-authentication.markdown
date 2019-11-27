@@ -25,12 +25,13 @@ the instructions at the
 to install OpenAM. Once you have it installed, create the @product@
 administrative user in it. Users are mapped back and forth by screen names. By
 default, the @product@ administrative user has a screen name of *test*, so if
-you were to use that account, in OpenAM, register the user with the ID of *test*
-and an email address of *test@liferay.com*. Once you have the user set up, log
-in to OpenAM using this user.
+you were to use that account, register the user in OpenAM with the ID of *test*
+and the email specified in the [`admin.email.from.address`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Admin%20Portlet)
+portal property. Once you have the user set up, log in to OpenAM using this
+user.
 
 In the same browser window, log in to @product@ as the administrative user (using
-the email address *test@liferay.com*). Go to the Control Panel and click
+the admin email address specified previously). Go to the Control Panel and click
 *Configuration* &rarr; *Instance Settings* &rarr; *Authentication* &rarr;
 *OpenSSO* at the top. Modify the three URL fields (Login URL, Logout URL, and
 Service URL) so they point to your OpenAM server (in other words, only modify the host

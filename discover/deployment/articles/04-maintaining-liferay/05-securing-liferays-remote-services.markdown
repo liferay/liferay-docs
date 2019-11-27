@@ -110,7 +110,7 @@ URL for a @product@ web service invocation using a browser:
     http://localhost:8080/api/jsonws/user/get-user-by-email-address/company-id/20154/email-address/test%40liferay.com?p_auth=[value]
 
 This @product@ web service invocation returns the user with the email address
-`test@liferay.com` in the company (portal instance) with the ID `20154`. Note
+`test@example.com` in the company (portal instance) with the ID `20154`. Note
 that for the web service invocation to succeed, you must supply a correct value
 for the `p_auth` URL parameter. You can find such a value by signing in to
 @product@, navigating to

@@ -43,19 +43,19 @@ to Groovy. Then execute the following code to check the status of the
 The code above just prints the value of the `agreedToTermsOfUse` attribute for
 each user. Next, you'll actually update each user in the system to set his or
 her `agreedToTermsOfUse` attribute to `false`. Your script will make sure to
-skip the default user as well as the default admin user that's currently logged
-in and running the script. If you're logged in as someone other than
-test@liferay.com, make sure to update the following script before running it. 
+skip the default user as well as the default admin user that's currently signed
+in and running the script. 
 
     import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
     userCount = UserLocalServiceUtil.getUsersCount()
     users = UserLocalServiceUtil.getUsers(0, userCount)
 
+    long currentUserId = Long.parseLong(userInfo.get("liferay.user.id"))
+
     for (user in users){
     
-        if(!user.isDefaultUser() && 
-            !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
+        if(!user.isDefaultUser() && (user.getUserId() != currentUserId)) {
             
                 user.setAgreedToTermsOfUse(false)
                 UserLocalServiceUtil.updateUser(user)
@@ -81,9 +81,8 @@ Keep these things in mind when working with the script console:
 For these reasons, you should use the script console cautiously. It's best to
 test run your scripts on non-production systems before running them on
 production. Follow the tips in the subsequent sections to make better use of
-Liferay's script console. Note: These tips originated from this Liferay blog
-post:
-[https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
+Liferay's script console. Note: These tips originated from a
+[Liferay blog post](https://liferay.dev/blogs/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
 The following scripts are Groovy scripts but they can be adapted to other
 languages.
 

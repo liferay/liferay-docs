@@ -104,7 +104,7 @@ that retrieves a user's sites. Note that this includes all the code required to
 make the call: 
 
     LRSession *session = [[LRSession alloc] 
-        initWithServer:@"http://localhost:8080" username:@"test@liferay.com" password:@"test"];
+        initWithServer:@"http://localhost:8080" username:@"test@example.com" password:@"test"];
 
     [session
         onSuccess:^(id result) {

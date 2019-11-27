@@ -229,9 +229,13 @@ are owned by your organization.
 
 There are five tabs under the Email Notifications page of Instance Settings. The
 Sender tab allows you to set the instance's administrative name and email address.
-By default, these are `Joe Bloggs` and `test@liferay.com`. You can change them
-to whatever you want. This name and email address will appear in the *From* field
-in all email messages sent by the Liferay instance.
+The Email Sender entry specifies the virtual instance's administrative Name and 
+Address for email notifications, declared as the `[$FROM_NAME$]` and 
+`[$FROM_ADDRESS$]` variables respectively in the email templates. By default, 
+they are from the
+[`admin.email.from.name` and `admin.email.from.address`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Admin%20Portlet)
+portal properties. This name and email address appear in the *From* field in all
+email messages sent by the virtual instance. 
 
 ![Figure 4: You can customize the email template for the email messages sent to users who have just created their accounts.](../../../images/instance-settings-account-created-notification.png)
 

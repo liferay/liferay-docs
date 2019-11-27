@@ -105,7 +105,7 @@ Liferay's remote Organization service with the following URL:
     http://2:test@localhost:8080/api/axis/Portal_OrganizationService
 
 Note that if an email address appears in the URL path, it must be URL-encoded 
-(e.g. `test@liferay.com` becomes `test%40liferay.com`). 
+(e.g. `test@example.com` becomes `test%40liferay.com`). 
 
 Suppose that your Liferay instance is now set to authenticate by email address. 
 To call the same web service for the same user, change the URL to this: 
