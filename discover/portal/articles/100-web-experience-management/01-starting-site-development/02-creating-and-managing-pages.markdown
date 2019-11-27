@@ -127,7 +127,8 @@ redirects create a poor user experience.
 **Embedded:** display content from another website inside of your instance.
 An administrator can set a URL from in the page management interface and that
 page will appear in the context and within the navigation of your Liferay
-instance.
+instance. To embed an external website, you must provide the protocol in the URL 
+(e.g. `https://www.liferay.com/`).
 
 **Full Page Application:** creates a page with one column that displays a single
 full page application.
