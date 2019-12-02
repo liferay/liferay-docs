@@ -14,11 +14,11 @@ installed, you're already one step ahead.
 
 Follow these steps to install the Liferay Theme Generator and generate a theme:
 
-1.  Install [Node.js](http://nodejs.org/). We recommend installing the Long Term 
-    Support (LTS) version. Note that Node Package Manager (npm) is installed 
-    with this as well. You'll use npm to install the remaining dependencies and 
-    generator. Make sure to 
-    [set up your npm environment](/docs/7-1/reference/-/knowledge_base/r/setting-up-your-npm-environment) 
+1.  Install [Node.js](http://nodejs.org/). We recommend installing 
+    [v8.10.0](https://nodejs.org/download/release/v8.10.0/), which is the 
+    version Liferay Portal 7.1 supports. Note that Node Package Manager (npm) is 
+    installed with this as well. You'll use npm to install the remaining 
+    dependencies and generator. Make sure to [set up your npm environment](/docs/7-1/reference/-/knowledge_base/r/setting-up-your-npm-environment) 
     before moving to the next step. Failing to do this can lead to permissions 
     issues later on. 
 
