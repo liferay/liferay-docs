@@ -74,6 +74,7 @@ contributed collection:
         target = "(osgi.web.symbolicname=com.liferay.fragment.collection.contributor.demo)"
     )
     ```
+    | **Note:** `osgi.web.symbolicname` must match `Bundle-SymbolicName` from `bnd.bnd`
 
 7.  Organize your imports and save.
 
