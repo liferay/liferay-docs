@@ -173,10 +173,8 @@ in the header. In CURL, pass the `-H` parameter:
      -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D'
 
 You must also provide the CSRF token by passing it in the `p_p_auth` query
-parameter or adding the URL to the whitelist of CSRF-allowed URLs in
-*System Settings* &rarr; *API Authentication* &rarr; *Portal Sessions*. You can
-disable CSRF checks altogether by setting `check.csrf.token` to `false` in
-`portal-ext.properties`, but this is not recommended. 
+parameter, or by adding the URL to the whitelist of CSRF allowed URLs or disabling CSRF
+checks altogether with the `auth.verifier.auth.verifier.PortalSessionAuthVerifier.check.csrf.token` property (application level).
 
 Here's a sample CURL request with the cookie and CSRF token:
 
