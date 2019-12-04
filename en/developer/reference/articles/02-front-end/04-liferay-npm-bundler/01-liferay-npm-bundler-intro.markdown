@@ -38,7 +38,7 @@ The liferay-npm-bundler uses the process below to create the OSGi bundle:
 
 2.  Traverse the project's dependency tree to determine its dependencies.
 
-3.  For the project:
+3.  For the project,
 
     a. Run the source files, specified in the `.npmbundlerrc` configuration, 
        through the rules.
