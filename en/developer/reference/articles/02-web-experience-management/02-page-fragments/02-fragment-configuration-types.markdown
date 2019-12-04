@@ -121,7 +121,7 @@ where you must select a predefined option:
 Configuration values inserted into the FreeMarker context honor the defined
 `datatype` value specified in the JSON file.
 
-![Figure 4: The `select` configuration is useful when an option choice is necessary.](../../../images/fragment-config-select.png)
+![Figure 3: The `select` configuration is useful when an option choice is necessary.](../../../images/fragment-config-select.png)
 
 ## Text Configuration
 
@@ -154,4 +154,4 @@ for cases where you must manually input a text option:
 Configuration values inserted into the FreeMarker context honor the defined
 `datatype` value specified in the JSON file.
 
-![Figure 5: The `text` configuration is useful when an input text option is necessary.](../../../images/fragment-config-text.png)
+![Figure 4: The `text` configuration is useful when an input text option is necessary.](../../../images/fragment-config-text.png)
