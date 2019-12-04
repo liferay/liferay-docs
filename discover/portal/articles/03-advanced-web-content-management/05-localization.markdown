@@ -24,6 +24,13 @@ of *Available Translations*.
 
 ![Figure 3.18: After typing your translated text, you can summarize the translation in the *Abstract* section.](../../images/04-web-content-translation-2.png)
 
+| **Note:** To view localizable fields in a given language, you must have your 
+| Portal set to that language. This includes friendly URLs for the web content as 
+| well. When you navigate to the localized friendly URL 
+| (e.g. `http://localhost:8080/web/guest/-/espanol`), the web content is always 
+| displayed in the current language. You can change the language with the 
+| [Language portlet](https://portal.liferay.dev/docs/6-2/user/-/knowledge_base/u/page-customizations).
+
 You can modify the language translation list by inserting `locales.enabled=`
 followed by your preferred languages in your `portal-ext.properties` file. For
 example, `locales.enabled=ar_SA,nl_NL,hi_IN` offers *Arabic (Saudi Arabia)*,
