@@ -73,7 +73,7 @@ You can learn about package de-duplication next.
 
 Since two or more OSGi modules may export multiple copies of the same package 
 and version, Liferay Portal must de-duplicate such collisions. To accomplish 
-de-duplication, a new concept called resolved module was created.
+de-duplication, a new concept called *resolved module* was created.
 
 A resolved module is the reference package exported to Liferay Portal's 
 front-end, when multiple copies of the same package and version exist. It's 
