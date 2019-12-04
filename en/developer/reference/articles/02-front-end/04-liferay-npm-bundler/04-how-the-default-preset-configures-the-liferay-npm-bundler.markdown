@@ -18,25 +18,25 @@ from `liferay-npm-bundler-preset-standard`:
 
 ```json
 {
-	"/": {
-		"plugins": ["resolve-linked-dependencies"],
-		".babelrc": {
-			"presets": ["liferay-standard"]
-		},
-		"post-plugins": ["namespace-packages", "inject-imports-dependencies"]
-	},
-	"*": {
-		"copy-plugins": ["exclude-imports"],
-		"plugins": ["replace-browser-modules"],
-		".babelrc": {
-			"presets": ["liferay-standard"]
-		},
-		"post-plugins": [
-			"namespace-packages",
-			"inject-imports-dependencies",
-			"inject-peer-dependencies"
-		]
-	}
+  "/": {
+    "plugins": ["resolve-linked-dependencies"],
+    ".babelrc": {
+      "presets": ["liferay-standard"]
+    },
+    "post-plugins": ["namespace-packages", "inject-imports-dependencies"]
+  },
+  "*": {
+    "copy-plugins": ["exclude-imports"],
+    "plugins": ["replace-browser-modules"],
+    ".babelrc": {
+      "presets": ["liferay-standard"]
+    },
+    "post-plugins": [
+      "namespace-packages",
+      "inject-imports-dependencies",
+      "inject-peer-dependencies"
+    ]
+  }
 }
 ```
 
@@ -85,11 +85,23 @@ In addition, the bundler runs Babel with the
 [babel-preset-liferay-standard](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-preset-liferay-standard) 
 preset, that invokes the following plugins:
 
+- [babel-plugin-normalize-requires](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-plugin-normalize-requires):
+  Normalize AMD `require()` calls.
+
+- [babel-plugin-transform-node-env-inline](https://github.com/babel/minify/tree/master/packages/babel-plugin-transform-node-env-inline):
+  Inline the `NODE_ENV` environment variable, and if it's part of a binary 
+  expression (eg. `process.env.NODE_ENV === "development"`), then statically 
+  evaluate and replace it.
+
+- [babel-plugin-minify-dead-code-elimination](https://www.npmjs.com/package/babel-plugin-minify-dead-code-elimination): 
+  Inline bindings when possible. Tries to evaluate expressions and prunes 
+  unreachable as a result.
+
+- [babel-plugin-wrap-modules-amd](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-plugin-wrap-modules-amd):
+  Wrap modules inside an AMD `define()` module.
+
 - [babel-plugin-name-amd-modules](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-plugin-name-amd-modules):
   Name AMD modules based on package name, version, and module path.
-
-- [babel-plugin-namespace-amd-define](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-plugin-namespace-amd-define):
-  Add a prefix to AMD `define()` calls (by default `Liferay.Loader.`).
 
 - [babel-plugin-namespace-modules](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-plugin-namespace-modules):
   Namespace modules based on the root project's package name, prepending 
@@ -97,16 +109,8 @@ preset, that invokes the following plugins:
   each module name appearance (in `define()` or `require()` calls) so that the 
   packages are localized per project and don't clash.
 
-- [babel-plugin-normalize-requires](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-plugin-normalize-requires):
-  Normalize AMD `require()` calls.
-
-- [babel-plugin-wrap-modules-amd](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-plugin-wrap-modules-amd):
-  Wrap modules inside an AMD `define()` module.
-
-- [babel-plugin-transform-node-env-inline](https://github.com/babel/minify/tree/master/packages/babel-plugin-transform-node-env-inline):
-  Inline the `NODE_ENV` environment variable, and if it's part of a binary 
-  expression (eg. `process.env.NODE_ENV === "development"`), then statically 
-  evaluate and replace it.
+- [babel-plugin-namespace-amd-define](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-plugin-namespace-amd-define):
+  Add a prefix to AMD `define()` calls (by default `Liferay.Loader.`).
 
 Now you know the available configuration presets for `.npmbundlerrc` and how 
 they work. 
