@@ -20,6 +20,11 @@ Here are the installation upgrade paths:
 | Liferay Portal 6.2+ &rarr; @product@ 7.2       |                            |
 | @product@ 7.0+ &rarr; @product@ 7.2            |                            |
 
+| **Warning:** There is a known issue upgrading from Liferay DXP 7.1 SP3+/FP15+ 
+| to DXP 7.2 SP3-. Wait until the fix for
+| [LPS-105035](https://issues.liferay.com/browse/LPS-105035)
+| is in a 7.2 fix pack before upgrading to that fix pack. 
+
 | **Note:** Themes and custom apps from Liferay Portal 6.0 through @product@ 
 | 7.1 can be upgraded directly to @product@ 7.2. See the
 | [code upgrade instructions](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-code-to-product-ver)
