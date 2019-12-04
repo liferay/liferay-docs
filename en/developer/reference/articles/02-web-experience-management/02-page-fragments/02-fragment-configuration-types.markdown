@@ -10,7 +10,6 @@ There are four configurable Fragment types available to implement:
 
 - `checkbox`
 - `colorPalette`
-- `itemSelector`
 - `select`
 - `text`
 
@@ -86,52 +85,6 @@ If you were to choose the color white, the `h3` tag heading would have the class
 `text-white'`.
 
 ![Figure 2: The `colorPalette` configuration is useful when a color selection is necessary.](../../../images/fragment-config-colorpalette.png)
-
-## Item Selector Configuration
-
-The following JSON configuration creates a selector you can implement for cases
-where you must select an entity residing in your @product@ instance.
-
-```json
-{
-    "fieldSets": [
-        {
-            "fields": [
-                {
-                    "dataType": "object",
-                    "defaultValue": {
-                        "className": "com.liferay.journal.model.JournalArticle",
-                        "classNameId": "126820",
-                        "classPK": "126821"
-                    },
-                    "label": "Web Content",
-                    "name": "itemSelector1",
-                    "type": "itemSelector",
-                    "typeOptions": {
-                        "className": "com.liferay.journal.model.JournalArticle",
-                        "enableSelectTemplate": true
-                    }
-                }
-            ]
-        }
-    ]
-}
-```
-
-The only *required* properties for this case are
-
-```json
-"name": "itemSelector1",
-"type": "itemSelector",
-"typeOptions": {
-    "className": "com.liferay.journal.model.JournalArticle"
-}
-```
-
-This example provides options to select existing web content articles to display
-in your Fragment.
-
-![Figure 3: The `itemSelector` configuration is useful when an option choice to display existing content is necessary.](../../../images/itemselector-fragment-config.png)
 
 ## Select Configuration
 
