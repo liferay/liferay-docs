@@ -18,9 +18,9 @@ persistence.
 
 Upgrading most Service Builder portlets involves these steps: 
 
-1.  [Adapt the code to @product-ver@'s API](step-1-adapt-the-code-to-product-vers-api)
-2.  [Resolve dependencies](step-2-resolve-dependencies)
-3.  [Build the services](step-3-build-the-services)
+1.  [Adapt the code to @product-ver@'s API](#step-1-adapt-the-code-to-product-vers-api)
+2.  [Resolve dependencies](#step-2-resolve-dependencies)
+3.  [Build the services](#step-3-build-the-services)
 
 Start by adapting the code. 
 
