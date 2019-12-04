@@ -18,9 +18,9 @@ preprocessed files, as shown in the example build script below:
 }
 ```
 
-In the new mode, the liferay-npm-bundler is in charge of the whole process, like 
-webpack, and configured via a set of rules. The build script is condensed, as 
-shown below:
+In the new mode, the liferay-npm-bundler runs the whole process, like webpack,
+and is configured via a set of rules. The build script is condensed, as shown
+below:
 
 ```json
 {
@@ -32,9 +32,9 @@ shown below:
 
 Follow these steps to migrate your project to use the new configuration mode:
 
-1.  Open the project's `package.json` file and update the `build` script to only 
-    use the liferay-npm-bundler:
-    
+1.  Open the project's `package.json` file and update the `build` script to 
+    use only the liferay-npm-bundler:
+
     ```json
     {
       "scripts":{
@@ -42,7 +42,7 @@ Follow these steps to migrate your project to use the new configuration mode:
       }
     }
     ```
-    
+
 2.  Define the rules for the bundler to use (e.g. running babel to transpile 
     files) in the project's `.npmbundlerrc` file. The example configuration 
     below defines rules for using the `babel-loader` to transpile JavaScript 
@@ -52,7 +52,7 @@ Follow these steps to migrate your project to use the new configuration mode:
     to create a custom loader. The liferay-npm-bundler processes the `*.js` 
     files in  `/src/` with babel and writes the results in the default `/build/` 
     folder:
-    
+
     ```json
     {
       "sources": ["src"],
@@ -72,7 +72,7 @@ Follow these steps to migrate your project to use the new configuration mode:
       ]
     }
     ```
-    
+
     |**Note:** The new mode of the liferay-npm-bundler acts very much 
     | like webpack, but because webpack creates a single JS bundle file and 
     | liferay-npm-bundler targets AMD loader, they are not compatible.
