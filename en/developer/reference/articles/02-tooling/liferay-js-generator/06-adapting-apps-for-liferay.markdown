@@ -9,13 +9,16 @@ header-id: adapting-existing-apps-to-run-on-product
 There are two ways to get your existing front-end applications running on
 @product@: 
 
-1. [Migrate your project](/docs/7-2/appdev/-/knowledge_base/a/web-front-ends) 
-   to a Liferay JS Toolkit project. 
+1.  [Migrate your project](/docs/7-2/appdev/-/knowledge_base/a/web-front-ends) 
+    to a Liferay JS Toolkit project. 
 
-2. Since v2.14.0 of the Liferay JS Toolkit, create projects normally, like with
-   [create-react-app](https://facebook.github.io/create-react-app/) and [Angular
-   CLI](https://cli.angular.io/) (Vue CLI based projects will be supported
-   soon), and adapt them to run on @product@. 
+2.  Since v2.15.0 of the Liferay JS Toolkit, create projects normally, as you 
+    would with [create-react-app](https://facebook.github.io/create-react-app/), 
+    [Angular CLI](https://cli.angular.io/) 
+    (any project containing `@angular/cli` as a dependency or devDependency), 
+    and [Vue CLI](https://cli.vuejs.org/) 
+    (any project containing `@vue/cli-service` as a dependency or devDependency), 
+    and adapt them to run on @product@. 
 
 Only adapt your project if you intend it to be platform-agnostic. If
 you want to integrate with @product@ fully and have access to all the 
@@ -31,15 +34,17 @@ webpack bundles all JavaScript in a single file to consume per app, if there are
 five widgets on a page, you have five copies of the framework in the JavaScript
 interpreter. To prevent this, 
 [migrate your project](/docs/7-2/appdev/-/knowledge_base/a/web-front-ends) to 
-a true Liferay JS Toolkit instead. 
+a true Liferay JS Toolkit project instead. 
 
 To adapt your project, it must have the structure shown below:
 
-- **Angular CLI projects:** Must use `app-root` as the application's Dom 
+- **Angular CLI projects** must use `app-root` as the application's Dom 
   selector. 
 
-- **creact-react-app projects:** Must use `ReactDom.render()` call in your entry 
+- **creact-react-app projects** must use `ReactDom.render()` call in your entry 
   point with a `document.getElementById()` parameter.
+  
+- **Vue CLI projects** must use `#app` as the application's DOM selector.
 
 When your project meets the requirements, you can follow these steps to use the 
 Liferay JS Generator to adapt it:
@@ -66,7 +71,7 @@ Liferay JS Generator to adapt it:
 
     ![Figure 2: You can run the adapt subtarget of the Liferay JS Generator to adapt your existing apps for Liferay.](../../../images/liferay-js-generator-adapt-complete.png)
 
-4.  The adapt process automatically addsa few npm scripts to the project's 
+4.  The adapt process automatically adds a few npm scripts to the project's 
     `package.json` so you can build and deploy your project to @product@. Note 
     that you can swap `npm` for `yarn` below if you prefer to use yarn instead.
 

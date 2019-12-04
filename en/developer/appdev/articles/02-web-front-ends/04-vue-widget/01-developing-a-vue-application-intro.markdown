@@ -7,13 +7,18 @@ header-id: developing-a-vue-application
 [TOC levels=1-4]
 
 Running an existing Vue app on @product@ makes the app available as a
-widget for using on site pages. You must use the Liferay JS Generator and
-Liferay npm Bundler to merge your files into a
-portlet bundle, adapt your static resource paths, and deploy your 
-bundle. The steps below demonstrate how easy it is to prepare a Vue app that 
-uses single file components (`.vue` files) with multiple views. 
+widget for using on site pages. You can [adapt your existing Vue app](/docs/7-2/reference/-/knowledge_base/r/adapting-existing-apps-to-run-on-product), 
+but this doesn't give you access to the bundler and its various loaders to 
+develop your project further in @product@. To have access to all of @product@'s 
+features, you must use the Liferay JS Generator and Liferay npm Bundler to merge 
+your files into a portlet bundle, update your static resource paths, and deploy 
+your bundle. The steps below demonstrate how to prepare a Vue app that uses 
+single file components (`.vue` files) with multiple views. 
 
 ![Figure 1: Vue Apps like this Guestbook App are easy to deploy, and they look great in @product@.](../../../images/appdev-vue-migrated.png)
+
+| **Note:** if you have a tree of components expressed as `.vue` templates, only 
+| the root one will be available as a true AMD module. 
 
 Follow these steps:
 

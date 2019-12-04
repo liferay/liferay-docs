@@ -7,9 +7,12 @@ header-id: developing-an-angular-application
 [TOC levels=1-4]
 
 Running an existing Angular app on @product@ makes the app available as a
-widget for using on site pages. You must use the Liferay JS Generator and
-Liferay npm Bundler to merge your files into a portlet bundle,
-adapt your routes and CSS, and deploy your bundle. 
+widget for using on site pages. You can [adapt your existing Angular app](/docs/7-2/reference/-/knowledge_base/r/adapting-existing-apps-to-run-on-product), 
+but this doesn't give you access to the bundler and its various loaders to 
+develop your project further in @product@. To have access to all of @product@'s 
+features, you must use the Liferay JS Generator and Liferay npm Bundler to merge 
+your files into a portlet bundle, adapt your routes and CSS, and deploy your 
+bundle. 
 
 ![Figure 1: Apps like this Guestbook app are easy to migrate to @product@.](../../../images/appdev-angular-app-migrated.png)
 
