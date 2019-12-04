@@ -80,7 +80,9 @@ portlet takes up the entire page.
 
 **Embedded:** Displays content from another website inside your instance. An
 administrator can set a URL from the page management interface and that page
-appears in the context and within the navigation of your Liferay instance.
+appears in the context and within the navigation of your Liferay instance. 
+To embed an external website, you must provide the protocol in the URL 
+(e.g. `https://www.liferay.com/`).
 
 **Link to URL:** Creates a link to any URL. This could be an external page or
 a link across Sites in the same Liferay instance.
