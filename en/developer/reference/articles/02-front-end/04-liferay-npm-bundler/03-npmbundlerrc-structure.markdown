@@ -234,8 +234,8 @@ to avoid EMFILE errors (especially on Windows). The default value is `128`.
 `max-parallel-files`. 
 
 `rules:` defines rules to apply to the projects source files with the loader. 
-Rules must have a `use` array property, which defines the loader to use, which 
-may be specified by just a package name or an object with `loader` and 
+Rules must have a `use` array property that defines the loader to use, which 
+can be specified using a package name or an object with `loader` and 
 `options` properties if applicable, and one or more of the properties below: 
 
 - `test`: defines a regular expression to filter files in the `sources` folders 
@@ -245,7 +245,7 @@ may be specified by just a package name or an object with `loader` and
 - `exclude`: refines the `test` expression by specifying files to exclude.
 - `include`: refines the `test` expression by specifying files to include.
 
-An example configuration is shown below:
+Here's an example configuration: 
 
 ```json
 {
@@ -274,9 +274,8 @@ An example configuration is shown below:
 }
 ```
 
-`sources:` defines the folders in the project that contain the source files to 
-apply rules to. Folders can be nested (e.g. `/src/main/resources/`) and must be 
-written using POSIX path separators 
+`sources:` rules apply to files in these project folders. Folders can be nested
+(e.g. `/src/main/resources/`) and must be written using POSIX path separators 
 (i.e. use `/` instead of `\` on Win32 systems). Note that rules are 
 automatically applied to package dependency files of the project. 
 
