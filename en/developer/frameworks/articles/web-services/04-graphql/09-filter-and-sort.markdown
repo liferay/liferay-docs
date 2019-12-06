@@ -33,7 +33,7 @@ use [search](#search).
 | `ge`         | Greater than or equal | `price ge 10`                         |
 | `lt`         | Less than             | `dateCreated lt 2018-02-13T12:33:12Z` |
 | `le`         | Less than or equal    | `dateCreated le 2012-05-29T09:13:28Z` |
-| `startsWith` | Starts with           | `addressLocality startsWith 'Lond'`   |
+| `startswith` | Starts with           | `startswith(addressLocality, 'Lond')`   |
 
 ### Logical Operators
 
