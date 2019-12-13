@@ -89,3 +89,7 @@ curl 'http://localhost:8080/o/graphql' -H 'Authorization: Basic dGVzdEBsaWZlcmF5
 -F 0=@"99-rest-generator.markdown"
 ```
 
+## Sending multipart requests with Apollo
+
+To send multipart requests with Apollo we recommend [apollo-upload-client](https://github.com/jaydenseric/apollo-upload-client), there is a full working example under this [repository](https://github.com/nhpatt/react-graphql-file-upload).
+
