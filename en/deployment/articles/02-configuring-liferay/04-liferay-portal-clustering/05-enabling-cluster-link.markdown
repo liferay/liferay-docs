@@ -144,10 +144,10 @@ If your network configuration or the geographical distance between nodes prevent
 
     If you aren't sure which one to choose, use TCPPing. The rest of these steps use TCPPing
 
-3.  Extract the `tcp.xml` file from `$LIFERAY.HOME/osgi/marketplace/Liferay Foundation - Liferay Portal - Impl.lpkg/com​.​liferay​.​portal​.​cluster​.​multiple​-​[version].​jar/lib​/​jgroups​-​[version].​Final​.​jar/tcp.xml` to a location accessible to DXP, such as a folder called `ehcache` in the DXP web application's `WEB-INF/classes` folder. 
+3.  Extract the `tcp.xml` file from `$LIFERAY.HOME/osgi/marketplace/Liferay Foundation - Liferay Portal - Impl.lpkg/com​.​liferay​.​portal​.​cluster​.​multiple​-​[version].​jar/lib​/​jgroups​-​[version].​Final​.​jar/tcp.xml` to a location accessible to DXP, such as a folder called `jgroups` in the DXP web application's `WEB-INF/classes` folder. 
 
     ```
-    WEB-INF/classes/ehcache/tcp.xml
+    WEB-INF/classes/jgroups/tcp.xml
     ```
 
 4.  In the `tcp.xml` file, set the TCP bind port to an unused port on your node. Here's an example:
@@ -162,7 +162,7 @@ If your network configuration or the geographical distance between nodes prevent
     <TCP bind_port="7800"/> 
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7800],192.168.224.155[7800]"
-        port_range="1"/> 
+        port_range="0"/> 
     ```
 
     > **Important:** Make sure your `initial_hosts` attribute accounts for all nodes.
@@ -175,15 +175,15 @@ If your network configuration or the geographical distance between nodes prevent
     <TCP bind_port="7800"/> 
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7800],192.168.224.155[7800]"
-        port_range="1"/> 
+        port_range="0"/> 
     ```
 
 7. Modify the [Cluster Link properties](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link) in the node's `portal-ext.properties` file to enable Cluster Link and point to the TCP XML file for each Cluster Link channel: 
 
 ```properties
 cluster.link.enabled=true
-cluster.link.channel.properties.control=/ehcache/tcp.xml
-cluster.link.channel.properties.transport.0=/ehcache/tcp.xml
+cluster.link.channel.properties.control=/jgroups/tcp.xml
+cluster.link.channel.properties.transport.0=/jgroups/tcp.xml
 ```
 
 The JGroups configuration demonstrated above is typically all that Unicast over TCP requires. However, in a very specific case, if *(and only if)* cluster nodes are deployed across multiple networks, then the parameter `external_addr` must be set on each host to the external (public IP) address of the firewall. This kind of configuration is usually only necessary when nodes are geographically separated. By setting this, clustered nodes deployed to separate networks (e.g. separated by different firewalls) can communicate together. This configuration may be flagged in security audits of your system. See [JGroups documentation](http://www.jgroups.org/manual4/index.html#_transport_protocols) for more information.
@@ -237,7 +237,7 @@ Using separate control and transport channel ports lets you monitor control and 
     -Djgroups.bind_addr=[node_ip_address]
     ```
 
-2.  Extract the `tcp.xml` file from `$LIFERAY.HOME/osgi/marketplace/Liferay Foundation - Liferay Portal - Impl.lpkg/com​.​liferay​.​portal​.​cluster​.​multiple​-​[version].​jar/lib​/​jgroups​-​[version].​Final​.​jar/tcp.xml` to a location accessible to DXP, such as a folder called `ehcache` in the DXP web application's `WEB-INF/classes` folder.  
+2.  Extract the `tcp.xml` file from `$LIFERAY.HOME/osgi/marketplace/Liferay Foundation - Liferay Portal - Impl.lpkg/com​.​liferay​.​portal​.​cluster​.​multiple​-​[version].​jar/lib​/​jgroups​-​[version].​Final​.​jar/tcp.xml` to a location accessible to DXP, such as a folder called `jgroups` in the DXP web application's `WEB-INF/classes` folder.  
 
 3.  Make a copy of the `tcp.xml` in the same location and rename both files, designating one for the control channel and the other for the transport channel. For example, you could use these file names:
 
@@ -249,8 +249,8 @@ Using separate control and transport channel ports lets you monitor control and 
 
     ```properties
     cluster.link.enabled=true
-    cluster.link.channel.properties.control=/ehcache/tcp-control.xml
-    cluster.link.channel.properties.transport.0=/ehcache/tcp-transport.xml
+    cluster.link.channel.properties.control=/jgroups/tcp-control.xml
+    cluster.link.channel.properties.transport.0=/jgroups/tcp-transport.xml
     ```
 
 6.  Modify each `tcp-*.xml` file's the TCP and TCPPing elements to account for each node's IP address and bind port. 
@@ -274,7 +274,7 @@ Using separate control and transport channel ports lets you monitor control and 
     <TCP bind_port="7800"/> 
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7800],192.168.224.154[7802]"
-        port_range="1"/> 
+        port_range="0"/> 
     ```
 
     **Node 1 `tcp-transport.xml`**
@@ -283,7 +283,7 @@ Using separate control and transport channel ports lets you monitor control and 
     <TCP bind_port="7801"/> 
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7801],192.168.224.154[7803]"
-        port_range="1"/> 
+        port_range="0"/> 
     ```
 
     **Node 2 `tcp-control.xml`**
@@ -292,7 +292,7 @@ Using separate control and transport channel ports lets you monitor control and 
     <TCP bind_port="7802"/> 
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7800],192.168.224.154[7802]"
-        port_range="1"/> 
+        port_range="0"/> 
     ```
 
     **Node 2 `tcp-transport.xml`**
@@ -301,7 +301,7 @@ Using separate control and transport channel ports lets you monitor control and 
     <TCP bind_port="7803"/> 
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7801],192.168.224.154[7803]"
-        port_range="1"/> 
+        port_range="0"/> 
     ```
 
 If you have added entities that can be cached or you want to tune the cache configuration for your system, you can do so using a module. 
