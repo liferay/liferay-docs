@@ -119,8 +119,11 @@ Checkpoint:
     - `configs`
     - `core`
     - `marketplace`
-    - `target-platform`
-    - `test`
+    - `modules`
+    - `portal`
+    - `state`
+    - `static`
+    - `war`
 
 ## Configuring Tomcat
 
