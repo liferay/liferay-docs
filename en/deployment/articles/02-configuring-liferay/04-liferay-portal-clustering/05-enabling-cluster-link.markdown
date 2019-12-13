@@ -194,7 +194,7 @@ You're now set up for Unicast over TCP clustering! Repeat either TCPPING process
 
 ### JDBC Ping
 
-Rather than use TCP Ping to discover cluster members, you can use a central database accessible by all the nodes to help them find each other. Cluster members write their own and read the other members' addresses from this database. To enable this configuration, replace the `TCPPING` tag with the corresponding `JDBCPING` tag: 
+Rather than use TCP Ping to discover cluster members, you can use a central database accessible by all the nodes to help them find each other. Cluster members write their own and read the other members' addresses from this database. To enable this configuration, replace the `TCPPING` tag with the corresponding `JDBC_PING` tag: 
 
 ```xml
 <JDBC_PING
