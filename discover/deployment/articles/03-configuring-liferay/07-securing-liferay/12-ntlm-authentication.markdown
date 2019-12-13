@@ -2,7 +2,7 @@
 header-id: ntlm-single-sign-on-authentication
 ---
 
-#  NTLM Single Sign On Authentication
+# NTLM Single Sign On Authentication
 
 [TOC levels=1-4]
 
@@ -24,7 +24,6 @@ Most importantly, all users *must* be imported from an Active Directory server.
 NTLM (and Kerberos) works only if the users are in the AD; otherwise any SSO
 requests initiated by @product@ will fail.
 
-
 NTLM configuration can be applied either at the system scope or at the scope of
 a portal instance. To configure the NTLM SSO module at the system scope,
 navigate to the Control Panel, click on *Configuration* &rarr; *System Settings*, click
@@ -41,8 +40,7 @@ Property Label | Property Key | Description | Type
 **Domain** | `domain` | Enter the domain / workgroup name | `String`
 **Service Account** | `serviceAccount` | You need to create a service account for NTLM. This account will be a computer account, not a user account. | `String`
 **Service Password** | `serviceAccount` | Enter the password for the service account. | `String`
-**Negotiate Flags** | `negotiateFlags` | Only available at system level. Set according to the client's requested capabilities and the server's ServerCapabilities. See the following link: [http://msdn.microsoft.com/en-us/library/cc717152%28v=PROT.10%29.aspx](http://msdn.microsoft.com/en-us/library/cc717152%28v=PROT.10%29.aspx) | `String`
-
+**Negotiate Flags** | `negotiateFlags` | Only available at system level. Set according to the client's requested capabilities and the server's ServerCapabilities. See [here](http://msdn.microsoft.com/en-us/library/cc717152%28v=PROT.10%29.aspx). | `String`
 
 Note the AD's name and IP address correspond to the `domainControllerName` and
 `domainController` settings. The `Service Account` is for the _NTLM_ account
