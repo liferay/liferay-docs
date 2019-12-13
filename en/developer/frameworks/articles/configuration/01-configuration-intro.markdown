@@ -23,11 +23,11 @@ configuration framework auto-generates a UI, sparing you the trouble of
 developing an interface for your users to select configuration options.
 
 | **Note:** To see a working application configuration, deploy the
-| `configuration-action` 
-| [Blade sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
+| `configuration-action` [Blade
+| sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
 | and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
-| *System Settings*). In the Other category, click the *Message display
-| configuration* entry.
+| *System Settings*). In the Platorm section's Third Party category, click the
+| *Message display configuration* entry.
 |
 | Add the *Blade Message Portlet* to a page to test your configuration choices.
 
