@@ -36,7 +36,7 @@ obtain a reference to it:
 1.  Here's the approach for components:
 
     ```java
-    @Referencomponents
+    @Reference(unbind = "-")
     protected void setConfigurationProvider(ConfigurationProvider configurationProvider) {
         _configurationProvider = configurationProvider;
     }
