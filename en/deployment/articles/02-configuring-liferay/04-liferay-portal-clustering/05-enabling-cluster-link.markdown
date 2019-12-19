@@ -32,6 +32,7 @@ Here are the Cluster Link topics:
 - [Unicast Over TCP](#unicast-over-tcp)
 - [Using Different Control and Transport Channel Ports](#using-different-control-and-transport-channel-ports)
 - [Modifying the Cache Configuration with a Module](#modifying-the-cache-configuration-with-a-module)
+- [Conclusion](#conclusion)
 
 
 ## Enabling Cluster Link 
@@ -185,9 +186,9 @@ If your network configuration or the geographical distance between nodes prevent
     ```
 
     **Regarding Initial Hosts:**
-    
-    - Make sure the initial hosts value accounts for all your nodes. If `initial_hosts` is not specified in a TCP XML file or in a JVM argument, `localhost` is the initial host.
+
     - An alternative to specifying initial hosts in a TCP XML file is to specify them to your app server using a JVM argument like this: `-Djgroups.tcpping.initial_hosts=192.168.224.154[7800],192.168.224.155[7800]`.
+    - Make sure the initial hosts value accounts for all your nodes. If `initial_hosts` is not specified in a TCP XML file or in a JVM argument, `localhost` is the initial host.
 
 6.  Copy your `tcp.xml` file to each node, making sure to set the TCP bind port to the node's bind port. On the node with IP address `192.168.224.155`, for example, configure TCPPing like this:
 
