@@ -25,6 +25,17 @@ database and store it in its local cache.
 
 ![Figure 1: @product@'s cache algorithm is extremely efficient. ](../../../images/clustering-cache-efficient-algorithm.png)
 
+Here are the Cluster Link topics: 
+
+- [Enabling Cluster Link](#enabling-cluster-link)
+- [Multicast Over UDP](#multicast-over-udp)
+- [Unicast Over TCP](#unicast-over-tcp)
+- [Using Different Control and Transport Channel Ports](#using-different-control-and-transport-channel-ports)
+- [Modifying the Cache Configuration with a Module](#modifying-the-cache-configuration-with-a-module)
+
+
+## Enabling Cluster Link 
+
 To enable Cluster Link, add this [portal
 property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties) to a
 `portal-ext.properties` file: 
@@ -33,9 +44,24 @@ property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties) to a
 cluster.link.enabled=true
 ```
 
-| **Note:** See the
-| [Cluster Link portal property definitions](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link)
-| for details. 
+The
+[Cluster Link portal properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link)
+provide a default configuration that you can override to fit your needs. 
+
+Many of the defaults use `localhost`, instead of a real address. In some
+configurations, however, `localhost` is bound to the internal loopback network
+(`127.0.0.1` or `::1`), rather than the host's real address. If for some reason
+you need this configuration, you can make DXP auto detect the real address with
+this property: 
+
+```properties
+cluster.link.autodetect.address=www.google.com:80
+```
+
+Set it to connect to some other host that's contactable by your server. By
+default, it points to Google, but this may not work if your server is behind a
+firewall. If you use each host's real address, you don't need to set the
+auto-detect address. 
 
 Cluster Link depends on 
 [JGroups](http://www.jgroups.org) 
@@ -45,13 +71,6 @@ and provides an API for nodes to communicate. It can
 - Send messages to a specific node
 - Invoke methods and retrieve values from all, some, or specific nodes
 - Detect membership and notify when nodes join or leave
-
-When you start @portal@ in a cluster, a log file message shows your cluster's 
-name (e.g., `cluster=liferay-channel-control`): 
-
-    ------------------------------------------------------------------- 
-    GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643 
-    -------------------------------------------------------------------
 
 Cluster Link contains an enhanced algorithm that provides one-to-many type
 communication between the nodes. This is implemented by default with JGroups's
@@ -156,7 +175,7 @@ If your network configuration or the geographical distance between nodes prevent
     <TCP bind_port="7800"/> 
     ```
 
-5.  In the `tcp.xml` file, make each node discoverable to TCPPing by specifying the node's IP address and an unused port on that node. Building off of the previous step, here's an example `<TCPPing>` element: 
+5.  In the `tcp.xml` file, make each node discoverable to TCPPing by specifying its IP address and an unused port on that node. Building off of the previous step, here's an example `<TCPPing>` element: 
 
     ```xml 
     <TCP bind_port="7800"/> 
@@ -165,9 +184,10 @@ If your network configuration or the geographical distance between nodes prevent
         port_range="0"/> 
     ```
 
-    > **Important:** Make sure your `initial_hosts` attribute accounts for all nodes.
-
-    > **Note:** An alternative to specifying initial hosts in a TCP XML file is to specify them to your app server using a JVM argument like this: `-Djgroups.tcpping.initial_hosts=192.168.224.154[7800],192.168.224.155[7800]`
+    **Regarding Initial Hosts:**
+    
+    - Make sure the initial hosts value accounts for all your nodes. If `initial_hosts` is not specified in a TCP XML file or in a JVM argument, `localhost` is the initial host.
+    - An alternative to specifying initial hosts in a TCP XML file is to specify them to your app server using a JVM argument like this: `-Djgroups.tcpping.initial_hosts=192.168.224.154[7800],192.168.224.155[7800]`.
 
 6.  Copy your `tcp.xml` file to each node, making sure to set the TCP bind port to the node's bind port. On the node with IP address `192.168.224.155`, for example, configure TCPPing like this:
 
@@ -322,3 +342,16 @@ You can install the module on each node and change the settings without taking
 down the cluster. This is a great benefit, but beware: since Ehcache doesn't
 allow for changes to cache settings while the cache is alive, reconfiguring a
 cache while the server is running flushes the cache. 
+
+## Conclusion 
+
+Once you've configured your cluster, you can start it. A log file message shows
+your cluster's  name (e.g., `cluster=liferay-channel-control`): 
+
+```bash
+------------------------------------------------------------------- 
+GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643 
+-------------------------------------------------------------------
+```
+
+Congratulations! Your cluster is using Cluster Link. 
