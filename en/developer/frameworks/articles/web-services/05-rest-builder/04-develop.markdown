@@ -104,7 +104,7 @@ And the cycle starts anew until we get to the final state and deploy our APIs th
     
 You can also execute _jaxrs:check_ in the OSGi console to see all the JAX-RS endpoints.
 
-And GraphQL? your paths and entities have been added automatically to the GraphQL endpoint (by default, localhost:8080/o/graphql). You can disable GraphQL generation by adding _generateGraphQL: false_ to your rest-config.yaml (generateREST controls headless).
+And GraphQL? your paths and entities have been added automatically to the GraphQL endpoint (by default, localhost:8080/o/graphql). You can disable GraphQL generation by adding _generateGraphQL: false_ to your rest-config.yaml (_generateREST_ controls the generation of the REST endpoints).
 
 ## Wrapping Up
 

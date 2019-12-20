@@ -30,7 +30,7 @@ Just one step left, writing our OpenAPI profile.
 
 ## OpenAPI profile
 
-The OpenAPI profile will be the source of all our APIs, in this file, we will add the paths and entities of our API. To write we'll create a [YAML](https://en.wikipedia.org/wiki/YAML) file called rest-openapi.yaml. Writing YAML files is tricky so we recommend using the [swagger editor](http://editor.swagger.io/) to do it, which validates the YAML file against YAML syntax and the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification).
+The OpenAPI profile will be the source of all our APIs, in this file, we will add the paths and entities of our API. First, we'll create a [YAML](https://en.wikipedia.org/wiki/YAML) file called rest-openapi.yaml. Writing YAML files is tricky so we recommend using the [swagger editor](http://editor.swagger.io/) to do it, which validates the YAML file against YAML syntax and the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification).
 
 A very simple OpenAPI profile that retrieves a fictitious entity would be:
 
@@ -130,11 +130,11 @@ paths:
 
 Here we have defined a path like _"/entities/{entity}"_. Following a very common pattern in REST APIs, this will be the endpoint to retrieve one element,  _"/entities"_ will return a list of elements and with a POST request we will create one...
   
-We have to add a tag, pointing to an existing schema, to indicate where to generate our code. The REST builder will create a method inside the class [TAG]ResourceImpl.java. 
+For every path, it is mandatory to add a tag, pointing to an existing schema, to indicate where to generate our code. The REST builder will create a method inside the class [TAG]ResourceImpl.java. 
 
 ## Generation
 
-We've written our OpenAPI configuration and profile... how do we generate our scaffolding for Headless and GraphQL?
+We've written our OpenAPI configuration and profile... how do we generate our scaffolding for REST and GraphQL?
 
 It's really easy, just execute (in the -impl or in the root module folder) this command:
 

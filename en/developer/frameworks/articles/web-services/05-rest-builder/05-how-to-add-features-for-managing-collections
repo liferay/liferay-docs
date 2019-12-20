@@ -1,8 +1,8 @@
 ---
-header-id: rest-builder-how-to-add-filtering-and-sorting
+header-id: rest-builder-how-to-add-features-for-managing-collections
 ---
 
-# How to add pagination, filtering and sorting in the REST Builder
+# How to add features for managing collections
 
 [TOC levels=1-4]
 
@@ -22,6 +22,8 @@ To add pagination to your endpoints, just add _page_ and _pageSize_ as query par
 ```
 
 Those two parameters would add a _Pagination pagination_ parameter in the method signature, to be used to restrict the number of entries to return in the _Page.of_ constructor.
+
+Pagination is highly recommended for entities that can have many elements, to avoid very large requests.
 
 ## Filtering, sorting and searching
 
