@@ -188,6 +188,6 @@ to learn more:
   Explains available mechanisms and extensions for customizing and theming
   pages, content, and applications. 
 
-- [Understanding the Page Layout](/docs/7-2/customization/-/knowledge_base/c/understanding-the-page-layout): 
+- [Understanding the Page Structure](/docs/7-2/customization/-/knowledge_base/c/understanding-the-page-structure): 
   Describes how the page's UI is organized and introduces tools for populating
   and developing each section. 

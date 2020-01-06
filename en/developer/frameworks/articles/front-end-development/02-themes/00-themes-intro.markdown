@@ -112,5 +112,5 @@ helpful Gulp tasks to streamline the process:
 See 
 [Theme Components](/docs/7-2/customization/-/knowledge_base/c/theme-components) 
 and 
-[Understanding the Page Layout](/docs/7-2/customization/-/knowledge_base/c/understanding-the-page-layout) 
+[Understanding the Page Structure](/docs/7-2/customization/-/knowledge_base/c/understanding-the-page-structure) 
 to get a top-level overview of how themes work. 
