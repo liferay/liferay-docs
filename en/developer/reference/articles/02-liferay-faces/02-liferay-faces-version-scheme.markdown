@@ -69,7 +69,7 @@ Provides a suite of JSF components that are based on the JSP tags provided by
 [Liferay Portal](https://liferay.dev/-/portal).
 
 |Branch|Example Artifact|Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;Portlet API|&nbsp;&nbsp;JSF API|
-|------|----------------|:------------------:|:-------:|
+|------|----------------|:------------------:|:-------:|:-------:|
 |[6.x](https://github.com/liferay/liferay-faces-portal/tree/master)|com.liferay.faces.portal-6.0.0.jar|7.2+|3.0|2.3|
 |[5.x](https://github.com/liferay/liferay-faces-portal/tree/5.x)|com.liferay.faces.portal-5.0.0.jar|7.2+|3.0|2.2|
 |[4.x](https://github.com/liferay/liferay-faces-portal/tree/4.x)|com.liferay.faces.portal-4.0.0.jar|7.2/7.3|2.0|2.2|
