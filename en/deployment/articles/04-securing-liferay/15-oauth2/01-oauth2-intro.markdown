@@ -7,12 +7,13 @@ header-id: oauth-2-0
 [TOC levels=1-4]
 
 OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly
-share select credentials from another website to log into yours. Any time you
-see a "Log In with Facebook," or "Log In with Google" button, or you authorize
-a third-party Twitter client, that's OAuth 2.0 in action. It works by
-authorizing password-less access to portions of user-owned resources (such as an
-email address, a user profile picture, or something else from your account) and
-other permissioned resources.
+share select credentials from your Liferay-based website with various clients.
+You've seen this before: any time you see a "This site wants to access:" button
+(followed by a list of things like email address, friends list, etc.) from
+Google or Facebook, or you authorize a third-party Twitter client, that's OAuth
+2.0 in action. It works by authorizing password-less access to portions of
+user-owned resources (such as an email address, a user profile picture, or
+something else from your account) and other permissioned resources.
 
 OAuth 2.0's design encrypts all authorization transport through HTTPS, which
 prevents data passed between the systems from being intercepted. 
