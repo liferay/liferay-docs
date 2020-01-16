@@ -2,16 +2,19 @@
 header-id: rest-builder-develop
 ---
 
-# How to develop our API with REST Builder
+# Developing an API with REST Builder
 
 [TOC levels=1-4]
 
-Let's take a quick look at what we've generated after executing _gw buildREST_ and our project structure. Right now we have two modules, _headless-test-api_, and _headless-test-impl_.
+After executing `gw buildREST`, you have two modules: _headless-test-api_ and
+_headless-test-impl_.
 
-* Headless Test API will contain the interfaces for our resources and the POJOs of our schemas.
-* Headless Test Impl will contain our implementation, under the _ResourceImpl files, GraphQL files, and the JAX-RS application.
+* Headless Test API contains the interfaces for your resources and the POJOs
+  of your schemas.
 
-Our, generated, _EntityResource_ looks like this:
+* Headless Test Impl contains your implementation and the JAX-RS application.
+
+Your generated `EntityResource` looks like this:
 
 ```java
 public interface EntityResource {
@@ -42,9 +45,12 @@ public interface EntityResource {
 }
 ```
 
-Here we have the methods that we have defined in our OpenAPI profile (the full set as displayed in the examples).
+These are generated methods you defined in the OpenAPI profile (the full set as
+displayed in the examples).
 
-REST builder also generates two implementation files, a base class, with all the JAX-RS, GraphQL and OpenAPI annotations and an empty implementation, _EntityResourceImpl_:
+REST builder also generates two implementation files, a base class, with all
+the JAX-RS, GraphQL and OpenAPI annotations and an empty implementation,
+`EntityResourceImpl`:
 
 ```java
 @Component(
@@ -55,7 +61,9 @@ public class EntityResourceImpl extends BaseEntityResourceImpl {
 }
 ```
 
-This is the file where we'll implement our new methods, by overriding the base class implementation and returning our code. For example, a fake implementation storing entities in a Map would be:
+This is where you implement new methods, by overriding the base class
+implementation and returning your code. For example, here's a prototype
+implementation storing entities in a Map:
 
 ```java
 Map<Integer, Entity> entities = new HashMap<>();
@@ -88,26 +96,55 @@ public Entity putEntity(Integer entityId, Entity entity) throws Exception {
 }
 ```
 
-For the collection, we are returning a _Page_ object based on a list but there are also utility methods that return the pagination information like:
+For the collection, you return a `Page` object based on a list but there
+are also utility methods that return the pagination information:
 
-     Page.of(list, pagination, totalCount)
+ ```java
+Page.of(list, pagination, totalCount)
+```
 
-We don't have to touch the interfaces or the base classes (those will be regenerated every time we run REST Builder), just our resource implementations, adding there our logic. We could call other REST APIs, use Service Builder or another persistence mechanism.
+Don't touch the interfaces or the base classes (those are
+regenerated every time you run REST Builder). Like 
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder), you only have 
+to maintain the implementation classes, and if you change the API, run REST
+Builder again and the interfaces are updated. Your business logic could call
+other REST APIs, use Service Builder or another persistence mechanism.
 
 ## Development Cycle
 
-After implementing the business logic of our API, typically we'll improve our API adding parameters or other paths. For that, we'll modify the OpenAPI profile and regenerate the API again calling the buildREST command.
+While implementing your API's business logic, you'll typically improve your API
+by adding parameters or other paths. For that, you'll modify the OpenAPI profile
+and regenerate the API again calling the `buildREST` command.
 
-And the cycle starts anew until we get to the final state and deploy our APIs that will be available under:
+The cycle starts anew until you get to the final state and deploy your APIs. 
+They become available at this URL pattern: 
                                                                                
-    http://localhost:8080/o/APPLICATION_CLASSNAME/OPEN_API_VERSION/
-    
-You can also execute _jaxrs:check_ in the OSGi console to see all the JAX-RS endpoints.
+    http://localhost:8080/o/[application class name]/[OpenAPI version]/
 
-And GraphQL? your paths and entities have been added automatically to the GraphQL endpoint (by default, localhost:8080/o/graphql). You can disable GraphQL generation by adding _generateGraphQL: false_ to your rest-config.yaml (_generateREST_ controls the generation of the REST endpoints).
+You can also execute `jaxrs:check` in the OSGi console to see all the JAX-RS
+endpoints.
+
+GraphQL paths and entities are added automatically to the default
+GraphQL endpoint: 
+
+    localhost:8080/o/graphql 
+
+You can disable GraphQL generation by adding `generateGraphQL: false` to your
+`rest-config.yaml` (`generateREST` controls the generation of the REST
+endpoints).
 
 ## Wrapping Up
 
 So... that's all! 
 
-When everything is ready, we might want to consider publishing our Headless API to Swaggerhub so others can consume it. For that, we can use the endpoint http://localhost:8080/o/headless-test/v1.0/openapi.yaml, which has the content of rest-openapi.yaml plus the classes that the REST Builder generates for us. 
+When everything is ready, you might want to consider publishing your Headless API
+to Swaggerhub so others can consume it. You can use the following URL pattern for that: 
+
+    http://localhost:8080/o/[application name]/[application version]/openapi.yaml
+
+The URL for the example above, therefore, would be 
+
+    http://localhost:8080/o/headless-test/v1.0/openapi.yaml
+
+This URL has the content of `rest-openapi.yaml` plus the classes that REST
+Builder generated for you. 
