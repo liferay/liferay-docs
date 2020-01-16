@@ -6,11 +6,20 @@ header-id: rest-builder-open-api
 
 [TOC levels=1-4]
 
-REST Builder is based on [OpenAPI](https://swagger.io/specification/), and it follows an approach of OpenAPI first: first we write the profile and then we use it as the base of our implementation.
+REST Builder is based on [OpenAPI](https://swagger.io/specification/), and its
+philosophy is "OpenAPI first": first you write the profile and then you use
+it as the base of your implementation.
 
-But first of all, we have to create a project, with two empty bundles (a blade template will follow soon). The bundles (-api and -impl) will have the files you are already used to: a build.gradle and a bnd.bnd (you can see an example [here](https://github.com/nhpatt/liferay-devcon-appointment). The novelty is two YAML files, a configuration file (rest-config.yaml) and the OpenAPI profile (rest-openapi.yaml). 
+But first you must create a project with two empty bundles (a Blade
+template will follow soon). The bundles (-api and -impl) should have the files you
+are already used to: a `build.gradle` and a `bnd.bnd`. The novelty is two
+YAML files, a configuration file (`rest-config.yaml`) and the OpenAPI profile
+(`rest-openapi.yaml`). An example project is
+[here](https://github.com/nhpatt/liferay-devcon-appointment). 
 
-Let's see the configuration file in detail. In the root of the -impl project we have to create a YAML file to specify paths and the basic configuration of our new API. A sample implementation would be:
+Let's see the configuration file in detail. In the root of the -impl project we
+have to create a YAML file to specify paths and the basic configuration of our
+new API. A sample implementation would be:
 
 ```yaml
 apiDir: "../headless-test-api/src/main/java"
@@ -22,17 +31,26 @@ application:
 author: "Javier Gamarra"
 ```
 
-This file specifies the path of the -api bundle, the java package that we will use across all the bundles and the information of the JAX-RS application: the path of our application, the name of the class and the JAX-RS name of our API.
+This file specifies the path of the -api bundle, the java package that we will
+use across all the bundles and the information of the JAX-RS application: the
+path of our application, the name of the class and the JAX-RS name of our API.
 
-I've skipped two advanced features, generating a client and automated tests, will see them later.
+I've skipped two advanced features, generating a client and automated tests,
+will see them later.
 
 Just one step left, writing our OpenAPI profile.
 
 ## OpenAPI profile
 
-The OpenAPI profile will be the source of all our APIs, in this file, we will add the paths and entities of our API. First, we'll create a [YAML](https://en.wikipedia.org/wiki/YAML) file called rest-openapi.yaml. Writing YAML files is tricky so we recommend using the [swagger editor](http://editor.swagger.io/) to do it, which validates the YAML file against YAML syntax and the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification).
+The OpenAPI profile will be the source of all our APIs, in this file, we will
+add the paths and entities of our API. First, we'll create
+a [YAML](https://en.wikipedia.org/wiki/YAML) file called rest-openapi.yaml.
+Writing YAML files is tricky so we recommend using the [swagger
+editor](http://editor.swagger.io/) to do it, which validates the YAML file
+against YAML syntax and the [OpenAPI
+specification](https://github.com/OAI/OpenAPI-Specification).
 
-A very simple OpenAPI profile that retrieves a fictitious entity would be:
+A simple OpenAPI profile that retrieves a fictitious entity might look like this:
 
 ```yaml
 components:
@@ -71,7 +89,9 @@ paths:
       tags: ["Entity"]
 ```
 
-All OpenAPI profiles have 3 different sections. The easier one is the information block, that contains the OpenAPI version, the title and the version of our API:
+All OpenAPI profiles have three different sections: components, info, and paths.
+The easiest one is the information block. It contains the OpenAPI version, the
+title and the version of your API:
 
 ```yaml
 info:
@@ -81,9 +101,12 @@ info:
 openapi: 3.0.1
 ```
 
-Watch out with the indentations (should be spaces!). The first time will be the hardest but after that, it's easy to get into the flow using the [swagger editor](http://editor.swagger.io/).
+Indentations should be spaces. The 
+[swagger editor](http://editor.swagger.io/) helps with formatting.
 
-The other section specifies the schemas/entities that we will return or accept on our APIs. In this particular case, we are defining a schema called _Entity_ that has two fields, a name and an id, both of type string.
+The components section specifies the schemas/entities to return or accept
+on your APIs. In this case, you define a schema called _Entity_
+that has two string fields: a name and an id. 
 
 ```yaml
 components:
@@ -100,13 +123,20 @@ components:
       type: object
 ```
 
-The OpenAPI specification defines many types and fields we can use in our schemas. We have a comprehensive list [here](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#schemaObject).
+The OpenAPI specification defines 
+[many types and fields](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#schemaObject)
+you can use in your schemas. 
 
-The other common type is $ref, a [reference type](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#referenceObject) that allows us to refer to an existing type like this: 
+The other common type is `$ref`, a 
+[reference type](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#referenceObject)
+that allows you to refer to an existing type like this: 
 
-    $ref: '#/components/schemas/Entity'
-    
-The last block defines our paths, the URLs that we will expose in our APIs, with the type of HTTP verbs, list of parameters, status codes...
+```yaml
+$ref: '#/components/schemas/Entity'
+```
+
+The last block, called paths, defines the URLs that you'll expose in your APIs,
+with the type of HTTP verbs, list of parameters, status codes, etc. 
 
 ```yaml
 paths:
@@ -128,25 +158,34 @@ paths:
       tags: ["Entity"]
 ```
 
-Here we have defined a path like _"/entities/{entity}"_. Following a very common pattern in REST APIs, this will be the endpoint to retrieve one element,  _"/entities"_ will return a list of elements and with a POST request we will create one...
-  
-For every path, it is mandatory to add a tag, pointing to an existing schema, to indicate where to generate our code. The REST builder will create a method inside the class [TAG]ResourceImpl.java. 
+The pattern above, `"/entities/{entity}"`, follows a common pattern in REST
+APIs. This is the endpoint that retrieves one element, `"/entities"`. It returns
+a list of elements, and a POST request creates one.
+
+For every path, it is mandatory to add a tag that points to an existing schema to
+indicate where to generate your code. REST Builder creates a method inside the
+class `[TAG]ResourceImpl.java`. 
 
 ## Generation
 
-We've written our OpenAPI configuration and profile... how do we generate our scaffolding for REST and GraphQL?
+Once you've written your OpenAPI configuration and profile, it's time to
+generate your scaffolding for REST and GraphQL.
 
-It's really easy, just execute (in the -impl or in the root module folder) this command:
+In the -impl or in the root module folder, execute this command:
 
-    gw buildREST
-                       
-Or _gw bR_ if you want to save a few keystrokes.
+```bash
+gw buildREST
+```
 
-If all the spaces are Ok and the OpenAPI profile validates, REST Builder will generate our JAX-RS resources and the GraphQL endpoint. We'll see in the next section what has been generated and how to implement our business logic.
+You can use `gw bR` if you want to save a few keystrokes.
+
+If everything's indented properly and the OpenAPI profile validates, REST
+Builder generates your JAX-RS resources and the GraphQL endpoint. Next, you'll
+see what has been generated and how to implement our business logic.
 
 ## Examples
 
-For the sake of completion, let's see how we would define the full CRUD in OpenAPI.
+Here's a complete example that defines all CRUD operations in OpenAPI.
 
 ### GET Collection
 
@@ -234,6 +273,11 @@ paths:
             tags: ["Entity"]
 ```
 
-#### More examples
+## Summary
 
-There are more examples showcasing all the supported OpenAPI syntax [here](https://github.com/brianchandotcom/liferay-portal/blob/master/modules/apps/headless/headless-delivery/headless-delivery-impl/rest-openapi.yaml) and [here](https://github.com/brianchandotcom/liferay-portal/blob/master/modules/apps/headless/headless-admin-taxonomy/headless-admin-taxonomy-impl/rest-openapi.yaml)
+There are more examples showcasing all the supported OpenAPI syntax
+[here](https://github.com/liferay/liferay-portal/blob/master/modules/apps/headless/headless-delivery/headless-delivery-impl/rest-openapi.yaml)
+and
+[here](https://github.com/liferay/liferay-portal/blob/master/modules/apps/headless/headless-admin-taxonomy/headless-admin-taxonomy-impl/rest-openapi.yaml). 
+Your next step is to [create your API](/docs/7-2/frameworks/-/knowledge_base/f/rest-builder-develop). 
+
