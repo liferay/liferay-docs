@@ -6,19 +6,25 @@ header-id: rest-builder-support-for-oneof-anyof-and-allof
 
 [TOC levels=1-4]
 
-OpenAPI 3.0 added several ways of using inheritance and composition to create complex schemas. Specifically, it added support for [_allOf_, _anyOf,_ and _oneOf_](https://swagger.io/docs/specification/data-models/oneof-anyof-allof-not/), with these semantics:
+OpenAPI 3.0 added several ways of using inheritance and composition to create
+complex schemas. Specifically, it added support for 
+[_allOf_, _anyOf,_ and _oneOf_](https://swagger.io/docs/specification/data-models/oneof-anyof-allof-not/),
+with these semantics:
 
 * allOf – the value validates against all the subschemas 
 * anyOf – the value validates against any of the subschemas
 * oneOf – the value validates against exactly one of the subschemas
 
-Let's see the syntax and generated code of every option:
+Next, you'll learn each option's syntax and how its code is generated. 
 
 ## allOf
 
-With _allOf_ we can use the power of composition to create an entity that combines several others. It's the most potent way of reusing code without losing expressiveness and granularity: we can define small entities that can be reused by composing several to create a larger entity.
+With `allOf` you can use the power of composition to create an entity that
+combines several others. It's the most potent way of reusing code without
+losing expressiveness and granularity: you can define small entities that can
+be reused by composing several to create a larger entity.
 
-To be able to use _allOf_ we have to follow this syntax:
+To use `allOf` you must follow this syntax:
 
 ```yaml
 EntityA:
@@ -35,7 +41,7 @@ EntityC:
         - $ref: '#/components/schemas/EntityB'
 ```
 
-This OpenAPI syntax will generate the following Java code inside the _EntityC_ class:
+This OpenAPI syntax generates the following Java code inside the `EntityC` class:
 
 ```java
 @Schema
@@ -53,7 +59,9 @@ public EntityB getEntityB() {
 
 ## oneOf
 
-_OneOf_ is the simplest of the generics properties, it allows us to define a property that can have different types. Due to Java not supporting Union Types, this just means that we use an Object to model the property:
+`OneOf` is the simplest of the generics properties. It defines a property that
+can have different types. Since Java doesn't support Union Types, use an Object
+to model the property:
 
 ```yaml
 EntityA:
@@ -71,7 +79,7 @@ EntityB:
                           type: string
 ```
 
-This syntax will generate the following Java code:
+This syntax generates the following Java code:
 
 ```java
 @Schema
@@ -83,7 +91,10 @@ public Object getNameB() {
 
 ## anyOf
 
-And the last one of the generic keywords, _anyOf_ leverages _JsonSubTypes_ to allow us to extend entities with properties using inheritance. We can define parent relationships (in our example, _EntityC_) that has two children with the properties of the parent and their own properties. The YAML to use inheritance in our OpenAPI profile is the following:
+The final generic keyword, `anyOf` leverages `JsonSubTypes` to extend entities
+with properties using inheritance. You can define parent relationships (in this
+example, `EntityC`) with two children containing the properties of the parent and
+their own properties. Here's how to define YAML to use inheritance:
 
 ```yaml
 EntityC:
@@ -99,7 +110,7 @@ EntityC:
             type: string
 ```
 
-This generates a parent class with two children:
+This generates a parent class and two children:
 
 ```java
 @JsonSubTypes(
@@ -128,7 +139,7 @@ public class EntityC {
     }
 ```
 
-And two children classes, like this one:
+And two children classes look like this: 
 
 ```java
 @JsonTypeInfo(
