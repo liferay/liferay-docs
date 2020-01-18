@@ -40,7 +40,7 @@ for JSR 286 (Portlet 2.0) and JSR 362 (Portlet 3.0).
 
 |Branch|Example Artifacts|Portlet API|JSF API|JCP Specification|Additional Info|
 |------|-----------------|:-----------:|:-------:|:-----------------:|---------------|
-|API: [5.x](https://github.com/liferay/liferay-faces-bridge-api/tree/5.x)<br/>IMPL: [5.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/5.x)|com.liferay.faces.bridge.api-5.0.0.jar<br/>com.liferay.faces.bridge.impl-5.0.0.jar|3.0|2.2|[JSR 378](https://www.jcp.org/en/jsr/detail?id=378)|*The Expert Group began work in September 2015 and the Specification is currently under development.*|
+|API: [5.x](https://github.com/liferay/liferay-faces-bridge-api/tree/5.x)<br/>IMPL: [5.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/5.x)|com.liferay.faces.bridge.api-5.0.0.jar<br/>com.liferay.faces.bridge.impl-5.0.0.jar|3.0|2.2|[JSR 378](https://www.jcp.org/en/jsr/detail?id=378)|*Under "Final Review" by the JCP and scheduled for release in 2020.*|
 |API: [4.x](https://github.com/liferay/liferay-faces-bridge-api/tree/4.x)<br/>IMPL: [4.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/4.x)|com.liferay.faces.bridge.api-4.1.0.jar<br/>com.liferay.faces.bridge.impl-4.0.0.jar|2.0|2.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329)|*Includes non-standard bridge extensions for JSF 2.2.*|
 |API: [3.x](https://github.com/liferay/liferay-faces-bridge-api/tree/3.x)<br/>IMPL: [3.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/3.x)|com.liferay.faces.bridge.api-3.1.0.jar<br/>com.liferay.faces.bridge.impl-3.0.0.jar|2.0|2.1|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329)|*Includes non-standard bridge extensions for JSF 2.1.*|
 |API: [2.x](https://github.com/liferay/liferay-faces-bridge-api/tree/2.x)<br/>IMPL: [2.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/2.x)|com.liferay.faces.bridge.api-2.1.0.jar<br/>com.liferay.faces.bridge.impl-2.0.0.jar|2.0|1.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329) (MR1)|*Includes support for Maintenance Release 1 (MR1).*|
@@ -68,11 +68,14 @@ and also takes advantage of Liferay-specific features such as friendly URLs.
 Provides a suite of JSF components that are based on the JSP tags provided by
 [Liferay Portal](https://liferay.dev/-/portal).
 
-|Branch|Example Artifact|Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;JSF API|
-|------|----------------|:------------------:|:-------:|
-|[3.x](https://github.com/liferay/liferay-faces-portal/tree/3.x)|com.liferay.faces.portal-3.0.1.jar|7.0.x+|2.2+|
-|[2.x](https://github.com/liferay/liferay-faces-portal/tree/2.x)|com.liferay.faces.portal-2.0.1.jar|6.2.x|2.1+|
-|[1.x](https://github.com/liferay/liferay-faces-portal/tree/1.x)|com.liferay.faces.portal-1.0.1.jar|6.2.x|1.2|
+|Branch|Example Artifact|Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;Portlet API|&nbsp;&nbsp;JSF API|
+|------|----------------|:------------------:|:-------:|:-------:|
+|[6.x](https://github.com/liferay/liferay-faces-portal/tree/master)|com.liferay.faces.portal-6.0.0.jar|7.2+|3.0|2.3|
+|[5.x](https://github.com/liferay/liferay-faces-portal/tree/5.x)|com.liferay.faces.portal-5.0.0.jar|7.2+|3.0|2.2|
+|[4.x](https://github.com/liferay/liferay-faces-portal/tree/4.x)|com.liferay.faces.portal-4.0.0.jar|7.2/7.3|2.0|2.2|
+|[3.x](https://github.com/liferay/liferay-faces-portal/tree/3.x)|com.liferay.faces.portal-3.0.1.jar|7.0/7.1/7.2|2.0|2.2|
+|[2.x](https://github.com/liferay/liferay-faces-portal/tree/2.x)|com.liferay.faces.portal-2.0.1.jar|6.2|2.0|2.1/2.2|
+|[1.x](https://github.com/liferay/liferay-faces-portal/tree/1.x)|com.liferay.faces.portal-1.0.1.jar|6.2|2.0|1.2|
 
 ## Liferay Faces Util
 
