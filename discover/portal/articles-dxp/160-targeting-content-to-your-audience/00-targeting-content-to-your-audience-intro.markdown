@@ -46,3 +46,13 @@ you'll lean how to use the *Audience Targeting* section of the Site
 Administration area to manage user segments and campaigns. Then you'll learn how
 to use each of the Audience Targeting applications and the Audience Targeting
 Simulator.
+
++$$$
+
+**Note:** The IP Geocoder porlet is an Optional Dependency of Audience Targeting
+and while it is not required to deploy Audience Targeting, you will need it to
+access the full functionality of Audience Targeting. For more information on
+Optional Dependencies, see our
+[Declaring Optional Import Package Requirements](/docs/7-0/tutorials/-/knowledge_base/t/declaring-optional-import-package-requirements) troubleshooting page.
+
+$$$
