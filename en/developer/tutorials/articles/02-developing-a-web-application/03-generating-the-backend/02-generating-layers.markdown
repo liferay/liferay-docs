@@ -179,7 +179,7 @@ The `Guestbook` entity is finished for now. Next, you'll create the
     </order>
     ```
 
-7.  Add a finder that retrieves `GuestbooEntry`s by a combination of `groupId`
+7.  Add a finder that retrieves `GuestbookEntry`s by a combination of `groupId`
     and `guestbookId`. This supports @product@'s multi-tenancy by only returning
     those entries that belong both to the current Site and the current
     Guestbook. After defining your finder add the closing entity tag:
