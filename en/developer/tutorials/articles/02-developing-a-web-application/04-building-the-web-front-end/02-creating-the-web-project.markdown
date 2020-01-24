@@ -61,7 +61,7 @@ In larger projects, it is important to have all of your files and modules well
 organized. Since the `guestbook-web` module really goes with your Service
 Builder modules, it should be in the `guestbook` folder.
 
-1.  In the *Project Explorer*, right-click on `guestbook-web` and select
+1.  In the *Project Explorer*, right-click on `guestbook-web`, select *Refactor* and then select
     *Move*.
 
 2.  In the window that appears, click *Browse*, choose the `guestbook` 
