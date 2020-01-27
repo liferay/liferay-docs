@@ -6,6 +6,12 @@ header-id: getting-started-with-lcs
 
 [TOC levels=1-4]
 
+| **Note:** The following LCS features are deprecated and will be removed in
+| March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
+| read the 
+| [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
+| to learn more about how you can prepare for these upcoming changes. 
+
 To use LCS, you must register a server in an LCS environment. An LCS environment 
 represents a physical cluster of servers or a virtual or logical aggregation of 
 servers. Each environment is part of an LCS project. An LCS project represents a 
