@@ -6,6 +6,12 @@ header-id: managing-liferay-dxp-subscriptions
 
 [TOC levels=1-4]
 
+| **Note:** The following LCS features are deprecated and will be removed in
+| March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
+| read the 
+| [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
+| to learn more about how you can prepare for these upcoming changes. 
+
 LCS lets you use and view your @product@ subscriptions. Recall that when you 
 [create an environment](/docs/7-1/deploy/-/knowledge_base/d/managing-lcs-environments#creating-environments), 
 you assign its subscription type and choose whether LCS activates servers that 
