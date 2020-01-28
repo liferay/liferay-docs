@@ -200,6 +200,20 @@ lang.line.begin=right
 lang.line.end=left
 ```
 
+| **Note:** You can prevent specific CSS rules from transforming (flipping) with 
+| the `/* @noflip */` decoration. Place the decoration to the left of the CSS 
+| rule to apply it. For example, this rule gives a left margin of `20em` to the 
+| `body` no matter if the selected language is LTR or RTL:
+|
+| ```css
+| /* @noflip */ body {
+|  margin-left: 20em;
+| }
+| ```
+|
+| You can also use the `.rtl` CSS selector for rules that exclusively apply to 
+| RTL languages.
+
 ## Related Topics
 
 [Overriding Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-language-keys)
