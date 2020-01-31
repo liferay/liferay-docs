@@ -169,10 +169,6 @@ Follow these steps:
         }
         ```
 
-    -   Comment out any HTTP client and in-memory data module code before 
-        deploying your bundle, as @product@ handles the requests and data via 
-        the bundle's portlet. 
-
     Your root module `app.module.ts` should look like this: 
 
     ```javascript
