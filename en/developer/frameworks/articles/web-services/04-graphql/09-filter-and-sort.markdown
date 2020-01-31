@@ -1,5 +1,5 @@
 ---
-header-id: filter-sort-and-search
+header-id: graphql-filter-sort-and-search
 ---
 
 # Filter, Sort, and Search
