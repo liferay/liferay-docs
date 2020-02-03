@@ -6,8 +6,8 @@ header-id: patching-tool
 
 [TOC levels=1-4]
 
-パッチングツールは、@ product @パッチをインストール、削除、比較、および準備します。
-これは@ product @バンドルに事前インストールされており、@ product @に簡単にマニュアルインストールでき、アップデートするのも簡単です。パッチングツールの実行可能スクリプトにより、パッチ適用を促進します。
+パッチングツールは、@product@パッチをインストール、削除、比較、および準備します。
+これは@product@バンドルに事前インストールされており、@product@に簡単にマニュアルインストールでき、アップデートするのも簡単です。パッチングツールの実行可能スクリプトにより、パッチ適用を促進します。
 
 
 
@@ -20,11 +20,11 @@ header-id: patching-tool
 
 ## パッチングツールのインストール
 
-@ product @バンドルには、パッチングツールが事前インストールされていて（`[Liferay Home]/patching-tool`に）、デフォルト設定で事前設定されています。バンドルを使用している場合はこのセクションを飛ばしてください。
+@product@バンドルには、パッチングツールが事前インストールされていて（`[Liferay Home]/patching-tool`に）、デフォルト設定で事前設定されています。バンドルを使用している場合はこのセクションを飛ばしてください。
 
 
 
-ただし、@ product @をマニュアルでインストールした場合は、パッチングツールもマニュアルでインストールする必要があります。
+ただし、@product@をマニュアルでインストールした場合は、パッチングツールもマニュアルでインストールする必要があります。
 
 
 
@@ -36,7 +36,7 @@ header-id: patching-tool
 
 
 
-パッチングツールをインストールしたら、@ product @インストールを使用するためにパッチングツールを設定する必要があります。（詳細：[configure it to use your @product@ installation](/docs/7-1/deploy/-/knowledge_base/d/configuring-the-patching-tool)）
+パッチングツールをインストールしたら、@product@インストールを使用するためにパッチングツールを設定する必要があります。（詳細：[configure it to use your @product@ installation](/docs/7-1/deploy/-/knowledge_base/d/configuring-the-patching-tool)）
 パッチングツールZIPファイルから抽出した`patching-tool`フォルダには、実行可能なスクリプトを含んだパッチングツールが含まれています。
 
 ## 実行ファイル
