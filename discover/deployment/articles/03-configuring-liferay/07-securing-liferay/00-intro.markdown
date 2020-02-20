@@ -11,23 +11,8 @@ procedures to make sure that @product@ is as secure as possible. First of
 all, @product@ is an open source product. As such, Liferay encourages
 security-minded community members to verify the product they're using. All
 Liferay users benefit when even a few don't blindly trust the provider! Please
-read Liferay security statement at
-[https://liferay.com/security](https://liferay.com/security) for more
+read [Liferay security statement](https://liferay.com/security) for more
 information.
-
-Next, Liferay forms a
-[Community Security Team](https://portal.liferay.dev/people/community-security-team).
-This team addresses community security concerns, helps with security related
-questions on the Liferay forums, and releases security patches for @product@
-versions. Members of the Liferay community security team attend Liferay
-conferences and engage in other individual activities.
-
-If you have time, please visit our community Hall of Fame for security
-reporters:
-[https://portal.liferay.dev/people/hall-of-fame/security-reporters](https://portal.liferay.dev/people/hall-of-fame/security-reporters).
-These community members helped us and invested their time to report security
-issues. With their help, we make @product@ better for the community and
-customers.
 
 Although we act on community reports, we understands that community reports
 alone are not enough. Liferay's internal security team also works on improving
