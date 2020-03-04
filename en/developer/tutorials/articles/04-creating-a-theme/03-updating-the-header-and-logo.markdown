@@ -75,9 +75,8 @@ Follow these steps:
     value below:
 
     ```markup
-    <
-    #assign header_css_class = 
-    "navbar navbar-expand-md navbar-dark flex-column flex-md-row bd-navbar" 
+    <#assign header_css_class =
+        "navbar navbar-expand-md navbar-dark flex-column flex-md-row bd-navbar"
     />
     ```
 
