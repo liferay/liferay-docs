@@ -286,23 +286,25 @@ If you want Tomcat to manage your data source, use this procedure:
    on a different machine, make sure it's accessible from your @product@ machine.
 
 2. Add your data source as a resource in the context of your web application
-   specified in `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml`:
+    specified in `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml`:
 
-        <Context...>
-            <Resource
-                name="jdbc/LiferayPool"
-                auth="Container"
-                type="javax.sql.DataSource"
-                driverClassName="com.mysql.jdbc.Driver"
-                url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-                username="root"
-                password="root"
-                maxActive="100"
-                maxIdle="30"
-                maxWait="10000"
-            />
-        </Context>
-
+    ```xml
+    <Context...>
+        ...
+        <Resource
+            name="jdbc/LiferayPool"
+            auth="Container"
+            type="javax.sql.DataSource"
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+            username="root"
+            password="root"
+            maxTotal="100"
+            maxIdle="30"
+            maxWaitMillis="10000"
+        />
+    </Context>
+    ```
 Note that the above resource definition assumes your database name is
 *lportal*, that you're using MySQL, and that your MySQL username and password
 are both *root*. You'll have to update these values with your own database name
