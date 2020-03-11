@@ -191,7 +191,7 @@ editor, and contributes a query to filter users based on the articles they
 authored.
 
 1.  In the `...internal.criteria.contributor` package, create a
-    `UserKBArticleSegmentCritieriaContributor` class that implements 
+    `UserKBArticleSegmentCriteriaContributor` class that implements
     `SegmentsCriteriaContributor`.
 
     ```java
