@@ -27,7 +27,7 @@ Follow the instructions below to get started.
 
 2.  Create the following packages within the module: 
 
-    - `com.liferay.segments.criteria.extension.sample.internal.odata.retreiver`
+    - `com.liferay.segments.criteria.extension.sample.internal.odata.retriever`
     - `com.liferay.segments.criteria.extension.sample.internal.odata.entity`
     - `com.liferay.segments.criteria.extension.sample.internal.criteria.contributor`
 
@@ -87,7 +87,7 @@ Next, you'll create the OData Retriever.
 
 Next, create the `ODataRetriever` which gets the data using the relevant filter. 
 
-1.  Inside the `...internal.odata.retreiver` package, create 
+1.  Inside the `...internal.odata.retriever` package, create
     `KBArticleODataRetriever.java` which implements `ODataRetriever`:
 
     ```java
