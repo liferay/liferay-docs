@@ -35,7 +35,7 @@ workflow:
 
 `long statusByUserId` is the ID of the user that set the status (for example,
 the initial User that hit the Submit for Publication button to add a new
-Asset.
+Asset).
 
 `String statusByUserName` is the User Name of the User that set the status of
 the Asset.
