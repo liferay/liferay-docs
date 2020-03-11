@@ -25,6 +25,8 @@ using a Web Services Description Language (WSDL) document.
 *Consumer:* A web service client that receives the data from the Producer and
 presents it to the user in a portlet window. 
 
+| **Warning:** The WSRP portlet is not recommended for using on the intranet because encryption is not supported between the producer and consumer.
+
 Below, you'll see how the components interact with each other. So without
 further ado, let's explore WSRP in Liferay!
 
