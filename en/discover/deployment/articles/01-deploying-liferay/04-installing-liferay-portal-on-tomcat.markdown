@@ -293,21 +293,23 @@ If you want Tomcat to manage your data source, follow these steps:
 2.  Open `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` and add your data 
     source as a `Resource` in your web application `Context`:
 
-        <Context...>
-            ...
-            <Resource
-                name="jdbc/LiferayPool"
-                auth="Container"
-                type="javax.sql.DataSource"
-                driverClassName="com.mysql.jdbc.Driver"
-                url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-                username="root"
-                password="root"
-                maxActive="100"
-                maxIdle="30"
-                maxWait="10000"
-            />
-        </Context>
+    ```xml
+    <Context...>
+        ...
+        <Resource
+            name="jdbc/LiferayPool"
+            auth="Container"
+            type="javax.sql.DataSource"
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+            username="root"
+            password="root"
+            maxTotal="100"
+            maxIdle="30"
+            maxWaitMillis="10000"
+        />
+    </Context>
+    ```
 
     The resource definition above is for a MySQL database named `lportal` that
     has a user named `root` whose password is `root`. Replace these values with
