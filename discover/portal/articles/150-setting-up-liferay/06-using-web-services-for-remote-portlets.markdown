@@ -25,7 +25,7 @@ using a Web Services Description Language (WSDL) document.
 *Consumer:* A web service client that receives the data from the Producer and
 presents it to the user in a portlet window. 
 
-| **Warning:** The WSRP portlet is not recommended for using on the intranet because encryption between the producer and consumer is not supported.
+| **Warning:** The WSRP portlet is not recommended for using on the Internet because encryption between the producer and consumer is not supported.
 
 Below, you'll see how the components interact with each other. So without
 further ado, let's explore WSRP in @product@!
