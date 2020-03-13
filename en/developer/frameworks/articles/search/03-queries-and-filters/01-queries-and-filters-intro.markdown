@@ -210,18 +210,19 @@ These steps are covered in more detail (with examples)
 
 ## Search Queries in Liferay's Code
 
-The new APIs for creating queries were introduced in @product-ver@, but already
-there are a couple usages in Liferay's own code: for example the new 
-[Change Tracking Service](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/change-tracking/change-tracking-service/src/main/java/com/liferay/change/tracking/service/impl/CTEntryLocalServiceImpl.java) 
-constructs a complex search request containing a `TermsQuery` using the new
-`Queries` API:
+The APIs for creating queries are best exemplified in Liferay's own test cases.
+For example, [BaseTermsQueryTestCase](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/query/BaseTermsQueryTestCase.java) constructs a search request containing
+a `TermsQuery` using the `Queries` API:
 
 ```java
-TermsQuery termsQuery = _queries.terms("field");
+TermsQuery termsQuery = queries.terms(Field.USER_NAME);
 ```
 
 This code executes the search request with the terms query constructed above
 in a query context.
+
+Other query test cases are also available to reference in the `portal-search`
+module's [source code](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/query).
 
 ## External References
 
