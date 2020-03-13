@@ -390,9 +390,9 @@ If you want Tomcat to manage your data source, follow these steps:
             url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
             username="root"
             password="root"
-            maxActive="100"
+            maxTotal="100"
             maxIdle="30"
-            maxWait="10000"
+            maxWaitMillis="10000"
         />
     </Context>
     ```
