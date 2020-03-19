@@ -46,28 +46,9 @@ storage:
 
 6.  In the *S3 Store Configuration* screen, configure the store your way.
 
+7.  Click *Save*.
+
 Your @product@ instance is using the Amazon S3 store. 
-
-To use the S3 store in a
-[cluster](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering), follow these
-steps: 
-
-1.  [Export](/docs/7-2/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
-    the configuration from the *S3 Store Configuration* screen to a  [`.config`
-    file](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files). 
-
-2.  Copy the `.config` file to each node's `[Liferay Home]/osgi/configs` 
-    folder. 
-
-3.  Copy the `portal-ext.properties` to each node's
-    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) folder. 
-
-4.  Copy the `system-ext.properties` (if you're using one) to a folder in the 
-    app server class path on each node. 
-
-5.  Restart @product@ on the nodes. 
-
-@product@ is using the Amazon S3 store throughout your cluster.
 
 | **Warning:** If a database transaction rollback occurs in a Document Library
 | that uses a file system based store, file system changes that have occurred

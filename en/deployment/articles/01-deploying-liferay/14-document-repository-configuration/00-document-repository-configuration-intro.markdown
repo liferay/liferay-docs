@@ -37,14 +37,6 @@ The document library store switches immediately to the new folder.
 
 ![Figure 1: The File Storage page in System Settings lets you configure document repository storage.](../../../images/file-storage.png)
 
-| **Note:** To propagate store configuration in a
-| [cluster](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering),
-| [export](/docs/7-2/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
-| your store
-| settings from your store's *File Storage* screen in System Settings to a
-| `.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder in
-| each node. 
-
 You can also use an entirely different method for storing documents and media
 files:
 
