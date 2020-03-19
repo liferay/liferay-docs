@@ -30,7 +30,7 @@ switches immediately to the new folder.
 
 | **Note:** To propagate store configuration in a cluster, export your store
 | settings from your store's *File Storage* screen in System Settings to a
-| `.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder in
+| `.config` file and copy the file to the `[Liferay-Home]/osgi/configs` folder in
 | each node. To export the configuration, select *Export* from the options icon
 | ![Options](../../../images/icon-options.png).
 
