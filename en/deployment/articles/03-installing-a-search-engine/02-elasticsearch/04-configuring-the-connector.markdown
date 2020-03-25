@@ -132,6 +132,10 @@ file:
     
         [Liferay_Home]/osgi/configs/com.liferay.portal.search.elasticsearch7.configuration.ElasticsearchConfiguration.config
 
+    | **Elasticsearch 6:** The name of the `.config` file for the Elasticsearch
+    | 6 connector is
+    | `com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.config`
+
 2. Add configurations to the file, in the format `propertyName="Value"`. For
    example,
 

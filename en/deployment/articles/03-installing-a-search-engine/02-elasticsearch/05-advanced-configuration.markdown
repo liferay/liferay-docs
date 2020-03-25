@@ -74,7 +74,7 @@ template).
 
 `additionalTypeMappings` defines extra mappings for the `LiferayDocumentType`
 type definition. These are applied when the index is created. Add the mappings
-in using JSON syntax. For more information see
+using JSON syntax. For more information see
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/mapping.html)
 and
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/indices-put-mapping.html).

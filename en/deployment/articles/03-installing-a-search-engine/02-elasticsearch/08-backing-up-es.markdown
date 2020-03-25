@@ -44,7 +44,7 @@ path.repo: ["path/to/shared/file/system/"]
 Once the path to the folder hosting the repository is registered (make sure the
 folder exists), create the repository with a PUT command. For example,
 
-```sh
+```bash
 curl -X PUT "localhost:9200/_snapshot/test_backup" -H 'Content-Type: application/json' -d'
 {
   "type": "fs",
@@ -72,7 +72,7 @@ The easiest snapshot approach is to create a
 [snapshot of all the indexes in your cluster](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-snapshots.html#_snapshot). 
 For example,
 
-```sh
+```bash
 curl -XPUT localhost:9200/_snapshot/test_backup/snapshot_1
 ```
 
@@ -83,20 +83,20 @@ It's possible to be more selective when taking snapshots. For example, if you
 you can exclude the monitoring indexes. Explicitly declare the indexes to
 include in the snapshot. For example,
 
-```sh
+```bash
 curl -XPUT localhost:9200/_snapshot/test_backup/snapshot_2
 { "indices": "liferay-0,liferay-20116" }
 ```
 
 **Note:** For a list of all the Elasticsearch indexes, use this command:
 
-```sh
+```bash
 curl -X GET "localhost:9200/_cat/indices?v"
 ```
 
 This shows the index metrics:
 
-```sh
+```bash
 health status index         uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 green  open   liferay-20099 obqiNE1_SDqfuz7rincrGQ   1   0        195            0    303.1kb        303.1kb
 green  open   liferay-47206 3YEjtye1S9OVT0i0EZcXcw   1   0          7            0     69.7kb         69.7kb
@@ -113,7 +113,7 @@ matter how cleverly you name the snapshots, you may forget what some snapshots
 contain. For this purpose, the Elasticsearch API provides getting information
 about any snapshot. For example:
 
-```sh
+```bash
 curl -XGET localhost:9200/_snapshot/test_backup/snapshot_1
 ```
 
@@ -148,7 +148,7 @@ included in the snapshot.
 
 If you want to get rid of a snapshot, use the `DELETE` command.
 
-```sh
+```bash
 curl -XDELETE localhost:9200/_snapshot/test_backup/snapshot_1
 ```
 
@@ -165,7 +165,7 @@ What good is a snapshot if you can't use it to
 in case of catastrophic failure? Use the `_restore` API to restore all the
 snapshot's indexes:
 
-```sh
+```bash
 curl -XPOST localhost:9200/_snapshot/test_backup/snapshot_1/_restore
 ```
 
@@ -173,7 +173,7 @@ Restore only specific indexes from a snapshot by passing in the `indices`
 option, and rename the indexes using the `rename_pattern` and
 `rename_replacement` options:
 
-```sh
+```bash
 curl -XPOST
 localhost:9200/_snapshot/test_backup/snapshot_1/_restore
 {
@@ -191,7 +191,7 @@ with `restored_liferayindex_`, so `liferay-20116index_1` becomes
 As with the process for taking snapshots, an errant restored index can be
 canceled with the `DELETE` command:
 
-```sh
+```bash
 curl -XDELETE localhost:9200/restored_liferay-20116index_3
 ```
 

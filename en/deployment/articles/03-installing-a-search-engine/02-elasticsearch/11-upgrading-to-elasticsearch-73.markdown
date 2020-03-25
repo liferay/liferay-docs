@@ -6,27 +6,27 @@ header-id: upgrading-to-elasticsearch-7
 
 [TOC levels=1-4]
 
-Elasticsearch 7.4.x is supported for @product-ver@. If you're upgrading
-@product@ and still running Elasticsearch 6.1, it's time to upgrade your
+Elasticsearch 7 is supported for @product-ver@. If you're upgrading
+@product@ and still running Elasticsearch 6, consider upgrading your
 Elasticsearch servers too. If you're setting up a new system and not already
-running a remote Elasticsearch 6.1.x server, follow the 
+running a remote Elasticsearch 6 server, follow the 
 [installation guide](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch) to install
-Elasticsearch 6 and the 
+Elasticsearch and the 
 [configuration guide](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector)
 to configure the Elasticsearch adapter. Here, you'll learn to upgrade an
 existing Elasticsearch 6 server (or cluster) to Elasticsearch 7: 
 
-1.  [Install and configure Elasticsearch 7](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch).
+1.  [Install and configure Elasticsearch 7](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch).
 
 2.  Back up the application specific indexes for Workflow Metrics and Result
     Rankings.
 
 3. In @product-ver@, the X-Pack module is now provided out of the box. If
-   you're not X-Pack security, make sure you disable it (it's disabled by
+   you're using X-Pack security, enable it (it's disabled by
    default):
 
     ```yml
-    xpack.security.enabled: false
+    xpack.security.enabled: true
     ```
 
 4.  Blacklist the bundled Liferay Connector to Elasticsearch 6.
@@ -66,7 +66,7 @@ To blacklist Elasticsearch 6,
 
 1.  Create a configuration file named
 
-    ```sh
+    ```bash
     com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
     ```
 
