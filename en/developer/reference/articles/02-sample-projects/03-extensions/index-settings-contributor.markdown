@@ -94,6 +94,8 @@ annotation that registers a new service to the OSGi container:
     immediate = true,
     service = com.liferay.portal.search.elasticsearch6.settings.IndexSettingsContributor.class
 )
+
+> If using Elasticsearch 7, the value of the `service` property is instead `com.liferay.portal.search.elasticsearch7.settings.IndexSettingsContributor.class`.
 ```
 
 This sample demonstrates the essentials needed to contribute your own index
