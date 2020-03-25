@@ -48,6 +48,10 @@ click _Configuration_.
 field to be filtered (for example, `title`). You won't need this if the Filter
 Query Type is set to a type that doesn't require a field, such as _Regexp_.
 
+> The Query String and Script queries do not require a Filter Field to be set.
+> All other queries require at least one field. 
+<!--Note: Multi Match and Simple Query String take an array of fields accoring to the Elasticsearch docs, but our config doesn't seem to support it afaict.? -->
+
 **Filter Value (text)**
 : For most filters, you must enter a text value here that specifies the
 text to apply the filter on in the specified field (for example, set a _Match_
