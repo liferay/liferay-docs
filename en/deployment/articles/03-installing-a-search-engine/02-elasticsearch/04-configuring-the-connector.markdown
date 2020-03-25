@@ -109,11 +109,11 @@ To configure the Elasticsearch connector from the System Settings application,
     search box) and click the Actions icon
     (![Actions](../../../images/icon-actions.png)), then *Edit*.
 
-    Figure 1: Use the System Settings application in @product@'s Control Panel to configure the Elasticsearch connector.](../../../images/cfg-elasticsearch-sys-settings.png)
+    ![Figure 1: Use the System Settings application in @product@'s Control Panel to configure the Elasticsearch connector.](../../../images/cfg-elasticsearch-sys-settings.png)
 
 4.  Make any edits to the configuration and click *Save*.
 
-    Figure 2: Configure the Elasticsearch connector's settings. Make sure you set the Operation Mode to *Remote*.](../../../images/cfg-elasticsearch-sys-settings2.png)
+    ![Figure 2: Configure the Elasticsearch connector's settings. Make sure you set the Operation Mode to *Remote*.](../../../images/cfg-elasticsearch-sys-settings2.png)
 
 | **Note:** If you switch operation modes (`EMBEDDED` &rarr; `REMOTE`), you must
 | trigger a re-index. Navigate to *Control Panel* &rarr; *Configuration* &rarr;
