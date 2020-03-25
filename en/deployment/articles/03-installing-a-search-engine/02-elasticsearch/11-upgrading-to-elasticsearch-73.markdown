@@ -29,7 +29,7 @@ existing Elasticsearch 6 server (or cluster) to Elasticsearch 7:
     xpack.security.enabled: false
     ```
 
-4.  Blacklist the bundled Liferay Connector to Elasticsearch 6. The [Installing Solr guide]()
+4.  Blacklist the bundled Liferay Connector to Elasticsearch 6.
 
 5.  Install and configure the Liferay Connector to Elasticsearch 7.
 
