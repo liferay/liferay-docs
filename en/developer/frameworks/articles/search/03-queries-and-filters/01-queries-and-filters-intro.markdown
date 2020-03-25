@@ -239,6 +239,6 @@ module's [source code](https://github.com/liferay/liferay-portal/tree/7.2.x/modu
 
 Package | Provided by Artifact | Notes |
 -----------|:--------------------:|:--------:|
-`com.liferay.portal.search.query.*` | com.liferay.portal.search.api | Most of the provided [query types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query) are new as of @product_ver@
-`com.liferay.portal.search.filter.*` | com.liferay.portal.search.api | Some of the provided [filter types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/filter) are new as of @product_ver@
+`com.liferay.portal.search.query.*` | com.liferay.portal.search.api | Most of the provided [query types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query) are new as of 7.2
+`com.liferay.portal.search.filter.*` | com.liferay.portal.search.api | Some of the provided [filter types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/filter) are new as of 7.2
 
