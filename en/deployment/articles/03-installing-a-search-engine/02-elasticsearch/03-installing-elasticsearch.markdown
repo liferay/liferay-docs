@@ -99,9 +99,12 @@ for definitive information on what's supported.
 
 | **Note:** Although the embedded server uses Elasticsearch 6.5, Elasticsearch
 | 6.8.x has been tested with @product-ver@ GA1, and is fully supported. If you've
-| upgraded to @product-ver@ Service Pack 1/Fix Pack 2 (or GA2 for CE users), up to
-| Elasticsearch 7.4.x is supported through the Liferay Connector to Elasticsearch
-| 7, which can be downloaded form Liferay Marketplace.
+| upgraded to @product-ver@ Service Pack 1/Fix Pack 2 (or GA2 for CE users),
+| Elasticsearch 7 is supported through the Liferay Connector to Elasticsearch
+| 7, which can be downloaded from Liferay Marketplace for both 
+| [CE](https://web.liferay.com/en/marketplace/-/mp/application/170642090) and 
+| [DXP](https://web.liferay.com/en/marketplace/-/mp/application/170390307).
+| Always refer to the [compatibility matrix to find the exact versions supported](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.2+Compatibility+Matrix.pdf/ed234765-db47-c4ad-7c82-2acb4c73b0f9).
 
 Shut down the @product@ server. In a local, single-machine testing environment,
 if you continue without shutting down, the Elasticsearch server you're about to
