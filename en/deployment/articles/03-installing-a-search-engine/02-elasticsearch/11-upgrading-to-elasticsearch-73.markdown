@@ -52,7 +52,7 @@ Learn about configuring Elasticsearch [here](/docs/7-2/deploy/-/knowledge_base/d
 ## Backing up Application-Specific Indexes
 
 To preserve data stored in application-specific indexes, use a
-[rolling upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/rolling-upgrades.html)
+[rolling upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/rolling-upgrades.html)
 for each index you need to preserve across the upgrade.
 
 | **Synonym Sets:** If you follow the workaround for the bug

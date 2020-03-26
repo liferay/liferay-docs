@@ -53,7 +53,7 @@ results are returned to users in order of relevance. Relevance is determined by
 a document's *score*, generated against the search query. The higher the score,
 the more relevant a document is considered. The particular relevance algorithm
 used is dependent on 
-[algorithms provided by the search engine (Elasticsearch by default)](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#relevance-intro).
+[algorithms provided by the search engine (Elasticsearch by default)](https://www.elastic.co/guide/en/elasticsearch/reference/current/relevance-intro.html#relevance-intro).
 
 ### Search Facets
 

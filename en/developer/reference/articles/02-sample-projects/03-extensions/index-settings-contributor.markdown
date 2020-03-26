@@ -52,7 +52,7 @@ follow these fundamental steps:
     `META-INF/mappings/resources/index-type-mappings.json` file. Notice that the
     default document for @product@ is called `LiferayDocumentType`. The
     mapping's features can be found in
-    [Elasticsearch's docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html).
+    [Elasticsearch's docs](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/mapping.html).
 
 2.  Inject the mapping into Elasticsearch. The `IndexSettingsContributor` class'
     components are invoked during the reindexing stage and receive a

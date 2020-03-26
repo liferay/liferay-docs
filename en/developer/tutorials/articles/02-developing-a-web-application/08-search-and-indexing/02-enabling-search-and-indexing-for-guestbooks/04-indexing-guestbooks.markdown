@@ -66,7 +66,7 @@ the `getSiteDefaultLocale` method, then using it to get the localized name
 of the Guestbook's title field. The retrieved Site locale is appended to the
 field (e.g., `title_en_US`), so the field gets passed to the search engine
 and goes through the right analysis and
-[tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
+[tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/analysis-tokenizers.html). 
 
 Use Ctrl-Shift-O to add these imports, and then save the file: 
 

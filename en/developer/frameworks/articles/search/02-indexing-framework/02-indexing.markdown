@@ -57,7 +57,7 @@ public class FooEntryModelDocumentContributor
 Implement the `contribute` method, calling the
 `com.liferay.portal.kernel.Document.add()` method appropriate for the data type
 the index should use (e.g., `addText` for fields that should be searched using a
-[full text search strategy](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/text.html)).
+[full text search strategy](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/text.html)).
 
 ```java
 @Override

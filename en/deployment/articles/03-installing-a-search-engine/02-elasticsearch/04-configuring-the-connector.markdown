@@ -7,7 +7,7 @@ header-id: configuring-the-liferay-elasticsearch-connector
 [TOC levels=1-4]
 
 For detailed Elasticsearch configuration information, refer to the
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/settings.html).
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/settings.html).
 
 The name of your Elasticsearch cluster is important. When you're running
 Elasticsearch in remote mode, the cluster name is used by @product@ to recognize
@@ -18,7 +18,7 @@ Elasticsearch Connector.
 | **Note:** The `http.enabled` setting in Elasticsearch corresponds to the
 | `httpEnabled` setting in the Liferay Connector to Elasticsearch 6 application.
 | As this setting was [deprecated in Elasticsearch
-| 6.3](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html#deprecation-6.3.0),
+| 6.3](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/release-notes-6.3.0.html),
 | the connector's corresponding setting is now also deprecated. This setting was
 | only used for configuring the embedded Elasticsearch server, so its deprecation
 | should have minimal impact to production deployments.
@@ -154,7 +154,7 @@ performance.
 What follows here are some known good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
 testing under load, and tuning again, so we encourage you to examine the
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/important-settings.html) 
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/important-settings.html) 
 and go through that process once you have a working configuration. 
 
 ## Configuring a Remote Elasticsearch Host 
@@ -184,7 +184,7 @@ On the Elasticsearch side, set the `network.host` property in your
 (the host where Elasticsearch listens for requests) and the *publish host*
 (the host name or IP address Elasticsearch uses to communicate with other
 nodes). See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-network.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/modules-network.html)
 for more information.
 
 ## Clustering Elasticsearch in Remote Operation Mode 
@@ -193,7 +193,7 @@ To cluster Elasticsearch, first set `node.max_local_storage_nodes` to
 be something greater than `1`. When you run the Elasticsearch start script,
 a new local storage node is added to the cluster. If you want four nodes running
 locally, for example, run `./bin/elasticsearch` four times. See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-node.html#max-local-storage-nodes)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/modules-node.html#max-local-storage-nodes)
 for more information.
 
 Configure the number of shards and replicas in the Elasticsearch 6 connector,
@@ -204,10 +204,10 @@ since the default number of shards is `5` and the default number of replica
 shards is `1`.
 
 | **Note:** Elasticsearch uses the [Zen Discovery
-| Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-discovery-zen.html)
+| Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.x/modules-discovery-zen.html)
 | by default, which provides unicast discovery. Additionally, nodes in the cluster
 | communicate using the [Transport
-| Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/modules-transport.html),
+| Module](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/modules-transport.html),
 | through TCP. See the Elasticsearch documentation for the available properties
 | (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 | connector's settings for the connector's available settings.
@@ -223,7 +223,7 @@ shards is `1`.
 | 
 | For more information on configuring an Elasticsearch cluster, see the
 | documentation on 
-| [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
+| [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/index-modules.html).
 
 
 ## Elasticsearch Connector System Settings, By Operation Mode 

@@ -10,11 +10,11 @@ Aggregations take the results of a query and group the data into logical sets.
 Aggregations can be composed to provide complex data summaries.
 
 @product-ver@ has a new API that exposes 
-[Elasticsearch's native Aggregation functionality](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html). 
+[Elasticsearch's native Aggregation functionality](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-aggregations.html). 
 
 Currently, these aggregation types are supported:
 
-- [Bucketing aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket.html) 
+- [Bucketing aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-aggregations-bucket.html) 
     create buckets of documents based on some criterion.  They support
     sub-aggregations.
     - Supported bucket aggregations include children aggregations, date
@@ -25,7 +25,7 @@ Currently, these aggregation types are supported:
         aggregations, reverse nested aggregations, sample aggregations,
         significant terms aggregations, significant text aggregations, and terms
         aggregations.
-- [Metrics aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics.html) 
+- [Metrics aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-aggregations-metrics.html) 
     compute metrics over a set of documents.
     - Supported metrics aggregations include average aggregations, cardinality
         aggregations, extended stats aggregations, geo bounds aggregations, geo
@@ -35,7 +35,7 @@ Currently, these aggregation types are supported:
         aggregations, value count aggregations, and weighted average
         aggregations. 
 
-- [Pipeline aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline.html) 
+- [Pipeline aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-aggregations-pipeline.html) 
     aggregate the output of other aggregations and their associated metrics.
     - Supported pipeline aggregations include average bucket pipeline
         aggregations, bucket metrics pipeline aggregations, bucket script
@@ -83,8 +83,8 @@ These steps are covered in more detail (with examples)
 
 ## External References
 
-* <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html>
-* <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html#_structuring_aggregations>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-aggregations.html>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-aggregations.html#_structuring_aggregations>
 
 ## Search Engine Connector Support
 

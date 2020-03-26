@@ -40,7 +40,7 @@ to learn more about these options.
 
 Liferay's search infrastructure supports full text search as implemented by its
 supported search engines
-([Elasticsearch]((https://www.elastic.co/guide/en/elasticsearch/reference/6.8/full-text-queries.html)
+([Elasticsearch]((https://www.elastic.co/guide/en/elasticsearch/reference/7.x/full-text-queries.html)
 and [Solr](http://lucene.apache.org/solr/features.html)).
 
 Full text search compares all the words entered in a search query (for example,
@@ -52,7 +52,7 @@ word *vacation* or *space* is returned).
 
 In addition to full text search, advanced search syntax is supported. @product@
 relies on the underlying search engine for this behavior, so consult the
-[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-query-string-query.html#query-string-syntax)
+[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-query-string-query.html#query-string-syntax)
 or 
 [Solr](https://lucene.apache.org/solr/guide/6_6/query-syntax-and-parsing.html)
 documentation for the details.
@@ -142,7 +142,7 @@ appear to users.
 
 **Use Advanced Search Syntax**
 : If using Elasticsearch, enabling this allows users to enter 
-[Query String Syntax](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-query-string-query.html#query-string-syntax) 
+[Query String Syntax](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-query-string-query.html#query-string-syntax) 
 into the Search Bar. If using Solr, consult its documentation for the 
 [proper syntax](https://lucene.apache.org/solr/guide/6_6/query-syntax-and-parsing.html).
 

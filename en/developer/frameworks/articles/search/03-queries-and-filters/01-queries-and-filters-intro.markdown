@@ -135,7 +135,7 @@ Here are some common compound queries:
 
 The concept of a join doesn't work well in a distributed index. Joining queries
 allow similar behavior in the search index, such as using the 
-[`nested` datatype](https://www.elastic.co/guide/en/elasticsearch/reference/current/nested.html)
+[`nested` datatype](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/nested.html)
 to index an array of objects that can be queried independently, using the
 `NestedQuery`.
 
@@ -182,7 +182,7 @@ ScriptQuery
 
 The proper search query is entirely context- and search engine-specific, so you
 should read the Query documentation straight from
-[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html) 
+[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html) 
 or 
 [Solr](https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html)
 to determine which queries are available and what they do.
@@ -226,7 +226,7 @@ module's [source code](https://github.com/liferay/liferay-portal/tree/7.2.x/modu
 
 ## External References
 
-* <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html>
 * <https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html>
 
 ## Search Engine Connector Support

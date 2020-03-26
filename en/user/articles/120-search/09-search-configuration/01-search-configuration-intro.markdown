@@ -80,7 +80,7 @@ until all entries have been sent to the search engine. Setting this to false
 changes the behavior for individual index operations, and may cause
 applications like Asset Publisher to exhibit a delayed response when showing
 newly added content. See the 
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html)
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/near-real-time.html)
 for more information.
 
 ### Index Registry
@@ -115,7 +115,7 @@ treated as non-analyzed keyword fields. Instead of scored full text queries,
 matching is performed by non-scored wildcard queries. This is a resource
 intensive operation that degrades search engine performance as indexes grow
 larger. For substring matching, relying on the 
-[ngram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-ngram-tokenizer.html)
+[ngram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/analysis-ngram-tokenizer.html)
 usually performs better.
 
 ### Reindex
@@ -160,7 +160,7 @@ match the `title` field of a document.
 **Maximum Expansions:** Limit the number of documents to return when matching
 searched keywords to the `title` field as a phrase prefix. See Elasticsearch's
 [Match Phrase Query
-documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-match-query-phrase.html)
+documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-match-query-phrase.html)
 for more information.
 
 ### Elasticsearch 6
