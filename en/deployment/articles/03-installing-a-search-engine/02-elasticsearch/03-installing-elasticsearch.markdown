@@ -22,7 +22,7 @@ Before installing Elasticsearch, refer to
 for guidance on configuring the servers to support an Elasticsearch deployment
 properly. 
 
-Installing Elasticsearch takes six steps: 
+Here's an overview of the installation steps: 
 
 1. Download a supported version of Elasticsearch. See
    [Elastic's](https://www.elastic.co) website. 
@@ -45,6 +45,19 @@ Installing Elasticsearch takes six steps:
 | using the same version and distribution (e.g., Oracle Open JDK 1.8.0_201). You
 | can specify this in `[Elasticsearch Home]/bin/elasticsearch.in.sh`:
 | `JAVA_HOME=/path/to/java`.
+
+| **Replacing the Default Elasticsearch 6 Connector:** If you're installing
+| Elasticsearch 6, use the connector application installed by default. If you're installing
+| Elasticsearch 7, you'll need to download the connector from Liferay Marketplace
+| for either
+| [CE](https://web.liferay.com/en/marketplace/-/mp/application/170642090) and
+| [DXP](https://web.liferay.com/en/marketplace/-/mp/application/170390307).
+| Always refer to the [compatibility matrix to find the exact versions
+| supported](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.2+Compatibility+Matrix.pdf/ed234765-db47-c4ad-7c82-2acb4c73b0f9).
+| Before installing the connector, blacklist the Elasticsearch 6 connector and
+| APIs. The [upgrade
+| documentation](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-elasticsearch-7#blacklisting-elasticsearch-6)
+| holds detailed blacklisting steps.
 
 When you perform these steps, you'll have a basic, production-ready instance of
 @product@ and Elasticsearch up and running. But that's just the beginning of
@@ -194,8 +207,9 @@ can find Elasticsearch on the network.
 Now that you're ready to configure @product@, start it if you haven't already,
 log in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System
 Settings* &rarr; *Search*. Enter the term *elasticsearch* in the search bar and
-click the *Elasticsearch 6* entry from the list of settings. Now you can
-configure it. Here are the configuration options to change: 
+click the *Elasticsearch [Version]* entry from the list of settings (at the
+tiem of writing, the version will either be *6* or *7*). Now you can configure
+it. Here are the configuration options to change: 
 
 **Cluster Name:** Enter the name of the cluster as you defined it in
 Elasticsearch. 
