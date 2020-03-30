@@ -32,21 +32,9 @@ To use the CMIS store, follow these steps:
 
 5.  In the *CMIS Repository* screen, configure the repository your way. 
 
-To use the CMIS store in a cluster, follow these steps:
+6.  Click *Save*.
 
-1.  Copy the `portal-ext.properties` to each node's
-    [`[Liferay Home]` folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home). 
-
-2.  Export the configuration from the *CMIS Store* screen to a 
-    [`.config` file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files). 
-
-3.  Export the configuration from the *CMIS Repository* screen to a 
-    [`.config` file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files). 
-
-4.  Copy the `.config` files to each node's `[Liferay Home]/osgi/configs` 
-    folder. 
-
-5.  Restart @product@ on the nodes. 
+7.  Restart @product@. 
 
 The @product@ repository is connected to CMIS via the CMIS store. As long as all
 nodes are pointing to your CMIS repository, everything in your cluster should be
