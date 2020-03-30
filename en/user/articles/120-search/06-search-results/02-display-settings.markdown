@@ -61,6 +61,16 @@ with this URL:
 
         http://localhost:8080/web/guest/search?q=test&delta=10
 
+**Federated Search Key**
+: If this widget is participating in a search on a non-default index, enter the
+key of the alternate search index. If not set, the widget participates in the
+default search, against the default index (`liferay-[comanyId]`. This value is
+usually the name of an application-defined index. 
+
+**Fields to Display**
+: If searching an alternate index using the Federated Search Key configuration,
+specify what fields to search from that index. 
+
 For further reading, check out how to 
 [return suggestions for better search terms](/docs/7-2/user/-/knowledge_base/u/searching-for-assets#search-suggestions)
 (for example, "Did you mean...") when not enough results are returned initially.

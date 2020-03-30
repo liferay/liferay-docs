@@ -48,6 +48,10 @@ click _Configuration_.
 field to be filtered (for example, `title`). You won't need this if the Filter
 Query Type is set to a type that doesn't require a field, such as _Regexp_.
 
+> The Query String and Script queries do not require a Filter Field to be set.
+> All other queries require at least one field. 
+<!--Note: Multi Match and Simple Query String take an array of fields accoring to the Elasticsearch docs, but our config doesn't seem to support it afaict.? -->
+
 **Filter Value (text)**
 : For most filters, you must enter a text value here that specifies the
 text to apply the filter on in the specified field (for example, set a _Match_
@@ -58,13 +62,13 @@ require special notation, as in the case of the _Regexp_ filter.
 : Select the query type to filter results by. Available types include Bool,
 Exists, Fuzzy, Match, Match Phrase, Match Phrase Prefix, Multi Match, Prefix,
 Query String, Regexp, Script, Simple Query String, Term, Wildcard. To learn more
-about these queries, visit the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html).
+about these queries, visit the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html).
 
 **Occur (select list)**
 : Set the occurrence type for the query being contributed to the search. Options
 include Filter, must, must_not, and should. To understand each type, see the
 [Elasticsearch
-documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-bool-query.html). 
+documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-bool-query.html). 
 
 **Query Name (text)**
 : Set the name of the contributed query. This is unnecessary unless this filter
@@ -77,7 +81,7 @@ This parent/child behavior is only available for filters of type Bool.
 Name configured in the parent Custom Filter widget. Otherwise, leave it blank.
 
 **Boost (number)**
-: [Boost](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html#term-field-params)
+: [Boost](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-term-query.html#term-field-params)
 the score of the results matching this query. Specify any whole or decimal
 number here that makes sense. If you always want results matching this at the
 top, set the Boost value really high (e.g., _1000_).

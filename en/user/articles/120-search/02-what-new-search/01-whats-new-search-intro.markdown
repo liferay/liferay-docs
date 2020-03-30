@@ -88,7 +88,7 @@ match the `title` field of a document.
 **Maximum Expansions:** Limit the number of documents to return when matching
 searched keywords to the `title` field as a phrase prefix. See Elasticsearch's
 [Match Phrase Query
-documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl-match-query-phrase.html)
+documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-match-query-phrase.html)
 for more information.
 
 ## New Infrastructure

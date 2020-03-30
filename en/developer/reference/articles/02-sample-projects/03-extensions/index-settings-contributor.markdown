@@ -52,7 +52,7 @@ follow these fundamental steps:
     `META-INF/mappings/resources/index-type-mappings.json` file. Notice that the
     default document for @product@ is called `LiferayDocumentType`. The
     mapping's features can be found in
-    [Elasticsearch's docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html).
+    [Elasticsearch's docs](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/mapping.html).
 
 2.  Inject the mapping into Elasticsearch. The `IndexSettingsContributor` class'
     components are invoked during the reindexing stage and receive a
@@ -94,6 +94,8 @@ annotation that registers a new service to the OSGi container:
     immediate = true,
     service = com.liferay.portal.search.elasticsearch6.settings.IndexSettingsContributor.class
 )
+
+> If using Elasticsearch 7, the value of the `service` property is instead `com.liferay.portal.search.elasticsearch7.settings.IndexSettingsContributor.class`.
 ```
 
 This sample demonstrates the essentials needed to contribute your own index

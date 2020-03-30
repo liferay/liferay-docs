@@ -52,7 +52,7 @@ To enable or disable the Explain option,
 
 Under the hood, the Explain option in the Search Insights widget is exposing an
 Elasticsearch API:
-[Explain](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-explain.html).
+[Explain](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-explain.html).
 See the Elasticsearch documentation for more details.
 
 Here's an abbreviated portion of the scoring explanation for the Search

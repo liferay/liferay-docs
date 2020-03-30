@@ -20,7 +20,7 @@ includes
     for more information.
 
 X-Pack is an 
-[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/setup-xpack.html)
+[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/setup-xpack.html)
 for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,
 you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
@@ -63,10 +63,10 @@ LES feature.
 
 Elastic's documentation explains additional configuration options, features,
 and the architecture of
-[X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/configuring-security.html). 
+[X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/configuring-security.html). 
 
 | **Note:** Out of the box, X-Pack comes with a [30-day
-| trial](https://www.elastic.co/guide/en/x-pack/current/license-management.html).
+| trial](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/start-trial.html).
 | This can be useful if there's a delay between your subscription and receipt of
 | your production X-Pack license.
 

@@ -35,7 +35,7 @@ concept of *relevance*. Relevance is a score calculated by the search engine.
 There are numerous factors contributing to the total score of a returned
 document, and all of the implementation details of how relevance scoring works
 are algorithms provided by the 
-[search engine](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#relevance-intro).
+[search engine](https://www.elastic.co/guide/en/elasticsearch/reference/current/relevance-intro.html#relevance-intro).
 
 ## Permissions and Search Results
 
