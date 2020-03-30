@@ -63,7 +63,7 @@ that same folder.
 If you already have an Eclipse environment that you're using for other
 things, it's easy to add Dev Studio to your existing Eclipse installation. 
 
-1.  In Dev Studio, select *Help* &rarr; *Install New Software*. 
+1.  In Eclipse, select *Help* &rarr; *Install New Software*. 
 
 2.  In the *Work with* field, copy in the following URL:
     https://releases.liferay.com/tools/ide/latest/stable/

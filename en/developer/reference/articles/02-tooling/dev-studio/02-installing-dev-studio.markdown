@@ -62,7 +62,7 @@ things, it's easy to add Dev Studio to your existing Eclipse installation.
     [Liferay Dev Studio](https://community.liferay.com/en_GB/project/-/asset_publisher/TyF2HQPLV1b5/content/ide-installation-instructions)
     page. Copy the URL for the latest stable update site. 
 
-2.  Select *Help* &rarr; *Install New Software*. 
+2.  In Eclipse, select *Help* &rarr; *Install New Software*. 
 
 3.  In the *Work with* field, copy in the URL.
 
