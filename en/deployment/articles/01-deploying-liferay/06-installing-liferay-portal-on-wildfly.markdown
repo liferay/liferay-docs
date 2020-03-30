@@ -397,9 +397,14 @@ If you want Wildfly to manage your data source, follow these steps:
     Make sure to replace the database name (i.e., `lportal`), user name, and
     password with the appropriate values. 
 
-    | **Note:** If you must change your data source `jndi-name` to something
-    | different, you must also edit the `datasource` element in the
-    | `<default-bindings>` tag.
+1.  If you change your data source `jndi-name` to something new, change the `<default-bindings>` tag's `datasource` attribute to the new JNDI name. The initial `<default-bindings>` tag's `datasource` attribute looks like this:
+
+    ```xml
+    <default-bindings
+       datasource="java:jboss/datasources/ExampleDS"
+       ...
+    />
+    ```
 
 2.  Add your driver to the `standalone.xml` file's `<drivers>` element also
     found within the `<datasources>` element. 
