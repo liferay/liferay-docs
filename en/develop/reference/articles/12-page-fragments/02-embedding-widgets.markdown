@@ -33,7 +33,7 @@ Here is the full list of widgets that can be embedded:
 |Site Map	|`<lfr-widget-site-map>`|
 |Tag Cloud	|`<lfr-widget-tag-cloud>`|
 |Tags Navigation	|`<lfr-widget-tags-nav>`|
-|Web Content Display	|`<lfr-widget-web-content>`
+|Web Content Display	|`<lfr-widget-web-content>`|
 |Rss Publisher (Deprecated)	|`<lfr-widget-rss>`|
 |Iframe	|`<lfr-widget-iframe>`|
 
