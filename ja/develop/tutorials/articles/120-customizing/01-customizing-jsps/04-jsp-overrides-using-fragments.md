@@ -96,10 +96,10 @@ JSPをオーバーライドするOSGiフラグメントに必要なのは以下�
 
 LiferayのアプリケーションのJSPを簡単に変更できるようになりました。
 
-![図1：例えるなら、LiferayのアプリケーションはOSGiランタイムの中で泳いでおり、フラグメントモジュールが歯をきれいにしてくれるを待っているようなものです。](../../../images/sharks.jpg)
+![図1：例えるなら、LiferayのアプリケーションはOSGiランタイムの中で泳いでおり、フラグメントモジュールが歯をきれいにしてくれるのを待っているようなものです。](../../../images/sharks.jpg)
 <!--https://commons.wikimedia.org/wiki/File:Carcharhinus_perezi_bahamas_feeding.jpg-->
 
-サンプルのJSP変更フラグメントの動作を確認するには、[Module JSP Override sample project](/docs/7-1/reference/-/knowledge_base/r/module-jsp-override)をご覧ください
+サンプルのJSP変更フラグメントの動作を確認するには、[Module JSP Override sample project](/docs/7-1/reference/-/knowledge_base/r/module-jsp-override)をご覧ください。
 
 ## 関連トピック
 
