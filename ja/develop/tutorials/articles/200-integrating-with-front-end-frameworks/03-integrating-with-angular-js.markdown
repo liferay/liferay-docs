@@ -4,6 +4,8 @@ header-id: using-angular-js-in-your-portlets
 
 # ポートレットでのAngularの使用
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 [npm Angularポートレットテンプレート](/docs/7-1/reference/-/knowledge_base/r/npm-angular-portlet-template) を使用して、必要な構成の多くを自動化するか、モジュールを手動で作成できます。 便宜上、すべての手動ステップを以下にリストします。 このチュートリアルでは、既存のAngularプロジェクトを移行する場合でも、新しいプロジェクトを構築する場合でも、ポートレットでAngularを使用する方法を示します。 ポートレットの構造の詳細については、 [npm Angularポートレットテンプレート](/docs/7-1/reference/-/knowledge_base/r/npm-angular-portlet-template) リファレンスドキュメントを参照してください。 OSGiモジュールを作成し、そのメタデータを構成することから始めます。

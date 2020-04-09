@@ -4,6 +4,8 @@ header-id: updating-6-2-project-metadata
 
 # 6.2プロジェクトメタデータの更新
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 テーマが [Liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages)使用している場合、 [Gulp `アップグレード` タスク](/docs/7-1/tutorials/-/knowledge_base/t/running-the-upgrade-task-for-6-2-themes) は、アップグレードプロセスの一部としてテーマのメタデータの一部を自動的に更新します。 以下の手順に従って、テーマのメタデータを手動で更新します。

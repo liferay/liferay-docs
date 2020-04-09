@@ -4,6 +4,8 @@ header-id: using-liferays-macros-in-your-theme
 
 # テーマで@product@のマクロを使用する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 [マクロ](https://freemarker.apache.org/docs/ref_directive_macro.html) は、テーマテンプレートフラグメントを変数に割り当てることができます。 これにより、テーマテンプレートが乱雑にならず、読みやすくなります。 @product@は、FreeMarkerテーマテンプレートで使用してテーマリソースや標準ポートレットなどを含めることができる [`FTL_Liferay.ftl` テンプレート](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl) でいくつかのマクロを定義します。 @product@は、そのtaglibをFreeMarkerマクロとして公開します。 FreeMarkerテンプレートでtaglibを使用する方法の詳細については、対応する [taglibチュートリアル](/docs/7-1/tutorials/-/knowledge_base/t/front-end-taglibs) を参照してください。 このチュートリアルでは、FreeMarkerテーマテンプレートでマクロを使用する方法を示します。

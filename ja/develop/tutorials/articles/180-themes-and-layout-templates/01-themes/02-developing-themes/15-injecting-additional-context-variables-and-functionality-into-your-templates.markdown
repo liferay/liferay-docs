@@ -4,6 +4,8 @@ header-id: injecting-additional-context-variables-into-your-templates
 
 # 追加のコンテキスト変数と機能をテンプレートに挿入する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 JSP templates are the predominant templating framework in @product@. テーマ、アプリケーション表示テンプレート（ADT）、DDMテンプレートなどは、JSPをテンプレートエンジンとして利用します。 JSPs, however, are not the only templating language supported by @product@. 多くの開発者は他のテンプレートフレームワーク（FreeMarkerなど）を好むため、@product@では、Context Contributorsフレームワークを提供することにより、他のテンプレート形式を使用できます。

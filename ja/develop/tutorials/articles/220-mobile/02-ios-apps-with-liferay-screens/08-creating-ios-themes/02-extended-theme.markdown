@@ -4,6 +4,8 @@ header-id: creating-an-ios-extended-theme
 
 # iOS拡張テーマの作成
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 拡張テーマは、別のテーマのUIコンポーネントと動作を継承しますが、親テーマのViewクラスを拡張して新しいXIBファイルを作成することにより、追加または変更できます。 拡張テーマの親は完全テーマでなければなりません。 [Flat7テーマ](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Themes/Flat7) は拡張テーマです。

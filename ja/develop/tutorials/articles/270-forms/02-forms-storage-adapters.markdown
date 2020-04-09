@@ -4,6 +4,8 @@ header-id: forms-storage-adapters
 
 # フォームストレージアダプター
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 ユーザーがフォームレコードを追加すると、Forms APIはストレージアダプターAPIを介してリクエストの処理をルーティングします。 フォームエントリに対して実行される他の *CRUD* 操作（読み取り、更新、および削除操作）についても同様です。 ストレージサービスのデフォルトの実装は `JSONStorageAdapter`と呼ばれ、その名前が示すように、 `StorageAdapter` インターフェースを実装してフォームエントリデータのJSONストレージを提供します。

@@ -4,6 +4,8 @@ header-id: creating-an-ios-full-theme
 
 # iOSフルテーマの作成
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 フルテーマは、親テーマを使用せずに、スクリーンレットに固有の動作と外観を実装します。 そのViewクラスは、Screensの [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift) を継承し、ScreenletのView Modelプロトコルに準拠する必要があります。 また、XIBファイルで新しいUIを指定する必要があります。 完全なテーマを作成するときに、チュートリアル [iOSスクリーンレットの作成](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-screenlets) を参照して、これらのクラスを作成する方法を学ぶことができます。

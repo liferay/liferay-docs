@@ -4,6 +4,8 @@ header-id: defining-assets-for-the-resources-importer
 
 # リソースインポーターのアセットの定義
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 `sitemap.json` ファイルは、インポートするサイトまたはサイトテンプレートのページと、これらのページのレイアウトテンプレート、ポートレット、およびポートレットプリファレンスを定義します。 テーマに含めるアセットに関する詳細を提供することもできます。 `asset.json` ファイルを使用すると、この情報を提供できます。 テーマの `[theme-name]/ src / WEB-INF / src / resources-importer` フォルダーに `asset.json` 作成します。

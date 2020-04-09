@@ -4,6 +4,8 @@ header-id: upgrade-processes-for-former-service-builder-plugins
 
 # 以前のService Builderプラグインのアップグレードプロセス
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Service Builderサービスを実装する従来のLiferayプラグインアプリケーションをモジュール化した場合、新しいモジュール式アプリケーションは@product@の `Release_` テーブルに登録する必要があります。 これは、アプリの以前のバージョンのリリースレコードが既に存在するかどうかに関係なく必要です。 Bundle Activatorは、変換されたアプリケーションの最初のモジュラーバージョンのリリースレコードを追加するための推奨される方法です。 ここでは、Bundle Activatorの例を参照し、アプリケーションのBundle Activatorを作成してアクティブにする方法を学習します。

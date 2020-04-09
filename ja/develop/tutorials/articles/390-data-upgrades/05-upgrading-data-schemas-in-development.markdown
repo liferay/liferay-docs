@@ -4,6 +4,8 @@ header-id: upgrading-data-schemas-in-development
 
 # 開発中のデータスキーマのアップグレード
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 モジュールを開発する際、いくつかのデータベーススキーマの変更を繰り返す必要がある場合があります。 スキーマの変更が完了した新しいモジュールバージョンをリリースする前に、正式な [データアップグレードプロセス](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app)作成する必要があります。 それまでは、ビルド自動アップグレード機能を使用して、スキーマの変更をその場でテストできます。

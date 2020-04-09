@@ -4,6 +4,8 @@ header-id: migrating-a-liferay-npm-bundler-project-from-1-x-to-2-x
 
 # liferay-npm-bundlerプロジェクトの1.xから2.xへの移行
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 liferay-npm-bundlerの最新の2.xバージョンを使用する必要があります。 [はより安定性が高く、すぐに使用できる](/docs/7-1/reference/-/knowledge_base/r/changes-between-liferay-npm-bundler-1x-and-2x)機能がより多く含まれています。 すでに1.xバージョンを使用してプロジェクトを作成している場合、心配する必要はありません。 次の手順に従って、プロジェクトを2.xに移行します。

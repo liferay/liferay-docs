@@ -4,6 +4,8 @@ header-id: compiling-and-building-themes-with-ant-gradle-and-maven
 
 # Ant、Gradle、およびMavenを使用したテーマのコンパイルと構築
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 LiferayのTheme Builderは、 [LiferayのTheme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes) （GradleやMavenなど）を使用していない開発者に、テーマWARファイルをコンパイルおよびビルドする方法を提供します。 テーマビルダーを使用するには、プロジェクトに適用する必要があります。 @製品の構造のテーマにしている場合は、あなたがわからないどのように@を参照してください [テーマの概要を](/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-themes) チュートリアル。

@@ -4,6 +4,8 @@ header-id: create-and-use-a-connector-with-your-screenlet
 
 # スクリーンレットでコネクタを作成して使用する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Liferay Screensでは、コネクタはローカルおよびリモートのデータソースとLiferayインスタンスと非同期に対話するクラスです。 コールバックは非同期サービス呼び出しも行うことを思い出してください。 では、なぜコネクタに悩まされるのでしょうか？ コネクタは、Interactorの外部でサービスを呼び出すことにより、抽象化の層を提供します。 たとえば、スクリーンレット作成チュートリアル</a> のインタラクター

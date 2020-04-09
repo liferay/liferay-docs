@@ -4,6 +4,8 @@ header-id: using-screenlets-in-ios-apps
 
 # iOSアプリでのスクリーンレットの使用
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 あなたがしたら [準備](/docs/7-1/tutorials/-/knowledge_base/t/preparing-ios-projects-for-liferay-screens) Liferayの画面を使用するようにiOSのプロジェクトを、アプリでのscreenletsを使用することができます。 Liferayスクリーンレットはたくさんありますが、スクリーンレット [リファレンスドキュメント](/docs/7-1/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios)記載されています。 このチュートリアルでは、SwiftおよびObjective-Cで記述されたiOSアプリにスクリーンレットを挿入および構成する方法を示します。 また、それらをローカライズする方法についても説明します。 あなたはすぐにスクリーンレットマスターになります\！

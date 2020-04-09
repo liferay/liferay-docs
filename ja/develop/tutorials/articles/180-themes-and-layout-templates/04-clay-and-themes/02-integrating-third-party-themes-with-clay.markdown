@@ -4,6 +4,8 @@ header-id: integrating-third-party-themes-with-clay
 
 # サードパーティのテーマとクレイの統合
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 [Clay Base](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) は、テーマに必要なすべての機能とコンポーネントを提供し、Bootstrapのスタイルを継承します。 その結果、Clay Baseは、BootstrapのSass変数APIを活用するサードパーティのテーマと完全に互換性があります。

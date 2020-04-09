@@ -4,6 +4,8 @@ header-id: prepare-xamarin-projects-for-liferay-screens
 
 # Liferay画面用のXamarinプロジェクトの準備
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Liferay ScreensをXamarinで使用するには、XamarinプロジェクトにScreensをインストールする必要があります。 次に、@product@インスタンスと通信するようにプロジェクトを構成する必要があります。 XamarinのLiferay Screensは、 [NuGet.org](https://www.nuget.org/packages/LiferayScreens)ホストされる [NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) パッケージとしてリリースされることに注意してください。

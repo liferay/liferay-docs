@@ -4,6 +4,8 @@ header-id: rendering-web-pages-in-your-ios-app
 
 # iOSアプリでのWebページのレンダリング
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 [Webコンテンツのレンダリング](/docs/7-1/tutorials/-/knowledge_base/t/rendering-web-content-in-your-ios-app) チュートリアルでは、iOSアプリで@product@サイトから [Webコンテンツ](/docs/7-1/user/-/knowledge_base/u/introduction-web-content) を表示する方法を示します。コンテンツの表示は素晴らしいですが、ページ全体を表示したい場合はどうでしょうか？ 問題ない\！ [Webスクリーンレット](/docs/7-1/reference/-/knowledge_base/r/web-screenlet-for-ios) では、任意のWebページを表示できます。 ローカルまたはリモートのJavaScriptファイルとCSSファイルを挿入して、ページをカスタマイズすることもできます。 @product@のサーバー側のカスタマイズ機能（例： [アプリケーション表示テンプレート](/docs/7-1/user/-/knowledge_base/u/styling-apps-and-assets)）と組み合わせると、Web ScreenletはiOSアプリでWebページを表示するためのほぼ無限の可能性を提供します。

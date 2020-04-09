@@ -4,6 +4,8 @@ header-id: packaging-independent-ui-resources-for-your-site
 
 # サイトの独立したUIリソースのパッケージ化
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 特定のテーマに依存しないUIリソースをパッケージ化し、@product@ページに含める場合は、テーマコントリビューターが最適なオプションです。 代わりに、テーマに関連付けられている@product@ページに個別のUIリソースを含める場合は、 [テーマレット](/docs/7-1/tutorials/-/knowledge_base/t/creating-reusable-pieces-of-code-for-your-themes)調べる必要があります。

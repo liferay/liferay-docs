@@ -4,6 +4,8 @@ header-id: using-themes-in-ios-screenlets
 
 # iOSスクリーンレットでテーマを使用する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Liferay Screens *Theme*を使用して、スクリーンレットのUIコンポーネント、スタイル、および動作を設定できます。 コア機能を心配することなく、ScreenletのUIとUXに集中できます。 Liferayのスクリーンレットにはいくつかのテーマがあり、Liferayとコミュニティによってさらに多くのテーマが開発されています。 Liferay Screenletのテーマは、そのリファレンスドキュメント [指定されています](/docs/7-1/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios)。 このチュートリアルでは、iOSスクリーンレットでテーマを使用する方法を示します。

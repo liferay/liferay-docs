@@ -4,6 +4,8 @@ header-id: adding-updating-and-deleting-assets
 
 # アセットの追加、更新、削除
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Liferayのアセットフレームワークをエンティティで使用するには、作成、変更、削除する各エンティティインスタンスについてアセットフレームワークに通知する必要があります。 この意味で、それは、通知に似て [Liferayの権限のフレームワーク](/docs/7-1/tutorials/-/knowledge_base/t/defining-application-permissions) 新しいリソースについて。 Liferayがエンティティを資産として追跡できるように、 `AssetEntry` をエンティティに関連付けるアセットフレームワークのメソッドを呼び出すだけです。 エンティティを更新するときは、資産を同時に更新します。

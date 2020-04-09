@@ -4,6 +4,8 @@ header-id: using-the-bootstrap-3-lexicon-css-compatibility-layer
 
 # Bootstrap 3 Lexicon CSS互換性レイヤーの使用
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 デフォルトでは、@product@にはすぐに使えるBootstrap 4が含まれています。 ブートストラップ4は完全に書き直され、したがって、いくつか含まれている [顕著な変化を](https://getbootstrap.com/docs/4.1/migration/) と [の互換性アップデート](http://getbootstrap.com/docs/4.1/getting-started/browsers-devices/) あなたのテーマは、ブートストラップ3またはレキシコンCSSを使用している場合は懸念の原因である可能性があります。 でも心配しないで。 アップグレードを円滑に実行するために、@product@には互換性レイヤーが含まれているため、新しいBootstrap 4およびClay CSSとともにBootstrap 3マークアップおよびLexicon CSSマークアップを使用できます。 バンドルされたアイコンフォント（Font Awesome v3.2.1およびGlyphicons 3）も、互換性レイヤーの [`_components.scss`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/compat/_components.scss#L3-L4) ファイルに移動されました。 テーマが [Styledベーステーマ](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled)拡張する場合、この互換性レイヤーはデフォルトで含まれます。

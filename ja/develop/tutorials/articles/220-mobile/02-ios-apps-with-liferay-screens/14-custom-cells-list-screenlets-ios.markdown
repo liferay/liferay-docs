@@ -4,6 +4,8 @@ header-id: using-custom-cells-with-list-screenlets
 
 # リストスクリーンレットでのカスタムセルの使用
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Liferayスクリーンに付属するものを含むほとんどのリストスクリーンレットでは、デフォルトテーマは [iOSの `UITableView`](https://developer.apple.com/reference/uikit/uitableview) のデフォルトセルを使用してリストを表示します。 [リストスクリーンレット作成チュートリアルのテーマ作成手順](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-ios-list-screenlets-theme) では、これらのセルを使用するよう指示されています。 ただし、カスタムセルを使用して、リストをニーズに合わせることができます。 これを行うには、必要があります [拡張されたテーマの作成](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-ios-extended-theme) テーマから使用している `のUITableView`のデフォルトのセルを。 これは通常、リストスクリーンレットのデフォルトテーマを拡張することを意味します。 このチュートリアルでは、リストScreenletのカスタムセルを含む拡張テーマを作成する方法を示します。 例として、このチュートリアルでは、サンプルのブックマークリストスクリーンレットのカスタムテーマのコードを使用します。 このテーマの完成したコード [は、GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/BookmarkListScreenlet/Themes/TableView) でいつでも参照できます。

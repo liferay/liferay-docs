@@ -4,6 +4,8 @@ header-id: full-views
 
 # 全景
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 フルビューには、一意のScreenletクラス、Viewクラス、およびレイアウトXMLファイルがあります。 スタンドアロンであり、どのビューからも継承しません。 ニーズを満たすために拡張できる他のビューがない場合、またはリスナーをカスタマイズするか、カスタムインタラクターを呼び出すことによってのみスクリーンレットの動作を拡張できる場合は、フルビューを作成する必要があります。 フルビューを作成するには、そのScreenletクラス、Viewクラス、およびレイアウトXMLファイルを作成する必要があります。 ここでのログインスクリーンレットの完全なビューの例は、ユーザー名に対して単一の `EditText` コンポーネントを示しています。 パスワードには、 [`Secure.ANDROID_ID`](http://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID)使用します。 [画面のテストのApp](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app) 用途 [本フルビュー](https://github.com/liferay/liferay-screens/tree/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview)。

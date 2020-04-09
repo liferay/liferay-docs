@@ -4,6 +4,8 @@ header-id: generating-staged-models-using-service-builder
 
 # Service Builderを使用した段階的モデルの生成
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 ステージングモデルは、アプリケーションにステージングフレームワークとエクスポート/インポートフレームワークを実装するための重要な構成要素です。 アプリのステージングモデルを手動で作成する代わりに、 [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder) を活用して、必要なステージングモデルロジックを生成できます。 このチュートリアルに入る前に、ステージングされたモデルの仕組みについての情報を得るために、 [ステージングされたモデルを理解する](/docs/7-1/tutorials/-/knowledge_base/t/understanding-staged-models) チュートリアルを必ず読んでください。 また、アプリでLiferayのService Builderを使用しない場合は、プロジェクトで設定する必要があります。 これを行うのに支援が必要な場合は、「Service Builder</a> でオブジェクトリレーショナルマップを定義する

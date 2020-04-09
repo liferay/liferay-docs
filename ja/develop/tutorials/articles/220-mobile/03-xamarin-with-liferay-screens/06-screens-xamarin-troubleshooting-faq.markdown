@@ -4,6 +4,8 @@ header-id: liferay-screens-for-xamarin-troubleshooting-and-faqs
 
 # XamarinのLiferay画面のトラブルシューティングとFAQ
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Liferayは細心の注意を払ってXamarinのLiferay Screensを開発しましたが、いくつかの一般的な問題に直面する可能性があります。 このチュートリアルでは、これらの問題のヒントと解決策、およびScreens for Xamarinに関する一般的な質問への回答を示します。

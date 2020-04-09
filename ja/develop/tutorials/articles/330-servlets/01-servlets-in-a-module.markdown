@@ -4,6 +4,8 @@ header-id: servlets-in-a-module
 
 # モジュール内のサーブレット
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 サーブレットまたは [JAX-RS](/docs/7-1/tutorials/-/knowledge_base/t/jax-rs) を使用して、軽量のWeb統合またはWebエンドポイントをブラウザークライアントに提供できます。 RESTエンドポイントまたはポートレットではなく、サーブレットを使用すると、アプリケーションのUIエクスペリエンス全体を制御できます。 @製品@支持体はベースのアプリケーションをサーブレットおよび埋め込み [HTTPホワイトボード](https://osgi.org/specification/osgi.cmpn/7.0.0/service.http.whiteboard.html) サーブレットのために。

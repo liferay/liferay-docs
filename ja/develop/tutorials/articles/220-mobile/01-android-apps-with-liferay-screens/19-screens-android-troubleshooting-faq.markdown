@@ -4,6 +4,8 @@ header-id: liferay-screens-for-android-troubleshooting-and-faqs
 
 # Android向けLiferay画面のトラブルシューティングとFAQ
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 LiferayはAndroid用のScreensを細心の注意を払って開発しましたが、いくつかの一般的な問題に直面する可能性があります。 これらの問題を解決するためのソリューションとヒントを次に示します。 また、Android用スクリーンに関する一般的な質問への回答もあります。

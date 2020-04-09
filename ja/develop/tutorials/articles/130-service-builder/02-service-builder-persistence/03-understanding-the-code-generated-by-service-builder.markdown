@@ -4,6 +4,8 @@ header-id: understanding-the-code-generated-by-service-builder
 
 # Service Builderによって生成されたコードを理解する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 [Service Builderは、エンティティをサポートするためにコード](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder) を生成します。 以下の[ローカルサービス]および[リモートサービス]にリストされているファイルは、 `ローカルサービス` および `リモートサービス` 属性が `true`設定されているエンティティに対してのみ生成されます。 Service Builderは、 `service.xml`指定したパッケージ内のアプリケーションの `* -api` および `* -service` モジュールでこれらのエンティティのサービスを生成します。 たとえば、Liferayのブックマークアプリケーションのパッケージパスは次のとおりです。

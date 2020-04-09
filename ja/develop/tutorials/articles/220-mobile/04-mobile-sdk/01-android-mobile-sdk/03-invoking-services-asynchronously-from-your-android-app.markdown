@@ -4,6 +4,8 @@ header-id: invoking-services-asynchronously-from-your-android-app
 
 # Androidアプリからのサービスの非同期呼び出し
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Androidでは、メインUIスレッドからの同期HTTPリクエストを許可していません。 Androidの [`AsyncTask`](http://developer.android.com/reference/android/os/AsyncTask.html) を使用して、メインUIスレッド以外のスレッドから同期リクエストを作成できます。 `AsyncTask`を使用したくない場合は、Mobile SDKを介して非同期リクエストを作成できます。 そのためには、コールバッククラスを実装およびインスタンス化し、それをセッションに設定する必要があります。 Mobile SDKがそのセッションのサービス呼び出しを行うと、非同期で呼び出しが行われます。 再度同期呼び出しを行うには、セッションのコールバックとして `null` を設定します。

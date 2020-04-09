@@ -4,6 +4,8 @@ header-id: creating-and-using-your-screenlets-model-class
 
 # スクリーンレットのモデルクラスの作成と使用
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Liferayのスクリーンは、典型的にLiferayのインスタンスからエンティティを受け取る `：[ANYOBJECT文字列]`、 `列` エンティティの属性となる `ANYOBJECT` 属性の値です。 スクリーンレット全体でこれらのディクショナリオブジェクトを使用できますが、多くの場合、対応するLiferayエンティティを表すオブジェクトに変換する *モデルクラス* を作成する方が簡単です。 これは、多くの属性と値のペアで構成される複雑なエンティティにとって特に便利です。 Liferayの画面がすでに提供していることに注意してください [いくつかのモデルクラス](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Models) 、あなたのために。

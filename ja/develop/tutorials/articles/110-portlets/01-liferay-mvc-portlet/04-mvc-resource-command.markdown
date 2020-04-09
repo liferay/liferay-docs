@@ -4,6 +4,8 @@ header-id: mvc-resource-command
 
 # MVCリソースコマンド
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 LiferayのMVCフレームワークを使用する場合、JSPでリソースURLを作成して、Liferayインスタンスから画像、XML、またはその他の種類のリソースを取得できます。 次に、リソースURLは、リソースの要求と応答を処理する対応するMVCリソースコマンドクラス（`* MVCResourceCommand`）を呼び出します。

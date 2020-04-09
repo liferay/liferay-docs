@@ -4,6 +4,8 @@ header-id: supporting-multiple-themes-in-your-ios-screenlet
 
 # iOSスクリーンレットで複数のテーマをサポートする
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 テーマを使用すると、同じスクリーンレットを異なるルックアンドフィールで表示できます。 たとえば、同じスクリーンレットを使用するアプリが複数ある場合、異なるテーマを使用して、スクリーンレットの外観を各アプリのスタイルに一致させることができます。 Liferay Screensに付属の各スクリーンレットは、複数のテーマの使用をサポートしています。 ただし、カスタムScreenletが異なるテーマをサポートするには、 *View Model* プロトコルが含まれている必要があります。 ビューモデルは、スクリーンレットの表示に使用されるテーマを抽象化し、開発者が他のテーマを使用できるようにします。 たとえば、 [のスクリーンレット作成チュートリアル](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-screenlets) のScreenletクラスの `createInteractor` メソッドは、Viewクラスへの参照を取得するときに、Viewクラス（`AddBookmarkView_default`）に直接アクセスします。

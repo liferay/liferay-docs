@@ -4,6 +4,8 @@ header-id: using-vue-in-your-portlets
 
 # ポートレットでVueを使用する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Vueプロジェクトを手動で作成するか、 [npm Vueポートレットテンプレート](/docs/7-1/reference/-/knowledge_base/r/npm-vue-js-portlet-template) を使用して、必要な構成の多くを自動化できます。 便宜上、すべての手動ステップを以下にリストします。 このチュートリアルでは、既存のVueプロジェクトを移行する場合でも、新規プロジェクトを構築する場合でも、ポートレットでVue JSを使用する方法を示します。 ポートレットの構造の詳細については、 [npm Vueポートレットテンプレート](/docs/7-1/reference/-/knowledge_base/r/npm-vue-js-portlet-template) リファレンスドキュメントを、今すぐテストおよびデプロイできるVueポートレットの例については、 [npm Vueポートレットサンプル](/docs/7-1/reference/-/knowledge_base/r/vue-js-npm-portlet) を参照してください。 OSGiモジュールを作成し、そのメタデータを構成することから始めます。

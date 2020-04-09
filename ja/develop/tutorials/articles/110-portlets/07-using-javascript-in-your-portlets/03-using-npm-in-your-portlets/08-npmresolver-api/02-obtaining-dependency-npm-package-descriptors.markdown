@@ -4,6 +4,8 @@ header-id: obtaining-dependency-npm-package-descriptors
 
 # OSGiバンドルの依存関係npmパッケージ記述子の取得
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 npmポートレットの作成中に、依存関係パッケージまたはそのモジュールを参照する必要がある場合があります。 たとえば、npm依存関係パッケージモジュールのCSSファイルを取得して、それをポートレットで使用できます。 [`NPMResolver` OSGiコンポーネント](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html) は、OSGiバンドルの依存関係npmパッケージ記述子を取得するための2つのメソッドを提供します： [`getDependencyJSPackage（）`](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html#getDependencyJSPackage) 依存関係npmパッケージを取得する [`resolveModuleName（）`](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html#resolveModuleName) このチュートリアルでは、以下の `package.json` 参照して、これらの方法を説明します。

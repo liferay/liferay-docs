@@ -4,6 +4,8 @@ header-id: invoking-services-from-service-builder-code
 
 # Service Builderコードからのサービスの呼び出し
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Service Builderアプリケーション内で作成されたすべてのサービスは、内部のSpringアプリケーションコンテキストを使用して配線されます。 これは、AOPプロキシを使用して、トランザクション、インデックス作成、およびセキュリティにサービスを適合させます。 モジュールの中で `モジュールspring.xml` スプリングアプリケーション・コンテキスト・ファイル、サービスビルダは、各エンティティの定義 `* LocalServiceImpl`、 `* ServiceImpl`、及び `* PersistenceImpl` のSpring Beanとしてクラスを。 たとえば、Service Builderは、 [Liferay Blade Service Builder `basic-service` sampleモジュールの](/docs/7-1/reference/-/knowledge_base/r/service-builder-samples) `src / main / resources / META-INF / spring / module-spring.xml` ファイルの `Foo` エンティティにSpring Beanを定義します。

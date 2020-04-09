@@ -4,6 +4,8 @@ header-id: using-translation-features-in-your-portlet
 
 # ウィジェットで翻訳機能を使用する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 デフォルトでは、Liferay JS Generatorは変換用の空の構成を作成します。 変換スクリプトは、サポートされている新しいロケールを追加する方法、または実行時に資格情報を構成する方法をユーザーに指示します。 翻訳ターゲットは、 `.npmbuildrc` ファイルの `supportedLocales` キーで定義したサポートされているロケールを読み取り、 `* language.properties` ファイルが一致することを確認します。

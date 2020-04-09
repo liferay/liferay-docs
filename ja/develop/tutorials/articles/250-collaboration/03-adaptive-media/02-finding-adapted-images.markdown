@@ -4,6 +4,8 @@ header-id: finding-adapted-images
 
 # 適応画像の検索
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 ほとんどの場合、あなたはに適応メディアのtaglibに頼ることができます [表示にアプリ内の画像を適応](/docs/7-1/tutorials/-/knowledge_base/t/displaying-adapted-images-in-your-app)。 このtaglibは、指定されたファイルバージョンを使用して、Adaptive Mediaのfinder APIを照会し、リクエストを行っているデバイスに適した適応画像を表示します。 ただし、さらに制御が必要な場合は、taglibを使用する代わりに、APIを使用して独自のクエリを作成できます。 たとえば、特定の次元の特定の画像を必要とするアプリがある場合、Adaptive Mediaのfinder APIを直接クエリすることをお勧めします。 その後、好きなように画像を表示できます（HTML `<img>` タグなど）。

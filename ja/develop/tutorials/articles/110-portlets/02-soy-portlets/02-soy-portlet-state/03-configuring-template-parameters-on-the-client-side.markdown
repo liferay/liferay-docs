@@ -4,6 +4,8 @@ header-id: configuring-soy-portlet-template-parameters-on-the-client-side
 
 # クライアント側での大豆ポートレットテンプレートパラメータの構成
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 [ポートレットテンプレートパラメータ](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-soy-portlet#using-portlet-template-parameters-in-the-soy-template) は、Soy Portletのサーバー側コードで設定されます。 MetalJSの `状態` クラスは、これらのパラメーターをプロパティとして公開する [`STATE` オブジェクト](/docs/7-1/tutorials/-/knowledge_base/t/understanding-the-state-object-architecture) を提供し、クライアント側でそれらにアクセスできるようにします。 このチュートリアルでは、UIを更新できるように、クライアント側でビューコンポーネントの `STATE` オブジェクトとそのプロパティを構成する方法について説明します。

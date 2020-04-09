@@ -4,6 +4,8 @@ header-id: creating-android-screenlets
 
 # Androidスクリーンレットの作成
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 [Liferay Screensに付属するScreenlets](/docs/7-1/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android) は、Liferayを使用するモバイルアプリの一般的なユースケースをカバーしています。 ユーザーを認証し、ダイナミックデータリストとやり取りし、アセットを表示します。 しかし、どのような何Screenletがそこにいない場合は *、あなたの* の特定のユースケース？ 汗かいていない\！ 独自に作成できます。 拡張性は、Liferay Screensの重要な強みです。

@@ -4,6 +4,8 @@ header-id: creating-android-list-screenlets
 
 # Androidリストスクリーンレットの作成
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 モバイルアプリがリストを表示することは非常に一般的です。 Liferay Screensを使用すると、 [Asset List Screenlet](/docs/7-1/reference/-/knowledge_base/r/assetlistscreenlet-for-android) および [DDL List Screenlet](/docs/7-1/reference/-/knowledge_base/r/ddllistscreenlet-for-android)をそれぞれ使用して、Androidアプリで資産リストとDDLリストを表示できます。 画面には、Webコンテンツ記事、画像など、他のLiferayエンティティのリストを表示するリストスクリーンレットも含まれています。 [スクリーンレットリファレンスドキュメント](/docs/7-1/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android) は、Liferayスクリーンに含まれるすべてのスクリーンレットをリストしています。 リストに表示するエンティティのリストスクリーンレットがない場合は、独自のスクリーンレットを作成する必要があります。 リストスクリーンレットは、Liferayインスタンスの任意のエンティティを表示できます。 たとえば、 `User`などの標準Liferayエンティティ、またはカスタムLiferayアプリのカスタムエンティティを表示するリストスクリーンレットを作成できます。

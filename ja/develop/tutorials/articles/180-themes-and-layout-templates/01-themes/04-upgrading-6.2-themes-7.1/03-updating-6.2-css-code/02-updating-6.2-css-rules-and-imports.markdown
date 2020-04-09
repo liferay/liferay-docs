@@ -4,6 +4,8 @@ header-id: updating-6-2-css-rules-and-imports
 
 # 6.2 CSSルールとインポートの更新
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 @product-ver@は、Bootstrap 4のCSSルール構文を使用します。 Font Awesomeアイコンも移動されており、インポートの変更が必要です。 テーマでLiferay JS Theme Toolkitを使用している場合、Gulp `upgrade` タスクは自動CSS更新を報告し、手動更新を提案します。 たとえば、次はLunar Resortテーマの6.2から7.0へのアップグレードのタスクログの一部です。実行および推奨される更新ごとに、タスクはファイル名と行番号の範囲を報告します。

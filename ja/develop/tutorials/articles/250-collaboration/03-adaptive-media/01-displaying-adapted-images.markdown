@@ -4,6 +4,8 @@ header-id: displaying-adapted-images-in-your-app
 
 # アプリでの適応画像の表示
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 表示するには [画像に適した](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices) アプリに、適応型メディアはに便利なタグライブラリを提供しています [モジュール `com.liferay.adaptive.media.image.taglib`](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib)。 このtaglibには、 `fileVersion`つの必須属性のみがあります。 この属性は、表示する適応画像のファイルバージョンを示します。 また、のような、必要に応じて多くの属性として追加することができます `クラス`、 `スタイル`、 `データ・サンプル`ように、と。 追加した属性は、taglibがレンダリングするマークアップ内の適応画像に追加されます。

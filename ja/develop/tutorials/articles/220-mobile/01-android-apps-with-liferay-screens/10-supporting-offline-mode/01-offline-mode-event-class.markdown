@@ -4,6 +4,8 @@ header-id: create-or-update-the-event-class
 
 # イベントクラスを作成または更新する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 スクリーンレットコンポーネント間の通信を処理するにはイベントクラスが必要であることを、基本的なスクリーンレット作成チュートリアルから思い出してください。 また、多くのScreenletsは、Screensに含まれるイベントクラス `BasicEvent`イベントクラスとして使用できることを思い出してください。 ただし、オフラインモードが機能するには、 `CacheEvent` を拡張するイベントクラスを作成する必要があります（[ここをクリックして](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/interactor/event/CacheEvent.java) をクリックして `CacheEvent`を表示します）。 イベントクラスには、Interactorに渡された引数へのアクセスを格納および提供するという1つの主要な責任があります。 これを実現するには、イベントクラスで次のことを行う必要があります。

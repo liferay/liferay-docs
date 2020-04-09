@@ -4,6 +4,8 @@ header-id: creating-the-model-class
 
 # モデルクラスの作成
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 エンティティは、LiferayからJSON形式で返されます。 アプリでこれらの結果を効率的に使用するには、Liferayのエンティティを表すモデルオブジェクトに変換する必要があります。 Screensの [`BaseListInteractor`](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/interactor/BaseListInteractor.java) はJSONエンティティを `Map` オブジェクトに変換しますが、アプリで使用するためにこれらを適切なエンティティオブジェクトに変換する必要があります。これは、モデルクラスを介して行います。

@@ -4,6 +4,8 @@ header-id: using-oauth-2-in-the-android-mobile-sdk
 
 # Android Mobile SDKでOAuth 2を使用する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 [OAuth 2](https://oauth.net/2/) を使用して、次の [OAuth 2許可タイプ](https://oauth.net/2/grant-types/)認証できます

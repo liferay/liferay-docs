@@ -4,6 +4,8 @@ header-id: using-front-end-frameworks-in-your-portlets
 
 # ポートレットでのフロントエンドフレームワークの使用
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 ポートレットで最も人気のあるフロントエンドフレームワークを使用して、標準のポートレット構成をわずかに更新するだけで済みます。 ポートレットプロジェクトのキックスタートを支援するために、いくつかの [ブレードポートレットプロジェクトテンプレート](/docs/7-1/reference/-/knowledge_base/r/project-templates)から選択できます。 このセクションでは、次のテンプレートについて説明します。

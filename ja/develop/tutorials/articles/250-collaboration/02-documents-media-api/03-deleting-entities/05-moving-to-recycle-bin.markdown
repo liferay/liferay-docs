@@ -4,6 +4,8 @@ header-id: moving-entities-to-the-recycle-bin
 
 # エンティティをごみ箱に移動する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 エンティティを削除する代わりに、それらを [ごみ箱](/docs/7-1/user/-/knowledge_base/u/restoring-deleted-assets)移動できます。 ごみ箱はDocuments and Media APIの一部ではないことに注意してください。 ごみ箱APIは直接使用できますが、ドキュメントとメディアの場合は、Capabilities APIを使用することをお勧めします。 これは、一部のサードパーティのリポジトリ（SharePointなど）がごみ箱機能をサポートしていないためです。 Capabilities APIを使用すると、作業中のリポジトリがごみ箱をサポートしていることを確認できます。 したがって、エンティティをごみ箱に移動するときは、常に機能APIを使用することがベストプラクティスです。

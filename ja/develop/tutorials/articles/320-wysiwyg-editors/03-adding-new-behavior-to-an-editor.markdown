@@ -4,6 +4,8 @@ header-id: adding-new-behavior-to-an-editor
 
 # エディターに新しい動作を追加する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 ユーザー用にいくつかの異なるWYSIWYGエディターから選択できます。各エディターは構成可能で、長所と短所があります。 ただし、構成だけでは、必要な機能が常に公開されるとは限りません。 これらの場合、 `liferay-util：dynamic-include` JavaScript拡張ポイントを使用して、エディターインスタンスにプログラムでアクセスし、必要なエディターエクスペリエンスを作成できます。 エディターを構成/変更するために、エディターのインスタンス化の直後にJavaScriptコードを挿入します。

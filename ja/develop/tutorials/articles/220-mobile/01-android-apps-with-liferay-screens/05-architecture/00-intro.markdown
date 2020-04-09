@@ -4,6 +4,8 @@ header-id: architecture-of-liferay-screens-for-android
 
 # Android向けLiferayスクリーンのアーキテクチャ
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Liferayの画面から建築のアイデアを適用する [モデルビュープレゼンター](http://en.wikipedia.org/wiki/Model-view-presenter)、 [モデルビューViewModelに](http://en.wikipedia.org/wiki/Model_View_ViewModel)、および [VIPER](http://www.objc.io/issue-13/viper.html)。 Screensはアプリではないため、これらのアーキテクチャの標準的な実装とは見なされませんが、プレゼンテーションレイヤーをビジネスロジックから分離するためにスクリーンから借用しています。 このチュートリアルでは、Screenの高レベルアーキテクチャ、そのコンポーネントの低レベルアーキテクチャ、およびAndroid Screenletライフサイクルについて説明します。 さあ、スクリーンの構成要素の調査を始めましょう！
