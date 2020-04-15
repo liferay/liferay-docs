@@ -26,21 +26,6 @@ such as those created with the
 
     ![Figure 1: Run the `gulp watch` task to automatically deploy any changes to your theme.](../../../../images/theme-dev-watching-themes-gulp-watch-startup.png)
 
-    You can verify that the watch task is running by checking that the 
-    `webBundleDir` property is present in your theme's `liferay-theme.json` 
-    file. It should have the value `watching`:
-
-
-    ```json
-    {
-      "LiferayTheme": {
-        ...
-        "pluginName": "my-liferay-theme",
-        "webBundleDir": "watching"
-      }
-    }
-    ```
-
 2.  Make a change to your theme and save the file. The updated files are built, 
     compiled, and copied directly to the proxy port (e.g. `9080`). CSS changes 
     are deployed live, so no page reload is needed.
