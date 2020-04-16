@@ -6,7 +6,7 @@ header-id: troubleshooting-your-lcs-connection
 
 [TOC levels=1-4]
 
-| **Note:** The following LCS features are deprecated and will be removed in
+| **Note:** The following LCS features have been deprecated and removed in
 | March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
 | read the 
 | [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)

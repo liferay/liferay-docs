@@ -6,15 +6,11 @@ header-id: activating-your-liferay-dxp-server-with-lcs
 
 [TOC levels=1-4]
 
-| **Note:** The following LCS features are deprecated and will be removed in
+| **Note:** The following LCS features have been deprecated and removed in
 | March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
 | read the 
 | [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
 | to learn more about how you can prepare for these upcoming changes. 
-
-| **Note:** You must use LCS for activation of Elastic subscriptions. Otherwise,
-| you don't have to use LCS for activation. You can instead request an XML
-| activation key from Liferay Support.
 
 Follow these steps to register your @product@ server with LCS: 
 

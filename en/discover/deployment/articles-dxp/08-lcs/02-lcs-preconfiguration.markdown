@@ -19,11 +19,10 @@ configure. The sections in this guide walk you through these steps:
 2.  [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-lcs-to-connect-through-a-proxy)
 3.  [Ensuring Access to LCS](#ensuring-access-to-lcs)
 4.  [NTP Server Synchronization](#ntp-server-synchronization)
-5.  [Configuring the Patching Tool](#configuring-the-patching-tool)
-6.  [Configuring WebSphere](#configuring-websphere): 
+5.  [Configuring WebSphere](#configuring-websphere): 
     This is only necessary if you're running @product@ on the WebSphere 
     application server. 
-7.  [Installing the LCS Client App](#installing-the-lcs-client-app)
+6.  [Installing the LCS Client App](#installing-the-lcs-client-app)
 
 [The last section](#upgrading-the-lcs-client-app) 
 in this guide shows you how to upgrade the LCS client app once your server is 
@@ -233,91 +232,6 @@ these:
 
 For information on how to synchronize your application server with a time 
 server, see your application server's documentation. 
-
-Next, you'll learn how to configure @product@'s patching tool. 
-
-## Configuring the Patching Tool
-
-LCS uses @product@'s patching tool to apply updates. In bundles, the patching 
-tool is pre-installed. If you're not running a bundle, you must 
-[download](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool) 
-and 
-[install](/docs/7-1/deploy/-/knowledge_base/d/patching-tool) 
-the patching tool separately. 
-
-Once installed, there are a few steps you must complete before LCS can use the 
-patching tool. Note that the commands below apply to Linux, Unix, and Mac. If 
-you're running Windows, drop the `.sh` from each command that has it. 
-
-1.  Navigate to the `patching-tool` directory on the command line. It's 
-    typically located in the 
-    [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
-    folder. Liferay Home is usually the parent folder of the application 
-    server's folder. 
-
-2.  To let the patching tool discover your @product@ installation, run this 
-    command: 
-
-    ```bash
-    patching-tool.sh auto-discovery
-    ```
-
-3.  To configure the patching tool, run this command: 
-
-    ```bash
-    patching-tool.sh setup
-    ```
-
-4.  On server startup, the patching tool agent installs the patches downloaded 
-    by LCS. For the agent to start with your server, you must set the 
-    `javaagent` property in the JVM options to point to your patching tool 
-    installation's `patching-tool-agent.jar`. Be sure to specify the correct 
-    path to this file: 
-
-    ```properties
-    -javaagent:../../patching-tool/lib/patching-tool-agent.jar
-    ```
-
-5.  If your patching tool is installed in a location other than the Liferay Home 
-    folder, you must also specify the `patching-tool` folder's path as an app 
-    server JVM argument. Do this with the `patching.tool.home` property: 
-
-    ```properties
-    -Dpatching.tool.home=/opt/liferay-dxp-7.1/patching-tool/
-    ```
-
-There are also a few other things to consider when using the agent. Due to class
-loading issues, the agent starts in a separate JVM. You can specify options for
-it with the `patching.tool.agent.jvm.opts` property. 
-
-```properties
--Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8"
-```
-
-You may also experience issues on Windows if the user starting the app server 
-doesn't have administrator privileges. Here are some examples of the errors you 
-may see: 
-
-    java.nio.file.FileSystemException: ..\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!
-    java.io.FileNotFoundException: java.io.IOException: Access refused
-
-To solve this, set the `java.io.tmpdir` system property as follows in the
-`patching.tool.agent.jvm.opts` property:
-
-```properties
--Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8 -Djava.io.tmpdir=%TMP%"
-```
-
-The agent also has some flags you can set to control how it behaves:
-
-- `debug`: Provides verbose output in the console.
-- `nohalt`: Starts the portal even if the agent encounters an issue.
-
-You can specify these as follows:
-
-```properties
--Dpatching.tool.agent.properties=debug,nohalt
-```
 
 ## Configuring WebSphere
 
