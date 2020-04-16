@@ -4,6 +4,8 @@ header-id: installing-liferay-ide
 
 # Liferay @ ide @のインストール
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Liferay @ ide @は、多くのLiferay固有の機能と追加のエンタープライズ専用機能を提供するEclipseのプラグインです。 既存のEclipse環境にインストールするか、Liferayがバンドルバージョンを提供します。 インストールプロセスを開始する前に、Dev Studioの [互換性マトリックス](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/developer-tools) を参照して、サポートされているLiferayのバージョンとアプリケーションサーバーについて理解してください。

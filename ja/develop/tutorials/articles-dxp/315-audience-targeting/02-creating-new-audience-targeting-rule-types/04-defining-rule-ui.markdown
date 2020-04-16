@@ -4,6 +4,8 @@ header-id: defining-the-rules-ui
 
 # ルールのUIの定義
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 ここまでに追加したJavaコードは、評価プロセス中に比較するために事前設定された気象値が利用可能であると想定しています。 管理者がその値を設定できるようにするには、UIを定義して、ビューのライフサイクル中にルールを構成できるようにする必要があります。 ルールのモジュール（たとえば、 `/src/main/resources/META-INF/resources/view.jsp`）に `view.jsp` ファイルを作成し、次のロジックを追加します。
