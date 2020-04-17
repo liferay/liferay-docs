@@ -110,11 +110,6 @@ recommended to disable built-in protections or to allow all values in security
 white-lists. Such acts may lead to security misconfiguration and an insecure
 deployment.
 
-For more information about securing a @product@ installation, please see 
-[our security overview](https://portal.liferay.dev/learn/security/overview), 
-[the community security team](https://portal.liferay.dev/people/community-security-team), 
-and the resources listed on those pages.
-
 Also, customers are advised to deploy security patches as described on the
 [customer portal](https://www.liferay.com/group/customer/products/portal/security-vulnerability).
 

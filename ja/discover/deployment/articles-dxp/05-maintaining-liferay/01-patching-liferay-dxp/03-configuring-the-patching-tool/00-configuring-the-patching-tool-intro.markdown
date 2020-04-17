@@ -7,14 +7,14 @@ header-id: configuring-the-patching-tool
 [TOC levels=1-4]
 
 
-パッチングツールは、@ product @パッチをインストールします。パッケージ済みの@ product @バンドルが付属しています。
-次のいずれかのシナリオが@ product @をインストールした際の工程に当てはまるようであれば、パッチングツールをマニュアルで設定する必要があります。
+パッチングツールは、@product@パッチをインストールします。パッケージ済みの@product@バンドルが付属しています。
+次のいずれかのシナリオが@product@をインストールした際の工程に当てはまるようであれば、パッチングツールをマニュアルで設定する必要があります。
 
 
 
-- 既存のアプリケーションサーバーに手動で@ product @をインストールした。
+- 既存のアプリケーションサーバーに手動で@product@をインストールした。
 
-- @ product @フォルダ構造をカスタマイズした。
+- @product@フォルダ構造をカスタマイズした。
 
 - クラスターで実行した。
 
@@ -23,7 +23,7 @@ header-id: configuring-the-patching-tool
 
 
 
-@ product @をマニュアルでインストールした場合は、パッチングツールも手動でインストールする必要があります。[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1/patching-tool)からダウンロードしてください。
+@product@をマニュアルでインストールした場合は、パッチングツールも手動でインストールする必要があります。[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1/patching-tool)からダウンロードしてください。
 [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)フォルダに解凍するのが最も簡単な方法です。
 
 

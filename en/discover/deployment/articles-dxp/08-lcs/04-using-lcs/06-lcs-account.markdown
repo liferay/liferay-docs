@@ -6,6 +6,12 @@ header-id: managing-your-lcs-account
 
 [TOC levels=1-4]
 
+| **Note:** The following LCS features are deprecated and will be removed in
+| March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
+| read the 
+| [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
+| to learn more about how you can prepare for these upcoming changes. 
+
 To manage your LCS account, select *My Account* from the user menu in the
 Dockbar. This takes you to a UI with four tabs: 
 

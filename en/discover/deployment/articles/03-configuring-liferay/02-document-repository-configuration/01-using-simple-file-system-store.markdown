@@ -17,12 +17,6 @@ The file system store was the first store created and is heavily bound to the
 subfolder of the `data` folder. Of course, you can change this path to anything
 you want in System Settings. 
 
-| **Note:** To propagate store configuration in a multi-node environment, export
-| your store settings from your store's *File Storage* screen in System Settings
-| to a `.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder
-| in each node. To export the configuration, select *Export* from the options icon
-| ![Options](../../../images/icon-options.png).
-
 The Simple File System store uses this folder path format for storing documents:
 
     /companyId/folderId/numericFileEntryName/versionNumber

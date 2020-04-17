@@ -6,6 +6,12 @@ header-id: managing-lcs-servers
 
 [TOC levels=1-4]
 
+| **Note:** The following LCS features are deprecated and will be removed in
+| March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
+| read the 
+| [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
+| to learn more about how you can prepare for these upcoming changes. 
+
 Clicking a server in the Dashboard or environment view takes you to the server 
 view. Server view provides detailed information about a server, including 
 statistics and performance metrics. To protect your users' privacy, LCS doesn't 

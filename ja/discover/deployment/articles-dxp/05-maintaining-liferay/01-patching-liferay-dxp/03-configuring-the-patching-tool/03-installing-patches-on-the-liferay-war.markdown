@@ -6,7 +6,7 @@ header-id: installing-patches-on-the-liferay-de-war
 
 [TOC levels=1-4]
 
-サポートされているアプリケーションサーバーにWARファイルとして@ product @をマニュアルでインストールした場合は（参照：[installed @product@ manually](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-manually)） 、WARファイルとサポートファイルにパッチを適用し、それらを再びデプロイする必要があります。ここではそれをどう行うか説明します。
+サポートされているアプリケーションサーバーにWARファイルとして@product@をマニュアルでインストールした場合は（参照：[installed @product@ manually](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-manually)） 、WARファイルとサポートファイルにパッチを適用し、それらを再びデプロイする必要があります。ここではそれをどう行うか説明します。
 
 
 

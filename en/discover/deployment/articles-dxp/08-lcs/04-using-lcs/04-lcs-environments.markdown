@@ -6,6 +6,12 @@ header-id: managing-lcs-environments
 
 [TOC levels=1-4]
 
+| **Note:** The following LCS features are deprecated and will be removed in
+| March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
+| read the 
+| [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
+| to learn more about how you can prepare for these upcoming changes. 
+
 Environments are the key components of your LCS project. When you register a 
 server in LCS, you do so in an environment. An environment is therefore the 
 gateway to managing and monitoring your servers in LCS. 

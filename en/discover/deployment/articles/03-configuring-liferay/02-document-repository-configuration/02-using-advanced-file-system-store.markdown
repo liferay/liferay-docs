@@ -41,18 +41,9 @@ To use the advanced file system store, follow these steps:
 
 4.  In the *Advanced File System Store* screen, configure the store your way. 
 
-To use advanced file system store in a multi-node environment, follow these
-steps:
+5.  Click *Save*.
 
-1.  Copy the `portal-ext.properties` to each node's
-    [`[Liferay Home]` folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home). 
-
-2.  Export the configuration from the *Advanced File System Store* screen to a 
-    [`.config` file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files). 
-
-3.  Copy the `.config` file to each node's `[Liferay Home]/osgi/configs` folder. 
-
-4.  Restart @product@ on the nodes.
+6.  Restart @product@.
  
 @product@ is using the advanced file system store. 
 

@@ -17,15 +17,15 @@ header-id: patching-tool-basic-configuration
 
 
 
-自動設定は、ローカルファイルシステム内の@ product @ファイルを探しだして設定ファイルを生成します。デフォルトでは、パッチングツールはその親フォルダで探しだします。プロセスを開始するには、パッチングツールフォルダ（`patching-tool`）で以下のコマンドを実行します：
+自動設定は、ローカルファイルシステム内の@product@ファイルを探しだして設定ファイルを生成します。デフォルトでは、パッチングツールはその親フォルダで探しだします。プロセスを開始するには、パッチングツールフォルダ（`patching-tool`）で以下のコマンドを実行します：
 
     patching-tool auto-discovery
 
-@ product @が親フォルダにインストールされていない場合は、その場所を指定します：
+@product@が親フォルダにインストールされていない場合は、その場所を指定します：
 
     patching-tool auto-discovery /opt/liferay-dxp
 
-@ product @の場所を間違えて指定した、または親フォルダにない場合は、パッチングツールは[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)を見つけることができず 、次のようなエラーを報告します：
+@product@の場所を間違えて指定した、または親フォルダにない場合は、パッチングツールは[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)を見つけることができず 、次のようなエラーを報告します：
 
     The .liferay-home has not been detected in the given directory tree.
     
