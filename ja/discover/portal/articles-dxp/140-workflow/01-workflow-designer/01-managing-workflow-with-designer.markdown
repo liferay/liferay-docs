@@ -4,6 +4,8 @@ header-id: managing-workflows-with-kaleo-designer
 
 # Kaleo Designerを使用したワークフローの管理
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 Kaleo Designerは、ワークフロー定義を作成するための直感的なインターフェースを提供します。最も単純な承認プロセスから、想像できる最も複雑なビジネスプロセスまで。 ドラッグアンドドロップインターフェイス、ワークフロー定義のバージョン管理、定義とそのノードのグラフィカルな表現が特徴です。 Kaleo Designerがなければ、ワークフロー定義全体をXMLで手作りする必要があります。 Kaleo Designerを使用すると、XMLの1行を確認する必要がなくなる可能性があります。 もちろん、必要に応じて、Kaleo Designerは（ *Source* タブを使用して）XMLを直接操作することもできます。
