@@ -1,5 +1,5 @@
 ---
-header-id: multipart-requests
+header-id: graphql-multipart-requests
 ---
 
 # Multipart Requests

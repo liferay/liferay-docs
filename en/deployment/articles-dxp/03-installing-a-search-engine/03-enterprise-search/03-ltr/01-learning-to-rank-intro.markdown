@@ -83,7 +83,7 @@ How does Learning to Rank work?
 In a normal search, the User sends a query to the search engine via Liferay
 DXP's [Search Bar](/docs/7-2/user/-/knowledge_base/u/searching-for-assets#search-bar).
 The order of returned results is dictated by the search engine's
-[relevance scoring algorithm](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/index-modules-similarity.html#bm25).
+[relevance scoring algorithm](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/index-modules-similarity.html#bm25).
 
 Here's where Learning to Rank intervenes and makes that process different:
 
@@ -93,7 +93,7 @@ Here's where Learning to Rank intervenes and makes that process different:
     results as usual, using the search engine's relevance algorithm. 
 
 3.  The top 1000 results are not returned as search hits, but are used by Elasticsearch for
-    [re-scoring](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/search-request-body.html#request-body-search-rescore)
+    [re-scoring](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-request-body.html#request-body-search-rescore)
     via the
     [rescore functionality](https://elasticsearch-learning-to-rank.readthedocs.io/en/latest/searching-with-your-model.html#rescore-top-n-with-sltr).
 

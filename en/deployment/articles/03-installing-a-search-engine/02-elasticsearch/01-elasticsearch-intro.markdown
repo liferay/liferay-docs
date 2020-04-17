@@ -16,10 +16,10 @@ through the process of configuring Elasticsearch in remote mode.
 ![Figure 1: To see information about the currently connected search engine, go to _Control Panel_ &rarr; _Configuration_ &rarr; _Search_.](../../../images/search-admin-engineinfo.png)
 
 | **Note:** Although Elasticsearch 6.5 is shipped as the embedded Elasticsearch
-| server version, Elasticsearch 7.3 is the most recent supported Elasticsearch
-| version for @product-ver@. Installing Elasticsearch 7.3 requires that you are
+| server version, Elasticsearch 7 is the most recent supported Elasticsearch
+| version for @product-ver@. Installing Elasticsearch 7 requires that you are
 | running Service Pack 1/Fix Pack 2 or later (GA2 or later for CE users).
-| Elasticsearch 6.8.x is also supported.
+| Elasticsearch 6.8.x is also supported. See the [compatibility matrix for exact versions](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.2+Compatibility+Matrix.pdf/ed234765-db47-c4ad-7c82-2acb4c73b0f9).
 
 If you'd rather use Solr, it's also supported. See the documentation on
 [Installing Solr](/docs/7-2/deploy/-/knowledge_base/d/installing-solr) 
@@ -89,8 +89,8 @@ configuration options in more detail.
 
 **Cluster Sniffing (Additional Configurations):**
 : Elasticsearch clusters can have multiple node 
-[types](https://www.elastic.co/guide/en/elasticsearch/reference/7.4/modules-node.html#modules-node).
-[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/7.4/transport-client.html), 
+[types](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/modules-node.html#modules-node).
+[Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/7.x/transport-client.html), 
 enabled by default in the @product@ connector, looks for `data` nodes
 configured in the `transportAddresses` property. If none are available, the
 connector may throw a `NoNodeAvailableException` in the console log. If cluster

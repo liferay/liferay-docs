@@ -1,5 +1,5 @@
 ---
-header-id: get-started-find-the-api
+header-id: get-started-rest-api
 ---
 
 # Get Started: Find the API

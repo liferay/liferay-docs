@@ -12,7 +12,7 @@ Elasticsearch 6.1, it's time to upgrade your Elasticsearch servers too. If
 you're setting up a new system and not already running a remote Elasticsearch
 6.1.x server, follow the 
 [installation guide](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch) to install
-Elasticsearch 6 and the 
+Elasticsearch and the 
 [configuration guide](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector)
 to configure the Elasticsearch adapter. Here, you'll learn to upgrade an
 existing Elasticsearch 6.1.x server (or cluster) to Elasticsearch 6.5.x: 
@@ -20,7 +20,7 @@ existing Elasticsearch 6.1.x server (or cluster) to Elasticsearch 6.5.x:
 1.  [Install and configure Elasticsearch 6.5.x](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch).
 
 2. Disable X-Pack Security in `elasticsearch.yml` unless you have an Liferay
-   Enterprise Search Premium subscription, which gives you access to Liferay's
+   Enterprise Search subscription, which gives you access to Liferay's
    X-Pack Security connector:
 
     ```yml

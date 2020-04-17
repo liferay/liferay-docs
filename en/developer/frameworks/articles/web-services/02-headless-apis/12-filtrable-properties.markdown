@@ -1,5 +1,5 @@
 ---
-header-id: filterable-properties
+header-id: rest-filterable-properties
 ---
 
 # Filterable properties

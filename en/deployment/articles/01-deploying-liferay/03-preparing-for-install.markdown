@@ -125,20 +125,14 @@ It's time to prepare your database.
 The recommended way to set up your @product@ database is also the simplest.
 @product@ takes care of just about everything. Here are the steps:
 
-1.  Configure your database server to use the GMT time zone. 
-
-    | **Important:** Setting the database server time zone to GMT preserves 
-    | database integrity through @product@ database upgrades no matter the time 
-    | zones you set in @product@. 
-
-2.  Create a blank database encoded with the character set UTF-8. @product@ is a
+1.  Create a blank database encoded with the character set UTF-8. @product@ is a
     multilingual application and needs UTF-8 encoding to display all of its
     supported character sets.
 
     | **Note:** If you plan to migrate from one database vendor to another,
     | [configure the database to use the default query result order you expect for entities @product@ lists](/docs/7-2/deploy/-/knowledge_base/d/sort-order-changed-with-a-different-database). 
 
-3.  Create a database user for accessing this database. Grant this database user
+2.  Create a database user for accessing this database. Grant this database user
     all rights, including the rights to create and drop tables, to the blank
     @product@ database.
 

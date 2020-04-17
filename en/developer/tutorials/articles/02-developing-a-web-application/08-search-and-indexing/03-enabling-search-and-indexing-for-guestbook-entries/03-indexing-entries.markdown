@@ -88,7 +88,7 @@ As with Guestbooks, add the localized values for fields that might be
 translated. The Site locale is appended to the field (e.g., `title_en_US`), so
 the field gets passed to the search engine and goes through the right analysis
 and
-[tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
+[tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/analysis-tokenizers.html). 
 
 Use Ctrl-Shift-O to add the following imports and save the file: 
 

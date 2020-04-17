@@ -1,5 +1,5 @@
 ---
-header-id: restrict-properties
+header-id: openapi-restrict-properties
 ---
 
 # Restrict Properties

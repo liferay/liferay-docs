@@ -8,15 +8,10 @@ header-id: factory-configurations
 
 Configurations supporting multiple entries are called *factory configurations*. 
 
-| **Factory Configuration Example:** JAX-WS and JAX-RS web  services are
-| supported. These services must use a CXF Endpoint, which is a context path where
-| the web services are deployed and accessed. Endpoints can be created via
-| factory configuration by navigating to the CXF Endpoints entry in System
-| Settings (System Settings &rarr; Platform &rarr; Web API &rarr; CXF Endpoints).
-| Click *ADD*, enter the desired configuration values, then repeat the process to
-| add as many CXF Endpoint configurations as needed. Creating CXF Endpoint
-| configurations also creates CXF Endpoints themselves. This is how factory
-| configurations work.
+> Factory Configuration Example: Adding Organization types is supported, and is
+> useful if you need to model real-life hierarchies or enforce hierarchical
+> rules. In Liferay DXP, each Organization type is created via a factory
+> configuration entry in System Settings.
 
 If a service is meant to support factory configurations, its System Settings
 entry has an ADD button. 
@@ -40,32 +35,38 @@ It's good practice to use a descriptive name:
 
     my.service.ServiceConfiguration-port9080.config
 
-To follow the CXF Endpoints example described above, if Liferay's developers had
-shipped an initial CXF Endpoint `.config` file with @product@, it would have
-been named this: 
+In the Organization type example, the default Organization type (aptly named
+_organization_) is created by a `-default.config` file named
 
-    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-default.config
+```bash
+com.liferay.organizations.internal.configuration.OrganizationTypeConfiguration-default.config
+```
 
-If this `-default.config` configuration specifies a context path for *REST* web 
-services, and you create another endpoint with a different context path for 
-*SOAP* web services, your second configuration file could be named: 
+Following the example from the [Adding a New Organization
+Type](../../users-and-permissions/organizations/adding-a-new-organization-type.md)
+article, you could add the _League_ type with a configuration file named 
 
-    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-soap.config
+```bash
+com.liferay.organizations.internal.configuration.OrganizationTypeConfiguration-league.config
+```
 
-| **Note:** Some System Settings entries (like the CXF Endpoints entry) don't ship
-| with a configuration file, so anything you create is the first occurrence.
-| However, if you configure one and export it to obtain the `.config` file, it
-| doesn't use the `-default.config` naming convention. Instead it's given a
-| guaranteed unique identifier for its subname, like this:
-| 
-|     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-a6f67e48-6dca-49c6-bf6b-8fd5e6016b2d.config
-| 
-| This guarantees that the file has a unique name. If you're exporting the
-| configuration file for deployment in a separate system, you can rename
-| the exported file to use a more descriptive subname. If you rename the file and
-| deploy it to the same system it was exported from, the new subname marks it as
-| an entirely new configuration. You'll end up with an additional configuration
-| instance in this case, not just a renamed one.
+Some System Settings entries that support factory configuration don't ship with
+a configuration file for the default instance (e.g., the Anonymous User entry).
+If you export a factory configuration file to obtain the `.config` file, it
+doesn't use the `-default.config` naming convention. Instead, whether it's the
+first occurrence or an additional one, it's given a guaranteed unique
+identifier for its subname:
+
+```bash
+com.liferay.user.associated.data.web.internal.configuration.AnonymousUserConfiguration-6befcd73-7c8b-4597-b396-a18f64f8c308.config
+```
+
+This guarantees that the file has a unique name. If you're exporting the
+configuration file for deployment in a separate system, you can rename the
+exported file to use a more descriptive subname. If you rename the file and
+deploy it to the same system it was exported from, the new subname marks it as
+an entirely new configuration. You'll end up with an additional configuration
+instance in this case, not just a renamed one.
 
 | **Warning::** For configuration entries supporting factory configurations,
 | omitting the subname from a `.config` file's name causes System Settings to
@@ -74,11 +75,11 @@ services, and you create another endpoint with a different context path for
 | [LPS-76352](https://issues.liferay.com/browse/LPS-76352)
 | for more information. Once an improperly named configuration file is deployed,
 | you can't add any entries for the configuration in question from its System
-| Settings entry. For example, if you deploy the following file to configure a CXF
-| Endpoint, not only does this not add a CXF Endpoint, it also prevents you from
-| adding any CXF Endpoints via System Settings:
+| Settings entry. For example, if you deploy the following file to configure an Organization Type,
+| not only does this not add an Organiaztion Type, it also prevents you from
+| adding any via System Settings:
 | 
-|     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration.config
+|     com.liferay.organizations.internal.configuration.OrganizationTypeConfiguration.config
 | 
 | Deploying an erroneous (lacking a subname) `.config` file doesn't disable
 | anything permanently. Just rename the file using the proper convention described

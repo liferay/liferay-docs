@@ -1,5 +1,5 @@
 ---
-header-id: api-formats-and-content-negotiation
+header-id: rest-api-formats-and-content-negotiation
 ---
 
 # API Formats and Content Negotiation

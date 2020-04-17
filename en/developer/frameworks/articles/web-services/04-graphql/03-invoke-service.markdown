@@ -26,7 +26,7 @@ query{
 }
 ```
 
-The only required parameter is `siteId` or `siteKey`, the ID, or the internal
+The only required parameter is `siteId` or `siteKey` (as of 7.2 FP4), the ID, or the internal
 name (like *guest*) of the blog posting's Site. Internally, the `siteId` is
 a `groupId` that you can retrieve from the database, a URL, or @product@'s UI
 via the Site Administration menu. For more information, see 

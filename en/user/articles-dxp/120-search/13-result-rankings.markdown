@@ -119,6 +119,20 @@ alias term is queried for in the Search Bar.
 
 Now you can customize the rankings.
 
+### Activating and Deactivating Aliases
+
+> Available as of Liferay DXP 7.2, SP2
+
+You can activate or deactivate existing aliases as you have need for them to take effect:
+
+1.  Find the Active alias and open its editor screen.
+
+2. Click the toggle switch currently labeled Active.
+
+Duplicate active aliases are not allowed, but you can deactivate an alias and
+then create a duplicate. After deactivating an alias, you can only reactivate
+it after deactivating any active duplicates.
+
 ### Pinning and Hiding Results
 
 To pin or hide rankings, hover over the result of interest: two icons appear,

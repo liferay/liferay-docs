@@ -135,7 +135,7 @@ Here are some common compound queries:
 
 The concept of a join doesn't work well in a distributed index. Joining queries
 allow similar behavior in the search index, such as using the 
-[`nested` datatype](https://www.elastic.co/guide/en/elasticsearch/reference/current/nested.html)
+[`nested` datatype](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/nested.html)
 to index an array of objects that can be queried independently, using the
 `NestedQuery`.
 
@@ -182,7 +182,7 @@ ScriptQuery
 
 The proper search query is entirely context- and search engine-specific, so you
 should read the Query documentation straight from
-[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html) 
+[Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html) 
 or 
 [Solr](https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html)
 to determine which queries are available and what they do.
@@ -210,22 +210,23 @@ These steps are covered in more detail (with examples)
 
 ## Search Queries in Liferay's Code
 
-The new APIs for creating queries were introduced in @product-ver@, but already
-there are a couple usages in Liferay's own code: for example the new 
-[Change Tracking Service](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/change-tracking/change-tracking-service/src/main/java/com/liferay/change/tracking/service/impl/CTEntryLocalServiceImpl.java) 
-constructs a complex search request containing a `TermsQuery` using the new
-`Queries` API:
+The APIs for creating queries are best exemplified in Liferay's own test cases.
+For example, [BaseTermsQueryTestCase](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/query/BaseTermsQueryTestCase.java) constructs a search request containing
+a `TermsQuery` using the `Queries` API:
 
 ```java
-TermsQuery termsQuery = _queries.terms("field");
+TermsQuery termsQuery = queries.terms(Field.USER_NAME);
 ```
 
 This code executes the search request with the terms query constructed above
 in a query context.
 
+Other query test cases are also available to reference in the `portal-search`
+module's [source code](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/query).
+
 ## External References
 
-* <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/query-dsl.html>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html>
 * <https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html>
 
 ## Search Engine Connector Support
@@ -238,6 +239,6 @@ in a query context.
 
 Package | Provided by Artifact | Notes |
 -----------|:--------------------:|:--------:|
-`com.liferay.portal.search.query.*` | com.liferay.portal.search.api | Most of the provided [query types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query) are new as of @product_ver@
-`com.liferay.portal.search.filter.*` | com.liferay.portal.search.api | Some of the provided [filter types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/filter) are new as of @product_ver@
+`com.liferay.portal.search.query.*` | com.liferay.portal.search.api | Most of the provided [query types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query) are new as of 7.2
+`com.liferay.portal.search.filter.*` | com.liferay.portal.search.api | Some of the provided [filter types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/filter) are new as of 7.2
 

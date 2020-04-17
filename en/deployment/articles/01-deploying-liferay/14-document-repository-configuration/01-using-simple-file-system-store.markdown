@@ -19,14 +19,6 @@ to the @product@ database. By default, documents are stored in a
 this path to anything you want in [System
 Settings](/docs/7-2/user/-/knowledge_base/u/system-settings). 
 
-| **Note:** To propagate store configuration in a
-| [cluster](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering),
-| [export](/docs/7-2/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
-| your store
-| settings from your store's *File Storage* screen in System Settings to a
-| `.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder in
-| each node. 
-
 The Simple File System store uses this folder path format for storing documents:
 
 ```bash
