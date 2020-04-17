@@ -4,6 +4,8 @@ header-id: organizations
 
 # 組織
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 *組織* [*ユーザー*](/docs/7-1/user/-/knowledge_base/u/users) 階層的にグループ化します。 たとえば、企業の部署（人事やカスタマーサポートなど）を組織でモデル化できます。 多くの場合、組織には独自のサイトがあります。 *ハウツー* 組織管理の一部は、次の記事にある [組織管理](/docs/7-1/user/-/knowledge_base/u/managing-organizations)。 この記事には、組織とは何か、いつ必要になるかについての重要な概念情報が含まれています。

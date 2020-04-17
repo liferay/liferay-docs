@@ -4,6 +4,8 @@ header-id: getting-started-with-wikis
 
 # Wikiの概要
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 メニュー（![Menu](../../../../images/icon-menu.png)）は、Wikiの操作を開始するのに最適な場所です。 *メニュー* （![Menu](../../../../images/icon-menu.png)）をクリックし、サイトに移動して、[ *コンテンツ* セクションを選択します。 既存のページスコープのWikiアプリインスタンスを更新する場合は、歯車アイコン（![Gear](../../../../images/icon-control-menu-gear.png)）で利用できるスコープメニューからそのページスコープを選択できます。 サイトのWikiアプリインスタンスは、デフォルトスコープで使用できます。 適切なコンテンツスコープに入ったら、[ *Wiki*]をクリックします。 Wiki管理画面では、Wikiノードを追加、変更、および削除できます。 Wikiアプリインスタンスには、多くのWikiノードを含めることができます。 デフォルトでは、1つのノードが含まれています： *Main*。

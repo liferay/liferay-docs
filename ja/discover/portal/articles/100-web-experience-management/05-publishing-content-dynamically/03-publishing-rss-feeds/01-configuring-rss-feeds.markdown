@@ -4,6 +4,8 @@ header-id: configuring-rss-feeds
 
 # RSSフィードの構成
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 | **注：** RSSフィードは@ product @ 7.1では非推奨であり、|によって無効にされていますデフォルト。 RSSフィードを活用するには、この機能を有効にする必要があります。 |に移動しますコントロールパネル→ *構成* → *システム設定* → *Web |内容*。 *System Scope* → *Administration* タブで、| *フィード* ボックスを表示します。 廃止されたアプリの詳細については、|を参照してください。 [この記事](/docs/7-1/deploy/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do#web-experience)。

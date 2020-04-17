@@ -4,6 +4,8 @@ header-id: aggregating-blogs
 
 # ブログの集計
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 必要に応じて、ブログ専用のWebサイト全体をセットアップできます。 Blogs Aggregatorを使用すると、1つのページに複数のブロガーからのエントリを公開できるため、ブログエントリをさらに可視化できます。 *追加* （![Add](../../../../images/icon-add-app.png)）→ *ウィジェット* メニューの *コラボレーション* カテゴリからページに追加できます。

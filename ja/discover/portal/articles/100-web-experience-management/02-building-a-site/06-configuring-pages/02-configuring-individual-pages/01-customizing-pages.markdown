@@ -4,6 +4,8 @@ header-id: individual-page-settings
 
 # 個別のページ設定
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 [構成]ページには、[一般]、[SEO]、[ルックアンドフィール]、および[詳細]の4つのタブがあります。 ここで選択したオプションは、サイトの他の部分には影響しません。選択したページのみ。 これらのオプションの多くは完全なページセットを構成するオプションと同じであるため、 [ページセット](/docs/7-1/user/-/knowledge_base/u/configuring-page-sets) 構成の記事で詳細を確認できます。

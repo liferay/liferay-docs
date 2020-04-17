@@ -4,6 +4,8 @@ header-id: managing-content-types-in-staging
 
 # ステージングでのコンテンツタイプの管理
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 ステージングの[高度なパブリケーション]メニューでコンテンツを管理する場合、コンテンツをパブリッシュする準備をするときに考慮すべきいくつかの要素があります。 [ステージングを使用した高度な公開](/docs/7-1/user/-/knowledge_base/u/advanced-publication-with-staging)で説明されているように、[高度な公開]メニューの[コンテンツ]領域に移動して、公開するコンテンツを選択できます。 各コンテンツグループ（Webコンテンツなど）には、管理可能なオプションもあります。

@@ -4,6 +4,8 @@ header-id: creating-configuration-files
 
 # 構成ファイルの作成
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 システム設定には、構成エントリを変更すると使用可能になる [*Export*](/docs/7-1/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations) オプションが用意されています。 エクスポートは、作成するための推奨される方法である `の.config` ファイル：あなたがダウンロード `の.config` にエントリの設定を含むファイル `キー=値` 形式を。 @ product @は、1つの値のみが変更された場合でも、エントリの利用可能な設定キーと値の合計をエクスポートします。 単一の構成エントリまたは変更された構成のセット全体をエクスポートできます。

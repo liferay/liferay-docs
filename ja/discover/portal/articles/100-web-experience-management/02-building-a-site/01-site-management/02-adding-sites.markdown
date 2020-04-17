@@ -4,6 +4,8 @@ header-id: adding-sites
 
 # サイトを追加する
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 サイトは、コントロールパネルからLiferay管理者が作成できます。 コントロールパネルは、Liferayインスタンスを管理するための管理インターフェイスを提供します。 Liferayコントロールパネルの4つのメインセクションがあります：ユーザー、サイト、アプリ、および構成。 このセクションでは、コントロールパネルを使用してサイトを管理する方法を学びます。 コントロールパネルのアプリケーション、ユーザー、および構成セクションの詳細については、を参照してください [Liferayのマーケットプレース使用して](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace)、 [ユーザーの管理](/docs/7-1/user/-/knowledge_base/u/managing-users)、および [システム全体の設定](/docs/7-1/user/-/knowledge_base/u/system-wide-settings) それぞれのセクションが、。

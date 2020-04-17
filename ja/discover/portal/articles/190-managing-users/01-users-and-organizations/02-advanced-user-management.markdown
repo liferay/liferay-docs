@@ -4,6 +4,8 @@ header-id: user-management-additional-topics
 
 # ユーザー管理：追加トピック
 
+<p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
+
 [TOC levels=1-4]
 
 ユーザーの追加と編集の基本を学習しましたが、管理者が実行する必要のある最も基本的なタスクを超える追加の重要なトピックがあります。 これらについて学ぶために読んでください。
