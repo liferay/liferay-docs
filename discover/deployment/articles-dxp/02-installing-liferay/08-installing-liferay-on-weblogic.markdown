@@ -37,33 +37,19 @@ Without any further ado, get ready to install @product@ in WebLogic!
 
 ## Configuring WebLogic's Node Manager
 
-WebLogic requires a Node Manager to start and stop managed servers. Before 
-installing @product@, you must configure the Node Manager included with your 
-WebLogic installation. You'll do this via the 
-`domains/your_domain_name/nodemanager/nodemanager.properties` file. Open this 
-file, and set the `SecureListener` property to `false`: 
+WebLogic's Node Manager starts and stops managed servers.
 
-    SecureListener=false
+If you're running WebLogic on a UNIX system other than Solaris or Linux, use the Java Node Manager, instead of the native version of the Node Manager, by configuring these Node Manager properties in the `domains/your_domain_name/nodemanager/nodemanager.properties` file:
 
-This setting disables the encryption (SSL) requirement for the Node Manager, 
-allowing it to accept unencrypted connections. Although it's possible to run 
-@product@ with this property set to `true`, you may encounter difficulties doing 
-so. Also note that with `SecureListener` set to `true`, you must configure your 
-machine in the Admin Server's console to accept unencrypted connections from the 
-Node Manager. To do this, first log in to your Admin Server and select 
-*Environment* &rarr; *Machines* from the *Domain Structure* box on the left. 
-Click your machine in the table and then select the *Configuration* &rarr; *Node 
-Manager* tab. In the *Type* field, select *Plain* from the selector menu, and 
-then click *Save*. You must restart your Admin Server for this change to take 
-effect. 
+```properties
+NativeVersionEnabled=false
 
-If you're running WebLogic on Mac or Linux, you may also need to set the 
-`NativeVersionEnabled` property to `false`: 
+StartScriptEnabled=true
+```
 
-    NativeVersionEnabled=false
+| **Note:**   By default, SSL is used with Node Manager. If you want to disable SSL during development, for example, set `SecureListener=false` in your `nodemanager.properties` file.
 
-This tells the Node Manager to start in non-native mode. This is required for 
-the platforms where WebLogic doesn't provide native Node Manager libraries. 
+See Oracle's [Configuring Java Node Manager](https://docs.oracle.com/middleware/1212/wls/NODEM/java_nodemgr.htm#NODEM173) documentation for details.
 
 <!-- 
 Do we need a section on setting MW_HOME, the classpath, and path, as set 
