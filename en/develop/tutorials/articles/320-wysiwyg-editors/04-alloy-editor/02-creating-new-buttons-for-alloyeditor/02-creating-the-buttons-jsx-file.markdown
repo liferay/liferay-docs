@@ -107,7 +107,7 @@ Follow these steps to create your button for AlloyEditor:
     by the `ButtonStateClasses` mixin and add it to the current `cssClass` 
     value. It also uses Liferay Util's `getLexiconIconTpl()` method to retrieve 
     a Lexicon icon to use for the button. See 
-    [Lexicon's Design Site](https://lexicondesign.io/docs/patterns/icons.html#liferay-icon-library) 
+    [Lexicon's Design Site](https://v2.clayui.com/docs/components/icons.html) 
     for a full list of the available icons. 
 
         render: function() {

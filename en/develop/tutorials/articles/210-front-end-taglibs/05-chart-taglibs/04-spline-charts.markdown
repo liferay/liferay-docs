@@ -30,7 +30,6 @@ Follow these steps:
         _splineChartConfig.addColumns(
           new MultiValueColumn("data1", 100, 20, 30),
           new MultiValueColumn("data2", 20, 70, 100));
-        }
         %>
 
 3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_splineChartConfig` 
