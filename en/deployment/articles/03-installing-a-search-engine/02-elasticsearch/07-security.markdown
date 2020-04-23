@@ -79,7 +79,8 @@ certificates.
     ./bin/elasticsearch-certutil ca --pem --ca-dn CN=localhost
     ```
 
-    This generates a ZIP file. Unzip the contents somewhere safe.
+    This generates a ZIP file. Unzip the contents in the
+    `[Elasticsearch Home]/config/certs` folder.
 
 2.  Generate X.509 certificates and private keys using the CA from Step 1:
 
@@ -87,13 +88,22 @@ certificates.
     ./bin/elasticsearch-certutil cert --pem --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --dns localhost --ip 127.0.0.1 --name localhost
     ```
 
-    This generates another ZIP file. Extract the contents somewhere in the
-    `[Elasticsearch Home]/config` folder.
+    This generates another ZIP file. Extract the contents in the
+    `[Elasticsearch Home]/config/certs` folder.
 
 | **Note:** The `certutil` command defaults to using the *PKSC#12* format for
 | certificate generation. Since Kibana does not work with PKSC#12 certificates,
 | the `--pem` option (generates the certificate in PEM format) is important if
 | you're using X-Pack monitoring.
+
+At this point, you should have the following files present in your `[Elasticsearch Home]/config/certs` folder:
+
+    ```bash
+    ca.crt
+    ca.key
+    localhost.crt
+    localhost.key
+    ```
 
 ### Enable TLS for Elasticsearch 7
 
@@ -111,9 +121,9 @@ on each node via its `elasticsearch.yml`.
     `elasticsearch.yml`:
 
     ```yaml
-    xpack.security.transport.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.key
-    xpack.security.transport.ssl.certificate_authorities: ["/path/to/ca.crt"]
-    xpack.security.transport.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.crt
+    xpack.security.transport.ssl.certificate: certs/localhost.key
+    xpack.security.transport.ssl.certificate_authorities: [ "certs/ca.crt" ]
+    xpack.security.transport.ssl.key: certs/localhost.crt
     xpack.security.transport.ssl.verification_mode: certificate
     ```
 
@@ -129,9 +139,9 @@ on each node via its `elasticsearch.yml`.
     node's `elasticsearch.yml`:
 
     ```yaml
-    xpack.security.http.ssl.certificate_authorities: ["/path/to/ca.crt"]
-    xpack.security.http.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
-    xpack.security.http.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
+    xpack.security.http.ssl.certificate_authorities: [ "certs/ca.crt" ]
+    xpack.security.http.ssl.certificate: certs/localhost.crt
+    xpack.security.http.ssl.key: certs/localhost.key
     xpack.security.http.ssl.verification_mode: certificate
     ```
 
@@ -145,9 +155,9 @@ on each node via its `elasticsearch.yml`.
 1.  Add the certificate, key and certificate authority paths to each node's
     `elasticsearch.yml`:
 
-        xpack.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
-        xpack.ssl.certificate_authorities: ["/path/to/ca.crt"]
-        xpack.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
+        xpack.ssl.certificate: certs/localhost.crt
+        xpack.ssl.certificate_authorities: [ "certs/ca.crt" ]
+        xpack.ssl.key: certs/localhost.key
         xpack.ssl.verification_mode: certificate 
 
     The example paths above assume you added the certificate to `Elasticsearch
@@ -180,16 +190,16 @@ xpack.security.enabled: true
 ## TLS/SSL settings for Transport layer
 xpack.security.transport.ssl.enabled: true
 xpack.security.transport.ssl.verification_mode: certificate 
-xpack.security.transport.ssl.key: /path/to/[Elastisearch_Home]/config/localhost.key
-xpack.security.transport.ssl.certificate: /path/to/[Elastisearch_Home]/config/localhost.crt
-xpack.security.transport.ssl.certificate_authorities : ["/path/to/ca.crt"]
+xpack.security.transport.ssl.key: certs/localhost.key
+xpack.security.transport.ssl.certificate: certs/localhost.crt
+xpack.security.transport.ssl.certificate_authorities : [ "certs/ca.crt" ]
 
 # TLS/SSL settings for HTTP layer
 xpack.security.http.ssl.enabled: true
 xpack.security.http.ssl.verification_mode: certificate 
-xpack.security.http.ssl.key: /path/to/[Elastisearch_Home]/config/localhost.key
-xpack.security.http.ssl.certificate: /path/to/[Elastisearch_Home]/config/localhost.crt
-xpack.security.http.ssl.certificate_authorities : ["/path/to/ca.crt"]
+xpack.security.http.ssl.key: certs/localhost.key
+xpack.security.http.ssl.certificate: certs/localhost.crt
+xpack.security.http.ssl.certificate_authorities : [ "certs/ca.crt" ]
 
 # Comment out when Kibana and Liferay's X-Pack Monitoring are also configured
 #xpack.monitoring.collection.enabled: true
@@ -206,9 +216,9 @@ xpack.security.http.ssl.certificate_authorities : ["/path/to/ca.crt"]
 #
 ## General TLS/SSL settings for both Transport and HTTP levels
 #xpack.ssl.verification_mode: certificate 
-#xpack.ssl.key: /path/to/[Elastisearch_Home]/config/localhost.key
-#xpack.ssl.certificate: /path/to/[Elastisearch_Home]/config/localhost.crt
-#xpack.ssl.certificate_authorities : ["/path/to/ca.crt"]
+#xpack.ssl.key: certs/localhost.key
+#xpack.ssl.certificate: certs/localhost.crt
+#xpack.ssl.certificate_authorities : [ "certs/ca.crt" ]
 #
 # Comment out when Kibana and Liferay's X-Pack Monitoring are also configured
 #xpack.monitoring.collection.enabled: true
