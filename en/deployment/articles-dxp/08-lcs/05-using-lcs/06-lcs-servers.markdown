@@ -6,26 +6,25 @@ header-id: managing-lcs-servers
 
 [TOC levels=1-4]
 
-| **Note:** The following LCS features are deprecated and will be removed in
+| **Note:** The following LCS features have been deprecated and removed in
 | March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
 | read the 
 | [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
 | to learn more about how you can prepare for these upcoming changes. 
 
 Clicking a server in the Dashboard or environment view takes you to the server 
-view. Server view provides detailed information about a server, including 
-statistics and performance metrics. To protect your users' privacy, LCS doesn't 
+view. Server view provides detailed information about a server. To protect your users' privacy, LCS doesn't 
 gather, store, or analyze user data. 
 
 Server view is segmented into six tabs: 
 
-**Page Analytics:** Displays metrics on page views and load times.
+**Page Analytics:** This service has been disabled, if you enabled it earlier you can see here the past history for metrics on page views and load times.
 
-**Snapshot Metrics:** Displays application, JVM, and server metrics.
+**Snapshot Metrics:** This service has been disabled, if you enabled it earlier you can see here the past history for application, JVM, and server metrics.
 
-**Fix Packs:** Displays the server's available and installed fix packs.
+**Fix Packs:** This service has been disabled, if you enabled it earlier you can see here the past history for the server's available and installed fix packs.
 
-**Portal Properties:** Displays your portal's properties and their settings.
+**Portal Properties:** This service has been disabled, if you enabled it earlier you can see here the past history for your portal's properties and their settings.
 
 **Details:** Displays general information about your @product@ installation, 
 Java version, and hardware.
@@ -33,11 +32,28 @@ Java version, and hardware.
 **Server Settings:** View or change your server's name, location, and 
 description. You can also unregister the server from LCS. 
 
-| **Note:** LCS only supports Snapshot Metrics for servers running on Tomcat or 
+| **Note:** LCS only supported Snapshot Metrics for servers running on Tomcat or 
 | WebLogic. On other application servers you may see a console message 
 | indicating that LCS doesn't support server metrics for your application 
 | server. You may also see a benign `NullPointerException` for the LCS 
 | `TaskSchedulerServiceImpl` and `ScheduleTasksCommand`. 
+
+## Details
+
+The *Details* tab shows general information about your server. There are three 
+tabs under Details: *Software*, *Java*, and *Hardware*. Each shows information, 
+respectively, about your @product@ installation, Java installation, and 
+hardware. This information is useful to the Liferay Support team in the event 
+you need their assistance. 
+
+![Figure 1: The Details tab shows information about your server.](../../../images-dxp/lcs-server-details.png)
+
+## Server Settings
+
+Finally, the *Server Settings* tab lets you view and edit your server's name,
+location, and description. You can also unregister your server from LCS. 
+
+![Figure 2: You can use the Server Settings tab to give your server a fun name.](../../../images-dxp/lcs-server-settings.png)
 
 ## Page Analytics
 
@@ -66,7 +82,7 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 1: The Page Analytics interface in the LCS Server view.](../../../images-dxp/lcs-page-analytics-01.png)
+![Figure 3: The Page Analytics interface in the LCS Server view.](../../../images-dxp/lcs-page-analytics-01.png)
 
 ## Snapshot Metrics
 
@@ -82,7 +98,7 @@ portlets in your server. The Cache category lists Liferay Single VM metrics and
 Hibernate metrics. The following screenshot shows the statistics in the Portlets
 category.
 
-![Figure 2: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../../images-dxp/lcs-server-metrics-application-portlets.png)
+![Figure 4: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../../images-dxp/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -91,14 +107,14 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the PS Eden Space, Code Cache, Compressed Class Space, PS Old Gen, PS 
 Survivor Space, and Metaspace. 
 
-![Figure 3: The LCS JVM metrics show performance data for memory and the garbage collector.](../../../images-dxp/lcs-server-metrics-jvm.png)
+![Figure 5: The LCS JVM metrics show performance data for memory and the garbage collector.](../../../images-dxp/lcs-server-metrics-jvm.png)
 
 Server is the third category in Snapshot Metrics. The Server category shows 
 additional information about how your server is running. For example, horizontal 
 bar graphs show the number of current threads running on your server, as well as 
 the JDBC connection pools. 
 
-![Figure 4: The LCS server metrics show current threads and JDBC connection pools.](../../../images-dxp/lcs-metrics-server.png)
+![Figure 6: The LCS server metrics show current threads and JDBC connection pools.](../../../images-dxp/lcs-metrics-server.png)
 
 Note that in Snapshot Metrics, the application and garbage collector metrics are 
 based on data collected by LCS from server registration to the present. Memory 
@@ -111,7 +127,7 @@ page. The available and installed fix packs appear in separate tables. The
 available fix packs table functions exactly like the Fix Packs table in 
 environment view for downloading and installing fix packs. 
 
-![Figure 5: The Fix Packs tab displays your server's available and installed fix packs.](../../../images-dxp/lcs-server-fix-packs.png)
+![Figure 7: The Fix Packs tab displays your server's available and installed fix packs.](../../../images-dxp/lcs-server-fix-packs.png)
 
 ## Portal Properties
 
@@ -139,21 +155,4 @@ top-right of the table. For example, by checking the *Show Default Values* and
 custom property values. To show only the custom values, select only *Show Custom 
 Values*. 
 
-![Figure 6: Click the gear icon to select the type of portal properties to show in the table.](../../../images-dxp/lcs-server-portal-properties.png)
-
-## Details
-
-The *Details* tab shows general information about your server. There are three 
-tabs under Details: *Software*, *Java*, and *Hardware*. Each shows information, 
-respectively, about your @product@ installation, Java installation, and 
-hardware. This information is useful to the Liferay Support team in the event 
-you need their assistance. 
-
-![Figure 7: The Details tab shows information about your server.](../../../images-dxp/lcs-server-details.png)
-
-## Server Settings
-
-Finally, the *Server Settings* tab lets you view and edit your server's name,
-location, and description. You can also unregister your server from LCS. 
-
-![Figure 8: You can use the Server Settings tab to give your server a fun name.](../../../images-dxp/lcs-server-settings.png)
+![Figure 8: Click the gear icon to select the type of portal properties to show in the table.](../../../images-dxp/lcs-server-portal-properties.png)
