@@ -103,6 +103,12 @@ creation screen,
 By default, your new page is added to the Navigation Menu and users can access
 the page you created.
 
+| Note: While portlets are rendered according to 
+| [`render-weight`](https://docs.liferay.com/ce/portal/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html#render-weight) 
+| on Widget Pages, that is not true for Content Pages. Portlets are rendered in 
+| the order they appear on the page on Content Pages (i.e. left to right, top 
+| to bottom).
+
 ## Propagation of Page Fragment Changes
 
 If you make an update to a Page Fragment or Content Page Templates it doesn't
