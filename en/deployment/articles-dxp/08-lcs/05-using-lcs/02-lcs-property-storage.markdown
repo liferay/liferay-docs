@@ -6,7 +6,7 @@ header-id: what-lcs-stores-about-your-liferay-dxp-servers
 
 [TOC levels=1-4]
 
-| **Note:** The following LCS features are deprecated and will be removed in
+| **Note:** The following LCS features have been deprecated and removed in
 | March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
 | read the 
 | [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
@@ -31,10 +31,10 @@ By default, LCS stores the following information about your server:
 -   File System Usage
 -   Memory Usage 
 
-The other data LCS stores depends on the services you enable in your environment 
-token. For more information on this, see 
+The other data LCS stores depends on the services you enabled in your environment 
+token, and whether your server was connected before certain services were removed. For more information on this, see 
 [Registering Servers with LCS](/docs/7-2/deploy/-/knowledge_base/d/activating-your-liferay-dxp-server-with-lcs).
-When you enable the following services, LCS gathers and stores the data listed
+If you enabled the following services, LCS gathered and stored the data listed
 for each: 
 
 -   **Portal analytics:** 
@@ -52,7 +52,7 @@ for each:
     -   `portal.properties` (except sensitive data) 
 
 Sensitive data is any key-value pair that contains user names or passwords. For
-example, LCS doesn't store the following properties because they contain
+example, LCS did not store the following properties because they contain
 sensitive data: 
 
     omniadmin.users
@@ -67,13 +67,14 @@ sensitive data:
     dl.store.s3.secret.key
     auto.deploy.glassfish.jee.dm.passwd
 
-LCS also doesn't store properties that end in `.password`, besides the following 
+LCS also did not store properties that end in `.password`, besides the following 
 non-sensitive properties: 
 
     portal.jaas.plain.password
     portal.jaas.strict.password
     login.create.account.allow.custom.password
 
-LCS also lets you prevent it from analyzing specific properties of your 
-choosing. For more information on this, see 
-[Registering Your Liferay DXP Server with LCS](/docs/7-2/deploy/-/knowledge_base/d/activating-your-liferay-dxp-server-with-lcs). 
+LCS also allowed you to prevent it from analyzing specific properties of your 
+choosing, by defining blacklisted properties.
+
+LCS is no longer gathering or storing the data listed above, that was associated with enabled services.

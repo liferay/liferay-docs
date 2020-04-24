@@ -6,15 +6,11 @@ header-id: activating-your-liferay-dxp-server-with-lcs
 
 [TOC levels=1-4]
 
-| **Note:** The following LCS features are deprecated and will be removed in
+| **Note:** The following LCS features have been deprecated and removed in
 | March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
 | read the 
 | [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
 | to learn more about how you can prepare for these upcoming changes. 
-
-| **Note:** You must use LCS for activation of Elastic subscriptions. Otherwise, 
-| you don't have to use LCS for activation. You can instead request an XML 
-| activation key from Liferay Support. 
 
 Follow these steps to register your @product@ server with LCS: 
 
@@ -45,23 +41,23 @@ Follow these steps to register your @product@ server with LCS:
     [environment's token file](/docs/7-2/deploy/-/knowledge_base/d/understanding-environment-tokens), 
     that registers servers in the environment. 
 
-    In the Registration tab's *Services* section, change the LCS service 
-    selections, if needed. Note that if you change the LCS service selections 
+    In the Registration tab's *Services* section, change the Liferay Instance Activation setting, 
+    if needed. Note that if you change this option 
     and there are servers already registered in the environment, you must 
     regenerate the token file and use it to reconnect those servers to LCS.
     You'll regenerate and/or download the token in the next step. 
 
-    The selected services are enabled for all servers that connect to this 
-    environment. If Portal Property Analysis is selected, you can prevent LCS 
-    from analyzing specific properties. Enter them into the box that appears 
-    when you select *Show Blacklisted Properties*. Note that 
-    [LCS doesn't access security sensitive properties](/docs/7-2/deploy/-/knowledge_base/d/what-lcs-stores-about-your-liferay-dxp-servers). 
+     Additionally, If you disable this service, you must activate via an XML file from Liferay support, and 
+    such instances must run version 5.0.0 or newer of the LCS client app. 
+
+    Liferay Instance Activation is either enabled or disabled for all servers that connect to this 
+    environment. If Portal Property Analysis is selected, you can prevent LCS environment.
 
     ![Figure 3: An environment's Registration tab lets you manage the token file used to register your server in the environment.](../../images-dxp/lcs-registration.png)
 
 5.  What you do now depends on what you did in the previous step: 
 
-    **Changes to LCS service selections:** Regenerate and download the token. 
+    **Changes to Liferay Instance Activation:** Regenerate and download the token. 
     Regenerating a token causes all servers using the old token to disconnect 
     from LCS. You must reconnect them using the new token. 
 
@@ -106,6 +102,10 @@ such message for a reconnection event.
 **Services:** The LCS services enabled for this server. Note that all 
 servers in an environment use the same set of LCS services. LCS services 
 can't be controlled on a server-by-server basis. 
+
+Note: Portal Analytics, Fix Pack Management and Portal Properties Analysis have been removed from the list of available services. 
+For more information about this change, please read 
+[this article](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
 
 **Project Home:** A link to this server's LCS project. 
 

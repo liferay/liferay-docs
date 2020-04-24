@@ -6,18 +6,17 @@ header-id: using-lcs
 
 [TOC levels=1-4]
 
-| **Note:** The following LCS features are deprecated and will be removed in
+| **Note:** The following LCS features have been deprecated and removed in
 | March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
 | read the 
 | [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
 | to learn more about how you can prepare for these upcoming changes. 
  
 Once your @product@ server is connected to LCS, you can get down to the business 
-that LCS is designed for---managing and monitoring your servers. If you're not 
+that LCS is designed for---managing your servers. If you're not 
 already there, log in with your account on 
 [lcs.liferay.com](https://lcs.liferay.com). 
-This is where you'll apply updates, view server metrics, manage environments, 
-and more. 
+This is where you'll manage environments, register servers and more. 
 
 This articles in this section each detail one or more of LCS's features: 
 
@@ -35,11 +34,11 @@ This articles in this section each detail one or more of LCS's features:
 
 -   [**Managing LCS Environments:**](/docs/7-2/deploy/-/knowledge_base/d/managing-lcs-environments) 
     Learn how to create and manage your LCS project's environments. This 
-    includes instructions on installing fix packs for an environment's servers. 
+    includes instructions on generating tokens for an environment's servers. 
 
 -   [**Managing LCS Servers:**](/docs/7-2/deploy/-/knowledge_base/d/managing-lcs-servers) 
     Learn how to manage your servers in LCS. This includes viewing server 
-    metrics and editing server settings.
+    status and editing server settings.
 
 -   [**Managing Your LCS Account:**](/docs/7-2/deploy/-/knowledge_base/d/managing-your-lcs-account) 
     Learn how to manage your LCS account. This includes setting general account 
