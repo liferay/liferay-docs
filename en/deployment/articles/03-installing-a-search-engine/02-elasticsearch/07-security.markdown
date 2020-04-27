@@ -79,8 +79,8 @@ certificates.
     ./bin/elasticsearch-certutil ca --pem --ca-dn CN=localhost
     ```
 
-    This generates a ZIP file. Unzip the contents in the
-    `[Elasticsearch Home]/config/certs` folder.
+    This generates a ZIP file. Unzip the contents in the `[Elasticsearch
+    Home]/config/certs` folder.
 
 2.  Generate X.509 certificates and private keys using the CA from Step 1:
 
@@ -96,14 +96,14 @@ certificates.
 | the `--pem` option (generates the certificate in PEM format) is important if
 | you're using X-Pack monitoring.
 
-At this point, you should have the following files present in your `[Elasticsearch Home]/config/certs` folder:
+**Checkpoint:** You now have the following files in your `[Elasticsearch Home]/config/certs` folder:
 
-    ```bash
-    ca.crt
-    ca.key
-    localhost.crt
-    localhost.key
-    ```
+```bash
+ca.crt
+ca.key
+localhost.crt
+localhost.key
+```
 
 ### Enable TLS for Elasticsearch 7
 

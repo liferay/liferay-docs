@@ -40,7 +40,7 @@ where necessary.
 
 Start by following the steps in this [article](/docs/7-2/deployment/-/knowledge_base/u/installing-liferay-enterprise-search-security) to enable TLS/SSL in your Elasticsearch and @product@ installation.
 
-Then, continue with enabling data collection in Elasticsearch.
+Then continue by enabling data collection in Elasticsearch.
 
 ## Enable Data Collection
 
@@ -127,7 +127,10 @@ for more information.
 
 1. Copy the `[Elasticsearch Home]/config/certs` folder into the `[Kibana Home]/config/` folder.
 
-    Note that we are reusing the very same certificate files we created for Elasticsearch in this [article](/docs/7-2/deployment/-/knowledge_base/u/installing-liferay-enterprise-search-security). If you wish to generate a separate certificate for your Kibana instance, make sure it is signed by the same CA as the Elasticsearch node certificates.
+    This example reuses the certificate files [created for Elasticsearch
+    itself](/docs/7-2/deployment/-/knowledge_base/u/installing-liferay-enterprise-search-security).
+    If you wish to generate a separate certificate for your Kibana instance, make
+    sure it is signed by the same CA as the Elasticsearch node certificates.
 
 2. Add these settings to `kibana.yml`:
 
@@ -181,9 +184,9 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
         kibanaUserName="elastic"
         kibanaURL="https://localhost:5601"
 
-    The values depend on your Kibana configuration. For example, use a
-    URL such as `kibanaURL="http://localhost:5601"` if you are not using X-Pack
-    Security TLS/SSL features.
+    The values depend on your Kibana configuration. For example, use a URL such
+    as `kibanaURL="http://localhost:5601"` if you are not using X-Pack Security
+    TLS/SSL features.
 
     Alternatively, configure the monitoring adapter from
     [System Settings](/docs/7-2/user/-/knowledge_base/u/system-settings).
