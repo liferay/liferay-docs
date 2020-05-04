@@ -121,13 +121,13 @@ curl -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D'
 ```
 
 You must also provide the CSRF token by passing it as a query parameter
-called `p_p_auth` or by adding the URL to the whitelist of CSRF allowed URLs or disabling CSRF
+called `p_auth` or by adding the URL to the whitelist of CSRF allowed URLs or disabling CSRF
 checks altogether with the `auth.verifier.auth.verifier.PortalSessionAuthVerifier.check.csrf.token` property (application level).
 
 Here's a sample cURL request with the cookie and CSRF token:
 
 ```bash
-curl -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D' http://localhost:8080/o/graphql?p_p_auth=O4dCU1Mj
+curl -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D' http://localhost:8080/o/graphql?p_auth=O4dCU1Mj
 ```
  
 To do an unauthenticated request from inside the @product@, from JavaScript code
