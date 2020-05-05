@@ -36,7 +36,11 @@ This document assumes you're enabling security (with authentication and encrypte
 Elasticsearch 7, but differences in the process for Elasticsearch 6 are noted
 where necessary.
 
-Start by enabling data collection in Elasticsearch.
+## Enable Encrypting Communication (TLS/SSL) in Elasticsearch and in @product@
+
+Start by following the steps in this [article](/docs/7-2/deployment/-/knowledge_base/u/installing-liferay-enterprise-search-security) to enable TLS/SSL in your Elasticsearch and @product@ installation.
+
+Then continue by enabling data collection in Elasticsearch.
 
 ## Enable Data Collection
 
@@ -68,10 +72,10 @@ for details.
     On 6.5 and below, use
 
     ```yaml
-    elasticsearch.url: "http://localhost:9200"
+    elasticsearch.url: "https://localhost:9200"
     ```
 
-    If TLS/SSL is enabled on Elasticsearch, this is an `https` URL, otherwise use `http`.
+    If TLS/SSL is not enabled on Elasticsearch, this is an `http` URL, otherwise use `https`.
 
 3.  If not using X-Pack security, start Kibana by opening a command prompt to 
     Kibana Home and entering this command:
@@ -108,39 +112,50 @@ these steps or refer to
     ./bin/kibana
     ```
 
-3.  Go to `localhost:5601` and make sure you can sign in as a 
+3.  Go to `http://localhost:5601` and make sure you can sign in as a 
     [user](https://www.elastic.co/guide/en/elasticsearch/reference/current/realms.html)
     who has the `kibana_user` 
     [role](https://www.elastic.co/guide/en/elasticsearch/reference/current/built-in-roles.html) 
     or a superuser (like the `elastic` user).
 
-### Configuring Kibana with Encryption
+### Configuring Kibana with Encryption (TLS/SSL)
 
 Follow these steps to configure Kibana if X-Pack encrypts communication with the
 Elasticsearch cluster. Consult 
 [Elastic's guide](https://www.elastic.co/guide/en/kibana/7.x/using-kibana-with-security.html#using-kibana-with-security)
 for more information.
 
-Add these settings to `kibana.yml`:
+1. Copy the `[Elasticsearch Home]/config/certs` folder into the `[Kibana Home]/config/` folder.
 
-```yaml
-xpack.security.encryptionKey: "xsomethingxatxleastx32xcharactersx"
-xpack.security.sessionTimeout: 600000
+    This example reuses the certificate files [created for Elasticsearch
+    itself](/docs/7-2/deployment/-/knowledge_base/u/installing-liferay-enterprise-search-security).
+    If you wish to generate a separate certificate for your Kibana instance, make
+    sure it is signed by the same CA as the Elasticsearch node certificates.
 
-elasticsearch.hosts: [ "https://localhost:9200" ]
-elasticsearch.ssl.verificationMode: certificate
-elasticsearch.ssl.certificateAuthorities: [ "/path/to/ca.crt" ]
+2. Add these settings to `kibana.yml`:
 
-server.ssl.enabled: true
-server.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
-server.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
-```
+    ```yaml
+    xpack.security.encryptionKey: "xsomethingxatxleastx32xcharactersx"
+    xpack.security.sessionTimeout: 600000
+
+    elasticsearch.hosts: [ "https://localhost:9200" ]
+
+    elasticsearch.ssl.verificationMode: certificate
+    elasticsearch.ssl.certificateAuthorities: [ "config/certs/ca.crt" ]
+    elasticsearch.ssl.certificate: config/certs/localhost.crt
+    elasticsearch.ssl.key: config/certs/localhost.key
+
+    server.ssl.enabled: true
+    server.ssl.certificateAuthorities: [ "config/certs/ca.crt" ]
+    server.ssl.certificate: config/certs/localhost.crt
+    server.ssl.key: config/certs/localhost.key
+    ```
 
 Elasticsearch/Kibana 6.5 and below use a  different property for specifying the
 host URL. Replace the `elasticsearch.hosts` property with
 
 ```yaml
-elasticsearch.url: "http://localhost:9200"
+elasticsearch.url: "https://localhost:9200"
 ```
 
 For more information about monitoring and security best practices in a clustered
@@ -167,11 +182,11 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
 
         kibanaPassword="liferay"
         kibanaUserName="elastic"
-        kibanaURL="http://localhost:5601"
+        kibanaURL="https://localhost:5601"
 
-    The values depend on your Kibana configuration. For example, use a secure
-    URL such as `kibanaURL="https://localhost:5601"` if you're using X-Pack
-    Security TLS/SSL features.
+    The values depend on your Kibana configuration. For example, use a URL such
+    as `kibanaURL="http://localhost:5601"` if you are not using X-Pack Security
+    TLS/SSL features.
 
     Alternatively, configure the monitoring adapter from
     [System Settings](/docs/7-2/user/-/knowledge_base/u/system-settings).
@@ -251,19 +266,28 @@ convenient copy/pasting:
 elasticsearch.username: "kibana"
 elasticsearch.password: "liferay"
 
-# When TLS is enabled in X-Pack Security
+# When TLS/SSL is enabled in X-Pack Security
 xpack.security.encryptionKey: "xsomethingxatxleastx32xcharactersx"
 xpack.security.sessionTimeout: 600000
+
 # If on Elasticsearch 6.5 or below, replace the next property with:
 # elasticsearch.url: "http://localhost:9200"
 elasticsearch.hosts: [ "https://localhost:9200" ]
-elasticsearch.ssl.verificationMode: certificate
-elasticsearch.ssl.certificateAuthorities: [ "/path/to/ca.crt" ]
-server.ssl.enabled: true
-server.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
-server.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
 
-# To use Kibana inside the Monitoring widget
+# Enable TLS/SSL for out-bound traffic: from Kibana to Elasticsearch
+elasticsearch.ssl.verificationMode: certificate
+elasticsearch.ssl.certificateAuthorities: [ "config/certs/ca.crt" ]
+elasticsearch.ssl.certificate: config/certs/localhost.crt
+elasticsearch.ssl.key: config/certs/localhost.key
+
+# Enable TLS/SSL for in-bound traffic: from browser or
+#  DXP (X-Pack Monitoring widget, proxy) to Kibana
+server.ssl.enabled: true
+server.ssl.certificateAuthorities: [ "config/certs/ca.crt" ]
+server.ssl.certificate: config/certs/localhost.crt
+server.ssl.key: config/certs/localhost.key
+
+# To use Kibana inside the X-Pack Monitoring widget
 server.rewriteBasePath: false
 server.basePath: "/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy"
 ```
