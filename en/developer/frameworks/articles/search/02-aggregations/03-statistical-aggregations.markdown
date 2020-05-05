@@ -65,15 +65,18 @@ that are to be computed for each field.
     metrics:
 
     ```java
-    StatsRequestBuilder statsRequestBuilder = statsRequestBuilderFactory.getStatsRequestBuilder();
-
-    StatsResponse expectedStatsResponse = statsResponseBuilder.cardinality(31)
-        .count(31)
-        .field(field).max(31)
-        .mean(16)
-        .min(1)
-        .sum(496)
-        .sumOfSquares(10416)
+    StatsRequestBuilder statsRequestBuilder = 
+        statsRequestBuilderFactory.getStatsRequestBuilder();
+    StatsRequest statsRequest = statsRequestBuilder
+        .cardinality(true)
+        .count(true)
+        .field(field)
+        .max(true)
+        .mean(true)
+        .min(true)
+        .missing(true)
+        .sum(true)
+        .sumOfSquares(true)
         .build();
     ```
 
@@ -151,7 +154,7 @@ supported:
     searchRequestBuilder.withSearchContext(searchContext -> searchContext.addStats(stats));
     ```
 
-[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L42)
+[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.0-ga1/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L42)
 
 ## External References
 
