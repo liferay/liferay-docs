@@ -172,14 +172,14 @@ in the header. In CURL, pass the `-H` parameter:
 
      -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D'
 
-You must also provide the CSRF token by passing it in the `p_p_auth` query
+You must also provide the CSRF token by passing it in the `p_auth` query
 parameter, or by adding the URL to the whitelist of CSRF allowed URLs or disabling CSRF
 checks altogether with the `auth.verifier.auth.verifier.PortalSessionAuthVerifier.check.csrf.token` property (application level).
 
 Here's a sample CURL request with the cookie and CSRF token:
 
 ```bash
-curl -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D' http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/?p_p_auth=O4dCU1Mj
+curl -H 'Cookie: JSESSIONID=27D7C95648D7CDBE3347601FC4543F5D' http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/?p_auth=O4dCU1Mj
 ```
  
 To do a cookie request from inside @product@, from JavaScript code or a Java
