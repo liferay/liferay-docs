@@ -171,7 +171,7 @@ into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`:
 
     ```properties
     jdbc.default.url=jdbc:mysql://lportal62?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
+    jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.default.username=root
     jdbc.default.password=
     ```

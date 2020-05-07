@@ -386,7 +386,7 @@ If you want Tomcat to manage your data source, follow these steps:
             name="jdbc/LiferayPool"
             auth="Container"
             type="javax.sql.DataSource"
-            driverClassName="com.mysql.jdbc.Driver"
+            driverClassName="com.mysql.cj.jdbc.Driver"
             url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
             username="root"
             password="root"

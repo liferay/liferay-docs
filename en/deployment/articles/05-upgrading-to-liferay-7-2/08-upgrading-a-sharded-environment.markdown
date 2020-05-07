@@ -42,17 +42,17 @@ Here are the upgrade steps:
     default shard and two non-default shards might look like this:
 
     ```properties
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
+    jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.default.url=jdbc:mysql://database-server/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.default.username=
     jdbc.default.password=
 
-    jdbc.one.driverClassName=com.mysql.jdbc.Driver
+    jdbc.one.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.one.url=jdbc:mysql://database-server/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.one.username=
     jdbc.one.password=
 
-    jdbc.two.driverClassName=com.mysql.jdbc.Driver
+    jdbc.two.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.two.url=jdbc:mysql://database-server/lportal_two?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.two.username=
     jdbc.two.password=
@@ -70,7 +70,7 @@ Here are the upgrade steps:
         database. For example, shard `one`'s original properties might start with `jdbc.one`:
 
     ```properties
-    jdbc.one.driverClassName=com.mysql.jdbc.Driver
+    jdbc.one.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.one.url=jdbc:mysql://database-server/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.one.username=
     jdbc.one.password=
@@ -79,7 +79,7 @@ Here are the upgrade steps:
     -   Rename the properties to start with `jdbc.default`. For example, 
 
     ```properties
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
+    jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.default.url=jdbc:mysql://database-server/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.default.username=
     jdbc.default.password=
@@ -96,17 +96,17 @@ Here are the upgrade steps:
     Old JDBC properties: 
 
     ```properties
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
+    jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.default.url=jdbc:mysql://database-server/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.default.username=
     jdbc.default.password=
 
-    jdbc.one.driverClassName=com.mysql.jdbc.Driver
+    jdbc.one.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.one.url=jdbc:mysql://database-server/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.one.username=
     jdbc.one.password=
 
-    jdbc.two.driverClassName=com.mysql.jdbc.Driver
+    jdbc.two.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.two.url=jdbc:mysql://database-server/lportal_two?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.two.username=
     jdbc.two.password=
@@ -115,7 +115,7 @@ Here are the upgrade steps:
     New JDBC properties:
 
     ```properties
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
+    jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.default.url=jdbc:mysql://database-server/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
     jdbc.default.username=
     jdbc.default.password=

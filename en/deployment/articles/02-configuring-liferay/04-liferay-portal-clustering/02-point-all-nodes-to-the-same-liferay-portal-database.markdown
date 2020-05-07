@@ -41,12 +41,12 @@ Then enable a read-writer database in your `portal-ext.properties` file:
 2.  Configure two different data sources, one for reading, and one for writing:
 
     ```properties
-    jdbc.read.driverClassName=com.mysql.jdbc.Driver
+    jdbc.read.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.read.username=**your user name**
     jdbc.read.password=**your password**
 
-    jdbc.write.driverClassName=com.mysql.jdbc.Driver
+    jdbc.write.driverClassName=com.mysql.cj.jdbc.Driver
     jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.write.username=**your user name**
     jdbc.write.password=**your password**

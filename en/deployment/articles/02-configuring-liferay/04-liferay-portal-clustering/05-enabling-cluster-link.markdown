@@ -222,7 +222,7 @@ Rather than use TCP Ping to discover cluster members, you can use a central data
     connection_url="jdbc:mysql://[DATABASE_IP]/[DATABASE_NAME]?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false"
     connection_username="[DATABASE_USER]"
     connection_password="[DATABASE_PASSWORD]"
-    connection_driver="com.mysql.jdbc.Driver"/>
+    connection_driver="com.mysql.cj.jdbc.Driver"/>
 ```
 
 The above example uses MySQL as the database. For further information about JDBC Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual4/index.html#DiscoveryProtocols).

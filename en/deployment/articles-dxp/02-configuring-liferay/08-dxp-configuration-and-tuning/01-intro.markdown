@@ -31,7 +31,7 @@ with this configuration:
 
     <Resource auth="Container"         
         description="Digital Enterprise DB Connection"   
-        driverClass="com.mysql.jdbc.Driver"   
+        driverClass="com.mysql.cj.jdbc.Driver"   
         maxPoolSize="75"   
         minPoolSize="10"           
         acquireIncrement="5"   

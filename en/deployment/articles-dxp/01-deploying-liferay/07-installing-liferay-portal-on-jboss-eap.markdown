@@ -393,7 +393,7 @@ If you want JBoss to manage your data source, follow these steps:
     ```xml
     <drivers>
         <driver name="mysql" module="com.liferay.portal">
-            <driver-class>com.mysql.jdbc.Driver</driver-class>
+            <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
         </driver>
     </drivers>
     ```
