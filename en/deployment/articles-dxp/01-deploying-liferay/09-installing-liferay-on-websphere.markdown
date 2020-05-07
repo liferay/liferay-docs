@@ -306,7 +306,7 @@ install.
     that points to your database. For example, a MySQL URL would look like this:
 
     ```properties
-    jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useFastDateParsing=false
     ```
 
     | **Tip:** For more example URLs, see the `jdbc.default.url` values in

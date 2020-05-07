@@ -273,7 +273,7 @@ appropriate for your database's configuration (if using MySQL):
 
 ```propreties
 jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
-jdbc.default.url=jdbc:mysql://your.db.ip.address/yourdbname?useUnicode?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+jdbc.default.url=jdbc:mysql://your.db.ip.address/yourdbname?useUnicode?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useFastDateParsing=false
 jdbc.default.username=yourdbuser
 jdbc.default.password=yourdbpassword
 ```

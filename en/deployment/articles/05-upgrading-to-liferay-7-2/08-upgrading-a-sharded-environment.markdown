@@ -12,28 +12,28 @@ natively by database vendors. Upgrading a sharded installation to @product-ver@
 requires migrating it to as many non-sharded @product@ installations (servers)
 as you have shards. These steps guide you through configuring the new @product@
 servers to use your formerly sharded data and upgrading the data to
-@product-ver@. 
+@product-ver@.
 
-| **Note:** Liferay continues to support its logical partitioning capabilities 
+| **Note:** Liferay continues to support its logical partitioning capabilities
 | (also known as
 | [virtual instances](/docs/7-2/user/-/knowledge_base/u/setting-up-a-virtual-instance))
-| for the foreseeable future. 
+| for the foreseeable future.
 
-| For any further assistance with sharding contact your Liferay account manager 
-| or Liferay Support. 
+| For any further assistance with sharding contact your Liferay account manager
+| or Liferay Support.
 
 Here are the upgrade steps:
 
 1.  If you're on Liferay Portal 6.1 or lower,
-    [upgrade to Liferay Portal 6.2](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay). 
+    [upgrade to Liferay Portal 6.2](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay).
 
-2.  [Plan for deprecated applications](/docs/7-2/deploy/-/knowledge_base/d/planning-for-deprecated-applications). 
+2.  [Plan for deprecated applications](/docs/7-2/deploy/-/knowledge_base/d/planning-for-deprecated-applications).
 
-3.  [Test upgrading a @product@ backup copy](/docs/7-2/deploy/-/knowledge_base/d/test-upgrading-a-product-backup-copy). 
+3.  [Test upgrading a @product@ backup copy](/docs/7-2/deploy/-/knowledge_base/d/test-upgrading-a-product-backup-copy).
 
-4.  [Prepare to upgrade the @product@ database](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database). 
+4.  [Prepare to upgrade the @product@ database](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database).
 
-4.  [Prepare a new @product@ server for the data upgrade](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade). 
+4.  [Prepare a new @product@ server for the data upgrade](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade).
 
 5.  [Upgrade the @product@ data](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-product-data)
     for the default shard. As part of the configuration, copy all of the shard
@@ -43,7 +43,7 @@ Here are the upgrade steps:
 
     ```properties
     jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
-    jdbc.default.url=jdbc:mysql://database-server/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+    jdbc.default.url=jdbc:mysql://database-server/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&serverTimezone=GMT&useFastDateParsing=false&useUnicode=true
     jdbc.default.username=
     jdbc.default.password=
 
@@ -64,9 +64,9 @@ Here are the upgrade steps:
 6.  [Upgrade the @product@ data](/docs/7-2/deploy/-/knowledge_base/d/upgrading-the-product-data)
     for each non-default shard. The JDBC *default* connection properties in each
     server's `portal-upgrade-database.properties` must specify the associated
-    shard. Here's how: 
+    shard. Here's how:
 
-    -   Add the original JDBC properties for the respective non-default shard 
+    -   Add the original JDBC properties for the respective non-default shard
         database. For example, shard `one`'s original properties might start with `jdbc.one`:
 
     ```properties
@@ -76,7 +76,7 @@ Here are the upgrade steps:
     jdbc.one.password=
     ```
 
-    -   Rename the properties to start with `jdbc.default`. For example, 
+    -   Rename the properties to start with `jdbc.default`. For example,
 
     ```properties
     jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
@@ -87,13 +87,13 @@ Here are the upgrade steps:
 
 7.  In each server's `portal-ext.properties`, use the JDBC *default* properties
     you specified in the `portal-upgrade-database.properties` (see the previous
-    step). 
+    step).
 
 8.  Remove the non-default shard JDBC properties from the default shard server's
     `portal-ext.properties` file, leaving only the default shard database
     `jdbc.default` properties. For example,
 
-    Old JDBC properties: 
+    Old JDBC properties:
 
     ```properties
     jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
@@ -123,4 +123,4 @@ Here are the upgrade steps:
 
 Congratulations! You have migrated off of a sharded environment to virtual
 instances on separate @product@ servers. You have also upgraded to
-@product-ver@. Your virtual instances are ready for action. 
+@product-ver@. Your virtual instances are ready for action.

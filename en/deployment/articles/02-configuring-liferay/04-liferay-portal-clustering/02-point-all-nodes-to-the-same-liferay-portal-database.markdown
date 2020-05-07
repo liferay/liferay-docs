@@ -21,13 +21,13 @@ optimized for reading and one optimized for writing. Since all supported
 databases support replication, use your database vendor's replication mechanism
 to keep the database nodes in sync.
 
-Set up the databases for replication now. 
+Set up the databases for replication now.
 
 Then enable a read-writer database in your `portal-ext.properties` file:
 
 1.  If you're not using JNDI, set the default database connection pool provider
     to `dbcp`, `tomcat`, or `c3po`. Note, provider HikariCP does not support
-    read/write splitting. Here's an example setting: 
+    read/write splitting. Here's an example setting:
 
     ```properties
     jdbc.default.liferay.pool.provider=dbcp
@@ -36,18 +36,18 @@ Then enable a read-writer database in your `portal-ext.properties` file:
     All the portal JDBC configuration properties are documented
     [here](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#JDBC).
 
-    Skip to step 3 to use JNDI. 
+    Skip to step 3 to use JNDI.
 
 2.  Configure two different data sources, one for reading, and one for writing:
 
     ```properties
     jdbc.read.driverClassName=com.mysql.cj.jdbc.Driver
-    jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useFastDateParsing=false
     jdbc.read.username=**your user name**
     jdbc.read.password=**your password**
 
     jdbc.write.driverClassName=com.mysql.cj.jdbc.Driver
-    jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useFastDateParsing=false
     jdbc.write.username=**your user name**
     jdbc.write.password=**your password**
     ```
@@ -76,10 +76,10 @@ Then enable a read-writer database in your `portal-ext.properties` file:
     jdbc.write.validationQuery=SELECT releaseId FROM Release_
     ```
 
-    These settings are related to issue 
+    These settings are related to issue
     [LPS-64624](https://issues.liferay.com/browse/LPS-64624).
 
-5.  Enable the read-writer database configuration by uncommenting the following 
+5.  Enable the read-writer database configuration by uncommenting the following
     Spring configuration files from the `spring.configs` and
     `spring.infrastructure.configs` properties:
 
@@ -95,8 +95,8 @@ Then enable a read-writer database in your `portal-ext.properties` file:
         [..]
     ```
 
-    The Spring configuration portal properties are documented 
+    The Spring configuration portal properties are documented
     [here](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Spring).
 
 The next time you start @product@, it uses the two data sources you have
-defined. 
+defined.
