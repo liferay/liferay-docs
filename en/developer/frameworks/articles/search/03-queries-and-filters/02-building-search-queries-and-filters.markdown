@@ -6,8 +6,10 @@ header-id: building-search-queries-and-filters
 
 [TOC levels=1-4]
 
-Each filter and query has a different purpose, but the way you'll add the
-information to the search request is similar between all queries and filters.
+Each filter and query has a [different
+purpose](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html),
+but the way you'll add the information to the search request is similar between
+all queries and filters.
 
 ## Queries
 
@@ -48,6 +50,17 @@ Once the query itself is in good shape, feed it to the search request.
 
     ```java
     SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
+    ```
+
+    Before building the request with the query, make sure the request builder
+    enables empty search and sets the `companyId` into the Search Context:
+
+    ```java
+    searchRequestBuilder.emptySearchEnabled(true);
+
+    searchRequestBuilder.withSearchContext(
+                searchContext -> searchContext.setCompanyId(companyId)
+            );
     ```
 
 2.  Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the
@@ -106,6 +119,12 @@ Once the query itself is in good shape, feed it to the search request.
 
     SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
 
+    searchRequestBuilder.emptySearchEnabled(true);
+
+    searchRequestBuilder.withSearchContext(
+                searchContext -> searchContext.setCompanyId(companyId)
+            );
+
     SearchRequest searchRequest = searchRequestBuilder.query(termsQuery).build();
 
     SearchResponse searcher.search(searchRequest);
@@ -160,3 +179,13 @@ search framework is constructing the main search query. See the
 which is called in the overridden `postProcessContextBooleanFilter` to add the
 filter logic.
 
+## Discovering Indexed Fields
+
+To find the fields to use in your Queries, navigate to *Control Panel* &rarr;
+*Configuration* &rarr; *Search* in a running portal. From there, open the Field Mappings tab and
+browse the mappings for the `liferay-[companyId]` index. Scroll to the
+[`properties`](https://www.elastic.co/guide/en/elasticsearch/reference/current/properties.html)
+section of the mapping.
+
+A summary of the text fields that are localized can be found
+[here](/docs/7-2/user/-/knowledge_base/u/building-search-queries-and-filters).
