@@ -229,4 +229,4 @@ browse the mappings for the `liferay-[companyId]` index. Scroll to the
 section of the mapping.
 
 A summary of the text fields that are localized can be found
-[here](/docs/7-2/user/-/knowledge_base/u/building-search-queries-and-filters).
+[here](/docs/7-2/user/-/knowledge_base/u/searching-for-localized-content).
