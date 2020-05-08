@@ -146,7 +146,7 @@ NestedQuery
 Nested Query: Query nested objects as if they each had a separate document in
 the index.
 
-## Geo Queries
+### Geo Queries
 
 In Elasticsearch, you can index latitude/longitude pairs and geographic shapes.
 Geo queries let you query for these points and shapes.

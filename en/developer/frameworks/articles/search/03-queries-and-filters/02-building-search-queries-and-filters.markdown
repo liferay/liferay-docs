@@ -22,44 +22,66 @@ your copying and pasting convenience at the end of this section.
     the query you'll construct. For example,
 
     ```java
-    TermsQuery termsQuery = queries.terms("fieldName");
+    TermsQuery rootFolderQuery = _queries.terms("folderId");
+    MatchQuery titleQuery = queries.match("title_en_US", keywords);
     ```
 
     To discover what fields each query must have (e.g., `String field` in the
     case of the above `com.liferay.portal.search.query.TermsQuery`), see the
-    [`Queries`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query/Queries.java) 
-    interface.
+    [`Queries`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query/Queries.java)
+    interface. Note that you'd need `keywords` to use the above code: `String
+    keywords = "Home"`, for example.
 
 2.  Build out the query to get the desired response. This looks different
     for each query type, but Elasticsearch's documentation on the query type
     explains it (for example, 
     [Terms Query](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-terms-query.html)).
 
-    For a Terms Query, you might just add terms to the query:
+    For a Terms Query, you might just add a value to match:
 
     ```java
-    termsQuery.addValues("value1", "value2");
+    rootFolderQuery.addValues("0");
     ```
+
+    This TermsQuery construct matches Documents with a `folderId` of `0`, which
+    is used to signify a root folder (as opposed to a subfolder).
+
+3.  You might want to wrap queries. For example, use the queries constructed
+    above as MUST clauses in a `BooleanQuery` wrapper:
+
+    ```java
+    BooleanQuery booleanQuery = _queries.booleanQuery();
+    booleanQuery.addMustQueryClauses(rootFolderQuery, titleQuery);
+    ```
+
+    Now the query you constructed will return only root folders matching (via
+    full text search, since it's a `MatchQuery`) the keywords with the localized
+    title field.
 
 Once the query itself is in good shape, feed it to the search request.
 
 ### Build the Search Request
 
-1.  Get an instance of `com.liferay.portal.search.searcher.SearchRequestBuilder`
-    from the `com.liferay.portal.search.legacy.searcher.SearchRequestBuilderFactory` service:
+1.  Get a service Reference to `com.liferay.portal.search.legacy.searcher.SearchRequestBuilderFactory`, then get an instance of `com.liferay.portal.search.searcher.SearchRequestBuilder`
+    from the  service:
 
     ```java
-    SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
+    @Reference
+    SearchRequestBuilderFactory _searchRequestBuilderFactory;
+
+    SearchRequestBuilder searchRequestBuilder = _searchRequestBuilderFactory.getSearchRequestBuilder();
     ```
 
     Before building the request with the query, make sure the request builder
-    enables empty search and sets the `companyId` into the Search Context:
+enables empty search and sets the `companyId` and `keywords` into the Search
+Context:
 
     ```java
     searchRequestBuilder.emptySearchEnabled(true);
 
     searchRequestBuilder.withSearchContext(
-                searchContext -> searchContext.setCompanyId(companyId)
+                searchContext -> searchContext.setCompanyId(companyId);
+                searchContext -> searchContext.setKeywords(keywords);
             );
     ```
 
@@ -67,9 +89,10 @@ Once the query itself is in good shape, feed it to the search request.
     builder, then add the query to it and run its `build` method:
 
     ```java
-    SearchRequest searchRequest = searchRequestBuilder.query(termsQuery).build();
+    SearchRequest searchRequest = searchRequestBuilder.query(booleanQuery).build();
     ```
 
+<!-- I'm not sure this still applies; please advise -->
 3.  To instead use the constructed query in a filter context, call the
     `postFilterQuery` method:
 
@@ -80,6 +103,7 @@ Once the query itself is in good shape, feed it to the search request.
     When constructing a search request, you'll often find it necessary to chain
     the builder methods together:
 
+<!-- Though we should still show this -->
     ```java
     SearchRequest searchRequest = 
         searchRequestBuilder.postFilterQuery(myQuery1).query(myQuery2).build();
@@ -95,50 +119,62 @@ Once the query itself is in good shape, feed it to the search request.
     `com.liferay.portal.search.searcher.SearchResponse`:
 
     ```java
-    SearchResponse searcher.search(searchRequest);
+    SearchResponse _searcher.search(searchRequest);
     ```
 
 2.  To satisfy the dependencies of the example code here, get a reference to
-    `com.liferay.portal.search.searcher.SearchRequestBuilderFactory` and
-    `com.liferay.portal.search.searcher.Searcher`:
+    `com.liferay.portal.search.searcher.SearchRequestBuilderFactory`,
+    `com.liferay.portal.search.searcher.Searcher`, and
+    `com.liferay.portal.search.query.Queries`:
 
     ```java
     @Reference
-    protected Searcher searcher;
+    protected Queries _queries;
 
     @Reference
-    SearchRequestBuilderFactory searchRequestBuilderFactory;
+    protected Searcher _searcher;
+
+    @Reference
+    SearchRequestBuilderFactory _searchRequestBuilderFactory;
     ```
 
     Here's the complete code snippet:
 
     ```java
-    TermsQuery termsQuery = queries.terms("fieldName");
+    MatchQuery titleQuery = queries.match("title_en_US", keywords);
 
-    termsQuery.addValues("value1", "value2");
+    TermsQuery rootFolderQuery = _queries.terms("folderId");
+    rootFolderQuery.addValues("0");
 
-    SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
+    BooleanQuery booleanQuery = _queries.booleanQuery();
+    booleanQuery.addMustQueryClauses(rootFolderQuery, titleQuery);
+
+    SearchRequestBuilder searchRequestBuilder = _searchRequestBuilderFactory.getSearchRequestBuilder();
 
     searchRequestBuilder.emptySearchEnabled(true);
 
     searchRequestBuilder.withSearchContext(
-                searchContext -> searchContext.setCompanyId(companyId)
+                searchContext -> searchContext.setCompanyId(companyId);
+                searchContext -> searchContext.setKeywords(keywords);
             );
 
-    SearchRequest searchRequest = searchRequestBuilder.query(termsQuery).build();
+    SearchRequest searchRequest = searchRequestBuilder.query(booleanQuery).build();
 
-    SearchResponse searcher.search(searchRequest);
-
-    @Reference
-    protected Searcher searcher;
+    SearchResponse _searcher.search(searchRequest);
 
     @Reference
-    SearchRequestBuilderFactory searchRequestBuilderFactory;
+    protected Queries _queries;
+
+    @Reference
+    protected Searcher _searcher;
+
+    @Reference
+    protected SearchRequestBuilderFactory _searchRequestBuilderFactory;
     ```
 
 ### Process the Search Response
 
-What you'll do with the `SearchResponse` returned by the `searcher.search` call
+What you'll do with the `SearchResponse` returned by the `_searcher.search` call
 is dependent on the type of query and your specific use case. See the
 documentation on searching programmatically for more information.
 
