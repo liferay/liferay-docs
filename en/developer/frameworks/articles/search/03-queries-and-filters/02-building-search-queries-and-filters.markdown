@@ -21,7 +21,11 @@ your copying and pasting convenience at the end of this section.
 1.  Use the `com.liferay.portal.search.query.Queries` interface to instantiate
     the query you'll construct. For example,
 
+
     ```java
+    @Reference
+    protected Queries _queries;
+
     TermsQuery rootFolderQuery = _queries.terms("folderId");
     MatchQuery titleQuery = queries.match("title_en_US", keywords);
     ```
@@ -30,14 +34,15 @@ your copying and pasting convenience at the end of this section.
     case of the above `com.liferay.portal.search.query.TermsQuery`), see the
     [`Queries`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query/Queries.java)
     interface. Note that you'd need `keywords` to use the above code: `String
-    keywords = "Home"`, for example.
+    keywords="Home";`, for example.
 
 2.  Build out the query to get the desired response. This looks different
     for each query type, but Elasticsearch's documentation on the query type
     explains it (for example, 
     [Terms Query](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-terms-query.html)).
 
-    For a Terms Query, you might just add a value to match:
+    For the `rootFolderQuery` Terms Query, you might just add a single value to
+    match against the `folderId` field:
 
     ```java
     rootFolderQuery.addValues("0");
