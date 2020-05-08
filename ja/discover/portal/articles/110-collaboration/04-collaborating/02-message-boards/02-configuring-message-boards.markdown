@@ -39,7 +39,7 @@ header-id: configuring-message-boards
 
 これらのタブを使用して、メッセージボードアプリが電子メール通知を処理する方法を構成します。
 
-**電子メール送信元**：電子メール通知を送信する名前と電子メールアドレス。 デフォルトの管理者アカウントの名前と電子メールアドレスは、 [`admin.email.from.name` および `admin.email.from.address`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Admin%20Portlet) ポータルプロパティから取得されます。 これらは、@ product @のインストール時に基本構成ウィザードで設定されました。 このメールアドレスは、通知専用の有効なアドレスに更新してください。
+**電子メール送信元**：電子メール通知を送信する名前と電子メールアドレス。 デフォルトの管理者アカウントの名前と電子メールアドレスは、 [`admin.email.from.name` および `admin.email.from.address`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Admin%20Portlet) ポータルプロパティから取得されます。 これらは、@product@のインストール時に基本構成ウィザードで設定されました。 このメールアドレスは、通知専用の有効なアドレスに更新してください。
 
 **HTML形式：** これらの電子メールでHTMLをサポートします。
 

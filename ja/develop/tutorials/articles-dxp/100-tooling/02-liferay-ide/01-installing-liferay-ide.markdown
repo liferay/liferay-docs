@@ -2,13 +2,13 @@
 header-id: installing-liferay-ide
 ---
 
-# Liferay @ ide @のインストール
+# Liferay @ide@のインストール
 
 <p class="alert alert-info"><span class="wysiwyg-color-blue120">ファストトラック記事は、お客様の利便性のために一部機械翻訳されています。また、ドキュメントは頻繁に更新が加えられており、翻訳は未完成の部分が含まれることをご了承ください。最新情報は都度公開されておりますため、必ず英語版をご参照ください。翻訳に問題がある場合は、<a href="mailto:support-content-jp@liferay.com">こちら</a>までご連絡ください。</span></p>
 
 [TOC levels=1-4]
 
-Liferay @ ide @は、多くのLiferay固有の機能と追加のエンタープライズ専用機能を提供するEclipseのプラグインです。 既存のEclipse環境にインストールするか、Liferayがバンドルバージョンを提供します。 インストールプロセスを開始する前に、Dev Studioの [互換性マトリックス](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/developer-tools) を参照して、サポートされているLiferayのバージョンとアプリケーションサーバーについて理解してください。
+Liferay @ide@は、多くのLiferay固有の機能と追加のエンタープライズ専用機能を提供するEclipseのプラグインです。 既存のEclipse環境にインストールするか、Liferayがバンドルバージョンを提供します。 インストールプロセスを開始する前に、Dev Studioの [互換性マトリックス](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/developer-tools) を参照して、サポートされているLiferayのバージョンとアプリケーションサーバーについて理解してください。
 
 このチュートリアルでは、Liferay Dev Studioをインストールするためのさまざまな方法を学習します。
 
@@ -20,15 +20,15 @@ Liferay @ ide @は、多くのLiferay固有の機能と追加のエンタープ�
 
 ## Liferay Dev Studio Bundleをインストールする
 
-1.  [Java](http://java.oracle.com)ダウンロードしてインストールします。 @ product @はJavaで実行されるため、他のすべてを実行するにはJavaが必要です。 Liferay Dev Studioで@ product @のアプリを開発するため、Java Development Kit（JDK）が必要です。 これは、新しいJavaテクノロジの開発に使用されるJava環境の拡張バージョンです。 Java SE JDKは、Java [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) ページからダウンロードできます。
+1.  [Java](http://java.oracle.com)ダウンロードしてインストールします。 @product@はJavaで実行されるため、他のすべてを実行するにはJavaが必要です。 Liferay Dev Studioで@product@のアプリを開発するため、Java Development Kit（JDK）が必要です。 これは、新しいJavaテクノロジの開発に使用されるJava環境の拡張バージョンです。 Java SE JDKは、Java [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) ページからダウンロードできます。
 
-2.  オペレーティングシステムに関連する@ ide @</a> 実行可能ファイルを含むLiferayの最新の3.2.x
+2.  オペレーティングシステムに関連する@ide@</a> 実行可能ファイルを含むLiferayの最新の3.2.x
 
-プロジェクトSDKをダウンロードします。 プロジェクトSDKには、@ ide @、 [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)、および [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)ます。</p> 
+プロジェクトSDKをダウンロードします。 プロジェクトSDKには、@ide@、 [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)、および [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)ます。</p> 
    
-   @ ide @インストーラをダウンロードする前に、liferay.comのユーザー名とパスワードの入力を求められる場合があります。 @ ide @には@ product @へのアクセスが含まれるため、それを使用する権限があることを確認する必要があります。
+   @ide@インストーラをダウンロードする前に、liferay.comのユーザー名とパスワードの入力を求められる場合があります。 @ide@には@product@へのアクセスが含まれるため、それを使用する権限があることを確認する必要があります。
    
-   資格情報はローカルに保存されません。それらは `/ .liferay` フォルダーにトークンとして保存されます。 @ product @バンドルを再ダウンロードすることを決定した場合、このトークンはDev Studioの [Liferayワークスペース](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace) によって使用されます。 さらに、ワークスペースにダウンロードされた@ product @バンドルも `/ .liferay / bundles` フォルダーにコピーされるため、同じバージョンの別の@ product @インスタンスを初期化する場合、バンドルは再作成されませんダウンロードしました。 参照してください [ワークスペースへのLiferayバンドルを追加する](/docs/7-1/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace) このトピックの詳細については。
+   資格情報はローカルに保存されません。それらは `/ .liferay` フォルダーにトークンとして保存されます。 @product@バンドルを再ダウンロードすることを決定した場合、このトークンはDev Studioの [Liferayワークスペース](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace) によって使用されます。 さらに、ワークスペースにダウンロードされた@product@バンドルも `/ .liferay / bundles` フォルダーにコピーされるため、同じバージョンの別の@product@インスタンスを初期化する場合、バンドルは再作成されませんダウンロードしました。 参照してください [ワークスペースへのLiferayバンドルを追加する](/docs/7-1/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace) このトピックの詳細については。
    
    **重要：** トークンジェネレーターは、プロキシの背後に構築されたワークスペースのトークンを生成するときに問題が発生することがあります。 ワークスペーストークンを自動的に生成できない場合は、 [手動で生成できます](#generating-a-workspace-token-manually)。</li> 
    
@@ -40,9 +40,9 @@ Liferay @ ide @は、多くのLiferay固有の機能と追加のエンタープ�
   
   ![図1：Dev Studioインスタンスを配置するフォルダーを選択します。](../../../images-dxp/dev-studio-install.png)
 
-6  @ product @アクティベーションキーを入力して、@ ide @とともにパッケージ化されたLiferay DXPバンドルをセットアップします。 次に *Next*クリックします。
+6  @product@アクティベーションキーを入力して、@ide@とともにパッケージ化されたLiferay DXPバンドルをセットアップします。 次に *Next*クリックします。
   
-  Dev Studioはデフォルトで [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace) インストールします。これは、@ product @プロジェクトの構築と管理に使用される開発者環境です。 インストーラーは、Liferayワークスペースとその専用コマンドラインツール（[ブレードCLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)）を自動的にインストールします。
+  Dev Studioはデフォルトで [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace) インストールします。これは、@product@プロジェクトの構築と管理に使用される開発者環境です。 インストーラーは、Liferayワークスペースとその専用コマンドラインツール（[ブレードCLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)）を自動的にインストールします。
 
 7  プロジェクトSDKのプロキシ設定を構成します。 ファイアウォールの内側でDev Studioを使用する必要がある場合は、プロキシ設定を構成できます。 詳細については、 [Liferay IDEプロキシ設定](/docs/7-1/tutorials/-/knowledge_base/t/setting-proxy-requirements-for-liferay-ide) および [Liferayワークスペースプロキシ設定](/docs/7-1/tutorials/-/knowledge_base/t/setting-proxy-requirements-for-liferay-workspace) チュートリアルを参照してください。 これが必要ない場合は、このステップをスキップしてください。
   
@@ -50,7 +50,7 @@ Liferay @ ide @は、多くのLiferay固有の機能と追加のエンタープ�
 
 8  *次* をクリックして、Dev Studioインスタンスのインストールプロセスを完了します。</ol> 
 
-おめでとう\！ Liferay @ ide @ \！をインストールしました。 指定したフォルダで利用できるようになりました。 Dev Studioを実行するには、 `DeveloperStudio` 実行可能ファイルを実行します。 Liferayワークスペースも同じフォルダーで初期化されています。
+おめでとう\！ Liferay @ide@ \！をインストールしました。 指定したフォルダで利用できるようになりました。 Dev Studioを実行するには、 `DeveloperStudio` 実行可能ファイルを実行します。 Liferayワークスペースも同じフォルダーで初期化されています。
 
 
 
@@ -74,7 +74,7 @@ Liferay Dev Studioが既存のEclipse環境にインストールされました�
 
 Zipファイルを使用してDev Studioをインストールするには、次の手順に従います。
 
-1.  [Liferay @ ide @](https://web.liferay.com/group/customer/dxp/downloads/developer-tools) ダウンロードページに移動します。 ドロップダウンメニューから、[ *Developer Studio Updatesite Zip* ]を選択し、[ *ダウンロード*]をクリックします。
+1.  [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools) ダウンロードページに移動します。 ドロップダウンメニューから、[ *Developer Studio Updatesite Zip* ]を選択し、[ *ダウンロード*]をクリックします。
 
 2.  Eclipseで、 *ヘルプ* → *新しいソフトウェアのインストール...*ます。
 

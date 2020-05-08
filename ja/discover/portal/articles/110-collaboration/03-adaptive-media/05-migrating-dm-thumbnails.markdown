@@ -8,7 +8,7 @@ header-id: migrating-documents-and-media-thumbnails-to-adaptive-media
 
 [TOC levels=1-4]
 
-@ product @は、ドキュメントとメディアの画像のサムネイルを自動的に生成します。 ただし、Adaptive Mediaアプリをデプロイすると、@ product @はそれらをAdaptive Mediaに移行するまでサムネイルを表示しません。 この記事では、この移行プロセスについて説明します。
+@product@は、ドキュメントとメディアの画像のサムネイルを自動的に生成します。 ただし、Adaptive Mediaアプリをデプロイすると、@product@はそれらをAdaptive Mediaに移行するまでサムネイルを表示しません。 この記事では、この移行プロセスについて説明します。
 
 | **注：** 説明されているアクションを実行するには、ポータル管理者である必要があります。ここに。
 

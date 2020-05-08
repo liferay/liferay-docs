@@ -8,7 +8,7 @@ header-id: sharepoint-repositoryの使用
 
 [TOCレベル= 1-4]
 
-Liferay Marketplaceアプリ [*Liferay Connector for SharePoint*](https://web.liferay.com/marketplace/-/mp/application/105406871) 使用すると、@ product @のドキュメントおよびメディアライブラリからSharePoint 2013およびSharePoint 2016ライブラリにアクセスできます。 このアプリをインストールしたら、@ product @のドキュメントとメディアライブラリにSharePointリポジトリタイプを追加して、SharePointファイルにアクセスできます。
+Liferay Marketplaceアプリ [*Liferay Connector for SharePoint*](https://web.liferay.com/marketplace/-/mp/application/105406871) 使用すると、@product@のドキュメントおよびメディアライブラリからSharePoint 2013およびSharePoint 2016ライブラリにアクセスできます。 このアプリをインストールしたら、@product@のドキュメントとメディアライブラリにSharePointリポジトリタイプを追加して、SharePointファイルにアクセスできます。
 
 | **注：** Liferay Connector for SharePointは、Azure ACS with OAuth 2を使用します。 SharePointサーバーの承認。 したがって、|でHTTPSサポートを有効にする必要があります。アプリサーバー。 手順については、アプリサーバーのドキュメントをご覧ください。 |たとえば、Tomcatに必要な手順は|にあります。 [そのドキュメント](https://tomcat.apache.org/tomcat-8.0-doc/ssl-howto.html)。
 

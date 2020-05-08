@@ -20,7 +20,7 @@ header-id: managing-workflows
 
 ## ワークフロー定義の公開権限
 
-ワークフロー定義を編集または公開する権限を持つユーザーは、ワークフローに [Groovyスクリプト](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow) を追加できます。 スクリプトエンジンへのアクセスとは、サーバーのJava仮想マシン（JVM）へのアクセスを意味します。 したがって、スクリプトを含むワークフロー定義を公開（または編集）するユーザーは、@ product @自体の個別の [仮想インスタンス](/docs/7-1/user/-/knowledge_base/u/virtual-instances) に含まれるデータなど、JVMの到達範囲内の任意のデータにアクセスできます。
+ワークフロー定義を編集または公開する権限を持つユーザーは、ワークフローに [Groovyスクリプト](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow) を追加できます。 スクリプトエンジンへのアクセスとは、サーバーのJava仮想マシン（JVM）へのアクセスを意味します。 したがって、スクリプトを含むワークフロー定義を公開（または編集）するユーザーは、@product@自体の個別の [仮想インスタンス](/docs/7-1/user/-/knowledge_base/u/virtual-instances) に含まれるデータなど、JVMの到達範囲内の任意のデータにアクセスできます。
 
 この広範囲にわたるアクセスのため、ワークフロー定義を作成または編集する権限は、デフォルトの仮想インスタンスの通常の管理者に制限されています。 Liferay DXPのお客様の場合、Kaleo DesignerおよびKaleo Forms Adminアプリケーションにアクセスできるサイト管理者もワークフローを編集および公開できます。
 
@@ -60,7 +60,7 @@ header-id: managing-workflows
 
 ## ワークフロー定義のアップロード
 
-ローカルXML定義ファイルがある場合（おそらく、 [埋め込みワークフロー](/docs/7-1/user/-/knowledge_base/u/workflow#embedded-workflows)基づいて新しいワークフローを作成したい場合）、それを@ product @にアップロードします。
+ローカルXML定義ファイルがある場合（おそらく、 [埋め込みワークフロー](/docs/7-1/user/-/knowledge_base/u/workflow#embedded-workflows)基づいて新しいワークフローを作成したい場合）、それを@product@にアップロードします。
 
 1.  [コントロールパネル]→[構成]→[ワークフロー]に移動します。
 

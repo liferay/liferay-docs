@@ -10,7 +10,7 @@ header-id: creating-a-new-sharepoint-repository-configuration
 
 リモートSharePointサーバーに接続するには、リポジトリー構成を作成する必要があります。
 
-1.  @ product @インスタンス内で、コントロールパネルを開き、 *設定* → *システム設定* → *コラボレーション* → *Sharepoint OAuth2*ます。
+1.  @product@インスタンス内で、コントロールパネルを開き、 *設定* → *システム設定* → *コラボレーション* → *Sharepoint OAuth2*ます。
 
     ![図1：* Sharepoint OAuth2 *システム設定を使用して、新しいSharePointリポジトリ構成を作成します。](../../../../images-dxp/sharepoint-system-setting.png)
 
@@ -40,4 +40,4 @@ header-id: creating-a-new-sharepoint-repository-configuration
 
 4.  [ *保存*クリックします。
 
-驚くばかり\！ SharePointリポジトリが構成されたので、@ product @のドキュメントとメディアライブラリにマウントできます。
+驚くばかり\！ SharePointリポジトリが構成されたので、@product@のドキュメントとメディアライブラリにマウントできます。

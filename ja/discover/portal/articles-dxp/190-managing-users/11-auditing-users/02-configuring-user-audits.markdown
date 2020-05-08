@@ -8,9 +8,9 @@ header-id: configuring-audits
 
 [TOC levels=1-4]
 
-監査はデフォルトで有効になっています。 監査アプリは監査イベントを報告しますが、@ product @のログまたはコンソールでそれらを報告したり、スケジュールされたジョブでそれらを有効にしたり、完全に無効にしたりすることもできます。
+監査はデフォルトで有効になっています。 監査アプリは監査イベントを報告しますが、@product@のログまたはコンソールでそれらを報告したり、スケジュールされたジョブでそれらを有効にしたり、完全に無効にしたりすることもできます。
 
-@ product @を設定するには、主に2つの方法があります。
+@product@を設定するには、主に2つの方法があります。
 
 1.  コントロールパネルから設定を編集します。 これにより、構成がデータベースに保存されます。
 
@@ -20,13 +20,13 @@ header-id: configuring-audits
 
 ## Liferayのログとコンソールでの監査イベントの報告
 
-コントロールパネルを使用して@ product @のログとコンソールでログイベントのレポートを構成するには、次の手順に従います。
+コントロールパネルを使用して@product@のログとコンソールでログイベントのレポートを構成するには、次の手順に従います。
 
 1.  *コントロールパネル* → *構成* → *システム設定*に移動し、 *セキュリティ* セクションから *監査* を選択します。
 
 2.  左側の *SYSTEM SCOPE* 列で、 *Logging Message Audit Message Processor*選択します。
 
-3.  *有効* チェックボックスを選択して、@ product @のログに監査イベントを報告します。
+3.  *有効* チェックボックスを選択して、@product@のログに監査イベントを報告します。
 
 4.  選択 *コンソールに出力を* コンソールで監査イベントを報告するチェックボックスをオンにします。
 
@@ -49,7 +49,7 @@ header-id: configuring-audits
 
 3.  ファイルを `[LIFERAY_HOME]/ osgi / modules` フォルダーにデプロイします。 [Liferayホームフォルダー](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) は、通常、アプリケーションサーバーの親フォルダーです。
 
-構成方法に関係なく、@ product @の `log4j-ext.xml` ファイルを拡張して、適切なクラスによって生成されたメッセージを適切なファイルに記録するようにLog4j（@ product @のロギング実装）を構成する必要もあります。 そのためには、次の構成で `portal-log4j-ext.xml` ファイルを `[LIFERAY_HOME]/ tomcat-[version]/ webapps / ROOT / WEB-INF / classes / META-INF` します。
+構成方法に関係なく、@product@の `log4j-ext.xml` ファイルを拡張して、適切なクラスによって生成されたメッセージを適切なファイルに記録するようにLog4j（@product@のロギング実装）を構成する必要もあります。 そのためには、次の構成で `portal-log4j-ext.xml` ファイルを `[LIFERAY_HOME]/ tomcat-[version]/ webapps / ROOT / WEB-INF / classes / META-INF` します。
 
     <?xml version="1.0"?>
     <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">

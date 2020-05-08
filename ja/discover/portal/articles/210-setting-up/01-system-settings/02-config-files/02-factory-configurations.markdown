@@ -30,7 +30,7 @@ header-id: factory-configurations
 
     my.service.ServiceConfiguration-port9080.config
 
-上記のCXFエンドポイントの例に従うと、Liferayの開発者が初期のCXFエンドポイント `.config` ファイルを@ product @とともに出荷していた場合、このファイルの名前は次のようになります。
+上記のCXFエンドポイントの例に従うと、Liferayの開発者が初期のCXFエンドポイント `.config` ファイルを@product@とともに出荷していた場合、このファイルの名前は次のようになります。
 
     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-default.config
 

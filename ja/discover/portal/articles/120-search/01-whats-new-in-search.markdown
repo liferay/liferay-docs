@@ -18,7 +18,7 @@ header-id: whats-new-with-search
 
 ## Elasticsearch 6
 
-Elasticsearch 6のサポートは、@ product @バージョン7.0の *オプトイン* 機能として追加されました。現在のバージョンでは、Elasticsearch 6がデフォルトの埋め込み検索エンジンです。 本番環境にリモートElasticsearchサーバーをインストールする方法については、 [Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch) インストールに関する記事を参照してください。
+Elasticsearch 6のサポートは、@product@バージョン7.0の *オプトイン* 機能として追加されました。現在のバージョンでは、Elasticsearch 6がデフォルトの埋め込み検索エンジンです。 本番環境にリモートElasticsearchサーバーをインストールする方法については、 [Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch) インストールに関する記事を参照してください。
 
 ![図2：Elasticsearch 6がデフォルトの検索エンジンです。](../../images/search-elasticsearch6.png)
 

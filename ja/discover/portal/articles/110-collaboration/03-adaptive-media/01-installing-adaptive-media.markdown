@@ -8,7 +8,7 @@ header-id: installing-adaptive-media
 
 [TOC levels=1-4]
 
-アダプティブメディアアプリはデフォルトで@ product @にインストールされます。 次のセクションでは、Adaptive Mediaアプリのモジュールと、アニメーションGIFを処理するようにAdaptive Mediaを準備する方法について説明します。
+アダプティブメディアアプリはデフォルトで@product@にインストールされます。 次のセクションでは、Adaptive Mediaアプリのモジュールと、アニメーションGIFを処理するようにAdaptive Mediaを準備する方法について説明します。
 
 | **注：** アダプティブメディアアプリはデフォルトでインストールされるため、|経由で更新されます。 Liferay DXPフィックスパックおよびLiferay Portal CE GAリリース。 |の使用 [Liferayマーケットプレイス](https://web.liferay.com/marketplace) | Liferay DXP 7.1でアプリを更新すると、エラーが発生します。
 

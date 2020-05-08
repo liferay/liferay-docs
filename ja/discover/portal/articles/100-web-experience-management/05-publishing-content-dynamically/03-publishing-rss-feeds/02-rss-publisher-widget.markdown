@@ -28,7 +28,7 @@ RSSパブリッシャーウィジェットは、Liferay CEポータル7.1 GA1お
    
         com.liferay.portlet.display-category="category.news"
 
-4.  @ product @を起動します。
+4.  @product@を起動します。
 
 RSSパブリッシャーウィジェットは、 *追加* （![Add](../../../../images/icon-add-app.png)）→ *ウィジェット* → *ニュース* メニューで使用できるようになりました。
 

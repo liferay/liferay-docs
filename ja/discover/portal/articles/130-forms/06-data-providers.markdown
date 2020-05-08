@@ -12,7 +12,7 @@ header-id: data-providers
 
 データプロバイダーを設定するときは、 [REST Webサービス](https://en.wikipedia.org/wiki/Representational_state_transfer)アクセスしています。 Liferay</a>に登録されている
 
-JSON Webサービス、またはアクセス可能なその他のREST Webサービスを使用します。 @ product @ですぐに使用できる登録済みJSON Webサービスのリストを見つけるには、 [http：// localhost：8080 / api / jsonws](http://localhost:8080/api/jsonws) します（ローカルサーバーを実行している場合）。 利用可能なLiferayサービスを参照します。 多くの場合、Formsアプリケーションで役立つサービスは何かのリストを取得します。 `get-countries` JSON Webサービス（2つあります---どちらか1つを使用）を見つけてクリックし、[ *Invoke*]をクリックします。 *Result* タブには、次のようなJSON構文を使用する国のリストが表示されます。</p> 
+JSON Webサービス、またはアクセス可能なその他のREST Webサービスを使用します。 @product@ですぐに使用できる登録済みJSON Webサービスのリストを見つけるには、 [http：// localhost：8080 / api / jsonws](http://localhost:8080/api/jsonws) します（ローカルサーバーを実行している場合）。 利用可能なLiferayサービスを参照します。 多くの場合、Formsアプリケーションで役立つサービスは何かのリストを取得します。 `get-countries` JSON Webサービス（2つあります---どちらか1つを使用）を見つけてクリックし、[ *Invoke*]をクリックします。 *Result* タブには、次のようなJSON構文を使用する国のリストが表示されます。</p> 
 
     [
       {

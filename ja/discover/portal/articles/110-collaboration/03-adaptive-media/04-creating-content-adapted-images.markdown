@@ -59,7 +59,7 @@ Webコンテンツの記事の場合、Adaptive Mediaは、ファイルセレク
 
 ## 適応した画像のステージング
 
-Adaptive Mediaは、@ product @の [コンテンツステージング](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication) および [エクスポート/インポート](/docs/7-1/user/-/knowledge_base/u/exporting-importing-widget-data) 機能と完全に統合されています。 アダプティブメディアは、公開時に段階的なコンテンツに適応された画像を含み、それらの画像を更新して新しい解像度に一致させることができます。
+Adaptive Mediaは、@product@の [コンテンツステージング](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication) および [エクスポート/インポート](/docs/7-1/user/-/knowledge_base/u/exporting-importing-widget-data) 機能と完全に統合されています。 アダプティブメディアは、公開時に段階的なコンテンツに適応された画像を含み、それらの画像を更新して新しい解像度に一致させることができます。
 
 同様に、適応された画像を含むコンテンツがエクスポートされると、Adaptive Mediaはそれらの画像をLARファイルにエクスポートします。 その後、そのLARファイルをインポートして、そのコンテンツをその適応されたイメージとともに復元または転送できます。
 
