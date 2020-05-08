@@ -42,7 +42,7 @@ header-id: openapi-profiles
 
 ## ヘッドレス管理
 
-ヘッドレス管理APIがいくつかあり、それぞれに独自のAPIセットが含まれています。以下の表では、これらAPIと各APIがマップする@prodcut@の内部モデルをまとめています。
+ヘッドレス管理APIがいくつかあり、それぞれに独自のAPIセットが含まれています。以下の表では、これらAPIと各APIがマップする@product@の内部モデルをまとめています。
 
 [Headless Admin User](https://app.swaggerhub.com/apis/liferayinc/headless-admin-user/1.0)には、ユーザーと組織に関する情報を取得および管理するために以下のAPIが含まれています。
 
