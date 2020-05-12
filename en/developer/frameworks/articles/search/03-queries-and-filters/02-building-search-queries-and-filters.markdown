@@ -16,6 +16,20 @@ all queries and filters.
 A mostly-complete code snippet for building Queries is provided for your
 copying and pasting convenience [below](#example).
 
+### Declare Gradle Dependencies
+
+Add the following to your `build.gradle` file:
+
+```gradle
+dependencies {
+	compileOnly group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.5.0"
+	compileOnly group: "com.liferay.portal", name: "release.portal.api", version: "7.2.0"
+	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+}
+```
+
+With this, you will be able to import the Query and Filter types and other necessary Search APIs shipped with @product@.
+
 ### Reference the Search Services
 
 To satisfy the dependencies of the example code presented here, get references to
