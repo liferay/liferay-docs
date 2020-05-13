@@ -39,14 +39,14 @@ To satisfy the dependencies of the example code presented here, get references t
 - `com.liferay.portal.search.query.Queries`
 
 ```java
-@Reference
-protected Queries _queries;
+	@Reference
+	protected Queries queries;
 
-@Reference
-protected Searcher _searcher;
+	@Reference
+	protected Searcher searcher;
 
-@Reference
-SearchRequestBuilderFactory _searchRequestBuilderFactory;
+	@Reference
+	protected SearchRequestBuilderFactory searchRequestBuilderFactory;
 ```
 
 ### Build the Search Query
@@ -84,13 +84,13 @@ Once the query itself is in good shape, feed it to the search request.
 
 ### Build the Search Request
 
-1.  Use `com.liferay.portal.search.legacy.searcher.SearchRequestBuilderFactory`
+1.  Use `com.liferay.portal.search.searcher.SearchRequestBuilderFactory`
     to get an instance of
     `com.liferay.portal.search.searcher.SearchRequestBuilder`:
 
     ```java
     SearchRequestBuilder searchRequestBuilder =
-        _searchRequestBuilderFactory.getSearchRequestBuilder();
+        searchRequestBuilderFactory.getSearchRequestBuilder();
     ```
 
     If not setting search keywords into the `SearchContext` (covered below), make
@@ -104,22 +104,23 @@ Once the query itself is in good shape, feed it to the search request.
     `com.liferay.portal.kernel.search.SearchContext`:
 
     ```java
-    searchRequestBuilder.withSearchContext(
-                searchContext -> searchContext.setCompanyId(companyId);
-                searchContext -> searchContext.setKeywords(keywords);
-            );
+		searchRequestBuilder.withSearchContext(
+			searchContext -> {
+				searchContext.setCompanyId(companyId);
+				searchContext.setKeywords(keywords);
+			});
     ```
 
     Setting the Company ID into the `SearchContext` is required to ensure the
     correct index is searched.
 
-    Setting Keywords into the `SearchContext` is necessary if you want to
+    Setting "keywords" on the `SearchContext` is necessary if you want to
     search via user input. For example, if providing a Search bar in an
     application's view layer, pass its input into the search context. Liferay's
     search framework adds the user input keywords and any other data in the
     `SearchContext` object to its own queries, searching the appropriate fields of
     each indexed entity, as defined by its
-    [`KeywordQueryContributor`](/docs/7-2/frameworks/-/knowledge_base/f/searching-the-index-for-model-entities#adding-your-model-entitys-terms-to-the-query).
+    [`KeywordQueryContributor`](/docs/7-2/frameworks/-/knowledge_base/f/searching-the-index-for-model-entities#adding-your-model-entitys-terms-to-the-query) or by the `postProcessSearchQuery` method of its `Indexer`.
 
 2.  To execute the query, get a
     `com.liferay.portal.search.searcher.SearchRequest` instance from the
@@ -157,12 +158,12 @@ service and the `SearchRequest` to get a
 `com.liferay.portal.search.searcher.SearchResponse`:
 
 ```java
-SearchResponse searchResponse = _searcher.search(searchRequest);
+SearchResponse searchResponse = searcher.search(searchRequest);
 ```
 
 ### Process the Search Response
 
-What you'll do with the `SearchResponse` returned by the `_searcher.search`
+What you'll do with the `SearchResponse` returned by the `searcher.search`
 call is dependent on the type of query and your specific use case. Much of the
 time you'll want to loop through the `com.liferay.portal.search.hits.SearchHit`
 and `com.liferay.portal.search.document.Document` objects, so that's what's
@@ -171,28 +172,32 @@ shown here, with a simple message printed in the log for each one.
 1.  Get the `SearchHits` from the response:
 
     ```java
-    SearchHits searchHitsObject = searchResponse.getSearchHits();
+    SearchHits searchHits = searchResponse.getSearchHits();
     ```
 
 2.  Get a List of the `SearchHit` objects:
 
     ```java
-    List<SearchHit> searchHits = searchHitsObjects.getSearchHits();
+    List<SearchHit> searchHitsList = searchHits.getSearchHits();
     ```
 
 3.  Loop through the `SearchHit` objects in the List, get the `Document`
-    associated with each one, printing its score and view count to the
+    associated with each one, printing its score and UID to the
     console:
 
     ```java
-    for (SearchHit hit : searchHits ) {
-        long hitId = hit.getId();
-        int hitScore = hit.getScore();
-        Document doc = hit.getDocument();
-        String viewCount = doc.getString("viewCount");
-        System.out.println("Document " + docId + " had a score of " + docScore +
-            " and a view count of " + viewCount);
-    }
+		searchHitsList.forEach(
+			searchHit -> {
+				float hitScore = searchHit.getScore();
+
+				Document doc = searchHit.getDocument();
+
+				String uid = doc.getString(Field.UID);
+
+				System.out.println(
+					StringBundler.concat(
+						"Document ", uid, " had a score of ", hitScore));
+			});
     ```
 
 ## Example
@@ -207,52 +212,103 @@ user input. User-provided `keywords` would further refine the list of results
 that match the queries written here:
 
 ```java
-MatchQuery titleQuery = queries.match("title_en_US", "legal");
+package com.liferay.docs.search;
 
-TermsQuery rootFolderQuery = _queries.terms("folderId");
-rootFolderQuery.addValues("0");
+import com.liferay.petra.string.StringBundler;
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.search.Field;
+import com.liferay.portal.kernel.util.LocaleUtil;
+import com.liferay.portal.search.document.Document;
+import com.liferay.portal.search.hits.SearchHit;
+import com.liferay.portal.search.hits.SearchHits;
+import com.liferay.portal.search.query.BooleanQuery;
+import com.liferay.portal.search.query.MatchQuery;
+import com.liferay.portal.search.query.Queries;
+import com.liferay.portal.search.query.TermsQuery;
+import com.liferay.portal.search.searcher.SearchRequest;
+import com.liferay.portal.search.searcher.SearchRequestBuilder;
+import com.liferay.portal.search.searcher.SearchRequestBuilderFactory;
+import com.liferay.portal.search.searcher.SearchResponse;
+import com.liferay.portal.search.searcher.Searcher;
 
-BooleanQuery booleanQuery = _queries.booleanQuery();
-booleanQuery.addMustQueryClauses(rootFolderQuery, titleQuery);
+import java.util.ArrayList;
+import java.util.List;
 
-SearchRequestBuilder searchRequestBuilder = 
-    _searchRequestBuilderFactory.getSearchRequestBuilder();
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
-searchRequestBuilder.emptySearchEnabled(true);
+@Component(
+	service = MySearchComponent.class
+)
+public class MySearchComponent {
 
-searchRequestBuilder.withSearchContext(
-            searchContext -> searchContext.setCompanyId(companyId);
-            searchContext -> searchContext.setKeywords(keywords);
-        );
+	public List<String> search(long companyId, String keywords)
+		throws PortalException {
 
-SearchRequest searchRequest = searchRequestBuilder.query(booleanQuery).build();
+		MatchQuery titleQuery = queries.match(
+			Field.getLocalizedName(LocaleUtil.US, Field.TITLE), keywords);
 
-SearchResponse searchResponse = _searcher.search(searchRequest);
+		TermsQuery rootFolderQuery = queries.terms(Field.FOLDER_ID);
 
-SearchHits searchHitsObject = searchResponse.getSearchHits();
+		rootFolderQuery.addValues("0");
 
-List<SearchHit> searchHits = searchHitsObjects.getSearchHits();
+		BooleanQuery booleanQuery = queries.booleanQuery();
 
-for (SearchHit hit : searchHits ) {
+		booleanQuery.addMustQueryClauses(rootFolderQuery, titleQuery);
 
-    long hitId = hit.getId();
-    int hitScore = hit.getScore();
+		SearchRequestBuilder searchRequestBuilder =
+			searchRequestBuilderFactory.builder();
 
-    Document doc = hit.getDocument();
-    String viewCount = doc.getString("viewCount");
+		// Uncomment this line below if you don't set "keywords"
+		// on the SearchContext
+		//		searchRequestBuilder.emptySearchEnabled(true);
 
-    System.out.println("Document " + docId + " had a score of " + docScore +
-        " and a view count of " + viewCount);
+		searchRequestBuilder.withSearchContext(
+			searchContext -> {
+				searchContext.setCompanyId(companyId);
+				searchContext.setKeywords(keywords);
+			});
+
+		SearchRequest searchRequest = searchRequestBuilder.query(
+			booleanQuery
+		).build();
+
+		SearchResponse searchResponse = searcher.search(searchRequest);
+
+		SearchHits searchHits = searchResponse.getSearchHits();
+
+		List<SearchHit> searchHitsList = searchHits.getSearchHits();
+
+		List<String> resultsList = new ArrayList<>(searchHitsList.size());
+
+		searchHitsList.forEach(
+			searchHit -> {
+				float hitScore = searchHit.getScore();
+
+				Document doc = searchHit.getDocument();
+
+				String uid = doc.getString(Field.UID);
+
+				System.out.println(
+					StringBundler.concat(
+						"Document ", uid, " had a score of ", hitScore));
+
+				resultsList.add(uid);
+			});
+
+		return resultsList;
+	}
+
+	@Reference
+	protected Queries queries;
+
+	@Reference
+	protected Searcher searcher;
+
+	@Reference
+	protected SearchRequestBuilderFactory searchRequestBuilderFactory;
+
 }
-
-@Reference
-protected Queries _queries;
-
-@Reference
-protected Searcher _searcher;
-
-@Reference
-protected SearchRequestBuilderFactory _searchRequestBuilderFactory;
 ```
 
 ## Filters
