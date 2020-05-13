@@ -200,7 +200,26 @@ shown here, with a simple message printed in the log for each one.
 			});
     ```
 
-## Example
+### Search Insights: Request and Response Strings
+
+When building your search application, it can be useful to inspect how the request string (translated into the search engine's dialect) looks like and also, to see the response string from returned by the search server.
+
+You can get these from the `SearchResponse` as
+
+```java
+    searchResponse.getRequestString();
+    searchResponse.getResponseString();
+``` 
+
+The format depends on your search engine: in case of Elasticsearch, it will be a JSON.
+
+        +$$$
+
+        **Note:** The JSON you will get as a request string is pruned from several Elasticsearch query defaults for clarity. If you want to see the full request JSON that Elasticsearch processed you will need to adjust the log levels for your Elasticsearch server.
+
+        $$$
+
+### Queries Example
 
 Here's a mostly-complete example code snippet, which performs a `MatchQuery` on the
 `title_en_US` field for the value `legal`, a `TermsQuery` on the `folderId`
@@ -295,6 +314,11 @@ public class MySearchComponent {
 
 				resultsList.add(uid);
 			});
+
+		System.out.println(
+			"Request String:\n" + searchResponse.getRequestString());
+		System.out.println(
+			"Response String:\n" + searchResponse.getResponseString());
 
 		return resultsList;
 	}
