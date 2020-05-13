@@ -6,10 +6,6 @@ header-id: search-queries-and-filters
 
 [TOC levels=1-4]
 
-As the ancient wisdom holds, 
-
-> A search without a query is like an answer without a question.
-
 To get sensible results from the search engine, you must provide a sensible
 query. 
 
@@ -62,9 +58,11 @@ Liferay's Search API supports the following types of queries:
 
 ### Full Text Queries
 
-Full text queries are high-level queries usually used for querying full text
-fields like the `content` field of a Blogs Entry. How terms are matched depends
-on the query type.
+[Full text
+queries](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/full-text-queries.html)
+are high-level queries usually used for querying full text fields like the
+`content` field of a Blogs Entry. How terms are matched depends on the query
+type.
 
 *Supported Full Text Queries*
 
@@ -86,7 +84,9 @@ Here are some common full text queries:
 
 ### Term Queries
 
-Term queries look for exact matching on keyword fields and indexed terms.
+[Term
+queries](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/term-level-queries.html)
+look for exact matching on keyword fields and indexed terms.
 
 ```java
 ExistsQuery
@@ -109,9 +109,10 @@ Here are some common term queries:
 
 ### Compound Queries
 
-Compound queries are often used to wrap other queries. They're commonly used to
-switch from query to filter context.
-
+[Compound
+queries](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/compound-queries.html)
+are often used to wrap other queries. They're commonly used to switch from
+query to filter context.
 
 ```java
 BooleanQuery
@@ -133,9 +134,10 @@ Here are some common compound queries:
 
 ### Joining Queries
 
-The concept of a join doesn't work well in a distributed index. Joining queries
-allow similar behavior in the search index, such as using the 
-[`nested` datatype](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/nested.html)
+The concept of a join doesn't work well in a distributed index. [Joining
+queries](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/joining-queries.html)
+allow similar behavior in the search index, such as using the [`nested`
+datatype](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/nested.html)
 to index an array of objects that can be queried independently, using the
 `NestedQuery`.
 
@@ -149,7 +151,9 @@ the index.
 ### Geo Queries
 
 In Elasticsearch, you can index latitude/longitude pairs and geographic shapes.
-Geo queries let you query for these points and shapes.
+[Geo
+queries](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/geo-queries.html)
+let you query for these points and shapes.
 
 ```java
 GeoBoundingBoxQuery
@@ -164,7 +168,9 @@ certain distance of a geographic point (latitude/longitude).
 
 ### Specialized Queries
 
-These queries don't fit into another group:
+These
+[queries](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/specialized-queries.html)
+don't fit into another group:
 
 ```java
 MoreLikeThisQuery
@@ -200,10 +206,11 @@ provided by `portal-kernel`.
 Here's the generalized approach for querying and filtering search documents in
 your own search code:
 
-1.  Instantiate and construct the query object
-2.  Add the query to the search request---the method you use determines
-    whether the context is filtering or querying.
-3.  Process the search response
+1.  Instantiate and construct the query object.
+2.  Add the query to the search request---the method you use determines whether
+    the context is filtering or querying (or both in the same request).
+3.  Execute the search request.
+4.  Process the search response.
 
 These steps are covered in more detail (with examples) 
 [in the next article](/docs/7-2/frameworks/-/knowledge_base/f/building-search-queries-and-filters).

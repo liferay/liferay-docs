@@ -28,25 +28,26 @@ dependencies {
 }
 ```
 
-With this, you will be able to import the Query and Filter types and other necessary Search APIs shipped with @product@.
+With this, you will be able to import all the Search APIs.
 
 ### Reference the Search Services
 
-To satisfy the dependencies of the example code presented here, get references to
+To satisfy the dependencies of the example code presented here, get references
+to
 
 - `com.liferay.portal.search.searcher.SearchRequestBuilderFactory`
 - `com.liferay.portal.search.searcher.Searcher`
 - `com.liferay.portal.search.query.Queries`
 
 ```java
-	@Reference
-	protected Queries queries;
+@Reference
+protected Queries queries;
 
-	@Reference
-	protected Searcher searcher;
+@Reference
+protected Searcher searcher;
 
-	@Reference
-	protected SearchRequestBuilderFactory searchRequestBuilderFactory;
+@Reference
+protected SearchRequestBuilderFactory searchRequestBuilderFactory;
 ```
 
 ### Build the Search Query
@@ -55,9 +56,9 @@ To satisfy the dependencies of the example code presented here, get references t
     the queries you'll construct. For example,
 
     ```java
-    TermsQuery termsQuery = _queries.terms("fieldName");
-    MatchQuery matchQuery = _queries.match("fieldName", "value");
-    BooleanQuery booleanQuery = _queries.booleanQuery();
+    TermsQuery termsQuery = queries.terms("fieldName");
+    MatchQuery matchQuery = queries.match("fieldName", "value");
+    BooleanQuery booleanQuery = queries.booleanQuery();
     ```
 
     To discover what parameters each query must have (e.g., `String field` in the
@@ -104,11 +105,11 @@ Once the query itself is in good shape, feed it to the search request.
     `com.liferay.portal.kernel.search.SearchContext`:
 
     ```java
-		searchRequestBuilder.withSearchContext(
-			searchContext -> {
-				searchContext.setCompanyId(companyId);
-				searchContext.setKeywords(keywords);
-			});
+    searchRequestBuilder.withSearchContext(
+        searchContext -> {
+            searchContext.setCompanyId(companyId);
+            searchContext.setKeywords(keywords);
+        });
     ```
 
     Setting the Company ID into the `SearchContext` is required to ensure the
@@ -120,7 +121,8 @@ Once the query itself is in good shape, feed it to the search request.
     search framework adds the user input keywords and any other data in the
     `SearchContext` object to its own queries, searching the appropriate fields of
     each indexed entity, as defined by its
-    [`KeywordQueryContributor`](/docs/7-2/frameworks/-/knowledge_base/f/searching-the-index-for-model-entities#adding-your-model-entitys-terms-to-the-query) or by the `postProcessSearchQuery` method of its `Indexer`.
+    [`KeywordQueryContributor`](/docs/7-2/frameworks/-/knowledge_base/f/searching-the-index-for-model-entities#adding-your-model-entitys-terms-to-the-query)
+    or by the `postProcessSearchQuery` method of its `Indexer`.
 
 2.  To execute the query, get a
     `com.liferay.portal.search.searcher.SearchRequest` instance from the
@@ -186,38 +188,43 @@ shown here, with a simple message printed in the log for each one.
     console:
 
     ```java
-		searchHitsList.forEach(
-			searchHit -> {
-				float hitScore = searchHit.getScore();
+    searchHitsList.forEach(
+        searchHit -> {
+            float hitScore = searchHit.getScore();
 
-				Document doc = searchHit.getDocument();
+            Document doc = searchHit.getDocument();
 
-				String uid = doc.getString(Field.UID);
+            String uid = doc.getString(Field.UID);
 
-				System.out.println(
-					StringBundler.concat(
-						"Document ", uid, " had a score of ", hitScore));
-			});
+            System.out.println(
+                StringBundler.concat(
+                    "Document ", uid, " had a score of ", hitScore));
+        });
     ```
 
 ### Search Insights: Request and Response Strings
 
-When building your search application, it can be useful to inspect how the request string (translated into the search engine's dialect) looks like and also, to see the response string from returned by the search server.
+When building a search application, it can be useful to inspect the request
+string (translated into the search engine's dialect), and subsequently see the
+response string returned by the search server.
 
 You can get these from the `SearchResponse` as
 
 ```java
-    searchResponse.getRequestString();
-    searchResponse.getResponseString();
+searchResponse.getRequestString();
+searchResponse.getResponseString();
 ``` 
 
-The format depends on your search engine: in case of Elasticsearch, it will be a JSON.
+The format depends on your search engine: with Elasticsearch, both are JSON.
 
-        +$$$
-
-        **Note:** The JSON you will get as a request string is pruned from several Elasticsearch query defaults for clarity. If you want to see the full request JSON that Elasticsearch processed you will need to adjust the log levels for your Elasticsearch server.
-
-        $$$
+| The JSON returned as a request string is pruned from several Elasticsearch
+| query defaults for clarity. To see the full request JSON that Elasticsearch
+| processed, use the Server Administration &rarr; Log Levels panel to adjust the
+| log levels for your Elasticsearch server. For Elasticsearch 6, Set
+| 
+| `com.liferay.portal.search.elasticsearch6.internal.ElasticsearchIndexSearcher`
+| 
+| to use INFO level logging.
 
 ### Queries Example
 
@@ -278,7 +285,7 @@ public class MySearchComponent {
 		SearchRequestBuilder searchRequestBuilder =
 			searchRequestBuilderFactory.builder();
 
-		// Uncomment this line below if you don't set "keywords"
+		// Uncomment this line below if you aren't setting "keywords"
 		// on the SearchContext
 		//		searchRequestBuilder.emptySearchEnabled(true);
 
