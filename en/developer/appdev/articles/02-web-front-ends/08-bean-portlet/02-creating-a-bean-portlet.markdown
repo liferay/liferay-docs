@@ -6,10 +6,12 @@ header-id: creating-a-bean-portlet
 
 [TOC levels=1-4]
 
-Your first step in developing a Bean Portlet is to create one. Here you'll
-generate a Bean Portlet project and deploy your Bean Portlet to @product@. 
+| **Important:** Bean Portlet is in development and is not yet available.
 
-1.  Generate a Bean Portlet project using a Maven command like this: 
+Your first step in developing a Bean Portlet is to create one. Here you'll
+generate a Bean Portlet project and deploy your Bean Portlet to @product@.
+
+1.  Generate a Bean Portlet project using a Maven command like this:
 
         mvn archetype:generate \
         -DarchetypeGroupId=com.liferay \
@@ -22,14 +24,14 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
 
     -   `com.mycompany.demo.bean.portlet` &rarr; Arbitrary project name.
         -   `src/main/java/`
-            -   `com.mycompany.constants.FooPortletKeys` &rarr; Declares portlet 
+            -   `com.mycompany.constants.FooPortletKeys` &rarr; Declares portlet
                 constants.
             -   `com.mycompany.portlet.FooPortlet` &rarr; Bean Portlet class.
         -   `src/main/webapp/WEB-INF/`
             -   `jsp/view.jsp` &rarr; Default view template.
-            -   `beans.xml` &rarr; Signals CDI to scan the portlet for 
+            -   `beans.xml` &rarr; Signals CDI to scan the portlet for
                 annotations.
-            
+
         - `pom.xml` &rarr; Specifies the project's dependencies and packaging.
 
     Here's the example Bean Portlet class:
@@ -75,17 +77,17 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
 
 2.  Set any portlet configuration or Liferay portlet configuration values
     using
-    [`@PortletConfiguration` and `Liferay@PortletConfiguration` attributes](/docs/7-2/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map). 
+    [`@PortletConfiguration` and `Liferay@PortletConfiguration` attributes](/docs/7-2/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map).
 
-3.  Inject any CDI beans using the `@Inject` annotation. 
+3.  Inject any CDI beans using the `@Inject` annotation.
 
 4.  Update your render method `doView` (it's annotated with
     `@RenderMethod`). It displays the template `WEB-INF/jsp/view.jsp` by
-    default. 
+    default.
 
-5.  Add any other logic you like to your portlet class. 
+5.  Add any other logic you like to your portlet class.
 
-6.  Build your portlet: 
+6.  Build your portlet:
 
         mvn clean package
 
@@ -93,9 +95,9 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
     Home]/deploy` folder. The
     [WAB Generator](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
     converts the WAR to an OSGi Web Application Bundle (WAB) and installs it to
-    Liferay's OSGi container. 
- 
-@product@ logs the deployment. 
+    Liferay's OSGi container.
+
+@product@ logs the deployment.
 
     INFO  [main][HotDeployImpl:226] Deploying com.mycompany.demo.bean.portlet from queue
     INFO  [main][PluginPackageUtil:1001] Reading plugin package for com.mycompany.demo.bean.portlet
@@ -103,12 +105,12 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
     INFO  [main][PortletHotDeployListener:181] 1 bean portlets for com.mycompany.demo.bean.portlet are available for use
 
 The Bean Portlet is now available in the @product@ UI. The example portlet is in
-the Widget category you assigned it. 
+the Widget category you assigned it.
 
 ![Figure 1: The Foo portlet prints the message returned from `doView` method and shows the included JSP's contents.](../../../images/portlet-3-portlet.png)
 
-Congratulations on creating and deploying a Bean Portlet! 
+Congratulations on creating and deploying a Bean Portlet!
 
-## Related Topics 
+## Related Topics
 
-[OSGi CDI Integration](/docs/7-2/frameworks/-/knowledge_base/f/osgi-cdi-integration) 
+[OSGi CDI Integration](/docs/7-2/frameworks/-/knowledge_base/f/osgi-cdi-integration)

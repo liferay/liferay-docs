@@ -8,7 +8,7 @@ header-id: web-front-ends
 
 Liferay's open development framework removes barriers so developers can write
 applications faster. If you already have an application, you can deploy it on
-@product@: 
+@product@:
 
 - Java-based standards (CDI, JSF, Portlets, Spring)
 - Front-end standards (Angular, React, Vue)
@@ -16,14 +16,14 @@ applications faster. If you already have an application, you can deploy it on
 If you plan to write a new application and deploy it on @product@, you can use
 the frameworks you know along with the build tools (Gradle, Maven) you know.
 Liferay also offers its own development framework called MVC Portlet that it
-uses to develop applications. When you want to integrate with 
+uses to develop applications. When you want to integrate with
 [Liferay services](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 and frameworks such as permissions, assets, and indexers, you'll find that these
 easily and seamlessly blend with your application to provide a great user
 experience.
 
 Regardless of your development strategy for applications, you'll find @product@
-to be a flexible platform that supports anything you need to write. 
+to be a flexible platform that supports anything you need to write.
 
 ## Using Popular Frameworks
 
@@ -31,17 +31,17 @@ Liferay gives you a head start on developing and deploying apps that use these
 popular Java and JavaScript-based technologies:
 
 -   [Angular Widget](/docs/7-2/appdev/-/knowledge_base/a/developing-an-angular-application)
--   [React Widget](/docs/7-2/appdev/-/knowledge_base/a/developing-a-react-application) 
+-   [React Widget](/docs/7-2/appdev/-/knowledge_base/a/developing-a-react-application)
 -   [Vue Widget](/docs/7-2/appdev/-/knowledge_base/a/developing-a-vue-application)
--   [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet) 
--   [JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet)
--   [PortletMVC4Spring Portlet](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring)
 -   [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
+-   [PortletMVC4Spring Portlet](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring)
+-   [JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet)
+<!---   [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet) TODO uncomment when Bean Portlet is available. jhinkey -->
 
 | **Note:** The Reference section describes
-| [sample projects](/docs/7-2/reference/-/knowledge_base/r/sample-projects) and 
-| [project templates](/docs/7-2/reference/-/knowledge_base/r/project-templates) 
-| for creating UIs using other technologies. 
+| [sample projects](/docs/7-2/reference/-/knowledge_base/r/sample-projects) and
+| [project templates](/docs/7-2/reference/-/knowledge_base/r/project-templates)
+| for creating UIs using other technologies.
 
 Angular, React, and Vue applications are written the same as you would outside of
 @product@---using
@@ -51,7 +51,7 @@ and the webpack dev server. The Liferay JS Generator creates a portlet bundle
 project comes with npm commands for building, testing, and deploying the app. It
 packages the app's dependencies (including JavaScript packages), deploys the
 bundle as a JAR, and installs the bundle to @product@'s run time environment,
-making your app available as a widget. 
+making your app available as a widget.
 
 You can also develop web front-ends using Java EE standards.
 @product@ supports the
@@ -59,7 +59,7 @@ You can also develop web front-ends using Java EE standards.
 Portlet 3.0 standard which is backwards-compatible with the
 [JSR 286](http://jcp.org/en/jsr/detail?id=286)
 Portlet 2.0 standard from the Java Community Process (JCP). Each portlet
-framework has benefits you may wish to consider. 
+framework has benefits you may wish to consider.
 
 Bean Portlet is the only framework containing all of the Portlet 3 features:
 
@@ -67,17 +67,17 @@ Bean Portlet is the only framework containing all of the Portlet 3 features:
 -   Extended method annotations
 -   Explicit render state
 -   Action, render, and resource parameters
--   Asynchronous support 
+-   Asynchronous support
 
 If you're a JavaServer Faces (JSF) developer, the
 [Liferay Faces Bridge](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-bridge)
 supports deploying JSF web apps as portlets without writing portlet-specific
 Java code. It also contains innovative features that make it possible to
-leverage the power of JSF 2.x inside a portlet application. 
+leverage the power of JSF 2.x inside a portlet application.
 
 If Spring is your thing, Spring Portlet MVC portlets are easy to configure and
 deploy on @product@. You can continue using Spring features, including Spring
-beans and Spring dependency injection. 
+beans and Spring dependency injection.
 
 Last but not least, Liferay MVC Portlet continues to be a favorite with
 experienced Liferay developers, and makes portlet development easy for Liferay
@@ -86,23 +86,23 @@ dependencies and defining configurable extension points. Since @product@ core
 and Liferay-written apps use DS, gaining experience with DS helps you
 develop @product@ extensions and customizations. Liferay MVC Portlet works
 seamlessly with many Liferay frameworks, such as MVC commands, Service Builder,
-and more. 
+and more.
 
 No matter which development framework you choose, you'll be able to get an app
-up and running fast. 
+up and running fast.
 
 ## Getting Started
 
 If you have an existing app that uses one the frameworks described above, your
 first step is to deploy it to @product@. Most deployments involve configuration
-steps that you can complete in an hour or less. 
+steps that you can complete in an hour or less.
 
 You can also build apps from scratch using the tools you like or leveraging
 Liferay's tool offering. Liferay provides templates for creating all kinds of
-apps and samples that you can examine and modify to fit your needs. 
+apps and samples that you can examine and modify to fit your needs.
 
 Once your app is functional, you can improve your app by integrating it with
-Liferay frameworks: 
+Liferay frameworks:
 
 -   Localization
 -   Permissions
@@ -115,7 +115,7 @@ Liferay frameworks:
 Liferay provides frameworks that integrate these features fast. As you develop
 apps on @product@, you'll enjoy using what you know, discover frameworks and
 tools that boost your productivity, and have fun creating rich, full-featured
-applications. 
+applications.
 
 If you're experienced with developing one of the listed app types, feel free to
-jump ahead to it. Otherwise, Angular Widgets is next. 
+jump ahead to it. Otherwise, Angular Widgets is next.
