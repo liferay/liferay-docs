@@ -10,7 +10,7 @@ header-id: using-taglibs-in-templates
 
 Liferayのtaglibには、FreeMarkerで開発しているWebコンテンツ管理者もアクセスできます。 FreeMarkerテンプレート内でこれらのtaglibをインスタンス化する必要はありません。それらはすでに自動的に提供されています。 TLDのファイル名をアンダースコアで示すことにより、これらのtaglibにアクセスできます。
 
-@ product @のテンプレートエディターを使用している場合、テンプレートエディターの左側に変数があります。 変数の1つをテンプレートエディターに配置するには、
+@product@のテンプレートエディターを使用している場合、テンプレートエディターの左側に変数があります。 変数の1つをテンプレートエディターに配置するには、
 
 1.  変数を配置する場所にカーソルを置きます。
 
@@ -24,6 +24,6 @@ Liferayのtaglibには、FreeMarkerで開発しているWebコンテンツ管理
 
 | **注：** の `utilLocator` `objectUtil`、および `staticUtil` 変数FreeMarkerおよびVelocityの `utilLocator` 変数は、デフォルトでは無効になっています。 |これらの変数は、リモートコードの実行と特権に対して脆弱です。エスカレーション。有効になっている場合は注意して使用する必要があります。
 
-テンプレートを保存すると、@ product @はWebDAV URLと静的URLを提供します。 これらの値は、構造のXMLソースにアクセスします。 保存後にテンプレートに戻り、[ *詳細* セクションを展開すると、これらのURLを見つけることができます。 WebDAVとWebDAV URLの使用の詳細については、 [WebDAV Access](/docs/7-0/user/-/knowledge_base/u/publishing-files#desktop-access-to-documents-and-media) セクションを参照してください。
+テンプレートを保存すると、@product@はWebDAV URLと静的URLを提供します。 これらの値は、構造のXMLソースにアクセスします。 保存後にテンプレートに戻り、[ *詳細* セクションを展開すると、これらのURLを見つけることができます。 WebDAVとWebDAV URLの使用の詳細については、 [WebDAV Access](/docs/7-0/user/-/knowledge_base/u/publishing-files#desktop-access-to-documents-and-media) セクションを参照してください。
 
 ハンサムなテンプレートを作成し、テンプレートエディターの使用方法を理解したところで、新しいテンプレートを使用できる幸運な人を決定する時が来ました。

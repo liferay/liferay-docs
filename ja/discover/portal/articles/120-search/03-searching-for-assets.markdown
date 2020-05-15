@@ -26,7 +26,7 @@ Liferayの検索インフラストラクチャは、サポートされている�
 
 全文検索は、検索クエリに入力されたすべての単語（たとえば、 *space Vacation*）を各インデックスドキュメント内のすべての単語と比較します。 Elasticsearchのような検索エンジンは関連性スコアを計算して、最良の結果が最初に返されるようにし（ブログエントリ *休暇はあなたにぴったりですか？*）、多くの一致する結果が返されます（単語 *Vacation* いずれかが含まれるもの）または *スペース* が返されます）。
 
-全文検索に加えて、高度な検索構文がサポートされています。 @ product @はこの動作の基礎となる検索エンジンに依存しているため、詳細については [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-query-string-query.html#query-string-syntax) または [Solr](https://lucene.apache.org/solr/guide/6_6/query-syntax-and-parsing.html) ドキュメントを参照してください。
+全文検索に加えて、高度な検索構文がサポートされています。 @product@はこの動作の基礎となる検索エンジンに依存しているため、詳細については [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-query-string-query.html#query-string-syntax) または [Solr](https://lucene.apache.org/solr/guide/6_6/query-syntax-and-parsing.html) ドキュメントを参照してください。
 
 ![図2：Elasticsearchのクエリ文字列構文を使用して特定のフィールドのテキストを検索します。](../../images/search-advanced-syntax.png)
 

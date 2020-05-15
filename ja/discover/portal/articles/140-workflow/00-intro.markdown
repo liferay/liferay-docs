@@ -44,7 +44,7 @@ Liferayのワークフローエンジンの名前は *Kaleo*です。 ギリシ�
 
 ## 埋め込みワークフロー
 
-単一の承認者定義に加えて、@ product @に同梱されているが、事前にインストールされていないワークフロー定義がいくつかあります。これらは主にテストケースに含まれているためです。 これらは `/ modules / apps / portal-workflow / portal-workflow-kaleo-runtime-impl / src / main / resources / META-INF / definitions`のLiferayソースコード、またはLiferayインストール自体にあります。 Liferayインストールの `osgi / portal / com.liferay.portal.workflow.kaleo.runtime.impl.jar`を開き、 `com.liferay.workflow.kaleo.runtime.impl-[version].jar`見つけて開きます。 定義は `META-INF / definitions` フォルダーにあります（図 [参照](/docs/6-2/tutorials/-/knowledge_base/t/designing-a-kaleo-workflow-definition)）。
+単一の承認者定義に加えて、@product@に同梱されているが、事前にインストールされていないワークフロー定義がいくつかあります。これらは主にテストケースに含まれているためです。 これらは `/ modules / apps / portal-workflow / portal-workflow-kaleo-runtime-impl / src / main / resources / META-INF / definitions`のLiferayソースコード、またはLiferayインストール自体にあります。 Liferayインストールの `osgi / portal / com.liferay.portal.workflow.kaleo.runtime.impl.jar`を開き、 `com.liferay.workflow.kaleo.runtime.impl-[version].jar`見つけて開きます。 定義は `META-INF / definitions` フォルダーにあります（図 [参照](/docs/6-2/tutorials/-/knowledge_base/t/designing-a-kaleo-workflow-definition)）。
 
 
 <!-- Do you need a real life example to convince you that workflow is

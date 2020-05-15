@@ -18,7 +18,7 @@ header-id: embedding-widgets-in-templates
 
     $theme.runtime("com_liferay_portal_kernel_servlet_taglib_ui_LanguageEntry");
 
-| **警告：** `テーマ` 変数は、FreeMarkerに注入されなくなりました。環境。 テーマ変数が削除された理由の詳細については、| @ product @ 7.0とコード更新の提案については、|をご覧ください。 [タグライブラリは、FreeMarker](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker) テーマ変数を介してアクセスできなくなりました|重大な変更エントリ。
+| **警告：** `テーマ` 変数は、FreeMarkerに注入されなくなりました。環境。 テーマ変数が削除された理由の詳細については、| @product@ 7.0とコード更新の提案については、|をご覧ください。 [タグライブラリは、FreeMarker](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker) テーマ変数を介してアクセスできなくなりました|重大な変更エントリ。
 
 テンプレートにウィジェットを埋め込むだけでなく、テンプレートを別のテンプレートに埋め込むこともできます。 これにより、再利用可能なコード、JavaScriptライブラリのインポート、スクリプト、またはマクロが可能になります。
 

@@ -8,7 +8,7 @@ header-id: translating-forms
 
 [TOC levels=1-4]
 
-フォームは、@ product @がサポートする任意のロケールに翻訳できます。 フォームビルダーは、フォームのデフォルト言語の翻訳を指定します。
+フォームは、@product@がサポートする任意のロケールに翻訳できます。 フォームビルダーは、フォームのデフォルト言語の翻訳を指定します。
 
 ![図1：フォームは、サポートされている任意の言語に翻訳可能です。](../../images/forms-translate1.png)
 
@@ -34,6 +34,6 @@ header-id: translating-forms
 
 3.  通常どおりフォームに入力し、[ *送信*]をクリックします。
 
-| **注：** 翻訳は、ユーザーがフォームにアクセスする方法に応じて動作が異なります。 | 1。 | @ product @ページのフォームウィジェットで [アクセス](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms#accessing-forms)、|フォームはユーザーの言語で自動的に表示されます。 ない場合| |のデフォルト言語であるユーザーの言語で利用可能な翻訳フォームが表示されます。 | | 2。 直接アクセスする場合| [URL](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms#accessing-forms)、|フォームの翻訳は手動で選択する必要があります。
+| **注：** 翻訳は、ユーザーがフォームにアクセスする方法に応じて動作が異なります。 | 1。 | @product@ページのフォームウィジェットで [アクセス](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms#accessing-forms)、|フォームはユーザーの言語で自動的に表示されます。 ない場合| |のデフォルト言語であるユーザーの言語で利用可能な翻訳フォームが表示されます。 | | 2。 直接アクセスする場合| [URL](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms#accessing-forms)、|フォームの翻訳は手動で選択する必要があります。
 
 ![図3：フォームの言語を選択します。](../../images/forms-translate3.png)

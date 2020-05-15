@@ -8,7 +8,7 @@ header-id: server-administration-external-services
 
 [TOC levels=1-4]
 
-ユーザーは、Documents and Mediaライブラリを介して、あらゆるタイプのファイルをアップロードおよび共有できます。これは、ファイルのカスタマイズ可能で権限が有効なオンラインリポジトリです（詳細については、 [公開ファイル ](/docs/7-1/user/-/knowledge_base/u/publishing-files) を参照）。 [PDFBox](https://pdfbox.apache.org/) は@ product @に含まれており、特定のファイルタイプ（主にPDF）の自動プレビューを生成します。 2つの追加ツールをインストールして、他のファイルタイプのプレビューを生成できます。
+ユーザーは、Documents and Mediaライブラリを介して、あらゆるタイプのファイルをアップロードおよび共有できます。これは、ファイルのカスタマイズ可能で権限が有効なオンラインリポジトリです（詳細については、 [公開ファイル ](/docs/7-1/user/-/knowledge_base/u/publishing-files) を参照）。 [PDFBox](https://pdfbox.apache.org/) は@product@に含まれており、特定のファイルタイプ（主にPDF）の自動プレビューを生成します。 2つの追加ツールをインストールして、他のファイルタイプのプレビューを生成できます。
 
   - [**OpenOffice：**](https://www.openoffice.org/) または [**LibreOffice：**](https://www.libreoffice.org/) さまざまなタイプのドキュメントのプレビューを変換および生成します。
 
@@ -18,9 +18,9 @@ header-id: server-administration-external-services
 
 Liferay 7.1以降、OpenOffice / LibreOfficeはポータルプロパティではなく、OSGi構成管理を介して構成されます。 したがって、これらの設定を調整するには、 *コントロールパネル* \&arr; *構成*\&arr; *システム設定* \&arr; *その他* → *OpenOffice統合*ます。 `[Liferay Home] / osgi / configs` フォルダーの `com.liferay.document.library.document.conversion.internal.configuration.OpenOfficeConfiguration.config` ファイルを使用して、これらの設定を調整することもできます。 詳細については、 [Breaking Changes](https://portal.liferay.dev/docs/7-1/reference/-/knowledge_base/r/breaking-changes#moved-openoffice-properties-to-osgi-configuration) ドキュメントを参照してください。
 
-ImageMagickとXugglerをインストールしたら、サーバー管理アプリの[外部サービス]タブを使用して、それらを使用するように@ product @を構成できます。 ご使用のオペレーティングシステムに合ったこれらのツールの正しいバージョンを選択してください。 古いバージョンは@ product @で正しく動作しない可能性があるため、最新の安定バージョンをインストールすることをお勧めします。 ImageMagickは手動でインストールする必要がありますが、コントロールパネルからXugglerをインストールできます。
+ImageMagickとXugglerをインストールしたら、サーバー管理アプリの[外部サービス]タブを使用して、それらを使用するように@product@を構成できます。 ご使用のオペレーティングシステムに合ったこれらのツールの正しいバージョンを選択してください。 古いバージョンは@product@で正しく動作しない可能性があるため、最新の安定バージョンをインストールすることをお勧めします。 ImageMagickは手動でインストールする必要がありますが、コントロールパネルからXugglerをインストールできます。
 
-| **ヒント：** Linuxサーバーで@ product @を実行していて問題が発生した場合| Xugglerを有効にするには、サーバーのglibcバージョンを確認します。 Xugglerが機能するには、 glibcをバージョン2.6以降に更新する必要がある場合があります。
+| **ヒント：** Linuxサーバーで@product@を実行していて問題が発生した場合| Xugglerを有効にするには、サーバーのglibcバージョンを確認します。 Xugglerが機能するには、 glibcをバージョン2.6以降に更新する必要がある場合があります。
 
 ## ImageMagick設定
 

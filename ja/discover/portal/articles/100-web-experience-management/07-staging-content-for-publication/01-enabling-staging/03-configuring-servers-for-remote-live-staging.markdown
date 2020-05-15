@@ -22,7 +22,7 @@ header-id: configuring-servers-for-remote-live-staging
         tunneling.servlet.shared.secret=[secret]
         tunneling.servlet.shared.secret.hex=true
 
-    @ product @がステージング環境と本番環境の間で事前共有キーを使用することで、リモート公開プロセスの安全が確保されます。 また、Webサービス認証のために公開サーバーのパスワードをリモートサーバーに送信する必要がなくなります。 事前共有キーを使用すると、提供した電子メールアドレス、スクリーン名、またはユーザーIDから認可コンテキスト（許可チェッカー）を作成し、 *することなく、* ユーザーのパスワード。
+    @product@がステージング環境と本番環境の間で事前共有キーを使用することで、リモート公開プロセスの安全が確保されます。 また、Webサービス認証のために公開サーバーのパスワードをリモートサーバーに送信する必要がなくなります。 事前共有キーを使用すると、提供した電子メールアドレス、スクリーン名、またはユーザーIDから認可コンテキスト（許可チェッカー）を作成し、 *することなく、* ユーザーのパスワード。
 
 2.  サーバーの `tunneling.servlet.shared.secret` プロパティの値を指定します。
 
@@ -56,7 +56,7 @@ header-id: configuring-servers-for-remote-live-staging
 
 4.  リモートLiferayインスタンスの *TunnelAuthVerfierConfiguration* を更新します。 これを行うには、コントロールパネルに移動します→ *構成* → *システム設定* → *API認証* → *トンネル認証ベリファイア*。 [ */ api / liferay / do* をクリックし、使用している追加のIPアドレスを[ *Hosts allowed* フィールドに挿入します。 次に *Update*選択します。
 
-    または、この構成を@ product @のOSGiファイル（例： `osgi / configs / com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`）に書き込むこともできます。インスタンス：
+    または、この構成を@product@のOSGiファイル（例： `osgi / configs / com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`）に書き込むこともできます。インスタンス：
 
         enabled = true hostsAllowed = 127.0.0.1、SERVER_IP、[Local server IP address] serviceAccessPolicyName = SYSTEM_USER_PASSWORD urlsIncludes = / api / liferay / do
 
@@ -64,7 +64,7 @@ header-id: configuring-servers-for-remote-live-staging
 
 リモートライブステージングを構成するために必要なのはこれだけです！ これで [有効にできます](/docs/7-1/user/-/knowledge_base/u/enabling-remote-live-staging)\！
 
-| **注：** @ product @データベースを複製しないでください。これを行うと重複する可能性があります。ステージングで使用される重要なデータ（UUIDなど）により、リモートパブリケーションが発生します。失敗するプロセス。
+| **注：** @product@データベースを複製しないでください。これを行うと重複する可能性があります。ステージングで使用される重要なデータ（UUIDなど）により、リモートパブリケーションが発生します。失敗するプロセス。
 
 リモートライブステージングの構成の詳細については、以下のトピックを参照してください。
 
@@ -74,7 +74,7 @@ header-id: configuring-servers-for-remote-live-staging
 
 ## リモートステージングのバッファサイズの構成
 
-ローカルライブステージングと同様に、優れたパフォーマンスを得るには、サイトの開発の最初にリモートステージングをオンにすることをお勧めします。 リモートライブステージングを使用していて、大量のコンテンツを公開している場合、公開が遅くなり、大量のネットワークトラフィックが発生する可能性があります。 @ product @のシステムは、ネットワークを介して転送されるデータ量に対して非常に高速です。 これは、1つの大きなデータダンプではなく、データ転送が少しずつ完了するためです。 `portal-ext.properties` ファイルで次のポータルプロパティを設定することにより、データトランザクションのサイズを制御できます。
+ローカルライブステージングと同様に、優れたパフォーマンスを得るには、サイトの開発の最初にリモートステージングをオンにすることをお勧めします。 リモートライブステージングを使用していて、大量のコンテンツを公開している場合、公開が遅くなり、大量のネットワークトラフィックが発生する可能性があります。 @product@のシステムは、ネットワークを介して転送されるデータ量に対して非常に高速です。 これは、1つの大きなデータダンプではなく、データ転送が少しずつ完了するためです。 `portal-ext.properties` ファイルで次のポータルプロパティを設定することにより、データトランザクションのサイズを制御できます。
 
     staging.remote.transfer.buffer.size
 

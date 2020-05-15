@@ -8,7 +8,7 @@ header-id: configuring-rss-feeds
 
 [TOC levels=1-4]
 
-| **注：** RSSフィードは@ product @ 7.1では非推奨であり、|によって無効にされていますデフォルト。 RSSフィードを活用するには、この機能を有効にする必要があります。 |に移動しますコントロールパネル→ *構成* → *システム設定* → *Web |内容*。 *System Scope* → *Administration* タブで、| *フィード* ボックスを表示します。 廃止されたアプリの詳細については、|を参照してください。 [この記事](/docs/7-1/deploy/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do#web-experience)。
+| **注：** RSSフィードは@product@ 7.1では非推奨であり、|によって無効にされていますデフォルト。 RSSフィードを活用するには、この機能を有効にする必要があります。 |に移動しますコントロールパネル→ *構成* → *システム設定* → *Web |内容*。 *System Scope* → *Administration* タブで、| *フィード* ボックスを表示します。 廃止されたアプリの詳細については、|を参照してください。 [この記事](/docs/7-1/deploy/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do#web-experience)。
 
 LiferayサイトのRSSフィードを管理するには、サイトの[サイトの管理]→[ *コンテンツ* ]ページに移動し、[ *Webコンテンツ*]をクリックします。 サイト管理者は、このWebコンテンツメニューオプションを使用して、「 [Webコンテンツの作成](/docs/7-1/user/-/knowledge_base/u/creating-web-content) セクションで学習した、Webコンテンツの構造やテンプレートなど、サイトのWebコンテンツを管理できます。 サイト管理者はこのオプションを使用して、サイトのRSSフィードを管理することもできます。 新しいフィードを追加するには：
 

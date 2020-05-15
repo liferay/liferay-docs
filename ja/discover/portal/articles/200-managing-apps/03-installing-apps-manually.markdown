@@ -22,7 +22,7 @@ header-id: installing-apps-manually
 
 ## ファイルシステムを使用してアプリをインストールする
 
-@ product @サーバーに手動でアプリをインストールするには、アプリを `[Liferay Home] / deploy` フォルダーに配置します（通常、Liferay Homeフォルダーはアプリサーバーの親フォルダーです）。 それでおしまい。 自動デプロイメカニズムが残りの処理を行います。
+@product@サーバーに手動でアプリをインストールするには、アプリを `[Liferay Home] / deploy` フォルダーに配置します（通常、Liferay Homeフォルダーはアプリサーバーの親フォルダーです）。 それでおしまい。 自動デプロイメカニズムが残りの処理を行います。
 
 「おっとっ！」 「残り」とはどういう意味ですか？ここで正確に何が起こりますか？ そして、私のアプリケーションサーバーが自動展開をサポートしていない場合はどうなりますか？」これらは素晴らしい質問です\！ アプリを `[Liferay Home] / deploy` フォルダーに配置すると、OSGiコンテナーはアプリを `[Liferay Home] / osgi`の適切なサブフォルダーに展開します。 デフォルトでは、以下のサブフォルダーが、指定されたファイルタイプに一致するアプリに使用されます。
 
@@ -40,9 +40,9 @@ header-id: installing-apps-manually
         ${module.framework.base.dir}/modules,\
         ${module.framework.base.dir}/war
 
-`configs` サブフォルダーはアプリ用ではありません。他の@ product @インスタンスからインポートされた設定ファイル [用です](/docs/7-1/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)。
+`configs` サブフォルダーはアプリ用ではありません。他の@product@インスタンスからインポートされた設定ファイル [用です](/docs/7-1/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)。
 
-しかし、アプリサーバーが自動デプロイをサポートしていない場合はどうなりますか？ 問題ない\！ @ product @のモジュールフレームワーク（OSGi）により、自動デプロイが可能になります。 したがって、@ product @を実行しているすべてのアプリサーバーも、この自動デプロイメカニズムをサポートしています。
+しかし、アプリサーバーが自動デプロイをサポートしていない場合はどうなりますか？ 問題ない\！ @product@のモジュールフレームワーク（OSGi）により、自動デプロイが可能になります。 したがって、@product@を実行しているすべてのアプリサーバーも、この自動デプロイメカニズムをサポートしています。
 
 ## LPKGアプリを手動でデプロイする
 

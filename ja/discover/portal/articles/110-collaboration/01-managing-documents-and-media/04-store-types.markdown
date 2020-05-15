@@ -14,7 +14,7 @@ Documents and Mediaライブラリがファイルの保存に使用するファ�
 
   - **Advanced File System Store：** より高速なパフォーマンスとより多くのファイルを保存するために、バージョンごとにファイルをディレクトリにネストします。
 
-  - **DBStore（データベースストレージ）**：@ product @データベースにファイルを保存します。 ファイル（blobとして保存）のサイズ制限は1 GBです。 Simple File System StoreまたはAdvanced File System Storeを使用して、より大きなファイルを保存します。
+  - **DBStore（データベースストレージ）**：@product@データベースにファイルを保存します。 ファイル（blobとして保存）のサイズ制限は1 GBです。 Simple File System StoreまたはAdvanced File System Storeを使用して、より大きなファイルを保存します。
 
   - **S3Store（Amazon Simple Storage）**：Amazonのクラウドベースのストレージソリューションを使用します。
 
@@ -22,11 +22,11 @@ Documents and Mediaライブラリがファイルの保存に使用するファ�
 
 ## シンプルファイルシステムストア
 
-Simple File System Storeがデフォルトのストアです。 ドキュメントとメディアファイルをサーバーのファイルシステム（ローカルまたはマウント済み）に保存します。 このストアは、@ product @のデータベースに大きく拘束されています。 ストアのデフォルトのルートフォルダーは `[Liferayホーム] / data / document_library`です。 これは、 `portal-ext.properties` ファイルの `dl.store.file.system.root.dir =` プロパティ、またはコントロールパネルで変更できます。 この手順については、 [ドキュメントリポジトリ構成ガイド](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)参照してください。
+Simple File System Storeがデフォルトのストアです。 ドキュメントとメディアファイルをサーバーのファイルシステム（ローカルまたはマウント済み）に保存します。 このストアは、@product@のデータベースに大きく拘束されています。 ストアのデフォルトのルートフォルダーは `[Liferayホーム] / data / document_library`です。 これは、 `portal-ext.properties` ファイルの `dl.store.file.system.root.dir =` プロパティ、またはコントロールパネルで変更できます。 この手順については、 [ドキュメントリポジトリ構成ガイド](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)参照してください。
 
 Simple File System Storeは、ローカルフォルダーを使用してファイルを格納します。 クラスター化された構成にファイルシステムを使用できますが、ストアを指すフォルダーが同時要求やファイルロックなどを処理できることを確認する必要があります。 したがって、ストレージエリアネットワークまたはクラスター化されたファイルシステムを使用する必要があります。
 
-Simple File System Storeは、@ product @のデータベースの主キーに基づいてフォルダー構造を作成します。 たとえば、ファイル名 `workflow.odp` プレゼンテーションを `stuff`という名前のフォルダーにアップロードすると、ストアは次のようなフォルダー構造を作成します。
+Simple File System Storeは、@product@のデータベースの主キーに基づいてフォルダー構造を作成します。 たとえば、ファイル名 `workflow.odp` プレゼンテーションを `stuff`という名前のフォルダーにアップロードすると、ストアは次のようなフォルダー構造を作成します。
 
     /companyId/folderId/numericFileEntryName/versionNumber
 
@@ -35,9 +35,9 @@ Simple File System Storeは、@ product @のデータベースの主キーに基
   - `numericFileEntryName`：ドキュメントの数値ファイルエントリ名。
   - `versionNumber`：ドキュメントのバージョン番号。
 
-![図1：Simple File System Storeは、@ product @のデータベースの主キーに基づいてフォルダー構造を作成します。](../../../images/enterprise-file-system-store.png)
+![図1：Simple File System Storeは、@product@のデータベースの主キーに基づいてフォルダー構造を作成します。](../../../images/enterprise-file-system-store.png)
 
-| **注：** |からのドキュメントの数値ファイルエントリ名を混同しないように注意してください。そのドキュメントID。 それぞれに独立したカウンターがあります。 数値のファイルエントリ名は|です。ドキュメントを格納するためのフォルダパスで使用されますが、ドキュメントIDは使用されません。 |数値のファイルエントリ名は、|の `name` 列にあります。 `@ product @のデータベースのDLFileEntry` テーブル。ドキュメントIDは|にあります。同じテーブルの `fileEntryId` 列。
+| **注：** |からのドキュメントの数値ファイルエントリ名を混同しないように注意してください。そのドキュメントID。 それぞれに独立したカウンターがあります。 数値のファイルエントリ名は|です。ドキュメントを格納するためのフォルダパスで使用されますが、ドキュメントIDは使用されません。 |数値のファイルエントリ名は、|の `name` 列にあります。 `@product@のデータベースのDLFileEntry` テーブル。ドキュメントIDは|にあります。同じテーブルの `fileEntryId` 列。
 
 ## Advanced File System Storeの使用
 
@@ -51,7 +51,7 @@ Advanced File System Storeの使用方法については、 [ドキュメント�
 
 ## Amazon Simple Storage Serviceの使用
 
-AmazonのSimple Storage Service（S3）は、@ product @で使用できるクラウドベースのストレージソリューションです。 すべてのノードからシームレスにドキュメントをクラウドに保存できます。
+AmazonのSimple Storage Service（S3）は、@product@で使用できるクラウドベースのストレージソリューションです。 すべてのノードからシームレスにドキュメントをクラウドに保存できます。
 
 サービスにサインアップすると、Amazonがアカウントにリンクする一意のキーを割り当てます。 Amazonのインターフェースでは、地域ごとに最適化されたデータの *バケット* を作成できます。 あなたの仕様にこれらを作成した後、続く [の手順](/docs/7-1/deploy/-/knowledge_base/d/using-amazon-simple-storage-service) @製品にリポジトリを接続するために、@。
 

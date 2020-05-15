@@ -10,9 +10,9 @@ header-id: installation-liferay-syncs-prerequisites
 
 Liferay Syncでは、Liferay Marketplaceから次のアプリをインストールする必要があります。 必ず次の順序でインストールしてください。
 
-1.  [Liferay Connector to OAuth 1.0a](https://web.liferay.com/marketplace/-/mp/application/45261909)：@ product @インストールでOAuth 1を有効にします（SyncはOAuth 2と互換性がないことに注意してください）。 あなたは **必見** 、このアプリのインストール **前** インストール *のLiferay Syncのコネクタ* アプリを。そうしないと、ポータルを開始できません。
+1.  [Liferay Connector to OAuth 1.0a](https://web.liferay.com/marketplace/-/mp/application/45261909)：@product@インストールでOAuth 1を有効にします（SyncはOAuth 2と互換性がないことに注意してください）。 あなたは **必見** 、このアプリのインストール **前** インストール *のLiferay Syncのコネクタ* アプリを。そうしないと、ポータルを開始できません。
 
-2.  [Liferay同期コネクタ](https://web.liferay.com/marketplace/-/mp/application/31709100)：@ product @インスタンスで同期を有効にして構成できます。 たとえば、インスタンス全体またはサイトごとに同期を無効にすることができます。 @ product @インスタンスのすべてのサイトで、デフォルトで同期が有効になっていることに注意してください。 あなたは **必見** 、このアプリのインストール **後** インストール *のOAuth 1.0aのにLiferayのコネクタを* アプリを。そうしないと、ポータルを開始できません。
+2.  [Liferay同期コネクタ](https://web.liferay.com/marketplace/-/mp/application/31709100)：@product@インスタンスで同期を有効にして構成できます。 たとえば、インスタンス全体またはサイトごとに同期を無効にすることができます。 @product@インスタンスのすべてのサイトで、デフォルトで同期が有効になっていることに注意してください。 あなたは **必見** 、このアプリのインストール **後** インストール *のOAuth 1.0aのにLiferayのコネクタを* アプリを。そうしないと、ポータルを開始できません。
 
 | **警告：** インストールする前に *Liferay Sync Connector* をインストールする場合| *Liferay Connector to OAuth 1.0a*、ポータルを開始できません。
 
@@ -36,6 +36,6 @@ SSO（シングルサインオン）ソリューションを使用する場合�
     https://www.joesblog.com/api/jsonws/sync-web.*
     https://www.joesblog.com/sync-ウェブ/*
 
-Syncは、OAuthを介した通信に最初のURLで指定されたパスを使用し、残りのURLで指定されたパスを@ product @インストールとの通常の通信に使用します。
+Syncは、OAuthを介した通信に最初のURLで指定されたパスを使用し、残りのURLで指定されたパスを@product@インストールとの通常の通信に使用します。
 
 また、同期コネクタアプリでOAuthを有効にする必要があります。次の記事では、これと、同期の構成方法に関するその他の情報について説明します。

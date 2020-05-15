@@ -137,4 +137,4 @@ DXPのインストールとソースコードにパッチが適用され、デ�
 
 [トラブルシューティングFAQ](/docs/7-1/tutorials/-/knowledge_base/t/troubleshooting-faq)
 
-[Liferay @ ide @](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide)
+[Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide)

@@ -47,7 +47,7 @@ that the API maps to.
 ## Headless Administration
 
 There are several headless admin APIs, each containing its own set of APIs. The 
-following tables list these, as well as any internal models in @prodcut@ that 
+following tables list these, as well as any internal models in @product@ that
 each API maps to. 
 
 [Headless Admin User](https://app.swaggerhub.com/apis/liferayinc/headless-admin-user/1.0) 

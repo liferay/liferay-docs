@@ -14,7 +14,7 @@ header-id: action-autofill
 
 この例に従うには：
 
-1.  `get-countries` JSON Webサービスを使用してデータプロバイダーを設定します。 @ product @を `localhost：8080`で実行している場合は、このWebサービスにアクセスできます。
+1.  `get-countries` JSON Webサービスを使用してデータプロバイダーを設定します。 @product@を `localhost：8080`で実行している場合は、このWebサービスにアクセスできます。
    
         http://localhost:8080/api/jsonws?contextName=&signature=%2Fcountry%2Fget-countries-0
 

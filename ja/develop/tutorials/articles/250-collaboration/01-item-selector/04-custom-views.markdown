@@ -238,7 +238,7 @@ header-id: creating-custom-item-selector-views
 
     This renders the following UI:
     
-    ![Figure 2: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../../images/layouts-item-selector-view.png)
+    ![Figure 1: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../../images/layouts-item-selector-view.png)
 
 4.  `aui：script` この部分は、ページのパスを返します。
    

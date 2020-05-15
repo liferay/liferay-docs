@@ -12,9 +12,9 @@ Google Drive™およびGoogle Photos™のファイルにリンクするドキ�
 
 1.  Liferay MarketplaceからLiferay Plugin for Google Drive™をインストールします。
 
-2.  @ product @インスタンスと通信できるGoogleプロジェクトを作成または構成します。 このプロジェクトでは、 [Google Picker API](https://developers.google.com/picker/) 有効にする必要があります。 このAPIを使用すると、リンクするGoogleファイルを選択できます。 また、Googleプロジェクトが@ product @インスタンスと通信するために必要な認証情報を作成する必要があります。
+2.  @product@インスタンスと通信できるGoogleプロジェクトを作成または構成します。 このプロジェクトでは、 [Google Picker API](https://developers.google.com/picker/) 有効にする必要があります。 このAPIを使用すると、リンクするGoogleファイルを選択できます。 また、Googleプロジェクトが@product@インスタンスと通信するために必要な認証情報を作成する必要があります。
 
-3.  Googleプロジェクトと通信するように@ product @インスタンスを構成します。
+3.  Googleプロジェクトと通信するように@product@インスタンスを構成します。
 
 この記事では、これらの手順を完了する方法を示し、ドキュメントライブラリからGoogleファイルにリンクする例を示して終わります。
 
@@ -35,7 +35,7 @@ Marketplaceからのアプリのインストールについてサポートが必
 
 ## Googleプロジェクトを構成する
 
-@ product @インスタンスと通信できるようにGoogleプロジェクトを作成または構成するには、次の手順に従います。
+@product@インスタンスと通信できるようにGoogleプロジェクトを作成または構成するには、次の手順に従います。
 
 1.  [Google API Console](https://console.developers.google.com)移動します。 適切なプロジェクトがない場合は、 [で新しいプロジェクトを作成します](https://support.google.com/googleapi/answer/6251787?hl=en&ref_topic=7014522)。
 
@@ -47,15 +47,15 @@ Marketplaceからのアプリのインストールについてサポートが必
       - **名前：** Googleドキュメントフック
       - **承認されたJavaScriptオリジン**： `[liferay-instance-URL]` （たとえば、 `http：// localhost：8080` はローカル開発マシンのデフォルトです）
       - **承認済みリダイレクトURI**： `[liferay-instance-URL]/ oath2callback`
-4.  Googleプロジェクトに新しいAPIキーを作成します。 手順については、Google API Consoleのドキュメントで [APIキーの作成](https://support.google.com/googleapi/answer/6158862?hl=en)ご覧ください。 キーを必ずHTTPリファラー（Webサイト）に制限し、@ product @インスタンスのURLからのリクエストを受け入れるように設定してください。
+4.  Googleプロジェクトに新しいAPIキーを作成します。 手順については、Google API Consoleのドキュメントで [APIキーの作成](https://support.google.com/googleapi/answer/6158862?hl=en)ご覧ください。 キーを必ずHTTPリファラー（Webサイト）に制限し、@product@インスタンスのURLからのリクエストを受け入れるように設定してください。
 
-新しいOAuthクライアントIDと公開APIアクセスキーがGoogleプロジェクトの[認証情報]画面に表示されます。 この画面を開いたままにして、@ product @で指定するときにこれらの値を参照します。
+新しいOAuthクライアントIDと公開APIアクセスキーがGoogleプロジェクトの[認証情報]画面に表示されます。 この画面を開いたままにして、@product@で指定するときにこれらの値を参照します。
 
 
 
-## @ product @のGoogle Apps設定を構成する
+## @product@のGoogle Apps設定を構成する
 
-前の手順で作成したクライアントIDとAPIキーで@ product @インスタンスを構成します。
+前の手順で作成したクライアントIDとAPIキーで@product@インスタンスを構成します。
 
 1.  *コントロールパネル* → *構成* → *インスタンス設定*ます。
 

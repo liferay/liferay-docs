@@ -12,7 +12,7 @@ header-id: exporting-widgets-to-other-websites
 
 ## OpenSocialガジェットの共有
 
-OpenSocialは、ソーシャルネットワーキング用の一連のAPIで構成されています。 サーバーのウィジェットを [ighome.com](http://ighome.com) や [igoogleportal.com](http://igoogleportal.com)などの他のサイトと共有すると便利な場合があります。 これらのサイトでは、ユーザーはガジェットを使用して自分のページをカスタマイズできます。 ユーザーは、任意のOpenSocial互換サイトで@ product @ウィジェットを共有できます。 @ product @は、ウィジェットのURLをOpenSocialプラットフォームと共有することでこれを行います。 このURLは、ユーザーの特定のウィジェットインスタンスに固有です。 したがって、ユーザーは同じウィジェットの複数のインスタンスを異なるOpenSocialガジェットとして共有できます。
+OpenSocialは、ソーシャルネットワーキング用の一連のAPIで構成されています。 サーバーのウィジェットを [ighome.com](http://ighome.com) や [igoogleportal.com](http://igoogleportal.com)などの他のサイトと共有すると便利な場合があります。 これらのサイトでは、ユーザーはガジェットを使用して自分のページをカスタマイズできます。 ユーザーは、任意のOpenSocial互換サイトで@product@ウィジェットを共有できます。 @product@は、ウィジェットのURLをOpenSocialプラットフォームと共有することでこれを行います。 このURLは、ユーザーの特定のウィジェットインスタンスに固有です。 したがって、ユーザーは同じウィジェットの複数のインスタンスを異なるOpenSocialガジェットとして共有できます。
 
 OpenSocialでウィジェットを共有するには、次の手順に従います。
 

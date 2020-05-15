@@ -41,6 +41,6 @@ header-id: creating-a-metric
     @Component(immediate = true, service = TrackingAction.class)
     ```
 
-    これにより、コンポーネントの実装クラスが宣言され、@ product @にデプロイされるとすぐに開始するように構成されます。
+    これにより、コンポーネントの実装クラスが宣言され、@product@にデプロイされるとすぐに開始するように構成されます。
 
 Javaクラスが設定されたので、 `TrackingAction` インターフェースのメソッドを実装して、メトリックがどのように機能するかを定義する必要があります。 次に、これらのメソッドの実装を開始します。

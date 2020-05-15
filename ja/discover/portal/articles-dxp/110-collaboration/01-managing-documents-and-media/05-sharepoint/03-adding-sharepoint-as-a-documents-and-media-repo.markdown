@@ -8,7 +8,7 @@ header-id: adding-a-sharepoint-documents-and-media-repository
 
 [TOC levels=1-4]
 
-以下の手順に従って、SharePointライブラリを@ product @のドキュメントとメディアに追加します。
+以下の手順に従って、SharePointライブラリを@product@のドキュメントとメディアに追加します。
 
 1.  *Documents and Media* アプリケーションをページに追加します（まだ追加していない場合）。
 
@@ -26,8 +26,8 @@ header-id: adding-a-sharepoint-documents-and-media-repository
 
 5.  [ *保存*クリックします。
 
-@ product @のドキュメントとメディアライブラリにSharePointリポジトリが一覧表示されます。
+@product@のドキュメントとメディアライブラリにSharePointリポジトリが一覧表示されます。
 
-| **注：** マウントされたSharePointリポジトリに初めてアクセスするときは、|ログイン資格情報を提供し、@ product @にアクセスするための権限を付与します。リモートSharePointリポジトリ。
+| **注：** マウントされたSharePointリポジトリに初めてアクセスするときは、|ログイン資格情報を提供し、@product@にアクセスするための権限を付与します。リモートSharePointリポジトリ。
 
-甘い\！ SharePointリポジトリを@ product @のドキュメントとメディアに追加したので、@ product @インスタンスのSharePointライブラリファイルにアクセスして変更できます。
+甘い\！ SharePointリポジトリを@product@のドキュメントとメディアに追加したので、@product@インスタンスのSharePointライブラリファイルにアクセスして変更できます。
