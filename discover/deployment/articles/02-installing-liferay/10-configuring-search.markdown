@@ -76,11 +76,13 @@ this:
 The version of Elasticsearch that's running is the value of the `"number"` field.
 In this example, it's `2.4.0`. 
 
-| **Elasticsearch 6.5:** Elasticsearch 6.5.x is supported for Liferay Digital
-| Enterprise systems running Fix Pack 79 or later. The latest Liferay Portal, GA
-| 7 at the time of this writing, does not support Elasticsearc 6.5. Instead use
-| Elasticsearch 6.1. In @product-ver@, Elasticsearch version 2.x remains the
-| default, embedded version. To install Elasticsearch 6.5.x,
+| **Elasticsearch 6:** Elasticsearch 6 is supported for Liferay Digital
+| Enterprise systems running Fix Pack 79 or later: see the [compatibility
+| matrix](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.0+Compatibility+Matrix.pdf)
+| for the exact version ranges supported for your Fix Pack level. The latest
+| Liferay Portal, GA 7 at the time of this writing, does not support Elasticsearch
+| 6.5. Instead use Elasticsearch 6.1. In @product-ver@, Elasticsearch version 2.x
+| remains the default, embedded version. To install Elasticsearch 6.5.x,
 | 
 | 1.  Make sure you're running at least Digital Enterprise FP-79.
 | 
