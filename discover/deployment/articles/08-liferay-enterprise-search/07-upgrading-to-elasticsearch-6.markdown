@@ -6,13 +6,16 @@ header-id: upgrading-to-elasticsearch-6
 
 [TOC levels=1-4]
 
-Elasticsearch 6.5.x is supported for Digital Enterprise subscribers running Fix
-Pack 79 or later. Community Edition users running 7.0 CE GA 7 or greater can
-use up to Elasticsearch 6.1.x. If you're not already running a remote
-Elasticsearch 2.x server, follow the 
-[installation guide](/docs/7-0/deploy/-/knowledge_base/d/installing-elasticsearch) 
-to install Elasticsearch 6 and the 
-[configuration guide](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0) 
+Elasticsearch 6 is supported for Digital Enterprise subscribers. The exact
+supported Elasticsearch version range depends on the Fix Pack Level: consult
+the [compatibility
+matrix](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.0+Compatibility+Matrix.pdf)
+for details. Community Edition users running 7.0 CE GA 7 or greater can use up
+to Elasticsearch 6.1.x. If you're not already running a remote Elasticsearch
+2.x server, follow the [installation
+guide](/docs/7-0/deploy/-/knowledge_base/d/installing-elasticsearch) to install
+Elasticsearch 6 and the [configuration
+guide](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0)
 to configure the Elasticsearch adapter. Here, you'll learn to upgrade an
 existing Elasticsearch 2.x server (or cluster) to Elasticsearch 6.5.x: 
 
@@ -143,7 +146,7 @@ for more information.
 <!--It starts automatically with log messages like this:
 
 Add when possible -->
-Now configure the adapter to find your Elasticsearch 6.5.x cluster by specifying
+Now configure the adapter to find your Elasticsearch cluster by specifying
 the correct *Cluster Name* and setting *Operation Mode* to *REMOTE*. Make sure
 the *Transport Address* matches the one Elasticsearch is using. If testing
 locally with Elasticsearch's default settings, the default value in the adapter
