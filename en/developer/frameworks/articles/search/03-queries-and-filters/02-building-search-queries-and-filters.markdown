@@ -6,65 +6,143 @@ header-id: building-search-queries-and-filters
 
 [TOC levels=1-4]
 
-Each filter and query has a different purpose, but the way you'll add the
-information to the search request is similar between all queries and filters.
+Each filter and query has a [different
+purpose](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html),
+but the way you'll add the information to the search request is similar between
+all queries and filters.
 
 ## Queries
 
-The complete dummy code snippet for building the below Query is available for
-your copying and pasting convenience at the end of this section.
+A mostly-complete code snippet for building Queries is provided for your
+copying and pasting convenience [below](#example).
+
+### Declare Gradle Dependencies
+
+Add the following to your `build.gradle` file:
+
+```gradle
+dependencies {
+	compileOnly group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.5.0"
+	compileOnly group: "com.liferay.portal", name: "release.portal.api", version: "7.2.0"
+	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+}
+```
+
+With this you can import all the Search APIs.
+
+### Reference the Search Services
+
+To satisfy the dependencies of the example code presented here, get references
+to
+
+- `com.liferay.portal.search.searcher.SearchRequestBuilderFactory`
+- `com.liferay.portal.search.searcher.Searcher`
+- `com.liferay.portal.search.query.Queries`
+
+```java
+@Reference
+protected Queries queries;
+
+@Reference
+protected Searcher searcher;
+
+@Reference
+protected SearchRequestBuilderFactory searchRequestBuilderFactory;
+```
 
 ### Build the Search Query
 
 1.  Use the `com.liferay.portal.search.query.Queries` interface to instantiate
-    the query you'll construct. For example,
+    the queries you'll construct. For example,
 
     ```java
     TermsQuery termsQuery = queries.terms("fieldName");
+    MatchQuery matchQuery = queries.match("fieldName", "value");
+    BooleanQuery booleanQuery = queries.booleanQuery();
     ```
 
-    To discover what fields each query must have (e.g., `String field` in the
+    To discover what parameters each query must have (e.g., `String field` in the
     case of the above `com.liferay.portal.search.query.TermsQuery`), see the
-    [`Queries`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query/Queries.java) 
+    [`Queries`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query/Queries.java)
     interface.
 
-2.  Build out the query to get the desired response. This looks different
-    for each query type, but Elasticsearch's documentation on the query type
-    explains it (for example, 
-    [Terms Query](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl-terms-query.html)).
-
-    For a Terms Query, you might just add terms to the query:
+2.  Build out the queries to get the desired response. This looks different for
+    each query type, as explained in [Elasticsearch's Query
+    documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/query-dsl.html).
 
     ```java
     termsQuery.addValues("value1", "value2");
+    ```
+
+3.  You might want to wrap queries. For example, use the queries constructed
+    above as MUST clauses in a `BooleanQuery` wrapper:
+
+    ```java
+    booleanQuery.addMustQueryClauses(termsQuery, matchQuery);
     ```
 
 Once the query itself is in good shape, feed it to the search request.
 
 ### Build the Search Request
 
-1.  Get an instance of `com.liferay.portal.search.searcher.SearchRequestBuilder`
-    from the `com.liferay.portal.search.legacy.searcher.SearchRequestBuilderFactory` service:
+1.  Use `com.liferay.portal.search.searcher.SearchRequestBuilderFactory`
+    to get an instance of
+    `com.liferay.portal.search.searcher.SearchRequestBuilder`:
 
     ```java
-    SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
+    SearchRequestBuilder searchRequestBuilder =
+        searchRequestBuilderFactory.getSearchRequestBuilder();
     ```
 
-2.  Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the
-    builder, then add the query to it and run its `build` method:
+    If not setting search keywords into the `SearchContext` (covered below), make
+    sure the request builder enables empty search. 
 
     ```java
-    SearchRequest searchRequest = searchRequestBuilder.query(termsQuery).build();
+    searchRequestBuilder.emptySearchEnabled(true);
     ```
 
-3.  To instead use the constructed query in a filter context, call the
-    `postFilterQuery` method:
+    Set the `long companyId` and, optionally, `String keywords` into the
+    `com.liferay.portal.kernel.search.SearchContext`:
 
     ```java
-    SearchRequest searchRequest = searchRequestBuilder.postFilterQuery(termsQuery).build();
+    searchRequestBuilder.withSearchContext(
+        searchContext -> {
+            searchContext.setCompanyId(companyId);
+            searchContext.setKeywords(keywords);
+        });
     ```
 
-    When constructing a search request, you'll often find it necessary to chain
+    Setting the Company ID into the `SearchContext` is required to ensure the
+    correct index is searched.
+
+    Setting "keywords" on the `SearchContext` is necessary if you want to
+    search via user input. For example, if providing a Search bar in an
+    application's view layer, pass its input into the search context. Liferay's
+    search framework adds the user input keywords and any other data in the
+    `SearchContext` object to its own queries, searching the appropriate fields of
+    each indexed entity, as defined by its
+    [`KeywordQueryContributor`](/docs/7-2/frameworks/-/knowledge_base/f/searching-the-index-for-model-entities#adding-your-model-entitys-terms-to-the-query)
+    or by the `postProcessSearchQuery` method of its `Indexer`.
+
+2.  To execute the query, get a
+    `com.liferay.portal.search.searcher.SearchRequest` instance from the
+    builder by adding the query to it and running its `build` method:
+
+    ```java
+    SearchRequest searchRequest = 
+        searchRequestBuilder.query(booleanQuery).build();
+    ```
+
+3.  To use a constructed query in a filter context, call the `postFilterQuery`
+    method while building the request:
+
+    ```java
+    SearchRequest searchRequest = 
+        searchRequestBuilder.postFilterQuery(termsQuery).build();
+    ```
+
+
+4.  When constructing a search request, you'll often find it necessary to chain
     the builder methods together:
 
     ```java
@@ -72,57 +150,222 @@ Once the query itself is in good shape, feed it to the search request.
         searchRequestBuilder.postFilterQuery(myQuery1).query(myQuery2).build();
     ```
 
-    Doing this allows you to add filters and queries (and anything else from
-    the builder API) to the same request in one fell swoop.
+    Chaining allows you to add filters and queries (and anything else from the
+    builder API) to the same request in one fell swoop.
 
 ### Execute the Search Request
 
-1.  Perform a search using the `com.liferay.portal.search.searcher.Searcher`
-    service and the `SearchRequest` to get a
-    `com.liferay.portal.search.searcher.SearchResponse`:
+Perform a search using the `com.liferay.portal.search.searcher.Searcher`
+service and the `SearchRequest` to get a
+`com.liferay.portal.search.searcher.SearchResponse`:
 
-    ```java
-    SearchResponse searcher.search(searchRequest);
-    ```
-
-2.  To satisfy the dependencies of the example code here, get a reference to
-    `com.liferay.portal.search.searcher.SearchRequestBuilderFactory` and
-    `com.liferay.portal.search.searcher.Searcher`:
-
-    ```java
-    @Reference
-    protected Searcher searcher;
-
-    @Reference
-    SearchRequestBuilderFactory searchRequestBuilderFactory;
-    ```
-
-    Here's the complete code snippet:
-
-    ```java
-    TermsQuery termsQuery = queries.terms("fieldName");
-
-    termsQuery.addValues("value1", "value2");
-
-    SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
-
-    SearchRequest searchRequest = searchRequestBuilder.query(termsQuery).build();
-
-    SearchResponse searcher.search(searchRequest);
-
-    @Reference
-    protected Searcher searcher;
-
-    @Reference
-    SearchRequestBuilderFactory searchRequestBuilderFactory;
-    ```
+```java
+SearchResponse searchResponse = searcher.search(searchRequest);
+```
 
 ### Process the Search Response
 
-What you'll do with the `SearchResponse` returned by the `searcher.search` call
-is dependent on the type of query and your specific use case. See the
-documentation on searching programmatically for more information.
+What you'll do with the `SearchResponse` returned by the `searcher.search`
+call is dependent on the type of query and your specific use case. Much of the
+time you'll want to loop through the `com.liferay.portal.search.hits.SearchHit`
+and `com.liferay.portal.search.document.Document` objects, so that's what's
+shown here, with a simple message printed in the log for each one.
 
+1.  Get the `SearchHits` from the response:
+
+    ```java
+    SearchHits searchHits = searchResponse.getSearchHits();
+    ```
+
+2.  Get a List of the `SearchHit` objects:
+
+    ```java
+    List<SearchHit> searchHitsList = searchHits.getSearchHits();
+    ```
+
+3.  Loop through the `SearchHit` objects in the List, get the `Document`
+    associated with each one, printing its score and UID to the
+    console:
+
+    ```java
+    searchHitsList.forEach(
+        searchHit -> {
+            float hitScore = searchHit.getScore();
+
+            Document doc = searchHit.getDocument();
+
+            String uid = doc.getString(Field.UID);
+
+            System.out.println(
+                StringBundler.concat(
+                    "Document ", uid, " had a score of ", hitScore));
+        });
+    ```
+
+### Search Insights: Request and Response Strings
+
+When building a search application, it can be useful to inspect the request
+string (translated into the search engine's dialect), and subsequently see the
+response string returned by the search server.
+
+Retrieve these from the `SearchResponse` as
+
+```java
+searchResponse.getRequestString();
+searchResponse.getResponseString();
+``` 
+
+The format depends on your search engine: with Elasticsearch, both are JSON.
+
+| **Note:** The JSON returned as a request string is pruned from several Elasticsearch
+| query defaults for clarity. To see the full request JSON that Elasticsearch
+| processed, use the Server Administration &rarr; Log Levels panel to adjust the
+| log levels for your Elasticsearch server. For Elasticsearch 6, Set
+| 
+| `com.liferay.portal.search.elasticsearch6.internal.ElasticsearchIndexSearcher`
+| 
+| to use INFO level logging.
+
+Inspecting the request string produced by the code example included
+[here](#example) reveals two main `"bool":"must"` query clauses in the JSON
+being sent to the search engine: 
+
+1.  The `BooleanQuery` explicitly declared in the code example.
+
+2.  A (very long) query determined by the logic embedded in the
+    [`SearcherImpl#doSearch`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/searcher/SearcherImpl.java#L137)
+    method.
+
+How you construct the `SearchRequest` determines how the `Searcher` API
+processes it, which in turn influences the request String sent to
+Elasticsearch. For example, sending `keywords` into the `SearchContext` object
+passed to the `SearchRequest` ensures that queries for certain fields are
+executed on all searchable documents.
+
+### Queries Example
+
+The code below performs a `MatchQuery` on the `title_en_US` field for the value
+provided via the `keywords` String. In addition, a `TermsQuery` on the
+`folderId` field is executed to match a value of `0` (root `JournalFolder`s are
+identified by `JournalFolderConstants.DEFAULT_PARENT_FOLDER_ID`, which
+evaluates to `0`). Both queries are wrapped in a `BooleanQuery` must clause.
+
+Because this example passes `keywords` to the `SearchContext`,
+`emptySearchEnabled(true)` is not called on the `SearchRequestBuilder`. The
+`keywords` variable is not explicitly declared because this should come from
+user input. Therefore the example `search` method receives `keywords` as a
+parameter, along with the `companyId`:
+
+```java
+package com.liferay.docs.search;
+
+import com.liferay.petra.string.StringBundler;
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.search.Field;
+import com.liferay.portal.kernel.util.LocaleUtil;
+import com.liferay.portal.search.document.Document;
+import com.liferay.portal.search.hits.SearchHit;
+import com.liferay.portal.search.hits.SearchHits;
+import com.liferay.portal.search.query.BooleanQuery;
+import com.liferay.portal.search.query.MatchQuery;
+import com.liferay.portal.search.query.Queries;
+import com.liferay.portal.search.query.TermsQuery;
+import com.liferay.portal.search.searcher.SearchRequest;
+import com.liferay.portal.search.searcher.SearchRequestBuilder;
+import com.liferay.portal.search.searcher.SearchRequestBuilderFactory;
+import com.liferay.portal.search.searcher.SearchResponse;
+import com.liferay.portal.search.searcher.Searcher;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+@Component(
+	service = MySearchComponent.class
+)
+public class MySearchComponent {
+
+	public List<String> search(long companyId, String keywords)
+		throws PortalException {
+
+		MatchQuery titleQuery = queries.match(
+			Field.getLocalizedName(LocaleUtil.US, Field.TITLE), keywords);
+
+		TermsQuery rootFolderQuery = queries.terms(Field.FOLDER_ID);
+
+		rootFolderQuery.addValues(String.valueOf(
+				JournalFolderConstants.DEFAULT_PARENT_FOLDER_ID));
+
+		BooleanQuery booleanQuery = queries.booleanQuery();
+
+		booleanQuery.addMustQueryClauses(rootFolderQuery, titleQuery);
+
+		SearchRequestBuilder searchRequestBuilder =
+			searchRequestBuilderFactory.builder();
+
+		// Uncomment this line below if you aren't setting "keywords"
+		// on the SearchContext
+		//		searchRequestBuilder.emptySearchEnabled(true);
+
+		searchRequestBuilder.withSearchContext(
+			searchContext -> {
+				searchContext.setCompanyId(companyId);
+				searchContext.setKeywords(keywords);
+			});
+
+		SearchRequest searchRequest = searchRequestBuilder.query(
+			booleanQuery
+		).build();
+
+		SearchResponse searchResponse = searcher.search(searchRequest);
+
+		SearchHits searchHits = searchResponse.getSearchHits();
+
+		List<SearchHit> searchHitsList = searchHits.getSearchHits();
+
+		List<String> resultsList = new ArrayList<>(searchHitsList.size());
+
+		searchHitsList.forEach(
+			searchHit -> {
+				float hitScore = searchHit.getScore();
+
+				Document doc = searchHit.getDocument();
+
+				String uid = doc.getString(Field.UID);
+
+				System.out.println(
+					StringBundler.concat(
+						"Document ", uid, " had a score of ", hitScore));
+
+				resultsList.add(uid);
+			});
+
+		System.out.println(StringPool.EIGHT_STARS);
+
+		/*
+		 *  // Uncomment to inspect the Request and Response Strings
+         * System.out.println( "Request String:\n" + searchResponse.getRequestString() +
+		 * "\n" + StringPool.EIGHT_STARS);
+		 * System.out.println( "Response String:\n" +
+		 * searchResponse.getResponseString() + "\n" + StringPool.EIGHT_STARS);
+		 */
+
+		return resultsList;
+	}
+
+	@Reference
+	protected Queries queries;
+
+	@Reference
+	protected Searcher searcher;
+
+	@Reference
+	protected SearchRequestBuilderFactory searchRequestBuilderFactory;
+
+}
+```
 ## Filters
 
 Filters as a distinct API-level object in @product@ are going away. It's best to
@@ -160,3 +403,13 @@ search framework is constructing the main search query. See the
 which is called in the overridden `postProcessContextBooleanFilter` to add the
 filter logic.
 
+## Discovering Indexed Fields
+
+To find the fields to use in your Queries, navigate to *Control Panel* &rarr;
+*Configuration* &rarr; *Search* in a running portal. From there, open the Field Mappings tab and
+browse the mappings for the `liferay-[companyId]` index. Scroll to the
+[`properties`](https://www.elastic.co/guide/en/elasticsearch/reference/current/properties.html)
+section of the mapping.
+
+A summary of the text fields that are localized can be found
+[here](/docs/7-2/user/-/knowledge_base/u/searching-for-localized-content).
