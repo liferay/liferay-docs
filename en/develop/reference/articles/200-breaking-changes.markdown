@@ -325,9 +325,9 @@ configurations are located in the `document-library-api` module.
 
 This affects anyone who is using the following portal properties:
 
+- `dl.file.entry.previewable.processor.max.size`
 - `dl.file.extensions`
 - `dl.file.max.size`
-- `dl.file.entry.previewable.processor.max.size`
 
 #### How should I update my code?
 
@@ -380,14 +380,14 @@ Closure Template library.
 
 #### What changed?
 
-Many `liferay-ui` taglibs have been moved out of Portal's kernel into OSGi
-modules. This change modified many of the taglib names. The list of converted
-names is below:
+Several `liferay-ui` taglibs have been moved from the Portal's kernel into OSGi
+modules, resulting in taglib names being changed. The updated names are listed
+below:
 
 - `liferay-ui:asset-add-button` &rarr; `liferay-asset:asset-add-button`
 - `liferay-ui:asset-addon-entry-display` &rarr; `liferay-asset:asset-addon-entry-display`
 - `liferay-ui:asset-addon-entry-selector` &rarr; `liferay-asset:asset-addon-entry-selector`
-- `liferay-ui:asset-categories-available`  &rarr; `liferay-asset:asset-categories-available`
+- `liferay-ui:asset-categories-available` &rarr; `liferay-asset:asset-categories-available`
 - `liferay-ui:asset-categories-error` &rarr; `liferay-asset:asset-categories-error`
 - `liferay-ui:asset-display` &rarr; `liferay-asset:asset-display`
 - `liferay-ui:asset-links` &rarr; `liferay-asset:asset-links`
@@ -407,12 +407,12 @@ This affects anyone who is using the taglibs listed above.
 
 #### How should I update my code?
 
-You must migrate your `liferay-ui` tags to the new tag names. If you prefer
+You must update your `liferay-ui` tags to use the new names. If you prefer
 keeping the old names temporarily, you can rely on the compatibility layer
 offered by Liferay. To set this, add the `com.liferay.portal.web.compat`
 dependency to your project's build file.
 
-Be sure to update to the new tag names soon, as this compatibility layer is
+Use the updated tag names as soon as you're able, as this compatibility layer is
 deprecated and will not be available for future releases.
 
 #### Why was this change made?
@@ -697,7 +697,8 @@ Liferay Portal 7.1 CE GA1 provides the Portlet 3.0 API dependency in the runtime
 classpath. Previous versions provided the Portlet 2.0 API.
 
 Full support for Portlet 3.0 will not be available until Liferay Portal 7.1 CE
-GA2 is released.
+GA4 is released. This will serve as a developer preview for the technology until
+it's officially promoted in Liferay Portal 7.2.
 
 #### Who is affected?
 
@@ -797,10 +798,54 @@ several of Liferay Portal's out-of-the-box portlets' `view.jsp`:
     }
     %>
 
+##### JSF Considerations
+
+JSF Portlets must be upgraded to the latest version of Liferay Faces Bridge,
+which is planned for release in Q4, 2018. Download and upgrade instructions will
+be made available at
+[https://www.liferayfaces.org](https://www.liferayfaces.org) at that time.
+
 #### Why was this change made?
 
 This change provides the latest features offered by the Portlet 3.0
 Specification, which was released in early 2017.
+
+---------------------------------------
+
+### Changed the From Last Publish Date Option in Staging
+- **Date:** 2018-Jun-06
+- **JIRA Ticket:** LPS-81695
+
+#### What changed?
+
+The *From Last Publish Date* option used in the publication process has
+programmatically changed.
+
+#### Who is affected?
+
+This affects anyone who implemented Staging support for their custom entities.
+
+#### How should I update my code?
+
+You must create a `*StagingModelListener` class for your custom entity, which
+extends the
+[`com.liferay.portal.kernel.model.BaseModelListener`](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/BaseModelListener.html).
+You can examine the
+[`BlogsEntryStagingModelListener`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/model/listener/BlogsEntryStagingModelListener.java)
+class as an example.
+
+You must also update the `doPrepareManifestSummary` method in your custom
+`*PortletDataHandler` to use the `populateLastPublishDateCounts` method from the
+[`com.liferay.exportimport.internal.staging.StagingImpl`](https://docs.liferay.com/ce/apps/web-experience/latest/javadocs/com/liferay/exportimport/staging/StagingImpl.html),
+in case of a *From Last Publish Date* publication. See the
+[`BlogsPortletDataHandler`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/exportimport/data/handler/BlogsPortletDataHandler.java)
+as an example.
+
+#### Why was this change made?
+
+It was hard to collect which entities should be published to the live site.
+Instead of running queries to find the contents that were modified since the
+last publication, now changesets are used to track this information.
 
 ---------------------------------------
 
@@ -842,43 +887,6 @@ compile successfully:
 #### Why was this change made?
 
 This change helps stabilize the foundation of Liferay Portal's utilities.
-
----------------------------------------
-
-### Changed the From Last Publish Date Option in Staging
-- **Date:** 2018-Jun-06
-- **JIRA Ticket:** [LPS-81695](https://issues.liferay.com/browse/LPS-81695)
-
-#### What changed?
-
-The *From Last Publish Date* option used in the publication process has
-programmatically changed.
-
-#### Who is affected?
-
-This affects anyone who implemented Staging support for their custom entities.
-
-#### How should I update my code?
-
-You must create a `*StagingModelListener` class for your custom entity, which
-extends the
-[`com.liferay.portal.kernel.model.BaseModelListener`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/BaseModelListener.html).
-You can examine the
-[`BlogsEntryStagingModelListener`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/model/listener/BlogsEntryStagingModelListener.java)
-class as an example.
-
-You must also update the `doPrepareManifestSummary` method in your custom
-`*PortletDataHandler` to use the `populateLastPublishDateCounts` method from the
-[`com.liferay.exportimport.internal.staging.StagingImpl`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staging/StagingImpl.html),
-in case of a *From Last Publish Date* publication. See the
-[`BlogsPortletDataHandler`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/exportimport/data/handler/BlogsPortletDataHandler.java)
-as an example.
-
-#### Why was this change made?
-
-It was hard to collect which entities should be published to the live site.
-Instead of running queries to find the contents that were modified since the
-last publication, now changesets are used to track this information.
 
 ---------------------------------------
 
@@ -1043,5 +1051,131 @@ the permissions.
 #### Why was this change made?
 
 This change removes old logic that is no longer used in Liferay Portal.
+
+---------------------------------------
+
+### Liferay `AssetEntries_AssetCategories` Is No Longer Used
+- **Date:** 2019-Sep-11
+- **JIRA Tickets:** [LPS-99973](https://issues.liferay.com/browse/LPS-99973),
+[LPS-76488](https://issues.liferay.com/browse/LPS-76488)
+
+#### What changed?
+
+Previously, Liferay used a mapping table and a corresponding interface for the
+relationship between `AssetEntry` and `AssetCategory` in
+`AssetEntryLocalService` and `AssetCategoryLocalService`. This mapping table and
+the corresponding interface have been replaced by the table
+`AssetEntryAssetCategoryRel` and the service
+`AssetEntryAssetCategoryRelLocalService`.
+
+#### Who is affected?
+
+This affects any content or code that relies on calling the old interfaces for
+the `AssetEntries_AssetCategories` relationship, through the
+`AssetEntryLocalService` and `AssetCategoryLocalService`.
+
+#### How should I update my code?
+
+Use the new methods in `AssetEntryAssetCategoryRelLocalService` to retrieve the
+same data as before. The method signatures haven't changed; they have just been
+relocated to a different service.
+
+**Example**
+
+Old way:
+
+```java
+List<AssetEntry> entries =
+AssetEntryLocalServiceUtil.getAssetCategoryAssetEntries(categoryId);
+
+for (AssetEntry entry: entries) {
+  ...
+}
+```
+
+New way:
+
+```java
+long[] assetEntryPKs =
+_assetEntryAssetCategoryRelLocalService.getAssetEntryPrimaryKeys(assetCategoryId);
+
+for (long assetEntryPK: assetEntryPKs) {
+  AssetEntry = _assetEntryLocalService.getEntry(assetEntryPK);
+  ...
+}
+
+...
+
+@Reference
+private AssetEntryAssetCategoryRelLocalService _assetEntryAssetCategoryRelLocalService;
+
+@Reference
+private AssetEntryLocalService _assetEntryLocalService;
+```
+
+#### Why was this change made?
+
+This change was made due to changes resulting from
+[LPS-76488](https://issues.liferay.com/browse/LPS-76488), which let developers
+control the order of a list of assets for a given category.
+
+---------------------------------------
+
+### Removed Cache Bootstrap Feature
+- **Date:** 2020-Jan-8
+- **JIRA Ticket:** [LPS-96563](https://issues.liferay.com/browse/LPS-96563)
+
+#### What changed?
+
+The cache bootstrap feature has been removed. These properties can no longer
+be used to enable/configure cache bootstrap:
+
+`ehcache.bootstrap.cache.loader.enabled`,
+`ehcache.bootstrap.cache.loader.properties.default`,
+`ehcache.bootstrap.cache.loader.properties.${specific.cache.name}`.
+
+#### Who is affected?
+
+This affects anyone using the properties listed above.
+
+#### How should I update my code?
+
+There's no direct replacement for the removed feature. If you have code that
+depends on it, you must implement it yourself.
+
+#### Why was this change made?
+
+This change was made to avoid security issues.
+
+---------------------------------------
+
+### Web Content Description Field Is Controlled by AlloyEditor
+- **Date:** 2020-Apr-07
+- **JIRA Ticket:** [LPS-71850](https://issues.liferay.com/browse/LPS-71850)
+
+#### What changed?
+
+Previously, the Web Content description field was a plain text field. This field
+is now managed by AlloyEditor, so any HTML characters entered into the field are
+escaped and rendered as plain text instead of HTML.
+
+#### Who is affected?
+
+This affects explicit HTML tags in Web Content descriptions that a developer
+expects to be rendered as regular HTML tags by the browser.
+
+#### How should I update my code?
+
+If you want these values rendered as HTML, you must unescape them using the
+proper unescape sequence: `HtmlUtil.unescape`.
+
+For example, the FreeMarker expression
+`${.vars['reserved-article-description'].data}` should be unescaped like
+`${htmlUtil.unescape(.vars['reserved-article-description'].data)}`
+
+#### Why was this change made?
+
+This change was made to take advantage of the AlloyEditor's styling and
+formatting tools in Web Content description fields.
 
 ---------------------------------------
