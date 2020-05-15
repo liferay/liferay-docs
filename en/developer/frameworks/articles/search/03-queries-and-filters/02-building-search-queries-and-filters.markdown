@@ -28,7 +28,7 @@ dependencies {
 }
 ```
 
-With this, you will be able to import all the Search APIs.
+With this you can import all the Search APIs.
 
 ### Reference the Search Services
 
@@ -208,7 +208,7 @@ When building a search application, it can be useful to inspect the request
 string (translated into the search engine's dialect), and subsequently see the
 response string returned by the search server.
 
-You can get these from the `SearchResponse` as
+Retrieve these from the `SearchResponse` as
 
 ```java
 searchResponse.getRequestString();
@@ -217,7 +217,7 @@ searchResponse.getResponseString();
 
 The format depends on your search engine: with Elasticsearch, both are JSON.
 
-| The JSON returned as a request string is pruned from several Elasticsearch
+| **Note:** The JSON returned as a request string is pruned from several Elasticsearch
 | query defaults for clarity. To see the full request JSON that Elasticsearch
 | processed, use the Server Administration &rarr; Log Levels panel to adjust the
 | log levels for your Elasticsearch server. For Elasticsearch 6, Set
@@ -226,16 +226,35 @@ The format depends on your search engine: with Elasticsearch, both are JSON.
 | 
 | to use INFO level logging.
 
+Inspecting the request string produced by the code example included
+[here](#example) reveals two main `"bool":"must"` query clauses in the JSON
+being sent to the search engine: 
+
+1.  The `BooleanQuery` explicitly declared in the code example.
+
+2.  A (very long) query determined by the logic embedded in the
+    [`SearcherImpl#doSearch`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/searcher/SearcherImpl.java#L137)
+    method.
+
+How you construct the `SearchRequest` determines how the `Searcher` API
+processes it, which in turn influences the request String sent to
+Elasticsearch. For example, sending `keywords` into the `SearchContext` object
+passed to the `SearchRequest` ensures that queries for certain fields are
+executed on all searchable documents.
+
 ### Queries Example
 
-Here's a mostly-complete example code snippet, which performs a `MatchQuery` on the
-`title_en_US` field for the value `legal`, a `TermsQuery` on the `folderId`
-field for the value `0`, and wraps them in a `BooleanQuery` must clause.
+The code below performs a `MatchQuery` on the `title_en_US` field for the value
+provided via the `keywords` String. In addition, a `TermsQuery` on the
+`folderId` field is executed to match a value of `0` (root `JournalFolder`s are
+identified by `JournalFolderConstants.DEFAULT_PARENT_FOLDER_ID`, which
+evaluates to `0`). Both queries are wrapped in a `BooleanQuery` must clause.
+
 Because this example passes `keywords` to the `SearchContext`,
-`emptySearchEnabled(true)` is not called on the `SearchRequestBuilder`. In this
-example, the `keywords` variable is not defined because this should come from
-user input. User-provided `keywords` would further refine the list of results
-that match the queries written here:
+`emptySearchEnabled(true)` is not called on the `SearchRequestBuilder`. The
+`keywords` variable is not explicitly declared because this should come from
+user input. Therefore the example `search` method receives `keywords` as a
+parameter, along with the `companyId`:
 
 ```java
 package com.liferay.docs.search;
@@ -276,7 +295,8 @@ public class MySearchComponent {
 
 		TermsQuery rootFolderQuery = queries.terms(Field.FOLDER_ID);
 
-		rootFolderQuery.addValues("0");
+		rootFolderQuery.addValues(String.valueOf(
+				JournalFolderConstants.DEFAULT_PARENT_FOLDER_ID));
 
 		BooleanQuery booleanQuery = queries.booleanQuery();
 
@@ -322,10 +342,15 @@ public class MySearchComponent {
 				resultsList.add(uid);
 			});
 
-		System.out.println(
-			"Request String:\n" + searchResponse.getRequestString());
-		System.out.println(
-			"Response String:\n" + searchResponse.getResponseString());
+		System.out.println(StringPool.EIGHT_STARS);
+
+		/*
+		 *  // Uncomment to inspect the Request and Response Strings
+         * System.out.println( "Request String:\n" + searchResponse.getRequestString() +
+		 * "\n" + StringPool.EIGHT_STARS);
+		 * System.out.println( "Response String:\n" +
+		 * searchResponse.getResponseString() + "\n" + StringPool.EIGHT_STARS);
+		 */
 
 		return resultsList;
 	}
@@ -341,7 +366,6 @@ public class MySearchComponent {
 
 }
 ```
-
 ## Filters
 
 Filters as a distinct API-level object in @product@ are going away. It's best to
