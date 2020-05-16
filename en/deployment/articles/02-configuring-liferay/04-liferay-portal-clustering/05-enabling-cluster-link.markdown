@@ -11,7 +11,7 @@ distributed across multiple @product@ nodes running concurrently. Cluster Link
 does
 [Ehcache](http://www.ehcache.org)
 replication. The Ehcache global settings are in the
-[`portal.properties` file](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Ehcache). 
+[`portal.properties` file](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Ehcache).
 
 By default Liferay does not copy cached entities between nodes. If an entity is
 deleted or changed, for example, Cluster Link sends a *remove* message to the
@@ -21,11 +21,11 @@ from the database and put into the local cache. Entities added to one node's
 local cache are not copied to local caches of the other nodes. An attempt to
 retrieve a new entity on a node which doesn't have that entity cached results in
 a cache *miss*. The miss triggers the node to retrieve the entity from the
-database and store it in its local cache. 
+database and store it in its local cache.
 
 ![Figure 1: @product@'s cache algorithm is extremely efficient. ](../../../images/clustering-cache-efficient-algorithm.png)
 
-Here are the Cluster Link topics: 
+Here are the Cluster Link topics:
 
 - [Enabling Cluster Link](#enabling-cluster-link)
 - [Multicast Over UDP](#multicast-over-udp)
@@ -35,11 +35,11 @@ Here are the Cluster Link topics:
 - [Conclusion](#conclusion)
 
 
-## Enabling Cluster Link 
+## Enabling Cluster Link
 
 To enable Cluster Link, add this [portal
 property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties) to a
-`portal-ext.properties` file: 
+`portal-ext.properties` file:
 
 ```properties
 cluster.link.enabled=true
@@ -47,13 +47,13 @@ cluster.link.enabled=true
 
 The
 [Cluster Link portal properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link)
-provide a default configuration that you can override to fit your needs. 
+provide a default configuration that you can override to fit your needs.
 
 Many of the defaults use `localhost`, instead of a real address. In some
 configurations, however, `localhost` is bound to the internal loopback network
 (`127.0.0.1` or `::1`), rather than the host's real address. If for some reason
 you need this configuration, you can make DXP auto detect the real address with
-this property: 
+this property:
 
 ```properties
 cluster.link.autodetect.address=www.google.com:80
@@ -62,10 +62,10 @@ cluster.link.autodetect.address=www.google.com:80
 Set it to connect to some other host that's contactable by your server. By
 default, it points to Google, but this may not work if your server is behind a
 firewall. If you use each host's real address, you don't need to set the
-auto-detect address. 
+auto-detect address.
 
-Cluster Link depends on 
-[JGroups](http://www.jgroups.org) 
+Cluster Link depends on
+[JGroups](http://www.jgroups.org)
 and provides an API for nodes to communicate. It can
 
 - Send messages to all nodes in a cluster
@@ -75,7 +75,7 @@ and provides an API for nodes to communicate. It can
 
 Cluster Link contains an enhanced algorithm that provides one-to-many type
 communication between the nodes. This is implemented by default with JGroups's
-UDP multicast, but unicast and TCP are also available. 
+UDP multicast, but unicast and TCP are also available.
 
 ## Multicast Over UDP
 
@@ -85,17 +85,17 @@ groups of [channels from
 JGroups](http://www.jgroups.org/manual4/index.html#_channel) to implement this:
 a control group and a transport group. If you want to customize the [channel
 properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link),
-you can do so in `portal-ext.properties`: 
+you can do so in `portal-ext.properties`:
 
 ```properties
 cluster.link.channel.name.control=[your control channel name]
 cluster.link.channel.properties.control=[your control channel properties]
 ```
 
-Please see 
-[JGroups's documentation](http://www.jgroups.org/manual4/index.html#protlist) 
+Please see
+[JGroups's documentation](http://www.jgroups.org/manual4/index.html#protlist)
 for channel properties. The default configuration sets many properties whose
-settings are discussed there. 
+settings are discussed there.
 
 Multicast broadcasts to all devices on the network. Clustered environments on
 the same network communicate with each other by default. Messages and
@@ -103,10 +103,10 @@ information (e.g., scheduled tasks) sent between them can lead to unintended
 consequences. Isolate such cluster environments by either separating them
 logically or physically on the network, or by configuring each cluster's
 `portal-ext.properties` to use different sets of
-[multicast group address and port values](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Multicast). 
+[multicast group address and port values](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Multicast).
 
 JGroups sets a bind address automatically. If you want to set a manual address,
-you can do this. By default, these are set to `localhost`: 
+you can do this. By default, these are set to `localhost`:
 
 ```properties
 cluster.link.bind.addr["cluster-link-control"]=localhost
@@ -116,7 +116,7 @@ cluster.link.bind.addr["cluster-link-udp"]=localhost
 In some configurations, however, `localhost` is bound to the internal loopback
 network (`127.0.0.1` or `::1`), rather than the host's real address. If for some
 reason you need this configuration, you can make @product@ auto detect its real
-address with this property: 
+address with this property:
 
 ```properties
 cluster.link.autodetect.address=www.google.com:80
@@ -125,16 +125,16 @@ cluster.link.autodetect.address=www.google.com:80
 Set it to connect to some other host that's contactable by your server. By
 default, it points to Google, but this may not work if your server is behind a
 firewall. If you set the address manually using the properties above, you don't
-need to set the auto-detect address. 
+need to set the auto-detect address.
 
 Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
-methods are all provided by JGroups. 
+methods are all provided by JGroups.
 
 ### Checkpoint:
 
 1.  If you are binding the IP address instead of using `localhost`, make sure
-    the right IP addresses are declared using these properties: 
+    the right IP addresses are declared using these properties:
 
     ```properties
     cluster.link.bind.addr["cluster-link-control"]=localhost
@@ -152,10 +152,10 @@ If your network configuration or the geographical distance between nodes prevent
     ```bash
     -Djgroups.bind_addr=[node_ip_address]
     ```
- 
+
     Use the node's IP address.
 
-2.  Select a discovery protocol for the nodes to use to find each other. Here are the protocol choices: 
+2.  Select a discovery protocol for the nodes to use to find each other. Here are the protocol choices:
 
     - TCPPing
     - JDBCPing
@@ -164,7 +164,7 @@ If your network configuration or the geographical distance between nodes prevent
 
     If you aren't sure which one to choose, use TCPPing. The rest of these steps use TCPPing
 
-3.  Extract the `tcp.xml` file from `$LIFERAY.HOME/osgi/marketplace/Liferay Foundation - Liferay Portal - Impl.lpkg/com​.​liferay​.​portal​.​cluster​.​multiple​-​[version].​jar/lib​/​jgroups​-​[version].​Final​.​jar/tcp.xml` to a location accessible to DXP, such as a folder called `jgroups` in the DXP web application's `WEB-INF/classes` folder. 
+3.  Extract the `tcp.xml` file from `$LIFERAY.HOME/osgi/marketplace/Liferay Foundation - Liferay Portal - Impl.lpkg/com​.​liferay​.​portal​.​cluster​.​multiple​-​[version].​jar/lib​/​jgroups​-​[version].​Final​.​jar/tcp.xml` to a location accessible to DXP, such as a folder called `jgroups` in the DXP web application's `WEB-INF/classes` folder.
 
     ```
     WEB-INF/classes/jgroups/tcp.xml
@@ -172,17 +172,17 @@ If your network configuration or the geographical distance between nodes prevent
 
 4.  In the `tcp.xml` file, set the TCP bind port to an unused port on your node. Here's an example:
 
-    ```xml 
-    <TCP bind_port="7800"/> 
+    ```xml
+    <TCP bind_port="7800"/>
     ```
 
-5.  In the `tcp.xml` file, make each node discoverable to TCPPing by specifying its IP address and an unused port on that node. Building off of the previous step, here's an example `<TCPPing>` element: 
+5.  In the `tcp.xml` file, make each node discoverable to TCPPing by specifying its IP address and an unused port on that node. Building off of the previous step, here's an example `<TCPPing>` element:
 
-    ```xml 
-    <TCP bind_port="7800"/> 
+    ```xml
+    <TCP bind_port="7800"/>
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7800],192.168.224.155[7800]"
-        port_range="0"/> 
+        port_range="0"/>
     ```
 
     **Regarding Initial Hosts:**
@@ -192,14 +192,14 @@ If your network configuration or the geographical distance between nodes prevent
 
 6.  Copy your `tcp.xml` file to each node, making sure to set the TCP bind port to the node's bind port. On the node with IP address `192.168.224.155`, for example, configure TCPPing like this:
 
-    ```xml 
-    <TCP bind_port="7800"/> 
+    ```xml
+    <TCP bind_port="7800"/>
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7800],192.168.224.155[7800]"
-        port_range="0"/> 
+        port_range="0"/>
     ```
 
-7. Modify the [Cluster Link properties](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link) in the node's `portal-ext.properties` file to enable Cluster Link and point to the TCP XML file for each Cluster Link channel: 
+7. Modify the [Cluster Link properties](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link) in the node's `portal-ext.properties` file to enable Cluster Link and point to the TCP XML file for each Cluster Link channel:
 
 ```properties
 cluster.link.enabled=true
@@ -215,27 +215,27 @@ You're now set up for Unicast over TCP clustering! Repeat either TCPPING process
 
 ### JDBC Ping
 
-Rather than use TCP Ping to discover cluster members, you can use a central database accessible by all the nodes to help them find each other. Cluster members write their own and read the other members' addresses from this database. To enable this configuration, replace the `TCPPING` tag with the corresponding `JDBC_PING` tag: 
+Rather than use TCP Ping to discover cluster members, you can use a central database accessible by all the nodes to help them find each other. Cluster members write their own and read the other members' addresses from this database. To enable this configuration, replace the `TCPPING` tag with the corresponding `JDBC_PING` tag:
 
 ```xml
 <JDBC_PING
-    connection_url="jdbc:mysql://[DATABASE_IP]/[DATABASE_NAME]?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false"
-    connection_username="[DATABASE_USER]"
-    connection_password="[DATABASE_PASSWORD]"
-    connection_driver="com.mysql.cj.jdbc.Driver"/>
+    connection_url="[place the URL to your database here]"
+    connection_username="[place your user name here]"
+    connection_password="[place your password here]"
+    connection_driver="[place your driver name here]"/>
 ```
 
-The above example uses MySQL as the database. For further information about JDBC Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual4/index.html#DiscoveryProtocols).
+For example JDBC connection values, please see [Database Templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates). For further information about JDBC Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual4/index.html#DiscoveryProtocols).
 
 ### S3 Ping
 
 Amazon S3 Ping can be used for servers running on Amazon's EC2 cloud service. Each node uploads a small file to an S3 bucket, and all the other nodes read the files from this bucket to discover the other nodes. When a node leaves, its file is deleted.
 
-To configure S3 Ping, replace the `TCPPING` tag with the corresponding `S3_PING` tag: 
+To configure S3 Ping, replace the `TCPPING` tag with the corresponding `S3_PING` tag:
 
 ```xml
-<S3_PING 
-    secret_access_key="[SECRETKEY]" 
+<S3_PING
+    secret_access_key="[SECRETKEY]"
     access_key="[ACCESSKEY]"
     location="ControlBucket"/>
 ```
@@ -246,11 +246,11 @@ Supply your Amazon keys as values for the parameters above. For further informat
 
 JGroups supplies other means for cluster members to discover each other, including Rackspace Ping, BPing, File Ping, and others. Please see the [JGroups Documentation](http://www.jgroups.org/manual4/index.html#DiscoveryProtocols) for information about these discovery methods.
 
-The control and transport channels can be configured to use different ports. 
+The control and transport channels can be configured to use different ports.
 
-## Using Different Control and Transport Channel Ports 
+## Using Different Control and Transport Channel Ports
 
-Using separate control and transport channel ports lets you monitor control and transport traffic and helps you isolate information to diagnose problems. These steps use Unicast over TCPPing to demonstrate the approach. 
+Using separate control and transport channel ports lets you monitor control and transport traffic and helps you isolate information to diagnose problems. These steps use Unicast over TCPPing to demonstrate the approach.
 
 1.  Add a parameter to your app server's JVM on each node:
 
@@ -266,7 +266,7 @@ Using separate control and transport channel ports lets you monitor control and 
 
     -   `tcp-transport.xml`
 
-5.  Modify the [Cluster Link properties](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link) in the node's `portal-ext.properties` file to enable Cluster Link and point to the TCP XML file for each Cluster Link channel: 
+5.  Modify the [Cluster Link properties](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Cluster%20Link) in the node's `portal-ext.properties` file to enable Cluster Link and point to the TCP XML file for each Cluster Link channel:
 
     ```properties
     cluster.link.enabled=true
@@ -274,7 +274,7 @@ Using separate control and transport channel ports lets you monitor control and 
     cluster.link.channel.properties.transport.0=/jgroups/tcp-transport.xml
     ```
 
-6.  Modify each `tcp-*.xml` file's the TCP and TCPPing elements to account for each node's IP address and bind port. 
+6.  Modify each `tcp-*.xml` file's the TCP and TCPPing elements to account for each node's IP address and bind port.
 
     If you're vertically clustering (i.e., you have multiple servers running on the same physical or virtual system), every channel must use a unique unused bind port for discovery communication. In each `tcp-*.xml` file, assign the TCP tag's `bind_port` attribute to a unique, unused port.
 
@@ -291,68 +291,68 @@ Using separate control and transport channel ports lets you monitor control and 
 
     **Node 1 `tcp-control.xml`**
 
-    ```xml 
-    <TCP bind_port="7800"/> 
+    ```xml
+    <TCP bind_port="7800"/>
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7800],192.168.224.154[7802]"
-        port_range="0"/> 
+        port_range="0"/>
     ```
 
     **Node 1 `tcp-transport.xml`**
 
-    ```xml 
-    <TCP bind_port="7801"/> 
+    ```xml
+    <TCP bind_port="7801"/>
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7801],192.168.224.154[7803]"
-        port_range="0"/> 
+        port_range="0"/>
     ```
 
     **Node 2 `tcp-control.xml`**
 
-    ```xml 
-    <TCP bind_port="7802"/> 
+    ```xml
+    <TCP bind_port="7802"/>
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7800],192.168.224.154[7802]"
-        port_range="0"/> 
+        port_range="0"/>
     ```
 
     **Node 2 `tcp-transport.xml`**
 
-    ```xml 
-    <TCP bind_port="7803"/> 
+    ```xml
+    <TCP bind_port="7803"/>
     <TCPPING async_discovery="true"
         initial_hosts="192.168.224.154[7801],192.168.224.154[7803]"
-        port_range="0"/> 
+        port_range="0"/>
     ```
 
-If you have added entities that can be cached or you want to tune the cache configuration for your system, you can do so using a module. 
+If you have added entities that can be cached or you want to tune the cache configuration for your system, you can do so using a module.
 
 ## Modifying the Cache Configuration with a Module
 
 It's recommended to test your system under a load that best simulates the kind
 of traffic your system must handle. If you serve a lot of message
 board messages, your script should reflect that. If web content is the core of
-your site, your script should reflect that too. 
+your site, your script should reflect that too.
 
 As a result of a load test, you may find that the default distributed cache
 settings aren't optimized for your site. In this case, tweak the settings using
 a module. Follow instructions for
-[Overriding Cache](/docs/7-2/frameworks/-/knowledge_base/f/overriding-cache). 
+[Overriding Cache](/docs/7-2/frameworks/-/knowledge_base/f/overriding-cache).
 
 You can install the module on each node and change the settings without taking
 down the cluster. This is a great benefit, but beware: since Ehcache doesn't
 allow for changes to cache settings while the cache is alive, reconfiguring a
-cache while the server is running flushes the cache. 
+cache while the server is running flushes the cache.
 
-## Conclusion 
+## Conclusion
 
 Once you've configured your cluster, you can start it. A log file message shows
-your cluster's  name (e.g., `cluster=liferay-channel-control`): 
+your cluster's  name (e.g., `cluster=liferay-channel-control`):
 
 ```bash
-------------------------------------------------------------------- 
-GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643 
+-------------------------------------------------------------------
+GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643
 -------------------------------------------------------------------
 ```
 
-Congratulations! Your cluster is using Cluster Link. 
+Congratulations! Your cluster is using Cluster Link.

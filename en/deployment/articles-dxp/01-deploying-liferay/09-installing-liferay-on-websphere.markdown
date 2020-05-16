@@ -184,6 +184,8 @@ now:
     folder. If you have a JDBC database driver `JAR`, copy it to this location
     as well.
 
+    | **Note:** The [Liferay DXP Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?) specifies supported databases and environments.
+
 2.  From the same archive, copy `portlet.jar`into `[Install
     Location]/WebSphere/AppServer/javaext` for WebSphere 9.0.0.x. WebSphere
     already contains an older version of `portlet.jar` which must be overridden
@@ -194,33 +196,6 @@ now:
     `[Liferay Home]/osgi` folder (create this folder if it doesn't exist). This
     is typically `[Install
     Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`.
-
-Before starting the server, verify that all the following jars have been copied
-to the correct folders. The following files should be present within the `lib/ext` (WebSphere Application)
-folder:
-
-1.  `com.liferay.petra.concurrent.jar`
-2.  `com.liferay.petra.executor.jar`
-3.  `com.liferay.petra.function.jar`
-4.  `com.liferay.petra.io.jar`
-5.  `com.liferay.petra.lang.jar`
-6.  `com.liferay.petra.memory.jar`
-7.  `com.liferay.petra.nio.jar`
-8.  `com.liferay.petra.process.jar`
-9.  `com.liferay.petra.reflect.jar`
-10. `com.liferay.petra.string.jar`
-11. `com.liferay.registry.api.jar`
-12. `hsql.jar`
-13. A JDBC database jar (e.g. MySQL, MariaDB, IBM DB2, Postgres for production)
-14. `portal-kernel.jar`
-15. `portlet.jar`
-
-The following folders should be present within the `/liferay/osgi` folder:
-
-1.  `configs`
-2.  `core`
-3.  `marketplace`
-4.  `war`
 
 ### Ensuring that @product@'s portlet.jar is loaded first
 

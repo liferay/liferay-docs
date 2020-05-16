@@ -21,9 +21,9 @@ or [Portal CE](https://www.liferay.com/downloads-community):
 - Dependencies ZIP file
 - OSGi Dependencies ZIP file
 
-| **Important:** 
+| **Important:**
 | [Prepare for the install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install)
-| before continuing. 
+| before continuing.
 
 Here are the basic steps for installing @product@ on Tomcat:
 
@@ -35,7 +35,7 @@ Here are the basic steps for installing @product@ on Tomcat:
 is Tomcat server's parent folder. `$TOMCAT_HOME` refers to your Tomcat server
 folder. It is usually named `tomcat-[version]` or `apache-tomcat-[version]`.
 
-## Installing Dependencies 
+## Installing Dependencies
 
 @product@ depends on many JARs included by @product@ Tomcat bundle. Some of the
 bundle's JARs are not strictly required but can still be useful. If you don't
@@ -44,22 +44,7 @@ have a bundle, you can download the Liferay JARs by downloading the
 the third-party JARs as described below.
 
 1.  Create the folder `$TOMCAT_HOME/lib/ext` if it doesn't exist and extract the
-    JARs from the dependencies ZIP to it. Here are the JARs:
- 
-    - `com.liferay.petra.concurrent.jar`
-    - `com.liferay.petra.executor.jar`
-    - `com.liferay.petra.function.jar`
-    - `com.liferay.petra.io.jar`
-    - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar`
-    - `com.liferay.petra.nio.jar`
-    - `com.liferay.petra.process.jar`
-    - `com.liferay.petra.reflect.jar`
-    - `com.liferay.petra.string.jar`
-    - `com.liferay.registry.api.jar`
-    - `hsql.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
+    JARs from the dependencies ZIP to it.
 
 2.  Copy the following JARs from a @product@ Tomcat bundle (or download them) to
     the `$TOMCAT_HOME/lib/ext` folder:
@@ -73,57 +58,14 @@ the third-party JARs as described below.
     - [`persistence.jar`](http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1)
     - [`support-tomcat.jar`](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat)
 
-3.  Copy the JDBC driver for your database to the `$CATALINA_BASE/lib/ext` 
-    folder. Here are some common drivers: 
+3.  Copy the JDBC driver for your database to the `$CATALINA_BASE/lib/ext`
+    folder.
 
-    - [`mariadb.jar`](https://downloads.mariadb.org/)
-    - [`mysql.jar`](http://dev.mysql.com/downloads/connector/j)
-    - [`postgresql.jar`](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
+    | **Note:** The [Liferay DXP Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?) specifies supported databases and environments.
 
-4.  Create an `osgi` folder in your Liferay Home. Extract the folders (i.e., 
+4.  Create an `osgi` folder in your Liferay Home. Extract the folders (i.e.,
     `configs`, `core`, and more) from OSGi ZIP file to the `osgi` folder. The
     `osgi` folder provides the necessary modules for @product@'s OSGi runtime.
-
-Checkpoint:
-
-1.  Your `$CATALINA_BASE/lib/ext` folder has these JARs:
-
-    - `activation.jar`
-    - `ccpp.jar`
-    - `com.liferay.petra.concurrent.jar`
-    - `com.liferay.petra.executor.jar`
-    - `com.liferay.petra.function.jar`
-    - `com.liferay.petra.io.jar`
-    - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar`
-    - `com.liferay.petra.nio.jar`
-    - `com.liferay.petra.process.jar`
-    - `com.liferay.petra.reflect.jar`
-    - `com.liferay.petra.string.jar`
-    - `com.liferay.registry.api.jar`
-    - `hsql.jar`
-    - `jms.jar`
-    - `jta.jar`
-    - `jutf7.jar`
-    - `mail.jar`
-    - `mariadb.jar`
-    - `mysql.jar`
-    - `persistence.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
-    - `postgresql.jar`
-    - `support-tomcat.jar`
-
-2. Your `[Liferay Home]/osgi` folder has these subfolders:
-
-    - `configs`
-    - `core`
-    - `marketplace`
-    - `modules`
-    - `portal`
-    - `state`
-    - `static`
-    - `war`
 
 ## Configuring Tomcat
 
@@ -139,12 +81,12 @@ session, you can configure Tomcat to manage them:
 - [Data source](#database-configuration)
 - [Mail session](#mail-configuration)
 
-Start with configuring Tomcat to run @product@. 
+Start with configuring Tomcat to run @product@.
 
-1.  If you have a @product@ Tomcat bundle, copy the `setenv.bat`, `setenv.sh`, 
+1.  If you have a @product@ Tomcat bundle, copy the `setenv.bat`, `setenv.sh`,
     `startup.bat`, `startup.sh`, `shutdown.bat`, and `shutdown.sh` files from it
-    to your `$CATALINA_BASE/bin` folder. If not, create the  `setenv.bat` and 
-    `setenv.sh`scripts. 
+    to your `$CATALINA_BASE/bin` folder. If not, create the  `setenv.bat` and
+    `setenv.sh`scripts.
 
     The scripts set JVM options for Catalina, which is Tomcat's servlet
     container. Among these options is the location of the Java runtime
@@ -156,11 +98,11 @@ Start with configuring Tomcat to run @product@.
     export JAVA_HOME=/usr/lib/jvm/java-8-jdk
     export PATH=$JAVA_HOME/bin:$PATH
     ```
-    
+
 
     Then configure Catalina's JVM options to support @product@.
 
-    Unix: 
+    Unix:
 
     ```bash
     CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xms2560m -Xmx2560m -XX:MaxMetaspaceSize=512m"
@@ -176,11 +118,11 @@ Start with configuring Tomcat to run @product@.
     prevents Tomcat from working around garbage collection bugs relating to
     static or final fields (these bugs don't exist in @product@ and working
     around them causes problems with the logging system), sets the time zone to
-    GMT, gives the JVM 2GB of RAM, and limits Metaspace to 512MB. 
+    GMT, gives the JVM 2GB of RAM, and limits Metaspace to 512MB.
 
-    | **Important:** @product@ requires that the application server JVM use the 
-    | GMT time zone and UTF-8 file encoding. 
-    
+    | **Important:** @product@ requires that the application server JVM use the
+    | GMT time zone and UTF-8 file encoding.
+
     | **Note:** On JDK 11, it's recommended to add this JVM argument to display
     | four-digit years.
     |
@@ -189,13 +131,13 @@ Start with configuring Tomcat to run @product@.
     | ```
 
     After installation, tune your system (including these JVM options) for
-    performance. 
+    performance.
 
 2.  If you have a @product@ Tomcat bundle, copy its
     `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` file to the corresponding
     location in your application server. Create the file path if it doesn't
     exist. If you don't have a @product@ Tomcat bundle, create a `ROOT.xml`
-    file. 
+    file.
 
     The `ROOT.xml` file specifies a web application context for @product@.
     `ROOT.xml` looks like this:
@@ -242,13 +184,13 @@ Start with configuring Tomcat to run @product@.
 
 3.  Provide Catalina access to the JARs in `$CATALINA_BASE/lib/ext` by opening
     your `$CATALINA_BASE/conf/catalina.properties` file and appending this
-    value to the `common.loader` property: 
+    value to the `common.loader` property:
 
     ```properties
     ,"${catalina.home}/lib/ext/global","${catalina.home}/lib/ext/global/*.jar","${catalina.home}/lib/ext","${catalina.home}/lib/ext/*.jar"
     ```
 
-4.  Make sure to use UTF-8 URI encoding consistently. If you have a @product@ 
+4.  Make sure to use UTF-8 URI encoding consistently. If you have a @product@
     Tomcat bundle, copy the `$CATALINA_BASE/conf/server.xml` file to your
     server. If not, open your `$CATALINA_BASE/conf/server.xml` file and add the
     attribute `URIEncoding="UTF-8"` to HTTP and AJP connectors that use
@@ -283,7 +225,7 @@ Start with configuring Tomcat to run @product@.
     here:
 
     ```xml
-    <!-- <Valve className="org.apache.catalina.valves.AccessLogValve" 
+    <!-- <Valve className="org.apache.catalina.valves.AccessLogValve"
            directory="logs"
            prefix="localhost_access_log" suffix=".txt"
            pattern="%h %l %u %t &quot;%r&quot; %s %b" /> -->
@@ -299,10 +241,10 @@ Start with configuring Tomcat to run @product@.
     org.apache.level=WARNING
     ```
 
-7.  In `$CATALINA_HOME/conf/web.xml`, set the JSP compiler to Java 8 and set 
+7.  In `$CATALINA_HOME/conf/web.xml`, set the JSP compiler to Java 8 and set
     @product@'s `TagHandlerPool` class to manage the JSP tag pool. Do this by
     adding the following elements above the `jsp` servlet element's
-    `<load-on-startup>` element. 
+    `<load-on-startup>` element.
 
     ```xml
     <init-param>
@@ -324,9 +266,9 @@ Start with configuring Tomcat to run @product@.
     JARs and classes. Setting `web-app` element's attribute
     `metadata-complete="true"` tells the application server there's no extra
     metadata. The application server starts up faster this way. The default is
-    to check for extra metadata. 
+    to check for extra metadata.
 
-9.  If you're on Unix, Linux, or Mac OS, make the shell scripts in your 
+9.  If you're on Unix, Linux, or Mac OS, make the shell scripts in your
     `$CATALINA_HOME/bin` and `$CATALINA_BASE/bin` folders executable by running
     this command in each folder:
 
@@ -338,12 +280,12 @@ Start with configuring Tomcat to run @product@.
 
 Your application server is configured to run @product@.
 
-1.  The file encoding, user time-zone, and preferred protocol stack are set in 
+1.  The file encoding, user time-zone, and preferred protocol stack are set in
     your `setenv.sh`.
 
 2.  The default memory available and Metaspace limit are set.
 
-3.  `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` declares the web 
+3.  `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` declares the web
     application context.
 
 4.  The `common.loader` property in `$CATALINA_BASE/conf/catalina.properties`
@@ -351,13 +293,13 @@ Your application server is configured to run @product@.
 
 5.  `$CATALINA_BASE/conf/server.xml` sets UTF-8 encoding.
 
-6.  `$CATALINA_BASE/conf/server.xml` doesn't declare any valve for writing host 
+6.  `$CATALINA_BASE/conf/server.xml` doesn't declare any valve for writing host
     access logs. (optional)
 
-7.  `$CATALINA_HOME/conf/logging.properties` sets the desired log levels. 
+7.  `$CATALINA_HOME/conf/logging.properties` sets the desired log levels.
 
-8.  `$CATALINA_HOME/conf/web.xml` sets the tag handler pool and sets Java 8 as 
-    the JSP compiler. 
+8.  `$CATALINA_HOME/conf/web.xml` sets the tag handler pool and sets Java 8 as
+    the JSP compiler.
 
 9.  `$CATALINA_HOME/conf/web.xml` specifies for the application server
     to refrain from looking for extra metadata. (optional)
@@ -376,7 +318,7 @@ If you want Tomcat to manage your data source, follow these steps:
 1.  Make sure your database server is installed and working. If it's installed
     on a different machine, make sure your @product@ machine can access it.
 
-2.  Open `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` and add your data 
+2.  Open `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` and add your data
     source as a `Resource` in your web application `Context`:
 
     ```xml
@@ -386,10 +328,10 @@ If you want Tomcat to manage your data source, follow these steps:
             name="jdbc/LiferayPool"
             auth="Container"
             type="javax.sql.DataSource"
-            driverClassName="com.mysql.cj.jdbc.Driver"
-            url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-            username="root"
-            password="root"
+            driverClassName="[place the database driver class here]"
+            url="[place the URL to your database here]"
+            username="[place your user name here]"
+            password="[place your password here]"
             maxTotal="100"
             maxIdle="30"
             maxWaitMillis="10000"
@@ -397,11 +339,9 @@ If you want Tomcat to manage your data source, follow these steps:
     </Context>
     ```
 
-    The example resource definition above is for a MySQL database named
-    `lportal` that has a user named `root` whose password is `root`. Replace
-    these values with your own. 
+   Make sure to replace the database URL, user name, and password with the appropriate values. For example JDBC connection values, please see [Database Templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates)
 
-3.  In a `portal-ext.properties` file in your Liferay Home, specify your data 
+3.  In a `portal-ext.properties` file in your Liferay Home, specify your data
     source:
 
     ```properties
@@ -416,11 +356,11 @@ it. Mail session configuration is next.
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s
 [built-in mail session](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail),
-skip this section. 
+skip this section.
 
 If you want to manage your mail session with Tomcat, follow these steps:
 
-1.  Open `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` and add your mail 
+1.  Open `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` and add your mail
     session as a `Resource` in your web application `Context`. Make sure to
     replace the example mail session values with your own.
 
@@ -456,22 +396,22 @@ If you want to manage your mail session with Tomcat, follow these steps:
     ```
 
 You've created a mail session for Tomcat to manage and configured @product@ to
-use it. 
+use it.
 
 ## Deploying @product@
 
 Now you're ready to deploy @product@ using the @product@ WAR file.
 
-1.  If you are manually installing @product@ on a clean Tomcat server, delete 
+1.  If you are manually installing @product@ on a clean Tomcat server, delete
     the contents of the `$CATALINA_BASE/webapps/ROOT` folder. This removes
     the default Tomcat home page.
 
 2.  Extract the @product@ `.war` file contents to
-    `$CATALINA_BASE/webapps/ROOT`. 
+    `$CATALINA_BASE/webapps/ROOT`.
 
     It's time to launch @product@ on Tomcat!
 
-3.  Start Tomcat by navigating to `$CATALINA_HOME/bin` and executing 
+3.  Start Tomcat by navigating to `$CATALINA_HOME/bin` and executing
     `./startup.sh`. Alternatively, execute `./catalina.sh run` to tail
     @product@'s log file. The log audits startup activities and is useful for
     debugging deployment.

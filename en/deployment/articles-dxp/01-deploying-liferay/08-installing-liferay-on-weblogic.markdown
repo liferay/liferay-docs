@@ -27,34 +27,6 @@ JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the-life
 -   Dependencies ZIP file
 -   OSGi Dependencies ZIP file
 
-**Checkpoint**
-
-The following jars should be present within the `liferay-dxp-dependencies-[version].zip`:
-
-1. `com.liferay.petra.concurrent.jar`
-2. `com.liferay.petra.executor.jar`
-3. `com.liferay.petra.function.jar`
-4. `com.liferay.petra.io.jar`
-5. `com.liferay.petra.lang.jar`
-6. `com.liferay.petra.memory.jar`
-7. `com.liferay.petra.nio.jar`
-8. `com.liferay.petra.process.jar`
-9. `com.liferay.petra.reflect.jar`
-10. `com.liferay.petra.string.jar`
-11. `com.liferay.registry.api.jar`
-12. `hsql.jar`
-13. `portal-kernel.jar`
-14. `portlet.jar`
-
-The following folders should be present within the `/liferay/osgi` folder:
-
-1. `Configs`
-2. `Core`
-3. `Marketplace`
-4. `War`
-
-Without any further ado, get ready to install @product@ in WebLogic!
-
 ## Configuring WebLogic's Node Manager
 
 WebLogic's Node Manager starts and stops managed servers.
@@ -195,41 +167,11 @@ now:
     `Liferay_Home/osgi` folder (create this folder if it doesn't exist).
 
 You must also add your database's driver JAR file to your domain's `lib` folder.
-Note that although Hypersonic is fine for testing purposes, you **should not**
-use it for production @product@ instances.
 
-**Checkpoint**
+| **Note:** Although Hypersonic is fine for testing purposes, **do not**
+| use it for production @product@ instances.
 
-Your domain `lib` folder has these jars:
-
-* `com.liferay.petra.concurrent.jar`
-* `com.liferay.petra.executor.jar`
-* `com.liferay.petra.function.jar`
-* `com.liferay.petra.io.jar`
-* `com.liferay.petra.lang.jar`
-* `com.liferay.petra.memory.jar`
-* `com.liferay.petra.nio.jar`
-* `com.liferay.petra.process.jar`
-* `com.liferay.petra.reflect.jar`
-* `com.liferay.petra.string.jar`
-* `com.liferay.registry.api.jar`
-* `hsql.jar`
-* `portal-kernel.jar`
-* `portlet.jar`
-
-A JDBC driver for your database has been added to your domain's `lib` folder.
-Here are some common JDBC drivers:
-
-* [`mariadb.jar`](https://downloads.mariadb.org/)
-* [`mysql.jar`](http://dev.mysql.com/downloads/connector/j)
-* [`postgres.jar`](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
-
-Your `[Liferay Home]/osgi` folder has these subfolders:
-
-* `Configs`
-* `Core`
-* `Marketplace`
-* `War`
+| **Note:** The [Liferay DXP Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?) specifies supported databases and environments.
 
 Next, you'll configure your database.
 
@@ -254,7 +196,11 @@ Hypersonic database.
 
 6.  If using MySQL, add the text
     `?useUnicode=true&characterEncoding=UTF-8&\useFastDateParsing=false` to the
-    URL line and test the connection. If it works, click *Next*.
+    URL line and test the connection.
+
+    | **Tip:** For more example URLs, see the `jdbc.default.url` values in [Database Templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates).
+
+    If the connection works, click *Next*.
 
 7.  Select the target for the data source and click *Finish*.
 
@@ -267,16 +213,7 @@ Hypersonic database.
     ```
 
 Alternatively, you can make the above configuration strictly via properties in
-the `portal-ext.properties` file. To do so, place the following properties and
-values in the file. Be sure to change the `your*` values with the values
-appropriate for your database's configuration (if using MySQL):
-
-```propreties
-jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
-jdbc.default.url=jdbc:mysql://your.db.ip.address/yourdbname?useUnicode?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useFastDateParsing=false
-jdbc.default.username=yourdbuser
-jdbc.default.password=yourdbpassword
-```
+the `portal-ext.properties` file. Please see the [Database Templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates) for example properties.
 
 Next, you'll configure your mail session.
 
