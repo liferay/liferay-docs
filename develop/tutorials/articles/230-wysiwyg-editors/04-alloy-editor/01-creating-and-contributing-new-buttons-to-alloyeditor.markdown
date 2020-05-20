@@ -24,63 +24,63 @@ AlloyEditor is built on `React.js` and uses `jsx` to render each button in the
 editor. Below is the folder structure for a module that adds a new button:
 
 - `frontend-editor-my-button-web`
-	- `src`
-	    - `main`
-	        - `java`
+  - `src`
+      - `main`
+          - `java`
                     - `com/liferay/frontend/editor/my/button/web/`
-		        - `editor`
-			    - `configuration`
-			        - `AlloyEditorMyButtonConfigContributor.java`
-			- `servlet`
-			    - `taglib`
-			        - `AlloyEditorMyButtonDynamicInclude.java`
-		- `resources`
-		    - `META-INF`
-		        - `resources`
-			    - `js`
-			        - `my_button.jsx`
+            - `editor`
+          - `configuration`
+              - `AlloyEditorMyButtonConfigContributor.java`
+      - `servlet`
+          - `taglib`
+              - `AlloyEditorMyButtonDynamicInclude.java`
+    - `resources`
+        - `META-INF`
+            - `resources`
+          - `js`
+              - `my_button.jsx`
 
-	- `.babelrc` - needed since `JSX` is being compiled
+  - `.babelrc` - needed since `JSX` is being compiled
 
-	- `bnd.bnd`(example configuration shown below)
+  - `bnd.bnd`(example configuration shown below)
 
-		Bundle-Name: Liferay Frontend Editor AlloyEditor My Button Web
-		Bundle-SymbolicName: com.liferay.frontend.editor.alloyeditor.my.button.web
-		Bundle-Version: 1.0.0
-		Liferay-Releng-Module-Group-Description:
-		Liferay-Releng-Module-Group-Title: Rich Text Editors
-		Web-ContextPath: /frontend-editor-alloyeditor-my-button-web
+    Bundle-Name: Liferay Frontend Editor AlloyEditor My Button Web
+    Bundle-SymbolicName: com.liferay.frontend.editor.alloyeditor.my.button.web
+    Bundle-Version: 1.0.0
+    Liferay-Releng-Module-Group-Description:
+    Liferay-Releng-Module-Group-Title: Rich Text Editors
+    Web-ContextPath: /frontend-editor-alloyeditor-my-button-web
 
 
-	- `build.gradle`(contents shown below)
+  - `build.gradle`(contents shown below)
 
-		configJSModules {
-			enabled = false
-		}
+    configJSModules {
+      enabled = false
+    }
 
-		dependencies {
-			provided group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-			provided group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
-			provided group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
-		}
+    dependencies {
+      provided group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+      provided group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+      provided group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+    }
 
-		transpileJS {
-			bundleFileName = "js/buttons.js"
-			globalName = "AlloyEditor.Buttons"
-			modules = "globals"
-			srcIncludes = "**/*.jsx"
-		}
+    transpileJS {
+      bundleFileName = "js/buttons.js"
+      globalName = "AlloyEditor.Buttons"
+      modules = "globals"
+      srcIncludes = "**/*.jsx"
+    }
 
-	- `package.json`(contents shown below)
+  - `package.json`(contents shown below)
 
-		{
-			"devDependencies": {
-				"babel-preset-react": "^6.11.1",
-				"metal-cli": "^2.0.0"
-			},
-			"name": "frontend-editor-alloyeditor-my-button-web",
-			"version": "1.0.0"
-		}
+    {
+      "devDependencies": {
+        "babel-preset-react": "^6.11.1",
+        "metal-cli": "^2.0.0"
+      },
+      "name": "frontend-editor-alloyeditor-my-button-web",
+      "version": "1.0.0"
+    }
 
 The contents of some of the files have been added as well, since the 
 `build gradle` file requires some customizing.
@@ -101,7 +101,6 @@ Below is an example configuration for a JSX file that creates a new button:
     
             var ButtonMyButton = React.createClass(
                     {
-                            mixins: [AlloyEditor.ButtonStateClasses],
     
                             displayName: 'ButtonMyButton',
     
@@ -121,7 +120,7 @@ Below is an example configuration for a JSX file that creates a new button:
                              */
                             render: function() {
                                     var cssClass = 'ae-button ' + 
-                                    this.getStateClasses();
+                                    AlloyEditor.Compat.ButtonStateClasses.getStateClasses();
     
                                     return (
                                             <button className={cssClass} 
