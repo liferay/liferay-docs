@@ -16,7 +16,8 @@ header-id: creating-form-templates
 
 3.  定義の[ *アクション* ]ボタン（![Actions](../../../images/icon-actions.png)）をクリックし、[ *テンプレートの管理*]を選択します。 定義のテンプレートがリストされます。
 
-4.  [ *Add* ]ボタン（![Add](../../../images/icon-add.png)）をクリックし、[ *Add Form Template*]を選択します。 このプレゼントをするために使用されるグラフィック、ドラッグアンドドロップインターフェースの同種 [定義の作成](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions)。
+4.  [ *Add* ]ボタン（![Add](../../../images/icon-add.png)）をクリックし、[ *Add Form Template*]を選択します。 このプレゼントをするために使用されるグラフィック、ドラッグアンドドロップインターフェースの同種
+[定義の作成](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions)。
 
 5.  テンプレートに名前を付け、[ *詳細* セクションを展開して説明を入力します。 *モード* セレクターを使用して、テンプレートを適用するモードを選択することもできます（*作成* または *編集*）。
 
