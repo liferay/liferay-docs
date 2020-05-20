@@ -1,5 +1,5 @@
 ---
-header-id: installation-liferay-syncs-prerequisites
+header-id: installing-liferay-syncs-prerequisites
 ---
 
 # Liferay Syncの前提条件のインストール
