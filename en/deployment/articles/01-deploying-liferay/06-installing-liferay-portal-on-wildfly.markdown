@@ -166,12 +166,7 @@ Make the following modifications to
     </security-domain>
     ```
 
-5.  Remove the following Weld-related tags:
-
-    -   `<extension module="org.jboss.as.weld"/>`
-    -   `<subsystem xmlns="urn:jboss:domain:weld:4.0"/>`
-
-6.  Remove the welcome content code snippets:
+5.  Remove the welcome content code snippets:
 
     ```xml
     <location name="/" handler="welcome-content"/>
@@ -185,7 +180,7 @@ Make the following modifications to
     </handlers>
     ```
 
-7.  Find the `<jsp-config/>` tag and set the `development`, `source-vm`, and
+6.  Find the `<jsp-config/>` tag and set the `development`, `source-vm`, and
     `target-vm` attributes in the tag. Once finished, the tag should look like
     this:
 
@@ -206,11 +201,9 @@ Before continuing, verify the following properties have been set in the
 
 4.  The new `<security-domain>` is created.
 
-5.  Weld tags are removed.
+5.  Welcome content is removed.
 
-6.  Welcome content is removed.
-
-7.  The `<jsp-config>` tag contains its new attributes.
+6.  The `<jsp-config>` tag contains its new attributes.
 
 Now you must configure your JVM and startup scripts.
 
