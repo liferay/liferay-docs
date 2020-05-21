@@ -9,6 +9,9 @@ header-id: creating-and-contributing-new-buttons-to-alloyeditor
 It is possible to add additional AlloyEditor functionality through OSGi bundles. 
 This tutorial demonstrates how to add a button to the editor.
 
+| **Note:** To use the syntax covered here, you must have AlloyEditor 2.11.0 or 
+| higher, which is included in Liferay DXP 7.0 Fix Pack 90 and Service Pack 13.
+
 In this tutorial, you will learn how to
 
 - Create an OSGi bundle for your own button
