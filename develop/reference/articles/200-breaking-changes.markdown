@@ -4426,3 +4426,56 @@ sync both components, and simplify its internal logic, activity sets are always
 enabled by default, with no option to disable them.
 
 ---------------------------------------
+
+### Removed Description HTML Escaping in PortletDisplay
+- **Date:** 2018-Jul-17
+- **JIRA Ticket:** LPS-83185
+
+#### What changed?
+
+The portlet description stored in `PortletDisplay.java` is no longer escaped
+automatically.
+
+#### Who is affected?
+
+This affects anyone who used the portlet description's escaped value to generate
+HTML. A small UI change could occur, as some characters may be unescaped.
+
+#### How should I update my code?
+
+If you were using the `portletDescription` value to generate HTML, you
+should escape it using the proper escape sequence: `HtmlUtil.escape`.
+
+#### Why was this change made?
+
+This change corrects a best practice violation regarding content escaping.
+
+---------------------------------------
+
+### Removed Cache Bootstrap Feature
+- **Date:** 2020-Jan-8
+- **JIRA Ticket:** LPS-96563
+
+#### What changed?
+
+The cache bootstrap feature has been removed. These properties can no longer
+be used to enable/configure cache bootstrap:
+
+`ehcache.bootstrap.cache.loader.enabled`,
+`ehcache.bootstrap.cache.loader.properties.default`,
+`ehcache.bootstrap.cache.loader.properties.${specific.cache.name}`.
+
+#### Who is affected?
+
+This affects anyone using the properties listed above.
+
+#### How should I update my code?
+
+There's no direct replacement for the removed feature. If you have code that
+depends on it, you must implement it yourself.
+
+#### Why was this change made?
+
+This change was made to avoid security issues.
+
+---------------------------------------
