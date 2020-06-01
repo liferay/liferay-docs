@@ -32,9 +32,7 @@ of @product@ itself.
 
 Because of this far-reaching access, permission to create or edit workflow
 definitions is limited to Regular Administrators of the Default Virtual
-Instance. For Liferay DXP customers, Site Administrators who can access the
-Kaleo Designer and Kaleo Forms Admin applications can also edit and publish
-workflows.
+Instance.
 
 To grant Users with these Roles the workflow publication access in additional
 Virtual Instances,
