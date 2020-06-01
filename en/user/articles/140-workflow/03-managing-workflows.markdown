@@ -19,6 +19,37 @@ But that's just the beginning of workflow management.
 
 Start by learning basic workflow management.
 
+## Workflow Definition Publication Permissions
+
+Users with permission to edit or publish workflow definitions can add 
+[Groovy scripts](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow) 
+to the workflow. Access to the scripting engine means access to the Java Virtual
+Machine (JVM) of the server. Users who publish (or edit) workflow definitions
+containing scripts, therefore, can get access to any data within the reach of
+the JVM, such as data contained in a separate 
+[Virtual Instance](/docs/7-1/user/-/knowledge_base/u/virtual-instances) 
+of @product@ itself. 
+
+Because of this far-reaching access, permission to create or edit workflow
+definitions is limited to Regular Administrators of the Default Virtual
+Instance. For Liferay DXP customers, Site Administrators who can access the
+Kaleo Designer and Kaleo Forms Admin applications can also edit and publish
+workflows.
+
+To grant Users with these Roles the workflow publication access in additional
+Virtual Instances,
+
+1.  Make sure you understand the access you're granting these admins.
+2.  Navigate to Control Panel &rarr; System Settings &rarr; Workflow &rarr;
+    Workflow Definition. 
+3.  Check the box for the setting _Allow Administrators to Publish and Edit Workflows_.
+
+This only applies to Virtual Instances that have been added to the
+system. The Default Virtual Instance provides workflow publication access to
+Regular Administrators (via Control Panel &rarr; Configuration &rarr; Workflow),
+and, if running Liferay DXP, to Site Administrators and other Users with access to
+the Kaleo Designer and Kaleo Forms Admin applications.
+
 ## Adding, Editing, and Deleting
 
 To add a workflow definition,
