@@ -48,7 +48,7 @@ This only applies to Virtual Instances that have been added to the
 system. The Default Virtual Instance provides workflow publication access to
 Regular Administrators (via Control Panel &rarr; Configuration &rarr; Workflow),
 and, if running Liferay DXP, to Site Administrators and other Users with access to
-the Kaleo Designer and Kaleo Forms Admin applications.
+the Kaleo Forms Admin applications.
 
 ## Adding, Editing, and Deleting
 
