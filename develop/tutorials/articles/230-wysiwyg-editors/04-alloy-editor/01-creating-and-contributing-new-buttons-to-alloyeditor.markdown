@@ -96,25 +96,19 @@ the AlloyEditor next.
 Below is an example configuration for a JSX file that creates a new button:
 
     /* global React, ReactDOM AlloyEditor */
-    
     (function() {
             'use strict';
-    
             var React = AlloyEditor.React;
-    
             var ButtonMyButton = React.createClass(
                     {
-    
+                            mixins: [AlloyEditor.Compat.ButtonStateClasses],
                             displayName: 'ButtonMyButton',
-    
                             propTypes: {
                                     editor: React.PropTypes.object.isRequired
                             },
-    
                             statics: {
                                     key: 'myButton'
                             },
-    
                             /**
                              * Lifecycle. Renders the UI of the button.
                              *
@@ -122,9 +116,7 @@ Below is an example configuration for a JSX file that creates a new button:
                              * @return {Object} The content which should be rendered.
                              */
                             render: function() {
-                                    var cssClass = 'ae-button ' + 
-                                    AlloyEditor.Compat.ButtonStateClasses.getStateClasses();
-    
+                                    var cssClass = 'ae-button ' + this.getStateClasses();
                                     return (
                                             <button className={cssClass} 
                                             onClick={this._requestExclusive} 
@@ -135,7 +127,6 @@ Below is an example configuration for a JSX file that creates a new button:
                                             </button>
                                     );
                             },
-    
                             /**
                              * @protected
                              * @method  _doSomething
@@ -146,7 +137,6 @@ Below is an example configuration for a JSX file that creates a new button:
                             }
                     }
             );
-    
             AlloyEditor.Buttons[ButtonMyButton.key] = AlloyEditor.ButtonMyButton 
             = ButtonMyButton;
     }());
