@@ -44,11 +44,11 @@ Virtual Instances,
 3.  Check the box for the setting _Allow Administrators to Publish and Edit
     Workflows_.
 
-This only applies to Virtual Instances that have been added to the
-system. The Default Virtual Instance provides workflow publication access to
-Regular Administrators (via Control Panel &rarr; Configuration &rarr; Workflow),
-and, if running Liferay DXP, to Site Administrators and others with access to
-the Kaleo Designer and Kaleo Forms Admin applications.
+This only applies to Virtual Instances that have been added to the system. The
+Default Virtual Instance provides workflow publication access to Regular
+Administrators, via Control Panel &rarr; Configuration &rarr; Workflow and in
+Liferay DXP with access to the Kaleo Designer and Kaleo Forms Admin
+applications.
 
 ## Adding, Editing, and Deleting
 
