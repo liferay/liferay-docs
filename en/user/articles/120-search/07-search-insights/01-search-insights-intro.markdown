@@ -12,10 +12,15 @@ header-id: search-insights
 
 Add the Search Insights Widget to the Search Page to inspect two things: 
 
-- The full query string that's constructed by the back-end search code when
+- The query string that's constructed by the back-end search code when
     the User enters a keyword 
 
 - The response string returned from the search engine
+
+| **Note:** The JSON returned as a request string is pruned from several
+| Elasticsearch query defaults for clarity. To see the full request JSON that
+| Elasticsearch processed, adjust the [Elasticsearch server's
+| logging](https://www.elastic.co/guide/en/elasticsearch/reference/6.x/logging.html).
 
 In @product-ver@, the Insights widget now adds the response string to
 the widget's output, and the _Enable Score Explanation_ option (enabled by

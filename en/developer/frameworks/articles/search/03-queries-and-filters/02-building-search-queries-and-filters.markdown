@@ -217,14 +217,10 @@ searchResponse.getResponseString();
 
 The format depends on your search engine: with Elasticsearch, both are JSON.
 
-| **Note:** The JSON returned as a request string is pruned from several Elasticsearch
-| query defaults for clarity. To see the full request JSON that Elasticsearch
-| processed, use the Server Administration &rarr; Log Levels panel to adjust the
-| log levels for your Elasticsearch server. For Elasticsearch 6, Set
-| 
-| `com.liferay.portal.search.elasticsearch6.internal.ElasticsearchIndexSearcher`
-| 
-| to use INFO level logging.
+| **Note:** The JSON returned as a request string is pruned from several
+| Elasticsearch query defaults for clarity. To see the full request JSON that
+| Elasticsearch processed, adjust the [Elasticsearch server's
+| logging](https://www.elastic.co/guide/en/elasticsearch/reference/6.x/logging.html).
 
 Inspecting the request string produced by the code example included
 [here](#example) reveals two main `"bool":"must"` query clauses in the JSON
