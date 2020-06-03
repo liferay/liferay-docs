@@ -67,7 +67,7 @@ from third-parties as described below.
     available in the Wildfly bundle.
 
 3.  Create the file `module.xml` in the
-    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert this 
+    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert this
     configuration:
 
         <?xml version="1.0"?>
@@ -110,7 +110,7 @@ from third-parties as described below.
 
 **Checkpoint:**
 
-1.  At this point, you should have the following files in the 
+1.  At this point, you should have the following files in the
     `$WILDFLY_HOME/modules/com/liferay/portal/main` folder:
 
     - `com.liferay.petra.concurrent`
@@ -118,7 +118,7 @@ from third-parties as described below.
     - `com.liferay.petra.function.jar`
     - `com.liferay.petra.io.jar`
     - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar` 
+    - `com.liferay.petra.memory.jar`
     - `com.liferay.petra.nio.jar`
     - `com.liferay.petra.process.jar`
     - `com.liferay.petra.reflect.jar`
@@ -141,7 +141,7 @@ from third-parties as described below.
     - `test`
     - `war`
 
-Great! You have your `.jar` files ready. 
+Great! You have your `.jar` files ready.
 
 ## Running @product@ on Wildfly in Standalone Mode vs. Domain Mode
 
@@ -180,7 +180,7 @@ Configuring Wildfly to run @product@ includes these things:
 - Removing unnecessary configurations
 
 Optionally, you can configure Wildfly to manage @product@'s data source and mail
-session. 
+session.
 
 Start with configuring Wildfly to run @product@.
 
@@ -217,12 +217,7 @@ Make the following modifications to
             </authentication>
         </security-domain>
 
-5.  Remove the following Weld-related tags:
-
-    - `<extension module="org.jboss.as.weld"/>`
-    - `<subsystem xmlns="urn:jboss:domain:weld:4.0"/>`
-
-6.  Remove the two code snippets providing welcome content:
+5.  Remove the two code snippets providing welcome content:
 
         <location name="/" handler="welcome-content"/>
 
@@ -232,7 +227,7 @@ Make the following modifications to
             <file name="welcome-content" path="${jboss.home.dir}/welcome-content"/>
         </handlers>
 
-7.  Find the `<jsp-config/>` tag and set the `development`, `source-vm`, and
+6.  Find the `<jsp-config/>` tag and set the `development`, `source-vm`, and
     `target-vm` attributes in the tag. Once finished, the tag should look like
     this:
 
@@ -251,11 +246,9 @@ Before continuing, verify the following properties have been set in the
 
 4.  The new `<security-domain>` is created.
 
-5.  Weld tags are removed.
+5.  Welcome content is removed.
 
-6.  Welcome content is removed.
-
-7.  The `<jsp-config>` tag contains its new attributes.
+6.  The `<jsp-config>` tag contains its new attributes.
 
 Now you must configure your JVM and startup scripts.
 
@@ -295,7 +288,7 @@ Make the following edits as applicable for your operating system:
 2.  Add the following statement to the bottom of the file:
 
         JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true  -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
-   
+
 | **Important:** For @product@ to work properly, the application server JVM must
 | use the `GMT` time zone and `UTF-8` file encoding.
 
@@ -303,25 +296,25 @@ Make the following edits as applicable for your operating system:
 | complete some additional steps. First, navigate to the
 | `$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
 | following dependency within the `<dependencies>` element:
-| 
+|
 |     <module name="ibm.jdk" />
-| 
+|
 | Then navigate to the
 | `$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
 | insert the following path names inside the `<paths>...</paths>` element:
-| 
+|
 |     <path name="com/sun/crypto" />
 |     <path name="com/sun/crypto/provider" />
 |     <path name="com/sun/org/apache/xml/internal/resolver" />
 |     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-| 
+|
 | The added paths resolve issues with deployment exceptions and image uploading
 | problems.
 
 **Checkpoint:**
 
 At this point, you've finished configuring the application server's JVM
-settings. 
+settings.
 
 1.  The file encoding, user time-zone, preferred protocol stack have been set in
     the `JAVA_OPTS` in the `standalone.conf.bat` file.
@@ -329,12 +322,12 @@ settings.
 2.  The default amount of memory available has been increased.
 
 The prescribed script modifications are now complete for your @product@
-installation on Wildfly. Next you'll configure your database. 
+installation on Wildfly. Next you'll configure your database.
 
 ### Database Configuration
 
 The easiest way to handle database configuration is to let @product@ manage your
-data source. The 
+data source. The
 [Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-the-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
@@ -358,7 +351,7 @@ If you want Wildfly to manage your data source, follow these steps:
         </datasource>
 
     Be sure to replace the database name (i.e., `lportal`), user name, and
-    password with the appropriate values. 
+    password with the appropriate values.
 
     | **Note:** If you must change your datasource `jndi-name` to something
     | different, you must also edit the `datasource` element in the
@@ -398,7 +391,7 @@ If you want Wildfly to manage your data source, follow these steps:
 
         jdbc.default.jndi.name=java:jboss/datasources/ExampleDS
 
-Now that you've configured your data source, the mail session is next. 
+Now that you've configured your data source, the mail session is next.
 
 ### Mail Configuration
 
@@ -430,7 +423,7 @@ If you want to manage your mail session with Wildfly, follow these steps:
     session:
 
         mail.session.jndi.name=java:jboss/mail/MailSession
- 
+
 You've got mail! Next, you'll deploy @product@ to your Wildfly app server.
 
 ## Deploying @product@
@@ -458,7 +451,7 @@ Congratulations; you've deployed @product@ on Wildfly!
 | as the ones below, involving `PhaseOptimizer`. These are benign and can be
 | ignored. Make sure to adjust your app server's logging level or log filters to
 | avoid excessive benign log messages.
-| 
+|
 |     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
 |     WARNING: Skipping pass gatherExternProperties
 |     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
