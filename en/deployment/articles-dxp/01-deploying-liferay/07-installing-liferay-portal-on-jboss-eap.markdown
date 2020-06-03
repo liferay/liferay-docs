@@ -13,7 +13,7 @@ Installing @product@ on JBoss EAP 7.1 takes three steps:
 - Installing the @product@ WAR file to your application server
 
 | **Important:** Before installing @product@, familiarize yourself with
-| [preparing for install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install). 
+| [preparing for install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install).
 
 Now, [download the @product@ WAR and Dependency
 JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the-liferay-war-and-dependency-jars):
@@ -30,31 +30,15 @@ your JBoss server folder. This folder is usually named `jboss-eap-[version]`.
 
 ## Installing Dependencies
 
-@product@ depends on several Liferay-specific and third-party JARs. 
+@product@ depends on several Liferay-specific and third-party JARs.
 Download and install the required JARs as described below.
 
 1.  Create the folder `$JBOSS_HOME/modules/com/liferay/portal/main` if it
-    doesn't exist and extract the JARs from the dependencies ZIP to it: 
-
-    - `com.liferay.petra.concurrent.jar`
-    - `com.liferay.petra.executor.jar` 
-    - `com.liferay.petra.function.jar` 
-    - `com.liferay.petra.io.jar` 
-    - `com.liferay.petra.lang.jar` 
-    - `com.liferay.petra.memory.jar` 
-    - `com.liferay.petra.nio.jar` 
-    - `com.liferay.petra.process.jar` 
-    - `com.liferay.petra.reflect.jar` 
-    - `com.liferay.petra.string.jar` 
-    - `com.liferay.registry.api.jar`
-    - `hsql.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
+    doesn't exist and extract the JARs from the dependencies ZIP to it.
 
 2.  Download your database driver `.jar` file and copy it into the same folder.
-    For example, download and extract
-    [MySQL's driver](http://dev.mysql.com/downloads/connector/j/)
-    into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
+
+    | **Note:** The [Liferay DXP Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?) specifies supported databases and environments.
 
 3.  Create the file `module.xml` in the
     `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert this
@@ -77,7 +61,7 @@ Download and install the required JARs as described below.
             <resource-root path="com.liferay.petra.string.jar" />
             <resource-root path="com.liferay.registry.api.jar" />
             <resource-root path="hsql.jar" />
-            <resource-root path="mysql.jar" />
+            <resource-root path="[place your database vendor's jar here]" />
             <resource-root path="portal-kernel.jar" />
             <resource-root path="portlet.jar" />
         </resources>
@@ -91,8 +75,7 @@ Download and install the required JARs as described below.
     </module>
     ```
 
-    If you use a different database, replace the MySQL `.jar` with the driver
-    JAR for your database (e.g., HSQL, PostgreSQL, etc.).
+    Replace `[place your database vendor's jar here]` with the driver JAR for your database.
 
 4.  Create an `osgi` folder in your [Liferay
     Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) folder. Extract the
@@ -104,41 +87,9 @@ Download and install the required JARs as described below.
 
 **Checkpoint:**
 
-1.  The following files are in the
-    `$JBOSS_HOME/modules/com/liferay/portal/main` folder: 
-
-    - `com.liferay.petra.concurrent`
-    - `com.liferay.petra.executor.jar`
-    - `com.liferay.petra.function.jar`
-    - `com.liferay.petra.io.jar`
-    - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar`
-    - `com.liferay.petra.nio.jar`
-    - `com.liferay.petra.process.jar`
-    - `com.liferay.petra.reflect.jar`
-    - `com.liferay.petra.string.jar`
-    - `com.liferay.registry.api.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
-    - a database JAR such as the MySQL Connector.
-
-2.  The `module.xml` has listed all JARs in the `<resource-root-path>` elements.
-
-3.  The `osgi` folder has the following subfolders:
-
-    - `configs`
-    - `core`
-    - `marketplace`
-    - `war`
-
-Great! You have your `.jar` files ready.
-
-Note, @product@ creates these `osgi` subfolders the first time it starts:
-
--   `modules`
--   `portal`
--   `static`
--   `war`
+1. The dependencies files have been unzipped into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder and a database jar.
+1. The `module.xml` contains all JARs in the `<resource-root-path>` elements.
+1. The `osgi` dependencies have been unzipped into the `osgi` folder.
 
 ## Running @product@ on JBoss EAP in Standalone Mode vs. Domain Mode
 
@@ -156,13 +107,13 @@ files (exploded or non-exploded). This prevents JSP hooks and Ext plugins from
 working as intended. For example, JSP hooks don't work on JBoss EAP running in
 managed domain mode, since @product@'s JSP override mechanism relies on the
 application server. Since JSP hooks and Ext plugins are deprecated, however, you
-may not be using them. 
+may not be using them.
 
 The command line interface is recommended for domain mode deployments.
 
 | **Note:** This does not prevent @product@ from running in a clustered
 | environment on multiple JBoss servers. You can set up a cluster of @product@
-| instances running on JBoss EAP servers running in standalone mode. Please 
+| instances running on JBoss EAP servers running in standalone mode. Please
 | refer to the [@product@ clustering articles](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
 | for more information.
 
@@ -175,7 +126,7 @@ Configuring JBoss to run @product@ includes these things:
 - Removing unnecessary configurations
 
 Optionally, you can configure JBoss to manage @product@'s data source and mail
-session. 
+session.
 
 Start with configuring JBoss to run @product@.
 
@@ -260,7 +211,7 @@ Before continuing, verify the following properties have been set in the
 6.  The `<jsp-config>` tag contains its new attributes.
 
 Now you should configure your JVM and startup scripts.
- 
+
 In the `$WILDFLY_HOME/bin/` folder, modify your standalone domain's
 configuration script file `standalone.conf` (`standalone.conf.bat` on Windows):
 
@@ -310,7 +261,7 @@ Make the following edits as applicable to your operating system:
     ```bash
     JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xms2560m -Xmx2560m -XX:MaxMetaspaceSize=512m"
     ```
-    
+
 
 On JDK 11, it's recommended to add this JVM argument to display four-digit
 years.
@@ -323,26 +274,26 @@ years.
 | complete some additional steps. First, navigate to the
 | `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
 | following dependency within the `<dependencies>` element:
-| 
+|
 |     <module name="ibm.jdk" />
-| 
+|
 | Then navigate to the
 | `$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
 | insert the following path names inside the `<paths>...</paths>` element:
-| 
+|
 |     <path name="com/sun/crypto" />
 |     <path name="com/sun/crypto/provider" />
 |     <path name="com/sun/image/codec/jpeg" />
 |     <path name="com/sun/org/apache/xml/internal/resolver" />
 |     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-| 
+|
 | The added paths resolve issues with portal deployment exceptions and image
 | uploading problems.
 
 **Checkpoint:**
 
 At this point, you've finished configuring the application server's JVM
-settings. 
+settings.
 
 1.  The file encoding, user time-zone, preferred protocol stack have been set in
     the `JAVA_OPTS` in the `standalone.conf.bat` file.
@@ -350,7 +301,7 @@ settings.
 2.  The default amount of memory available has been increased.
 
 The prescribed script modifications are now complete for your @product@
-installation on JBoss. Next you'll configure the database and mail. 
+installation on JBoss. Next you'll configure the database and mail.
 
 ## Database Configuration
 
@@ -363,37 +314,32 @@ built-in data source, skip this section.
 This section demonstrates configuring a MySQL database. If you're using a
 different database, modify the data source and driver snippets as necessary.
 
-If you want JBoss to manage your data source, follow these steps:
+If using JBoss to manage the data source, follow these steps:
 
-1.  Add your data source inside the
-    `$JBOSS_HOME/standalone/configuration/standalone.xml` file's the
-    `<datasources>` element.
+1. Add the data source inside the `$JBOSS_HOME/standalone/configuration/standalone.xml` file's the `<datasources>` element.
 
     ```xml
     <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-        <connection-url>jdbc:mysql://localhost/lportal</connection-url>
-        <driver>mysql</driver>
+        <connection-url>[place the URL to your database here]</connection-url>
+        <driver>[place the driver name here]</driver>
         <security>
-            <user-name>root</user-name>
-            <password>root</password>
+            <user-name>[place your user name here]</user-name>
+            <password>[place your password here]</password>
         </security>
     </datasource>
     ```
 
-    Make sure to replace the database name (i.e., `lportal`), user name, and
-    password with the appropriate values. 
+    Make sure to replace the database URL, user name, and password with the appropriate values.
 
-    | **Note:** If you must change your datasource `jndi-name` to something
-    | different, you must also edit the `datasource` element in the
-    | `<default-bindings>` tag.
+    | **Note:** If the data source `jndi-name` must be changed, edit the `datasource` element in the `<default-bindings>` tag.
 
 2.  Add your driver to the `standalone.xml` file's `<drivers>` element also
     found within the `<datasources>` element.
 
     ```xml
     <drivers>
-        <driver name="mysql" module="com.liferay.portal">
-            <driver-class>com.mysql.jdbc.Driver</driver-class>
+        <driver name="[name of driver must match name above]" module="com.liferay.portal">
+            <driver-class>[place your JDBC driver class here]</driver-class>
         </driver>
     </drivers>
     ```
@@ -426,7 +372,7 @@ If you want JBoss to manage your data source, follow these steps:
     jdbc.default.jndi.name=java:jboss/datasources/ExampleDS
     ```
 
-Now that you've configured your data source, the mail session is next. 
+Now that you've configured your data source, the mail session is next.
 
 ## Mail Configuration
 
@@ -445,7 +391,7 @@ If you want to manage your mail session with JBoss, follow these steps:
     <subsystem xmlns="urn:jboss:domain:mail:3.0">
         <mail-session jndi-name="java:jboss/mail/MailSession" >
             <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
-                <login username="USERNAME" password="PASSWORD"/>
+                <login username="[place user name here]" password="[place password here]"/>
             </smtp-server>
        </mail-session>
     </subsystem>
@@ -453,7 +399,7 @@ If you want to manage your mail session with JBoss, follow these steps:
     <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
     ...
     <outbound-socket-binding name="mail-smtp">
-            <remote-destination host="smtp.gmail.com" port="465"/>
+            <remote-destination host="[place SMTP mail host here]" port="[place mail port here]"/>
         </outbound-socket-binding>
     </socket-binding-group>
     ```
@@ -464,7 +410,7 @@ If you want to manage your mail session with JBoss, follow these steps:
     ```properties
     mail.session.jndi.name=java:jboss/mail/MailSession
     ```
- 
+
 You've got mail! Next, you'll deploy @product@ to your JBoss app server.
 
 ## Deploy Liferay
@@ -487,11 +433,11 @@ Now you're ready to deploy @product@ using the @product@ WAR file.
 
 Congratulations; you've now deployed @product@ on JBoss!
 
-| After deploying @product@, you may see excessive warnings and log messages, 
-| such as the ones below, involving `PhaseOptimizer`. These are benign and can 
-| be ignored. Make sure to adjust your app server's logging level or log 
+| After deploying @product@, you may see excessive warnings and log messages,
+| such as the ones below, involving `PhaseOptimizer`. These are benign and can
+| be ignored. Make sure to adjust your app server's logging level or log
 | filters to avoid excessive benign log messages.
-| 
+|
 |     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
 |     WARNING: Skipping pass gatherExternProperties
 |     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
