@@ -2,7 +2,7 @@
 header-id: installation-and-setup
 ---
 
-#  Installation and Setup
+# Installation and Setup
 
 [TOC levels=1-4]
 
