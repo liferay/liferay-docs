@@ -41,6 +41,11 @@ file. Everything in the HTML pane goes to `index.html`, the CSS pane goes to
 `index.css`, and the JavaScript pane goes to `index.js`. The preview pane
 renders everything as it looks on the page. 
 
+| **Warning:** Do not include images inline in base64 in your Page Fragments, as 
+| this is a bad practice that can lead to publishing/export/import issues. Use 
+| [references to resources](/docs/7-2/frameworks/-/knowledge_base/f/including-default-resources-in-fragments) 
+| in your Page Fragments instead.
+
 A Section defines a work space. Now create a section with an editable rich text
 area where content can be entered:
 
