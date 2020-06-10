@@ -11,20 +11,11 @@ problems in theme development.
 
 Click a question to view the answer.
 
-- [How can I use the Classic theme as my base theme?](#classic-base-theme)
 - [How can I include OSGi headers in my theme?](#osgi-headers-in-themes)
 - [Why aren't my changes showing up after I redeploy my theme?](#developer-mode)
 - [Why is my theme not loading? It returns the default theme instead.](#default-theme-returned)
 - [How can I prevent specific CSS rules from transforming for RTL Languages?](#rtl-no-flip)
 
-<div class="ldn-faq-question" id="classic-base-theme">
-  <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I use the Classic theme as my base theme?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
-  <div class="hide">
-    <p>The Classic theme is already an implementation of an existing base theme and should not be extended. You can use the <a href="/docs/7-2/frameworks/-/knowledge_base/f/copying-an-existing-themes-files">Gulp kickstart</a> task to copy files from the Classic theme into your theme if you wish. If you want to start off with some base styling, start with the Styled theme instead.</p>
-  </div>
-</div>
-
-<br/>
 <div class="ldn-faq-question" id="osgi-headers-in-themes">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I include OSGi headers in my theme?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">
