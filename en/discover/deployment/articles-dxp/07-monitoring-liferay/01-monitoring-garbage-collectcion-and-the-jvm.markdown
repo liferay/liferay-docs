@@ -38,6 +38,12 @@ To enable JMX connections, add these JVM arguments:
     -Dcom.sun.management.jmxremote.port=5000
     -Dcom.sun.management.jmxremote.authenticate=false
     -Dcom.sun.management.jmxremote.ssl=false
+    
+If you're running JMX Console from a another machine, add these JVM arguments too:
+
+    -Dcom.sun.management.jmxremote.local.only=false
+    -Dcom.sun.management.jmxremote.rmi.port=5000
+    -Djava.rmi.server.hostname=[place IP address here]
 
 ![Figure 2: VisualVM monitors the JVM using Java Management Extensions.](../../images-dxp/visual-vm-jmx.png)
 
