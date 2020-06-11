@@ -6,6 +6,10 @@ header-id: test-upgrading-a-product-backup-copy
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/upgrading-liferay-dxp/upgrade-basics/upgrade-overview.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Before upgrading your production Liferay instance, you should do a trial run
 (even multiple runs) to make sure that you upgrade successfully and efficiently.
 Here's the process:

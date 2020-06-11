@@ -6,6 +6,10 @@ header-id: apps-in-maintenance-mode
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/upgrading-liferay-dxp/reference/features-in-maintenance-mode.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 At a designated time, Liferay may cease enhancing a product or capability. This
 is called *maintenance mode*. During this mode, Liferay actively supports and
 provides bug fixes for the product or capability in accordance with the

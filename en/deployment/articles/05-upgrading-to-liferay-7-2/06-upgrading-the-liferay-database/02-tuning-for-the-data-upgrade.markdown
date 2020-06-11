@@ -6,6 +6,10 @@ header-id: tuning-for-the-data-upgrade
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/upgrading-liferay-dxp/upgrade-stability-and-performance/database-tuning-for-upgrades.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Upgrading impacts the database differently from daily running in production.
 Because of this, you should tune your database for the upgrade process before
 you run it, and then re-apply your production settings after the upgrade

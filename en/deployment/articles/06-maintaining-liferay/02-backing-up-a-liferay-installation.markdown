@@ -6,6 +6,10 @@ header-id: backing-up-a-liferay-installation
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/maintaining-a-liferay-dxp-installation/backing-up.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Once you have an installation of @product@ running, you should implement a
 comprehensive backup plan. In case some kind of catastrophic hardware failure
 occurs, you'll be thankful to have backups and procedures for restoring

@@ -6,6 +6,10 @@ header-id: planning-for-deprecated-applications
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/upgrading-liferay-dxp/reference/deprecations-in-liferay-dxp-7-2.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 As @product@ evolves so do Liferay applications. They may, for example, be
 deprecated in favor of newer and better Liferay applications. The deprecations
 might call for migrating application data to a new application or completely

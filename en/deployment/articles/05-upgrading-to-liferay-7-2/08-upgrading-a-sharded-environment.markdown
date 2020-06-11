@@ -6,6 +6,10 @@ header-id: upgrading-a-sharded-environment
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/upgrading-liferay-dxp/other-upgrade-scenarios/upgrading-a-sharded-environment.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Since @product@ 7.0, Liferay removed its own physical partitioning
 implementation (also known as sharding) in favor of the capabilities provided
 natively by database vendors. Upgrading a sharded installation to @product-ver@

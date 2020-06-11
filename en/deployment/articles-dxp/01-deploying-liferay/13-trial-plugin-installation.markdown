@@ -6,6 +6,10 @@ header-id: trial-plugin-installation
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/system-administration/installing-and-managing-apps/installing-apps/accessing-ee-plugins-during-a-trial-period.html) and is no longer maintained here.</span>
+</aside>
+
 For Liferay customers who are evaluating @product@ on a trial basis, **the
 plugins can be accessed from within the *Apps* &rarr; *Store* (i.e.,
 Marketplace) section of the Control Panel in your product installation**. 

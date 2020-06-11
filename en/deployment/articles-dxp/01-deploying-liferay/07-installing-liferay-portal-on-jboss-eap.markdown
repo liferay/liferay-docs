@@ -6,6 +6,10 @@ header-id: installing-product-on-jboss-eap
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/installing-liferay/installing-liferay-on-an-application-server/installing-on-jboss-eap.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Installing @product@ on JBoss EAP 7.1 takes three steps:
 
 - Installing dependencies to your application server
@@ -13,7 +17,7 @@ Installing @product@ on JBoss EAP 7.1 takes three steps:
 - Installing the @product@ WAR file to your application server
 
 | **Important:** Before installing @product@, familiarize yourself with
-| [preparing for install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install). 
+| [preparing for install](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install).
 
 Now, [download the @product@ WAR and Dependency
 JARs](/docs/7-2/deploy/-/knowledge_base/d/obtaining-product#downloading-the-liferay-war-and-dependency-jars):
@@ -30,22 +34,22 @@ your JBoss server folder. This folder is usually named `jboss-eap-[version]`.
 
 ## Installing Dependencies
 
-@product@ depends on several Liferay-specific and third-party JARs. 
+@product@ depends on several Liferay-specific and third-party JARs.
 Download and install the required JARs as described below.
 
 1.  Create the folder `$JBOSS_HOME/modules/com/liferay/portal/main` if it
-    doesn't exist and extract the JARs from the dependencies ZIP to it: 
+    doesn't exist and extract the JARs from the dependencies ZIP to it:
 
     - `com.liferay.petra.concurrent.jar`
-    - `com.liferay.petra.executor.jar` 
-    - `com.liferay.petra.function.jar` 
-    - `com.liferay.petra.io.jar` 
-    - `com.liferay.petra.lang.jar` 
-    - `com.liferay.petra.memory.jar` 
-    - `com.liferay.petra.nio.jar` 
-    - `com.liferay.petra.process.jar` 
-    - `com.liferay.petra.reflect.jar` 
-    - `com.liferay.petra.string.jar` 
+    - `com.liferay.petra.executor.jar`
+    - `com.liferay.petra.function.jar`
+    - `com.liferay.petra.io.jar`
+    - `com.liferay.petra.lang.jar`
+    - `com.liferay.petra.memory.jar`
+    - `com.liferay.petra.nio.jar`
+    - `com.liferay.petra.process.jar`
+    - `com.liferay.petra.reflect.jar`
+    - `com.liferay.petra.string.jar`
     - `com.liferay.registry.api.jar`
     - `hsql.jar`
     - `portal-kernel.jar`
@@ -105,7 +109,7 @@ Download and install the required JARs as described below.
 **Checkpoint:**
 
 1.  The following files are in the
-    `$JBOSS_HOME/modules/com/liferay/portal/main` folder: 
+    `$JBOSS_HOME/modules/com/liferay/portal/main` folder:
 
     - `com.liferay.petra.concurrent`
     - `com.liferay.petra.executor.jar`
@@ -156,13 +160,13 @@ files (exploded or non-exploded). This prevents JSP hooks and Ext plugins from
 working as intended. For example, JSP hooks don't work on JBoss EAP running in
 managed domain mode, since @product@'s JSP override mechanism relies on the
 application server. Since JSP hooks and Ext plugins are deprecated, however, you
-may not be using them. 
+may not be using them.
 
 The command line interface is recommended for domain mode deployments.
 
 | **Note:** This does not prevent @product@ from running in a clustered
 | environment on multiple JBoss servers. You can set up a cluster of @product@
-| instances running on JBoss EAP servers running in standalone mode. Please 
+| instances running on JBoss EAP servers running in standalone mode. Please
 | refer to the [@product@ clustering articles](/docs/7-2/deploy/-/knowledge_base/d/liferay-clustering)
 | for more information.
 
@@ -175,7 +179,7 @@ Configuring JBoss to run @product@ includes these things:
 - Removing unnecessary configurations
 
 Optionally, you can configure JBoss to manage @product@'s data source and mail
-session. 
+session.
 
 Start with configuring JBoss to run @product@.
 
@@ -260,7 +264,7 @@ Before continuing, verify the following properties have been set in the
 6.  The `<jsp-config>` tag contains its new attributes.
 
 Now you should configure your JVM and startup scripts.
- 
+
 In the `$WILDFLY_HOME/bin/` folder, modify your standalone domain's
 configuration script file `standalone.conf` (`standalone.conf.bat` on Windows):
 
@@ -310,7 +314,7 @@ Make the following edits as applicable to your operating system:
     ```bash
     JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xms2560m -Xmx2560m -XX:MaxMetaspaceSize=512m"
     ```
-    
+
 
 On JDK 11, it's recommended to add this JVM argument to display four-digit
 years.
@@ -323,26 +327,26 @@ years.
 | complete some additional steps. First, navigate to the
 | `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
 | following dependency within the `<dependencies>` element:
-| 
+|
 |     <module name="ibm.jdk" />
-| 
+|
 | Then navigate to the
 | `$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
 | insert the following path names inside the `<paths>...</paths>` element:
-| 
+|
 |     <path name="com/sun/crypto" />
 |     <path name="com/sun/crypto/provider" />
 |     <path name="com/sun/image/codec/jpeg" />
 |     <path name="com/sun/org/apache/xml/internal/resolver" />
 |     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-| 
+|
 | The added paths resolve issues with portal deployment exceptions and image
 | uploading problems.
 
 **Checkpoint:**
 
 At this point, you've finished configuring the application server's JVM
-settings. 
+settings.
 
 1.  The file encoding, user time-zone, preferred protocol stack have been set in
     the `JAVA_OPTS` in the `standalone.conf.bat` file.
@@ -350,7 +354,7 @@ settings.
 2.  The default amount of memory available has been increased.
 
 The prescribed script modifications are now complete for your @product@
-installation on JBoss. Next you'll configure the database and mail. 
+installation on JBoss. Next you'll configure the database and mail.
 
 ## Database Configuration
 
@@ -381,7 +385,7 @@ If you want JBoss to manage your data source, follow these steps:
     ```
 
     Make sure to replace the database name (i.e., `lportal`), user name, and
-    password with the appropriate values. 
+    password with the appropriate values.
 
     | **Note:** If you must change your datasource `jndi-name` to something
     | different, you must also edit the `datasource` element in the
@@ -426,7 +430,7 @@ If you want JBoss to manage your data source, follow these steps:
     jdbc.default.jndi.name=java:jboss/datasources/ExampleDS
     ```
 
-Now that you've configured your data source, the mail session is next. 
+Now that you've configured your data source, the mail session is next.
 
 ## Mail Configuration
 
@@ -464,7 +468,7 @@ If you want to manage your mail session with JBoss, follow these steps:
     ```properties
     mail.session.jndi.name=java:jboss/mail/MailSession
     ```
- 
+
 You've got mail! Next, you'll deploy @product@ to your JBoss app server.
 
 ## Deploy Liferay
@@ -487,11 +491,11 @@ Now you're ready to deploy @product@ using the @product@ WAR file.
 
 Congratulations; you've now deployed @product@ on JBoss!
 
-| After deploying @product@, you may see excessive warnings and log messages, 
-| such as the ones below, involving `PhaseOptimizer`. These are benign and can 
-| be ignored. Make sure to adjust your app server's logging level or log 
+| After deploying @product@, you may see excessive warnings and log messages,
+| such as the ones below, involving `PhaseOptimizer`. These are benign and can
+| be ignored. Make sure to adjust your app server's logging level or log
 | filters to avoid excessive benign log messages.
-| 
+|
 |     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
 |     WARNING: Skipping pass gatherExternProperties
 |     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process

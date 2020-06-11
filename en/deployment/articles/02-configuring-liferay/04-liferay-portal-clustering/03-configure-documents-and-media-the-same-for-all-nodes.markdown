@@ -6,6 +6,10 @@ header-id: configure-documents-and-media-the-same-for-all-nodes
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/setting-up-liferay-dxp/clustering-for-high-availability/database-configuration-for-cluster-nodes.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 In a cluster, Documents and Media must use the same
 [document repository configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
 on all nodes. 

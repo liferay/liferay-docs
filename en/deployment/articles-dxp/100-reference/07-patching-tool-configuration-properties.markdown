@@ -6,6 +6,10 @@ header-id: patching-tool-configuration-properties
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/maintaining-a-liferay-dxp-installation/patching-liferay/configuring-the-patching-tool.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Here are the Patching Tool configuration properties. See 
 [Configuring the Patching Tool](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-patching-tool) 
 for more information on configuring the Patching Tool. 
