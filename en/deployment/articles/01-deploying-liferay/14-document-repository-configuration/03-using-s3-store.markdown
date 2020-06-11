@@ -7,7 +7,7 @@ header-id: using-amazon-simple-storage-service
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/system-administration/file-storage/other-file-store-types/amazon-s3-store.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/system-administration/file-storage/other-file-store-types/amazon-s3-store.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Amazon's simple storage service (S3) is a cloud-based storage solution that you

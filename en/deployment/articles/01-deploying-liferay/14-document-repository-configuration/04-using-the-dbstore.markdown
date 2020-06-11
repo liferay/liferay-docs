@@ -7,7 +7,7 @@ header-id: using-the-dbstore
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/system-administration/file-storage/other-file-store-types/dbstore.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/system-administration/file-storage/other-file-store-types/dbstore.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 You can store Documents and Media files in your @product@ database using

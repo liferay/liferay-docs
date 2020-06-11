@@ -7,7 +7,7 @@ header-id: configuring-product
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/setting_up_liferay_dxp.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/setting_up_liferay_dxp.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Once you have @product@ installed, it's time to configure it to the specifics of

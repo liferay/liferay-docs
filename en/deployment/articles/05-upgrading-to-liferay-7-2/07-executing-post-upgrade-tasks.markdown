@@ -7,7 +7,7 @@ header-id: executing-post-upgrade-tasks
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/upgrading-liferay-dxp/upgrade-basics/post-upgrade-considerations.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/upgrading-liferay-dxp/upgrade-basics/post-upgrade-considerations.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Since you optimized your system for upgrading, after the upgrade is complete
