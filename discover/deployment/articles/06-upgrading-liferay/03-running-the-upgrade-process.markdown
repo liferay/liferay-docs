@@ -332,37 +332,24 @@ Otherwise, you can connect to Gogo shell via telnet:
 
 `telnet localhost 11311`
 
-Here are the commands available in the `upgrade` namespace:
+Here are the commands:
 
-**exit** or **quit:** exits the Gogo shell
-
-**upgrade:help:** displays upgrade commands
-
-**upgrade:check:** list upgrades pending to execute because they failed in 
-the past or the module hasn't reached its final version
-
-**upgrade:execute {module_name}:** executes upgrades for that module
-
-**upgrade:executeAll:** executes all pending module upgrade processes
-
-**upgrade:list:** lists all registered upgrades
-
-**upgrade:list {module_name}:** lists the module's required upgrade steps
-
-**upgrade:list | grep Registered:** lists registered upgrades and their versions
-
-**verify:help:** displays verify commands
-
-**verify:check {module_name}:** lists the latest execution result for the
-module's verify process
-
-**verify:checkAll:** lists the latest execution results for all verify processes
-
-**verify:execute {module_name}:** executes the module's verifier
-
-**verify:executeAll:** executes all verifiers
-
-**verify:list:** lists all registered verifiers
+| Command | Description |
+| :------ | :---------- |
+| `exit` or `quit` | Exits the Gogo shell |
+| `upgrade:help` | Displays upgrade commands |
+| `upgrade:check` | Lists upgrades pending execution because they failed in the past or the module hasn't reached its final version |
+| `upgrade:execute [module_name]` | Executes upgrades for that module |
+| `upgrade:executeAll` | Executes all pending module upgrade processes |
+| `upgrade:list` | Lists all registered upgrades |
+| `upgrade:list [module_name]` | Lists the module's required upgrade steps |
+| `upgrade:list | grep Registered` | Lists registered upgrades and their versions |
+| `verify:help` | Displays verify commands |
+| `verify:check [module_name]` | Lists the latest execution result for the module's verify process |
+| `verify:checkAll` | Lists the latest execution results for all verify processes |
+| `verify:execute [module_name]` | Executes the module's verifier |
+| `verify:executeAll` | Executes all verifiers |
+| `verify:list` | Lists all registered verifiers |
 
 There are many useful
 [Liferay commands and standard commands available in Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
