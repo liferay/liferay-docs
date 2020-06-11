@@ -111,3 +111,5 @@ for developing portlets.
 [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
 
 [JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet)
+
+[Portlet 3.0 API Opt In](/docs/7-2/reference/-/knowledge_base/r/portlet-3-0-api-opt-in)

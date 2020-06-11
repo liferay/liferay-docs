@@ -12,7 +12,9 @@ header-id: database-templates
 
 Below are templates (example
 [portal properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties))
-for configuring various databases as a built-in data source for @product@. 
+for configuring various databases as a built-in data source for @product@.
+
+| **Note:** The [Liferay DXP Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?) specifies supported databases and environments.
 
 ## MariaDB
 
@@ -25,7 +27,7 @@ jdbc.default.password=
 
 ## MySQL
 
-| **Note:** MySQL Connector/J 8.0 is highly recommended for use with MySQL 
+| **Note:** MySQL Connector/J 8.0 is highly recommended for use with MySQL
 | Server 8.0 and 5.7.
 
 ```properties
@@ -46,4 +48,4 @@ jdbc.default.password
 
 See the
 [default portal properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#JDBC)
-for more database templates. 
+for more database templates.

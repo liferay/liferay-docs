@@ -13,7 +13,7 @@ enables you to deploy JSF web apps as portlets without writing portlet-specific
 code. You must also provide portlet-specific descriptor files to make it
 compatible with the @product@ platform. The easiest way to do this is by
 generating a new Liferay JSF Portlet project and migrating your code to it. Then
-you can deploy your new JSF portlet project to @product@. 
+you can deploy your new JSF portlet project to @product@.
 
 Follow these steps:
 
@@ -47,7 +47,7 @@ Follow these steps:
     The above archetypes support both Gradle and Maven development by providing
     a `build.gradle` and `pom.xml`, respectively. For more information, visit
     [faces.liferay.dev](https://faces.liferay.dev).
-    
+
     Here's the resulting project structure for a JSF Standard portlet:
 
     - [liferay-jsf-portlet]/ &rarr; Arbitrary project name
@@ -56,7 +56,7 @@ Follow these steps:
                 - `java/[my-package-path]/`
                     - `bean/` &rarr; Sub-package for managed Java beans
                       (optional)
-                    - `dto/` &rarr; Sub-package for model (data transfer 
+                    - `dto/` &rarr; Sub-package for model (data transfer
                       object) classes (optional)
                 - `resources/` &rarr; Resources to include in the class path
                     - `i18n.properties` &rarr; Internationalization
@@ -148,7 +148,7 @@ Follow these steps:
 10. Replace your new JSF portlet's `webapp/WEB-INF/web.xml` with your web app's
     `web.xml` file. The `web.xml` file serves as a deployment descriptor that
     provides necessary configurations for your JSF portlet to deploy and
-    function in @product@. 
+    function in @product@.
 
     Make sure the Faces Servlet is configured in your `web.xml`:
 
@@ -180,16 +180,29 @@ Follow these steps:
     </init-param>
     ```
 
-12. Modify your `webapp/WEB-INF/liferay-portlet.xml` as desired. It specifies 
+    If you want to opt-in to Portlet 3.0 features, modify your `portlet-app`
+    element to specify `version="3.0"` and the Portlet 3.0 schema. The
+    `portlet-app` element should look like this:
+
+    ```xml
+    <portlet-app xmlns="http://xmlns.jcp.org/xml/ns/portlet"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/portlet http://xmlns.jcp.org/xml/ns/portlet/portlet-app_3_0.xsd"
+			 version="3.0">
+       ...
+    </portlet-app>
+    ```
+
+12. Modify your `webapp/WEB-INF/liferay-portlet.xml` as desired. It specifies
     additional information @product@ uses to enhance your portlet: supported
     security roles, portlet icon, CSS and JavaScript locations, and more. The
     [liferay-portlet-app DTD](@platform-ref@/7.2-latest/definitions/liferay-portlet-app_7_2_0.dtd.html)
     defines the `liferay-portlet.xml` elements.
 
-13. Modify your `webapp/WEB-INF/liferay-display.xml` as desired. It configures 
+13. Modify your `webapp/WEB-INF/liferay-display.xml` as desired. It configures
     characteristics for displaying your portlet. For example, this
     `liferay-display.xml` snippet specifies the Widget category in the Add
-    Widget menu: 
+    Widget menu:
 
     ```xml
     <?xml version="1.0"?>
@@ -202,7 +215,7 @@ Follow these steps:
     </display>
     ```
 
-14. Modify your `webapp/WEB-INF/liferay-plugin-package.properties` as desired. 
+14. Modify your `webapp/WEB-INF/liferay-plugin-package.properties` as desired.
     It describes the portlet application's packaging and version information
     and specifies any required OSGi metadata. For example, this
     `liferay-plugin-package.properties` snippet tells the OSGi container not to
@@ -222,11 +235,11 @@ Follow these steps:
 
     The
     [liferay-plugin-package reference document](@platform-ref@/7.2-latest/propertiesdoc/liferay-plugin-package_7_2_0.properties.html)
-    describes the `liferay-plugin-package.properties` file. 
+    describes the `liferay-plugin-package.properties` file.
 
 15. [Build and deploy your project](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project).
 
-@product@ logs the deployment. 
+@product@ logs the deployment.
 
 ```
 2019-05-30 14:10:59.405 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:261] Processing guestbook-jsf-portlet.war

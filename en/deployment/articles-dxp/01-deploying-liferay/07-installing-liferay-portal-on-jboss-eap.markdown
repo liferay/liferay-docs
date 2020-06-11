@@ -38,27 +38,11 @@ your JBoss server folder. This folder is usually named `jboss-eap-[version]`.
 Download and install the required JARs as described below.
 
 1.  Create the folder `$JBOSS_HOME/modules/com/liferay/portal/main` if it
-    doesn't exist and extract the JARs from the dependencies ZIP to it:
-
-    - `com.liferay.petra.concurrent.jar`
-    - `com.liferay.petra.executor.jar`
-    - `com.liferay.petra.function.jar`
-    - `com.liferay.petra.io.jar`
-    - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar`
-    - `com.liferay.petra.nio.jar`
-    - `com.liferay.petra.process.jar`
-    - `com.liferay.petra.reflect.jar`
-    - `com.liferay.petra.string.jar`
-    - `com.liferay.registry.api.jar`
-    - `hsql.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
+    doesn't exist and extract the JARs from the dependencies ZIP to it.
 
 2.  Download your database driver `.jar` file and copy it into the same folder.
-    For example, download and extract
-    [MySQL's driver](http://dev.mysql.com/downloads/connector/j/)
-    into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
+
+    | **Note:** The [Liferay DXP Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?) specifies supported databases and environments.
 
 3.  Create the file `module.xml` in the
     `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert this
@@ -81,7 +65,7 @@ Download and install the required JARs as described below.
             <resource-root path="com.liferay.petra.string.jar" />
             <resource-root path="com.liferay.registry.api.jar" />
             <resource-root path="hsql.jar" />
-            <resource-root path="mysql.jar" />
+            <resource-root path="[place your database vendor's jar here]" />
             <resource-root path="portal-kernel.jar" />
             <resource-root path="portlet.jar" />
         </resources>
@@ -95,8 +79,7 @@ Download and install the required JARs as described below.
     </module>
     ```
 
-    If you use a different database, replace the MySQL `.jar` with the driver
-    JAR for your database (e.g., HSQL, PostgreSQL, etc.).
+    Replace `[place your database vendor's jar here]` with the driver JAR for your database.
 
 4.  Create an `osgi` folder in your [Liferay
     Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) folder. Extract the
@@ -108,41 +91,9 @@ Download and install the required JARs as described below.
 
 **Checkpoint:**
 
-1.  The following files are in the
-    `$JBOSS_HOME/modules/com/liferay/portal/main` folder:
-
-    - `com.liferay.petra.concurrent`
-    - `com.liferay.petra.executor.jar`
-    - `com.liferay.petra.function.jar`
-    - `com.liferay.petra.io.jar`
-    - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar`
-    - `com.liferay.petra.nio.jar`
-    - `com.liferay.petra.process.jar`
-    - `com.liferay.petra.reflect.jar`
-    - `com.liferay.petra.string.jar`
-    - `com.liferay.registry.api.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
-    - a database JAR such as the MySQL Connector.
-
-2.  The `module.xml` has listed all JARs in the `<resource-root-path>` elements.
-
-3.  The `osgi` folder has the following subfolders:
-
-    - `configs`
-    - `core`
-    - `marketplace`
-    - `war`
-
-Great! You have your `.jar` files ready.
-
-Note, @product@ creates these `osgi` subfolders the first time it starts:
-
--   `modules`
--   `portal`
--   `static`
--   `war`
+1. The dependencies files have been unzipped into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder and a database jar.
+1. The `module.xml` contains all JARs in the `<resource-root-path>` elements.
+1. The `osgi` dependencies have been unzipped into the `osgi` folder.
 
 ## Running @product@ on JBoss EAP in Standalone Mode vs. Domain Mode
 
@@ -367,37 +318,32 @@ built-in data source, skip this section.
 This section demonstrates configuring a MySQL database. If you're using a
 different database, modify the data source and driver snippets as necessary.
 
-If you want JBoss to manage your data source, follow these steps:
+If using JBoss to manage the data source, follow these steps:
 
-1.  Add your data source inside the
-    `$JBOSS_HOME/standalone/configuration/standalone.xml` file's the
-    `<datasources>` element.
+1. Add the data source inside the `$JBOSS_HOME/standalone/configuration/standalone.xml` file's the `<datasources>` element.
 
     ```xml
     <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-        <connection-url>jdbc:mysql://localhost/lportal</connection-url>
-        <driver>mysql</driver>
+        <connection-url>[place the URL to your database here]</connection-url>
+        <driver>[place the driver name here]</driver>
         <security>
-            <user-name>root</user-name>
-            <password>root</password>
+            <user-name>[place your user name here]</user-name>
+            <password>[place your password here]</password>
         </security>
     </datasource>
     ```
 
-    Make sure to replace the database name (i.e., `lportal`), user name, and
-    password with the appropriate values.
+    Make sure to replace the database URL, user name, and password with the appropriate values.
 
-    | **Note:** If you must change your datasource `jndi-name` to something
-    | different, you must also edit the `datasource` element in the
-    | `<default-bindings>` tag.
+    | **Note:** If the data source `jndi-name` must be changed, edit the `datasource` element in the `<default-bindings>` tag.
 
 2.  Add your driver to the `standalone.xml` file's `<drivers>` element also
     found within the `<datasources>` element.
 
     ```xml
     <drivers>
-        <driver name="mysql" module="com.liferay.portal">
-            <driver-class>com.mysql.jdbc.Driver</driver-class>
+        <driver name="[name of driver must match name above]" module="com.liferay.portal">
+            <driver-class>[place your JDBC driver class here]</driver-class>
         </driver>
     </drivers>
     ```
@@ -449,7 +395,7 @@ If you want to manage your mail session with JBoss, follow these steps:
     <subsystem xmlns="urn:jboss:domain:mail:3.0">
         <mail-session jndi-name="java:jboss/mail/MailSession" >
             <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
-                <login username="USERNAME" password="PASSWORD"/>
+                <login username="[place user name here]" password="[place password here]"/>
             </smtp-server>
        </mail-session>
     </subsystem>
@@ -457,7 +403,7 @@ If you want to manage your mail session with JBoss, follow these steps:
     <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
     ...
     <outbound-socket-binding name="mail-smtp">
-            <remote-destination host="smtp.gmail.com" port="465"/>
+            <remote-destination host="[place SMTP mail host here]" port="[place mail port here]"/>
         </outbound-socket-binding>
     </socket-binding-group>
     ```

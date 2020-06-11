@@ -89,6 +89,14 @@ portlet to a page.
 | `@PortletConfiguration` or `@LiferayPortletConfiguration` equivalent setting
 | for each `@Component` property.
 
+To opt-in to Portlet 3.0 features, add the following
+[`@PortletApplication`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/PortletApplication.html)
+annotation to the class.
+
+```java
+@PortletApplication(version="3.0")
+```
+
 Once you've configured your portlet, you should declare the objects it uses
 (depends on).
 
