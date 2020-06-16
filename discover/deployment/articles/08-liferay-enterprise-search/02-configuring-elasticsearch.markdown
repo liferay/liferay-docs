@@ -110,7 +110,7 @@ To run as a daemon in the background, add the `-d` switch to either command:
 
     ./bin/elasticsearch -d
 
-When you have Elasticsearch itself installed and running, and [@product@ installed](/docs/6-2/deploy/-/knowledge_base/d/liferay-installation-overview)
+When you have Elasticsearch itself installed and running, and [@product@ installed](/docs/7-0/deploy/-/knowledge_base/d/preparing-for-install)
 and running (do that if you haven't already) you need to introduce @product@ and
 Elasticsearch to each other. Fortunately, Liferay provides an adapter that helps
 it find and integrate your Elasticsearch cluster.
