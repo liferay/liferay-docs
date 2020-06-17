@@ -208,7 +208,7 @@ Now that you're ready to configure @product@, start it if you haven't already,
 log in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System
 Settings* &rarr; *Search*. Enter the term *elasticsearch* in the search bar and
 click the *Elasticsearch [Version]* entry from the list of settings (at the
-tiem of writing, the version will either be *6* or *7*). Now you can configure
+time of writing, the version will either be *6* or *7*). Now you can configure
 it. Here are the configuration options to change: 
 
 **Cluster Name:** Enter the name of the cluster as you defined it in
