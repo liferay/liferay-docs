@@ -91,7 +91,7 @@ Once the query itself is in good shape, feed it to the search request.
 
     ```java
     SearchRequestBuilder searchRequestBuilder =
-        searchRequestBuilderFactory.getSearchRequestBuilder();
+        searchRequestBuilderFactory.builder();
     ```
 
     If not setting search keywords into the `SearchContext` (covered below), make
