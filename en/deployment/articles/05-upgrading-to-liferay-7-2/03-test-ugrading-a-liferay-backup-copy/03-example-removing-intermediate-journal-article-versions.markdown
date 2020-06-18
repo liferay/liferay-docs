@@ -7,7 +7,7 @@ header-id: example-removing-intermediate-journal-article-versions
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/installation-and-upgrades/upgrading-liferay-dxp/upgrade-stability-and-performance/example-removing-intermediate-journal-article-versions.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/installation-and-upgrades/upgrading-liferay-dxp/upgrade-stability-and-performance/example-removing-intermediate-journal-article-versions.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 These instructions and code samples demonstrate removing intermediate Journal

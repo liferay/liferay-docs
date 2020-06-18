@@ -7,7 +7,7 @@ header-id: document-repository-configuration
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/system-administration/file-storage/configuring-file-storage.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/system-administration/file-storage/configuring-file-storage.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 You can configure file storage in several ways. Each option is a *store* which
