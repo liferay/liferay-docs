@@ -14,7 +14,6 @@ these *Additional Files*:
 - Dependencies ZIP file
 - OSGi Dependencies ZIP file
 
-
 Here are the basic steps for installing @product@ on tc Server: 
 
 - Installing @product@ dependencies to your application server
@@ -84,23 +83,7 @@ download the required JARs from third parties, as described below.
 | quickly, using one of these sources might save you time.
 
 1.  Extract the JARs from the dependencies ZIP to the 
-    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder. The JARs are 
-    listed below:
-
-    - `com.liferay.petra.concurrent.jar`
-    - `com.liferay.petra.executor.jar`
-    - `com.liferay.petra.function.jar`
-    - `com.liferay.petra.io.jar`
-    - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar`
-    - `com.liferay.petra.nio.jar`
-    - `com.liferay.petra.process.jar`
-    - `com.liferay.petra.reflect.jar`
-    - `com.liferay.petra.string.jar`
-    - `com.liferay.registry.api.jar`
-    - `hsql.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder.
 
 2.  Download the following JARs or copy them from a @product@ bundle to the 
     `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder:
@@ -114,60 +97,13 @@ download the required JARs from third parties, as described below.
     - [`persistence.jar`](http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1)
     - [`support-tomcat.jar`](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat)
 
-3.  Copy the JDBC driver for your database to the 
-    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder. Here are some 
-    common drivers: 
-    
-    - [`mariadb.jar`](https://downloads.mariadb.org/)
-    - [`mysql.jar`](http://dev.mysql.com/downloads/connector/j)
-    - [`postgresql.jar`](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
+3.  Download a database driver `.jar` file and copy it to the 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder. For a list of supported databases, see Liferay's [compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85)
 
 4.  Create an `osgi` folder in your *Liferay Home*. Extract the folders 
     (i.e., `configs`, `core`, and more) from OSGi ZIP file to the `osgi` folder.
     The `osgi` folder provides the necessary modules for @product@'s OSGi
     runtime.
-
-**Checkpoint:**
-
-1.  Your `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder has these 
-    JARs:
-
-    - `activation.jar`
-    - `ccpp.jar`
-    - `com.liferay.petra.concurrent.jar`
-    - `com.liferay.petra.executor.jar`
-    - `com.liferay.petra.function.jar`
-    - `com.liferay.petra.io.jar`
-    - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar`
-    - `com.liferay.petra.nio.jar`
-    - `com.liferay.petra.process.jar`
-    - `com.liferay.petra.reflect.jar`
-    - `com.liferay.petra.string.jar`
-    - `com.liferay.registry.api.jar`
-    - `hsql.jar`
-    - `jms.jar`
-    - `jta.jar`
-    - `jutf7.jar`
-    - `mail.jar`
-    - `mariadb.jar`
-    - `mysql.jar`
-    - `persistence.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
-    - `postgresql.jar`
-    - `support-tomcat.jar`
-
-2. Your `[Liferay Home]/osgi` folder has these subfolders:
-
-    - `configs`
-    - `core`
-    - `marketplace`
-    - `modules`
-    - `portal`
-    - `static`
-    - `test`
-    - `war`
 
 ## Configuring tc Server
 

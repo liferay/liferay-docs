@@ -32,37 +32,6 @@ these *Additional Files*:
 - Dependencies ZIP file
 - OSGi Dependencies ZIP file
 
-**Checkpoint**
-
-The following jars should be present within the Dependencies ZIP file:
-
-1. `com.liferay.petra.concurrent.jar`
-2. `com.liferay.petra.executor.jar`
-3. `com.liferay.petra.function.jar`
-4. `com.liferay.petra.io.jar`
-5. `com.liferay.petra.lang.jar`
-6. `com.liferay.petra.memory.jar`
-7. `com.liferay.petra.nio.jar`
-8. `com.liferay.petra.process.jar`
-9. `com.liferay.petra.reflect.jar`
-10. `com.liferay.petra.string.jar`
-11. `com.liferay.registry.api.jar`
-12. `hsql.jar`
-13. `portal-kernel.jar`
-14. `portlet.jar`
-
-The following folders should be present within the `/liferay/osgi` folder: 
-
-1. `Configs`
-2. `Core`
-3. `Marketplace`
-4. `Modules`
-5. `Portal`
-6. `Static`
-7. `Test`
-8. `War`
-
-
 Without any further ado, get ready to install @product@ in WebLogic! 
 
 ## Configuring WebLogic's Node Manager
@@ -186,49 +155,10 @@ now:
     and place its contents in your WebLogic domain's `lib` folder. 
 
 2.  `liferay-dxp-digital-enterprise-osgi-[version].zip`: Unzip this file and 
-    place its contents in the `Liferay_Home/osgi` folder (create this folder if
+    place its contents in the `[Liferay Home]/osgi` folder (create this folder if
     it doesn't exist).
 
-You must also add your database's driver JAR file to your domain's `lib` folder.
-Note that although Hypersonic is fine for testing purposes, you **should not**
-use it for production @product@ instances. 
-
-**Checkpoint**
-
-Your domain `lib` folder has these jars:
-
-* `com.liferay.petra.concurrent.jar`
-* `com.liferay.petra.executor.jar`
-* `com.liferay.petra.function.jar`
-* `com.liferay.petra.io.jar`
-* `com.liferay.petra.lang.jar`
-* `com.liferay.petra.memory.jar`
-* `com.liferay.petra.nio.jar`
-* `com.liferay.petra.process.jar`
-* `com.liferay.petra.reflect.jar`
-* `com.liferay.petra.string.jar`
-* `com.liferay.registry.api.jar`
-* `hsql.jar`
-* `portal-kernel.jar`
-* `portlet.jar`
-
-A JDBC driver for your database has been added to your domain's `lib` folder.
-Here are some common JDBC drivers:
-
-* [`mariadb.jar`](https://downloads.mariadb.org/) 
-* [`mysql.jar`](http://dev.mysql.com/downloads/connector/j)
-* [`postgres.jar`](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
-
-Your `[Liferay Home]/osgi` folder has these subfolders:
-
-* `Configs`
-* `Core`
-* `Marketplace`
-* `Modules`
-* `Portal`
-* `Static`
-* `Test`
-* `War`
+3.  Download your database driver `.jar` file and copy it to your domain's `lib` folder. Please see the [compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85) for a list of supported databases.
 
 Next, you'll configure your database. 
 
