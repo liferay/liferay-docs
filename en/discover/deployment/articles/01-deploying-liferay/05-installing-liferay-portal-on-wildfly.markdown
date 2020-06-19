@@ -42,29 +42,10 @@ useful. If you don't have a @product@ Wildfly bundle, download the required JARs
 from third-parties as described below.
 
 1.  Create the folder `$WILDFLY_HOME/modules/com/liferay/portal/main` if it
-    doesn't exist and extract the dependencies ZIP JARs to it:
-
-    - `com.liferay.petra.concurrent.jar`
-    - `com.liferay.petra.executor.jar`
-    - `com.liferay.petra.function.jar`
-    - `com.liferay.petra.io.jar`
-    - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar`
-    - `com.liferay.petra.nio.jar`
-    - `com.liferay.petra.process.jar`
-    - `com.liferay.petra.reflect.jar`
-    - `com.liferay.petra.string.jar`
-    - `com.liferay.registry.api.jar`
-    - `hsql.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
+    doesn't exist and extract the dependencies ZIP JARs to it.
 
 2.  Download your database driver `.jar` file and copy it into the
-    same folder. For example,
-    [copy MySQL's driver](http://dev.mysql.com/downloads/connector/j/)
-    into the `$WILDFLY_HOME/modules/com/liferay/portal/main` folder. The
-    `mariadb.jar`, `mysql.jar`, and `postgresql.jar` driver JARs are also
-    available in the Wildfly bundle.
+    same folder. Please see the [compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85) for a list of supported databases.
 
 3.  Create the file `module.xml` in the
     `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert this
@@ -86,7 +67,7 @@ from third-parties as described below.
                 <resource-root path="com.liferay.petra.string.jar" />
                 <resource-root path="com.liferay.registry.api.jar" />
                 <resource-root path="hsql.jar" />
-                <resource-root path="mysql.jar" />
+                <resource-root path="[place your database driver here]" />
                 <resource-root path="portal-kernel.jar" />
                 <resource-root path="portlet.jar" />
             </resources>
@@ -99,8 +80,7 @@ from third-parties as described below.
             </dependencies>
         </module>
 
-    If you use a different database, replace the MySQL `.jar` with the driver
-    JAR for your database (e.g., HSQL, PostgreSQL, etc.).
+    Replace the indicated `resource-root` element with the driver JAR for your database.
 
 4.  Create an `osgi` folder in your Liferay Home folder. Extract the OSGi ZIP
     file that you downloaded into the `osgi` folder.
@@ -110,38 +90,10 @@ from third-parties as described below.
 
 **Checkpoint:**
 
-1.  At this point, you should have the following files in the
-    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder:
-
-    - `com.liferay.petra.concurrent`
-    - `com.liferay.petra.executor.jar`
-    - `com.liferay.petra.function.jar`
-    - `com.liferay.petra.io.jar`
-    - `com.liferay.petra.lang.jar`
-    - `com.liferay.petra.memory.jar`
-    - `com.liferay.petra.nio.jar`
-    - `com.liferay.petra.process.jar`
-    - `com.liferay.petra.reflect.jar`
-    - `com.liferay.petra.string.jar`
-    - `com.liferay.registry.api.jar`
-    - `portal-kernel.jar`
-    - `portlet.jar`
-    - a database JAR such as the MySQL Connector.
-
-2. The `module.xml` has listed all JARs in the `<resource-root-path>` elements.
-
-3. The `osgi` folder has the following subfolders:
-
-    - `configs`
-    - `core`
-    - `marketplace`
-    - `modules`
-    - `portal`
-    - `static`
-    - `test`
-    - `war`
-
-Great! You have your `.jar` files ready.
+1. The contents of the Dependencies zip have been placed in the `$WILDFLY_HOME/modules/com/liferay/portal/main` folder:
+1. Your database vendor's JDBC driver has been placed in `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and listed as a dependency.
+1. The `module.xml` has listed all JARs in the `<resource-root>` elements.
+1. The OSGi dependencies have been unzipped in the `osgi` folder located inside the `${Liferay.home}` folder.
 
 ## Running @product@ on Wildfly in Standalone Mode vs. Domain Mode
 
@@ -332,59 +284,56 @@ data source. The
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 
-MySQL is used as the example below. If you're using a different database, modify
-the data source and driver snippets as necessary.
-
 If you want Wildfly to manage your data source, follow these steps:
 
-1.  Add your data source inside
-    `$WILDFLY_HOME/standalone/configuration/standalone.xml` file's
-    `<datasources>` element:
+1.  Add the data source inside the `$WILDFLY_HOME/standalone/configuration/standalone.xml` file's the `<datasources>` element.
 
-        <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-            <connection-url>jdbc:mysql://localhost/lportal</connection-url>
-            <driver>mysql</driver>
-            <security>
-                <user-name>root</user-name>
-                <password>root</password>
-            </security>
-        </datasource>
+    ```xml
+    <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+        <connection-url>[place the URL to your database here]</connection-url>
+        <driver>[place the driver name here]</driver>
+        <security>
+            <user-name>[place your user name here]</user-name>
+            <password>[place your password here]</password>
+        </security>
+    </datasource>
+    ```
 
-    Be sure to replace the database name (i.e., `lportal`), user name, and
-    password with the appropriate values.
+    Make sure to replace the database URL, user name, and password with the appropriate values.
 
     | **Note:** If you must change your datasource `jndi-name` to something
     | different, you must also edit the `datasource` element in the
     | `<default-bindings>` tag.
 
-2.  Add your driver to the `standalone.xml` file's `<drivers>` element also
-    found within the `<datasources>` element:
+2.  Add the driver to the `standalone.xml` file's `<drivers>` element also found within the `<datasources>` element.
 
-        <drivers>
-            <driver name="mysql" module="com.liferay.portal">
-                <driver-class>com.mysql.jdbc.Driver</driver-class>
-            </driver>
-        </drivers>
+    ```xml
+    <drivers>
+        <driver name="[name of driver must match name above]" module="com.liferay.portal">
+            <driver-class>[place your JDBC driver class here]</driver-class>
+        </driver>
+    </drivers>
+    ```
 
-    Your final data sources subsystem should look like this:
+    A final data source subsystem that uses MySQL should look like this:
 
-        <subsystem xmlns="urn:jboss:domain:datasources:1.0">
-            <datasources>
-                <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
-                    <connection-url>jdbc:mysql://localhost/lportal</connection-url>
-                    <driver>mysql</driver>
-                    <security>
-                        <user-name>root</user-name>
-                        <password>root</password>
-                    </security>
-                </datasource>
-                <drivers>
-                    <driver name="mysql" module="com.liferay.portal">
-                        <driver-class>com.mysql.jdbc.Driver</driver-class>
-                    </driver>
-                </drivers>
-            </datasources>
-        </subsystem>
+    ```xml
+    <subsystem xmlns="urn:jboss:domain:datasources:5.0">
+        <datasources>
+            <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
+                <connection-url>jdbc:mysql://localhost/lportal</connection-url>
+                <driver>mysql</driver>
+                <security>
+                    <user-name>root</user-name>
+                    <password>root</password>
+                </security>
+            </datasource>
+            <drivers>
+                <driver name="mysql" module="com.liferay.portal"/>
+            </drivers>
+        </datasources>
+    </subsystem>
+    ```
 
 3.  In a `portal-ext.properties` file in your Liferay Home, specify your data
     source:
