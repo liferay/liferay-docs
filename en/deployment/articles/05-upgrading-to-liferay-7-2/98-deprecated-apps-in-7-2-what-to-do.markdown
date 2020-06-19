@@ -7,7 +7,7 @@ header-id: deprecated-apps-in-7-2-what-to-do
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/installation-and-upgrades/upgrading-liferay-dxp/reference/deprecations-in-liferay-dxp-7-2.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/upgrading-liferay-dxp/reference/deprecations-in-liferay-dxp-7-2.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 During the development of any software product, it's sometimes necessary to stop
