@@ -261,8 +261,8 @@ You can run Liferay on any application server supported by Liferay Portal. Here,
 for demonstration purposes, we'll set up our Liferay runtime on the Tomcat
 application server. The steps you'd follow for any other supported application
 server would be similar. For a list of Liferay bundles with other application
-servers, please visit [Liferay's Downloads
-page](https://www.liferay.com/downloads/liferay-portal/available-releases). For
+servers, please visit the
+[Help Center](https://help.liferay.com/hc). For
 instructions on installing Liferay manually on other application servers, please
 refer to the [Installation and
 Setup](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/installation-and-setup-liferay-portal-6-2-user-guide-15-en)
@@ -908,13 +908,13 @@ To start deploying projects to a remote server, you'll need to download and
 install the following resources on your local development machine:
 
 - Download [Liferay IDE](http://www.liferay.com/downloads/liferay-projects/liferay-ide)
-from Liferay's downloads page or download [Liferay Developer Studio](http://www.liferay.com/group/customer/products/developer-studio/1.6)
-from the Customer Portal.
-- Download [Liferay Portal CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
-to your local development machine. 
+    from Liferay's downloads page or download [Liferay Developer Studio](http://www.liferay.com/group/customer/products/developer-studio/1.6)
+    from the Customer Portal.
+- Download Liferay Portal EE from the
+    [Help Center](https://help.liferay.com/hc).
+    to your local development machine. 
 
-You'll need to download [Liferay Portal CE or EE](http://www.liferay.com/downloads/liferay-portal/available-releases)
-to your remote (test) server as well. 
+You'll need to download Liferay Portal EE to your remote (test) server as well. 
 
 Our demonstration uses the Remote Server Adapter on Liferay Portal bundled with
 Apache Tomcat, but you can use the adapter with Liferay Portal running on any
