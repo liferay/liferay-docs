@@ -15,7 +15,7 @@ resources available in the JVM.
 
 | **Note:** Liferay DXP customers can use Liferay Connected Services (LCS) to
 | obtain additional performance metrics. If you're a DXP customer, see the
-| [LCS documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services)
+| [LCS documentation](https://help.liferay.com/hc/en-us/articles/360018175791-Introduction-to-Managing-Liferay-DXP-with-Liferay-Connected-Services)
 | for more information.
 
 The Server Administration functionality is broken into several tabs:
