@@ -110,7 +110,7 @@ To run as a daemon in the background, add the `-d` switch to either command:
 
     ./bin/elasticsearch -d
 
-When you have Elasticsearch itself installed and running, and [@product@ installed](/docs/6-2/deploy/-/knowledge_base/d/liferay-installation-overview)
+When you have Elasticsearch itself installed and running, and [@product@ installed](/docs/7-0/deploy/-/knowledge_base/d/preparing-for-install)
 and running (do that if you haven't already) you need to introduce @product@ and
 Elasticsearch to each other. Fortunately, Liferay provides an adapter that helps
 it find and integrate your Elasticsearch cluster.
@@ -534,7 +534,7 @@ continues to look for Elasticsearch at the default port (`9300`).
 
 Now you have Elasticsearch configured for use. If you're a Liferay DXP customer,
 you can read
-[here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/securing-elasticsearch-with-shield)
+[here](/docs/7-0/deploy/-/knowledge_base/d/securing-elasticsearch-with-shield)
 to learn about configuring Shield to secure your Elasticsearch data. 
 
 ## Elasticsearch Connector System Settings, By Operation Mode
