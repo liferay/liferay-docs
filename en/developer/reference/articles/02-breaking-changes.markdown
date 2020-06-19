@@ -6,6 +6,10 @@ header-id: breaking-changes
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/liferay-internals/reference/7-2-breaking-changes.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 This document presents a chronological list of changes that break existing
 functionality, APIs, or contracts with third party Liferay developers or users.
 We try our best to minimize these disruptions, but sometimes they are
