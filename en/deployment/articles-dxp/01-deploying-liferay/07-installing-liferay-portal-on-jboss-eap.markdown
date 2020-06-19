@@ -6,6 +6,10 @@ header-id: installing-product-on-jboss-eap
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/installation-and-upgrades/installing-liferay/installing-liferay-on-an-application-server/installing-on-jboss-eap.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Installing @product@ on JBoss EAP 7.1 takes three steps:
 
 - Installing dependencies to your application server

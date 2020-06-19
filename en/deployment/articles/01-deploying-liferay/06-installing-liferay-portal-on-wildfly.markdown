@@ -6,6 +6,10 @@ header-id: installing-product-on-wildfly
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/installation-and-upgrades/installing-liferay/installing-liferay-on-an-application-server/installing-on-wildfly.html) and is no longer maintained here.</span>
+</aside>
+
 Installing @product@ on Wildfly 11 takes three steps:
 
 -   [Installing dependencies to your application server](#installing-dependencies)

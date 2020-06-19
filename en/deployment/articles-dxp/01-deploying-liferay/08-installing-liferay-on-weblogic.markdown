@@ -6,6 +6,10 @@ header-id: installing-liferay-dxp-on-weblogic-12c-r2
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/installation-and-upgrades/installing-liferay/installing-liferay-on-an-application-server/installing-on-weblogic.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Although you can install @product@ in a WebLogic Admin Server, this isn't
 recommended. It's a best practice to install web apps, including @product@, in
 a WebLogic Managed server. Deploying to a Managed Server lets you start or shut

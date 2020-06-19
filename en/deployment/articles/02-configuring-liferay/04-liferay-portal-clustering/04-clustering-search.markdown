@@ -6,6 +6,10 @@ header-id: clustering-search
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/using-search/installing-and-upgrading-a-search-engine/introduction-to-installing-a-search-engine.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Search should always run on a separate environment from your @product@ server.
 @product@ supports 
 [Elasticsearch](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch), 

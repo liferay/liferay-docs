@@ -6,6 +6,10 @@ header-id: setting-up-marketplace-and-portal-security
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/system-administration/installing-and-managing-apps/getting-started/using-marketplace.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [Liferay Marketplace](https://www.liferay.com/marketplace) is more than just a
 store for Liferay applications. Under the hood, it provides both the store and
 @product@'s application deployment features. For this reason, you must ensure

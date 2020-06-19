@@ -6,6 +6,10 @@ header-id: other-cluster-update-techniques
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/installation-and-upgrades/maintaining-a-liferay-dxp-installation/maintaining-clustered-installations/blue-green-deployments.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Blue-green is a deployment technique in which you duplicate your production
 environment (the *blue* environment) and modify the duplicate (the *green*
 environment) with software and data changes. When you've successfully tested the

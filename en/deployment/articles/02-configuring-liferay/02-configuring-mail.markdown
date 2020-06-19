@@ -6,6 +6,10 @@ header-id: configuring-mail
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/installation-and-upgrades/setting-up-liferay-dxp/configuring-mail/connecting-to-a-mail-server.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 @product@ uses a mail server and SMTP to email notifications. @product@'s
 built-in mail session is the easiest way to configure mail and it's recommended.
 You can configure the built-in mail session before or after deploying @product@.

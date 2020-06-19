@@ -6,6 +6,10 @@ header-id: upgrading-modules-using-gogo-shell
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/installation-and-upgrades/upgrading-liferay-dxp/upgrade-stability-and-performance/upgrading-modules-using-gogo-shell.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Liferay's Gogo shell can upgrade and verify individual modules. It's
 a fine-grained approach to upgrading the core and non-core modules. If you
 haven't already upgraded your non-core modules using the upgrade tool or if
