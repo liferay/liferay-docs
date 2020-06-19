@@ -38,8 +38,8 @@ Download the necessary artifacts from the
         liferay.home=/liferay-de-home/
 
     If you have different OSGi folder structure, you can specify them as
-    described in the documentation [Patching Tool Advanced
-    Configuration](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-tool-advanced-configuration): 
+    described in the documentation
+    [Patching Tool Advanced Configuration](/docs/7-0/deploy/-/knowledge_base/d/patching-tool-advanced-configuration): 
 	
         module.framework.core.path=d:/liferay-de-home/osgi/core
         module.framework.marketplace.path=d:/liferay-de-home/osgi/marketplace
@@ -85,10 +85,10 @@ deployed on any supported Application Server.
 
 ## Related Topics
 
-[Patching Tool Advanced Configuration](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-tool-advanced-configuration)
+[Patching Tool Advanced Configuration](/docs/7-0/deploy/-/knowledge_base/d/patching-tool-advanced-configuration)
 
-[Deploying @product@](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/deploying-liferay-dxp)
+[Deploying @product@](https://help.liferay.com/hc/en-us/articles/360017895792-Introduction-to-Deploying-Liferay-DXP)
 
-[Installing @product@ on WebLogic 12c R2](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp-on-weblogic-12c-r2)
+[Installing @product@ on WebLogic 12c R2](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-dxp-on-weblogic-12c-r2)
 
-[Installing @product@ on WebSphere 8.5.5](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp-on-websphere-8-5-5)
+[Installing @product@ on WebSphere 8.5.5](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-dxp-on-websphere-8-5-5)

@@ -25,7 +25,7 @@ filter entities by status to display only reviewed entities.
 | the Kaleo Workflow Designer, which offers a convenient drag-and-drop user
 | interface for designing workflow definition files. You can read more about this
 | in Liferay DXP's
-| [documentation](https://customer.liferay.com/documentation/7.0/admin/-/official_documentation/portal/kaleo-designer).
+| [documentation](https://help.liferay.com/hc/en-us/articles/360017876972-Kaleo-Designer).
 | @product@ comes with a workflow definition called the *Single Approver*
 | definition, but you can write your own workflow definitions according to your
 | organization's requirements.

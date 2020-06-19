@@ -15,7 +15,7 @@ There are 2 ways to activate your Liferay DXP instance:
     introduced LCS as a way to activate Liferay DXP instances. LCS can also 
     install fix packs, monitor each instance's performance, and help 
     administrators automatically manage Liferay DXP subscriptions. See the 
-    [LCS documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services) 
+    [LCS documentation](/docs/7-0/deploy/-/knowledge_base/d/managing-liferay-with-liferay-connected-services) 
     for instructions on activating your instances with LCS. 
 
 | **Note:** You must use LCS for activation of containerized instances, cloud
