@@ -174,7 +174,7 @@ or
 [use @product@ bundled with your application server of choice](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay).
 
 Then
-[install the latest fix pack](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay). 
+[install the latest fix pack](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/maintaining-a-liferay-dxp-installation/patching-liferay/installing-patches.html). 
 
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
 Liferay Portal 6.2 and earlier, once you prepared your system for an upgrade,

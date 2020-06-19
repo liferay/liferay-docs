@@ -20,7 +20,7 @@ There are several steps to effective workflowing:
 
 - [Designing review processes in XML](/docs/7-1/tutorials/-/knowledge_base/t/crafting-xml-workflow-definitions)
 
-- (DXP only) [Designing review processes in Kaleo Designer](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-designer)
+- (DXP only) [Designing review processes in Kaleo Designer](https://help.liferay.com/hc/en-us/articles/360017894912-Kaleo-Designer)
 
 - [Uploading workflow definitions](/docs/7-1/user/-/knowledge_base/u/managing-workflows#uploading-workflow-definitions)
 
