@@ -18,28 +18,28 @@ platform with a strong heritage of serving some of the biggest sites in the
 world---and some of the smallest, too. 
 
 The documentation here shows you how to use it. This is the
-[**User**](/docs/7-2/user) section,
+**User** section,
 which describes the features of an installed @product@, how to configure its
 applications, and how to build your website. 
 
 The **Developer** section is divided into five subsections: 
 
-[**Application Development**](/docs/7-2/appdev) shows you how you can build applications using
+[**Application Development**](/docs/7-2/appdev/-/knowledge_base/a/application-development) shows you how you can build applications using
 industry standard tools and frameworks on @product@. 
 
-[**Tutorials**](/docs/7-2/tutorials) lead you step-by-step through specific tasks, such as developing
+[**Tutorials**](/docs/7-2/tutorials/-/knowledge_base/t/developer-tutorials) lead you step-by-step through specific tasks, such as developing
 web applications, upgrading old applications, creating themes, and more. 
 
-[**Frameworks**](/docs/7-2/frameworks) show you all the Liferay APIs and development frameworks you can
+[**Frameworks**](/docs/7-2/frameworks/-/knowledge_base/f/frameworks) show you all the Liferay APIs and development frameworks you can
 use in your applications to streamline development. 
 
-[**Customization**](/docs/7-2/customization) explains the myriad of ways @product@ can be customized to
+[**Customization**](/docs/7-2/customization/-/knowledge_base/c/liferay-customization) explains the myriad of ways @product@ can be customized to
 your exact specifications. 
 
-[**Reference**](/docs/7-2/reference) is a collection of material showing developers the options
+[**Reference**](/docs/7-2/reference/-/knowledge_base/r/developer-reference) is a collection of material showing developers the options
 available for various APIs. 
 
-The [**Deployment**](/docs/7-2/deploy) section shows administrators how to obtain, install, and
+The [**Installation and Upgrades**](https://learn.liferay.com/dxp/7.x/en/installation_and_upgrades.html) section shows administrators how to obtain, install, and
 configure @product@ on bare metal, virtualized environments, and the cloud. 
 
 If you're coming from an older version, read on to learn what's new in
