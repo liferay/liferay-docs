@@ -7,7 +7,7 @@ header-id: point-all-nodes-to-the-same-database
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp-7.x/en/installation-and-upgrades/setting-up-liferay-dxp/clustering-for-high-availability/database-configuration-for-cluster-nodes.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/setting-up-liferay-dxp/clustering-for-high-availability/database-configuration-for-cluster-nodes.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Each node should have a data source that points to one @product@ database
