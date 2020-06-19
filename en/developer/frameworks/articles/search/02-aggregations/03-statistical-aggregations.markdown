@@ -44,7 +44,7 @@ that are to be computed for each field.
 2.  Get an instance of `com.liferay.portal.search.searcher.SearchRequestBuilder`:
 
     ```java
-    SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
+    SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.builder();
     ```
 
 3.  Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the builder:
