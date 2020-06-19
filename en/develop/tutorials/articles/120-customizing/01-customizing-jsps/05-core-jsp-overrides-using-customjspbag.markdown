@@ -131,8 +131,7 @@ services. The following steps implement a custom JSP bag.
     `getResources` method looks up all the paths to resources in the container
     by a given path. It returns a `HashSet` of `Strings` for the matching custom
     JSP paths. The `getResource` method returns one specific resource by its
-    name (the path included). The sample's `BladeCustomJspBag` class implements
-    `getURLContainer` like this: 
+    name (the path included).
 
         @Override
         public URLContainer getURLContainer() {
