@@ -13,7 +13,15 @@ running a remote Elasticsearch 6 server, follow the
 [installation guide](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch) to install
 Elasticsearch and the 
 [configuration guide](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector)
-to configure the Elasticsearch adapter. Here, you'll learn to upgrade an
+to configure the Elasticsearch adapter.
+
+| **Before Proceeding,** back up your existing data before upgrading
+| Elasticsearch. If something goes wrong during or after the upgrade, roll back
+| to the previous version using the uncorrupted index snapshots. See
+| [here](/docs/7-2/deploy/-/knowledge_base/d/backing-up-elasticsearch) for more
+| information.
+
+Here, you'll learn to upgrade an
 existing Elasticsearch 6 server (or cluster) to Elasticsearch 7: 
 
 1.  [Install and configure Elasticsearch 7](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch).
@@ -34,12 +42,6 @@ existing Elasticsearch 6 server (or cluster) to Elasticsearch 7:
 5.  Install and configure the Liferay Connector to Elasticsearch 7.
 
 6.  Re-index all search  and spell check indexes.
-
-| **Before Proceeding,** back up your existing data before upgrading
-| Elasticsearch. If something goes wrong during or after the upgrade, roll back
-| to the previous version using the uncorrupted index snapshots. See
-| [here](/docs/7-2/deploy/-/knowledge_base/d/backing-up-elasticsearch) for more
-| information.
 
 | **Known Issue:** See
 | [LPS-103938](https://issues.liferay.com/browse/LPS-103938). The Liferay
