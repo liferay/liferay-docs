@@ -132,7 +132,7 @@ services. Here are steps for implementing a custom JSP bag.
     `getResources` method looks up all the paths to resources in the container 
     by a given path. It returns a `HashSet` of `Strings` for the matching custom 
     JSP paths. The `getResource` method returns one specific resource by its 
-    name (the path included). Here's what it looks like: 
+    name (the path included).
 
     ```java
     @Override
