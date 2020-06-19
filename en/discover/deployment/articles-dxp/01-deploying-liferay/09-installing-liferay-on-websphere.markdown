@@ -192,33 +192,6 @@ now:
     if it doesn't exist). This is typically `[Install
     Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`. 
 
-Before starting the server, verify that all the following jars have been copied 
-to the correct folders. Optional jars are available (italics) and are used to 
-optimize Liferay performance which must be added to this folder. Required jars 
-in bold are from the `liferay-digital-enterprise-dependencies-[version] zip`. The 
-following files should be present within the `lib/ext` (WebSphere Application) 
-folder: 
-
-1. `activation.jar`
-2. `com.liferay.registry.api.jar`
-3. `hsql.jar`
-4. A JDBC database jar (e.g. MySQL, MariaDB, IBM DB2, Postgres for production)
-5. `persistence.jar`
-6. `portal-kernel.jar`
-7. `portlet.jar`
-
-The following folders should be present within the `/liferay/osgi` folder: 
-
-1. `Configs`
-2. `Core`
-3. `Marketplace`
-4. `Modules`
-5. `Portal`
-6. `Static`
-7. `Test`
-8. `War`
-
-
 ### Ensuring that @product@'s portlet.jar is loaded first
 
 In addition to placing the `portlet.jar` in the correct folder, you must
