@@ -193,5 +193,5 @@ and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and
 click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 
 
-For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/_installation.html).
+For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.x/getting-started-install.html).
 
