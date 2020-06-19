@@ -56,14 +56,7 @@ place your custom JSP at
 
 @product@ (specifically the [`CustomJspBagRegistryUtil` class](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBagRegistryUtil.html)) 
 loads JSPs from [`CustomJspBag`](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
-services. The Core Override JSP sample project provides a working custom JSP bag 
-implementation. The following steps for implementing a custom JSP bag refer to 
-that sample class code. 
-
-<!--
-Add back URL for Core Override JSP Sample Project code once it's ported:
-(/docs/7-1/reference/-/knowledge_base/r/core-jsp-hook)
--->
+services. Here are steps for implementing a custom JSP bag. 
 
 1.  In your module, create a class that implements [`CustomJspBag`](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html).
 
@@ -139,8 +132,7 @@ Add back URL for Core Override JSP Sample Project code once it's ported:
     `getResources` method looks up all the paths to resources in the container 
     by a given path. It returns a `HashSet` of `Strings` for the matching custom 
     JSP paths. The `getResource` method returns one specific resource by its 
-    name (the path included). The sample's `BladeCustomJspBag` class implements 
-    `getURLContainer` like this: 
+    name (the path included). Here's what it looks like: 
 
     ```java
     @Override
@@ -183,13 +175,6 @@ Add back URL for Core Override JSP Sample Project code once it's ported:
 Now your module provides custom JSPs and a custom JSP bag implementation. When 
 you deploy it, @product@ uses its custom JSPs in place of the core JSPs they 
 override. 
-
-<!--
-Add back once sample is ported:
-
-For a working example, examine the 
-[Core Override JSP sample project](/docs/7-1/reference/-/knowledge_base/r/core-jsp-hook).
--->
 
 ## Extend a JSP
 
