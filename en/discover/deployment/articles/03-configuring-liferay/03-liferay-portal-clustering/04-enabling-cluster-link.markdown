@@ -62,31 +62,30 @@ Please see [JGroups's documentation](http://www.jgroups.org/manual/index.html#pr
 for channel properties. The default configuration sets many properties whose
 settings are discussed there. 
 
-Multicast broadcasts to all devices on the network. Clustered environments on
-the same network communicate with each other by default. Messages and
-information (e.g., scheduled tasks) sent between them can lead to unintended
-consequences. Isolate such cluster environments by either separating them
-logically or physically on the network, or by configuring each cluster's
-`portal-ext.properties` to use different sets of
-[multicast group address and port values](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Multicast). 
+Multicast broadcasts to all devices on the network. Clustered environments on the same network communicate with each other by default. Messages and information (e.g., scheduled tasks) sent between them can lead to unintended consequences. Isolate such cluster environments by either separating them logically or physically on the network, or by configuring each cluster's `portal-ext.properties` to use different sets of [multicast group address and port values](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Multicast).
 
-JGroups sets a bind address automatically. If you want to set a manual address,
-you can do this. By default, these are set to `localhost`: 
+JGroups sets a bind address automatically, using `localhost` by default. In some configurations, however, `localhost` is bound to the internal loopback network (`127.0.0.1` or `::1`), rather than the host's real address. As long as @product@'s `cluster.link.autodetect.address` Portal Property points to a server that's contactable, @product@ uses that server to automatically detect your host's real address. Here's the default setting:
 
-    cluster.link.bind.addr["cluster-link-control"]=localhost
-    cluster.link.bind.addr["cluster-link-udp"]=localhost
+```properties
+cluster.link.autodetect.address=www.google.com:80
+```
 
-In some configurations, however, `localhost` is bound to the internal loopback
-network (`127.0.0.1` or `::1`), rather than the host's real address. If for some
-reason you need this configuration, you can make @product@ auto detect its real
-address with this property: 
+Contacting Google may not work if your server is behind a firewall.
 
-    cluster.link.autodetect.address=www.google.com:80
+An alternative to detecting the host address automatically for the bind address, you can set the bind address manually in your `portal-ext.properties` file.
 
-Set it to connect to some other host that's contactable by your server. By
-default, it points to Google, but this may not work if your server is behind a
-firewall. If you set the address manually using the properties above, you don't
-need to set the auto-detect address. 
+1. Disable address auto-detection by setting the `cluster.link.autodetect.address` property to an empty value:
+
+    ```properties
+    cluster.link.autodetect.address=
+    ```
+
+2. Set the following properties to your host's IP address:
+
+    ```properties
+    cluster.link.bind.addr["cluster-link-control"]=[place your IP address or host name here]
+    cluster.link.bind.addr["cluster-link-udp"]=[place your IP address or host name here]
+    ```
 
 Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
@@ -111,9 +110,9 @@ different geographical locations.
 
 1.  Add a parameter to your app server's JVM:
 
-        -Djgroups.bind_addr=[node_address]
+        -Djgroups.bind_addr=[place your IP address or host name here]
  
-    Use the node's IP address. 
+    Use the node's IP address or host name. 
 
 2.  Now you must determine the discovery protocol the nodes should use to
     find each other. You have four choices: 
