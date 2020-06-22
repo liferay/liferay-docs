@@ -157,6 +157,8 @@ following inside the `jvmEntries` tag:
 Alternately, you can set the UTF-8 properties from the WebSphere Admin Console.
 (See below.)
 
+| **Important:** On JDK 11, the setting `-Djava.locale.providers=JRE,COMPAT,CLDR` is required to display four-digit years. Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the default locales provider. CLDR does not provide years in a four-digit format (see [LPS-87191](https://issues.liferay.com/browse/LPS-87191)). This setting works around the issue by using JDK 8's default locales provider.
+
 ### Removing the secureSessionCookie Tag
 
 In the same profile, you should delete a problematic `secureSessionCookie` tag 

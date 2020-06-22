@@ -113,6 +113,8 @@ Start with configuring Tomcat to run @product@.
     | **Important:** For @product@ to work properly, the application server JVM
     | must use the `GMT` time zone and `UTF-8` file encoding.
 
+    | **Important:** On JDK 11, the setting `-Djava.locale.providers=JRE,COMPAT,CLDR` is required to display four-digit years. Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the default locales provider. CLDR does not provide years in a four-digit format (see [LPS-87191](https://issues.liferay.com/browse/LPS-87191)). This setting works around the issue by using JDK 8's default locales provider.
+
     After installation, tune your system (including these JVM options) for
     performance. 
 

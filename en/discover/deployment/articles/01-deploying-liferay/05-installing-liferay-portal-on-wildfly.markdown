@@ -248,6 +248,8 @@ Make the following edits as applicable for your operating system:
 | **Important:** For @product@ to work properly, the application server JVM must
 | use the `GMT` time zone and `UTF-8` file encoding.
 
+| **Important:** On JDK 11, the setting `-Djava.locale.providers=JRE,COMPAT,CLDR` is required to display four-digit years. Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the default locales provider. CLDR does not provide years in a four-digit format (see [LPS-87191](https://issues.liferay.com/browse/LPS-87191)). This setting works around the issue by using JDK 8's default locales provider.
+
 | **Note:** If you plan on using the IBM JDK with your Wildfly server, you must
 | complete some additional steps. First, navigate to the
 | `$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the

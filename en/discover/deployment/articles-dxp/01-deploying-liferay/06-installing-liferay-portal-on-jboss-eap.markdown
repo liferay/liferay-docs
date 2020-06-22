@@ -238,6 +238,8 @@ Make the following edits as applicable to your operating system:
 
         JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
 
+| **Important:** On JDK 11, the setting `-Djava.locale.providers=JRE,COMPAT,CLDR` is required to display four-digit years. Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the default locales provider. CLDR does not provide years in a four-digit format (see [LPS-87191](https://issues.liferay.com/browse/LPS-87191)). This setting works around the issue by using JDK 8's default locales provider.
+
 | **Note:** If you plan on using the IBM JDK with your JBoss server, you must
 | complete some additional steps. First, navigate to the
 | `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and insert the

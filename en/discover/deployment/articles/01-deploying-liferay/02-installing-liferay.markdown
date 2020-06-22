@@ -99,6 +99,8 @@ finished with the installation (and before you've started @product@ for the
 first time), come back to this spot, because you must hook it up to your
 database. 
 
+| **Important:** On JDK 11, the setting `-Djava.locale.providers=JRE,COMPAT,CLDR` is required to display four-digit years. Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the default locales provider. CLDR does not provide years in a four-digit format (see [LPS-87191](https://issues.liferay.com/browse/LPS-87191)). This setting works around the issue by using JDK 8's default locales provider. Please see [Installing Liferay DXP on Tomcat](/docs/7-1/deploy/-/knowledge_base/d/installing-product-on-tomcat#configuring-tomcat) for more information.
+
 ## Connecting to Your Database
 
 You can connect to your database with JNDI on your app server or the data source
