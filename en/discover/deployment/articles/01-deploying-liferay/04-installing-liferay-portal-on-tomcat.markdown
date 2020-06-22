@@ -25,6 +25,10 @@ or
 - Dependencies ZIP file
 - OSGi Dependencies ZIP file
 
+@product@ requires a Java JDK 8 or 11.
+
+| **Note:** Please see [the compatibility matrix](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.1+Compatibility+Matrix.pdf/c8805b72-c693-1f26-3f2d-731ffc301366) for information on supported JDKs, databases, and environments.
+
 Here are the basic steps for installing @product@ on Tomcat:
 
 - [Installing dependencies to your application server](#installing-dependencies)

@@ -19,6 +19,10 @@ Before proceeding, download these files from the
 - Dependencies ZIP file
 - OSGi JARs ZIP file
 
+@product@ requires a Java JDK 8 or 11.
+
+| **Note:** Please see [the compatibility matrix](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.1+Compatibility+Matrix.pdf/c8805b72-c693-1f26-3f2d-731ffc301366) for information on supported JDKs, databases, and environments.
+
 [*Liferay Home*](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 is the folder containing your JBoss server folder. After installing and
 deploying @product@, the Liferay Home folder contains the JBoss server folder as
