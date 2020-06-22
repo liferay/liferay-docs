@@ -177,16 +177,16 @@ You must now install @product@'s dependencies. Recall that earlier you
 downloaded two ZIP files containing these dependencies. Install their contents 
 now: 
 
-1.  `liferay-dxp-digital-enterprise-dependencies-[version].zip`: Unzip this file
+1.  `liferay-dxp-dependencies-[version].zip`: Unzip this file
     and place its contents in your WebSphere application server's `[Install
     Location]/WebSphere/AppServer/lib/ext` folder. If you have a JDBC database
     driver `JAR`, copy it to this location as well. 
 
-3.  `liferay-dxp-digital-enterprise-osgi-[version].zip`: Unzip this file and 
+1.  `liferay-dxp-osgi-[version].zip`: Unzip this file and 
     place its contents in the `[Liferay Home]/osgi` folder (create this folder
     if it doesn't exist). This is typically `[Install
     Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`.
-    
+
 ### Installing the DXP portlet.jar
 
 DXP's `portlet.jar` (version 3) is backwards-compatible. It is included with the Dependencies ZIP that you unzipped above. WebSphere contains an older `portlet.jar` version which must be overridden.
