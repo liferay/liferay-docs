@@ -151,11 +151,11 @@ these places:
 
 In such cases, you must manually determine these packages and specify an `Import-Package` OSGi header that includes these packages and the packages that Bnd detects automatically. The `Import-Package` header belongs in the location appropriate to your project type:
 
- Project type | `Import-Package` header location |
-:----------- | :------------------------------- |
- Module (uses bnd)     | `[project]/bnd.bnd` |
- Module (doesn't use bnd) | `[module JAR]/META-INF/MANIFEST.MF` |
- Traditional Liferay plugin WAR | `WEB-INF/liferay-plugin-package.properties` |
+| Project type | `Import-Package` header location |
+| :----------- | :------------------------------- |
+| Module (uses bnd)     | `[project]/bnd.bnd` |
+| Module (doesn't use bnd) | `[module JAR]/META-INF/MANIFEST.MF` |
+| Traditional Liferay plugin WAR | `WEB-INF/liferay-plugin-package.properties` |
  
 Here's an example of adding a package called `com.liferay.docs.foo` to the list of referenced packages that Bnd detects automatically:
 
