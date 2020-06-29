@@ -85,6 +85,8 @@ Here are the steps:
     that have the prefix `jdbc.ext.`. 
 
     ```java
+    package com.liferay.external.data.source.test.internal;
+    
     import com.liferay.portal.kernel.dao.jdbc.DataSourceFactoryUtil;
     import com.liferay.portal.kernel.dao.jdbc.DataSourceProvider;
     import com.liferay.portal.kernel.util.PropsUtil;
