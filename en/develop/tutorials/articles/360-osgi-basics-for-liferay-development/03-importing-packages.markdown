@@ -18,7 +18,10 @@ header with a comma-separated list of the Java packages it needs. For example,
 if a module needs classes from the `javax.portlet` and
 `com.liferay.portal.kernel.util` packages, it must specify them like so:
 
-    Import-Package: javax.portlet,com.liferay.portal.kernel.util
+
+    Import-Package: javax.portlet,com.liferay.portal.kernel.util,*
+
+The `*` character represents all packages that the module refers to explicitly. Bnd detects the referenced packages.
 
 Import packages must sometimes be specified manually, but not always.
 Conveniently, @product@ project templates and tools automatically detect the
@@ -135,9 +138,8 @@ these places:
 -   Reflection code
 -   Class loader code
 
-In such cases, you must manually determine the packages required and add them to
-an `Import-Package` OSGi header in the location appropriate to your project
-type:
+
+In such cases, you must manually determine these packages and specify an `Import-Package` OSGi header that includes these packages and the packages that Bnd detects automatically. The `Import-Package` header belongs in the location appropriate to your project type:
 
  Project type | `Import-Package` header location |
 :----------- | :------------------------------- |
@@ -145,6 +147,13 @@ type:
  Module (doesn't use bnd) | `[module JAR]/META-INF/MANIFEST.MF` |
  Traditional Liferay plugin WAR | `WEB-INF/liferay-plugin-package.properties` |
 
+Here's an example of adding a package called `com.liferay.docs.foo` to the list of referenced packages that Bnd detects automatically:
+
+```
+Import-Package:\
+ com.liferay.docs.foo,\
+ *
+```
  
 | **Note:** The
 | [WAB Generator](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
