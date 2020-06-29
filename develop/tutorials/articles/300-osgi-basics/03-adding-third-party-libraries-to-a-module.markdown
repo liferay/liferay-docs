@@ -184,8 +184,14 @@ Follow these steps:
 
 Lastly, if after embedding a library you get unresolved imports when trying to
 deploy to Liferay, you may need to blacklist some imports: 
-    
-`Import-Package: !foo.bar.baz`
+
+```    
+Import-Package:\
+    !foo.bar.baz,\
+    *
+```
+
+The `*` character represents all packages that the module refers to explicitly. Bnd detects the referenced packages.
 
 Congratulations! Resolving all of your module's package dependencies, especially
 those from traditional Java libraries, is a quite an accomplishment. 
