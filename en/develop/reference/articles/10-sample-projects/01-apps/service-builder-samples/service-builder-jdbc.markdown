@@ -82,8 +82,8 @@ into the database.
 
 ## What API(s) and/or code components does this sample highlight?
 
-This sample demonstrates two ways to access data from an external database
-defined by a JDBC connection:
+The sample configures the data source using Spring Beans and demonstrates two
+ways to access data from an external database defined by a JDBC connection:
 
 - extract data directly from the raw data source by explicitly specifying a SQL
   query.
@@ -96,6 +96,18 @@ Once you've added the `-web` portlet to a page, the
 `CountryLocalService.useJDBC` method is invoked. This method accesses the
 database defined by the JDBC connection you specified and logs information about
 the rows in the `country` table to @product@'s log.
+
+### Configuring the Data Source
+
+The `-service` module's `src/main/resources/META-INF/spring/ext-spring.xml` file
+configures the external data source connection and applies the alias
+`extDataSource` to the data source. The `service.xml` file `entity` element
+specifies the data source via the attribute assignment
+`data-source="extDataSource"`. The `ext-spring.xml` and `service.xml` files
+demonstrate the configuration steps explained in
+[Connecting the Data Source Using Spring Beans](/docs/7-1/tutorials/-/knowledge_base/t/connecting-service-builder-to-external-databases).
+
+### Accessing Data
 
 The first way of accessing data from the external database is to extract it
 directly from the raw data source by explicitly specifying a SQL query. This
