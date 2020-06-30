@@ -18,7 +18,7 @@ the importing bundle. At run time, the importing bundle gets the class from the
 wired bundle that exports the class's package. 
 
 For this to happen, a bundle's `META-INF/MANIFEST.MF` file must specify the
-`Import-Package` OSGi manifest header with a comma-separated list of the Java
+[`Import-Package`](https://bnd.bndtools.org/heads/import_package.html) OSGi manifest header with a comma-separated list of the Java
 packages it needs. For example, if a bundle needs classes from the
 `javax.portlet` and `com.liferay.portal.kernel.util` packages, it must specify
 them like so:
@@ -177,6 +177,8 @@ Import-Package:\
 | deploying the module. If the package provider is not an OSGi module, follow  
 | the instructions for
 | [adding third-party libraries](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module). 
+
+Please see the [`Import-Package`](https://bnd.bndtools.org/heads/import_package.html) header documentation for more information.
 
 Congratulations! Now you can import all kinds of packages for your modules and
 plugins to use.
