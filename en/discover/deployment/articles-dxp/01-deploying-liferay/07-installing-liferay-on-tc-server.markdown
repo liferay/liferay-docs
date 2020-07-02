@@ -14,6 +14,10 @@ these *Additional Files*:
 - Dependencies ZIP file
 - OSGi Dependencies ZIP file
 
+@product@ requires a Java JDK 8 or 11.
+
+| **Note:** Please see [the compatibility matrix](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.1+Compatibility+Matrix.pdf/c8805b72-c693-1f26-3f2d-731ffc301366) for information on supported JDKs, databases, and environments.
+
 Here are the basic steps for installing @product@ on tc Server: 
 
 - Installing @product@ dependencies to your application server
@@ -161,11 +165,14 @@ instance.
         wrapper.java.additional.9=-Xss512K
         wrapper.java.additional.10=-XX:MaxMetaspaceSize=256M
         wrapper.java.additional.11=-Dfile.encoding=UTF-8
+
     | **Important:** For @product@ to work properly, the application server JVM
     | must use the `GMT` time zone and `UTF-8` file encoding. If your Java wrapper
     | doesn't already specify the `GMT` time zone, add an entry for it:
     | 
     |     wrapper.java.additional.12=-Duser.timezone=GMT
+
+    | **Important:** On JDK 11, the setting `-Djava.locale.providers=JRE,COMPAT,CLDR` is required to display four-digit years. Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the default locales provider. CLDR does not provide years in a four-digit format (see [LPS-87191](https://issues.liferay.com/browse/LPS-87191)). This setting works around the issue by using JDK 8's default locales provider.
 
 4.  Finally, open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/web.xml` and 
     add the following configuration after

@@ -41,6 +41,10 @@ these *Additional Files*:
 - Dependencies ZIP file
 - OSGi Dependencies ZIP file
 
+@product@ requires a Java JDK 8 or 11.
+
+| **Note:** Please see [the compatibility matrix](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.1+Compatibility+Matrix.pdf/c8805b72-c693-1f26-3f2d-731ffc301366) for information on supported JDKs, databases, and environments.
+
 Without any further ado, get ready to install @product@ in WebSphere! 
 
 ## Preparing WebSphere for @product@
@@ -152,6 +156,8 @@ following inside the `jvmEntries` tag:
     
 Alternately, you can set the UTF-8 properties from the WebSphere Admin Console.
 (See below.)
+
+| **Important:** On JDK 11, the setting `-Djava.locale.providers=JRE,COMPAT,CLDR` is required to display four-digit years. Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the default locales provider. CLDR does not provide years in a four-digit format (see [LPS-87191](https://issues.liferay.com/browse/LPS-87191)). This setting works around the issue by using JDK 8's default locales provider.
 
 ### Removing the secureSessionCookie Tag
 
