@@ -40,7 +40,7 @@ to learn more about these options.
 
 Liferay's search infrastructure supports full text search as implemented by its
 supported search engines
-([Elasticsearch]((https://www.elastic.co/guide/en/elasticsearch/reference/7.x/full-text-queries.html)
+([Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/full-text-queries.html)
 and [Solr](http://lucene.apache.org/solr/features.html)).
 
 Full text search compares all the words entered in a search query (for example,
