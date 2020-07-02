@@ -107,7 +107,7 @@ this is configurable via portal properties. All you have to do to enable entity
 and finder caching for an entity in your project is to set the
 `cache-enabled=true` attribute of your entity's `<entity>` element in your
 `service.xml` configuration file. Please refer to the
-[Distributed Caching](/docs/6-2/deploy/-/knowledge_base/d/liferay-clustering#distributed-caching)
+[Distributed Caching](/docs/7-0/deploy/-/knowledge_base/d/liferay-clustering#modifying-the-cache-configuration-with-a-module)
 documentation for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks
