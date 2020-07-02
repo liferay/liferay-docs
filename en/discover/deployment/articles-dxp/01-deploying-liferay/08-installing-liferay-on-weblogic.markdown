@@ -157,10 +157,10 @@ You must now install @product@'s dependencies. Recall that earlier you
 downloaded two ZIP files containing these dependencies. Install their contents 
 now: 
 
-1.  `liferay-dxp-digital-enterprise-dependencies-[version].zip`: Unzip this file 
+1.  `liferay-dxp-dependencies-[version].zip`: Unzip this file 
     and place its contents in your WebLogic domain's `lib` folder. 
 
-2.  `liferay-dxp-digital-enterprise-osgi-[version].zip`: Unzip this file and 
+2.  `liferay-dxp-osgi-[version].zip`: Unzip this file and 
     place its contents in the `[Liferay Home]/osgi` folder (create this folder if
     it doesn't exist).
 

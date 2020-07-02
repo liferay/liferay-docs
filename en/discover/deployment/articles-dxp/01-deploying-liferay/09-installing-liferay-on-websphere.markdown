@@ -172,8 +172,10 @@ Delete the `secureSessionCookie` tag containing
 
 If this tag is not removed, an error similar to this may occur: 
 
-    WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901    
-    com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
+```
+WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901    
+com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
+```
 
 ## Installing @product@'s Dependencies
 
@@ -181,38 +183,40 @@ You must now install @product@'s dependencies. Recall that earlier you
 downloaded two ZIP files containing these dependencies. Install their contents 
 now: 
 
-1.  `liferay-dxp-digital-enterprise-dependencies-[version].zip`: Unzip this file
+1.  `liferay-dxp-dependencies-[version].zip`: Unzip this file
     and place its contents in your WebSphere application server's `[Install
     Location]/WebSphere/AppServer/lib/ext` folder. If you have a JDBC database
     driver `JAR`, copy it to this location as well. 
 
-2.  From the same archive, copy `portlet.jar`into `[Install
-    Location]/WebSphere/AppServer/java/java-[version]/jre/lib/ext` for WebSphere 8.5.5.11 or `[Install
-    Location]/WebSphere/AppServer/javaext` for WebSphere 9.0.0.x. WebSphere already contains
-    an older version of `portlet.jar` which must be overridden at the highest
-    classloader level. The new `portlet.jar` (version 3) is
-    backwards-compatible. 
-
-3.  `liferay-dxp-digital-enterprise-osgi-[version].zip`: Unzip this file and 
+1.  `liferay-dxp-osgi-[version].zip`: Unzip this file and 
     place its contents in the `[Liferay Home]/osgi` folder (create this folder
     if it doesn't exist). This is typically `[Install
-    Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`. 
+    Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`.
 
-### Ensuring that @product@'s portlet.jar is loaded first
+### Installing the DXP portlet.jar
 
-In addition to placing the `portlet.jar` in the correct folder, you must
-configure the `config.ini` file so that it is loaded first. Navigate to
-`/IBM/WebSphere/AppServer/configuration/config.ini`.
+DXP's `portlet.jar` (version 3) is backwards-compatible. It is included with the Dependencies ZIP that you unzipped above. WebSphere contains an older `portlet.jar` version which must be overridden.
 
-1. Find the property `com.ibm.CORBA,com.ibm`
+1. In your `[Install Location]/WebSphere/AppServer/profiles/your-profile/` folder, create a folder called `app_shared_libraries`.
 
-2. Insert the property `javax.portlet,javax.portlet.filter,javax.portlet.annotations`
-   after `com.ibm.CORBA` and before `com.ibm`.
+1. Move DXP's `portlet.jar` from the `[Install Location]/WebSphere/AppServer/lib/ext` folder to the `app_shared_libraries` folder you created.
 
-3. Save the file.
+1. Follow IBM's steps for [using a server associated shared library](https://www.ibm.com/support/pages/best-practice-using-common-application-files#usingserver); make sure to choose *Classes loaded with local class loader first (parent_Last)* on step 4d.
 
-Once you've installed these dependencies and configured the `config.ini` file,
-start the server profile you created for @product@. Once it starts, you're ready
+1. Save the configuration.
+
+### Ensuring That the DXP Portlet.jar is Loaded First
+
+In addition to placing DXP's `portlet.jar` in a server associated shared library, configure the `config.ini` file so that it is loaded first.
+
+1. Open the `[Install Location]/WebSphere/AppServer/configuration/config.ini` file.
+1. Find the property `com.ibm.CORBA,com.ibm`.
+1. Insert the property
+    `javax.portlet,javax.portlet.filter,javax.portlet.annotations`
+    after `com.ibm.CORBA` and before `com.ibm`.
+1. Save the file.
+
+Start the server profile you created for @product@. Once it starts, you're ready
 to configure your database.
 
 ## Database Configuration
