@@ -8,11 +8,15 @@ header-id: connecting-service-builder-to-an-external-database
 
 If you want to use a database separate from @product@'s, follow these steps:
 
-1.  Define a data source for your database. 
+1. Specify your database and a data source name in your `service.xml`.
 
-2.  Connect your Service Builder module to the data source. 
+1. Create the database manually.
 
-3.  Run Service Builder. 
+1. Define the data source.
+
+1. Connect your Service Builder module to the data source. 
+
+1. Run Service Builder. 
 
 There are two different ways to create the connection:
 

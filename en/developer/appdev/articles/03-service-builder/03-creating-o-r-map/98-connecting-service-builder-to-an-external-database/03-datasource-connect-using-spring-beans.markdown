@@ -15,13 +15,15 @@ Builder modules that use the `spring`
 [dependency injection option](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#dependency-injector). 
 Here are the steps: 
 
-1. Specify the data source.
+1. Specify your database and a data source name in your `service.xml`.
 
-2. Create a Spring bean that points to the data source.
+1. Create the database manually.
 
-3. Set your entity's data source to the `liferayDataSource` alias.
+1. Define the data source.
 
-4. Run Service Builder.
+1. Create a Spring bean that points to the data source.
+
+1. Run Service Builder.
 
 | **Note:** All entities defined in a Service Builder module's 
 | [`service.xml`](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file) 
@@ -36,11 +38,43 @@ Here are the steps:
 | propagate between a module that uses an external data source and @product@
 | services (or another app's services) that use a different data source. 
 
-First, use portal properties to set your data source. 
+## Specify Your Database and a Data Source Name in Your `service.xml`
 
-## Step 1: Specify the Data Source
+In your `service.xml` file, specify the same arbitrary data source name for all of the entities, a unique table name for each entity, and  a database column name for each column. Here's an example: 
 
-If the application server defines the data source using JNDI, skip this  step.
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN"
+    "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
+
+<service-builder dependency-injector="spring" package-path="com.liferay.example" >
+    <namespace>TestDB</namespace>
+    <entity local-service="true" name="Foo" table="testdata" data-source="extDataSource"
+            remote-service="false" uuid="false">
+           <column name="id" db-name="id" primary="true" type="long" />
+           <column name="foo" db-name="foo" type="String" />
+           <column name="bar" db-name="bar" type="long" />
+    </entity>
+</service-builder>
+```
+
+Note the example's `<entity>` tag attributes: 
+
+*`data-source`*: The `liferayDataSource` alias `ext-spring.xml` specifies.
+
+*`table`*: Your entity's database table. 
+
+Also note that your entity's `<column>`s must have a *`db-name`* attribute set to the column name.
+
+## Create the Database Manually
+
+[Create the database](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/installing-liferay/configuring-a-database.html) per the database specification in your `service.xml`.
+
+Next, use portal properties to set your data source. 
+
+## Define the Data Source
+
+If the application server defines the data source using JNDI, skip this step.
 Otherwise, specify the data source in a
 [`portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties).
 Distinguish it from Liferay's default data source by giving it a prefix other
@@ -53,7 +87,9 @@ jdbc.ext.url=jdbc:mariadb://localhost/external?useUnicode=true&characterEncoding
 jdbc.ext.username=yourusername
 ```
 
-## Step 2: Create a Spring Bean that Points to the Data Source
+Restart your server if you defined your data source using portal properties.
+
+## Connect Your Service Builder Module to the Data Source Via a Spring Bean 
 
 To do this, create a parent context extension (e.g.,`ext-spring.xml`) in your
 `*-service` module's `src/main/resources/META-INF/spring/parent` folder or in
@@ -93,7 +129,7 @@ Define the following elements:
 2.  A Liferay data source bean that refers to the data source factory Spring 
     bean.
 
-3.  An alias for the Liferay data source bean. 
+3.  An alias for the Liferay data source bean. Name the alias after the data source name you specified in the `service.xml`.
 
     Here's an example `ext-spring.xml` that points to a JNDI data source: 
 
@@ -145,45 +181,16 @@ the `liferayDataSourceFactory` bean. The override affects this bundle (module or
 [Web Application Bundle](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)) 
 only. 
 
-The alias `extDataSource` refers to the `liferayDataSource` data source bean. 
+The alias `extDataSource` refers to the `liferayDataSource` data source bean.
+
+| **Important:** The alias name must match the data source name specified in the `service.xml`.
 
 | **Note**: To use an external data source in multiple Service Builder
 | bundles, you must override the `liferayDataSource` bean in each bundle.
 
-## Step 3: Set Your Entity's Data Source to the `liferayDataSource` Alias
+## Run Service Builder
 
-In your `service.xml` file, set your entity's data source to the
-`liferayDataSource` alias you specified in your `ext-spring.xml` file. Here's
-an example: 
-
-```xml
-<?xml version="1.0"?>
-<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN"
-    "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
-
-<service-builder dependency-injector="spring" package-path="com.liferay.example" >
-    <namespace>TestDB</namespace>
-    <entity local-service="true" name="Foo" table="testdata" data-source="extDataSource"
-            remote-service="false" uuid="false">
-           <column name="id" db-name="id" primary="true" type="long" />
-           <column name="foo" db-name="foo" type="String" />
-           <column name="bar" db-name="bar" type="long" />
-    </entity>
-</service-builder>
-```
-
-Note the example's `<entity>` tag attributes: 
-
-*`data-source`*: The `liferayDataSource` alias `ext-spring.xml` specifies.
-
-*`table`*: Your entity's database table. 
-
-Also note that your entity's `<column>`s must have a `db-name` attribute set to 
-the column name.
-
-## Step 4: Run Service Builder
-
-[Run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder).
+[Run Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder) and [deploy](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project) your `-service` module.
 Now your Service Builder services use the data source. You can
 [use the services in your business logic](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)
 as you always have regardless of the underlying data source.
