@@ -13,13 +13,15 @@ registered modules that export the needed packages and wires them to the
 importing module. At run time, the importing module gets the class from the
 wired module that exports the class's package. 
 
-For this to happen, a module must specify the `Import-Package` OSGi manifest
+For this to happen, a module must specify the [`Import-Package`](https://bnd.bndtools.org/heads/import_package.html) OSGi manifest
 header with a comma-separated list of the Java packages it needs. For example,
 if a module needs classes from the `javax.portlet` and
 `com.liferay.portal.kernel.util` packages, it must specify them like so:
 
-    Import-Package: javax.portlet,com.liferay.portal.kernel.util
+    Import-Package: javax.portlet,com.liferay.portal.kernel.util,*
 
+The `*` character represents all packages that the module refers to explicitly. Bnd detects the referenced packages.
+ 
 Import packages must sometimes be specified manually, but not always.
 Conveniently, @product@ project templates and tools automatically detect the
 packages a module uses and add them to the package imports in the module JAR's
@@ -87,15 +89,21 @@ these places:
 -   Reflection code
 -   Class loader code
 
-In such cases, you must manually determine the packages required and add them to
-an `Import-Package` OSGi header in the location appropriate to your project
-type:
+In such cases, you must manually determine these packages and specify an `Import-Package` OSGi header that includes these packages and the packages that Bnd detects automatically. The `Import-Package` header belongs in the location appropriate to your project type:
 
  Project type | `Import-Package` header location |
 :----------- | :------------------------------- |
  Module (uses bnd)     | `[project]/bnd.bnd` |
  Module (doesn't use bnd) | `[module JAR]/META-INF/MANIFEST.MF` |
  Traditional Liferay plugin WAR | `WEB-INF/liferay-plugin-package.properties` |
+ 
+Here's an example of adding a package called `com.liferay.docs.foo` to the list of referenced packages that Bnd detects automatically:
+
+```
+Import-Package:\
+    com.liferay.docs.foo,\
+    *
+```
 
 | **Note:** The WAB Generator refrains from adding WAR project embedded
 | third-party JARs to a WAB if
@@ -107,6 +115,8 @@ type:
 | deploying the module. If the package provider is not an OSGi module, follow  
 | the instructions for
 | [adding third-party libraries](/docs/7-0/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module). 
+
+Please see the [`Import-Package`](https://bnd.bndtools.org/heads/import_package.html) header documentation for more information.
 
 Congratulations! Now you can import all kinds of packages for your modules and
 plugins to use.
