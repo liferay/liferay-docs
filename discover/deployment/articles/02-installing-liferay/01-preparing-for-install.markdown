@@ -43,7 +43,9 @@ an application server preference, consider starting with the Tomcat bundle.
 Tomcat is one of the most lightweight and straightforward bundles to configure.
 If you have an open source application server preference, choose the server you
 prefer from the available @product@ bundles. You must have a JDK (Java
-Development Kit) installed prior to launching @product@.
+Development Kit) 8 installed prior to launching @product@.
+
+| **Note:** Please see [the compatibility matrix](https://help.liferay.com/hc/en-us/articles/360015783792-Liferay-DXP-7-0-Compatibility-Matrix) for information on supported JDKs, databases, and environments.
 
 Please note that @product@ is not able to provide application server bundles for
 proprietary application servers such as WebLogic or WebSphere, because the
