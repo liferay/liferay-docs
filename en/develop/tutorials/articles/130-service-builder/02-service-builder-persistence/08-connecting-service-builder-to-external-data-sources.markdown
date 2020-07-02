@@ -12,22 +12,58 @@ data source on the app server. This tutorial shows how to connect
 [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 to a data source. Here's how: 
 
-1. [Specify the data source.](#step-1-specify-the-data-source)
+1. [Specify the database and data source in your `service.xml`.](#step-1-specify-the-database-and-data-source-in-your-service-xml)
 
-2. [Create a Spring bean that points to the data source.](#step-2-create-a-spring-bean-that-points-to-the-data-source)
+2. [Create the Database Manually](#step-2-create-the-database-manually)
 
-3. [Set your entity's data source to the `liferayDataSource` alias.](#step-3-set-your-entitys-data-source-to-the-liferaydatasource-alias)
+3. [Define the Data Source](#step-3-define-the-data-source)
 
-4. [Run Service Builder.](#step-4-run-service-builder)
+4. [Create a Spring bean that points to the data source.](#step-4-create-a-spring-bean-that-points-to-the-data-source)
+
+5. [Set your entity's data source to the `liferayDataSource` alias.](#step-5-set-your-entitys-data-source-to-the-liferaydatasource-alias)
+
+6. [Run Service Builder.](#step-6-run-service-builder)
 
 | **Note**: All entities defined in a Service Builder module's `service.xml` file
 | are bound to the same data source. Binding different entities to different data
 | sources requires defining the entities in separate Service Builder modules and
 | configuring each of the modules to use a different data source.
 
-First, use portal properties to set your data source. 
+## Step 1: Specify Your Database and a Data Source Name in Your `service.xml`
 
-## Step 1: Specify the Data Source
+In your `service.xml` file, specify the same arbitrary data source name for all of the entities, a unique table name for each entity, and  a database column name for each column. Here's an example: 
+
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.1.0//EN"
+    "http://www.liferay.com/dtd/liferay-service-builder_7_1_0.dtd">
+
+<service-builder package-path="com.liferay.example" >
+    <namespace>TestDB</namespace>
+    <entity local-service="true" name="Foo" table="testdata" data-source="extDataSource"
+            remote-service="false" uuid="false">
+           <column name="id" db-name="id" primary="true" type="long" />
+           <column name="foo" db-name="foo" type="String" />
+           <column name="bar" db-name="bar" type="long" />
+    </entity>
+</service-builder>
+```
+
+Note the example's `<entity>` tag attributes: 
+
+*`data-source`*: The `liferayDataSource` alias `ext-spring.xml` specifies.
+
+*`table`*: Your entity's database table. 
+
+Also note that your entity's `<column>`s must have a *`db-name`* attribute set to the column name.
+
+## Step 2: Create the Database Manually
+
+[Create the database](/docs/7-1/deploy/-/knowledge_base/d/preparing-for-install#step-1-choose-a-database-server-and-create-a-new-database) per the database specification in your `service.xml`.
+
+Next, use portal properties to set your data source. 
+
+## Step 3: Specify the Data Source
 
 If the application server defines the data source using JNDI, skip this  step.
 Otherwise, specify the data source in a `portal-ext.properties` file.
@@ -39,7 +75,7 @@ than `jdbc.default.`. This example uses prefix `jdbc.ext.`:
     jdbc.ext.url=jdbc:mariadb://localhost/external?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.ext.username=yourusername
 
-## Step 2: Create a Spring Bean that Points to the Data Source
+## Step 4: Create a Spring Bean that Points to the Data Source
 
 To do this, create a parent context extension (e.g.,`ext-spring.xml`) in your
 Service Builder module's `src/main/resources/META-INF/spring/parent` folder or
@@ -142,7 +178,7 @@ The alias `extDataSource` refers to the `liferayDataSource` data source bean.
 | **Note**: To use an external data source in multiple Service Builder
 | bundles, you must override the `liferayDataSource` bean in each bundle.
 
-## Step 3: Set Your Entity's Data Source to the `liferayDataSource` Alias
+## Step 5: Set Your Entity's Data Source to the `liferayDataSource` Alias
 
 In your `service.xml` file, set your entity's data source to the
 `liferayDataSource` alias you specified in your `ext-spring.xml` file. Here's
@@ -171,7 +207,7 @@ Note the example's `<entity>` tag attributes:
 Also note that your entity's `<column>`s must have a `db-name` attribute set to 
 the column name.
 
-## Step 4: Run Service Builder
+## Step 6: Run Service Builder
 
 [Run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder).
 Now your Service Builder services use the data source. You can
