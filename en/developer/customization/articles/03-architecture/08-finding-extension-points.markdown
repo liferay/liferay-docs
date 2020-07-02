@@ -7,7 +7,7 @@ header-id: finding-extension-points
 [TOC levels=1-4]
 
 @product@ provides many features that help users accomplish their tasks. 
-Sometimes, however, you may find it necessary to [customize a built-in feature](/docs/7-2/customization).
+Sometimes, however, you may find it necessary to [customize a built-in feature](/docs/7-2/customization/-/knowledge_base/c/liferay-customization).
 It's easy to **find** an area you want to customize, but it may seem like a 
 daunting task to figure out **how** to customize it. @product@ was developed for 
 easy customization, meaning it has many extension points you can use to add 
