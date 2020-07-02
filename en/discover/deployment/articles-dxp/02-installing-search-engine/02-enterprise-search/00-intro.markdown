@@ -13,9 +13,8 @@ you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
 Elasticsearch's internal and external communications. These are necessary
 security features for most production systems. A Liferay Enterprise Search
-Premium subscription gets you access to two X-Pack Connectors for @product@:
-monitoring and security. A Liferay Enterprise Search Standard subscription gets
-you the monitoring integration. Contact
+subscription gets you access to two X-Pack Connectors for @product@:
+monitoring and security. Contact
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 Here's an overview of using X-Pack with @product@:
@@ -24,13 +23,8 @@ Here's an overview of using X-Pack with @product@:
 
 2.  You'll receive license for X-Pack. Install it on your Elasticsearch servers.
 
-2.  Download and install the X-Pack connectors you purchased. Access the
-    connector corresponding to your subscription level:
-
-    [Enterprise Search Standard](https://customer.liferay.com/downloads?p_p_id=com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_productAssetCategoryId=118191015&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_fileTypeAssetCategoryId=118191062)
-
-    [Enterprise Search Premium](https://customer.liferay.com/downloads?p_p_id=com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_productAssetCategoryId=118191013&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_fileTypeAssetCategoryId=118191060)
-
+2.  Download and install the [X-Pack connectors](https://customer.liferay.com/downloads?p_p_id=com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_productAssetCategoryId=118191013&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_fileTypeAssetCategoryId=118191060) you purchased.
+    
 3.  Configure the connectors with the proper credentials and encryption
     information.
 

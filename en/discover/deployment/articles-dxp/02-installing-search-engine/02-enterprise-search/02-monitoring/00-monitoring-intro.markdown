@@ -10,10 +10,10 @@ Monitor Elasticsearch with X-Pack Monitoring. First
 [install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack)
 and configure security if you're using X-Pack's security features. Then come
 back here for instructions on installing and configuring Kibana (the monitoring
-server) with X-Pack so that Elasticsearch (secured with X-Pack), Kibana (secured
-with X-Pack), and @product@ can communicate effortlessly and securely. A Liferay
-Enterprise Search Standard subscription (included with Premium) is necessary for
-this integration.  Contact 
+server) with X-Pack so that Elasticsearch (secured with X-Pack), Kibana
+(secured with X-Pack), and @product@ can communicate effortlessly and securely.
+A Liferay Enterprise Search subscription is necessary for this integration.
+Contact 
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 1.  Tell Elasticsearch to enable data collection.
@@ -121,9 +121,9 @@ with a Kibana user. The last step is to connect Kibana to @product@.
 
 ## Configuring the Liferay Connector to X-Pack Monitoring
 
-If you have a Liferay Enterprise Search (Premium or Standard) subscription,
-download the Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install
-the LPKG file by copying it into the `Liferay Home/deploy` folder. 
+If you have a Liferay Enterprise Search subscription, download the Liferay
+Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install the LPKG file by
+copying it into the `Liferay Home/deploy` folder. 
 
 1.  Once the connector is installed and Kibana and Elasticsearch are securely
     configured, create a 
