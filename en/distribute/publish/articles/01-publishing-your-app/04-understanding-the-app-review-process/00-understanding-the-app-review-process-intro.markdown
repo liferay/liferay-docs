@@ -194,15 +194,15 @@ table td {
             <td class="fourth-column" colspan="3">MySQL 5.7.x</td>
         </tr>
         <tr>
-            <td class="first-column"> Application Server * </td>
+            <td class="first-column"> Application Server *</td>
             <td class="second-column">Tomcat 7</td>
             <td class="third-column">Tomcat 8</td>
             <td class="fourth-column" colspan="3">Tomcat 9</td> 
         </tr>
         <tr>
-            <td class="first-column"> JDK </td>
+            <td class="first-column"> JDK **</td>
             <td class="second-column">Oracle JDK 6, 7</td>
-            <td class="third-column" colspan="3">Oracle JDK 8 / JDK 11 (7.1 and higher)</td>
+            <td class="third-column" colspan="4">Oracle JDK 8 / JDK 11 (7.1 and higher)</td>
         </tr>
         <tr>
             <td class="first-column"> Browser </td>
@@ -220,6 +220,8 @@ table td {
 servers. For Liferay 7.x, Wildfly 10 is available. For Liferay 6.x, Glassfish
 3.1 and an appropriate JBoss version are available. Please add the request in
 the app submission panel's *Note to testers* section.
+
+**\**** On 6.x versions, testing is conducted on JDK 7 unless otherwise directed.  On 7.x versions, testing is conducted on JDK 8 unless either otherwise directed, or the app clearly encounters an issue with JDK 8, then it is conducted on JDK 11.
 
 Once your app is approved by Marketplace staff, you'll get email notification.
 When your app is approved, it is made available on Marketplace. The app also
