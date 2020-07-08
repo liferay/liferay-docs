@@ -26,7 +26,7 @@ for other file types:
 
 As of Liferay 7.1, OpenOffice/LibreOffice is configured in OSGi Configuration
 Admin instead of portal properties. To adjust the these settings, go to *Control
-Panel* &arr; *Configuration*&arr; *System Settings* &arr; *Connectors* &rarr;
+Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Connectors* &rarr;
 *OpenOffice Integration*. You can also adjust these
 settings by deploying a
 `com.liferay.document.library.document.conversion.internal.configuration.OpenOfficeConfiguration.config`
