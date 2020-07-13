@@ -17,9 +17,7 @@ you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
 Elasticsearch's internal and external communications. These are necessary
 security features for most production systems. A Liferay Enterprise Search
-Premium subscription gets you access to both monitoring and security, while a
-Liferay Enterprise Search Standard subscription gets you the monitoring
-integration. Contact
+subscription gets you access to both monitoring and security. Contact
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
@@ -193,7 +191,7 @@ adapter in @product@.
 
 ## Install and Configure the Liferay Connector to X-Pack Security
 
-If you have a Liferay Enterprise Search Premium subscription, 
+If you have a Liferay Enterprise Search subscription, 
 [download](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
 the Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG
 file by copying it into the `Liferay Home/deploy` folder. That's all there is to
