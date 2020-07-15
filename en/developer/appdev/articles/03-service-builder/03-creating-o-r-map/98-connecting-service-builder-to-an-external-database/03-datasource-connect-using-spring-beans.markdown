@@ -11,9 +11,9 @@ data source must be defined in `portal-ext.properties` or configured as a JNDI
 data source on the app server. Here you'll connect
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 to a data source using Spring XML files. This approach only works with Service
-Builder modules that use the `spring` 
-[dependency injection option](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#dependency-injector). 
-Here are the steps: 
+Builder modules that use the `spring`
+[dependency injection option](/docs/7-2/appdev/-/knowledge_base/a/defining-global-service-information#dependency-injector).
+Here are the steps:
 
 1. Specify your database and a data source name in your `service.xml`.
 
@@ -25,22 +25,25 @@ Here are the steps:
 
 1. Run Service Builder.
 
-| **Note:** All entities defined in a Service Builder module's 
-| [`service.xml`](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file) 
+| **Note:** All entities defined in a Service Builder module's
+| [`service.xml`](/docs/7-2/appdev/-/knowledge_base/a/creating-the-service-xml-file)
 | file are bound to the same data source. Binding different entities to
 | different data sources requires defining the entities in separate Service
 | Builder modules and configuring each of the modules to use a different data
 | source.
 
-| **Warning:** If your Service Builder services require nested transactions, 
+| **Warning:** If your Service Builder services require nested transactions,
 | using an external data source may not be appropriate for you. Transactions
 | between separate data sources cannot be fully nested. Rollbacks may not
 | propagate between a module that uses an external data source and @product@
-| services (or another app's services) that use a different data source. 
+| services (or another app's services) that use a different data source.
+
+| **Important:** Connecting to an external data source using JNDI is broken in
+| Portal CE 7.2 GA1 and GA2, and in DXP 7.2 releases prior to FP5/SP2.
 
 ## Specify Your Database and a Data Source Name in Your `service.xml`
 
-In your `service.xml` file, specify the same arbitrary data source name for all of the entities, a unique table name for each entity, and  a database column name for each column. Here's an example: 
+In your `service.xml` file, specify the same arbitrary data source name for all of the entities, a unique table name for each entity, and  a database column name for each column. Here's an example:
 
 ```xml
 <?xml version="1.0"?>
@@ -58,11 +61,11 @@ In your `service.xml` file, specify the same arbitrary data source name for all 
 </service-builder>
 ```
 
-Note the example's `<entity>` tag attributes: 
+Note the example's `<entity>` tag attributes:
 
 *`data-source`*: The `liferayDataSource` alias `ext-spring.xml` specifies.
 
-*`table`*: Your entity's database table. 
+*`table`*: Your entity's database table.
 
 Also note that your entity's `<column>`s must have a *`db-name`* attribute set to the column name.
 
@@ -70,7 +73,7 @@ Also note that your entity's `<column>`s must have a *`db-name`* attribute set t
 
 [Create the database](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/installing-liferay/configuring-a-database.html) per the database specification in your `service.xml`.
 
-Next, use portal properties to set your data source. 
+Next, use portal properties to set your data source.
 
 ## Define the Data Source
 
@@ -89,19 +92,19 @@ jdbc.ext.username=yourusername
 
 Restart your server if you defined your data source using portal properties.
 
-## Connect Your Service Builder Module to the Data Source Via a Spring Bean 
+## Connect Your Service Builder Module to the Data Source Via a Spring Bean
 
 To do this, create a parent context extension (e.g.,`ext-spring.xml`) in your
-`*-service` module's `src/main/resources/META-INF/spring/parent` folder or in
-your traditional portlet's `WEB-INF/src/META-INF/parent` folder. Create this
-folder if it doesn't exist already. 
+`*-service` module's `src/main/resources/META-INF/spring` folder or in
+your traditional portlet's `WEB-INF/src/META-INF` folder. Create this
+folder if it doesn't exist already.
 
-Define the following elements: 
+Define the following elements:
 
 1.  A data source factory Spring bean for the data source. It's different based
     on the type.
 
-    -   **JNDI**: Specify an arbitrary property prefix and prepend the prefix 
+    -   **JNDI**: Specify an arbitrary property prefix and prepend the prefix
         to a JNDI name property key. Here's an example:
 
     ```xml
@@ -116,7 +119,7 @@ Define the following elements:
     </bean>
     ```
 
-    -   **Portal Properties**: Specify a property prefix that matches the 
+    -   **Portal Properties**: Specify a property prefix that matches the
         prefix (e.g., `jdbc.ext.`) you used in `portal-ext.properties`.
 
     ```xml
@@ -126,12 +129,12 @@ Define the following elements:
     </bean>
     ```
 
-2.  A Liferay data source bean that refers to the data source factory Spring 
+2.  A Liferay data source bean that refers to the data source factory Spring
     bean.
 
 3.  An alias for the Liferay data source bean. Name the alias after the data source name you specified in the `service.xml`.
 
-    Here's an example `ext-spring.xml` that points to a JNDI data source: 
+    Here's an example `ext-spring.xml` that points to a JNDI data source:
 
     ```xml
     <?xml version="1.0"?>
@@ -140,9 +143,9 @@ Define the following elements:
        xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-       <!-- To define an external data source, the liferayDataSource Spring bean 
-           must be overridden. Other default Spring beans like liferaySessionFactory 
-           and liferayTransactionManager may optionally be overridden. 
+       <!-- To define an external data source, the liferayDataSource Spring bean
+           must be overridden. Other default Spring beans like liferaySessionFactory
+           and liferayTransactionManager may optionally be overridden.
 
            liferayDataSourceFactory refers to the data source configured on the
            application server. -->
@@ -164,8 +167,8 @@ Define the following elements:
            <property name="targetDataSource" ref="liferayDataSourceFactory" />
        </bean>
 
-       <!-- In service.xml, we associated our entity with the extDataSource. To 
-           associate the extDataSource with our overridden liferayDataSource, we define 
+       <!-- In service.xml, we associated our entity with the extDataSource. To
+           associate the extDataSource with our overridden liferayDataSource, we define
            this alias. -->
        <alias alias="extDataSource" name="liferayDataSource" />
     </beans>
@@ -178,12 +181,14 @@ source property prefix.
 
 The data source bean `liferayDataSource` is overridden with one that refers to
 the `liferayDataSourceFactory` bean. The override affects this bundle (module or
-[Web Application Bundle](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)) 
-only. 
+[Web Application Bundle](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator))
+only.
 
 The alias `extDataSource` refers to the `liferayDataSource` data source bean.
 
-| **Important:** The alias name must match the data source name specified in the `service.xml`.
+| **Important:** The `alias` element's `alias` attribute value must match the
+| data source name specified in the `service.xml`. For example, the alias
+| attribute value above is `extDataSource`.
 
 | **Note**: To use an external data source in multiple Service Builder
 | bundles, you must override the `liferayDataSource` bean in each bundle.
@@ -195,11 +200,13 @@ Now your Service Builder services use the data source. You can
 [use the services in your business logic](/docs/7-2/appdev/-/knowledge_base/a/business-logic-with-service-builder)
 as you always have regardless of the underlying data source.
 
-Congratulations! You've connected Service Builder to your external data source. 
+Congratulations! You've connected Service Builder to your external data source.
 
 ## Related Topics
 
-[Connecting to JNDI Data Sources](/docs/7-2/appdev/-/knowledge_base/a/connecting-to-data-sources-using-jndi)
+[Sample Service Builder Application Using External Database via JNDI](/docs/7-2/reference/-/knowledge_base/r/service-builder-application-using-external-database-via-jndi)
+
+[Sample Service Builder Application Using External Database via JDBC](/docs/7-2/reference/-/knowledge_base/r/service-builder-application-using-external-database-via-jdbc)
 
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 
