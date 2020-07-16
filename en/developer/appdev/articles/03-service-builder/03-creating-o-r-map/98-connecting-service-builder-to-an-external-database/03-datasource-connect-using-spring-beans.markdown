@@ -39,7 +39,8 @@ Here are the steps:
 | services (or another app's services) that use a different data source.
 
 | **Important:** Connecting to an external data source using JNDI is broken in
-| Portal CE 7.2 GA1 and GA2, and in DXP 7.2 releases prior to FP5/SP2.
+| Portal CE 7.2 GA1 and GA2, and in DXP 7.2 releases prior to FP5/SP2. See
+| [LPS-107733](https://issues.liferay.com/browse/LPS-107733) for details.
 
 ## Specify Your Database and a Data Source Name in Your `service.xml`
 

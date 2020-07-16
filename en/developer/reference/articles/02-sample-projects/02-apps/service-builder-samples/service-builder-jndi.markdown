@@ -12,7 +12,8 @@ database other than @product@'s database. For this sample to work correctly, you
 must prepare such an external database and configure your application server to use it.
 
 | **Important:** Connecting to an external data source using JNDI is broken in
-| Portal CE 7.2 GA1 and GA2, and in DXP 7.2 releases prior to FP5/SP2.
+| Portal CE 7.2 GA1 and GA2, and in DXP 7.2 releases prior to FP5/SP2. See
+| [LPS-107733](https://issues.liferay.com/browse/LPS-107733) for details.
 
 Follow the steps below to make the required preparations before deploying the
 application.
