@@ -100,6 +100,7 @@ if __name__ == "__main__":
     done_header_id = False
     done_title = False
     done_toc = False
+    prev_sidebar_line_empty = False
 
     # Variables for markup context
     in_code = False
@@ -206,95 +207,110 @@ if __name__ == "__main__":
                 para_line = write_and_reset_string(para_line, newFile)
                 list_item_line = write_and_reset_string(list_item_line, newFile)
 
-                # Replace the leading pipe with a space
-                stripped_line = line.replace("| ", "", 1)
+                pipe_index = re.search("|", line).start()
 
-                # Use double-back ticks for all code markup
-                stripped_line = stripped_line.replace("`", "``")
+                tmp_line = line.replace("| ", "", 1).strip()
+                if tmp_line in "":
+                    prev_sidebar_line_empty = True
+                    sidebar_line += "\n"
+                else:
 
-                if sidebar_line in "":
+                    # Use double-back ticks for all code markup
+                    stripped_line = line.replace("`", "``")\
+                    # Replace the leading pipe with a space
+                    stripped_line = stripped_line.replace("| ", "", 1)
 
-                    # Start the sidebar
-                    if "**Note:**" in stripped_line:
-                        newFile.write("```note::\n   ")
-                        stripped_line = stripped_line.replace("**Note:**", "", 1)
-                    elif "**Warning:**" in stripped_line:
-                        newFile.write("```warning::\n   ")
-                        stripped_line = stripped_line.replace("**Warning:**", "", 1)
-                    elif "**Important:**" in stripped_line:
-                        newFile.write("```important::\n   ")
-                        stripped_line = stripped_line.replace("**Important:**", "", 1)
-                    elif "**Note**:" in stripped_line:
-                        newFile.write("```note::\n   ")
-                        stripped_line = stripped_line.replace("**Note**:", "", 1)
-                    elif "**Important**:" in stripped_line:
-                        newFile.write("```important::\n   ")
-                        stripped_line = stripped_line.replace("**Important**:", "", 1)
-                    elif "**Warning**:" in stripped_line:
-                        newFile.write("```warning::\n   ")
-                        stripped_line = stripped_line.replace("**Warning**:", "", 1)
-                    else:
-                        newFile.write("```note::\n   ")
+                    if sidebar_line in "":
 
-                # Process the sidebar line, creating a new line that uses RST links in place of Markdown links
-                new_line = ""
-                caption_link_index = -1
-                while True:
-                    stripped_line_len = len(stripped_line)
+                        # Start the sidebar
 
-                    caption_link = re.search("\[[\w\s\.\/\-\_\`\'@]*\]\([\w\s:\.\/:\-\_\`]*\)", stripped_line)
+                        if "**Note:**" in stripped_line:
+                            newFile.write("```note::\n")
+                            stripped_line = stripped_line.replace("**Note:**", "", 1)
+                        elif "**Warning:**" in stripped_line:
+                            newFile.write("```warning::\n")
+                            stripped_line = stripped_line.replace("**Warning:**", "", 1)
+                        elif "**Important:**" in stripped_line:
+                            newFile.write("```important::\n")
+                            stripped_line = stripped_line.replace("**Important:**", "", 1)
+                        elif "**Note**:" in stripped_line:
+                            newFile.write("```note::\n")
+                            stripped_line = stripped_line.replace("**Note**:", "", 1)
+                        elif "**Important**:" in stripped_line:
+                            newFile.write("```important::\n")
+                            stripped_line = stripped_line.replace("**Important**:", "", 1)
+                        elif "**Warning**:" in stripped_line:
+                            newFile.write("```warning::\n")
+                            stripped_line = stripped_line.replace("**Warning**:", "", 1)
+                        else:
+                            newFile.write("```note::\n")
 
-                    link_len = 0
-                    if caption_link:
+                    # Process the sidebar line, creating a new line that uses RST links in place of Markdown links
+                    new_line = ""
+                    caption_link_index = -1
+                    while True:
+                        stripped_line_len = len(stripped_line)
 
-                        link_len = len(caption_link.group());
-                        caption_link_index = stripped_line.index(caption_link.group());
-                        if caption_link_index > 0:
-                            # Add text that precedes the caption
-                            text_before_caption = stripped_line[0:caption_link_index]
-                            new_line += text_before_caption;
+                        caption_link = re.search("\[[\w\s\.\/\-\_\`\'@]*\]\([\w\s:\.\/:\-\_\`]*\)", stripped_line)
 
-                        # Split the caption and link parts of the Markdown
-                        caption_link_split = caption_link.group().split("](");
-                        caption_half = caption_link_split[0]
-                        link_half = caption_link_split[1]
+                        link_len = 0
+                        if caption_link:
 
-                        caption = ""
-                        link = ""
+                            link_len = len(caption_link.group());
+                            caption_link_index = stripped_line.index(caption_link.group());
+                            if caption_link_index > 0:
+                                # Add text that precedes the caption
+                                text_before_caption = stripped_line[0:caption_link_index]
+                                new_line += text_before_caption;
 
-                        # Write the caption and link in RST format
-                        if len(caption_link_split) > 1 and len(caption_half) > 1 and len(link_half) > 1:
-                            caption = (caption_half)[1:]
-                            caption = caption.replace("``", "`")
-                            print("caption: " + caption)
-                            link = (link_half)[:-1]
-                            print("link: " + link)
-                            new_line += "`"
-                            new_line += caption
-                            new_line += " <"
-                            new_line += link
-                            new_line += ">`_"
+                            # Split the caption and link parts of the Markdown
+                            caption_link_split = caption_link.group().split("](");
+                            caption_half = caption_link_split[0]
+                            link_half = caption_link_split[1]
+
+                            caption = ""
+                            link = ""
+
+                            # Write the caption and link in RST format
+                            if len(caption_link_split) > 1 and len(caption_half) > 1 and len(link_half) > 1:
+                                caption = (caption_half)[1:]
+                                caption = caption.replace("``", "`")
+                                print("caption: " + caption)
+                                link = (link_half)[:-1]
+                                print("link: " + link)
+                                new_line += "`"
+                                new_line += caption
+                                new_line += " <"
+                                new_line += link
+                                new_line += ">`_"
+
+                            else:
+                                print("Unable to convert link: " + caption_link)
 
                         else:
-                            print("Unable to convert link: " + caption_link)
+                            # Does not contain a link
+                            new_line += stripped_line
+                            break;
 
+                        if (caption_link_index + link_len) > stripped_line_len :
+                            # The link ends the line
+                            break;
+                        else:
+                            # Continue processing the rest of the line
+                            stripped_line = stripped_line[caption_link_index + link_len:]
+
+                    # Done the while loop that processes the sidebar line
+
+                    if sidebar_line in "":
+                        sidebar_line = "   " + new_line.lstrip()
                     else:
-                        # Does not contain a link
-                        new_line += stripped_line
-                        break;
+                        if prev_sidebar_line_empty:
+                            sidebar_line = sidebar_line + "   " + new_line
+                            prev_sidebar_line_empty = False
+                        else:
+                            sidebar_line = sidebar_line.rstrip() + " " + new_line.lstrip()
 
-                    if (caption_link_index + link_len) > stripped_line_len :
-                        # The link ends the line
-                        break;
-                    else:
-                        # Continue processing the rest of the line
-                        stripped_line = stripped_line[caption_link_index + link_len:]
-
-                # Done the while loop that processes the sidebar line
-
-                sidebar_line = append_to_line(sidebar_line, new_line)
-
-                prev_index = re.search("\S", line).start()
+                    prev_index = re.search("\S", line).start()
             else:
                 # Handle table line
 
