@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
     new_article_path = dest_folder + "/" + article.split('.markdown')[0] + ".md"
 
-    # Copy referenced image files
+    # Copy referenced image files to [article destination folder]/images
 
     file = open(article)
     content = file.read()
@@ -82,6 +82,7 @@ if __name__ == "__main__":
     lines = file.readlines()
     file.close()
 
+    # Open the destination file for writing to
     newFile = open(new_article_path, 'w')
 
     print("Migrating to article: " + new_article_path)
@@ -89,12 +90,18 @@ if __name__ == "__main__":
     # Track the last significant line's first non-space character column index
     prev_index = -1
 
+    # Variables for storing text that belongs on the same line; hard returns are
+    # removed
     list_item_line = ""
     para_line = ""
     sidebar_line = ""
 
+    # Variables that allow you to skip more detailed condition checks
     done_header_id = False
     done_title = False
+    done_toc = False
+
+    # Variables for markup context
     in_code = False
     in_header_id = False
 
@@ -110,24 +117,34 @@ if __name__ == "__main__":
         line = re.sub("@app-ref@", "https://docs.liferay.com/dxp/apps", line)
         line = re.sub("@platform-ref@", "https://docs.liferay.com/dxp/portal", line)
 
+        # Convenience variable for working with the current line free of leading
+        # and trailing white space.
         trimmed_line = line.lstrip()
 
-        if not (done_header_id):
+        if not done_header_id:
+            # Skip over all of the legacy header-id stuff
 
-            if not (in_header_id):
-                if (trimmed_line.startswith("---")):
+            if trimmed_line.startswith("---"):
+                if not in_header_id:
                     in_header_id = True
-            elif (trimmed_line.startswith("---")):
+                else:
                     done_header_id = True
                     in_header_id = False
-        elif not (done_title):
-            if (line.startswith("#")):
-                newFile.write(line)
-                done_title = True
-        elif (trimmed_line.startswith("[TOC")):
-            # Don't write anything for the legacy TOC line
+
             continue
-        elif (trimmed_line.startswith("```")):
+        if not done_title and trimmed_line in "":
+            # Skip empty lines until the title is written
+            continue
+        elif line.startswith("#"):
+            # Handle heading
+            newFile.write(line)
+
+            if not done_title:
+                done_title = True
+        elif not done_toc and trimmed_line in "":
+            # Skip empty lines until TOC is done
+            continue
+        elif trimmed_line.startswith("```"):
             # Toggle whether we're in code
 
             # Write any saved text
@@ -287,21 +304,24 @@ if __name__ == "__main__":
 
                 # Write the table line
                 newFile.write(line)
-
-        elif (in_code):
+        elif in_code:
 
             # Write code line
             newFile.write(line)
-        elif (para_line != ""):
+        elif trimmed_line.startswith("[TOC"):
+            # Don't write anything for the legacy TOC line
+            done_toc = True
+            continue
+        elif para_line != "":
 
-            if (re.search("^[\d\-]", trimmed_line)):
+            if re.search("^[\d\-]", trimmed_line):
                 # Write the existing paragraph and start a list item
                 list_item_line = line
 
                 para_line = write_and_reset_string(para_line, newFile)
 
                 prev_index = re.search("\S", line).start()
-            elif (re.search("^[\:]", trimmed_line)):
+            elif re.search("^[\:]", trimmed_line):
 
                 # Write definition term
                 newFile.write(para_line)
@@ -310,7 +330,7 @@ if __name__ == "__main__":
                 para_line = line
 
                 prev_index = re.search("\S", line).start()
-            elif (re.search("^[\w\*\@\!\(\&\.\[\`\s(\w\*\@\!\(\&\.\[\`)]", trimmed_line)):
+            elif re.search("^[\w\*\@\!\(\&\.\[\`\s(\w\*\@\!\(\&\.\[\`)]", trimmed_line):
 
                 para_line = append_to_line(para_line, trimmed_line)
             else:
@@ -321,7 +341,7 @@ if __name__ == "__main__":
 
                 if re.search("\S", line):
                     prev_index = re.search("\S", line).start()
-        elif (re.search("^[\w\*\@\!\(\&\.\[\`\s\:(\w\*\@\!\(\&\.\[\`)]", trimmed_line)):
+        elif re.search("^[\w\*\@\!\(\&\.\[\`\s\:(\w\*\@\!\(\&\.\[\`)]", trimmed_line):
 
             sidebar_line = end_sidebar(sidebar_line, newFile)
 
@@ -330,7 +350,7 @@ if __name__ == "__main__":
 
                 if index > prev_index:
 
-                    if (list_item_line != ""):
+                    if list_item_line != "":
                         list_item_line = append_to_line(list_item_line, line)
                     elif (para_line != ""):
                         para_line = append_to_line(para_line, line)
@@ -354,26 +374,32 @@ if __name__ == "__main__":
                 # Write the current line
                 newFile.write(line)
         else:
-            # Set index to first non-space character
-            if re.search("\S", line):
-                prev_index = re.search("\S", line).start()
 
-            para_line = write_and_reset_string(para_line, newFile)
-            sidebar_line = end_sidebar(sidebar_line, newFile)
-            list_item_line = write_and_reset_string(list_item_line, newFile)
+            if not done_header_id and trimmed_line in "":
+                # Skip writing empty lines before writing the title line
+                continue
+            else:
+                # Set index to first non-space character
+                if re.search("\S", line):
+                    prev_index = re.search("\S", line).start()
 
-            # Write the current line
-            newFile.write(line)
+
+                para_line = write_and_reset_string(para_line, newFile)
+                sidebar_line = end_sidebar(sidebar_line, newFile)
+                list_item_line = write_and_reset_string(list_item_line, newFile)
+
+                # Write the current line
+                newFile.write(line)
 
     # Done looping through the lines
 
     # Finish writing the current paragraph, list item, or sidebar
 
-    if (para_line != ""):
+    if para_line != "":
         newFile.write(para_line)
-    elif (list_item_line != ""):
+    elif list_item_line != "":
         newFile.write(list_item_line)
-    elif (sidebar_line != ""):
+    elif sidebar_line != "":
         newFile.write(sidebar_line)
 
     newFile.close()
