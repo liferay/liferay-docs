@@ -227,6 +227,9 @@ if __name__ == "__main__":
                         if "**Note:**" in stripped_line:
                             newFile.write("```note::\n")
                             stripped_line = stripped_line.replace("**Note:**", "", 1)
+                        elif "**Tip:**" in stripped_line:
+                            newFile.write("```tip::\n")
+                            stripped_line = stripped_line.replace("**Tip:**", "", 1)
                         elif "**Warning:**" in stripped_line:
                             newFile.write("```warning::\n")
                             stripped_line = stripped_line.replace("**Warning:**", "", 1)
@@ -236,12 +239,15 @@ if __name__ == "__main__":
                         elif "**Note**:" in stripped_line:
                             newFile.write("```note::\n")
                             stripped_line = stripped_line.replace("**Note**:", "", 1)
-                        elif "**Important**:" in stripped_line:
-                            newFile.write("```important::\n")
-                            stripped_line = stripped_line.replace("**Important**:", "", 1)
+                        elif "**Tip**:" in stripped_line:
+                            newFile.write("```tip::\n")
+                            stripped_line = stripped_line.replace("**Tip**:", "", 1)
                         elif "**Warning**:" in stripped_line:
                             newFile.write("```warning::\n")
                             stripped_line = stripped_line.replace("**Warning**:", "", 1)
+                        elif "**Important**:" in stripped_line:
+                            newFile.write("```important::\n")
+                            stripped_line = stripped_line.replace("**Important**:", "", 1)
                         else:
                             newFile.write("```note::\n")
 
