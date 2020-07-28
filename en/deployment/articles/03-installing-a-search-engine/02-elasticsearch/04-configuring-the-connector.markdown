@@ -142,7 +142,7 @@ file:
         operationMode="REMOTE"
         # If running Elasticsearch from a different computer:
         #transportAddresses="ip.of.elasticsearch.node:9300"
-        # Highly recommended for all non-prodcution usage (e.g., practice, tests, diagnostics):
+        # Highly recommended for all non-production usage (e.g., practice, tests, diagnostics):
         #logExceptionsOnly="false"
 
 3. Start @product@ or re-index if already running.
