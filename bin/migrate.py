@@ -28,7 +28,7 @@ def write_and_reset_string(line, newFile):
 if __name__ == "__main__":
 
     if (len(sys.argv) < 2):
-        print("Usage:\n\tpython migrate.py article [dest_folder]\n\nDescription:\n\tMigrates the article to an .md file and converts the content to liferay-learn Markdown/RST syntax. The converted article destination folder [dest_folder] is the current folder by default but is typically set to a liferay-learn folder.\n\n\tIMPORTANT: Run this script in the liferay-docs article's folder so that the script can use the image file paths found in the article to copy the image files to the [dest_folder]/images/ folder.")
+        print("Usage:\n\tpython migrate.py article [dest_folder]\n\nDescription:\n\tMigrates the article to an .md file and converts the content to liferay-learn Markdown/RST syntax. The converted article destination folder [dest_folder] is the current folder by default but is typically set to a liferay-learn folder.\n\n\tIMPORTANT: Run this script in the liferay-docs article's folder so that the script can use the image file paths found in the article to copy the image files to the [dest_folder]/[article_name]/images/ folder.")
         sys.exit()
 
     article = sys.argv[1]
@@ -40,9 +40,11 @@ if __name__ == "__main__":
     if not (os.path.isdir(dest_folder)):
         os.mkdir(dest_folder)
 
-    new_article_path = dest_folder + "/" + article.split('.markdown')[0] + ".md"
+    article_name = article.split('.markdown')[0]
 
-    # Copy referenced image files to [article destination folder]/images
+    new_article_path = dest_folder + "/" + article_name + ".md"
+
+    # Copy referenced image files to [article destination folder]/[article_name]/images
 
     file = open(article)
     content = file.read()
@@ -64,17 +66,21 @@ if __name__ == "__main__":
 
         ii = ii + 1
 
-    image_folder = dest_folder + "/images"
+    article_name_folder = dest_folder + "/" + article_name
+    images_folder = article_name_folder + "/images"
 
     if (len(images) > 0):
 
-        if not os.path.isdir(image_folder):
-            os.mkdir(image_folder)
+        if not os.path.isdir(article_name_folder):
+            os.mkdir(article_name_folder)
 
-        print("Writing images to folder: " + image_folder)
+        if not os.path.isdir(images_folder):
+            os.mkdir(images_folder)
+
+        print("Writing images to folder: " + images_folder)
 
     for ff in images:
-        shutil.copy(ff, image_folder)
+        shutil.copy(ff, images_folder)
 
     # Process the text
 
@@ -106,10 +112,12 @@ if __name__ == "__main__":
     in_code = False
     in_header_id = False
 
+    images_folder_path = "](./" + article_name + "/images/"
+
     for line in lines:
 
-        # Set all image file locations to the ./images/ folder
-        line = re.sub("\]\((../)+images/", "](./images/", line)
+        # Set all image file locations to the ./[article_name]/images/ folder
+        line = re.sub("\]\((../)+images/", images_folder_path, line)
 
         # Replace legacy tokens
         line = re.sub("@product@", "Liferay DXP", line)
