@@ -54,10 +54,9 @@ Here are the code upgrade steps:
             Configure your bundle URL that the @product@ bundle is downloaded
             from.{.summary}
 
-        2.  [Configure Target Platform Version](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment#configuring-target-platform-version){.title commandId=configure_target_platform_version}
+        2.  [Configure Workspace Product Key](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment#configuring-workspace-product-key){.title commandId=configure_workspace_product_key}
 
-            Configure your Target Platform version, which provides the specific
-            artifacts associated with a @product@ release.{.summary}
+            Configure your workspace by setting a product key, which automatically sets target platform version, docker image name, bundle url as well as other useful default settings for a specific @product@ release.{.summay}
 
         3.  [Initialize Server Bundle](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment#initializing-server-bundle){commandId=initialize_server_bundle}
 
