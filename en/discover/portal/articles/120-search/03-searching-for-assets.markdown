@@ -42,7 +42,7 @@ beckoning users to enter the search context.](../../images/search-bar.png)
 
 Liferay's search infrastructure supports full text search as implemented by its
 supported search engines 
-([Elasticsearch]((https://www.elastic.co/guide/en/elasticsearch/reference/6.5/full-text-queries.html)
+([Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/full-text-queries.html)
 and 
 [Solr](http://lucene.apache.org/solr/features.html)).
 

@@ -111,7 +111,7 @@ adapter in @product@.
 
 ## Install and Configure the Liferay Connector to X-Pack Security
 
-If you have a Liferay Enterprise Search Premium subscription, 
+If you have a Liferay Enterprise Search subscription, 
 [download](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
 the Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG
 file by copying it into the `Liferay Home/deploy` folder. 
