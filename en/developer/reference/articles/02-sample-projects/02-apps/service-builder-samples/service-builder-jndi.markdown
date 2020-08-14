@@ -6,18 +6,46 @@ header-id: service-builder-application-using-external-database-via-jndi
 
 [TOC levels=1-4]
 
-This sample demonstrates how to connect a Liferay Service Builder application to
-an external database via a JNDI connection. Here, an external database means any
+The `apps/service-builder/jndi` sample demonstrates how to connect a Liferay Service Builder application to
+an external database via a JNDI connection configured on the application server. Here, an external database means any
 database other than @product@'s database. For this sample to work correctly, you
-must prepare such an external database and configure @product@ to use it. Follow
-the steps below to make the required preparations before deploying the
+must prepare such an external database and configure your application server to use it.
+
+| **Important:** Connecting to an external data source using JNDI is broken in
+| Portal CE 7.2 GA1 and GA2, and in DXP 7.2 releases prior to FP5/SP2. See
+| [LPS-107733](https://issues.liferay.com/browse/LPS-107733) for details.
+
+Follow the steps below to make the required preparations before deploying the
 application.
 
-1.  Create the external database to which your Service Builder application will
-    connect. For example, create a MariaDB database called `external`. Add a
-    table to this database called `region` with a `BIGINT` column called `Id`
-    and a `VARCHAR(255)` column called `Name`. Add at least one record to this
-    table. Here are the MariaDB commands to accomplish this:
+1.  Create an external database based on sample application's `service.xml`.
+
+    `service.xml`:
+
+    ```xml
+    <?xml version="1.0"?>
+    <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
+
+    <service-builder package-path="com.liferay.blade.samples.jndiservicebuilder">
+    	<namespace>REGION</namespace>
+    	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="bar" tx-manager="sampleTransactionManager uuid="true"">-->
+    	<entity
+    		data-source="extDataSource"
+    		local-service="true"
+    		name="Region"
+    		remote-service="false"
+    		table="region"
+    		uuid="false"
+    	>
+    		<column db-name="id" name="regionId" primary="true" type="long" />
+    		<column db-name="name" name="regionName" type="String" />
+    	</entity>
+    </service-builder>
+    ```
+
+    The entity's data source name `extDataSource` is arbitrary but must be specified in the data source configuration in the application server (next step).
+
+    Here are MariaDB commands to create the database:
 
     ```bash
     create database external character set utf8;
@@ -29,14 +57,13 @@ application.
     insert into region(id, name) values(1, 'Tasmania');
     ```
 
-    Make sure that your database commands were successful: Running `select *
-    from region;` should return the record you added.
+    The database name is arbitrary; the data source configuration in your application server (next step), however, must specify this same database. The database table called `region` represents the service entity. The table has a `BIGINT` column called `Id` and a `VARCHAR(255)` column called `Name`.
 
-2.  Now you need to define a JNDI connection to your database. The way this is
-    done depends on your application server. Here we demonstrate how to specify
-    the JNDI connection for Tomcat. First, open your
-    `[LIFERAY_HOME]/tomcat-9.0.6/conf/server.xml` file and add this resource
-    element inside of the `<GlobalNamingResources>` element:
+    Add at least one record to this table. Running `select * from region;` should return the record you added.
+
+1.  In your application server configuration, define a JNDI connection to your database and map it to the `data-source` name (i.e., `extDataSource`) that the sample `service.xml` entities specify.
+
+    For example, if Tomcat is your application server, open your `[LIFERAY_HOME]/tomcat-version/conf/server.xml` file and add a `Resource` element like this one inside of the `<GlobalNamingResources>` element:
 
     ```xml
     <Resource
@@ -45,20 +72,18 @@ application.
         type="javax.sql.DataSource"
         factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
         driverClassName="org.mariadb.jdbc.Driver"
-        url="jdbc:mariadb://localhost/external"
-        username="yourusername"
-        password="yourpassword"
+        url="jdbc:mariadb://localhost/external?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false"
+        username="[place user name here]"
+        password="[place password here]"
         maxActive="20"
         maxIdle="5"
         maxWait="10000"
     />
     ```
 
-    Replace the specified username and password with the correct values for your
-    database.
+    Replace the user name and password values and see the [Database Templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates) for the URL parameters to use for your database.
 
-3.  Open your `[LIFERAY_HOME]/tomcat-9.0.6/conf/context.xml` file and add this
-    resource link element inside of the `<Context>` element:
+1.  If you are using Tomcat, open your `[LIFERAY_HOME]/tomcat-version/conf/context.xml` file and add this resource link element inside of the `<Context>` element:
 
     ```xml
     <ResourceLink name="jdbc/externalDataSource" global="jdbc/externalDataSource" type="javax.sql.DataSource"/>
@@ -66,7 +91,7 @@ application.
 
     Now your data source is defined at Tomcat's scope.
 
-4.  Create a `com.liferay.blade.samples.jndiservicebuilder.service-log4j-ext.xml`
+1.  Create a `com.liferay.blade.samples.jndiservicebuilder.service-log4j-ext.xml`
     in your @product@ instance's `[LIFERAY_HOME]/osgi/log4` folder. Create this
     folder if it doesn't yet exist. Add this content to the XML file that you
     created:
@@ -137,4 +162,8 @@ are two examples of the persistence layer helper methods that Service Builder
 generates. This is the technique used by the sample application to actually
 display the data. The portlet's `view.jsp` uses the `<search-container>` JSP tag
 to display a list of results. The results are obtained by the
-`UseJNDI.getRegions` method mentioned above. 
+`UseJNDI.getRegions` method mentioned above.
+
+## Additional Information
+
+* [Connecting to an External Data Source](/docs/7-2/appdev/-/knowledge_base/a/connecting-service-builder-to-an-external-database)
