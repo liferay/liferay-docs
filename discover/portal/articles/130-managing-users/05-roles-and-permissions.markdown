@@ -66,8 +66,8 @@ name is displayed. When you finish, click *Save*.
 | 
 | Read [here](/docs/7-0/user/-/knowledge_base/u/creating-teams-for-advanced-site-membership-management) For more information about teams.
 
-After you save, your role is added to the exiting list of roles. To see what
-functions you can perform on your new role, click the *Actions* button.
+After you save, your role is added to the list of roles. To see what functions
+you can perform on your new role, click the *Actions* button.
 
 **Edit:** lets you change the name, title or description of the role.
 
