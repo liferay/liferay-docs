@@ -40,7 +40,7 @@ choose the one that best fits your needs. If you don't currently have an
 application server preference, consider starting with the Tomcat bundle. Tomcat
 is one of the most lightweight and straightforward bundles to configure. If you
 have an open source application server preference, choose the server you prefer
-from the available @product@ bundles. @product@ requires a Java JDK 8 or 11. 
+from the available @product@ bundles. @product@ requires a Java JDK 8 or 11.
 
 | **Note:** Please see [the compatibility matrix](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.1+Compatibility+Matrix.pdf/c8805b72-c693-1f26-3f2d-731ffc301366) for information on supported JDKs, databases, and environments.
 
@@ -82,7 +82,7 @@ installation steps:
     application server (further instructions below).
 
 4.  Choose IPv4 or IPv6. Determine which address format is best for your network
-    (further instructions below). 
+    (further instructions below).
 
 5.  Determine how you'll configure Elasticsearch. @product@'s default embedded
     configuration is not supported for production use, so you must install
@@ -129,6 +129,10 @@ steps:
 2.  Create a database user for accessing this database. Grant this database user
     all rights, including the rights to create and drop tables, to the blank
     @product@ database.
+
+    | **Important:** Liferay requires reading from and writing to the database.
+    | The Liferay database user must therefore have permissions to read and
+    | write data.
 
 @product@ uses this database user's credentials to connect to the @product@
 database either directly or through its application server. During its initial
@@ -195,7 +199,7 @@ setting the `dl.store.impl=` property. Available options are Simple File System
 Store, Advanced File System Store, CMIS Store, DBStore, JCRStore, and Amazon
 S3Store. In addition, @product@ can be connected to various open source and
 enterprise-level document repositories. All of the repositories are connected to
-@product@ through hooks available on Liferay Marketplace (see below). 
+@product@ through hooks available on Liferay Marketplace (see below).
 
 Once you have your database and document repository ready, you can install
 @product@ on your server.
@@ -205,7 +209,7 @@ Once you have your database and document repository ready, you can install
 @product@ uses a mail server to send email notifications. As part of the
 install, therefore, you will need to have credentials that @product@ can use to
 connect to your mail server. Specifically, you'll need to have the following
-information: 
+information:
 
 - Incoming POP Server and port
 - POP User Name
@@ -215,7 +219,7 @@ information:
 - SMTP Password
 - A list of JavaMail properties that would override a default configuration
 
-Once you've gathered this information, you're ready to move on to the next step. 
+Once you've gathered this information, you're ready to move on to the next step.
 
 ## Step 3: Install
 
@@ -223,26 +227,26 @@ The next step is to install @product@. You can do this in one of two ways: by
 [installing @product@ bundled with an application server](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay),
 or by
 [installing @product@ manually on an existing application server](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-manually).
-Each @product@ installation's 
+Each @product@ installation's
 [Liferay Home contains several folders](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home).
 
 By far the easiest way to get @product@ installed is to use a bundle. Though
 bundles are pre-packaged for demo purposes, it is very easy to turn them into
-full, production-ready @product@ instances.  
+full, production-ready @product@ instances.
 
 ## Step 4: Network Configuration
 
 @product@ supports both IPv4 and IPv6 address formats. You must
 [choose between IPv4 or IPv6](/docs/7-0/deploy/-/knowledge_base/d/choosing-ipv4-or-ipv6).
-By default, @product@ uses IPv4 addresses. If you are using IPv6, you will have to configure @product@. There are two simple steps. 
+By default, @product@ uses IPv4 addresses. If you are using IPv6, you will have to configure @product@. There are two simple steps.
 
 1.  In the application server's environment settings, set
-    `-Djava.net.preferIPv4Stack=false`. 
+    `-Djava.net.preferIPv4Stack=false`.
 
 2.  Create a `portal-ext.properties` file in your portal's
     [Liferay Home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
     (if one does not already exist) and set the `tunnel.servlet.hosts.allowed`
-    property to the target hosts you want to allow (e.g., _0:0:0:0:0:0:0:1_). 
+    property to the target hosts you want to allow (e.g., _0:0:0:0:0:0:0:1_).
 
 ## Step 5: Configure Elasticsearch
 
@@ -270,14 +274,14 @@ Liferay Marketplace. Some of the key features the Marketplace plugin enables are
 
 The portal installation process deploys and registers the Marketplace plugin
 automatically. If you're installing @product@ in an environment that would
-prevent this from happening, you'll have to perform one of several workarounds. 
+prevent this from happening, you'll have to perform one of several workarounds.
 
 Now that you know where you're headed, you can install @product@. If you have
 decided to install @product@ using a bundle, continue with the next section. If
 you're installing @product@ manually, skip to the section for your application
 server of choice. Once you have @product@ installed manually or via a bundle,
-you can move on to 
+you can move on to
 [using @product@'s Setup Wizard](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay##using-liferays-setup-wizard),
 [configuring mail](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#configuring-mail),
-and 
-[installing Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch). 
+and
+[installing Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch).
