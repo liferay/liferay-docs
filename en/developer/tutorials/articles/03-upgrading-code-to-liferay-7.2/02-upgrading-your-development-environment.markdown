@@ -52,29 +52,10 @@ workspace is imported into the Project Explorer.
 For more information importing a workspace into your IDE, see
 [this article](/docs/7-2/reference/-/knowledge_base/r/importing-projects-in-dev-studio).
 
-
-
 ## Configuring Liferay Workspace Settings
 
 You must configure your workspace with the @product@ version you intend to
-upgrade to. You should verify the workspace's
-
-- Bundle URL
-- Target Platform Version
-
-The bundle URL version and target platform version must match.
-
-Visit these steps to begin.
-
-### Configuring Bundle URL
-
-The bundle URL points to the @product@ version you want workspace to download.
-When initiating this step, your workspace's Bundle URL property is updated to
-the latest release of @product-ver@.
-
-For more information on configuring a workspace's bundle URL, see the
-[Adding a Liferay Bundle to Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/adding-a-liferay-bundle-to-liferay-workspace)
-article.
+upgrade to. You should verify the workspace's Target Platform Version.
 
 ### Configuring Target Platform Version
 
