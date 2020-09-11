@@ -55,22 +55,13 @@ For more information importing a workspace into your IDE, see
 ## Configuring Liferay Workspace Settings
 
 You must configure your workspace with the @product@ version you intend to
-upgrade to. You should verify the workspace's Target Platform Version.
+upgrade to.
 
-### Configuring Target Platform Version
+### Configure Workspace Product Key
 
-The target platform is the @product@ version you intend to develop for in your
-workspace. This is used to specify dependencies associated with a specific
-release. You set the target platform, define your dependencies, and workspace
-automatically assigns the dependency versions based on the set @product@
-version. When initiating this step, your workspace's Target Platform property is
-updated to the latest release of @product-ver@.
+Configure your workspace by setting a product key. This automatically sets the Target Platform version, Docker image name, bundle URL, and other default settings for the @product@ release.
 
-For more information on this, see the
-[Managing the Target Platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform)
-article.
-
-## Initializing Server Bundle
+### Initializing Server Bundle
 
 Once your workspace is configured for the @product@ version you're upgrading to,
 you can initialize the server bundle. This involves downloading the bundle and

@@ -49,9 +49,9 @@ Here are the code upgrade steps:
         Set the @product@ version in workspace's configuration you intend to
         upgrade to.{.summary}
 
-        1.  [Configure Workspace Product Key](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment#configuring-target-platform-version){.title commandId=configure_workspace_product_key}
+        1.  [Configure Workspace Product Key](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment#configure-workspace-product-key){.title commandId=configure_workspace_product_key}
 
-            Configure your workspace by setting a product key, which automatically sets target platform version, docker image name, bundle url as well as other useful default settings for a specific @product@ release.{.summay}
+            Configure your workspace by setting a product key.{.summay}
 
         2.  [Initialize Server Bundle](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment#initializing-server-bundle){commandId=initialize_server_bundle}
 
