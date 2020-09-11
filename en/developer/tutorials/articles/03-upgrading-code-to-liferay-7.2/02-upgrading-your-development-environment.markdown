@@ -52,44 +52,16 @@ workspace is imported into the Project Explorer.
 For more information importing a workspace into your IDE, see
 [this article](/docs/7-2/reference/-/knowledge_base/r/importing-projects-in-dev-studio).
 
-
-
 ## Configuring Liferay Workspace Settings
 
 You must configure your workspace with the @product@ version you intend to
-upgrade to. You should verify the workspace's
+upgrade to.
 
-- Bundle URL
-- Target Platform Version
+### Configure Workspace Product Key
 
-The bundle URL version and target platform version must match.
+Configure your workspace by setting a product key. This automatically sets the Target Platform version, Docker image name, bundle URL, and other default settings for the @product@ release.
 
-Visit these steps to begin.
-
-### Configuring Bundle URL
-
-The bundle URL points to the @product@ version you want workspace to download.
-When initiating this step, your workspace's Bundle URL property is updated to
-the latest release of @product-ver@.
-
-For more information on configuring a workspace's bundle URL, see the
-[Adding a Liferay Bundle to Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/adding-a-liferay-bundle-to-liferay-workspace)
-article.
-
-### Configuring Target Platform Version
-
-The target platform is the @product@ version you intend to develop for in your
-workspace. This is used to specify dependencies associated with a specific
-release. You set the target platform, define your dependencies, and workspace
-automatically assigns the dependency versions based on the set @product@
-version. When initiating this step, your workspace's Target Platform property is
-updated to the latest release of @product-ver@.
-
-For more information on this, see the
-[Managing the Target Platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform)
-article.
-
-## Initializing Server Bundle
+### Initializing Server Bundle
 
 Once your workspace is configured for the @product@ version you're upgrading to,
 you can initialize the server bundle. This involves downloading the bundle and
