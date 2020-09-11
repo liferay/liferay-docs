@@ -13,7 +13,7 @@ header-id: installing-liferay-on-wildfly-10
 (Portal CE). The Wildfly bundle contains JARs, scripts, and configuration files
 required for deploying @product-ver@. Copying these files from the @product@
 Wildfly bundle facilitates installing @product@ on an existing Wildfly
-application server. 
+application server.
 
 Whether you copy bundle files (recommended) or download and create the files,
 you must download these *Additional Files* for
@@ -48,7 +48,7 @@ third-parties, as described below.
 
 1. Create the folder `$WILDFLY_HOME/modules/com/liferay/portal/main`. Unzip the
    the @product@ Dependencies zip file and copy the `.jar` files to this
-   folder. 
+   folder.
 
 2. Download your database driver `.jar` file and copy it into the
    same folder. For example, for MySQL,
@@ -56,7 +56,7 @@ third-parties, as described below.
    and put its `.jar` file into the
    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder.
 
-3. Download the remaining required JAR and insert it into the same folder. 
+3. Download the remaining required JAR and insert it into the same folder.
 
     - [`com.liferay.registry.api.jar`](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
 
@@ -87,7 +87,7 @@ third-parties, as described below.
         </module>
 
     Make sure to replace `[version]` with the correct version of the MySQL JDBC
-    driver. If you are using a different database, replace the MySQL `.jar` with 
+    driver. If you are using a different database, replace the MySQL `.jar` with
     the driver JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
 5. Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
@@ -96,9 +96,9 @@ third-parties, as described below.
     @product@ requires an OSGi runtime, and the `osgi` folder provides this with
     many required JAR files and configuration files.
 
-Checkpoint: 
+Checkpoint:
 
-1. At this point, you should have the following files in the 
+1. At this point, you should have the following files in the
 `$WILDFLY_HOME/modules/com/liferay/portal/main` folder:
 
 - `com.liferay.registry.api.jar`
@@ -116,7 +116,7 @@ Checkpoint:
 - `target-platform`
 - `test`
 
-Great! You have your `.jar` files ready. 
+Great! You have your `.jar` files ready.
 
 ## Running @product@ on Wildfly 10.0 in Standalone Mode vs. Domain Mode
 
@@ -162,6 +162,12 @@ your `$WILDFLY_HOME/modules/`. You'll begin with making changes to
 `standalone.xml`.
 
 Make the following modifications to `standalone.xml`:
+
+1.  In the `<jsp-configuration>` tag, set the Java VM compatibility for Liferay source and class files. They are compatible with Java 8 by default.
+
+    ```xml
+    <jsp-configuration development="true" source-vm="1.8" target-vm="1.8" />
+    ```
 
 1. Locate the closing `</extensions>` tag. Directly beneath that tag, insert the
    following system properties:
@@ -215,12 +221,12 @@ Before continuing, verify the following properties have been set in the `standal
 5. `<jsp-config development>` has been set to `true`.
 
 Now it's time for some changes to your configuration and startup scripts.
- 
+
 Make the following modifications to your standalone domain's configuration
 script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
 `$WILDFLY_HOME/bin/` folder.
 
-These modifications change the following options: 
+These modifications change the following options:
 - Set the file encoding
 - Set the user time-zone
 - Set the preferred protocol stack
@@ -238,7 +244,7 @@ Then add the following `JAVA_OPTS` assignment one line above the
 
         set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$WILDFLY_HOME/bin/server.policy -Dwildfly.home.dir=$WILDFLY_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m"
 
-On Unix, merge the following values into your settings for `JAVA_OPTS`, 
+On Unix, merge the following values into your settings for `JAVA_OPTS`,
 replacing any matching attributes with the ones found in the assignment
 below:
 
@@ -249,32 +255,32 @@ below:
 
 Make sure you replace the `$WILDFLY_HOME` references with the appropriate
 directory. You'll notice some Java security options. You'll finish configuring
-the Java security options in the *Security Configuration* section. 
+the Java security options in the *Security Configuration* section.
 
 | **Note:** If you plan on using the IBM JDK with your Wildfly server, you'll need
 | to complete some additional steps. First, navigate to the
 | `$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
 | following dependency within the `<dependencies>` element:
-| 
+|
 |     <module name="ibm.jdk" />
-| 
+|
 | Then navigate to the
 | `$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
 | insert the following path names inside the `<paths>...</paths>` element:
-| 
+|
 |     <path name="com/sun/crypto" />
 |     <path name="com/sun/crypto/provider" />
 |     <path name="com/sun/image/codec/jpeg" />
 |     <path name="com/sun/org/apache/xml/internal/resolver" />
 |     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-| 
+|
 | The added paths resolve issues with portal deployment exceptions and image
 | uploading problems on a @product@ instance running on Wildfly 10.0.x.
 
-Checkpoint: 
+Checkpoint:
 
 At this point, you'll have finished configuring the application
-server's JVM settings. 
+server's JVM settings.
 
 1. The file encoding, user time-zone, preferred protocol stack have been set in
    the `JAVA_OPTS` in the `standalone.conf.bat` file.
@@ -285,7 +291,7 @@ server's JVM settings.
    `$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file.
 
 The prescribed script modifications are now complete for your @product@
-installation on Wildfly. Next you'll configure mail and the database. 
+installation on Wildfly. Next you'll configure mail and the database.
 
 ## Database Configuration
 
@@ -308,7 +314,7 @@ Modify `standalone.xml` and add your data source and driver in the
         </datasource>
 
     Be sure to replace the database name (i.e. `lportal`), user name, and
-    password with the appropriate values. 
+    password with the appropriate values.
 
     | **Note:** If you'd like to change your datasource `jndi-name` to something
     | different, you'll need to also edit the `datasource` element in the
@@ -339,7 +345,7 @@ Your final data sources subsystem should look like this:
             </datasources>
         </subsystem>
 
-Now that you've configured your data source, the mail session is next. 
+Now that you've configured your data source, the mail session is next.
 
 ## Mail Configuration
 
@@ -360,7 +366,7 @@ Specify your mail subsystem in `standalone.xml` as in the following example:
             <remote-destination host="smtp.gmail.com" port="465"/>
         </outbound-socket-binding>
     </socket-binding-group>
- 
+
 You've got mail! Next, you'll make sure @product@ can connect using your new mail
 session and database.
 
