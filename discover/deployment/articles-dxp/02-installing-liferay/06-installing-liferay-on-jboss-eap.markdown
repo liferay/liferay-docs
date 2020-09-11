@@ -14,8 +14,8 @@ Installing @product@ manually requires these basic steps:
 
 In this article, you'll step through these basic steps and install @product@ on
 your existing JBoss EAP 6.4 application server. Before proceeding, you must
-[download](https://customer.liferay.com/downloads) 
-these *Additional Files*: 
+[download](https://customer.liferay.com/downloads)
+these *Additional Files*:
 
 - @product@ WAR file
 - Dependencies ZIP file
@@ -37,17 +37,17 @@ download the required JARs from third-parties, as described below.
 
 1. Create the folder `$JBOSS_HOME/modules/com/liferay/portal/main`. Unzip the
    the @product@ Dependencies zip file and copy the `.jar` files to this
-   folder. 
+   folder.
 
 2. Download your database driver `.jar` file and copy it into the
-   same folder. For example, for MySQL, 
+   same folder. For example, for MySQL,
    [download the MySQL Connector/J driver](http://dev.mysql.com/downloads/connector/j/).
    and put its `.jar` file into the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
 3. Download the
    [com.liferay.registry.api.jar](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
-   JAR and insert it into the same folder. 
+   JAR and insert it into the same folder.
 
 4. Create the file `module.xml` in the
    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the
@@ -72,7 +72,7 @@ download the required JARs from third-parties, as described below.
         </module>
 
     Make sure to replace `[version]` with the correct version of the MySQL JDBC
-    driver. If you are using a different database, replace the MySQL `.jar` with 
+    driver. If you are using a different database, replace the MySQL `.jar` with
     the driver JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
 5. Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
@@ -82,21 +82,21 @@ download the required JARs from third-parties, as described below.
     many required JAR files and configuration files.
 
 
-Checkpoint: 
+Checkpoint:
 1. Inside the `$JBOSS_HOME/modules/com/liferay/portal/main` folder,
-   verify that the following are present: 
+   verify that the following are present:
 
-   a. `com.liferay.registry.api.jar` 
-   b. `portal-kernel.jar` 
-   c. `portlet.jar` 
+   a. `com.liferay.registry.api.jar`
+   b. `portal-kernel.jar`
+   c. `portlet.jar`
    d. (database of your choice `jar`) (e.g. MySQL, SQL Server...)
 
 2. Inside the `osgi` folder, verify the following folders are present:
 
-   a. `configs` 
-   b. `core` 
-   c. `marketplace` 
-   d. `target-platform` 
+   a. `configs`
+   b. `core`
+   c. `marketplace`
+   d. `target-platform`
    e. `test`
 
 ## Running @product@ on JBoss EAP 6.4 in Standalone Mode vs. Domain Mode
@@ -144,6 +144,12 @@ your `$JBOSS_HOME/modules/`. You'll begin with making changes to
 
 Make the following modifications to `standalone.xml`:
 
+1.  In the `<jsp-configuration>` tag, set the Java VM compatibility for Liferay source and class files. They are compatible with Java 8 by default.
+
+    ```xml
+    <jsp-configuration development="true" source-vm="1.8" target-vm="1.8" />
+    ```
+
 1. Locate the closing `</extensions>` tag. Directly beneath that tag, insert the
    following system properties:
 
@@ -186,23 +192,23 @@ Make the following modifications to `standalone.xml`:
 
 Checkpoint:
 
-1. The `standalone.xml` has been modified with the following values: 
+1. The `standalone.xml` has been modified with the following values:
 
-    a. `deployment-timeout="360"` has been set. The value is in seconds.    
-     b. The JAAS security domain has been added.    
-     c. The property `enable-welcome-root="false"` has been set.    
+    a. `deployment-timeout="360"` has been set. The value is in seconds.
+     b. The JAAS security domain has been added.
+     c. The property `enable-welcome-root="false"` has been set.
      d. The property `jsp-configuration source-vm="1.8" target-vm="1.8" development="true"` has been set in the
     `<configuration>` element. This is required because @product@ runs on Java
     JDK 1.8 or else there will be a JasperException and the instance will fail
     to start.
 
 Now it's time for some changes to your configuration and startup scripts.
- 
+
 Make the following modifications to your standalone domain's configuration
 script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
 `$JBOSS_HOME/bin/` folder.
 
-These modifications change the following options: 
+These modifications change the following options:
 - Set the file encoding
 - Set the user time-zone
 - Set the preferred protocol stack
@@ -220,7 +226,7 @@ Then add the following `JAVA_OPTS` assignment one line above the
 
     set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m"
 
-On Unix, merge the following values into your settings for `JAVA_OPTS`, 
+On Unix, merge the following values into your settings for `JAVA_OPTS`,
 replacing any matching attributes with the ones found in the assignment
 below:
 
@@ -231,37 +237,37 @@ below:
 
 Make sure you replace the `$JBOSS_HOME` references with the appropriate
 directory. You'll notice some Java security options. You'll finish configuring
-the Java security options in the *Security Configuration* section. 
+the Java security options in the *Security Configuration* section.
 
 | **Note:** If you plan on using the IBM JDK with your JBoss server, you'll need
 | to complete some additional steps. First, navigate to the
 | `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
 | following dependency within the `<dependencies>` element:
-| 
+|
 |     <module name="ibm.jdk" />
-| 
+|
 | Then navigate to the
 | `$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
 | insert the following path names inside the `<paths>...</paths>` element:
-| 
+|
 |     <path name="com/sun/crypto" />
 |     <path name="com/sun/crypto/provider" />
 |     <path name="com/sun/image/codec/jpeg" />
 |     <path name="com/sun/org/apache/xml/internal/resolver" />
 |     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-| 
+|
 | The added paths resolve issues with portal deployment exceptions and image
 | uploading problems on a @product@ instance running on JBoss EAP 6.4.
 
 Checkpoint:
 
-1.  The `standalone.conf.bat` file has been updated with the following changes: 
+1.  The `standalone.conf.bat` file has been updated with the following changes:
 
-    a. UTF-8 file encoding 
-    b. The user time-zone 
-    c. The preferred protocol stack 
+    a. UTF-8 file encoding
+    b. The user time-zone
+    c. The preferred protocol stack
     d. Increased the default amount of memory available.
- 
+
 2.  If using the IBM JDK with the JBoss server, `<module name="ibm.jdk" />` has
     been added to the `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file.
 
@@ -269,7 +275,7 @@ Checkpoint:
     `$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file.
 
 The prescribed script modifications are now complete for your @product@
-installation on JBoss. Next you'll configure mail and the database. 
+installation on JBoss. Next you'll configure mail and the database.
 
 ## Database Configuration
 
@@ -292,7 +298,7 @@ Modify `standalone.xml` and add your data source and driver in the
         </datasource>
 
     Be sure to replace the database name (i.e. `lportal`), user name, and
-    password with the appropriate values. 
+    password with the appropriate values.
 
     | **Note:** If you'd like to change your datasource `jndi-name` to something
     | different, you'll need to also edit the `datasource` element in the
@@ -323,7 +329,7 @@ Your final data sources subsystem should look like this:
             </datasources>
         </subsystem>
 
-Now that you've configured your data source, the mail session is next. 
+Now that you've configured your data source, the mail session is next.
 
 ## Mail Configuration
 
@@ -346,7 +352,7 @@ Specify your mail subsystem in `standalone.xml` as in the following example:
             <remote-destination host="smtp.gmail.com" port="465"/>
         </outbound-socket-binding>
     </socket-binding-group>
- 
+
 You've got mail! Next, you'll make sure @product@ can connect using your new mail
 session and database.
 
@@ -439,13 +445,13 @@ The JBoss application server starts and deploys @product@.
 | stability timeout (the default is `300` seconds). If container stability times
 | out during startup, all applications are undeployed and the container shuts
 | down. The error message looks like this:
-| 
+|
 |     12:21:13,956 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) JBAS013412: Timeout after [300] seconds waiting for service container stability. Operation will roll back. Step that first updated the service container was 'add' at address '[("interface" => "management")]'
-| 
+|
 | JBoss CLI, Java options, and `.conf` files let you modify the timeout
 | (e.g., increase the timeout to give the container more time to stabilize).
 | Here's a `900` second timeout set in a `.conf` file property.
-| 
+|
 |     ...
 |     </extensions>
 |     <system-properties>
@@ -453,7 +459,7 @@ The JBoss application server starts and deploys @product@.
 |     </system-properties>
 |     <management>
 |     ...
-| 
+|
 | [JBoss documentation](https://access.redhat.com/solutions/1190323)
 | has more details.
 
