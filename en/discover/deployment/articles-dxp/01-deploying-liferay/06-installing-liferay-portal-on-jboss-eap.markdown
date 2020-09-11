@@ -12,7 +12,7 @@ Installing @product@ on JBoss EAP 7.1 takes three steps:
 - [Configuring your application server for @product@](#configuring-jboss)
 - [Installing the @product@ WAR file to your application server](#deploying-product)
 
-Before proceeding, download these files from the 
+Before proceeding, download these files from the
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1):
 
 - @product@ WAR file
@@ -31,7 +31,7 @@ your JBoss server folder. This folder is usually named `jboss-eap-[version]`.
 
 ## Installing Dependencies
 
-@product@ depends on several Liferay-specific and third-party JARs. 
+@product@ depends on several Liferay-specific and third-party JARs.
 Download and install the required JARs as described below.
 
 1.  Create the folder `$JBOSS_HOME/modules/com/liferay/portal/main` if it
@@ -103,7 +103,7 @@ files (exploded or non-exploded). This prevents JSP hooks and Ext plugins from
 working as intended. For example, JSP hooks don't work on JBoss EAP running in
 managed domain mode, since @product@'s JSP override mechanism relies on the
 application server. Since both of these features are deprecated, however, you
-may not be using them. 
+may not be using them.
 
 The command line interface is recommended for domain mode deployments.
 
@@ -132,6 +132,12 @@ Start with configuring JBoss to run @product@.
 Make the following modifications to
 `$JBOSS_HOME/standalone/configuration/standalone.xml`:
 
+1.  In the `<jsp-configuration>` tag, set the Java VM compatibility for Liferay source and class files. They are compatible with Java 8 by default.
+
+    ```xml
+    <jsp-configuration development="true" source-vm="1.8" target-vm="1.8" />
+    ```
+
 1.  Locate the closing `</extensions>` tag. Directly beneath that tag, insert
     these system properties:
 
@@ -142,7 +148,7 @@ Make the following modifications to
 
 2.  Add the following `<filter-spec>` tag within the `<console-handler>` tag,
     directly below the `<level name="INFO"/>` tag:
-        
+
         <filter-spec value="not(any(match(&quot;WFLYSRV0059&quot;),match(&quot;WFLYEE0007&quot;)))" />
 
 3.  Add a timeout for the deployment scanner by setting
@@ -196,7 +202,7 @@ Before continuing, verify the following properties have been set in the
 6.  The `<jsp-config>` tag contains its new attributes.
 
 Now you should configure your JVM and startup scripts.
- 
+
 In the `$JBOSS_HOME/bin` folder, you must make these modifications to your
 standalone domain's configuration script file `standalone.conf`
 (`standalone.conf.bat` on Windows):
@@ -244,26 +250,26 @@ Make the following edits as applicable to your operating system:
 | complete some additional steps. First, navigate to the
 | `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
 | following dependency within the `<dependencies>` element:
-| 
+|
 |     <module name="ibm.jdk" />
-| 
+|
 | Then navigate to the
 | `$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
 | insert the following path names inside the `<paths>...</paths>` element:
-| 
+|
 |     <path name="com/sun/crypto" />
 |     <path name="com/sun/crypto/provider" />
 |     <path name="com/sun/image/codec/jpeg" />
 |     <path name="com/sun/org/apache/xml/internal/resolver" />
 |     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-| 
+|
 | The added paths resolve issues with portal deployment exceptions and image
 | uploading problems.
 
 **Checkpoint:**
 
 At this point, you've finished configuring the application server's JVM
-settings. 
+settings.
 
 1.  The file encoding, user time-zone, preferred protocol stack have been set in
     the `JAVA_OPTS` in the `standalone.conf.bat` file.
@@ -271,12 +277,12 @@ settings.
 2.  The default amount of memory available has been increased.
 
 The prescribed script modifications are now complete for your @product@
-installation on JBoss. Next you'll configure the database and mail. 
+installation on JBoss. Next you'll configure the database and mail.
 
 ## Database Configuration
 
 The easiest way to handle your database configuration is to let @product@ manage
-your data source. The 
+your data source. The
 [Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-the-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
@@ -337,7 +343,7 @@ If you want JBoss to manage your data source, follow these steps:
 
         jdbc.default.jndi.name=java:jboss/datasources/ExampleDS
 
-Now that you've configured your data source, the mail session is next. 
+Now that you've configured your data source, the mail session is next.
 
 ## Mail Configuration
 
@@ -371,7 +377,7 @@ If you want to manage your mail session with JBoss, follow these steps:
     session:
 
         mail.session.jndi.name=java:jboss/mail/MailSession
- 
+
 You've got mail! Next, you'll deploy @product@ to your JBoss app server.
 
 ## Deploying @product@
@@ -397,7 +403,7 @@ Congratulations; you've now deployed @product@ on JBoss!
 | as the ones below, involving `PhaseOptimizer`. These are benign and can be
 | ignored. Make sure to adjust your app server's logging level or log filters to
 | avoid excessive benign log messages.
-| 
+|
 |     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
 |     WARNING: Skipping pass gatherExternProperties
 |     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
