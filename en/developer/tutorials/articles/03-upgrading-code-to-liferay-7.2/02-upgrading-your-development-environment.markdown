@@ -76,3 +76,7 @@ this by right-clicking the workspace project and selecting *Liferay* &rarr;
 article if you use IntelliJ instead. Visit the
 [Managing Your Liferay Server with Blade CLI](/docs/7-2/reference/-/knowledge_base/r/managing-your-liferay-server-with-blade-cli)
 article for information on how to do this via the command line.
+
+### Migrate .cfg Files to .config Files
+
+`.config` files are preferred over `.cfg` files because they allow specifying a property value's type, and allow multi-valued properties.
