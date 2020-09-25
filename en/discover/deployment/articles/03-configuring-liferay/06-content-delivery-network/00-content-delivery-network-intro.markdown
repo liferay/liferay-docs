@@ -97,9 +97,16 @@ These properties are exactly the same as the ones you can specify in your
 `portal-ext.properties`. Make sure to visit the Content Delivery Network section
 of the
 [portal.properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network)
-reference document if you don't know how to fill in the CDN fields. Once you're
-finished, click *Save* and your old host is replaced with your new CDN host for
-static content.
+reference document if you don't know how to fill in the CDN fields. 
+
+Make sure to specify your CDN host(s) with a URL that includes the protocol and domain.
+
+Examples,
+
+*CDN Host HTTP:* `http://cdnhost1.liferay.com`  
+*CDN Host HTTP:* `https://cdnhost2.liferay.com`
+
+Once you're finished, click *Save* and your old host is replaced with your new CDN host for static content.
 
 As you can see, configuring a CDN is easy and can drastically reduce latency
 time and improve performance.
