@@ -100,6 +100,13 @@ notice three fields related to CDNs:
 These properties are exactly the same as the ones you can specify in your
 `portal-ext.properties`. Make sure to visit the CDN section of the Properties
 Document referenced previously if you don't know how to fill in the CDN fields.
+Make sure to specify your CDN host(s) with a URL that includes the protocol and domain.
+
+Examples,
+
+*CDN Host HTTP:* `http://cdnhost1.liferay.com`  
+*CDN Host HTTP:* `https://cdnhost2.liferay.com`
+
 Once you're finished, click *Save* and your old host is replaced with your new
 CDN host for static content.
 
