@@ -6,6 +6,10 @@ header-id: exporting-packages
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/liferay-internals/fundamentals/exporting-packages.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 An OSGi bundle's Java packages are private by default. To expose a package, you
 must explicitly export it. This way you share only the classes you want to
 share. Exporting a package in your OSGi bundle (bundle) manifest makes all the
@@ -36,10 +40,10 @@ or
 use
 [bnd](http://bnd.bndtools.org/).
 On building such a project's module JAR, bnd propagates the OSGi headers from
-the project's `bnd.bnd` file to the JAR's `META-INF/MANIFEST.MF`.  
+the project's `bnd.bnd` file to the JAR's `META-INF/MANIFEST.MF`.
 
 In module projects that don't use bnd, you must manually add package exports to
-an `Export-Package` header in the module JAR's `META-INF/MANIFEST.MF`. 
+an `Export-Package` header in the module JAR's `META-INF/MANIFEST.MF`.
 
 In plugin WAR projects, you must add package exports to an
 `Export-Package` header in the project's `WEB-INF/liferay-plugin-package.properties`. On
@@ -51,21 +55,21 @@ file to the `META-INF/MANIFEST.MF` file in the generated Web Application Bundle 
 | **Note:** bnd makes a module's exported packages *substitutable*. That is, the
 | OSGi framework can substitute your module's exported package with a compatible
 | package of the same name, but potentially different version, that's exported
-| from a different OSGi bundle. bnd enables this for your module by 
+| from a different OSGi bundle. bnd enables this for your module by
 | automatically making your module import every package it exports. In this way,
 | your module can work on its own, but can also work in conjunction with bundles
-| that provide a different (compatible) version, or even the same version, of 
-| the package. A package from another bundle might provide better "wiring" 
+| that provide a different (compatible) version, or even the same version, of
+| the package. A package from another bundle might provide better "wiring"
 | opportunities with other bundles.
 | [Peter Kriens' blog post](http://blog.osgi.org/2007/04/importance-of-exporting-nd-importing.html)
 | provides more details on how substitutable exports works.
 
-| **Important:** Don't export the same package from different JARs. Multiple 
-| exports of the same package leads to "split package" issues, whose side 
-| affects differ from case to case. 
+| **Important:** Don't export the same package from different JARs. Multiple
+| exports of the same package leads to "split package" issues, whose side
+| affects differ from case to case.
 
 Now you can share your module's or plugin's terrific [EDITOR: or terrible!]
-packages with other OSGi bundles! 
+packages with other OSGi bundles!
 
 ## Related Topics
 

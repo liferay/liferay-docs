@@ -6,13 +6,17 @@ header-id: semantic-versioning
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/liferay-internals/fundamentals/semantic-versioning.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [Semantic Versioning](https://semver.org)
 is a three tiered versioning system that increments version numbers based on the
 type of API change introduced to a releasable software component. It's a
 standard way of communicating programmatic compatibility of a package or module
 for dependent consumers and API implementations. If a package is
-programmatically (i.e., semantically) incompatible with a project, 
-[bnd](http://bnd.bndtools.org) 
+programmatically (i.e., semantically) incompatible with a project,
+[bnd](http://bnd.bndtools.org)
 (used when building
 [Liferay generated module projects](/docs/7-2/reference/-/knowledge_base/r/creating-a-project))
 fails that project's build immediately.
@@ -32,7 +36,7 @@ For more details on semantic versioning, see the official
 [Semantic Versioning](https://semver.org/)
 site and
 [OSGi Alliance's Semantic Versioning](http://www.osgi.org/wp-content/uploads/SemanticVersioning1.pdf)
-technical whitepaper. 
+technical whitepaper.
 
 All of @product@'s modules use Semantic Versioning.
 
@@ -142,14 +146,14 @@ much easier to test and has less chance for unexpected failures.
 
 | **Note:** When specifying package versions in your `bnd.bnd` file, exact
 | versions are typically specified like this: `version="1.1.2"`. However, this
-| syntax is technically a range; it is interpreted as [1.1.2, &#8734;). 
-| Therefore, if a higher version of the package is available, it's used instead 
+| syntax is technically a range; it is interpreted as [1.1.2, &#8734;).
+| Therefore, if a higher version of the package is available, it's used instead
 | of the version you specified. For these cases, it may be better to specify a
 | version range for compatible versions that have been tested. If you want to
 | specify a true exact match, the syntax is like this: `[1.1.2]`. See the
 | [Version Range](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#i3189032)
 | section in the OSGi specifications for more info.
-| 
+|
 | Gradle and Maven use exact versions when only one version is specified.
 
 You now know the pros and cons for tracking dependencies as a range and as an
