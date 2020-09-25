@@ -57,6 +57,10 @@ Here are the code upgrade steps:
 
             Download the @product@ bundle you're upgrading to.
 
+        3.  [Migrate .cfg Files to .config Files](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment#migrate-cfg-files-to-config-files){.title commandId=upgrade-cfg-to-config}
+
+            Convert `.cfg` files to `.config` files.{.summay}
+
 2.  [Migrate Plugins SDK Projects](/docs/7-2/tutorials/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace){.title}
 
     Copy your Plugins SDK projects into workspace and convert them to
