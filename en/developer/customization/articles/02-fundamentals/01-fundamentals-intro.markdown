@@ -6,6 +6,10 @@ header-id: fundamentals
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/liferay-internals/fundamentals/fundamentals.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 The fundamentals of developing on @product@ and customizing it are perhaps best
 learned in the context of projects. It's in projects that you configure access
 to @product@'s API, extend and override @product@ features, and package your
@@ -16,32 +20,32 @@ time via Apache Gogo Shell. The fundamentals are explained in the context of
 projects so that you understand them in a practical sense and can apply them
 right away. Here are the fundamental topics:
 
--   **WARs Versus OSGi JAR** explains fundamental differences between the WAR 
-    and OSGi JAR structures and how they're deployed in @product@. 
+-   **WARs Versus OSGi JAR** explains fundamental differences between the WAR
+    and OSGi JAR structures and how they're deployed in @product@.
 
--   **Configuring Dependencies** demonstrates how to identify and configure 
+-   **Configuring Dependencies** demonstrates how to identify and configure
     Liferay artifacts and third-party artifacts to use their Java packages in
-    your projects. 
+    your projects.
 
--   **Importing and Exporting Packages** shows how to import the packages your 
+-   **Importing and Exporting Packages** shows how to import the packages your
     projects need and export packages your projects provide. Liferay's tooling
-    detects package use and specifies package imports automatically. 
+    detects package use and specifies package imports automatically.
 
--   **Semantic Versioning** shows how @product@ uses a standard for ascribing 
-    meaning to major, minor, and micro versions of modules and Java packages. 
+-   **Semantic Versioning** shows how @product@ uses a standard for ascribing
+    meaning to major, minor, and micro versions of modules and Java packages.
 
--   **Deploying WARs (WAB Generator)** explains how Liferay's WAB Generator 
-    deploys WAR applications as OSGi Web Application Bundles (WABs). 
+-   **Deploying WARs (WAB Generator)** explains how Liferay's WAB Generator
+    deploys WAR applications as OSGi Web Application Bundles (WABs).
 
--   **Gogo Shell** enables you to examine components, debug issues, and manage 
-    deployments. 
+-   **Gogo Shell** enables you to examine components, debug issues, and manage
+    deployments.
 
 <!-- Uncomment when 'Architecture' section is available. Jim
 | **Note:** The
 | Architecture section
-| provides conceptual diagrams and explains @product@ services and components, 
-| and applications, and the @product@ core. 
+| provides conceptual diagrams and explains @product@ services and components,
+| and applications, and the @product@ core.
 -->
 
 Start with understanding how WAR and OSGi JAR project structures are used in
-development. 
+development.
