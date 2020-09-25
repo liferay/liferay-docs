@@ -6,13 +6,17 @@ header-id: using-liferays-script-engine
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/system-administration/using-the-script-engine/using-the-script-engine.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 @product@ provides a robust script engine for executing
 [Groovy](http://groovy-lang.org/)
 scripts. You can execute scripts to perform maintenance tasks like data
 cleanup, user maintenance operations, bulk invocations of Liferay's API, or
 even system level operations in the scripting console.
 
-These tutorials cover the following scripting topics: 
+These tutorials cover the following scripting topics:
 
 - [Invoking Liferay services](/docs/7-2/user/-/knowledge_base/u/invoking-liferay-services-from-scripts)
 
@@ -24,5 +28,5 @@ These tutorials cover the following scripting topics:
 
 The most common use of the scripting console is to invoke Liferay's services,
 so that's covered first. Familiarity with Liferay's API makes the scripting
-console a useful tool. 
+console a useful tool.
 

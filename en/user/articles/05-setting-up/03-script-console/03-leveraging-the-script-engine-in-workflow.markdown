@@ -6,12 +6,16 @@ header-id: leveraging-the-script-engine-in-workflow
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/process-automation/workflow/developer-guide/using-the-script-engine-in-workflow.html?highlight=workflow">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Liferay's Kaleo workflow engine provides a robust system for reviewing and
 approving content in an enterprise environment. Even if you don't leverage
 scripts, it's a powerful and robust workflow solution. Adding scripts takes it
 to the next level. These scripts aren't run from the script console, but are
-embedded in 
-[XML workflow definitions](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions) 
+embedded in
+[XML workflow definitions](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions)
 and run during the execution of the workflow.
 
 ## Injected Variables
@@ -182,15 +186,15 @@ submission. Otherwise, the asset is sent to the `Default Review` task.
 
 Within a workflow, the next task or state is chosen based on the return value.
 See some examples of workflow scripts by accessing the
-[embedded workflows](/docs/7-2/user/-/knowledge_base/u/workflow#embedded-workflows) 
+[embedded workflows](/docs/7-2/user/-/knowledge_base/u/workflow#embedded-workflows)
 and inspecting the XML.
 
 ## Calling OSGi Services
 
 How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
-disappear without notice? 
-[Use a service tracker](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers-for-osgi-services). 
+disappear without notice?
+[Use a service tracker](/docs/7-2/frameworks/-/knowledge_base/f/service-trackers-for-osgi-services).
 That way you can make sure your code has access to the service it
 needs, and if not, do something appropriate in response. Here's a little example
 code to show you how this might look in Groovy:
@@ -213,7 +217,7 @@ try {
     st.open();
 
     JournalArticleLocalService jaService = st.waitForService(500);
-    
+
     if (jaService == null) {
         _log.warn("The required service 'JournalArticleLocalService' is not available.");
     }

@@ -6,11 +6,15 @@ header-id: running-scripts-from-the-script-console
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/system-administration/using-the-script-engine/running-scripts-from-the-script-console.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 The script console provides a single view for executing Groovy scripts and
 printing their output. It has predefined variables that facilitate printing
 output and working with portlets and users. Here you'll learn these things:
 
-- [How to execute a script in the script console](#running-the-sample-script) 
+- [How to execute a script in the script console](#running-the-sample-script)
 
 - [The predefined variables available in the script console](#predefined-variables)
 
@@ -19,7 +23,7 @@ output and working with portlets and users. Here you'll learn these things:
 | **Important:** The script console is for system operations and maintenance and
 | not for end users. Limit script console access to portal administrators.
 
-Start with running the script console's sample script. 
+Start with running the script console's sample script.
 
 ## Running the Sample Script
 
@@ -28,10 +32,10 @@ Here's how to run the sample script in the script console:
 1.  Sign in as an administrator.
 
 2.  In the Product Menu, navigate to *Control Panel* &rarr; *Configuration*
-    &rarr; *Server Administration*. 
+    &rarr; *Server Administration*.
 
 3.  Click on *Script*. This is the script console. The default sample script
-    prints the User count to the console output. 
+    prints the User count to the console output.
 
     ```groovy
     // ### Groovy Sample ###
@@ -74,8 +78,8 @@ company = PortalUtil.getCompany(actionRequest)
 out.println("Current Company:${company.getName()}\n")
 
 out.println("User Info:")
-userInfo.each { 
-        k,v -> out.println("${k}:${v}") 
+userInfo.each {
+        k,v -> out.println("${k}:${v}")
 }
 ```
 
@@ -83,16 +87,16 @@ userInfo.each {
 
 ## Tips
 
-Keep these things in mind when using the script console: 
+Keep these things in mind when using the script console:
 
 - There is no undo.
 - There is no preview.
 - Permissions checking is not enforced for local services.
 - Scripts are executed synchronously. Avoid executing scripts that might take a
-  long time. 
+  long time.
 
 For these reasons, use the script console cautiously. Test your scripts on
-non-production systems before running them on production. 
+non-production systems before running them on production.
 
 Of course, Liferay's script engine can be used outside of the script console.
 Next, you'll learn how workflows leverage Liferay's script engine.

@@ -6,6 +6,10 @@ header-id: script-examples
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/system-administration/using-the-script-engine/script-examples.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Here are some examples to help you use Liferay's script console. Note: Most of
 these originated from a [Liferay blog post](https://liferay.dev/blogs/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
 
@@ -26,14 +30,14 @@ languages.
 
 This example retrieves user information from the database, makes changes, and
 then saves the changes in the database. Suppose that your company has
-updated the 
+updated the
 [terms of use](/docs/7-2/user/-/knowledge_base/u/instance-configuration-instance-settings#terms-of-use)
 and wants present users with the updated terms of use whenever they sign in
 next. When they agree to the terms of use, a boolean attribute called
 `agreedToTermsOfUse` is set in their user records. As long as the value of this
 variable is `true`, users aren't presented with the terms of use when they
 sign in. If you set this flag to `false` for each user, each user must
-agree to the terms of use again before they can sign in. 
+agree to the terms of use again before they can sign in.
 
 1.  Enter and execute the following code in the script console:
 
@@ -47,10 +51,10 @@ agree to the terms of use again before they can sign in.
     user.getAgreedToTermsOfUse()) }
     ```
 
-    This code prints each user's `agreedToTermsOfUse` attribute value. 
+    This code prints each user's `agreedToTermsOfUse` attribute value.
 
 2.  Replace that with this script:
-    
+
     ```groovy
     import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
@@ -76,12 +80,12 @@ agree to the terms of use again before they can sign in.
     in and running the script.
 
 3.  Click *Execute*.
- 
-4.  Verify the script updated the records by running the first script again. 
 
-    All users (except the default user and your user) have been updated. 
+4.  Verify the script updated the records by running the first script again.
 
-You've enabled the new terms of use agreement for all users to accept. 
+    All users (except the default user and your user) have been updated.
+
+You've enabled the new terms of use agreement for all users to accept.
 
 ## Example 2: Embedding HTML Markup in Script Outputs
 
@@ -94,7 +98,7 @@ import com.liferay.portal.kernel.service.*
 
 number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount();
 out.println(
-        """	
+        """
                 <div style="background-color:black; text-align: center">
                         <h1 style="color: #37A9CC; font-size:xx-large">${number}</h1>
                 </div>
@@ -143,7 +147,7 @@ can see an outline of the data impacted by the script. If everything is okay,
 switch the flag so the script can make permanent updates to the database.
 
 Here's an example Groovy script that sets users to inactive. Clearly, you'd
-want to test this with preview mode before running it: 
+want to test this with preview mode before running it:
 
 ```groovy
 import java.util.Calendar
@@ -179,7 +183,7 @@ users.each { u ->
 
 if(previewMode) {
         out.println('Preview mode is on: switch off the flag and execute '
-                + 'again this script to make changes to the database') 
+                + 'again this script to make changes to the database')
 }
 ```
 
@@ -217,7 +221,7 @@ def trace(message) {
 users = UserLocalServiceUtil.getUsers(QueryUtil.ALL_POS, QueryUtil.ALL_POS)
 users.each { u ->
         trace(u.getFullName())
-} 
+}
 ```
 
 The script above creates a subfolder of
