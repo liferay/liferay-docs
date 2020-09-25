@@ -6,39 +6,39 @@ header-id: deprecated-apps-in-7-1-what-to-do
 
 [TOC levels=1-4]
 
-During the development of any software product, it's sometimes necessary to stop 
-development on or remove outdated or unpopular features. @product-ver@ is no 
-different. Liferay has deprecated several apps in @product-ver@. It's important 
-to note what, exactly, *deprecated* means here. 
+During the development of any software product, it's sometimes necessary to stop
+development on or remove outdated or unpopular features. @product-ver@ is no
+different. Liferay has deprecated several apps in @product-ver@. It's important
+to note what, exactly, *deprecated* means here.
 
 | **Note:** All apps deprecated by Liferay are no longer in active development.
 | You should therefore plan to stop using these apps. Such apps, however, may
 | still be available for download.
 
-There are three types of deprecated apps: 
+There are three types of deprecated apps:
 
 1.  Deprecated apps that remain in @product@, but will be removed in a future
-    release. 
+    release.
 
-2.  Deprecated apps that have been removed from @product@, yet are still 
-    available for download via 
-    [Liferay Marketplace](https://web.liferay.com/marketplace) 
-    or 
-    [Liferay's public Nexus repository](https://repository.liferay.com). For 
-    instructions on installing apps, see the 
-    [Managing Apps](/docs/7-1/user/-/knowledge_base/u/managing-apps) 
-    documentation. 
+2.  Deprecated apps that have been removed from @product@, yet are still
+    available for download via
+    [Liferay Marketplace](https://web.liferay.com/marketplace)
+    or
+    [Liferay's public Nexus repository](https://repository.liferay.com). For
+    instructions on installing apps, see the
+    [Managing Apps](/docs/7-1/user/-/knowledge_base/u/managing-apps)
+    documentation.
 
-3.  Deprecated apps that have been removed from @product@ and aren't available 
-    for download. 
+3.  Deprecated apps that have been removed from @product@ and aren't available
+    for download.
 
-This article lists the apps deprecated in @product-ver@, along with their 
-availability. 
+This article lists the apps deprecated in @product-ver@, along with their
+availability.
 
 ## Collaboration
 
 | App | &nbsp;Availability | &nbsp;Notes |
-| --- | ------------------ | ----------- | 
+| --- | ------------------ | ----------- |
 | Bookmarks | Marketplace |  |
 | Chat | Removed |  |
 | Directory | Nexus |  |
@@ -65,7 +65,7 @@ availability.
 
 | App | &nbsp;Availability | &nbsp;Notes |
 | --- | ------------------ | ----------- |
-| AlloyUI | Release (bundle) | Replaced by [Metal.js](https://metaljs.com/). | 
+| AlloyUI | Release (bundle) | Replaced by [Metal.js](https://metaljs.com/). |
 | CMIS Store | Will be removed | Migrate to another [Document Repository Store option](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-1/deploy/-/knowledge_base/d/upgrading-to-liferay-71), migrate your document store data using [Data Migration in Server Administration](/docs/7-1/user/-/knowledge_base/u/server-administration). |
 | Columns Layout | Removed | |
 | Google Login | Release (bundle) | Replaced by OpenID Connect. |
@@ -74,6 +74,10 @@ availability.
 | OpenID | Release (bundle) | Replaced by OpenID Connect. |
 | OpenSocial Gadget | Removed | |
 | Plugins SDK | [GitHub](https://github.com/liferay/liferay-plugins) | Deprecated in 7.0. Replaced by [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace). |
+| Project Template: project-templates-content-targeting-report | [GitHub](https://github.com/liferay/liferay-blade-cli/tree/master/extensions) | No replacement. |
+| Project Template: project-templates-content-targeting-rule | [GitHub](https://github.com/liferay/liferay-blade-cli/tree/master/extensions) | No replacement. |
+| Project Template: project-templates-content-targeting-tracking-action | [GitHub](https://github.com/liferay/liferay-blade-cli/tree/master/extensions) | No replacement. |
+| Project Template: project-templates-social-bookmark | [GitHub](https://github.com/liferay/liferay-blade-cli/tree/master/extensions) | No replacement. |
 | Ruby Console | Removed | |
 | Search Portlet | Release (bundle) | Will be removed in a future release. Replaced by the [Search widgets](/docs/7-1/user/-/knowledge_base/u/whats-new-with-search). |
 | Shield Integration | Removed | Replaced by X-Pack. |
