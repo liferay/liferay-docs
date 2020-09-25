@@ -7,40 +7,40 @@ header-id: deprecated-apps-in-7-2-what-to-do
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/upgrading-liferay/reference/deprecations-in-liferay-dxp-7-2.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/upgrading-liferay/reference/maintenance-mode-and-deprecations-in-7-2.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 During the development of any software product, it's sometimes necessary to stop
 development on or remove outdated or unpopular features. @product-ver@ is no
-different. In @product-ver@, Liferay has deprecated several apps and features. 
+different. In @product-ver@, Liferay has deprecated several apps and features.
 
-There are three types of deprecated apps: 
+There are three types of deprecated apps:
 
 1.  Deprecated apps that remain in @product@, but will be removed in a future
     release. (Availability: *Bundled*)
 
-2.  Deprecated apps that have been removed from @product@, yet are still 
+2.  Deprecated apps that have been removed from @product@, yet are still
     available for download via [Liferay
     Marketplace](https://web.liferay.com/marketplace) (Availability:
-    *Marketplace*) 
+    *Marketplace*)
 
-3.  Deprecated apps that have been removed from @product@ and aren't available 
-    for download. (Availability: *Removed*) 
+3.  Deprecated apps that have been removed from @product@ and aren't available
+    for download. (Availability: *Removed*)
 
 | **Note:** All apps deprecated by Liferay are no longer in active development.
 | You should therefore plan to stop using these apps. Such apps, however, may
 | still be available for download.
 
-| **Note:** For information on apps deprecated in @product@ 7.1, please see 
+| **Note:** For information on apps deprecated in @product@ 7.1, please see
 | [Deprecated Apps in 7.1: What to Do](/docs/7-1/deploy/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do)
 
-Here are the apps deprecated in @product-ver@. 
+Here are the apps deprecated in @product-ver@.
 
 ## Foundation
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
-| AlloyUI | Bundled | Replaced by [MetalJS](https://metaljs.com/) (temporary) exposed as [ClayUI tag](/docs/7-2/reference/-/knowledge_base/r/front-end-taglibs) equivalents. |  
+| AlloyUI | Bundled | Replaced by [MetalJS](https://metaljs.com/) (temporary) exposed as [ClayUI tag](/docs/7-2/reference/-/knowledge_base/r/front-end-taglibs) equivalents. |
 | CMIS Store | Removed | Migrate to another [Document Repository Store option](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver), migrate your document store data using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration). |
 | JCRStore | Removed | Migrate to another [Document Repository Store option](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver), migrate your document store data using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration). |
 | Legacy Search Portlet | Bundled | Will be removed in a future release. Replaced by the [Search widgets](/docs/7-2/user/-/knowledge_base/u/search). |
@@ -50,7 +50,7 @@ Here are the apps deprecated in @product-ver@.
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
-| Audience Targeting | Removed | Replaced by [Personalization](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization). | 
+| Audience Targeting | Removed | Replaced by [Personalization](/docs/7-2/user/-/knowledge_base/u/segmentation-and-personalization). |
 
 ## Web Experience
 
@@ -78,10 +78,10 @@ Here are the apps deprecated in @product-ver@.
 
 ## User and System Management
 
-| App |  Availability | 
+| App |  Availability |
 | --- | ------------------ |
-| Live Users | Enabled through the [`live.users.enabled`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html) [portal property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties). | 
+| Live Users | Enabled through the [`live.users.enabled`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html) [portal property](/docs/7-2/deploy/-/knowledge_base/d/portal-properties). |
 
-## Related Topics 
+## Related Topics
 
 [Apps in Maintenance Mode](/docs/7-2/deploy/-/knowledge_base/d/apps-in-maintenance-mode)
