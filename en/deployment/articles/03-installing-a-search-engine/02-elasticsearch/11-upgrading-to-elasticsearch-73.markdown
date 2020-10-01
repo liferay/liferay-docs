@@ -80,7 +80,7 @@ To blacklist Elasticsearch 6,
         "com.liferay.portal.search.elasticsearch6.impl", \
         "com.liferay.portal.search.elasticsearch6.spi", \
         "com.liferay.portal.search.elasticsearch6.xpack.security.impl", \
-        "Liferay Connector to X-Pack Security [Elastic Stack 6.x] - Impl" \
+        "Liferay Enterprise Search Security  - Impl" \
     ]
     ```
 

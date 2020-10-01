@@ -227,11 +227,11 @@ xpack.security.http.ssl.certificate_authorities : [ "certs/ca.crt" ]
 For both Elasticsearch 6 and Elasticsearch 7, the Liferay Connector settings
 are the same.
 
-## Install and Configure the Liferay Connector to X-Pack Security
+## Install and Configure the Liferay Enterprise Search Security app
 
 If you have a Liferay Enterprise Search subscription, 
 [download](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
-the Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG
+the Liferay Enterprise Search Security app . Install the LPKG
 file by copying it into the `Liferay Home/deploy` folder. 
 
 To configure the X-Pack adapter, navigate to *Control Panel* &rarr;
