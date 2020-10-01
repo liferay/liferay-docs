@@ -25,8 +25,7 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
     [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#configuring-tls).
 
 3.  Download and install the 
-    [Liferay Enterprise Search Security](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
-   . 
+    [Liferay Enterprise Search Security](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search). 
 
 4.  Configure the X-Pack connector with the proper credentials and encryption
     information.
