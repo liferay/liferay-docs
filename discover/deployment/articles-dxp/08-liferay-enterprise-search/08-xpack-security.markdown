@@ -30,9 +30,9 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 2.  Configure X-Pack to require authentication and 
     [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#configuring-tls).
 
-3.  Download and install the [Liferay Connector to X-Pack
+3.  Download and install the [Liferay Enterprise Search
     Security](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search)
-    [Elastic Stack 6.x]. 
+   . 
 
 4.  Configure the X-Pack connector with the proper credentials and encryption
     information.
@@ -135,11 +135,11 @@ on each node via its `elasticsearch.yml`.
 After X-Pack is installed and TLS is enabled, configure the X-Pack Security
 adapter in @product@.
 
-## Install and Configure the Liferay Connector to X-Pack Security
+## Install and Configure the Liferay Enterprise Search Security app
 
 If you have a Liferay Enterprise Search subscription, 
 [download](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
-the Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG
+the Liferay Enterprise Search Security app. Install the LPKG
 file by copying it into the `Liferay Home/deploy` folder. That's all there is to
 it.
 
