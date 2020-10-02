@@ -176,7 +176,7 @@ the Elasticsearch, Shield, and Marvel plugins.
     blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.spi","com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Enterprise Search Monitoring ","Liferay Enterprise Search Security "]
     ```
 
-    If the X-Pack LPKG files are installed, you must blacklist these too.
+    If the LES Security and Monitoring LPKG files are installed, you must blacklist these too.
 
 2.  Place the file in `Liferay Home/osgi/configs`.
 

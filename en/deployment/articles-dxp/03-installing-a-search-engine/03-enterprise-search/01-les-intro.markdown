@@ -10,12 +10,12 @@ A Liferay Enterprise Search (LES) subscription gets you additional features
 beyond what's available out of the box with your @product@ subscription. It
 includes
 
-- Connector to use X-Pack Security*
-- Connector to use X-Pack Monitoring
-- Learning to Rank
+- Liferay Enterprise Search Security\*
+- Liferay Enterprise Search Monitoring
+- Liferay Enterprise Search Learning to Rank
 
 \* A LES subscription is not necessary if using Elasticsearch 7 via the _Liferay Connector to
-    Elasticsearch 7_. X-Pack's security features are bundled. See the [LES
+    Elasticsearch 7_as X-Pack's security features are bundled. See the [LES
     compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651-Liferay-Enterprise-Search-Compatibility-Matrix)
     for more information.
 
@@ -26,12 +26,12 @@ you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
 Elasticsearch's internal and external communications. These are necessary
 security features for most production systems. A LES subscription gets you
-access to two X-Pack Connectors if you're using Elasticsearch 6: monitoring and
-security. Elasticsearch 7 bundles X-Pack's security features, and Liferay has
-followed suit. Therefore, X-Pack security is bundled with the Liferay Connector
+access to two connectors if you're using Elasticsearch 6: monitoring and
+security. Elasticsearch 7 bundles these security features, and Liferay has
+followed suit. Therefore, security is bundled with the Liferay Connector
 to Elasticsearch 7, and no LES subscription is necessary. Because of this, the
 documentation for
-[installing X-Pack security](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-security) 
+[installing Liferay Enterprise Search Security](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-security) 
 on @product@ has been moved from the LES documentation section (this section) to
 the
 [Elasticsearch](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch) 
@@ -48,10 +48,10 @@ Here's an overview of using the LES applications with @product@:
     **Note:** If using Elasticsearch 6, you'll also need a LES subscription for
     X-Pack security.
 
-3.  Download and install the Liferay connectors you purchased. Access the
-    connectors in the
-    [Help Center Downloads page](https://customer.liferay.com/en/downloads),
-    choosing Enterprise Search from the Product drop-down menu.
+3.  Download and install the Liferay Enterprise Search apps you purchased. Find
+    them in the [Help Center Downloads
+    page](https://customer.liferay.com/en/downloads), choosing Enterprise Search
+    from the Product drop-down menu.
 
 4.  Configure the connectors with the proper credentials, encryption
     information, and settings.

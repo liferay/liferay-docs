@@ -29,9 +29,8 @@ existing Elasticsearch 6 server (or cluster) to Elasticsearch 7:
 2.  Back up the application specific indexes for Workflow Metrics and Result
     Rankings.
 
-3. In @product-ver@, the X-Pack module is now provided out of the box. If
-   you're using X-Pack security, enable it (it's disabled by
-   default):
+3. In @product-ver@, security is now provided out of the box. If you're using
+   X-Pack security, enable it (it's disabled by default):
 
     ```yml
     xpack.security.enabled: true
