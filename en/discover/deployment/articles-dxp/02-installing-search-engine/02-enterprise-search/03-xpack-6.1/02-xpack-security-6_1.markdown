@@ -68,7 +68,7 @@ certificates.
 | **Note:** The `certutil` command defaults to using the *PKSC#12* format for
 | certificate generation. Since Kibana does not work with PKSC#12 certificates,
 | the `--pem` option (generates the certificate in PEM format) is important if
-| you're using X-Pack monitoring.
+| you're using monitoring.
 
 ### Enable TLS
 
@@ -94,7 +94,7 @@ on each node via its `elasticsearch.yml`.
 
         xpack.security.http.ssl.enabled: true
 
-After X-Pack is installed and TLS is enabled, configure the X-Pack Security
+After X-Pack is installed and TLS is enabled, configure the security
 adapter in @product@.
 
 ## Install and Configure the Liferay Enterprise Search Security app
@@ -105,12 +105,12 @@ the Liferay Enterprise Search Security app. Install the LPKG
 file by copying it into the `Liferay Home/deploy` folder. That's all there is to
 it.
 
-To configure the X-Pack adapter, navigate to *Control Panel* &rarr;
+To configure the security adapter, navigate to *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings*. Find the *Search* category and click
 on the *X-Pack Security* entry. You can enter the property values here, but
 it's more common to use a 
 [configuration file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)
-deployed to `Liferay Home/osgi/configs`. For the X-Pack adapter, create a file
+deployed to `Liferay Home/osgi/configs`. For the security adapter, create a file
 called
 
     com.liferay.portal.search.elasticsearch6.xpack.security.internal.configuration.XPackSecurityConfiguration.config
@@ -142,7 +142,7 @@ certificate verification mode and certificate format, and provide the path to
 the certificate, key, and certificate authority. Of course, the exact values
 depend on your X-Pack configuration. 
 
-Here's the complete list of configuration options for the X-Pack Connector:
+Here's the complete list of configuration options for the security app:
 
 - `sslKeyPath`
 - `sslCertificatePath`
@@ -158,5 +158,5 @@ Here's the complete list of configuration options for the X-Pack Connector:
 - `sslTruststorePath`
 - `sslTruststorePassword`
 
-When you're finished configuring X-Pack Security, restart Elasticsearch. These
+When you're finished configuring security, restart Elasticsearch. These
 steps require a full cluster restart.

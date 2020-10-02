@@ -23,7 +23,7 @@ Here's an overview of using X-Pack with @product@:
 
 2.  You'll receive license for X-Pack. Install it on your Elasticsearch servers.
 
-2.  Download and install the [X-Pack connectors](https://customer.liferay.com/downloads?p_p_id=com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_productAssetCategoryId=118191013&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_fileTypeAssetCategoryId=118191060) you purchased.
+2.  Download and install the [Liferay Enterprise Search apps](https://customer.liferay.com/downloads?p_p_id=com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_productAssetCategoryId=118191013&_com_liferay_osb_customer_downloads_display_web_DownloadsDisplayPortlet_fileTypeAssetCategoryId=118191060) you purchased.
     
 3.  Configure the connectors with the proper credentials and encryption
     information.

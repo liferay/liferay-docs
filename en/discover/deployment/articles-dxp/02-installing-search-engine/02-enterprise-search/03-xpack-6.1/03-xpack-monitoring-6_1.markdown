@@ -30,7 +30,7 @@ This document assumes you're enabling security *and* monitoring, though
 differences in the process are noted as appropriate.
 
 For the X-Pack installation procedure, refer to the 
-[X-Pack security article](/docs/7-1/deploy/-/knowledge_base/d/installing-x-pack-security-6-1).
+[security article](/docs/7-1/deploy/-/knowledge_base/d/installing-x-pack-security-6-1).
 
 Start with the installation of Kibana.
 

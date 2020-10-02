@@ -106,7 +106,7 @@ on each node via its `elasticsearch.yml`.
 
         xpack.security.http.ssl.enabled: true
 
-After X-Pack is installed and TLS is enabled, configure the X-Pack Security
+After X-Pack is installed and TLS is enabled, configure the security
 adapter in @product@.
 
 ## Install and Configure the Liferay Enterprise Search Security app
@@ -116,12 +116,12 @@ If you have a Liferay Enterprise Search subscription,
 the Liferay Enterprise Search Security app. Install the LPKG
 file by copying it into the `Liferay Home/deploy` folder. 
 
-To configure the X-Pack adapter, navigate to *Control Panel* &rarr;
+To configure security, navigate to *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings*. Find the *Search* category and click
 on the *X-Pack Security* entry. You can enter the property values here, but it's
 more common to use a 
 [configuration file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)
-deployed to `[Liferay Home]/osgi/configs`. For the X-Pack adapter, create a file
+deployed to `[Liferay Home]/osgi/configs`. For the security adapter, create a file
 called
 
     com.liferay.portal.search.elasticsearch6.xpack.security.internal.configuration.XPackSecurityConfiguration.config
@@ -153,7 +153,7 @@ certificate verification mode and certificate format, and provide the path to
 the certificate, key, and certificate authority. Of course, the exact values
 depend on your X-Pack configuration. 
 
-Here's the complete list of configuration options for the X-Pack Connector:
+Here's the complete list of security configuration options:
 
 - `sslKeyPath`
 - `sslCertificatePath`
