@@ -16,7 +16,7 @@ manually, you can download the upgrade tool separately.
 
 - *Liferay DXP*: Go to the [*Downloads* page](https://customer.liferay.com/group/customer/downloads) and select the DXP version and the _Product/Service Packs_ file type. In the listing that appears, click _Download_ for the _Liferay DXP Upgrade Client_. 
 
-- *Liferay Portal CE*: Go to the [_Downloads_ page](https://www.liferay.com/downloads-community) and select _Download_ for _Liferay Portal Tools for 7.x_. 
+- *Liferay Portal CE*: Go to [SourceForge](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/), select *7.0 GA[version]*, and click `liferay-ce-portal-tools-[version].zip`.
 
 Before running the upgrade tool, learn the tool's usage and how to configure the
 core upgrade and non-core module upgrades. 
