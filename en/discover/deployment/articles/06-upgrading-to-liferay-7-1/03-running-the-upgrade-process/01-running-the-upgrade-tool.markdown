@@ -14,13 +14,9 @@ the modules--together or separately.
 @product-ver@ bundles include the upgrade tool. If you installed @product-ver@
 manually, you can download the upgrade tool separately. 
 
-- *Liferay DXP 7.1*: Go to the
-[*Liferay DXP 7.1 Downloads* page](https://web.liferay.com/group/customer/dxp/downloads/7-1),
-select *Admin Tools*, and click *Download*. 
+- *Liferay DXP*: Go to the [*Downloads* page](https://customer.liferay.com/group/customer/downloads) and select the DXP version and the _Product/Service Packs_ file type. In the listing that appears, click _Download_ for the _Liferay DXP Upgrade Client_. 
 
-- *Liferay Portal CE 7.1*: Go to the
-[*Downloads* page](https://www.liferay.com/downloads-community)
-and select *Download* for *Liferay Portal Tools for 7.1*. 
+- *Liferay Portal CE*: Go to the [_Downloads_ page](https://www.liferay.com/downloads-community) and select _Download_ for _Liferay Portal Tools for 7.x_. 
 
 Before running the upgrade tool, learn the tool's usage and how to configure the
 core upgrade and non-core module upgrades. 
