@@ -6,6 +6,10 @@ header-id: adding-third-party-libraries-to-a-module
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/liferay-internals/fundamentals/configuring-dependencies/resolving-third-party-library-package-dependencies.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Liferay's OSGi framework lets you build applications composed of multiple OSGi
 bundles (modules). For the framework to assemble the modules into a working
 system, the modules must resolve their Java package dependencies. In a perfect
