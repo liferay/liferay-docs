@@ -6,6 +6,10 @@ header-id: configuring-the-liferay-elasticsearch-connector
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/using-search/installing-and-upgrading-a-search-engine/elasticsearch/connecting-to-elasticsearch.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 For detailed Elasticsearch configuration information, refer to the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/settings.html).
 
