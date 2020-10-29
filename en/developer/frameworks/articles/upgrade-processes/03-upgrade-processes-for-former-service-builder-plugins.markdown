@@ -100,7 +100,7 @@ Follow these steps to create a Bundle Activator:
 2.  Add a service tracker field:
 
     ```java
-    `private ServiceTracker<Object, Object> _serviceTracker;`
+    private ServiceTracker<Object, Object> _serviceTracker;
     ```
 
 3.  Override BundleActivator's `stop` method to close the service tracker:
