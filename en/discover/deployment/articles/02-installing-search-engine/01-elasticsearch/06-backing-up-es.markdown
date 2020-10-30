@@ -71,9 +71,8 @@ To snapshot everything, enter
 If `{"accepted":true}` appears in the terminal, the snapshot was a success.
 
 It's possible to be more selective when taking snapshots. For example, if you
-[use X-Pack Monitoring](https://help.liferay.com/hc/en-us/articles/360018176011-Installing-X-Pack-Monitoring-),
-you can exclude the monitoring indexes. Explicitly declare the indexes to
-include in the snapshot:
+use LES Monitoring, you can exclude the monitoring indexes. Explicitly declare
+the indexes to include in the snapshot:
 
     curl -XPUT localhost:9200/_snapshot/test_backup/snapshot_2
     { "indices": "liferay-0,liferay-20116" }
