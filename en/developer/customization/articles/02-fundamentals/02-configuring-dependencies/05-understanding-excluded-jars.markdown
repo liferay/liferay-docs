@@ -6,6 +6,10 @@ header-id: understanding-excluded-jars
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/developing-applications/reference/jars-excluded-from-wabs.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [Portal property
 `module.framework.web.generator.excluded.paths`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Module%20Framework)
 declares JARs that are stripped from all @product@ [generated
