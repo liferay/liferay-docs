@@ -79,9 +79,8 @@ curl -XPUT localhost:9200/_snapshot/test_backup/snapshot_1
 If `{"accepted":true}` appears in the terminal, the snapshot was a success.
 
 It's possible to be more selective when taking snapshots. For example, if you
-[use X-Pack Monitoring](https://help.liferay.com/hc/en-us/articles/360018176011-Installing-X-Pack-Monitoring-),
-you can exclude the monitoring indexes. Explicitly declare the indexes to
-include in the snapshot. For example,
+use LES Monitoring, you can exclude the monitoring indexes. Explicitly declare
+the indexes to include in the snapshot. For example,
 
 ```bash
 curl -XPUT localhost:9200/_snapshot/test_backup/snapshot_2

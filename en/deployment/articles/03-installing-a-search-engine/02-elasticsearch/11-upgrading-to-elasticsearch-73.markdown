@@ -29,9 +29,8 @@ existing Elasticsearch 6 server (or cluster) to Elasticsearch 7:
 2.  Back up the application specific indexes for Workflow Metrics and Result
     Rankings.
 
-3. In @product-ver@, the X-Pack module is now provided out of the box. If
-   you're using X-Pack security, enable it (it's disabled by
-   default):
+3. In @product-ver@, security is now provided out of the box. If you're using
+   X-Pack security, enable it (it's disabled by default):
 
     ```yml
     xpack.security.enabled: true
@@ -80,7 +79,7 @@ To blacklist Elasticsearch 6,
         "com.liferay.portal.search.elasticsearch6.impl", \
         "com.liferay.portal.search.elasticsearch6.spi", \
         "com.liferay.portal.search.elasticsearch6.xpack.security.impl", \
-        "Liferay Connector to X-Pack Security [Elastic Stack 6.x] - Impl" \
+        "Liferay Enterprise Search Security  - Impl" \
     ]
     ```
 

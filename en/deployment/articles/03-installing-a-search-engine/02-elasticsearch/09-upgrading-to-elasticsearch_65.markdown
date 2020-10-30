@@ -20,8 +20,8 @@ existing Elasticsearch 6.1.x server (or cluster) to Elasticsearch 6.5.x:
 1.  [Install and configure Elasticsearch 6.5.x](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch).
 
 2. Disable X-Pack Security in `elasticsearch.yml` unless you have an Liferay
-   Enterprise Search subscription, which gives you access to Liferay's
-   X-Pack Security connector:
+   Enterprise Search subscription, which gives you access to the Liferay
+   Enterprise Search Security app:
 
     ```yml
     xpack.security.enabled: false
