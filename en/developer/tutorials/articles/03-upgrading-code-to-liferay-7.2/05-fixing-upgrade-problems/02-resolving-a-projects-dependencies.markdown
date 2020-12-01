@@ -61,7 +61,7 @@ identifying the module and specifying your project's dependency on it.
 Before @product@ 7.0, all the platform APIs were in `portal-service.jar`. Many 
 of these APIs are now in independent modules. Modularization has resulted in 
 many benefits, as described in the article 
-[Benefits of @product-ver@ for Liferay Portal 6 Developers](/docs/tutorials/7-1/-/knowledge_base/t/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm). 
+[Benefits of @product-ver@ for Liferay Portal 6 Developers](/docs/7-1/tutorials/-/knowledge_base/t/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm). 
 One such advantage is that these API modules can evolve separately from the
 platform kernel. They also simplify future upgrades. For example, instead of
 having to check all of Liferay's APIs, each module's 

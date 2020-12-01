@@ -56,7 +56,7 @@ shown below:
 -   `serveResource` &rarr; [`MVCResourceCommand`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCResourceCommand.html)
 
 Look at the
-[`ExampleStrutsPortletAction` class](/docs/tutorials/6-2/-/knowledge_base/t/overriding-and-adding-struts-actions)
+[`ExampleStrutsPortletAction` class](/docs/6-2/tutorials/-/knowledge_base/t/overriding-and-adding-struts-actions)
 for a `StrutsAction` wrapper example. Depending on the actions overridden, the
 user must use different `MVCCommand`s. In this example, the action and render
 were overridden, so to migrate to the new pattern, you would create two classes:

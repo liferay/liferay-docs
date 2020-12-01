@@ -46,7 +46,7 @@ many third party packages for plugins to use. Best practices for using packages
 that @product@ exports are found
 [here](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies). For
 more information on this specific scenario, see the
-[Using Packages Liferay Portal Exports](/docs/tutorials/7-1/-/knowledge_base/t/resolving-a-plugins-dependencies#using-packages-liferay-portal-exports)
+[Using Packages Liferay Portal Exports](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-packages-liferay-portal-exports)
 section.
 
 Once you've deployed your portlet, the server prints messages that indicate the
