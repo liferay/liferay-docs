@@ -106,9 +106,9 @@ class should extend `BasePersistenceImpl<Entry>`.
 
 [Run Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 to generate the `*Finder` interface based on the `*FinderImpl` class. Modify
-your `*FinderImpl` class to have it implement the `*Finder` interface you just
-generated:
+your `*FinderImpl` class to make it a component (annotated with [`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html)) that implements the `*Finder` interface you just generated:
 
+    @Component(service = EntryFinder.class)
     public class EntryFinderImpl extends BasePersistenceImpl<Event>
         implements EntryFinder {
 
