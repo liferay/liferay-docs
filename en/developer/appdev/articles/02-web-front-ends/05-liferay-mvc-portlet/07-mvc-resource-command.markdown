@@ -60,7 +60,7 @@ Here how to create your own MVC Resource Command:
     | command classes, naming them this way helps differentiate them. 
 
 6.  Annotate your class with an
-    [`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html)
+    [`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html)
     annotation, like this one:
 
     ```java

@@ -55,7 +55,7 @@ Some of your
 [non-generated Spring bean classes](/docs/7-2/appdev/-/knowledge_base/a/understanding-the-code-generated-by-service-builder)
 must be updated to use DS. 
 
-1.  Add the [`@Component`](https://osgi.org/javadoc/r6/cmpn/org/osgi/service/component/annotations/Component.html)
+1.  Add the [`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html)
     annotation to your `*LocalServiceImpl`, `*ServiceImpl`, and `*FinderImpl`
     classes. 
 

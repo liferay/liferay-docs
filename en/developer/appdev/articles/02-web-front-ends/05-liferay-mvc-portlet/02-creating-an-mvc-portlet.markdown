@@ -73,7 +73,7 @@ public class MyMvcPortlet extends MVCPortlet {
 The class extends
 [`MVCPortlet`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html).
 The
-[`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html)
+[`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html)
 annotation and `service = Portlet.class` attribute makes the class an OSGi
 Declarative Services component that provides the
 [`javax.portlet.Portlet`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/Portlet.html)

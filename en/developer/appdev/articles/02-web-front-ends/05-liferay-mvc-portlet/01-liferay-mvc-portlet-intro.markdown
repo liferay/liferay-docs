@@ -83,7 +83,7 @@ break up your controller functionality.
 There must be some confusing configuration files to keep everything wired
 together and working properly, right? Wrong: it's all easily managed in the
 `-Portlet` class's
-[`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html)
+[`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html)
 annotation.
 
 ## Liferay MVC Portlet Component
