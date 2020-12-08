@@ -41,9 +41,9 @@ String guestbookName)`. The steps are below.
     `com.liferay.docs.guestbook.service.persistence.GuestbookFinder` is
     generated.
 
-5.  Make sure that the finder class implements the interface. For example, the 
-    class declaration should look like this:
+5.  Make the finder class a component (annotated with [`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html)) that implements the finder interface. For example, the class declaration should look like this:
 
+        @Component(service = GuestbookFinder.class)
         public class GuestbookFinderImpl extends BasePersistenceImpl<Guestbook> implements GuestbookFinder
 
 Your next step is to implement the query in your finder method using the
