@@ -52,28 +52,15 @@ from third-parties as described below.
     same folder. Please see the [compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85) for a list of supported databases.
 
 3.  Create the file `module.xml` in the
-    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert this
-    configuration:
+    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder. In the file, declare the portal module and all of its required resources and dependencies:
 
         <?xml version="1.0"?>
 
         <module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
             <resources>
-                <resource-root path="com.liferay.petra.concurrent.jar" />
-                <resource-root path="com.liferay.petra.executor.jar" />
-                <resource-root path="com.liferay.petra.function.jar" />
-                <resource-root path="com.liferay.petra.io.jar" />
-                <resource-root path="com.liferay.petra.lang.jar" />
-                <resource-root path="com.liferay.petra.memory.jar" />
-                <resource-root path="com.liferay.petra.nio.jar" />
-                <resource-root path="com.liferay.petra.process.jar" />
-                <resource-root path="com.liferay.petra.reflect.jar" />
-                <resource-root path="com.liferay.petra.string.jar" />
-                <resource-root path="com.liferay.registry.api.jar" />
-                <resource-root path="hsql.jar" />
-                <resource-root path="[place your database driver here]" />
-                <resource-root path="portal-kernel.jar" />
-                <resource-root path="portlet.jar" />
+                <resource-root path="[place your database vendor's JAR file name here]" />
+                <resource-root path="[place a Liferay dependencies JAR file name here]" />
+                <!-- Add a resource-root element for each Liferay dependencies JAR -->
             </resources>
             <dependencies>
                 <module name="javax.api" />
@@ -84,7 +71,13 @@ from third-parties as described below.
             </dependencies>
         </module>
 
-    Replace the indicated `resource-root` element with the driver JAR for your database.
+    Replace `[place your database vendor's JAR file name here]` with the driver JAR for your database.
+
+    For each JAR in the Liferay dependencies ZIP, add a `resource-root` element with its `path` attribute set to the JAR name. For example, add a `resource-root` element like this for the `com.liferay.petra.concurrent.jar` file:
+
+    ```xml
+    <resource-root path="com.liferay.petra.concurrent.jar" />
+    ```
 
 4.  Create an `osgi` folder in your Liferay Home folder. Extract the OSGi ZIP
     file that you downloaded into the `osgi` folder.
