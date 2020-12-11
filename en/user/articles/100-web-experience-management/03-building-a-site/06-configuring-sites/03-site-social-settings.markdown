@@ -29,7 +29,7 @@ for more information.
 
 The *Languages* tab lets you configure the language options for your Site.
 
-![Figure 1: Setting up Google Analytics for your Site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../../../images/site-language.png)
+![Figure 1: In the Languages tab, you can configure the site to use the instance's default language or another supported language.](../../../../images/site-language.png)
 
 You can use the default language or define another supported language as the
 default for your Site. 
