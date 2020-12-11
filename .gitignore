@@ -6,16 +6,18 @@
 *-tmp.html
 .project
 .classpath
-.METADATA
 .settings
-.nb-gradle-properties
 git-modified-list.txt
 nbbuild.xml
 properties/
+.METADATA
 .DS_Store
 .directory 
-**/.gradle
-**/.nb-gradle
+.gradle
+.nb-gradle
+.vscode
+
+node_modules/
 
 /*.ipr
 /*.iws
