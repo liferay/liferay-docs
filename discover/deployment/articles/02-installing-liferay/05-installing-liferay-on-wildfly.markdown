@@ -163,10 +163,10 @@ your `$WILDFLY_HOME/modules/`. You'll begin with making changes to
 
 Make the following modifications to `standalone.xml`:
 
-1.  In the `<jsp-configuration>` tag, set the Java VM compatibility for Liferay source and class files. They are compatible with Java 8 by default.
+1.  In the `<jsp-config>` tag, set the Java VM compatibility for Liferay source and class files. They are compatible with Java 8 by default.
 
     ```xml
-    <jsp-configuration development="true" source-vm="1.8" target-vm="1.8" />
+    <jsp-config development="true" source-vm="1.8" target-vm="1.8" />
     ```
 
 1. Locate the closing `</extensions>` tag. Directly beneath that tag, insert the
