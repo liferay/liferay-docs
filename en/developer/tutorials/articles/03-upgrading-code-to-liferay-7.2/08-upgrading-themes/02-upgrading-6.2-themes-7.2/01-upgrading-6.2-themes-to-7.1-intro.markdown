@@ -12,7 +12,7 @@ Learning Path to @product-ver@ using the [Liferay JS Theme Toolkit](https://gith
 The Lunar Resort theme is similar to many Liferay Portal 6.2 themes, as it 
 extends the [`_styled` theme](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/html/themes/_styled), 
 adds configurable settings, and incorporates a responsive design that leverages 
-Font Awesome icons and Bootstrap. The theme [ZIP file](/documents/10184/656312/lunar-resort-theme-migration-6.2.zip) 
+Font Awesome icons and Bootstrap. The theme [ZIP file](https://github.com/liferay/liferay-docs/blob/7.0.x/develop/tutorials/code/upgrading-themes/lunar-resort-theme-migration-6.2.zip) 
 contains its original source code. 
 
 ![Figure 1: The Lunar Resort example theme upgraded in this tutorial uses a clean, minimal design.](../../../../images/finished-7-2-theme.png) 

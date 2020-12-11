@@ -11,7 +11,7 @@ header-id: upgrading-service-wrapper-hooks
 </div>
 
 Upgrading traditional
-[service wrapper hook plugins](/docs/tutorials/6-2/-/knowledge_base/t/overriding-a-portal-service-using-a-hook)
+[service wrapper hook plugins](/docs/6-2/tutorials/-/knowledge_base/t/overriding-a-portal-service-using-a-hook)
 to @product-ver@ is quick and easy.
 
 1.  Adapt your code to @product-ver@'s API using the Liferay Upgrade Planner. When
