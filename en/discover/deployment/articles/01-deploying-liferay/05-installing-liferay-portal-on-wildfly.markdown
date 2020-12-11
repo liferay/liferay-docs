@@ -52,28 +52,15 @@ from third-parties as described below.
     same folder. Please see the [compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85) for a list of supported databases.
 
 3.  Create the file `module.xml` in the
-    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert this
-    configuration:
+    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder. In the file, declare the portal module and all of its required resources and dependencies:
 
         <?xml version="1.0"?>
 
         <module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
             <resources>
-                <resource-root path="com.liferay.petra.concurrent.jar" />
-                <resource-root path="com.liferay.petra.executor.jar" />
-                <resource-root path="com.liferay.petra.function.jar" />
-                <resource-root path="com.liferay.petra.io.jar" />
-                <resource-root path="com.liferay.petra.lang.jar" />
-                <resource-root path="com.liferay.petra.memory.jar" />
-                <resource-root path="com.liferay.petra.nio.jar" />
-                <resource-root path="com.liferay.petra.process.jar" />
-                <resource-root path="com.liferay.petra.reflect.jar" />
-                <resource-root path="com.liferay.petra.string.jar" />
-                <resource-root path="com.liferay.registry.api.jar" />
-                <resource-root path="hsql.jar" />
-                <resource-root path="[place your database driver here]" />
-                <resource-root path="portal-kernel.jar" />
-                <resource-root path="portlet.jar" />
+                <resource-root path="[place your database vendor's JAR file name here]" />
+                <resource-root path="[place a Liferay dependencies JAR file name here]" />
+                <!-- Add a resource-root element for each Liferay dependencies JAR -->
             </resources>
             <dependencies>
                 <module name="javax.api" />
@@ -84,7 +71,13 @@ from third-parties as described below.
             </dependencies>
         </module>
 
-    Replace the indicated `resource-root` element with the driver JAR for your database.
+    Replace `[place your database vendor's JAR file name here]` with the driver JAR for your database.
+
+    For each JAR in the Liferay dependencies ZIP, add a `resource-root` element with its `path` attribute set to the JAR name. For example, add a `resource-root` element like this for the `com.liferay.petra.concurrent.jar` file:
+
+    ```xml
+    <resource-root path="com.liferay.petra.concurrent.jar" />
+    ```
 
 4.  Create an `osgi` folder in your Liferay Home folder. Extract the OSGi ZIP
     file that you downloaded into the `osgi` folder.
@@ -143,10 +136,10 @@ Start with configuring Wildfly to run @product@.
 Make the following modifications to
 `$WILDFLY_HOME/standalone/configuration/standalone.xml`:
 
-1.  In the `<jsp-configuration>` tag, set the Java VM compatibility for Liferay source and class files. They are compatible with Java 8 by default.
+1.  In the `<jsp-config>` tag, set the Java VM compatibility for Liferay source and class files. They are compatible with Java 8 by default.
 
     ```xml
-    <jsp-configuration development="true" source-vm="1.8" target-vm="1.8" />
+    <jsp-config development="true" source-vm="1.8" target-vm="1.8" />
     ```
 
 1.  Locate the closing `</extensions>` tag. Directly beneath that tag, insert
@@ -188,12 +181,6 @@ Make the following modifications to
         <handlers>
             <file name="welcome-content" path="${jboss.home.dir}/welcome-content"/>
         </handlers>
-
-6.  Find the `<jsp-config/>` tag and set the `development`, `source-vm`, and
-    `target-vm` attributes in the tag. Once finished, the tag should look like
-    this:
-
-        <jsp-config development="true" source-vm="1.8" target-vm="1.8" />
 
 **Checkpoint:**
 
