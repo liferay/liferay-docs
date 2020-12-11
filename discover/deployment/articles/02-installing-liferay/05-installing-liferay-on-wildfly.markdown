@@ -190,7 +190,7 @@ Make the following modifications to `standalone.xml`:
 
         <security-domain name="PortalRealm">
             <authentication>
-                <login-module code="com.liferay.portal.security.jaas.PortalLoginModule" flag="required" />
+                <login-module code="com.liferay.portal.kernel.security.jaas.PortalLoginModule" flag="required" />
             </authentication>
         </security-domain>
 
