@@ -1,0 +1,6 @@
+{
+    "githubPullRequests.remotes": [
+        "git@github.com:jorge-campo/liferay-docs.git",
+        "git@github.com:liferay/liferay-docs.git"
+    ]
+}
