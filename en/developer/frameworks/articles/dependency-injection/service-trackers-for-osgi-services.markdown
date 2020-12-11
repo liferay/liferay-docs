@@ -22,7 +22,7 @@ available.
 
 | **Note:** The `@Reference` annotation can only be used in a class that is
 | annotated with
-| [`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html).
+| [`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html).
 | That is, only a Declarative Services component can use `@Reference` to bind to
 | an OSGi service.
 

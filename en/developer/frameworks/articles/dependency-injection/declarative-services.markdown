@@ -12,7 +12,7 @@ OSGi Services model supports a collaborative environment for objects.
 
 Declarative Services (DS) provides a service component model on top of OSGi
 Services. DS service components are marked with the
-[`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html)
+[`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html)
 annotation and implement or extend a service class. Service components can refer
 to and use each other's services. The Service Component Runtime (SCR) registers
 component services and handles binding them to other components that reference
@@ -36,7 +36,7 @@ How do you use DS to register and bind services? Does it involve creating XML
 files? No, it's much easier than that. You use two annotations: `@Component` and
 `@Reference`. 
 
--   [`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html):
+-   [`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html):
     Add this annotation to a class definition to make the class a component--a
     service provider. 
 
@@ -45,7 +45,7 @@ files? No, it's much easier than that. You use two annotations: `@Component` and
     field's type. 
 
 The
-[`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html)
+[`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html)
 annotation makes the class an OSGi component. Setting the annotation's `service`
 attribute to a particular service type allows other components to reference the
 service component by that service type.

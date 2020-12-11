@@ -55,7 +55,7 @@ Here are the steps:
     interface. 
 
 6.  Annotate the class with an
-    [`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html)
+    [`@Component`](https://docs.osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/component/annotations/Component.html)
     annotation, like this one:
 
     ```java
