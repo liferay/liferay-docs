@@ -12,8 +12,16 @@ a device.
 
 To add actions to a selected rule group:
 
-1.  Go to the *Configuration* page for the page, page set, or Site where you 
-    have configured a device family.
+1.  Click *Configure* (![Configure](../../../../../../images/icon-gear.png)) for the page, page set, or Site where you
+    have configured a device family. The configuration page appears. 
+
+1.  Click the *Advanced* tab.
+
+1.  Decline using the same mobile device rules from the public pages by setting the option to *No*. The device family section appears.
+
+    ![Figure 1: Disable using public pages device rules.](../../../../../../images/configure-mobile-device-rule-for-page.png)
+
+1.  Click *Select* to open the Device Families page.
 
 2.  In the *Mobile Device Rules* section, click *Actions*
     (![Actions](../../../../../../images/icon-actions.png)) &rarr; *Manage 
@@ -21,7 +29,7 @@ To add actions to a selected rule group:
  
 3.  Click *Add Action*.
 
-![Figure 1: Getting to the Manage Actions page.](../../../../../../images/manage-mobile-actions.png)
+![Figure 2: Getting to the Manage Actions page.](../../../../../../images/manage-mobile-actions.png)
 
 By default, there are four kinds of actions that can be configured for mobile
 families:
@@ -69,7 +77,7 @@ mobile device requests are received, take the following steps:
 ## Mobile Device Rules Example
 
 Now you'll look at an example of using mobile device rules. Suppose you want to
-create a rule so that when a Site is accessed by an Android or iOS tablet,
+create a rule so that when a Site is accessed by an Android device,
 a different layout is used. To set this up, you must follow the same four steps
 described above.
 
@@ -79,26 +87,26 @@ First create the Mobile Device Family:
 
 2.  Click *Add Device Family* (![Add Device Family](../../../../../../images/icon-add.png)).
 
-3.  Enter *Android and iOS Tablets* for the *Name*.
+3.  Enter *Android* for the *Name*.
 
 4.  Click *Save*.
 
 Next create a rule for the family:
 
-1.  From the *Mobile Device Families* page, click on *Android and iOS Tablets*.
+1.  From the *Mobile Device Families* page, click on *Android*.
 
 2.  Click *Add Classification Rule* (![Add Classification Rule](../../../../../../images/icon-add.png)).
 
 3.  Name the rule *Rule 1*.
 
-4.  Under *Operating System* select *Android* and *iPhone OS* (you can hold
+4.  Under *Operating System* select *Android* (you can hold
     <CTRL> or <CMD> to select multiple items).
 
-5.  Under *Device Type* select *Tablets*,
+5.  Under *Device Type* select *All*,
 
 6.  Click *Save*.
 
-    ![Figure 2: Create the Classification rule.](../../../../../../images/example-classification-rule.png)
+    ![Figure 3: Create the Classification rule.](../../../../../../images/example-classification-rule.png)
 
 As with the previous example, you only need one rule to describe your device
 family. Now you must apply the rule to some pages.
@@ -109,13 +117,13 @@ family. Now you must apply the rule to some pages.
 
 3.  Go to the *Advanced* tab.
 
-3.  Under *Mobile Device Rules*, select the *Android and iOS Tablets* device
+3.  Under *Mobile Device Rules*, select the *Android* device
     family.
 
-Now you must define an action for your Android and iOS Tablets rule group to use
+Now you must define an action for your Android rule group to use
 a different layout.
 
-1.  Click *Actions* &rarr; *Manage Actions* for the *Android and iOS Tablets* 
+1.  Click *Actions* &rarr; *Manage Actions* for the *Android* 
     rule.
  
 2.  Click *Add Action*.
@@ -127,9 +135,9 @@ a different layout.
 
 5.  Click *Save*.
 
-![Figure 3: Create the Actions for Android and iOS Tablets.](../../../../../../images/example-mobile-action.png)
+![Figure 4: Create the Actions for Android.](../../../../../../images/example-mobile-action.png)
 
-Now the Liferay Site's pages are presented to Android and iOS tablet users with 
+Now the Liferay Site's pages are presented to Android users with 
 the 1 Column layout template.
 
 Mobile Device Rules are a powerful way to manage the way pages and content
