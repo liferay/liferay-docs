@@ -6,6 +6,10 @@ header-id: creating-contributed-fragment-collection
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+	<span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/developer-guide/developing-page-fragments/creating-a-contributed-fragment-collection.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 To create a Contributed Fragment Collection, a developer must,
 
 1.  Create a module which will contain the necessary logic and the fragments.

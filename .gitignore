@@ -15,6 +15,7 @@ properties/
 .directory 
 .gradle
 .nb-gradle
+.vscode
 
 node_modules/
 
