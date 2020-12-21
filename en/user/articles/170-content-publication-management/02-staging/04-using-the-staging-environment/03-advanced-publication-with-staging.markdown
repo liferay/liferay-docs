@@ -6,6 +6,10 @@ header-id: advanced-publication-with-staging
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/staging-ui-reference.html#advanced-publishing">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Once you've finished your changes on the staged site and want to publish them,
 select the *Publish to Live* button from the Staging Bar. To configure advanced
 publication options, select the *Switch to Advanced Publication* button. Opening

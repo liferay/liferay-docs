@@ -6,6 +6,10 @@ header-id: enabling-local-live-staging
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/configuring-local-live-staging.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Local Live staging places both your staging environment and your live
 environment on the same server. When it's enabled, a clone of the site is
 created containing copies of all of the site's existing pages. This means the

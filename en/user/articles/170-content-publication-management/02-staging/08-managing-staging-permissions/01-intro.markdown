@@ -6,6 +6,10 @@ header-id: managing-permissions
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/managing-staging-permissions.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 The staging environment has many different options for building and managing
 a Site and its pages. Sometimes administrators want to limit access to staging's
 subset of powerful features. A Role with permissions can accomplish this. To
