@@ -72,7 +72,7 @@ Live staging environment for your site.
 
 8.  Click *Save*.
 
-You've officially begun the staging process!
+You've officially enabled Remote Live staging!
 
 If you fail to configure your current and remote server properly, you won't be
 able to enable staging and an error message appears. If you have issues,
