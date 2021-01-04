@@ -15,6 +15,10 @@ different, so you'll learn about both.
 
 ## Disabling Local Live Staging
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This material has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/configuring-local-live-staging.html#disabling-local-live-staging">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Conceptually, the live site is the final approved version of your site, whereas
 the staging site is a temporary workspace containing information that is not
 finalized.
@@ -34,6 +38,10 @@ a substantial amount of time to process. For this reason, don't disable staging
 when your portal instance is busy.
 
 ## Disabling Remote Live Staging
+
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This material has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/configuring-remote-live-staging.html#disabling-remote-live-staging">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
 
 Disabling remote staging does not delete the staged site; it only disables the
 connection between the live site and remote staging site. This means no data is

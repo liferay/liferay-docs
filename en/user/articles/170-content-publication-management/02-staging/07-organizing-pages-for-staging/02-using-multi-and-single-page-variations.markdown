@@ -6,6 +6,10 @@ header-id: using-multi-and-single-page-variations
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/page-versioning.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 There are two page variation options available from the
 [Staging Bar](/docs/7-2/user/-/knowledge_base/u/using-the-staging-environment):
 

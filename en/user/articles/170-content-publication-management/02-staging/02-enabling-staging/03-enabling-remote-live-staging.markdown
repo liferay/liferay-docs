@@ -6,6 +6,10 @@ header-id: enabling-remote-live-staging
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/configuring-remote-live-staging.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 In Remote Live staging, a connection is established between the current site and
 another site on a remote Liferay server. The remote site becomes the live
 environment and the current site becomes the staging environment---an instance

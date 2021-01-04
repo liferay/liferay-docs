@@ -6,6 +6,10 @@ header-id: using-the-staging-environment
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/staging-ui-reference.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 After [enabling staging](/docs/7-2/user/-/knowledge_base/u/enabling-staging)
 (either Local Live or Remote Live) for a site, you'll notice additional options
 provided on the top Control Menu (Staging Bar) and also in the menu to the left.

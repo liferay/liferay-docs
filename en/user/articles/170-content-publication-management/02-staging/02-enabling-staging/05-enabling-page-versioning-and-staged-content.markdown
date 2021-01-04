@@ -6,6 +6,10 @@ header-id: enabling-page-versioning-and-staged-content
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/page-versioning.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Enabling page versioning for a site lets site administrators work in parallel on
 multiple versions of the site's pages. Page versioning also maintains a history
 of all updates to the site from the time page versioning was enabled. Site
