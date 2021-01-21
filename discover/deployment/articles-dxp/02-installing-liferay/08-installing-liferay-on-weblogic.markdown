@@ -59,33 +59,32 @@ have done?
 
 ## Configuring WebLogic
 
-Next, you must set some variables in two WebLogic startup scripts. These 
-variables and scripts are as follows. Be sure to use `set` instead of `export` 
-if you're on Windows. 
+Configure the JVM and other options in a `setUserOverridesLate` WebLogic startup script and in your Managed Server UI.
 
-1. `your-domain/startWebLogic.[cmd|sh]`: This is the Admin Server's startup 
-   script. 
+Create a `setUserOverridesLate.sh` script in `[Your Domain]/bin` and add the following settings.
 
-2. `your-domain/bin/startWebLogic.[cmd|sh]`: This is the startup script for 
-   Managed Servers. 
-
-Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
-
-    export DERBY_FLAG="false"
-    export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8  -Duser.timezone=GMT -da:org.apache.lucene... -da:org.aspectj..."
-    export MW_HOME="/your/weblogic/directory"
-    export USER_MEM_ARGS="-Xmx1024m -XX:MetaspaceSize=512m"
+```bash
+export DERBY_FLAG="false"
+export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -Duser.timezone=GMT -da:org.apache.lucene... -da:org.aspectj..."
+export JAVA_PROPERTIES="-Dfile.encoding=UTF-8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+export MW_HOME="[place your WebLogic Server folder path here]"
+export USER_MEM_ARGS="-Xmx1024m -XX:MetaspaceSize=512m"
+```
 
 | **Important:** For @product@ to work properly, the application server JVM must
 | use the `GMT` time zone and `UTF-8` file encoding.
 
-The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
-@product@ doesn't require this server. The remaining settings support @product@'s 
-memory requirements, UTF-8 requirement, Lucene usage, and Aspect Oriented 
-Programming via AspectJ. Also make sure to set `MW_HOME` to the directory 
-containing your WebLogic server on your machine. For example: 
+The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as DXP does not require this server.
 
-    export MW_HOME="/Users/ray/Oracle/wls12210"
+`JAVA_OPTIONS` sets DXP's UTF-8 requirement, Lucene usage, and Aspect Oriented Programming via AspectJ.
+
+`JAVA_PROPERTIES` also sets DXP's UTF-8 requirement.
+
+Set `MW_HOME` to the folder containing the WebLogic server on the machine. For example,
+
+```bash
+export MW_HOME="/Users/ray/Oracle/wls12210"
+```
 
 You must also ensure that the Node Manager sets @product@'s memory 
 requirements when starting the Managed Server. In the Admin Server's console UI, 
@@ -95,12 +94,6 @@ Start* tab. Enter the following into the *Arguments* field:
     -Xmx2048m -XX:MaxMetaspaceSize=512m
 
 Click *Save* when you're finished. 
-
-The UTF-8 file encoding and GMT time zone must also be set in your environment's
-Java properties. In your `setDomainEnv.[sh|cmd]` script, append
-`-Dfile.encoding=UTF-8 -Duser.timezone=GMT` ahead of your other Java properties: 
-
-    JAVA_PROPERTIES="-Dfile.encoding=UTF-8 -Duser.timezone=GMT ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
 
 Next, you'll set some @product@-specific properties for your @product@ installation. 
 
