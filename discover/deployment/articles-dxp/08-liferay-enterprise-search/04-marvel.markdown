@@ -76,7 +76,7 @@ Elasticsearch for @product@.
         ./bin/plugin install marvel-agent
 
 2.  Download a
-    [compatible](https://help.liferay.com/hc/en-us/articles/360016511651)
+    [compatible](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-Enterprise-Search)
     version of [Kibana](https://www.elastic.co/downloads/kibana) and extract it
     to your Liferay Home folder.
 
