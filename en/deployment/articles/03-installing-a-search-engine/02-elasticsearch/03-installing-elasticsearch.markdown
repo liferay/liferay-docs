@@ -74,7 +74,7 @@ your server/connector configuration:
 For complete information on compatibility, check the
 [@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?)
 and the
-[Liferay Enterprise Search compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651)
+[Liferay Enterprise Search compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-Enterprise-Search)
 if you have a subscription.
 
 ### Step One: Download a Supported Version of Elasticsearch
