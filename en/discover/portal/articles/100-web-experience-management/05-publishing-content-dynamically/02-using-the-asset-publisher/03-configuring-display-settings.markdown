@@ -6,6 +6,10 @@ header-id: configuring-display-settings
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+    <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/displaying-content/using-the-asset-publisher-widget/configuring-display-settings.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 From the Asset Publisher's configuration page, open the Setup tab's *Display
 Settings* sub-tab. This section gives you precise control over the display of
 your assets. There are many options available to configure how you want your
@@ -53,7 +57,7 @@ section below on display pages for more information.
 | should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
 | Image*, and upload an image. Then click *Publish*. Once your web content article
 | appears in the Asset Publisher's list, clicking the small image takes you to the
-| full article.
+| full article (applies to Liferay versions 7.0 and 7.1.)
 
 **Number of Items to Display**: Select the maximum number of assets that can be
 displayed by the Asset Publisher. If pagination is enabled, this number
