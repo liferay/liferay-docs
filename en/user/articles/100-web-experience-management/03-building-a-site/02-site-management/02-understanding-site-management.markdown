@@ -66,7 +66,7 @@ share the following content across Sites:
 - Data Definitions (Dynamic Data Lists)
 
 Please refer to the 
-[Sites Admin Portlet](https://docs.liferay.com/portal/7.2/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
+[Sites Admin Portlet](https://docs.liferay.com/dxp/portal/7.2-latest/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
 section of Liferay's `portal.properties` file for a list of relevant
 configurable properties. For example, the
 `Sites.content.sharing.with.children.enabled` property can disable content
