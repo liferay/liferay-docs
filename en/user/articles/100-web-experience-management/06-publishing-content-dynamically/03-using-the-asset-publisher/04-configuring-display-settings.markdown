@@ -47,14 +47,6 @@ causes that asset to be displayed in the application where the asset belongs.
 For example, a blog entry is displayed in Blogs where it was created. See the
 section below on display pages for more information.
 
-| **Tip:** When the Asset Publisher displays web content articles with an
-| associated small image, the small image becomes a link to the full article. To
-| use this feature, add or edit a web content article that the Asset Publisher
-| should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
-| Image*, and upload an image. Then click *Publish*. Once your web content article
-| appears in the Asset Publisher's list, clicking the small image takes you to the
-| full article (applies to Liferay 7.0 and 7.1.)
-
 **Number of Items to Display**: Select the maximum number of assets that can be
 displayed by the Asset Publisher. If pagination is enabled, this number
 represents the maximum number of assets that can be displayed per page.
