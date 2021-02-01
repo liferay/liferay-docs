@@ -72,7 +72,7 @@ your server/connector configuration:
 - [Liferay Enterprise Search] Learn how to configure [Monitoring](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-monitoring).
 
 For complete information on compatibility, check the
-[@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?)
+[@product@ compatibility matrix](https://help.liferay.com/hc/en-us/articles/360028982631-Liferay-DXP-7-2-Compatibility-Matrix)
 and the
 [Liferay Enterprise Search compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-Enterprise-Search)
 if you have a subscription.
@@ -111,7 +111,7 @@ The version of Elasticsearch that's running is the value of the `number` field.
 In this example, it's 6.5.0. You can install the embedded version, but it might
 not be the most up-to-date version of Elasticsearch that's supported with
 @product@. Consult the
-[Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.2+Compatibility+Matrix/b6e0f064-db31-49b4-8317-a29d1d76abf7?)
+[Compatibility Matrix](https://help.liferay.com/hc/en-us/articles/360016511651)
 for definitive information on what's supported. 
 
 | **Note:** Although the embedded server uses Elasticsearch 6.5, Elasticsearch
@@ -121,7 +121,7 @@ for definitive information on what's supported.
 | 7, which can be downloaded from Liferay Marketplace for both 
 | [CE](https://web.liferay.com/en/marketplace/-/mp/application/170642090) and 
 | [DXP](https://web.liferay.com/en/marketplace/-/mp/application/170390307).
-| Always refer to the [compatibility matrix to find the exact versions supported](https://www.liferay.com/documents/10182/246659966/Liferay+DXP+7.2+Compatibility+Matrix.pdf/ed234765-db47-c4ad-7c82-2acb4c73b0f9).
+| Always refer to the [compatibility matrix to find the exact versions supported](https://help.liferay.com/hc/en-us/articles/360016511651).
 
 Shut down the @product@ server. In a local, single-machine testing environment,
 if you continue without shutting down, the Elasticsearch server you're about to
