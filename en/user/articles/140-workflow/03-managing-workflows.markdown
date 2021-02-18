@@ -6,6 +6,10 @@ header-id: managing-workflows
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/process-automation/workflow/designing-and-managing-workflows/managing-workflows.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Like other resources, workflow definitions can be added, edited, and deleted.
 But that's just the beginning of workflow management.
 

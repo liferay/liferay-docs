@@ -6,6 +6,10 @@ header-id: activating-workflow
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/process-automation/workflow/using-workflows/activating-workflow.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Assets are integrated with the [workflow
 framework](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework) if
 their content is meant to be sent through review processes. Since this is most
