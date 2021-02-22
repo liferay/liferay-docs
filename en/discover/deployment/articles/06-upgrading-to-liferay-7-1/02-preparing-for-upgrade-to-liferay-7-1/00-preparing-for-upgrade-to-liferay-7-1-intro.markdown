@@ -118,20 +118,22 @@ provide property details and examples.
 
 ## Step 6: Configuring Your Documents and Media File Store
 
-It's time to migrate and update your document store configuration to
-@product-ver@. Here's what's changed for document stores:
+It's time to migrate and update your document store to
+@product-ver@.
 
--   Store implementation class package names changed from 
+1.  Store implementation class package names changed from 
     `com.liferay.portlet.documentlibrary.store.*` in Liferay Portal 6.2 to
     `com.liferay.portal.store.*` in @product@ 7.0+. Make sure your
     `portal-ext.properties` sets the `dl.store.impl` property one of these ways:
 
-        dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
-        dl.store.impl=com.liferay.portal.store.db.DBStore
-        dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
-        dl.store.impl=com.liferay.portal.store.s3.S3Store
+    ```properties
+    dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
+    dl.store.impl=com.liferay.portal.store.db.DBStore
+    dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
+    dl.store.impl=com.liferay.portal.store.s3.S3Store
+    ```
 
--   JCR Store was deprecated as of Liferay DXP Digital Enterprise 7.0 Fix Pack 
+1.  JCR Store was deprecated as of Liferay DXP Digital Enterprise 7.0 Fix Pack 
     14 and Liferay Portal CE 7.0 GA4. The
     [Document Repository Configuration](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)
     documentation describes other store options.
@@ -139,7 +141,9 @@ It's time to migrate and update your document store configuration to
     to one of the other store options before upgrading from your current Liferay
     version. 
 
--   Since @product@ 7.0, document store specific configuration (e.g., 
+1. If you're using Advanced File System Store or Simple File System Store, copy the document ling Advanced File System Store or Simple File System Store, copy the document library's root folder to your new installation or make sure the the newibrary's root folder to your new installation or make sure the the new installation can access it.
+
+1.  Since @product@ 7.0, document store specific configuration (e.g., 
     configurations specific to Simple File Store, Advanced File Store, S3, etc.)
     is done in the Control Panel at *Configuration &rarr; System Settings &rarr;
     File Storage* or done using OSGi configuration files (`.config` files).
@@ -147,8 +151,7 @@ It's time to migrate and update your document store configuration to
     Note, general document store configuration (e.g., `dl.store.impl=[File Store
     Impl Class]`) continues to be done using `portal-ext.properties`.  
 
-    Here are steps, for example, that create a `.config` file that specifies an
-    Advanced File Store's root file location:
+    Configure your existing file store in your new installation:
 
     1.  Create a `.config` file named after the store implementation class 
         (i.e., the class assigned to your `dl.store.impl` property):
@@ -156,11 +159,13 @@ It's time to migrate and update your document store configuration to
             com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.config
 
     2.  Set the following property in the `.config` file and replace 
-        `{document_library_path}` with  your file store's path. 
+        `{document_library_path}` with your Advanced File Store path. 
 
             rootDir="{document_library_path}"
 
-    3.  Copy the `.config` file to your `[Liferay Home]/osgi/configs` folder
+    3.  Copy the `.config` file to your new installation's `[Liferay Home]/osgi/configs` folder.
+
+| **Important:** If you're using Advanced File System Store, you must configure it with a `.config` file in the new installation before upgrading the database.
 
 The
 [Document Repository Configuration](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)
