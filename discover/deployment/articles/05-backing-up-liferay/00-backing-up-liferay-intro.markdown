@@ -45,6 +45,9 @@ Liferay Home's `/data` folder. If you're using the File System store or the
 Advanced File System store, the documents and media repository is also stored
 here by default. It's always important to back up your `/data` folder.
 
+| **Important:** If you've configured the document library to store files to a
+location other than a `[Liferay Home]/data` subfolder, back up that location.
+
 The files that comprise @product@'s OSGi runtime are stored in Liferay Home's
 `/osgi` folder. It contains all of the app and module JAR files deployed to
 @product@. The `/osgi` folder also contains other required JAR files,
@@ -56,9 +59,6 @@ occurs on @product@, the @product@ log files often provide valuable information
 for determining what went wrong. The `/data`, `/osgi`, and `/logs` folders are
 all contained in the Liferay Home folder. Thus, if you're backing up both your
 application server folder and your Liferay Home folder, you're in good shape.
-
-Remember that if you've configured the document library to store files to a
-location other than the default location, you should also back up that location.
 
 That covers the @product@ file system locations you should back up. Next, let's
 discuss how to back up @product@'s database.
