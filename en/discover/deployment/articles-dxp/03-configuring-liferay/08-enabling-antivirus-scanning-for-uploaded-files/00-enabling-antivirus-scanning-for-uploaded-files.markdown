@@ -1,6 +1,6 @@
 # Enabling Antivirus Scanning for Uploaded Files
 
-Antivirus scanning is available for files uploaded to Liferay DXP. When you enable the antivirus scanner, it checks files on upload to Liferay applications, such as Documents and Media, Message Boards, and more. Virus-infected files are reported for users to reject.
+You can automatically scan any file uploaded to Liferay for viruses. When you enable the antivirus scanner, it checks files on upload to Liferay applications, such as Documents and Media, Message Boards, and more. Virus-infected files are reported for users to reject.
 
 ![The scanner detects virus-infected files on upload to Documents and Media and other Liferay applications.](../../../images-dxp/clamd-virus-detected.png)
 
@@ -14,7 +14,7 @@ Here's how to enable the Clamd antivirus scanner:
 
     **Important:** Load your ClamAV database before starting Clamd.
 
-1. Enable antivirus for your File Store (Document Library) by setting the following portal property or [Docker Env variable](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/installing-liferay/using-liferay-docker-images/configuring-containers.html#using-liferay-env-variables).
+1. Enable antivirus for your File Store (Document Library) by setting the following portal property or [Docker Environment variable](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/installing-liferay/using-liferay-docker-images/configuring-containers.html#using-liferay-env-variables).
 
     Portal property:
 
@@ -22,7 +22,7 @@ Here's how to enable the Clamd antivirus scanner:
     dl.store.antivirus.enabled=true
     ```
 
-    Env variable:
+    Environment variable:
 
     ```properties
     -e LIFERAY_DL_PERIOD_STORE_PERIOD_ANTIVIRUS_PERIOD_ENABLED=true
