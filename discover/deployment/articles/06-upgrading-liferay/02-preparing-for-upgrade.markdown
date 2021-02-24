@@ -140,7 +140,7 @@ It's time to migrate and update your document store configuration to
     to one of the other store options before upgrading from your current Liferay
     version. 
 
-1. If you're using Advanced File System Store or Simple File System Store, copy the document ling Advanced File System Store or Simple File System Store, copy the document library's root folder to your new installation or make sure the the newibrary's root folder to your new installation or make sure the the new installation can access it.
+1. If you're using Advanced File System Store or Simple File System Store, make the store accessible to your new installation. For example, copy the store files to the location `[Liferay Home]/data/document_library` in your new installation.
 
 1.  Since @product@ 7.0, document store specific configuration (e.g., 
     configurations specific to Simple File Store, Advanced File Store, S3, etc.)
@@ -150,7 +150,7 @@ It's time to migrate and update your document store configuration to
     Note, general document store configuration (e.g., `dl.store.impl=[File Store
     Impl Class]`) continues to be done using `portal-ext.properties`.  
 
-    Configure your existing file store in your new installation:
+    Here are steps, for example, to configure an existing Advanced File System Store in your new installation:
 
     1.  Create a `.config` file named after the store implementation class 
         (i.e., the class assigned to your `dl.store.impl` property):
