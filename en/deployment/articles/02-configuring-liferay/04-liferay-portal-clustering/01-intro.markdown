@@ -7,7 +7,7 @@ header-id: liferay-clustering
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/setting-up-liferay-dxp/clustering-for-high-availability/clustering-for-high-availability.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/setting-up-liferay/clustering-for-high-availability/clustering-for-high-availability.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 @product@ can serve everything from the smallest to the largest web sites. Out
