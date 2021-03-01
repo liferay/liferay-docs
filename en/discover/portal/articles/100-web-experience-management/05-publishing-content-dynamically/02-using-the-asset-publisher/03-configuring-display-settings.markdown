@@ -6,6 +6,10 @@ header-id: configuring-display-settings
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+    <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/displaying-content/using-the-asset-publisher-widget/configuring-display-settings.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 From the Asset Publisher's configuration page, open the Setup tab's *Display
 Settings* sub-tab. This section gives you precise control over the display of
 your assets. There are many options available to configure how you want your
