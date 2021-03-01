@@ -56,55 +56,40 @@ See Oracle's [Configuring Java Node Manager](https://docs.oracle.com/middleware/
 
 ## Configuring WebLogic
 
-Next, you must set some variables in two WebLogic startup scripts. These 
-variables and scripts are as follows. Be sure to use `set` instead of `export` 
-if you're on Windows. 
+Configure the JVM and other options in a `setUserOverridesLate` WebLogic startup script and in your Managed Server UI.
 
-1.  `your-domain/startWebLogic.[cmd|sh]`: This is the Admin Server's startup
-    script. 
+1. Create a `setUserOverridesLate.sh` script in `[Your Domain]/bin`.
 
-2.  `your-domain/bin/startWebLogic.[cmd|sh]`: This is the startup script for
-    Managed Servers. 
+1. Add the following settings.
 
-    Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
-
-        export DERBY_FLAG="false"
-        export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -Duser.timezone=GMT -da:org.apache.lucene... -da:org.aspectj..."
-        export MW_HOME="/your/weblogic/directory"
-        export USER_MEM_ARGS="-Xmx2048m"
+    ```bash
+    export DERBY_FLAG="false"
+    export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -Duser.timezone=GMT -da:org.apache.lucene... -da:org.aspectj..."
+    export JAVA_PROPERTIES="-Dfile.encoding=UTF-8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+    export MW_HOME="[place your WebLogic Server folder path here]"
+    export USER_MEM_ARGS="-Xms512m -Xmx2048m"
+    export WLS_MEM_ARGS_64BIT="-Xms512m -Xmx2048m"
+    export WLS_MEM_ARGS_32BIT="-Xms512m -Xmx2048m"
+    ```
 
     | **Important:** For @product@ to work properly, the application server JVM
     | must use the `GMT` time zone and `UTF-8` file encoding.
 
     | **Important:** On JDK 11, the setting `-Djava.locale.providers=JRE,COMPAT,CLDR` is required to display four-digit years. Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the default locales provider. CLDR does not provide years in a four-digit format (see [LPS-87191](https://issues.liferay.com/browse/LPS-87191)). This setting works around the issue by using JDK 8's default locales provider.
     
-    The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
-    @product@ doesn't require this server. The remaining settings support @product@'s 
-    memory requirements, UTF-8 requirement, Lucene usage, and Aspect Oriented 
-    Programming via AspectJ. Also make sure to set `MW_HOME` to the directory 
-    containing your WebLogic server on your machine. For example: 
+    The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as DXP does not require this server.
+    
+    `JAVA_OPTIONS` sets DXP's UTF-8 requirement, Lucene usage, and Aspect Oriented Programming via AspectJ.
 
-        export MW_HOME="/Users/ray/Oracle/wls12210"
+    `JAVA_PROPERTIES` also sets DXP's UTF-8 requirement.
 
+    Set `MW_HOME` to the folder containing the WebLogic server on the machine. For example,
 
-3.  Some of the settings are also found in the `your-domain/bin/SetDomainEnv.[cmd|sh]` . Add the following variables (Windows):
-
-        set WLS_MEM_ARGS_64BIT=-Xms512m -Xmx2048m 
-        set WLS_MEM_ARGS_32BIT=-Xms512m -Xmx2048m
-
-    or on Mac or Linux:
-
-        WLS_MEM_ARGS_64BIT="-Xms512m -Xmx2048m"
-        export WLS_MEM_ARGS_64BIT
-
-        WLS_MEM_ARGS_32BIT="-Xms512m -Xmx2048m"
-        export WLS_MEM_ARGS_32BIT
-
-4.  Set the Java file encoding to UTF-8 in 
-    `your-domain/bin/SetDomainEnv.[cmd|sh]` by appending `-Dfile.encoding=UTF-8`
-    ahead of your other Java properties:  
-
-        JAVA_PROPERTIES="-Dfile.encoding=UTF-8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+    ```bash
+    export MW_HOME="/Users/ray/Oracle/wls12210"
+    ```
+        
+    The `*_MEM_ARGS` variables set DXP's starting and maximum heap memory capacity.
 
 5.  You must also ensure that the Node Manager sets @product@'s memory
     requirements when starting the Managed Server. In the Admin Server's console
