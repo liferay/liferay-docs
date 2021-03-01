@@ -231,7 +231,7 @@ workflow, with some of the `role` assignment tags cut out for brevity:
                     <name></name>
                     <template></template>
                     <template-language>text</template-language>
-                    <notification-type>im</notification-type>
+                    <notification-type>user-notification</notification-type>
                 </timer-notification>
             </timer-actions>
         </task-timer>
