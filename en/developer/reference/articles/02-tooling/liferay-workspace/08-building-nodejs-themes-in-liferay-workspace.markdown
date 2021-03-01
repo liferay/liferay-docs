@@ -62,5 +62,5 @@ Generator's required tooling is installed.
 
 Excellent! You learned how generated themes are recognized in workspace and 
 where they should reside. For more information on building Gradle/Maven-based
-themes in workspace, see it's dedicated
+themes in workspace, see its dedicated
 [article](/docs/7-2/reference/-/knowledge_base/r/building-gradle-maven-themes-in-liferay-workspace).
