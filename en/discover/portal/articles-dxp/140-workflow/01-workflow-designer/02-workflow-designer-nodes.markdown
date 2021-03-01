@@ -85,10 +85,13 @@ a notification.
 
 ![Figure 2: You can send a Notification from a Task node.](../../../images-dxp/workflow-designer-notification.png)
 
-You must specify the Notification Type, and you can choose User
-Notification, Email, Instant Messenger, or Private Message. You can use
-Freemarker or Velocity if you need a template, or you can choose to write a
-plain text message.
+You must specify the Notification Type, and you can choose User Notification or
+Email. You can use Freemarker or Velocity if you need a template, or you can
+choose to write a plain text message.
+
+| **Note:** Instant Messenger and Private Message also appear as Notification
+| Type options, but these are non-functional and will be removed in a future
+| version.
 
 Here's a basic Freemarker template that reports the name of the asset creator and
 the type of asset in the notification:
