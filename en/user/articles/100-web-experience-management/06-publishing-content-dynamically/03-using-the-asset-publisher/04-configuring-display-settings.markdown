@@ -6,6 +6,10 @@ header-id: configuring-display-settings
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+    <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/displaying-content/using-the-asset-publisher-widget/configuring-display-settings.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 From the Asset Publisher's configuration page, open the Setup tab's *Display
 Settings* sub-tab. This section gives you precise control over the display of
 your assets. There are many options available to configure how you want your
@@ -42,14 +46,6 @@ displays the full asset in the current Asset Publisher. *View in a Context*
 causes that asset to be displayed in the application where the asset belongs.
 For example, a blog entry is displayed in Blogs where it was created. See the
 section below on display pages for more information.
-
-| **Tip:** When the Asset Publisher displays web content articles with an
-| associated small image, the small image becomes a link to the full article. To
-| use this feature, add or edit a web content article that the Asset Publisher
-| should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
-| Image*, and upload an image. Then click *Publish*. Once your web content article
-| appears in the Asset Publisher's list, clicking the small image takes you to the
-| full article.
 
 **Number of Items to Display**: Select the maximum number of assets that can be
 displayed by the Asset Publisher. If pagination is enabled, this number
