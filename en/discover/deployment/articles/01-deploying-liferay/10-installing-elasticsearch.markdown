@@ -51,7 +51,7 @@ Installing Elasticsearch is pretty easy and takes only six steps:
 | Consult the
 | [Elasticsearch compatibility matrix](https://www.elastic.co/support/matrix#matrix_jvm)
 | and the
-| [@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85)
+| [@product@ compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016285432-Liferay-DXP-7-1-Compatibility-Matrix)
 | to learn more about supported JDK distributions and versions.
 
 Now you'll perform these steps, and when you're done, you'll have
