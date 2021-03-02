@@ -16,7 +16,7 @@ includes
 
 \* A LES subscription is not necessary if using Elasticsearch 7 via the _Liferay Connector to
     Elasticsearch 7_as X-Pack's security features are bundled. See the [LES
-    compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651-Liferay-Enterprise-Search-Compatibility-Matrix)
+    compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-Enterprise-Search)
     for more information.
 
 X-Pack is an 

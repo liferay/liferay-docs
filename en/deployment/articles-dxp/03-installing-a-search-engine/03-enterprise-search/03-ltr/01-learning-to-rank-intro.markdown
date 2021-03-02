@@ -74,7 +74,7 @@ queries sent to Elasticsearch:
     uploaded into the Learning to Rank plugin. 
 
 To understand more about the compatibility requirements for LES, see its
-[compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651-Liferay-Enterprise-Search-Compatibility-Matrix?flash_digest=645af3a9a43c3f505b5dbe67c6f1015e573382a9).
+[compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-Enterprise-Search).
 
 How does Learning to Rank work?
 
