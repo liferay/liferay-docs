@@ -62,9 +62,9 @@ Note that if you add a friendly URL for your instance's home page, you
 should update your instance's Home URL field so that page requests to
 `http://localhost:8080` redirect properly: 
 
-1.  Go to *Configuration* &rarr; *Instance Settings* in the Control Panel.
+1.  Go to *Configuration* &rarr; *Instance Settings* &rarr; *Instance Configuration* &rarr; *General* in the Control Panel.
 
-2.  Under *Navigation*, in the Home URL field enter your home URL (i.e.
+2.  Under *Navigation*, in the *Home URL* field enter your home URL (i.e.
     */web/lunar-resort/home*).
 
 <!-- TODO: Check for Navigation tab. -->
