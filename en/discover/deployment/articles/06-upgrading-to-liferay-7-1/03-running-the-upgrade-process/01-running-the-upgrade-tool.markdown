@@ -208,11 +208,12 @@ Add all portal properties, such as `portal-ext.properties` file properties, from
 
 `liferay.home`: the [Liferay home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) *(required)*
 
+`locales`: Liferay upgrades data for all of the specified locales. If you added locales to the property [in your `portal-ext.properties`](/docs/7-1/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#step-6-configuring-your-documents-and-media-file-store), specify the updated property here.
+
 `dl.store.impl`: the implementation for persisting documents to the document
 library store. This property's default value is
 `com.liferay.portal.store.file.system.FileSystemStore`.
-If you updated the property
-[in your `portal-ext.properties`](/docs/7-1/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#step-6-configuring-your-documents-and-media-file-store)
+If you updated the property in your `portal-ext.properties`
 to use a different implementation, specify the updated property here.
 
 `hibernate.jdbc.batch_size`: the JDBC batch size used to improve performance;
