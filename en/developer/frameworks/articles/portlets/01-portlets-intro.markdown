@@ -6,6 +6,10 @@ header-id: portlets
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/developing-applications/developing-a-java-web-application/portlets.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 @product@ started off as a portal server, designed to serve Java-based web
 applications called *portlets* (see [JSR 168](https://jcp.org/en/jsr/detail?id=168),
 [JSR-286](https://jcp.org/en/jsr/detail?id=286), and

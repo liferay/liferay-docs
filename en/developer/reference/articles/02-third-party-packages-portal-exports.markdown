@@ -6,6 +6,10 @@ header-id: third-party-packages-portal-exports
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/liferay-internals/reference/exported-third-party-packages.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 The `com.liferay.portal.bootstrap` module exports many third party Java packages 
 that can cause problems if used improperly. If your WAR's Gradle file, for 
 example, uses the `compile` scope for a [dependency](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies) 
