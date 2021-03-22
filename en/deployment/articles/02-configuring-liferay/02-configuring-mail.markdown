@@ -144,7 +144,7 @@ Email senders are the default name and email address @product@ uses to send admi
 Default email senders are configured in the
 [`portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties).  
 
--    Admin email configuration:
+-   Admin email configuration:
 
     ```properties
     admin.email.from.name=Joe Bloggs
