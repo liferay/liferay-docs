@@ -42,13 +42,13 @@ Set each category's `priority` element to the log
 (priority) you want.
 
 -   ALL
+-   TRACE
 -   DEBUG
+-   INFO
+-   WARN
 -   ERROR
 -   FATAL
--   INFO
 -   OFF
--   TRACE
--   WARN
 
 The log messages are printed to Liferay log files in `[Liferay_Home]/logs`.
 

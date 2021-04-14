@@ -40,13 +40,13 @@ Here's how to use SLF4J to log messages in a class:
 
     Use `Logger` methods appropriate for each message:
  
-    -  `debug`: Event and application information helpful for debugging.
-    -  `error`: Normal errors. This is the least verbose message level.
-    -  `info`: High level events.
     -  `trace`: Provides more information than debug. This is the most verbose
        message level. 
+    -  `debug`: Event and application information helpful for debugging.
+    -  `info`: High level events.
     -  `warn`: Information that might, but does not necessarily, indicate a
        problem.
+    -  `error`: Normal errors. This is the least verbose message level.
 
 Log verbosity should correlate with the log level set for the class or package.
 Make sure you provide additional information at log levels expected to be more
