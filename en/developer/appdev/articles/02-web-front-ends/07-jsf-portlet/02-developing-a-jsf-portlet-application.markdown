@@ -180,19 +180,6 @@ Follow these steps:
     </init-param>
     ```
 
-    If you want to opt-in to Portlet 3.0 features, modify your `portlet-app`
-    element to specify `version="3.0"` and the Portlet 3.0 schema. The
-    `portlet-app` element should look like this:
-
-    ```xml
-    <portlet-app xmlns="http://xmlns.jcp.org/xml/ns/portlet"
-			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/portlet http://xmlns.jcp.org/xml/ns/portlet/portlet-app_3_0.xsd"
-			 version="3.0">
-       ...
-    </portlet-app>
-    ```
-
 12. Modify your `webapp/WEB-INF/liferay-portlet.xml` as desired. It specifies
     additional information @product@ uses to enhance your portlet: supported
     security roles, portlet icon, CSS and JavaScript locations, and more. The
