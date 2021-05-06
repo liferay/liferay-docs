@@ -24,8 +24,9 @@ deployment properly.
 
 Installing Elasticsearch is pretty easy and takes only six steps: 
 
-1. Find the version of Elasticsearch that's embedded in the version of @product@
-   you have, and then download that version from [Elastic's](https://www.elastic.co) 
+1. Find the latest [compatible version of
+   Elasticsearch](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-DXP-7.1),
+   and then download that version from [Elastic's](https://www.elastic.co)
    website. 
 
 2. Install Elasticsearch by extracting its archive to the system where you want
@@ -36,6 +37,12 @@ Installing Elasticsearch is pretty easy and takes only six steps:
 4. Name your Elasticsearch cluster. 
 
 5. Configure @product@ to connect to your Elasticsearch cluster. 
+
+   | **Note:** If you are installing an Elasticsearch version that requires
+   | installation of a new connector application, you must disable several
+   | version-specific modules. The instructions in [Installing Elasticsearch
+   | 7](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch-7)
+   | demonstrate this.
 
 6. Restart @product@ and reindex your search indexes. 
 
@@ -65,7 +72,14 @@ information on installing a search engine, see
 
 ### Step One: Find the Right Version of Elasticsearch
 
-If @product@ isn't running, start it. 
+To install the latest compatible Elasticsearch version, refer to the [Search
+Engine Compatibility
+Matrix](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-DXP-7.1),
+and then download that version from [Elastic's](https://www.elastic.co)
+website. 
+
+To inspect the version of the embedded Elasticsearrch server, if @product@
+isn't running, start it. 
 
 Visit port 9200 on localhost to access the embedded Elasticsearch: 
 

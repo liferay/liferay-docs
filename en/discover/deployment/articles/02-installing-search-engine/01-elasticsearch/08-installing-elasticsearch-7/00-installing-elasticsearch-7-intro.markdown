@@ -1,6 +1,15 @@
+---
+header-id: installing-elasticsearch-7
+---
+
 # Installing Elasticsearch 7
 
 [TOC levels=1-4]
+
+Elasticsearrch 7 can be installed with @product-ver@. This article presents a basic setup. For additional details on the general Elasticsearch Installation procedure, refer to
+[Installing Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch).
+
+Once installed refere to the [configuration guide](/docs/7-1/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector).
 
 | **Note:** Elasticsearch 6.x and 7.x are supported for @product-ver@. Refer to
 | the [Search Engine Compatibility
@@ -105,7 +114,16 @@ Elasticsearch 6 search modules.
 
 2. Give it these contents:
 
-    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Enterprise Search Monitoring","Liferay Enterprise Search Security"]
+    ```properties
+    blacklistBundleSymbolicNames=[ \
+        "com.liferay.portal.search.elasticsearch6.api", \
+        "com.liferay.portal.search.elasticsearch6.impl", \
+        "com.liferay.portal.search.elasticsearch6.spi", \
+        "com.liferay.portal.search.elasticsearch6.xpack.security.impl", \
+        "Liferay Connector to X-Pack Security [Elastic Stack 6.x] - Impl", \
+        "Liferay Enterprise Search Security  - Impl" \
+    ]
+    ```
 
 3. Place the file in `Liferay Home/osgi/configs`.
 
@@ -132,6 +150,8 @@ This simple configuration leverages many default settings, but the
 configuration is customizable. See the [Elasticsearch
 documentation](https://www.elastic.co/guide/en/elasticsearch/reference/7.12/modules-network.html#transport-settings)
 to learn about the available transport settings.
+
+Learn more about the Liferay connector's corresponding configurations in the [configuration guide](/docs/7-1/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector).
 
 ## Restart and Re-Index
 
