@@ -44,11 +44,11 @@ instance:
 
         <AppPermissionRequests>
             <AppPermissionRequest
-                scope="http://sharepoint/content/sitecollection/web/list"
+                Scope="http://sharepoint/content/sitecollection/web/list"
                 Right="Write" 
             />
             <AppPermissionRequest
-                scope="http://sharepoint/search"
+                Scope="http://sharepoint/search"
                 Right="QueryAsUserIgnoreAppPrincipal" 
             />
         </AppPermissionRequests>
