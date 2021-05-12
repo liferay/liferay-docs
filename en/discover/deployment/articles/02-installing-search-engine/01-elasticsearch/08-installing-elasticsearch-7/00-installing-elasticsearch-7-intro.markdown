@@ -32,7 +32,8 @@ To install Elasticsearch 7 on a new @product-ver@ installation:
 
 To install Elasticsearch,
 
-1. Download an Elasticsearch archive (not the OSS version) from [Elastic's website](https://www.elastic.co).
+1. Download an Elasticsearch archive (not the OSS version) from 
+   [Elastic's website](https://www.elastic.co).
 
    Download the latest Elasticsearch archive [compatible with your Liferay version](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-DXP-7.1).
 
@@ -94,11 +95,11 @@ Start Elasticsearch.
 Liferay requires installation of a connector application that can enable
 communication with the corresponding Elasticsearch version:
 
-1. Download the [appropriate
-   connector](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-DXP-7.1)
+1. Download the
+   [appropriate connector](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-DXP-7.1)
    for your version of Liferay and Elasticsearch.
 
-2. Stop Liferay and place the LPKG file into `Liferay Home/osgi/marketplace/`
+2. Stop Liferay and place the LPKG file into `Liferay Home/osgi/marketplace/`.
 
 ## Disable the default Liferay Connector to Elasticsearch 6
 

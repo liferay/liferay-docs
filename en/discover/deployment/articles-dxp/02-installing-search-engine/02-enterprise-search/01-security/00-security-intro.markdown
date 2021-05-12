@@ -8,10 +8,11 @@ header-id: installing-liferay-enterprise-search-security
 
 ## Enabling X-Pack Security
 
-| **Elasticsearch 6.x:** If you're using Elasticsearch 6, you'll need a Liferay
-| Enterprise Search (LES) subscription to use X-Pack Security in your Liferay DXP-Elasticsearch stack.
-| Starting with the _Liferay Connector to Elasticsearch 7_ (available on Liferay Marketplace), X-Pack security
-| is included by default. Liferay Enterprise Search Monitoring still requires LES.
+| **Elasticsearch 6.x:** If you're using Elasticsearch 6, a Liferay Enterprise
+| Search (LES) subscription is required to use X-Pack Security in your Liferay
+| DXP-Elasticsearch stack. Starting with the _Liferay Connector to Elasticsearch 7_
+| (available on Liferay Marketplace), X-Pack security is included by default.
+| Liferay Enterprise Search Monitoring still requires LES.
 
 The first thing to do is enable X-Pack security. Add this setting in
 `elasticsearch.yml`:
@@ -22,8 +23,9 @@ Now you can set up X-Pack users.
 
 ## Setting Up X-Pack Users in Elasticsearch
 
-In a system using Security and Monitoring, these built-in
-X-Pack users of Elasticsearch are important to enable authentication in clients like Liferay or Kibana:
+In a system using Security and Monitoring, Kibana and Liferay must authenticate
+as clients to Elasticsearch, using the credentials configured for these
+built-in X-Pack users:
 
 - `kibana_system`
 - `elastic`
@@ -196,7 +198,10 @@ on each node via its `[Elasticsearch Home]/config/elasticsearch.yml` file.
     xpack.security.http.ssl.truststore.password: liferay
     ```
 
-To configure Elasticsearch using `PEM` format certificates, please refer to the examples at the bottom of this page. After TLS is enabled, configure the X-Pack Security in @product@.
+| **PEM:** To configure Elasticsearch using `PEM` format certificates, refer to
+| the examples below. 
+
+Once TLS is enabled, configure X-Pack Security in @product@.
 
 ## Configuring Security in Liferay's Elasticsearch Connector
 
@@ -206,7 +211,8 @@ To configure Elasticsearch using `PEM` format certificates, please refer to the 
 | file by copying it into the `Liferay Home/deploy` folder. 
 
 | **Elasticsearch 7.x:** The Liferay Connector to Elasticsearch 7 includes
-| security integration by default, so you don't need to download and install the LES Security app separately.
+| security integration by default; installing the LES Security app is
+| unnecessary.
 
 To configure security, navigate to *Control Panel* &rarr; *Configuration*
 &rarr; *System Settings*. Find the *Search* category and click on the *X-Pack
@@ -215,8 +221,7 @@ to use a
 [configuration file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)
 deployed to `[Liferay Home]/osgi/configs`.
 
-On Elasticsearch 7.x, for the security adapter, create a file
-called
+On Elasticsearch 7.x, for the security adapter, create a file called
 
 
     com.liferay.portal.search.elasticsearch7.configuration.XPackSecurityConfiguration.config
@@ -225,9 +230,9 @@ For Elasticsearch 6.x installations the file is named
 
     com.liferay.portal.search.elasticsearch6.xpack.security.internal.configuration.XPackSecurityConfiguration.config
 
-The exact contents of the file depend on your X-Pack setup in Elasticsearch. To configure the
-adapter according to the Elasticsearch setup documented here, populate the file
-like this (`PKCS#12`):
+The exact contents of the file depend on your X-Pack setup in Elasticsearch. To
+configure the adapter according to the Elasticsearch setup documented here,
+populate the file like this (`PKCS#12`):
 
 ```properties
 certificateFormat="PKCS#12"
@@ -263,11 +268,11 @@ The certificate and key files referenced here are the same ones used on the
 Elasticsearch server. Copy them to the @product@ server and update their paths
 in the configuration accordingly.
 
-Enable authentication by setting `requiresAuthentication` to `true` and providing the
-credentials for the Elasticsearch user. For SSL, enable transport SSL, set the
-certificate verification mode and certificate format, and provide the path to
-the certificate, key, and certificate authority. Of course, the exact values
-depend on your X-Pack configuration. 
+Enable authentication by setting `requiresAuthentication` to `true` and
+providing the credentials for the Elasticsearch user. For SSL, enable transport
+SSL, set the certificate verification mode and certificate format, and provide
+the path to the certificate, key, and certificate authority. Of course, the
+exact values depend on your X-Pack configuration. 
 
 Here's the complete list of security configuration options:
 
@@ -342,6 +347,6 @@ xpack.security.http.ssl.certificate_authorities: ["certs/ca.crt"]
 xpack.security.http.ssl.key: certs/elastic-nodes.key
 xpack.security.http.ssl.key_passphrase: liferay
 
-# Comment out when Kibana and Liferay's LES Monitoring are also configured
+# Use this setting when Kibana and Liferay's LES Monitoring are also configured
 #xpack.monitoring.collection.enabled: true
 ```
