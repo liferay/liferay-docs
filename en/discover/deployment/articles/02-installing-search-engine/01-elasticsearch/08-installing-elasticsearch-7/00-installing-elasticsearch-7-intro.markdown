@@ -20,7 +20,7 @@ To install Elasticsearch 7 on a new @product-ver@ installation:
 
 1. Install and configure Elasticsearch 7.x. 
 
-2. Install the Liferay Connector to Elasticsearch 7 and restart @product@.
+2. Install the Liferay Connector to Elasticsearch 7.
  
 3. Disable the default, bundled Liferay Connector to Elasticsearch 6.
 
