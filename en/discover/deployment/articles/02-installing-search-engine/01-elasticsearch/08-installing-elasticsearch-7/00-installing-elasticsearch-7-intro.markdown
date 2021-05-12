@@ -18,13 +18,13 @@ Once installed refere to the [configuration guide](/docs/7-1/deploy/-/knowledge_
 
 To install Elasticsearch 7 on a new @product-ver@ installation:
 
-1. Install and configure Elasticsearch. 
+1. Install and configure Elasticsearch 7.x. 
 
 2. Install the Liferay Connector to Elasticsearch 7 and restart @product@.
  
-3. Disable Elasticsearch 6.
+3. Disable the default, bundled Liferay Connector to Elasticsearch 6.
 
-4. Configure @product@ to connect to your Elasticsearch cluster. 
+4. Configure @product@ to connect to your Elasticsearch 7.x cluster. 
 
 5. Restart @product@ and reindex your search indexes. 
 
@@ -89,7 +89,7 @@ Start Elasticsearch.
 ./bin/elasticsearch
 ```
 
-## Install the Liferay Connector to Elasticsearch
+## Install the Liferay Connector to Elasticsearch 7
 
 Liferay requires installation of a connector application that can enable
 communication with the corresponding Elasticsearch version:
@@ -98,15 +98,13 @@ communication with the corresponding Elasticsearch version:
    connector](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-DXP-7.1)
    for your version of Liferay and Elasticsearch.
 
-2. With Liferay running, place the LPKG file into `Liferay Home/deploy/`
+2. Stop Liferay and place the LPKG file into `Liferay Home/osgi/marketplace/`
 
-3. Restart Liferay. The remaining steps can be completed with Liferay running.
-
-## Disable Elasticsearch 6
+## Disable the default Liferay Connector to Elasticsearch 6
 
 Whether you're installing Elasticsearch 7 for a new @product-ver@ installation
-or upgrading an existing stack to Elasticsearch 6, you must disable the
-Elasticsearch 6 search modules.
+or upgrading an existing stack to Elasticsearch 6, you must disable Liferay's
+Elasticsearch 6 search modules bundled with the @product@ by default.
 
 1. Create a configuration file named
 
