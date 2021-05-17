@@ -6,6 +6,10 @@ header-id: solr-connector-settings
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/using-search/installing-and-upgrading-a-search-engine/solr/installing-solr.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Solr can be configured for use with @product-ver@. Liferay Marketplace includes
 a Solr connector app called the Liferay Connector to Solr 7. The connector is
 configurable through System Settings or an OSGi configuration file named
