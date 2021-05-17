@@ -6,6 +6,9 @@ header-id: installing-solr-basic-installation
 
 [TOC levels=1-4]
 
+| **Note:** To install Solr 8, see the Solr installation guide on
+| [Liferay Learn](https://learn.liferay.com/dxp/latest/en/using-search/installing-and-upgrading-a-search-engine/solr/installing-solr.html)
+
 There are two ways to install the Liferay Connector to Solr 7:
 
 1. Navigate to 
