@@ -172,7 +172,7 @@ If both Liferay and Elasticsearch are running, once the connection is configured
 In the Control Panel, navigate to Configuration &rarr; Search and verify the
 Elasticsearch connection is active.
 
-![Figure x: An active connection is displayed in the Search administrative panel.](../../../../images/elasticsearch-7-connection.png)
+![Figure 1: An active connection is displayed in the Search administrative panel.](../../../../images/elasticsearch-7-connection.png)
 
 | **Important:** Re-index your search indexes and spell check indexes. Invoke
 | both of these actions in the Index Actions tab of Control Panel &rarr;

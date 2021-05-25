@@ -1,4 +1,10 @@
+---
+header-id: enabling-antivirus-scanning-for-uploaded-files
+---
+
 # Enabling Antivirus Scanning for Uploaded Files
+
+[TOC levels=1-4]
 
 You can automatically scan any file uploaded to Liferay for viruses. When you enable the antivirus scanner, it checks files on upload to Liferay applications, such as Documents and Media, Message Boards, and more. Virus-infected files are reported for users to reject.
 
