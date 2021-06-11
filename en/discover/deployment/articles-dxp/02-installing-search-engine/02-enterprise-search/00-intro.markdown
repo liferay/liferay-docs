@@ -25,6 +25,13 @@ license, but you can enable a
 [30-day trial](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/start-trial.html)
 to work with in the meantime.
 
+Detailed installation and usage instructions are available in the article for
+each LES feature, including
+
+-  [Liferay Learn] [Cross-Cluster Replication](https://learn.liferay.com/dxp/latest/en/using-search/liferay-enterprise-search/cross-cluster-replication/cross-cluster-replication.html)
+-  [Monitoring Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/monitoring-product)
+-  [Securing Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-enterprise-search-security) [Free without LES for Liferay CE and DXP with Elasticsearch 7] 
+
 Always check the
 [LES compatibility matrix](https://help.liferay.com/hc/en-us/articles/360016511651#Liferay-Enterprise-Search)
 for compatibility information.
