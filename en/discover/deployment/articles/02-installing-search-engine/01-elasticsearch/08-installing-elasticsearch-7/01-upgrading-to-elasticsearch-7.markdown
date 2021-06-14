@@ -6,7 +6,7 @@ header-id: upgrading-to-elasticsearch-7
 
 [TOC levels=1-4]
 
-Elasticsearch 7 is supported for @product-ver@. If you're upgrading @product@
+Elasticsearch 7 is supported for Liferay DXP 7.1. If you're upgrading Liferay DXP
 and still running Elasticsearch 6, consider upgrading your Elasticsearch
 servers too. If you're setting up a new system and not already running a remote
 Elasticsearch 6 server, follow the 
