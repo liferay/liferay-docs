@@ -192,11 +192,6 @@ streamlining and optimizing those processes and operations.
 Reduce the time it takes for IT to deliver custom applications for the
 business. Automate data collection through applications.
 
-#### Data Engine API
-
-Reduce the time it takes for IT to deliver custom applications for the business.
-Automate data collection through applications. 
-
 #### Workflow Metrics
 
 Workflow metrics helps users gain insight into how long certain workflow events
