@@ -6,6 +6,10 @@ header-id: creating-a-destination
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/developing-applications/core-frameworks/message-bus/using-asynchronous-messaging.html#examine-the-destination-configuration">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [Message Bus destinations](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus#messaging-destinations) 
 are based on destination configurations and registered as OSGi services. Message 
 Bus detects the destination services and manages their associated destinations. 

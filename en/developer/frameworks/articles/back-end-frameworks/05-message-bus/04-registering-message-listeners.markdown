@@ -6,6 +6,10 @@ header-id: registering-message-listeners
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/developing-applications/core-frameworks/message-bus/listening-for-messages.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 There are three ways to register a 
 [message listener](/docs/7-2/frameworks/-/knowledge_base/f/using-the-message-bus#message-listeners) 
 with the Message Bus: 
