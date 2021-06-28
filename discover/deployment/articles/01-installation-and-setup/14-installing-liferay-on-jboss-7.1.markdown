@@ -11,9 +11,9 @@ header-id: installing-liferay-on-jboss-7-1
 1. Download and install JBoss AS 7.1.x into your preferred directory. This
    directory is referred to as `$JBOSS_HOME` throughout this section.
 
-2. Download the latest version of the Liferay Portal `.war` file.
+2. Download the latest version of the Liferay Portal `.war` file from the [Help Center](https://help.liferay.com/hc).
 
-3. Download Liferay's Portal Dependencies.
+3. Download Liferay's Portal Dependencies from the [Help Center](https://help.liferay.com/hc).
 
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on JBoss.

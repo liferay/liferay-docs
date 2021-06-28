@@ -21,7 +21,7 @@ WebLogic server installation (e.g., `/Oracle/Middleware/Oracle_Home/wlserver`).
 
 Before you begin, make sure to download the latest Liferay `.war` file and
 Liferay Portal dependencies from
-[http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
+the [Help Center](https://help.liferay.com/hc).
 The Liferay `.war` file is called `liferay-portal-[version].war` and
 the dependencies file is called `liferay-portal-dependencies-[version].zip`.
 

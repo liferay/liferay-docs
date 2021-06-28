@@ -69,7 +69,7 @@ and administration UIs. Here is a description of each surname and what it means:
   these releases. A General Availability release is a re-label of the last
   release candidate, based on internal testing and feedback from beta
   testers. These releases are stable and are made available via Liferay's
-  Downloads page for CE and on the Customer Portal for EE. 
+  Downloads page for CE and on the [Help Center](https://help.liferay.com/hc) for EE. 
 
 Armed with this information, here's our advice for how to manage your Liferay
 installation. 

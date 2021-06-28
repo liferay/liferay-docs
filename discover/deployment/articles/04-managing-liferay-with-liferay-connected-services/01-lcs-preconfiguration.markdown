@@ -184,7 +184,7 @@ Next, you'll learn how to configure Liferay Portal's patching tool.
 LCS uses Liferay Portal's patching tool to apply updates. In Liferay Portal 6.2
 EE bundles, the patching tool is pre-installed. If you're not running a bundle,
 you must
-[download](https://web.liferay.com/group/customer/products/patching-tool)
+[download](https://help.liferay.com/hc)
 and
 [install](/docs/6-2/deploy/-/knowledge_base/d/patching-liferay#installing-the-patching-tool)
 the patching tool separately.

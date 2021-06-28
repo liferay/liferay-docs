@@ -11,13 +11,13 @@ header-id: installing-liferay-on-tomcat-7
 For this section, we will refer to your Tomcat server's installation location as
 `$TOMCAT_HOME`. If you do not already have an existing Tomcat server, we
 recommend you download a Liferay/Tomcat bundle from
-[http://www.liferay.com/downloads](http://www.liferay.com/downloads).
+the [Help Center](https://help.liferay.com/hc).
 If you have an existing Tomcat server or would like to install Liferay on Tomcat
 manually, please follow the steps below.
 
 Before you begin, make sure you have downloaded the latest Liferay `.war` file
 and Liferay Portal dependencies from
-[http://www.liferay.com/downloads#additional-files](http://www.liferay.com/downloads#additional-files).
+the [Help Center](https://help.liferay.com/hc).
 The Liferay `.war` file should be called `liferay-portal-6.2.x-[date].war` and
 the dependencies file should be called
 `liferay-portal-dependencies-6.2.x-[date].zip`.

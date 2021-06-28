@@ -12,7 +12,7 @@ the top of the page, and you'll see multiple options for getting a copy of
 Liferay, including our convenient bundles or a `.war` package for installation
 on your application server of choice.
 
-Liferay enterprise subscribers can download Liferay from the Customer Portal.
+Liferay enterprise subscribers can download Liferay from the [Help Center](https://help.liferay.com/hc).
 You have a choice of the same open source app server bundles as community
 members, plus a few commercial alternatives, in addition to the `.war` package
 for manual installation. 

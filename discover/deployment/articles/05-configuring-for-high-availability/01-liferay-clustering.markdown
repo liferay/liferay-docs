@@ -675,14 +675,13 @@ worry--even though you'll create a plugin, you won't have to write any code.
 Since we're assuming you're an administrator and not a developer, we'll take the
 easiest route, and use Liferay's graphical development tools, rather than the
 command line Plugins SDK by itself. If you're a Liferay EE customer, download
-Liferay Developer Studio from the Customer Portal. Set it up with all the
+Liferay Developer Studio from the [Help Center](https://help.liferay.com/hc). Set it up with all the
 defaults from the first start wizard, and you're good to go (skip the next
 paragraph).
 
 If you're not a Liferay EE customer, download Eclipse and install Liferay IDE
 from the Eclipse Marketplace. Download the Plugins SDK for your edition of
-Liferay from either the Customer Portal (EE) or the Downloads page on
-liferay.com. Connect Liferay IDE to your Plugins SDK using the instructions
+Liferay from either the [Help Center](https://help.liferay.com/hc). Connect Liferay IDE to your Plugins SDK using the instructions
 found in the *Liferay Developer's Guide*.
 
 Next, create a hook plugin by selecting *File* &rarr; *New* &rarr; *Liferay
