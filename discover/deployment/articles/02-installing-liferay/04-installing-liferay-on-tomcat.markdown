@@ -7,7 +7,7 @@ header-id: installing-liferay-on-tomcat-8
 [TOC levels=1-4]
 
 @product-ver@ bundled with Tomcat 8 is available on the
-[Help Center](https://customer.liferay.com/downloads)
+[Help Center](https://help.liferay.com/hc)
 (DXP) or the
 [Community Downloads page](https://www.liferay.com/downloads-community)
 (Portal CE). The Tomcat bundle contains JARs, scripts, and configuration files
@@ -17,7 +17,7 @@ server.
 
 Whether you copy bundle files (recommended) or download and create the files,
 you must download these *Additional Files* for
-[DXP](https://customer.liferay.com/downloads)
+[DXP](https://help.liferay.com/hc)
 or
 [Portal CE](https://www.liferay.com/downloads-community):
 

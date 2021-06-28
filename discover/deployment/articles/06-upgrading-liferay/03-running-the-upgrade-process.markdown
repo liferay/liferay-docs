@@ -39,7 +39,7 @@ the modules--together or separately.
 manually, you can download the upgrade tool separately.
 
 - *Liferay DXP 7.0*: Go to the
-[*Downloads* page](https://customer.liferay.com/downloads),
+[*Downloads* page](https://help.liferay.com/hc),
 select product *DXP 7.0* and file type *Product*, and select *Download* for
 *Liferay DXP DB Upgrade Client*.
 
