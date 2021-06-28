@@ -33,9 +33,10 @@ is important to the operation of @product@. In Liferay Home, @product@ creates
 certain files and folders that it needs to run. On WebSphere, Liferay Home is 
 typically `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
 
-Before proceeding, you must
-[download](https://customer.liferay.com/downloads) 
-these *Additional Files*: 
+Before proceeding, you must download these *Additional Files* for
+[DXP](https://help.liferay.com/hc)
+or
+[Portal CE](https://www.liferay.com/downloads-community):: 
 
 - @product@ WAR file
 - Dependencies ZIP file
