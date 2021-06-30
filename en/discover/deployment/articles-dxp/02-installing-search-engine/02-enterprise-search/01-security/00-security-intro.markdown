@@ -10,9 +10,9 @@ header-id: installing-liferay-enterprise-search-security
 
 | **Elasticsearch 6.x:** If you're using Elasticsearch 6, a Liferay Enterprise
 | Search (LES) subscription is required to use X-Pack Security in your Liferay
-| DXP-Elasticsearch stack. Starting with the _Liferay Connector to Elasticsearch 7_
-| (available on Liferay Marketplace), X-Pack security is included by default.
-| Liferay Enterprise Search Monitoring still requires LES.
+| DXP-Elasticsearch stack. Starting with the _Liferay Connector to Elasticsearch
+| 7_ (available for Liferay DXP 7.1 on Liferay Marketplace), X-Pack security is
+| included by default.  Liferay Enterprise Search Monitoring still requires LES.
 
 The first thing to do is enable X-Pack security. Add this setting in
 `elasticsearch.yml`:
@@ -210,9 +210,9 @@ Once TLS is enabled, configure X-Pack Security in @product@.
 | the Liferay Enterprise Search Security app. Install the LPKG
 | file by copying it into the `Liferay Home/deploy` folder. 
 
-| **Elasticsearch 7.x:** The Liferay Connector to Elasticsearch 7 includes
-| security integration by default; installing the LES Security app is
-| unnecessary.
+| **Elasticsearch 7.x:** The Liferay Connector to Elasticsearch 7 (DXP-only on
+| Liferay 7.1) includes security integration by default; installing the LES
+| Security app is unnecessary.
 
 To configure security, navigate to *Control Panel* &rarr; *Configuration*
 &rarr; *System Settings*. Find the *Search* category and click on the *X-Pack

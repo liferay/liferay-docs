@@ -6,7 +6,7 @@ header-id: installing-elasticsearch-7
 
 [TOC levels=1-4]
 
-Elasticsearrch 7 can be installed with @product-ver@. This article presents a basic setup. For additional details on the general Elasticsearch Installation procedure, refer to
+Elasticsearrch 7 can be installed with Liferay DXP 7.1 (DXP-only). This article presents a basic setup. For additional details on the general Elasticsearch Installation procedure, refer to
 [Installing Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch).
 
 Once installed refere to the [configuration guide](/docs/7-1/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector).
