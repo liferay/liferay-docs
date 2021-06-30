@@ -6,8 +6,7 @@ header-id: installing-product-on-tomcat
 
 [TOC levels=1-4]
 
-@product-ver@ bundled with Tomcat 9 is available on the
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
+@product-ver@ bundled with Tomcat 9 is available on the [Help Center](https://help.liferay.com/hc)
 (DXP) or
 [Liferay Downloads](https://www.liferay.com/downloads)
 (Portal CE). The Tomcat bundle contains JARs, scripts, and configuration files
@@ -17,7 +16,7 @@ Copying these files from a @product@ Tomcat bundle facilitates installing
 
 Whether you copy bundle files (recommended) or download and create the files,
 you must download these *Additional Files* for
-[DXP](https://customer.liferay.com/downloads)
+[DXP](https://help.liferay.com/hc)
 or
 [Portal CE](https://www.liferay.com/downloads-community):
 

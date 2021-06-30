@@ -28,8 +28,7 @@ open source version of @product@ or a trial of the commercial version in several
 different formats. These include our convenient bundles as well as `.war` files
 for installing @product@ on your application server of choice.
 
-Liferay enterprise subscribers can download Liferay DXP from the
-[Customer Portal](https://www.liferay.com/group/customer).
+Liferay enterprise subscribers can download Liferay DXP from the [Help Center](https://help.liferay.com/hc).
 
 So what is a @product@ bundle anyway? A @product@ bundle is an application
 server with @product@ pre-installed. Bundles after Liferay DXP 7.1 GA1 and

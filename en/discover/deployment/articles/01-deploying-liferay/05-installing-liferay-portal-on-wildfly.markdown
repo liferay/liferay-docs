@@ -6,15 +6,14 @@ header-id: installing-product-on-wildfly
 
 [TOC levels=1-4]
 
-@product-ver@ bundled with Wildfly 11 is available on the
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
+@product-ver@ bundled with Wildfly 11 is available on the [Help Center](https://help.liferay.com/hc)
 (DXP) or [Liferay Downloads](https://www.liferay.com/downloads) (Portal CE).
 @product-ver@ supports deployment to Wildfly 10 and Wildfly 11. Even if you want
 to manually install @product@ on an existing Wildfly application server, it can
 be helpful to download a @product@ Wildfly bundle to make gathering the
 dependencies easier. Before proceeding, also download these *Additional Files*
 for
-[DXP](https://customer.liferay.com/downloads)
+[DXP](https://help.liferay.com/hc)
 or
 [Portal CE](https://www.liferay.com/downloads-community):
 

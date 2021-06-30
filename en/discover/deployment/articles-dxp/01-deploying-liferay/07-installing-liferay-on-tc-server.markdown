@@ -7,8 +7,10 @@ header-id: installing-liferay-on-tc-server
 [TOC levels=1-4]
 
 Installing @product@ on tc server requires
-[downloading](https://customer.liferay.com/downloads) 
-these *Additional Files*: 
+these *Additional Files* for
+[DXP](https://help.liferay.com/hc)
+or
+[Portal CE](https://www.liferay.com/downloads-community):: 
 
 - @product@ WAR file
 - Dependencies ZIP file

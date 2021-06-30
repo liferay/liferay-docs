@@ -24,9 +24,10 @@ You should also read the following articles to familiarize yourself with
 - [Preparing for Install](/docs/7-1/deploy/-/knowledge_base/d/preparing-for-install)
 - [Installing @product@ Manually](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-manually)
 
-Before proceeding, you must
-[download](https://customer.liferay.com/downloads) 
-these *Additional Files*: 
+Before proceeding, you must download these *Additional Files* for
+[DXP](https://help.liferay.com/hc)
+or
+[Portal CE](https://www.liferay.com/downloads-community): 
 
 - @product@ WAR file
 - Dependencies ZIP file
