@@ -17,7 +17,7 @@ server of choice.
 There are five generic steps to installing Liferay on an existing application
 server:
 
-1. Obtain the Liferay `.war` file and the dependencies archive.
+1. Obtain the Liferay `.war` file and the dependencies archive from the [Help Center](https://help.liferay.com/hc).
 
 2. Shut your application server down.
 

@@ -9,13 +9,13 @@ header-id: installing-liferay-on-mulesoft-tcat
 For this section, we will refer to your Tcat server's installation location as
 `[TCAT_HOME]`. If you don't already have an existing Tcat server, we
 recommend you download a Liferay/Tcat bundle from
-[http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases).
+the [Help Center](https://help.liferay.com/hc).
 If you have an existing Tcat server on which you'd like to deploy Liferay
 manually, please follow the steps below.
 
 Your first step is to download the latest Liferay `.war` file and Liferay
 Portal dependencies from
-[http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
+the [Help Center](https://help.liferay.com/hc).
 The Liferay `.war` file should be called `liferay-portal-6.2.x-[date].war` and
 the dependencies file should be called
 `liferay-portal-dependencies-6.2.x-[date].zip`.

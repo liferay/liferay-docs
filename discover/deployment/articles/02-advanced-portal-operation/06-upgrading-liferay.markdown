@@ -482,7 +482,7 @@ supported application server.
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
    1. Verify that your application server is supported by Liferay. You can do
-      this by viewing the appropriate document on the Customer Portal (EE), in
+      this by viewing the appropriate document on the [Help Center](https://help.liferay.com/hc) (EE), in
       the [Deployment](/discover/deployment) documentation (if there are
       installation instructions for your app server, then it's supported), or on
       liferay.com (CE). If your application server isn't supported by Liferay

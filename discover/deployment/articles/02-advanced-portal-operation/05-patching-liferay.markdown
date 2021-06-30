@@ -28,14 +28,14 @@ Now that you know what patching is all about, let's check out the tool.
 
 If you're using a Liferay bundle, congratulations! The Patching Tool is already
 installed. Your job isn't done yet, however, because Liferay *might* have
-updated the Patching Tool. Always check the Customer Portal to see if the
+updated the Patching Tool. Always check the [Help Center](https://help.liferay.com/hc) to see if the
 Patching Tool has been updated first. But even if you forget to check, the
 Patching Tool will tell you if it needs to be updated when you run it. A lot of
 planning and forethought has gone into the patching system to make it run as
 smoothly as possible.
 
 You follow the same procedure whether you're installing or upgrading the
-Patching Tool. Once you've obtained it from the customer portal, unzip it to the
+Patching Tool. Once you've obtained it from the [Help Center](https://help.liferay.com/hc), unzip it to the
 Liferay Home folder. This is the folder where you've placed your
 `portal-ext.properties` file and where by default the `data` folder resides.
 This is generally one folder up from where your application server is installed,
@@ -138,7 +138,7 @@ for more information.
 
 Liferay distributes patches as `.zip` files, whether they are hotfixes or fix
 packs. When you receive one, either via a LESA ticket (hotfix) or through
-downloading a fix pack from the customer portal, you'll need to place it in the
+downloading a fix pack from the [Help Center](https://help.liferay.com/hc), you'll need to place it in the
 `patches` folder, which is inside the Patching Tool's home folder. Once you've
 done that, it's a simple matter to install it. First, execute
 
@@ -210,7 +210,7 @@ the `diff` command described below in the new features section.
 
 Some hotfix require a fix pack to be installed first. If you attempt to
  install a hotfix that depends on a fix pack, the Patching Tool notifies
- you of this so you can go to the customer portal and obtain the hotfix
+ you of this so you can go to the [Help Center](https://help.liferay.com/hc) and obtain the hotfix
  dependency. Once all the necessary patches are available in the `patches`
  folder, the Patching Tool will install them. 
 

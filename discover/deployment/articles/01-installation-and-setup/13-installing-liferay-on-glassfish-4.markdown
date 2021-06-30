@@ -14,13 +14,13 @@ For example, if your domain location is
 
 If you don't already have an existing GlassFish server, we recommend that you
 download a Liferay/GlassFish bundle from
-[http://www.liferay.com/downloads/liferay-portal/available-releases](http://www.liferay.com/downloads/liferay-portal/available-releases).
+the [Help Center](https://help.liferay.com/hc).
 If you have an existing GlassFish server or would like to install Liferay on
 GlassFish manually, please follow the steps below.
 
 Before you begin, make sure you have downloaded the latest Liferay `.war` file
 and Liferay Portal dependencies from
-[http://www.liferay.com/downloads/liferay-portal/additional-files](http://www.liferay.com/downloads/liferay-portal/additional-files).
+the [Help Center](https://help.liferay.com/hc).
 The Liferay `.war` file should be called `liferay-portal-6.2.x-<date>.war` and
 the dependencies file should be called
 `liferay-portal-dependencies-6.2.x-<date>.zip`.
