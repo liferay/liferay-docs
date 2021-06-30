@@ -34,7 +34,7 @@ certain files and folders that it needs to run. On WebSphere, Liferay Home is
 typically `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
 
 Before proceeding, you must
-[download](https://customer.liferay.com/downloads) 
+[download](https://help.liferay.com/hc) 
 these *Additional Files*: 
 
 - @product@ WAR file

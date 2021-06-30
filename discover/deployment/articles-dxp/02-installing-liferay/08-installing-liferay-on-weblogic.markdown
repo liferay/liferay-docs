@@ -26,7 +26,7 @@ You should also read the following articles to familiarize yourself with
 - [Installing @product@ Manually](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-manually)
 
 Before proceeding, you must
-[download](https://customer.liferay.com/downloads) 
+[download](https://help.liferay.com/hc) 
 these *Additional Files*: 
 
 - @product@ WAR file

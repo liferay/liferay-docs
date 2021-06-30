@@ -29,8 +29,7 @@ open source version of @product@ or a trial of the commercial version in several
 different formats. These include our convenient bundles as well as `.war` files
 for installing @product@ on your application server of choice.
 
-Liferay enterprise subscribers can download @product@ from the
-[Customer Portal](https://www.liferay.com/group/customer).
+Liferay enterprise subscribers can download @product@ from the [Help Center](https://help.liferay.com/hc).
 You have a choice of the same open source app server bundles as community
 members, plus a few commercial alternatives, in addition to the `.war` files
 for manual installation.

@@ -14,7 +14,7 @@ Installing @product@ manually requires these basic steps:
 
 In this article, you'll step through these basic steps and install @product@ on
 your existing JBoss EAP 6.4 application server. Before proceeding, you must
-[download](https://customer.liferay.com/downloads)
+[download](https://help.liferay.com/hc)
 these *Additional Files*:
 
 - @product@ WAR file

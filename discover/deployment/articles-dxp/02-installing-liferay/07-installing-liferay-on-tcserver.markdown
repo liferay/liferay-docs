@@ -9,7 +9,7 @@ header-id: installing-liferay-on-tc-server
 @product@ is supported on tc Server. Please see the 
 [Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
 for the supported version. Before proceeding, you must
-[download](https://customer.liferay.com/downloads) 
+[download](https://help.liferay.com/hc) 
 these *Additional Files*: 
 
 - @product@ WAR file
