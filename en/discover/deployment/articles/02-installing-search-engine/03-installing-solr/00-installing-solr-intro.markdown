@@ -6,6 +6,9 @@ header-id: installing-solr
 
 [TOC levels=1-4]
 
+| **Note:** To install Solr 8, see the Solr installation guide on
+| [Liferay Learn](https://learn.liferay.com/dxp/latest/en/using-search/installing-and-upgrading-a-search-engine/solr/installing-solr.html)
+
 Solr is a popular enterprise search platform built on Apache Lucene. It's
 reliable, scalable, and fault tolerant. Read more about it
 [here](http://lucene.apache.org/solr/).

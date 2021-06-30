@@ -6,6 +6,9 @@ header-id: high-availability-with-solrcloud
 
 [TOC levels=1-4]
 
+| **Note:** To install Solr 8, see the Solr installation guide on
+| [Liferay Learn](https://learn.liferay.com/dxp/latest/en/using-search/installing-and-upgrading-a-search-engine/solr/installing-solr.html)
+
 Use SolrCloud if you need a cluster of Solr servers. Note that to use SolrCloud
 in production, you should set up an 
 [external ZooKeeper ensemble](https://cwiki.apache.org/confluence/display/solr/Setting+Up+an+External+ZooKeeper+Ensemble).
