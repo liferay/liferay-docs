@@ -6,11 +6,11 @@ header-id: managing-liferay-dxp-with-liferay-connected-services
 
 [TOC levels=1-4]
 
-| **Note:** The following LCS features have been deprecated and removed in
-| March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
-| read the
-| [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
-| to learn more about how you can prepare for these upcoming changes.
+| **Note:** LCS is deprecated and will be shut down on December 31, 2021. 
+| Customers who activate LCS are advised to replace it with our latest activation
+| key type which is suitable for virtualized environments. 
+|
+| For further information, please see [Changes to Liferay Product Activation](https://help.liferay.com/hc/en-us/articles/4402347960845-Changes-to-Liferay-Product-Activation).
 
 Liferay Connected Services (LCS) is a set of tools and services for managing your @product@ instances. LCS can help you activate your instances and manage your
 subscriptions. In other words, LCS is like a butler for the mansion that is

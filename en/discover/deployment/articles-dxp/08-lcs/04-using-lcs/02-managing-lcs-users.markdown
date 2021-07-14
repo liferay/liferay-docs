@@ -6,11 +6,11 @@ header-id: managing-lcs-users-in-your-project
 
 [TOC levels=1-4]
 
-| **Note:** The following LCS features have been deprecated and removed in
-| March 2020: Page Analytics, Fix Pack Management, and Portal Properties. Please
-| read the 
-| [LCS Feature Deprecation Update](https://help.liferay.com/hc/en-us/articles/360037317691-Liferay-Connected-Services-Feature-Deprecation-Update-March-2020)
-| to learn more about how you can prepare for these upcoming changes. 
+| **Note:** LCS is deprecated and will be shut down on December 31, 2021. 
+| Customers who activate LCS are advised to replace it with our latest activation
+| key type which is suitable for virtualized environments. 
+|
+| For further information, please see [Changes to Liferay Product Activation](https://help.liferay.com/hc/en-us/articles/4402347960845-Changes-to-Liferay-Product-Activation).
 
 The Users section of LCS is where you manage the LCS users that are part of your 
 project. It's here that you can grant or revoke LCS Roles. To manage users, 
