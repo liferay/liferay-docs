@@ -7,7 +7,7 @@ header-id: using-the-clay-taglib-in-your-portlets
 [TOC levels=1-4]
 
 The Liferay Clay tag library provides a set of tags for creating 
-[Clay](https://claycss.com/docs/clay/) 
+[Clay](https://clayui.com/) 
 UI components in your app. 
 
 | **Note:** AUI taglibs are deprecated as of @product-ver@. We recommend that you
