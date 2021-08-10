@@ -12,6 +12,7 @@ def append_to_line(line, new_line):
 
 def end_sidebar(sidebar_line, newFile):
     if sidebar_line not in "":
+        sidebar_line = sidebar_line.replace("| ", "")
         newFile.write(sidebar_line)
         newFile.write("```\n")
         sidebar_line = ""
