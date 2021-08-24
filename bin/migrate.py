@@ -12,6 +12,7 @@ def append_to_line(line, new_line):
 
 def end_sidebar(sidebar_line, newFile):
     if sidebar_line not in "":
+        sidebar_line = sidebar_line.replace("| ", "")
         newFile.write(sidebar_line)
         newFile.write("```\n")
         sidebar_line = ""
@@ -28,7 +29,7 @@ def write_and_reset_string(line, newFile):
 if __name__ == "__main__":
 
     if (len(sys.argv) < 2):
-        print("Usage:\n\tpython migrate.py article [dest_folder]\n\nDescription:\n\tMigrates the article to an .md file and converts the content to liferay-learn Markdown/RST syntax. The converted article destination folder [dest_folder] is the current folder by default but is typically set to a liferay-learn folder.\n\n\tIMPORTANT: Run this script in the liferay-docs article's folder so that the script can use the image file paths found in the article to copy the image files to the [dest_folder]/[article_name]/images/ folder.")
+        print("Usage:\n\tpython migrate.py article [dest_folder]\n\nDescription:\n\tMigrates the article to an .md file and converts the content to liferay-learn Markdown/MyST syntax. The converted article destination folder [dest_folder] is the current folder by default but is typically set to a liferay-learn folder.\n\n\tIMPORTANT: Run this script in the liferay-docs article's folder so that the script can use the image file paths found in the article to copy the image files to the [dest_folder]/[article_name]/images/ folder.")
         sys.exit()
 
     article = sys.argv[1]
@@ -223,106 +224,48 @@ if __name__ == "__main__":
                     sidebar_line += "\n"
                 else:
 
-                    # Use double-back ticks for all code markup
-                    stripped_line = line.replace("`", "``")\
                     # Replace the leading pipe with a space
-                    stripped_line = stripped_line.replace("| ", "", 1)
+                    stripped_line = line.replace("| ", "", 1)
 
                     if sidebar_line in "":
 
                         # Start the sidebar
 
                         if "**Note:**" in stripped_line:
-                            newFile.write("```note::\n")
+                            newFile.write("```{note}\n")
                             stripped_line = stripped_line.replace("**Note:**", "", 1)
                         elif "**Tip:**" in stripped_line:
-                            newFile.write("```tip::\n")
+                            newFile.write("```{tip}\n")
                             stripped_line = stripped_line.replace("**Tip:**", "", 1)
                         elif "**Warning:**" in stripped_line:
-                            newFile.write("```warning::\n")
+                            newFile.write("```{warning}\n")
                             stripped_line = stripped_line.replace("**Warning:**", "", 1)
                         elif "**Important:**" in stripped_line:
-                            newFile.write("```important::\n")
+                            newFile.write("```{important}\n")
                             stripped_line = stripped_line.replace("**Important:**", "", 1)
                         elif "**Note**:" in stripped_line:
-                            newFile.write("```note::\n")
+                            newFile.write("```{note}\n")
                             stripped_line = stripped_line.replace("**Note**:", "", 1)
                         elif "**Tip**:" in stripped_line:
-                            newFile.write("```tip::\n")
+                            newFile.write("```{tip}\n")
                             stripped_line = stripped_line.replace("**Tip**:", "", 1)
                         elif "**Warning**:" in stripped_line:
-                            newFile.write("```warning::\n")
+                            newFile.write("```{warning}\n")
                             stripped_line = stripped_line.replace("**Warning**:", "", 1)
                         elif "**Important**:" in stripped_line:
-                            newFile.write("```important::\n")
+                            newFile.write("```{important}\n")
                             stripped_line = stripped_line.replace("**Important**:", "", 1)
                         else:
-                            newFile.write("```note::\n")
-
-                    # Process the sidebar line, creating a new line that uses RST links in place of Markdown links
-                    new_line = ""
-                    caption_link_index = -1
-                    while True:
-                        stripped_line_len = len(stripped_line)
-
-                        caption_link = re.search("\[[\w\s\.\/\-\_\`\'@]*\]\([\w\s:\.\/:\-\_\`]*\)", stripped_line)
-
-                        link_len = 0
-                        if caption_link:
-
-                            link_len = len(caption_link.group());
-                            caption_link_index = stripped_line.index(caption_link.group());
-                            if caption_link_index > 0:
-                                # Add text that precedes the caption
-                                text_before_caption = stripped_line[0:caption_link_index]
-                                new_line += text_before_caption;
-
-                            # Split the caption and link parts of the Markdown
-                            caption_link_split = caption_link.group().split("](");
-                            caption_half = caption_link_split[0]
-                            link_half = caption_link_split[1]
-
-                            caption = ""
-                            link = ""
-
-                            # Write the caption and link in RST format
-                            if len(caption_link_split) > 1 and len(caption_half) > 1 and len(link_half) > 1:
-                                caption = (caption_half)[1:]
-                                caption = caption.replace("``", "`")
-                                print("caption: " + caption)
-                                link = (link_half)[:-1]
-                                print("link: " + link)
-                                new_line += "`"
-                                new_line += caption
-                                new_line += " <"
-                                new_line += link
-                                new_line += ">`_"
-
-                            else:
-                                print("Unable to convert link: " + caption_link)
-
-                        else:
-                            # Does not contain a link
-                            new_line += stripped_line
-                            break;
-
-                        if (caption_link_index + link_len) > stripped_line_len :
-                            # The link ends the line
-                            break;
-                        else:
-                            # Continue processing the rest of the line
-                            stripped_line = stripped_line[caption_link_index + link_len:]
-
-                    # Done the while loop that processes the sidebar line
+                            newFile.write("```{note}\n")
 
                     if sidebar_line in "":
-                        sidebar_line = "   " + new_line.lstrip()
+                        sidebar_line = stripped_line.lstrip()
                     else:
                         if prev_sidebar_line_empty:
-                            sidebar_line = sidebar_line + "   " + new_line
+                            sidebar_line = sidebar_line + stripped_line
                             prev_sidebar_line_empty = False
                         else:
-                            sidebar_line = sidebar_line.rstrip() + " " + new_line.lstrip()
+                            sidebar_line = sidebar_line.rstrip() + " " + stripped_line.lstrip()
 
                     prev_index = re.search("\S", line).start()
             else:
