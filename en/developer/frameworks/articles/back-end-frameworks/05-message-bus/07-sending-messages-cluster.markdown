@@ -6,10 +6,6 @@ header-id: sending-messages-across-a-cluster
 
 [TOC levels=1-4]
 
-<aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/developing-applications/core-frameworks/message-bus/message-bus.html">Liferay Learn</a> and is no longer maintained here.</span>
-</aside>
-
 To ensure a message sent to a destination is received by all cluster nodes, you 
 must register a 
 [`ClusterBridgeMessageListener`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/cluster/messaging/ClusterBridgeMessageListener.html) 
