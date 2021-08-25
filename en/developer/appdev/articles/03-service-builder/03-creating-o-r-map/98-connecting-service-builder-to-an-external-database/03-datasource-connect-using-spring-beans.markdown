@@ -72,7 +72,7 @@ Also note that your entity's `<column>`s must have a *`db-name`* attribute set t
 
 ## Create the Database Manually
 
-[Create the database](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/installing-liferay/configuring-a-database.html) per the database specification in your `service.xml`.
+[Create the database](https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/installing-liferay/configuring-a-database.html) per the database specification in your `service.xml`.
 
 Next, use portal properties to set your data source.
 

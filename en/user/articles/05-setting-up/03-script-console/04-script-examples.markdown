@@ -7,7 +7,7 @@ header-id: script-examples
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/system-administration/using-the-script-engine/script-examples.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/system-administration/using-the-script-engine/script-examples.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Here are some examples to help you use Liferay's script console. Note: Most of

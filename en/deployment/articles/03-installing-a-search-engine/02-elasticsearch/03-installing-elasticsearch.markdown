@@ -7,7 +7,7 @@ header-id: installing-elasticsearch
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/using-search/installing-and-upgrading-a-search-engine/elasticsearch/installing-elasticsearch.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/using-search/installing-and-upgrading-a-search-engine/elasticsearch/installing-elasticsearch.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 @product@ uses Elasticsearch to index its content. By default, it's installed as

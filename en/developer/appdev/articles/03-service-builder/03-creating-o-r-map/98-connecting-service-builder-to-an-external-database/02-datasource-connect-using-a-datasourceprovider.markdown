@@ -55,7 +55,7 @@ Here are the steps:
 
     Also note that your entity's `<column>`s must have a *`db-name`* attribute set to the column name.
 
-1. [Manually create the database](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/installing-liferay/configuring-a-database.html) you defined in your `service.xml`.
+1. [Manually create the database](https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/installing-liferay/configuring-a-database.html) you defined in your `service.xml`.
 
 1.  Define the data source. One way is to use
     [portal properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)

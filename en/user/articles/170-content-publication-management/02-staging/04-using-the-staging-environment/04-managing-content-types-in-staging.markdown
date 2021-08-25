@@ -7,7 +7,7 @@ header-id: managing-content-types-in-staging
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/managing-data-and-content-types-in-staging.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/site-building/publishing-tools/staging/managing-data-and-content-types-in-staging.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 When managing content in Staging's Advanced Publication menu, there are several

@@ -7,7 +7,7 @@ header-id: publishing-staged-content-efficiently
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/understanding-the-publishing-process.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/site-building/publishing-tools/staging/understanding-the-publishing-process.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Now that you understand how staging works, you'll dive deeper into the

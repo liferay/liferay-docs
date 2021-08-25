@@ -7,7 +7,7 @@ header-id: specifying-dependencies
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/liferay-internals/fundamentals/configuring-dependencies/specifying-dependencies.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/liferay-internals/fundamentals/configuring-dependencies/specifying-dependencies.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Compiling your project and deploying it to @product@ requires satisfying its

@@ -7,7 +7,7 @@ header-id: content-page-management-interface
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/creating-pages/building-and-managing-content-pages/content-pages-overview.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/site-building/creating-pages/building-and-managing-content-pages/content-pages-overview.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Unlike Widget Pages, Content Pages can only be edited through the *Site 

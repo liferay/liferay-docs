@@ -16,7 +16,7 @@ different, so you'll learn about both.
 ## Disabling Local Live Staging
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This material has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/configuring-local-live-staging.html#disabling-local-live-staging">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This material has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/site-building/publishing-tools/staging/configuring-local-live-staging.html#disabling-local-live-staging">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Conceptually, the live site is the final approved version of your site, whereas
@@ -40,7 +40,7 @@ when your portal instance is busy.
 ## Disabling Remote Live Staging
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This material has been updated and ported to <a href="https://learn.liferay.com/dxp/7.x/en/site-building/publishing-tools/staging/configuring-remote-live-staging.html#disabling-remote-live-staging">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This material has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/site-building/publishing-tools/staging/configuring-remote-live-staging.html#disabling-remote-live-staging">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Disabling remote staging does not delete the staged site; it only disables the
