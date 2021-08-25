@@ -7,7 +7,7 @@ header-id: sending-a-message
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/developing-applications/core-frameworks/message-bus/message-bus.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120"> This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/developing-applications/core-frameworks/message-bus.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Once you've 
