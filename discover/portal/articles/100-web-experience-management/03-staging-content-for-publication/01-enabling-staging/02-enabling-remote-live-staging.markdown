@@ -213,8 +213,4 @@ have been completed. Otherwise, Remote Staging will fail.
     staging environments. In addition, the users must have the same credentials
     (e.g., screen name, email, roles, and password). 
 
-**Important:** Never clone your @product@ database; doing this can duplicate
-important data used by Staging (e.g., UUID), causing the Remote Publication
-process to fail.
-
 You should proceed only when all four major steps have been completed. 
