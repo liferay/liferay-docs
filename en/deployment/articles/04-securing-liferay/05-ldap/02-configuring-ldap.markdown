@@ -4,6 +4,10 @@ header-id: configuring-ldap
 
 # Configuring LDAP
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/users-and-permissions/connecting-to-a-user-directory/configuring-user-import-and-export.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 In this article, you'll learn how to configure import settings, export settings,

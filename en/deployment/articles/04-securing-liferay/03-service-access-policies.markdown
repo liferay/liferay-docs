@@ -4,6 +4,10 @@ header-id: service-access-policies
 
 # Service Access Policies
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/securing-web-services/setting-service-access-policies.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 *Service access policies* comprise a layer of web service security that defines

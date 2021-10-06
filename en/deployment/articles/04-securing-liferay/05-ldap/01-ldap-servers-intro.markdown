@@ -4,6 +4,10 @@ header-id: ldap
 
 # LDAP
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/users-and-permissions/connecting-to-a-user-directory/connecting-to-an-ldap-directory.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 LDAP is a common user store for @product@. You can configure LDAP at the

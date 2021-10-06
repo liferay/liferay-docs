@@ -4,6 +4,10 @@ header-id: authorizing-account-access-with-oauth2
 
 # Authorizing Account Access with OAuth2
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/headless-delivery/using-oauth2/authorizing-account-access-with-oauth2.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 Once you have an application registered, you can start authorizing users. To do

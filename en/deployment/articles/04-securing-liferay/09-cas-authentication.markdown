@@ -4,6 +4,10 @@ header-id: cas-central-authentication-service-single-sign-on-authentication
 
 # CAS (Central Authentication Service) Single Sign On Authentication
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-cas.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 CAS is an authentication system originally created at Yale University. It is a

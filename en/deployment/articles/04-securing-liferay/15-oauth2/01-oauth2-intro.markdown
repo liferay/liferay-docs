@@ -4,6 +4,10 @@ header-id: oauth-2-0
 
 # OAuth 2.0
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/headless-delivery/using-oauth2.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly

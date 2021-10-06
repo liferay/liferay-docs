@@ -4,6 +4,10 @@ header-id: oauth2-scopes
 
 # OAuth2 Scopes
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/headless-delivery/using-oauth2/oauth2-scopes.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 In OAuth 2.0, applications are granted access to limited subsets of user data.

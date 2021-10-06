@@ -4,6 +4,11 @@ header-id: opensso-single-sign-on-authentication
 
 # OpenAM Single Sign On Authentication
 
+
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/using-openam.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 OpenAM is an open source single sign-on solution that comes from the code base

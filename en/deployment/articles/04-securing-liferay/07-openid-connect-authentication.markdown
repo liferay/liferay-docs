@@ -4,6 +4,10 @@ header-id: authenticating-with-openid-connect
 
 # Authenticating with OpenID Connect
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/using-openid-connect.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 OpenID Connect is a lightweight authentication layer built on top of the 

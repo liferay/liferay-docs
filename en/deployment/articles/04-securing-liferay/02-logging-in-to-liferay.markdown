@@ -4,6 +4,10 @@ header-id: logging-into-liferay
 
 # Logging into @product@
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/authentication-basics.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 One of the primary functions of a security system is to make pages, content, and

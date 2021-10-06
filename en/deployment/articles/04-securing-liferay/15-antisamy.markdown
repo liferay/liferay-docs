@@ -4,6 +4,10 @@ header-id: antisamy
 
 # AntiSamy
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/using-antisamy.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 [TOC levels=1-4]
 
 @product@ includes an [AntiSamy](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project) 
@@ -24,7 +28,7 @@ content articles.
 
 AntiSamy is enabled by default. 
 
-![Figure 1: @product@'s AntiSamy configuration options allow you to specify both a blacklist and a whitelist.](../../../images/antisamy.png)
+![Figure 1: @product@'s AntiSamy configuration options allow you to specify both a blacklist and a whitelist.](../../images/antisamy.png)
 
 ## Configuring AntiSamy
 
