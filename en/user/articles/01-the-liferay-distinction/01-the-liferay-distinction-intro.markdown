@@ -39,7 +39,7 @@ your exact specifications.
 [**Reference**](/docs/7-2/reference/-/knowledge_base/r/developer-reference) is a collection of material showing developers the options
 available for various APIs. 
 
-The [**Installation and Upgrades**](https://learn.liferay.com/dxp/latest/en/installation_and_upgrades.html) section shows administrators how to obtain, install, and
+The [**Installation and Upgrades**](https://learn.liferay.com/dxp/latest/en/installation-and-upgrades.html) section shows administrators how to obtain, install, and
 configure @product@ on bare metal, virtualized environments, and the cloud. 
 
 If you're coming from an older version, read on to learn what's new in

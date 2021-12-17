@@ -7,7 +7,7 @@ header-id: configuring-the-patching-tool
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/maintaining-a-liferay-dxp-installation/patching-liferay/configuring-the-patching-tool.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/maintaining-a-liferay-installation/reference/configuring-the-patching-tool.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 The Patching Tool installs @product@ patches. It ships with prepackaged
