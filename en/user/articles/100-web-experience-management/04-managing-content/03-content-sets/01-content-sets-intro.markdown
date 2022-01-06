@@ -7,7 +7,7 @@ header-id: content-sets
 [TOC levels=1-4]
 
 A Content Set is exactly what it sounds like: a set of content items. In short, 
-an administrator can defines a list of content, and then that list can be 
+an administrator can define a list of content, and then that list can be 
 displayed. The way that the Content Set is displayed is determined by the 
 method that is used to display it. For example, if the Content Set is being 
 used by a smartwatch app, it could be displayed as a simple list of titles, and 
@@ -18,7 +18,7 @@ content of each article.
 | **Note:** In previous versions of @product@, you used the Asset Publisher to 
 | define and display either static lists of assets or dynamic lists based on 
 | criteria like tags, categories, or asset type. In @product-ver@ Content Sets 
-| take the core idea of defining different types of asset lists and expands it. 
+| take the core idea of defining different types of asset lists and expand it. 
 | Content Lists are created outside of the context of a specific application or 
 | widget and can be used and re-used across different channels and applications.
 
