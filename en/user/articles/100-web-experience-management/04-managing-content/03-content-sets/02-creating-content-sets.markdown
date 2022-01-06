@@ -11,7 +11,7 @@ interface in Site Administration. Content Sets can use either Manual or Dynamic
 selection, and you can create any number of Content Sets, and display them 
 through the Asset Publisher or custom applications. Content 
 Sets can also have
-[personalizated variations](/docs/7-2/user/-/knowledge_base/u/content-set-personalization)
+[personalized variations](/docs/7-2/user/-/knowledge_base/u/content-set-personalization)
 which provide different experiences for different users based on criteria that
 you specify. The criteria management is shared with the Asset Publisher, so for
 more  information on each option, see the official
