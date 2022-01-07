@@ -85,7 +85,7 @@ the stability, conformity, and future evolution of your applications.
 Below are some of the available front-end extensions:
 
 - [Theme Contributors](/docs/7-2/frameworks/-/knowledge_base/f/packaging-independent-ui-resources-for-your-site)
-- [Context Contributors](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme-te)
+- [Context Contributors](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme-templates)
 - [Dynamic Includes](/docs/7-2/customization/-/knowledge_base/c/dynamic-includes)
 
 See 
