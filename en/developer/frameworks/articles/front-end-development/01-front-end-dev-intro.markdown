@@ -44,10 +44,10 @@ to use in your JavaScript applications.
 ## Lexicon and Clay
 
 Liferay uses its own design language, called 
-[Lexicon](https://lexicondesign.io/docs/lexicon/), to provide a common framework 
+[Lexicon](https://liferay.design/lexicon), to provide a common framework 
 for building consistent UIs and user experiences across the Liferay product 
 ecosystem. The web implementation of Lexicon (CSS, JS, and HTML) is called 
-[Clay](https://clayui.com/docs/get-started/introduction.html). 
+[Clay](https://clayui.com/). 
 It is automatically available to application developers through a set of CSS 
 classes or our 
 [tag library](/docs/7-2/reference/-/knowledge_base/r/using-the-clay-taglib-in-your-portlets). 
