@@ -13,7 +13,7 @@ Google Drive&trade; from the
 [Liferay Marketplace](https://web.liferay.com/marketplace). 
 
 | **Important:** The Liferay Plugin for Google Drive&trade; is a Labs application
-| available for Liferay DXP and Liferay Portal CE 7.0 GA6+. Apps designated as
+| available for Liferay DXP 7.0 and Liferay Portal CE 7.0 GA6+. Apps designated as
 | Labs are experimental and not supported by Liferay. They're released to
 | accelerate the availability of useful and cutting-edge features. This status may
 | change without notice. Please download and use Labs apps at your own discretion.

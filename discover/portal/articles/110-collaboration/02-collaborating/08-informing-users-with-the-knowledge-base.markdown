@@ -18,7 +18,7 @@ your users.
 
 | **Note:** [Staging](/docs/7-0/user/-/knowledge_base/u/staging-content-for-publication)
 | is supported in both Knowledge Base content and portlet configurations since
-| Liferay DXP Fix Pack 14 and Liferay Portal CE GA4.
+| Liferay DXP 7.0 Fix Pack 14 and Liferay Portal CE GA4.
 
 Here are the key features of the Knowledge Base:
 

@@ -9,7 +9,7 @@ header-id: web-content-list-screenlet-for-android
 ## Requirements
 
 - Android SDK 4.1 (API Level 16) or above
-- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP 7.0+
 
 ## Compatibility
 

@@ -119,7 +119,7 @@ system must support concurrent requests and file locking. Otherwise, you may
 experience data corruption issues if two users attempt to write to the same file
 at the same time from two different nodes. 
 
-| **Note:** Since Liferay DXP Fix Pack 14 and Liferay Portal 7.0 CE GA4, to
+| **Note:** Since Liferay DXP 7.0 Fix Pack 14 and Liferay Portal 7.0 CE GA4, to
 | configure the advanced file system store you must configure both the
 | `portal-ext.properties` and `.config` files.
 
@@ -221,7 +221,7 @@ documents on the local file system where @product@ is installed, in the
 `[Liferay Home]/liferay/jackrabbit` folder. Inside this folder is Jackrabbit's
 configuration file, called `repository.xml`. 
 
-| **Note:** JCR Store is deprecated as of Liferay DXP Digital Enterprise Fix 
+| **Note:** JCR Store is deprecated as of Liferay DXP Digital Enterprise 7.0 Fix 
 | Pack 14 (SP3) and Liferay Portal CE 7.0 GA4. You should use one of the other 
 | documentation repositories listed above. 
 
@@ -305,7 +305,7 @@ Property | Default | Required
 
 ### Advanced File Store
 
-**Since Liferay DXP Fix Pack 14 and Liferay Portal 7.0 CE GA4, both the 
+**Since Liferay DXP 7.0 Fix Pack 14 and Liferay Portal 7.0 CE GA4, both the 
 `portal-ext.properties` and `.config` files are required to configure the 
 advanced file system store.**
 

@@ -27,7 +27,7 @@ view and manage your requests.
 ## Managing Notifications
 
 Notifications can pile up after some time, especially if you were away for a few
-days. Since Liferay DXP Fix Pack 30 and Liferay Portal 7.0 CE GA5, the
+days. Since Liferay DXP 7.0 Fix Pack 30 and Liferay Portal 7.0 CE GA5, the
 Management Bar gives you several ways to filter and sort your notifications. 
 
 The following filters are available for notifications:

@@ -20,7 +20,7 @@ tutorial shows how to use @product@'s macros in your FreeMarker and Velocity
 theme templates.  
 
 Note that **Velocity templates are supported, but deprecated as of Liferay 
-Portal CE 7.0 and Liferay DXP**. We recommend that you convert your Velocity 
+Portal CE 7.0 and Liferay DXP 7.0**. We recommend that you convert your Velocity 
 theme templates to FreeMarker at your earliest convenience to avoid future
 issues. This tutorial covers both FreeMarker and Velocity template macros to
 help with your conversion process.

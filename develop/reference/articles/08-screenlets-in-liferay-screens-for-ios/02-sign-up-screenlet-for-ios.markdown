@@ -10,7 +10,7 @@ header-id: signupscreenlet-for-ios
 
 - Xcode 9.3 or above
 - iOS 11 SDK
-- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP 7.0+
 
 ## Compatibility
 
