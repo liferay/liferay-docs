@@ -6,6 +6,12 @@ header-id: adding-a-liferay-bundle-to-liferay-workspace
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/creating-code-with-liferay-workspace.html
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Liferay Workspaces can generate and hold a Liferay Server. This lets you
 build/test your workspace's plugins against a running Liferay instance. Follow
 the instructions below to get started.

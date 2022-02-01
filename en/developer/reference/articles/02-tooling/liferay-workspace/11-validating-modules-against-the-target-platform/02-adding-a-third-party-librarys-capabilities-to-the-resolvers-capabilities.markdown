@@ -6,6 +6,12 @@ header-id: adding-a-third-party-librarys-capabilities-to-the-resolvers-capabilit
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/configuring-liferay-workspace.html#managing-the-target-platform
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 You can add your third party dependencies to the target platform's default list
 of capabilities by listing them as provided modules.
 

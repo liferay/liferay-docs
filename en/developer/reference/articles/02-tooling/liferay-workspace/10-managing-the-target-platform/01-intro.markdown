@@ -6,6 +6,12 @@ header-id: managing-the-target-platform
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/configuring-liferay-workspace.html#managing-the-target-platform
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 | **Note:** The Target Platform articles currently assume you're using Gradle
 | as a build tool. If your projects are built with Maven, you can still
 | leverage the Target Platform features, but it is not built into Liferay

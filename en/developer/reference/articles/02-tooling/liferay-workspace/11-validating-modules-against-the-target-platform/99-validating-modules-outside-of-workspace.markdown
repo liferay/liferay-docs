@@ -6,6 +6,12 @@ header-id: validating-modules-outside-of-workspace
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/configuring-liferay-workspace.html#managing-the-target-platform
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 If you prefer to not use Liferay Workspace, but still want to validate modules
 against a target platform, you must apply the
 [Target Platform Gradle plugin](/docs/7-2/reference/-/knowledge_base/r/target-platform-gradle-plugin)

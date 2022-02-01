@@ -6,6 +6,12 @@ header-id: building-node-js-themes-in-liferay-workspace
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/creating-code-with-liferay-workspace.html
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Liferay Workspace reserves the `themes` folder only for themes that are created 
 with the Themes Generator. There are no Blade CLI-provided commands or Maven 
 archetypes to generate a theme for this folder. You must leverage the 

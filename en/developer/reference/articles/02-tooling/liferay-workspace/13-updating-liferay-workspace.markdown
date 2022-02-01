@@ -6,6 +6,12 @@ header-id: updating-liferay-workspace
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/configuring-liferay-workspace.html#updating-liferay-workspace-and-bundled-plugins
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Liferay Workspace is continuously being updated with new features. If you
 created your workspace a while ago, you may be missing out on some of the latest
 features that could improve your @product@ development experience. Updating your

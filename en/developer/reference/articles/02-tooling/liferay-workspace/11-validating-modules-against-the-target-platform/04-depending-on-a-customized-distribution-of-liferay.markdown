@@ -6,6 +6,12 @@ header-id: depending-on-a-customized-distribution-of-product
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/configuring-liferay-workspace.html#managing-the-target-platform
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 To regenerate the target platform's capabilities (distro JAR) based on the
 current workspace's @product@ instance, follow the steps below:
 

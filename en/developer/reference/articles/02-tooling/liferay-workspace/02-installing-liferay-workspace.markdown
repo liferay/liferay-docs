@@ -6,6 +6,12 @@ header-id: installing-liferay-workspace
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/creating-a-liferay-workspace.html
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 You can install Liferay Workspace using the Liferay Project SDK installer. This
 installs JPM and
 [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli) into your user

@@ -6,6 +6,12 @@ header-id: updating-default-plugins-provided-by-liferay-workspace
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/configuring-liferay-workspace.html#updating-liferay-workspace-and-bundled-plugins
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Liferay Workspace comes with a slew of plugins like these: 
 
 - [CSS Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/css-builder)

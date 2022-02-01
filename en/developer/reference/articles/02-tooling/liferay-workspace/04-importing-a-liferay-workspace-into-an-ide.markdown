@@ -6,6 +6,12 @@ header-id: importing-a-liferay-workspace-into-an-ide
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="
+https://learn.liferay.com/dxp/latest/en/building-applications/tooling/liferay-workspace/creating-code-with-liferay-workspace.html
+">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Liferay supports two IDEs with preconfigured Liferay Workspace wizards and
 functionalities
 
