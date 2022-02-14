@@ -7,7 +7,7 @@ header-id: advanced-publication-with-staging
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/site-building/publishing-tools/staging/staging-ui-reference.html#advanced-publishing">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/site-building/publishing-tools/staging/site-staging-ui-reference.html#advanced-publishing">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 Once you've finished your changes on the staged site and want to publish them,
