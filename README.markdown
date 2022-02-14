@@ -87,3 +87,19 @@ own machine, [click here](guidelines/01-creating-docs-for-liferay.markdown) to g
 to our guidelines section. 
 
 Thanks for helping us out with Liferay documentation! 
+
+## Redirect instructions
+
+```
+cd liferay-docs
+./bin/update_liferay_learn_links.sh path/to/properties/file
+```
+
+For example, 
+
+```bash
+cd liferay-learn
+cat ./site/docs/redirects_keep.properties ./site/docs/redirects_new.properties > ~/redirects.properties
+cd ../liferay-docs
+./bin/update_liferay_learn_links.sh ~/redirects.properties
+```
