@@ -149,7 +149,7 @@ related to your entry, you can choose it here. For example, you might want to
 write a blog entry talking about a discussion that happened on the forums. To
 link those two assets together, select the forum thread under Related Assets. 
 
-The Configuration panel is next. Since Liferay DXP Fix Pack 13 and Liferay 
+The Configuration panel is next. Since Liferay DXP 7.0 Fix Pack 13 and Liferay 
 Portal CE GA4, you can specify a friendly URL for the blog entry. The default 
 selection of *Automatic* generates the URL for you based on the blog entry's 
 title. The generated URL appears in the text box shown below the 

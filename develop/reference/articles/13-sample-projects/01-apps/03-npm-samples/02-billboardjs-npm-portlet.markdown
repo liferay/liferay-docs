@@ -22,7 +22,7 @@ charts and a more advanced custom chart. These are all built using Billboard.js.
 | to remove the JSDoc comments. This process may take a long time, depending on
 | the number of files that require an update.
 
-**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+**Important:** This sample works for Liferay DXP 7.0 Fix Pack 44+ and Liferay Portal
 CE GA7+.
 
 ## What API(s) and/or code components does this sample highlight?

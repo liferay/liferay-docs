@@ -88,7 +88,7 @@ Setting the version to develop for takes two steps:
         liferay.workspace.target.platform.version=7.0.10.7
 
     **Important:** You can leverage the target platform features in Liferay
-    Portal GA6+ and Liferay DXP SP7+. Previous versions do not provide these
+    Portal GA6+ and Liferay DXP 7.0 SP7+. Previous versions do not provide these
     features.
 
     The versions following the SP7 release of DXP follow fix pack versions

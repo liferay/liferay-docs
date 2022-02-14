@@ -13,7 +13,7 @@ possible thanks to the
 framework. As an administrator, you may wish to hide certain form sections. 
 Maybe you want to show certain sections when creating new content, but hide 
 other sections when someone updates that content. Perhaps you want to reorder 
-form sections. Since Liferay DXP Fix Pack 14 and Liferay Portal CE GA4, all 
+form sections. Since Liferay DXP 7.0 Fix Pack 14 and Liferay Portal CE GA4, all 
 these configuration options are possible via the *Form Navigator Configuration* 
 system setting. 
 

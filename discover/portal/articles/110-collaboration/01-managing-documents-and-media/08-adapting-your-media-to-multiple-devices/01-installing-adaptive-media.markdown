@@ -8,7 +8,7 @@ header-id: installing-adaptive-media
 
 You can install the Adaptive Media app from 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
-for Liferay Portal CE 7.0 GA5+ or Liferay DXP. Search for *Adaptive Media* in 
+for Liferay Portal CE 7.0 GA5+ or Liferay DXP 7.0. Search for *Adaptive Media* in 
 the Marketplace and follow the app installation instructions at 
 [Using the Liferay Marketplace](/docs/7-0/user/-/knowledge_base/u/using-the-liferay-marketplace). 
 
@@ -17,7 +17,7 @@ the Marketplace and follow the app installation instructions at
 | [customer portal](https://web.liferay.com/group/customer)
 | to download fix packs.
 
-If you're running Liferay Portal CE 7.0 GA6+, or Liferay DXP with Fix Pack 35+, 
+If you're running Liferay Portal CE 7.0 GA6+, or Liferay DXP 7.0  with Fix Pack 35+, 
 then installing the Adaptive Media app is all you need to do. If you're running 
 Liferay Portal CE 7.0 GA5, however, then you must also install another module. 
 The next section explains how to do this. 

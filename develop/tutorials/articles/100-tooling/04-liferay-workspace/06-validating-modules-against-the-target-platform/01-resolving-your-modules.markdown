@@ -52,7 +52,7 @@ For example, you could set your target platform workspace Gradle property to
     liferay.workspace.target.platform.version=7.0.10.7
 
 **Important:** You can leverage the target platform features in Liferay Portal
-GA6+ and Liferay DXP SP7+. Previous versions do not provide these features.
+GA6+ and Liferay DXP 7.0 SP7+. Previous versions do not provide these features.
 
 The versions following the SP7 release of DXP follow service pack versions
 (e.g., `7.0.10.8` (SP8), `7.0.10.9` (SP9), etc.).

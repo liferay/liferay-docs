@@ -9,11 +9,11 @@ header-id: pdf-display-screenlet-for-android
 ## Requirements
 
 - Android SDK 4.1 (API Level 16) or above
-- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP 7.0+
 - Liferay Screens Compatibility app
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
-  This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
+  This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP 7.0+. 
 
 ## Compatibility
 

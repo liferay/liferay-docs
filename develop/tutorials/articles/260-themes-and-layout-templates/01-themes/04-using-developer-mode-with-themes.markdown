@@ -31,7 +31,7 @@ override settings that trigger them (if applicable):
 | and [LPS-70364](https://issues.liferay.com/browse/LPS-70364) that prevent CSS
 | changes from being applied to the page and the Control Panel and Product Menu to
 | break when using Developer Mode. Both these issues are fixed in Liferay Portal
-| CE 7.0.3 GA4 and Liferay DXP Fixpack DE 13.
+| CE 7.0.3 GA4 and Liferay DXP 7.0 Fixpack DE 13.
 
 Individual file loading of your styling and behaviors, combined with disabled
 caching for layout and FreeMarker templates, lets you see your changes more 

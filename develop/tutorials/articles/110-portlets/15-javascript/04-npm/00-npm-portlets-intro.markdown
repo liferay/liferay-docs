@@ -7,7 +7,7 @@ header-id: using-npm-in-your-portlets
 [TOC levels=1-4]
 
 npm is a powerful tool, and almost a necessity for Front-End development. Since 
-Liferay DXP Fix Pack 30 and Liferay Portal 7.0 CE GA5, you can use npm as your 
+Liferay DXP 7.0 Fix Pack 30 and Liferay Portal 7.0 CE GA5, you can use npm as your 
 JavaScript package manager tool---including npm and npm packages---while 
 developing portlets in your normal, everyday workflow. 
  

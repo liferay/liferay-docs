@@ -145,7 +145,7 @@ clustered CMIS repository by the administrator without having to mount it
 through the UI. The CMIS store allows you to do just that. 
 
 | **Note:** CMIS Store is not suitable for production use and is deprecated as of
-| Liferay Portal CE 7.0 and Liferay DXP. Because it can have performance issues
+| Liferay Portal CE 7.0 and Liferay DXP 7.0. Because it can have performance issues
 | with large repositories, it's recommended that you use one of the other
 | configurations listed above, such as Advanced File System Store, to store your
 | Documents and Media files. This deprecation does not affect the use of external
@@ -169,7 +169,7 @@ documents on the local file system where Liferay is installed, in the
 `[Liferay Home]/liferay/jackrabbit` folder. Inside this folder is Jackrabbit's
 configuration file, called `repository.xml`. 
 
-| **Note:** JCR Store is deprecated as of Liferay DXP Fix Pack 14 and Liferay
+| **Note:** JCR Store is deprecated as of Liferay DXP 7.0 Fix Pack 14 and Liferay
 | Portal CE 7.0 GA4.
 
 Using the default settings, the JCR store is not very different from the file

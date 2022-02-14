@@ -30,12 +30,12 @@ a sample project. It requires the following software:
 
 -   Android Studio 3.0 or above.
 -   Android SDK 4.1 (API Level 16) or above. 
--   [Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
+-   [Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, or Liferay DXP 7.0](http://www.liferay.com/downloads/liferay-portal/available-releases)
 -   Liferay Screens Compatibility Plugin 
     ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
     [DXP/EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
     depending on your portal edition). This app is preinstalled in Liferay CE 
-    Portal 7.0/7.1 CE and Liferay DXP. 
+    Portal 7.0/7.1 CE and Liferay DXP 7.0. 
 -   Liferay Screens source code. 
 
 Liferay Screens for Android uses
