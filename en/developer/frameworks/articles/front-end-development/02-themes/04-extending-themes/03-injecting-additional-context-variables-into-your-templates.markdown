@@ -1,5 +1,5 @@
 ---
-header-id: injecting-additional-context-variables-and-functionality-into-your-theme-te
+header-id: injecting-additional-context-variables-and-functionality-into-your-theme-templates
 ---
 
 # Injecting Additional Context Variables and Functionality into Your Theme Templates

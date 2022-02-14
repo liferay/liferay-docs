@@ -111,7 +111,7 @@ The following extensions and mechanisms are available for themes:
 - **Context Contributor:** Exposes Java variables and functionality for use in
   FreeMarker templates. This allows non-JSP templating languages in themes,
   widget templates, and any other templates. See the 
-  [Context Contributors tutorial](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme-te)
+  [Context Contributors tutorial](/docs/7-2/frameworks/-/knowledge_base/f/injecting-additional-context-variables-and-functionality-into-your-theme-templates)
   or more information.
 - **Theme Contributor:** A package containing UI resources, not attached to a 
   theme, that you want to include on every page. See the 
