@@ -7,7 +7,7 @@ header-id: installing-liferay-enterprise-search
 [TOC levels=1-4]
 
 <aside class="alert alert-info">
-  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/using-search/liferay_enterprise_search.html">Liferay Learn</a> and is no longer maintained here.</span>
+  <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/using-search/liferay-enterprise-search.html">Liferay Learn</a> and is no longer maintained here.</span>
 </aside>
 
 A Liferay Enterprise Search (LES) subscription gets you additional features
