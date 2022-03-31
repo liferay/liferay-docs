@@ -25,7 +25,8 @@ portlet instance settings for your widget:
 2.  Create a `configuration.json` file in the `/features` folder and follow the 
     pattern below. See the [Configuration JSON](/docs/7-1/reference/-/knowledge_base/r/configuring-system-settings-for-osgi-bundles-created-with-the-bundler) 
     reference for an explanation of each of the available options:
-    
+
+    ```json
     {
       "system": {
         "category": "{category identifier}",
@@ -69,6 +70,7 @@ portlet instance settings for your widget:
         }
       }
     }
+    ```
 
 3.  Access a system setting's value or a portlet instance setting's value with 
     the syntax `configuration.system` or `configuration.portletInstance` 
