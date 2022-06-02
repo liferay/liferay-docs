@@ -9,9 +9,9 @@ header-id: enabling-a-b-testing
 Before creating an A/B test, you must ensure some conditions are met:
 
 - You must have @product@ connected to
-  [Analytics Cloud](https://help.liferay.com/hc/en-us/articles/360006608732). To
+  [Analytics Cloud](https://learn.liferay.com/analytics-cloud/latest/en/index.html). To
   begin,
-  [add a Data Source](https://help.liferay.com/hc/en-us/articles/360006653472-Adding-a-Liferay-DXP-Data-Source).
+  [add a Data Source](https://learn.liferay.com/analytics-cloud/latest/en/connecting-data-sources.html).
 
 - Your page must be a Content Page, since only Content Pages (not Widget Pages)
   support Experiences for different Segments.
