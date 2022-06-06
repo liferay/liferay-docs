@@ -6,6 +6,10 @@ header-id: setting-up-liferay-as-a-saml-identity-provider
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 An identity provider is a trusted provider that provides single sign-on for
 users to access other websites. A service provider is a website that hosts
 applications and grants access only to identified users with proper credentials.

@@ -6,6 +6,10 @@ header-id: configuring-saml
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 There are some ways of configuring the SAML plugin outside the UI. This is done
 via OSGi configuration files and by uploading metadata XML to configure how
 connections are negotiated. 
