@@ -6,6 +6,10 @@ header-id: setting-up-liferay-as-a-saml-service-provider
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Many of these steps are similar to configuring @product@ as a SAML Identity
 Provider. As a reminder, a single @product@ installation can be configured as a
 SAML Identify Provider *or* as a SAML Service Provider but not as both. If your

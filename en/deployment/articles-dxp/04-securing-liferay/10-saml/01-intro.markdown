@@ -6,6 +6,10 @@ header-id: authenticating-using-saml
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 The SAML (Security Assertion Markup Language) adapter provides Single Sign On
 (SSO) and Single Log Off (SLO) in your deployment. Each @product@ instance
 serves as either the Service Provider (SP) or the Identity Provider (IdP). An

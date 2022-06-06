@@ -6,6 +6,10 @@ header-id: registering-a-saml-service-provider
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+   <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/securing-liferay/configuring-sso/authenticating-with-saml.html">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Setting up @product@ as a SAML Identity Provider is only useful if you
 can connect to one or more SAML Service Providers. Navigate to the Service
 Provider Connections tab of the SAML Admin Control Panel entry and click 
