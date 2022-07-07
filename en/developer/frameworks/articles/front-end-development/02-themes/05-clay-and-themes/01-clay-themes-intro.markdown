@@ -41,7 +41,7 @@ consuming tasks such as these:
 - notification icons/messages
 - vertical alignment of content
 
-[Clay CSS](https://claycss.com/) is bundled with two sub-themes: [Clay Base](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) 
+[Clay CSS](https://clayui.com/) is bundled with two sub-themes: [Clay Base](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) 
 and [Atlas](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay/atlas). 
 Clay Base is @product@'s Bootstrap API extension. It adds all the features and 
 components you need and inherits Bootstrap's styles. As a result, Clay Base is 
