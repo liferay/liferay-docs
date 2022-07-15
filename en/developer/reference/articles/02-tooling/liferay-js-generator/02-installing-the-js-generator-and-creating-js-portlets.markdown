@@ -6,6 +6,10 @@ header-id: installing-the-js-generator-and-generating-a-bundle
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+    <span class="wysiwyg-color-blue120">This document has been replaced by an article on <a href="https://learn.liferay.com/dxp/latest/en/building-applications/tooling/other-tools/liferay-cli-tool.html">Liferay Learn</a> and is no longer maintained here. The Liferay CLI tool is used for creating JavaScript application projects for Liferay versions 7.1+.</span>
+</aside>
+
 Here you'll learn how to install the 
 [Liferay JS Generator](https://www.npmjs.com/package/generator-liferay-bundle) 
 and use it to create JavaScript widgets. See the 
