@@ -11,7 +11,7 @@ ensuring that certain resources are loaded before executing.
 
 | **Note:** AUI is deprecated and no longer in active development in 
 | @product-ver@, but all the tags will remain fully functional in @product-ver@. 
-| Eventually, these tags will be replaced with [Clay](https://claycss.com/) 
+| Eventually, these tags will be replaced with [Clay](https://clayui.com/) 
 | tag counterparts.
 
 The `aui:script` tag supports the following options:
