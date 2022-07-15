@@ -13,9 +13,11 @@ header-id: elasticsearch
 Elasticsearch is an open source, highly scalable, full-text search and
 analytics engine.
 
-By default, Elasticsearch runs as an embedded search engine, but it's only
-supported in production as a separate server or cluster. This guide walks you
-through the process of configuring Elasticsearch in remote mode.
+By default, Elasticsearch runs as an embedded search engine, which is useful
+for development and testing but is not supported in production. In production
+environments you must run Elasticsearch in remote mode, as a separate server or
+cluster. This guide walks you through the process of configuring Elasticsearch
+in remote mode.
 
 ![Figure 1: To see information about the currently connected search engine, go to _Control Panel_ &rarr; _Configuration_ &rarr; _Search_.](../../../images/search-admin-engineinfo.png)
 
