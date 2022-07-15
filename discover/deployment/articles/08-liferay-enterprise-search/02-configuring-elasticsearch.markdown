@@ -10,9 +10,11 @@ header-id: configuring-elasticsearch-for-liferay-0
 default search engine is also an open source project. Elasticsearch is a highly
 scalable, full-text search and analytics engine.
 
-By default, Elasticsearch runs as an embedded search engine, but it's only
-supported in production as a separate server or cluster. This guide walks you
-through the process of configuring Elasticsearch.
+By default, Elasticsearch runs as an embedded search engine, which is useful
+for development and testing but is not supported in production. In production
+environments you must run Elasticsearch in remote mode, as a separate server or
+cluster. This guide walks you through the process of configuring Elasticsearch
+in remote mode.
 
 If you'd rather use Solr, it's also supported. See
 [here](/docs/7-0/deploy/-/knowledge_base/d/using-solr) for information on
