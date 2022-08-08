@@ -138,7 +138,7 @@ look like this image:
 
     ![Figure 8: You can add and configure fields to form a custom list definition.](../../../images/ddl-name-and-more.png)
 
-    - The options for the Select field  wtih the label *How fit are you?* should be *Fit as a
+    -  The options for the Select field  wtih the label *How fit are you?* should be *Fit as a
       fiddle!*, *Moderately fit, I think.*, and *Bring extra oxygen.*
 
 13.  That's a good start to the form. To make sure all Activity Sign-Up use
