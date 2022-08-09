@@ -41,11 +41,7 @@ some settings and processing features to explore:
 | (![Options](../../../images/icon-options.png)) button &rarr; *Settings*), you'll
 | see that the only storage option is JSON. Keep in mind that developers can
 | implement their own storage types if JSON is not desirable. If they do, the
-| option will appear here in Form Settings. See the tutorial on custom storage
-| types (not yet written) for more information.
-
-More features are being planned, so don't despair if you need a feature that's
-not yet present in the Forms application.
+| option will appear here in Form Settings.
 
 ## The Lunar Resort Employment Application Form
 
