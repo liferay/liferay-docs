@@ -137,13 +137,12 @@ The Service Provider tab includes these options:
 **Require Assertion Signature?:** When this box is checked, SAML assertions
 must be individually signed in addition to the entire SAML message.
 
-| **Note:** Individual assertions need not be signed as long as the SAML response
-| itself is signed. The SP and IdP should always communicate over `https` to have
+| **Note:** Because Liferay requires the SAML response to be signed, individual 
+| assertions need not be signed. The SP and IdP should always communicate over `https` to have
 | encryption at the transport level.
 | 
 | If you believe man-in-the-middle attacks are possible, the SAML response can be
-| signed. The only reason to sign the assertions is if the SAML response is not
-| signed. In this case, assertions should not only be signed but also encrypted.
+| signed. 
 
 **Clock Skew:** Clock skew is a tolerance in milliseconds used by the Service
 Provider for verifying expiration of messages and assertions. This can be used
