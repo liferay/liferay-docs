@@ -53,7 +53,7 @@ Now you're ready to invoke Liferay's JSON web services.
 Let's examine a simple JSON web service invocation in JavaScript:
 
     Liferay.Service(
-        '/user/get-user-by-email-address`,
+        '/user/get-user-by-email-address',
         {
             companyId: Liferay.ThemeDisplay.getCompanyId(),
             emailAddress: 'test@liferay.com`
