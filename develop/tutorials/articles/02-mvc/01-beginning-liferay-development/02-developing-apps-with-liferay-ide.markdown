@@ -24,7 +24,7 @@ Liferay provides a bundled version.
    page. 
 
 2. Download
-   [Liferay IDE](https://www.liferay.com/downloads/liferay-projects/liferay-ide).
+   [Liferay IDE](https://liferay.dev/-/ide).
    Installing it is easy: unzip it to a convenient location on your system. 
 
 Congratulations! You've installed Liferay IDE! 
