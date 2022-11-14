@@ -57,8 +57,9 @@ simple steps.
 
 ![Figure 1: You can change the scope of your application by navigating to its Configuration menu.](../../../../images/changing-widget-scope.png)
 
-Once you've defined a page scope for an widget, the Menu provides a
-*Default Scope* dropdown that allows you to select the page.
+Once you've created a new scope for widgets, a button (![Scope drop-down icon](../../../../images/icon-cog.png)) with a drop-down menu appears in the *Content & Data* menu for you to select which scope to manage content for. You can choose the default scope or any new scopes you created for your widgets. Your selection changes the content that appears when you manage each type.
+
+![Figure 2: Use the drop-down menu under Content & Data to determine which scope to manage content for.](../../../../images/widget-scope-drop-down-menu.png)
 
 That's all it takes to change the scope for a particular widget. By setting the 
 scope to the current page, you can add as many of these widgets to a Site as 
