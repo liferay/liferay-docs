@@ -43,11 +43,10 @@ set to the Site where they are placed.
 
 Unless otherwise noted, all widgets support scoping by instance (global), Site
 (default), or page. This grants you some flexibility in how you want to set up
-your Liferay instance. You can configure the scope of an app with just a few
+your Liferay instance. You can configure the scope of a widget's content with just a few
 simple steps.
 
-1.  Click the *Options* icon (![Options](../../../../images/icon-app-options.png))
-    in the app window.
+1.  Click the widget's *Options* icon (![Options](../../../../images/icon-app-options.png)).
 
 2.  Select *Configuration*.
 
@@ -55,13 +54,14 @@ simple steps.
 
 4.  Use the drop-down menu to set the scope.
 
-![Figure 1: You can change the scope of your application by navigating to its Configuration menu.](../../../../images/changing-widget-scope.png)
+![Figure 1: You can change the scope of your widget's content by navigating to its Configuration menu.](../../../../images/changing-widget-scope.png)
 
-Once you've defined a page scope for an widget, the Menu provides a
-*Default Scope* dropdown that allows you to select the page.
+Once you've created a new scope for widgets, a button (![Scope drop-down icon](../../../../images/icon-cog.png)) with a drop-down menu appears in the *Content & Data* menu for you to select which scope to manage content for. You can choose the default scope or any new scopes you created for your widgets. Your selection changes the content that appears when you manage each type.
+
+![Figure 2: Use the drop-down menu under Content & Data to determine which scope to manage content for.](../../../../images/widget-scope-drop-down-menu.png)
 
 That's all it takes to change the scope for a particular widget. By setting the 
 scope to the current page, you can add as many of these widgets to a Site as 
 you want, provided they are all added to separate pages. 
 
-Another useful feature of Liferay's apps is Configuration Templates. 
+Another useful feature of Liferay's widgets is Configuration Templates. 
