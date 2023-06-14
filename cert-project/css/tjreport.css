@@ -1,0 +1,493 @@
+/* WARNING: This is an automatically generated file. DO NOT EDIT IT!
+ * If you want to use your own style sheet, keep a master copy
+ * somewhere else and copy it over this file if needed. This file will
+ * be overwritten whenever the stylesheet that comes with TaskJuggler
+ * has been modified. */
+body {
+  font-family:Bitstream Vera Sans, Tahoma, sans-serif;
+  font-size:15px;
+}
+h1, h2, table, tr, td, div, span {
+}
+table {
+}
+/* Treat images in tables as block and not line elements. This will
+ * eliminate surprising space at the bottom. */
+td img {display: block;}
+p {
+  font-size:15px;
+}
+td, div {
+  padding:0px;
+  margin:0px;
+}
+h1 { font-size:22px; }
+h2 { font-size:18px; }
+h3 { font-size:16px; }
+
+.tj_journal {
+  font-size:11px;
+}
+i.tj_journal { font-size:9px; }
+h1.tj_journal {
+  font-size:16px;
+  margin-left:0px;
+}
+h2.tj_journal {
+  font-size:14px;
+  margin-left:10px;
+}
+h3.tj_journal { 
+  margin-top:5px;
+  font-size:13px; 
+  margin-bottom:1px;
+  margin-left:20px;
+}
+h4.tj_journal { 
+  font-size:12px;
+  margin-left:30px;
+}
+p.tj_journal {
+  margin-top:1px;
+  margin-bottom:5px;
+  margin-left:30px;
+}
+
+/* The basic elements of a text report page. */
+.tj_text_page {
+  width:100%;
+  border-spacing:0px;
+}
+
+.tj_text_row {
+}
+.tj_column_left {
+  vertical-align:top;
+}
+
+.tj_column_center {
+  vertical-align:top;
+}
+
+.tj_column_right {
+  vertical-align:top;
+}
+
+/* The top-level page layout */
+.tj_page {
+  margin: 35px 5% 25px 5%;
+}
+
+/* The container that holds report tables */
+.tj_table_frame {
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  background-color:#9a9a9a;
+  margin-top:15px;
+  margin-bottom:15px;
+  border-spacing:1px;
+  font-size:13px;
+}
+
+/* The headline box for report tables */
+.tj_table_headline {
+  font-size:16px; 
+  font-weight:bold;
+  white-space:nowrap;
+  padding:5px;
+  margin:1px;
+  text-align:center;
+  color:#000000;
+  background-color:#d4dde6; 
+}
+
+.tj_table {
+  background-color:#9a9a9a;
+  margin:0px;
+  border-spacing:1px;
+}
+
+/* The cells of the table header. */
+.tj_table_header_cell {
+  padding:1px 3px 1px 3px;
+  white-space:nowrap;
+  border-spacing:0px;
+  color:#ffffff;
+  overflow:hidden;
+}
+
+/* A regular table cell. It usually contains the cell icon, the text
+ * label and a tooltip trigger. */
+.tj_table_cell {
+  font-size:13px;
+  vertical-align:top;
+  padding:1px 3px 1px 3px;
+  margin:0px;
+  width:100%;
+  border-spacing:0px;
+  position: relative;
+  overflow:hidden;
+} 
+
+/* The symbol is the icon to the left of the text label in a table
+ * cell. */
+.tj_table_cell_icon {
+  vertical-align:top;
+  text-align:right;
+  padding:1px 3px 0px 0px;
+  width:19px;
+}
+
+/* This is the text label of a cell. */
+.tj_table_cell_label {
+  font-size:12px;
+  vertical-align:top;
+  padding-top:1px;
+}
+
+/* The box around the icon to the right of the text label. This is
+ * optional and triggers the tooltip with the full text of the cell in
+ * case the cell is not large enough to show everything. */
+.tj_table_cell_tooltip {
+  font-size:13px;
+  vertical-align:top;
+  padding:2px 0px 0px 3px;
+}
+
+/* The container that holds the invisible tooltips. */
+.tj_tooltip_box{
+  position:fixed; 
+  top:0px;
+  left:0px;
+  display:none;
+  visibility:hidden;
+}
+
+/* The caption box for report tables */
+.tj_table_caption {
+  padding: 5px 13px 5px 13px;
+  background-color:#ebf2ff;
+  text-align:left;
+  white-space:normal;
+  margin:1px;
+  font-size:13px
+}
+
+.tj_table_legend_frame {
+  padding:5px;
+  margin:1px;
+  background-color:#d4dde6; 
+}
+
+/* The legend of reports with calendar and Gantt charts */
+.tj_table_legend {
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  font-size:11px;
+  color:#000000;
+  border-spacing:1px;
+}
+
+/* A row of the table legend */
+.tj_legend_row {
+  height:19px;
+}
+
+/* Headlines used for the legend when both chart types are used in a
+ * report */
+.tj_legend_headline {
+  font-size:12px;
+  font-weight:bold;
+}
+
+/* A legend row has 3 items. An item contains a label and a symbol */
+.tj_legend_item {
+}
+
+.tj_legend_symbol {
+  position: relative;
+  width:45px;
+  height:19px;
+}
+
+.tj_legend_label {
+  text-align: left;
+}
+
+.tj_legend_spacer {
+  width:30px;
+}
+
+.tj_gantt_jag {
+  position:absolute;
+  border-style: solid;
+  width: 0px;
+  height: 0px; 
+  line-height: 0px;
+  border-top: 5px solid black;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: none
+}
+
+.tj_diamond_top {
+  position:absolute;
+  border-style: solid;
+  width: 0px;
+  height: 0px; 
+  line-height: 0px;
+  border-top: none;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid black;
+}
+.tj_diamond_bottom {
+  position:absolute;
+  border-style: solid;
+  width: 0px;
+  height: 0px; 
+  line-height: 0px;
+  border-top: 7px solid black;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: none;
+}
+
+.tj_arrow_head {
+  position:absolute;
+  border-style: solid;
+  width: 0px;
+  height: 0px; 
+  line-height: 0px;
+  border-top: 5px solid transparent;
+  border-left: 5px solid black;
+  border-right: none; 
+  border-bottom: 5px solid transparent;
+}
+
+.tabback {
+  background-color:#9a9a9a;
+  overflow:visible;
+}
+.tabfront { background-color:#d4dde6; }
+.tabhead {
+  white-space:nowrap;
+  background-color:#7a7a7a;
+  color:#ffffff;
+  text-align:center;
+}
+.tabhead_offduty {
+  white-space:nowrap;
+  background-color:#bdbdaa;
+  color:#000000;
+}
+.tabfooter {
+  white-space:nowrap;
+  background-color:#9a9a9a;
+  color:#ffffff;
+  text-align:center;
+}
+.headercelldiv {
+  padding-top:1px;
+  padding-right:3px;
+  padding-left:3px;
+  padding-bottom:0px;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.celldiv {
+  padding:1px 3px 2px 3px;
+  white-space:nowrap;
+  overflow:hidden;
+  position: relative;
+}
+.tabline { color:#000000 }
+.tabcell {
+  white-space:nowrap;
+  overflow:hidden;
+  padding:0px;
+}
+.costaccountcell1 {
+  background-color:#fff2eb;
+  white-space:nowrap;
+  padding:0px;
+}
+.costaccountcell2 {
+  background-color:#ebdfd9;
+  white-space:nowrap;
+  padding:0px;
+}
+.revenueaccountcell1 {
+  background-color:#cbffcc;
+  white-space:nowrap;
+  padding:0px;
+}
+.revenueaccountcell2 {
+  background-color:#a6d0a6;
+  white-space:nowrap;
+  padding:0px;
+}
+.accountcell1 {
+  background-color:#ebf2ff;
+  white-space:nowrap;
+  padding:0px;
+}
+.accountcell2 {
+  background-color:#d9dfeb;
+  white-space:nowrap;
+  padding:0px;
+}
+.taskcell1 {
+  background-color:#ebf2ff;
+  white-space:nowrap;
+  padding:0px;
+}
+.taskcell2 {
+  background-color:#d9dfeb;
+  white-space:nowrap;
+  padding:0px;
+}
+.resourcecell1 {
+  background-color:#fff2eb;
+  white-space:nowrap;
+  padding:0px;
+}
+.resourcecell2 {
+  background-color:#ebdfd9;
+  white-space:nowrap;
+  padding:0px;
+}
+/* The *2 versions have a 20 points less HSV value of the *1 versions*/
+.busy1 { background-color:#ff3b3b; }
+.busy2 { background-color:#eb3636; }
+.loaded1 { background-color:#ff9b9b; }
+.loaded2 { background-color:#eb8f8f; }
+.free1 { background-color:#a5ffb4; }
+.free2 { background-color:#98eba6; }
+.offduty1 { background-color:#bdbdaa; }
+.offduty2 { background-color:#a9a999; }
+.calconttask1 { background-color:#abbeae; }
+.calconttask2 { background-color:#99aa9c; }
+.caltask1 { background-color:#2050e5; }
+.caltask2 { background-color:#1c4ad1; }
+.todo1 { background-color:#beabab; }
+.todo2 { background-color:#aa9999; }
+
+.tabvline {
+  background-color:#9a9a9a;
+  position:absolute;
+}
+.tj_gantt_frame {
+  position:absolute;
+  /* Make sure this element is above all other elements */
+  z-index:100;
+}
+.containerbar {
+  background-color:#09090a;
+  position:absolute;
+}
+.taskbarframe {
+  background-color:#09090a;
+  position:absolute;
+}
+.taskbar {
+  background-color:#2f57ea;
+  position:absolute;
+}
+.progressbar {
+  background-color:#36363f;
+  position:absolute;
+}
+.milestone {
+  background-color:#09090a;
+  position:absolute;
+}
+.loadstackframe {
+  background-color:#452a2a;
+  position:absolute;
+}
+.free {
+  background-color:#a5ffb5;
+  position:absolute;
+}
+.busy {
+  background-color:#ff9b9b;
+  position:absolute;
+}
+.assigned {
+  background-color:#ff3b3b;
+  position:absolute;
+}
+.offduty {
+  background-color:#bdbdaa;
+  white-space:nowrap;
+  position:absolute;
+}
+.depline {
+  background-color:#000000;
+  position:absolute;
+}
+.nowline {
+  background-color:#EE0000;
+  position:absolute;
+}
+.markdateline {
+  background-color:#000000;
+  position:absolute;
+}
+.white {
+  background-color:#FFFFFF;
+  position:absolute;
+}
+
+.navbar_topruler {
+  margin:7px 0px 0px 0px;
+}
+.navbar_midruler {
+  margin:5px 0px 0px 0px;
+}
+.navbar_bottomruler {
+  margin:5px 0px 7px 0px;
+}
+.navbar_current {
+  background-color:#606060;
+  font-size:13px;
+  font-weight:bold;
+  padding:5px;
+  color:#FFFFFF;
+}
+.navbar_other {
+  background-color:#FFFFFF;
+  font-size:13px;
+  font-weight:bold;
+  padding:2px;
+}
+.navbar {
+  font-size:20px;
+  font-weight:bold;
+  padding:0px;
+}
+.copyright {
+  font-size:9px;
+  color:#101010;
+  text-align:center;
+  margin-top:10px;
+}
+div[codesection] {
+  border-width:2px;
+  border-color:#ABABAB;
+  border-style:solid;
+  background-color:#F0F0F0;
+  margin-top:8px;
+  margin-bottom:8px;
+}
+pre[codesection] {
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+
+

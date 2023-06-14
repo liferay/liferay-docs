@@ -1,0 +1,412 @@
+project cert "Liferay Certification" 2023-01-03 + 12m {
+  timezone "America/New_York"
+  currency "USD"
+  timeformat "%Y-%m-%d"
+  numberformat "-" "" "," "." 1
+  currencyformat "(" ")" "," "." 0
+  # Compare base scenario with any delays.
+  scenario plan "Plan" {
+    scenario actual "Actual"
+  }
+}
+rate 270.0
+
+leaves holiday "MLK Day" 2023-01-16
+leaves holiday "Presidents Day" 2023-02-20
+leaves holiday "Memorial Day" 2023-05-29
+leaves holiday "Independence Day" 2023-07-04
+leaves holiday "Labor Day" 2023-09-04
+leaves holiday "Thanksgiving Day" 2023-11-23
+leaves holiday "Christmas Eve" 2023-12-22
+leaves holiday "Christmas Day" 2023-12-25
+leaves holiday "New Years Eve" 2023-12-29
+
+flags team
+
+resource leader "Rich Sezov" {
+ email "richard.sezov@liferay.com"
+}
+
+resource writers "Writers" {
+  managers leader
+  resource writer1 "Russell Bohl" {
+    email "russell.bohl@liferay.com"
+  }
+  resource writer2 "James Garcia" {
+    email "james.garcia@liferay.com"
+  }
+  resource writer3 "Aswin Rajeev" {
+    email "aswin.rajeev@liferay.com"
+  }
+  resource writer4 "Alec Shay" {
+    email "alec.shay@liferay.com"
+  }
+  resource writer5 "Makoto Tokudome" {
+    email "makoto.tokudome@liferay.com"
+    leaves annual 2023-06-12 - 2023-06-28
+  }
+  flags team
+}
+
+  task Cert "Liferay Certification" {
+    task courses "Develop Courses" {
+      priority 1000
+      task cloud "Liferay Cloud Course" {
+        allocate writer4
+        duration 90d
+        actual:duration 180d
+        # complete 80
+        journalentry 2023-05-25 "Delay due to changing product" {
+          author leader
+          alert yellow
+          summary -8<-
+            Product changes forced new due date of May 15
+          ->8-
+          details -8<-
+            Ambiguity on features, stability of the product, and scarcity of knowledge resources combined to result in a delay.
+          ->8-
+        }
+        journalentry 2023-05-30 "Delay for Client Extensions configuration" {
+          author leader
+          alert yellow
+          summary -8<-
+            JAR runner image prevents static file hosting
+          ->8-
+          details -8<-
+            The JAR runner Docker image we are using for the Spring Boot microservice has a hard coded configuration to prevent serving static resources. For this reason, we could not use it to auto-wire OAuth 2 and host the application without further configuration. This introduced another week's delay.
+          ->8-
+        }
+        journalentry 2023-06-07 "Delay for deployment project change" {
+          author leader
+          alert red
+          summary -8<-
+            Brian Chan wouldn't merge the project developed for the deployment exercise because he wants us to use one of the samples that are in the liferay-portal repo's workspace samples. This will introduce further delay and push delivery of the course to the end of Q2.
+          ->8-
+        }
+      }
+      task admin "Liferay Admin Course" {
+        allocate writer5
+        duration 90d
+        actual:duration 135d
+      }
+      task dev "Liferay Developer Course" {
+        allocate writer2
+        effort 65d
+        actual:effort 75d
+        journalentry 2023-06-13 "Need more time for course development" {
+          author leader
+          alert yellow
+          summary -8<-
+            Due to changes and newness of Client Extensions technology, course development is taking longer than anticipated. We are projecting a new delivery date of July 14 for this course.
+            ->8-
+        }
+        start 2023-04-03
+      }
+      task content "Liferay Content Course" {
+        allocate writer1
+        duration 90d
+        #depends !dev
+        start 2023-07-01
+      }
+      task commerce "Liferay Commerce Course" {
+        allocate writer3
+        duration 90d
+        start 2023-07-01
+      }
+      task search "Liferay Search Course" {
+        allocate writer1
+        duration 90d
+        depends !content
+        start 2023-10-02
+      }
+    }
+    task rev "Revisions" {
+      depends !courses.cloud, !courses.admin
+      task sitecloud "Import Site to Cloud Course" {
+        depends !!courses.content
+        allocate writer4
+        effort 5d
+      }
+      task appcloud "Import App to Cloud Course" {
+        depends !!courses.dev
+        allocate writer4
+        effort 5d
+      }
+      task siteadmin "Import Site to Admin Course" {
+        depends !!courses.content
+        allocate writer5
+        effort 5d
+      }
+      task appsite "Import Site to App Dev Course" {
+        depends !!courses.content
+        allocate writer2
+        effort 5d
+      }
+      task containercloud "Re-implement JARrunner" {
+        allocate writer4
+        effort 5d
+        journalentry 2023-06-01 "Delay for Client Extensions configuration" {
+          author leader
+          alert yellow
+          summary -8<-
+            JAR runner image prevents static file hosting
+          ->8-
+          details -8<-
+            The JAR runner Docker image may get updated in the future. When this happens, we should simplify our example to use it to better showcase LXC.
+          ->8-
+        }
+      }
+    }
+    task qbank "Question Bank" {
+      depends !courses.admin
+      task adminquestions "Compile Liferay Administrator questions" {
+        allocate writer5
+        duration 90d
+      }
+      task cloudquestions "Complie Liferay Cloud questions" {
+        depends !!courses.cloud
+        allocate writer4
+        duration 90d
+      }
+    }
+    task testgen "Test Generator" {
+      depends !qbank
+    }
+    task tracker "Cert Tracker" {
+      depends !testgen
+    }
+    task deliveries "Milestones" {
+      task start "Project start" {
+        start ${projectstart}
+      }
+      task rel1 "Release 1: Cloud and Admin" {
+        depends !!courses.admin, !!courses.cloud
+      }
+      task rel2 "Release 2: Developer" {
+        depends !!courses.dev
+      }
+      task rel3 "Release 3: Content and Commerce" {
+        depends !!courses.content, !!courses.commerce
+      }
+      task rel4 "Release 4: Search" {
+        depends !!courses.search
+      }
+    }
+  }
+
+navigator navbar {
+  hidereport @none
+}
+
+  macro TaskTip [
+    tooltip istask() -8<-
+      '''Start: ''' <-query attribute='start'->
+      '''End: ''' <-query attribute='end'->
+      ----
+      '''Resources:'''
+
+      <-query attribute='resources'->
+      ----
+      '''Precursors: '''
+
+      <-query attribute='precursors'->
+      ----
+      '''Followers: '''
+
+      <-query attribute='followers'->
+      ->8-
+  ]
+
+  textreport frame "" {
+    selfcontained yes
+    header -8<-
+      == Liferay Certification Project ==
+      <[navigator id="navbar"]>
+    ->8-
+    footer "----"
+    textreport index "Overview" {
+      formats html
+      center '<[report id="overview"]>'
+    }
+
+    textreport "Status" {
+      formats html
+      center -8<-
+        <[report id="status.dashboard"]>
+        ----
+        <[report id="status.completed"]>
+        ----
+        <[report id="status.ongoing"]>
+        ----
+        <[report id="status.future"]>
+      ->8-
+    }
+
+    textreport courses "Courses" {
+      formats html
+      center '<[report id="courses"]>'
+    }
+
+    textreport story "Project Story" {
+      formats html
+      center '<[report id="story"]>'
+    }
+
+    textreport "Deliveries" {
+      formats html
+      center '<[report id="deliveries"]>'
+    }
+
+    textreport "ContactList" {
+      formats html
+      title "Contact List"
+      center '<[report id="contactList"]>'
+    }
+    textreport "ResourceGraph" {
+      formats html
+      title "Resource Graph"
+      center '<[report id="resourceGraph"]>'
+    }
+  }
+
+  taskreport overview "" {
+    selfcontained yes
+    header -8<-
+      === Project Overview ===
+
+      The project is structured into 4 phases.
+
+      # <-reportlink id='frame.courses'->
+      # Question Bank
+      # Test Generation/Delivery
+      # Certification Tracker
+
+      === Project Plan ===
+    ->8-
+
+    columns bsi { title 'WBS' },
+            name, start, end, effort, chart { ${TaskTip} }
+    scenarios actual
+    timeformat "%a %Y-%m-%d"
+    loadunit days
+    caption 'All effort values are in man-days.'
+
+    footer -8<-
+      === Staffing ===
+
+      All project phases are properly staffed. See [[ResourceGraph]] for
+      detailed resource allocations.
+
+      === Current Status ===
+
+      See [[Deliveries]] for the impact on the delivery dates.
+    ->8-
+  }
+
+# Macro to set the background color of a cell according to the alert
+# level of the task.
+macro AlertColor [
+  cellcolor plan.alert = 0 "#90FF90" # green
+  cellcolor plan.alert = 1 "#FFFF90" # yellow
+  cellcolor plan.alert = 2 "#FF9090" # red
+]
+
+taskreport status "" {
+  selfcontained yes
+  columns bsi { width 50 title 'WBS' }, name { width 150 },
+          start { width 100 }, end { width 100 },
+          effort { width 100 },
+          alert { tooltip plan.journal
+                          != '' "<-query attribute='journal'->" width 150 },
+          status { width 150 }
+  scenarios plan
+
+  taskreport dashboard "" {
+    headline "Project Dashboard (<-query attribute='now'->)"
+    columns name { title "Task" ${AlertColor} width 200},
+            resources { width 200 ${AlertColor}
+                        listtype bullets
+                        listitem "<-query attribute='name'->"
+                        start ${projectstart} end ${projectend} },
+            alerttrend { title "Trend" ${AlertColor} width 50 },
+            journal { width 350 ${AlertColor} }
+    journalmode status_up
+    journalattributes headline, author, date, summary, details
+    hidetask ~hasalert(0)
+    sorttasks alert.down, actual.end.up
+    period %{${now} - 4w} +4w
+  }
+
+  taskreport completed "" {
+    headline "Already completed tasks"
+    hidetask ~(actual.end <= ${now})
+  }
+  taskreport ongoing "" {
+    headline "Ongoing tasks"
+    hidetask ~((actual.start <= ${now}) & (actual.end > ${now}))
+  }
+  taskreport future "" {
+    headline "Future tasks"
+    hidetask ~(actual.start > ${now})
+  }
+}
+
+# A list of tasks showing the resources assigned to each task.
+taskreport courses "" {
+  scenarios actual
+  headline "Development - Resource Allocation Report"
+  columns bsi { title 'WBS' }, name, start, end, effort { title "Work" },
+          duration, chart { ${TaskTip} scale day width 500 }
+  timeformat "%Y-%m-%d"
+  hideresource ~(isleaf() & isleaf_())
+  sortresources name.up
+}
+
+taskreport story "" {
+  headline "Project Journal (<-query attribute='now'->)"
+  columns name { title "Task" ${AlertColor} width 200},
+          resources { width 200 ${AlertColor}
+                      listtype bullets
+                      listitem "<-query attribute='name'->"
+                      start ${projectstart} end ${projectend} },
+          alerttrend { title "Trend" ${AlertColor} width 50 },
+          journal { width 350 ${AlertColor} }
+  journalmode journal
+  journalattributes headline, author, date, summary, details
+  hidetask ~hasalert(0)
+  sorttasks alert.down, actual.end.up
+}
+
+# A list of all tasks with the percentage completed for each task
+taskreport deliveries "" {
+  headline "Project Deliverables"
+  columns bsi { title 'WBS' }, name, start, end, note { width 150 }, complete,
+          chart { ${TaskTip} }
+  taskroot Cert.deliveries
+  hideresource @all
+  scenarios plan, actual
+}
+# A list of all employees with their contact details.
+resourcereport contactList "" {
+  scenarios actual
+  headline "Contact list and duty plan"
+  columns name,
+          email { celltext 1 "[mailto:<-email-> <-email->]" },
+          managers { title "Manager" },
+          chart { scale day }
+  hideresource ~isleaf()
+  sortresources name.up
+  hidetask @all
+}
+
+# A graph showing resource allocation. It identifies whether each
+# resource is under- or over-allocated for.
+resourcereport resourceGraph "" {
+  scenarios actual
+  headline "Resource Allocation Graph"
+  columns no, name, effort, rate, weekly { ${TaskTip} }
+  loadunit shortauto
+  # We only like to show leaf tasks for leaf resources.
+  hidetask ~(isleaf() & isleaf_())
+  sorttasks plan.start.up
+}
