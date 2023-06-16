@@ -48,6 +48,10 @@ resource writers "Writers" {
   flags team
 }
 
+resource devteams "Development Teams" {
+  resource cloudteam "Liferay Cloud Team"{}
+}
+
   task Cert "Liferay Certification" {
     task courses "Develop Courses" {
       priority 1000
@@ -156,6 +160,26 @@ resource writers "Writers" {
           ->8-
         }
       }
+      task lxcuifixes "LXC Team UI for object and workflow actions" {
+        start 2023-07-10
+        allocate cloudteam
+        effort 1m
+      }
+      task objworkflowcleanup "Undeploy object and workflow actions" {
+        allocate writer4
+        effort 5d
+        depends !lxcuifixes
+        journalentry 2023-06-16 "LXC has missing UI functionality" {
+          author leader
+          alert yellow
+          summary -8<-
+            Undeploy exercise misses some cleanup opportunities
+          ->8-
+          details -8<-
+            In the exercise where the sample client extension is undeployed, various pieces that were deployed to DXP with it remain in the system, such as object and workflow actions. LXC currently has no UI for removing these things. This conflicts with a best practice not to have artifacts installed/running that you aren't using. When there is a UI for removing these things, we need to come back and fix this exercise.
+          ->8-
+        }
+      }
     }
     task qbank "Question Bank" {
       depends !courses.admin
@@ -163,7 +187,7 @@ resource writers "Writers" {
         allocate writer5
         duration 90d
       }
-      task cloudquestions "Complie Liferay Cloud questions" {
+      task cloudquestions "Compile Liferay Cloud questions" {
         depends !!courses.cloud
         allocate writer4
         duration 90d
