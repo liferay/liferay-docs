@@ -20,6 +20,6 @@ You need to download and install Sync on your Android or iOS device through its
 respective app store, the same as you do any other mobile app. To find the app, 
 search Google Play or the App Store for *Liferay*. You can also download Sync 
 from the 
-[Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
+[Liferay customer downloads page](https://customer.liferay.com/downloads). 
 Once you've installed the Sync app on your device, the rest of the articles in 
 this guide show you how to use it. 

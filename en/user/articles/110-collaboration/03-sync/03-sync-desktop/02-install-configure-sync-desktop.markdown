@@ -7,7 +7,7 @@ header-id: installing-and-configuring-the-desktop-liferay-sync-client
 [TOC levels=1-4]
 
 You can download the desktop client from the
-[Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
+[Liferay customer downloads page](https://customer.liferay.com/downloads). 
 Note that you'll need a Liferay account for this. Once you've downloaded the 
 appropriate desktop client for your operating system, installing Liferay Sync on 
 Windows or Mac OS is straightforward. 
