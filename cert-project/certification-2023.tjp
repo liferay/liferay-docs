@@ -1,4 +1,4 @@
-project cert "Liferay Certification" 2023-01-03 + 12m {
+project cert "Liferay Certification" 2023-01-03 + 24m {
   timezone "America/New_York"
   currency "USD"
   timeformat "%Y-%m-%d"
@@ -44,6 +44,9 @@ resource writers "Writers" {
   resource writer5 "Makoto Tokudome" {
     email "makoto.tokudome@liferay.com"
     leaves annual 2023-06-12 - 2023-06-28
+  }
+  resource writer6 "Eric Moritsuka" {
+    email "eric.moritsuka@liferay.com"
   }
   flags team
 }
@@ -106,10 +109,22 @@ resource devteams "Development Teams" {
         }
         start 2023-04-03
       }
-      task content "Liferay Content Course" {
-        allocate writer1
-        duration 90d
-        #depends !dev
+      task content "Liferay Site Designer Certification" {
+        task sitemanager "Web Site Manager Course" {
+          allocate writer1,writer4
+          duration 90d
+          actual:duration 120d
+        }
+        task contentmanager "Content Manager Course" {
+          depends !sitemanager
+          allocate writer2,writer6
+          duration 90d
+        }
+        task sitedesigner "Site Designer Course" {
+          depends !contentmanager
+          allocate writer2
+          duration 90d
+        }
         start 2023-07-01
       }
       task commerce "Liferay Commerce Course" {
@@ -121,7 +136,6 @@ resource devteams "Development Teams" {
         allocate writer1
         duration 90d
         depends !content
-        start 2023-10-02
       }
     }
     task rev "Revisions" {
