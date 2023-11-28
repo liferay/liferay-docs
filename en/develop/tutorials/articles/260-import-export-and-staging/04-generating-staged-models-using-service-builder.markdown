@@ -13,7 +13,7 @@ models for your app manually, you can leverage
 generate the necessary staged model logic for you. Before diving into this
 tutorial, make sure you've read the
 [Understanding Staged Models](/docs/7-1/tutorials/-/knowledge_base/t/understanding-staged-models)
-tutorial for information on how staged models work. Also, if your app doesn't 
+tutorial for information on how staged models work. Also, if your app doesn't
 use Liferay's Service Builder, you must configure it in your project. If you
 need help doing this, follow the
 [Defining an Object-Relational Map with Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
@@ -98,6 +98,6 @@ staged model type.
     Your model is now a staged grouped model! The `groupId` column is also
     required to extend the `StagedGroupedModel` interface, but it was already
     defined in the original `service.xml` file.
- 
+
 Fantastic! You've witnessed firsthand how easy it is to generate staged models
 using Service Builder.
