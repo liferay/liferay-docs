@@ -46,7 +46,7 @@ Before proceeding, make sure you understand these critical terms:
 actions that be performed on the Bookmarks application include `ADD_TO_PAGE`,
 `CONFIGURATION`, and `VIEW`. Actions that can be performed with respect to
 Bookmarks entry entity include `ADD_ENTRY`, `DELETE`, `PERMISSIONS`, `UPDATE`,
-and `VIEW`. 
+and `VIEW`.
 
 **Resource**: A generic representation of any application or entity in the
 portal on which an action can be performed. Resources are used for permission
@@ -89,7 +89,7 @@ Model resources represent entities within Liferay, such as bookmarks folders or
 bookmarks entries. The names of model resources are the fully qualified class
 names of the entities they represent. In the `default.xml` files displayed
 below, permission implementations are first defined for the *portlet* resource
-and then for the *model* resources. 
+and then for the *model* resources.
 
 | **Note:** For each resource, there are four scopes to which the permissions can
 | be applied: company, group, group-template, or individual. See the Javadoc of
@@ -97,29 +97,25 @@ and then for the *model* resources.
 | for more information.
 
 You can add permissions to your custom portlets using four easy steps (also
-known as *DRAC*): 
+known as *DRAC*):
 
-1. <b>D</b>efine all resources and their permissions. This is the step presented 
-   in this tutorial.
+1. <b>D</b>efine all resources and their permissions.
 
 2. <b>R</b>egister all defined resources in the permissions system. This is also
-   known as *adding resources*. This step is discussed in the tutorial 
-   [Adding and Deleting Resources (not yet written)]().
+   known as *adding resources*.
 
-3. <b>A</b>ssociate the necessary permissions with resources. This step is 
-   discussed in the tutorial [Exposing the Permission Interface to Users (not yet written)]().
+3. <b>A</b>ssociate the necessary permissions with resources.
 
-4. <b>C</b>heck permission before returning resources. This step is described in 
-   the tutorial [Checking Permissions (not yet written)]().
+4. <b>C</b>heck permission before returning resources.
 
 ## Define All Resources and Permissions
 
-The first step is to define your resources and the actions that can be defined
-on them. The Bookmarks application is used here to demonstrate how to define
+Here you'll learn the first step, in which you define your resources and their
+actions. The Bookmarks application is used here to demonstrate how to define
 portlet resources and model resources. Open the `default.xml` file in
 `bookmarks-web` module of the Bookmarks application:
 [default.xml](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/bookmarks/bookmarks-web/src/main/resources/resource-actions/default.xml).
-There, you'll see the following mapping of resources to actions: 
+There, you'll see the following mapping of resources to actions:
 
     <?xml version="1.0"?>
     <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
@@ -409,7 +405,7 @@ there are multiple permissions XML definition files for various core Liferay
 portlets in the `portal/portal-impl/src/resource-actions` directory. The
 `default.xml` file in that folder contains pointers to the definition files of
 the various applications. This excerpt from Liferay's `default.xml` references
-the resource permission definition files for all built-in Liferay portlets: 
+the resource permission definition files for all built-in Liferay portlets:
 
     <?xml version="1.0"?>
     <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
@@ -430,7 +426,7 @@ should be placed in a directory in your module's classpath.
 your `portlet.properties` file, create a property named
 `resource.actions.configs` with the relative path to your portlet's
 resource-action mapping file (e.g. `default.xml`) as its value. Here's what
-this property specification might look like: 
+this property specification might look like:
 
     resource.actions.configs=resource-actions/default.xml
 
