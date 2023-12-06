@@ -14,22 +14,24 @@ A couple versions of the Liferay Theme Generator are available. The version you
 must install depends on the version of @product@ you're developing on. The
 required versions are listed in the table below:
 
-| Liferay Version | Liferay Theme Generator Version | Command |
-| --- | --- | --- |
-| 6.2 | 7.x.x | `npm install -g generator-liferay-theme@^7.x.x` |
-| 7.0 | 7.x.x or 8.x.x | Same as above or below |
-| 7.1 | 8.x.x | `npm install -g generator-liferay-theme@^8.x.x` |
-| 7.2 | 9.x.x | `npm install -g generator-liferay-theme@^9.x.x` |
+| Liferay Version | Liferay Theme Generator Version | Command                                         |
+|:----------------|:--------------------------------|:------------------------------------------------|
+| 6.2             | 7.x.x                           | `npm install -g generator-liferay-theme@^7.x.x` |
+| 7.0             | 7.x.x or 8.x.x                  | Same as above or below                          |
+| 7.1             | 8.x.x                           | `npm install -g generator-liferay-theme@^8.x.x` |
+| 7.2             | 9.x.x                           | `npm install -g generator-liferay-theme@^9.x.x` |
+
+See [Version Compatibility Matrix](https://learn.liferay.com/w/dxp/building-applications/tooling/reference/node-version-information#version-compatibility-matrix) for more information.
 
 ## Sub-generators
 
 The Liferay Theme Generator includes the sub-generators listed in the table
 below:
 
-| Sub-generator | Command to run | Description |
-| --- | --- | --- |
-| Layouts | `yo liferay-theme:layout` | Generate layout templates with an interactive VIM. |
-| Themelets | `yo liferay-theme:themelet` | Create small, reusable, pieces of CSS and HTML for your themes. |
+| Sub-generator | Command to run              | Description                                                     |
+|:--------------|:----------------------------|:----------------------------------------------------------------|
+| Layouts       | `yo liferay-theme:layout`   | Generate layout templates with an interactive VIM.              |
+| Themelets     | `yo liferay-theme:themelet` | Create small, reusable, pieces of CSS and HTML for your themes. |
 
 ### Layouts Sub-generator
 
