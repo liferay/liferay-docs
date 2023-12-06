@@ -14,7 +14,7 @@ restrict who can post or access content.
 
 Fortunately, no matter what your portlet does, access to it and to its content
 can be controlled with permissions. Read on to learn about Liferay's
-permissions system and how add permissions to your application.
+permissions system and how to add permissions to your application.
 
 ## Liferay's Permission System
 
@@ -38,7 +38,7 @@ portlets.
 
 In this tutorial, you'll learn how to use Liferay's permissions system to
 provide Liferay administrators the same level of control over permissions that
-they they over the out-of-the-box Liferay applications.
+they have over the out-of-the-box Liferay applications.
 
 Before proceeding, make sure you understand these critical terms:
 
@@ -79,7 +79,7 @@ This `BOOKMARKS` string is used when declaring portlet resources in
 There are two kinds of resources in Liferay: *portlet resources* and *model
 resources*. Portlet resources represent portlets. The names of portlet
 resources are the portlet IDs from the portlets' `portlet.xml` files (or in the
-case of core portlets, Liferay's `portlet-custom.xml`. Model resources
+case of core portlets, Liferay's `portlet-custom.xml`). Model resources
 refer to entities within Liferay. The names of model resources are the fully
 qualified class names of the entities they represent. In the XML displayed
 below, permission implementations are first defined for the *portlet* resource
