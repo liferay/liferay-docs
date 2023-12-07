@@ -193,7 +193,7 @@ functionality.
 3.  Paste the following code into the file: 
 
     ```markup
-<%@include file="../init.jsp"%>
+    <%@include file="../init.jsp"%>
 
     <%
     String mvcPath = ParamUtil.getString(request, "mvcPath");
