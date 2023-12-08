@@ -13,7 +13,7 @@ you define the configuration options in a Java interface. This way, you don't
 have to create your own application configuration framework.
 
 Complete these three high level tasks to integrate your application with the
-configuration framework: 
+configuration framework:
 
 1.  Provide a way to set configurations in the user interface.
 
@@ -23,20 +23,20 @@ configuration framework:
 
 This tutorial demonstrates both adding your application's configuration form to
 the System Settings application in the Control Panel and categorizing the
-configuration. Subsequent tutorials show you how to 
+configuration. Subsequent tutorials show you how to
 
 1.  Set the *scope* of the configuration. Read more about configuration scope
     [here](/docs/7-1/user/-/knowledge_base/u/system-settings#configuration-scope).
 
-2.  Read configuration values from various contexts. 
+2.  Read configuration values from various contexts.
 
 | **Note:** To see a working application configuration, deploy the
 | `configuration-action`
 | [Blade sample](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/configuration-action)
 | and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
-| *System Settings*). In the Other category, click the *Message display
-| configuration* entry.
-| 
+| *System Settings*). Go to *Platform* &rarr; *Third Party*. In the System Scope,
+| open the *Message display configuration* entry and edit the fields as you wish.
+|
 | Add the *Blade Message Portlet* to a page to test your configuration choices.
 
 You don't need much prior knowledge to use the configuration API, but
@@ -52,11 +52,11 @@ errors. Configuration options should be programmatically explicit, so developers
 can use autocomplete in modern IDEs to find out all configuration options of
 a given application or one of its components.
 
-**Modularity** 
+**Modularity**
 : Modern applications are *modular* and built as a collection of lightweight
 [components](/docs/7-1/tutorials/-/knowledge_base/t/fundamentals#components).
 
-**Configuration Scope** 
+**Configuration Scope**
 : If your application must support different configurations at different scopes,
 the APIs described below handle most of the burden for you. You should still
 understand the term *configuration scope* even if you don't plan to scope the
@@ -66,7 +66,7 @@ application's configuration. Here are the most common configuration scopes:
      the application.
 
    - *Virtual Instance* configurations can vary per virtual instance.
- 
+
    - *Site* configuration can vary per site.
 
    - *Portlet Instance* configurations apply to a single application placed on a
@@ -116,8 +116,8 @@ First, you'll learn how to create a configuration at the system scope.
     1.  **Meta.OCD:** Registers this class as a configuration with a specific id. **The
         ID must be the fully qualified configuration class name.**
 
-    2.  **Meta.AD:** Specifies 
-        [optional metadata](http://bnd.bndtools.org/chapters/210-metatype.html) 
+    2.  **Meta.AD:** Specifies
+        [optional metadata](http://bnd.bndtools.org/chapters/210-metatype.html)
         about the field, such as whether it's a required field or if it has a default value.
         Note that if you set a field as required and don't specify a default value,
         the system administrator must specify a value in order for your application
@@ -129,12 +129,12 @@ First, you'll learn how to create a configuration at the system scope.
     documentation](http://bnd.bndtools.org/chapters/210-metatype.html).
 
     The cool thing about configuration interfaces is that once you have one, you
-    also have an auto-generated UI! 
+    also have an auto-generated UI!
 
 2.  To use the `Meta.OCD` and `Meta.AD` annotations in your modules, you must
     [specify a dependency](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)
     on the bnd library. We recommend using bnd version 3. Here's an example of
-    how to include this dependency in a Gradle project: 
+    how to include this dependency in a Gradle project:
 
         dependencies {
             compile group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
@@ -155,8 +155,8 @@ First, you'll learn how to create a configuration at the system scope.
 
     This line lets bnd use your configuration interface to generate an XML
     configuration file. This provides a lot of information about your application's
-    configuration options. Enough, in fact, to generate a 
-    [System Settings](/docs/7-1/user/-/knowledge_base/u/system-settings) user 
+    configuration options. Enough, in fact, to generate a
+    [System Settings](/docs/7-1/user/-/knowledge_base/u/system-settings) user
     interface automatically.
 
 <!--[Figure 1: Navigate to the Control Panel and then click on *Configuration* &rarr; *System Settings*. Then click on *Platform* &rarr; *Third Party*, find the *Example configuration* link, and click on it.](../../images/example-configuration-system-settings.png)-->
