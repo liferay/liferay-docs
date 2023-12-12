@@ -46,11 +46,11 @@ caption {
 <table style="width:100%">
   <caption>
     This table links you to the @product-ver@ API modules. Their
-    root location is  
+    root location is
     <a href="@platform-ref@/7.1-latest/javadocs/" target="_blank">
     here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
-    </a> The 
-    reference doc Zip is available  
+    </a> The
+    reference doc Zip is available
     <a href="@platform-ref@/7.1-latest/" target="_blank">
     here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a>
@@ -104,757 +104,91 @@ caption {
 
 ### @product@ App Java APIs
 
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-caption {
-    text-align: left;
-}
-</style>
-<table style="width:100%">
-  <caption>
-    This table links you to @product@ application APIs. Their root location is 
-    <a href="@app-ref@" target="_blank">
-    here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
-    </a>
-    <br>
-  </caption>
+This table links you to Liferay DXP application APIs. Their root location is [here](https://docs.liferay.com/dxp/apps).
 
-  <tr>
-    <th rowspan="29">
-      <a href="@app-ref@/collaboration/latest/javadocs/" target="_blank">
-      Collaboration<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
-      <br>
-      <a href="@app-ref@/collaboration/latest/" target="_blank">
-       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
-    </th>
-    <td>
-       com.liferay.announcements.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.blogs.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.blogs.demo.data.creator.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.blogs.item.selector.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.blogs.recent.bloggers.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.bookmarks.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.comment.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.comment.demo.data.creator.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.document.library.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.document.library.content.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.document.library.file.rank.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.document.library.repository.cmis.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.document.library.sync.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.flags.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.invitation.invite.members.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.item.selector.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.item.selector.criteria.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.mentions.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.message.boards.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.microblogs.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.ratings.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.reading.time.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.social.activities.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.social.activity.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.social.bookmarks.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.social.user.statistics.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.subscription.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.upload.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.wiki.api
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="10">
-      <a href="@app-ref@/forms-and-workflow/latest/javadocs/" target="_blank">
-      Forms &amp; Workflow<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
-      <br>
-      <a href="@app-ref@/forms-and-workflow/latest/" target="_blank">
-       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
-    </th>
-    <td>
-       com.liferay.calendar.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.dynamic.data.lists.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.dynamic.data.mapping.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.polls.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.reports.engine.api
-      </td>
-  </tr>
-    <td>
-       com.liferay.portal.rules.engine.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.workflow.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.workflow.kaleo.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.workflow.kaleo.definition.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-       com.liferay.portal.workflow.kaleo.runtime.api
-      </td>
-  </tr>
-
-  <tr>
-    <th rowspan="56">
-      <a href="@app-ref@/foundation/latest/javadocs/" target="_blank">
-      Foundation<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
-      <br>
-      <a href="@app-ref@/foundation/latest/" target="_blank">
-       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
-    </th>
-    <td>
-       com.liferay.apio.architect.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.apio.architect.wiring.osgi.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.apio.architect.writer.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.captcha.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.configuration.admin.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.contacts.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.friendly.url.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.frontend.editor.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.frontend.image.editor.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.frontend.js.loader.modules.extender.api
-      </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.map.api
-    </td>
-    </tr>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.mobile.device.rules.api
-    </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.organizations.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.organizations.item.selector.api
-        </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.password.policies.admin.api
-    </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.portal.background.task.api
-    </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.cache.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.configuration.upgrade.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.instances.api
-        </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.portal.lock.api
-    </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.remote.soap.extender.api
-        </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.portal.scripting.api
-    </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.search.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.search.web.api
-        </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.portal.security.audit.api
-    </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.sso.cas.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.sso.facebook.connect.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.sso.google.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.sso.ntlm.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.sso.openid.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.sso.openid.connect.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.sso.opensso.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.sso.token.api
-        </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.portal.security.exportimport.api
-    </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.ldap.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.security.service.access.policy.api
-      </td>
-      </tr>
-    <tr>
-      <td>
-      com.liferay.portal.settings.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.template.soy.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.url.builder.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.custom.jsp.bag.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.instance.lifecycle.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.jmx.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.output.stream.container.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.spring.extender.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.portal.upgrade.api
-        </td>
-    </tr>
-    <tr>   
-      <td>
-      com.liferay.roles.admin.api
-        </td>
-    </tr>
-    <tr>   
-      <td>
-      com.liferay.roles.admin.demo.data.creator.api
-        </td>
-    </tr>
-    <tr>   
-        <td>
-        com.liferay.roles.item.selector.api
-        </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.text.localizer.address.api
-      </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.user.associated.data.api
-      </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.user.groups.admin.api
-    </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.user.groups.admin.item.selector.api
-      </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.users.admin.api
-    </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.users.admin.demo.data.creator.api
-    </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.users.admin.item.selector.api
-      </td>
-    </tr>
-  <tr>
-    <td>
-    com.liferay.xstream.configurator.api
-    </td>
-  </tr>
-
-  <tr>
-    <th rowspan="40">
-      <a href="@app-ref@/web-experience/latest/javadocs/" target="_blank">
-      Web Experience<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
-      <br>
-      <a href="@app-ref@/web-experience/latest/" target="_blank">
-       (JAR)<span class="opens-new-window-accessible"> (Opens New Window) </span>
-      </a>
-    </th>
-    <td>
-    com.liferay.application.list.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.asset.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.asset.categories.navigation.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.asset.category.property.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.asset.display.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.asset.display.template.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.asset.entry.rel.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.asset.publisher.api
-    </td>
-    <tr>
-      <td>
-      com.liferay.asset.tag.stats.api
-      </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.asset.tags.api
-      </td>
-    </tr>
-    <tr>
-      <td>
-      com.liferay.asset.tags.navigation.api
-      </td>
-    </tr>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.exportimport.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.exportimport.changeset.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.fragment.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.fragment.demo.data.creator.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.fragment.item.selector.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.html.preview.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.journal.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.journal.demo.data.creator.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.journal.item.selector.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.layout.admin.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.layout.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.layout.item.selector.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.layout.page.template.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.layout.prototype.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.layout.set.prototype.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.portlet.display.template.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.product.navigation.control.menu.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.product.navigation.product.menu.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.product.navigation.simulation.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.rss.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.site.navigation.admin.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.site.navigation.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.site.navigation.item.selector.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.site.navigation.language.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.site.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.site.demo.data.creator.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.site.item.selector.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.staging.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.trash.api
-    </td>
-  </tr>
-       
-</table>
+| App                                                                                                                                                          | Packages                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [**Announcements:**](https://docs.liferay.com/portal/7.1-latest/apps/announcements-1.0.1/javadocs/)                                                          | com.liferay.announcements.constants                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| [**Apio Architect:**](https://docs.liferay.com/portal/7.1-latest/apps/apio-architect-1.0.1/javadocs/)                                                        | com.liferay.apio.architect.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| [**Application List:**](https://docs.liferay.com/portal/7.1-latest/apps/application-list-1.0.1/javadocs/)                                                    | com.liferay.application.list.api <br> com.liferay.application.list.taglib                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| [**Asset:**](https://docs.liferay.com/portal/7.1-latest/apps/asset-1.0.1/javadocs/)                                                                          | com.liferay.asset.api <br> com.liferay.asset.categories.navigation.api <br> com.liferay.asset.category.property.api <br> com.liferay.asset.display.api <br> com.liferay.asset.display.page.api <br> com.liferay.asset.display.page.item.selector.api <br> com.liferay.asset.entry.rel.api <br> com.liferay.asset.publisher.api <br> com.liferay.asset.tag.stats.api <br> com.liferay.asset.taglib <br> com.liferay.asset.tags.api <br> com.liferay.asset.tags.navigation.api <br> com.liferay.asset.test.util |
+| [**Blogs:**](https://docs.liferay.com/portal/7.1-latest/apps/blogs-1.0.1/javadocs/)                                                                          | com.liferay.blogs.api <br> com.liferay.blogs.demo.data.creator.api <br> com.liferay.blogs.item.selector.api <br> com.liferay.blogs.recent.bloggers.api <br> com.liferay.blogs.test.util                                                                                                                                                                                                                                                                                                                       |
+| [**Calendar:**](https://docs.liferay.com/portal/7.1-latest/apps/calendar-3.0.1/javadocs/)                                                                    | com.liferay.calendar.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| [**Captcha:**](https://docs.liferay.com/portal/7.1-latest/apps/captcha-1.0.0/javadocs/)                                                                      | com.liferay.captcha.api <br> com.liferay.captcha.taglib                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| [**Comment:**](https://docs.liferay.com/portal/7.1-latest/apps/comment-1.0.1/javadocs/)                                                                      | com.liferay.comment.api <br> com.liferay.comment.demo.data.creator.api <br> com.liferay.comment.taglib                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [**Configuration Admin:**](https://docs.liferay.com/portal/7.1-latest/apps/configuration-admin-1.0.1/javadocs/)                                              | com.liferay.configuration.admin.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| [**Contacts:**](https://docs.liferay.com/portal/7.1-latest/apps/contacts-1.0.1/javadocs/)                                                                    | com.liferay.contacts.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| [**Document Library:**](https://docs.liferay.com/portal/7.1-latest/apps/document-library-1.0.1/javadocs/)                                                    | com.liferay.document.library.api <br> com.liferay.document.library.content.api <br> com.liferay.document.library.demo.data.creator.api <br> com.liferay.document.library.file.rank.api <br> com.liferay.document.library.repository.authorization.api <br> com.liferay.document.library.repository.cmis.api <br> com.liferay.document.library.repository.external.api <br> com.liferay.document.library.sync.api <br> com.liferay.document.library.test.util                                                  |
+| [**Dynamic Data Lists:**](https://docs.liferay.com/portal/7.1-latest/apps/dynamic-data-lists-1.0.1/javadocs/)                                                | com.liferay.dynamic.data.lists.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| [**Dynamic Data Mapping:**](https://docs.liferay.com/portal/7.1-latest/apps/dynamic-data-mapping-1.0.1/javadocs/)                                            | com.liferay.dynamic.data.mapping.api <br> com.liferay.dynamic.data.mapping.taglib <br> com.liferay.dynamic.data.mapping.test.util                                                                                                                                                                                                                                                                                                                                                                             |
+| [**Export Import:**](https://docs.liferay.com/portal/7.1-latest/apps/export-import-1.0.1/javadocs/)                                                          | com.liferay.exportimport.api <br> com.liferay.exportimport.changeset.api <br> com.liferay.exportimport.changeset.taglib <br> com.liferay.exportimport.test.util                                                                                                                                                                                                                                                                                                                                               |
+| [**Flags:**](https://docs.liferay.com/portal/7.1-latest/apps/flags-1.0.1/javadocs/)                                                                          | com.liferay.flags.api <br> com.liferay.flags.taglib                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| [**Fragment:**](https://docs.liferay.com/portal/7.1-latest/apps/fragment-1.0.1/javadocs/)                                                                    | com.liferay.fragment.api <br> com.liferay.fragment.demo.data.creator.api <br> com.liferay.fragment.item.selector.api                                                                                                                                                                                                                                                                                                                                                                                          |
+| [**Friendly URL:**](https://docs.liferay.com/portal/7.1-latest/apps/friendly-url-1.0.1/javadocs/)                                                            | com.liferay.friendly.url.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [**Frontend Editor:**](https://docs.liferay.com/portal/7.1-latest/apps/frontend-editor-1.0.1/javadocs/)                                                      | com.liferay.frontend.editor.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [**Frontend Image Editor:**](https://docs.liferay.com/portal/7.1-latest/apps/frontend-image-editor-1.0.1/javadocs/)                                          | com.liferay.frontend.image.editor.capability                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [**Frontend JS:**](https://docs.liferay.com/portal/7.1-latest/apps/frontend-js-1.0.1/javadocs/)                                                              | com.liferay.frontend.js.loader.modules.extender.npm                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| [**HTML Preview:**](https://docs.liferay.com/portal/7.1-latest/apps/html-preview-1.0.1/javadocs/)                                                            | com.liferay.html.preview.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [**Invitation:**](https://docs.liferay.com/portal/7.1-latest/apps/invitation-1.0.1/javadocs/)                                                                | com.liferay.invitation.invite.members.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| [**Item Selector:**](https://docs.liferay.com/portal/7.1-latest/apps/item-selector-1.0.1/javadocs/)                                                          | com.liferay.item.selector.api <br> com.liferay.item.selector.criteria.api <br> com.liferay.item.selector.taglib                                                                                                                                                                                                                                                                                                                                                                                               |
+| [**Journal:**](https://docs.liferay.com/portal/7.1-latest/apps/journal-1.0.1/javadocs/)                                                                      | com.liferay.journal.api <br> com.liferay.journal.content.asset.addon.entry.api <br> com.liferay.journal.demo.data.creator.api <br> com.liferay.journal.item.selector.api <br> com.liferay.journal.taglib <br> com.liferay.journal.test.util                                                                                                                                                                                                                                                                   |
+| [**Layout:**](https://docs.liferay.com/portal/7.1-latest/apps/layout-1.0.1/javadocs/)                                                                        | com.liferay.layout.api <br> com.liferay.layout.admin.api <br> com.liferay.layout.item.selector.api <br> com.liferay.layout.page.template.api <br> com.liferay.layout.prototype.api <br> com.liferay.layout.set.prototype.api <br> com.liferay.layout.taglib                                                                                                                                                                                                                                                   |
+| [**Map:**](https://docs.liferay.com/portal/7.1-latest/apps/map-1.0.1/javadocs/)                                                                              | com.liferay.map.api <br> com.liferay.map.taglib                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [**Mentions:**](https://docs.liferay.com/portal/7.1-latest/apps/mentions-1.0.1/javadocs/)                                                                    | com.liferay.mentions.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| [**Message Boards:**](https://docs.liferay.com/portal/7.1-latest/apps/message-boards-1.0.1/javadocs/)                                                        | com.liferay.message.boards.api <br> com.liferay.message.boards.demo.data.creator.api <br> com.liferay.message.boards.test.util                                                                                                                                                                                                                                                                                                                                                                                |
+| [**Mobile Device Rules:**](https://docs.liferay.com/portal/7.1-latest/apps/mobile-device-rules-1.0.1/javadocs/)                                              | com.liferay.mobile.device.rules.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| [**Organizations:**](https://docs.liferay.com/portal/7.1-latest/apps/organizations-1.0.1/javadocs/)                                                          | com.liferay.organizations.api <br> com.liferay.organizations.item.selector.api                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| [**Password Policies Admin:**](https://docs.liferay.com/portal/7.1-latest/apps/password-policies-admin-1.0.1/javadocs/)                                      | com.liferay.password.policies.admin.constants                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| [**Polls:**](https://docs.liferay.com/portal/7.1-latest/apps/polls-1.0.1/javadocs/)                                                                          | com.liferay.polls.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| [**Portal:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-1.0.1/javadocs/)                                                                        | com.liferay.portal.custom.jsp.bag.api <br> com.liferay.portal.dao.orm.custom.sql.api <br> com.liferay.portal.instance.lifecycle.api <br> com.liferay.portal.jmx.api <br> com.liferay.portal.output.stream.container.api <br> com.liferay.portal.spring.extender.api <br> com.liferay.portal.upgrade.api                                                                                                                                                                                                       |
+| [**Portal Background Task:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-background-task-1.0.1/javadocs/)                                        | com.liferay.portal.background.task.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [**Portal Cache:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-cache-1.0.1/javadocs/)                                                            | com.liferay.portal.cache.api <br> com.liferay.portal.cache.ehcache.spi <br> com.liferay.portal.cache.test.util                                                                                                                                                                                                                                                                                                                                                                                                |
+| [**Portal Configuration:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-configuration-1.0.1/javadocs/)                                            | com.liferay.portal.configuration.test.util <br> com.liferay.portal.configuration.upgrade.api                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [**Portal Instances:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-instances-1.0.1/javadocs/)                                                    | com.liferay.portal.instances.service                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [**Portal Lock:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-lock-1.0.1/javadocs/)                                                              | com.liferay.portal.lock.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| [**Portal Reports Engine:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-reports-engine-1.0.1/javadocs/)                                          | com.liferay.portal.reports.engine.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| [**Portal Remote:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-remote-1.0.1/javadocs/)                                                          | com.liferay.portal.remote.soap.extender                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| [**Portal Rules:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-rules-engine-1.0.1/javadocs/com/liferay/portal/rules/engine/package-summary.html) | com.liferay.portal.rules.engine                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [**Portal Scripting:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-scripting-1.0.1/javadocs/)                                                    | com.liferay.portal.scripting                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [**Portal Search:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-search-1.0.1/javadocs/)                                                          | com.liferay.portal.search.api <br> com.liferay.portal.search.engine.adapter.api <br> com.liferay.portal.search.spi <br> com.liferay.portal.search.test.util <br> com.liferay.portal.search.web.api                                                                                                                                                                                                                                                                                                            |
+| [**Portal Security:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-security-1.0.1/javadocs/)                                                      | com.liferay.portal.security.exportimport.api <br> com.liferay.portal.security.ldap.api <br> com.liferay.portal.security.permission.api <br> com.liferay.portal.security.service.access.policy.api <br> com.liferay.portal.security.service.access.quota.api                                                                                                                                                                                                                                                   |
+| [**Portal Security Audit:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-security-audit-1.0.1/javadocs/)                                          | com.liferay.portal.security.audit.api <br> com.liferay.portal.security.audit.event.generators.api <br> com.liferay.portal.security.audit.storage.api                                                                                                                                                                                                                                                                                                                                                          |
+| [**Portal Security SSO:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-security-sso-1.0.1/javadocs/)                                              | com.liferay.portal.security.sso.cas.api <br> com.liferay.portal.security.sso.facebook.connect.api <br> com.liferay.portal.security.sso.google.api <br> com.liferay.portal.security.sso.ntlm.api <br> com.liferay.portal.security.sso.openid.api <br> com.liferay.portal.security.sso.openid.connect.api <br> com.liferay.portal.security.sso.opensso.api <br> com.liferay.portal.security.sso.token.api                                                                                                       |
+| [**Portal Settings:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-settings-1.0.1/javadocs/)                                                      | com.liferay.portal.settings.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [**Portal Template:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-template-1.0.1/javadocs/)                                                      | com.liferay.portal.template.soy.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| [**Portal URL Builder:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-url-builder-1.0.1/javadocs/)                                                | com.liferay.portal.url.builder                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| [**Portal Workflow:**](https://docs.liferay.com/portal/7.1-latest/apps/portal-workflow-1.0.1/javadocs/)                                                      | com.liferay.portal.workflow.api <br> com.liferay.portal.workflow.kaleo.api <br> com.liferay.portal.workflow.kaleo.definition.api <br> com.liferay.portal.workflow.kaleo.runtime.api                                                                                                                                                                                                                                                                                                                           |
+| [**Portlet Display Template:**](https://docs.liferay.com/portal/7.1-latest/apps/portlet-display-template-1.0.1/javadocs/)                                    | com.liferay.portlet.display.template.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| [**Product Navigation:**](https://docs.liferay.com/portal/7.1-latest/apps/product-navigation-1.0.1/javadocs/)                                                | com.liferay.product.navigation.control.menu.api <br> com.liferay.product.navigation.product.menu.api <br> com.liferay.product.navigation.simulation.api <br> com.liferay.product.navigation.taglib                                                                                                                                                                                                                                                                                                            |
+| [**Ratings:**](https://docs.liferay.com/portal/7.1-latest/apps/ratings-1.0.1/javadocs/)                                                                      | com.liferay.ratings.page.ratings.constants                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| [**Reading Time:**](https://docs.liferay.com/portal/7.1-latest/apps/reading-time-1.0.1/javadocs/)                                                            | com.liferay.reading.time.api <br> com.liferay.reading.time.taglib                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| [**Roles:**](https://docs.liferay.com/portal/7.1-latest/apps/roles-1.0.1/javadocs/)                                                                          | com.liferay.roles.admin.api <br> com.liferay.roles.admin.demo.data.creator.api <br> com.liferay.roles.item.selector.api                                                                                                                                                                                                                                                                                                                                                                                       |
+| [**RSS:**](https://docs.liferay.com/portal/7.1-latest/apps/rss-1.0.1/javadocs/)                                                                              | com.liferay.rss.api <br> com.liferay.rss.taglib                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [**Site:**](https://docs.liferay.com/portal/7.1-latest/apps/site-1.0.1/javadocs/)                                                                            | com.liferay.site.api <br> com.liferay.site.demo.data.creator.api <br> com.liferay.site.item.selector.api <br> com.liferay.site.taglib                                                                                                                                                                                                                                                                                                                                                                         |
+| [**Social:**](https://docs.liferay.com/portal/7.1-latest/apps/social-1.0.1/javadocs/)                                                                        | com.liferay.social.activities.api <br> com.liferay.social.activities.taglib <br> com.liferay.social.activity.api <br> com.liferay.social.activity.test.util <br> com.liferay.social.bookmarks.api <br> com.liferay.social.bookmarks.taglib <br> com.liferay.social.user.statistics.api                                                                                                                                                                                                                        |
+| [**Staging:**](https://docs.liferay.com/portal/7.1-latest/apps/staging-1.0.1/javadocs/)                                                                      | com.liferay.staging.api <br> com.liferay.staging.taglib                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| [**Subscription:**](https://docs.liferay.com/portal/7.1-latest/apps/subscription-1.0.1/javadocs/)                                                            | com.liferay.subscription.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [**Text Localizer:**](https://docs.liferay.com/portal/7.1-latest/apps/text-localizer-1.0.1/javadocs/)                                                        | com.liferay.text.localizer.address.api <br> com.liferay.text.localizer.taglib                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| [**Trash:**](https://docs.liferay.com/portal/7.1-latest/apps/trash-1.0.1/javadocs/)                                                                          | com.liferay.trash.api <br> com.liferay.trash.taglib <br> com.liferay.trash.test.util                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [**Upload:**](https://docs.liferay.com/portal/7.1-latest/apps/upload-1.0.1/javadocs/)                                                                        | com.liferay.upload                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| [**User Associated Data:**](https://docs.liferay.com/portal/7.1-latest/apps/user-associated-data-1.0.1/javadocs/)                                            | com.liferay.user.associated.data.api <br> com.liferay.user.associated.data.test.util                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [**User Groups Admin:**](https://docs.liferay.com/portal/7.1-latest/apps/user-groups-admin-1.0.1/javadocs/)                                                  | com.liferay.user.groups.admin.api <br> com.liferay.user.groups.admin.item.selector.api                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [**Users Admin:**](https://docs.liferay.com/portal/7.1-latest/apps/users-admin-1.0.1/javadocs/)                                                              | com.liferay.users.admin.api <br> com.liferay.users.admin.demo.data.creator.api <br> com.liferay.users.admin.item.selector.api <br> com.liferay.users.admin.test.util                                                                                                                                                                                                                                                                                                                                          |
+| [**Wiki:**](https://docs.liferay.com/portal/7.1-latest/apps/wiki-1.0.1/javadocs/)                                                                            | com.liferay.wiki.api                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [**XStream:**](https://docs.liferay.com/portal/7.1-latest/apps/xstream-1.0.1/javadocs/)                                                                      | com.liferay.xstream.configurator                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 <!-- TODO: Add back when this article is available:
 For help finding API modules for specific common classes, see
 [@product-ver@ API Modules](develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules).
 -->
 
-For help finding module attributes and configuring dependencies, see 
-[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies). 
+For help finding module attributes and configuring dependencies, see
+[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies).
 
 ## Taglibs
 
 Here you'll find tag library documentation for the @product-ver@, @product@
-apps, and Liferay Faces. 
+apps, and Liferay Faces.
 
 ### @product-ver@ Taglibs
 
@@ -1066,8 +400,8 @@ caption {
 <!-- TODO: Add additional TLD categories once they're finalized for 7.1. Still
 in the works and have not all been properly published. -Cody -->
 
-For help finding module attributes and configuring dependencies, see 
-[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies). 
+For help finding module attributes and configuring dependencies, see
+[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies).
 
 ### Faces Taglibs
 
@@ -1086,7 +420,7 @@ provide a consistent and documented API.
 [Lexicon Experience Language](https://lexicondesign.io/).
 
 [**Bootstrap**](http://getbootstrap.com/): The base CSS library onto which
-Lexicon is built. @product@ uses Bootstrap natively and all of its CSS classes 
+Lexicon is built. @product@ uses Bootstrap natively and all of its CSS classes
 and JavaScript features are available within portlets, templates, and themes.
 
 [**AlloyUI**](http://alloyui.com): Liferay includes AlloyUI and all of its
