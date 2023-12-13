@@ -2,6 +2,23 @@
 header-id: development-reference
 ---
 
+<style>
+  table {
+    width: 100%;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+  caption {
+    text-align: left;
+  }
+</style>
+
 # Development Reference
 
 [TOC levels=1-4]
@@ -30,20 +47,7 @@ Here you'll find Javadoc for @product-ver@ and @product@ apps.
 
 ### @product-ver@ Java APIs
 
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-caption {
-    text-align: left;
-}
-</style>
-<table style="width:100%">
+<table>
   <caption>
     This table links you to the @product-ver@ API modules. Their
     root location is
@@ -192,21 +196,7 @@ apps, and Liferay Faces.
 
 ### @product-ver@ Taglibs
 
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-caption {
-    text-align: left;
-}
-</style>
-
-<table style="width:100%">
+<table>
   <caption>
     <br>
   </caption>
@@ -265,21 +255,7 @@ caption {
 
 ### @product@ App Taglibs
 
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-caption {
-    text-align: left;
-}
-</style>
-
-<table style="width:100%">
+<table>
   <caption>
     <br>
   </caption>
