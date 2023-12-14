@@ -6,7 +6,7 @@ header-id: updating-default-plugins-provided-by-liferay-workspace
 
 [TOC levels=1-4]
 
-Liferay Workspace comes with a slew of plugins like these: 
+Liferay Workspace comes with a slew of plugins like these:
 
 - [CSS Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/css-builder)
 - [Javadoc Formatter](https://github.com/liferay/liferay-portal/tree/master/modules/util/javadoc-formatter)
@@ -17,7 +17,7 @@ Liferay Workspace comes with a slew of plugins like these:
 - etc.
 
 Bundled plugins are updated with each release of workspace. Suppose you need
-a new feature in the 
+a new feature in the
 [Source Formatter plugin](https://github.com/liferay/liferay-portal/tree/master/modules/util/source-formatter),
 but the latest workspace version has not yet been updated to include it. You can
 upgrade it yourself!
@@ -30,7 +30,7 @@ To upgrade one of workspace's bundled plugins, follow these steps:
     file. For example, the Source Formatter's BSN is
     `com.liferay.source.formatter`.
 
-2.  Open your workspace's `build.gradle` file and copy the plugin's BSN followed
+2.  Open your workspace's `gradle.properties` file and copy the plugin's BSN followed
     by `.version` and set the desired plugin version you want to use. For
     example,
 
