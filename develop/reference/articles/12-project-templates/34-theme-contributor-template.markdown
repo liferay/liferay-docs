@@ -10,7 +10,7 @@ In this article, you'll learn how to create a Liferay theme contributor as a
 Liferay module. To create a theme contributor via the command line using Blade
 CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t theme-contributor -v 7.0 [--contributorType contributorType] [-p packageName] projectName
+    blade create -t theme-contributor -v 7.0 [--contributor-type contributorType] [-p packageName] projectName
 
 or
 
@@ -30,7 +30,7 @@ to create a theme contributor project called `my-theme-contributor` with a
 package name of `com.liferay.docs.theme.contributor` and a contributor type of
 `my-contributor`. You could run the following command to accomplish this:
 
-    blade create -t theme-contributor -v 7.0 --contributorType my-contributor -p com.liferay.docs.theme.contributor my-theme-contributor
+    blade create -t theme-contributor -v 7.0 --contributor-type my-contributor -p com.liferay.docs.theme.contributor my-theme-contributor
 
 or
 
@@ -45,32 +45,28 @@ or
         -DliferayVersion=7.0
 
 After running the command above, your project's folder structure would look
-like this: 
+like this:
 
 - `my-theme-contributor`
-    - `gradle` (only in Blade CLI generated projects)
-        - `wrapper`
-            - `gradle-wrapper.jar`
-            - `gradle-wrapper.properties`
     - `src`
         - `main`
             - `java`
                 - `com/liferay/docs/theme/contributor`
-            - `resources`
-                - `META-INF`
-                    - `resources`
-                    	- `css`
-                    		- `my-contributor`
-                    			- `_body.scss`
-                    			- `_control_menu.scss`
-                    			- `_product_menu.scss`
-                    			- `_simulation_panel.scss`
-                    		- `my-contributor.scss`
-                    	- `js`
-                    		- `my-contributor.js`
+            - `resources/META-INF/resources`
+                - `css`
+                    - `my-contributor`
+                        - `_body.scss`
+                        - `_control_menu.scss`
+                        - `_product_menu.scss`
+                        - `_simulation_panel.scss`
+                    - `my-contributor.scss`
+                - `js`
+                    - `my-contributor.js`
     - `bnd.bnd`
-    - `build.gradle`
-    - `[gradlew|pom.xml]`
+    - `build.gradle` (only in Gradle Blade CLI generated projects)
+    - `mvnw` (only in Maven Blade CLI generated projects)
+    - `mvnw.cmd` (only in Maven Blade CLI generated projects)
+    - `pom.xml` (only in Maven-related projects)
 
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
