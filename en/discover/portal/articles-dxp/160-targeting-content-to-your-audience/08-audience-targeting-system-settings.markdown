@@ -10,7 +10,7 @@ Audience Targeting's configuration options are provided in [System
 Settings](/docs/7-1/user/-/knowledge_base/u/system-settings). Configurations
 made here take effect system-wide. You can find Audience Targeting system
 settings by navigating to the Control Panel &rarr; *Configuration* &rarr;
-*System Settings* &rarr; *Web Experience*. The following options are available
+*System Settings* &rarr; *Audience Targeting*. The following options are available
 for the Audience Targeting apps:
 
 - [Audience Targeting Analytics Service](#audience-targeting-analytics-service)
