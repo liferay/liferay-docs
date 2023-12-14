@@ -50,7 +50,7 @@ a supported locale to see the translations (for example, enter
 
 Language keys are just keys to use in place of a hard coded, fully translated
 String value in your user interface code. You use a language key in your JSP
-with a `<liferay-ui:message />` tag. 
+with a `<liferay-ui:message />` tag.
 
 If you wanted to hard code a message, you'd use the tag like this:
 
@@ -94,7 +94,7 @@ to find them.
         sv_SE,tr_TR,uk_UA,vi_VN
 
 To provide a translation for one of these locales, specify the locale in the
-file name containing the translated keys (for example, `Langauge_es.properties`
+file name containing the translated keys (for example, `Language_es.properties`
 holds the Spanish translation).
 
 ## Where do I Put Language Files?
@@ -112,7 +112,7 @@ in your `-Portlet` classes) in the module include this property:
 Providing translated language properties files and specifying the
 `javax.portlet.resource-bundle` property in your portlet component is all you
 must do to point @product@ at your translations. Users see the translations for
-the locales they select. 
+the locales they select.
 
 In a more complicated, well-modularized application, you might have language
 keys spread over multiple modules providing portlet components and JSP files.
@@ -158,13 +158,13 @@ language module called `my-application-lang`.
 
 In the language module, create a `src/main/resources/content` folder. Put your
 language properties files here. A `Language.properties` file might look like
-this: 
+this:
 
     application=My Application
     add-entity=Add Entity
 
 Create any translations you want, adding the translation locale ID to the
-language file name. File `Language_es.properties` might look like this: 
+language file name. File `Language_es.properties` might look like this:
 
     my-app-title=Mi Aplicación
     add-entity=Añadir Entity
@@ -177,10 +177,10 @@ to the module. A capability is a contract a module declares to @product@'s OSGi
 framework. Capabilities let you associate services with modules that provide
 them. In this case, @product@ registers a
 [ResourceBundleLoader](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
-service for the resource bundle capability. 
+service for the resource bundle capability.
 
 Next, you'll configure a web module to use the language module resource
-bundle. 
+bundle.
 
 ## Using a Language Module
 
@@ -196,7 +196,7 @@ Instructions for using a language module are divided into these environments:
 If you're using bnd with Maven or Gradle, you need only specify Liferay's
 `-liferay-aggregate-resource-bundle:` bnd instruction--at build time, Liferay's
 bnd plugin converts the instruction to `Require-Capability` and
-`Provide-Capability` parameters automatically. Both approaches are demonstrated. 
+`Provide-Capability` parameters automatically. Both approaches are demonstrated.
 
 ### Using a Language Module from a Module
 
