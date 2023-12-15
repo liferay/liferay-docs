@@ -64,10 +64,10 @@ After running the command above, your project's directory structure looks like
 this:
 
 - `my-npm-vuejs-portlet`
-    - `[gradle|.mvn]`
+    - `.mvn` (only in Maven Blade CLI generated projects)
         - `wrapper`
-            - `[gradle|maven]-wrapper.jar`
-            - `[gradle|maven]-wrapper.properties`
+            - `maven-wrapper.jar`
+            - `maven-wrapper.properties`
     - `src`
         - `main`
             - `java`
@@ -81,7 +81,7 @@ this:
                     - `Language.properties`
                 - `META-INF`
                     - `resources`
-                        - `js`
+                        - `lib`
                             - `index.es.js`
                         - `init.jsp`
                         - `view.jsp`
@@ -89,7 +89,8 @@ this:
     - `.npmbundlerrc`
     - `bnd.bnd`
     - `[build.gradle|pom.xml]`
-    - `[gradlew|mvnw]`
+    - `mvnw` (only in Maven Blade CLI generated projects)
+    - `mvnw.cmd` (only in Maven Blade CLI generated projects)
     - `package.json`
 
 The generated module is a working application and is deployable to a @product@
