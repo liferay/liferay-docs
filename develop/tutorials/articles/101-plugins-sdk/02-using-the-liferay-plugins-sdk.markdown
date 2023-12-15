@@ -8,63 +8,68 @@ header-id: using-the-plugins-sdk
 
 This tutorial describes the Plugins SDK's directory structure and project Ant
 targets, demonstrates how to create plugin projects, and shows how to deploy
-them. 
+them.
 
 By learning the SDK's directory structure, you'll know where to initiate
 creating the different project types, know its build files, and know where
-plugins archives are held for distribution. The Plugins SDK tour is up next. 
+plugins archives are held for distribution. The Plugins SDK tour is up next.
 
 ## Understanding the SDK's Structure
 
 Each folder in the Plugins SDK contains scripts for creating new plugins of that
-type. Here is the directory structure of the Plugins SDK: 
+type. Here is the directory structure of the Plugins SDK:
 
-- `liferay-plugins-[version]/` - Plugins SDK root directory. 
-    - `clients/` - client applications directory. 
-    - `dist/` - archived plugins for distribution and deployment. 
-    - `ext/` - Ext plugins directory. <!-- TODO See the [Ext Plugins
-    tutorial](http://www.liferay.com) for details.--> 
-    - `hooks/` - hook plugins directory. <!-- TODO See the [Hook Plugins
-    tutorial](http://www.liferay.com) for details.--> 
-    - `layouttpl/` - layout templates directory. <!-- TODO See the [Layout
-    Templates tutorial](http://www.liferay.com) for details.-->  
-    - `lib/` - commonly referenced libraries. 
+- `liferay-plugins-[version]/` - Plugins SDK root directory.
+    - `clients/` - client applications directory.
+    - `dist/` - archived plugins for distribution and deployment.
+    - `ext/` - Ext plugins directory. See
+      [Advanced Customization with Ext Plugins](https://help.liferay.com/hc/en-us/articles/360018181211-Advanced-Customization-with-Ext-Plugins)
+      for details.
+    - `hooks/` - hook plugins directory. See
+      [Creating a Hook Project in the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-hook-project-in-the-plugins-sdk)
+      for details.
+    - `layouttpl/` - layout templates directory. See
+      [Creating a Layout Template Project in the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-layout-template-project-in-the-plugins-sdk)
+      for details.
+    - `lib/` - commonly referenced libraries.
     - `misc/` - development configuration files. Example, a source code
-      formatting specification file. 
-    - `portlets/` - portlet plugins directory. See the <!-- TODO [Portlets
-    tutorial](http://www.liferay.com) for details. -->
-    - `themes/` - themes plugins directory. See the <!-- TODO [Themes
-    tutorial](http://www.liferay.com) for details.--> 
-    - `tools/` - plugin templates and utilities. 
-    - `webs/` - web plugins directory. 
-    - `build.properties` - default SDK properties. 
-    - `build.[username].properties` - (optional) override SDK properties. 
-    - `build.xml` - contains targets to invoke in the SDK. 
+      formatting specification file.
+    - `portlets/` - portlet plugins directory. See
+      [Creating Plugins with Liferay SDK](#creating-plugins-with-liferay-sdk)
+      for details.
+    - `themes/` - themes plugins directory. See
+      [Creating a Theme Project in the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-theme-project-in-the-plugins-sdk)
+      for details.
+    - `tools/` - plugin templates and utilities.
+    - `webs/` - web plugins directory.
+    - `build.properties` - default SDK properties.
+    - `build.[username].properties` - (optional) override SDK properties.
+    - `build.xml` - contains targets to invoke in the SDK.
     - `build-common.xml` - contains common targets and properties referenced
-      throughout the SDK. 
+      throughout the SDK.
     - `build-common-plugin.xml` - contains common targets and properties
-      referenced by each plugin. 
+      referenced by each plugin.
     - `build-common-plugins.xml` - contains common targets and properties
-      referenced by each plugin type. 
+      referenced by each plugin type.
 
 New plugins are placed in their own subdirectory of the appropriate plugin type.
 For instance, a new portlet called *greeting-portlet* would reside in
-`liferay-plugins-[version]/portlets/greeting-portlet`. 
+`liferay-plugins-[version]/portlets/greeting-portlet`.
 
 There's an Ant build file called `build.xml` in each of the plugins
 directories. Here are some Ant targets you'll commonly use in developing your
-plugins: 
+plugins:
 
 - `build-service` - builds the service layer for a plugin, using Liferay Service
-  Builder. 
+  Builder.
 - `clean` - cleans the residual files created by the invocations of the
-  compilation, archiving, and deployment targets. 
-- `compile` - compiles the plugin source code. 
-- `deploy` - builds and deploys the plugin to your application server. 
+  compilation, archiving, and deployment targets.
+- `compile` - compiles the plugin source code.
+- `deploy` - builds and deploys the plugin to your application server.
 - `format-source` - formats the source code per Liferay's source code
   guidelines, informing you of violations that must be addressed. See the
   [Development Style](http://www.liferay.com/community/wiki/-/wiki/Main/Development+Style#section-Development+Style-Format+Source)
-  community wiki page for details. 
+  community wiki page for details.
 - `format-javadoc` - formats the Javadoc per Liferay's Javadoc guidelines. See
   the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
   community wiki page for details.
@@ -77,15 +82,15 @@ running Ant commands. That's due to the default Plugins SDK configuration found 
     ant.build.javac.target=1.8
 
 Next, you'll learn how to create a plugin using Liferay SDK from a terminal
-environment. 
+environment.
 
 ## Creating Plugins with Liferay SDK
 
 Liferay IDE makes it easy to create and deploy Liferay plugin projects since it
 includes a bundled Liferay SDK. If you don't want to use Eclipse, you can still
-leverage the SDK to create your Liferay plugins. 
+leverage the SDK to create your Liferay plugins.
 
-Navigate to the `portlets` folder of your Plugins SDK and follow these steps: 
+Navigate to the `portlets` folder of your Plugins SDK and follow these steps:
 
 1.  On Linux and Mac OS X, enter
 
@@ -124,7 +129,7 @@ can have separate Plugins SDK projects for each plugin. For example, if you have
 an internal Intranet using Liferay with some custom portlets, you can keep those
 portlets and themes in their own Plugins SDK project in your source code
 projects. Or, you can further separate your projects by having a different
-Plugins SDK project for each portlet or theme project. 
+Plugins SDK project for each portlet or theme project.
 
 <!-- Commenting out as I don't understand what's trying to be conveyed in this
 paragraph. Jim
