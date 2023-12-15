@@ -57,6 +57,9 @@ or
         -DpackageJsonVersion=1.0.0 \
         -DliferayVersion=7.0
 
+**Important:** This sample works for Liferay DXP 7.0 Fix Pack 44+ and Liferay Portal
+CE GA7+.
+
 After running the command above, your project's directory structure looks like
 this:
 
