@@ -69,6 +69,13 @@ plugins:
   the [Javadoc Guidelines](http://www.liferay.com/community/wiki/-/wiki/Main/Javadoc+Guidelines)
   community wiki page for details.
 
+| **Note**: If you're using JDK 8, you may run into a Java compilation error when
+running Ant commands. That's due to the default Plugins SDK configuration found in the `build.properties` file. To override the settings and fix the compilation errors, open/create `build.[username].properties` and paste the snippet:
+
+    javac.compiler=modern
+    ant.build.javac.source=1.8
+    ant.build.javac.target=1.8
+
 Next, you'll learn how to create a plugin using Liferay SDK from a terminal
 environment. 
 
