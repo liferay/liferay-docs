@@ -6,13 +6,13 @@ header-id: gauge-charts
 
 [TOC levels=1-4]
 
-Gauge charts are percentage-based. A gauge chart shows where percentage-based 
-data falls over a given range. Each data set must be defined as a new instance 
-of the 
-[`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html). 
-Follow these steps to configure your portlet to use gauge charts. 
+Gauge charts are percentage-based. A gauge chart shows where percentage-based
+data falls over a given range. Each data set must be defined as a new instance
+of the
+[`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
+Follow these steps to configure your portlet to use gauge charts.
 
-1.  Import the chart taglib along with the `GaugeChartConfig` and 
+1.  Import the chart taglib along with the `GaugeChartConfig` and
     `SingleValueColumn` classes into your bundle's `init.jsp` file:
 
     ```markup
@@ -30,11 +30,10 @@ Follow these steps to configure your portlet to use gauge charts.
     _gaugeChartConfig.addColumn(
       new SingleValueColumn("data1", 85.4)
     );
-
     %>
     ```
 
-3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_gaugeChartConfig` 
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_gaugeChartConfig`
     as the `config` attribute's value:
 
     ```markup
@@ -45,10 +44,10 @@ Follow these steps to configure your portlet to use gauge charts.
 
 ![Figure 1: A gauge chart shows where percentage-based data falls over a given range.](../../../../images/chart-taglib-gauge.png)
 
-Awesome! Now you know how to create gauge charts for your apps. 
+Awesome! Now you know how to create gauge charts for your apps.
 
 ## Related Topics
 
-- [Gauge Charts](/docs/7-2/reference/-/knowledge_base/r/gauge-charts)
-- [Geomap Charts](/docs/7-2/reference/-/knowledge_base/r/geomap-charts)
 - [Pie Charts](/docs/7-2/reference/-/knowledge_base/r/pie-charts)
+- [Donut Charts](/docs/7-2/reference/-/knowledge_base/r/donut-charts)
+- [Bar Charts](/docs/7-2/reference/-/knowledge_base/r/bar-charts)
