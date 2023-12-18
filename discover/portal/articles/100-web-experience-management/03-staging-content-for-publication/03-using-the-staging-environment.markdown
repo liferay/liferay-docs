@@ -18,7 +18,7 @@ to make changes.
 ## Staging Content
 
 Click on the *Staging* button to view the staged area. Your management options
-are restored and you can access some new options related to staging. 
+are restored and you can access some new options related to staging.
 
 ![Figure 1: You can see the new staging options added to the top and left of your screen.](../../../images/staging-live-page.png)
 
@@ -121,6 +121,10 @@ the Web Content label. Otherwise, the Web Content section is absent.
 *Categories* and *Page Ratings* content types are not dependent on the date
 range, and are always shown in the list.
 
+| **Note:** Since some content types are meant for the end user and aren't
+| supported in staging (e.g. comments, ratings, and custom fields), they can
+| only be added to the live site and cannot be removed.
+
 Unchecking the checkbox next to a certain content type excludes it from the
 current publication to Live.
 
@@ -135,7 +139,7 @@ clicking the *Change* button next to the list.
 *Referenced Content* is represented by the Documents and Media files included in
 web content articles. Documents and Media content gets referenced when a user
 uses the editor to insert an image or if the article is based on a structure
-that has a field of the *Documents and Media* type. 
+that has a field of the *Documents and Media* type.
 
 Web content tends to be frequently updated, often more so than other kinds of
 content. Sometimes this can result in high numbers of versions, into the
