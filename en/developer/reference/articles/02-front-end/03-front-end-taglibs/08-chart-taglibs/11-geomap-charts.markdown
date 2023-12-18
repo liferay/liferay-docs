@@ -9,7 +9,7 @@ header-id: geomap-charts
 A Geomap Chart lets you visualize data based on geography, given a specified
 color range---a lighter color representing a lower rank and a darker a higher
 rank usually. The default configuration comes from the Clay charts
-[geomap component](https://github.com/liferay/clay/blob/develop/packages/clay-charts/src/Geomap.js#L233-L276):
+[geomap component](https://github.com/liferay/clay/blob/2.x-stable/packages/clay-charts/src/Geomap.js#L90-L104):
 which ranges from light-blue (#b1d4ff) to dark-blue (#0065e4) and ranks the
 geography based on the location's `pop_est` value (specified in the geomap's
 JSON file).
