@@ -23,7 +23,7 @@ Follow these steps to use predictive charts.
     ```
 
 2.  Add the following Java scriptlet to the top of your `view.jsp`. Add a
-    [`MixedDataColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MixedDataColumn.html)
+    [`MixedDataColumn` object](https://docs.liferay.com/portal/7.2-latest/apps/frontend-taglib-2.0.2/javadocs/com/liferay/frontend/taglib/chart/model/MixedDataColumn.html)
     ---a column that supports both single number values and arrays of three
     numbers---for each data series. Single number values define existing data.
     Arrays of numbers are used as the prediction/forecast data and contain three

@@ -9,7 +9,7 @@ header-id: gauge-charts
 Gauge charts are percentage-based. A gauge chart shows where percentage-based
 data falls over a given range. Each data set must be defined as a new instance
 of the
-[`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
+[`SingleValueColumn` object](https://docs.liferay.com/portal/7.2-latest/apps/frontend-taglib-2.0.2/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
 Follow these steps to configure your portlet to use gauge charts.
 
 1.  Import the chart taglib along with the `GaugeChartConfig` and

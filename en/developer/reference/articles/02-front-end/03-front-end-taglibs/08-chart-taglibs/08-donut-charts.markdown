@@ -9,7 +9,7 @@ header-id: donut-charts
 Donut charts are percentage-based. A donut chart is similar to a pie chart, but
 it has a hole in the center. Each data set must be defined as a new instance of
 the
-[`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
+[`SingleValueColumn` object](https://docs.liferay.com/portal/7.2-latest/apps/frontend-taglib-2.0.2/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
 Follow these steps to configure your portlet to use donut charts.
 
 1.  Import the chart taglib along with the `DonutChartConfig` and
