@@ -22,7 +22,7 @@ Follow these steps:
         <%@ page import="com.liferay.frontend.taglib.chart.model.MixedDataColumn" %>
 
 2.  Add the following Java scriptlet to the top of your `view.jsp`. Add a
-    [`MixedDataColumn` object](@platform-ref@/7.1-latest/apps/frontend-taglib-1.0.1/javadocs/com/liferay/frontend/taglib/chart/model/MixedDataColumn.html)
+    [`MixedDataColumn` object](https://docs.liferay.com/portal/7.1-latest/apps/frontend-taglib-1.0.1/javadocs/com/liferay/frontend/taglib/chart/model/MixedDataColumn.html)
     ---a column that supports both single number values and arrays of three
     numbers---for each data series. Single number values define existing data.
     Arrays of numbers are used as the prediction/forecast data and contain three
