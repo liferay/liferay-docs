@@ -10,7 +10,7 @@ Combination charts have minor differences from other charts. In a combination
 chart, you must define the representation type of each data set: `AREA`,
 `AREA_SPLINE`, `AREA_STEP`, `BAR`, `BUBBLE`, `DONUT`, `GAUGE`, `LINE`, `PIE`,
 `SCATTER`, `SPLINE`, or `STEP`. Each data set in a combination chart is an
-instance of the `TypedMultiValueColumn` object. Each object receives an ID, the
+instance of the [`TypedMultiValueColumn` object](https://docs.liferay.com/portal/7.1-latest/apps/frontend-taglib-1.0.1/javadocs/com/liferay/frontend/taglib/chart/model/TypedMultiValueColumn.html). Each object receives an ID, the
 representation type, and values for the data. This tutorial shows how to
 configure your portlet to use combination charts.
 
