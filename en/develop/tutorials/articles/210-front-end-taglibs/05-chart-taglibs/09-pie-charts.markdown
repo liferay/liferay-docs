@@ -8,7 +8,7 @@ header-id: pie-charts
 
 Pie charts are percentage-based. A pie chart models percentage-based data as
 individual slices of pie. Each data set must be defined as a new instance of the
-[`SingleValueColumn` object](@platform-ref@/7.1-latest/apps/frontend-taglib-1.0.1/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
+[`SingleValueColumn` object](https://docs.liferay.com/portal/7.1-latest/apps/frontend-taglib-1.0.1/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
 This tutorial shows how to configure your portlet to use pie charts.
 
 Follow these steps:
