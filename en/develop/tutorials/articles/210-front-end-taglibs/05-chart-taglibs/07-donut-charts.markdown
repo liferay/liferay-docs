@@ -43,8 +43,8 @@ Follow these steps:
 
 ## Related Topics
 
-[Pie Charts](/docs/7-1/tutorials/-/knowledge_base/t/scatter-charts)
+[Pie Charts](/docs/7-1/tutorials/-/knowledge_base/t/pie-charts)
 
-[Gauge Charts](/docs/7-1/tutorials/-/knowledge_base/t/line-charts)
+[Gauge Charts](/docs/7-1/tutorials/-/knowledge_base/t/gauge-charts)
 
 [Bar Charts](/docs/7-1/tutorials/-/knowledge_base/t/bar-charts)
