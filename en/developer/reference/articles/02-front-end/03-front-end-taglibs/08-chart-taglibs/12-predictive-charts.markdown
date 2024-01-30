@@ -6,14 +6,14 @@ header-id: predictive-charts
 
 [TOC levels=1-4]
 
-Predictive charts let you visualize current data along with predicted/forecasted 
-data within a given value range. 
+Predictive charts let you visualize current data along with predicted/forecasted
+data within a given value range.
 
 ![Figure 1: Predicted/forecasted data is surrounded by a highlighted area of possible values.](../../../../images/chart-taglib-predictive-value-range.png)
 
-Follow these steps to use predictive charts. 
+Follow these steps to use predictive charts.
 
-1.  Import the chart taglib along with the `PredictiveChartConfig` and 
+1.  Import the chart taglib along with the `PredictiveChartConfig` and
     `MixedDataColumn` classes into your bundle's `init.jsp` file:
 
     ```markup
@@ -22,27 +22,28 @@ Follow these steps to use predictive charts.
     <%@ page import="com.liferay.frontend.taglib.chart.model.MixedDataColumn" %>
     ```
 
-2.  Add the following Java scriptlet to the top of your `view.jsp`. Add a 
-    [`MixedDataColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MixedDataColumn.html)
-    ---a column that supports both single number values and arrays of three 
-    numbers---for each data series. Single number values define existing data. 
-    Arrays of numbers are used as the prediction/forecast data and contain three 
-    numbers: a minimum value, an estimated value, and a maximum value. The 
-    estimated value is rendered solid and surrounded by a highlighted area with 
-    borders specified by the minimum and maximum values. This lets you visualize 
-    your estimated values, while also giving you an idea of the possible value 
+2.  Add the following Java scriptlet to the top of your `view.jsp`. Add a
+    [`MixedDataColumn` object](https://docs.liferay.com/portal/7.2-latest/apps/frontend-taglib-2.0.2/javadocs/com/liferay/frontend/taglib/chart/model/MixedDataColumn.html)
+    ---a column that supports both single number values and arrays of three
+    numbers---for each data series. Single number values define existing data.
+    Arrays of numbers are used as the prediction/forecast data and contain three
+    numbers: a minimum value, an estimated value, and a maximum value. The
+    estimated value is rendered solid and surrounded by a highlighted area with
+    borders specified by the minimum and maximum values. This lets you visualize
+    your estimated values, while also giving you an idea of the possible value
     ranges. Use the `addDataColumn()` method to add each data series:
 
     ```java
     <%
     private PredictiveChartConfig _predictiveChartConfig = new
     PredictiveChartConfig();
-    
+
     MixedDataColumn mixedDataColumn1 = new MixedDataColumn(
       "data1", 130, 340, 200, 500, 80, 240, 40,
       new Number[] {370, 400, 450}, new Number[] {210, 240, 270},
       new Number[] {150, 180, 210}, new Number[] {60, 90, 120},
-      new Number[] {310, 340, 370});
+      new Number[] {310, 340, 370}
+    );
 
     _predictiveChartConfig.addDataColumn(mixedDataColumn1);
 
@@ -50,10 +51,11 @@ Follow these steps to use predictive charts.
       "data2", 210, 160, 50, 125, 230, 110, 90,
       Arrays.asList(170, 200, 230), Arrays.asList(10, 40, 70),
       Arrays.asList(350, 380, 410), Arrays.asList(260, 290, 320),
-      Arrays.asList(30, 70, 150));
+      Arrays.asList(30, 70, 150)
+    );
 
     _predictiveChartConfig.addDataColumn(mixedDataColumn2);
-    
+
     _predictiveChartConfig.setAxisXTickFormat("%b");
 
     _predictiveChartConfig.setPredictionDate("2018-07-01");
@@ -74,25 +76,24 @@ Follow these steps to use predictive charts.
     timeseries.add("2018-12-01");
 
     _predictiveChartConfig.setTimeseries(timeseries);
-
     %>
     ```
     Predictive charts have these properties:
-    
-    **axisXTickFormat:** An optional string which specfies the time formatting 
-    on the X axis. For more information on which formats can be specified please 
-    refer to 
-    [d3's time format README](https://github.com/d3/d3-time-format/blob/master/README.md#locale_format). 
-    This value is set using the `setAxisXTickFormat()` method. 
-    
-    **Prediction Date:** A date as a string that represents the point in the 
-    timeline from when the forecast/prediction is shown. This value is parsed as 
-    a Date object in JavaScript and set using the `setPredictionDate()` method. 
-    
-    **Time Series:** A timeline for the data which is displayed on the X axis of 
-    the chart. This value is set as an array of dates (`2018-01-01` for example). 
 
-3.  Add the `<chart>` taglib to the `view.jsp`, passing the 
+    **axisXTickFormat:** An optional string which specfies the time formatting
+    on the X axis. For more information on which formats can be specified please
+    refer to
+    [d3's time format README](https://github.com/d3/d3-time-format/blob/master/README.md#locale_format).
+    This value is set using the `setAxisXTickFormat()` method.
+
+    **Prediction Date:** A date as a string that represents the point in the
+    timeline from when the forecast/prediction is shown. This value is parsed as
+    a Date object in JavaScript and set using the `setPredictionDate()` method.
+
+    **Time Series:** A timeline for the data which is displayed on the X axis of
+    the chart. This value is set as an array of dates (`2018-01-01` for example).
+
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the
     `_predictiveChartConfig` as the `config` attribute's value:
 
     ```markup
@@ -101,15 +102,15 @@ Follow these steps to use predictive charts.
     />
     ```
 
-The area contained within the light-blue rectangle is the point from which the 
+The area contained within the light-blue rectangle is the point from which the
 predicted/forecasted values are shown:
 
 ![Figure 2: A predictive chart lets you visualize estimated future data alongside existing data.](../../../../images/chart-taglib-predictive.png)
 
-Awesome! Now you know how to create predictive charts for your apps. 
+Awesome! Now you know how to create predictive charts for your apps.
 
 ## Related Topics
 
+- [Line Charts](/docs/7-2/reference/-/knowledge_base/r/Line-charts)
 - [Combination Charts](/docs/7-2/reference/-/knowledge_base/r/combination-charts)
 - [Geomap Charts](/docs/7-2/reference/-/knowledge_base/r/geomap-charts)
-- [Scatter Charts](/docs/7-2/reference/-/knowledge_base/r/scatter-charts)

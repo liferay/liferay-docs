@@ -6,13 +6,13 @@ header-id: donut-charts
 
 [TOC levels=1-4]
 
-Donut charts are percentage-based. A donut chart is similar to a pie chart, but 
-it has a hole in the center. Each data set must be defined as a new instance of 
-the 
-[`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html). 
-Follow these steps to configure your portlet to use donut charts. 
+Donut charts are percentage-based. A donut chart is similar to a pie chart, but
+it has a hole in the center. Each data set must be defined as a new instance of
+the
+[`SingleValueColumn` object](https://docs.liferay.com/portal/7.2-latest/apps/frontend-taglib-2.0.2/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
+Follow these steps to configure your portlet to use donut charts.
 
-1.  Import the chart taglib along with the `DonutChartConfig` and 
+1.  Import the chart taglib along with the `DonutChartConfig` and
     `SingleValueColumn` classes into your bundle's `init.jsp` file:
 
     ```markup
@@ -31,11 +31,10 @@ Follow these steps to configure your portlet to use donut charts.
       new SingleValueColumn("data1", 30),
       new SingleValueColumn("data2", 70)
     );
-
     %>
     ```
 
-3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_donutChartConfig` 
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_donutChartConfig`
     as the `config` attribute's value:
 
     ```markup
@@ -46,10 +45,10 @@ Follow these steps to configure your portlet to use donut charts.
 
 ![Figure 1: A donut chart is similar to a pie chart, but it has a hole in the center.](../../../../images/chart-taglib-donut.png)
 
-Awesome! Now you know how to create donut charts for your apps. 
+Awesome! Now you know how to create donut charts for your apps.
 
 ## Related Topics
 
-- [Donut Charts](/docs/7-2/reference/-/knowledge_base/r/donut-charts)
-- [Gauge Charts](/docs/7-2/reference/-/knowledge_base/r/line-charts)
-- [Pie Charts](/docs/7-2/reference/-/knowledge_base/r/scatter-charts)
+- [Pie Charts](/docs/7-2/reference/-/knowledge_base/r/pie-charts)
+- [Gauge Charts](/docs/7-2/reference/-/knowledge_base/r/gauge-charts)
+- [Bar Charts](/docs/7-2/reference/-/knowledge_base/r/bar-charts)

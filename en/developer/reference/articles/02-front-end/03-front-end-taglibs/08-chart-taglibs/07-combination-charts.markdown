@@ -10,12 +10,12 @@ Combination charts have minor differences from other charts. In a combination
 chart, you must define the representation type of each data set: `AREA`,
 `AREA_SPLINE`, `AREA_STEP`, `BAR`, `BUBBLE`, `DONUT`, `GAUGE`, `LINE`, `PIE`,
 `SCATTER`, `SPLINE`, or `STEP`. Each data set in a combination chart is an
-instance of the `TypedMultiValueColumn` object. Each object receives an ID, the
-representation type, and values for the data. Follow these steps to configure 
-your portlet to use combination charts. 
+instance of the [`TypedMultiValueColumn` object](https://docs.liferay.com/portal/7.2-latest/apps/frontend-taglib-2.0.2/javadocs/com/liferay/frontend/taglib/chart/model/TypedMultiValueColumn.html). Each object receives an ID, the
+representation type, and values for the data. Follow these steps to configure
+your portlet to use combination charts.
 
-1.  Import the chart taglib along with the `CombinationChartConfig`, 
-    `MultiValueColumn`, and `MultiValueColumn.Type` classes into your bundle's 
+1.  Import the chart taglib along with the `CombinationChartConfig`,
+    `MultiValueColumn`, and `MultiValueColumn.Type` classes into your bundle's
     `init.jsp` file:
 
     ```markup
@@ -29,7 +29,7 @@ your portlet to use combination charts.
 
     ```java
     <%
-    CombinationChartConfig _combinationChartConfig = 
+    CombinationChartConfig _combinationChartConfig =
     new CombinationChartConfig();
 
     _combinationChartConfig.addColumns(
@@ -44,14 +44,14 @@ your portlet to use combination charts.
       new TypedMultiValueColumn(
         "data5", Type.BAR, 130, 120, 150, 140, 160, 150),
       new TypedMultiValueColumn(
-        "data6", Type.AREA, 90, 70, 20, 50, 60, 120));
+        "data6", Type.AREA, 90, 70, 20, 50, 60, 120)
+      );
 
     _combinationChartConfig.addGroup("data1", "data2");
-
     %>
     ```
 
-3.  Add the `<chart>` taglib to the `view.jsp`, passing the 
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the
     `_combinationChartConfig` as the `config` attribute's value:
 
     ```markup
@@ -62,10 +62,10 @@ your portlet to use combination charts.
 
 ![Figure 1: A combination chart displays a variety of data set types.](../../../../images/chart-taglib-combination.png)
 
-Awesome! Now you know how to create combination charts for your apps. 
+Awesome! Now you know how to create combination charts for your apps.
 
 ## Related Topics
 
 - [Bar Charts](/docs/7-2/reference/-/knowledge_base/r/bar-charts)
-- [Donut Charts](/docs/7-2/reference/-/knowledge_base/r/donut-charts)
-- [Pie Charts](/docs/7-2/reference/-/knowledge_base/r/pie-charts)
+- [Line Charts](/docs/7-2/reference/-/knowledge_base/r/line-charts)
+- [Geomap Charts](/docs/7-2/reference/-/knowledge_base/r/geomap-charts)
