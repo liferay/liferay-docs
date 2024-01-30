@@ -6,14 +6,14 @@ header-id: pie-charts
 
 [TOC levels=1-4]
 
-Pie charts are percentage-based. A pie chart models percentage-based data as 
-individual slices of pie. Each data set must be defined as a new instance of the 
-[`SingleValueColumn` object](@platform-ref@/7.1-latest/apps/frontend-taglib-1.0.1/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html). 
-This tutorial shows how to configure your portlet to use pie charts. 
+Pie charts are percentage-based. A pie chart models percentage-based data as
+individual slices of pie. Each data set must be defined as a new instance of the
+[`SingleValueColumn` object](https://docs.liferay.com/portal/7.1-latest/apps/frontend-taglib-1.0.1/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
+This tutorial shows how to configure your portlet to use pie charts.
 
 Follow these steps:
 
-1.  Import the chart taglib along with the `PieChartConfig` and 
+1.  Import the chart taglib along with the `PieChartConfig` and
     `SingleValueColumn` classes into your bundle's `init.jsp` file:
 
         <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
@@ -28,10 +28,9 @@ Follow these steps:
         _pieChartConfig.addColumn(
           new SingleValueColumn("data1", 85.4)
         );
-
         %>
 
-3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_pieChartConfig` 
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_pieChartConfig`
     as the `config` attribute's value:
 
         <chart:pie
@@ -44,6 +43,6 @@ Follow these steps:
 
 [Donut Charts](/docs/7-1/tutorials/-/knowledge_base/t/donut-charts)
 
-[Pie Charts](/docs/7-1/tutorials/-/knowledge_base/t/pie-charts)
+[Gauge Charts](/docs/7-1/tutorials/-/knowledge_base/t/gauge-charts)
 
-[Using Clay Taglibs in Your Portlet](/docs/7-1/tutorials/-/knowledge_base/t/using-the-clay-taglib-in-your-portlets)
+[Spline Charts](/docs/7-1/tutorials/-/knowledge_base/t/spline-charts)
