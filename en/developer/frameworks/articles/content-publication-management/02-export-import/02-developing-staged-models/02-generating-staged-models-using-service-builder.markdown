@@ -6,19 +6,23 @@ header-id: generating-staged-models-using-service-builder
 
 [TOC levels=1-4]
 
+<aside class="alert alert-info">
+    <span class="wysiwyg-color-blue120">This document has been updated and ported to <a href="https://learn.liferay.com/web/guest/w/dxp/building-applications/data-frameworks/service-builder/service-builder-basics/generating-model-persistence-and-service-code">Liferay Learn</a> and is no longer maintained here.</span>
+</aside>
+
 Instead of having to create staged models for your app manually, you can
 leverage
 [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder) to
-generate the necessary staged model logic for you. If your app doesn't 
-use Liferay's Service Builder, you must configure it in your project. This 
-<!-- 
-Add link back for 'configure it in your project' once 
-defining-an-object-relational-map-with-service-builder article is available 
+generate the necessary staged model logic for you. If your app doesn't
+use Liferay's Service Builder, you must configure it in your project. This
+<!--
+Add link back for 'configure it in your project' once
+defining-an-object-relational-map-with-service-builder article is available
 -->
-tutorial assumes you have a Service Builder project with `*api` and `*service` 
-modules. If you want to follow along with this tutorial, download the 
-[staged-model-example](/documents/10184/656312/staged-model-example.zip/5b2a8b0f-fa04-ca4a-2345-015871c0a14a)
-Service Builder project (Gradle-based). 
+tutorial assumes you have a Service Builder project with `*api` and `*service`
+modules. If you want to follow along with this tutorial, download the
+staged-model-example
+Service Builder project (Gradle-based).
 
 <!-- TODO: Update the example above when we can upload projects to new site.-->
 
@@ -79,6 +83,6 @@ staged model type.
     Your model is now a staged grouped model! The `groupId` column is also
     required to extend the `StagedGroupedModel` interface, but it was already
     defined in the original `service.xml` file.
- 
+
 Fantastic! You've witnessed firsthand how easy it is to generate staged models
 using Service Builder.
