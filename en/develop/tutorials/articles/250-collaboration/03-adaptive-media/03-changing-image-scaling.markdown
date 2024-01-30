@@ -6,79 +6,79 @@ header-id: changing-adaptive-medias-image-scaling
 
 [TOC levels=1-4]
 
-As described in 
-[the Adaptive Media user guide](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices), 
-Adaptive Media scales images to match the image resolutions defined by the 
-@product@ administrator. The default scaling is usually suitable, but you can 
-also customize it to your needs. Before doing so, however, you should understand 
-how this scaling works. 
+As described in
+[the Adaptive Media user guide](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices),
+Adaptive Media scales images to match the image resolutions defined by the
+@product@ administrator. The default scaling is usually suitable, but you can
+also customize it to your needs. Before doing so, however, you should understand
+how this scaling works.
 
 ## Understanding Image Scaling in Adaptive Media
 
-Adaptive Media contains an extension point that lets you replace the way it 
-scales images. 
-[The `AMImageScaler` interface](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/scaler/AMImageScaler.java) 
-defines Adaptive Media's image scaling logic. Out of the box, Adaptive Media 
-provides two implementations of this interface: 
+Adaptive Media contains an extension point that lets you replace the way it
+scales images.
+[The `AMImageScaler` interface](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/adaptive-media/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/scaler/AMImageScaler.java)
+defines Adaptive Media's image scaling logic. Out of the box, Adaptive Media
+provides two implementations of this interface:
 
--   [`AMDefaultImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMDefaultImageScaler.java): 
-    The default image scaler. It's always enabled and uses `java.awt` for its 
-    image processing and scaling. 
+-   [`AMDefaultImageScaler`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/adaptive-media/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMDefaultImageScaler.java):
+    The default image scaler. It's always enabled and uses `java.awt` for its
+    image processing and scaling.
 
--   [`AMGIFImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMGIFImageScaler.java): 
-    A scaler that works only with GIF images. It depends on the installation of 
-    the external tool 
-    [gifsicle](https://www.lcdf.org/gifsicle/) 
-    in the @product@ instance. This scaler must be enabled in *Control Panel* 
-    &rarr; *System Settings*. 
+-   [`AMGIFImageScaler`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/adaptive-media/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMGIFImageScaler.java):
+    A scaler that works only with GIF images. It depends on the installation of
+    the external tool
+    [gifsicle](https://www.lcdf.org/gifsicle/)
+    in the @product@ instance. This scaler must be enabled in *Control Panel*
+    &rarr; *System Settings*.
 
-You must register image scalers in @product@'s OSGi container using the 
-`AMImageScaler` interface. Each scaler must also set the `mime.type` property to 
-the MIME type it handles. For example, if you set a scaler's MIME type to 
-`image/jpeg`, then that scaler can only handle `image/jpeg` images. If you 
-specify the special MIME type `*`, the scaler can process any image. Note that 
-[the `AMDefaultImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMDefaultImageScaler.java) 
-is registered using `mime.type=*`, while 
-[the `AMGIFImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMGIFImageScaler.java) 
-is registered using `mime.type=image/gif`. Both scalers, like all scalers, 
-implement `AMImageScaler`. 
+You must register image scalers in @product@'s OSGi container using the
+`AMImageScaler` interface. Each scaler must also set the `mime.type` property to
+the MIME type it handles. For example, if you set a scaler's MIME type to
+`image/jpeg`, then that scaler can only handle `image/jpeg` images. If you
+specify the special MIME type `*`, the scaler can process any image. Note that
+[the `AMDefaultImageScaler`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/adaptive-media/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMDefaultImageScaler.java)
+is registered using `mime.type=*`, while
+[the `AMGIFImageScaler`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/adaptive-media/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMGIFImageScaler.java)
+is registered using `mime.type=image/gif`. Both scalers, like all scalers,
+implement `AMImageScaler`.
 
-You can add as many image scalers as you need, even for the same MIME type. Even 
-so, Adaptive Media uses only one scaler per image, using this process to 
-determine the best one: 
+You can add as many image scalers as you need, even for the same MIME type. Even
+so, Adaptive Media uses only one scaler per image, using this process to
+determine the best one:
 
-1.  Select only the image scalers registered with the same MIME type as the 
-    image. 
+1.  Select only the image scalers registered with the same MIME type as the
+    image.
 
-2.  Select the enabled scalers from those selected in the first step 
-    ([the `AMImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/scaler/AMImageScaler.java) 
-    method `isEnabled()` returns `true` for enabled scalers). 
+2.  Select the enabled scalers from those selected in the first step
+    ([the `AMImageScaler`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/adaptive-media/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/scaler/AMImageScaler.java)
+    method `isEnabled()` returns `true` for enabled scalers).
 
-3.  Of the scalers selected in the second step, select the scaler with the 
-    highest `service.ranking`. 
+3.  Of the scalers selected in the second step, select the scaler with the
+    highest `service.ranking`.
 
-If these steps return no results, they're repeated, but the first step uses the 
-special MIME type `*`. Also note that if an image scaler is registered for 
-specific MIME types and has a higher `service.ranking`, it's more likely to be 
-chosen than if it's registered for the special MIME type `*` or has a lower 
-`service.ranking`. 
+If these steps return no results, they're repeated, but the first step uses the
+special MIME type `*`. Also note that if an image scaler is registered for
+specific MIME types and has a higher `service.ranking`, it's more likely to be
+chosen than if it's registered for the special MIME type `*` or has a lower
+`service.ranking`.
 
 ## Creating an Image Scaler
 
-Now that you know how Adaptive Media scales images, you'll learn how to 
-customize this scaling. As an example, you'll see a sample image scaler that 
-customizes the scaling of PNG images. 
+Now that you know how Adaptive Media scales images, you'll learn how to
+customize this scaling. As an example, you'll see a sample image scaler that
+customizes the scaling of PNG images.
 
-Follow these steps to create a custom image scaler: 
+Follow these steps to create a custom image scaler:
 
-1.  Create your scaler class to implement `AMImageScaler`. You must also 
-    annotate your scaler class with `@Component`, setting `mime.type` properties 
-    for each of the scaler's MIME types, and registering an `AMImageScaler` 
-    service. If there's more than one scaler for the same MIME type, you must 
-    also set the `@Component` annotation's `service.ranking` property. For your 
-    scaler to take precedence over other scalers of the same MIME type, its 
-    service ranking property must be higher than that of the other scalers. If 
-    `service.ranking` isn't set, it defaults to `0`. 
+1.  Create your scaler class to implement `AMImageScaler`. You must also
+    annotate your scaler class with `@Component`, setting `mime.type` properties
+    for each of the scaler's MIME types, and registering an `AMImageScaler`
+    service. If there's more than one scaler for the same MIME type, you must
+    also set the `@Component` annotation's `service.ranking` property. For your
+    scaler to take precedence over other scalers of the same MIME type, its
+    service ranking property must be higher than that of the other scalers. If
+    `service.ranking` isn't set, it defaults to `0`.
 
     | **Note:** The `service.ranking` property isn't set for the image scalers
     | included with Adaptive Media (`AMDefaultImageScaler` and
@@ -86,8 +86,8 @@ Follow these steps to create a custom image scaler:
     | replace either scaler, you must set your scaler to the same MIME type and
     | give it a service ranking higher than `0`.
 
-    For example, this sample image scaler scales PNG and x-PNG images, and has a 
-    service ranking of `100`: 
+    For example, this sample image scaler scales PNG and x-PNG images, and has a
+    service ranking of `100`:
 
         @Component(
             immediate = true,
@@ -96,39 +96,39 @@ Follow these steps to create a custom image scaler:
         )
         public class SampleAMPNGImageScaler implements AMImageScaler {...
 
-    This requires these imports: 
+    This requires these imports:
 
         import com.liferay.adaptive.media.image.scaler.AMImageScaler;
         import org.osgi.service.component.annotations.Component;
 
-2.  Implement the `isEnabled()` method to return `true` when you want to enable 
-    the scaler. In many cases, you always want the scaler enabled, so you can 
-    simply return `true` in this method. This is the case with the example 
-    `SampleAMPNGImageScaler`: 
+2.  Implement the `isEnabled()` method to return `true` when you want to enable
+    the scaler. In many cases, you always want the scaler enabled, so you can
+    simply return `true` in this method. This is the case with the example
+    `SampleAMPNGImageScaler`:
 
         @Override
         public boolean isEnabled() {
             return true;
         }
 
-    This method gets more interesting when the scaler depends on other tools or 
-    features. For example, the `isEnabled()` method in `AMGIFImageScaler` 
-    determines whether gifsicle is enabled. This scaler must only be enabled 
-    when the tool it depends on, gifsicle, is also enabled: 
+    This method gets more interesting when the scaler depends on other tools or
+    features. For example, the `isEnabled()` method in `AMGIFImageScaler`
+    determines whether gifsicle is enabled. This scaler must only be enabled
+    when the tool it depends on, gifsicle, is also enabled:
 
         @Override
         public boolean isEnabled() {
             return _amImageConfiguration.gifsicleEnabled();
         }
 
-3.  Implement the `scaleImage` method. This method contains the scaler's 
-    business logic, and must return an `AMImageScaledImage` instance. For 
-    example, the example `scaleImage` implementation in `SampleAMPNGImageScaler` 
-    uses `AMImageConfigurationEntry` to get the maximum height and width values 
-    for the scaled image, and `FileVersion` to get the image to scale. The 
-    scaling is done with the help of a private inner class, assuming that the 
-    methods `_scalePNG`, `_getScalePNGHeight`, `_getScalePNGWidth`, and 
-    `_getScalePNGSize` implement the actual scaling: 
+3.  Implement the `scaleImage` method. This method contains the scaler's
+    business logic, and must return an `AMImageScaledImage` instance. For
+    example, the example `scaleImage` implementation in `SampleAMPNGImageScaler`
+    uses `AMImageConfigurationEntry` to get the maximum height and width values
+    for the scaled image, and `FileVersion` to get the image to scale. The
+    scaling is done with the help of a private inner class, assuming that the
+    methods `_scalePNG`, `_getScalePNGHeight`, `_getScalePNGWidth`, and
+    `_getScalePNGSize` implement the actual scaling:
 
         @Override
         public AMImageScaledImage scaleImage(FileVersion fileVersion,
@@ -140,7 +140,7 @@ Follow these steps to create a custom image scaler:
             int maxWidth = GetterUtil.getInteger(properties.get("max-width"));
 
             try {
-                InputStream inputStream = 
+                InputStream inputStream =
                     _scalePNG(fileVersion.getContentStream(false), maxHeight, maxWidth);
 
                 int height = _getScalePNGHeight();
@@ -176,7 +176,7 @@ Follow these steps to create a custom image scaler:
                 return _width;
             }
 
-            private AMImageScaledImageImpl(InputStream inputStream, int height, 
+            private AMImageScaledImageImpl(InputStream inputStream, int height,
                 int width, long size) {
 
                 _inputStream = inputStream;
@@ -192,7 +192,7 @@ Follow these steps to create a custom image scaler:
 
         }
 
-    This requires these imports: 
+    This requires these imports:
 
         import com.liferay.adaptive.media.exception.AMRuntimeException;
         import com.liferay.adaptive.media.image.configuration.AMImageConfigurationEntry;
@@ -203,7 +203,7 @@ Follow these steps to create a custom image scaler:
         import java.io.InputStream;
         import java.util.Map;
 
-Great! Now you know how to write your own image scalers. 
+Great! Now you know how to write your own image scalers.
 
 ## Related Topics
 
