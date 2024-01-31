@@ -78,8 +78,9 @@ Content label. Otherwise, the Web Content section is absent.
 The *Categories* content type is not dependent on the date range and is always
 shown in the list.
 
-| **Note:** Since comments and ratings are meant for the end user, they are not
-| supported in staging and can only be added to the live site.
+| **Note:** Since some content types are meant for the end user and aren't
+| supported in staging (e.g. comments, ratings, and custom fields), they can
+| only be added to the live site and cannot be removed.
 
 Unchecking the checkbox next to a certain content type excludes it from the
 current publication to the live site.
@@ -98,10 +99,10 @@ article for more information on managing content during the publication process.
 
 ## Deletions
 
-This portion of the menu lets you delete two things: 
+This portion of the menu lets you delete two things:
 
-- portlet metadata before publishing 
-- operations performed for content types. 
+- portlet metadata before publishing
+- operations performed for content types.
 
 You have two options to manage for deletions:
 
