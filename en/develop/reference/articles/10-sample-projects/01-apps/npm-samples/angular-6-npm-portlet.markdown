@@ -47,4 +47,4 @@ build tool:
 TODO: Replace above when tool is available for other build tools. -Cody
 -->
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/npm/angular-npm-portlet)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/npm/angular-npm-portlet)
