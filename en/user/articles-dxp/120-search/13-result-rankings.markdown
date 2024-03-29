@@ -194,10 +194,10 @@ keywords, so more results are returned if there are matches to the synonyms.
 Result Rankings Aliases are just keywords that also have the particular
 ranking interventions applied to them. Only the searched keyword is matched
 to results, and then, the pins, hides, re-ordering, and additional results take
-effect after that. Of course, if you add a Synonym Set that includes an
-identical set of search terms as the Result Ranking you configure, the features
-can be used together. All the synonymous terms return the same result set, with
-the customized rankings applied on top.
+effect after that. 
+
+These features don't interact in a predictable way. If you need synonym-like
+behavior in results rankings, define aliases for the keyword.
 
 ## Known Issues
 
