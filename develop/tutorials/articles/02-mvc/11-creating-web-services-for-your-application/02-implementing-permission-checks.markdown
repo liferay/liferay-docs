@@ -105,7 +105,7 @@ services, use the following steps:
                         throws PortalException, SystemException {
 
                 GuestbookModelPermission.check(getPermissionChecker(),
-                                serviceContext.getScopeGroupId(), ActionKeys.ADD_ENTRY);
+                                guestbookId, ActionKeys.ADD_ENTRY);
 
                 return EntryLocalServiceUtil.addEntry(userId, guestbookId, name, email,
                                 message, serviceContext);
@@ -115,7 +115,7 @@ services, use the following steps:
                         throws PortalException, SystemException {
 
                 EntryPermission.check(getPermissionChecker(),
-                                serviceContext.getScopeGroupId(), ActionKeys.DELETE);
+                                entryId, ActionKeys.DELETE);
 
                 return EntryLocalServiceUtil.deleteEntry(entryId, serviceContext);
         }
@@ -126,7 +126,7 @@ services, use the following steps:
                         SystemException {
 
                 EntryPermission.check(getPermissionChecker(),
-                                serviceContext.getScopeGroupId(), ActionKeys.UPDATE);
+                                entryId, ActionKeys.UPDATE);
 
                 return EntryLocalServiceUtil.updateEntry(userId, guestbookId, entryId,
                                 name, email, message, serviceContext);
