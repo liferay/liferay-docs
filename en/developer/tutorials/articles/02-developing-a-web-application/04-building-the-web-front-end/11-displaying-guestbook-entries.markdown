@@ -11,7 +11,7 @@ header-id: viewing-guestbook-entries
 </div>
 
 To display guestbook entries, you must do the reverse of what you did to store
-them: retrieve them the database, loop through them, and present them on the
+them: retrieve them from the database, loop through them, and present them on the
 page. To do this, you must override the default MVC Portlet `render` method so
 you can tell your portlet how to render itself.
 
