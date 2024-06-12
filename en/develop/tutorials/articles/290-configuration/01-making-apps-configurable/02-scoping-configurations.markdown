@@ -94,7 +94,7 @@ To create a configuration bean declaration:
 
 1.  Register the configuration class by implementing `ConfigurationBeanDeclaration`.
 
-        @Component
+        @Component(service = ConfigurationBeanDeclaration.class)
         public class JournalGroupServiceConfigurationBeanDeclaration
             implements ConfigurationBeanDeclaration {
 
