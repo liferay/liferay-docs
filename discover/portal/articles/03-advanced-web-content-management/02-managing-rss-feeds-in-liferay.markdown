@@ -123,6 +123,12 @@ available to guests or site members, respectively. In these cases, make sure
 that only site administrators have permission to customize the RSS portlet and
 select feeds to be displayed.
 
++$$$
+
+**Note:** If you are behind a proxy, then you'll need to make sure to set the appropriate Java proxy settings either in your setenv script or in your system-ext.properties, such as http.proxyHost= and http.proxyPort=. Without them, the RSS Portlet will be unable to access any RSS feeds.
+
+$$$
+
 Once you've added the RSS portlet to a page, open the portlet's Configuration
 popup window by clicking on the gear icon at the top right corner of the
 portlet and selecting *Configuration*.
