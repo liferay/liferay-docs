@@ -142,7 +142,8 @@ all works, it's time to test it.
 
 11. Verify that your entry appears.
 
-![Figure 1: Your first guestbook and entry appears. Nice job!](../../../images/guestbook-entry-test.png)
+![Figure 1: Your first guestbook and entry appears. Nice job!](../../../images/guestbook-entry-test.png) //I think the guestbook-entry-test.png image is not entirely corresponding to the tutorial. The 'Action' button on the right column is never mentioned in the tutorial. However I do not know which image is the correct one.
+
 
 ## What's Next?
 
