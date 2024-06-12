@@ -31,10 +31,10 @@ categories similar to the one you added to the `edit_guestbook.jsp` file.
    `</aui:fieldset>`: 
 
    ```markup
-<liferay-asset:asset-categories-error />
-<liferay-asset:asset-tags-error />
+    <liferay-asset:asset-categories-error />
+    <liferay-asset:asset-tags-error />
 
-<liferay-ui:panel defaultState="closed" 
+    <liferay-ui:panel defaultState="closed" 
                   extended="<%= false %>" id="entryCategorizationPanel" 
                   persistState="<%= true %>" title="categorization">
 
@@ -43,9 +43,9 @@ categories similar to the one you added to the `edit_guestbook.jsp` file.
        <liferay-asset:asset-tags-selector className="<%= GuestbookEntry.class.getName() %>" classPK="<%= entryId %>" />
     </aui:fieldset>
 
-</liferay-ui:panel>
+    </liferay-ui:panel>
 
-<liferay-ui:panel defaultState="closed" 
+    <liferay-ui:panel defaultState="closed" 
                   extended="<%= false %>" 
                   id="entryAssetLinksPanel" 
                   persistState="<%= true %>" 
@@ -59,8 +59,8 @@ categories similar to the one you added to the `edit_guestbook.jsp` file.
         />
             
     </aui:fieldset>
-</liferay-ui:panel>
-```
+    </liferay-ui:panel>
+    ```
 
 Test your JSP by using the Guestbook portlet to add and update Guestbook 
 entries. Add and remove tags, categories, and related assets. 
