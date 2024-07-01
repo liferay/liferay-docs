@@ -2,7 +2,7 @@
 header-id: accessing-google-docs
 ---
 
-# Accessing Google Docs&trade;
+# Accessing Google Docs™
 
 [TOC levels=1-4]
 
