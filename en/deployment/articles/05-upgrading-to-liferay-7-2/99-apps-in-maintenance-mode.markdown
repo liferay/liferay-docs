@@ -28,7 +28,6 @@ maintenance mode:
 -   Liferay Mobile Experience (Liferay Screens, Liferay Mobile SDK, Liferay Push)
 -   Liferay Reports
 -   Liferay Sync
--   Staging
 
 ## Related Topics
 
