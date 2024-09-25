@@ -7,9 +7,6 @@ header-id: disabling-cache-for-table-mapper-tables
 [TOC levels=1-4]
 
 Service Builder creates relational mappings between entities. It uses mapping
-<!--
-Add link back for 'relational mappings between entities' once article is available
--->
 tables to associate the entities. In your `service.xml` file, both entities have 
 a `mapping-table` column attribute of the format `mapping-table="table1_table2"`. 
 For example, a `service.xml` that maps `AssetEntry`s to `AssetCategory`s has an 
