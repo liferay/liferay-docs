@@ -1,0 +1,353 @@
+\documentclass[11pt,openright,twoside]{memoir}
+
+% \usepackage{ucs}
+\usepackage[english]{babel}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{ctable}
+%\usepackage[labelformat=empty,font=small]{caption}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{morefloats}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{framed}
+\usepackage{animate}
+\defaultfontfeatures{Ligatures=TeX}
+
+% Begin stuff from Pandoc template 
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% End stuff from Pandoc template 
+
+%\geometry{paperwidth=191mm,paperheight=235mm,
+%    hmargin={20mm,20mm},vmargin={20mm,20mm}}
+\geometry{letterpaper, hmargin={1in, 1in}, vmargin={1in,1in}}
+
+\setmainfont{Source Serif Pro}
+\setsansfont{Source Sans Pro}
+\setmonofont{IosevkaTermSlab Nerd Font}
+\newfontfamily\sectionfont{Source Sans Pro}
+\newfontfamily\subsectionfont{Source Sans Pro}
+\newfontfamily\subsubsectionfont{Source Sans Pro}
+\newfontfamily\captionfont{Source Sans Pro}
+\newcommand{\hruleafter}[1]{#1\hrule}
+\titleformat{\section}{\large\bfseries\sffamily\sectionfont}{\thesection}{1em}{\hruleafter}
+\titleformat*{\subsection}{\bfseries\sffamily\subsectionfont}
+\titleformat*{\subsubsection}{\itshape\subsubsectionfont}
+\captionnamefont{\small\sffamily}
+\captiontitlefont{\small\sffamily}
+\aliaspagestyle{part}{empty}
+
+\makeatletter
+\g@addto@macro\@verbatim\scriptsize
+\makeatother
+
+\newlength{\imgwidth}
+\newlength{\drop}% for my convenience
+
+\newcommand*{\titleGM}{\begingroup% Gentle Madness
+\drop = 0.1\textheight
+%\vspace*{\baselineskip}
+\vfill
+\hbox{%
+\hspace*{0.2\textwidth}%
+\rule{1pt}{\textheight}
+\hspace*{0.05\textwidth}%
+\parbox[b]{0.75\textwidth}{
+\vbox{%
+\vspace{\drop}
+{\noindent\HUGE\bfseries Using\\[0.5\baselineskip]
+Liferay DXP}\\[2\baselineskip]
+{\Large\itshape A Complete Guide}\\[4\baselineskip]
+{\Large THE LIFERAY DOCUMENTATION TEAM}\par
+{\small Richard Sezov, Jr.}\par
+{\small Jim Hinkey}\par
+{\small Stephen Kostas}\par
+{\small Jesse Rao}\par
+{\small Cody Hoag}\par
+{\small Nicholas Gaskill}\par
+{\small Michael Williams}\par
+\vspace{0.25\textheight}
+{\noindent Liferay Press}\\[\baselineskip]
+}% end of vbox
+}% end of parbox
+}% end of hbox
+\vfill
+\null
+\endgroup}
+
+\makeatletter
+\newcommand\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\setlength\midchapskip{10pt}
+\makechapterstyle{VZ14}{
+  \renewcommand\chapternamenum{}
+  \renewcommand\printchaptername{}
+  \renewcommand\chapnamefont{\sffamily\Large\scshape}
+  \renewcommand\printchapternum{%
+    \chapnamefont\null\thickhrulefill\quad
+    \@chapapp\space\thechapter\quad\thickhrulefill}
+  \renewcommand\printchapternonum{%
+    \par\thickhrulefill\par\vskip\midchapskip
+    \hrule\vskip\midchapskip
+  }
+  \renewcommand\chaptitlefont{\sffamily\Huge\scshape\centering}
+  \renewcommand\afterchapternum{%
+    \par\nobreak\vskip\midchapskip\hrule\vskip\midchapskip}
+  \renewcommand\afterchaptertitle{%
+    \par\vskip\midchapskip\hrule\nobreak\vskip\afterchapskip}
+}
+\makeatother
+
+\newcommand\scalegraphics[1]{%   
+    \settowidth{\imgwidth}{\includegraphics{#1}}%
+    \setlength{\imgwidth}{\minof{\imgwidth}{\textwidth}}%
+    \includegraphics[width=\imgwidth]{#1}%
+}
+
+
+\usepackage{fancybox}
+\newenvironment{roundedframe}{%
+\def\FrameCommand{%
+\cornersize*{20pt}%
+\setlength{\fboxsep}{5pt}%
+\ovalbox}%
+\MakeFramed{\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+
+
+\author{Richard L. Sezov, Jr. }
+\title{Using Liferay DXP}
+\date{12/10/2018}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\titleGM
+
+Using Liferay DXP 7.1
+
+by The Liferay Documentation Team 
+
+Copyright \copyright 2018 by Liferay, Inc.\\[2\baselineskip]
+This work is offered under the following license: \\[2\baselineskip]
+Creative Commons Attribution-Share Alike Unported
+
+\scalegraphics{./images/cc-by-sa.png}
+
+You are free:
+
+\begin{enumerate}[1.]
+\item
+  to share---to copy, distribute, and transmit the work
+\item
+  to remix---to adapt the work
+\end{enumerate}
+
+Under the following conditions:
+
+\begin{enumerate}[1.]
+\item
+  Attribution. You must attribute the work in the manner specified by
+  the author or licensor (but not in any way that suggests that they
+  endorse you or your use of the work).
+\item
+  Share Alike. If you alter, transform, or build upon this work, you may
+  distribute the resulting work only under the same, similar or a
+  compatible license.
+\end{enumerate}
+
+The full version of this license is here:
+
+\href{http://creativecommons.org/licenses/by-sa/3.0}{http://creativecommons.org/licenses/by-sa/3.0}
+
+This book was created out of material from the \href{https://github.com/liferay/liferay-docs}{Liferay 
+    Docs} repository. Where the content of this book and the repository differ, 
+the site is more up to date. 
+
+\clearpage
+
+\frontmatter
+\pagestyle{plain}
+\pagenumbering{roman}
+\chapterstyle{VZ14}
+
+\tableofcontents
+
+\chapter{Preface}
+
+Welcome to the world of Liferay DXP! This book was written for anyone who has
+any part in setting up, using, or maintaining a web site built on Liferay
+DXP. For the end user, it contains everything you need to know about using
+the applications included with Liferay. For the administrator, you'll learn all
+you need to know about setting up your site with users, sites, organizations,
+and user groups, as well as how to manage your site's security with roles. For
+server admins, it guides you step-by-step through the installation,
+configuration, and optimization of Liferay DXP, including setting it up in a
+clustered, enterprise-ready environment. Use this book as a handbook for
+everything you need to do to get your Liferay DXP installation running
+smoothly, and then keep it by your side as you configure and maintain your
+Liferay-powered web site.
+
+\section{Conventions}
+
+The information contained herein has been organized in a way that makes it easy
+to locate information. The book has two parts. The first part, 
+\textit{Using Liferay Portal}, describes how to configure and use a freshly 
+installed Liferay Portal. The second part, \textit{Deploying Liferay Portal}, 
+is for administrators who want to install Liferay Portal and optimize its 
+performance. 
+
+Sections are broken up into multiple levels of headings, and these are
+designed to make it easy to find information.
+
+Source code and configuration file directives are presented monospaced, as
+below.
+
+\begin{verbatim}
+
+  Source code appears in a non-proportional font. 
+
+\end{verbatim}
+
+\textit{Italics} represent links or buttons to be clicked on in a user interface.
+
+\texttt{Monospaced type} denotes Java classes, code, or properties within the text.
+
+\textbf{Bold} describes field labels and portlets.
+
+Page headers denote the chapters and the section within the chapter.
+
+\section{Publisher Notes}
+
+It is our hope that this book is valuable to you, and that it becomes an indispensable resource as you work with Liferay DXP. If you need assistance beyond what is covered in this book, Liferay offers training\footnote{https://learn.liferay.com}, consulting\footnote{https://www.liferay.com/consulting}, and support\footnote{https://help.liferay.com} services to fill any need that you might have. 
+
+For up-to-date documentation on the latest versions of Liferay, please see the documentation pages on Liferay Learn.\footnote{https://learn.liferay.com} 
+
+As always, we welcome feedback. If there is any way you think we could make this book better, please feel free to mention it on our forums or in the feedback on Liferay Learn. You can also
+use any of the email addresses on our Contact Us page.\footnote{\href{http://www.liferay.com/contact-us}{https://www.liferay.com/contact-us}} We are here to serve you, our users and customers, and to help make your experience using Liferay DXP the best it can be.
+
+\mainmatter
+\pagenumbering{gobble}
+
+\part{Using Liferay DXP}
+
+\pagestyle{headings}
+\pagenumbering{arabic}
+
+\include{discover-portal}
+
+\part{Discovering Analytics Cloud}
+\include{discover-analytics-cloud}
+
+% \pagenumbering{gobble}
+\part{Deploying Liferay DXP}
+% \pagenumbering{arabic}
+
+\include{discover-deployment}
+
+% \pagenumbering{gobble}
+% \part{Developing On Liferay DXP}
+% \pagenumbering{arabic}
+
+% \include{develop-tutorials}
+% \include{develop-reference}
+
+\end{document}
