@@ -116,17 +116,16 @@ pattern looks like this:
 
     https://[hostname]/o/oauth2/token?grant_type=password&client_id=[client ID]&client_secret=[client secret]&username=[user@emailaddress.com]&password=
 
-Users are prompted for their passwords, and upon successful log in, receive an
-authorization code. 
+In both cases users are NOT prompted for their passwords and receive an directly an access token. 
 
-## Token Use
+## Access Token Use
 
 All flows above result in an access token that's sent by the authorization
 server (@product@) to the client application. This token is sent in the response
 for the client application to store and send along with any future request for
 data. 
 
-For example, say the authorization code `946856e2b5ddf0928f6fc55f657bab73` was
+For example, say the access token `946856e2b5ddf0928f6fc55f657bab73` was
 sent to the client application. When the client requests data, this code must be
 sent in each request header. Using a command line HTTP client such as Curl, you
 could send a request like this: 
