@@ -97,7 +97,15 @@ exposing the ADT functionality to users. You'll walk through these steps now:
     	include-and-override=portlet-ext.properties
 	    resource.actions.configs=resource-actions/default.xml
 
-4. Now that your portlet officially supports ADTs, you'll want to expose the
+4. Now you need to register the ADT handler class in the portlet controller in order to get your Portlet get ADT Capability.
+	
+	```
+	@Component(configurationPid = "your.package.path.*PortletConfigurationHandler", immediate = true, property = {
+        "[...]",
+        "template-handler=your.package.path.*PortletDisplayTemplateHandler" }, service = Portlet.class)
+	```
+	
+5. Now that your portlet officially supports ADTs, you'll want to expose the
    ADT option to your users. Just include the
    `<liferay-ui:ddm-template-selector>` tag in the JSP file you're using to
    control your portlet's configuration.
