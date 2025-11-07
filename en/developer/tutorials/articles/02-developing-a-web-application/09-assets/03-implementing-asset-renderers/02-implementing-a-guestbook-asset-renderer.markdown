@@ -284,6 +284,7 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
       public static final String CLASS_NAME = Guestbook.class.getName();
       public static final String TYPE = "guestbook";
       private Logger logger = Logger.getLogger(this.getClass().getName());
+      @Reference(target = "(model.class.name=com.liferay.docs.guestbook.model.Guestbook)")
       private ModelResourcePermission<Guestbook> _guestbookModelResourcePermission;
     }
     ```
@@ -336,16 +337,14 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
     }
     ```
 
-3.  Implement the `hasPermission` method via the `GuestbookPermission` class:
+3.  Implement the `hasPermission` method:
 
     ```java
     @Override
     public boolean hasPermission(PermissionChecker permissionChecker, 
     long classPK, String actionId) throws Exception {
-
       Guestbook guestbook = _guestbookLocalService.getGuestbook(classPK);
-      long groupId = guestbook.getGroupId();
-      return GuestbookPermission.contains(permissionChecker, groupId, 
+      return _guestbookModelResourcePermission.contains(permissionChecker, guestbook.getGuestbookId(), 
       actionId);
     }
     ```
