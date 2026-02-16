@@ -22,6 +22,8 @@ compatibility information.
 
 ![Figure 1: Specify a set of files for each Liferay version you wish to support.](../../../images/marketplace-app-version-and-upload-files.png) 
 
+In case you wish to upload the source code of your app, you can use the Upload Source Code link. This will be available as a separate download for Liferay Marketplace users.
+
 If you selected *Free* for your app pricing, click *Next* to advance to the 
 final screen. If you selected *Paid*, you'll be presented with additional 
 options for licensing and pricing your app. 
