@@ -154,19 +154,18 @@ ratings on guestbook entries:
     you to create a portlet action URL.
 
     ```markup
-      <liferay-comment:discussion
-        className="<%= GuestbookEntry.class.getName() %>"
-        classPK="<%= entry.getEntryId() %>"
-        discussion="<%= discussion %>"
-        formName="fm2"
-        ratingsEnabled="true"
-        redirect="<%= currentURL %>"
-        userId="<%= entry.getUserId() %>"
-        />
-    </c:if>
-
-  </liferay-ui:panel>
-</liferay-ui:panel-container>
+           <liferay-comment:discussion
+           className="<%= GuestbookEntry.class.getName() %>"
+           classPK="<%= entry.getEntryId() %>"
+           discussion="<%= discussion %>"
+            formName="fm2"
+            ratingsEnabled="true"
+            redirect="<%= currentURL %>"
+            userId="<%= entry.getUserId() %>"
+            />
+        </c:if>
+    </liferay-ui:panel>
+    </liferay-ui:panel-container>
     ```
 
 12. To restrict comments and ratings access to logged-in users, wrap the whole 
