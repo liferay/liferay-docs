@@ -70,7 +70,7 @@ define information about your entry. This takes only two steps:
     The `property` element designates two properties that should be assigned for
     your category. The `panel.category.key` specifies the parent category for
     your custom category. You can find popular parent categories to assign in
-    the [`PanelCategoryKeys`](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/PanelCategoryKeys.html)
+    the [`PanelCategoryKeys`](@app-ref@/application-list/latest/javadocs/com/liferay/application/list/constants/PanelCategoryKeys.html)
     class. For instance, if you wanted to create a child category in the Control
     Panel, you could assign `PanelCategoryKeys.CONTROL_PANEL`. Likewise, if you
     wanted to create a root category, like the Control Panel or Site
