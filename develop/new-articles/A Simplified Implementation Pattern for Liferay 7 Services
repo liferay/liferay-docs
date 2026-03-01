@@ -1,0 +1,182 @@
+Introduction
+============
+This is a simplified OSGi service API and implementation pattern. It follows the traditional Java interface-implementation pattern, in which the programmer is only required to keep the interface class and implementation class in sync. It does not use Liferay 7 service builder.
+
+The attached archive is a fully implemented ORM service based on MyBatis. Unzip it into the modules folder in a Blade created workspace. A script to create the back-end database will be added soon to make this example fully operational.
+
+Implementation Pattern
+======================
+In this ORM example, there are two top level packages: 'api' and 'impl'. The 'api' and its children packages are to be exported and used by consumers of this service API. The 'impl' and its children packages are for implementation only and should remain private packages of this OSGi module.
+
+Factory Usage Pattern
+=====================
+The 'api.Factory' class is the access point for consumers to get the services they need. A consumer class uses the Factory like this:
+
+import com.acme.orm.api.bean.Order
+import static com.acme.orm.api.Facotry.getOrderLocalService;
+    
+class OnlineStore {
+    public Order checkOrder(String orderId) {
+        Order order = getOrderLocalService().getOrderDetailsById(orderId);
+        // Do something else
+        return order;
+    }
+}
+
+In order to preserve OSGi's runt-time life cycle management of this module (start, stop, install, uninstall), it is important NOT to keep a reference of the service object obtained from the Factory:
+
+// DO NOT DO THIS
+OrderLocalService myService = getOrderLocalService();
+// DO NOT DO THIS
+OrderLocalService myService = Factory.getOrderLocalService();
+
+The Liferay service builder went to great length to prevent programmers from keeping a reference of the service object by generating and forcing people to use the static methods in the XyzServiceUtil class. It also creates other confusing and irrelevant artifacts: XyzServiceBaseImpl, XyzServiceWrapper and two projects (two jars) for one service.
+
+Instead of making it foolproof with all those complexities, why not just tell programmers, a very intelligent bunch, not to keep references of OSGi service objects. The result is this clean implementation pattern, with no generated artifact, and two easy to understand rules:
+
+  * Keep the API interface class in sync with the implementation class.
+  * Do not keep a reference of the service object obtained from the Factory.
+
+Understanding ServiceTracker
+============================
+When an OSGi module (or bundle) is replaced at run-time due to it being stopped, started, uninstalled or re-installed, the desired effect is that the services provided by that module be replaced as well. ServiceTracker is the OSGi class that keeps track of module life cycle changes. Module life cycle changes are transparent to service consumer code as long as the consumer code always access the service from the ServiceTracker.
+
+OSGi is a component framework running in a JVM instance that exhibits the same run-time behavior as any Java programs. When the consumer code saves a reference to a service object, that service object will live on even when OSGi replaced its module with a new instance. That service object now becomes an orphan and out-dated instance only known to that consumer code. This is the reason for not keeping a reference to the service.
+
+In this implementation pattern, the Factory class retrieves the service object from its corresponding ServiceTracker. The getService() method of the ServiceTracker shields the module's life cycle changes from the consumer code:
+
+@ProviderType
+public class Factory
+{
+    private static ServiceTracker<OrderLocalService, OrderLocalService>
+        _OrderLocalService = ServiceTrackerFactory.open(OrderLocalService.class);
+    public static OrderLocalService getOrderLocalService() {
+        return _OrderLocalService.getService();
+    }
+}
+
+Local vs. Remote Service
+========================
+The differences between a Liferay 7.0 local service and remote service are:
+
+  * The base interface of the API.
+  * Specific annotations for the remote interface.
+
+In the ORM example, OrderLocalService is local service interface:
+
+Local Service API Declaration
+-----------------------------
+@ProviderType
+@Transactional(isolation = Isolation.PORTAL, rollbackFor =  {
+    PortalException.class, SystemException.class})
+public interface OrderLocalService extends BaseLocalService {
+ 
+}
+
+while OrderService is the remote service interface exposed as RESTful web service:
+
+Remote Service API Declaration
+------------------------------
+@AccessControlled
+@JSONWebService
+@OSGiBeanProperties(property =  {
+    "json.web.service.context.name=acme",
+    "json.web.service.context.path=Order" }, service = OrderService.class)
+@ProviderType
+@Transactional(isolation = Isolation.PORTAL, rollbackFor =  {
+    PortalException.class, SystemException.class})
+public interface OrderService extends BaseService {
+ 
+    public Order getOrderDetailsById(String orderId);
+}
+
+This RESTful web service can be found in the following catalog under Context Name "acme" (click the drop down box to find "acme" or other context names):
+
+http://localhost:8080/api/jsonws?contextName=acme
+
+Both the local and remote service implementation classes just implement their corresponding API interfaces. In the ORM example, OrderLocalServiceImpl is the local implementation that does the actual work of mapping to the database. The remote implementation, as shown below, simply calls the local Factory services:
+
+Remote Service Implementation
+-----------------------------
+@ProviderType
+public class OrderServiceImpl implements OrderService {
+ 
+    public Order getOrderDetailsById(String orderId) {
+        return Factory.getOrderLocalService().getOrderDetailsById(orderId);
+    }
+}
+
+Development Details
+===================
+Here are some key files for creating and implementing a service in this pattern.
+
+Eclipse .project and .classpath
+-------------------------------
+These two files in the example archive must be used to start your service project for Eclipse to recognize it as a Gradle project. You can change the project name in the <name> tag of the .project file before importing the project to Eclipse:
+
+<name>orm.api</name>
+
+You must also create these two folder structures to hold your Java and resource files:
+
+src/main/java
+src/main/resources
+
+Once imported to Eclipse, be sure to right click on the project and select "Gradle" -> "Refresh Gradle Project". You can also do the same thing with the parent Gradle project created by Liferay Blade.
+
+ 
+build.gradle
+------------
+The two 'org.osgi:org.osgi.*' dependencies are required for OSGi features.
+
+dependencies {
+    compile group: "com.liferay", name: "com.liferay.osgi.util", version: "3.0.3"
+    compile group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+    compile 'org.osgi:org.osgi.core:5.0.0'
+    compile 'org.osgi:org.osgi.annotation:6.0.0'
+    compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+    compile group: "org.mybatis", name: "mybatis", version: "3.4.1"
+    compile files('./resources/lib/sqljdbc4.jar')
+    compileOnly group: "com.liferay", name: "com.liferay.journal.api", version: "1.0.0"
+}
+
+ 
+bnd.bnd
+-------
+All packages under 'api' should be exported in the "Export-Package:" setting. The "Liferay-Spring-Context:" setting directs Liferay to load the Spring bean definition in the module-spring.xml file discussed below. "Lifer-Require-SchemaVersion:", "Liferay-Service:" and "Require-Capability:" settings are also required.
+
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .,lib/sqljdbc4.jar
+Export-Package: \
+    com.acme.orm.api,\
+    com.acme.orm.api.bean,\
+    com.acme.orm.api.exception
+Import-Package: \
+    !com.microsoft.sqlserver.*,\
+    !microsoft.sql.*,\
+    !com.sun.jdi.*,\
+    !net.sf.cglib.proxy.*,\
+    !org.apache.logging.*,\
+    *
+Include-Resource: @mybatis-3.4.1.jar
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true
+Liferay-Spring-Context: META-INF/spring
+Require-Capability: liferay.extender;filter:="(&(liferay.extender=spring.extender)(version>=2.0)(!(version>=3.0)))"
+
+ 
+src/main/resources/META-INF/spring/module-spring.xml
+----------------------------------------------------
+For each bean definition, the "class=" value is the implementation class name, and the "id=" value is the interface class name.
+
+<?xml version="1.0"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.acme.orm.impl.CommunicationMediumLocalServiceImpl" id="com.acme.orm.api.CommunicationMediumLocalService" />
+    <bean class="com.acme.orm.impl.MessageCenterLocalServiceImpl" id="com.acme.orm.api.MessageCenterLocalService" />
+    <bean class="com.acme.orm.impl.NSMUserLocalServiceImpl" id="com.acme.orm.api.NSMUserLocalService" />
+    <bean class="com.acme.orm.impl.OrderLocalServiceImpl" id="com.acme.orm.api.OrderLocalService" />
+    <bean class="com.acme.orm.impl.OrderServiceImpl" id="com.acme.orm.api.OrderService" />
+    <bean class="com.acme.orm.impl.RoutingAreaLocalServiceImpl" id="com.acme.orm.api.RoutingAreaLocalService" />
+    <bean class="com.acme.orm.impl.WebContentArticleLocalServiceImpl" id="com.acme.orm.api.WebContentArticleLocalService" />
+</beans>
+
+.
